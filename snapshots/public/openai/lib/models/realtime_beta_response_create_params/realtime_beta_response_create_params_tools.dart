@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';@immutable final class RealtimeBetaResponseCreateParamsTools {const RealtimeBetaResponseCreateParamsTools({this.type, this.name, this.description, this.parameters, });
 
-factory RealtimeBetaResponseCreateParamsTools.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParamsTools(
+factory RealtimeBetaResponseCreateParamsTools.fromJson(Map<String, dynamic> json) {return RealtimeBetaResponseCreateParamsTools(
   type: json['type'] != null ? AssistantToolsFunctionType.fromJson(json['type'] as String) : null,
   name: json['name'] as String?,
   description: json['description'] as String?,
   parameters: json['parameters'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The type of the tool, i.e. `function`.
 final AssistantToolsFunctionType? type;
@@ -25,19 +25,19 @@ final String? description;
 /// Parameters of the function in JSON Schema.
 final Map<String,dynamic>? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'name': ?name,
   'description': ?description,
   'parameters': ?parameters,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'name', 'description', 'parameters'}.contains(key)); } 
-RealtimeBetaResponseCreateParamsTools copyWith({AssistantToolsFunctionType? Function()? type, String? Function()? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, }) { return RealtimeBetaResponseCreateParamsTools(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'name', 'description', 'parameters'}.contains(key));}
+RealtimeBetaResponseCreateParamsTools copyWith({AssistantToolsFunctionType? Function()? type, String? Function()? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, }) {return RealtimeBetaResponseCreateParamsTools(
   type: type != null ? type() : this.type,
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaResponseCreateParamsTools &&
           type == other.type &&
@@ -49,4 +49,4 @@ RealtimeBetaResponseCreateParamsTools copyWith({AssistantToolsFunctionType? Func
 
 @override String toString() => 'RealtimeBetaResponseCreateParamsTools(type: $type, name: $name, description: $description, parameters: $parameters)';
 
- }
+}

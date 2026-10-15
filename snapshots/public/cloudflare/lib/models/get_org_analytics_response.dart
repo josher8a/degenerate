@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/get_org_analytics_response_data.dart';@immutable final class GetOrgAnalyticsResponse {const GetOrgAnalyticsResponse({this.data, this.success, });
 
-factory GetOrgAnalyticsResponse.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponse(
+factory GetOrgAnalyticsResponse.fromJson(Map<String, dynamic> json) {return GetOrgAnalyticsResponse(
   data: json['data'] != null ? GetOrgAnalyticsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final GetOrgAnalyticsResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-GetOrgAnalyticsResponse copyWith({GetOrgAnalyticsResponseData? Function()? data, bool? Function()? success, }) { return GetOrgAnalyticsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+GetOrgAnalyticsResponse copyWith({GetOrgAnalyticsResponseData? Function()? data, bool? Function()? success, }) {return GetOrgAnalyticsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetOrgAnalyticsResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ GetOrgAnalyticsResponse copyWith({GetOrgAnalyticsResponseData? Function()? data,
 
 @override String toString() => 'GetOrgAnalyticsResponse(data: $data, success: $success)';
 
- }
+}

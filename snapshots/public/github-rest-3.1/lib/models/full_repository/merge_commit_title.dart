@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default valu
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 sealed class MergeCommitTitle {const MergeCommitTitle();
 
-factory MergeCommitTitle.fromJson(String json) { return switch (json) {
+factory MergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'MERGE_MESSAGE' => mergeMessage,
   _ => MergeCommitTitle$Unknown(json),
-}; }
+};}
 
 static const MergeCommitTitle prTitle = MergeCommitTitle$prTitle._();
 
@@ -20,30 +20,30 @@ static const MergeCommitTitle mergeMessage = MergeCommitTitle$mergeMessage._();
 static const List<MergeCommitTitle> values = [prTitle, mergeMessage];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PR_TITLE' => 'prTitle',
   'MERGE_MESSAGE' => 'mergeMessage',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MergeCommitTitle$Unknown; } 
+bool get isUnknown {return this is MergeCommitTitle$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() prTitle, required W Function() mergeMessage, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() prTitle, required W Function() mergeMessage, required W Function(String value) $unknown, }) {return switch (this) {
       MergeCommitTitle$prTitle() => prTitle(),
       MergeCommitTitle$mergeMessage() => mergeMessage(),
       MergeCommitTitle$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? prTitle, W Function()? mergeMessage, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? prTitle, W Function()? mergeMessage, W Function(String value)? $unknown, }) {return switch (this) {
       MergeCommitTitle$prTitle() => prTitle != null ? prTitle() : orElse(value),
       MergeCommitTitle$mergeMessage() => mergeMessage != null ? mergeMessage() : orElse(value),
       MergeCommitTitle$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MergeCommitTitle($value)';
 
- }
+}
 @immutable final class MergeCommitTitle$prTitle extends MergeCommitTitle {const MergeCommitTitle$prTitle._();
 
 @override String get value => 'PR_TITLE';
@@ -52,7 +52,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? prTitle,
 
 @override int get hashCode => 'PR_TITLE'.hashCode;
 
- }
+}
 @immutable final class MergeCommitTitle$mergeMessage extends MergeCommitTitle {const MergeCommitTitle$mergeMessage._();
 
 @override String get value => 'MERGE_MESSAGE';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? prTitle,
 
 @override int get hashCode => 'MERGE_MESSAGE'.hashCode;
 
- }
+}
 @immutable final class MergeCommitTitle$Unknown extends MergeCommitTitle {const MergeCommitTitle$Unknown(this.value);
 
 @override final String value;
@@ -71,4 +71,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? prTitle,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

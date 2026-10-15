@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualitySpeedTopLocationsResponseResultTop0 {const RadarGetQualitySpeedTopLocationsResponseResultTop0({required this.bandwidthDownload, required this.bandwidthUpload, required this.clientCountryAlpha2, required this.clientCountryName, required this.jitterIdle, required this.jitterLoaded, required this.latencyIdle, required this.latencyLoaded, required this.numTests, required this.rankPower, });
 
-factory RadarGetQualitySpeedTopLocationsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopLocationsResponseResultTop0(
+factory RadarGetQualitySpeedTopLocationsResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedTopLocationsResponseResultTop0(
   bandwidthDownload: json['bandwidthDownload'] as String,
   bandwidthUpload: json['bandwidthUpload'] as String,
   clientCountryAlpha2: json['clientCountryAlpha2'] as String,
@@ -14,7 +14,7 @@ factory RadarGetQualitySpeedTopLocationsResponseResultTop0.fromJson(Map<String, 
   latencyLoaded: json['latencyLoaded'] as String,
   numTests: (json['numTests'] as num).toDouble(),
   rankPower: (json['rankPower'] as num).toDouble(),
-); }
+);}
 
 /// Example: `'295.886073'`
 final String bandwidthDownload;
@@ -46,7 +46,7 @@ final double numTests;
 /// Example: `0.77`
 final double rankPower;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bandwidthDownload': bandwidthDownload,
   'bandwidthUpload': bandwidthUpload,
   'clientCountryAlpha2': clientCountryAlpha2,
@@ -57,8 +57,8 @@ Map<String, dynamic> toJson() { return {
   'latencyLoaded': latencyLoaded,
   'numTests': numTests,
   'rankPower': rankPower,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bandwidthDownload') && json['bandwidthDownload'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bandwidthDownload') && json['bandwidthDownload'] is String &&
       json.containsKey('bandwidthUpload') && json['bandwidthUpload'] is String &&
       json.containsKey('clientCountryAlpha2') && json['clientCountryAlpha2'] is String &&
       json.containsKey('clientCountryName') && json['clientCountryName'] is String &&
@@ -67,8 +67,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bandw
       json.containsKey('latencyIdle') && json['latencyIdle'] is String &&
       json.containsKey('latencyLoaded') && json['latencyLoaded'] is String &&
       json.containsKey('numTests') && json['numTests'] is num &&
-      json.containsKey('rankPower') && json['rankPower'] is num; } 
-RadarGetQualitySpeedTopLocationsResponseResultTop0 copyWith({String? bandwidthDownload, String? bandwidthUpload, String? clientCountryAlpha2, String? clientCountryName, String? jitterIdle, String? jitterLoaded, String? latencyIdle, String? latencyLoaded, double? numTests, double? rankPower, }) { return RadarGetQualitySpeedTopLocationsResponseResultTop0(
+      json.containsKey('rankPower') && json['rankPower'] is num;}
+RadarGetQualitySpeedTopLocationsResponseResultTop0 copyWith({String? bandwidthDownload, String? bandwidthUpload, String? clientCountryAlpha2, String? clientCountryName, String? jitterIdle, String? jitterLoaded, String? latencyIdle, String? latencyLoaded, double? numTests, double? rankPower, }) {return RadarGetQualitySpeedTopLocationsResponseResultTop0(
   bandwidthDownload: bandwidthDownload ?? this.bandwidthDownload,
   bandwidthUpload: bandwidthUpload ?? this.bandwidthUpload,
   clientCountryAlpha2: clientCountryAlpha2 ?? this.clientCountryAlpha2,
@@ -79,7 +79,7 @@ RadarGetQualitySpeedTopLocationsResponseResultTop0 copyWith({String? bandwidthDo
   latencyLoaded: latencyLoaded ?? this.latencyLoaded,
   numTests: numTests ?? this.numTests,
   rankPower: rankPower ?? this.rankPower,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedTopLocationsResponseResultTop0 &&
           bandwidthDownload == other.bandwidthDownload &&
@@ -97,4 +97,4 @@ RadarGetQualitySpeedTopLocationsResponseResultTop0 copyWith({String? bandwidthDo
 
 @override String toString() => 'RadarGetQualitySpeedTopLocationsResponseResultTop0(\n  bandwidthDownload: $bandwidthDownload,\n  bandwidthUpload: $bandwidthUpload,\n  clientCountryAlpha2: $clientCountryAlpha2,\n  clientCountryName: $clientCountryName,\n  jitterIdle: $jitterIdle,\n  jitterLoaded: $jitterLoaded,\n  latencyIdle: $latencyIdle,\n  latencyLoaded: $latencyLoaded,\n  numTests: $numTests,\n  rankPower: $rankPower,\n)';
 
- }
+}

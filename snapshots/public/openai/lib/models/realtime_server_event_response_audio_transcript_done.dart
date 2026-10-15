@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when th
 /// 
 @immutable final class RealtimeServerEventResponseAudioTranscriptDone {const RealtimeServerEventResponseAudioTranscriptDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.transcript, });
 
-factory RealtimeServerEventResponseAudioTranscriptDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseAudioTranscriptDone(
+factory RealtimeServerEventResponseAudioTranscriptDone.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseAudioTranscriptDone(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -15,7 +15,7 @@ factory RealtimeServerEventResponseAudioTranscriptDone.fromJson(Map<String, dyna
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   transcript: json['transcript'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -38,7 +38,7 @@ final int contentIndex;
 /// The final transcript of the audio.
 final String transcript;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -46,15 +46,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'transcript': transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('transcript') && json['transcript'] is String; } 
-RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) { return RealtimeServerEventResponseAudioTranscriptDone(
+      json.containsKey('transcript') && json['transcript'] is String;}
+RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) {return RealtimeServerEventResponseAudioTranscriptDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -62,7 +62,7 @@ RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   transcript: transcript ?? this.transcript,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseAudioTranscriptDone &&
           eventId == other.eventId &&
@@ -77,4 +77,4 @@ RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String
 
 @override String toString() => 'RealtimeServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)';
 
- }
+}

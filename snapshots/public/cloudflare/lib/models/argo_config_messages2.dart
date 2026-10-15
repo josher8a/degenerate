@@ -3,29 +3,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArgoConfigMessages2 {const ArgoConfigMessages2({required this.code, required this.message, });
 
-factory ArgoConfigMessages2.fromJson(Map<String, dynamic> json) { return ArgoConfigMessages2(
+factory ArgoConfigMessages2.fromJson(Map<String, dynamic> json) {return ArgoConfigMessages2(
   code: (json['code'] as num).toInt(),
   message: json['message'] as String,
-); }
+);}
 
 final int code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (code < 1000) { errors.add('code: must be >= 1000'); }
-return errors; } 
-ArgoConfigMessages2 copyWith({int? code, String? message, }) { return ArgoConfigMessages2(
+return errors;}
+ArgoConfigMessages2 copyWith({int? code, String? message, }) {return ArgoConfigMessages2(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ArgoConfigMessages2 &&
           code == other.code &&
@@ -35,4 +35,4 @@ ArgoConfigMessages2 copyWith({int? code, String? message, }) { return ArgoConfig
 
 @override String toString() => 'ArgoConfigMessages2(code: $code, message: $message)';
 
- }
+}

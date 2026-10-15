@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_quote_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent.dart';/// The type of parent that generated this invoice
 sealed class BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType();
 
-factory BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(String json) { return switch (json) {
+factory BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(String json) {return switch (json) {
   'quote_details' => quoteDetails,
   'subscription_details' => subscriptionDetails,
   _ => BillingBillResourceInvoicingParentsInvoiceParentType$Unknown(json),
-}; }
+};}
 
 static const BillingBillResourceInvoicingParentsInvoiceParentType quoteDetails = BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails._();
 
@@ -17,30 +17,30 @@ static const BillingBillResourceInvoicingParentsInvoiceParentType subscriptionDe
 static const List<BillingBillResourceInvoicingParentsInvoiceParentType> values = [quoteDetails, subscriptionDetails];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'quote_details' => 'quoteDetails',
   'subscription_details' => 'subscriptionDetails',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingBillResourceInvoicingParentsInvoiceParentType$Unknown; } 
+bool get isUnknown {return this is BillingBillResourceInvoicingParentsInvoiceParentType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() quoteDetails, required W Function() subscriptionDetails, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() quoteDetails, required W Function() subscriptionDetails, required W Function(String value) $unknown, }) {return switch (this) {
       BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails() => quoteDetails(),
       BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails() => subscriptionDetails(),
       BillingBillResourceInvoicingParentsInvoiceParentType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? quoteDetails, W Function()? subscriptionDetails, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? quoteDetails, W Function()? subscriptionDetails, W Function(String value)? $unknown, }) {return switch (this) {
       BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails() => quoteDetails != null ? quoteDetails() : orElse(value),
       BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails() => subscriptionDetails != null ? subscriptionDetails() : orElse(value),
       BillingBillResourceInvoicingParentsInvoiceParentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingBillResourceInvoicingParentsInvoiceParentType($value)';
 
- }
+}
 @immutable final class BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails extends BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails._();
 
 @override String get value => 'quote_details';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? quoteDet
 
 @override int get hashCode => 'quote_details'.hashCode;
 
- }
+}
 @immutable final class BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails extends BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails._();
 
 @override String get value => 'subscription_details';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? quoteDet
 
 @override int get hashCode => 'subscription_details'.hashCode;
 
- }
+}
 @immutable final class BillingBillResourceInvoicingParentsInvoiceParentType$Unknown extends BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType$Unknown(this.value);
 
 @override final String value;
@@ -68,36 +68,36 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? quoteDet
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class BillingBillResourceInvoicingParentsInvoiceParent {const BillingBillResourceInvoicingParentsInvoiceParent({required this.type, this.quoteDetails, this.subscriptionDetails, });
+@immutable final class BillingBillResourceInvoicingParentsInvoiceParent {const BillingBillResourceInvoicingParentsInvoiceParent({required this.type, this.quoteDetails = const Omittable.absent(), this.subscriptionDetails = const Omittable.absent(), });
 
-factory BillingBillResourceInvoicingParentsInvoiceParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceParent(
-  quoteDetails: json['quote_details'] != null ? BillingBillResourceInvoicingParentsInvoiceQuoteParent.fromJson(json['quote_details'] as Map<String, dynamic>) : null,
-  subscriptionDetails: json['subscription_details'] != null ? BillingBillResourceInvoicingParentsInvoiceSubscriptionParent.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
+factory BillingBillResourceInvoicingParentsInvoiceParent.fromJson(Map<String, dynamic> json) {return BillingBillResourceInvoicingParentsInvoiceParent(
+  quoteDetails: json.containsKey('quote_details') ? Omittable(json['quote_details'] != null ? BillingBillResourceInvoicingParentsInvoiceQuoteParent.fromJson(json['quote_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  subscriptionDetails: json.containsKey('subscription_details') ? Omittable(json['subscription_details'] != null ? BillingBillResourceInvoicingParentsInvoiceSubscriptionParent.fromJson(json['subscription_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Details about the quote that generated this invoice
-final BillingBillResourceInvoicingParentsInvoiceQuoteParent? quoteDetails;
+final Omittable<BillingBillResourceInvoicingParentsInvoiceQuoteParent?> quoteDetails;
 
 /// Details about the subscription that generated this invoice
-final BillingBillResourceInvoicingParentsInvoiceSubscriptionParent? subscriptionDetails;
+final Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParent?> subscriptionDetails;
 
 /// The type of parent that generated this invoice
 final BillingBillResourceInvoicingParentsInvoiceParentType type;
 
-Map<String, dynamic> toJson() { return {
-  if (quoteDetails != null) 'quote_details': quoteDetails?.toJson(),
-  if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (quoteDetails.isPresent) 'quote_details': quoteDetails.value?.toJson(),
+  if (subscriptionDetails.isPresent) 'subscription_details': subscriptionDetails.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BillingBillResourceInvoicingParentsInvoiceParent copyWith({BillingBillResourceInvoicingParentsInvoiceQuoteParent? Function()? quoteDetails, BillingBillResourceInvoicingParentsInvoiceSubscriptionParent? Function()? subscriptionDetails, BillingBillResourceInvoicingParentsInvoiceParentType? type, }) { return BillingBillResourceInvoicingParentsInvoiceParent(
-  quoteDetails: quoteDetails != null ? quoteDetails() : this.quoteDetails,
-  subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+BillingBillResourceInvoicingParentsInvoiceParent copyWith({Omittable<BillingBillResourceInvoicingParentsInvoiceQuoteParent?>? quoteDetails, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParent?>? subscriptionDetails, BillingBillResourceInvoicingParentsInvoiceParentType? type, }) {return BillingBillResourceInvoicingParentsInvoiceParent(
+  quoteDetails: quoteDetails ?? this.quoteDetails,
+  subscriptionDetails: subscriptionDetails ?? this.subscriptionDetails,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingParentsInvoiceParent &&
           quoteDetails == other.quoteDetails &&
@@ -108,4 +108,4 @@ BillingBillResourceInvoicingParentsInvoiceParent copyWith({BillingBillResourceIn
 
 @override String toString() => 'BillingBillResourceInvoicingParentsInvoiceParent(quoteDetails: $quoteDetails, subscriptionDetails: $subscriptionDetails, type: $type)';
 
- }
+}

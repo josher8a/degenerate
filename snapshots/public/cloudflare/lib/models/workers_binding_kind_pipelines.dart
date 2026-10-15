@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindPipelines {const WorkersBindingKindPipelines({required this.name, required this.pipeline, required this.type, });
 
-factory WorkersBindingKindPipelines.fromJson(Map<String, dynamic> json) { return WorkersBindingKindPipelines(
+factory WorkersBindingKindPipelines.fromJson(Map<String, dynamic> json) {return WorkersBindingKindPipelines(
   name: WorkersBindingName.fromJson(json['name'] as String),
   pipeline: json['pipeline'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
@@ -19,19 +19,19 @@ final String pipeline;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'pipeline': pipeline,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('pipeline') && json['pipeline'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindPipelines copyWith({WorkersBindingName? name, String? pipeline, String? type, }) { return WorkersBindingKindPipelines(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindPipelines copyWith({WorkersBindingName? name, String? pipeline, String? type, }) {return WorkersBindingKindPipelines(
   name: name ?? this.name,
   pipeline: pipeline ?? this.pipeline,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindPipelines &&
           name == other.name &&
@@ -42,4 +42,4 @@ WorkersBindingKindPipelines copyWith({WorkersBindingName? name, String? pipeline
 
 @override String toString() => 'WorkersBindingKindPipelines(name: $name, pipeline: $pipeline, type: $type)';
 
- }
+}

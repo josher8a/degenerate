@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/HealthchecksQueryHealthcheck
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_address.dart';import 'package:pub_cloudflare/models/healthchecks_check_regions2.dart';import 'package:pub_cloudflare/models/healthchecks_consecutive_fails.dart';import 'package:pub_cloudflare/models/healthchecks_consecutive_successes.dart';import 'package:pub_cloudflare/models/healthchecks_description.dart';import 'package:pub_cloudflare/models/healthchecks_http_config.dart';import 'package:pub_cloudflare/models/healthchecks_interval.dart';import 'package:pub_cloudflare/models/healthchecks_name.dart';import 'package:pub_cloudflare/models/healthchecks_retries.dart';import 'package:pub_cloudflare/models/healthchecks_suspended.dart';import 'package:pub_cloudflare/models/healthchecks_tcp_config.dart';import 'package:pub_cloudflare/models/healthchecks_timeout.dart';import 'package:pub_cloudflare/models/healthchecks_type.dart';@immutable final class HealthchecksQueryHealthcheck {const HealthchecksQueryHealthcheck({required this.address, required this.name, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig, this.interval, this.retries, this.suspended, this.tcpConfig, this.timeout, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_address.dart';import 'package:pub_cloudflare/models/healthchecks_check_regions2.dart';import 'package:pub_cloudflare/models/healthchecks_consecutive_fails.dart';import 'package:pub_cloudflare/models/healthchecks_consecutive_successes.dart';import 'package:pub_cloudflare/models/healthchecks_description.dart';import 'package:pub_cloudflare/models/healthchecks_http_config.dart';import 'package:pub_cloudflare/models/healthchecks_interval.dart';import 'package:pub_cloudflare/models/healthchecks_name.dart';import 'package:pub_cloudflare/models/healthchecks_retries.dart';import 'package:pub_cloudflare/models/healthchecks_suspended.dart';import 'package:pub_cloudflare/models/healthchecks_tcp_config.dart';import 'package:pub_cloudflare/models/healthchecks_timeout.dart';import 'package:pub_cloudflare/models/healthchecks_type.dart';@immutable final class HealthchecksQueryHealthcheck {const HealthchecksQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig = const Omittable.absent(), this.interval, this.retries, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
-factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) { return HealthchecksQueryHealthcheck(
+factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) {return HealthchecksQueryHealthcheck(
   address: HealthchecksAddress.fromJson(json['address'] as String),
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? HealthchecksConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? HealthchecksConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   description: json['description'] != null ? HealthchecksDescription.fromJson(json['description'] as String) : null,
-  httpConfig: json['http_config'] != null ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
+  httpConfig: json.containsKey('http_config') ? Omittable(json['http_config'] != null ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   interval: json['interval'] != null ? HealthchecksInterval.fromJson(json['interval'] as num) : null,
   name: HealthchecksName.fromJson(json['name'] as String),
   retries: json['retries'] != null ? HealthchecksRetries.fromJson(json['retries'] as num) : null,
   suspended: json['suspended'] != null ? HealthchecksSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
+  tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? HealthchecksTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The hostname or IP address of the origin server to run health checks on.
 final HealthchecksAddress address;
 
 /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
-final List<HealthchecksCheckRegions2>? checkRegions;
+final Omittable<List<HealthchecksCheckRegions2>?> checkRegions;
 
 /// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final HealthchecksConsecutiveFails? consecutiveFails;
@@ -34,7 +34,7 @@ final HealthchecksConsecutiveSuccesses? consecutiveSuccesses;
 /// A human-readable description of the health check.
 final HealthchecksDescription? description;
 
-final HealthchecksHttpConfig? httpConfig;
+final Omittable<HealthchecksHttpConfig?> httpConfig;
 
 /// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
 final HealthchecksInterval? interval;
@@ -46,48 +46,49 @@ final HealthchecksRetries? retries;
 
 final HealthchecksSuspended? suspended;
 
-final HealthchecksTcpConfig? tcpConfig;
+final Omittable<HealthchecksTcpConfig?> tcpConfig;
 
 final HealthchecksTimeout? timeout;
 
 final HealthchecksType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
   if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
   if (description != null) 'description': description?.toJson(),
-  if (httpConfig != null) 'http_config': httpConfig?.toJson(),
+  if (httpConfig.isPresent) 'http_config': httpConfig.value?.toJson(),
   if (interval != null) 'interval': interval?.toJson(),
   'name': name.toJson(),
   if (retries != null) 'retries': retries?.toJson(),
   if (suspended != null) 'suspended': suspended?.toJson(),
-  if (tcpConfig != null) 'tcp_config': tcpConfig?.toJson(),
+  if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name'); } 
-HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<HealthchecksCheckRegions2>? Function()? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksDescription? Function()? description, HealthchecksHttpConfig? Function()? httpConfig, HealthchecksInterval? Function()? interval, HealthchecksName? name, HealthchecksRetries? Function()? retries, HealthchecksSuspended? Function()? suspended, HealthchecksTcpConfig? Function()? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) { return HealthchecksQueryHealthcheck(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name');}
+HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, Omittable<List<HealthchecksCheckRegions2>?>? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksDescription? Function()? description, Omittable<HealthchecksHttpConfig?>? httpConfig, HealthchecksInterval? Function()? interval, HealthchecksName? name, HealthchecksRetries? Function()? retries, HealthchecksSuspended? Function()? suspended, Omittable<HealthchecksTcpConfig?>? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) {return HealthchecksQueryHealthcheck(
   address: address ?? this.address,
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+  checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
   consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
   description: description != null ? description() : this.description,
-  httpConfig: httpConfig != null ? httpConfig() : this.httpConfig,
+  httpConfig: httpConfig ?? this.httpConfig,
   interval: interval != null ? interval() : this.interval,
   name: name ?? this.name,
   retries: retries != null ? retries() : this.retries,
   suspended: suspended != null ? suspended() : this.suspended,
-  tcpConfig: tcpConfig != null ? tcpConfig() : this.tcpConfig,
+  tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HealthchecksQueryHealthcheck &&
           address == other.address &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           consecutiveFails == other.consecutiveFails &&
           consecutiveSuccesses == other.consecutiveSuccesses &&
           description == other.description &&
@@ -100,8 +101,8 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<Health
           timeout == other.timeout &&
           type == other.type;
 
-@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);
+@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);
 
 @override String toString() => 'HealthchecksQueryHealthcheck(\n  address: $address,\n  checkRegions: $checkRegions,\n  consecutiveFails: $consecutiveFails,\n  consecutiveSuccesses: $consecutiveSuccesses,\n  description: $description,\n  httpConfig: $httpConfig,\n  interval: $interval,\n  name: $name,\n  retries: $retries,\n  suspended: $suspended,\n  tcpConfig: $tcpConfig,\n  timeout: $timeout,\n  type: $type,\n)';
 
- }
+}

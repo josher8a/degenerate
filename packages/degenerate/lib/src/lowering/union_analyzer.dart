@@ -23,7 +23,7 @@ DiscUnionMetadata _analyze(
   Map<String, IrType> typeRegistry,
 ) {
   final discKey = union.discriminatorProperty;
-  final variants = <String, VariantInfo>{};
+  final variants = <SpecString, VariantInfo>{};
 
   for (final MapEntry(:key, :value) in union.mapping.entries) {
     final resolved = _resolve(value, typeRegistry);
@@ -32,7 +32,6 @@ DiscUnionMetadata _analyze(
       isSpreadable: _isSpreadable(resolved),
       payloadFields: _payloadFields(resolved, discKey),
       discFieldType: _discFieldType(resolved, discKey),
-      discDefault: _discDefault(resolved, discKey),
     );
   }
 
@@ -48,19 +47,22 @@ IrType _resolve(IrType type, Map<String, IrType> registry) {
 }
 
 bool _isSpreadable(IrType resolved) {
-  final vs = resolved.unionVariants;
+  // A lossless anyOf serializes its raw/merged value (`Object?`); callers
+  // cast it to a map when the discriminator identifies an object payload.
+  if (resolved is IrAnyOf) return true;
+  final vs = resolved.oneOfVariants;
   if (vs != null) return !isOneOfEligible(vs);
   return resolved is IrObject ||
       resolved is IrDiscriminatedUnion ||
       resolved is IrTypeRef;
 }
 
-List<IrField> _payloadFields(IrType resolved, String discKey) {
+List<IrField> _payloadFields(IrType resolved, SpecString discKey) {
   if (resolved is! IrObject) return const [];
   return resolved.fields.where((f) => f.originalName != discKey).toList();
 }
 
-IrType? _discFieldType(IrType resolved, String discKey) {
+IrType? _discFieldType(IrType resolved, SpecString discKey) {
   if (resolved is! IrObject) return null;
   for (final f in resolved.fields) {
     if (f.originalName == discKey) return f.type;
@@ -68,17 +70,9 @@ IrType? _discFieldType(IrType resolved, String discKey) {
   return null;
 }
 
-String? _discDefault(IrType resolved, String discKey) {
-  if (resolved is! IrObject) return null;
-  for (final f in resolved.fields) {
-    if (f.originalName == discKey) return f.defaultValue as String?;
-  }
-  return null;
-}
-
 List<IrField> _computeCommonFields(
   IrDiscriminatedUnion union,
-  Map<String, VariantInfo> variants,
+  Map<SpecString, VariantInfo> variants,
   Map<String, IrType> typeRegistry,
 ) {
   final discKey = union.discriminatorProperty;
@@ -101,7 +95,7 @@ List<IrField> _computeCommonFields(
 
   bool isUnionField(IrType type) {
     final t = _resolve(type, typeRegistry);
-    final vs = t.unionVariants;
+    final vs = t.oneOfVariants;
     return vs != null && isOneOfEligible(vs);
   }
 
@@ -142,11 +136,11 @@ List<IrField> _computeCommonFields(
 /// union and at least one sibling variant declares a field with the same wire
 /// name. Discriminated unions dispatch on the discriminator itself rather than
 /// through `canParse`, so they need no pin.
-Map<String, Set<String>> analyzeConstDiscriminators(
+Map<String, Set<SpecString>> analyzeConstDiscriminators(
   List<IrType> types,
   Map<String, IrType> registry,
 ) {
-  final pinned = <String, Set<String>>{};
+  final pinned = <String, Set<SpecString>>{};
 
   for (final type in types) {
     final variants = switch (type) {
@@ -164,7 +158,7 @@ Map<String, Set<String>> analyzeConstDiscriminators(
 
     // Wire names declared by more than one variant: the ones key presence
     // alone cannot tell apart.
-    final declaredBy = <String, int>{};
+    final declaredBy = <SpecString, int>{};
     for (final o in objects) {
       for (final name in o.fields.map((f) => f.originalName).toSet()) {
         declaredBy[name] = (declaredBy[name] ?? 0) + 1;
@@ -178,7 +172,7 @@ Map<String, Set<String>> analyzeConstDiscriminators(
         if ((declaredBy[f.originalName] ?? 0) < 2) continue;
         final resolved = f.type.resolveRef(registry);
         if (resolved is! IrEnum || resolved.values.length != 1) continue;
-        (pinned[o.name] ??= <String>{}).add(f.originalName);
+        (pinned[o.name] ??= <SpecString>{}).add(f.originalName);
       }
     }
   }

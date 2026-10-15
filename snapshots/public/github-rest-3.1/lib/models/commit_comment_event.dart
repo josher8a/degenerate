@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_comment_event/commit_comment_event_comment.dart';@immutable final class CommitCommentEvent {const CommitCommentEvent({required this.action, required this.comment, });
 
-factory CommitCommentEvent.fromJson(Map<String, dynamic> json) { return CommitCommentEvent(
+factory CommitCommentEvent.fromJson(Map<String, dynamic> json) {return CommitCommentEvent(
   action: json['action'] as String,
   comment: CommitCommentEventComment.fromJson(json['comment'] as Map<String, dynamic>),
-); }
+);}
 
 final String action;
 
 final CommitCommentEventComment comment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'comment': comment.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
-      json.containsKey('comment'); } 
-CommitCommentEvent copyWith({String? action, CommitCommentEventComment? comment, }) { return CommitCommentEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('comment');}
+CommitCommentEvent copyWith({String? action, CommitCommentEventComment? comment, }) {return CommitCommentEvent(
   action: action ?? this.action,
   comment: comment ?? this.comment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommentEvent &&
           action == other.action &&
@@ -31,4 +31,4 @@ CommitCommentEvent copyWith({String? action, CommitCommentEventComment? comment,
 
 @override String toString() => 'CommitCommentEvent(action: $action, comment: $comment)';
 
- }
+}

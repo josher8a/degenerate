@@ -10,12 +10,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class DestinationPath {const DestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
 
-factory DestinationPath.fromJson(Map<String, dynamic> json) { return DestinationPath(
+factory DestinationPath.fromJson(Map<String, dynamic> json) {return DestinationPath(
   bucket: json['bucket'] as String,
   filename: json['filename'] as String?,
   filepath: json['filepath'] as String?,
   prefix: json['prefix'] as String?,
-); }
+);}
 
 /// Specifies the R2 Bucket to store files.
 /// 
@@ -37,19 +37,19 @@ final String? filepath;
 /// Example: `'base'`
 final String? prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket': bucket,
   'filename': ?filename,
   'filepath': ?filepath,
   'prefix': ?prefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String; } 
-DestinationPath copyWith({String? bucket, String? Function()? filename, String? Function()? filepath, String? Function()? prefix, }) { return DestinationPath(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bucket') && json['bucket'] is String;}
+DestinationPath copyWith({String? bucket, String? Function()? filename, String? Function()? filepath, String? Function()? prefix, }) {return DestinationPath(
   bucket: bucket ?? this.bucket,
   filename: filename != null ? filename() : this.filename,
   filepath: filepath != null ? filepath() : this.filepath,
   prefix: prefix != null ? prefix() : this.prefix,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationPath &&
           bucket == other.bucket &&
@@ -61,4 +61,4 @@ DestinationPath copyWith({String? bucket, String? Function()? filename, String? 
 
 @override String toString() => 'DestinationPath(bucket: $bucket, filename: $filename, filepath: $filepath, prefix: $prefix)';
 
- }
+}

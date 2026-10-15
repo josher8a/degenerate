@@ -10,7 +10,7 @@ final class MethodsApi with ApiExecutor {const MethodsApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `DELETE /method/delete`
-Future<ApiResult<MethodDeleteResponse, Never>> methodDelete({required MethodDeleteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MethodDeleteResponse, Never>> methodDelete({required MethodDeleteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -21,15 +21,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MethodDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /method/get`
-Future<ApiResult<MethodGetResponse, Never>> methodGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MethodGetResponse, Never>> methodGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -38,15 +38,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MethodGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `HEAD /method/head`
-Future<ApiResult<void, Never>> methodHead({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> methodHead({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'HEAD',
@@ -55,13 +55,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `OPTIONS /method/options`
-Future<ApiResult<void, Never>> methodOptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> methodOptions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'OPTIONS',
@@ -70,13 +70,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `PATCH /method/patch`
-Future<ApiResult<MethodPatchResponse, Never>> methodPatch({required MethodPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MethodPatchResponse, Never>> methodPatch({required MethodPatchRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,15 +87,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MethodPatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /method/post`
-Future<ApiResult<MethodPostResponse, Never>> methodPost({required MethodPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MethodPostResponse, Never>> methodPost({required MethodPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,15 +106,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MethodPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `PUT /method/put`
-Future<ApiResult<MethodPutResponse, Never>> methodPut({required MethodPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MethodPutResponse, Never>> methodPut({required MethodPutRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -125,15 +125,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MethodPutResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `TRACE /method/trace`
-Future<ApiResult<String, Never>> methodTrace({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> methodTrace({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'TRACE',
@@ -142,11 +142,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
   },
 );
- } 
- }
+}
+}

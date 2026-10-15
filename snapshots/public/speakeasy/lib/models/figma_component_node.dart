@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/figma_boolean_operation_node.dart';import 'package:pub_speakeasy/models/figma_subcanvas_node.dart';@immutable final class FigmaComponentNode {const FigmaComponentNode({this.type, this.children, });
 
-factory FigmaComponentNode.fromJson(Map<String, dynamic> json) { return FigmaComponentNode(
+factory FigmaComponentNode.fromJson(Map<String, dynamic> json) {return FigmaComponentNode(
   type: json['type'] as String?,
   children: (json['children'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => FigmaBooleanOperationNode.fromJson(v as Map<String, dynamic>), fromB: (v) => FigmaComponentNode.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 final String? type;
 
 final List<FigmaSubcanvasNode>? children;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   if (children != null) 'children': children?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'children'}.contains(key)); } 
-FigmaComponentNode copyWith({String? Function()? type, List<FigmaSubcanvasNode>? Function()? children, }) { return FigmaComponentNode(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'children'}.contains(key));}
+FigmaComponentNode copyWith({String? Function()? type, List<FigmaSubcanvasNode>? Function()? children, }) {return FigmaComponentNode(
   type: type != null ? type() : this.type,
   children: children != null ? children() : this.children,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FigmaComponentNode &&
           type == other.type &&
@@ -30,4 +30,4 @@ FigmaComponentNode copyWith({String? Function()? type, List<FigmaSubcanvasNode>?
 
 @override String toString() => 'FigmaComponentNode(type: $type, children: $children)';
 
- }
+}

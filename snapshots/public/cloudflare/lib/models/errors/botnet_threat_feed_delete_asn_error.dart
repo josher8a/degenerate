@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure33.dart';sealed class BotnetThreatFeedDeleteAsnError {const BotnetThreatFeedDeleteAsnError();
 
-factory BotnetThreatFeedDeleteAsnError.fromResponse(ApiResponse response) {     try {
+factory BotnetThreatFeedDeleteAsnError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => BotnetThreatFeedDeleteAsnError$4XX(ResponseCommonFailure33.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => BotnetThreatFeedDeleteAsnError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return BotnetThreatFeedDeleteAsnError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class BotnetThreatFeedDeleteAsnError$4XX extends BotnetThreatFeedDeleteAsnError {const BotnetThreatFeedDeleteAsnError$4XX(this.error, this.statusCode, );
 
 final ResponseCommonFailure33 error;
@@ -23,14 +23,14 @@ final ResponseCommonFailure33 error;
 
 @override Object get typedError => error;
 
- }
+}
 final class BotnetThreatFeedDeleteAsnError$Unknown extends BotnetThreatFeedDeleteAsnError {const BotnetThreatFeedDeleteAsnError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef BotnetThreatFeedGetDayReportError = BotnetThreatFeedDeleteAsnError;
 typedef BotnetThreatFeedGetFullReportError = BotnetThreatFeedDeleteAsnError;
 typedef BotnetThreatFeedListAsnError = BotnetThreatFeedDeleteAsnError;

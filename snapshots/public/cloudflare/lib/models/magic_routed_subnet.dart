@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';import 'package:pub_cloudflare/models/magic_ip_address.dart';import 'package:pub_cloudflare/models/magic_nat.dart';@immutable final class MagicRoutedSubnet {const MagicRoutedSubnet({required this.nextHop, required this.prefix, this.nat, });
 
-factory MagicRoutedSubnet.fromJson(Map<String, dynamic> json) { return MagicRoutedSubnet(
+factory MagicRoutedSubnet.fromJson(Map<String, dynamic> json) {return MagicRoutedSubnet(
   nat: json['nat'] != null ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>) : null,
   nextHop: MagicIpAddress.fromJson(json['next_hop'] as String),
   prefix: MagicCidr.fromJson(json['prefix'] as String),
-); }
+);}
 
 final MagicNat? nat;
 
@@ -17,18 +17,18 @@ final MagicIpAddress nextHop;
 /// A valid CIDR notation representing an IP range.
 final MagicCidr prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (nat != null) 'nat': nat?.toJson(),
   'next_hop': nextHop.toJson(),
   'prefix': prefix.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('next_hop') &&
-      json.containsKey('prefix'); } 
-MagicRoutedSubnet copyWith({MagicNat? Function()? nat, MagicIpAddress? nextHop, MagicCidr? prefix, }) { return MagicRoutedSubnet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('next_hop') &&
+      json.containsKey('prefix');}
+MagicRoutedSubnet copyWith({MagicNat? Function()? nat, MagicIpAddress? nextHop, MagicCidr? prefix, }) {return MagicRoutedSubnet(
   nat: nat != null ? nat() : this.nat,
   nextHop: nextHop ?? this.nextHop,
   prefix: prefix ?? this.prefix,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRoutedSubnet &&
           nat == other.nat &&
@@ -39,4 +39,4 @@ MagicRoutedSubnet copyWith({MagicNat? Function()? nat, MagicIpAddress? nextHop, 
 
 @override String toString() => 'MagicRoutedSubnet(nat: $nat, nextHop: $nextHop, prefix: $prefix)';
 
- }
+}

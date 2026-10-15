@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of th
 /// 
 sealed class LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus();
 
-factory LocalShellToolCallOutputStatus.fromJson(String json) { return switch (json) {
+factory LocalShellToolCallOutputStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => LocalShellToolCallOutputStatus$Unknown(json),
-}; }
+};}
 
 static const LocalShellToolCallOutputStatus inProgress = LocalShellToolCallOutputStatus$inProgress._();
 
@@ -21,33 +21,33 @@ static const LocalShellToolCallOutputStatus incomplete = LocalShellToolCallOutpu
 static const List<LocalShellToolCallOutputStatus> values = [inProgress, completed, incomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'incomplete' => 'incomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LocalShellToolCallOutputStatus$Unknown; } 
+bool get isUnknown {return this is LocalShellToolCallOutputStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) {return switch (this) {
       LocalShellToolCallOutputStatus$inProgress() => inProgress(),
       LocalShellToolCallOutputStatus$completed() => completed(),
       LocalShellToolCallOutputStatus$incomplete() => incomplete(),
       LocalShellToolCallOutputStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) {return switch (this) {
       LocalShellToolCallOutputStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       LocalShellToolCallOutputStatus$completed() => completed != null ? completed() : orElse(value),
       LocalShellToolCallOutputStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       LocalShellToolCallOutputStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LocalShellToolCallOutputStatus($value)';
 
- }
+}
 @immutable final class LocalShellToolCallOutputStatus$inProgress extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class LocalShellToolCallOutputStatus$completed extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$completed._();
 
 @override String get value => 'completed';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class LocalShellToolCallOutputStatus$incomplete extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class LocalShellToolCallOutputStatus$Unknown extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$Unknown(this.value);
 
 @override final String value;
@@ -84,17 +84,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The output of a local shell tool call.
 /// 
-@immutable final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status, });
+@immutable final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status = const Omittable.absent(), });
 
-factory LocalShellToolCallOutput.fromJson(Map<String, dynamic> json) { return LocalShellToolCallOutput(
+factory LocalShellToolCallOutput.fromJson(Map<String, dynamic> json) {return LocalShellToolCallOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   output: json['output'] as String,
-  status: json['status'] != null ? LocalShellToolCallOutputStatus.fromJson(json['status'] as String) : null,
-); }
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? LocalShellToolCallOutputStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
+);}
 
 /// The type of the local shell tool call output. Always `local_shell_call_output`.
 /// 
@@ -110,23 +110,23 @@ final String output;
 
 /// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
 /// 
-final LocalShellToolCallOutputStatus? status;
+final Omittable<LocalShellToolCallOutputStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'output': output,
-  if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+  if (status.isPresent) 'status': status.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('output') && json['output'] is String; } 
-LocalShellToolCallOutput copyWith({String? type, String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return LocalShellToolCallOutput(
+      json.containsKey('output') && json['output'] is String;}
+LocalShellToolCallOutput copyWith({String? type, String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) {return LocalShellToolCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   output: output ?? this.output,
-  status: status != null ? status() : this.status,
-); } 
+  status: status ?? this.status,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LocalShellToolCallOutput &&
           type == other.type &&
@@ -138,4 +138,4 @@ LocalShellToolCallOutput copyWith({String? type, String? id, String? output, Loc
 
 @override String toString() => 'LocalShellToolCallOutput(type: $type, id: $id, output: $output, status: $status)';
 
- }
+}

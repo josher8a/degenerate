@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterValueCountsResponseResultVariant1 {const SecurityCenterValueCountsResponseResultVariant1({this.count, this.value, });
 
-factory SecurityCenterValueCountsResponseResultVariant1.fromJson(Map<String, dynamic> json) { return SecurityCenterValueCountsResponseResultVariant1(
+factory SecurityCenterValueCountsResponseResultVariant1.fromJson(Map<String, dynamic> json) {return SecurityCenterValueCountsResponseResultVariant1(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// Example: `1`
 final int? count;
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'value'}.contains(key)); } 
-SecurityCenterValueCountsResponseResultVariant1 copyWith({int? Function()? count, String? Function()? value, }) { return SecurityCenterValueCountsResponseResultVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'value'}.contains(key));}
+SecurityCenterValueCountsResponseResultVariant1 copyWith({int? Function()? count, String? Function()? value, }) {return SecurityCenterValueCountsResponseResultVariant1(
   count: count != null ? count() : this.count,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityCenterValueCountsResponseResultVariant1 &&
           count == other.count &&
@@ -31,4 +31,4 @@ SecurityCenterValueCountsResponseResultVariant1 copyWith({int? Function()? count
 
 @override String toString() => 'SecurityCenterValueCountsResponseResultVariant1(count: $count, value: $value)';
 
- }
+}

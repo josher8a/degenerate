@@ -4778,8 +4778,8 @@ static final customPagesForAZoneGetACustomPageRequirements = [const ApiSecurityR
 
 static final customPagesForAZoneUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-static ApiConfig applyApiEmail(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Email': value}); } 
-static ApiConfig applyApiKey(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Key': value}); } 
-static ApiConfig applyApiToken(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
-static ApiConfig applyUserServiceKey(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-User-Service-Key': value}); } 
- }
+static ApiConfig applyApiEmail(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Email': value});}
+static ApiConfig applyApiKey(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Key': value});}
+static ApiConfig applyApiToken(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+static ApiConfig applyUserServiceKey(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-User-Service-Key': value});}
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/traffic.dart';/// Clone Traffic
 @immutable final class CloneTraffic {const CloneTraffic({required this.count, required this.uniques, required this.clones, });
 
-factory CloneTraffic.fromJson(Map<String, dynamic> json) { return CloneTraffic(
+factory CloneTraffic.fromJson(Map<String, dynamic> json) {return CloneTraffic(
   count: (json['count'] as num).toInt(),
   uniques: (json['uniques'] as num).toInt(),
   clones: (json['clones'] as List<dynamic>).map((e) => Traffic.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int count;
 
@@ -16,19 +16,19 @@ final int uniques;
 
 final List<Traffic> clones;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'uniques': uniques,
   'clones': clones.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('uniques') && json['uniques'] is num &&
-      json.containsKey('clones'); } 
-CloneTraffic copyWith({int? count, int? uniques, List<Traffic>? clones, }) { return CloneTraffic(
+      json.containsKey('clones');}
+CloneTraffic copyWith({int? count, int? uniques, List<Traffic>? clones, }) {return CloneTraffic(
   count: count ?? this.count,
   uniques: uniques ?? this.uniques,
   clones: clones ?? this.clones,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloneTraffic &&
           count == other.count &&
@@ -39,4 +39,4 @@ CloneTraffic copyWith({int? count, int? uniques, List<Traffic>? clones, }) { ret
 
 @override String toString() => 'CloneTraffic(count: $count, uniques: $uniques, clones: $clones)';
 
- }
+}

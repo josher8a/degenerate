@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the message content can be stored or redacted based on privacy settings
 sealed class MessageEnumContentRetention {const MessageEnumContentRetention();
 
-factory MessageEnumContentRetention.fromJson(String json) { return switch (json) {
+factory MessageEnumContentRetention.fromJson(String json) {return switch (json) {
   'retain' => retain,
   'discard' => discard,
   _ => MessageEnumContentRetention$Unknown(json),
-}; }
+};}
 
 static const MessageEnumContentRetention retain = MessageEnumContentRetention$retain._();
 
@@ -17,30 +17,30 @@ static const MessageEnumContentRetention discard = MessageEnumContentRetention$d
 static const List<MessageEnumContentRetention> values = [retain, discard];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'retain' => 'retain',
   'discard' => 'discard',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageEnumContentRetention$Unknown; } 
+bool get isUnknown {return this is MessageEnumContentRetention$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() retain, required W Function() discard, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() retain, required W Function() discard, required W Function(String value) $unknown, }) {return switch (this) {
       MessageEnumContentRetention$retain() => retain(),
       MessageEnumContentRetention$discard() => discard(),
       MessageEnumContentRetention$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, W Function()? discard, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, W Function()? discard, W Function(String value)? $unknown, }) {return switch (this) {
       MessageEnumContentRetention$retain() => retain != null ? retain() : orElse(value),
       MessageEnumContentRetention$discard() => discard != null ? discard() : orElse(value),
       MessageEnumContentRetention$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageEnumContentRetention($value)';
 
- }
+}
 @immutable final class MessageEnumContentRetention$retain extends MessageEnumContentRetention {const MessageEnumContentRetention$retain._();
 
 @override String get value => 'retain';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, 
 
 @override int get hashCode => 'retain'.hashCode;
 
- }
+}
 @immutable final class MessageEnumContentRetention$discard extends MessageEnumContentRetention {const MessageEnumContentRetention$discard._();
 
 @override String get value => 'discard';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, 
 
 @override int get hashCode => 'discard'.hashCode;
 
- }
+}
 @immutable final class MessageEnumContentRetention$Unknown extends MessageEnumContentRetention {const MessageEnumContentRetention$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Determines if the address can be stored or obfuscated based on privacy settings
 sealed class MessageEnumAddressRetention {const MessageEnumAddressRetention();
 
-factory MessageEnumAddressRetention.fromJson(String json) { return switch (json) {
+factory MessageEnumAddressRetention.fromJson(String json) {return switch (json) {
   'retain' => retain,
   'obfuscate' => obfuscate,
   _ => MessageEnumAddressRetention$Unknown(json),
-}; }
+};}
 
 static const MessageEnumAddressRetention retain = MessageEnumAddressRetention$retain._();
 
@@ -85,30 +85,30 @@ static const MessageEnumAddressRetention obfuscate = MessageEnumAddressRetention
 static const List<MessageEnumAddressRetention> values = [retain, obfuscate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'retain' => 'retain',
   'obfuscate' => 'obfuscate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageEnumAddressRetention$Unknown; } 
+bool get isUnknown {return this is MessageEnumAddressRetention$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() retain, required W Function() obfuscate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() retain, required W Function() obfuscate, required W Function(String value) $unknown, }) {return switch (this) {
       MessageEnumAddressRetention$retain() => retain(),
       MessageEnumAddressRetention$obfuscate() => obfuscate(),
       MessageEnumAddressRetention$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, W Function()? obfuscate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, W Function()? obfuscate, W Function(String value)? $unknown, }) {return switch (this) {
       MessageEnumAddressRetention$retain() => retain != null ? retain() : orElse(value),
       MessageEnumAddressRetention$obfuscate() => obfuscate != null ? obfuscate() : orElse(value),
       MessageEnumAddressRetention$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageEnumAddressRetention($value)';
 
- }
+}
 @immutable final class MessageEnumAddressRetention$retain extends MessageEnumAddressRetention {const MessageEnumAddressRetention$retain._();
 
 @override String get value => 'retain';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, 
 
 @override int get hashCode => 'retain'.hashCode;
 
- }
+}
 @immutable final class MessageEnumAddressRetention$obfuscate extends MessageEnumAddressRetention {const MessageEnumAddressRetention$obfuscate._();
 
 @override String get value => 'obfuscate';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, 
 
 @override int get hashCode => 'obfuscate'.hashCode;
 
- }
+}
 @immutable final class MessageEnumAddressRetention$Unknown extends MessageEnumAddressRetention {const MessageEnumAddressRetention$Unknown(this.value);
 
 @override final String value;
@@ -136,40 +136,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class MessageEnumTrafficType {const MessageEnumTrafficType();
 
-factory MessageEnumTrafficType.fromJson(String json) { return switch (json) {
+factory MessageEnumTrafficType.fromJson(String json) {return switch (json) {
   'free' => free,
   _ => MessageEnumTrafficType$Unknown(json),
-}; }
+};}
 
 static const MessageEnumTrafficType free = MessageEnumTrafficType$free._();
 
 static const List<MessageEnumTrafficType> values = [free];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'free' => 'free',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageEnumTrafficType$Unknown; } 
+bool get isUnknown {return this is MessageEnumTrafficType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() free, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() free, required W Function(String value) $unknown, }) {return switch (this) {
       MessageEnumTrafficType$free() => free(),
       MessageEnumTrafficType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function(String value)? $unknown, }) {return switch (this) {
       MessageEnumTrafficType$free() => free != null ? free() : orElse(value),
       MessageEnumTrafficType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageEnumTrafficType($value)';
 
- }
+}
 @immutable final class MessageEnumTrafficType$free extends MessageEnumTrafficType {const MessageEnumTrafficType$free._();
 
 @override String get value => 'free';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => 'free'.hashCode;
 
- }
+}
 @immutable final class MessageEnumTrafficType$Unknown extends MessageEnumTrafficType {const MessageEnumTrafficType$Unknown(this.value);
 
 @override final String value;
@@ -188,41 +188,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
 sealed class MessageEnumScheduleType {const MessageEnumScheduleType();
 
-factory MessageEnumScheduleType.fromJson(String json) { return switch (json) {
+factory MessageEnumScheduleType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   _ => MessageEnumScheduleType$Unknown(json),
-}; }
+};}
 
 static const MessageEnumScheduleType fixed = MessageEnumScheduleType$fixed._();
 
 static const List<MessageEnumScheduleType> values = [fixed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fixed' => 'fixed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageEnumScheduleType$Unknown; } 
+bool get isUnknown {return this is MessageEnumScheduleType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fixed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fixed, required W Function(String value) $unknown, }) {return switch (this) {
       MessageEnumScheduleType$fixed() => fixed(),
       MessageEnumScheduleType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function(String value)? $unknown, }) {return switch (this) {
       MessageEnumScheduleType$fixed() => fixed != null ? fixed() : orElse(value),
       MessageEnumScheduleType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageEnumScheduleType($value)';
 
- }
+}
 @immutable final class MessageEnumScheduleType$fixed extends MessageEnumScheduleType {const MessageEnumScheduleType$fixed._();
 
 @override String get value => 'fixed';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => 'fixed'.hashCode;
 
- }
+}
 @immutable final class MessageEnumScheduleType$Unknown extends MessageEnumScheduleType {const MessageEnumScheduleType$Unknown(this.value);
 
 @override final String value;
@@ -241,15 +241,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
 sealed class MessageEnumRiskCheck {const MessageEnumRiskCheck();
 
-factory MessageEnumRiskCheck.fromJson(String json) { return switch (json) {
+factory MessageEnumRiskCheck.fromJson(String json) {return switch (json) {
   'enable' => enable,
   'disable' => disable,
   _ => MessageEnumRiskCheck$Unknown(json),
-}; }
+};}
 
 static const MessageEnumRiskCheck enable = MessageEnumRiskCheck$enable._();
 
@@ -258,30 +258,30 @@ static const MessageEnumRiskCheck disable = MessageEnumRiskCheck$disable._();
 static const List<MessageEnumRiskCheck> values = [enable, disable];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enable' => 'enable',
   'disable' => 'disable',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageEnumRiskCheck$Unknown; } 
+bool get isUnknown {return this is MessageEnumRiskCheck$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enable, required W Function() disable, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enable, required W Function() disable, required W Function(String value) $unknown, }) {return switch (this) {
       MessageEnumRiskCheck$enable() => enable(),
       MessageEnumRiskCheck$disable() => disable(),
       MessageEnumRiskCheck$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enable, W Function()? disable, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enable, W Function()? disable, W Function(String value)? $unknown, }) {return switch (this) {
       MessageEnumRiskCheck$enable() => enable != null ? enable() : orElse(value),
       MessageEnumRiskCheck$disable() => disable != null ? disable() : orElse(value),
       MessageEnumRiskCheck$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageEnumRiskCheck($value)';
 
- }
+}
 @immutable final class MessageEnumRiskCheck$enable extends MessageEnumRiskCheck {const MessageEnumRiskCheck$enable._();
 
 @override String get value => 'enable';
@@ -290,7 +290,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enable, 
 
 @override int get hashCode => 'enable'.hashCode;
 
- }
+}
 @immutable final class MessageEnumRiskCheck$disable extends MessageEnumRiskCheck {const MessageEnumRiskCheck$disable._();
 
 @override String get value => 'disable';
@@ -299,7 +299,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enable, 
 
 @override int get hashCode => 'disable'.hashCode;
 
- }
+}
 @immutable final class MessageEnumRiskCheck$Unknown extends MessageEnumRiskCheck {const MessageEnumRiskCheck$Unknown(this.value);
 
 @override final String value;
@@ -309,10 +309,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enable, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateMessageRequest {const CreateMessageRequest({required this.to, this.statusCallback, this.applicationSid, this.maxPrice, this.provideFeedback, this.attempt, this.validityPeriod, this.forceDelivery, this.contentRetention, this.addressRetention, this.smartEncoded, this.persistentAction, this.trafficType, this.shortenUrls, this.scheduleType, this.sendAt, this.sendAsMms, this.contentVariables, this.riskCheck, this.from, this.messagingServiceSid, this.body, this.mediaUrl, this.contentSid, });
 
-factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
+factory CreateMessageRequest.fromJson(Map<String, dynamic> json) {return CreateMessageRequest(
   to: json['To'] as String,
   statusCallback: json['StatusCallback'] != null ? Uri.parse(json['StatusCallback'] as String) : null,
   applicationSid: json['ApplicationSid'] as String?,
@@ -337,7 +337,7 @@ factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return Create
   body: json['Body'] as String?,
   mediaUrl: (json['MediaUrl'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
   contentSid: json['ContentSid'] as String?,
-); }
+);}
 
 /// The recipient's phone number in [E.164](https://www.twilio.com/docs/glossary/what-e164) format (for SMS/MMS) or [channel address](https://www.twilio.com/docs/messaging/channels), e.g. `whatsapp:+15552229999`.
 final String to;
@@ -410,7 +410,7 @@ final List<Uri>? mediaUrl;
 /// For [Content Editor/API](https://www.twilio.com/docs/content) only: The SID of the Content Template to be used with the Message, e.g., `HXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`. If this parameter is not provided, a Content Template is not used. Find the SID in the Console on the Content Editor page. For Content API users, the SID is found in Twilio's response when [creating the Template](https://www.twilio.com/docs/content/content-api-resources#create-templates) or by [fetching your Templates](https://www.twilio.com/docs/content/content-api-resources#fetch-all-content-resources).
 final String? contentSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'To': to,
   if (statusCallback != null) 'StatusCallback': statusCallback?.toString(),
   'ApplicationSid': ?applicationSid,
@@ -435,10 +435,10 @@ Map<String, dynamic> toJson() { return {
   'Body': ?body,
   if (mediaUrl != null) 'MediaUrl': mediaUrl?.map((e) => e.toString()).toList(),
   'ContentSid': ?contentSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') && json['To'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('To') && json['To'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final applicationSid$ = applicationSid;
 if (applicationSid$ != null) {
   if (applicationSid$.runes.length < 34) { errors.add('applicationSid: length must be >= 34'); }
@@ -457,8 +457,8 @@ if (contentSid$ != null) {
   if (contentSid$.runes.length > 34) { errors.add('contentSid: length must be <= 34'); }
   if (!RegExp(r'^HX[0-9a-fA-F]{32}$').hasMatch(contentSid$)) { errors.add(r'contentSid: must match pattern ^HX[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, String? Function()? applicationSid, double? Function()? maxPrice, bool? Function()? provideFeedback, int? Function()? attempt, int? Function()? validityPeriod, bool? Function()? forceDelivery, MessageEnumContentRetention? Function()? contentRetention, MessageEnumAddressRetention? Function()? addressRetention, bool? Function()? smartEncoded, List<String>? Function()? persistentAction, MessageEnumTrafficType? Function()? trafficType, bool? Function()? shortenUrls, MessageEnumScheduleType? Function()? scheduleType, DateTime? Function()? sendAt, bool? Function()? sendAsMms, String? Function()? contentVariables, MessageEnumRiskCheck? Function()? riskCheck, String? Function()? from, String? Function()? messagingServiceSid, String? Function()? body, List<Uri>? Function()? mediaUrl, String? Function()? contentSid, }) { return CreateMessageRequest(
+return errors;}
+CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, String? Function()? applicationSid, double? Function()? maxPrice, bool? Function()? provideFeedback, int? Function()? attempt, int? Function()? validityPeriod, bool? Function()? forceDelivery, MessageEnumContentRetention? Function()? contentRetention, MessageEnumAddressRetention? Function()? addressRetention, bool? Function()? smartEncoded, List<String>? Function()? persistentAction, MessageEnumTrafficType? Function()? trafficType, bool? Function()? shortenUrls, MessageEnumScheduleType? Function()? scheduleType, DateTime? Function()? sendAt, bool? Function()? sendAsMms, String? Function()? contentVariables, MessageEnumRiskCheck? Function()? riskCheck, String? Function()? from, String? Function()? messagingServiceSid, String? Function()? body, List<Uri>? Function()? mediaUrl, String? Function()? contentSid, }) {return CreateMessageRequest(
   to: to ?? this.to,
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
   applicationSid: applicationSid != null ? applicationSid() : this.applicationSid,
@@ -483,7 +483,7 @@ CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, Stri
   body: body != null ? body() : this.body,
   mediaUrl: mediaUrl != null ? mediaUrl() : this.mediaUrl,
   contentSid: contentSid != null ? contentSid() : this.contentSid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateMessageRequest &&
           to == other.to &&
@@ -515,4 +515,4 @@ CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, Stri
 
 @override String toString() => 'CreateMessageRequest(\n  to: $to,\n  statusCallback: $statusCallback,\n  applicationSid: $applicationSid,\n  maxPrice: $maxPrice,\n  provideFeedback: $provideFeedback,\n  attempt: $attempt,\n  validityPeriod: $validityPeriod,\n  forceDelivery: $forceDelivery,\n  contentRetention: $contentRetention,\n  addressRetention: $addressRetention,\n  smartEncoded: $smartEncoded,\n  persistentAction: $persistentAction,\n  trafficType: $trafficType,\n  shortenUrls: $shortenUrls,\n  scheduleType: $scheduleType,\n  sendAt: $sendAt,\n  sendAsMms: $sendAsMms,\n  contentVariables: $contentVariables,\n  riskCheck: $riskCheck,\n  from: $from,\n  messagingServiceSid: $messagingServiceSid,\n  body: $body,\n  mediaUrl: $mediaUrl,\n  contentSid: $contentSid,\n)';
 
- }
+}

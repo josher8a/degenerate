@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_transcript_summary.dart';@immutable final class GetSessionSummaryResponse {const GetSessionSummaryResponse({this.data, this.success, });
 
-factory GetSessionSummaryResponse.fromJson(Map<String, dynamic> json) { return GetSessionSummaryResponse(
+factory GetSessionSummaryResponse.fromJson(Map<String, dynamic> json) {return GetSessionSummaryResponse(
   data: json['data'] != null ? RealtimekitTranscriptSummary.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final RealtimekitTranscriptSummary? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-GetSessionSummaryResponse copyWith({RealtimekitTranscriptSummary? Function()? data, bool? Function()? success, }) { return GetSessionSummaryResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+GetSessionSummaryResponse copyWith({RealtimekitTranscriptSummary? Function()? data, bool? Function()? success, }) {return GetSessionSummaryResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetSessionSummaryResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ GetSessionSummaryResponse copyWith({RealtimekitTranscriptSummary? Function()? da
 
 @override String toString() => 'GetSessionSummaryResponse(data: $data, success: $success)';
 
- }
+}

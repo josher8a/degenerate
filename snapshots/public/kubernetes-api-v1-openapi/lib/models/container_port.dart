@@ -2,15 +2,15 @@
 // Source: #/components/schemas/ContainerPort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerPort represents a network port in a single container.
-@immutable final class ContainerPort {const ContainerPort({this.containerPort = 0, this.hostIp, this.hostPort, this.name, this.protocol = 'TCP', });
+@immutable final class ContainerPort {const ContainerPort({required this.containerPort, this.hostIp, this.hostPort, this.name, this.protocol, });
 
-factory ContainerPort.fromJson(Map<String, dynamic> json) { return ContainerPort(
+factory ContainerPort.fromJson(Map<String, dynamic> json) {return ContainerPort(
   containerPort: (json['containerPort'] as num).toInt(),
   hostIp: json['hostIP'] as String?,
   hostPort: json['hostPort'] != null ? (json['hostPort'] as num).toInt() : null,
   name: json['name'] as String?,
-  protocol: json.containsKey('protocol') ? json['protocol'] as String : 'TCP',
-); }
+  protocol: json['protocol'] as String?,
+);}
 
 /// Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
 final int containerPort;
@@ -25,23 +25,26 @@ final int? hostPort;
 final String? name;
 
 /// Protocol for port. Must be UDP, TCP, or SCTP. Defaults to "TCP".
-final String protocol;
+final String? protocol;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `protocol`, or its schema default when absent.
+String get protocolOrDefault => protocol ?? 'TCP';
+
+Map<String, dynamic> toJson() {return {
   'containerPort': containerPort,
   'hostIP': ?hostIp,
   'hostPort': ?hostPort,
   'name': ?name,
-  'protocol': protocol,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('containerPort') && json['containerPort'] is num; } 
-ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Function()? hostPort, String? Function()? name, String Function()? protocol, }) { return ContainerPort(
+  'protocol': ?protocol,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('containerPort') && json['containerPort'] is num;}
+ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Function()? hostPort, String? Function()? name, String? Function()? protocol, }) {return ContainerPort(
   containerPort: containerPort ?? this.containerPort,
   hostIp: hostIp != null ? hostIp() : this.hostIp,
   hostPort: hostPort != null ? hostPort() : this.hostPort,
   name: name != null ? name() : this.name,
   protocol: protocol != null ? protocol() : this.protocol,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerPort &&
           containerPort == other.containerPort &&
@@ -54,4 +57,4 @@ ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Fun
 
 @override String toString() => 'ContainerPort(containerPort: $containerPort, hostIp: $hostIp, hostPort: $hostPort, name: $name, protocol: $protocol)';
 
- }
+}

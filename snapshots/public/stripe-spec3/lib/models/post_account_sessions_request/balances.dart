@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request/balances_features.dart';@immutable final class Balances {const Balances({required this.enabled, this.features, });
 
-factory Balances.fromJson(Map<String, dynamic> json) { return Balances(
+factory Balances.fromJson(Map<String, dynamic> json) {return Balances(
   enabled: json['enabled'] as bool,
   features: json['features'] != null ? BalancesFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final BalancesFeatures? features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-Balances copyWith({bool? enabled, BalancesFeatures? Function()? features, }) { return Balances(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+Balances copyWith({bool? enabled, BalancesFeatures? Function()? features, }) {return Balances(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Balances &&
           enabled == other.enabled &&
@@ -30,4 +30,4 @@ Balances copyWith({bool? enabled, BalancesFeatures? Function()? features, }) { r
 
 @override String toString() => 'Balances(enabled: $enabled, features: $features)';
 
- }
+}

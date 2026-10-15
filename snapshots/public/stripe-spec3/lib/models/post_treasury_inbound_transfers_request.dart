@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryInboundTransfersRequest {const PostTreasuryInboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, required this.originPaymentMethod, this.description, this.expand, this.metadata, this.statementDescriptor, });
 
-factory PostTreasuryInboundTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryInboundTransfersRequest(
+factory PostTreasuryInboundTransfersRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryInboundTransfersRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -12,7 +12,7 @@ factory PostTreasuryInboundTransfersRequest.fromJson(Map<String, dynamic> json) 
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   originPaymentMethod: json['origin_payment_method'] as String,
   statementDescriptor: json['statement_descriptor'] as String?,
-); }
+);}
 
 /// Amount (in cents) to be transferred.
 final int amount;
@@ -38,7 +38,7 @@ final String originPaymentMethod;
 /// The complete description that appears on your customers' statements. Maximum 10 characters. Can only include -#.$&*, spaces, and alphanumeric characters.
 final String? statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -47,13 +47,13 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'origin_payment_method': originPaymentMethod,
   'statement_descriptor': ?statementDescriptor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
-      json.containsKey('origin_payment_method') && json['origin_payment_method'] is String; } 
+      json.containsKey('origin_payment_method') && json['origin_payment_method'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -63,8 +63,8 @@ final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 10) { errors.add('statementDescriptor: length must be <= 10'); }
 }
-return errors; } 
-PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? originPaymentMethod, String? Function()? statementDescriptor, }) { return PostTreasuryInboundTransfersRequest(
+return errors;}
+PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? originPaymentMethod, String? Function()? statementDescriptor, }) {return PostTreasuryInboundTransfersRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -73,7 +73,7 @@ PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, Str
   metadata: metadata != null ? metadata() : this.metadata,
   originPaymentMethod: originPaymentMethod ?? this.originPaymentMethod,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryInboundTransfersRequest &&
           amount == other.amount &&
@@ -89,4 +89,4 @@ PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, Str
 
 @override String toString() => 'PostTreasuryInboundTransfersRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, originPaymentMethod: $originPaymentMethod, statementDescriptor: $statementDescriptor)';
 
- }
+}

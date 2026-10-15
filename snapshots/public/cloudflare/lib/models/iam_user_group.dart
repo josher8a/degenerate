@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_user_group/iam_user_group_policies.dart';/// A group of policies resources.
 @immutable final class IamUserGroup {const IamUserGroup({required this.createdOn, required this.id, required this.modifiedOn, required this.name, this.policies, });
 
-factory IamUserGroup.fromJson(Map<String, dynamic> json) { return IamUserGroup(
+factory IamUserGroup.fromJson(Map<String, dynamic> json) {return IamUserGroup(
   createdOn: DateTime.parse(json['created_on'] as String),
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   name: json['name'] as String,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => IamUserGroupPolicies.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Timestamp for the creation of the user group
 /// 
@@ -32,24 +32,24 @@ final String name;
 /// Policies attached to the User group
 final List<IamUserGroupPolicies>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toIso8601String(),
   'id': id.toJson(),
   'modified_on': modifiedOn.toIso8601String(),
   'name': name,
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-IamUserGroup copyWith({DateTime? createdOn, IamCommonComponentsSchemasIdentifier? id, DateTime? modifiedOn, String? name, List<IamUserGroupPolicies>? Function()? policies, }) { return IamUserGroup(
+      json.containsKey('name') && json['name'] is String;}
+IamUserGroup copyWith({DateTime? createdOn, IamCommonComponentsSchemasIdentifier? id, DateTime? modifiedOn, String? name, List<IamUserGroupPolicies>? Function()? policies, }) {return IamUserGroup(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   name: name ?? this.name,
   policies: policies != null ? policies() : this.policies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserGroup &&
           createdOn == other.createdOn &&
@@ -62,4 +62,4 @@ IamUserGroup copyWith({DateTime? createdOn, IamCommonComponentsSchemasIdentifier
 
 @override String toString() => 'IamUserGroup(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, name: $name, policies: $policies)';
 
- }
+}

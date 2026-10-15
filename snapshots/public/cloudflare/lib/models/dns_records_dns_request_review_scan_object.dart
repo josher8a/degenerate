@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsDnsRequestReviewScanObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_a_record.dart';import 'package:pub_cloudflare/models/dns_records_aaaa_record.dart';import 'package:pub_cloudflare/models/dns_records_cname_record.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_patch.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_scan_batch_reject.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_with_data.dart';import 'package:pub_cloudflare/models/dns_records_mx_record.dart';import 'package:pub_cloudflare/models/dns_records_ns_record.dart';import 'package:pub_cloudflare/models/dns_records_openpgpkey_record.dart';import 'package:pub_cloudflare/models/dns_records_ptr_record.dart';import 'package:pub_cloudflare/models/dns_records_txt_record.dart';@immutable final class DnsRecordsDnsRequestReviewScanObject {const DnsRecordsDnsRequestReviewScanObject({this.accepts, this.rejects, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_patch.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_scan_batch_reject.dart';@immutable final class DnsRecordsDnsRequestReviewScanObject {const DnsRecordsDnsRequestReviewScanObject({this.accepts, this.rejects, });
 
-factory DnsRecordsDnsRequestReviewScanObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRequestReviewScanObject(
-  accepts: (json['accepts'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => OneOf8.parse(v, fromA: (v) => DnsRecordsARecord.fromJson(v as Map<String, dynamic>), fromB: (v) => DnsRecordsAaaaRecord.fromJson(v as Map<String, dynamic>), fromC: (v) => DnsRecordsCnameRecord.fromJson(v as Map<String, dynamic>), fromD: (v) => DnsRecordsMxRecord.fromJson(v as Map<String, dynamic>), fromE: (v) => DnsRecordsNsRecord.fromJson(v as Map<String, dynamic>), fromF: (v) => DnsRecordsOpenpgpkeyRecord.fromJson(v as Map<String, dynamic>), fromG: (v) => DnsRecordsPtrRecord.fromJson(v as Map<String, dynamic>), fromH: (v) => DnsRecordsTxtRecord.fromJson(v as Map<String, dynamic>),), fromB: DnsRecordsDnsRecordWithData.fromJson,)).toList(),
+factory DnsRecordsDnsRequestReviewScanObject.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsRequestReviewScanObject(
+  accepts: (json['accepts'] as List<dynamic>?)?.map(DnsRecordsDnsRecordPatch.fromJson).toList(),
   rejects: (json['rejects'] as List<dynamic>?)?.map((e) => DnsRecordsDnsRecordScanBatchReject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<DnsRecordsDnsRecordPatch>? accepts;
 
 final List<DnsRecordsDnsRecordScanBatchReject>? rejects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accepts != null) 'accepts': accepts?.map((e) => e.toJson()).toList(),
   if (rejects != null) 'rejects': rejects?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key)); } 
-DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch>? Function()? accepts, List<DnsRecordsDnsRecordScanBatchReject>? Function()? rejects, }) { return DnsRecordsDnsRequestReviewScanObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key));}
+DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch>? Function()? accepts, List<DnsRecordsDnsRecordScanBatchReject>? Function()? rejects, }) {return DnsRecordsDnsRequestReviewScanObject(
   accepts: accepts != null ? accepts() : this.accepts,
   rejects: rejects != null ? rejects() : this.rejects,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsRequestReviewScanObject &&
           listEquals(accepts, other.accepts) &&
@@ -30,4 +30,4 @@ DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch>? F
 
 @override String toString() => 'DnsRecordsDnsRequestReviewScanObject(accepts: $accepts, rejects: $rejects)';
 
- }
+}

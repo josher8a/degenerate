@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of this message.
 @immutable final class RulesetsMessageSource {const RulesetsMessageSource({required this.pointer});
 
-factory RulesetsMessageSource.fromJson(Map<String, dynamic> json) { return RulesetsMessageSource(
+factory RulesetsMessageSource.fromJson(Map<String, dynamic> json) {return RulesetsMessageSource(
   pointer: json['pointer'] as String,
-); }
+);}
 
 /// A JSON pointer to the field that is the source of the message.
 /// 
 /// Example: `'/rules/0/action'`
 final String pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pointer': pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pointer') && json['pointer'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pointer') && json['pointer'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (pointer.isEmpty) { errors.add('pointer: length must be >= 1'); }
-return errors; } 
-RulesetsMessageSource copyWith({String? pointer}) { return RulesetsMessageSource(
+return errors;}
+RulesetsMessageSource copyWith({String? pointer}) {return RulesetsMessageSource(
   pointer: pointer ?? this.pointer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsMessageSource &&
           pointer == other.pointer;
@@ -32,4 +32,4 @@ RulesetsMessageSource copyWith({String? pointer}) { return RulesetsMessageSource
 
 @override String toString() => 'RulesetsMessageSource(pointer: $pointer)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `owner` or `reader`
 sealed class InviteRequestRole {const InviteRequestRole();
 
-factory InviteRequestRole.fromJson(String json) { return switch (json) {
+factory InviteRequestRole.fromJson(String json) {return switch (json) {
   'owner' => owner,
   'reader' => reader,
   _ => InviteRequestRole$Unknown(json),
-}; }
+};}
 
 static const InviteRequestRole owner = InviteRequestRole$owner._();
 
@@ -17,30 +17,30 @@ static const InviteRequestRole reader = InviteRequestRole$reader._();
 static const List<InviteRequestRole> values = [owner, reader];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'owner' => 'owner',
   'reader' => 'reader',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InviteRequestRole$Unknown; } 
+bool get isUnknown {return this is InviteRequestRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() owner, required W Function() reader, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() owner, required W Function() reader, required W Function(String value) $unknown, }) {return switch (this) {
       InviteRequestRole$owner() => owner(),
       InviteRequestRole$reader() => reader(),
       InviteRequestRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? owner, W Function()? reader, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? owner, W Function()? reader, W Function(String value)? $unknown, }) {return switch (this) {
       InviteRequestRole$owner() => owner != null ? owner() : orElse(value),
       InviteRequestRole$reader() => reader != null ? reader() : orElse(value),
       InviteRequestRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InviteRequestRole($value)';
 
- }
+}
 @immutable final class InviteRequestRole$owner extends InviteRequestRole {const InviteRequestRole$owner._();
 
 @override String get value => 'owner';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? owner, W
 
 @override int get hashCode => 'owner'.hashCode;
 
- }
+}
 @immutable final class InviteRequestRole$reader extends InviteRequestRole {const InviteRequestRole$reader._();
 
 @override String get value => 'reader';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? owner, W
 
 @override int get hashCode => 'reader'.hashCode;
 
- }
+}
 @immutable final class InviteRequestRole$Unknown extends InviteRequestRole {const InviteRequestRole$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? owner, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

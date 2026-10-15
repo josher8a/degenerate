@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NscBgpControl
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscBgpControl {const NscBgpControl({required this.customerAsn, required this.extraPrefixes, this.md5Key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscBgpControl {const NscBgpControl({required this.customerAsn, required this.extraPrefixes, this.md5Key = const Omittable.absent(), });
 
-factory NscBgpControl.fromJson(Map<String, dynamic> json) { return NscBgpControl(
+factory NscBgpControl.fromJson(Map<String, dynamic> json) {return NscBgpControl(
   customerAsn: (json['customer_asn'] as num).toInt(),
   extraPrefixes: (json['extra_prefixes'] as List<dynamic>).map((e) => e as String).toList(),
-  md5Key: json['md5_key'] as String?,
-); }
+  md5Key: json.containsKey('md5_key') ? Omittable(json['md5_key'] as String?) : const Omittable.absent(),
+);}
 
 /// ASN used on the customer end of the BGP session
 final int customerAsn;
@@ -33,24 +33,24 @@ final List<String> extraPrefixes;
 /// quotation mark (`"`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed
 /// (0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more of
 /// these disallowed characters will be rejected.
-final String? md5Key;
+final Omittable<String?> md5Key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer_asn': customerAsn,
   'extra_prefixes': extraPrefixes,
-  'md5_key': ?md5Key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_asn') && json['customer_asn'] is num &&
-      json.containsKey('extra_prefixes'); } 
+  if (md5Key.isPresent) 'md5_key': md5Key.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customer_asn') && json['customer_asn'] is num &&
+      json.containsKey('extra_prefixes');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (customerAsn < 0) { errors.add('customerAsn: must be >= 0'); }
-return errors; } 
-NscBgpControl copyWith({int? customerAsn, List<String>? extraPrefixes, String? Function()? md5Key, }) { return NscBgpControl(
+return errors;}
+NscBgpControl copyWith({int? customerAsn, List<String>? extraPrefixes, Omittable<String?>? md5Key, }) {return NscBgpControl(
   customerAsn: customerAsn ?? this.customerAsn,
   extraPrefixes: extraPrefixes ?? this.extraPrefixes,
-  md5Key: md5Key != null ? md5Key() : this.md5Key,
-); } 
+  md5Key: md5Key ?? this.md5Key,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NscBgpControl &&
           customerAsn == other.customerAsn &&
@@ -61,4 +61,4 @@ NscBgpControl copyWith({int? customerAsn, List<String>? extraPrefixes, String? F
 
 @override String toString() => 'NscBgpControl(customerAsn: $customerAsn, extraPrefixes: $extraPrefixes, md5Key: $md5Key)';
 
- }
+}

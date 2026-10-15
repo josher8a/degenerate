@@ -12,7 +12,7 @@ final class DatasetApi with ApiExecutor {const DatasetApi(this.apiConfig);
 /// Lists all datasets in an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset`
-Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListError>> getDatasetList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListError>> getDatasetList({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -29,11 +29,11 @@ return execute(
   },
   onError: GetDatasetListError.fromResponse,
 );
- } 
+}
 /// Reads a dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<GetDatasetReadResponse, GetDatasetReadError>> getDatasetRead({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetDatasetReadResponse, GetDatasetReadError>> getDatasetRead({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -42,18 +42,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetDatasetReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: GetDatasetReadError.fromResponse,
 );
- } 
+}
 /// Updates an existing dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateError>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateError>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,18 +64,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostDatasetUpdateError.fromResponse,
 );
- } 
+}
 /// Updates an existing dataset
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateError>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateError>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -86,20 +86,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PatchDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PatchDatasetUpdateError.fromResponse,
 );
- } 
+}
 /// Delete a dataset
 ///
 /// Deletes a dataset given a datasetId.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteError>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteError>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -108,18 +108,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeleteDatasetDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: DeleteDatasetDeleteError.fromResponse,
 );
- } 
+}
 /// Creates a dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/create`
-Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateError>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateError>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -130,12 +130,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostDatasetCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostDatasetCreateError.fromResponse,
 );
- } 
- }
+}
+}

@@ -14,7 +14,7 @@ final class PpcConfigApi with ApiExecutor {const PpcConfigApi(this.apiConfig);
 /// Allows an account admin to set the can_be_enabled setting on a list of zones.
 ///
 /// `PATCH /accounts/{account_id}/pay-per-crawl/zones_can_be_enabled`
-Future<ApiResult<NoResultResponse, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlSetZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NoResultResponse, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlSetZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,20 +25,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Gets the can_be_enabled zone setting
 ///
 /// Provided a list of pay-per-crawl configured zones this method will return whether they can enable PPC or not.
 ///
 /// `POST /accounts/{account_id}/pay-per-crawl/zones_can_be_enabled/query`
-Future<ApiResult<PayPerCrawlZonesCanBeEnabledPayload?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlQueryZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlZonesCanBeEnabledPayload?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlQueryZonesCanBeEnabled({required String accountId, required PayPerCrawlZonesCanBeEnabledPayload body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,7 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -57,13 +57,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Get the pay-per-crawl config
 ///
 /// Gets the pay-per-crawl config for a zone including the bot configuration.
 ///
 /// `GET /zones/{zone_id}/pay-per-crawl/configuration`
-Future<ApiResult<PayPerCrawlDaricConfig?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlGetConfig({required String zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlDaricConfig?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlGetConfig({required String zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,7 +72,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -80,13 +80,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Creates pay-per-crawl config for a zone
 ///
 /// Creates the pay-per-crawl config for a zone.
 ///
 /// `POST /zones/{zone_id}/pay-per-crawl/configuration`
-Future<ApiResult<PayPerCrawlDaricConfig?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCreateConfig({required String zoneId, required PayPerCrawlDaricConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlDaricConfig?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCreateConfig({required String zoneId, required PayPerCrawlDaricConfig body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,7 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -105,13 +105,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Changes pay-per-crawl config for a zone
 ///
 /// Changes the pay-per-crawl config for a zone.
 ///
 /// `PATCH /zones/{zone_id}/pay-per-crawl/configuration`
-Future<ApiResult<PayPerCrawlDaricConfig?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPatchConfig({required String zoneId, required PayPerCrawlDaricConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlDaricConfig?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPatchConfig({required String zoneId, required PayPerCrawlDaricConfig body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,7 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -130,5 +130,5 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
- }
+}
+}

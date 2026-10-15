@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_create_with_pr_for_authenticated_user_request/geo.dart';@immutable final class CodespacesCreateWithPrForAuthenticatedUserRequest {const CodespacesCreateWithPrForAuthenticatedUserRequest({this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
 
-factory CodespacesCreateWithPrForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateWithPrForAuthenticatedUserRequest(
+factory CodespacesCreateWithPrForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return CodespacesCreateWithPrForAuthenticatedUserRequest(
   location: json['location'] as String?,
   geo: json['geo'] != null ? Geo.fromJson(json['geo'] as String) : null,
   clientIp: json['client_ip'] as String?,
@@ -14,7 +14,7 @@ factory CodespacesCreateWithPrForAuthenticatedUserRequest.fromJson(Map<String, d
   idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? (json['idle_timeout_minutes'] as num).toInt() : null,
   displayName: json['display_name'] as String?,
   retentionPeriodMinutes: json['retention_period_minutes'] != null ? (json['retention_period_minutes'] as num).toInt() : null,
-); }
+);}
 
 /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
 final String? location;
@@ -46,7 +46,7 @@ final String? displayName;
 /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
 final int? retentionPeriodMinutes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'location': ?location,
   if (geo != null) 'geo': geo?.toJson(),
   'client_ip': ?clientIp,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   'idle_timeout_minutes': ?idleTimeoutMinutes,
   'display_name': ?displayName,
   'retention_period_minutes': ?retentionPeriodMinutes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key)); } 
-CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? location, Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithPrForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key));}
+CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? location, Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) {return CodespacesCreateWithPrForAuthenticatedUserRequest(
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,
   clientIp: clientIp != null ? clientIp() : this.clientIp,
@@ -70,7 +70,7 @@ CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? 
   idleTimeoutMinutes: idleTimeoutMinutes != null ? idleTimeoutMinutes() : this.idleTimeoutMinutes,
   displayName: displayName != null ? displayName() : this.displayName,
   retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateWithPrForAuthenticatedUserRequest &&
           location == other.location &&
@@ -88,4 +88,4 @@ CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? 
 
 @override String toString() => 'CodespacesCreateWithPrForAuthenticatedUserRequest(\n  location: $location,\n  geo: $geo,\n  clientIp: $clientIp,\n  machine: $machine,\n  devcontainerPath: $devcontainerPath,\n  multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut,\n  workingDirectory: $workingDirectory,\n  idleTimeoutMinutes: $idleTimeoutMinutes,\n  displayName: $displayName,\n  retentionPeriodMinutes: $retentionPeriodMinutes,\n)';
 
- }
+}

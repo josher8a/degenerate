@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/VectorizeDeprecatedUpsertVectorResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_upsert_response.dart';@immutable final class VectorizeDeprecatedUpsertVectorResponse {const VectorizeDeprecatedUpsertVectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_upsert_response.dart';import 'package:pub_cloudflare/models/vectorize_messages2.dart';@immutable final class VectorizeDeprecatedUpsertVectorResponse {const VectorizeDeprecatedUpsertVectorResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory VectorizeDeprecatedUpsertVectorResponse.fromJson(Map<String, dynamic> json) { return VectorizeDeprecatedUpsertVectorResponse(
-  result: json['result'] != null ? VectorizeIndexUpsertResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory VectorizeDeprecatedUpsertVectorResponse.fromJson(Map<String, dynamic> json) {return VectorizeDeprecatedUpsertVectorResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: VectorizeIndexUpsertResponse.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final VectorizeIndexUpsertResponse? result;
+final List<VectorizeMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-VectorizeDeprecatedUpsertVectorResponse copyWith({VectorizeIndexUpsertResponse? Function()? result}) { return VectorizeDeprecatedUpsertVectorResponse(
-  result: result != null ? result() : this.result,
-); } 
+final List<VectorizeMessages2> messages;
+
+final VectorizeIndexUpsertResponse result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+VectorizeDeprecatedUpsertVectorResponse copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, VectorizeIndexUpsertResponse? result, bool? success, }) {return VectorizeDeprecatedUpsertVectorResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeprecatedUpsertVectorResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'VectorizeDeprecatedUpsertVectorResponse(result: $result)';
+@override String toString() => 'VectorizeDeprecatedUpsertVectorResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

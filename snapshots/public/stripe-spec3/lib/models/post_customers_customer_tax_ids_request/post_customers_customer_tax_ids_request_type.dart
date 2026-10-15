@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType();
 
-factory PostCustomersCustomerTaxIdsRequestType.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerTaxIdsRequestType.fromJson(String json) {return switch (json) {
   'ad_nrt' => adNrt,
   'ae_trn' => aeTrn,
   'al_tin' => alTin,
@@ -117,7 +117,7 @@ factory PostCustomersCustomerTaxIdsRequestType.fromJson(String json) { return sw
   'zm_tin' => zmTin,
   'zw_tin' => zwTin,
   _ => PostCustomersCustomerTaxIdsRequestType$Unknown(json),
-}; }
+};}
 
 static const PostCustomersCustomerTaxIdsRequestType adNrt = PostCustomersCustomerTaxIdsRequestType$adNrt._();
 
@@ -346,9 +346,9 @@ static const PostCustomersCustomerTaxIdsRequestType zwTin = PostCustomersCustome
 static const List<PostCustomersCustomerTaxIdsRequestType> values = [adNrt, aeTrn, alTin, amTin, aoTin, arCuit, auAbn, auArn, awTin, azTin, baTin, bbTin, bdBin, bfIfu, bgUic, bhVat, bjIfu, boTin, brCnpj, brCpf, bsTin, byTin, caBn, caGstHst, caPstBc, caPstMb, caPstSk, caQst, cdNif, chUid, chVat, clTin, cmNiu, cnTin, coNit, crTin, cvNif, deStn, doRcn, ecRuc, egTin, esCif, etTin, euOssVat, euVat, gbVat, geVat, gnNif, hkBr, hrOib, huTin, idNpwp, ilVat, inGst, isVat, jpCn, jpRn, jpTrn, kePin, kgTin, khTin, krBrn, kzBin, laTin, liUid, liVat, lkVat, maVat, mdVat, mePib, mkVat, mrNif, mxRfc, myFrp, myItn, mySst, ngTin, noVat, noVoec, npPan, nzGst, omVat, peRuc, phTin, plNip, roTin, rsPib, ruInn, ruKpp, saVat, sgGst, sgUen, siTin, snNinea, srFin, svNit, thVat, tjTin, trTin, twVat, tzVat, uaVat, ugTin, usEin, uyRuc, uzTin, uzVat, veRif, vnTin, zaVat, zmTin, zwTin];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ad_nrt' => 'adNrt',
   'ae_trn' => 'aeTrn',
   'al_tin' => 'alTin',
@@ -462,11 +462,11 @@ String get name { return switch (value) {
   'zm_tin' => 'zmTin',
   'zw_tin' => 'zwTin',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostCustomersCustomerTaxIdsRequestType$Unknown; } 
+bool get isUnknown {return this is PostCustomersCustomerTaxIdsRequestType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adNrt, required W Function() aeTrn, required W Function() alTin, required W Function() amTin, required W Function() aoTin, required W Function() arCuit, required W Function() auAbn, required W Function() auArn, required W Function() awTin, required W Function() azTin, required W Function() baTin, required W Function() bbTin, required W Function() bdBin, required W Function() bfIfu, required W Function() bgUic, required W Function() bhVat, required W Function() bjIfu, required W Function() boTin, required W Function() brCnpj, required W Function() brCpf, required W Function() bsTin, required W Function() byTin, required W Function() caBn, required W Function() caGstHst, required W Function() caPstBc, required W Function() caPstMb, required W Function() caPstSk, required W Function() caQst, required W Function() cdNif, required W Function() chUid, required W Function() chVat, required W Function() clTin, required W Function() cmNiu, required W Function() cnTin, required W Function() coNit, required W Function() crTin, required W Function() cvNif, required W Function() deStn, required W Function() doRcn, required W Function() ecRuc, required W Function() egTin, required W Function() esCif, required W Function() etTin, required W Function() euOssVat, required W Function() euVat, required W Function() gbVat, required W Function() geVat, required W Function() gnNif, required W Function() hkBr, required W Function() hrOib, required W Function() huTin, required W Function() idNpwp, required W Function() ilVat, required W Function() inGst, required W Function() isVat, required W Function() jpCn, required W Function() jpRn, required W Function() jpTrn, required W Function() kePin, required W Function() kgTin, required W Function() khTin, required W Function() krBrn, required W Function() kzBin, required W Function() laTin, required W Function() liUid, required W Function() liVat, required W Function() lkVat, required W Function() maVat, required W Function() mdVat, required W Function() mePib, required W Function() mkVat, required W Function() mrNif, required W Function() mxRfc, required W Function() myFrp, required W Function() myItn, required W Function() mySst, required W Function() ngTin, required W Function() noVat, required W Function() noVoec, required W Function() npPan, required W Function() nzGst, required W Function() omVat, required W Function() peRuc, required W Function() phTin, required W Function() plNip, required W Function() roTin, required W Function() rsPib, required W Function() ruInn, required W Function() ruKpp, required W Function() saVat, required W Function() sgGst, required W Function() sgUen, required W Function() siTin, required W Function() snNinea, required W Function() srFin, required W Function() svNit, required W Function() thVat, required W Function() tjTin, required W Function() trTin, required W Function() twVat, required W Function() tzVat, required W Function() uaVat, required W Function() ugTin, required W Function() usEin, required W Function() uyRuc, required W Function() uzTin, required W Function() uzVat, required W Function() veRif, required W Function() vnTin, required W Function() zaVat, required W Function() zmTin, required W Function() zwTin, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adNrt, required W Function() aeTrn, required W Function() alTin, required W Function() amTin, required W Function() aoTin, required W Function() arCuit, required W Function() auAbn, required W Function() auArn, required W Function() awTin, required W Function() azTin, required W Function() baTin, required W Function() bbTin, required W Function() bdBin, required W Function() bfIfu, required W Function() bgUic, required W Function() bhVat, required W Function() bjIfu, required W Function() boTin, required W Function() brCnpj, required W Function() brCpf, required W Function() bsTin, required W Function() byTin, required W Function() caBn, required W Function() caGstHst, required W Function() caPstBc, required W Function() caPstMb, required W Function() caPstSk, required W Function() caQst, required W Function() cdNif, required W Function() chUid, required W Function() chVat, required W Function() clTin, required W Function() cmNiu, required W Function() cnTin, required W Function() coNit, required W Function() crTin, required W Function() cvNif, required W Function() deStn, required W Function() doRcn, required W Function() ecRuc, required W Function() egTin, required W Function() esCif, required W Function() etTin, required W Function() euOssVat, required W Function() euVat, required W Function() gbVat, required W Function() geVat, required W Function() gnNif, required W Function() hkBr, required W Function() hrOib, required W Function() huTin, required W Function() idNpwp, required W Function() ilVat, required W Function() inGst, required W Function() isVat, required W Function() jpCn, required W Function() jpRn, required W Function() jpTrn, required W Function() kePin, required W Function() kgTin, required W Function() khTin, required W Function() krBrn, required W Function() kzBin, required W Function() laTin, required W Function() liUid, required W Function() liVat, required W Function() lkVat, required W Function() maVat, required W Function() mdVat, required W Function() mePib, required W Function() mkVat, required W Function() mrNif, required W Function() mxRfc, required W Function() myFrp, required W Function() myItn, required W Function() mySst, required W Function() ngTin, required W Function() noVat, required W Function() noVoec, required W Function() npPan, required W Function() nzGst, required W Function() omVat, required W Function() peRuc, required W Function() phTin, required W Function() plNip, required W Function() roTin, required W Function() rsPib, required W Function() ruInn, required W Function() ruKpp, required W Function() saVat, required W Function() sgGst, required W Function() sgUen, required W Function() siTin, required W Function() snNinea, required W Function() srFin, required W Function() svNit, required W Function() thVat, required W Function() tjTin, required W Function() trTin, required W Function() twVat, required W Function() tzVat, required W Function() uaVat, required W Function() ugTin, required W Function() usEin, required W Function() uyRuc, required W Function() uzTin, required W Function() uzVat, required W Function() veRif, required W Function() vnTin, required W Function() zaVat, required W Function() zmTin, required W Function() zwTin, required W Function(String value) $unknown, }) {return switch (this) {
       PostCustomersCustomerTaxIdsRequestType$adNrt() => adNrt(),
       PostCustomersCustomerTaxIdsRequestType$aeTrn() => aeTrn(),
       PostCustomersCustomerTaxIdsRequestType$alTin() => alTin(),
@@ -580,9 +580,9 @@ W when<W>({required W Function() adNrt, required W Function() aeTrn, required W 
       PostCustomersCustomerTaxIdsRequestType$zmTin() => zmTin(),
       PostCustomersCustomerTaxIdsRequestType$zwTin() => zwTin(),
       PostCustomersCustomerTaxIdsRequestType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W Function()? aeTrn, W Function()? alTin, W Function()? amTin, W Function()? aoTin, W Function()? arCuit, W Function()? auAbn, W Function()? auArn, W Function()? awTin, W Function()? azTin, W Function()? baTin, W Function()? bbTin, W Function()? bdBin, W Function()? bfIfu, W Function()? bgUic, W Function()? bhVat, W Function()? bjIfu, W Function()? boTin, W Function()? brCnpj, W Function()? brCpf, W Function()? bsTin, W Function()? byTin, W Function()? caBn, W Function()? caGstHst, W Function()? caPstBc, W Function()? caPstMb, W Function()? caPstSk, W Function()? caQst, W Function()? cdNif, W Function()? chUid, W Function()? chVat, W Function()? clTin, W Function()? cmNiu, W Function()? cnTin, W Function()? coNit, W Function()? crTin, W Function()? cvNif, W Function()? deStn, W Function()? doRcn, W Function()? ecRuc, W Function()? egTin, W Function()? esCif, W Function()? etTin, W Function()? euOssVat, W Function()? euVat, W Function()? gbVat, W Function()? geVat, W Function()? gnNif, W Function()? hkBr, W Function()? hrOib, W Function()? huTin, W Function()? idNpwp, W Function()? ilVat, W Function()? inGst, W Function()? isVat, W Function()? jpCn, W Function()? jpRn, W Function()? jpTrn, W Function()? kePin, W Function()? kgTin, W Function()? khTin, W Function()? krBrn, W Function()? kzBin, W Function()? laTin, W Function()? liUid, W Function()? liVat, W Function()? lkVat, W Function()? maVat, W Function()? mdVat, W Function()? mePib, W Function()? mkVat, W Function()? mrNif, W Function()? mxRfc, W Function()? myFrp, W Function()? myItn, W Function()? mySst, W Function()? ngTin, W Function()? noVat, W Function()? noVoec, W Function()? npPan, W Function()? nzGst, W Function()? omVat, W Function()? peRuc, W Function()? phTin, W Function()? plNip, W Function()? roTin, W Function()? rsPib, W Function()? ruInn, W Function()? ruKpp, W Function()? saVat, W Function()? sgGst, W Function()? sgUen, W Function()? siTin, W Function()? snNinea, W Function()? srFin, W Function()? svNit, W Function()? thVat, W Function()? tjTin, W Function()? trTin, W Function()? twVat, W Function()? tzVat, W Function()? uaVat, W Function()? ugTin, W Function()? usEin, W Function()? uyRuc, W Function()? uzTin, W Function()? uzVat, W Function()? veRif, W Function()? vnTin, W Function()? zaVat, W Function()? zmTin, W Function()? zwTin, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W Function()? aeTrn, W Function()? alTin, W Function()? amTin, W Function()? aoTin, W Function()? arCuit, W Function()? auAbn, W Function()? auArn, W Function()? awTin, W Function()? azTin, W Function()? baTin, W Function()? bbTin, W Function()? bdBin, W Function()? bfIfu, W Function()? bgUic, W Function()? bhVat, W Function()? bjIfu, W Function()? boTin, W Function()? brCnpj, W Function()? brCpf, W Function()? bsTin, W Function()? byTin, W Function()? caBn, W Function()? caGstHst, W Function()? caPstBc, W Function()? caPstMb, W Function()? caPstSk, W Function()? caQst, W Function()? cdNif, W Function()? chUid, W Function()? chVat, W Function()? clTin, W Function()? cmNiu, W Function()? cnTin, W Function()? coNit, W Function()? crTin, W Function()? cvNif, W Function()? deStn, W Function()? doRcn, W Function()? ecRuc, W Function()? egTin, W Function()? esCif, W Function()? etTin, W Function()? euOssVat, W Function()? euVat, W Function()? gbVat, W Function()? geVat, W Function()? gnNif, W Function()? hkBr, W Function()? hrOib, W Function()? huTin, W Function()? idNpwp, W Function()? ilVat, W Function()? inGst, W Function()? isVat, W Function()? jpCn, W Function()? jpRn, W Function()? jpTrn, W Function()? kePin, W Function()? kgTin, W Function()? khTin, W Function()? krBrn, W Function()? kzBin, W Function()? laTin, W Function()? liUid, W Function()? liVat, W Function()? lkVat, W Function()? maVat, W Function()? mdVat, W Function()? mePib, W Function()? mkVat, W Function()? mrNif, W Function()? mxRfc, W Function()? myFrp, W Function()? myItn, W Function()? mySst, W Function()? ngTin, W Function()? noVat, W Function()? noVoec, W Function()? npPan, W Function()? nzGst, W Function()? omVat, W Function()? peRuc, W Function()? phTin, W Function()? plNip, W Function()? roTin, W Function()? rsPib, W Function()? ruInn, W Function()? ruKpp, W Function()? saVat, W Function()? sgGst, W Function()? sgUen, W Function()? siTin, W Function()? snNinea, W Function()? srFin, W Function()? svNit, W Function()? thVat, W Function()? tjTin, W Function()? trTin, W Function()? twVat, W Function()? tzVat, W Function()? uaVat, W Function()? ugTin, W Function()? usEin, W Function()? uyRuc, W Function()? uzTin, W Function()? uzVat, W Function()? veRif, W Function()? vnTin, W Function()? zaVat, W Function()? zmTin, W Function()? zwTin, W Function(String value)? $unknown, }) {return switch (this) {
       PostCustomersCustomerTaxIdsRequestType$adNrt() => adNrt != null ? adNrt() : orElse(value),
       PostCustomersCustomerTaxIdsRequestType$aeTrn() => aeTrn != null ? aeTrn() : orElse(value),
       PostCustomersCustomerTaxIdsRequestType$alTin() => alTin != null ? alTin() : orElse(value),
@@ -696,10 +696,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
       PostCustomersCustomerTaxIdsRequestType$zmTin() => zmTin != null ? zmTin() : orElse(value),
       PostCustomersCustomerTaxIdsRequestType$zwTin() => zwTin != null ? zwTin() : orElse(value),
       PostCustomersCustomerTaxIdsRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostCustomersCustomerTaxIdsRequestType($value)';
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$adNrt extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$adNrt._();
 
 @override String get value => 'ad_nrt';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ad_nrt'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$aeTrn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$aeTrn._();
 
 @override String get value => 'ae_trn';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ae_trn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$alTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$alTin._();
 
 @override String get value => 'al_tin';
@@ -726,7 +726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'al_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$amTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$amTin._();
 
 @override String get value => 'am_tin';
@@ -735,7 +735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'am_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$aoTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$aoTin._();
 
 @override String get value => 'ao_tin';
@@ -744,7 +744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ao_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$arCuit extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$arCuit._();
 
 @override String get value => 'ar_cuit';
@@ -753,7 +753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ar_cuit'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$auAbn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$auAbn._();
 
 @override String get value => 'au_abn';
@@ -762,7 +762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'au_abn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$auArn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$auArn._();
 
 @override String get value => 'au_arn';
@@ -771,7 +771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'au_arn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$awTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$awTin._();
 
 @override String get value => 'aw_tin';
@@ -780,7 +780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'aw_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$azTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$azTin._();
 
 @override String get value => 'az_tin';
@@ -789,7 +789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'az_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$baTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$baTin._();
 
 @override String get value => 'ba_tin';
@@ -798,7 +798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ba_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bbTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bbTin._();
 
 @override String get value => 'bb_tin';
@@ -807,7 +807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bb_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bdBin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bdBin._();
 
 @override String get value => 'bd_bin';
@@ -816,7 +816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bd_bin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bfIfu extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bfIfu._();
 
 @override String get value => 'bf_ifu';
@@ -825,7 +825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bf_ifu'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bgUic extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bgUic._();
 
 @override String get value => 'bg_uic';
@@ -834,7 +834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bg_uic'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bhVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bhVat._();
 
 @override String get value => 'bh_vat';
@@ -843,7 +843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bh_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bjIfu extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bjIfu._();
 
 @override String get value => 'bj_ifu';
@@ -852,7 +852,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bj_ifu'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$boTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$boTin._();
 
 @override String get value => 'bo_tin';
@@ -861,7 +861,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bo_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$brCnpj extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$brCnpj._();
 
 @override String get value => 'br_cnpj';
@@ -870,7 +870,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'br_cnpj'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$brCpf extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$brCpf._();
 
 @override String get value => 'br_cpf';
@@ -879,7 +879,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'br_cpf'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$bsTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$bsTin._();
 
 @override String get value => 'bs_tin';
@@ -888,7 +888,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bs_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$byTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$byTin._();
 
 @override String get value => 'by_tin';
@@ -897,7 +897,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'by_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$caBn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$caBn._();
 
 @override String get value => 'ca_bn';
@@ -906,7 +906,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_bn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$caGstHst extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$caGstHst._();
 
 @override String get value => 'ca_gst_hst';
@@ -915,7 +915,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_gst_hst'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$caPstBc extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$caPstBc._();
 
 @override String get value => 'ca_pst_bc';
@@ -924,7 +924,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_pst_bc'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$caPstMb extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$caPstMb._();
 
 @override String get value => 'ca_pst_mb';
@@ -933,7 +933,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_pst_mb'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$caPstSk extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$caPstSk._();
 
 @override String get value => 'ca_pst_sk';
@@ -942,7 +942,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_pst_sk'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$caQst extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$caQst._();
 
 @override String get value => 'ca_qst';
@@ -951,7 +951,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_qst'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$cdNif extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$cdNif._();
 
 @override String get value => 'cd_nif';
@@ -960,7 +960,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cd_nif'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$chUid extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$chUid._();
 
 @override String get value => 'ch_uid';
@@ -969,7 +969,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ch_uid'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$chVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$chVat._();
 
 @override String get value => 'ch_vat';
@@ -978,7 +978,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ch_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$clTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$clTin._();
 
 @override String get value => 'cl_tin';
@@ -987,7 +987,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cl_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$cmNiu extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$cmNiu._();
 
 @override String get value => 'cm_niu';
@@ -996,7 +996,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cm_niu'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$cnTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$cnTin._();
 
 @override String get value => 'cn_tin';
@@ -1005,7 +1005,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cn_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$coNit extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$coNit._();
 
 @override String get value => 'co_nit';
@@ -1014,7 +1014,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'co_nit'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$crTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$crTin._();
 
 @override String get value => 'cr_tin';
@@ -1023,7 +1023,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cr_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$cvNif extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$cvNif._();
 
 @override String get value => 'cv_nif';
@@ -1032,7 +1032,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cv_nif'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$deStn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$deStn._();
 
 @override String get value => 'de_stn';
@@ -1041,7 +1041,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'de_stn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$doRcn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$doRcn._();
 
 @override String get value => 'do_rcn';
@@ -1050,7 +1050,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'do_rcn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$ecRuc extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$ecRuc._();
 
 @override String get value => 'ec_ruc';
@@ -1059,7 +1059,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ec_ruc'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$egTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$egTin._();
 
 @override String get value => 'eg_tin';
@@ -1068,7 +1068,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'eg_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$esCif extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$esCif._();
 
 @override String get value => 'es_cif';
@@ -1077,7 +1077,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'es_cif'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$etTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$etTin._();
 
 @override String get value => 'et_tin';
@@ -1086,7 +1086,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'et_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$euOssVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$euOssVat._();
 
 @override String get value => 'eu_oss_vat';
@@ -1095,7 +1095,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'eu_oss_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$euVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$euVat._();
 
 @override String get value => 'eu_vat';
@@ -1104,7 +1104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'eu_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$gbVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$gbVat._();
 
 @override String get value => 'gb_vat';
@@ -1113,7 +1113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'gb_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$geVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$geVat._();
 
 @override String get value => 'ge_vat';
@@ -1122,7 +1122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ge_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$gnNif extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$gnNif._();
 
 @override String get value => 'gn_nif';
@@ -1131,7 +1131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'gn_nif'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$hkBr extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$hkBr._();
 
 @override String get value => 'hk_br';
@@ -1140,7 +1140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'hk_br'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$hrOib extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$hrOib._();
 
 @override String get value => 'hr_oib';
@@ -1149,7 +1149,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'hr_oib'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$huTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$huTin._();
 
 @override String get value => 'hu_tin';
@@ -1158,7 +1158,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'hu_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$idNpwp extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$idNpwp._();
 
 @override String get value => 'id_npwp';
@@ -1167,7 +1167,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'id_npwp'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$ilVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$ilVat._();
 
 @override String get value => 'il_vat';
@@ -1176,7 +1176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'il_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$inGst extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$inGst._();
 
 @override String get value => 'in_gst';
@@ -1185,7 +1185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'in_gst'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$isVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$isVat._();
 
 @override String get value => 'is_vat';
@@ -1194,7 +1194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'is_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$jpCn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$jpCn._();
 
 @override String get value => 'jp_cn';
@@ -1203,7 +1203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'jp_cn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$jpRn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$jpRn._();
 
 @override String get value => 'jp_rn';
@@ -1212,7 +1212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'jp_rn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$jpTrn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$jpTrn._();
 
 @override String get value => 'jp_trn';
@@ -1221,7 +1221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'jp_trn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$kePin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$kePin._();
 
 @override String get value => 'ke_pin';
@@ -1230,7 +1230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ke_pin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$kgTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$kgTin._();
 
 @override String get value => 'kg_tin';
@@ -1239,7 +1239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kg_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$khTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$khTin._();
 
 @override String get value => 'kh_tin';
@@ -1248,7 +1248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kh_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$krBrn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$krBrn._();
 
 @override String get value => 'kr_brn';
@@ -1257,7 +1257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kr_brn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$kzBin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$kzBin._();
 
 @override String get value => 'kz_bin';
@@ -1266,7 +1266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kz_bin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$laTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$laTin._();
 
 @override String get value => 'la_tin';
@@ -1275,7 +1275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'la_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$liUid extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$liUid._();
 
 @override String get value => 'li_uid';
@@ -1284,7 +1284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'li_uid'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$liVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$liVat._();
 
 @override String get value => 'li_vat';
@@ -1293,7 +1293,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'li_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$lkVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$lkVat._();
 
 @override String get value => 'lk_vat';
@@ -1302,7 +1302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'lk_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$maVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$maVat._();
 
 @override String get value => 'ma_vat';
@@ -1311,7 +1311,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ma_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$mdVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$mdVat._();
 
 @override String get value => 'md_vat';
@@ -1320,7 +1320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'md_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$mePib extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$mePib._();
 
 @override String get value => 'me_pib';
@@ -1329,7 +1329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'me_pib'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$mkVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$mkVat._();
 
 @override String get value => 'mk_vat';
@@ -1338,7 +1338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'mk_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$mrNif extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$mrNif._();
 
 @override String get value => 'mr_nif';
@@ -1347,7 +1347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'mr_nif'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$mxRfc extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$mxRfc._();
 
 @override String get value => 'mx_rfc';
@@ -1356,7 +1356,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'mx_rfc'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$myFrp extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$myFrp._();
 
 @override String get value => 'my_frp';
@@ -1365,7 +1365,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'my_frp'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$myItn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$myItn._();
 
 @override String get value => 'my_itn';
@@ -1374,7 +1374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'my_itn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$mySst extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$mySst._();
 
 @override String get value => 'my_sst';
@@ -1383,7 +1383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'my_sst'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$ngTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$ngTin._();
 
 @override String get value => 'ng_tin';
@@ -1392,7 +1392,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ng_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$noVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$noVat._();
 
 @override String get value => 'no_vat';
@@ -1401,7 +1401,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'no_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$noVoec extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$noVoec._();
 
 @override String get value => 'no_voec';
@@ -1410,7 +1410,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'no_voec'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$npPan extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$npPan._();
 
 @override String get value => 'np_pan';
@@ -1419,7 +1419,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'np_pan'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$nzGst extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$nzGst._();
 
 @override String get value => 'nz_gst';
@@ -1428,7 +1428,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'nz_gst'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$omVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$omVat._();
 
 @override String get value => 'om_vat';
@@ -1437,7 +1437,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'om_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$peRuc extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$peRuc._();
 
 @override String get value => 'pe_ruc';
@@ -1446,7 +1446,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'pe_ruc'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$phTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$phTin._();
 
 @override String get value => 'ph_tin';
@@ -1455,7 +1455,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ph_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$plNip extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$plNip._();
 
 @override String get value => 'pl_nip';
@@ -1464,7 +1464,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'pl_nip'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$roTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$roTin._();
 
 @override String get value => 'ro_tin';
@@ -1473,7 +1473,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ro_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$rsPib extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$rsPib._();
 
 @override String get value => 'rs_pib';
@@ -1482,7 +1482,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'rs_pib'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$ruInn extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$ruInn._();
 
 @override String get value => 'ru_inn';
@@ -1491,7 +1491,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ru_inn'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$ruKpp extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$ruKpp._();
 
 @override String get value => 'ru_kpp';
@@ -1500,7 +1500,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ru_kpp'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$saVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$saVat._();
 
 @override String get value => 'sa_vat';
@@ -1509,7 +1509,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sa_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$sgGst extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$sgGst._();
 
 @override String get value => 'sg_gst';
@@ -1518,7 +1518,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sg_gst'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$sgUen extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$sgUen._();
 
 @override String get value => 'sg_uen';
@@ -1527,7 +1527,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sg_uen'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$siTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$siTin._();
 
 @override String get value => 'si_tin';
@@ -1536,7 +1536,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'si_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$snNinea extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$snNinea._();
 
 @override String get value => 'sn_ninea';
@@ -1545,7 +1545,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sn_ninea'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$srFin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$srFin._();
 
 @override String get value => 'sr_fin';
@@ -1554,7 +1554,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sr_fin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$svNit extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$svNit._();
 
 @override String get value => 'sv_nit';
@@ -1563,7 +1563,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sv_nit'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$thVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$thVat._();
 
 @override String get value => 'th_vat';
@@ -1572,7 +1572,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'th_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$tjTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$tjTin._();
 
 @override String get value => 'tj_tin';
@@ -1581,7 +1581,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tj_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$trTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$trTin._();
 
 @override String get value => 'tr_tin';
@@ -1590,7 +1590,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tr_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$twVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$twVat._();
 
 @override String get value => 'tw_vat';
@@ -1599,7 +1599,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tw_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$tzVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$tzVat._();
 
 @override String get value => 'tz_vat';
@@ -1608,7 +1608,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tz_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$uaVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$uaVat._();
 
 @override String get value => 'ua_vat';
@@ -1617,7 +1617,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ua_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$ugTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$ugTin._();
 
 @override String get value => 'ug_tin';
@@ -1626,7 +1626,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ug_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$usEin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$usEin._();
 
 @override String get value => 'us_ein';
@@ -1635,7 +1635,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'us_ein'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$uyRuc extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$uyRuc._();
 
 @override String get value => 'uy_ruc';
@@ -1644,7 +1644,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'uy_ruc'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$uzTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$uzTin._();
 
 @override String get value => 'uz_tin';
@@ -1653,7 +1653,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'uz_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$uzVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$uzVat._();
 
 @override String get value => 'uz_vat';
@@ -1662,7 +1662,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'uz_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$veRif extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$veRif._();
 
 @override String get value => 've_rif';
@@ -1671,7 +1671,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 've_rif'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$vnTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$vnTin._();
 
 @override String get value => 'vn_tin';
@@ -1680,7 +1680,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'vn_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$zaVat extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$zaVat._();
 
 @override String get value => 'za_vat';
@@ -1689,7 +1689,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'za_vat'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$zmTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$zmTin._();
 
 @override String get value => 'zm_tin';
@@ -1698,7 +1698,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'zm_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$zwTin extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$zwTin._();
 
 @override String get value => 'zw_tin';
@@ -1707,7 +1707,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'zw_tin'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerTaxIdsRequestType$Unknown extends PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType$Unknown(this.value);
 
 @override final String value;
@@ -1717,4 +1717,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_16_allof_unions/models/store_order/kinds_cat.dart';import 'package:spec_16_allof_unions/models/store_order/kinds_dog.dart';import 'package:spec_16_allof_unions/models/tracking/status.dart';sealed class KindsKind {const KindsKind();
 
-factory KindsKind.fromJson(String json) { return switch (json) {
+factory KindsKind.fromJson(String json) {return switch (json) {
   'CAT' => cat,
   'DOG' => dog,
   _ => KindsKind$Unknown(json),
-}; }
+};}
 
 static const KindsKind cat = KindsKind$cat._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is KindsKind$Unknown;
 
- }
+}
 @immutable final class KindsKind$cat extends KindsKind {const KindsKind$cat._();
 
 @override String get value => 'CAT';
@@ -31,7 +31,7 @@ bool get isUnknown => this is KindsKind$Unknown;
 
 @override String toString() => 'KindsKind(CAT)';
 
- }
+}
 @immutable final class KindsKind$dog extends KindsKind {const KindsKind$dog._();
 
 @override String get value => 'DOG';
@@ -42,7 +42,7 @@ bool get isUnknown => this is KindsKind$Unknown;
 
 @override String toString() => 'KindsKind(DOG)';
 
- }
+}
 @immutable final class KindsKind$Unknown extends KindsKind {const KindsKind$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is KindsKind$Unknown;
 
 @override String toString() => 'KindsKind($value)';
 
- }
+}
 sealed class Kinds {const Kinds();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
-factory Kinds.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {
+factory Kinds.fromJson(Map<String, dynamic> json) {return switch (json['kind']) {
   'CAT' => KindsCat$Variant.fromJson(json),
   'DOG' => KindsDog$Variant.fromJson(json),
   _ => Kinds$Unknown(json),
-}; }
+};}
 
 /// Build the `CAT` variant.
-factory Kinds.cat({required String huntingSkill, String? orderId, Status? status, }) { return KindsCat$Variant(KindsCat(kind: 'CAT', huntingSkill: huntingSkill, orderId: orderId, status: status)); }
+factory Kinds.cat({required String huntingSkill, String? orderId, Status? status, }) {return KindsCat$Variant(KindsCat(kind: 'CAT', huntingSkill: huntingSkill, orderId: orderId, status: status));}
 
 /// Build the `DOG` variant.
-factory Kinds.dog({required String breed, String? orderId, Status? status, }) { return KindsDog$Variant(KindsDog(kind: 'DOG', breed: breed, orderId: orderId, status: status)); }
+factory Kinds.dog({required String breed, String? orderId, Status? status, }) {return KindsDog$Variant(KindsDog(kind: 'DOG', breed: breed, orderId: orderId, status: status));}
 
 /// The discriminator value identifying this variant.
 KindsKind get kind;
@@ -79,15 +79,15 @@ bool get isUnknown => this is Kinds$Unknown;
 String? get orderId;
 /// Shared by all variants of this union.
 Status? get status;
-R when<R>({required R Function(KindsCat$Variant) cat, required R Function(KindsDog$Variant) dog, required R Function(Kinds$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(KindsCat$Variant) cat, required R Function(KindsDog$Variant) dog, required R Function(Kinds$Unknown) unknown, }) {return switch (this) {
   final KindsCat$Variant v => cat(v),
   final KindsDog$Variant v => dog(v),
   final Kinds$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class KindsCat$Variant extends Kinds {const KindsCat$Variant(this.kindsCat);
 
-factory KindsCat$Variant.fromJson(Map<String, dynamic> json) { return KindsCat$Variant(KindsCat.fromJson(json)); }
+factory KindsCat$Variant.fromJson(Map<String, dynamic> json) {return KindsCat$Variant(KindsCat.fromJson(json));}
 
 final KindsCat kindsCat;
 
@@ -95,11 +95,11 @@ final KindsCat kindsCat;
 
 @override Map<String, dynamic> toJson() => {...kindsCat.toJson(), 'kind': kind.toJson()};
 
-KindsCat$Variant copyWith({String? huntingSkill, String? Function()? orderId, Status? Function()? status, }) { return KindsCat$Variant(kindsCat.copyWith(
+KindsCat$Variant copyWith({String? huntingSkill, String? Function()? orderId, Status? Function()? status, }) {return KindsCat$Variant(kindsCat.copyWith(
   huntingSkill: huntingSkill,
   orderId: orderId,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is KindsCat$Variant && kindsCat == other.kindsCat;
 
@@ -111,10 +111,10 @@ KindsCat$Variant copyWith({String? huntingSkill, String? Function()? orderId, St
 
 @override Status? get status => kindsCat.status;
 
- }
+}
 @immutable final class KindsDog$Variant extends Kinds {const KindsDog$Variant(this.kindsDog);
 
-factory KindsDog$Variant.fromJson(Map<String, dynamic> json) { return KindsDog$Variant(KindsDog.fromJson(json)); }
+factory KindsDog$Variant.fromJson(Map<String, dynamic> json) {return KindsDog$Variant(KindsDog.fromJson(json));}
 
 final KindsDog kindsDog;
 
@@ -122,11 +122,11 @@ final KindsDog kindsDog;
 
 @override Map<String, dynamic> toJson() => {...kindsDog.toJson(), 'kind': kind.toJson()};
 
-KindsDog$Variant copyWith({String? breed, String? Function()? orderId, Status? Function()? status, }) { return KindsDog$Variant(kindsDog.copyWith(
+KindsDog$Variant copyWith({String? breed, String? Function()? orderId, Status? Function()? status, }) {return KindsDog$Variant(kindsDog.copyWith(
   breed: breed,
   orderId: orderId,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is KindsDog$Variant && kindsDog == other.kindsDog;
 
@@ -138,7 +138,7 @@ KindsDog$Variant copyWith({String? breed, String? Function()? orderId, Status? F
 
 @override Status? get status => kindsDog.status;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class Kinds$Unknown extends Kinds {Kinds$Unknown(this.json);
@@ -164,4 +164,4 @@ late final Status? _status = json['status'] != null ? Status.fromJson(json['stat
 
 @override Status? get status => _status;
 
- }
+}

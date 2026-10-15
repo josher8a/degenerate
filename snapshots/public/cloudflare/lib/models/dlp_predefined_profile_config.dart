@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpPredefinedProfileConfig
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class DlpPredefinedProfileConfig {const DlpPredefinedProfileConfig({required this.allowedMatchCount, required this.enabledEntries, required this.entries, required this.id, required this.name, this.aiContextEnabled = false, this.confidenceThreshold = 'low', this.ocrEnabled = false, this.openAccess, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class DlpPredefinedProfileConfig {const DlpPredefinedProfileConfig({required this.allowedMatchCount, required this.confidenceThreshold, required this.enabledEntries, required this.entries, required this.id, required this.name, this.aiContextEnabled, this.ocrEnabled, this.openAccess, });
 
-factory DlpPredefinedProfileConfig.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfileConfig(
-  aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
+factory DlpPredefinedProfileConfig.fromJson(Map<String, dynamic> json) {return DlpPredefinedProfileConfig(
+  aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
   confidenceThreshold: json['confidence_threshold'] as String?,
   enabledEntries: (json['enabled_entries'] as List<dynamic>).map((e) => e as String).toList(),
@@ -19,11 +19,11 @@ factory DlpPredefinedProfileConfig.fromJson(Map<String, dynamic> json) { return 
 }).toList(),
   id: json['id'] as String,
   name: json['name'] as String,
-  ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,
+  ocrEnabled: json['ocr_enabled'] as bool?,
   openAccess: json['open_access'] as bool?,
-); }
+);}
 
-final bool aiContextEnabled;
+final bool? aiContextEnabled;
 
 final int allowedMatchCount;
 
@@ -41,29 +41,35 @@ final String id;
 /// The name of the predefined profile.
 final String name;
 
-final bool ocrEnabled;
+final bool? ocrEnabled;
 
 /// Whether this profile can be accessed by anyone.
 final bool? openAccess;
 
-Map<String, dynamic> toJson() { return {
-  'ai_context_enabled': aiContextEnabled,
+/// The value of `aiContextEnabled`, or its schema default when absent.
+bool get aiContextEnabledOrDefault => aiContextEnabled ?? false;
+
+/// The value of `ocrEnabled`, or its schema default when absent.
+bool get ocrEnabledOrDefault => ocrEnabled ?? false;
+
+Map<String, dynamic> toJson() {return {
+  'ai_context_enabled': ?aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
   'confidence_threshold': confidenceThreshold,
   'enabled_entries': enabledEntries,
   'entries': entries.map((e) => e.toJson()).toList(),
   'id': id,
   'name': name,
-  'ocr_enabled': ocrEnabled,
+  'ocr_enabled': ?ocrEnabled,
   'open_access': ?openAccess,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
-      json.containsKey('confidence_threshold') && json['confidence_threshold'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
+      json.containsKey('confidence_threshold') && (json['confidence_threshold'] == null || json['confidence_threshold'] is String) &&
       json.containsKey('enabled_entries') &&
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-DlpPredefinedProfileConfig copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, String? Function()? confidenceThreshold, List<String>? enabledEntries, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool? Function()? openAccess, }) { return DlpPredefinedProfileConfig(
+      json.containsKey('name') && json['name'] is String;}
+DlpPredefinedProfileConfig copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, String? Function()? confidenceThreshold, List<String>? enabledEntries, List<DlpEntry>? entries, String? id, String? name, bool? Function()? ocrEnabled, bool? Function()? openAccess, }) {return DlpPredefinedProfileConfig(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,
@@ -73,7 +79,7 @@ DlpPredefinedProfileConfig copyWith({bool Function()? aiContextEnabled, int? all
   name: name ?? this.name,
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   openAccess: openAccess != null ? openAccess() : this.openAccess,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPredefinedProfileConfig &&
           aiContextEnabled == other.aiContextEnabled &&
@@ -90,4 +96,4 @@ DlpPredefinedProfileConfig copyWith({bool Function()? aiContextEnabled, int? all
 
 @override String toString() => 'DlpPredefinedProfileConfig(\n  aiContextEnabled: $aiContextEnabled,\n  allowedMatchCount: $allowedMatchCount,\n  confidenceThreshold: $confidenceThreshold,\n  enabledEntries: $enabledEntries,\n  entries: $entries,\n  id: $id,\n  name: $name,\n  ocrEnabled: $ocrEnabled,\n  openAccess: $openAccess,\n)';
 
- }
+}

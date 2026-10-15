@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';/// 
 @immutable final class PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions({this.captureMethod});
 
-factory PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
+factory PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) { return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method'}.contains(key));}
+PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) {return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions &&
           captureMethod == other.captureMethod;
@@ -26,4 +26,4 @@ PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions copyWith({Checko
 
 @override String toString() => 'PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(captureMethod: $captureMethod)';
 
- }
+}

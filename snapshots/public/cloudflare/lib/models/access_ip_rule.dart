@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_ip_rule/access_ip_rule_ip.dart';/// Matches an IP address block.
 @immutable final class AccessIpRule {const AccessIpRule({required this.ip});
 
-factory AccessIpRule.fromJson(Map<String, dynamic> json) { return AccessIpRule(
+factory AccessIpRule.fromJson(Map<String, dynamic> json) {return AccessIpRule(
   ip: AccessIpRuleIp.fromJson(json['ip'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessIpRuleIp ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip': ip.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip'); } 
-AccessIpRule copyWith({AccessIpRuleIp? ip}) { return AccessIpRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip');}
+AccessIpRule copyWith({AccessIpRuleIp? ip}) {return AccessIpRule(
   ip: ip ?? this.ip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessIpRule &&
           ip == other.ip;
@@ -25,4 +25,4 @@ AccessIpRule copyWith({AccessIpRuleIp? ip}) { return AccessIpRule(
 
 @override String toString() => 'AccessIpRule(ip: $ip)';
 
- }
+}

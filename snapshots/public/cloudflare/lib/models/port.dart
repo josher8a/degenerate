@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Port {const Port({this.number, this.proto, this.status, });
 
-factory Port.fromJson(Map<String, dynamic> json) { return Port(
+factory Port.fromJson(Map<String, dynamic> json) {return Port(
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,
   proto: json['proto'] as String?,
   status: json['status'] as String?,
-); }
+);}
 
 /// Example: `8080`
 final double? number;
@@ -18,17 +18,17 @@ final String? proto;
 /// Example: `'open'`
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'number': ?number,
   'proto': ?proto,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number', 'proto', 'status'}.contains(key)); } 
-Port copyWith({double? Function()? number, String? Function()? proto, String? Function()? status, }) { return Port(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'number', 'proto', 'status'}.contains(key));}
+Port copyWith({double? Function()? number, String? Function()? proto, String? Function()? status, }) {return Port(
   number: number != null ? number() : this.number,
   proto: proto != null ? proto() : this.proto,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Port &&
           number == other.number &&
@@ -39,4 +39,4 @@ Port copyWith({double? Function()? number, String? Function()? proto, String? Fu
 
 @override String toString() => 'Port(number: $number, proto: $proto, status: $status)';
 
- }
+}

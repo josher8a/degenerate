@@ -14,7 +14,7 @@ final class DomainIntelligenceApi with ApiExecutor {const DomainIntelligenceApi(
 /// Gets security details and statistics about a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain`
-Future<ApiResult<IntelDomain?, DomainIntelligenceGetDomainDetailsError>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IntelDomain?, DomainIntelligenceGetDomainDetailsError>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -31,7 +31,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -39,13 +39,13 @@ return execute(
   },
   onError: DomainIntelligenceGetDomainDetailsError.fromResponse,
 );
- } 
+}
 /// Get Multiple Domain Details
 ///
 /// Same as summary.
 ///
 /// `GET /accounts/{account_id}/intel/domain/bulk`
-Future<ApiResult<List<IntelCollectionResponseResult>?, DomainIntelligenceGetMultipleDomainDetailsError>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelCollectionResponseResult>, DomainIntelligenceGetMultipleDomainDetailsError>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
 for (final item in domain) {
@@ -64,13 +64,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => IntelCollectionResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => IntelCollectionResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DomainIntelligenceGetMultipleDomainDetailsError.fromResponse,
 );
- } 
- }
+}
+}

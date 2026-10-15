@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_track_config_layer.dart';@immutable final class StartTrackRecordingForAMeetingRequest {const StartTrackRecordingForAMeetingRequest({required this.layers, required this.meetingId, this.maxSeconds, });
 
-factory StartTrackRecordingForAMeetingRequest.fromJson(Map<String, dynamic> json) { return StartTrackRecordingForAMeetingRequest(
+factory StartTrackRecordingForAMeetingRequest.fromJson(Map<String, dynamic> json) {return StartTrackRecordingForAMeetingRequest(
   layers: (json['layers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, RealtimekitTrackConfigLayer.fromJson(v as Map<String, dynamic>))),
   maxSeconds: json['max_seconds'] != null ? (json['max_seconds'] as num).toDouble() : null,
   meetingId: json['meeting_id'] as String,
-); }
+);}
 
 final Map<String,RealtimekitTrackConfigLayer> layers;
 
@@ -17,18 +17,18 @@ final double? maxSeconds;
 /// ID of the meeting to record.
 final String meetingId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'layers': layers.map((k, v) => MapEntry(k, v.toJson())),
   'max_seconds': ?maxSeconds,
   'meeting_id': meetingId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('layers') &&
-      json.containsKey('meeting_id') && json['meeting_id'] is String; } 
-StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfigLayer>? layers, double? Function()? maxSeconds, String? meetingId, }) { return StartTrackRecordingForAMeetingRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('layers') &&
+      json.containsKey('meeting_id') && json['meeting_id'] is String;}
+StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfigLayer>? layers, double? Function()? maxSeconds, String? meetingId, }) {return StartTrackRecordingForAMeetingRequest(
   layers: layers ?? this.layers,
   maxSeconds: maxSeconds != null ? maxSeconds() : this.maxSeconds,
   meetingId: meetingId ?? this.meetingId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StartTrackRecordingForAMeetingRequest &&
           layers == other.layers &&
@@ -39,4 +39,4 @@ StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfi
 
 @override String toString() => 'StartTrackRecordingForAMeetingRequest(layers: $layers, maxSeconds: $maxSeconds, meetingId: $meetingId)';
 
- }
+}

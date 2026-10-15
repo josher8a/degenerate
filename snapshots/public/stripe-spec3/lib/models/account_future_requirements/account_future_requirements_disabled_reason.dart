@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This is typed as an enum for consistency with `requirements.disabled_reason`.
 sealed class AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason();
 
-factory AccountFutureRequirementsDisabledReason.fromJson(String json) { return switch (json) {
+factory AccountFutureRequirementsDisabledReason.fromJson(String json) {return switch (json) {
   'action_required.requested_capabilities' => actionRequiredRequestedCapabilities,
   'listed' => listed,
   'other' => $other,
@@ -21,7 +21,7 @@ factory AccountFutureRequirementsDisabledReason.fromJson(String json) { return s
   'requirements.pending_verification' => requirementsPendingVerification,
   'under_review' => underReview,
   _ => AccountFutureRequirementsDisabledReason$Unknown(json),
-}; }
+};}
 
 static const AccountFutureRequirementsDisabledReason actionRequiredRequestedCapabilities = AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities._();
 
@@ -56,9 +56,9 @@ static const AccountFutureRequirementsDisabledReason underReview = AccountFuture
 static const List<AccountFutureRequirementsDisabledReason> values = [actionRequiredRequestedCapabilities, listed, $other, platformPaused, rejectedFraud, rejectedIncompleteVerification, rejectedListed, rejectedOther, rejectedPlatformFraud, rejectedPlatformOther, rejectedPlatformTermsOfService, rejectedTermsOfService, requirementsPastDue, requirementsPendingVerification, underReview];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'action_required.requested_capabilities' => 'actionRequiredRequestedCapabilities',
   'listed' => 'listed',
   'other' => r'$other',
@@ -75,11 +75,11 @@ String get name { return switch (value) {
   'requirements.pending_verification' => 'requirementsPendingVerification',
   'under_review' => 'underReview',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountFutureRequirementsDisabledReason$Unknown; } 
+bool get isUnknown {return this is AccountFutureRequirementsDisabledReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() actionRequiredRequestedCapabilities, required W Function() listed, required W Function() $other, required W Function() platformPaused, required W Function() rejectedFraud, required W Function() rejectedIncompleteVerification, required W Function() rejectedListed, required W Function() rejectedOther, required W Function() rejectedPlatformFraud, required W Function() rejectedPlatformOther, required W Function() rejectedPlatformTermsOfService, required W Function() rejectedTermsOfService, required W Function() requirementsPastDue, required W Function() requirementsPendingVerification, required W Function() underReview, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() actionRequiredRequestedCapabilities, required W Function() listed, required W Function() $other, required W Function() platformPaused, required W Function() rejectedFraud, required W Function() rejectedIncompleteVerification, required W Function() rejectedListed, required W Function() rejectedOther, required W Function() rejectedPlatformFraud, required W Function() rejectedPlatformOther, required W Function() rejectedPlatformTermsOfService, required W Function() rejectedTermsOfService, required W Function() requirementsPastDue, required W Function() requirementsPendingVerification, required W Function() underReview, required W Function(String value) $unknown, }) {return switch (this) {
       AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities() => actionRequiredRequestedCapabilities(),
       AccountFutureRequirementsDisabledReason$listed() => listed(),
       AccountFutureRequirementsDisabledReason$$other() => $other(),
@@ -96,9 +96,9 @@ W when<W>({required W Function() actionRequiredRequestedCapabilities, required W
       AccountFutureRequirementsDisabledReason$requirementsPendingVerification() => requirementsPendingVerification(),
       AccountFutureRequirementsDisabledReason$underReview() => underReview(),
       AccountFutureRequirementsDisabledReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRequiredRequestedCapabilities, W Function()? listed, W Function()? $other, W Function()? platformPaused, W Function()? rejectedFraud, W Function()? rejectedIncompleteVerification, W Function()? rejectedListed, W Function()? rejectedOther, W Function()? rejectedPlatformFraud, W Function()? rejectedPlatformOther, W Function()? rejectedPlatformTermsOfService, W Function()? rejectedTermsOfService, W Function()? requirementsPastDue, W Function()? requirementsPendingVerification, W Function()? underReview, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRequiredRequestedCapabilities, W Function()? listed, W Function()? $other, W Function()? platformPaused, W Function()? rejectedFraud, W Function()? rejectedIncompleteVerification, W Function()? rejectedListed, W Function()? rejectedOther, W Function()? rejectedPlatformFraud, W Function()? rejectedPlatformOther, W Function()? rejectedPlatformTermsOfService, W Function()? rejectedTermsOfService, W Function()? requirementsPastDue, W Function()? requirementsPendingVerification, W Function()? underReview, W Function(String value)? $unknown, }) {return switch (this) {
       AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities() => actionRequiredRequestedCapabilities != null ? actionRequiredRequestedCapabilities() : orElse(value),
       AccountFutureRequirementsDisabledReason$listed() => listed != null ? listed() : orElse(value),
       AccountFutureRequirementsDisabledReason$$other() => $other != null ? $other() : orElse(value),
@@ -115,10 +115,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
       AccountFutureRequirementsDisabledReason$requirementsPendingVerification() => requirementsPendingVerification != null ? requirementsPendingVerification() : orElse(value),
       AccountFutureRequirementsDisabledReason$underReview() => underReview != null ? underReview() : orElse(value),
       AccountFutureRequirementsDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountFutureRequirementsDisabledReason($value)';
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities._();
 
 @override String get value => 'action_required.requested_capabilities';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'action_required.requested_capabilities'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$listed extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$listed._();
 
 @override String get value => 'listed';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'listed'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$$other extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$$other._();
 
 @override String get value => 'other';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$platformPaused extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$platformPaused._();
 
 @override String get value => 'platform_paused';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'platform_paused'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedFraud extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedFraud._();
 
 @override String get value => 'rejected.fraud';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.fraud'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedIncompleteVerification extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedIncompleteVerification._();
 
 @override String get value => 'rejected.incomplete_verification';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.incomplete_verification'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedListed extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedListed._();
 
 @override String get value => 'rejected.listed';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.listed'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedOther extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedOther._();
 
 @override String get value => 'rejected.other';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.other'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedPlatformFraud extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedPlatformFraud._();
 
 @override String get value => 'rejected.platform_fraud';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.platform_fraud'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedPlatformOther extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedPlatformOther._();
 
 @override String get value => 'rejected.platform_other';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.platform_other'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedPlatformTermsOfService extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedPlatformTermsOfService._();
 
 @override String get value => 'rejected.platform_terms_of_service';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.platform_terms_of_service'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$rejectedTermsOfService extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$rejectedTermsOfService._();
 
 @override String get value => 'rejected.terms_of_service';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'rejected.terms_of_service'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$requirementsPastDue extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$requirementsPastDue._();
 
 @override String get value => 'requirements.past_due';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'requirements.past_due'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$requirementsPendingVerification extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$requirementsPendingVerification._();
 
 @override String get value => 'requirements.pending_verification';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'requirements.pending_verification'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$underReview extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$underReview._();
 
 @override String get value => 'under_review';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => 'under_review'.hashCode;
 
- }
+}
 @immutable final class AccountFutureRequirementsDisabledReason$Unknown extends AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason$Unknown(this.value);
 
 @override final String value;
@@ -263,4 +263,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRe
 
 @override int get hashCode => value.hashCode;
 
- }
+}

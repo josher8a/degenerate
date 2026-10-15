@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlStripeConnection {const PayPerCrawlStripeConnection({this.connectStatus, this.stripeAccountId, });
 
-factory PayPerCrawlStripeConnection.fromJson(Map<String, dynamic> json) { return PayPerCrawlStripeConnection(
+factory PayPerCrawlStripeConnection.fromJson(Map<String, dynamic> json) {return PayPerCrawlStripeConnection(
   connectStatus: json['connect_status'] as String?,
   stripeAccountId: json['stripe_account_id'] as String?,
-); }
+);}
 
 final String? connectStatus;
 
 final String? stripeAccountId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connect_status': ?connectStatus,
   'stripe_account_id': ?stripeAccountId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connect_status', 'stripe_account_id'}.contains(key)); } 
-PayPerCrawlStripeConnection copyWith({String? Function()? connectStatus, String? Function()? stripeAccountId, }) { return PayPerCrawlStripeConnection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'connect_status', 'stripe_account_id'}.contains(key));}
+PayPerCrawlStripeConnection copyWith({String? Function()? connectStatus, String? Function()? stripeAccountId, }) {return PayPerCrawlStripeConnection(
   connectStatus: connectStatus != null ? connectStatus() : this.connectStatus,
   stripeAccountId: stripeAccountId != null ? stripeAccountId() : this.stripeAccountId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlStripeConnection &&
           connectStatus == other.connectStatus &&
@@ -30,4 +30,4 @@ PayPerCrawlStripeConnection copyWith({String? Function()? connectStatus, String?
 
 @override String toString() => 'PayPerCrawlStripeConnection(connectStatus: $connectStatus, stripeAccountId: $stripeAccountId)';
 
- }
+}

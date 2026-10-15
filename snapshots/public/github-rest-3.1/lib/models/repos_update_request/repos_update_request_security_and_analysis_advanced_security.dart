@@ -8,20 +8,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status`
 /// For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
 @immutable final class ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity {const ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity({this.status});
 
-factory ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity(
+factory ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) {return ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity(
   status: json['status'] as String?,
-); }
+);}
 
 /// Can be `enabled` or `disabled`.
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity copyWith({String? Function()? status}) { return ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity copyWith({String? Function()? status}) {return ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity(
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity &&
           status == other.status;
@@ -30,4 +30,4 @@ ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity copyWith({String? Function
 
 @override String toString() => 'ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity(status: $status)';
 
- }
+}

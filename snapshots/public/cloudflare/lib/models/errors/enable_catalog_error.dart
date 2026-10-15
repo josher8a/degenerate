@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure55.dart';sealed class EnableCatalogError {const EnableCatalogError();
 
-factory EnableCatalogError.fromResponse(ApiResponse response) {     try {
+factory EnableCatalogError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         400 => EnableCatalogError$400(ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         401 => EnableCatalogError$401(ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -13,12 +13,12 @@ factory EnableCatalogError.fromResponse(ApiResponse response) {     try {
       };
     } on Object {
       return EnableCatalogError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class EnableCatalogError$400 extends EnableCatalogError {const EnableCatalogError$400(this.error);
 
 final ResponseCommonFailure55 error;
@@ -27,7 +27,7 @@ final ResponseCommonFailure55 error;
 
 @override int get statusCode => 400;
 
- }
+}
 final class EnableCatalogError$401 extends EnableCatalogError {const EnableCatalogError$401(this.error);
 
 final ResponseCommonFailure55 error;
@@ -36,7 +36,7 @@ final ResponseCommonFailure55 error;
 
 @override int get statusCode => 401;
 
- }
+}
 final class EnableCatalogError$403 extends EnableCatalogError {const EnableCatalogError$403(this.error);
 
 final ResponseCommonFailure55 error;
@@ -45,7 +45,7 @@ final ResponseCommonFailure55 error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class EnableCatalogError$409 extends EnableCatalogError {const EnableCatalogError$409(this.error);
 
 final ResponseCommonFailure55 error;
@@ -54,7 +54,7 @@ final ResponseCommonFailure55 error;
 
 @override int get statusCode => 409;
 
- }
+}
 final class EnableCatalogError$500 extends EnableCatalogError {const EnableCatalogError$500(this.error);
 
 final ResponseCommonFailure55 error;
@@ -63,11 +63,11 @@ final ResponseCommonFailure55 error;
 
 @override int get statusCode => 500;
 
- }
+}
 final class EnableCatalogError$Unknown extends EnableCatalogError {const EnableCatalogError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

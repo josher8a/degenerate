@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain/validation_data.dart';import 'package:pub_cloudflare/models/pages_domain/verification_data.dart';import 'package:pub_cloudflare/models/pages_domain_name.dart';sealed class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority();
 
-factory PagesDomainCertificateAuthority.fromJson(String json) { return switch (json) {
+factory PagesDomainCertificateAuthority.fromJson(String json) {return switch (json) {
   'google' => google,
   'lets_encrypt' => letsEncrypt,
   _ => PagesDomainCertificateAuthority$Unknown(json),
-}; }
+};}
 
 static const PagesDomainCertificateAuthority google = PagesDomainCertificateAuthority$google._();
 
@@ -16,30 +16,30 @@ static const PagesDomainCertificateAuthority letsEncrypt = PagesDomainCertificat
 static const List<PagesDomainCertificateAuthority> values = [google, letsEncrypt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'google' => 'google',
   'lets_encrypt' => 'letsEncrypt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesDomainCertificateAuthority$Unknown; } 
+bool get isUnknown {return this is PagesDomainCertificateAuthority$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() google, required W Function() letsEncrypt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() google, required W Function() letsEncrypt, required W Function(String value) $unknown, }) {return switch (this) {
       PagesDomainCertificateAuthority$google() => google(),
       PagesDomainCertificateAuthority$letsEncrypt() => letsEncrypt(),
       PagesDomainCertificateAuthority$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, W Function()? letsEncrypt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, W Function()? letsEncrypt, W Function(String value)? $unknown, }) {return switch (this) {
       PagesDomainCertificateAuthority$google() => google != null ? google() : orElse(value),
       PagesDomainCertificateAuthority$letsEncrypt() => letsEncrypt != null ? letsEncrypt() : orElse(value),
       PagesDomainCertificateAuthority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PagesDomainCertificateAuthority($value)';
 
- }
+}
 @immutable final class PagesDomainCertificateAuthority$google extends PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority$google._();
 
 @override String get value => 'google';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => 'google'.hashCode;
 
- }
+}
 @immutable final class PagesDomainCertificateAuthority$letsEncrypt extends PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority$letsEncrypt._();
 
 @override String get value => 'lets_encrypt';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => 'lets_encrypt'.hashCode;
 
- }
+}
 @immutable final class PagesDomainCertificateAuthority$Unknown extends PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority$Unknown(this.value);
 
 @override final String value;
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class PagesDomainStatus {const PagesDomainStatus();
 
-factory PagesDomainStatus.fromJson(String json) { return switch (json) {
+factory PagesDomainStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
@@ -78,7 +78,7 @@ factory PagesDomainStatus.fromJson(String json) { return switch (json) {
   'blocked' => blocked,
   'error' => error,
   _ => PagesDomainStatus$Unknown(json),
-}; }
+};}
 
 static const PagesDomainStatus initializing = PagesDomainStatus$initializing._();
 
@@ -95,9 +95,9 @@ static const PagesDomainStatus error = PagesDomainStatus$error._();
 static const List<PagesDomainStatus> values = [initializing, pending, active, deactivated, blocked, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'pending' => 'pending',
   'active' => 'active',
@@ -105,11 +105,11 @@ String get name { return switch (value) {
   'blocked' => 'blocked',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesDomainStatus$Unknown; } 
+bool get isUnknown {return this is PagesDomainStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() blocked, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() blocked, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       PagesDomainStatus$initializing() => initializing(),
       PagesDomainStatus$pending() => pending(),
       PagesDomainStatus$active() => active(),
@@ -117,9 +117,9 @@ W when<W>({required W Function() initializing, required W Function() pending, re
       PagesDomainStatus$blocked() => blocked(),
       PagesDomainStatus$error() => error(),
       PagesDomainStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? blocked, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? blocked, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       PagesDomainStatus$initializing() => initializing != null ? initializing() : orElse(value),
       PagesDomainStatus$pending() => pending != null ? pending() : orElse(value),
       PagesDomainStatus$active() => active != null ? active() : orElse(value),
@@ -127,10 +127,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
       PagesDomainStatus$blocked() => blocked != null ? blocked() : orElse(value),
       PagesDomainStatus$error() => error != null ? error() : orElse(value),
       PagesDomainStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PagesDomainStatus($value)';
 
- }
+}
 @immutable final class PagesDomainStatus$initializing extends PagesDomainStatus {const PagesDomainStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class PagesDomainStatus$pending extends PagesDomainStatus {const PagesDomainStatus$pending._();
 
 @override String get value => 'pending';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class PagesDomainStatus$active extends PagesDomainStatus {const PagesDomainStatus$active._();
 
 @override String get value => 'active';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class PagesDomainStatus$deactivated extends PagesDomainStatus {const PagesDomainStatus$deactivated._();
 
 @override String get value => 'deactivated';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deactivated'.hashCode;
 
- }
+}
 @immutable final class PagesDomainStatus$blocked extends PagesDomainStatus {const PagesDomainStatus$blocked._();
 
 @override String get value => 'blocked';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'blocked'.hashCode;
 
- }
+}
 @immutable final class PagesDomainStatus$error extends PagesDomainStatus {const PagesDomainStatus$error._();
 
 @override String get value => 'error';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class PagesDomainStatus$Unknown extends PagesDomainStatus {const PagesDomainStatus$Unknown(this.value);
 
 @override final String value;
@@ -194,10 +194,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PagesDomain {const PagesDomain({required this.certificateAuthority, required this.createdOn, required this.domainId, required this.id, required this.name, required this.status, required this.validationData, required this.verificationData, required this.zoneTag, });
 
-factory PagesDomain.fromJson(Map<String, dynamic> json) { return PagesDomain(
+factory PagesDomain.fromJson(Map<String, dynamic> json) {return PagesDomain(
   certificateAuthority: PagesDomainCertificateAuthority.fromJson(json['certificate_authority'] as String),
   createdOn: json['created_on'] as String,
   domainId: json['domain_id'] as String,
@@ -207,7 +207,7 @@ factory PagesDomain.fromJson(Map<String, dynamic> json) { return PagesDomain(
   validationData: ValidationData.fromJson(json['validation_data'] as Map<String, dynamic>),
   verificationData: VerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),
   zoneTag: json['zone_tag'] as String,
-); }
+);}
 
 /// Example: `'lets_encrypt'`
 final PagesDomainCertificateAuthority certificateAuthority;
@@ -228,7 +228,7 @@ final VerificationData verificationData;
 
 final String zoneTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate_authority': certificateAuthority.toJson(),
   'created_on': createdOn,
   'domain_id': domainId,
@@ -238,8 +238,8 @@ Map<String, dynamic> toJson() { return {
   'validation_data': validationData.toJson(),
   'verification_data': verificationData.toJson(),
   'zone_tag': zoneTag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_authority') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_authority') &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('domain_id') && json['domain_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -247,8 +247,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('status') &&
       json.containsKey('validation_data') &&
       json.containsKey('verification_data') &&
-      json.containsKey('zone_tag') && json['zone_tag'] is String; } 
-PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, String? createdOn, String? domainId, String? id, PagesDomainName? name, PagesDomainStatus? status, ValidationData? validationData, VerificationData? verificationData, String? zoneTag, }) { return PagesDomain(
+      json.containsKey('zone_tag') && json['zone_tag'] is String;}
+PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, String? createdOn, String? domainId, String? id, PagesDomainName? name, PagesDomainStatus? status, ValidationData? validationData, VerificationData? verificationData, String? zoneTag, }) {return PagesDomain(
   certificateAuthority: certificateAuthority ?? this.certificateAuthority,
   createdOn: createdOn ?? this.createdOn,
   domainId: domainId ?? this.domainId,
@@ -258,7 +258,7 @@ PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, Str
   validationData: validationData ?? this.validationData,
   verificationData: verificationData ?? this.verificationData,
   zoneTag: zoneTag ?? this.zoneTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDomain &&
           certificateAuthority == other.certificateAuthority &&
@@ -275,4 +275,4 @@ PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, Str
 
 @override String toString() => 'PagesDomain(\n  certificateAuthority: $certificateAuthority,\n  createdOn: $createdOn,\n  domainId: $domainId,\n  id: $id,\n  name: $name,\n  status: $status,\n  validationData: $validationData,\n  verificationData: $verificationData,\n  zoneTag: $zoneTag,\n)';
 
- }
+}

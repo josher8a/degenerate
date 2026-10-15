@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reaction to use
 sealed class ReactionContent {const ReactionContent();
 
-factory ReactionContent.fromJson(String json) { return switch (json) {
+factory ReactionContent.fromJson(String json) {return switch (json) {
   '+1' => plus1,
   '-1' => minus1,
   'laugh' => laugh,
@@ -14,7 +14,7 @@ factory ReactionContent.fromJson(String json) { return switch (json) {
   'rocket' => rocket,
   'eyes' => eyes,
   _ => ReactionContent$Unknown(json),
-}; }
+};}
 
 static const ReactionContent plus1 = ReactionContent$plus1._();
 
@@ -35,9 +35,9 @@ static const ReactionContent eyes = ReactionContent$eyes._();
 static const List<ReactionContent> values = [plus1, minus1, laugh, confused, heart, hooray, rocket, eyes];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '+1' => 'plus1',
   '-1' => 'minus1',
   'laugh' => 'laugh',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'rocket' => 'rocket',
   'eyes' => 'eyes',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReactionContent$Unknown; } 
+bool get isUnknown {return this is ReactionContent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() plus1, required W Function() minus1, required W Function() laugh, required W Function() confused, required W Function() heart, required W Function() hooray, required W Function() rocket, required W Function() eyes, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() plus1, required W Function() minus1, required W Function() laugh, required W Function() confused, required W Function() heart, required W Function() hooray, required W Function() rocket, required W Function() eyes, required W Function(String value) $unknown, }) {return switch (this) {
       ReactionContent$plus1() => plus1(),
       ReactionContent$minus1() => minus1(),
       ReactionContent$laugh() => laugh(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() plus1, required W Function() minus1, required W
       ReactionContent$rocket() => rocket(),
       ReactionContent$eyes() => eyes(),
       ReactionContent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W Function()? minus1, W Function()? laugh, W Function()? confused, W Function()? heart, W Function()? hooray, W Function()? rocket, W Function()? eyes, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W Function()? minus1, W Function()? laugh, W Function()? confused, W Function()? heart, W Function()? hooray, W Function()? rocket, W Function()? eyes, W Function(String value)? $unknown, }) {return switch (this) {
       ReactionContent$plus1() => plus1 != null ? plus1() : orElse(value),
       ReactionContent$minus1() => minus1 != null ? minus1() : orElse(value),
       ReactionContent$laugh() => laugh != null ? laugh() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
       ReactionContent$rocket() => rocket != null ? rocket() : orElse(value),
       ReactionContent$eyes() => eyes != null ? eyes() : orElse(value),
       ReactionContent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReactionContent($value)';
 
- }
+}
 @immutable final class ReactionContent$plus1 extends ReactionContent {const ReactionContent$plus1._();
 
 @override String get value => '+1';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => '+1'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$minus1 extends ReactionContent {const ReactionContent$minus1._();
 
 @override String get value => '-1';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => '-1'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$laugh extends ReactionContent {const ReactionContent$laugh._();
 
 @override String get value => 'laugh';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => 'laugh'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$confused extends ReactionContent {const ReactionContent$confused._();
 
 @override String get value => 'confused';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => 'confused'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$heart extends ReactionContent {const ReactionContent$heart._();
 
 @override String get value => 'heart';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => 'heart'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$hooray extends ReactionContent {const ReactionContent$hooray._();
 
 @override String get value => 'hooray';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => 'hooray'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$rocket extends ReactionContent {const ReactionContent$rocket._();
 
 @override String get value => 'rocket';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => 'rocket'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$eyes extends ReactionContent {const ReactionContent$eyes._();
 
 @override String get value => 'eyes';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => 'eyes'.hashCode;
 
- }
+}
 @immutable final class ReactionContent$Unknown extends ReactionContent {const ReactionContent$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

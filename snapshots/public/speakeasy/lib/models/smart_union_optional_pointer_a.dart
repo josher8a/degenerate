@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionOptionalPointerA {const SmartUnionOptionalPointerA({this.foo});
 
-factory SmartUnionOptionalPointerA.fromJson(Map<String, dynamic> json) { return SmartUnionOptionalPointerA(
+factory SmartUnionOptionalPointerA.fromJson(Map<String, dynamic> json) {return SmartUnionOptionalPointerA(
   foo: json['foo'] as String?,
-); }
+);}
 
 final String? foo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'foo': ?foo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'foo'}.contains(key)); } 
-SmartUnionOptionalPointerA copyWith({String? Function()? foo}) { return SmartUnionOptionalPointerA(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'foo'}.contains(key));}
+SmartUnionOptionalPointerA copyWith({String? Function()? foo}) {return SmartUnionOptionalPointerA(
   foo: foo != null ? foo() : this.foo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionOptionalPointerA &&
           foo == other.foo;
@@ -24,4 +24,4 @@ SmartUnionOptionalPointerA copyWith({String? Function()? foo}) { return SmartUni
 
 @override String toString() => 'SmartUnionOptionalPointerA(foo: $foo)';
 
- }
+}

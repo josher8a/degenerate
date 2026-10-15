@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEmailRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description = const Omittable.absent(), });
 
-factory DlpEmailRule.fromJson(Map<String, dynamic> json) { return DlpEmailRule(
+factory DlpEmailRule.fromJson(Map<String, dynamic> json) {return DlpEmailRule(
   action: DlpEmailRuleAction.fromJson(json['action']),
   conditions: (json['conditions'] as List<dynamic>).map((e) => DlpEmailRuleCondition.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   priority: (json['priority'] as num).toInt(),
   ruleId: json['rule_id'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final DlpEmailRuleAction action;
 
@@ -22,7 +22,7 @@ final List<DlpEmailRuleCondition> conditions;
 
 final DateTime createdAt;
 
-final String? description;
+final Omittable<String?> description;
 
 final bool enabled;
 
@@ -34,40 +34,40 @@ final String ruleId;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'conditions': conditions.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'enabled': enabled,
   'name': name,
   'priority': priority,
   'rule_id': ruleId,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('conditions') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('priority') && json['priority'] is num &&
       json.containsKey('rule_id') && json['rule_id'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
+      json.containsKey('updated_at') && json['updated_at'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (priority < 0) { errors.add('priority: must be >= 0'); }
-return errors; } 
-DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, DateTime? createdAt, String? Function()? description, bool? enabled, String? name, int? priority, String? ruleId, DateTime? updatedAt, }) { return DlpEmailRule(
+return errors;}
+DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, DateTime? createdAt, Omittable<String?>? description, bool? enabled, String? name, int? priority, String? ruleId, DateTime? updatedAt, }) {return DlpEmailRule(
   action: action ?? this.action,
   conditions: conditions ?? this.conditions,
   createdAt: createdAt ?? this.createdAt,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   priority: priority ?? this.priority,
   ruleId: ruleId ?? this.ruleId,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEmailRule &&
           action == other.action &&
@@ -84,4 +84,4 @@ DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? 
 
 @override String toString() => 'DlpEmailRule(\n  action: $action,\n  conditions: $conditions,\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  name: $name,\n  priority: $priority,\n  ruleId: $ruleId,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

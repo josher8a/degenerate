@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentPagesCheckoutSessionShippingCost
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
-@immutable final class PaymentPagesCheckoutSessionShippingCost {const PaymentPagesCheckoutSessionShippingCost({required this.amountSubtotal, required this.amountTax, required this.amountTotal, this.shippingRate, this.taxes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionShippingCost {const PaymentPagesCheckoutSessionShippingCost({required this.amountSubtotal, required this.amountTax, required this.amountTotal, this.shippingRate = const Omittable.absent(), this.taxes, });
 
-factory PaymentPagesCheckoutSessionShippingCost.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingCost(
+factory PaymentPagesCheckoutSessionShippingCost.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionShippingCost(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  shippingRate: json['shipping_rate'] != null ? OneOf2.parse(json['shipping_rate'], fromA: (v) => v as String, fromB: (v) => ShippingRate.fromJson(v as Map<String, dynamic>),) : null,
+  shippingRate: json.containsKey('shipping_rate') ? Omittable(json['shipping_rate'] != null ? InvoicesResourceShippingCostShippingRate.fromJson(json['shipping_rate']) : null) : const Omittable.absent(),
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Total shipping cost before any discounts or taxes are applied.
 final int amountSubtotal;
@@ -22,28 +22,28 @@ final int amountTax;
 final int amountTotal;
 
 /// The ID of the ShippingRate for this order.
-final InvoicesResourceShippingCostShippingRate? shippingRate;
+final Omittable<InvoicesResourceShippingCostShippingRate?> shippingRate;
 
 /// The taxes applied to the shipping rate.
 final List<LineItemsTaxAmount>? taxes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_subtotal': amountSubtotal,
   'amount_tax': amountTax,
   'amount_total': amountTotal,
-  if (shippingRate != null) 'shipping_rate': shippingRate?.toJson(),
+  if (shippingRate.isPresent) 'shipping_rate': shippingRate.value?.toJson(),
   if (taxes != null) 'taxes': taxes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
-      json.containsKey('amount_total') && json['amount_total'] is num; } 
-PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, InvoicesResourceShippingCostShippingRate? Function()? shippingRate, List<LineItemsTaxAmount>? Function()? taxes, }) { return PaymentPagesCheckoutSessionShippingCost(
+      json.containsKey('amount_total') && json['amount_total'] is num;}
+PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, Omittable<InvoicesResourceShippingCostShippingRate?>? shippingRate, List<LineItemsTaxAmount>? Function()? taxes, }) {return PaymentPagesCheckoutSessionShippingCost(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTax: amountTax ?? this.amountTax,
   amountTotal: amountTotal ?? this.amountTotal,
-  shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
+  shippingRate: shippingRate ?? this.shippingRate,
   taxes: taxes != null ? taxes() : this.taxes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionShippingCost &&
           amountSubtotal == other.amountSubtotal &&
@@ -56,4 +56,4 @@ PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amou
 
 @override String toString() => 'PaymentPagesCheckoutSessionShippingCost(amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, shippingRate: $shippingRate, taxes: $taxes)';
 
- }
+}

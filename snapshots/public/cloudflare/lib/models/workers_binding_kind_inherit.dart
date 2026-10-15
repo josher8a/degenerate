@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersBindingKindInherit
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersBindingKindInherit {const WorkersBindingKindInherit({required this.name, required this.type, this.oldName, this.versionId = 'latest', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersBindingKindInherit {const WorkersBindingKindInherit({required this.name, required this.type, this.oldName, this.versionId, });
 
-factory WorkersBindingKindInherit.fromJson(Map<String, dynamic> json) { return WorkersBindingKindInherit(
+factory WorkersBindingKindInherit.fromJson(Map<String, dynamic> json) {return WorkersBindingKindInherit(
   name: json['name'] as String,
   oldName: json['old_name'] as String?,
   type: json['type'] as String,
-  versionId: json.containsKey('version_id') ? json['version_id'] as String : 'latest',
-); }
+  versionId: json['version_id'] as String?,
+);}
 
 /// The name of the inherited binding.
 /// 
@@ -26,22 +26,25 @@ final String type;
 /// Identifier for the version to inherit the binding from, which can be the version ID or the literal "latest" to inherit from the latest version. Defaults to inheriting the binding from the latest version.
 /// 
 /// Example: `'8969331f-7192-434c-9938-6aea24ed58bf'`
-final String versionId;
+final String? versionId;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `versionId`, or its schema default when absent.
+String get versionIdOrDefault => versionId ?? 'latest';
+
+Map<String, dynamic> toJson() {return {
   'name': name,
   'old_name': ?oldName,
   'type': type,
-  'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindInherit copyWith({String? name, String? Function()? oldName, String? type, String Function()? versionId, }) { return WorkersBindingKindInherit(
+  'version_id': ?versionId,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindInherit copyWith({String? name, String? Function()? oldName, String? type, String? Function()? versionId, }) {return WorkersBindingKindInherit(
   name: name ?? this.name,
   oldName: oldName != null ? oldName() : this.oldName,
   type: type ?? this.type,
   versionId: versionId != null ? versionId() : this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindInherit &&
           name == other.name &&
@@ -53,4 +56,4 @@ WorkersBindingKindInherit copyWith({String? name, String? Function()? oldName, S
 
 @override String toString() => 'WorkersBindingKindInherit(name: $name, oldName: $oldName, type: $type, versionId: $versionId)';
 
- }
+}

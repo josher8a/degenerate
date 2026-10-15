@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/static_chunking_strategy.dart';/// Customize your own chunking strategy by setting chunk size and chunk overlap.
 @immutable final class StaticChunkingStrategyRequestParam {const StaticChunkingStrategyRequestParam({required this.type, required this.$static, });
 
-factory StaticChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) { return StaticChunkingStrategyRequestParam(
+factory StaticChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) {return StaticChunkingStrategyRequestParam(
   type: json['type'] as String,
   $static: StaticChunkingStrategy.fromJson(json['static'] as Map<String, dynamic>),
-); }
+);}
 
 /// Always `static`.
 final String type;
 
 final StaticChunkingStrategy $static;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'static': $static.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('static'); } 
-StaticChunkingStrategyRequestParam copyWith({String? type, StaticChunkingStrategy? $static, }) { return StaticChunkingStrategyRequestParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('static');}
+StaticChunkingStrategyRequestParam copyWith({String? type, StaticChunkingStrategy? $static, }) {return StaticChunkingStrategyRequestParam(
   type: type ?? this.type,
   $static: $static ?? this.$static,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StaticChunkingStrategyRequestParam &&
           type == other.type &&
@@ -33,4 +33,4 @@ StaticChunkingStrategyRequestParam copyWith({String? type, StaticChunkingStrateg
 
 @override String toString() => 'StaticChunkingStrategyRequestParam(type: $type, \$static: ${$static})';
 
- }
+}

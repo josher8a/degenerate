@@ -26,7 +26,7 @@ final class CredentialsApi with ApiExecutor {const CredentialsApi(this.apiConfig
 /// > Any authenticated requests will return a 403.
 ///
 /// `POST /credentials/revoke`
-Future<ApiResult<Map<String, dynamic>, CredentialsRevokeError>> credentialsRevoke({required CredentialsRevokeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, CredentialsRevokeError>> credentialsRevoke({required CredentialsRevokeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -37,12 +37,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: CredentialsRevokeError.fromResponse,
 );
- } 
- }
+}
+}

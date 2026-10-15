@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of email addresses that can approve a temporary authentication request.
 @immutable final class AccessSchemasApprovalGroup {const AccessSchemasApprovalGroup({required this.approvalsNeeded, this.emailAddresses, this.emailListUuid, });
 
-factory AccessSchemasApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessSchemasApprovalGroup(
+factory AccessSchemasApprovalGroup.fromJson(Map<String, dynamic> json) {return AccessSchemasApprovalGroup(
   approvalsNeeded: (json['approvals_needed'] as num).toDouble(),
   emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e).toList(),
   emailListUuid: json['email_list_uuid'] as String?,
-); }
+);}
 
 /// The number of approvals needed to obtain access.
 /// 
@@ -23,21 +23,21 @@ final List<dynamic>? emailAddresses;
 /// The UUID of an re-usable email list.
 final String? emailListUuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'approvals_needed': approvalsNeeded,
   'email_addresses': ?emailAddresses,
   'email_list_uuid': ?emailListUuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('approvals_needed') && json['approvals_needed'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('approvals_needed') && json['approvals_needed'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (approvalsNeeded < 0) { errors.add('approvalsNeeded: must be >= 0'); }
-return errors; } 
-AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<dynamic>? Function()? emailAddresses, String? Function()? emailListUuid, }) { return AccessSchemasApprovalGroup(
+return errors;}
+AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<dynamic>? Function()? emailAddresses, String? Function()? emailListUuid, }) {return AccessSchemasApprovalGroup(
   approvalsNeeded: approvalsNeeded ?? this.approvalsNeeded,
   emailAddresses: emailAddresses != null ? emailAddresses() : this.emailAddresses,
   emailListUuid: emailListUuid != null ? emailListUuid() : this.emailListUuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasApprovalGroup &&
           approvalsNeeded == other.approvalsNeeded &&
@@ -48,4 +48,4 @@ AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<dynamic>? Fun
 
 @override String toString() => 'AccessSchemasApprovalGroup(approvalsNeeded: $approvalsNeeded, emailAddresses: $emailAddresses, emailListUuid: $emailListUuid)';
 
- }
+}

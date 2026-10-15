@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/name_collection_params/business.dart';import 'package:pub_stripe_spec3/models/name_collection_params/name_collection_params_individual.dart';@immutable final class NameCollectionParams {const NameCollectionParams({this.business, this.individual, });
 
-factory NameCollectionParams.fromJson(Map<String, dynamic> json) { return NameCollectionParams(
+factory NameCollectionParams.fromJson(Map<String, dynamic> json) {return NameCollectionParams(
   business: json['business'] != null ? Business.fromJson(json['business'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? NameCollectionParamsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Business? business;
 
 final NameCollectionParamsIndividual? individual;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-NameCollectionParams copyWith({Business? Function()? business, NameCollectionParamsIndividual? Function()? individual, }) { return NameCollectionParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business', 'individual'}.contains(key));}
+NameCollectionParams copyWith({Business? Function()? business, NameCollectionParamsIndividual? Function()? individual, }) {return NameCollectionParams(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NameCollectionParams &&
           business == other.business &&
@@ -30,4 +30,4 @@ NameCollectionParams copyWith({Business? Function()? business, NameCollectionPar
 
 @override String toString() => 'NameCollectionParams(business: $business, individual: $individual)';
 
- }
+}

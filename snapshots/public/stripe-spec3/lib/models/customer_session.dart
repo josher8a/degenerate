@@ -1,40 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomerSession
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CustomerSessionObject {const CustomerSessionObject();
 
-factory CustomerSessionObject.fromJson(String json) { return switch (json) {
+factory CustomerSessionObject.fromJson(String json) {return switch (json) {
   'customer_session' => customerSession,
   _ => CustomerSessionObject$Unknown(json),
-}; }
+};}
 
 static const CustomerSessionObject customerSession = CustomerSessionObject$customerSession._();
 
 static const List<CustomerSessionObject> values = [customerSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_session' => 'customerSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerSessionObject$Unknown; } 
+bool get isUnknown {return this is CustomerSessionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerSession, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerSessionObject$customerSession() => customerSession(),
       CustomerSessionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerSession, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerSessionObject$customerSession() => customerSession != null ? customerSession() : orElse(value),
       CustomerSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerSessionObject($value)';
 
- }
+}
 @immutable final class CustomerSessionObject$customerSession extends CustomerSessionObject {const CustomerSessionObject$customerSession._();
 
 @override String get value => 'customer_session';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_session'.hashCode;
 
- }
+}
 @immutable final class CustomerSessionObject$Unknown extends CustomerSessionObject {const CustomerSessionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,25 +53,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Customer Session allows you to grant Stripe's frontend SDKs (like Stripe.js) client-side access
 /// control over a Customer.
 /// 
 /// Related guides: [Customer Session with the Payment Element](/payments/accept-a-payment-deferred?platform=web&type=payment#save-payment-methods),
 /// [Customer Session with the Pricing Table](/payments/checkout/pricing-table#customer-session),
 /// [Customer Session with the Buy Button](/payment-links/buy-button#pass-an-existing-customer).
-@immutable final class CustomerSession {const CustomerSession({required this.clientSecret, required this.created, required this.customer, required this.expiresAt, required this.livemode, required this.object, this.components, this.customerAccount, });
+@immutable final class CustomerSession {const CustomerSession({required this.clientSecret, required this.created, required this.customer, required this.expiresAt, required this.livemode, required this.object, this.components, this.customerAccount = const Omittable.absent(), });
 
-factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSession(
+factory CustomerSession.fromJson(Map<String, dynamic> json) {return CustomerSession(
   clientSecret: json['client_secret'] as String,
   components: json['components'] != null ? CustomerSessionResourceComponents.fromJson(json['components'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
-  customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
+  customer: BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   expiresAt: (json['expires_at'] as num).toInt(),
   livemode: json['livemode'] as bool,
   object: CustomerSessionObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The client secret of this Customer Session. Used on the client to set up secure access to the given `customer`.
 /// 
@@ -87,7 +87,7 @@ final int created;
 final BankConnectionsResourceAccountholderCustomer customer;
 
 /// The Account that the Customer Session was created for.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The timestamp at which this Customer Session will expire.
 final int expiresAt;
@@ -98,40 +98,40 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final CustomerSessionObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': clientSecret,
   if (components != null) 'components': components?.toJson(),
   'created': created,
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'expires_at': expiresAt,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') && json['client_secret'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer') &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (clientSecret.runes.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
-final customerAccount$ = customerAccount;
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
+return errors;}
+CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, BankConnectionsResourceAccountholderCustomer? customer, Omittable<String?>? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) {return CustomerSession(
   clientSecret: clientSecret ?? this.clientSecret,
   components: components != null ? components() : this.components,
   created: created ?? this.created,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   expiresAt: expiresAt ?? this.expiresAt,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSession &&
           clientSecret == other.clientSecret &&
@@ -147,4 +147,4 @@ CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponent
 
 @override String toString() => 'CustomerSession(clientSecret: $clientSecret, components: $components, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, livemode: $livemode, object: $object)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/redirect_response.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/request_initiator.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/request_request.dart';@immutable final class DataRequestsRequest {const DataRequestsRequest({required this.documentUrl, required this.hasUserGesture, required this.initiator, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, this.frameId, this.loaderId, this.primaryRequest, this.redirectResponse, });
 
-factory DataRequestsRequest.fromJson(Map<String, dynamic> json) { return DataRequestsRequest(
+factory DataRequestsRequest.fromJson(Map<String, dynamic> json) {return DataRequestsRequest(
   documentUrl: json['documentURL'] as String,
   frameId: json['frameId'] as String?,
   hasUserGesture: json['hasUserGesture'] as bool,
@@ -16,7 +16,7 @@ factory DataRequestsRequest.fromJson(Map<String, dynamic> json) { return DataReq
   requestId: json['requestId'] as String,
   type: json['type'] as String,
   wallTime: (json['wallTime'] as num).toDouble(),
-); }
+);}
 
 final String documentUrl;
 
@@ -42,7 +42,7 @@ final String type;
 
 final double wallTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'documentURL': documentUrl,
   'frameId': ?frameId,
   'hasUserGesture': hasUserGesture,
@@ -55,16 +55,16 @@ Map<String, dynamic> toJson() { return {
   'requestId': requestId,
   'type': type,
   'wallTime': wallTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('documentURL') && json['documentURL'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('documentURL') && json['documentURL'] is String &&
       json.containsKey('hasUserGesture') && json['hasUserGesture'] is bool &&
       json.containsKey('initiator') &&
       json.containsKey('redirectHasExtraInfo') && json['redirectHasExtraInfo'] is bool &&
       json.containsKey('request') &&
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('wallTime') && json['wallTime'] is num; } 
-DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, bool? hasUserGesture, RequestInitiator? initiator, String? Function()? loaderId, bool? Function()? primaryRequest, bool? redirectHasExtraInfo, RedirectResponse? Function()? redirectResponse, RequestRequest? request, String? requestId, String? type, double? wallTime, }) { return DataRequestsRequest(
+      json.containsKey('wallTime') && json['wallTime'] is num;}
+DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, bool? hasUserGesture, RequestInitiator? initiator, String? Function()? loaderId, bool? Function()? primaryRequest, bool? redirectHasExtraInfo, RedirectResponse? Function()? redirectResponse, RequestRequest? request, String? requestId, String? type, double? wallTime, }) {return DataRequestsRequest(
   documentUrl: documentUrl ?? this.documentUrl,
   frameId: frameId != null ? frameId() : this.frameId,
   hasUserGesture: hasUserGesture ?? this.hasUserGesture,
@@ -77,7 +77,7 @@ DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, 
   requestId: requestId ?? this.requestId,
   type: type ?? this.type,
   wallTime: wallTime ?? this.wallTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DataRequestsRequest &&
           documentUrl == other.documentUrl &&
@@ -97,4 +97,4 @@ DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, 
 
 @override String toString() => 'DataRequestsRequest(\n  documentUrl: $documentUrl,\n  frameId: $frameId,\n  hasUserGesture: $hasUserGesture,\n  initiator: $initiator,\n  loaderId: $loaderId,\n  primaryRequest: $primaryRequest,\n  redirectHasExtraInfo: $redirectHasExtraInfo,\n  redirectResponse: $redirectResponse,\n  request: $request,\n  requestId: $requestId,\n  type: $type,\n  wallTime: $wallTime,\n)';
 
- }
+}

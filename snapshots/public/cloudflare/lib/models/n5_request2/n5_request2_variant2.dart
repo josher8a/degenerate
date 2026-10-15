@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n5_request2/n5_request2_variant2_requests.dart';@immutable final class $5Request2Variant2 {const $5Request2Variant2({required this.requests});
 
-factory $5Request2Variant2.fromJson(Map<String, dynamic> json) { return $5Request2Variant2(
+factory $5Request2Variant2.fromJson(Map<String, dynamic> json) {return $5Request2Variant2(
   requests: (json['requests'] as List<dynamic>).map((e) => $5Request2Variant2Requests.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Batch of the embeddings requests to run using async-queue
 final List<$5Request2Variant2Requests> requests;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requests': requests.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requests'); } 
-$5Request2Variant2 copyWith({List<$5Request2Variant2Requests>? requests}) { return $5Request2Variant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requests');}
+$5Request2Variant2 copyWith({List<$5Request2Variant2Requests>? requests}) {return $5Request2Variant2(
   requests: requests ?? this.requests,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is $5Request2Variant2 &&
           listEquals(requests, other.requests);
@@ -25,4 +25,4 @@ $5Request2Variant2 copyWith({List<$5Request2Variant2Requests>? requests}) { retu
 
 @override String toString() => '\$5Request2Variant2(requests: $requests)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FileInputDetail {const FileInputDetail();
 
-factory FileInputDetail.fromJson(String json) { return switch (json) {
+factory FileInputDetail.fromJson(String json) {return switch (json) {
   'low' => low,
   'high' => high,
   _ => FileInputDetail$Unknown(json),
-}; }
+};}
 
 static const FileInputDetail low = FileInputDetail$low._();
 
@@ -16,30 +16,30 @@ static const FileInputDetail high = FileInputDetail$high._();
 static const List<FileInputDetail> values = [low, high];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low' => 'low',
   'high' => 'high',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FileInputDetail$Unknown; } 
+bool get isUnknown {return this is FileInputDetail$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() high, required W Function(String value) $unknown, }) {return switch (this) {
       FileInputDetail$low() => low(),
       FileInputDetail$high() => high(),
       FileInputDetail$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? high, W Function(String value)? $unknown, }) {return switch (this) {
       FileInputDetail$low() => low != null ? low() : orElse(value),
       FileInputDetail$high() => high != null ? high() : orElse(value),
       FileInputDetail$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FileInputDetail($value)';
 
- }
+}
 @immutable final class FileInputDetail$low extends FileInputDetail {const FileInputDetail$low._();
 
 @override String get value => 'low';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class FileInputDetail$high extends FileInputDetail {const FileInputDetail$high._();
 
 @override String get value => 'high';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class FileInputDetail$Unknown extends FileInputDetail {const FileInputDetail$Unknown(this.value);
 
 @override final String value;
@@ -67,24 +67,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A file input to the model.
-@immutable final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
+@immutable final class InputFileContent {const InputFileContent({required this.type, this.fileId = const Omittable.absent(), this.filename, this.fileData, this.fileUrl, this.detail, });
 
-factory InputFileContent.fromJson(Map<String, dynamic> json) { return InputFileContent(
+factory InputFileContent.fromJson(Map<String, dynamic> json) {return InputFileContent(
   type: json['type'] as String,
-  fileId: json['file_id'] as String?,
+  fileId: json.containsKey('file_id') ? Omittable(json['file_id'] as String?) : const Omittable.absent(),
   filename: json['filename'] as String?,
   fileData: json['file_data'] as String?,
   fileUrl: json['file_url'] as String?,
   detail: json['detail'] != null ? FileInputDetail.fromJson(json['detail'] as String) : null,
-); }
+);}
 
 /// The type of the input item. Always `input_file`.
 final String type;
 
 /// The ID of the file to be sent to the model.
-final String? fileId;
+final Omittable<String?> fileId;
 
 /// The name of the file to be sent to the model.
 final String? filename;
@@ -99,23 +99,23 @@ final String? fileUrl;
 /// The detail level of the file to be sent to the model. One of `high` or `low`. Defaults to `high`.
 final FileInputDetail? detail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-  'file_id': ?fileId,
+  if (fileId.isPresent) 'file_id': fileId.value,
   'filename': ?filename,
   'file_data': ?fileData,
   'file_url': ?fileUrl,
   if (detail != null) 'detail': detail?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-InputFileContent copyWith({String? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputFileContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+InputFileContent copyWith({String? type, Omittable<String?>? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) {return InputFileContent(
   type: type ?? this.type,
-  fileId: fileId != null ? fileId() : this.fileId,
+  fileId: fileId ?? this.fileId,
   filename: filename != null ? filename() : this.filename,
   fileData: fileData != null ? fileData() : this.fileData,
   fileUrl: fileUrl != null ? fileUrl() : this.fileUrl,
   detail: detail != null ? detail() : this.detail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputFileContent &&
           type == other.type &&
@@ -129,4 +129,4 @@ InputFileContent copyWith({String? type, String? Function()? fileId, String? Fun
 
 @override String toString() => 'InputFileContent(type: $type, fileId: $fileId, filename: $filename, fileData: $fileData, fileUrl: $fileUrl, detail: $detail)';
 
- }
+}

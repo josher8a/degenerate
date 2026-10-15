@@ -2,14 +2,14 @@
 // Source: #/components/schemas/ResourceList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource.dart';/// APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.
-@immutable final class ResourceList {const ResourceList({required this.resources, this.apiVersion, this.groupVersion = '', this.kind, });
+@immutable final class ResourceList {const ResourceList({required this.groupVersion, required this.resources, this.apiVersion, this.kind, });
 
-factory ResourceList.fromJson(Map<String, dynamic> json) { return ResourceList(
+factory ResourceList.fromJson(Map<String, dynamic> json) {return ResourceList(
   apiVersion: json['apiVersion'] as String?,
   groupVersion: json['groupVersion'] as String,
   kind: json['kind'] as String?,
   resources: (json['resources'] as List<dynamic>).map((e) => Resource.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -23,20 +23,20 @@ final String? kind;
 /// resources contains the name of the resources and if they are namespaced.
 final List<Resource> resources;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'groupVersion': groupVersion,
   'kind': ?kind,
   'resources': resources.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('groupVersion') && json['groupVersion'] is String &&
-      json.containsKey('resources'); } 
-ResourceList copyWith({String? Function()? apiVersion, String? groupVersion, String? Function()? kind, List<Resource>? resources, }) { return ResourceList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('groupVersion') && json['groupVersion'] is String &&
+      json.containsKey('resources');}
+ResourceList copyWith({String? Function()? apiVersion, String? groupVersion, String? Function()? kind, List<Resource>? resources, }) {return ResourceList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   groupVersion: groupVersion ?? this.groupVersion,
   kind: kind != null ? kind() : this.kind,
   resources: resources ?? this.resources,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceList &&
           apiVersion == other.apiVersion &&
@@ -48,4 +48,4 @@ ResourceList copyWith({String? Function()? apiVersion, String? groupVersion, Str
 
 @override String toString() => 'ResourceList(apiVersion: $apiVersion, groupVersion: $groupVersion, kind: $kind, resources: $resources)';
 
- }
+}

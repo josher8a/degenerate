@@ -2,16 +2,16 @@
 // Source: #/components/schemas/AuthenticationToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/authentication_token/authentication_token_repository_selection.dart';import 'package:pub_github_rest_3_1/models/repository.dart';/// Authentication Token
-@immutable final class AuthenticationToken {const AuthenticationToken({required this.token, required this.expiresAt, this.permissions, this.repositories, this.singleFile, this.repositorySelection, });
+@immutable final class AuthenticationToken {const AuthenticationToken({required this.token, required this.expiresAt, this.permissions, this.repositories, this.singleFile = const Omittable.absent(), this.repositorySelection, });
 
-factory AuthenticationToken.fromJson(Map<String, dynamic> json) { return AuthenticationToken(
+factory AuthenticationToken.fromJson(Map<String, dynamic> json) {return AuthenticationToken(
   token: json['token'] as String,
   expiresAt: DateTime.parse(json['expires_at'] as String),
   permissions: json['permissions'] as Map<String, dynamic>?,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
-  singleFile: json['single_file'] as String?,
+  singleFile: json.containsKey('single_file') ? Omittable(json['single_file'] as String?) : const Omittable.absent(),
   repositorySelection: json['repository_selection'] != null ? AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String) : null,
-); }
+);}
 
 /// The token used for authentication
 final String token;
@@ -24,29 +24,29 @@ final Map<String,dynamic>? permissions;
 /// The repositories this token has access to
 final List<Repository>? repositories;
 
-final String? singleFile;
+final Omittable<String?> singleFile;
 
 /// Describe whether all repositories have been selected or there's a selection involved
 final AuthenticationTokenRepositorySelection? repositorySelection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': token,
   'expires_at': expiresAt.toIso8601String(),
   'permissions': ?permissions,
   if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
-  'single_file': ?singleFile,
+  if (singleFile.isPresent) 'single_file': singleFile.value,
   if (repositorySelection != null) 'repository_selection': repositorySelection?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String; } 
-AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dynamic>? Function()? permissions, List<Repository>? Function()? repositories, String? Function()? singleFile, AuthenticationTokenRepositorySelection? Function()? repositorySelection, }) { return AuthenticationToken(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token') && json['token'] is String &&
+      json.containsKey('expires_at') && json['expires_at'] is String;}
+AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dynamic>? Function()? permissions, List<Repository>? Function()? repositories, Omittable<String?>? singleFile, AuthenticationTokenRepositorySelection? Function()? repositorySelection, }) {return AuthenticationToken(
   token: token ?? this.token,
   expiresAt: expiresAt ?? this.expiresAt,
   permissions: permissions != null ? permissions() : this.permissions,
   repositories: repositories != null ? repositories() : this.repositories,
-  singleFile: singleFile != null ? singleFile() : this.singleFile,
+  singleFile: singleFile ?? this.singleFile,
   repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AuthenticationToken &&
           token == other.token &&
@@ -60,4 +60,4 @@ AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dy
 
 @override String toString() => 'AuthenticationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositories: $repositories, singleFile: $singleFile, repositorySelection: $repositorySelection)';
 
- }
+}

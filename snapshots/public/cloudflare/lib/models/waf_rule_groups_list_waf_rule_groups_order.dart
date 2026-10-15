@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rule groups.
 sealed class WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder();
 
-factory WafRuleGroupsListWafRuleGroupsOrder.fromJson(String json) { return switch (json) {
+factory WafRuleGroupsListWafRuleGroupsOrder.fromJson(String json) {return switch (json) {
   'mode' => mode,
   'rules_count' => rulesCount,
   _ => WafRuleGroupsListWafRuleGroupsOrder$Unknown(json),
-}; }
+};}
 
 static const WafRuleGroupsListWafRuleGroupsOrder mode = WafRuleGroupsListWafRuleGroupsOrder$mode._();
 
@@ -17,30 +17,30 @@ static const WafRuleGroupsListWafRuleGroupsOrder rulesCount = WafRuleGroupsListW
 static const List<WafRuleGroupsListWafRuleGroupsOrder> values = [mode, rulesCount];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mode' => 'mode',
   'rules_count' => 'rulesCount',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WafRuleGroupsListWafRuleGroupsOrder$Unknown; } 
+bool get isUnknown {return this is WafRuleGroupsListWafRuleGroupsOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mode, required W Function() rulesCount, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mode, required W Function() rulesCount, required W Function(String value) $unknown, }) {return switch (this) {
       WafRuleGroupsListWafRuleGroupsOrder$mode() => mode(),
       WafRuleGroupsListWafRuleGroupsOrder$rulesCount() => rulesCount(),
       WafRuleGroupsListWafRuleGroupsOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mode, W Function()? rulesCount, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mode, W Function()? rulesCount, W Function(String value)? $unknown, }) {return switch (this) {
       WafRuleGroupsListWafRuleGroupsOrder$mode() => mode != null ? mode() : orElse(value),
       WafRuleGroupsListWafRuleGroupsOrder$rulesCount() => rulesCount != null ? rulesCount() : orElse(value),
       WafRuleGroupsListWafRuleGroupsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WafRuleGroupsListWafRuleGroupsOrder($value)';
 
- }
+}
 @immutable final class WafRuleGroupsListWafRuleGroupsOrder$mode extends WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder$mode._();
 
 @override String get value => 'mode';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mode, W 
 
 @override int get hashCode => 'mode'.hashCode;
 
- }
+}
 @immutable final class WafRuleGroupsListWafRuleGroupsOrder$rulesCount extends WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder$rulesCount._();
 
 @override String get value => 'rules_count';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mode, W 
 
 @override int get hashCode => 'rules_count'.hashCode;
 
- }
+}
 @immutable final class WafRuleGroupsListWafRuleGroupsOrder$Unknown extends WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mode, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

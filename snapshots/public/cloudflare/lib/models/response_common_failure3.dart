@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/response_common_failure3/response_common_failure3_messages.dart';@immutable final class ResponseCommonFailure3 {const ResponseCommonFailure3({required this.errors, required this.success, this.messages, });
 
-factory ResponseCommonFailure3.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure3(
+factory ResponseCommonFailure3.fromJson(Map<String, dynamic> json) {return ResponseCommonFailure3(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => ResponseCommonFailure3Messages.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 /// A list of error messages.
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
@@ -20,18 +20,18 @@ final List<ResponseCommonFailure3Messages>? messages;
 /// Example: `false`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure3 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<ResponseCommonFailure3Messages>? Function()? messages, bool? success, }) { return ResponseCommonFailure3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommonFailure3 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<ResponseCommonFailure3Messages>? Function()? messages, bool? success, }) {return ResponseCommonFailure3(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure3 &&
           listEquals(errors, other.errors) &&
@@ -42,4 +42,4 @@ ResponseCommonFailure3 copyWith({List<AiSearchInstanceChangeJobStatusResponse400
 
 @override String toString() => 'ResponseCommonFailure3(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

@@ -2,6 +2,7 @@ import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
@@ -19,10 +20,11 @@ final class DiscriminatedUnionEmitter {
   final EmitContext ctx;
 
   /// The Dart getter name for the discriminator property.
-  String get _discDartName => toCamelCase(union.discriminatorProperty);
+  String get _discDartName =>
+      union.discriminatorProperty.toIdentifier(toCamelCase);
 
   /// The original JSON key for the discriminator property.
-  String get _discJsonKey => union.discriminatorProperty;
+  SpecString get _discJsonKey => union.discriminatorProperty;
 
   /// The resolved Dart type for the discriminator getter. When every variant
   /// declares the discriminator field as the same enum or extension type, the
@@ -40,9 +42,11 @@ final class DiscriminatedUnionEmitter {
   /// enum under the natural name, the names no longer compare equal, so the
   /// getter reuses the spec enum instead of re-declaring it.
   String get _syntheticDiscEnumName {
-    final natural = '${union.name}${toPascalCase(union.discriminatorProperty)}';
+    final natural = union.discriminatorProperty.toIdentifier(
+      (p) => '${union.name}${toPascalCase(p)}',
+    );
     final variantNames = union.mapping.keys.map(
-      (k) => variantClassName(union.name, k),
+      (k) => k.toIdentifier((v) => variantClassName(union.name, v)),
     );
     if (variantNames.contains(natural) ||
         ctx.typeRegistry.containsKey(natural)) {
@@ -159,15 +163,29 @@ final class DiscriminatedUnionEmitter {
 
   /// Fields shared by every variant, hoisted onto the sealed base as nullable
   /// getters so common data can be read without pattern-matching.
-  List<IrField> get commonFields => _meta.commonFields;
+  ///
+  /// A field presence-wrapped in any variant is not hoisted: its Dart type
+  /// there is `Omittable<T?>`, which can't override a plain `T?` getter.
+  List<IrField> get commonFields => [
+    for (final f in _meta.commonFields)
+      if (!_meta.variants.values.any(
+        (v) => v.payloadFields.any((p) => p.name == f.name && ctx.isOmittable(p)),
+      ))
+        f,
+  ];
 
   /// Abstract getter on the base for a hoisted common field. Non-null when the
   /// field is required in every variant.
+  ///
+  /// Nullable as well when some variant's whole payload may be null.
   Method _baseCommonGetter(IrField f) => Method(
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
-      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..returns = irTypeToReference(
+        f.type,
+        forceNullable: !f.isRequired || _anyNullablePayload,
+      )
       ..docs.add('/// Shared by all variants of this union.'),
   );
 
@@ -214,87 +232,101 @@ final class DiscriminatedUnionEmitter {
 
   /// Override getter for a hoisted field on a variant whose payload exposes it
   /// directly (a `$ref` wrapper field).
-  Method _forwardCommonGetter(IrField f, String payloadField) => Method(
+  ///
+  /// The base getter exposes the plain value, so a payload field the model
+  /// presence-wraps ([payloadOmittable]) forwards its `.value`.
+  Method _forwardCommonGetter(
+    IrField f,
+    String payloadField, {
+    required bool payloadOmittable,
+    required bool payloadNullable,
+  }) => Method(
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
       ..lambda = true
       ..annotations.add(refer('override'))
-      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
-      ..body = Code('$payloadField.${f.name}'),
+      ..returns = irTypeToReference(
+        f.type,
+        forceNullable: !f.isRequired || _anyNullablePayload,
+      )
+      ..body = Code(
+        '$payloadField${payloadNullable ? '?' : ''}.${f.name}'
+        '${payloadOmittable ? '.value' : ''}',
+      ),
   );
+
+  /// Whether some `$ref` variant's payload type is nullable (a `nullable`
+  /// variant schema), so hoisted getters may have no payload to read.
+  bool get _anyNullablePayload =>
+      union.mapping.values.any((v) => v is IrTypeRef && v.isNullable);
 
   /// Class name for a variant, disambiguated when it would collide with an
   /// existing schema.
-  String _variantClassName(String discValue) {
-    final name = variantClassName(union.name, discValue);
+  String _variantClassName(SpecString discValue) {
+    final name = discValue.toIdentifier((v) => variantClassName(union.name, v));
     return ctx.typeRegistry.containsKey(name) ? '$name\$Variant' : name;
   }
 
   /// Named-constructor name for a variant (e.g. `DOG` → `dog`).
-  String _variantCtorName(String discValue) {
-    final camel = toCamelCase(discValue);
-    return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
-  }
+  String _variantCtorName(SpecString discValue) =>
+      discValue.toIdentifier((v) {
+        final camel = toCamelCase(v);
+        return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
+      });
 
   /// Look up the [VariantInfo] for a discriminator value, falling back to
   /// an unresolved default when metadata is absent.
-  VariantInfo _variantInfo(String discValue) =>
+  VariantInfo _variantInfo(SpecString discValue) =>
       _meta.variants[discValue] ??
       VariantInfo(
         resolvedType: union.mapping[discValue] ?? const IrTypeRef(''),
         isSpreadable: false,
       );
 
-  List<IrField> _variantPayloadFields(String discValue) =>
+  List<IrField> _variantPayloadFields(SpecString discValue) =>
       _variantInfo(discValue).payloadFields;
 
   /// The Dart expression for the discriminator value on the union's getter.
   /// Always returns the union-level disc type (synthetic or spec-defined).
-  String _discValueExpr(String discValue) {
+  String _discValueExpr(SpecString discValue) {
     final typeName = _discTypeName;
-    return '$typeName.fromJson(${dartStringLiteral(discValue)})';
+    return '$typeName.fromJson(${discValue.literal})';
   }
 
   /// The Dart expression for the discriminator value in the payload's native
   /// type. Used when constructing the inner payload object, whose disc field
   /// may be a plain `String`, an enum, or an extension type.
-  String _rawDiscValueExpr(String discValue) {
+  String _rawDiscValueExpr(SpecString discValue) {
     final discFieldType = _variantInfo(discValue).discFieldType;
-    if (discFieldType == null) return dartStringLiteral(discValue);
+    if (discFieldType == null) return discValue.literal;
     final t = ctx.resolve(discFieldType);
     return switch (t) {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
-        '$name.fromJson(${dartStringLiteral(discValue)})',
+        '$name.fromJson(${discValue.literal})',
+      // An int/num enum's fromJson takes the number, not its spelling.
+      IrEnum(:final name) =>
+        '$name.fromJson(${discValue.scalarLiteral ?? discValue.literal})',
       IrExtensionType(:final name, :final inner)
           when inner.kind == PrimitiveKind.string =>
-        '$name.fromJson(${dartStringLiteral(discValue)})',
-      _ when isNonStringPrimitiveDisc(t) => discValue,
-      _ => dartStringLiteral(discValue),
+        '$name.fromJson(${discValue.literal})',
+      _ when isNonStringPrimitiveDisc(t) =>
+        discValue.scalarLiteral ?? discValue.literal,
+      _ => discValue.literal,
     };
-  }
-
-  Method _buildObjectVariantCopyWith(String className, List<IrField> fields) {
-    final assignments = fields.map(copyWithAssignment).join('\n');
-    final constPrefix = fields.isEmpty ? 'const ' : '';
-    return Method(
-      (m) => m
-        ..name = 'copyWith'
-        ..returns = refer(className)
-        ..optionalParameters.addAll(fields.map(copyWithParam))
-        ..body = Code('return $constPrefix$className(\n$assignments\n);'),
-    );
   }
 
   Method _buildRefVariantCopyWith(
     String className,
     String fieldName,
-    String discValue,
+    SpecString discValue,
     IrType type,
   ) {
     final payloadFields = _variantPayloadFields(discValue);
-    if (payloadFields.isEmpty) {
+    // A nullable payload can't forward to its own copyWith (it may be null),
+    // so, like a field-less payload, it is replaced wholesale.
+    if (payloadFields.isEmpty || type.isNullable) {
       return Method(
         (m) => m
           ..name = 'copyWith'
@@ -320,14 +352,19 @@ final class DiscriminatedUnionEmitter {
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(className)
-        ..optionalParameters.addAll(payloadFields.map(copyWithParam))
+        // The payload model's own copyWith shape, presence wrappers included.
+        ..optionalParameters.addAll(
+          payloadFields.map(
+            (f) => copyWithParam(f, omittable: ctx.isOmittable(f)),
+          ),
+        )
         ..body = Code(
           'return $className($receiver.copyWith(\n$forwards\n));',
         ),
     );
   }
 
-  Constructor? _buildVariantFactory(String discValue, IrType variantType) {
+  Constructor? _buildVariantFactory(SpecString discValue, IrType variantType) {
     final info = _variantInfo(discValue);
     final fields = info.payloadFields;
     if (fields.isEmpty && variantType is! IrObject) return null;
@@ -338,10 +375,22 @@ final class DiscriminatedUnionEmitter {
     final String body;
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
-      final discArg = info.discFieldType != null &&
-              info.discDefault != discValue
-          ? '$_discDartName: ${_rawDiscValueExpr(discValue)}'
-          : null;
+      // The payload model presence-wraps an optional nullable discriminator
+      // field, so its constructor takes Omittable(value).
+      final discField = switch (info.resolvedType) {
+        IrObject(:final fields) => fields
+            .where((f) => f.originalName == union.discriminatorProperty)
+            .firstOrNull,
+        _ => null,
+      };
+      final rawDisc = _rawDiscValueExpr(discValue);
+      final discExpr = discField != null && ctx.isOmittable(discField)
+          ? 'Omittable($rawDisc)'
+          : rawDisc;
+      // Always pass the discriminator: a payload default is not serialized
+      // when absent, so omitting it would make the variant undispatchable.
+      final discArg =
+          info.discFieldType != null ? '$_discDartName: $discExpr' : null;
       final parts = [
         ?discArg,
         ...args,
@@ -355,24 +404,30 @@ final class DiscriminatedUnionEmitter {
       (c) => c
         ..name = _variantCtorName(discValue)
         ..factory = true
-        ..docs.add('/// Build the `$discValue` variant.')
+        ..docs.add('/// Build the `${discValue.commentText}` variant.')
         ..optionalParameters.addAll(
           (fields.toList()..sort((a, b) {
             final aReq = fieldIsRequiredInCtor(a) ? 0 : 1;
             final bReq = fieldIsRequiredInCtor(b) ? 0 : 1;
             return aReq.compareTo(bReq);
           })).map(
-            (f) => Parameter(
-              (p) => p
-                ..name = f.name
-                ..named = true
-                ..required = fieldIsRequiredInCtor(f)
-                ..type = irTypeToReference(
-                  f.type,
-                  forceNullable: !f.isRequired && !fieldHasDefault(f),
-                )
-                ..defaultTo = fieldDefaultCode(f),
-            ),
+            (f) {
+              // A $ref payload is a model whose constructor presence-wraps
+              // these fields; inline variant fields stay plain.
+              final wrapped = variantType is IrTypeRef && ctx.isOmittable(f);
+              return Parameter(
+                (p) => p
+                  ..name = f.name
+                  ..named = true
+                  ..required = fieldIsRequiredInCtor(f)
+                  ..type = wrapped
+                      ? omittableTypeRef(f)
+                      : irTypeToReference(f.type, forceNullable: !f.isRequired)
+                  ..defaultTo = wrapped
+                      ? const Code('const Omittable.absent()')
+                      : null,
+              );
+            },
           ),
         )
         ..body = Code(body),
@@ -383,7 +438,7 @@ final class DiscriminatedUnionEmitter {
     final cases = union.mapping.entries
         .map((e) {
           final className = _variantClassName(e.key);
-          return '  ${dartStringLiteral(e.key)} => $className.fromJson(json),';
+          return '  ${e.key.literal} => $className.fromJson(json),';
         })
         .join('\n');
 
@@ -399,10 +454,10 @@ final class DiscriminatedUnionEmitter {
           ),
         )
         ..docs.add(
-          '/// Deserialize from JSON, dispatching on the `$_discJsonKey` discriminator.',
+          '/// Deserialize from JSON, dispatching on the `${_discJsonKey.commentText}` discriminator.',
         )
         ..body = Code(
-          'return switch (json[${dartStringLiteral(_discJsonKey)}]) {\n'
+          'return switch (json[${_discJsonKey.literal}]) {\n'
           '$cases\n'
           '  _ => $unknownClassName(json),\n'
           '};',
@@ -448,7 +503,7 @@ final class DiscriminatedUnionEmitter {
           Method(
             (m) {
               final body =
-                  "$_discTypeName.fromJson(json[${dartStringLiteral(_discJsonKey)}] as String? ?? '')";
+                  "$_discTypeName.fromJson(json[${_discJsonKey.literal}] as String? ?? '')";
               m
                 ..name = _discDartName
                 ..type = MethodType.getter
@@ -492,7 +547,7 @@ final class DiscriminatedUnionEmitter {
       ..modifier = FieldModifier.final$
       ..type = irTypeToReference(f.type, forceNullable: !f.isRequired)
       ..assignment = Code(
-        ctx.fromJson(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
+        ctx.fromJson(f.type, 'json[${f.originalName.literal}]', isOptional: !f.isRequired),
       ),
   );
 
@@ -506,7 +561,7 @@ final class DiscriminatedUnionEmitter {
       ..body = Code('_${f.name}'),
   );
 
-  List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
+  List<Spec> _buildVariant(SpecString discriminatorValue, IrType variantType) {
     final className = _variantClassName(discriminatorValue);
     if (variantType is IrObject) {
       return [_buildObjectVariant(className, discriminatorValue, variantType)];
@@ -514,104 +569,49 @@ final class DiscriminatedUnionEmitter {
     return [_buildRefVariant(className, discriminatorValue, variantType)];
   }
 
-  Class _buildObjectVariant(String className, String discValue, IrObject obj) {
-    final fields = obj.fields
-        .where((f) => f.originalName != _discJsonKey)
-        .toList();
+  /// An inline object variant: the variant's own model (via [ModelEmitter],
+  /// so presence, defaults, overflow, canParse and validate match standalone
+  /// models) re-parented under the union, with the discriminator getter and
+  /// wire key added.
+  Class _buildObjectVariant(String className, SpecString discValue, IrObject obj) {
+    final model = IrObject(
+      className,
+      obj.fields.where((f) => f.originalName != _discJsonKey).toList(),
+      additionalProperties: obj.additionalProperties,
+      description: obj.description,
+    );
+    final declaration = ModelEmitter(
+      model,
+      ctx: ctx,
+      ignoredJsonKeys: [_discJsonKey],
+      trailingJsonEntries: [
+        '  ${_discJsonKey.literal}: $_discDartName.toJson(),',
+      ],
+    ).emit().single as Class;
 
     final commonNames = commonFields.map((f) => f.name).toSet();
-    final fieldDecls = fields.map(
-      (f) => Field(
-        (b) => b
-          ..name = f.name
-          ..modifier = FieldModifier.final$
-          ..annotations.addAll(
-            commonNames.contains(f.name) ? [refer('override')] : const [],
-          )
-          ..type = irTypeToReference(f.type, forceNullable: !f.isRequired),
-      ),
-    );
-
-    final ctorParams = fields.map(
-      (f) => Parameter(
-        (p) => p
-          ..name = f.name
-          ..named = true
-          ..toThis = true
-          ..required = f.isRequired,
-      ),
-    );
-
-    final fromJsonArgs = fields
-        .map((f) {
-          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
-          final isOptional = fieldIsNullableInDart(f);
-          return '  ${f.name}: ${ctx.fromJson(f.type, accessor, isOptional: isOptional)},';
-        })
-        .join('\n');
-
-    final discToJson = '$_discDartName.toJson()';
-    final toJsonEntries = <String>[
-      '  ${dartStringLiteral(_discJsonKey)}: $discToJson,',
-      ...fields.map(
-        (f) => toJsonEntry(f, dartStringLiteral(f.originalName), isNullable: fieldIsNullableInDart(f)),
-      ),
-    ];
-
-    final eqComparisons = fields
-        .map(
-          (f) => equalsComparison(
-            f,
-            self: f.name == 'other' ? 'this.${f.name}' : null,
-          ),
-        )
-        .join(' && ');
-    final eqBody = eqComparisons.isEmpty
-        ? 'identical(this, other) || other is $className'
-        : 'identical(this, other) ||\n      other is $className && $eqComparisons';
-
-    final hashFields = fields
-        .map(
-          (f) =>
-              hashCodeExpr(f, isNullable: !f.isRequired || f.type.isNullable),
-        )
-        .join(', ');
-    final hashBody = hashFields.isEmpty
-        ? 'runtimeType.hashCode'
-        : 'Object.hash(runtimeType, $hashFields)';
-
-    final toStrFields = fields.map(toStringField).join(', ');
-
-    return Class(
+    final toStrFields = model.fields.map(toStringField).join(', ');
+    return declaration.rebuild(
       (b) => b
-        ..name = className
-        ..modifier = ClassModifier.final$
-        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..constructors.add(
-          Constructor(
-            (c) => c
-              ..constant = true
-              ..optionalParameters.addAll(ctorParams),
-          ),
-        )
-        ..constructors.add(
-          Constructor(
-            (c) => c
-              ..name = 'fromJson'
-              ..factory = true
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'json'
-                    ..type = refer('Map<String, dynamic>'),
-                ),
-              )
-              ..body = Code('return $className(\n$fromJsonArgs\n);'),
-          ),
-        )
-        ..fields.addAll(fieldDecls)
-        ..methods.add(
+        ..fields.clear()
+        ..fields.addAll([
+          for (final f in declaration.fields)
+            commonNames.contains(f.name)
+                ? f.rebuild((x) => x.annotations.add(refer('override')))
+                : f,
+        ])
+        ..methods.clear()
+        ..methods.addAll([
+          for (final m in declaration.methods)
+            switch (m.name) {
+              'toJson' => m.rebuild((x) => x.annotations.add(refer('override'))),
+              // Keep the union-qualified form (`Union.variant(...)`).
+              'toString' => buildToStringOverride(
+                "'${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)'",
+              ),
+              _ => m,
+            },
           Method(
             (m) => m
               ..name = _discDartName
@@ -621,42 +621,37 @@ final class DiscriminatedUnionEmitter {
               ..returns = _discReturnType
               ..body = Code(_discValueExpr(discValue)),
           ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'toJson'
-              ..annotations.add(refer('override'))
-              ..returns = refer('Map<String, dynamic>')
-              ..lambda = true
-              ..body = Code('{\n${toJsonEntries.join('\n')}\n}'),
-          ),
-        )
-        ..methods.add(_buildObjectVariantCopyWith(className, fields))
-        ..methods.add(buildEqualsOverride(eqBody))
-        ..methods.add(buildHashCodeOverride(hashBody))
-        ..methods.add(
-          buildToStringOverride(
-            "'${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)'",
-          ),
-        ),
+        ]),
     );
   }
 
+
   String _refVariantToJsonBody(
-    String discValue,
+    SpecString discValue,
     IrType type,
     String fieldName,
   ) {
-    final toJsonExpr = buildToJsonCode(type, fieldName);
+    // A nullable payload (e.g. a `nullable: true` variant schema) must not be
+    // dereferenced; a null payload contributes only the discriminator.
+    final toJsonExpr = buildToJsonCode(
+      type,
+      fieldName,
+      nullable: type.isNullable,
+    );
     final discToJson = '$_discDartName.toJson()';
     if (_variantInfo(discValue).isSpreadable) {
-      return '{...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $discToJson}';
+      final spread = type.isNullable ? '...?' : '...';
+      // A lossless anyOf serializes to `Object?`; the discriminator says the
+      // payload is an object, so its map is spread.
+      final payload = ctx.resolve(type) is IrAnyOf
+          ? '($toJsonExpr as Map<String, dynamic>${type.isNullable ? '?' : ''})'
+          : toJsonExpr;
+      return '{$spread$payload, ${_discJsonKey.literal}: $discToJson}';
     }
-    return '{${dartStringLiteral(_discJsonKey)}: $discToJson, ${dartStringLiteral('data')}: $toJsonExpr}';
+    return '{${_discJsonKey.literal}: $discToJson, ${dartStringLiteral('data')}: $toJsonExpr}';
   }
 
-  Class _buildRefVariant(String className, String discValue, IrType type) {
+  Class _buildRefVariant(String className, SpecString discValue, IrType type) {
     final typeName = irTypeName(type);
     final safeType = safeTypeName(typeName);
     final fieldName = sanitizeFieldName(toCamelCase(safeType));
@@ -748,7 +743,16 @@ final class DiscriminatedUnionEmitter {
           );
         }())
         ..methods.addAll(
-          commonFields.map((f) => _forwardCommonGetter(f, fieldName)),
+          commonFields.map(
+            (f) => _forwardCommonGetter(
+              f,
+              fieldName,
+              payloadOmittable: _variantPayloadFields(discValue).any(
+                (p) => p.name == f.name && ctx.isOmittable(p),
+              ),
+              payloadNullable: type.isNullable,
+            ),
+          ),
         ),
     );
   }
@@ -777,7 +781,7 @@ final class DiscriminatedUnionEmitter {
     final valuesList = <String>[];
 
     for (final dv in discValues) {
-      final subclassName = '$enumName\$${toCamelCase(dv)}';
+      final subclassName = dv.toIdentifier((v) => '$enumName\$${toCamelCase(v)}');
       // Escape names that collide with the enum's own API surface — a static
       // const `json` would be shadowed by the `fromJson(String json)`
       // parameter, and `value`/`values` collide with members.
@@ -793,7 +797,7 @@ final class DiscriminatedUnionEmitter {
           ..type = refer(enumName)
           ..assignment = Code('$subclassName._()'),
       ));
-      fromJsonCases.add('  ${dartStringLiteral(dv)} => $fieldName,');
+      fromJsonCases.add('  ${dv.literal} => $fieldName,');
       valuesList.add(fieldName);
     }
 
@@ -852,7 +856,7 @@ final class DiscriminatedUnionEmitter {
 
     // Known subclasses
     for (final dv in discValues) {
-      final subclassName = '$enumName\$${toCamelCase(dv)}';
+      final subclassName = dv.toIdentifier((v) => '$enumName\$${toCamelCase(v)}');
       specs.add(Class(
         (b) => b
           ..name = subclassName
@@ -871,16 +875,16 @@ final class DiscriminatedUnionEmitter {
               ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code(dartStringLiteral(dv)),
+              ..body = Code(dv.literal),
           ))
           ..methods.add(buildEqualsOverride(
             'identical(this, other) || other is $subclassName',
           ))
           ..methods.add(
-            buildHashCodeOverride('${dartStringLiteral(dv)}.hashCode'),
+            buildHashCodeOverride('${dv.literal}.hashCode'),
           )
           ..methods.add(buildToStringOverride(
-            "'${escapeNameForString(enumName)}(${escapeDartString(dv)})'",
+            "'${escapeNameForString(enumName)}(${dv.escaped})'",
           )),
       ));
     }

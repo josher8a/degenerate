@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/campaigns_get_campaign_summary_response503.dart';sealed class CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError();
 
-factory CampaignsGetCampaignSummaryError.fromResponse(ApiResponse response) {     try {
+factory CampaignsGetCampaignSummaryError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         404 => CampaignsGetCampaignSummaryError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         422 => CampaignsGetCampaignSummaryError$422(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -11,12 +11,12 @@ factory CampaignsGetCampaignSummaryError.fromResponse(ApiResponse response) {   
       };
     } on Object {
       return CampaignsGetCampaignSummaryError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class CampaignsGetCampaignSummaryError$404 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$404(this.error);
 
 final BasicError error;
@@ -25,7 +25,7 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class CampaignsGetCampaignSummaryError$422 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$422(this.error);
 
 final BasicError error;
@@ -34,7 +34,7 @@ final BasicError error;
 
 @override int get statusCode => 422;
 
- }
+}
 final class CampaignsGetCampaignSummaryError$503 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$503(this.error);
 
 final CampaignsGetCampaignSummaryResponse503 error;
@@ -43,11 +43,11 @@ final CampaignsGetCampaignSummaryResponse503 error;
 
 @override int get statusCode => 503;
 
- }
+}
 final class CampaignsGetCampaignSummaryError$Unknown extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

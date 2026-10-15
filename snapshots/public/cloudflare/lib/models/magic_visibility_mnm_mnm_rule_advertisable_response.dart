@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';@immutable final class MagicVisibilityMnmMnmRuleAdvertisableResponse {const MagicVisibilityMnmMnmRuleAdvertisableResponse({required this.automaticAdvertisement});
 
-factory MagicVisibilityMnmMnmRuleAdvertisableResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRuleAdvertisableResponse(
+factory MagicVisibilityMnmMnmRuleAdvertisableResponse.fromJson(Map<String, dynamic> json) {return MagicVisibilityMnmMnmRuleAdvertisableResponse(
   automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
-); }
+);}
 
 final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_advertisement': automaticAdvertisement?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_advertisement'); } 
-MagicVisibilityMnmMnmRuleAdvertisableResponse copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement}) { return MagicVisibilityMnmMnmRuleAdvertisableResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_advertisement');}
+MagicVisibilityMnmMnmRuleAdvertisableResponse copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement}) {return MagicVisibilityMnmMnmRuleAdvertisableResponse(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmRuleAdvertisableResponse &&
           automaticAdvertisement == other.automaticAdvertisement;
@@ -24,4 +24,4 @@ MagicVisibilityMnmMnmRuleAdvertisableResponse copyWith({MagicVisibilityMnmMnmRul
 
 @override String toString() => 'MagicVisibilityMnmMnmRuleAdvertisableResponse(automaticAdvertisement: $automaticAdvertisement)';
 
- }
+}

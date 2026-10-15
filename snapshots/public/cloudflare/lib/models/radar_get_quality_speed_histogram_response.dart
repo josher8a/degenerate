@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_response/radar_get_quality_speed_histogram_response_result.dart';@immutable final class RadarGetQualitySpeedHistogramResponse {const RadarGetQualitySpeedHistogramResponse({required this.result, required this.success, });
 
-factory RadarGetQualitySpeedHistogramResponse.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedHistogramResponse(
+factory RadarGetQualitySpeedHistogramResponse.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedHistogramResponse(
   result: RadarGetQualitySpeedHistogramResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetQualitySpeedHistogramResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetQualitySpeedHistogramResponse copyWith({RadarGetQualitySpeedHistogramResponseResult? result, bool? success, }) { return RadarGetQualitySpeedHistogramResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetQualitySpeedHistogramResponse copyWith({RadarGetQualitySpeedHistogramResponseResult? result, bool? success, }) {return RadarGetQualitySpeedHistogramResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedHistogramResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetQualitySpeedHistogramResponse copyWith({RadarGetQualitySpeedHistogramRes
 
 @override String toString() => 'RadarGetQualitySpeedHistogramResponse(result: $result, success: $success)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_rule_action.dart';import 'package:pub_cloudflare/models/waitingroom_rule_description.dart';import 'package:pub_cloudflare/models/waitingroom_rule_enabled.dart';import 'package:pub_cloudflare/models/waitingroom_rule_expression.dart';@immutable final class WaitingroomCreateRule {const WaitingroomCreateRule({required this.action, required this.expression, this.description, this.enabled, });
 
-factory WaitingroomCreateRule.fromJson(Map<String, dynamic> json) { return WaitingroomCreateRule(
+factory WaitingroomCreateRule.fromJson(Map<String, dynamic> json) {return WaitingroomCreateRule(
   action: WaitingroomRuleAction.fromJson(json['action'] as String),
   description: json['description'] != null ? WaitingroomRuleDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? WaitingroomRuleEnabled.fromJson(json['enabled'] as bool) : null,
   expression: WaitingroomRuleExpression.fromJson(json['expression'] as String),
-); }
+);}
 
 final WaitingroomRuleAction action;
 
@@ -18,20 +18,20 @@ final WaitingroomRuleEnabled? enabled;
 
 final WaitingroomRuleExpression expression;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   'expression': expression.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('expression'); } 
-WaitingroomCreateRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? expression, }) { return WaitingroomCreateRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('expression');}
+WaitingroomCreateRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? expression, }) {return WaitingroomCreateRule(
   action: action ?? this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   expression: expression ?? this.expression,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomCreateRule &&
           action == other.action &&
@@ -43,4 +43,4 @@ WaitingroomCreateRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDe
 
 @override String toString() => 'WaitingroomCreateRule(action: $action, description: $description, enabled: $enabled, expression: $expression)';
 
- }
+}

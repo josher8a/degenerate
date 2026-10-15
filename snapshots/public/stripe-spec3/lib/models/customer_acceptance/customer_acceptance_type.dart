@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The mandate includes the type of customer acceptance information, such as: `online` or `offline`.
 sealed class CustomerAcceptanceType {const CustomerAcceptanceType();
 
-factory CustomerAcceptanceType.fromJson(String json) { return switch (json) {
+factory CustomerAcceptanceType.fromJson(String json) {return switch (json) {
   'offline' => offline,
   'online' => online,
   _ => CustomerAcceptanceType$Unknown(json),
-}; }
+};}
 
 static const CustomerAcceptanceType offline = CustomerAcceptanceType$offline._();
 
@@ -17,30 +17,30 @@ static const CustomerAcceptanceType online = CustomerAcceptanceType$online._();
 static const List<CustomerAcceptanceType> values = [offline, online];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'offline' => 'offline',
   'online' => 'online',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerAcceptanceType$Unknown; } 
+bool get isUnknown {return this is CustomerAcceptanceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offline, required W Function() online, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offline, required W Function() online, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerAcceptanceType$offline() => offline(),
       CustomerAcceptanceType$online() => online(),
       CustomerAcceptanceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline, W Function()? online, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline, W Function()? online, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerAcceptanceType$offline() => offline != null ? offline() : orElse(value),
       CustomerAcceptanceType$online() => online != null ? online() : orElse(value),
       CustomerAcceptanceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerAcceptanceType($value)';
 
- }
+}
 @immutable final class CustomerAcceptanceType$offline extends CustomerAcceptanceType {const CustomerAcceptanceType$offline._();
 
 @override String get value => 'offline';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline,
 
 @override int get hashCode => 'offline'.hashCode;
 
- }
+}
 @immutable final class CustomerAcceptanceType$online extends CustomerAcceptanceType {const CustomerAcceptanceType$online._();
 
 @override String get value => 'online';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline,
 
 @override int get hashCode => 'online'.hashCode;
 
- }
+}
 @immutable final class CustomerAcceptanceType$Unknown extends CustomerAcceptanceType {const CustomerAcceptanceType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

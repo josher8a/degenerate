@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_certificate/geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// An individual certificate within a certificate pack.
 @immutable final class TlsCertificatesAndHostnamesCertificatePackCertificate {const TlsCertificatesAndHostnamesCertificatePackCertificate({required this.hosts, required this.id, required this.status, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.issuer, this.modifiedOn, this.priority, this.signature, this.uploadedOn, this.zoneId, });
 
-factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
+factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: json['bundle_method'] as String?,
   expiresOn: json['expires_on'] != null ? DateTime.parse(json['expires_on'] as String) : null,
   geoRestrictions: json['geo_restrictions'] != null ? GeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
@@ -17,7 +17,7 @@ factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<Strin
   status: json['status'] as String,
   uploadedOn: json['uploaded_on'] != null ? DateTime.parse(json['uploaded_on'] as String) : null,
   zoneId: json['zone_id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['zone_id'] as String) : null,
-); }
+);}
 
 /// Certificate bundle method.
 /// 
@@ -72,7 +72,7 @@ final DateTime? uploadedOn;
 
 final TlsCertificatesAndHostnamesIdentifier? zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bundle_method': ?bundleMethod,
   if (expiresOn != null) 'expires_on': expiresOn?.toIso8601String(),
   if (geoRestrictions != null) 'geo_restrictions': geoRestrictions?.toJson(),
@@ -85,11 +85,11 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toIso8601String(),
   if (zoneId != null) 'zone_id': zoneId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hosts') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hosts') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('status') && json['status'] is String; } 
-TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function()? bundleMethod, DateTime? Function()? expiresOn, GeoRestrictions? Function()? geoRestrictions, List<String>? hosts, String? id, String? Function()? issuer, DateTime? Function()? modifiedOn, double? Function()? priority, String? Function()? signature, String? status, DateTime? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? Function()? zoneId, }) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
+      json.containsKey('status') && json['status'] is String;}
+TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function()? bundleMethod, DateTime? Function()? expiresOn, GeoRestrictions? Function()? geoRestrictions, List<String>? hosts, String? id, String? Function()? issuer, DateTime? Function()? modifiedOn, double? Function()? priority, String? Function()? signature, String? status, DateTime? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? Function()? zoneId, }) {return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   geoRestrictions: geoRestrictions != null ? geoRestrictions() : this.geoRestrictions,
@@ -102,7 +102,7 @@ TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function
   status: status ?? this.status,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
   zoneId: zoneId != null ? zoneId() : this.zoneId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificatePackCertificate &&
           bundleMethod == other.bundleMethod &&
@@ -122,4 +122,4 @@ TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function
 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificatePackCertificate(\n  bundleMethod: $bundleMethod,\n  expiresOn: $expiresOn,\n  geoRestrictions: $geoRestrictions,\n  hosts: $hosts,\n  id: $id,\n  issuer: $issuer,\n  modifiedOn: $modifiedOn,\n  priority: $priority,\n  signature: $signature,\n  status: $status,\n  uploadedOn: $uploadedOn,\n  zoneId: $zoneId,\n)';
 
- }
+}

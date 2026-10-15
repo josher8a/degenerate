@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_scheme.dart';@immutable final class HyperdriveHyperdriveDatabase {const HyperdriveHyperdriveDatabase({this.database, this.password, this.scheme, this.user, });
 
-factory HyperdriveHyperdriveDatabase.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveDatabase(
+factory HyperdriveHyperdriveDatabase.fromJson(Map<String, dynamic> json) {return HyperdriveHyperdriveDatabase(
   database: json['database'] as String?,
   password: json['password'] as String?,
   scheme: json['scheme'] != null ? HyperdriveHyperdriveScheme.fromJson(json['scheme'] as String) : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// Set the name of your origin database.
 /// 
@@ -25,19 +25,19 @@ final HyperdriveHyperdriveScheme? scheme;
 /// Example: `'postgres'`
 final String? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'database': ?database,
   'password': ?password,
   if (scheme != null) 'scheme': scheme?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'database', 'password', 'scheme', 'user'}.contains(key)); } 
-HyperdriveHyperdriveDatabase copyWith({String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) { return HyperdriveHyperdriveDatabase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'database', 'password', 'scheme', 'user'}.contains(key));}
+HyperdriveHyperdriveDatabase copyWith({String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) {return HyperdriveHyperdriveDatabase(
   database: database != null ? database() : this.database,
   password: password != null ? password() : this.password,
   scheme: scheme != null ? scheme() : this.scheme,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveDatabase &&
           database == other.database &&
@@ -49,4 +49,4 @@ HyperdriveHyperdriveDatabase copyWith({String? Function()? database, String? Fun
 
 @override String toString() => 'HyperdriveHyperdriveDatabase(database: $database, password: $password, scheme: $scheme, user: $user)';
 
- }
+}

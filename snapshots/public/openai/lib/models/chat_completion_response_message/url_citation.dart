@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URL citation when using web search.
 @immutable final class UrlCitation {const UrlCitation({required this.endIndex, required this.startIndex, required this.url, required this.title, });
 
-factory UrlCitation.fromJson(Map<String, dynamic> json) { return UrlCitation(
+factory UrlCitation.fromJson(Map<String, dynamic> json) {return UrlCitation(
   endIndex: (json['end_index'] as num).toInt(),
   startIndex: (json['start_index'] as num).toInt(),
   url: json['url'] as String,
   title: json['title'] as String,
-); }
+);}
 
 /// The index of the last character of the URL citation in the message.
 final int endIndex;
@@ -23,22 +23,22 @@ final String url;
 /// The title of the web resource.
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_index': endIndex,
   'start_index': startIndex,
   'url': url,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_index') && json['end_index'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_index') && json['end_index'] is num &&
       json.containsKey('start_index') && json['start_index'] is num &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('title') && json['title'] is String; } 
-UrlCitation copyWith({int? endIndex, int? startIndex, String? url, String? title, }) { return UrlCitation(
+      json.containsKey('title') && json['title'] is String;}
+UrlCitation copyWith({int? endIndex, int? startIndex, String? url, String? title, }) {return UrlCitation(
   endIndex: endIndex ?? this.endIndex,
   startIndex: startIndex ?? this.startIndex,
   url: url ?? this.url,
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlCitation &&
           endIndex == other.endIndex &&
@@ -50,4 +50,4 @@ UrlCitation copyWith({int? endIndex, int? startIndex, String? url, String? title
 
 @override String toString() => 'UrlCitation(endIndex: $endIndex, startIndex: $startIndex, url: $url, title: $title)';
 
- }
+}

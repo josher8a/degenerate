@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCouponsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_coupons_request/applies_to.dart';@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_coupons_request/applies_to.dart';@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
 
-factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCouponsRequest(
+factory PostCouponsRequest.fromJson(Map<String, dynamic> json) {return PostCouponsRequest(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,
   appliesTo: json['applies_to'] != null ? AppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
@@ -13,11 +13,11 @@ factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCoup
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   percentOff: json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null,
   redeemBy: json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null,
-); }
+);}
 
 /// A positive integer representing the amount to subtract from an invoice total (required if `percent_off` is not passed).
 final int? amountOff;
@@ -58,7 +58,7 @@ final double? percentOff;
 /// Unix timestamp specifying the last time at which the coupon can be redeemed (cannot be set to more than 5 years in the future). After the redeem_by date, the coupon can no longer be applied to new customers.
 final int? redeemBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_off': ?amountOff,
   if (appliesTo != null) 'applies_to': appliesTo?.toJson(),
   'currency': ?currency,
@@ -72,10 +72,10 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'percent_off': ?percentOff,
   'redeem_by': ?redeemBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_off', 'applies_to', 'currency', 'currency_options', 'duration', 'duration_in_months', 'expand', 'id', 'max_redemptions', 'metadata', 'name', 'percent_off', 'redeem_by'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_off', 'applies_to', 'currency', 'currency_options', 'duration', 'duration_in_months', 'expand', 'id', 'max_redemptions', 'metadata', 'name', 'percent_off', 'redeem_by'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
   if (id$.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
@@ -84,8 +84,8 @@ final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 40) { errors.add('name: length must be <= 40'); }
 }
-return errors; } 
-PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? appliesTo, String? Function()? currency, Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, CouponDuration? Function()? duration, int? Function()? durationInMonths, List<String>? Function()? expand, String? Function()? id, int? Function()? maxRedemptions, Metadata? Function()? metadata, String? Function()? name, double? Function()? percentOff, int? Function()? redeemBy, }) { return PostCouponsRequest(
+return errors;}
+PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? appliesTo, String? Function()? currency, Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, CouponDuration? Function()? duration, int? Function()? durationInMonths, List<String>? Function()? expand, String? Function()? id, int? Function()? maxRedemptions, Metadata? Function()? metadata, String? Function()? name, double? Function()? percentOff, int? Function()? redeemBy, }) {return PostCouponsRequest(
   amountOff: amountOff != null ? amountOff() : this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,
   currency: currency != null ? currency() : this.currency,
@@ -99,7 +99,7 @@ PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? 
   name: name != null ? name() : this.name,
   percentOff: percentOff != null ? percentOff() : this.percentOff,
   redeemBy: redeemBy != null ? redeemBy() : this.redeemBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCouponsRequest &&
           amountOff == other.amountOff &&
@@ -120,4 +120,4 @@ PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? 
 
 @override String toString() => 'PostCouponsRequest(\n  amountOff: $amountOff,\n  appliesTo: $appliesTo,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  duration: $duration,\n  durationInMonths: $durationInMonths,\n  expand: $expand,\n  id: $id,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  name: $name,\n  percentOff: $percentOff,\n  redeemBy: $redeemBy,\n)';
 
- }
+}

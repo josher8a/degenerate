@@ -2,35 +2,35 @@
 // Source: #/components/schemas/TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails({required this.present, this.ipAddress, });
+@immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails({required this.present, this.ipAddress = const Omittable.absent(), });
 
-factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(
-  ipAddress: json['ip_address'] as String?,
+factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails.fromJson(Map<String, dynamic> json) {return TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(
+  ipAddress: json.containsKey('ip_address') ? Omittable(json['ip_address'] as String?) : const Omittable.absent(),
   present: json['present'] as bool,
-); }
+);}
 
 /// IP address of the user initiating the OutboundPayment. Set if `present` is set to `true`. IP address collection is required for risk and compliance reasons. This will be used to help determine if the OutboundPayment is authorized or should be blocked.
-final String? ipAddress;
+final Omittable<String?> ipAddress;
 
 /// `true` if the OutboundPayment creation request is being made on behalf of an end user by a platform. Otherwise, `false`.
 final bool present;
 
-Map<String, dynamic> toJson() { return {
-  'ip_address': ?ipAddress,
+Map<String, dynamic> toJson() {return {
+  if (ipAddress.isPresent) 'ip_address': ipAddress.value,
   'present': present,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('present') && json['present'] is bool; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('present') && json['present'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final ipAddress$ = ipAddress;
+List<String> validate() {final errors = <String>[];
+final ipAddress$ = ipAddress.value;
 if (ipAddress$ != null) {
   if (ipAddress$.runes.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
-return errors; } 
-TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(
-  ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
+return errors;}
+TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails copyWith({Omittable<String?>? ipAddress, bool? present, }) {return TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(
+  ipAddress: ipAddress ?? this.ipAddress,
   present: present ?? this.present,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails &&
           ipAddress == other.ipAddress &&
@@ -40,4 +40,4 @@ TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails copyWith({
 
 @override String toString() => 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(ipAddress: $ipAddress, present: $present)';
 
- }
+}

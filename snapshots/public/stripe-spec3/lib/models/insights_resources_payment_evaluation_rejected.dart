@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card.dart';/// Details of an rejected outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationRejected {const InsightsResourcesPaymentEvaluationRejected({this.card});
 
-factory InsightsResourcesPaymentEvaluationRejected.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationRejected(
+factory InsightsResourcesPaymentEvaluationRejected.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationRejected(
   card: json['card'] != null ? InsightsResourcesPaymentEvaluationRejectedCard.fromJson(json['card'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final InsightsResourcesPaymentEvaluationRejectedCard? card;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (card != null) 'card': card?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card'}.contains(key)); } 
-InsightsResourcesPaymentEvaluationRejected copyWith({InsightsResourcesPaymentEvaluationRejectedCard? Function()? card}) { return InsightsResourcesPaymentEvaluationRejected(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'card'}.contains(key));}
+InsightsResourcesPaymentEvaluationRejected copyWith({InsightsResourcesPaymentEvaluationRejectedCard? Function()? card}) {return InsightsResourcesPaymentEvaluationRejected(
   card: card != null ? card() : this.card,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationRejected &&
           card == other.card;
@@ -25,4 +25,4 @@ InsightsResourcesPaymentEvaluationRejected copyWith({InsightsResourcesPaymentEva
 
 @override String toString() => 'InsightsResourcesPaymentEvaluationRejected(card: $card)';
 
- }
+}

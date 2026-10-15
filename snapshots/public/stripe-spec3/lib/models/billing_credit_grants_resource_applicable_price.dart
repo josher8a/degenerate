@@ -2,29 +2,29 @@
 // Source: #/components/schemas/BillingCreditGrantsResourceApplicablePrice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class BillingCreditGrantsResourceApplicablePrice {const BillingCreditGrantsResourceApplicablePrice({this.id});
+@immutable final class BillingCreditGrantsResourceApplicablePrice {const BillingCreditGrantsResourceApplicablePrice({this.id = const Omittable.absent()});
 
-factory BillingCreditGrantsResourceApplicablePrice.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicablePrice(
-  id: json['id'] as String?,
-); }
+factory BillingCreditGrantsResourceApplicablePrice.fromJson(Map<String, dynamic> json) {return BillingCreditGrantsResourceApplicablePrice(
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
+);}
 
 /// Unique identifier for the object.
-final String? id;
+final Omittable<String?> id;
 
-Map<String, dynamic> toJson() { return {
-  'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (id.isPresent) 'id': id.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final id$ = id;
+List<String> validate() {final errors = <String>[];
+final id$ = id.value;
 if (id$ != null) {
   if (id$.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
-return errors; } 
-BillingCreditGrantsResourceApplicablePrice copyWith({String? Function()? id}) { return BillingCreditGrantsResourceApplicablePrice(
-  id: id != null ? id() : this.id,
-); } 
+return errors;}
+BillingCreditGrantsResourceApplicablePrice copyWith({Omittable<String?>? id}) {return BillingCreditGrantsResourceApplicablePrice(
+  id: id ?? this.id,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditGrantsResourceApplicablePrice &&
           id == other.id;
@@ -33,4 +33,4 @@ BillingCreditGrantsResourceApplicablePrice copyWith({String? Function()? id}) { 
 
 @override String toString() => 'BillingCreditGrantsResourceApplicablePrice(id: $id)';
 
- }
+}

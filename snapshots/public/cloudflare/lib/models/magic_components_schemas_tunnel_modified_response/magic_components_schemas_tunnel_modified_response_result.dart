@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_interconnect.dart';@immutable final class MagicComponentsSchemasTunnelModifiedResponseResult {const MagicComponentsSchemasTunnelModifiedResponseResult({this.modified, this.modifiedInterconnect, });
 
-factory MagicComponentsSchemasTunnelModifiedResponseResult.fromJson(Map<String, dynamic> json) { return MagicComponentsSchemasTunnelModifiedResponseResult(
+factory MagicComponentsSchemasTunnelModifiedResponseResult.fromJson(Map<String, dynamic> json) {return MagicComponentsSchemasTunnelModifiedResponseResult(
   modified: json['modified'] as bool?,
   modifiedInterconnect: json['modified_interconnect'] != null ? MagicInterconnect.fromJson(json['modified_interconnect'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Example: `true`
 final bool? modified;
 
 final MagicInterconnect? modifiedInterconnect;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'modified': ?modified,
   if (modifiedInterconnect != null) 'modified_interconnect': modifiedInterconnect?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_interconnect'}.contains(key)); } 
-MagicComponentsSchemasTunnelModifiedResponseResult copyWith({bool? Function()? modified, MagicInterconnect? Function()? modifiedInterconnect, }) { return MagicComponentsSchemasTunnelModifiedResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'modified', 'modified_interconnect'}.contains(key));}
+MagicComponentsSchemasTunnelModifiedResponseResult copyWith({bool? Function()? modified, MagicInterconnect? Function()? modifiedInterconnect, }) {return MagicComponentsSchemasTunnelModifiedResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedInterconnect: modifiedInterconnect != null ? modifiedInterconnect() : this.modifiedInterconnect,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicComponentsSchemasTunnelModifiedResponseResult &&
           modified == other.modified &&
@@ -31,4 +31,4 @@ MagicComponentsSchemasTunnelModifiedResponseResult copyWith({bool? Function()? m
 
 @override String toString() => 'MagicComponentsSchemasTunnelModifiedResponseResult(modified: $modified, modifiedInterconnect: $modifiedInterconnect)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.input_audio_transcription.segment`.
 sealed class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType();
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(String json) {return switch (json) {
   'conversation.item.input_audio_transcription.segment' => conversationItemInputAudioTranscriptionSegment,
   _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType conversationItemInputAudioTranscriptionSegment = RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment._();
 
 static const List<RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType> values = [conversationItemInputAudioTranscriptionSegment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'conversation.item.input_audio_transcription.segment' => 'conversationItemInputAudioTranscriptionSegment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() conversationItemInputAudioTranscriptionSegment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() conversationItemInputAudioTranscriptionSegment, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment() => conversationItemInputAudioTranscriptionSegment(),
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversationItemInputAudioTranscriptionSegment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversationItemInputAudioTranscriptionSegment, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment() => conversationItemInputAudioTranscriptionSegment != null ? conversationItemInputAudioTranscriptionSegment() : orElse(value),
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment._();
 
 @override String get value => 'conversation.item.input_audio_transcription.segment';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversa
 
 @override int get hashCode => 'conversation.item.input_audio_transcription.segment'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversa
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when an input audio transcription segment is identified for an item.
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(json['type'] as String),
   itemId: json['item_id'] as String,
@@ -67,7 +67,7 @@ factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment.fr
   speaker: json['speaker'] as String,
   start: (json['start'] as num).toDouble(),
   end: (json['end'] as num).toDouble(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -96,7 +96,7 @@ final double start;
 /// End time of the segment in seconds.
 final double end;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'item_id': itemId,
@@ -106,8 +106,8 @@ Map<String, dynamic> toJson() { return {
   'speaker': speaker,
   'start': start,
   'end': end,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
@@ -115,8 +115,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('speaker') && json['speaker'] is String &&
       json.containsKey('start') && json['start'] is num &&
-      json.containsKey('end') && json['end'] is num; } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType? type, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(
+      json.containsKey('end') && json['end'] is num;}
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType? type, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
@@ -126,7 +126,7 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment copyWith({
   speaker: speaker ?? this.speaker,
   start: start ?? this.start,
   end: end ?? this.end,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment &&
           eventId == other.eventId &&
@@ -143,4 +143,4 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment copyWith({
 
 @override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(\n  eventId: $eventId,\n  type: $type,\n  itemId: $itemId,\n  contentIndex: $contentIndex,\n  text: $text,\n  id: $id,\n  speaker: $speaker,\n  start: $start,\n  end: $end,\n)';
 
- }
+}

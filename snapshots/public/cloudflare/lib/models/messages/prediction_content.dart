@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Prediction > Content)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class ContentType {const ContentType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';sealed class ContentType {const ContentType();
 
-factory ContentType.fromJson(String json) { return switch (json) {
+factory ContentType.fromJson(String json) {return switch (json) {
   'content' => content,
   _ => ContentType$Unknown(json),
-}; }
+};}
 
 static const ContentType content = ContentType$content._();
 
 static const List<ContentType> values = [content];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'content' => 'content',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ContentType$Unknown; } 
+bool get isUnknown {return this is ContentType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() content, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() content, required W Function(String value) $unknown, }) {return switch (this) {
       ContentType$content() => content(),
       ContentType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? content, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? content, W Function(String value)? $unknown, }) {return switch (this) {
       ContentType$content() => content != null ? content() : orElse(value),
       ContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ContentType($value)';
 
- }
+}
 @immutable final class ContentType$content extends ContentType {const ContentType$content._();
 
 @override String get value => 'content';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? content,
 
 @override int get hashCode => 'content'.hashCode;
 
- }
+}
 @immutable final class ContentType$Unknown extends ContentType {const ContentType$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? content,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PredictionContent {const PredictionContent({required this.content, required this.type, });
 
-factory PredictionContent.fromJson(Map<String, dynamic> json) { return PredictionContent(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => DeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+factory PredictionContent.fromJson(Map<String, dynamic> json) {return PredictionContent(
+  content: DeveloperContent.fromJson(json['content']),
   type: ContentType.fromJson(json['type'] as String),
-); }
+);}
 
 final DeveloperContent content;
 
 final ContentType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('type'); } 
-PredictionContent copyWith({DeveloperContent? content, ContentType? type, }) { return PredictionContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('type');}
+PredictionContent copyWith({DeveloperContent? content, ContentType? type, }) {return PredictionContent(
   content: content ?? this.content,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PredictionContent &&
           content == other.content &&
@@ -83,4 +83,4 @@ PredictionContent copyWith({DeveloperContent? content, ContentType? type, }) { r
 
 @override String toString() => 'PredictionContent(content: $content, type: $type)';
 
- }
+}

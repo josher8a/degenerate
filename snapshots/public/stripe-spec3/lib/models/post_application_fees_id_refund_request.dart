@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostApplicationFeesIdRefundRequest {const PostApplicationFeesIdRefundRequest({this.amount, this.directive, this.expand, });
 
-factory PostApplicationFeesIdRefundRequest.fromJson(Map<String, dynamic> json) { return PostApplicationFeesIdRefundRequest(
+factory PostApplicationFeesIdRefundRequest.fromJson(Map<String, dynamic> json) {return PostApplicationFeesIdRefundRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   directive: json['directive'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final int? amount;
 
@@ -16,24 +16,24 @@ final String? directive;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'directive': ?directive,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'directive', 'expand'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'directive', 'expand'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final directive$ = directive;
 if (directive$ != null) {
   if (directive$.runes.length > 5000) { errors.add('directive: length must be <= 5000'); }
 }
-return errors; } 
-PostApplicationFeesIdRefundRequest copyWith({int? Function()? amount, String? Function()? directive, List<String>? Function()? expand, }) { return PostApplicationFeesIdRefundRequest(
+return errors;}
+PostApplicationFeesIdRefundRequest copyWith({int? Function()? amount, String? Function()? directive, List<String>? Function()? expand, }) {return PostApplicationFeesIdRefundRequest(
   amount: amount != null ? amount() : this.amount,
   directive: directive != null ? directive() : this.directive,
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostApplicationFeesIdRefundRequest &&
           amount == other.amount &&
@@ -44,4 +44,4 @@ PostApplicationFeesIdRefundRequest copyWith({int? Function()? amount, String? Fu
 
 @override String toString() => 'PostApplicationFeesIdRefundRequest(amount: $amount, directive: $directive, expand: $expand)';
 
- }
+}

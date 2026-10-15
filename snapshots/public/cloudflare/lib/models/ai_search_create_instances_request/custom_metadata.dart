@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DataType {const DataType();
 
-factory DataType.fromJson(String json) { return switch (json) {
+factory DataType.fromJson(String json) {return switch (json) {
   'text' => text,
   'number' => number,
   'boolean' => boolean,
   _ => DataType$Unknown(json),
-}; }
+};}
 
 static const DataType text = DataType$text._();
 
@@ -19,33 +19,33 @@ static const DataType boolean = DataType$boolean._();
 static const List<DataType> values = [text, number, boolean];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'number' => 'number',
   'boolean' => 'boolean',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DataType$Unknown; } 
+bool get isUnknown {return this is DataType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) {return switch (this) {
       DataType$text() => text(),
       DataType$number() => number(),
       DataType$boolean() => boolean(),
       DataType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) {return switch (this) {
       DataType$text() => text != null ? text() : orElse(value),
       DataType$number() => number != null ? number() : orElse(value),
       DataType$boolean() => boolean != null ? boolean() : orElse(value),
       DataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DataType($value)';
 
- }
+}
 @immutable final class DataType$text extends DataType {const DataType$text._();
 
 @override String get value => 'text';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class DataType$number extends DataType {const DataType$number._();
 
 @override String get value => 'number';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'number'.hashCode;
 
- }
+}
 @immutable final class DataType$boolean extends DataType {const DataType$boolean._();
 
 @override String get value => 'boolean';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'boolean'.hashCode;
 
- }
+}
 @immutable final class DataType$Unknown extends DataType {const DataType$Unknown(this.value);
 
 @override final String value;
@@ -82,33 +82,33 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CustomMetadata {const CustomMetadata({required this.dataType, required this.fieldName, });
 
-factory CustomMetadata.fromJson(Map<String, dynamic> json) { return CustomMetadata(
+factory CustomMetadata.fromJson(Map<String, dynamic> json) {return CustomMetadata(
   dataType: DataType.fromJson(json['data_type'] as String),
   fieldName: json['field_name'] as String,
-); }
+);}
 
 final DataType dataType;
 
 final String fieldName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data_type': dataType.toJson(),
   'field_name': fieldName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_type') &&
-      json.containsKey('field_name') && json['field_name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data_type') &&
+      json.containsKey('field_name') && json['field_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (fieldName.isEmpty) { errors.add('fieldName: length must be >= 1'); }
 if (fieldName.runes.length > 64) { errors.add('fieldName: length must be <= 64'); }
-return errors; } 
-CustomMetadata copyWith({DataType? dataType, String? fieldName, }) { return CustomMetadata(
+return errors;}
+CustomMetadata copyWith({DataType? dataType, String? fieldName, }) {return CustomMetadata(
   dataType: dataType ?? this.dataType,
   fieldName: fieldName ?? this.fieldName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomMetadata &&
           dataType == other.dataType &&
@@ -118,4 +118,4 @@ CustomMetadata copyWith({DataType? dataType, String? fieldName, }) { return Cust
 
 @override String toString() => 'CustomMetadata(dataType: $dataType, fieldName: $fieldName)';
 
- }
+}

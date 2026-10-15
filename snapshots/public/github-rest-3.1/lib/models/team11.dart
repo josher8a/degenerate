@@ -2,28 +2,28 @@
 // Source: #/components/schemas/Team
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_parent.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';/// Groups of organization members that gives permissions on specified repositories.
-@immutable final class Team11 {const Team11({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
+@immutable final class Team11 {const Team11({required this.id, required this.name, this.deleted, this.description = const Omittable.absent(), this.htmlUrl, this.membersUrl, this.nodeId, this.parent = const Omittable.absent(), this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
-factory Team11.fromJson(Map<String, dynamic> json) { return Team11(
+factory Team11.fromJson(Map<String, dynamic> json) {return Team11(
   deleted: json['deleted'] as bool?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null ? TeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? TeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permission: json['permission'] as String?,
   privacy: json['privacy'] != null ? TeamPrivacy.fromJson(json['privacy'] as String) : null,
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,
   slug: json['slug'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final bool? deleted;
 
 /// Description of the team
-final String? description;
+final Omittable<String?> description;
 
 final Uri? htmlUrl;
 
@@ -37,7 +37,7 @@ final String name;
 
 final String? nodeId;
 
-final TeamParent? parent;
+final Omittable<TeamParent?> parent;
 
 /// Permission that the team will have for its repositories
 final String? permission;
@@ -51,38 +51,38 @@ final String? slug;
 /// URL for the team
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
   'id': id,
   'members_url': ?membersUrl,
   'name': name,
   'node_id': ?nodeId,
-  if (parent != null) 'parent': parent?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'permission': ?permission,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (repositoriesUrl != null) 'repositories_url': repositoriesUrl?.toString(),
   'slug': ?slug,
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-Team11 copyWith({bool? Function()? deleted, String? Function()? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, TeamParent? Function()? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) { return Team11(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+Team11 copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<TeamParent?>? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) {return Team11(
   deleted: deleted != null ? deleted() : this.deleted,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   id: id ?? this.id,
   membersUrl: membersUrl != null ? membersUrl() : this.membersUrl,
   name: name ?? this.name,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
-  parent: parent != null ? parent() : this.parent,
+  parent: parent ?? this.parent,
   permission: permission != null ? permission() : this.permission,
   privacy: privacy != null ? privacy() : this.privacy,
   repositoriesUrl: repositoriesUrl != null ? repositoriesUrl() : this.repositoriesUrl,
   slug: slug != null ? slug() : this.slug,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Team11 &&
           deleted == other.deleted &&
@@ -103,4 +103,4 @@ Team11 copyWith({bool? Function()? deleted, String? Function()? description, Uri
 
 @override String toString() => 'Team11(\n  deleted: $deleted,\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  parent: $parent,\n  permission: $permission,\n  privacy: $privacy,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n)';
 
- }
+}

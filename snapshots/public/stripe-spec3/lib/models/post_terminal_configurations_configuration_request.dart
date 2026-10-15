@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTerminalConfigurationsConfigurationRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bbpos_wise_pad3.dart';import 'package:pub_stripe_spec3/models/bbpos_wise_pose.dart';import 'package:pub_stripe_spec3/models/cellular.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/offline.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_bbpos_wisepad3.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_bbpos_wisepos_e.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_cellular.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_offline.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_reboot_window.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_stripe_s700.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_stripe_s710.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_tipping.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_verifone_p400.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_wifi.dart';import 'package:pub_stripe_spec3/models/reboot_window.dart';import 'package:pub_stripe_spec3/models/stripe_s700.dart';import 'package:pub_stripe_spec3/models/stripe_s710.dart';import 'package:pub_stripe_spec3/models/tipping.dart';import 'package:pub_stripe_spec3/models/verifone_p400.dart';import 'package:pub_stripe_spec3/models/wifi.dart';@immutable final class PostTerminalConfigurationsConfigurationRequest {const PostTerminalConfigurationsConfigurationRequest({this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.expand, this.name, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_bbpos_wisepad3.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_bbpos_wisepos_e.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_cellular.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_offline.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_reboot_window.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_stripe_s700.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_stripe_s710.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_tipping.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_verifone_p400.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request/post_terminal_configurations_configuration_request_wifi.dart';@immutable final class PostTerminalConfigurationsConfigurationRequest {const PostTerminalConfigurationsConfigurationRequest({this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.expand, this.name, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
-factory PostTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsConfigurationRequest(
-  bbposWisepad3: json['bbpos_wisepad3'] != null ? OneOf2.parse(json['bbpos_wisepad3'], fromA: (v) => BbposWisePad3.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  bbposWiseposE: json['bbpos_wisepos_e'] != null ? OneOf2.parse(json['bbpos_wisepos_e'], fromA: (v) => BbposWisePose.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  cellular: json['cellular'] != null ? OneOf2.parse(json['cellular'], fromA: (v) => Cellular.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+factory PostTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) {return PostTerminalConfigurationsConfigurationRequest(
+  bbposWisepad3: json['bbpos_wisepad3'] != null ? PostTerminalConfigurationsConfigurationRequestBbposWisepad3.fromJson(json['bbpos_wisepad3']) : null,
+  bbposWiseposE: json['bbpos_wisepos_e'] != null ? PostTerminalConfigurationsConfigurationRequestBbposWiseposE.fromJson(json['bbpos_wisepos_e']) : null,
+  cellular: json['cellular'] != null ? PostTerminalConfigurationsConfigurationRequestCellular.fromJson(json['cellular']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
-  offline: json['offline'] != null ? OneOf2.parse(json['offline'], fromA: (v) => Offline.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  rebootWindow: json['reboot_window'] != null ? OneOf2.parse(json['reboot_window'], fromA: (v) => RebootWindow.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  stripeS700: json['stripe_s700'] != null ? OneOf2.parse(json['stripe_s700'], fromA: (v) => StripeS700.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  stripeS710: json['stripe_s710'] != null ? OneOf2.parse(json['stripe_s710'], fromA: (v) => StripeS710.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  tipping: json['tipping'] != null ? OneOf2.parse(json['tipping'], fromA: (v) => Tipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  verifoneP400: json['verifone_p400'] != null ? OneOf2.parse(json['verifone_p400'], fromA: (v) => VerifoneP400.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  wifi: json['wifi'] != null ? OneOf2.parse(json['wifi'], fromA: (v) => Wifi.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+  offline: json['offline'] != null ? PostTerminalConfigurationsConfigurationRequestOffline.fromJson(json['offline']) : null,
+  rebootWindow: json['reboot_window'] != null ? PostTerminalConfigurationsConfigurationRequestRebootWindow.fromJson(json['reboot_window']) : null,
+  stripeS700: json['stripe_s700'] != null ? PostTerminalConfigurationsConfigurationRequestStripeS700.fromJson(json['stripe_s700']) : null,
+  stripeS710: json['stripe_s710'] != null ? PostTerminalConfigurationsConfigurationRequestStripeS710.fromJson(json['stripe_s710']) : null,
+  tipping: json['tipping'] != null ? PostTerminalConfigurationsConfigurationRequestTipping.fromJson(json['tipping']) : null,
+  verifoneP400: json['verifone_p400'] != null ? PostTerminalConfigurationsConfigurationRequestVerifoneP400.fromJson(json['verifone_p400']) : null,
+  wifi: json['wifi'] != null ? PostTerminalConfigurationsConfigurationRequestWifi.fromJson(json['wifi']) : null,
+);}
 
 /// An object containing device type specific settings for BBPOS WisePad 3 readers.
 final PostTerminalConfigurationsConfigurationRequestBbposWisepad3? bbposWisepad3;
@@ -54,7 +54,7 @@ final PostTerminalConfigurationsConfigurationRequestVerifoneP400? verifoneP400;
 /// Configurations for connecting to a WiFi network.
 final PostTerminalConfigurationsConfigurationRequestWifi? wifi;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bbposWisepad3 != null) 'bbpos_wisepad3': bbposWisepad3?.toJson(),
   if (bbposWiseposE != null) 'bbpos_wisepos_e': bbposWiseposE?.toJson(),
   if (cellular != null) 'cellular': cellular?.toJson(),
@@ -67,16 +67,16 @@ Map<String, dynamic> toJson() { return {
   if (tipping != null) 'tipping': tipping?.toJson(),
   if (verifoneP400 != null) 'verifone_p400': verifoneP400?.toJson(),
   if (wifi != null) 'wifi': wifi?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bbpos_wisepad3', 'bbpos_wisepos_e', 'cellular', 'expand', 'name', 'offline', 'reboot_window', 'stripe_s700', 'stripe_s710', 'tipping', 'verifone_p400', 'wifi'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bbpos_wisepad3', 'bbpos_wisepos_e', 'cellular', 'expand', 'name', 'offline', 'reboot_window', 'stripe_s700', 'stripe_s710', 'tipping', 'verifone_p400', 'wifi'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 100) { errors.add('name: length must be <= 100'); }
 }
-return errors; } 
-PostTerminalConfigurationsConfigurationRequest copyWith({PostTerminalConfigurationsConfigurationRequestBbposWisepad3? Function()? bbposWisepad3, PostTerminalConfigurationsConfigurationRequestBbposWiseposE? Function()? bbposWiseposE, PostTerminalConfigurationsConfigurationRequestCellular? Function()? cellular, List<String>? Function()? expand, String? Function()? name, PostTerminalConfigurationsConfigurationRequestOffline? Function()? offline, PostTerminalConfigurationsConfigurationRequestRebootWindow? Function()? rebootWindow, PostTerminalConfigurationsConfigurationRequestStripeS700? Function()? stripeS700, PostTerminalConfigurationsConfigurationRequestStripeS710? Function()? stripeS710, PostTerminalConfigurationsConfigurationRequestTipping? Function()? tipping, PostTerminalConfigurationsConfigurationRequestVerifoneP400? Function()? verifoneP400, PostTerminalConfigurationsConfigurationRequestWifi? Function()? wifi, }) { return PostTerminalConfigurationsConfigurationRequest(
+return errors;}
+PostTerminalConfigurationsConfigurationRequest copyWith({PostTerminalConfigurationsConfigurationRequestBbposWisepad3? Function()? bbposWisepad3, PostTerminalConfigurationsConfigurationRequestBbposWiseposE? Function()? bbposWiseposE, PostTerminalConfigurationsConfigurationRequestCellular? Function()? cellular, List<String>? Function()? expand, String? Function()? name, PostTerminalConfigurationsConfigurationRequestOffline? Function()? offline, PostTerminalConfigurationsConfigurationRequestRebootWindow? Function()? rebootWindow, PostTerminalConfigurationsConfigurationRequestStripeS700? Function()? stripeS700, PostTerminalConfigurationsConfigurationRequestStripeS710? Function()? stripeS710, PostTerminalConfigurationsConfigurationRequestTipping? Function()? tipping, PostTerminalConfigurationsConfigurationRequestVerifoneP400? Function()? verifoneP400, PostTerminalConfigurationsConfigurationRequestWifi? Function()? wifi, }) {return PostTerminalConfigurationsConfigurationRequest(
   bbposWisepad3: bbposWisepad3 != null ? bbposWisepad3() : this.bbposWisepad3,
   bbposWiseposE: bbposWiseposE != null ? bbposWiseposE() : this.bbposWiseposE,
   cellular: cellular != null ? cellular() : this.cellular,
@@ -89,7 +89,7 @@ PostTerminalConfigurationsConfigurationRequest copyWith({PostTerminalConfigurati
   tipping: tipping != null ? tipping() : this.tipping,
   verifoneP400: verifoneP400 != null ? verifoneP400() : this.verifoneP400,
   wifi: wifi != null ? wifi() : this.wifi,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalConfigurationsConfigurationRequest &&
           bbposWisepad3 == other.bbposWisepad3 &&
@@ -109,4 +109,4 @@ PostTerminalConfigurationsConfigurationRequest copyWith({PostTerminalConfigurati
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequest(\n  bbposWisepad3: $bbposWisepad3,\n  bbposWiseposE: $bbposWiseposE,\n  cellular: $cellular,\n  expand: $expand,\n  name: $name,\n  offline: $offline,\n  rebootWindow: $rebootWindow,\n  stripeS700: $stripeS700,\n  stripeS710: $stripeS710,\n  tipping: $tipping,\n  verifoneP400: $verifoneP400,\n  wifi: $wifi,\n)';
 
- }
+}

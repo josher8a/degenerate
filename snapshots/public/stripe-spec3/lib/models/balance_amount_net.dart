@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount_by_source_type.dart';import 'package:pub_stripe_spec3/models/balance_net_available.dart';/// 
 @immutable final class BalanceAmountNet {const BalanceAmountNet({required this.amount, required this.currency, this.netAvailable, this.sourceTypes, });
 
-factory BalanceAmountNet.fromJson(Map<String, dynamic> json) { return BalanceAmountNet(
+factory BalanceAmountNet.fromJson(Map<String, dynamic> json) {return BalanceAmountNet(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   netAvailable: (json['net_available'] as List<dynamic>?)?.map((e) => BalanceNetAvailable.fromJson(e as Map<String, dynamic>)).toList(),
   sourceTypes: json['source_types'] != null ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Balance amount.
 final int amount;
@@ -22,20 +22,20 @@ final List<BalanceNetAvailable>? netAvailable;
 
 final BalanceAmountBySourceType? sourceTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   if (netAvailable != null) 'net_available': netAvailable?.map((e) => e.toJson()).toList(),
   if (sourceTypes != null) 'source_types': sourceTypes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-BalanceAmountNet copyWith({int? amount, String? currency, List<BalanceNetAvailable>? Function()? netAvailable, BalanceAmountBySourceType? Function()? sourceTypes, }) { return BalanceAmountNet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+BalanceAmountNet copyWith({int? amount, String? currency, List<BalanceNetAvailable>? Function()? netAvailable, BalanceAmountBySourceType? Function()? sourceTypes, }) {return BalanceAmountNet(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   netAvailable: netAvailable != null ? netAvailable() : this.netAvailable,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceAmountNet &&
           amount == other.amount &&
@@ -47,4 +47,4 @@ BalanceAmountNet copyWith({int? amount, String? currency, List<BalanceNetAvailab
 
 @override String toString() => 'BalanceAmountNet(amount: $amount, currency: $currency, netAvailable: $netAvailable, sourceTypes: $sourceTypes)';
 
- }
+}

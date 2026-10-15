@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/targeted_mode.dart';@immutable final class WorkersPlacementInfoNoStatusTargeted3 {const WorkersPlacementInfoNoStatusTargeted3({required this.host, required this.mode, });
 
-factory WorkersPlacementInfoNoStatusTargeted3.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusTargeted3(
+factory WorkersPlacementInfoNoStatusTargeted3.fromJson(Map<String, dynamic> json) {return WorkersPlacementInfoNoStatusTargeted3(
   host: json['host'] as String,
   mode: TargetedMode.fromJson(json['mode'] as String),
-); }
+);}
 
 /// TCP host and port for targeted placement.
 /// 
@@ -16,16 +16,16 @@ final String host;
 /// Targeted placement mode.
 final TargetedMode mode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
   'mode': mode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
-      json.containsKey('mode') && json['mode'] == 'targeted'; } 
-WorkersPlacementInfoNoStatusTargeted3 copyWith({String? host, TargetedMode? mode, }) { return WorkersPlacementInfoNoStatusTargeted3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String &&
+      json.containsKey('mode') && json['mode'] == 'targeted';}
+WorkersPlacementInfoNoStatusTargeted3 copyWith({String? host, TargetedMode? mode, }) {return WorkersPlacementInfoNoStatusTargeted3(
   host: host ?? this.host,
   mode: mode ?? this.mode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersPlacementInfoNoStatusTargeted3 &&
           host == other.host &&
@@ -35,4 +35,4 @@ WorkersPlacementInfoNoStatusTargeted3 copyWith({String? host, TargetedMode? mode
 
 @override String toString() => 'WorkersPlacementInfoNoStatusTargeted3(host: $host, mode: $mode)';
 
- }
+}

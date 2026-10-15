@@ -14,7 +14,7 @@ final class IndicatorsApi with ApiExecutor {const IndicatorsApi(this.apiConfig);
 /// Creates a new indicator type and initializes its dedicated Durable Object
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create`
-Future<ApiResult<PostIndicatorTypeCreateResponse, PostIndicatorTypeCreateError>> postIndicatorTypeCreate({required String accountId, required String datasetId, PostIndicatorTypeCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostIndicatorTypeCreateResponse, PostIndicatorTypeCreateError>> postIndicatorTypeCreate({required String accountId, required String datasetId, PostIndicatorTypeCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,12 +25,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostIndicatorTypeCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostIndicatorTypeCreateError.fromResponse,
 );
- } 
- }
+}
+}

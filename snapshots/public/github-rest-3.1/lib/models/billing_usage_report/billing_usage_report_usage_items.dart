@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUsageReportUsageItems {const BillingUsageReportUsageItems({required this.date, required this.product, required this.sku, required this.quantity, required this.unitType, required this.pricePerUnit, required this.grossAmount, required this.discountAmount, required this.netAmount, required this.organizationName, this.repositoryName, });
 
-factory BillingUsageReportUsageItems.fromJson(Map<String, dynamic> json) { return BillingUsageReportUsageItems(
+factory BillingUsageReportUsageItems.fromJson(Map<String, dynamic> json) {return BillingUsageReportUsageItems(
   date: json['date'] as String,
   product: json['product'] as String,
   sku: json['sku'] as String,
@@ -15,7 +15,7 @@ factory BillingUsageReportUsageItems.fromJson(Map<String, dynamic> json) { retur
   netAmount: (json['netAmount'] as num).toDouble(),
   organizationName: json['organizationName'] as String,
   repositoryName: json['repositoryName'] as String?,
-); }
+);}
 
 /// Date of the usage line item.
 final String date;
@@ -50,7 +50,7 @@ final String organizationName;
 /// Name of the repository.
 final String? repositoryName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': date,
   'product': product,
   'sku': sku,
@@ -62,8 +62,8 @@ Map<String, dynamic> toJson() { return {
   'netAmount': netAmount,
   'organizationName': organizationName,
   'repositoryName': ?repositoryName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('date') && json['date'] is String &&
       json.containsKey('product') && json['product'] is String &&
       json.containsKey('sku') && json['sku'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('date'
       json.containsKey('grossAmount') && json['grossAmount'] is num &&
       json.containsKey('discountAmount') && json['discountAmount'] is num &&
       json.containsKey('netAmount') && json['netAmount'] is num &&
-      json.containsKey('organizationName') && json['organizationName'] is String; } 
-BillingUsageReportUsageItems copyWith({String? date, String? product, String? sku, int? quantity, String? unitType, double? pricePerUnit, double? grossAmount, double? discountAmount, double? netAmount, String? organizationName, String? Function()? repositoryName, }) { return BillingUsageReportUsageItems(
+      json.containsKey('organizationName') && json['organizationName'] is String;}
+BillingUsageReportUsageItems copyWith({String? date, String? product, String? sku, int? quantity, String? unitType, double? pricePerUnit, double? grossAmount, double? discountAmount, double? netAmount, String? organizationName, String? Function()? repositoryName, }) {return BillingUsageReportUsageItems(
   date: date ?? this.date,
   product: product ?? this.product,
   sku: sku ?? this.sku,
@@ -85,7 +85,7 @@ BillingUsageReportUsageItems copyWith({String? date, String? product, String? sk
   netAmount: netAmount ?? this.netAmount,
   organizationName: organizationName ?? this.organizationName,
   repositoryName: repositoryName != null ? repositoryName() : this.repositoryName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUsageReportUsageItems &&
           date == other.date &&
@@ -104,4 +104,4 @@ BillingUsageReportUsageItems copyWith({String? date, String? product, String? sk
 
 @override String toString() => 'BillingUsageReportUsageItems(\n  date: $date,\n  product: $product,\n  sku: $sku,\n  quantity: $quantity,\n  unitType: $unitType,\n  pricePerUnit: $pricePerUnit,\n  grossAmount: $grossAmount,\n  discountAmount: $discountAmount,\n  netAmount: $netAmount,\n  organizationName: $organizationName,\n  repositoryName: $repositoryName,\n)';
 
- }
+}

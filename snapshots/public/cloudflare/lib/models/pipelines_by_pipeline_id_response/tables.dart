@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the connection.
 sealed class TablesType {const TablesType();
 
-factory TablesType.fromJson(String json) { return switch (json) {
+factory TablesType.fromJson(String json) {return switch (json) {
   'stream' => stream,
   'sink' => sink,
   _ => TablesType$Unknown(json),
-}; }
+};}
 
 static const TablesType stream = TablesType$stream._();
 
@@ -17,30 +17,30 @@ static const TablesType sink = TablesType$sink._();
 static const List<TablesType> values = [stream, sink];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'stream' => 'stream',
   'sink' => 'sink',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TablesType$Unknown; } 
+bool get isUnknown {return this is TablesType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() stream, required W Function() sink, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() stream, required W Function() sink, required W Function(String value) $unknown, }) {return switch (this) {
       TablesType$stream() => stream(),
       TablesType$sink() => sink(),
       TablesType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? stream, W Function()? sink, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stream, W Function()? sink, W Function(String value)? $unknown, }) {return switch (this) {
       TablesType$stream() => stream != null ? stream() : orElse(value),
       TablesType$sink() => sink != null ? sink() : orElse(value),
       TablesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TablesType($value)';
 
- }
+}
 @immutable final class TablesType$stream extends TablesType {const TablesType$stream._();
 
 @override String get value => 'stream';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stream, 
 
 @override int get hashCode => 'stream'.hashCode;
 
- }
+}
 @immutable final class TablesType$sink extends TablesType {const TablesType$sink._();
 
 @override String get value => 'sink';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stream, 
 
 @override int get hashCode => 'sink'.hashCode;
 
- }
+}
 @immutable final class TablesType$Unknown extends TablesType {const TablesType$Unknown(this.value);
 
 @override final String value;
@@ -68,16 +68,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stream, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Tables {const Tables({required this.id, required this.latest, required this.name, required this.type, required this.version, });
 
-factory Tables.fromJson(Map<String, dynamic> json) { return Tables(
+factory Tables.fromJson(Map<String, dynamic> json) {return Tables(
   id: json['id'] as String,
   latest: (json['latest'] as num).toInt(),
   name: json['name'] as String,
   type: TablesType.fromJson(json['type'] as String),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 /// Unique identifier for the connection (stream or sink).
 /// 
@@ -104,30 +104,30 @@ final TablesType type;
 /// Example: `4`
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'latest': latest,
   'name': name,
   'type': type.toJson(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('latest') && json['latest'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') &&
-      json.containsKey('version') && json['version'] is num; } 
+      json.containsKey('version') && json['version'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-Tables copyWith({String? id, int? latest, String? name, TablesType? type, int? version, }) { return Tables(
+return errors;}
+Tables copyWith({String? id, int? latest, String? name, TablesType? type, int? version, }) {return Tables(
   id: id ?? this.id,
   latest: latest ?? this.latest,
   name: name ?? this.name,
   type: type ?? this.type,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Tables &&
           id == other.id &&
@@ -140,4 +140,4 @@ Tables copyWith({String? id, int? latest, String? name, TablesType? type, int? v
 
 @override String toString() => 'Tables(id: $id, latest: $latest, name: $name, type: $type, version: $version)';
 
- }
+}

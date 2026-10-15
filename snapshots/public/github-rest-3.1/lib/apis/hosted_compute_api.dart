@@ -16,7 +16,7 @@ final class HostedComputeApi with ApiExecutor {const HostedComputeApi(this.apiCo
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-configurations`
-Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse, Never>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<HostedComputeListNetworkConfigurationsForOrgResponse, Never>> hostedComputeListNetworkConfigurationsForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -36,13 +36,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a hosted compute network configuration for an organization
 ///
 /// Creates a hosted compute network configuration for an organization.
@@ -50,7 +50,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/settings/network-configurations`
-Future<ApiResult<NetworkConfiguration, Never>> hostedComputeCreateNetworkConfigurationForOrg({required String org, required HostedComputeCreateNetworkConfigurationForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeCreateNetworkConfigurationForOrg({required String org, required HostedComputeCreateNetworkConfigurationForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,13 +61,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NetworkConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get a hosted compute network configuration for an organization
 ///
 /// Gets a hosted compute network configuration configured in an organization.
@@ -75,7 +75,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<NetworkConfiguration, Never>> hostedComputeGetNetworkConfigurationForOrg({required String org, required String networkConfigurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeGetNetworkConfigurationForOrg({required String org, required String networkConfigurationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,13 +84,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NetworkConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update a hosted compute network configuration for an organization
 ///
 /// Updates a hosted compute network configuration for an organization.
@@ -98,7 +98,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<NetworkConfiguration, Never>> hostedComputeUpdateNetworkConfigurationForOrg({required String org, required String networkConfigurationId, required HostedComputeUpdateNetworkConfigurationForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NetworkConfiguration, Never>> hostedComputeUpdateNetworkConfigurationForOrg({required String org, required String networkConfigurationId, required HostedComputeUpdateNetworkConfigurationForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,13 +109,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NetworkConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a hosted compute network configuration from an organization
 ///
 /// Deletes a hosted compute network configuration from an organization.
@@ -123,7 +123,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}`
-Future<ApiResult<void, Never>> hostedComputeDeleteNetworkConfigurationFromOrg({required String org, required String networkConfigurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> hostedComputeDeleteNetworkConfigurationFromOrg({required String org, required String networkConfigurationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,11 +132,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a hosted compute network settings resource for an organization
 ///
 /// Gets a hosted compute network settings resource configured for an organization.
@@ -144,7 +144,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/settings/network-settings/{network_settings_id}`
-Future<ApiResult<NetworkSettings, Never>> hostedComputeGetNetworkSettingsForOrg({required String org, required String networkSettingsId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NetworkSettings, Never>> hostedComputeGetNetworkSettingsForOrg({required String org, required String networkSettingsId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -153,11 +153,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NetworkSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

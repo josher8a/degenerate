@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_build_command.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_deploy_command.dart';import 'package:pub_cloudflare/models/builds_provider_account_name.dart';import 'package:pub_cloudflare/models/builds_repo_name.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';sealed class BuildsBuildTriggerSource {const BuildsBuildTriggerSource();
 
-factory BuildsBuildTriggerSource.fromJson(String json) { return switch (json) {
+factory BuildsBuildTriggerSource.fromJson(String json) {return switch (json) {
   'push' => push,
   'pull_request' => pullRequest,
   'manual' => manual,
   'api' => api,
   _ => BuildsBuildTriggerSource$Unknown(json),
-}; }
+};}
 
 static const BuildsBuildTriggerSource push = BuildsBuildTriggerSource$push._();
 
@@ -22,36 +22,36 @@ static const BuildsBuildTriggerSource api = BuildsBuildTriggerSource$api._();
 static const List<BuildsBuildTriggerSource> values = [push, pullRequest, manual, api];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'push' => 'push',
   'pull_request' => 'pullRequest',
   'manual' => 'manual',
   'api' => 'api',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BuildsBuildTriggerSource$Unknown; } 
+bool get isUnknown {return this is BuildsBuildTriggerSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() push, required W Function() pullRequest, required W Function() manual, required W Function() api, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() push, required W Function() pullRequest, required W Function() manual, required W Function() api, required W Function(String value) $unknown, }) {return switch (this) {
       BuildsBuildTriggerSource$push() => push(),
       BuildsBuildTriggerSource$pullRequest() => pullRequest(),
       BuildsBuildTriggerSource$manual() => manual(),
       BuildsBuildTriggerSource$api() => api(),
       BuildsBuildTriggerSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W Function()? pullRequest, W Function()? manual, W Function()? api, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W Function()? pullRequest, W Function()? manual, W Function()? api, W Function(String value)? $unknown, }) {return switch (this) {
       BuildsBuildTriggerSource$push() => push != null ? push() : orElse(value),
       BuildsBuildTriggerSource$pullRequest() => pullRequest != null ? pullRequest() : orElse(value),
       BuildsBuildTriggerSource$manual() => manual != null ? manual() : orElse(value),
       BuildsBuildTriggerSource$api() => api != null ? api() : orElse(value),
       BuildsBuildTriggerSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BuildsBuildTriggerSource($value)';
 
- }
+}
 @immutable final class BuildsBuildTriggerSource$push extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$push._();
 
 @override String get value => 'push';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W 
 
 @override int get hashCode => 'push'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildTriggerSource$pullRequest extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$pullRequest._();
 
 @override String get value => 'pull_request';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W 
 
 @override int get hashCode => 'pull_request'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildTriggerSource$manual extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$manual._();
 
 @override String get value => 'manual';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W 
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildTriggerSource$api extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$api._();
 
 @override String get value => 'api';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W 
 
 @override int get hashCode => 'api'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildTriggerSource$Unknown extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$Unknown(this.value);
 
 @override final String value;
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Git commit hash
 extension type const BuildsCommitHash(String value) {
 factory BuildsCommitHash.fromJson(String json) => BuildsCommitHash(json);
@@ -107,7 +107,7 @@ String toJson() => value;
 }
 @immutable final class BuildsBuildTriggerMetadataResponse {const BuildsBuildTriggerMetadataResponse({this.author, this.branch, this.buildCommand, this.buildTokenName, this.buildTokenUuid, this.buildTriggerSource, this.commitHash, this.commitMessage, this.deployCommand, this.environmentVariables, this.providerAccountName, this.providerType, this.repoName, this.rootDirectory, });
 
-factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildTriggerMetadataResponse(
+factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) {return BuildsBuildTriggerMetadataResponse(
   author: json['author'] as String?,
   branch: json['branch'] != null ? BuildsBranch.fromJson(json['branch'] as String) : null,
   buildCommand: json['build_command'] != null ? BuildsBuildCommand.fromJson(json['build_command'] as String) : null,
@@ -122,7 +122,7 @@ factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) {
   providerType: json['provider_type'] != null ? BuildsScmProviderType.fromJson(json['provider_type'] as String) : null,
   repoName: json['repo_name'] != null ? BuildsRepoName.fromJson(json['repo_name'] as String) : null,
   rootDirectory: json['root_directory'] != null ? BuildsRootDirectory.fromJson(json['root_directory'] as String) : null,
-); }
+);}
 
 /// Example: `'developer@cloudflare.com'`
 final String? author;
@@ -154,7 +154,7 @@ final BuildsRepoName? repoName;
 
 final BuildsRootDirectory? rootDirectory;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': ?author,
   if (branch != null) 'branch': branch?.toJson(),
   if (buildCommand != null) 'build_command': buildCommand?.toJson(),
@@ -169,9 +169,9 @@ Map<String, dynamic> toJson() { return {
   if (providerType != null) 'provider_type': providerType?.toJson(),
   if (repoName != null) 'repo_name': repoName?.toJson(),
   if (rootDirectory != null) 'root_directory': rootDirectory?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author', 'branch', 'build_command', 'build_token_name', 'build_token_uuid', 'build_trigger_source', 'commit_hash', 'commit_message', 'deploy_command', 'environment_variables', 'provider_account_name', 'provider_type', 'repo_name', 'root_directory'}.contains(key)); } 
-BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsBranch? Function()? branch, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsBuildTriggerSource? Function()? buildTriggerSource, BuildsCommitHash? Function()? commitHash, String? Function()? commitMessage, BuildsDeployCommand? Function()? deployCommand, Map<String, String>? Function()? environmentVariables, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoName? Function()? repoName, BuildsRootDirectory? Function()? rootDirectory, }) { return BuildsBuildTriggerMetadataResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'author', 'branch', 'build_command', 'build_token_name', 'build_token_uuid', 'build_trigger_source', 'commit_hash', 'commit_message', 'deploy_command', 'environment_variables', 'provider_account_name', 'provider_type', 'repo_name', 'root_directory'}.contains(key));}
+BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsBranch? Function()? branch, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsBuildTriggerSource? Function()? buildTriggerSource, BuildsCommitHash? Function()? commitHash, String? Function()? commitMessage, BuildsDeployCommand? Function()? deployCommand, Map<String, String>? Function()? environmentVariables, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoName? Function()? repoName, BuildsRootDirectory? Function()? rootDirectory, }) {return BuildsBuildTriggerMetadataResponse(
   author: author != null ? author() : this.author,
   branch: branch != null ? branch() : this.branch,
   buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,
@@ -186,7 +186,7 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
   providerType: providerType != null ? providerType() : this.providerType,
   repoName: repoName != null ? repoName() : this.repoName,
   rootDirectory: rootDirectory != null ? rootDirectory() : this.rootDirectory,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildTriggerMetadataResponse &&
           author == other.author &&
@@ -208,4 +208,4 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
 
 @override String toString() => 'BuildsBuildTriggerMetadataResponse(\n  author: $author,\n  branch: $branch,\n  buildCommand: $buildCommand,\n  buildTokenName: $buildTokenName,\n  buildTokenUuid: $buildTokenUuid,\n  buildTriggerSource: $buildTriggerSource,\n  commitHash: $commitHash,\n  commitMessage: $commitMessage,\n  deployCommand: $deployCommand,\n  environmentVariables: $environmentVariables,\n  providerAccountName: $providerAccountName,\n  providerType: $providerType,\n  repoName: $repoName,\n  rootDirectory: $rootDirectory,\n)';
 
- }
+}

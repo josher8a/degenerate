@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Ases {const Ases({required this.asn, required this.country, required this.name, required this.rank, this.rankChange, });
 
-factory Ases.fromJson(Map<String, dynamic> json) { return Ases(
+factory Ases.fromJson(Map<String, dynamic> json) {return Ases(
   asn: (json['asn'] as num).toInt(),
   country: json['country'] as String,
   name: json['name'] as String,
   rank: (json['rank'] as num).toInt(),
   rankChange: json['rankChange'] != null ? (json['rankChange'] as num).toInt() : null,
-); }
+);}
 
 /// Example: `4134`
 final int asn;
@@ -26,24 +26,24 @@ final int rank;
 /// Example: `-2`
 final int? rankChange;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'country': country,
   'name': name,
   'rank': rank,
   'rankChange': ?rankChange,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('rank') && json['rank'] is num; } 
-Ases copyWith({int? asn, String? country, String? name, int? rank, int? Function()? rankChange, }) { return Ases(
+      json.containsKey('rank') && json['rank'] is num;}
+Ases copyWith({int? asn, String? country, String? name, int? rank, int? Function()? rankChange, }) {return Ases(
   asn: asn ?? this.asn,
   country: country ?? this.country,
   name: name ?? this.name,
   rank: rank ?? this.rank,
   rankChange: rankChange != null ? rankChange() : this.rankChange,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Ases &&
           asn == other.asn &&
@@ -56,4 +56,4 @@ Ases copyWith({int? asn, String? country, String? name, int? rank, int? Function
 
 @override String toString() => 'Ases(asn: $asn, country: $country, name: $name, rank: $rank, rankChange: $rankChange)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTimeseriesGroupDkim {const RadarGetEmailSecurityTimeseriesGroupDkim();
 
-factory RadarGetEmailSecurityTimeseriesGroupDkim.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTimeseriesGroupDkim.fromJson(String json) {return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
   _ => RadarGetEmailSecurityTimeseriesGroupDkim$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTimeseriesGroupDkim pass = RadarGetEmailSecurityTimeseriesGroupDkim$pass._();
 
@@ -19,33 +19,33 @@ static const RadarGetEmailSecurityTimeseriesGroupDkim fail = RadarGetEmailSecuri
 static const List<RadarGetEmailSecurityTimeseriesGroupDkim> values = [pass, none, fail];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PASS' => 'pass',
   'NONE' => 'none',
   'FAIL' => 'fail',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupDkim$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailSecurityTimeseriesGroupDkim$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTimeseriesGroupDkim$pass() => pass(),
       RadarGetEmailSecurityTimeseriesGroupDkim$none() => none(),
       RadarGetEmailSecurityTimeseriesGroupDkim$fail() => fail(),
       RadarGetEmailSecurityTimeseriesGroupDkim$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTimeseriesGroupDkim$pass() => pass != null ? pass() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDkim$none() => none != null ? none() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDkim$fail() => fail != null ? fail() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDkim$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupDkim($value)';
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDkim$pass extends RadarGetEmailSecurityTimeseriesGroupDkim {const RadarGetEmailSecurityTimeseriesGroupDkim$pass._();
 
 @override String get value => 'PASS';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'PASS'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDkim$none extends RadarGetEmailSecurityTimeseriesGroupDkim {const RadarGetEmailSecurityTimeseriesGroupDkim$none._();
 
 @override String get value => 'NONE';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'NONE'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDkim$fail extends RadarGetEmailSecurityTimeseriesGroupDkim {const RadarGetEmailSecurityTimeseriesGroupDkim$fail._();
 
 @override String get value => 'FAIL';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'FAIL'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDkim$Unknown extends RadarGetEmailSecurityTimeseriesGroupDkim {const RadarGetEmailSecurityTimeseriesGroupDkim$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

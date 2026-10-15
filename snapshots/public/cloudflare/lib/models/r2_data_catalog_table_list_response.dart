@@ -2,19 +2,19 @@
 // Source: #/components/schemas/R2DataCatalogTableListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_details.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_identifier.dart';/// Contains the list of tables with optional pagination.
-@immutable final class R2DataCatalogTableListResponse {const R2DataCatalogTableListResponse({required this.identifiers, this.details, this.nextPageToken, this.tableUuids, });
+@immutable final class R2DataCatalogTableListResponse {const R2DataCatalogTableListResponse({required this.identifiers, this.details = const Omittable.absent(), this.nextPageToken = const Omittable.absent(), this.tableUuids = const Omittable.absent(), });
 
-factory R2DataCatalogTableListResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableListResponse(
-  details: (json['details'] as List<dynamic>?)?.map((e) => R2DataCatalogTableDetails.fromJson(e as Map<String, dynamic>)).toList(),
+factory R2DataCatalogTableListResponse.fromJson(Map<String, dynamic> json) {return R2DataCatalogTableListResponse(
+  details: json.containsKey('details') ? Omittable((json['details'] as List<dynamic>?)?.map((e) => R2DataCatalogTableDetails.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   identifiers: (json['identifiers'] as List<dynamic>).map((e) => R2DataCatalogTableIdentifier.fromJson(e as Map<String, dynamic>)).toList(),
-  nextPageToken: json['next_page_token'] as String?,
-  tableUuids: (json['table_uuids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+  nextPageToken: json.containsKey('next_page_token') ? Omittable(json['next_page_token'] as String?) : const Omittable.absent(),
+  tableUuids: json.containsKey('table_uuids') ? Omittable((json['table_uuids'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
+);}
 
 /// Contains detailed metadata for each table when return_details is true.
 /// Each object includes identifier, UUID, timestamps, and locations.
 /// 
-final List<R2DataCatalogTableDetails>? details;
+final Omittable<List<R2DataCatalogTableDetails>?> details;
 
 /// Lists tables in the namespace.
 final List<R2DataCatalogTableIdentifier> identifiers;
@@ -24,37 +24,39 @@ final List<R2DataCatalogTableIdentifier> identifiers;
 /// 
 /// 
 /// Example: `'MSYxNzU5NzU2MTI4NTU2Njk2JjAxOTliOWEzLTkxMmUtN2ZhMS05YzllLTg5MTAxMGQzYTg0MQ'`
-final String? nextPageToken;
+final Omittable<String?> nextPageToken;
 
 /// Contains UUIDs for each table when return_uuids is true.
 /// The order corresponds to the identifiers array.
 /// 
 /// 
 /// Example: `[0199b9a1-28a0-71e0-a73e-b0fc32c8468e, 0199b9a1-3c74-7731-bf53-d8c67ead079d]`
-final List<String>? tableUuids;
+final Omittable<List<String>?> tableUuids;
 
-Map<String, dynamic> toJson() { return {
-  if (details != null) 'details': details?.map((e) => e.toJson()).toList(),
+Map<String, dynamic> toJson() {return {
+  if (details.isPresent) 'details': details.value?.map((e) => e.toJson()).toList(),
   'identifiers': identifiers.map((e) => e.toJson()).toList(),
-  'next_page_token': ?nextPageToken,
-  'table_uuids': ?tableUuids,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('identifiers'); } 
-R2DataCatalogTableListResponse copyWith({List<R2DataCatalogTableDetails>? Function()? details, List<R2DataCatalogTableIdentifier>? identifiers, String? Function()? nextPageToken, List<String>? Function()? tableUuids, }) { return R2DataCatalogTableListResponse(
-  details: details != null ? details() : this.details,
+  if (nextPageToken.isPresent) 'next_page_token': nextPageToken.value,
+  if (tableUuids.isPresent) 'table_uuids': tableUuids.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('identifiers');}
+R2DataCatalogTableListResponse copyWith({Omittable<List<R2DataCatalogTableDetails>?>? details, List<R2DataCatalogTableIdentifier>? identifiers, Omittable<String?>? nextPageToken, Omittable<List<String>?>? tableUuids, }) {return R2DataCatalogTableListResponse(
+  details: details ?? this.details,
   identifiers: identifiers ?? this.identifiers,
-  nextPageToken: nextPageToken != null ? nextPageToken() : this.nextPageToken,
-  tableUuids: tableUuids != null ? tableUuids() : this.tableUuids,
-); } 
+  nextPageToken: nextPageToken ?? this.nextPageToken,
+  tableUuids: tableUuids ?? this.tableUuids,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableListResponse &&
-          listEquals(details, other.details) &&
+          details.isPresent == other.details.isPresent &&
+          listEquals(details.value, other.details.value) &&
           listEquals(identifiers, other.identifiers) &&
           nextPageToken == other.nextPageToken &&
-          listEquals(tableUuids, other.tableUuids);
+          tableUuids.isPresent == other.tableUuids.isPresent &&
+          listEquals(tableUuids.value, other.tableUuids.value);
 
-@override int get hashCode => Object.hash(Object.hashAll(details ?? const []), Object.hashAll(identifiers), nextPageToken, Object.hashAll(tableUuids ?? const []));
+@override int get hashCode => Object.hash(Object.hashAll(details.value ?? const []), Object.hashAll(identifiers), nextPageToken, Object.hashAll(tableUuids.value ?? const []));
 
 @override String toString() => 'R2DataCatalogTableListResponse(details: $details, identifiers: $identifiers, nextPageToken: $nextPageToken, tableUuids: $tableUuids)';
 
- }
+}

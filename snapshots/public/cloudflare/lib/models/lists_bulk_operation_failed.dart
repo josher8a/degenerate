@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_completed.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';/// The current status of the asynchronous operation.
 sealed class ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus();
 
-factory ListsBulkOperationFailedStatus.fromJson(String json) { return switch (json) {
+factory ListsBulkOperationFailedStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   _ => ListsBulkOperationFailedStatus$Unknown(json),
-}; }
+};}
 
 static const ListsBulkOperationFailedStatus failed = ListsBulkOperationFailedStatus$failed._();
 
 static const List<ListsBulkOperationFailedStatus> values = [failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ListsBulkOperationFailedStatus$Unknown; } 
+bool get isUnknown {return this is ListsBulkOperationFailedStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       ListsBulkOperationFailedStatus$failed() => failed(),
       ListsBulkOperationFailedStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       ListsBulkOperationFailedStatus$failed() => failed != null ? failed() : orElse(value),
       ListsBulkOperationFailedStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ListsBulkOperationFailedStatus($value)';
 
- }
+}
 @immutable final class ListsBulkOperationFailedStatus$failed extends ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus$failed._();
 
 @override String get value => 'failed';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class ListsBulkOperationFailedStatus$Unknown extends ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ListsBulkOperationFailed {const ListsBulkOperationFailed({required this.completed, required this.error, required this.id, required this.status, });
 
-factory ListsBulkOperationFailed.fromJson(Map<String, dynamic> json) { return ListsBulkOperationFailed(
+factory ListsBulkOperationFailed.fromJson(Map<String, dynamic> json) {return ListsBulkOperationFailed(
   completed: ListsCompleted.fromJson(json['completed'] as String),
   error: json['error'] as String,
   id: ListsOperationId.fromJson(json['id'] as String),
   status: ListsBulkOperationFailedStatus.fromJson(json['status'] as String),
-); }
+);}
 
 final ListsCompleted completed;
 
@@ -77,22 +77,22 @@ final ListsOperationId id;
 /// Example: `'failed'`
 final ListsBulkOperationFailedStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed': completed.toJson(),
   'error': error,
   'id': id.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completed') &&
       json.containsKey('error') && json['error'] is String &&
       json.containsKey('id') &&
-      json.containsKey('status') && json['status'] == 'failed'; } 
-ListsBulkOperationFailed copyWith({ListsCompleted? completed, String? error, ListsOperationId? id, ListsBulkOperationFailedStatus? status, }) { return ListsBulkOperationFailed(
+      json.containsKey('status') && json['status'] == 'failed';}
+ListsBulkOperationFailed copyWith({ListsCompleted? completed, String? error, ListsOperationId? id, ListsBulkOperationFailedStatus? status, }) {return ListsBulkOperationFailed(
   completed: completed ?? this.completed,
   error: error ?? this.error,
   id: id ?? this.id,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsBulkOperationFailed &&
           completed == other.completed &&
@@ -104,4 +104,4 @@ ListsBulkOperationFailed copyWith({ListsCompleted? completed, String? error, Lis
 
 @override String toString() => 'ListsBulkOperationFailed(completed: $completed, error: $error, id: $id, status: $status)';
 
- }
+}

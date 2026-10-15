@@ -12,7 +12,7 @@ final class DatasetsApi with ApiExecutor {const DatasetsApi(this.apiConfig);
 /// Populate dataset-specific lookup tables from existing Events data with batch processing
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/datasets/populate`
-Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateError>> postDatasetPopulate({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateError>> postDatasetPopulate({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -21,12 +21,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostDatasetPopulateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostDatasetPopulateError.fromResponse,
 );
- } 
- }
+}
+}

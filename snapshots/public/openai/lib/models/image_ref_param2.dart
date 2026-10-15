@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageRefParam2 {const ImageRefParam2({this.imageUrl, this.fileId, });
 
-factory ImageRefParam2.fromJson(Map<String, dynamic> json) { return ImageRefParam2(
+factory ImageRefParam2.fromJson(Map<String, dynamic> json) {return ImageRefParam2(
   imageUrl: json['image_url'] as String?,
   fileId: json['file_id'] as String?,
-); }
+);}
 
 /// A fully qualified URL or base64-encoded data URL.
 final String? imageUrl;
@@ -14,22 +14,22 @@ final String? imageUrl;
 /// Example: `'file-123'`
 final String? fileId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'image_url': ?imageUrl,
   'file_id': ?fileId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final imageUrl$ = imageUrl;
 if (imageUrl$ != null) {
   if (imageUrl$.runes.length > 20971520) { errors.add('imageUrl: length must be <= 20971520'); }
 }
-return errors; } 
-ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileId, }) { return ImageRefParam2(
+return errors;}
+ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileId, }) {return ImageRefParam2(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageRefParam2 &&
           imageUrl == other.imageUrl &&
@@ -39,4 +39,4 @@ ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileI
 
 @override String toString() => 'ImageRefParam2(imageUrl: $imageUrl, fileId: $fileId)';
 
- }
+}

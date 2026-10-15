@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_summarization_config.dart';import 'package:pub_cloudflare/models/realtimekit_transcription_config.dart';/// The AI Config allows you to customize the behavior of meeting transcriptions and summaries
 @immutable final class RealtimekitAiConfig {const RealtimekitAiConfig({this.summarization, this.transcription, });
 
-factory RealtimekitAiConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAiConfig(
+factory RealtimekitAiConfig.fromJson(Map<String, dynamic> json) {return RealtimekitAiConfig(
   summarization: json['summarization'] != null ? RealtimekitSummarizationConfig.fromJson(json['summarization'] as Map<String, dynamic>) : null,
   transcription: json['transcription'] != null ? RealtimekitTranscriptionConfig.fromJson(json['transcription'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RealtimekitSummarizationConfig? summarization;
 
 final RealtimekitTranscriptionConfig? transcription;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (summarization != null) 'summarization': summarization?.toJson(),
   if (transcription != null) 'transcription': transcription?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summarization', 'transcription'}.contains(key)); } 
-RealtimekitAiConfig copyWith({RealtimekitSummarizationConfig? Function()? summarization, RealtimekitTranscriptionConfig? Function()? transcription, }) { return RealtimekitAiConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'summarization', 'transcription'}.contains(key));}
+RealtimekitAiConfig copyWith({RealtimekitSummarizationConfig? Function()? summarization, RealtimekitTranscriptionConfig? Function()? transcription, }) {return RealtimekitAiConfig(
   summarization: summarization != null ? summarization() : this.summarization,
   transcription: transcription != null ? transcription() : this.transcription,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitAiConfig &&
           summarization == other.summarization &&
@@ -31,4 +31,4 @@ RealtimekitAiConfig copyWith({RealtimekitSummarizationConfig? Function()? summar
 
 @override String toString() => 'RealtimekitAiConfig(summarization: $summarization, transcription: $transcription)';
 
- }
+}

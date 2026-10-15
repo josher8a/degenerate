@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookMarketplacePurchaseCancelledAction {const WebhookMarketplacePurchaseCancelledAction();
 
-factory WebhookMarketplacePurchaseCancelledAction.fromJson(String json) { return switch (json) {
+factory WebhookMarketplacePurchaseCancelledAction.fromJson(String json) {return switch (json) {
   'cancelled' => cancelled,
   _ => WebhookMarketplacePurchaseCancelledAction$Unknown(json),
-}; }
+};}
 
 static const WebhookMarketplacePurchaseCancelledAction cancelled = WebhookMarketplacePurchaseCancelledAction$cancelled._();
 
 static const List<WebhookMarketplacePurchaseCancelledAction> values = [cancelled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cancelled' => 'cancelled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookMarketplacePurchaseCancelledAction$Unknown; } 
+bool get isUnknown {return this is WebhookMarketplacePurchaseCancelledAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cancelled, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookMarketplacePurchaseCancelledAction$cancelled() => cancelled(),
       WebhookMarketplacePurchaseCancelledAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancelled, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookMarketplacePurchaseCancelledAction$cancelled() => cancelled != null ? cancelled() : orElse(value),
       WebhookMarketplacePurchaseCancelledAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookMarketplacePurchaseCancelledAction($value)';
 
- }
+}
 @immutable final class WebhookMarketplacePurchaseCancelledAction$cancelled extends WebhookMarketplacePurchaseCancelledAction {const WebhookMarketplacePurchaseCancelledAction$cancelled._();
 
 @override String get value => 'cancelled';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancelle
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class WebhookMarketplacePurchaseCancelledAction$Unknown extends WebhookMarketplacePurchaseCancelledAction {const WebhookMarketplacePurchaseCancelledAction$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancelle
 
 @override int get hashCode => value.hashCode;
 
- }
+}

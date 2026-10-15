@@ -3,21 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_attestation_request/repos_create_attestation_request_bundle.dart';@immutable final class ReposCreateAttestationRequest {const ReposCreateAttestationRequest({required this.bundle});
 
-factory ReposCreateAttestationRequest.fromJson(Map<String, dynamic> json) { return ReposCreateAttestationRequest(
+factory ReposCreateAttestationRequest.fromJson(Map<String, dynamic> json) {return ReposCreateAttestationRequest(
   bundle: ReposCreateAttestationRequestBundle.fromJson(json['bundle'] as Map<String, dynamic>),
-); }
+);}
 
 /// The attestation's Sigstore Bundle.
 /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
 final ReposCreateAttestationRequestBundle bundle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bundle': bundle.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bundle'); } 
-ReposCreateAttestationRequest copyWith({ReposCreateAttestationRequestBundle? bundle}) { return ReposCreateAttestationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bundle');}
+ReposCreateAttestationRequest copyWith({ReposCreateAttestationRequestBundle? bundle}) {return ReposCreateAttestationRequest(
   bundle: bundle ?? this.bundle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateAttestationRequest &&
           bundle == other.bundle;
@@ -26,4 +26,4 @@ ReposCreateAttestationRequest copyWith({ReposCreateAttestationRequestBundle? bun
 
 @override String toString() => 'ReposCreateAttestationRequest(bundle: $bundle)';
 
- }
+}

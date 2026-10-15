@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteOrganizationResponse {const DeleteOrganizationResponse({required this.id});
 
-factory DeleteOrganizationResponse.fromJson(Map<String, dynamic> json) { return DeleteOrganizationResponse(
+factory DeleteOrganizationResponse.fromJson(Map<String, dynamic> json) {return DeleteOrganizationResponse(
   id: json['id'] as String,
-); }
+);}
 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-DeleteOrganizationResponse copyWith({String? id}) { return DeleteOrganizationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+DeleteOrganizationResponse copyWith({String? id}) {return DeleteOrganizationResponse(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteOrganizationResponse &&
           id == other.id;
@@ -24,4 +24,4 @@ DeleteOrganizationResponse copyWith({String? id}) { return DeleteOrganizationRes
 
 @override String toString() => 'DeleteOrganizationResponse(id: $id)';
 
- }
+}

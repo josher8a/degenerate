@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTreeTree {const GitTreeTree({required this.path, required this.mode, required this.type, required this.sha, this.size, this.url, });
 
-factory GitTreeTree.fromJson(Map<String, dynamic> json) { return GitTreeTree(
+factory GitTreeTree.fromJson(Map<String, dynamic> json) {return GitTreeTree(
   path: json['path'] as String,
   mode: json['mode'] as String,
   type: json['type'] as String,
   sha: json['sha'] as String,
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
   url: json['url'] as String?,
-); }
+);}
 
 final String path;
 
@@ -24,26 +24,26 @@ final int? size;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'mode': mode,
   'type': type,
   'sha': sha,
   'size': ?size,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
       json.containsKey('mode') && json['mode'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('sha') && json['sha'] is String; } 
-GitTreeTree copyWith({String? path, String? mode, String? type, String? sha, int? Function()? size, String? Function()? url, }) { return GitTreeTree(
+      json.containsKey('sha') && json['sha'] is String;}
+GitTreeTree copyWith({String? path, String? mode, String? type, String? sha, int? Function()? size, String? Function()? url, }) {return GitTreeTree(
   path: path ?? this.path,
   mode: mode ?? this.mode,
   type: type ?? this.type,
   sha: sha ?? this.sha,
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitTreeTree &&
           path == other.path &&
@@ -57,4 +57,4 @@ GitTreeTree copyWith({String? path, String? mode, String? type, String? sha, int
 
 @override String toString() => 'GitTreeTree(path: $path, mode: $mode, type: $type, sha: $sha, size: $size, url: $url)';
 
- }
+}

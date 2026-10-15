@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalConnectionTokensRequest {const PostTerminalConnectionTokensRequest({this.expand, this.location, });
 
-factory PostTerminalConnectionTokensRequest.fromJson(Map<String, dynamic> json) { return PostTerminalConnectionTokensRequest(
+factory PostTerminalConnectionTokensRequest.fromJson(Map<String, dynamic> json) {return PostTerminalConnectionTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   location: json['location'] as String?,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,22 +14,22 @@ final List<String>? expand;
 /// The id of the location that this connection token is scoped to. If specified the connection token will only be usable with readers assigned to that location, otherwise the connection token will be usable with all readers. Note that location scoping only applies to internet-connected readers. For more details, see [the docs on scoping connection tokens](https://docs.stripe.com/terminal/fleet/locations-and-zones?dashboard-or-api=api#connection-tokens).
 final String? location;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'location': ?location,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'location'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'location'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final location$ = location;
 if (location$ != null) {
   if (location$.runes.length > 5000) { errors.add('location: length must be <= 5000'); }
 }
-return errors; } 
-PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, String? Function()? location, }) { return PostTerminalConnectionTokensRequest(
+return errors;}
+PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, String? Function()? location, }) {return PostTerminalConnectionTokensRequest(
   expand: expand != null ? expand() : this.expand,
   location: location != null ? location() : this.location,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalConnectionTokensRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, 
 
 @override String toString() => 'PostTerminalConnectionTokensRequest(expand: $expand, location: $location)';
 
- }
+}

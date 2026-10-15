@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Assigned Issue Event
 @immutable final class AssignedIssueEvent {const AssignedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.assignee, required this.assigner, });
 
-factory AssignedIssueEvent.fromJson(Map<String, dynamic> json) { return AssignedIssueEvent(
+factory AssignedIssueEvent.fromJson(Map<String, dynamic> json) {return AssignedIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -13,10 +13,10 @@ factory AssignedIssueEvent.fromJson(Map<String, dynamic> json) { return Assigned
   commitId: json['commit_id'] as String?,
   commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
-  performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   assignee: SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>),
   assigner: SimpleUser.fromJson(json['assigner'] as Map<String, dynamic>),
-); }
+);}
 
 final int id;
 
@@ -34,13 +34,13 @@ final String? commitUrl;
 
 final String createdAt;
 
-final Integration performedViaGithubApp;
+final Integration? performedViaGithubApp;
 
 final SimpleUser assignee;
 
 final SimpleUser assigner;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -49,22 +49,22 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp.toJson(),
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'assignee': assignee.toJson(),
   'assigner': assigner.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('assignee') &&
-      json.containsKey('assigner'); } 
-AssignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? performedViaGithubApp, SimpleUser? assignee, SimpleUser? assigner, }) { return AssignedIssueEvent(
+      json.containsKey('assigner');}
+AssignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? assignee, SimpleUser? assigner, }) {return AssignedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -73,10 +73,10 @@ AssignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? a
   commitId: commitId != null ? commitId() : this.commitId,
   commitUrl: commitUrl != null ? commitUrl() : this.commitUrl,
   createdAt: createdAt ?? this.createdAt,
-  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   assignee: assignee ?? this.assignee,
   assigner: assigner ?? this.assigner,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssignedIssueEvent &&
           id == other.id &&
@@ -95,4 +95,4 @@ AssignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? a
 
 @override String toString() => 'AssignedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  assignee: $assignee,\n  assigner: $assigner,\n)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_rule.dart';@immutable final class DigitalExperienceMonitoringListRulesResponse {const DigitalExperienceMonitoringListRulesResponse({this.rules});
 
-factory DigitalExperienceMonitoringListRulesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringListRulesResponse(
+factory DigitalExperienceMonitoringListRulesResponse.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringListRulesResponse(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDexRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<DigitalExperienceMonitoringDexRule>? rules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules'}.contains(key)); } 
-DigitalExperienceMonitoringListRulesResponse copyWith({List<DigitalExperienceMonitoringDexRule>? Function()? rules}) { return DigitalExperienceMonitoringListRulesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rules'}.contains(key));}
+DigitalExperienceMonitoringListRulesResponse copyWith({List<DigitalExperienceMonitoringDexRule>? Function()? rules}) {return DigitalExperienceMonitoringListRulesResponse(
   rules: rules != null ? rules() : this.rules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringListRulesResponse &&
           listEquals(rules, other.rules);
@@ -24,4 +24,4 @@ DigitalExperienceMonitoringListRulesResponse copyWith({List<DigitalExperienceMon
 
 @override String toString() => 'DigitalExperienceMonitoringListRulesResponse(rules: $rules)';
 
- }
+}

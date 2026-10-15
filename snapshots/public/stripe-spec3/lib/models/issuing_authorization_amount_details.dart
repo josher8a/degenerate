@@ -2,28 +2,28 @@
 // Source: #/components/schemas/IssuingAuthorizationAmountDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingAuthorizationAmountDetails {const IssuingAuthorizationAmountDetails({this.atmFee, this.cashbackAmount, });
+@immutable final class IssuingAuthorizationAmountDetails {const IssuingAuthorizationAmountDetails({this.atmFee = const Omittable.absent(), this.cashbackAmount = const Omittable.absent(), });
 
-factory IssuingAuthorizationAmountDetails.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationAmountDetails(
-  atmFee: json['atm_fee'] != null ? (json['atm_fee'] as num).toInt() : null,
-  cashbackAmount: json['cashback_amount'] != null ? (json['cashback_amount'] as num).toInt() : null,
-); }
+factory IssuingAuthorizationAmountDetails.fromJson(Map<String, dynamic> json) {return IssuingAuthorizationAmountDetails(
+  atmFee: json.containsKey('atm_fee') ? Omittable(json['atm_fee'] != null ? (json['atm_fee'] as num).toInt() : null) : const Omittable.absent(),
+  cashbackAmount: json.containsKey('cashback_amount') ? Omittable(json['cashback_amount'] != null ? (json['cashback_amount'] as num).toInt() : null) : const Omittable.absent(),
+);}
 
 /// The fee charged by the ATM for the cash withdrawal.
-final int? atmFee;
+final Omittable<int?> atmFee;
 
 /// The amount of cash requested by the cardholder.
-final int? cashbackAmount;
+final Omittable<int?> cashbackAmount;
 
-Map<String, dynamic> toJson() { return {
-  'atm_fee': ?atmFee,
-  'cashback_amount': ?cashbackAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'atm_fee', 'cashback_amount'}.contains(key)); } 
-IssuingAuthorizationAmountDetails copyWith({int? Function()? atmFee, int? Function()? cashbackAmount, }) { return IssuingAuthorizationAmountDetails(
-  atmFee: atmFee != null ? atmFee() : this.atmFee,
-  cashbackAmount: cashbackAmount != null ? cashbackAmount() : this.cashbackAmount,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (atmFee.isPresent) 'atm_fee': atmFee.value,
+  if (cashbackAmount.isPresent) 'cashback_amount': cashbackAmount.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'atm_fee', 'cashback_amount'}.contains(key));}
+IssuingAuthorizationAmountDetails copyWith({Omittable<int?>? atmFee, Omittable<int?>? cashbackAmount, }) {return IssuingAuthorizationAmountDetails(
+  atmFee: atmFee ?? this.atmFee,
+  cashbackAmount: cashbackAmount ?? this.cashbackAmount,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationAmountDetails &&
           atmFee == other.atmFee &&
@@ -33,4 +33,4 @@ IssuingAuthorizationAmountDetails copyWith({int? Function()? atmFee, int? Functi
 
 @override String toString() => 'IssuingAuthorizationAmountDetails(atmFee: $atmFee, cashbackAmount: $cashbackAmount)';
 
- }
+}

@@ -12,8 +12,8 @@ void main() {
   group('collectTypeRefs', () {
     test('collects names from object fields', () {
       const obj = IrObject('Parent', [
-        IrField('child', 'child', IrTypeRef('ChildType'), isRequired: true),
-        IrField('other', 'other', IrTypeRef('OtherType')),
+        IrField('child', SpecString('child'), IrTypeRef('ChildType'), isRequired: true),
+        IrField('other', SpecString('other'), IrTypeRef('OtherType')),
       ]);
       final names = <String>{};
       collectTypeRefs(obj, names);
@@ -76,9 +76,9 @@ void main() {
     });
 
     test('collects names from discriminated union mapping values', () {
-      const union = IrDiscriminatedUnion('Shape', 'type', {
-        'circle': IrTypeRef('Circle'),
-        'square': IrTypeRef('Square'),
+      final union = IrDiscriminatedUnion('Shape', SpecString('type'), {
+        SpecString('circle'): IrTypeRef('Circle'),
+        SpecString('square'): IrTypeRef('Square'),
       });
       final names = <String>{};
       collectTypeRefs(union, names);
@@ -87,7 +87,7 @@ void main() {
 
     test('walkFields=false skips object fields', () {
       const obj = IrObject('Parent', [
-        IrField('child', 'child', IrTypeRef('ChildType'), isRequired: true),
+        IrField('child', SpecString('child'), IrTypeRef('ChildType'), isRequired: true),
       ]);
       final names = <String>{};
       collectTypeRefs(obj, names, walkFields: false);
@@ -97,7 +97,7 @@ void main() {
 
     test('resolves IrTypeRef through registry when provided', () {
       const inner = IrObject('Inner', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.string), isRequired: true),
       ]);
       const ref = IrTypeRef('Inner');
       final registry = <String, IrType>{'Inner': inner};
@@ -123,7 +123,7 @@ void main() {
     test('circular refs with registry do not cause infinite loops', () {
       // Node → refs Node itself via IrTypeRef('Node')
       const node = IrObject('Node', [
-        IrField('child', 'child', IrTypeRef('Node')),
+        IrField('child', SpecString('child'), IrTypeRef('Node')),
       ]);
       final registry = <String, IrType>{'Node': node};
       final names = <String>{};
@@ -147,8 +147,8 @@ void main() {
   group('buildTypeDeps', () {
     test('builds correct adjacency map for a simple object', () {
       const obj = IrObject('Foo', [
-        IrField('bar', 'bar', IrTypeRef('Bar'), isRequired: true),
-        IrField('baz', 'baz', IrTypeRef('Baz')),
+        IrField('bar', SpecString('bar'), IrTypeRef('Bar'), isRequired: true),
+        IrField('baz', SpecString('baz'), IrTypeRef('Baz')),
       ]);
       final deps = buildTypeDeps([obj]);
       expect(deps, containsPair('Foo', containsAll(['Bar', 'Baz'])));
@@ -173,10 +173,10 @@ void main() {
 
     test('handles multiple types and builds independent entries', () {
       const a = IrObject('A', [
-        IrField('ref', 'ref', IrTypeRef('B'), isRequired: true),
+        IrField('ref', SpecString('ref'), IrTypeRef('B'), isRequired: true),
       ]);
       const b = IrObject('B', [
-        IrField('val', 'val', IrPrimitive(PrimitiveKind.string),
+        IrField('val', SpecString('val'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       final deps = buildTypeDeps([a, b]);
@@ -276,7 +276,7 @@ void main() {
           'testOp',
           'testOp',
           HttpMethod.get,
-          '/test',
+          SpecString('/test'),
           parameters: parameters,
           requestBody: requestBody,
           responses: responses,
@@ -288,7 +288,7 @@ void main() {
         makeOp(
           parameters: [
             const IrParameter(
-              'param1',
+              SpecString('param1'),
               'param1',
               ParameterLocation.query,
               IrTypeRef('OldParam'),
@@ -308,9 +308,9 @@ void main() {
     test('renames type refs in request body', () {
       final api = IrApi('MyApi', [
         makeOp(
-          requestBody: const IrRequestBody(
+          requestBody: IrRequestBody(
             {
-              'application/json':
+              SpecString('application/json'):
                   IrMediaType(IrTypeRef('OldBody')),
             },
             isRequired: true,
@@ -321,7 +321,7 @@ void main() {
         api,
         (n) => n == 'OldBody' ? 'NewBody' : n,
       );
-      final mt = renamed.operations.first.requestBody!.content['application/json']!;
+      final mt = renamed.operations.first.requestBody!.content[SpecString('application/json')]!;
       expect((mt.schema as IrTypeRef).name, equals('NewBody'));
     });
 
@@ -329,9 +329,9 @@ void main() {
       final api = IrApi('MyApi', [
         makeOp(
           responses: {
-            200: const IrResponse(
+            200: IrResponse(
               content: {
-                'application/json': IrMediaType(IrTypeRef('OldResponse')),
+                SpecString('application/json'): IrMediaType(IrTypeRef('OldResponse')),
               },
             ),
           },
@@ -342,16 +342,16 @@ void main() {
         (n) => n == 'OldResponse' ? 'NewResponse' : n,
       );
       final mt =
-          renamed.operations.first.responses[200]!.content['application/json']!;
+          renamed.operations.first.responses[200]!.content[SpecString('application/json')]!;
       expect((mt.schema as IrTypeRef).name, equals('NewResponse'));
     });
 
     test('renames type refs in default response', () {
       final api = IrApi('MyApi', [
         makeOp(
-          defaultResponse: const IrResponse(
+          defaultResponse: IrResponse(
             content: {
-              'application/json': IrMediaType(IrTypeRef('OldDefault')),
+              SpecString('application/json'): IrMediaType(IrTypeRef('OldDefault')),
             },
           ),
         ),
@@ -360,7 +360,7 @@ void main() {
         api,
         (n) => n == 'OldDefault' ? 'NewDefault' : n,
       );
-      final mt = renamed.operations.first.defaultResponse!.content['application/json']!;
+      final mt = renamed.operations.first.defaultResponse!.content[SpecString('application/json')]!;
       expect((mt.schema as IrTypeRef).name, equals('NewDefault'));
     });
 
@@ -370,7 +370,7 @@ void main() {
           responses: {
             200: const IrResponse(
               headers: [
-                IrField('xHeader', 'X-Header', IrTypeRef('OldHeader')),
+                IrField('xHeader', SpecString('X-Header'), IrTypeRef('OldHeader')),
               ],
             ),
           },
@@ -396,9 +396,9 @@ void main() {
       final api = IrApi('MyApi', [
         makeOp(
           responses: {
-            200: const IrResponse(
+            200: IrResponse(
               content: {
-                'application/x-ndjson': IrMediaType(
+                SpecString('application/x-ndjson'): IrMediaType(
                   IrTypeRef('StreamType'),
                   itemSchema: IrTypeRef('ItemType'),
                 ),
@@ -412,7 +412,7 @@ void main() {
         (n) => n == 'ItemType' ? 'RenamedItem' : n,
       );
       final mt =
-          renamed.operations.first.responses[200]!.content['application/x-ndjson']!;
+          renamed.operations.first.responses[200]!.content[SpecString('application/x-ndjson')]!;
       expect((mt.itemSchema! as IrTypeRef).name, equals('RenamedItem'));
     });
   });
@@ -437,10 +437,10 @@ void main() {
           'op',
           'op',
           HttpMethod.post,
-          '/op',
+          SpecString('/op'),
           parameters: [
             IrParameter(
-              'statuses',
+              SpecString('statuses'),
               'statuses',
               ParameterLocation.query,
               IrList(IrTypeRef('MyEnum')),
@@ -468,15 +468,15 @@ void main() {
       };
       final resolver = TypeRefResolver(registry);
 
-      const api = IrApi('MyApi', [
+      final api = IrApi('MyApi', [
         IrOperation(
           'op',
           'op',
           HttpMethod.post,
-          '/op',
+          SpecString('/op'),
           requestBody: IrRequestBody(
             {
-              'application/json':
+              SpecString('application/json'):
                   IrMediaType(IrList(IrTypeRef('Alias'))),
             },
             isRequired: true,
@@ -487,7 +487,7 @@ void main() {
 
       final result = resolveApiTypeRefs(resolver, [api]);
       final mt =
-          result.first.operations.first.requestBody!.content['application/json']!;
+          result.first.operations.first.requestBody!.content[SpecString('application/json')]!;
       // The outer IrList should be unchanged; its item should be IrPrimitive.
       expect(mt.schema, isA<IrList>());
       expect((mt.schema as IrList).items, isA<IrPrimitive>());
@@ -499,16 +499,16 @@ void main() {
       };
       final resolver = TypeRefResolver(registry);
 
-      const api = IrApi('MyApi', [
+      final api = IrApi('MyApi', [
         IrOperation(
           'op',
           'op',
           HttpMethod.get,
-          '/op',
+          SpecString('/op'),
           responses: {
             200: IrResponse(
               content: {
-                'application/json':
+                SpecString('application/json'):
                     IrMediaType(IrList(IrTypeRef('Alias'))),
               },
             ),
@@ -518,7 +518,7 @@ void main() {
 
       final result = resolveApiTypeRefs(resolver, [api]);
       final mt =
-          result.first.operations.first.responses[200]!.content['application/json']!;
+          result.first.operations.first.responses[200]!.content[SpecString('application/json')]!;
       expect(mt.schema, isA<IrList>());
       expect((mt.schema as IrList).items, isA<IrPrimitive>());
     });
@@ -533,10 +533,10 @@ void main() {
         'op',
         'op',
         HttpMethod.get,
-        '/op',
+        SpecString('/op'),
         parameters: [
           IrParameter(
-            'id',
+            SpecString('id'),
             'id',
             ParameterLocation.path,
             IrPrimitive(PrimitiveKind.string),
@@ -564,10 +564,10 @@ void main() {
         'noop',
         'noop',
         HttpMethod.get,
-        '/noop',
+        SpecString('/noop'),
         parameters: [
           IrParameter(
-            'x',
+            SpecString('x'),
             'x',
             ParameterLocation.query,
             IrPrimitive(PrimitiveKind.string),
@@ -580,10 +580,10 @@ void main() {
           'op',
           'op',
           HttpMethod.post,
-          '/op',
+          SpecString('/op'),
           parameters: [
             IrParameter(
-              'flag',
+              SpecString('flag'),
               'flag',
               ParameterLocation.query,
               IrTypeRef('Alias'),

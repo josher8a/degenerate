@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultDataContent {const ResultDataContent({this.text, this.type, });
 
-factory ResultDataContent.fromJson(Map<String, dynamic> json) { return ResultDataContent(
+factory ResultDataContent.fromJson(Map<String, dynamic> json) {return ResultDataContent(
   text: json['text'] as String?,
   type: json['type'] as String?,
-); }
+);}
 
 final String? text;
 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': ?text,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text', 'type'}.contains(key)); } 
-ResultDataContent copyWith({String? Function()? text, String? Function()? type, }) { return ResultDataContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'text', 'type'}.contains(key));}
+ResultDataContent copyWith({String? Function()? text, String? Function()? type, }) {return ResultDataContent(
   text: text != null ? text() : this.text,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultDataContent &&
           text == other.text &&
@@ -30,4 +30,4 @@ ResultDataContent copyWith({String? Function()? text, String? Function()? type, 
 
 @override String toString() => 'ResultDataContent(text: $text, type: $type)';
 
- }
+}

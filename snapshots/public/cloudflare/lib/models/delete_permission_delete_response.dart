@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePermissionDeleteResponse {const DeletePermissionDeleteResponse({this.message, this.success, });
 
-factory DeletePermissionDeleteResponse.fromJson(Map<String, dynamic> json) { return DeletePermissionDeleteResponse(
+factory DeletePermissionDeleteResponse.fromJson(Map<String, dynamic> json) {return DeletePermissionDeleteResponse(
   message: json['message'] as String?,
   success: json['success'] as bool?,
-); }
+);}
 
 final String? message;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': ?message,
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'success'}.contains(key)); } 
-DeletePermissionDeleteResponse copyWith({String? Function()? message, bool? Function()? success, }) { return DeletePermissionDeleteResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'message', 'success'}.contains(key));}
+DeletePermissionDeleteResponse copyWith({String? Function()? message, bool? Function()? success, }) {return DeletePermissionDeleteResponse(
   message: message != null ? message() : this.message,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeletePermissionDeleteResponse &&
           message == other.message &&
@@ -30,4 +30,4 @@ DeletePermissionDeleteResponse copyWith({String? Function()? message, bool? Func
 
 @override String toString() => 'DeletePermissionDeleteResponse(message: $message, success: $success)';
 
- }
+}

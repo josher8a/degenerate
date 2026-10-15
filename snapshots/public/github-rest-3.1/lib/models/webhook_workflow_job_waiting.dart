@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_waiting/webhook_workflow_job_waiting_workflow_job.dart';sealed class WebhookWorkflowJobWaitingAction {const WebhookWorkflowJobWaitingAction();
 
-factory WebhookWorkflowJobWaitingAction.fromJson(String json) { return switch (json) {
+factory WebhookWorkflowJobWaitingAction.fromJson(String json) {return switch (json) {
   'waiting' => waiting,
   _ => WebhookWorkflowJobWaitingAction$Unknown(json),
-}; }
+};}
 
 static const WebhookWorkflowJobWaitingAction waiting = WebhookWorkflowJobWaitingAction$waiting._();
 
 static const List<WebhookWorkflowJobWaitingAction> values = [waiting];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'waiting' => 'waiting',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookWorkflowJobWaitingAction$Unknown; } 
+bool get isUnknown {return this is WebhookWorkflowJobWaitingAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() waiting, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookWorkflowJobWaitingAction$waiting() => waiting(),
       WebhookWorkflowJobWaitingAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookWorkflowJobWaitingAction$waiting() => waiting != null ? waiting() : orElse(value),
       WebhookWorkflowJobWaitingAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookWorkflowJobWaitingAction($value)';
 
- }
+}
 @immutable final class WebhookWorkflowJobWaitingAction$waiting extends WebhookWorkflowJobWaitingAction {const WebhookWorkflowJobWaitingAction$waiting._();
 
 @override String get value => 'waiting';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'waiting'.hashCode;
 
- }
+}
 @immutable final class WebhookWorkflowJobWaitingAction$Unknown extends WebhookWorkflowJobWaitingAction {const WebhookWorkflowJobWaitingAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookWorkflowJobWaiting {const WebhookWorkflowJobWaiting({required this.action, required this.repository, required this.sender, required this.workflowJob, this.enterprise, this.installation, this.organization, this.deployment, });
 
-factory WebhookWorkflowJobWaiting.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobWaiting(
+factory WebhookWorkflowJobWaiting.fromJson(Map<String, dynamic> json) {return WebhookWorkflowJobWaiting(
   action: WebhookWorkflowJobWaitingAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -64,7 +64,7 @@ factory WebhookWorkflowJobWaiting.fromJson(Map<String, dynamic> json) { return W
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflowJob: WebhookWorkflowJobWaitingWorkflowJob.fromJson(json['workflow_job'] as Map<String, dynamic>),
   deployment: json['deployment'] != null ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookWorkflowJobWaitingAction action;
 
@@ -82,7 +82,7 @@ final WebhookWorkflowJobWaitingWorkflowJob workflowJob;
 
 final Deployment? deployment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -91,12 +91,12 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'workflow_job': workflowJob.toJson(),
   if (deployment != null) 'deployment': deployment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('workflow_job'); } 
-WebhookWorkflowJobWaiting copyWith({WebhookWorkflowJobWaitingAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookWorkflowJobWaitingWorkflowJob? workflowJob, Deployment? Function()? deployment, }) { return WebhookWorkflowJobWaiting(
+      json.containsKey('workflow_job');}
+WebhookWorkflowJobWaiting copyWith({WebhookWorkflowJobWaitingAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookWorkflowJobWaitingWorkflowJob? workflowJob, Deployment? Function()? deployment, }) {return WebhookWorkflowJobWaiting(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -105,7 +105,7 @@ WebhookWorkflowJobWaiting copyWith({WebhookWorkflowJobWaitingAction? action, Ent
   sender: sender ?? this.sender,
   workflowJob: workflowJob ?? this.workflowJob,
   deployment: deployment != null ? deployment() : this.deployment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobWaiting &&
           action == other.action &&
@@ -121,4 +121,4 @@ WebhookWorkflowJobWaiting copyWith({WebhookWorkflowJobWaitingAction? action, Ent
 
 @override String toString() => 'WebhookWorkflowJobWaiting(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)';
 
- }
+}

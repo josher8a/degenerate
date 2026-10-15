@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
 @immutable final class Restrictions {const Restrictions({required this.users, required this.teams, this.apps, });
 
-factory Restrictions.fromJson(Map<String, dynamic> json) { return Restrictions(
+factory Restrictions.fromJson(Map<String, dynamic> json) {return Restrictions(
   users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),
   teams: (json['teams'] as List<dynamic>).map((e) => e as String).toList(),
   apps: (json['apps'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The list of user `login`s with push access
 final List<String> users;
@@ -19,18 +19,18 @@ final List<String> teams;
 /// The list of app `slug`s with push access
 final List<String>? apps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'users': users,
   'teams': teams,
   'apps': ?apps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('users') &&
-      json.containsKey('teams'); } 
-Restrictions copyWith({List<String>? users, List<String>? teams, List<String>? Function()? apps, }) { return Restrictions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('users') &&
+      json.containsKey('teams');}
+Restrictions copyWith({List<String>? users, List<String>? teams, List<String>? Function()? apps, }) {return Restrictions(
   users: users ?? this.users,
   teams: teams ?? this.teams,
   apps: apps != null ? apps() : this.apps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Restrictions &&
           listEquals(users, other.users) &&
@@ -41,4 +41,4 @@ Restrictions copyWith({List<String>? users, List<String>? teams, List<String>? F
 
 @override String toString() => 'Restrictions(users: $users, teams: $teams, apps: $apps)';
 
- }
+}

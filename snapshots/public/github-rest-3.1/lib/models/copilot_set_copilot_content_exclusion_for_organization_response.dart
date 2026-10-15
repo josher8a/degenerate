@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotSetCopilotContentExclusionForOrganizationResponse {const CopilotSetCopilotContentExclusionForOrganizationResponse({this.message});
 
-factory CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(Map<String, dynamic> json) { return CopilotSetCopilotContentExclusionForOrganizationResponse(
+factory CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(Map<String, dynamic> json) {return CopilotSetCopilotContentExclusionForOrganizationResponse(
   message: json['message'] as String?,
-); }
+);}
 
 final String? message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': ?message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message'}.contains(key)); } 
-CopilotSetCopilotContentExclusionForOrganizationResponse copyWith({String? Function()? message}) { return CopilotSetCopilotContentExclusionForOrganizationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'message'}.contains(key));}
+CopilotSetCopilotContentExclusionForOrganizationResponse copyWith({String? Function()? message}) {return CopilotSetCopilotContentExclusionForOrganizationResponse(
   message: message != null ? message() : this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotSetCopilotContentExclusionForOrganizationResponse &&
           message == other.message;
@@ -24,4 +24,4 @@ CopilotSetCopilotContentExclusionForOrganizationResponse copyWith({String? Funct
 
 @override String toString() => 'CopilotSetCopilotContentExclusionForOrganizationResponse(message: $message)';
 
- }
+}

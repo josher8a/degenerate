@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/link_with_type.dart';@immutable final class FeedLinks {const FeedLinks({required this.timeline, required this.user, this.securityAdvisories, this.currentUser, this.currentUserPublic, this.currentUserActor, this.currentUserOrganization, this.currentUserOrganizations, this.repositoryDiscussions, this.repositoryDiscussionsCategory, });
 
-factory FeedLinks.fromJson(Map<String, dynamic> json) { return FeedLinks(
+factory FeedLinks.fromJson(Map<String, dynamic> json) {return FeedLinks(
   timeline: LinkWithType.fromJson(json['timeline'] as Map<String, dynamic>),
   user: LinkWithType.fromJson(json['user'] as Map<String, dynamic>),
   securityAdvisories: json['security_advisories'] != null ? LinkWithType.fromJson(json['security_advisories'] as Map<String, dynamic>) : null,
@@ -14,7 +14,7 @@ factory FeedLinks.fromJson(Map<String, dynamic> json) { return FeedLinks(
   currentUserOrganizations: (json['current_user_organizations'] as List<dynamic>?)?.map((e) => LinkWithType.fromJson(e as Map<String, dynamic>)).toList(),
   repositoryDiscussions: json['repository_discussions'] != null ? LinkWithType.fromJson(json['repository_discussions'] as Map<String, dynamic>) : null,
   repositoryDiscussionsCategory: json['repository_discussions_category'] != null ? LinkWithType.fromJson(json['repository_discussions_category'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final LinkWithType timeline;
 
@@ -36,7 +36,7 @@ final LinkWithType? repositoryDiscussions;
 
 final LinkWithType? repositoryDiscussionsCategory;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timeline': timeline.toJson(),
   'user': user.toJson(),
   if (securityAdvisories != null) 'security_advisories': securityAdvisories?.toJson(),
@@ -47,10 +47,10 @@ Map<String, dynamic> toJson() { return {
   if (currentUserOrganizations != null) 'current_user_organizations': currentUserOrganizations?.map((e) => e.toJson()).toList(),
   if (repositoryDiscussions != null) 'repository_discussions': repositoryDiscussions?.toJson(),
   if (repositoryDiscussionsCategory != null) 'repository_discussions_category': repositoryDiscussionsCategory?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('timeline') &&
-      json.containsKey('user'); } 
-FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Function()? securityAdvisories, LinkWithType? Function()? currentUser, LinkWithType? Function()? currentUserPublic, LinkWithType? Function()? currentUserActor, LinkWithType? Function()? currentUserOrganization, List<LinkWithType>? Function()? currentUserOrganizations, LinkWithType? Function()? repositoryDiscussions, LinkWithType? Function()? repositoryDiscussionsCategory, }) { return FeedLinks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('timeline') &&
+      json.containsKey('user');}
+FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Function()? securityAdvisories, LinkWithType? Function()? currentUser, LinkWithType? Function()? currentUserPublic, LinkWithType? Function()? currentUserActor, LinkWithType? Function()? currentUserOrganization, List<LinkWithType>? Function()? currentUserOrganizations, LinkWithType? Function()? repositoryDiscussions, LinkWithType? Function()? repositoryDiscussionsCategory, }) {return FeedLinks(
   timeline: timeline ?? this.timeline,
   user: user ?? this.user,
   securityAdvisories: securityAdvisories != null ? securityAdvisories() : this.securityAdvisories,
@@ -61,7 +61,7 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
   currentUserOrganizations: currentUserOrganizations != null ? currentUserOrganizations() : this.currentUserOrganizations,
   repositoryDiscussions: repositoryDiscussions != null ? repositoryDiscussions() : this.repositoryDiscussions,
   repositoryDiscussionsCategory: repositoryDiscussionsCategory != null ? repositoryDiscussionsCategory() : this.repositoryDiscussionsCategory,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FeedLinks &&
           timeline == other.timeline &&
@@ -79,4 +79,4 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
 
 @override String toString() => 'FeedLinks(\n  timeline: $timeline,\n  user: $user,\n  securityAdvisories: $securityAdvisories,\n  currentUser: $currentUser,\n  currentUserPublic: $currentUserPublic,\n  currentUserActor: $currentUserActor,\n  currentUserOrganization: $currentUserOrganization,\n  currentUserOrganizations: $currentUserOrganizations,\n  repositoryDiscussions: $repositoryDiscussions,\n  repositoryDiscussionsCategory: $repositoryDiscussionsCategory,\n)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_messages2.dart';@immutable final class CloudforceOneRequestTypesResponse {const CloudforceOneRequestTypesResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory CloudforceOneRequestTypesResponse.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestTypesResponse(
+factory CloudforceOneRequestTypesResponse.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestTypesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CloudforceOneRequestsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CloudforceOneRequestsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<CloudforceOneRequestsMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final List<String>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': ?result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-CloudforceOneRequestTypesResponse copyWith({List<CloudforceOneRequestsMessages2>? errors, List<CloudforceOneRequestsMessages2>? messages, bool? success, List<String>? Function()? result, }) { return CloudforceOneRequestTypesResponse(
+      json.containsKey('success') && json['success'] is bool;}
+CloudforceOneRequestTypesResponse copyWith({List<CloudforceOneRequestsMessages2>? errors, List<CloudforceOneRequestsMessages2>? messages, bool? success, List<String>? Function()? result, }) {return CloudforceOneRequestTypesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestTypesResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ CloudforceOneRequestTypesResponse copyWith({List<CloudforceOneRequestsMessages2>
 
 @override String toString() => 'CloudforceOneRequestTypesResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

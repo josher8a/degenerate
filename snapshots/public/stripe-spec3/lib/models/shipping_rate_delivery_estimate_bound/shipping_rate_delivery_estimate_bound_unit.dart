@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A unit of time.
 sealed class ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit();
 
-factory ShippingRateDeliveryEstimateBoundUnit.fromJson(String json) { return switch (json) {
+factory ShippingRateDeliveryEstimateBoundUnit.fromJson(String json) {return switch (json) {
   'business_day' => businessDay,
   'day' => day,
   'hour' => hour,
   'month' => month,
   'week' => week,
   _ => ShippingRateDeliveryEstimateBoundUnit$Unknown(json),
-}; }
+};}
 
 static const ShippingRateDeliveryEstimateBoundUnit businessDay = ShippingRateDeliveryEstimateBoundUnit$businessDay._();
 
@@ -26,39 +26,39 @@ static const ShippingRateDeliveryEstimateBoundUnit week = ShippingRateDeliveryEs
 static const List<ShippingRateDeliveryEstimateBoundUnit> values = [businessDay, day, hour, month, week];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'business_day' => 'businessDay',
   'day' => 'day',
   'hour' => 'hour',
   'month' => 'month',
   'week' => 'week',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShippingRateDeliveryEstimateBoundUnit$Unknown; } 
+bool get isUnknown {return this is ShippingRateDeliveryEstimateBoundUnit$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() businessDay, required W Function() day, required W Function() hour, required W Function() month, required W Function() week, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() businessDay, required W Function() day, required W Function() hour, required W Function() month, required W Function() week, required W Function(String value) $unknown, }) {return switch (this) {
       ShippingRateDeliveryEstimateBoundUnit$businessDay() => businessDay(),
       ShippingRateDeliveryEstimateBoundUnit$day() => day(),
       ShippingRateDeliveryEstimateBoundUnit$hour() => hour(),
       ShippingRateDeliveryEstimateBoundUnit$month() => month(),
       ShippingRateDeliveryEstimateBoundUnit$week() => week(),
       ShippingRateDeliveryEstimateBoundUnit$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? businessDay, W Function()? day, W Function()? hour, W Function()? month, W Function()? week, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? businessDay, W Function()? day, W Function()? hour, W Function()? month, W Function()? week, W Function(String value)? $unknown, }) {return switch (this) {
       ShippingRateDeliveryEstimateBoundUnit$businessDay() => businessDay != null ? businessDay() : orElse(value),
       ShippingRateDeliveryEstimateBoundUnit$day() => day != null ? day() : orElse(value),
       ShippingRateDeliveryEstimateBoundUnit$hour() => hour != null ? hour() : orElse(value),
       ShippingRateDeliveryEstimateBoundUnit$month() => month != null ? month() : orElse(value),
       ShippingRateDeliveryEstimateBoundUnit$week() => week != null ? week() : orElse(value),
       ShippingRateDeliveryEstimateBoundUnit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShippingRateDeliveryEstimateBoundUnit($value)';
 
- }
+}
 @immutable final class ShippingRateDeliveryEstimateBoundUnit$businessDay extends ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit$businessDay._();
 
 @override String get value => 'business_day';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'business_day'.hashCode;
 
- }
+}
 @immutable final class ShippingRateDeliveryEstimateBoundUnit$day extends ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit$day._();
 
 @override String get value => 'day';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'day'.hashCode;
 
- }
+}
 @immutable final class ShippingRateDeliveryEstimateBoundUnit$hour extends ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit$hour._();
 
 @override String get value => 'hour';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'hour'.hashCode;
 
- }
+}
 @immutable final class ShippingRateDeliveryEstimateBoundUnit$month extends ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit$month._();
 
 @override String get value => 'month';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'month'.hashCode;
 
- }
+}
 @immutable final class ShippingRateDeliveryEstimateBoundUnit$week extends ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit$week._();
 
 @override String get value => 'week';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'week'.hashCode;
 
- }
+}
 @immutable final class ShippingRateDeliveryEstimateBoundUnit$Unknown extends ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => value.hashCode;
 
- }
+}

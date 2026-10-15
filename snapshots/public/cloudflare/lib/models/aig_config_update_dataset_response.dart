@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_dataset_response/aig_config_create_dataset_response_result.dart';@immutable final class AigConfigUpdateDatasetResponse {const AigConfigUpdateDatasetResponse({required this.result, required this.success, });
 
-factory AigConfigUpdateDatasetResponse.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetResponse(
+factory AigConfigUpdateDatasetResponse.fromJson(Map<String, dynamic> json) {return AigConfigUpdateDatasetResponse(
   result: AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigCreateDatasetResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigUpdateDatasetResponse copyWith({AigConfigCreateDatasetResponseResult? result, bool? success, }) { return AigConfigUpdateDatasetResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigUpdateDatasetResponse copyWith({AigConfigCreateDatasetResponseResult? result, bool? success, }) {return AigConfigUpdateDatasetResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigUpdateDatasetResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AigConfigUpdateDatasetResponse copyWith({AigConfigCreateDatasetResponseResult? r
 
 @override String toString() => 'AigConfigUpdateDatasetResponse(result: $result, success: $success)';
 
- }
+}

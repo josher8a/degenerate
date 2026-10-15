@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_verdicts_overall.dart';@immutable final class UrlscannerGetScanResponse2Verdicts {const UrlscannerGetScanResponse2Verdicts({required this.overall});
 
-factory UrlscannerGetScanResponse2Verdicts.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Verdicts(
+factory UrlscannerGetScanResponse2Verdicts.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2Verdicts(
   overall: UrlscannerGetScanResponse2VerdictsOverall.fromJson(json['overall'] as Map<String, dynamic>),
-); }
+);}
 
 final UrlscannerGetScanResponse2VerdictsOverall overall;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'overall': overall.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('overall'); } 
-UrlscannerGetScanResponse2Verdicts copyWith({UrlscannerGetScanResponse2VerdictsOverall? overall}) { return UrlscannerGetScanResponse2Verdicts(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('overall');}
+UrlscannerGetScanResponse2Verdicts copyWith({UrlscannerGetScanResponse2VerdictsOverall? overall}) {return UrlscannerGetScanResponse2Verdicts(
   overall: overall ?? this.overall,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Verdicts &&
           overall == other.overall;
@@ -24,4 +24,4 @@ UrlscannerGetScanResponse2Verdicts copyWith({UrlscannerGetScanResponse2VerdictsO
 
 @override String toString() => 'UrlscannerGetScanResponse2Verdicts(overall: $overall)';
 
- }
+}

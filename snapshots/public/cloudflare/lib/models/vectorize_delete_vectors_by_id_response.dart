@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/VectorizeDeleteVectorsByIdResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response3.dart';@immutable final class VectorizeDeleteVectorsByIdResponse {const VectorizeDeleteVectorsByIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response3.dart';import 'package:pub_cloudflare/models/vectorize_messages2.dart';@immutable final class VectorizeDeleteVectorsByIdResponse {const VectorizeDeleteVectorsByIdResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory VectorizeDeleteVectorsByIdResponse.fromJson(Map<String, dynamic> json) { return VectorizeDeleteVectorsByIdResponse(
-  result: json['result'] != null ? Response3.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory VectorizeDeleteVectorsByIdResponse.fromJson(Map<String, dynamic> json) {return VectorizeDeleteVectorsByIdResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: Response3.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final Response3? result;
+final List<VectorizeMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-VectorizeDeleteVectorsByIdResponse copyWith({Response3? Function()? result}) { return VectorizeDeleteVectorsByIdResponse(
-  result: result != null ? result() : this.result,
-); } 
+final List<VectorizeMessages2> messages;
+
+final Response3 result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+VectorizeDeleteVectorsByIdResponse copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, Response3? result, bool? success, }) {return VectorizeDeleteVectorsByIdResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeleteVectorsByIdResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'VectorizeDeleteVectorsByIdResponse(result: $result)';
+@override String toString() => 'VectorizeDeleteVectorsByIdResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

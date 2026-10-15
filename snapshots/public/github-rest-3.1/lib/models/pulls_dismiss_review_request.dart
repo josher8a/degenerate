@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent();
 
-factory PullsDismissReviewRequestEvent.fromJson(String json) { return switch (json) {
+factory PullsDismissReviewRequestEvent.fromJson(String json) {return switch (json) {
   'DISMISS' => dismiss,
   _ => PullsDismissReviewRequestEvent$Unknown(json),
-}; }
+};}
 
 static const PullsDismissReviewRequestEvent dismiss = PullsDismissReviewRequestEvent$dismiss._();
 
 static const List<PullsDismissReviewRequestEvent> values = [dismiss];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DISMISS' => 'dismiss',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PullsDismissReviewRequestEvent$Unknown; } 
+bool get isUnknown {return this is PullsDismissReviewRequestEvent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dismiss, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dismiss, required W Function(String value) $unknown, }) {return switch (this) {
       PullsDismissReviewRequestEvent$dismiss() => dismiss(),
       PullsDismissReviewRequestEvent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismiss, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismiss, W Function(String value)? $unknown, }) {return switch (this) {
       PullsDismissReviewRequestEvent$dismiss() => dismiss != null ? dismiss() : orElse(value),
       PullsDismissReviewRequestEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PullsDismissReviewRequestEvent($value)';
 
- }
+}
 @immutable final class PullsDismissReviewRequestEvent$dismiss extends PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent$dismiss._();
 
 @override String get value => 'DISMISS';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismiss,
 
 @override int get hashCode => 'DISMISS'.hashCode;
 
- }
+}
 @immutable final class PullsDismissReviewRequestEvent$Unknown extends PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismiss,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PullsDismissReviewRequest {const PullsDismissReviewRequest({required this.message, this.event, });
 
-factory PullsDismissReviewRequest.fromJson(Map<String, dynamic> json) { return PullsDismissReviewRequest(
+factory PullsDismissReviewRequest.fromJson(Map<String, dynamic> json) {return PullsDismissReviewRequest(
   message: json['message'] as String,
   event: json['event'] != null ? PullsDismissReviewRequestEvent.fromJson(json['event'] as String) : null,
-); }
+);}
 
 /// The message for the pull request review dismissal
 final String message;
 
 final PullsDismissReviewRequestEvent? event;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
   if (event != null) 'event': event?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEvent? Function()? event, }) { return PullsDismissReviewRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEvent? Function()? event, }) {return PullsDismissReviewRequest(
   message: message ?? this.message,
   event: event != null ? event() : this.event,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullsDismissReviewRequest &&
           message == other.message &&
@@ -83,4 +83,4 @@ PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEv
 
 @override String toString() => 'PullsDismissReviewRequest(message: $message, event: $event)';
 
- }
+}

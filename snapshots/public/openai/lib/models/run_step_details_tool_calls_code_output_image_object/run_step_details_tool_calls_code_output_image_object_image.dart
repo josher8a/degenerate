@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDetailsToolCallsCodeOutputImageObjectImage {const RunStepDetailsToolCallsCodeOutputImageObjectImage({required this.fileId});
 
-factory RunStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeOutputImageObjectImage(
+factory RunStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsCodeOutputImageObjectImage(
   fileId: json['file_id'] as String,
-); }
+);}
 
 /// The [file](/docs/api-reference/files) ID of the image.
 final String fileId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': fileId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String; } 
-RunStepDetailsToolCallsCodeOutputImageObjectImage copyWith({String? fileId}) { return RunStepDetailsToolCallsCodeOutputImageObjectImage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file_id') && json['file_id'] is String;}
+RunStepDetailsToolCallsCodeOutputImageObjectImage copyWith({String? fileId}) {return RunStepDetailsToolCallsCodeOutputImageObjectImage(
   fileId: fileId ?? this.fileId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeOutputImageObjectImage &&
           fileId == other.fileId;
@@ -25,4 +25,4 @@ RunStepDetailsToolCallsCodeOutputImageObjectImage copyWith({String? fileId}) { r
 
 @override String toString() => 'RunStepDetailsToolCallsCodeOutputImageObjectImage(fileId: $fileId)';
 
- }
+}

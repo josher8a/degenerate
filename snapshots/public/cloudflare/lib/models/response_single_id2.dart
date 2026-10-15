@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_messages2.dart';import 'package:pub_cloudflare/models/cache_result.dart';@immutable final class ResponseSingleId2 {const ResponseSingleId2({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory ResponseSingleId2.fromJson(Map<String, dynamic> json) { return ResponseSingleId2(
+factory ResponseSingleId2.fromJson(Map<String, dynamic> json) {return ResponseSingleId2(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CacheMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: CacheResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<CacheMessages2> errors;
 
@@ -21,22 +21,22 @@ final CacheResult result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseSingleId2 copyWith({List<CacheMessages2>? errors, List<CacheMessages2>? messages, CacheResult? result, bool? success, }) { return ResponseSingleId2(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseSingleId2 copyWith({List<CacheMessages2>? errors, List<CacheMessages2>? messages, CacheResult? result, bool? success, }) {return ResponseSingleId2(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseSingleId2 &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ ResponseSingleId2 copyWith({List<CacheMessages2>? errors, List<CacheMessages2>? 
 
 @override String toString() => 'ResponseSingleId2(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Notification typ
 /// 
 sealed class AbuseReportsGeneralReportOwnerNotification {const AbuseReportsGeneralReportOwnerNotification();
 
-factory AbuseReportsGeneralReportOwnerNotification.fromJson(String json) { return switch (json) {
+factory AbuseReportsGeneralReportOwnerNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   'send-anon' => sendAnon,
   _ => AbuseReportsGeneralReportOwnerNotification$Unknown(json),
-}; }
+};}
 
 static const AbuseReportsGeneralReportOwnerNotification send = AbuseReportsGeneralReportOwnerNotification$send._();
 
@@ -18,30 +18,30 @@ static const AbuseReportsGeneralReportOwnerNotification sendAnon = AbuseReportsG
 static const List<AbuseReportsGeneralReportOwnerNotification> values = [send, sendAnon];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'send' => 'send',
   'send-anon' => 'sendAnon',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AbuseReportsGeneralReportOwnerNotification$Unknown; } 
+bool get isUnknown {return this is AbuseReportsGeneralReportOwnerNotification$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() send, required W Function() sendAnon, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() send, required W Function() sendAnon, required W Function(String value) $unknown, }) {return switch (this) {
       AbuseReportsGeneralReportOwnerNotification$send() => send(),
       AbuseReportsGeneralReportOwnerNotification$sendAnon() => sendAnon(),
       AbuseReportsGeneralReportOwnerNotification$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W Function()? sendAnon, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W Function()? sendAnon, W Function(String value)? $unknown, }) {return switch (this) {
       AbuseReportsGeneralReportOwnerNotification$send() => send != null ? send() : orElse(value),
       AbuseReportsGeneralReportOwnerNotification$sendAnon() => sendAnon != null ? sendAnon() : orElse(value),
       AbuseReportsGeneralReportOwnerNotification$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AbuseReportsGeneralReportOwnerNotification($value)';
 
- }
+}
 @immutable final class AbuseReportsGeneralReportOwnerNotification$send extends AbuseReportsGeneralReportOwnerNotification {const AbuseReportsGeneralReportOwnerNotification$send._();
 
 @override String get value => 'send';
@@ -50,7 +50,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'send'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsGeneralReportOwnerNotification$sendAnon extends AbuseReportsGeneralReportOwnerNotification {const AbuseReportsGeneralReportOwnerNotification$sendAnon._();
 
 @override String get value => 'send-anon';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'send-anon'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsGeneralReportOwnerNotification$Unknown extends AbuseReportsGeneralReportOwnerNotification {const AbuseReportsGeneralReportOwnerNotification$Unknown(this.value);
 
 @override final String value;
@@ -69,4 +69,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigListGatewayDynamicRouteVersionsResponse (inline: Data > Versions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';@immutable final class DataVersions {const DataVersions({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';@immutable final class DataVersions {const DataVersions({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment = const Omittable.absent(), });
 
-factory DataVersions.fromJson(Map<String, dynamic> json) { return DataVersions(
+factory DataVersions.fromJson(Map<String, dynamic> json) {return DataVersions(
   active: Active.fromJson(json['active'] as String),
-  comment: json['comment'] as String?,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   data: json['data'] as String,
   versionId: json['version_id'] as String,
-); }
+);}
 
 final Active active;
 
-final String? comment;
+final Omittable<String?> comment;
 
 final String createdAt;
 
@@ -21,24 +21,24 @@ final String data;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active.toJson(),
-  'comment': ?comment,
+  if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'data': data,
   'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('data') && json['data'] is String &&
-      json.containsKey('version_id') && json['version_id'] is String; } 
-DataVersions copyWith({Active? active, String? Function()? comment, String? createdAt, String? data, String? versionId, }) { return DataVersions(
+      json.containsKey('version_id') && json['version_id'] is String;}
+DataVersions copyWith({Active? active, Omittable<String?>? comment, String? createdAt, String? data, String? versionId, }) {return DataVersions(
   active: active ?? this.active,
-  comment: comment != null ? comment() : this.comment,
+  comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   data: data ?? this.data,
   versionId: versionId ?? this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DataVersions &&
           active == other.active &&
@@ -51,4 +51,4 @@ DataVersions copyWith({Active? active, String? Function()? comment, String? crea
 
 @override String toString() => 'DataVersions(active: $active, comment: $comment, createdAt: $createdAt, data: $data, versionId: $versionId)';
 
- }
+}

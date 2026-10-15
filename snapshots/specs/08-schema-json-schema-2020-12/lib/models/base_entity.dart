@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseEntity {const BaseEntity({required this.id, this.createdAt, });
 
-factory BaseEntity.fromJson(Map<String, dynamic> json) { return BaseEntity(
+factory BaseEntity.fromJson(Map<String, dynamic> json) {return BaseEntity(
   id: json['id'] as String,
   createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : null,
-); }
+);}
 
 final String id;
 
 final DateTime? createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-BaseEntity copyWith({String? id, DateTime? Function()? createdAt, }) { return BaseEntity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+BaseEntity copyWith({String? id, DateTime? Function()? createdAt, }) {return BaseEntity(
   id: id ?? this.id,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BaseEntity &&
           id == other.id &&
@@ -30,4 +30,4 @@ BaseEntity copyWith({String? id, DateTime? Function()? createdAt, }) { return Ba
 
 @override String toString() => 'BaseEntity(id: $id, createdAt: $createdAt)';
 
- }
+}

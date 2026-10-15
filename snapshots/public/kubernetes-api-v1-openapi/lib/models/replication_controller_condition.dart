@@ -2,15 +2,15 @@
 // Source: #/components/schemas/ReplicationControllerCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ReplicationControllerCondition describes the state of a replication controller at a certain point.
-@immutable final class ReplicationControllerCondition {const ReplicationControllerCondition({this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
+@immutable final class ReplicationControllerCondition {const ReplicationControllerCondition({required this.status, required this.type, this.lastTransitionTime, this.message, this.reason, });
 
-factory ReplicationControllerCondition.fromJson(Map<String, dynamic> json) { return ReplicationControllerCondition(
+factory ReplicationControllerCondition.fromJson(Map<String, dynamic> json) {return ReplicationControllerCondition(
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,
   message: json['message'] as String?,
   reason: json['reason'] as String?,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// The last time the condition transitioned from one status to another.
 final Time? lastTransitionTime;
@@ -27,22 +27,22 @@ final String status;
 /// Type of replication controller condition.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lastTransitionTime != null) 'lastTransitionTime': lastTransitionTime?.toJson(),
   'message': ?message,
   'reason': ?reason,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-ReplicationControllerCondition copyWith({Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) { return ReplicationControllerCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+ReplicationControllerCondition copyWith({Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) {return ReplicationControllerCondition(
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReplicationControllerCondition &&
           lastTransitionTime == other.lastTransitionTime &&
@@ -55,4 +55,4 @@ ReplicationControllerCondition copyWith({Time? Function()? lastTransitionTime, S
 
 @override String toString() => 'ReplicationControllerCondition(lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)';
 
- }
+}

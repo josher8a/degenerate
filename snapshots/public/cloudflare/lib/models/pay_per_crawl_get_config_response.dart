@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_daric_config.dart';import 'package:pub_cloudflare/models/pay_per_crawl_msg.dart';import 'package:pub_cloudflare/models/pay_per_crawl_result_info.dart';@immutable final class PayPerCrawlGetConfigResponse {const PayPerCrawlGetConfigResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
 
-factory PayPerCrawlGetConfigResponse.fromJson(Map<String, dynamic> json) { return PayPerCrawlGetConfigResponse(
+factory PayPerCrawlGetConfigResponse.fromJson(Map<String, dynamic> json) {return PayPerCrawlGetConfigResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? PayPerCrawlDaricConfig.fromJson(json['result'] as Map<String, dynamic>) : null,
   resultInfo: json['result_info'] != null ? PayPerCrawlResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final List<PayPerCrawlMsg>? errors;
 
@@ -21,21 +21,21 @@ final PayPerCrawlResultInfo? resultInfo;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   if (result != null) 'result': result?.toJson(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'result', 'result_info', 'success'}.contains(key)); } 
-PayPerCrawlGetConfigResponse copyWith({List<PayPerCrawlMsg>? Function()? errors, List<PayPerCrawlMsg>? Function()? messages, PayPerCrawlDaricConfig? Function()? result, PayPerCrawlResultInfo? Function()? resultInfo, bool? Function()? success, }) { return PayPerCrawlGetConfigResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'result', 'result_info', 'success'}.contains(key));}
+PayPerCrawlGetConfigResponse copyWith({List<PayPerCrawlMsg>? Function()? errors, List<PayPerCrawlMsg>? Function()? messages, PayPerCrawlDaricConfig? Function()? result, PayPerCrawlResultInfo? Function()? resultInfo, bool? Function()? success, }) {return PayPerCrawlGetConfigResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlGetConfigResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ PayPerCrawlGetConfigResponse copyWith({List<PayPerCrawlMsg>? Function()? errors,
 
 @override String toString() => 'PayPerCrawlGetConfigResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';
 
- }
+}

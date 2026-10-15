@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetBillingAlertsAlertType {const GetBillingAlertsAlertType();
 
-factory GetBillingAlertsAlertType.fromJson(String json) { return switch (json) {
+factory GetBillingAlertsAlertType.fromJson(String json) {return switch (json) {
   'usage_threshold' => usageThreshold,
   _ => GetBillingAlertsAlertType$Unknown(json),
-}; }
+};}
 
 static const GetBillingAlertsAlertType usageThreshold = GetBillingAlertsAlertType$usageThreshold._();
 
 static const List<GetBillingAlertsAlertType> values = [usageThreshold];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'usage_threshold' => 'usageThreshold',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetBillingAlertsAlertType$Unknown; } 
+bool get isUnknown {return this is GetBillingAlertsAlertType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() usageThreshold, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() usageThreshold, required W Function(String value) $unknown, }) {return switch (this) {
       GetBillingAlertsAlertType$usageThreshold() => usageThreshold(),
       GetBillingAlertsAlertType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? usageThreshold, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? usageThreshold, W Function(String value)? $unknown, }) {return switch (this) {
       GetBillingAlertsAlertType$usageThreshold() => usageThreshold != null ? usageThreshold() : orElse(value),
       GetBillingAlertsAlertType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetBillingAlertsAlertType($value)';
 
- }
+}
 @immutable final class GetBillingAlertsAlertType$usageThreshold extends GetBillingAlertsAlertType {const GetBillingAlertsAlertType$usageThreshold._();
 
 @override String get value => 'usage_threshold';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? usageThr
 
 @override int get hashCode => 'usage_threshold'.hashCode;
 
- }
+}
 @immutable final class GetBillingAlertsAlertType$Unknown extends GetBillingAlertsAlertType {const GetBillingAlertsAlertType$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? usageThr
 
 @override int get hashCode => value.hashCode;
 
- }
+}

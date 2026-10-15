@@ -2,45 +2,45 @@
 // Source: #/components/schemas/PaymentPagesCheckoutSessionCustomFieldsDropdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_option.dart';/// 
-@immutable final class PaymentPagesCheckoutSessionCustomFieldsDropdown {const PaymentPagesCheckoutSessionCustomFieldsDropdown({required this.options, this.defaultValue, this.value, });
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsDropdown {const PaymentPagesCheckoutSessionCustomFieldsDropdown({required this.options, this.defaultValue = const Omittable.absent(), this.value = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsDropdown(
-  defaultValue: json['default_value'] as String?,
+factory PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionCustomFieldsDropdown(
+  defaultValue: json.containsKey('default_value') ? Omittable(json['default_value'] as String?) : const Omittable.absent(),
   options: (json['options'] as List<dynamic>).map((e) => PaymentPagesCheckoutSessionCustomFieldsOption.fromJson(e as Map<String, dynamic>)).toList(),
-  value: json['value'] as String?,
-); }
+  value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
+);}
 
 /// The value that pre-fills on the payment page.
-final String? defaultValue;
+final Omittable<String?> defaultValue;
 
 /// The options available for the customer to select. Up to 200 options allowed.
 final List<PaymentPagesCheckoutSessionCustomFieldsOption> options;
 
 /// The option selected by the customer. This will be the `value` for the option.
-final String? value;
+final Omittable<String?> value;
 
-Map<String, dynamic> toJson() { return {
-  'default_value': ?defaultValue,
+Map<String, dynamic> toJson() {return {
+  if (defaultValue.isPresent) 'default_value': defaultValue.value,
   'options': options.map((e) => e.toJson()).toList(),
-  'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
+  if (value.isPresent) 'value': value.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('options');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final defaultValue$ = defaultValue;
+List<String> validate() {final errors = <String>[];
+final defaultValue$ = defaultValue.value;
 if (defaultValue$ != null) {
   if (defaultValue$.runes.length > 5000) { errors.add('defaultValue: length must be <= 5000'); }
 }
-final value$ = value;
+final value$ = value.value;
 if (value$ != null) {
   if (value$.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
-return errors; } 
-PaymentPagesCheckoutSessionCustomFieldsDropdown copyWith({String? Function()? defaultValue, List<PaymentPagesCheckoutSessionCustomFieldsOption>? options, String? Function()? value, }) { return PaymentPagesCheckoutSessionCustomFieldsDropdown(
-  defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
+return errors;}
+PaymentPagesCheckoutSessionCustomFieldsDropdown copyWith({Omittable<String?>? defaultValue, List<PaymentPagesCheckoutSessionCustomFieldsOption>? options, Omittable<String?>? value, }) {return PaymentPagesCheckoutSessionCustomFieldsDropdown(
+  defaultValue: defaultValue ?? this.defaultValue,
   options: options ?? this.options,
-  value: value != null ? value() : this.value,
-); } 
+  value: value ?? this.value,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFieldsDropdown &&
           defaultValue == other.defaultValue &&
@@ -51,4 +51,4 @@ PaymentPagesCheckoutSessionCustomFieldsDropdown copyWith({String? Function()? de
 
 @override String toString() => 'PaymentPagesCheckoutSessionCustomFieldsDropdown(defaultValue: $defaultValue, options: $options, value: $value)';
 
- }
+}

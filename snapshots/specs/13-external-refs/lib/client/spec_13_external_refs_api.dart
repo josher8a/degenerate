@@ -14,4 +14,4 @@ static const defaultBaseUrl = 'https://petstore.example.com/v1';
 
 late final PetsApi pets = PetsApi(_config);
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The amount of the tax rate when the `rate_type`` is `flat_amount`. Tax rates with `rate_type` `percentage` can vary based on the transaction, resulting in this field being `null`. This field exposes the amount and currency of the flat tax rate.`
 @immutable final class TaxRateFlatAmount {const TaxRateFlatAmount({required this.amount, required this.currency, });
 
-factory TaxRateFlatAmount.fromJson(Map<String, dynamic> json) { return TaxRateFlatAmount(
+factory TaxRateFlatAmount.fromJson(Map<String, dynamic> json) {return TaxRateFlatAmount(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-); }
+);}
 
 /// Amount of the tax when the `rate_type` is `flat_amount`. This positive integer represents how much to charge in the smallest currency unit (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
 final int amount;
@@ -15,20 +15,20 @@ final int amount;
 /// Three-letter ISO currency code, in lowercase.
 final String currency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
-return errors; } 
-TaxRateFlatAmount copyWith({int? amount, String? currency, }) { return TaxRateFlatAmount(
+return errors;}
+TaxRateFlatAmount copyWith({int? amount, String? currency, }) {return TaxRateFlatAmount(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxRateFlatAmount &&
           amount == other.amount &&
@@ -38,4 +38,4 @@ TaxRateFlatAmount copyWith({int? amount, String? currency, }) { return TaxRateFl
 
 @override String toString() => 'TaxRateFlatAmount(amount: $amount, currency: $currency)';
 
- }
+}

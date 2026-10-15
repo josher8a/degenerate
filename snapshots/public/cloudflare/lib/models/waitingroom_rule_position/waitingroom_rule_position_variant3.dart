@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomRulePositionVariant3 {const WaitingroomRulePositionVariant3({this.after});
 
-factory WaitingroomRulePositionVariant3.fromJson(Map<String, dynamic> json) { return WaitingroomRulePositionVariant3(
+factory WaitingroomRulePositionVariant3.fromJson(Map<String, dynamic> json) {return WaitingroomRulePositionVariant3(
   after: json['after'] as String?,
-); }
+);}
 
 /// Places the rule after rule `<RULE_ID>`. Use this argument with an empty rule ID value ("") to set the rule as the last rule in the ruleset.
 /// 
 /// Example: `'<RULE_ID>'`
 final String? after;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': ?after,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
-WaitingroomRulePositionVariant3 copyWith({String? Function()? after}) { return WaitingroomRulePositionVariant3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'after'}.contains(key));}
+WaitingroomRulePositionVariant3 copyWith({String? Function()? after}) {return WaitingroomRulePositionVariant3(
   after: after != null ? after() : this.after,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomRulePositionVariant3 &&
           after == other.after;
@@ -27,4 +27,4 @@ WaitingroomRulePositionVariant3 copyWith({String? Function()? after}) { return W
 
 @override String toString() => 'WaitingroomRulePositionVariant3(after: $after)';
 
- }
+}

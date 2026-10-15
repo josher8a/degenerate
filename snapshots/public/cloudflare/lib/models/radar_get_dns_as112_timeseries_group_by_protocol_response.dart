@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_protocol_response/radar_get_dns_as112_timeseries_group_by_protocol_response_result.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByProtocolResponse {const RadarGetDnsAs112TimeseriesGroupByProtocolResponse({required this.result, required this.success, });
 
-factory RadarGetDnsAs112TimeseriesGroupByProtocolResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByProtocolResponse(
+factory RadarGetDnsAs112TimeseriesGroupByProtocolResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsAs112TimeseriesGroupByProtocolResponse(
   result: RadarGetDnsAs112TimeseriesGroupByProtocolResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsAs112TimeseriesGroupByProtocolResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsAs112TimeseriesGroupByProtocolResponse copyWith({RadarGetDnsAs112TimeseriesGroupByProtocolResponseResult? result, bool? success, }) { return RadarGetDnsAs112TimeseriesGroupByProtocolResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsAs112TimeseriesGroupByProtocolResponse copyWith({RadarGetDnsAs112TimeseriesGroupByProtocolResponseResult? result, bool? success, }) {return RadarGetDnsAs112TimeseriesGroupByProtocolResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesGroupByProtocolResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetDnsAs112TimeseriesGroupByProtocolResponse copyWith({RadarGetDnsAs112Time
 
 @override String toString() => 'RadarGetDnsAs112TimeseriesGroupByProtocolResponse(result: $result, success: $success)';
 
- }
+}

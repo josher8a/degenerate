@@ -2,35 +2,35 @@
 // Source: #/components/schemas/PaymentMethodKrCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_kr_card/payment_method_details_kr_card_brand.dart';/// 
-@immutable final class PaymentMethodKrCard {const PaymentMethodKrCard({this.brand, this.last4, });
+@immutable final class PaymentMethodKrCard {const PaymentMethodKrCard({this.brand = const Omittable.absent(), this.last4 = const Omittable.absent(), });
 
-factory PaymentMethodKrCard.fromJson(Map<String, dynamic> json) { return PaymentMethodKrCard(
-  brand: json['brand'] != null ? PaymentMethodDetailsKrCardBrand.fromJson(json['brand'] as String) : null,
-  last4: json['last4'] as String?,
-); }
+factory PaymentMethodKrCard.fromJson(Map<String, dynamic> json) {return PaymentMethodKrCard(
+  brand: json.containsKey('brand') ? Omittable(json['brand'] != null ? PaymentMethodDetailsKrCardBrand.fromJson(json['brand'] as String) : null) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+);}
 
 /// The local credit or debit card brand.
-final PaymentMethodDetailsKrCardBrand? brand;
+final Omittable<PaymentMethodDetailsKrCardBrand?> brand;
 
 /// The last four digits of the card. This may not be present for American Express cards.
-final String? last4;
+final Omittable<String?> last4;
 
-Map<String, dynamic> toJson() { return {
-  if (brand != null) 'brand': brand?.toJson(),
-  'last4': ?last4,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'last4'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (brand.isPresent) 'brand': brand.value?.toJson(),
+  if (last4.isPresent) 'last4': last4.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'brand', 'last4'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final last4$ = last4;
+List<String> validate() {final errors = <String>[];
+final last4$ = last4.value;
 if (last4$ != null) {
   if (last4$.runes.length > 4) { errors.add('last4: length must be <= 4'); }
 }
-return errors; } 
-PaymentMethodKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand, String? Function()? last4, }) { return PaymentMethodKrCard(
-  brand: brand != null ? brand() : this.brand,
-  last4: last4 != null ? last4() : this.last4,
-); } 
+return errors;}
+PaymentMethodKrCard copyWith({Omittable<PaymentMethodDetailsKrCardBrand?>? brand, Omittable<String?>? last4, }) {return PaymentMethodKrCard(
+  brand: brand ?? this.brand,
+  last4: last4 ?? this.last4,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodKrCard &&
           brand == other.brand &&
@@ -40,4 +40,4 @@ PaymentMethodKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand
 
 @override String toString() => 'PaymentMethodKrCard(brand: $brand, last4: $last4)';
 
- }
+}

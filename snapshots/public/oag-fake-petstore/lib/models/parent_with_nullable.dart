@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ParentWithNullable
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_fake_petstore/models/child_with_nullable/child_with_nullable_type.dart';@immutable final class ParentWithNullable {const ParentWithNullable({this.type, this.nullableProperty, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_fake_petstore/models/child_with_nullable/child_with_nullable_type.dart';@immutable final class ParentWithNullable {const ParentWithNullable({this.type, this.nullableProperty = const Omittable.absent(), });
 
-factory ParentWithNullable.fromJson(Map<String, dynamic> json) { return ParentWithNullable(
+factory ParentWithNullable.fromJson(Map<String, dynamic> json) {return ParentWithNullable(
   type: json['type'] != null ? ChildWithNullableType.fromJson(json['type'] as String) : null,
-  nullableProperty: json['nullableProperty'] as String?,
-); }
+  nullableProperty: json.containsKey('nullableProperty') ? Omittable(json['nullableProperty'] as String?) : const Omittable.absent(),
+);}
 
 final ChildWithNullableType? type;
 
-final String? nullableProperty;
+final Omittable<String?> nullableProperty;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-  'nullableProperty': ?nullableProperty,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'nullableProperty'}.contains(key)); } 
-ParentWithNullable copyWith({ChildWithNullableType? Function()? type, String? Function()? nullableProperty, }) { return ParentWithNullable(
+  if (nullableProperty.isPresent) 'nullableProperty': nullableProperty.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'nullableProperty'}.contains(key));}
+ParentWithNullable copyWith({ChildWithNullableType? Function()? type, Omittable<String?>? nullableProperty, }) {return ParentWithNullable(
   type: type != null ? type() : this.type,
-  nullableProperty: nullableProperty != null ? nullableProperty() : this.nullableProperty,
-); } 
+  nullableProperty: nullableProperty ?? this.nullableProperty,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ParentWithNullable &&
           type == other.type &&
@@ -30,4 +30,4 @@ ParentWithNullable copyWith({ChildWithNullableType? Function()? type, String? Fu
 
 @override String toString() => 'ParentWithNullable(type: $type, nullableProperty: $nullableProperty)';
 
- }
+}

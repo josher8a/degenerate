@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_action.dart';import 'package:pub_cloudflare/models/email_rule_enabled.dart';import 'package:pub_cloudflare/models/email_rule_matcher.dart';import 'package:pub_cloudflare/models/email_rule_name.dart';import 'package:pub_cloudflare/models/email_rule_priority.dart';@immutable final class EmailUpdateRuleProperties {const EmailUpdateRuleProperties({required this.actions, required this.matchers, this.enabled, this.name, this.priority, });
 
-factory EmailUpdateRuleProperties.fromJson(Map<String, dynamic> json) { return EmailUpdateRuleProperties(
+factory EmailUpdateRuleProperties.fromJson(Map<String, dynamic> json) {return EmailUpdateRuleProperties(
   actions: (json['actions'] as List<dynamic>).map((e) => EmailRuleAction.fromJson(e as Map<String, dynamic>)).toList(),
   enabled: json['enabled'] != null ? EmailRuleEnabled.fromJson(json['enabled'] as bool) : null,
   matchers: (json['matchers'] as List<dynamic>).map((e) => EmailRuleMatcher.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] != null ? EmailRuleName.fromJson(json['name'] as String) : null,
   priority: json['priority'] != null ? EmailRulePriority.fromJson(json['priority'] as num) : null,
-); }
+);}
 
 /// List actions patterns.
 final List<EmailRuleAction> actions;
@@ -26,22 +26,22 @@ final EmailRuleName? name;
 /// Priority of the routing rule.
 final EmailRulePriority? priority;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actions': actions.map((e) => e.toJson()).toList(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   'matchers': matchers.map((e) => e.toJson()).toList(),
   if (name != null) 'name': name?.toJson(),
   if (priority != null) 'priority': priority?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions') &&
-      json.containsKey('matchers'); } 
-EmailUpdateRuleProperties copyWith({List<EmailRuleAction>? actions, EmailRuleEnabled? Function()? enabled, List<EmailRuleMatcher>? matchers, EmailRuleName? Function()? name, EmailRulePriority? Function()? priority, }) { return EmailUpdateRuleProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actions') &&
+      json.containsKey('matchers');}
+EmailUpdateRuleProperties copyWith({List<EmailRuleAction>? actions, EmailRuleEnabled? Function()? enabled, List<EmailRuleMatcher>? matchers, EmailRuleName? Function()? name, EmailRulePriority? Function()? priority, }) {return EmailUpdateRuleProperties(
   actions: actions ?? this.actions,
   enabled: enabled != null ? enabled() : this.enabled,
   matchers: matchers ?? this.matchers,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailUpdateRuleProperties &&
           listEquals(actions, other.actions) &&
@@ -54,4 +54,4 @@ EmailUpdateRuleProperties copyWith({List<EmailRuleAction>? actions, EmailRuleEna
 
 @override String toString() => 'EmailUpdateRuleProperties(actions: $actions, enabled: $enabled, matchers: $matchers, name: $name, priority: $priority)';
 
- }
+}

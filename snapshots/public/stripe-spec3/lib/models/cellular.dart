@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Cellular {const Cellular({required this.enabled});
 
-factory Cellular.fromJson(Map<String, dynamic> json) { return Cellular(
+factory Cellular.fromJson(Map<String, dynamic> json) {return Cellular(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-Cellular copyWith({bool? enabled}) { return Cellular(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+Cellular copyWith({bool? enabled}) {return Cellular(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Cellular &&
           enabled == other.enabled;
@@ -24,4 +24,4 @@ Cellular copyWith({bool? enabled}) { return Cellular(
 
 @override String toString() => 'Cellular(enabled: $enabled)';
 
- }
+}

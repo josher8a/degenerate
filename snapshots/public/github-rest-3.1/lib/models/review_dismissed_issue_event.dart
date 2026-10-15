@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/review_dismissed_issue_event/dismissed_review.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Review Dismissed Issue Event
 @immutable final class ReviewDismissedIssueEvent {const ReviewDismissedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.dismissedReview, });
 
-factory ReviewDismissedIssueEvent.fromJson(Map<String, dynamic> json) { return ReviewDismissedIssueEvent(
+factory ReviewDismissedIssueEvent.fromJson(Map<String, dynamic> json) {return ReviewDismissedIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory ReviewDismissedIssueEvent.fromJson(Map<String, dynamic> json) { return R
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   dismissedReview: DismissedReview.fromJson(json['dismissed_review'] as Map<String, dynamic>),
-); }
+);}
 
 final int id;
 
@@ -37,7 +37,7 @@ final Integration? performedViaGithubApp;
 
 final DismissedReview dismissedReview;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -48,18 +48,18 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   'dismissed_review': dismissedReview.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
-      json.containsKey('dismissed_review'); } 
-ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, DismissedReview? dismissedReview, }) { return ReviewDismissedIssueEvent(
+      json.containsKey('dismissed_review');}
+ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, DismissedReview? dismissedReview, }) {return ReviewDismissedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -70,7 +70,7 @@ ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, Simple
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   dismissedReview: dismissedReview ?? this.dismissedReview,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewDismissedIssueEvent &&
           id == other.id &&
@@ -88,4 +88,4 @@ ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, Simple
 
 @override String toString() => 'ReviewDismissedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  dismissedReview: $dismissedReview,\n)';
 
- }
+}

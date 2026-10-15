@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetaDateRange {const MetaDateRange({required this.endTime, required this.startTime, });
 
-factory MetaDateRange.fromJson(Map<String, dynamic> json) { return MetaDateRange(
+factory MetaDateRange.fromJson(Map<String, dynamic> json) {return MetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),
   startTime: DateTime.parse(json['startTime'] as String),
-); }
+);}
 
 /// Adjusted end of date range.
 /// 
@@ -18,16 +18,16 @@ final DateTime endTime;
 /// Example: `'2022-09-16T10:22:57.555Z'`
 final DateTime startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'endTime': endTime.toIso8601String(),
   'startTime': startTime.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('endTime') && json['endTime'] is String &&
-      json.containsKey('startTime') && json['startTime'] is String; } 
-MetaDateRange copyWith({DateTime? endTime, DateTime? startTime, }) { return MetaDateRange(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('endTime') && json['endTime'] is String &&
+      json.containsKey('startTime') && json['startTime'] is String;}
+MetaDateRange copyWith({DateTime? endTime, DateTime? startTime, }) {return MetaDateRange(
   endTime: endTime ?? this.endTime,
   startTime: startTime ?? this.startTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MetaDateRange &&
           endTime == other.endTime &&
@@ -37,4 +37,4 @@ MetaDateRange copyWith({DateTime? endTime, DateTime? startTime, }) { return Meta
 
 @override String toString() => 'MetaDateRange(endTime: $endTime, startTime: $startTime)';
 
- }
+}

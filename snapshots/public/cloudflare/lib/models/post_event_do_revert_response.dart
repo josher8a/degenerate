@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/post_event_do_revert_response_properties.dart';@immutable final class PostEventDoRevertResponse {const PostEventDoRevertResponse({required this.properties, required this.$required, required this.type, });
 
-factory PostEventDoRevertResponse.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponse(
+factory PostEventDoRevertResponse.fromJson(Map<String, dynamic> json) {return PostEventDoRevertResponse(
   properties: PostEventDoRevertResponseProperties.fromJson(json['properties'] as Map<String, dynamic>),
   $required: (json['required'] as List<dynamic>).map((e) => e as String).toList(),
   type: json['type'] as String,
-); }
+);}
 
 final PostEventDoRevertResponseProperties properties;
 
@@ -16,19 +16,19 @@ final List<String> $required;
 /// Example: `'object'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'properties': properties.toJson(),
   'required': $required,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('properties') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('properties') &&
       json.containsKey('required') &&
-      json.containsKey('type') && json['type'] is String; } 
-PostEventDoRevertResponse copyWith({PostEventDoRevertResponseProperties? properties, List<String>? $required, String? type, }) { return PostEventDoRevertResponse(
+      json.containsKey('type') && json['type'] is String;}
+PostEventDoRevertResponse copyWith({PostEventDoRevertResponseProperties? properties, List<String>? $required, String? type, }) {return PostEventDoRevertResponse(
   properties: properties ?? this.properties,
   $required: $required ?? this.$required,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventDoRevertResponse &&
           properties == other.properties &&
@@ -39,4 +39,4 @@ PostEventDoRevertResponse copyWith({PostEventDoRevertResponseProperties? propert
 
 @override String toString() => 'PostEventDoRevertResponse(properties: $properties, \$required: ${$required}, type: $type)';
 
- }
+}

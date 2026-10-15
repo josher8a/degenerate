@@ -8,7 +8,7 @@ static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': [
 
 static final secureReadRequirements = [const ApiSecurityRequirement({'HttpBearer': []}), const ApiSecurityRequirement({'MutualTLS': []}), const ApiSecurityRequirement({'OpenId': []})];
 
-static ApiConfig applyApiKeyAuth(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value}); } 
-static ApiConfig applyHttpBasic(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
-static ApiConfig applyHttpBearer(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
- }
+static ApiConfig applyApiKeyAuth(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});}
+static ApiConfig applyHttpBasic(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+static ApiConfig applyHttpBearer(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+}

@@ -12,7 +12,7 @@ final class SettingsApi with ApiExecutor {const SettingsApi(this.apiConfig);
 /// Get the current settings for the active account
 ///
 /// `GET /accounts/{account_id}/cni/settings`
-Future<ApiResult<NscSettings, Never>> getSettings({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscSettings, Never>> getSettings({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,17 +21,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update the current settings for the active account
 ///
 /// `PUT /accounts/{account_id}/cni/settings`
-Future<ApiResult<NscSettings, Never>> updateSettings({required String accountId, required NscSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscSettings, Never>> updateSettings({required String accountId, required NscSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -42,11 +42,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

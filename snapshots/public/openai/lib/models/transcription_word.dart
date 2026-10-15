@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptionWord {const TranscriptionWord({required this.word, required this.start, required this.end, });
 
-factory TranscriptionWord.fromJson(Map<String, dynamic> json) { return TranscriptionWord(
+factory TranscriptionWord.fromJson(Map<String, dynamic> json) {return TranscriptionWord(
   word: json['word'] as String,
   start: (json['start'] as num).toDouble(),
   end: (json['end'] as num).toDouble(),
-); }
+);}
 
 /// The text content of the word.
 final String word;
@@ -18,19 +18,19 @@ final double start;
 /// End time of the word in seconds.
 final double end;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'word': word,
   'start': start,
   'end': end,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('word') && json['word'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('word') && json['word'] is String &&
       json.containsKey('start') && json['start'] is num &&
-      json.containsKey('end') && json['end'] is num; } 
-TranscriptionWord copyWith({String? word, double? start, double? end, }) { return TranscriptionWord(
+      json.containsKey('end') && json['end'] is num;}
+TranscriptionWord copyWith({String? word, double? start, double? end, }) {return TranscriptionWord(
   word: word ?? this.word,
   start: start ?? this.start,
   end: end ?? this.end,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptionWord &&
           word == other.word &&
@@ -41,4 +41,4 @@ TranscriptionWord copyWith({String? word, double? start, double? end, }) { retur
 
 @override String toString() => 'TranscriptionWord(word: $word, start: $start, end: $end)';
 
- }
+}

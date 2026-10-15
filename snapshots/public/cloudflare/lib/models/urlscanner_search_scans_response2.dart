@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_search_scans_response2/urlscanner_search_scans_response2_results.dart';@immutable final class UrlscannerSearchScansResponse2 {const UrlscannerSearchScansResponse2({required this.results});
 
-factory UrlscannerSearchScansResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse2(
+factory UrlscannerSearchScansResponse2.fromJson(Map<String, dynamic> json) {return UrlscannerSearchScansResponse2(
   results: (json['results'] as List<dynamic>).map((e) => UrlscannerSearchScansResponse2Results.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<UrlscannerSearchScansResponse2Results> results;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'results': results.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('results'); } 
-UrlscannerSearchScansResponse2 copyWith({List<UrlscannerSearchScansResponse2Results>? results}) { return UrlscannerSearchScansResponse2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('results');}
+UrlscannerSearchScansResponse2 copyWith({List<UrlscannerSearchScansResponse2Results>? results}) {return UrlscannerSearchScansResponse2(
   results: results ?? this.results,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerSearchScansResponse2 &&
           listEquals(results, other.results);
@@ -24,4 +24,4 @@ UrlscannerSearchScansResponse2 copyWith({List<UrlscannerSearchScansResponse2Resu
 
 @override String toString() => 'UrlscannerSearchScansResponse2(results: $results)';
 
- }
+}

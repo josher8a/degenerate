@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';/// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
 @immutable final class TranscriptTextDeltaEvent {const TranscriptTextDeltaEvent({required this.type, required this.delta, this.logprobs, this.segmentId, });
 
-factory TranscriptTextDeltaEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextDeltaEvent(
+factory TranscriptTextDeltaEvent.fromJson(Map<String, dynamic> json) {return TranscriptTextDeltaEvent(
   type: json['type'] as String,
   delta: json['delta'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => TranscriptTextDeltaEventLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
   segmentId: json['segment_id'] as String?,
-); }
+);}
 
 /// The type of the event. Always `transcript.text.delta`.
 /// 
@@ -27,20 +27,20 @@ final List<TranscriptTextDeltaEventLogprobs>? logprobs;
 /// 
 final String? segmentId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'delta': delta,
   if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
   'segment_id': ?segmentId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('delta') && json['delta'] is String; } 
-TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) { return TranscriptTextDeltaEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('delta') && json['delta'] is String;}
+TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) {return TranscriptTextDeltaEvent(
   type: type ?? this.type,
   delta: delta ?? this.delta,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   segmentId: segmentId != null ? segmentId() : this.segmentId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextDeltaEvent &&
           type == other.type &&
@@ -52,4 +52,4 @@ TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptT
 
 @override String toString() => 'TranscriptTextDeltaEvent(type: $type, delta: $delta, logprobs: $logprobs, segmentId: $segmentId)';
 
- }
+}

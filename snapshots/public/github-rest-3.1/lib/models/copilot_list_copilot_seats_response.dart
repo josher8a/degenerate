@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_seat_details.dart';@immutable final class CopilotListCopilotSeatsResponse {const CopilotListCopilotSeatsResponse({this.totalSeats, this.seats, });
 
-factory CopilotListCopilotSeatsResponse.fromJson(Map<String, dynamic> json) { return CopilotListCopilotSeatsResponse(
+factory CopilotListCopilotSeatsResponse.fromJson(Map<String, dynamic> json) {return CopilotListCopilotSeatsResponse(
   totalSeats: json['total_seats'] != null ? (json['total_seats'] as num).toInt() : null,
   seats: (json['seats'] as List<dynamic>?)?.map((e) => CopilotSeatDetails.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Total number of Copilot seats for the organization currently being billed.
 final int? totalSeats;
 
 final List<CopilotSeatDetails>? seats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_seats': ?totalSeats,
   if (seats != null) 'seats': seats?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_seats', 'seats'}.contains(key)); } 
-CopilotListCopilotSeatsResponse copyWith({int? Function()? totalSeats, List<CopilotSeatDetails>? Function()? seats, }) { return CopilotListCopilotSeatsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total_seats', 'seats'}.contains(key));}
+CopilotListCopilotSeatsResponse copyWith({int? Function()? totalSeats, List<CopilotSeatDetails>? Function()? seats, }) {return CopilotListCopilotSeatsResponse(
   totalSeats: totalSeats != null ? totalSeats() : this.totalSeats,
   seats: seats != null ? seats() : this.seats,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotListCopilotSeatsResponse &&
           totalSeats == other.totalSeats &&
@@ -31,4 +31,4 @@ CopilotListCopilotSeatsResponse copyWith({int? Function()? totalSeats, List<Copi
 
 @override String toString() => 'CopilotListCopilotSeatsResponse(totalSeats: $totalSeats, seats: $seats)';
 
- }
+}

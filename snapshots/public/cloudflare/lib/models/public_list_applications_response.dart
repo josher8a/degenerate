@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_messages2.dart';import 'package:pub_cloudflare/models/cc_public_application.dart';@immutable final class PublicListApplicationsResponse {const PublicListApplicationsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory PublicListApplicationsResponse.fromJson(Map<String, dynamic> json) { return PublicListApplicationsResponse(
+factory PublicListApplicationsResponse.fromJson(Map<String, dynamic> json) {return PublicListApplicationsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CcMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CcMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>).map((e) => CcPublicApplication.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<CcMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final List<CcPublicApplication> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-PublicListApplicationsResponse copyWith({List<CcMessages2>? errors, List<CcMessages2>? messages, bool? success, List<CcPublicApplication>? result, }) { return PublicListApplicationsResponse(
+      json.containsKey('result');}
+PublicListApplicationsResponse copyWith({List<CcMessages2>? errors, List<CcMessages2>? messages, bool? success, List<CcPublicApplication>? result, }) {return PublicListApplicationsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PublicListApplicationsResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ PublicListApplicationsResponse copyWith({List<CcMessages2>? errors, List<CcMessa
 
 @override String toString() => 'PublicListApplicationsResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

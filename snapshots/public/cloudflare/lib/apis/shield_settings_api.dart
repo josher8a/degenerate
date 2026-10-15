@@ -14,7 +14,7 @@ final class ShieldSettingsApi with ApiExecutor {const ShieldSettingsApi(this.api
 /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
 ///
 /// `GET /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ShieldConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) {
   queryParameters['normalize'] = normalize.toString();
@@ -31,7 +31,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -39,13 +39,13 @@ return execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Update configuration properties
 ///
 /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
 ///
 /// `PUT /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ShieldConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, required ShieldConfiguration body, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, required ShieldConfiguration body, bool? normalize, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) {
   queryParameters['normalize'] = normalize.toString();
@@ -64,7 +64,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -72,5 +72,5 @@ return execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
- }
+}
+}

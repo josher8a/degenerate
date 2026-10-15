@@ -3,16 +3,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_in_progress/webhook_workflow_job_in_progress_action.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookWorkflowRunInProgress {const WebhookWorkflowRunInProgress({required this.action, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
-factory WebhookWorkflowRunInProgress.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgress(
+factory WebhookWorkflowRunInProgress.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunInProgress(
   action: WebhookWorkflowJobInProgressAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  workflow: WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>),
+  workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
   workflowRun: WebhookWorkflowRunInProgressWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookWorkflowJobInProgressAction action;
 
@@ -26,35 +26,35 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-final WebhooksWorkflow workflow;
+final WebhooksWorkflow? workflow;
 
 final WebhookWorkflowRunInProgressWorkflowRun workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-  'workflow': workflow.toJson(),
+  'workflow': workflow?.toJson(),
   'workflow_run': workflowRun.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
-      json.containsKey('workflow_run'); } 
-WebhookWorkflowRunInProgress copyWith({WebhookWorkflowJobInProgressAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookWorkflowRunInProgressWorkflowRun? workflowRun, }) { return WebhookWorkflowRunInProgress(
+      json.containsKey('workflow_run');}
+WebhookWorkflowRunInProgress copyWith({WebhookWorkflowJobInProgressAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookWorkflowRunInProgressWorkflowRun? workflowRun, }) {return WebhookWorkflowRunInProgress(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-  workflow: workflow ?? this.workflow,
+  workflow: workflow != null ? workflow() : this.workflow,
   workflowRun: workflowRun ?? this.workflowRun,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunInProgress &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookWorkflowRunInProgress copyWith({WebhookWorkflowJobInProgressAction? actio
 
 @override String toString() => 'WebhookWorkflowRunInProgress(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';
 
- }
+}

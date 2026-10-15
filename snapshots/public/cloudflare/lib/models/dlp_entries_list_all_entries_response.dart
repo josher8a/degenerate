@@ -1,9 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEntriesListAllEntriesResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_exact_data_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_integration_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_predefined_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_word_list_entry.dart';@immutable final class DlpEntriesListAllEntriesResponse {const DlpEntriesListAllEntriesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_exact_data_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_integration_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_predefined_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_word_list_entry.dart';import 'package:pub_cloudflare/models/dlp_messages2.dart';@immutable final class DlpEntriesListAllEntriesResponse {const DlpEntriesListAllEntriesResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DlpEntriesListAllEntriesResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesListAllEntriesResponse(
+factory DlpEntriesListAllEntriesResponse.fromJson(Map<String, dynamic> json) {return DlpEntriesListAllEntriesResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => switch (e) {
   final Map<String, dynamic> m when m['type'] == 'custom' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.a(DlpEntryWithUploadStatusCustomEntry.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.b(DlpEntryWithUploadStatusPredefinedEntry.fromJson(m)),
@@ -13,23 +16,43 @@ factory DlpEntriesListAllEntriesResponse.fromJson(Map<String, dynamic> json) { r
   final Map<String, dynamic> m when m['type'] == 'word_list' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.f(DlpEntryWithUploadStatusWordListEntry.fromJson(m)),
   _ => OneOf6.parse(e, fromA: (v) => DlpEntryWithUploadStatusCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpEntryWithUploadStatusPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpEntryWithUploadStatusIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpEntryWithUploadStatusExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpEntryWithUploadStatusDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpEntryWithUploadStatusWordListEntry.fromJson(v as Map<String, dynamic>),),
 }).toList(),
-); }
+);}
+
+final List<DlpMessages2> errors;
+
+final List<DlpMessages2> messages;
+
+/// Whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
 
 final List<DlpEntryWithUploadStatus>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-DlpEntriesListAllEntriesResponse copyWith({List<DlpEntryWithUploadStatus>? Function()? result}) { return DlpEntriesListAllEntriesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool;}
+DlpEntriesListAllEntriesResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, List<DlpEntryWithUploadStatus>? Function()? result, }) {return DlpEntriesListAllEntriesResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntriesListAllEntriesResponse &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
           listEquals(result, other.result);
 
-@override int get hashCode => Object.hashAll(result ?? const []);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result ?? const []));
 
-@override String toString() => 'DlpEntriesListAllEntriesResponse(result: $result)';
+@override String toString() => 'DlpEntriesListAllEntriesResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

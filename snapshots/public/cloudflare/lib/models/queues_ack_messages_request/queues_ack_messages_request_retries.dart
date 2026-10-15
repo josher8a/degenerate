@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_lease_id.dart';import 'package:pub_cloudflare/models/mq_retry_delay.dart';@immutable final class QueuesAckMessagesRequestRetries {const QueuesAckMessagesRequestRetries({this.delaySeconds, this.leaseId, });
 
-factory QueuesAckMessagesRequestRetries.fromJson(Map<String, dynamic> json) { return QueuesAckMessagesRequestRetries(
+factory QueuesAckMessagesRequestRetries.fromJson(Map<String, dynamic> json) {return QueuesAckMessagesRequestRetries(
   delaySeconds: json['delay_seconds'] != null ? MqRetryDelay.fromJson(json['delay_seconds'] as num) : null,
   leaseId: json['lease_id'] != null ? MqLeaseId.fromJson(json['lease_id'] as String) : null,
-); }
+);}
 
 /// The number of seconds to delay before making the message available for another attempt.
 final MqRetryDelay? delaySeconds;
@@ -14,15 +14,15 @@ final MqRetryDelay? delaySeconds;
 /// An ID that represents an "in-flight" message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.
 final MqLeaseId? leaseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (delaySeconds != null) 'delay_seconds': delaySeconds?.toJson(),
   if (leaseId != null) 'lease_id': leaseId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_seconds', 'lease_id'}.contains(key)); } 
-QueuesAckMessagesRequestRetries copyWith({MqRetryDelay? Function()? delaySeconds, MqLeaseId? Function()? leaseId, }) { return QueuesAckMessagesRequestRetries(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'delay_seconds', 'lease_id'}.contains(key));}
+QueuesAckMessagesRequestRetries copyWith({MqRetryDelay? Function()? delaySeconds, MqLeaseId? Function()? leaseId, }) {return QueuesAckMessagesRequestRetries(
   delaySeconds: delaySeconds != null ? delaySeconds() : this.delaySeconds,
   leaseId: leaseId != null ? leaseId() : this.leaseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesAckMessagesRequestRetries &&
           delaySeconds == other.delaySeconds &&
@@ -32,4 +32,4 @@ QueuesAckMessagesRequestRetries copyWith({MqRetryDelay? Function()? delaySeconds
 
 @override String toString() => 'QueuesAckMessagesRequestRetries(delaySeconds: $delaySeconds, leaseId: $leaseId)';
 
- }
+}

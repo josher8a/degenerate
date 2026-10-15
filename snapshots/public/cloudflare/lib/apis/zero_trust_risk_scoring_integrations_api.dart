@@ -12,7 +12,7 @@ final class ZeroTrustRiskScoringIntegrationsApi with ApiExecutor {const ZeroTrus
 /// List all risk score integrations for the account.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations`
-Future<ApiResult<List<DlpRiskScoreIntegration>?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpRiskScoreIntegration>?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationList({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -29,11 +29,11 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Create new risk score integration.
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/integrations`
-Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationCreate({required String accountId, required DlpCreateIntegrationBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationCreate({required String accountId, required DlpCreateIntegrationBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -52,11 +52,11 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Get risk score integration by id.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationGet({required String accountId, required String integrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationGet({required String accountId, required String integrationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -73,13 +73,13 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Update a risk score integration.
 ///
 /// Overwrite the reference_id, tenant_url, and active values with the ones provided.
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationUpdate({required String accountId, required String integrationId, required DlpUpdateIntegrationBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationUpdate({required String accountId, required String integrationId, required DlpUpdateIntegrationBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,7 +90,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -98,11 +98,11 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Delete a risk score integration.
 ///
 /// `DELETE /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}`
-Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationDelete({required String accountId, required String integrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationDelete({required String accountId, required String integrationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -111,7 +111,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -119,11 +119,11 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Get risk score integration by reference id.
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}`
-Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationGetByReferenceId({required String accountId, required String referenceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRiskScoreIntegration?, DlpDatasetsCreateError>> dlpZtRiskScoreIntegrationGetByReferenceId({required String accountId, required String referenceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -132,7 +132,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -140,5 +140,5 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
- }
+}
+}

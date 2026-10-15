@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to view and manage security events like code scanning alerts.
 sealed class SecurityEvents {const SecurityEvents();
 
-factory SecurityEvents.fromJson(String json) { return switch (json) {
+factory SecurityEvents.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => SecurityEvents$Unknown(json),
-}; }
+};}
 
 static const SecurityEvents read = SecurityEvents$read._();
 
@@ -17,30 +17,30 @@ static const SecurityEvents write = SecurityEvents$write._();
 static const List<SecurityEvents> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecurityEvents$Unknown; } 
+bool get isUnknown {return this is SecurityEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       SecurityEvents$read() => read(),
       SecurityEvents$write() => write(),
       SecurityEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       SecurityEvents$read() => read != null ? read() : orElse(value),
       SecurityEvents$write() => write != null ? write() : orElse(value),
       SecurityEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecurityEvents($value)';
 
- }
+}
 @immutable final class SecurityEvents$read extends SecurityEvents {const SecurityEvents$read._();
 
 @override String get value => 'read';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class SecurityEvents$write extends SecurityEvents {const SecurityEvents$write._();
 
 @override String get value => 'write';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class SecurityEvents$Unknown extends SecurityEvents {const SecurityEvents$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

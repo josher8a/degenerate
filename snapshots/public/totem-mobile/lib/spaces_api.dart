@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
+
 export 'apis/spaces_api.dart';
 export 'models/meeting_provider_enum.dart';
 export 'models/mobile_space_detail_schema.dart';

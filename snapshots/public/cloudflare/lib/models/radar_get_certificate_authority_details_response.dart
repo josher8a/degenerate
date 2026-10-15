@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response/radar_get_certificate_authority_details_response_result.dart';@immutable final class RadarGetCertificateAuthorityDetailsResponse {const RadarGetCertificateAuthorityDetailsResponse({required this.result, required this.success, });
 
-factory RadarGetCertificateAuthorityDetailsResponse.fromJson(Map<String, dynamic> json) { return RadarGetCertificateAuthorityDetailsResponse(
+factory RadarGetCertificateAuthorityDetailsResponse.fromJson(Map<String, dynamic> json) {return RadarGetCertificateAuthorityDetailsResponse(
   result: RadarGetCertificateAuthorityDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetCertificateAuthorityDetailsResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetCertificateAuthorityDetailsResponse copyWith({RadarGetCertificateAuthorityDetailsResponseResult? result, bool? success, }) { return RadarGetCertificateAuthorityDetailsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetCertificateAuthorityDetailsResponse copyWith({RadarGetCertificateAuthorityDetailsResponseResult? result, bool? success, }) {return RadarGetCertificateAuthorityDetailsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetCertificateAuthorityDetailsResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetCertificateAuthorityDetailsResponse copyWith({RadarGetCertificateAuthori
 
 @override String toString() => 'RadarGetCertificateAuthorityDetailsResponse(result: $result, success: $success)';
 
- }
+}

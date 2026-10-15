@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
 sealed class TaxIdVerificationStatus {const TaxIdVerificationStatus();
 
-factory TaxIdVerificationStatus.fromJson(String json) { return switch (json) {
+factory TaxIdVerificationStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'unavailable' => unavailable,
   'unverified' => unverified,
   'verified' => verified,
   _ => TaxIdVerificationStatus$Unknown(json),
-}; }
+};}
 
 static const TaxIdVerificationStatus pending = TaxIdVerificationStatus$pending._();
 
@@ -23,36 +23,36 @@ static const TaxIdVerificationStatus verified = TaxIdVerificationStatus$verified
 static const List<TaxIdVerificationStatus> values = [pending, unavailable, unverified, verified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'unavailable' => 'unavailable',
   'unverified' => 'unverified',
   'verified' => 'verified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxIdVerificationStatus$Unknown; } 
+bool get isUnknown {return this is TaxIdVerificationStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() unavailable, required W Function() unverified, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() unavailable, required W Function() unverified, required W Function() verified, required W Function(String value) $unknown, }) {return switch (this) {
       TaxIdVerificationStatus$pending() => pending(),
       TaxIdVerificationStatus$unavailable() => unavailable(),
       TaxIdVerificationStatus$unverified() => unverified(),
       TaxIdVerificationStatus$verified() => verified(),
       TaxIdVerificationStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? unavailable, W Function()? unverified, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? unavailable, W Function()? unverified, W Function()? verified, W Function(String value)? $unknown, }) {return switch (this) {
       TaxIdVerificationStatus$pending() => pending != null ? pending() : orElse(value),
       TaxIdVerificationStatus$unavailable() => unavailable != null ? unavailable() : orElse(value),
       TaxIdVerificationStatus$unverified() => unverified != null ? unverified() : orElse(value),
       TaxIdVerificationStatus$verified() => verified != null ? verified() : orElse(value),
       TaxIdVerificationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxIdVerificationStatus($value)';
 
- }
+}
 @immutable final class TaxIdVerificationStatus$pending extends TaxIdVerificationStatus {const TaxIdVerificationStatus$pending._();
 
 @override String get value => 'pending';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class TaxIdVerificationStatus$unavailable extends TaxIdVerificationStatus {const TaxIdVerificationStatus$unavailable._();
 
 @override String get value => 'unavailable';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'unavailable'.hashCode;
 
- }
+}
 @immutable final class TaxIdVerificationStatus$unverified extends TaxIdVerificationStatus {const TaxIdVerificationStatus$unverified._();
 
 @override String get value => 'unverified';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'unverified'.hashCode;
 
- }
+}
 @immutable final class TaxIdVerificationStatus$verified extends TaxIdVerificationStatus {const TaxIdVerificationStatus$verified._();
 
 @override String get value => 'verified';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'verified'.hashCode;
 
- }
+}
 @immutable final class TaxIdVerificationStatus$Unknown extends TaxIdVerificationStatus {const TaxIdVerificationStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,47 +98,47 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress, this.verifiedName, });
+@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
-factory TaxIdVerification.fromJson(Map<String, dynamic> json) { return TaxIdVerification(
+factory TaxIdVerification.fromJson(Map<String, dynamic> json) {return TaxIdVerification(
   status: TaxIdVerificationStatus.fromJson(json['status'] as String),
-  verifiedAddress: json['verified_address'] as String?,
-  verifiedName: json['verified_name'] as String?,
-); }
+  verifiedAddress: json.containsKey('verified_address') ? Omittable(json['verified_address'] as String?) : const Omittable.absent(),
+  verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
+);}
 
 /// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
 final TaxIdVerificationStatus status;
 
 /// Verified address.
-final String? verifiedAddress;
+final Omittable<String?> verifiedAddress;
 
 /// Verified name.
-final String? verifiedName;
+final Omittable<String?> verifiedName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status.toJson(),
-  'verified_address': ?verifiedAddress,
-  'verified_name': ?verifiedName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+  if (verifiedAddress.isPresent) 'verified_address': verifiedAddress.value,
+  if (verifiedName.isPresent) 'verified_name': verifiedName.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final verifiedAddress$ = verifiedAddress;
+List<String> validate() {final errors = <String>[];
+final verifiedAddress$ = verifiedAddress.value;
 if (verifiedAddress$ != null) {
   if (verifiedAddress$.runes.length > 5000) { errors.add('verifiedAddress: length must be <= 5000'); }
 }
-final verifiedName$ = verifiedName;
+final verifiedName$ = verifiedName.value;
 if (verifiedName$ != null) {
   if (verifiedName$.runes.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
-return errors; } 
-TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()? verifiedAddress, String? Function()? verifiedName, }) { return TaxIdVerification(
+return errors;}
+TaxIdVerification copyWith({TaxIdVerificationStatus? status, Omittable<String?>? verifiedAddress, Omittable<String?>? verifiedName, }) {return TaxIdVerification(
   status: status ?? this.status,
-  verifiedAddress: verifiedAddress != null ? verifiedAddress() : this.verifiedAddress,
-  verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
-); } 
+  verifiedAddress: verifiedAddress ?? this.verifiedAddress,
+  verifiedName: verifiedName ?? this.verifiedName,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxIdVerification &&
           status == other.status &&
@@ -149,4 +149,4 @@ TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()?
 
 @override String toString() => 'TaxIdVerification(status: $status, verifiedAddress: $verifiedAddress, verifiedName: $verifiedName)';
 
- }
+}

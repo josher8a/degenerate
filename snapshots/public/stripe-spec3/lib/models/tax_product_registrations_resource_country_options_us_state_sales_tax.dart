@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_us_state_sales_tax_election.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax({this.elections});
 
-factory TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(
+factory TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax.fromJson(Map<String, dynamic> json) {return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(
   elections: (json['elections'] as List<dynamic>?)?.map((e) => TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Elections for the state sales tax registration.
 final List<TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection>? elections;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (elections != null) 'elections': elections?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'elections'}.contains(key)); } 
-TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax copyWith({List<TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection>? Function()? elections}) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'elections'}.contains(key));}
+TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax copyWith({List<TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection>? Function()? elections}) {return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(
   elections: elections != null ? elections() : this.elections,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax &&
           listEquals(elections, other.elections);
@@ -26,4 +26,4 @@ TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax copyWith({List<TaxP
 
 @override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(elections: $elections)';
 
- }
+}

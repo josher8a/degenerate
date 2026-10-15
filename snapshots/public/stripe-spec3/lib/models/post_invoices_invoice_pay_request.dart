@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoicePayRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request/post_invoices_invoice_pay_request_mandate.dart';@immutable final class PostInvoicesInvoicePayRequest {const PostInvoicesInvoicePayRequest({this.expand, this.forgive, this.mandate, this.offSession, this.paidOutOfBand, this.paymentMethod, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request/post_invoices_invoice_pay_request_mandate.dart';@immutable final class PostInvoicesInvoicePayRequest {const PostInvoicesInvoicePayRequest({this.expand, this.forgive, this.mandate, this.offSession, this.paidOutOfBand, this.paymentMethod, this.source, });
 
-factory PostInvoicesInvoicePayRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoicePayRequest(
+factory PostInvoicesInvoicePayRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoicePayRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   forgive: json['forgive'] as bool?,
-  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  mandate: json['mandate'] != null ? PostInvoicesInvoicePayRequestMandate.fromJson(json['mandate']) : null,
   offSession: json['off_session'] as bool?,
   paidOutOfBand: json['paid_out_of_band'] as bool?,
   paymentMethod: json['payment_method'] as String?,
   source: json['source'] as String?,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -36,7 +36,7 @@ final String? paymentMethod;
 /// A payment source to be charged. The source must be the ID of a source belonging to the customer associated with the invoice being paid.
 final String? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'forgive': ?forgive,
   if (mandate != null) 'mandate': mandate?.toJson(),
@@ -44,10 +44,10 @@ Map<String, dynamic> toJson() { return {
   'paid_out_of_band': ?paidOutOfBand,
   'payment_method': ?paymentMethod,
   'source': ?source,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'forgive', 'mandate', 'off_session', 'paid_out_of_band', 'payment_method', 'source'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'forgive', 'mandate', 'off_session', 'paid_out_of_band', 'payment_method', 'source'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
   if (paymentMethod$.runes.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
@@ -56,8 +56,8 @@ final source$ = source;
 if (source$ != null) {
   if (source$.runes.length > 5000) { errors.add('source: length must be <= 5000'); }
 }
-return errors; } 
-PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? Function()? forgive, PostInvoicesInvoicePayRequestMandate? Function()? mandate, bool? Function()? offSession, bool? Function()? paidOutOfBand, String? Function()? paymentMethod, String? Function()? source, }) { return PostInvoicesInvoicePayRequest(
+return errors;}
+PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? Function()? forgive, PostInvoicesInvoicePayRequestMandate? Function()? mandate, bool? Function()? offSession, bool? Function()? paidOutOfBand, String? Function()? paymentMethod, String? Function()? source, }) {return PostInvoicesInvoicePayRequest(
   expand: expand != null ? expand() : this.expand,
   forgive: forgive != null ? forgive() : this.forgive,
   mandate: mandate != null ? mandate() : this.mandate,
@@ -65,7 +65,7 @@ PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? 
   paidOutOfBand: paidOutOfBand != null ? paidOutOfBand() : this.paidOutOfBand,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   source: source != null ? source() : this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoicePayRequest &&
           listEquals(expand, other.expand) &&
@@ -80,4 +80,4 @@ PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? 
 
 @override String toString() => 'PostInvoicesInvoicePayRequest(expand: $expand, forgive: $forgive, mandate: $mandate, offSession: $offSession, paidOutOfBand: $paidOutOfBand, paymentMethod: $paymentMethod, source: $source)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0({required this.gre, required this.icmp, required this.tcp, required this.udp, required this.timestamps, });
 
-factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(
+factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(
   gre: (json['GRE'] as List<dynamic>).map((e) => e as String).toList(),
   icmp: (json['ICMP'] as List<dynamic>).map((e) => e as String).toList(),
   tcp: (json['TCP'] as List<dynamic>).map((e) => e as String).toList(),
   udp: (json['UDP'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> gre;
 
@@ -21,25 +21,25 @@ final List<String> udp;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'GRE': gre,
   'ICMP': icmp,
   'TCP': tcp,
   'UDP': udp,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('GRE') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('GRE') &&
       json.containsKey('ICMP') &&
       json.containsKey('TCP') &&
       json.containsKey('UDP') &&
-      json.containsKey('timestamps'); } 
-RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 copyWith({List<String>? gre, List<String>? icmp, List<String>? tcp, List<String>? udp, List<DateTime>? timestamps, }) { return RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 copyWith({List<String>? gre, List<String>? icmp, List<String>? tcp, List<String>? udp, List<DateTime>? timestamps, }) {return RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(
   gre: gre ?? this.gre,
   icmp: icmp ?? this.icmp,
   tcp: tcp ?? this.tcp,
   udp: udp ?? this.udp,
   timestamps: timestamps ?? this.timestamps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 &&
           listEquals(gre, other.gre) &&
@@ -52,4 +52,4 @@ RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 copyWith({Lis
 
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(gre: $gre, icmp: $icmp, tcp: $tcp, udp: $udp, timestamps: $timestamps)';
 
- }
+}

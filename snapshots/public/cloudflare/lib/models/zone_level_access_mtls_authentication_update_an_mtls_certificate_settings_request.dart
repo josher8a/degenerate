@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_settings.dart';@immutable final class ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest {const ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest({required this.settings});
 
-factory ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(
+factory ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest.fromJson(Map<String, dynamic> json) {return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(
   settings: (json['settings'] as List<dynamic>).map((e) => AccessSchemasSettings.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<AccessSchemasSettings> settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'settings': settings.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('settings'); } 
-ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest copyWith({List<AccessSchemasSettings>? settings}) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('settings');}
+ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest copyWith({List<AccessSchemasSettings>? settings}) {return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(
   settings: settings ?? this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest &&
           listEquals(settings, other.settings);
@@ -24,4 +24,4 @@ ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest copyWith
 
 @override String toString() => 'ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(settings: $settings)';
 
- }
+}

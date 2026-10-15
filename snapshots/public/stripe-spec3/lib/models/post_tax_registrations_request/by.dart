@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_simplified/tax_product_registrations_resource_country_options_simplified_type.dart';@immutable final class By {const By({required this.type});
 
-factory By.fromJson(Map<String, dynamic> json) { return By(
+factory By.fromJson(Map<String, dynamic> json) {return By(
   type: TaxProductRegistrationsResourceCountryOptionsSimplifiedType.fromJson(json['type'] as String),
-); }
+);}
 
 final TaxProductRegistrationsResourceCountryOptionsSimplifiedType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-By copyWith({TaxProductRegistrationsResourceCountryOptionsSimplifiedType? type}) { return By(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+By copyWith({TaxProductRegistrationsResourceCountryOptionsSimplifiedType? type}) {return By(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is By &&
           type == other.type;
@@ -24,4 +24,4 @@ By copyWith({TaxProductRegistrationsResourceCountryOptionsSimplifiedType? type})
 
 @override String toString() => 'By(type: $type)';
 
- }
+}

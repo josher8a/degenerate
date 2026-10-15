@@ -14,7 +14,7 @@ final class WorkerDomainApi with ApiExecutor {const WorkerDomainApi(this.apiConf
 /// Lists all Worker Domains for an account.
 ///
 /// `GET /accounts/{account_id}/workers/domains`
-Future<ApiResult<List<WorkersDomain>?, WorkerDomainListDomainsError>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersDomain>?, WorkerDomainListDomainsError>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (zoneName != null) {
   queryParameters['zone_name'] = zoneName.toJson();
@@ -43,7 +43,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -51,13 +51,13 @@ return execute(
   },
   onError: WorkerDomainListDomainsError.fromResponse,
 );
- } 
+}
 /// Attach to Domain
 ///
 /// Attaches a Worker to a zone and hostname.
 ///
 /// `PUT /accounts/{account_id}/workers/domains`
-Future<ApiResult<WorkersDomain?, WorkerDomainAttachToDomainError>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersDomain?, WorkerDomainAttachToDomainError>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -76,13 +76,13 @@ return execute(
   },
   onError: WorkerDomainAttachToDomainError.fromResponse,
 );
- } 
+}
 /// Get a Domain
 ///
 /// Gets a Worker domain.
 ///
 /// `GET /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<WorkersDomain?, WorkerDomainGetADomainError>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersDomain?, WorkerDomainGetADomainError>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,7 +91,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -99,13 +99,13 @@ return execute(
   },
   onError: WorkerDomainGetADomainError.fromResponse,
 );
- } 
+}
 /// Detach from Domain
 ///
 /// Detaches a Worker from a zone and hostname.
 ///
 /// `DELETE /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<void, Never>> workerDomainDetachFromDomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> workerDomainDetachFromDomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -114,9 +114,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_description.dart';import 'package:pub_cloudflare/models/web3_dnslink.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_name.dart';import 'package:pub_cloudflare/models/web3_target.dart';import 'package:pub_cloudflare/models/web3_timestamp.dart';/// Specifies the status of the hostname's activation.
 sealed class Web3Status {const Web3Status();
 
-factory Web3Status.fromJson(String json) { return switch (json) {
+factory Web3Status.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending' => pending,
   'deleting' => deleting,
   'error' => error,
   _ => Web3Status$Unknown(json),
-}; }
+};}
 
 static const Web3Status active = Web3Status$active._();
 
@@ -23,36 +23,36 @@ static const Web3Status error = Web3Status$error._();
 static const List<Web3Status> values = [active, pending, deleting, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'pending' => 'pending',
   'deleting' => 'deleting',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Web3Status$Unknown; } 
+bool get isUnknown {return this is Web3Status$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() pending, required W Function() deleting, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() pending, required W Function() deleting, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       Web3Status$active() => active(),
       Web3Status$pending() => pending(),
       Web3Status$deleting() => deleting(),
       Web3Status$error() => error(),
       Web3Status$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function()? deleting, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function()? deleting, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       Web3Status$active() => active != null ? active() : orElse(value),
       Web3Status$pending() => pending != null ? pending() : orElse(value),
       Web3Status$deleting() => deleting != null ? deleting() : orElse(value),
       Web3Status$error() => error != null ? error() : orElse(value),
       Web3Status$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Web3Status($value)';
 
- }
+}
 @immutable final class Web3Status$active extends Web3Status {const Web3Status$active._();
 
 @override String get value => 'active';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class Web3Status$pending extends Web3Status {const Web3Status$pending._();
 
 @override String get value => 'pending';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class Web3Status$deleting extends Web3Status {const Web3Status$deleting._();
 
 @override String get value => 'deleting';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'deleting'.hashCode;
 
- }
+}
 @immutable final class Web3Status$error extends Web3Status {const Web3Status$error._();
 
 @override String get value => 'error';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class Web3Status$Unknown extends Web3Status {const Web3Status$Unknown(this.value);
 
 @override final String value;
@@ -98,10 +98,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Web3Web3Hostname {const Web3Web3Hostname({this.createdOn, this.description, this.dnslink, this.id, this.modifiedOn, this.name, this.status, this.target, });
 
-factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) { return Web3Web3Hostname(
+factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) {return Web3Web3Hostname(
   createdOn: json['created_on'] != null ? Web3Timestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? Web3Description.fromJson(json['description'] as String) : null,
   dnslink: json['dnslink'] != null ? Web3Dnslink.fromJson(json['dnslink'] as String) : null,
@@ -110,7 +110,7 @@ factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) { return Web3Web3Ho
   name: json['name'] != null ? Web3Name.fromJson(json['name'] as String) : null,
   status: json['status'] != null ? Web3Status.fromJson(json['status'] as String) : null,
   target: json['target'] != null ? Web3Target.fromJson(json['target'] as String) : null,
-); }
+);}
 
 final Web3Timestamp? createdOn;
 
@@ -134,7 +134,7 @@ final Web3Status? status;
 /// Specify the target gateway of the hostname.
 final Web3Target? target;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (dnslink != null) 'dnslink': dnslink?.toJson(),
@@ -143,9 +143,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (target != null) 'target': target?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'dnslink', 'id', 'modified_on', 'name', 'status', 'target'}.contains(key)); } 
-Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description? Function()? description, Web3Dnslink? Function()? dnslink, Web3Identifier? Function()? id, Web3Timestamp? Function()? modifiedOn, Web3Name? Function()? name, Web3Status? Function()? status, Web3Target? Function()? target, }) { return Web3Web3Hostname(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'description', 'dnslink', 'id', 'modified_on', 'name', 'status', 'target'}.contains(key));}
+Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description? Function()? description, Web3Dnslink? Function()? dnslink, Web3Identifier? Function()? id, Web3Timestamp? Function()? modifiedOn, Web3Name? Function()? name, Web3Status? Function()? status, Web3Target? Function()? target, }) {return Web3Web3Hostname(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   dnslink: dnslink != null ? dnslink() : this.dnslink,
@@ -154,7 +154,7 @@ Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description
   name: name != null ? name() : this.name,
   status: status != null ? status() : this.status,
   target: target != null ? target() : this.target,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Web3Web3Hostname &&
           createdOn == other.createdOn &&
@@ -170,4 +170,4 @@ Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description
 
 @override String toString() => 'Web3Web3Hostname(createdOn: $createdOn, description: $description, dnslink: $dnslink, id: $id, modifiedOn: $modifiedOn, name: $name, status: $status, target: $target)';
 
- }
+}

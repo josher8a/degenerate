@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/screenshot.dart';@immutable final class UrlscannerGetScanResponse2Page {const UrlscannerGetScanResponse2Page({required this.apexDomain, required this.asn, required this.asnname, required this.city, required this.country, required this.domain, required this.ip, required this.mimeType, required this.server, required this.status, required this.title, required this.tlsAgeDays, required this.tlsIssuer, required this.tlsValidDays, required this.tlsValidFrom, required this.url, this.screenshot, });
 
-factory UrlscannerGetScanResponse2Page.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Page(
+factory UrlscannerGetScanResponse2Page.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2Page(
   apexDomain: json['apexDomain'] as String,
   asn: json['asn'] as String,
   asnname: json['asnname'] as String,
@@ -21,7 +21,7 @@ factory UrlscannerGetScanResponse2Page.fromJson(Map<String, dynamic> json) { ret
   tlsValidDays: (json['tlsValidDays'] as num).toDouble(),
   tlsValidFrom: json['tlsValidFrom'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final String apexDomain;
 
@@ -58,7 +58,7 @@ final String tlsValidFrom;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apexDomain': apexDomain,
   'asn': asn,
   'asnname': asnname,
@@ -76,8 +76,8 @@ Map<String, dynamic> toJson() { return {
   'tlsValidDays': tlsValidDays,
   'tlsValidFrom': tlsValidFrom,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('apexDomain') && json['apexDomain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('apexDomain') && json['apexDomain'] is String &&
       json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('asnname') && json['asnname'] is String &&
       json.containsKey('city') && json['city'] is String &&
@@ -92,8 +92,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apexD
       json.containsKey('tlsIssuer') && json['tlsIssuer'] is String &&
       json.containsKey('tlsValidDays') && json['tlsValidDays'] is num &&
       json.containsKey('tlsValidFrom') && json['tlsValidFrom'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String? asnname, String? city, String? country, String? domain, String? ip, String? mimeType, Screenshot? Function()? screenshot, String? server, String? status, String? title, double? tlsAgeDays, String? tlsIssuer, double? tlsValidDays, String? tlsValidFrom, String? url, }) { return UrlscannerGetScanResponse2Page(
+      json.containsKey('url') && json['url'] is String;}
+UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String? asnname, String? city, String? country, String? domain, String? ip, String? mimeType, Screenshot? Function()? screenshot, String? server, String? status, String? title, double? tlsAgeDays, String? tlsIssuer, double? tlsValidDays, String? tlsValidFrom, String? url, }) {return UrlscannerGetScanResponse2Page(
   apexDomain: apexDomain ?? this.apexDomain,
   asn: asn ?? this.asn,
   asnname: asnname ?? this.asnname,
@@ -111,7 +111,7 @@ UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String
   tlsValidDays: tlsValidDays ?? this.tlsValidDays,
   tlsValidFrom: tlsValidFrom ?? this.tlsValidFrom,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Page &&
           apexDomain == other.apexDomain &&
@@ -136,4 +136,4 @@ UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String
 
 @override String toString() => 'UrlscannerGetScanResponse2Page(\n  apexDomain: $apexDomain,\n  asn: $asn,\n  asnname: $asnname,\n  city: $city,\n  country: $country,\n  domain: $domain,\n  ip: $ip,\n  mimeType: $mimeType,\n  screenshot: $screenshot,\n  server: $server,\n  status: $status,\n  title: $title,\n  tlsAgeDays: $tlsAgeDays,\n  tlsIssuer: $tlsIssuer,\n  tlsValidDays: $tlsValidDays,\n  tlsValidFrom: $tlsValidFrom,\n  url: $url,\n)';
 
- }
+}

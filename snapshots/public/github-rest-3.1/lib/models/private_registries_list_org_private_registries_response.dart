@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_private_registry_configuration.dart';@immutable final class PrivateRegistriesListOrgPrivateRegistriesResponse {const PrivateRegistriesListOrgPrivateRegistriesResponse({required this.totalCount, required this.configurations, });
 
-factory PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(Map<String, dynamic> json) { return PrivateRegistriesListOrgPrivateRegistriesResponse(
+factory PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(Map<String, dynamic> json) {return PrivateRegistriesListOrgPrivateRegistriesResponse(
   totalCount: (json['total_count'] as num).toInt(),
   configurations: (json['configurations'] as List<dynamic>).map((e) => OrgPrivateRegistryConfiguration.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<OrgPrivateRegistryConfiguration> configurations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'configurations': configurations.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('configurations'); } 
-PrivateRegistriesListOrgPrivateRegistriesResponse copyWith({int? totalCount, List<OrgPrivateRegistryConfiguration>? configurations, }) { return PrivateRegistriesListOrgPrivateRegistriesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('configurations');}
+PrivateRegistriesListOrgPrivateRegistriesResponse copyWith({int? totalCount, List<OrgPrivateRegistryConfiguration>? configurations, }) {return PrivateRegistriesListOrgPrivateRegistriesResponse(
   totalCount: totalCount ?? this.totalCount,
   configurations: configurations ?? this.configurations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateRegistriesListOrgPrivateRegistriesResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ PrivateRegistriesListOrgPrivateRegistriesResponse copyWith({int? totalCount, Lis
 
 @override String toString() => 'PrivateRegistriesListOrgPrivateRegistriesResponse(totalCount: $totalCount, configurations: $configurations)';
 
- }
+}

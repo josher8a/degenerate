@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetHttpTopAsesByIpVersionFormat {const RadarGetHttpTopAsesByIpVersionFormat();
 
-factory RadarGetHttpTopAsesByIpVersionFormat.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByIpVersionFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTopAsesByIpVersionFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByIpVersionFormat $json = RadarGetHttpTopAsesByIpVersionFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetHttpTopAsesByIpVersionFormat csv = RadarGetHttpTopAsesByIpV
 static const List<RadarGetHttpTopAsesByIpVersionFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopAsesByIpVersionFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopAsesByIpVersionFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByIpVersionFormat$$json() => $json(),
       RadarGetHttpTopAsesByIpVersionFormat$csv() => csv(),
       RadarGetHttpTopAsesByIpVersionFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByIpVersionFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetHttpTopAsesByIpVersionFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetHttpTopAsesByIpVersionFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopAsesByIpVersionFormat($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByIpVersionFormat$$json extends RadarGetHttpTopAsesByIpVersionFormat {const RadarGetHttpTopAsesByIpVersionFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByIpVersionFormat$csv extends RadarGetHttpTopAsesByIpVersionFormat {const RadarGetHttpTopAsesByIpVersionFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByIpVersionFormat$Unknown extends RadarGetHttpTopAsesByIpVersionFormat {const RadarGetHttpTopAsesByIpVersionFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

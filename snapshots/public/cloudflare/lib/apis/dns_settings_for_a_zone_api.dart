@@ -14,7 +14,7 @@ final class DnsSettingsForAZoneApi with ApiExecutor {const DnsSettingsForAZoneAp
 /// Show DNS settings for a zone
 ///
 /// `GET /zones/{zone_id}/dns_settings`
-Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, DnsSettingsForAZoneListDnsSettingsError>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, DnsSettingsForAZoneListDnsSettingsError>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: DnsSettingsForAZoneListDnsSettingsError.fromResponse,
 );
- } 
+}
 /// Update DNS Settings
 ///
 /// Update DNS settings for a zone
 ///
 /// `PATCH /zones/{zone_id}/dns_settings`
-Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, DnsSettingsForAZoneUpdateDnsSettingsError>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsZonePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, DnsSettingsForAZoneUpdateDnsSettingsError>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsZonePatch body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,5 +56,5 @@ return execute(
   },
   onError: DnsSettingsForAZoneUpdateDnsSettingsError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_create_with_pr_for_authenticated_user_request/geo.dart';@immutable final class CodespacesCreateWithRepoForAuthenticatedUserRequest {const CodespacesCreateWithRepoForAuthenticatedUserRequest({this.ref, this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
 
-factory CodespacesCreateWithRepoForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateWithRepoForAuthenticatedUserRequest(
+factory CodespacesCreateWithRepoForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return CodespacesCreateWithRepoForAuthenticatedUserRequest(
   ref: json['ref'] as String?,
   location: json['location'] as String?,
   geo: json['geo'] != null ? Geo.fromJson(json['geo'] as String) : null,
@@ -15,7 +15,7 @@ factory CodespacesCreateWithRepoForAuthenticatedUserRequest.fromJson(Map<String,
   idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? (json['idle_timeout_minutes'] as num).toInt() : null,
   displayName: json['display_name'] as String?,
   retentionPeriodMinutes: json['retention_period_minutes'] != null ? (json['retention_period_minutes'] as num).toInt() : null,
-); }
+);}
 
 /// Git ref (typically a branch name) for this codespace
 final String? ref;
@@ -50,7 +50,7 @@ final String? displayName;
 /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
 final int? retentionPeriodMinutes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ?ref,
   'location': ?location,
   if (geo != null) 'geo': geo?.toJson(),
@@ -62,9 +62,9 @@ Map<String, dynamic> toJson() { return {
   'idle_timeout_minutes': ?idleTimeoutMinutes,
   'display_name': ?displayName,
   'retention_period_minutes': ?retentionPeriodMinutes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key)); } 
-CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()? ref, String? Function()? location, Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithRepoForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ref', 'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key));}
+CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()? ref, String? Function()? location, Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) {return CodespacesCreateWithRepoForAuthenticatedUserRequest(
   ref: ref != null ? ref() : this.ref,
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,
@@ -76,7 +76,7 @@ CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()
   idleTimeoutMinutes: idleTimeoutMinutes != null ? idleTimeoutMinutes() : this.idleTimeoutMinutes,
   displayName: displayName != null ? displayName() : this.displayName,
   retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateWithRepoForAuthenticatedUserRequest &&
           ref == other.ref &&
@@ -95,4 +95,4 @@ CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()
 
 @override String toString() => 'CodespacesCreateWithRepoForAuthenticatedUserRequest(\n  ref: $ref,\n  location: $location,\n  geo: $geo,\n  clientIp: $clientIp,\n  machine: $machine,\n  devcontainerPath: $devcontainerPath,\n  multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut,\n  workingDirectory: $workingDirectory,\n  idleTimeoutMinutes: $idleTimeoutMinutes,\n  displayName: $displayName,\n  retentionPeriodMinutes: $retentionPeriodMinutes,\n)';
 
- }
+}

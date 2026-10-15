@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Rectangle
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rectangle {const Rectangle({required this.kind, required this.width, required this.height, this.meta, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rectangle {const Rectangle({required this.kind, required this.width, required this.height, this.meta = const Omittable.absent(), });
 
-factory Rectangle.fromJson(Map<String, dynamic> json) { return Rectangle(
+factory Rectangle.fromJson(Map<String, dynamic> json) {return Rectangle(
   kind: json['kind'],
   width: (json['width'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
-  meta: json['meta'],
-); }
+  meta: json.containsKey('meta') ? Omittable(json['meta']) : const Omittable.absent(),
+);}
 
 final dynamic kind;
 
@@ -16,23 +16,23 @@ final double width;
 
 final double height;
 
-final dynamic meta;
+final Omittable<dynamic> meta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind,
   'width': width,
   'height': height,
-  'meta': ?meta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+  if (meta.isPresent) 'meta': meta.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
       json.containsKey('width') && json['width'] is num &&
-      json.containsKey('height') && json['height'] is num; } 
-Rectangle copyWith({dynamic Function()? kind, double? width, double? height, dynamic Function()? meta, }) { return Rectangle(
+      json.containsKey('height') && json['height'] is num;}
+Rectangle copyWith({dynamic Function()? kind, double? width, double? height, Omittable<dynamic>? meta, }) {return Rectangle(
   kind: kind != null ? kind() : this.kind,
   width: width ?? this.width,
   height: height ?? this.height,
-  meta: meta != null ? meta() : this.meta,
-); } 
+  meta: meta ?? this.meta,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Rectangle &&
           kind == other.kind &&
@@ -44,4 +44,4 @@ Rectangle copyWith({dynamic Function()? kind, double? width, double? height, dyn
 
 @override String toString() => 'Rectangle(kind: $kind, width: $width, height: $height, meta: $meta)';
 
- }
+}

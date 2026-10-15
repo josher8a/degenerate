@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gists_update_request/gists_update_request_files_value.dart';@immutable final class GistsUpdateRequest {const GistsUpdateRequest({this.description, this.files, });
 
-factory GistsUpdateRequest.fromJson(Map<String, dynamic> json) { return GistsUpdateRequest(
+factory GistsUpdateRequest.fromJson(Map<String, dynamic> json) {return GistsUpdateRequest(
   description: json['description'] as String?,
   files: (json['files'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : GistsUpdateRequestFilesValue.fromJson(v as Map<String, dynamic>))),
-); }
+);}
 
 /// The description of the gist.
 final String? description;
@@ -18,15 +18,15 @@ final String? description;
 /// deleted if the specified object does not contain at least one of `content` or `filename`.
 final Map<String,GistsUpdateRequestFilesValue?>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   if (files != null) 'files': files?.map((k, v) => MapEntry(k, v?.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'files'}.contains(key)); } 
-GistsUpdateRequest copyWith({String? Function()? description, Map<String, GistsUpdateRequestFilesValue?>? Function()? files, }) { return GistsUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'files'}.contains(key));}
+GistsUpdateRequest copyWith({String? Function()? description, Map<String, GistsUpdateRequestFilesValue?>? Function()? files, }) {return GistsUpdateRequest(
   description: description != null ? description() : this.description,
   files: files != null ? files() : this.files,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GistsUpdateRequest &&
           description == other.description &&
@@ -36,4 +36,4 @@ GistsUpdateRequest copyWith({String? Function()? description, Map<String, GistsU
 
 @override String toString() => 'GistsUpdateRequest(description: $description, files: $files)';
 
- }
+}

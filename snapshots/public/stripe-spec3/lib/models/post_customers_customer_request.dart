@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_card.dart';import 'package:pub_stripe_spec3/models/customer_shipping.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_customer_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request/post_customers_customer_bank_accounts_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/business_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/individual_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_cash_balance.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';@immutable final class PostCustomersCustomerRequest {const PostCustomersCustomerRequest({this.address, this.balance, this.bankAccount, this.businessName, this.card, this.cashBalance, this.defaultAlipayAccount, this.defaultBankAccount, this.defaultCard, this.defaultSource, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request/post_customers_customer_bank_accounts_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/business_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/individual_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_cash_balance.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';@immutable final class PostCustomersCustomerRequest {const PostCustomersCustomerRequest({this.address, this.balance, this.bankAccount, this.businessName, this.card, this.cashBalance, this.defaultAlipayAccount, this.defaultBankAccount, this.defaultCard, this.defaultSource, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, });
 
-factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequest(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsCustomerAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerRequest(
+  address: json['address'] != null ? PostCustomersCustomerRequestAddress.fromJson(json['address']) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => CustomerPaymentSourceBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  businessName: json['business_name'] != null ? OneOf2.parse(json['business_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? PostCustomersCustomerBankAccountsRequestBankAccount.fromJson(json['bank_account']) : null,
+  businessName: json['business_name'] != null ? BusinessName.fromJson(json['business_name']) : null,
+  card: json['card'] != null ? PostChargesRequestCard.fromJson(json['card']) : null,
   cashBalance: json['cash_balance'] != null ? PostCustomersCustomerRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   defaultAlipayAccount: json['default_alipay_account'] as String?,
   defaultBankAccount: json['default_bank_account'] as String?,
@@ -17,19 +17,19 @@ factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { retur
   description: json['description'] as String?,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  individualName: json['individual_name'] != null ? IndividualName.fromJson(json['individual_name']) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => CustomerShipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? PostCustomersCustomerRequestShipping.fromJson(json['shipping']) : null,
   source: json['source'] as String?,
   tax: json['tax'] != null ? PostCustomersCustomerRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
-); }
+);}
 
 /// The customer's address. Learn about [country-specific requirements for calculating tax](https://docs.stripe.com/invoicing/taxes?dashboard-or-api=dashboard#set-up-customer).
 final PostCustomersCustomerRequestAddress? address;
@@ -109,7 +109,7 @@ final PostCustomersCustomerRequestTax? tax;
 /// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 final PostCustomersCustomerRequestTaxExempt? taxExempt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   'balance': ?balance,
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
@@ -135,10 +135,10 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
   if (tax != null) 'tax': tax?.toJson(),
   if (taxExempt != null) 'tax_exempt': taxExempt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'bank_account', 'business_name', 'card', 'cash_balance', 'default_alipay_account', 'default_bank_account', 'default_card', 'default_source', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'balance', 'bank_account', 'business_name', 'card', 'cash_balance', 'default_alipay_account', 'default_bank_account', 'default_card', 'default_source', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultAlipayAccount$ = defaultAlipayAccount;
 if (defaultAlipayAccount$ != null) {
   if (defaultAlipayAccount$.runes.length > 500) { errors.add('defaultAlipayAccount: length must be <= 500'); }
@@ -179,8 +179,8 @@ final source$ = source;
 if (source$ != null) {
   if (source$.runes.length > 5000) { errors.add('source: length must be <= 5000'); }
 }
-return errors; } 
-PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, PostCustomersCustomerBankAccountsRequestBankAccount? Function()? bankAccount, BusinessName? Function()? businessName, PostChargesRequestCard? Function()? card, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? defaultAlipayAccount, String? Function()? defaultBankAccount, String? Function()? defaultCard, String? Function()? defaultSource, String? Function()? description, String? Function()? email, List<String>? Function()? expand, IndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, Metadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersCustomerRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, }) { return PostCustomersCustomerRequest(
+return errors;}
+PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, PostCustomersCustomerBankAccountsRequestBankAccount? Function()? bankAccount, BusinessName? Function()? businessName, PostChargesRequestCard? Function()? card, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? defaultAlipayAccount, String? Function()? defaultBankAccount, String? Function()? defaultCard, String? Function()? defaultSource, String? Function()? description, String? Function()? email, List<String>? Function()? expand, IndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, Metadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersCustomerRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, }) {return PostCustomersCustomerRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
@@ -206,7 +206,7 @@ PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Func
   source: source != null ? source() : this.source,
   tax: tax != null ? tax() : this.tax,
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerRequest &&
           address == other.address &&
@@ -239,4 +239,4 @@ PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Func
 
 @override String toString() => 'PostCustomersCustomerRequest(\n  address: $address,\n  balance: $balance,\n  bankAccount: $bankAccount,\n  businessName: $businessName,\n  card: $card,\n  cashBalance: $cashBalance,\n  defaultAlipayAccount: $defaultAlipayAccount,\n  defaultBankAccount: $defaultBankAccount,\n  defaultCard: $defaultCard,\n  defaultSource: $defaultSource,\n  description: $description,\n  email: $email,\n  expand: $expand,\n  individualName: $individualName,\n  invoicePrefix: $invoicePrefix,\n  invoiceSettings: $invoiceSettings,\n  metadata: $metadata,\n  name: $name,\n  nextInvoiceSequence: $nextInvoiceSequence,\n  phone: $phone,\n  preferredLocales: $preferredLocales,\n  shipping: $shipping,\n  source: $source,\n  tax: $tax,\n  taxExempt: $taxExempt,\n)';
 
- }
+}

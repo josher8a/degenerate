@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/botnet_threat_feed_delete_asn_response/botnet_threat_feed_delete_asn_response_result.dart';import 'package:pub_cloudflare/models/dos_messages2.dart';@immutable final class BotnetThreatFeedDeleteAsnResponse {const BotnetThreatFeedDeleteAsnResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory BotnetThreatFeedDeleteAsnResponse.fromJson(Map<String, dynamic> json) { return BotnetThreatFeedDeleteAsnResponse(
+factory BotnetThreatFeedDeleteAsnResponse.fromJson(Map<String, dynamic> json) {return BotnetThreatFeedDeleteAsnResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? BotnetThreatFeedDeleteAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<DosMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final BotnetThreatFeedDeleteAsnResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-BotnetThreatFeedDeleteAsnResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, BotnetThreatFeedDeleteAsnResponseResult? Function()? result, }) { return BotnetThreatFeedDeleteAsnResponse(
+      json.containsKey('success') && json['success'] is bool;}
+BotnetThreatFeedDeleteAsnResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, BotnetThreatFeedDeleteAsnResponseResult? Function()? result, }) {return BotnetThreatFeedDeleteAsnResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BotnetThreatFeedDeleteAsnResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ BotnetThreatFeedDeleteAsnResponse copyWith({List<DosMessages2>? errors, List<Dos
 
 @override String toString() => 'BotnetThreatFeedDeleteAsnResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

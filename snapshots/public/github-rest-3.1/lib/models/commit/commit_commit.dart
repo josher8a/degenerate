@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_user.dart';import 'package:pub_github_rest_3_1/models/verification.dart';@immutable final class CommitCommit {const CommitCommit({required this.url, required this.author, required this.committer, required this.message, required this.commentCount, required this.tree, this.verification, });
 
-factory CommitCommit.fromJson(Map<String, dynamic> json) { return CommitCommit(
+factory CommitCommit.fromJson(Map<String, dynamic> json) {return CommitCommit(
   url: Uri.parse(json['url'] as String),
   author: json['author'] != null ? GitUser.fromJson(json['author'] as Map<String, dynamic>) : null,
   committer: json['committer'] != null ? GitUser.fromJson(json['committer'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory CommitCommit.fromJson(Map<String, dynamic> json) { return CommitCommit(
   commentCount: (json['comment_count'] as num).toInt(),
   tree: GitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
   verification: json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri url;
 
@@ -27,7 +27,7 @@ final GitCommitTree tree;
 
 final Verification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'author': author?.toJson(),
   'committer': committer?.toJson(),
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   'comment_count': commentCount,
   'tree': tree.toJson(),
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('author') &&
       json.containsKey('committer') &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('comment_count') && json['comment_count'] is num &&
-      json.containsKey('tree'); } 
-CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function()? committer, String? message, int? commentCount, GitCommitTree? tree, Verification? Function()? verification, }) { return CommitCommit(
+      json.containsKey('tree');}
+CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function()? committer, String? message, int? commentCount, GitCommitTree? tree, Verification? Function()? verification, }) {return CommitCommit(
   url: url ?? this.url,
   author: author != null ? author() : this.author,
   committer: committer != null ? committer() : this.committer,
@@ -50,7 +50,7 @@ CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function(
   commentCount: commentCount ?? this.commentCount,
   tree: tree ?? this.tree,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommit &&
           url == other.url &&
@@ -65,4 +65,4 @@ CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function(
 
 @override String toString() => 'CommitCommit(url: $url, author: $author, committer: $committer, message: $message, commentCount: $commentCount, tree: $tree, verification: $verification)';
 
- }
+}

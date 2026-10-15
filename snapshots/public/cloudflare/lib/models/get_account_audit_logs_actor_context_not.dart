@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot();
 
-factory GetAccountAuditLogsActorContextNot.fromJson(String json) { return switch (json) {
+factory GetAccountAuditLogsActorContextNot.fromJson(String json) {return switch (json) {
   'api_key' => apiKey,
   'api_token' => apiToken,
   'dash' => dash,
   'oauth' => oauth,
   'origin_ca_key' => originCaKey,
   _ => GetAccountAuditLogsActorContextNot$Unknown(json),
-}; }
+};}
 
 static const GetAccountAuditLogsActorContextNot apiKey = GetAccountAuditLogsActorContextNot$apiKey._();
 
@@ -25,39 +25,39 @@ static const GetAccountAuditLogsActorContextNot originCaKey = GetAccountAuditLog
 static const List<GetAccountAuditLogsActorContextNot> values = [apiKey, apiToken, dash, oauth, originCaKey];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'api_key' => 'apiKey',
   'api_token' => 'apiToken',
   'dash' => 'dash',
   'oauth' => 'oauth',
   'origin_ca_key' => 'originCaKey',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetAccountAuditLogsActorContextNot$Unknown; } 
+bool get isUnknown {return this is GetAccountAuditLogsActorContextNot$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() apiKey, required W Function() apiToken, required W Function() dash, required W Function() oauth, required W Function() originCaKey, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() apiKey, required W Function() apiToken, required W Function() dash, required W Function() oauth, required W Function() originCaKey, required W Function(String value) $unknown, }) {return switch (this) {
       GetAccountAuditLogsActorContextNot$apiKey() => apiKey(),
       GetAccountAuditLogsActorContextNot$apiToken() => apiToken(),
       GetAccountAuditLogsActorContextNot$dash() => dash(),
       GetAccountAuditLogsActorContextNot$oauth() => oauth(),
       GetAccountAuditLogsActorContextNot$originCaKey() => originCaKey(),
       GetAccountAuditLogsActorContextNot$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, W Function()? apiToken, W Function()? dash, W Function()? oauth, W Function()? originCaKey, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, W Function()? apiToken, W Function()? dash, W Function()? oauth, W Function()? originCaKey, W Function(String value)? $unknown, }) {return switch (this) {
       GetAccountAuditLogsActorContextNot$apiKey() => apiKey != null ? apiKey() : orElse(value),
       GetAccountAuditLogsActorContextNot$apiToken() => apiToken != null ? apiToken() : orElse(value),
       GetAccountAuditLogsActorContextNot$dash() => dash != null ? dash() : orElse(value),
       GetAccountAuditLogsActorContextNot$oauth() => oauth != null ? oauth() : orElse(value),
       GetAccountAuditLogsActorContextNot$originCaKey() => originCaKey != null ? originCaKey() : orElse(value),
       GetAccountAuditLogsActorContextNot$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetAccountAuditLogsActorContextNot($value)';
 
- }
+}
 @immutable final class GetAccountAuditLogsActorContextNot$apiKey extends GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot$apiKey._();
 
 @override String get value => 'api_key';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, 
 
 @override int get hashCode => 'api_key'.hashCode;
 
- }
+}
 @immutable final class GetAccountAuditLogsActorContextNot$apiToken extends GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot$apiToken._();
 
 @override String get value => 'api_token';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, 
 
 @override int get hashCode => 'api_token'.hashCode;
 
- }
+}
 @immutable final class GetAccountAuditLogsActorContextNot$dash extends GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot$dash._();
 
 @override String get value => 'dash';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, 
 
 @override int get hashCode => 'dash'.hashCode;
 
- }
+}
 @immutable final class GetAccountAuditLogsActorContextNot$oauth extends GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot$oauth._();
 
 @override String get value => 'oauth';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, 
 
 @override int get hashCode => 'oauth'.hashCode;
 
- }
+}
 @immutable final class GetAccountAuditLogsActorContextNot$originCaKey extends GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot$originCaKey._();
 
 @override String get value => 'origin_ca_key';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, 
 
 @override int get hashCode => 'origin_ca_key'.hashCode;
 
- }
+}
 @immutable final class GetAccountAuditLogsActorContextNot$Unknown extends GetAccountAuditLogsActorContextNot {const GetAccountAuditLogsActorContextNot$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

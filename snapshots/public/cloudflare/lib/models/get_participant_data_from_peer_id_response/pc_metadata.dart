@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PcMetadata {const PcMetadata({this.effectiveNetworkType, this.reflexiveConnectivity, this.relayConnectivity, this.timestamp, this.turnConnectivity, });
 
-factory PcMetadata.fromJson(Map<String, dynamic> json) { return PcMetadata(
+factory PcMetadata.fromJson(Map<String, dynamic> json) {return PcMetadata(
   effectiveNetworkType: json['effective_network_type'] as String?,
   reflexiveConnectivity: json['reflexive_connectivity'] as bool?,
   relayConnectivity: json['relay_connectivity'] as bool?,
   timestamp: json['timestamp'] as String?,
   turnConnectivity: json['turn_connectivity'] as bool?,
-); }
+);}
 
 final String? effectiveNetworkType;
 
@@ -21,21 +21,21 @@ final String? timestamp;
 
 final bool? turnConnectivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'effective_network_type': ?effectiveNetworkType,
   'reflexive_connectivity': ?reflexiveConnectivity,
   'relay_connectivity': ?relayConnectivity,
   'timestamp': ?timestamp,
   'turn_connectivity': ?turnConnectivity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effective_network_type', 'reflexive_connectivity', 'relay_connectivity', 'timestamp', 'turn_connectivity'}.contains(key)); } 
-PcMetadata copyWith({String? Function()? effectiveNetworkType, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, String? Function()? timestamp, bool? Function()? turnConnectivity, }) { return PcMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'effective_network_type', 'reflexive_connectivity', 'relay_connectivity', 'timestamp', 'turn_connectivity'}.contains(key));}
+PcMetadata copyWith({String? Function()? effectiveNetworkType, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, String? Function()? timestamp, bool? Function()? turnConnectivity, }) {return PcMetadata(
   effectiveNetworkType: effectiveNetworkType != null ? effectiveNetworkType() : this.effectiveNetworkType,
   reflexiveConnectivity: reflexiveConnectivity != null ? reflexiveConnectivity() : this.reflexiveConnectivity,
   relayConnectivity: relayConnectivity != null ? relayConnectivity() : this.relayConnectivity,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PcMetadata &&
           effectiveNetworkType == other.effectiveNetworkType &&
@@ -48,4 +48,4 @@ PcMetadata copyWith({String? Function()? effectiveNetworkType, bool? Function()?
 
 @override String toString() => 'PcMetadata(effectiveNetworkType: $effectiveNetworkType, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, timestamp: $timestamp, turnConnectivity: $turnConnectivity)';
 
- }
+}

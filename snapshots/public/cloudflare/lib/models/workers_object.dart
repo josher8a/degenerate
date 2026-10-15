@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObject {const WorkersObject({this.hasStoredData, this.id, });
 
-factory WorkersObject.fromJson(Map<String, dynamic> json) { return WorkersObject(
+factory WorkersObject.fromJson(Map<String, dynamic> json) {return WorkersObject(
   hasStoredData: json['hasStoredData'] as bool?,
   id: json['id'] as String?,
-); }
+);}
 
 /// Whether the Durable Object has stored data.
 /// 
@@ -18,15 +18,15 @@ final bool? hasStoredData;
 /// Example: `'fe7803fc55b964e09d94666545aab688d360c6bda69ba349ced1e5f28d2fc2c8'`
 final String? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hasStoredData': ?hasStoredData,
   'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hasStoredData', 'id'}.contains(key)); } 
-WorkersObject copyWith({bool? Function()? hasStoredData, String? Function()? id, }) { return WorkersObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hasStoredData', 'id'}.contains(key));}
+WorkersObject copyWith({bool? Function()? hasStoredData, String? Function()? id, }) {return WorkersObject(
   hasStoredData: hasStoredData != null ? hasStoredData() : this.hasStoredData,
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObject &&
           hasStoredData == other.hasStoredData &&
@@ -36,4 +36,4 @@ WorkersObject copyWith({bool? Function()? hasStoredData, String? Function()? id,
 
 @override String toString() => 'WorkersObject(hasStoredData: $hasStoredData, id: $id)';
 
- }
+}

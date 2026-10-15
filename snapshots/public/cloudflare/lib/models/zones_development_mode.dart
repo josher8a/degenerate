@@ -2,18 +2,18 @@
 // Source: #/components/schemas/ZonesDevelopmentMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_development_mode_value.dart';/// Development Mode temporarily allows you to enter development mode for your websites if you need to make changes to your site. This will bypass Cloudflare's accelerated cache and slow down your site, but is useful if you are making changes to cacheable content (like images, css, or JavaScript) and would like to see those changes right away. Once entered, development mode will last for 3 hours and then automatically toggle off.
-@immutable final class ZonesDevelopmentMode {const ZonesDevelopmentMode({required this.id, required this.value, this.editable = true, this.modifiedOn, this.timeRemaining, });
+@immutable final class ZonesDevelopmentMode {const ZonesDevelopmentMode({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), this.timeRemaining, });
 
-factory ZonesDevelopmentMode.fromJson(Map<String, dynamic> json) { return ZonesDevelopmentMode(
-  editable: json.containsKey('editable') ? json['editable'] as bool : true,
+factory ZonesDevelopmentMode.fromJson(Map<String, dynamic> json) {return ZonesDevelopmentMode(
+  editable: json['editable'] as bool?,
   id: json['id'],
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesDevelopmentModeValue.fromJson(json['value'] as String),
   timeRemaining: json['time_remaining'] != null ? (json['time_remaining'] as num).toDouble() : null,
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-final bool editable;
+final bool? editable;
 
 /// ID of the zone setting.
 /// 
@@ -23,7 +23,7 @@ final dynamic id;
 /// last time this setting was modified.
 /// 
 /// Example: `'2014-01-01T05:20:00.12345Z'`
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 final ZonesDevelopmentModeValue value;
 
@@ -33,22 +33,25 @@ final ZonesDevelopmentModeValue value;
 /// Example: `3600`
 final double? timeRemaining;
 
-Map<String, dynamic> toJson() { return {
-  'editable': editable,
+/// The value of `editable`, or its schema default when absent.
+bool get editableOrDefault => editable ?? true;
+
+Map<String, dynamic> toJson() {return {
+  'editable': ?editable,
   'id': id,
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
   'time_remaining': ?timeRemaining,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesDevelopmentMode copyWith({bool Function()? editable, dynamic Function()? id, DateTime? Function()? modifiedOn, ZonesDevelopmentModeValue? value, double? Function()? timeRemaining, }) { return ZonesDevelopmentMode(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesDevelopmentMode copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesDevelopmentModeValue? value, double? Function()? timeRemaining, }) {return ZonesDevelopmentMode(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
   timeRemaining: timeRemaining != null ? timeRemaining() : this.timeRemaining,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesDevelopmentMode &&
           editable == other.editable &&
@@ -61,4 +64,4 @@ ZonesDevelopmentMode copyWith({bool Function()? editable, dynamic Function()? id
 
 @override String toString() => 'ZonesDevelopmentMode(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value, timeRemaining: $timeRemaining)';
 
- }
+}

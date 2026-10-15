@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingSummaryByArcIpVersion {const RadarGetEmailRoutingSummaryByArcIpVersion();
 
-factory RadarGetEmailRoutingSummaryByArcIpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingSummaryByArcIpVersion.fromJson(String json) {return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
   _ => RadarGetEmailRoutingSummaryByArcIpVersion$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingSummaryByArcIpVersion iPv4 = RadarGetEmailRoutingSummaryByArcIpVersion$iPv4._();
 
@@ -16,30 +16,30 @@ static const RadarGetEmailRoutingSummaryByArcIpVersion iPv6 = RadarGetEmailRouti
 static const List<RadarGetEmailRoutingSummaryByArcIpVersion> values = [iPv4, iPv6];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'IPv4' => 'iPv4',
   'IPv6' => 'iPv6',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailRoutingSummaryByArcIpVersion$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailRoutingSummaryByArcIpVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() iPv4, required W Function() iPv6, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() iPv4, required W Function() iPv6, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailRoutingSummaryByArcIpVersion$iPv4() => iPv4(),
       RadarGetEmailRoutingSummaryByArcIpVersion$iPv6() => iPv6(),
       RadarGetEmailRoutingSummaryByArcIpVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W Function()? iPv6, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W Function()? iPv6, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailRoutingSummaryByArcIpVersion$iPv4() => iPv4 != null ? iPv4() : orElse(value),
       RadarGetEmailRoutingSummaryByArcIpVersion$iPv6() => iPv6 != null ? iPv6() : orElse(value),
       RadarGetEmailRoutingSummaryByArcIpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailRoutingSummaryByArcIpVersion($value)';
 
- }
+}
 @immutable final class RadarGetEmailRoutingSummaryByArcIpVersion$iPv4 extends RadarGetEmailRoutingSummaryByArcIpVersion {const RadarGetEmailRoutingSummaryByArcIpVersion$iPv4._();
 
 @override String get value => 'IPv4';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W 
 
 @override int get hashCode => 'IPv4'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingSummaryByArcIpVersion$iPv6 extends RadarGetEmailRoutingSummaryByArcIpVersion {const RadarGetEmailRoutingSummaryByArcIpVersion$iPv6._();
 
 @override String get value => 'IPv6';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W 
 
 @override int get hashCode => 'IPv6'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingSummaryByArcIpVersion$Unknown extends RadarGetEmailRoutingSummaryByArcIpVersion {const RadarGetEmailRoutingSummaryByArcIpVersion$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

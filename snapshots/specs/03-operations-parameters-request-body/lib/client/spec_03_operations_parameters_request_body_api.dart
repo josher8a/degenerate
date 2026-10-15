@@ -12,4 +12,4 @@ final ApiConfig _config;
 
 late final ItemsApi items = ItemsApi(_config);
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude();
 
-factory RadarGetSearchGlobalExclude.fromJson(String json) { return switch (json) {
+factory RadarGetSearchGlobalExclude.fromJson(String json) {return switch (json) {
   'ADM1S' => adm1S,
   'ASNS' => asns,
   'BOTS' => bots,
@@ -17,7 +17,7 @@ factory RadarGetSearchGlobalExclude.fromJson(String json) { return switch (json)
   'TLDS' => tlds,
   'VERTICALS' => verticals,
   _ => RadarGetSearchGlobalExclude$Unknown(json),
-}; }
+};}
 
 static const RadarGetSearchGlobalExclude adm1S = RadarGetSearchGlobalExclude$adm1S._();
 
@@ -46,9 +46,9 @@ static const RadarGetSearchGlobalExclude verticals = RadarGetSearchGlobalExclude
 static const List<RadarGetSearchGlobalExclude> values = [adm1S, asns, bots, certificateAuthorities, certificateLogs, origins, originRegions, industries, locations, notebooks, tlds, verticals];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ADM1S' => 'adm1S',
   'ASNS' => 'asns',
   'BOTS' => 'bots',
@@ -62,11 +62,11 @@ String get name { return switch (value) {
   'TLDS' => 'tlds',
   'VERTICALS' => 'verticals',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetSearchGlobalExclude$Unknown; } 
+bool get isUnknown {return this is RadarGetSearchGlobalExclude$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adm1S, required W Function() asns, required W Function() bots, required W Function() certificateAuthorities, required W Function() certificateLogs, required W Function() origins, required W Function() originRegions, required W Function() industries, required W Function() locations, required W Function() notebooks, required W Function() tlds, required W Function() verticals, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adm1S, required W Function() asns, required W Function() bots, required W Function() certificateAuthorities, required W Function() certificateLogs, required W Function() origins, required W Function() originRegions, required W Function() industries, required W Function() locations, required W Function() notebooks, required W Function() tlds, required W Function() verticals, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetSearchGlobalExclude$adm1S() => adm1S(),
       RadarGetSearchGlobalExclude$asns() => asns(),
       RadarGetSearchGlobalExclude$bots() => bots(),
@@ -80,9 +80,9 @@ W when<W>({required W Function() adm1S, required W Function() asns, required W F
       RadarGetSearchGlobalExclude$tlds() => tlds(),
       RadarGetSearchGlobalExclude$verticals() => verticals(),
       RadarGetSearchGlobalExclude$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W Function()? asns, W Function()? bots, W Function()? certificateAuthorities, W Function()? certificateLogs, W Function()? origins, W Function()? originRegions, W Function()? industries, W Function()? locations, W Function()? notebooks, W Function()? tlds, W Function()? verticals, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W Function()? asns, W Function()? bots, W Function()? certificateAuthorities, W Function()? certificateLogs, W Function()? origins, W Function()? originRegions, W Function()? industries, W Function()? locations, W Function()? notebooks, W Function()? tlds, W Function()? verticals, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetSearchGlobalExclude$adm1S() => adm1S != null ? adm1S() : orElse(value),
       RadarGetSearchGlobalExclude$asns() => asns != null ? asns() : orElse(value),
       RadarGetSearchGlobalExclude$bots() => bots != null ? bots() : orElse(value),
@@ -96,10 +96,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
       RadarGetSearchGlobalExclude$tlds() => tlds != null ? tlds() : orElse(value),
       RadarGetSearchGlobalExclude$verticals() => verticals != null ? verticals() : orElse(value),
       RadarGetSearchGlobalExclude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetSearchGlobalExclude($value)';
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$adm1S extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$adm1S._();
 
 @override String get value => 'ADM1S';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'ADM1S'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$asns extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$asns._();
 
 @override String get value => 'ASNS';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'ASNS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$bots extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$bots._();
 
 @override String get value => 'BOTS';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'BOTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$certificateAuthorities extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$certificateAuthorities._();
 
 @override String get value => 'CERTIFICATE_AUTHORITIES';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'CERTIFICATE_AUTHORITIES'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$certificateLogs extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$certificateLogs._();
 
 @override String get value => 'CERTIFICATE_LOGS';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'CERTIFICATE_LOGS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$origins extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$origins._();
 
 @override String get value => 'ORIGINS';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'ORIGINS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$originRegions extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$originRegions._();
 
 @override String get value => 'ORIGIN_REGIONS';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'ORIGIN_REGIONS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$industries extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$industries._();
 
 @override String get value => 'INDUSTRIES';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'INDUSTRIES'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$locations extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$locations._();
 
 @override String get value => 'LOCATIONS';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'LOCATIONS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$notebooks extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$notebooks._();
 
 @override String get value => 'NOTEBOOKS';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'NOTEBOOKS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$tlds extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$tlds._();
 
 @override String get value => 'TLDS';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'TLDS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$verticals extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$verticals._();
 
 @override String get value => 'VERTICALS';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => 'VERTICALS'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalExclude$Unknown extends RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude$Unknown(this.value);
 
 @override final String value;
@@ -217,4 +217,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

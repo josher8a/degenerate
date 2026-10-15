@@ -14,7 +14,7 @@ final class WorkerAccountSettingsApi with ApiExecutor {const WorkerAccountSettin
 /// Fetches Worker account settings for an account.
 ///
 /// `GET /accounts/{account_id}/workers/account-settings`
-Future<ApiResult<WorkersAccountSettings, CreateWorkerVersionError>> workerAccountSettingsFetchWorkerAccountSettings({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAccountSettings, CreateWorkerVersionError>> workerAccountSettingsFetchWorkerAccountSettings({required WorkersIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Create Worker Account Settings
 ///
 /// Creates Worker account settings for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/account-settings`
-Future<ApiResult<WorkersAccountSettings, CreateWorkerVersionError>> workerAccountSettingsCreateWorkerAccountSettings({required WorkersIdentifier accountId, required WorkersAccountSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAccountSettings, CreateWorkerVersionError>> workerAccountSettingsCreateWorkerAccountSettings({required WorkersIdentifier accountId, required WorkersAccountSettings body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,5 +56,5 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

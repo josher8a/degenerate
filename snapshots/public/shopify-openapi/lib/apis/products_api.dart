@@ -14,7 +14,7 @@ final class ProductsApi with ApiExecutor {const ProductsApi(this.apiConfig);
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-01
 ///
 /// `GET /admin/api/2020-01/collects.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -37,17 +37,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-01
 ///
 /// `POST /admin/api/2020-01/collects.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCollects({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCollects({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,17 +58,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-01
 ///
 /// `GET /admin/api/2020-01/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -85,17 +85,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -104,17 +104,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-01
 ///
 /// `GET /admin/api/2020-01/collects/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectsCount({int? collectionId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionId != null) {
   queryParameters['collection_id'] = collectionId.toString();
@@ -131,17 +131,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-04
 ///
 /// `GET /admin/api/2020-04/collects.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -164,17 +164,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-04
 ///
 /// `POST /admin/api/2020-04/collects.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCollects({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCollects({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -185,17 +185,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-04
 ///
 /// `GET /admin/api/2020-04/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -212,17 +212,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -231,17 +231,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-04
 ///
 /// `GET /admin/api/2020-04/collects/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectsCount({int? collectionId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionId != null) {
   queryParameters['collection_id'] = collectionId.toString();
@@ -258,17 +258,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-07
 ///
 /// `GET /admin/api/2020-07/collects.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -291,17 +291,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-07
 ///
 /// `POST /admin/api/2020-07/collects.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCollects({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCollects({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -312,17 +312,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-07
 ///
 /// `GET /admin/api/2020-07/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -339,17 +339,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -358,17 +358,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-07
 ///
 /// `GET /admin/api/2020-07/collects/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectsCount({int? collectionId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionId != null) {
   queryParameters['collection_id'] = collectionId.toString();
@@ -385,17 +385,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-10
 ///
 /// `GET /admin/api/2020-10/collects.json`
-Future<ApiResult<void, Never>> getCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -418,17 +418,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-10
 ///
 /// `POST /admin/api/2020-10/collects.json`
-Future<ApiResult<void, Never>> createCollects({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createCollects({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -439,17 +439,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-10
 ///
 /// `GET /admin/api/2020-10/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> getCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -466,17 +466,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -485,17 +485,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-10
 ///
 /// `GET /admin/api/2020-10/collects/count.json`
-Future<ApiResult<void, Never>> getCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectsCount({int? collectionId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionId != null) {
   queryParameters['collection_id'] = collectionId.toString();
@@ -512,17 +512,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2021-01
 ///
 /// `GET /admin/api/2021-01/collects.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -545,17 +545,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2021-01
 ///
 /// `POST /admin/api/2021-01/collects.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCollects({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCollects({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -566,17 +566,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2021-01
 ///
 /// `GET /admin/api/2021-01/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -593,17 +593,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -612,17 +612,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2021-01
 ///
 /// `GET /admin/api/2021-01/collects/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectsCount({int? collectionId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionId != null) {
   queryParameters['collection_id'] = collectionId.toString();
@@ -639,17 +639,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-unstable
 ///
 /// `GET /admin/api/unstable/collects.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollects({dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -672,17 +672,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-unstable
 ///
 /// `POST /admin/api/unstable/collects.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCollects({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCollects({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -693,17 +693,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-unstable
 ///
 /// `GET /admin/api/unstable/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsParamCollectId({required String collectId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -720,17 +720,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/collects/{collect_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCollectsParamCollectId({required String collectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -739,17 +739,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-unstable
 ///
 /// `GET /admin/api/unstable/collects/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsCount({int? collectionId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectsCount({int? collectionId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionId != null) {
   queryParameters['collection_id'] = collectionId.toString();
@@ -766,17 +766,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-01
 ///
 /// `GET /admin/api/2020-01/collections/{collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -793,17 +793,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-01
 ///
 /// `GET /admin/api/2020-01/collections/{collection_id}/products.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -820,17 +820,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-04
 ///
 /// `GET /admin/api/2020-04/collections/{collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -847,17 +847,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-04
 ///
 /// `GET /admin/api/2020-04/collections/{collection_id}/products.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -874,17 +874,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-07
 ///
 /// `GET /admin/api/2020-07/collections/{collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -901,17 +901,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-07
 ///
 /// `GET /admin/api/2020-07/collections/{collection_id}/products.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -928,17 +928,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-10
 ///
 /// `GET /admin/api/2020-10/collections/{collection_id}.json`
-Future<ApiResult<void, Never>> getCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -955,17 +955,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-10
 ///
 /// `GET /admin/api/2020-10/collections/{collection_id}/products.json`
-Future<ApiResult<void, Never>> getCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -982,17 +982,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2021-01
 ///
 /// `GET /admin/api/2021-01/collections/{collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1009,17 +1009,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2021-01
 ///
 /// `GET /admin/api/2021-01/collections/{collection_id}/products.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1036,17 +1036,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-unstable
 ///
 /// `GET /admin/api/unstable/collections/{collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionId({required String collectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1063,17 +1063,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-unstable
 ///
 /// `GET /admin/api/unstable/collections/{collection_id}/products.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionsParamCollectionIdProducts({required String collectionId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1090,17 +1090,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-01
 ///
 /// `GET /admin/api/2020-01/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1150,17 +1150,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-01
 ///
 /// `POST /admin/api/2020-01/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCustomCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCustomCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1171,17 +1171,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-01
 ///
 /// `GET /admin/api/2020-01/custom_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -1216,17 +1216,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-01
 ///
 /// `GET /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1243,17 +1243,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1264,17 +1264,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1283,17 +1283,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-04
 ///
 /// `GET /admin/api/2020-04/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1343,17 +1343,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-04
 ///
 /// `POST /admin/api/2020-04/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCustomCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCustomCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1364,17 +1364,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-04
 ///
 /// `GET /admin/api/2020-04/custom_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -1409,17 +1409,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-04
 ///
 /// `GET /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1436,17 +1436,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1457,17 +1457,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1476,17 +1476,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-07
 ///
 /// `GET /admin/api/2020-07/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1536,17 +1536,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-07
 ///
 /// `POST /admin/api/2020-07/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCustomCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCustomCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1557,17 +1557,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-07
 ///
 /// `GET /admin/api/2020-07/custom_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -1602,17 +1602,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-07
 ///
 /// `GET /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1629,17 +1629,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1650,17 +1650,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1669,17 +1669,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-10
 ///
 /// `GET /admin/api/2020-10/custom_collections.json`
-Future<ApiResult<void, Never>> getCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1729,17 +1729,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-10
 ///
 /// `POST /admin/api/2020-10/custom_collections.json`
-Future<ApiResult<void, Never>> createCustomCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createCustomCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1750,17 +1750,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-10
 ///
 /// `GET /admin/api/2020-10/custom_collections/count.json`
-Future<ApiResult<void, Never>> getCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -1795,17 +1795,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-10
 ///
 /// `GET /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> getCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1822,17 +1822,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> updateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1843,17 +1843,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1862,17 +1862,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2021-01
 ///
 /// `GET /admin/api/2021-01/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1922,17 +1922,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2021-01
 ///
 /// `POST /admin/api/2021-01/custom_collections.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCustomCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCustomCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1943,17 +1943,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2021-01
 ///
 /// `GET /admin/api/2021-01/custom_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -1988,17 +1988,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2021-01
 ///
 /// `GET /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2015,17 +2015,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2036,17 +2036,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2055,17 +2055,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-unstable
 ///
 /// `GET /admin/api/unstable/custom_collections.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2115,17 +2115,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-unstable
 ///
 /// `POST /admin/api/unstable/custom_collections.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCustomCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2136,17 +2136,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-unstable
 ///
 /// `GET /admin/api/unstable/custom_collections/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -2181,17 +2181,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-unstable
 ///
 /// `GET /admin/api/unstable/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2208,17 +2208,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-unstable
 ///
 /// `PUT /admin/api/unstable/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCustomCollectionsParamCustomCollectionId({required String customCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2229,17 +2229,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/custom_collections/{custom_collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCustomCollectionsParamCustomCollectionId({required String customCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2248,17 +2248,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-01
 ///
 /// `GET /admin/api/2020-01/products.json`
-Future<ApiResult<void, Never>> deprecated202001GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -2326,11 +2326,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -2340,7 +2340,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-01
 ///
 /// `POST /admin/api/2020-01/products.json`
-Future<ApiResult<void, Never>> deprecated202001CreateProducts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateProducts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2351,17 +2351,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-01
 ///
 /// `GET /admin/api/2020-01/products/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (vendor != null) {
   queryParameters['vendor'] = vendor.toString();
@@ -2405,17 +2405,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2432,11 +2432,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -2446,7 +2446,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2457,17 +2457,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2476,17 +2476,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-04
 ///
 /// `GET /admin/api/2020-04/products.json`
-Future<ApiResult<void, Never>> deprecated202004GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -2554,11 +2554,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -2568,7 +2568,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-04
 ///
 /// `POST /admin/api/2020-04/products.json`
-Future<ApiResult<void, Never>> deprecated202004CreateProducts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateProducts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2579,17 +2579,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-04
 ///
 /// `GET /admin/api/2020-04/products/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (vendor != null) {
   queryParameters['vendor'] = vendor.toString();
@@ -2633,17 +2633,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2660,11 +2660,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -2674,7 +2674,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2685,17 +2685,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2704,17 +2704,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-07
 ///
 /// `GET /admin/api/2020-07/products.json`
-Future<ApiResult<void, Never>> deprecated202007GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -2782,11 +2782,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -2796,7 +2796,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-07
 ///
 /// `POST /admin/api/2020-07/products.json`
-Future<ApiResult<void, Never>> deprecated202007CreateProducts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateProducts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2807,17 +2807,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-07
 ///
 /// `GET /admin/api/2020-07/products/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (vendor != null) {
   queryParameters['vendor'] = vendor.toString();
@@ -2861,17 +2861,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2888,11 +2888,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -2902,7 +2902,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2913,17 +2913,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2932,17 +2932,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-10
 ///
 /// `GET /admin/api/2020-10/products.json`
-Future<ApiResult<void, Never>> getProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -3010,11 +3010,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -3024,7 +3024,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2020-10
 ///
 /// `POST /admin/api/2020-10/products.json`
-Future<ApiResult<void, Never>> createProducts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createProducts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3035,17 +3035,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-10
 ///
 /// `GET /admin/api/2020-10/products/count.json`
-Future<ApiResult<void, Never>> getProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (vendor != null) {
   queryParameters['vendor'] = vendor.toString();
@@ -3089,17 +3089,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}.json`
-Future<ApiResult<void, Never>> getProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -3116,11 +3116,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -3130,7 +3130,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/products/{product_id}.json`
-Future<ApiResult<void, Never>> updateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3141,17 +3141,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/products/{product_id}.json`
-Future<ApiResult<void, Never>> deleteProductsParamProductId({required String productId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteProductsParamProductId({required String productId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3160,17 +3160,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2021-01
 ///
 /// `GET /admin/api/2021-01/products.json`
-Future<ApiResult<void, Never>> deprecated202101GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -3238,11 +3238,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -3252,7 +3252,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-2021-01
 ///
 /// `POST /admin/api/2021-01/products.json`
-Future<ApiResult<void, Never>> deprecated202101CreateProducts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateProducts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3263,17 +3263,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2021-01
 ///
 /// `GET /admin/api/2021-01/products/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (vendor != null) {
   queryParameters['vendor'] = vendor.toString();
@@ -3317,17 +3317,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -3344,11 +3344,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -3358,7 +3358,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3369,17 +3369,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteProductsParamProductId({required String productId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3388,17 +3388,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-unstable
 ///
 /// `GET /admin/api/unstable/products.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetProducts({dynamic ids, dynamic limit, dynamic sinceId, dynamic title, dynamic vendor, dynamic handle, dynamic productType, dynamic status, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, dynamic presentmentCurrencies, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -3466,11 +3466,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -3480,7 +3480,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#create-unstable
 ///
 /// `POST /admin/api/unstable/products.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateProducts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateProducts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3491,17 +3491,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-unstable
 ///
 /// `GET /admin/api/unstable/products/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsCount({dynamic vendor, dynamic productType, dynamic collectionId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (vendor != null) {
   queryParameters['vendor'] = vendor.toString();
@@ -3545,17 +3545,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductId({required String productId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -3572,11 +3572,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -3586,7 +3586,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#update-unstable
 ///
 /// `PUT /admin/api/unstable/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateProductsParamProductId({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3597,17 +3597,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/products/{product_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteProductsParamProductId({required String productId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteProductsParamProductId({required String productId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3616,17 +3616,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -3646,17 +3646,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-01
 ///
 /// `POST /admin/api/2020-01/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202001CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3667,17 +3667,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}/images/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -3694,17 +3694,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-01
 ///
 /// `GET /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -3721,17 +3721,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3742,17 +3742,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3761,17 +3761,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -3791,17 +3791,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-04
 ///
 /// `POST /admin/api/2020-04/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202004CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3812,17 +3812,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}/images/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -3839,17 +3839,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-04
 ///
 /// `GET /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -3866,17 +3866,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3887,17 +3887,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3906,17 +3906,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -3936,17 +3936,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-07
 ///
 /// `POST /admin/api/2020-07/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202007CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3957,17 +3957,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}/images/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -3984,17 +3984,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-07
 ///
 /// `GET /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -4011,17 +4011,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4032,17 +4032,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4051,17 +4051,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> getProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -4081,17 +4081,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-10
 ///
 /// `POST /admin/api/2020-10/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> createProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4102,17 +4102,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}/images/count.json`
-Future<ApiResult<void, Never>> getProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -4129,17 +4129,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-10
 ///
 /// `GET /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> getProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -4156,17 +4156,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> updateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4177,17 +4177,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4196,17 +4196,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -4226,17 +4226,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2021-01
 ///
 /// `POST /admin/api/2021-01/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecated202101CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4247,17 +4247,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}/images/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -4274,17 +4274,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2021-01
 ///
 /// `GET /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -4301,17 +4301,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4322,17 +4322,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4341,17 +4341,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImages({required String productId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -4371,17 +4371,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-unstable
 ///
 /// `POST /admin/api/unstable/products/{product_id}/images.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateProductsParamProductIdImages({required String productId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4392,17 +4392,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}/images/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesCount({required String productId, dynamic sinceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -4419,17 +4419,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-unstable
 ///
 /// `GET /admin/api/unstable/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -4446,17 +4446,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-unstable
 ///
 /// `PUT /admin/api/unstable/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateProductsParamProductIdImagesParamImageId({required String productId, required String imageId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4467,17 +4467,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/products/{product_id}/images/{image_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteProductsParamProductIdImagesParamImageId({required String productId, required String imageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4486,17 +4486,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-01
 ///
 /// `GET /admin/api/2020-01/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202001GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4546,17 +4546,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-01
 ///
 /// `POST /admin/api/2020-01/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202001CreateSmartCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateSmartCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4567,17 +4567,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-01
 ///
 /// `GET /admin/api/2020-01/smart_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -4612,17 +4612,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-01
 ///
 /// `GET /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -4639,17 +4639,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4660,17 +4660,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4679,17 +4679,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-01
 ///
 /// `PUT /admin/api/2020-01/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (products != null) {
   queryParameters['products'] = products.toString();
@@ -4714,17 +4714,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-04
 ///
 /// `GET /admin/api/2020-04/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202004GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -4774,17 +4774,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-04
 ///
 /// `POST /admin/api/2020-04/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202004CreateSmartCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateSmartCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4795,17 +4795,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-04
 ///
 /// `GET /admin/api/2020-04/smart_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -4840,17 +4840,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-04
 ///
 /// `GET /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -4867,17 +4867,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4888,17 +4888,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4907,17 +4907,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-04
 ///
 /// `PUT /admin/api/2020-04/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (products != null) {
   queryParameters['products'] = products.toString();
@@ -4942,17 +4942,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-07
 ///
 /// `GET /admin/api/2020-07/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202007GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5002,17 +5002,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-07
 ///
 /// `POST /admin/api/2020-07/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202007CreateSmartCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateSmartCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5023,17 +5023,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-07
 ///
 /// `GET /admin/api/2020-07/smart_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -5068,17 +5068,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-07
 ///
 /// `GET /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -5095,17 +5095,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5116,17 +5116,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5135,17 +5135,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-07
 ///
 /// `PUT /admin/api/2020-07/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (products != null) {
   queryParameters['products'] = products.toString();
@@ -5170,17 +5170,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-10
 ///
 /// `GET /admin/api/2020-10/smart_collections.json`
-Future<ApiResult<void, Never>> getSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5230,17 +5230,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-10
 ///
 /// `POST /admin/api/2020-10/smart_collections.json`
-Future<ApiResult<void, Never>> createSmartCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createSmartCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5251,17 +5251,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-10
 ///
 /// `GET /admin/api/2020-10/smart_collections/count.json`
-Future<ApiResult<void, Never>> getSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -5296,17 +5296,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-10
 ///
 /// `GET /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> getSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -5323,17 +5323,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5344,17 +5344,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5363,17 +5363,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-10
 ///
 /// `PUT /admin/api/2020-10/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> updateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (products != null) {
   queryParameters['products'] = products.toString();
@@ -5398,17 +5398,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2021-01
 ///
 /// `GET /admin/api/2021-01/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202101GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5458,17 +5458,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2021-01
 ///
 /// `POST /admin/api/2021-01/smart_collections.json`
-Future<ApiResult<void, Never>> deprecated202101CreateSmartCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateSmartCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5479,17 +5479,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2021-01
 ///
 /// `GET /admin/api/2021-01/smart_collections/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -5524,17 +5524,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2021-01
 ///
 /// `GET /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -5551,17 +5551,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5572,17 +5572,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5591,17 +5591,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2021-01
 ///
 /// `PUT /admin/api/2021-01/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101UpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (products != null) {
   queryParameters['products'] = products.toString();
@@ -5626,17 +5626,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-unstable
 ///
 /// `GET /admin/api/unstable/smart_collections.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollections({dynamic limit, dynamic ids, dynamic sinceId, dynamic title, dynamic productId, dynamic handle, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -5686,17 +5686,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-unstable
 ///
 /// `POST /admin/api/unstable/smart_collections.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateSmartCollections({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateSmartCollections({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5707,17 +5707,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-unstable
 ///
 /// `GET /admin/api/unstable/smart_collections/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsCount({dynamic title, dynamic productId, dynamic updatedAtMin, dynamic updatedAtMax, dynamic publishedAtMin, dynamic publishedAtMax, dynamic publishedStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (title != null) {
   queryParameters['title'] = title.toString();
@@ -5752,17 +5752,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-unstable
 ///
 /// `GET /admin/api/unstable/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -5779,17 +5779,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-unstable
 ///
 /// `PUT /admin/api/unstable/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionId({required String smartCollectionId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5800,17 +5800,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/smart_collections/{smart_collection_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteSmartCollectionsParamSmartCollectionId({required String smartCollectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5819,17 +5819,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-unstable
 ///
 /// `PUT /admin/api/unstable/smart_collections/{smart_collection_id}/order.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateSmartCollectionsParamSmartCollectionIdOrder({required String smartCollectionId, dynamic products, dynamic sortOrder, int? products2, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (products != null) {
   queryParameters['products'] = products.toString();
@@ -5854,9 +5854,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

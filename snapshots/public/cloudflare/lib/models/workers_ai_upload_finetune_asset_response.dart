@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiUploadFinetuneAssetResponse {const WorkersAiUploadFinetuneAssetResponse({required this.success});
 
-factory WorkersAiUploadFinetuneAssetResponse.fromJson(Map<String, dynamic> json) { return WorkersAiUploadFinetuneAssetResponse(
+factory WorkersAiUploadFinetuneAssetResponse.fromJson(Map<String, dynamic> json) {return WorkersAiUploadFinetuneAssetResponse(
   success: json['success'] as bool,
-); }
+);}
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-WorkersAiUploadFinetuneAssetResponse copyWith({bool? success}) { return WorkersAiUploadFinetuneAssetResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool;}
+WorkersAiUploadFinetuneAssetResponse copyWith({bool? success}) {return WorkersAiUploadFinetuneAssetResponse(
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiUploadFinetuneAssetResponse &&
           success == other.success;
@@ -24,4 +24,4 @@ WorkersAiUploadFinetuneAssetResponse copyWith({bool? success}) { return WorkersA
 
 @override String toString() => 'WorkersAiUploadFinetuneAssetResponse(success: $success)';
 
- }
+}

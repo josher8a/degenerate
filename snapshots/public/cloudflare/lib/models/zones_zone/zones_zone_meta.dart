@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the zone.
 @immutable final class ZonesZoneMeta {const ZonesZoneMeta({this.cdnOnly, this.customCertificateQuota, this.dnsOnly, this.foundationDns, this.pageRuleQuota, this.phishingDetected, this.step, });
 
-factory ZonesZoneMeta.fromJson(Map<String, dynamic> json) { return ZonesZoneMeta(
+factory ZonesZoneMeta.fromJson(Map<String, dynamic> json) {return ZonesZoneMeta(
   cdnOnly: json['cdn_only'] as bool?,
   customCertificateQuota: json['custom_certificate_quota'] != null ? (json['custom_certificate_quota'] as num).toInt() : null,
   dnsOnly: json['dns_only'] as bool?,
@@ -12,7 +12,7 @@ factory ZonesZoneMeta.fromJson(Map<String, dynamic> json) { return ZonesZoneMeta
   pageRuleQuota: json['page_rule_quota'] != null ? (json['page_rule_quota'] as num).toInt() : null,
   phishingDetected: json['phishing_detected'] as bool?,
   step: json['step'] != null ? (json['step'] as num).toInt() : null,
-); }
+);}
 
 /// The zone is only configured for CDN.
 /// 
@@ -47,7 +47,7 @@ final bool? phishingDetected;
 /// Example: `2`
 final int? step;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cdn_only': ?cdnOnly,
   'custom_certificate_quota': ?customCertificateQuota,
   'dns_only': ?dnsOnly,
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   'page_rule_quota': ?pageRuleQuota,
   'phishing_detected': ?phishingDetected,
   'step': ?step,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cdn_only', 'custom_certificate_quota', 'dns_only', 'foundation_dns', 'page_rule_quota', 'phishing_detected', 'step'}.contains(key)); } 
-ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertificateQuota, bool? Function()? dnsOnly, bool? Function()? foundationDns, int? Function()? pageRuleQuota, bool? Function()? phishingDetected, int? Function()? step, }) { return ZonesZoneMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cdn_only', 'custom_certificate_quota', 'dns_only', 'foundation_dns', 'page_rule_quota', 'phishing_detected', 'step'}.contains(key));}
+ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertificateQuota, bool? Function()? dnsOnly, bool? Function()? foundationDns, int? Function()? pageRuleQuota, bool? Function()? phishingDetected, int? Function()? step, }) {return ZonesZoneMeta(
   cdnOnly: cdnOnly != null ? cdnOnly() : this.cdnOnly,
   customCertificateQuota: customCertificateQuota != null ? customCertificateQuota() : this.customCertificateQuota,
   dnsOnly: dnsOnly != null ? dnsOnly() : this.dnsOnly,
@@ -65,7 +65,7 @@ ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertif
   pageRuleQuota: pageRuleQuota != null ? pageRuleQuota() : this.pageRuleQuota,
   phishingDetected: phishingDetected != null ? phishingDetected() : this.phishingDetected,
   step: step != null ? step() : this.step,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZoneMeta &&
           cdnOnly == other.cdnOnly &&
@@ -80,4 +80,4 @@ ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertif
 
 @override String toString() => 'ZonesZoneMeta(cdnOnly: $cdnOnly, customCertificateQuota: $customCertificateQuota, dnsOnly: $dnsOnly, foundationDns: $foundationDns, pageRuleQuota: $pageRuleQuota, phishingDetected: $phishingDetected, step: $step)';
 
- }
+}

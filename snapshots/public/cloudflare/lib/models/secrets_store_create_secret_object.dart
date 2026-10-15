@@ -10,12 +10,12 @@ String toJson() => value;
 }
 @immutable final class SecretsStoreCreateSecretObject {const SecretsStoreCreateSecretObject({required this.name, required this.scopes, required this.value, this.comment, });
 
-factory SecretsStoreCreateSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreCreateSecretObject(
+factory SecretsStoreCreateSecretObject.fromJson(Map<String, dynamic> json) {return SecretsStoreCreateSecretObject(
   comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,
   name: SecretsStoreSecretName.fromJson(json['name'] as String),
   scopes: (json['scopes'] as List<dynamic>).map((e) => e as String).toList(),
   value: SecretsStoreValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Freeform text describing the secret
 final SecretsStoreComment? comment;
@@ -26,21 +26,21 @@ final List<String> scopes;
 
 final SecretsStoreValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   'name': name.toJson(),
   'scopes': scopes,
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('scopes') &&
-      json.containsKey('value'); } 
-SecretsStoreCreateSecretObject copyWith({SecretsStoreComment? Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, SecretsStoreValue? value, }) { return SecretsStoreCreateSecretObject(
+      json.containsKey('value');}
+SecretsStoreCreateSecretObject copyWith({SecretsStoreComment? Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, SecretsStoreValue? value, }) {return SecretsStoreCreateSecretObject(
   comment: comment != null ? comment() : this.comment,
   name: name ?? this.name,
   scopes: scopes ?? this.scopes,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreCreateSecretObject &&
           comment == other.comment &&
@@ -52,4 +52,4 @@ SecretsStoreCreateSecretObject copyWith({SecretsStoreComment? Function()? commen
 
 @override String toString() => 'SecretsStoreCreateSecretObject(comment: $comment, name: $name, scopes: $scopes, value: $value)';
 
- }
+}

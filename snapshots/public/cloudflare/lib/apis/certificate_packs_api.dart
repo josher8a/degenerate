@@ -14,7 +14,7 @@ final class CertificatePacksApi with ApiExecutor {const CertificatePacksApi(this
 /// For a given zone, list all active certificate packs.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs`
-Future<ApiResult<List<TlsCertificatesAndHostnamesCertificatePack>?, CertificatePacksListCertificatePacksError>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, dynamic status, dynamic deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesCertificatePack>?, CertificatePacksListCertificatePacksError>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, dynamic status, dynamic deploy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,13 +48,13 @@ return execute(
   },
   onError: CertificatePacksListCertificatePacksError.fromResponse,
 );
- } 
+}
 /// Get Certificate Pack
 ///
 /// For a given zone, get a certificate pack.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, CertificatePacksGetCertificatePackError>> certificatePacksGetCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, CertificatePacksGetCertificatePackError>> certificatePacksGetCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -63,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -71,13 +71,13 @@ return execute(
   },
   onError: CertificatePacksGetCertificatePackError.fromResponse,
 );
- } 
+}
 /// Restart Validation or Update Advanced Certificate Manager Certificate Pack
 ///
 /// For a given zone, restart validation or add cloudflare branding for an advanced certificate pack.  The former is only a validation operation for a Certificate Pack in a validation_timed_out status.
 ///
 /// `PATCH /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackError>> certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackError>> certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,13 +96,13 @@ return execute(
   },
   onError: CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackError.fromResponse,
 );
- } 
+}
 /// Delete Advanced Certificate Manager Certificate Pack
 ///
 /// For a given zone, delete an advanced certificate pack.
 ///
 /// `DELETE /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<AaaIdResponseResult?, CertificatePacksDeleteAdvancedCertificateManagerCertificatePackError>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, CertificatePacksDeleteAdvancedCertificateManagerCertificatePackError>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -111,7 +111,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -119,13 +119,13 @@ return execute(
   },
   onError: CertificatePacksDeleteAdvancedCertificateManagerCertificatePackError.fromResponse,
 );
- } 
+}
 /// Order Advanced Certificate Manager Certificate Pack
 ///
 /// For a given zone, order an advanced certificate pack.
 ///
 /// `POST /zones/{zone_id}/ssl/certificate_packs/order`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, CertificatePacksOrderAdvancedCertificateManagerCertificatePackError>> certificatePacksOrderAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, CertificatePacksOrderAdvancedCertificateManagerCertificatePackError>> certificatePacksOrderAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -144,13 +144,13 @@ return execute(
   },
   onError: CertificatePacksOrderAdvancedCertificateManagerCertificatePackError.fromResponse,
 );
- } 
+}
 /// Get Certificate Pack Quotas
 ///
 /// For a given zone, list certificate pack quotas.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs/quota`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult?, CertificatePacksGetCertificatePackQuotasError>> certificatePacksGetCertificatePackQuotas({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult?, CertificatePacksGetCertificatePackQuotasError>> certificatePacksGetCertificatePackQuotas({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -159,7 +159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -167,5 +167,5 @@ return execute(
   },
   onError: CertificatePacksGetCertificatePackQuotasError.fromResponse,
 );
- } 
- }
+}
+}

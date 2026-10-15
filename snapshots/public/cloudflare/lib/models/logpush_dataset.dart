@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
 sealed class LogpushDataset {const LogpushDataset();
 
-factory LogpushDataset.fromJson(String json) { return switch (json) {
+factory LogpushDataset.fromJson(String json) {return switch (json) {
   'access_requests' => accessRequests,
   'audit_logs' => auditLogs,
   'audit_logs_v2' => auditLogsV2,
@@ -36,7 +36,7 @@ factory LogpushDataset.fromJson(String json) { return switch (json) {
   'zaraz_events' => zarazEvents,
   'zero_trust_network_sessions' => zeroTrustNetworkSessions,
   _ => LogpushDataset$Unknown(json),
-}; }
+};}
 
 static const LogpushDataset accessRequests = LogpushDataset$accessRequests._();
 
@@ -101,9 +101,9 @@ static const LogpushDataset zeroTrustNetworkSessions = LogpushDataset$zeroTrustN
 static const List<LogpushDataset> values = [accessRequests, auditLogs, auditLogsV2, bisoUserActions, casbFindings, devicePostureResults, dexApplicationTests, dexDeviceStateEvents, dlpForensicCopies, dnsFirewallLogs, dnsLogs, emailSecurityAlerts, firewallEvents, gatewayDns, gatewayHttp, gatewayNetwork, httpRequests, ipsecLogs, magicIdsDetections, nelReports, networkAnalyticsLogs, pageShieldEvents, sinkholeHttpLogs, spectrumEvents, sshLogs, warpConfigChanges, warpToggleChanges, workersTraceEvents, zarazEvents, zeroTrustNetworkSessions];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'access_requests' => 'accessRequests',
   'audit_logs' => 'auditLogs',
   'audit_logs_v2' => 'auditLogsV2',
@@ -135,11 +135,11 @@ String get name { return switch (value) {
   'zaraz_events' => 'zarazEvents',
   'zero_trust_network_sessions' => 'zeroTrustNetworkSessions',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LogpushDataset$Unknown; } 
+bool get isUnknown {return this is LogpushDataset$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accessRequests, required W Function() auditLogs, required W Function() auditLogsV2, required W Function() bisoUserActions, required W Function() casbFindings, required W Function() devicePostureResults, required W Function() dexApplicationTests, required W Function() dexDeviceStateEvents, required W Function() dlpForensicCopies, required W Function() dnsFirewallLogs, required W Function() dnsLogs, required W Function() emailSecurityAlerts, required W Function() firewallEvents, required W Function() gatewayDns, required W Function() gatewayHttp, required W Function() gatewayNetwork, required W Function() httpRequests, required W Function() ipsecLogs, required W Function() magicIdsDetections, required W Function() nelReports, required W Function() networkAnalyticsLogs, required W Function() pageShieldEvents, required W Function() sinkholeHttpLogs, required W Function() spectrumEvents, required W Function() sshLogs, required W Function() warpConfigChanges, required W Function() warpToggleChanges, required W Function() workersTraceEvents, required W Function() zarazEvents, required W Function() zeroTrustNetworkSessions, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accessRequests, required W Function() auditLogs, required W Function() auditLogsV2, required W Function() bisoUserActions, required W Function() casbFindings, required W Function() devicePostureResults, required W Function() dexApplicationTests, required W Function() dexDeviceStateEvents, required W Function() dlpForensicCopies, required W Function() dnsFirewallLogs, required W Function() dnsLogs, required W Function() emailSecurityAlerts, required W Function() firewallEvents, required W Function() gatewayDns, required W Function() gatewayHttp, required W Function() gatewayNetwork, required W Function() httpRequests, required W Function() ipsecLogs, required W Function() magicIdsDetections, required W Function() nelReports, required W Function() networkAnalyticsLogs, required W Function() pageShieldEvents, required W Function() sinkholeHttpLogs, required W Function() spectrumEvents, required W Function() sshLogs, required W Function() warpConfigChanges, required W Function() warpToggleChanges, required W Function() workersTraceEvents, required W Function() zarazEvents, required W Function() zeroTrustNetworkSessions, required W Function(String value) $unknown, }) {return switch (this) {
       LogpushDataset$accessRequests() => accessRequests(),
       LogpushDataset$auditLogs() => auditLogs(),
       LogpushDataset$auditLogsV2() => auditLogsV2(),
@@ -171,9 +171,9 @@ W when<W>({required W Function() accessRequests, required W Function() auditLogs
       LogpushDataset$zarazEvents() => zarazEvents(),
       LogpushDataset$zeroTrustNetworkSessions() => zeroTrustNetworkSessions(),
       LogpushDataset$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRequests, W Function()? auditLogs, W Function()? auditLogsV2, W Function()? bisoUserActions, W Function()? casbFindings, W Function()? devicePostureResults, W Function()? dexApplicationTests, W Function()? dexDeviceStateEvents, W Function()? dlpForensicCopies, W Function()? dnsFirewallLogs, W Function()? dnsLogs, W Function()? emailSecurityAlerts, W Function()? firewallEvents, W Function()? gatewayDns, W Function()? gatewayHttp, W Function()? gatewayNetwork, W Function()? httpRequests, W Function()? ipsecLogs, W Function()? magicIdsDetections, W Function()? nelReports, W Function()? networkAnalyticsLogs, W Function()? pageShieldEvents, W Function()? sinkholeHttpLogs, W Function()? spectrumEvents, W Function()? sshLogs, W Function()? warpConfigChanges, W Function()? warpToggleChanges, W Function()? workersTraceEvents, W Function()? zarazEvents, W Function()? zeroTrustNetworkSessions, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRequests, W Function()? auditLogs, W Function()? auditLogsV2, W Function()? bisoUserActions, W Function()? casbFindings, W Function()? devicePostureResults, W Function()? dexApplicationTests, W Function()? dexDeviceStateEvents, W Function()? dlpForensicCopies, W Function()? dnsFirewallLogs, W Function()? dnsLogs, W Function()? emailSecurityAlerts, W Function()? firewallEvents, W Function()? gatewayDns, W Function()? gatewayHttp, W Function()? gatewayNetwork, W Function()? httpRequests, W Function()? ipsecLogs, W Function()? magicIdsDetections, W Function()? nelReports, W Function()? networkAnalyticsLogs, W Function()? pageShieldEvents, W Function()? sinkholeHttpLogs, W Function()? spectrumEvents, W Function()? sshLogs, W Function()? warpConfigChanges, W Function()? warpToggleChanges, W Function()? workersTraceEvents, W Function()? zarazEvents, W Function()? zeroTrustNetworkSessions, W Function(String value)? $unknown, }) {return switch (this) {
       LogpushDataset$accessRequests() => accessRequests != null ? accessRequests() : orElse(value),
       LogpushDataset$auditLogs() => auditLogs != null ? auditLogs() : orElse(value),
       LogpushDataset$auditLogsV2() => auditLogsV2 != null ? auditLogsV2() : orElse(value),
@@ -205,10 +205,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
       LogpushDataset$zarazEvents() => zarazEvents != null ? zarazEvents() : orElse(value),
       LogpushDataset$zeroTrustNetworkSessions() => zeroTrustNetworkSessions != null ? zeroTrustNetworkSessions() : orElse(value),
       LogpushDataset$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LogpushDataset($value)';
 
- }
+}
 @immutable final class LogpushDataset$accessRequests extends LogpushDataset {const LogpushDataset$accessRequests._();
 
 @override String get value => 'access_requests';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'access_requests'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$auditLogs extends LogpushDataset {const LogpushDataset$auditLogs._();
 
 @override String get value => 'audit_logs';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'audit_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$auditLogsV2 extends LogpushDataset {const LogpushDataset$auditLogsV2._();
 
 @override String get value => 'audit_logs_v2';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'audit_logs_v2'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$bisoUserActions extends LogpushDataset {const LogpushDataset$bisoUserActions._();
 
 @override String get value => 'biso_user_actions';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'biso_user_actions'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$casbFindings extends LogpushDataset {const LogpushDataset$casbFindings._();
 
 @override String get value => 'casb_findings';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'casb_findings'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$devicePostureResults extends LogpushDataset {const LogpushDataset$devicePostureResults._();
 
 @override String get value => 'device_posture_results';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'device_posture_results'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$dexApplicationTests extends LogpushDataset {const LogpushDataset$dexApplicationTests._();
 
 @override String get value => 'dex_application_tests';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'dex_application_tests'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$dexDeviceStateEvents extends LogpushDataset {const LogpushDataset$dexDeviceStateEvents._();
 
 @override String get value => 'dex_device_state_events';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'dex_device_state_events'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$dlpForensicCopies extends LogpushDataset {const LogpushDataset$dlpForensicCopies._();
 
 @override String get value => 'dlp_forensic_copies';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'dlp_forensic_copies'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$dnsFirewallLogs extends LogpushDataset {const LogpushDataset$dnsFirewallLogs._();
 
 @override String get value => 'dns_firewall_logs';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'dns_firewall_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$dnsLogs extends LogpushDataset {const LogpushDataset$dnsLogs._();
 
 @override String get value => 'dns_logs';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'dns_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$emailSecurityAlerts extends LogpushDataset {const LogpushDataset$emailSecurityAlerts._();
 
 @override String get value => 'email_security_alerts';
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'email_security_alerts'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$firewallEvents extends LogpushDataset {const LogpushDataset$firewallEvents._();
 
 @override String get value => 'firewall_events';
@@ -325,7 +325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'firewall_events'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$gatewayDns extends LogpushDataset {const LogpushDataset$gatewayDns._();
 
 @override String get value => 'gateway_dns';
@@ -334,7 +334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'gateway_dns'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$gatewayHttp extends LogpushDataset {const LogpushDataset$gatewayHttp._();
 
 @override String get value => 'gateway_http';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'gateway_http'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$gatewayNetwork extends LogpushDataset {const LogpushDataset$gatewayNetwork._();
 
 @override String get value => 'gateway_network';
@@ -352,7 +352,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'gateway_network'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$httpRequests extends LogpushDataset {const LogpushDataset$httpRequests._();
 
 @override String get value => 'http_requests';
@@ -361,7 +361,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'http_requests'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$ipsecLogs extends LogpushDataset {const LogpushDataset$ipsecLogs._();
 
 @override String get value => 'ipsec_logs';
@@ -370,7 +370,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'ipsec_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$magicIdsDetections extends LogpushDataset {const LogpushDataset$magicIdsDetections._();
 
 @override String get value => 'magic_ids_detections';
@@ -379,7 +379,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'magic_ids_detections'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$nelReports extends LogpushDataset {const LogpushDataset$nelReports._();
 
 @override String get value => 'nel_reports';
@@ -388,7 +388,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'nel_reports'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$networkAnalyticsLogs extends LogpushDataset {const LogpushDataset$networkAnalyticsLogs._();
 
 @override String get value => 'network_analytics_logs';
@@ -397,7 +397,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'network_analytics_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$pageShieldEvents extends LogpushDataset {const LogpushDataset$pageShieldEvents._();
 
 @override String get value => 'page_shield_events';
@@ -406,7 +406,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'page_shield_events'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$sinkholeHttpLogs extends LogpushDataset {const LogpushDataset$sinkholeHttpLogs._();
 
 @override String get value => 'sinkhole_http_logs';
@@ -415,7 +415,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'sinkhole_http_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$spectrumEvents extends LogpushDataset {const LogpushDataset$spectrumEvents._();
 
 @override String get value => 'spectrum_events';
@@ -424,7 +424,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'spectrum_events'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$sshLogs extends LogpushDataset {const LogpushDataset$sshLogs._();
 
 @override String get value => 'ssh_logs';
@@ -433,7 +433,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'ssh_logs'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$warpConfigChanges extends LogpushDataset {const LogpushDataset$warpConfigChanges._();
 
 @override String get value => 'warp_config_changes';
@@ -442,7 +442,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'warp_config_changes'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$warpToggleChanges extends LogpushDataset {const LogpushDataset$warpToggleChanges._();
 
 @override String get value => 'warp_toggle_changes';
@@ -451,7 +451,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'warp_toggle_changes'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$workersTraceEvents extends LogpushDataset {const LogpushDataset$workersTraceEvents._();
 
 @override String get value => 'workers_trace_events';
@@ -460,7 +460,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'workers_trace_events'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$zarazEvents extends LogpushDataset {const LogpushDataset$zarazEvents._();
 
 @override String get value => 'zaraz_events';
@@ -469,7 +469,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'zaraz_events'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$zeroTrustNetworkSessions extends LogpushDataset {const LogpushDataset$zeroTrustNetworkSessions._();
 
 @override String get value => 'zero_trust_network_sessions';
@@ -478,7 +478,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => 'zero_trust_network_sessions'.hashCode;
 
- }
+}
 @immutable final class LogpushDataset$Unknown extends LogpushDataset {const LogpushDataset$Unknown(this.value);
 
 @override final String value;
@@ -488,4 +488,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessRe
 
 @override int get hashCode => value.hashCode;
 
- }
+}

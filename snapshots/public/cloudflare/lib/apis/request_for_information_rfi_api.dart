@@ -12,7 +12,7 @@ final class RequestForInformationRfiApi with ApiExecutor {const RequestForInform
 /// List Requests
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests`
-Future<ApiResult<List<CloudforceOneRequestsRequestListItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudforceOneRequestsRequestListItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestList body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,11 +31,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Get a Request
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<CloudforceOneRequestsRequestItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -52,13 +52,13 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Update a Request
 ///
 /// Updating a request alters the request in the Cloudforce One queue. This API may be used to update any attributes of the request after the initial submission. Only fields that you choose to update need to be add to the request body.
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<CloudforceOneRequestsRequestItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,7 +69,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -77,11 +77,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Delete a Request
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<ResponseCommon14, CloudforceOnePriorityDeleteError>> cloudforceOneRequestDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon14, CloudforceOnePriorityDeleteError>> cloudforceOneRequestDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -90,18 +90,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// List Request Assets
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset`
-Future<ApiResult<List<CloudforceOneRequestsRequestAssetItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudforceOneRequestsRequestAssetItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetList body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -120,11 +120,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Get a Request Asset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<List<CloudforceOneRequestsRequestAssetItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudforceOneRequestsRequestAssetItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -141,11 +141,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Update a Request Asset
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<CloudforceOneRequestsRequestAssetItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestAssetItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -164,11 +164,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Delete a Request Asset
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<ResponseCommon14, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon14, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -177,18 +177,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Create a New Request Asset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new`
-Future<ApiResult<CloudforceOneRequestsRequestAssetItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestAssetItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -202,7 +202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -210,11 +210,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// List Request Messages
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message`
-Future<ApiResult<List<CloudforceOneRequestsRequestMessageItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudforceOneRequestsRequestMessageItem>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageList body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -225,7 +225,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -233,11 +233,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Update a Request Message
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}`
-Future<ApiResult<CloudforceOneRequestsRequestMessageItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestMessageItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -248,7 +248,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -256,11 +256,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Delete a Request Message
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}`
-Future<ApiResult<ResponseCommon14, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon14, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageDelete({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -269,18 +269,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Create a New Request Message
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new`
-Future<ApiResult<CloudforceOneRequestsRequestMessageItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestMessageItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestMessageNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -291,7 +291,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -299,11 +299,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Get Request Priority, Status, and TLP constants
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/constants`
-Future<ApiResult<CloudforceOneRequestsRequestConstants?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestConstants({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestConstants?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestConstants({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -312,7 +312,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -320,13 +320,13 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Create a New Request.
 ///
 /// Creating a request adds the request into the Cloudforce One queue for analysis. In addition to the content, a short title, type, priority, and releasability should be provided. If one is not provided, a default will be assigned.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/new`
-Future<ApiResult<CloudforceOneRequestsRequestItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestItem?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -337,7 +337,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -345,11 +345,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Get Request Quota
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/quota`
-Future<ApiResult<CloudforceOneRequestsQuota?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsQuota?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -358,7 +358,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -366,11 +366,11 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
+}
 /// Get Request Types
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/types`
-Future<ApiResult<List<String>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestTypes({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>?, CloudforceOnePriorityDeleteError>> cloudforceOneRequestTypes({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -379,7 +379,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -387,5 +387,5 @@ return execute(
   },
   onError: CloudforceOnePriorityDeleteError.fromResponse,
 );
- } 
- }
+}
+}

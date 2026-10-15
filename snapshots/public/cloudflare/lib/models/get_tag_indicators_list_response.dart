@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_indicators.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_pagination.dart';@immutable final class GetTagIndicatorsListResponse {const GetTagIndicatorsListResponse({required this.indicators, required this.pagination, });
 
-factory GetTagIndicatorsListResponse.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponse(
+factory GetTagIndicatorsListResponse.fromJson(Map<String, dynamic> json) {return GetTagIndicatorsListResponse(
   indicators: (json['indicators'] as List<dynamic>).map((e) => GetIndicatorListLegacyResponseIndicators.fromJson(e as Map<String, dynamic>)).toList(),
   pagination: GetIndicatorListLegacyResponsePagination.fromJson(json['pagination'] as Map<String, dynamic>),
-); }
+);}
 
 final List<GetIndicatorListLegacyResponseIndicators> indicators;
 
 final GetIndicatorListLegacyResponsePagination pagination;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'indicators': indicators.map((e) => e.toJson()).toList(),
   'pagination': pagination.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicators') &&
-      json.containsKey('pagination'); } 
-GetTagIndicatorsListResponse copyWith({List<GetIndicatorListLegacyResponseIndicators>? indicators, GetIndicatorListLegacyResponsePagination? pagination, }) { return GetTagIndicatorsListResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indicators') &&
+      json.containsKey('pagination');}
+GetTagIndicatorsListResponse copyWith({List<GetIndicatorListLegacyResponseIndicators>? indicators, GetIndicatorListLegacyResponsePagination? pagination, }) {return GetTagIndicatorsListResponse(
   indicators: indicators ?? this.indicators,
   pagination: pagination ?? this.pagination,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetTagIndicatorsListResponse &&
           listEquals(indicators, other.indicators) &&
@@ -31,4 +31,4 @@ GetTagIndicatorsListResponse copyWith({List<GetIndicatorListLegacyResponseIndica
 
 @override String toString() => 'GetTagIndicatorsListResponse(indicators: $indicators, pagination: $pagination)';
 
- }
+}

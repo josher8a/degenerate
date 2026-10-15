@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the transcription error.
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError({this.type, this.code, this.message, this.param, });
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(
   type: json['type'] as String?,
   code: json['code'] as String?,
   message: json['message'] as String?,
   param: json['param'] as String?,
-); }
+);}
 
 /// The type of error.
 final String? type;
@@ -23,19 +23,19 @@ final String? message;
 /// Parameter related to the error, if any.
 final String? param;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'code': ?code,
   'message': ?message,
   'param': ?param,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'code', 'message', 'param'}.contains(key)); } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError copyWith({String? Function()? type, String? Function()? code, String? Function()? message, String? Function()? param, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'code', 'message', 'param'}.contains(key));}
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError copyWith({String? Function()? type, String? Function()? code, String? Function()? message, String? Function()? param, }) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   param: param != null ? param() : this.param,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError &&
           type == other.type &&
@@ -47,4 +47,4 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError copyWi
 
 @override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(type: $type, code: $code, message: $message, param: $param)';
 
- }
+}

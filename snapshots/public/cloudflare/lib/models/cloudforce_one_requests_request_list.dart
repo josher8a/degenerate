@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_list/sort_order.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_status.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_type.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestList {const CloudforceOneRequestsRequestList({required this.page, required this.perPage, this.completedAfter, this.completedBefore, this.createdAfter, this.createdBefore, this.requestType, this.sortBy, this.sortOrder, this.status, });
 
-factory CloudforceOneRequestsRequestList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestList(
+factory CloudforceOneRequestsRequestList.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsRequestList(
   completedAfter: json['completed_after'] != null ? CloudforceOneRequestsTime.fromJson(json['completed_after'] as String) : null,
   completedBefore: json['completed_before'] != null ? CloudforceOneRequestsTime.fromJson(json['completed_before'] as String) : null,
   createdAfter: json['created_after'] != null ? CloudforceOneRequestsTime.fromJson(json['created_after'] as String) : null,
@@ -14,7 +14,7 @@ factory CloudforceOneRequestsRequestList.fromJson(Map<String, dynamic> json) { r
   sortBy: json['sort_by'] as String?,
   sortOrder: json['sort_order'] != null ? SortOrder.fromJson(json['sort_order'] as String) : null,
   status: json['status'] != null ? CloudforceOneRequestsRequestStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// Retrieve requests completed after this time.
 /// 
@@ -56,7 +56,7 @@ final SortOrder? sortOrder;
 
 final CloudforceOneRequestsRequestStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (completedAfter != null) 'completed_after': completedAfter?.toJson(),
   if (completedBefore != null) 'completed_before': completedBefore?.toJson(),
   if (createdAfter != null) 'created_after': createdAfter?.toJson(),
@@ -67,10 +67,10 @@ Map<String, dynamic> toJson() { return {
   'sort_by': ?sortBy,
   if (sortOrder != null) 'sort_order': sortOrder?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
-      json.containsKey('per_page') && json['per_page'] is num; } 
-CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()? completedAfter, CloudforceOneRequestsTime? Function()? completedBefore, CloudforceOneRequestsTime? Function()? createdAfter, CloudforceOneRequestsTime? Function()? createdBefore, int? page, int? perPage, CloudforceOneRequestsRequestType? Function()? requestType, String? Function()? sortBy, SortOrder? Function()? sortOrder, CloudforceOneRequestsRequestStatus? Function()? status, }) { return CloudforceOneRequestsRequestList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('page') && json['page'] is num &&
+      json.containsKey('per_page') && json['per_page'] is num;}
+CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()? completedAfter, CloudforceOneRequestsTime? Function()? completedBefore, CloudforceOneRequestsTime? Function()? createdAfter, CloudforceOneRequestsTime? Function()? createdBefore, int? page, int? perPage, CloudforceOneRequestsRequestType? Function()? requestType, String? Function()? sortBy, SortOrder? Function()? sortOrder, CloudforceOneRequestsRequestStatus? Function()? status, }) {return CloudforceOneRequestsRequestList(
   completedAfter: completedAfter != null ? completedAfter() : this.completedAfter,
   completedBefore: completedBefore != null ? completedBefore() : this.completedBefore,
   createdAfter: createdAfter != null ? createdAfter() : this.createdAfter,
@@ -81,7 +81,7 @@ CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()
   sortBy: sortBy != null ? sortBy() : this.sortBy,
   sortOrder: sortOrder != null ? sortOrder() : this.sortOrder,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestList &&
           completedAfter == other.completedAfter &&
@@ -99,4 +99,4 @@ CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()
 
 @override String toString() => 'CloudforceOneRequestsRequestList(\n  completedAfter: $completedAfter,\n  completedBefore: $completedBefore,\n  createdAfter: $createdAfter,\n  createdBefore: $createdBefore,\n  page: $page,\n  perPage: $perPage,\n  requestType: $requestType,\n  sortBy: $sortBy,\n  sortOrder: $sortOrder,\n  status: $status,\n)';
 
- }
+}

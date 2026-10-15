@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/destination_details_unimplemented.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_blik.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_br_bank_transfer.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_card.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_crypto.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_eu_bank_transfer.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_gb_bank_transfer.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_jp_bank_transfer.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_mb_way.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_multibanco.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_mx_bank_transfer.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_p24.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_paypal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_swish.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_th_bank_transfer.dart';import 'package:pub_stripe_spec3/models/refund_destination_details_us_bank_transfer.dart';/// 
 @immutable final class RefundDestinationDetails {const RefundDestinationDetails({required this.type, this.customerCashBalance, this.alipay, this.alma, this.amazonPay, this.auBankTransfer, this.blik, this.brBankTransfer, this.card, this.cashapp, this.crypto, this.affirm, this.eps, this.euBankTransfer, this.gbBankTransfer, this.giropay, this.grabpay, this.jpBankTransfer, this.klarna, this.mbWay, this.multibanco, this.mxBankTransfer, this.nzBankTransfer, this.zip, this.paynow, this.paypal, this.pix, this.revolut, this.sofort, this.swish, this.thBankTransfer, this.twint, this.afterpayClearpay, this.usBankTransfer, this.wechatPay, this.p24, });
 
-factory RefundDestinationDetails.fromJson(Map<String, dynamic> json) { return RefundDestinationDetails(
+factory RefundDestinationDetails.fromJson(Map<String, dynamic> json) {return RefundDestinationDetails(
   affirm: json['affirm'] != null ? DestinationDetailsUnimplemented.fromJson(json['affirm'] as Map<String, dynamic>) : null,
   afterpayClearpay: json['afterpay_clearpay'] != null ? DestinationDetailsUnimplemented.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
   alipay: json['alipay'] != null ? DestinationDetailsUnimplemented.fromJson(json['alipay'] as Map<String, dynamic>) : null,
@@ -41,7 +41,7 @@ factory RefundDestinationDetails.fromJson(Map<String, dynamic> json) { return Re
   usBankTransfer: json['us_bank_transfer'] != null ? RefundDestinationDetailsUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>) : null,
   wechatPay: json['wechat_pay'] != null ? DestinationDetailsUnimplemented.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
   zip: json['zip'] != null ? DestinationDetailsUnimplemented.fromJson(json['zip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DestinationDetailsUnimplemented? affirm;
 
@@ -116,7 +116,7 @@ final DestinationDetailsUnimplemented? wechatPay;
 
 final DestinationDetailsUnimplemented? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (affirm != null) 'affirm': affirm?.toJson(),
   if (afterpayClearpay != null) 'afterpay_clearpay': afterpayClearpay?.toJson(),
   if (alipay != null) 'alipay': alipay?.toJson(),
@@ -153,13 +153,13 @@ Map<String, dynamic> toJson() { return {
   if (usBankTransfer != null) 'us_bank_transfer': usBankTransfer?.toJson(),
   if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
   if (zip != null) 'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-RefundDestinationDetails copyWith({DestinationDetailsUnimplemented? Function()? affirm, DestinationDetailsUnimplemented? Function()? afterpayClearpay, DestinationDetailsUnimplemented? Function()? alipay, DestinationDetailsUnimplemented? Function()? alma, DestinationDetailsUnimplemented? Function()? amazonPay, DestinationDetailsUnimplemented? Function()? auBankTransfer, RefundDestinationDetailsBlik? Function()? blik, RefundDestinationDetailsBrBankTransfer? Function()? brBankTransfer, RefundDestinationDetailsCard? Function()? card, DestinationDetailsUnimplemented? Function()? cashapp, RefundDestinationDetailsCrypto? Function()? crypto, DestinationDetailsUnimplemented? Function()? customerCashBalance, DestinationDetailsUnimplemented? Function()? eps, RefundDestinationDetailsEuBankTransfer? Function()? euBankTransfer, RefundDestinationDetailsGbBankTransfer? Function()? gbBankTransfer, DestinationDetailsUnimplemented? Function()? giropay, DestinationDetailsUnimplemented? Function()? grabpay, RefundDestinationDetailsJpBankTransfer? Function()? jpBankTransfer, DestinationDetailsUnimplemented? Function()? klarna, RefundDestinationDetailsMbWay? Function()? mbWay, RefundDestinationDetailsMultibanco? Function()? multibanco, RefundDestinationDetailsMxBankTransfer? Function()? mxBankTransfer, DestinationDetailsUnimplemented? Function()? nzBankTransfer, RefundDestinationDetailsP24? Function()? p24, DestinationDetailsUnimplemented? Function()? paynow, RefundDestinationDetailsPaypal? Function()? paypal, DestinationDetailsUnimplemented? Function()? pix, DestinationDetailsUnimplemented? Function()? revolut, DestinationDetailsUnimplemented? Function()? sofort, RefundDestinationDetailsSwish? Function()? swish, RefundDestinationDetailsThBankTransfer? Function()? thBankTransfer, DestinationDetailsUnimplemented? Function()? twint, String? type, RefundDestinationDetailsUsBankTransfer? Function()? usBankTransfer, DestinationDetailsUnimplemented? Function()? wechatPay, DestinationDetailsUnimplemented? Function()? zip, }) { return RefundDestinationDetails(
+return errors;}
+RefundDestinationDetails copyWith({DestinationDetailsUnimplemented? Function()? affirm, DestinationDetailsUnimplemented? Function()? afterpayClearpay, DestinationDetailsUnimplemented? Function()? alipay, DestinationDetailsUnimplemented? Function()? alma, DestinationDetailsUnimplemented? Function()? amazonPay, DestinationDetailsUnimplemented? Function()? auBankTransfer, RefundDestinationDetailsBlik? Function()? blik, RefundDestinationDetailsBrBankTransfer? Function()? brBankTransfer, RefundDestinationDetailsCard? Function()? card, DestinationDetailsUnimplemented? Function()? cashapp, RefundDestinationDetailsCrypto? Function()? crypto, DestinationDetailsUnimplemented? Function()? customerCashBalance, DestinationDetailsUnimplemented? Function()? eps, RefundDestinationDetailsEuBankTransfer? Function()? euBankTransfer, RefundDestinationDetailsGbBankTransfer? Function()? gbBankTransfer, DestinationDetailsUnimplemented? Function()? giropay, DestinationDetailsUnimplemented? Function()? grabpay, RefundDestinationDetailsJpBankTransfer? Function()? jpBankTransfer, DestinationDetailsUnimplemented? Function()? klarna, RefundDestinationDetailsMbWay? Function()? mbWay, RefundDestinationDetailsMultibanco? Function()? multibanco, RefundDestinationDetailsMxBankTransfer? Function()? mxBankTransfer, DestinationDetailsUnimplemented? Function()? nzBankTransfer, RefundDestinationDetailsP24? Function()? p24, DestinationDetailsUnimplemented? Function()? paynow, RefundDestinationDetailsPaypal? Function()? paypal, DestinationDetailsUnimplemented? Function()? pix, DestinationDetailsUnimplemented? Function()? revolut, DestinationDetailsUnimplemented? Function()? sofort, RefundDestinationDetailsSwish? Function()? swish, RefundDestinationDetailsThBankTransfer? Function()? thBankTransfer, DestinationDetailsUnimplemented? Function()? twint, String? type, RefundDestinationDetailsUsBankTransfer? Function()? usBankTransfer, DestinationDetailsUnimplemented? Function()? wechatPay, DestinationDetailsUnimplemented? Function()? zip, }) {return RefundDestinationDetails(
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
   alipay: alipay != null ? alipay() : this.alipay,
@@ -196,7 +196,7 @@ RefundDestinationDetails copyWith({DestinationDetailsUnimplemented? Function()? 
   usBankTransfer: usBankTransfer != null ? usBankTransfer() : this.usBankTransfer,
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetails &&
           affirm == other.affirm &&
@@ -240,4 +240,4 @@ RefundDestinationDetails copyWith({DestinationDetailsUnimplemented? Function()? 
 
 @override String toString() => 'RefundDestinationDetails(\n  affirm: $affirm,\n  afterpayClearpay: $afterpayClearpay,\n  alipay: $alipay,\n  alma: $alma,\n  amazonPay: $amazonPay,\n  auBankTransfer: $auBankTransfer,\n  blik: $blik,\n  brBankTransfer: $brBankTransfer,\n  card: $card,\n  cashapp: $cashapp,\n  crypto: $crypto,\n  customerCashBalance: $customerCashBalance,\n  eps: $eps,\n  euBankTransfer: $euBankTransfer,\n  gbBankTransfer: $gbBankTransfer,\n  giropay: $giropay,\n  grabpay: $grabpay,\n  jpBankTransfer: $jpBankTransfer,\n  klarna: $klarna,\n  mbWay: $mbWay,\n  multibanco: $multibanco,\n  mxBankTransfer: $mxBankTransfer,\n  nzBankTransfer: $nzBankTransfer,\n  p24: $p24,\n  paynow: $paynow,\n  paypal: $paypal,\n  pix: $pix,\n  revolut: $revolut,\n  sofort: $sofort,\n  swish: $swish,\n  thBankTransfer: $thBankTransfer,\n  twint: $twint,\n  type: $type,\n  usBankTransfer: $usBankTransfer,\n  wechatPay: $wechatPay,\n  zip: $zip,\n)';
 
- }
+}

@@ -12,7 +12,7 @@ final class WhoisRecordApi with ApiExecutor {const WhoisRecordApi(this.apiConfig
 /// Get WHOIS Record
 ///
 /// `GET /accounts/{account_id}/intel/whois`
-Future<ApiResult<CloudforceOneWhoisWhois?, WhoisRecordGetWhoisRecordError>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CloudforceOneWhoisWhois?, WhoisRecordGetWhoisRecordError>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -29,7 +29,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -37,5 +37,5 @@ return execute(
   },
   onError: WhoisRecordGetWhoisRecordError.fromResponse,
 );
- } 
- }
+}
+}

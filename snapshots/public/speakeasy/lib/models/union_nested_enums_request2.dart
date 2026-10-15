@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum.dart';import 'package:pub_speakeasy/models/union_nested_enums_request2/enums.dart';@immutable final class UnionNestedEnumsRequest2 {const UnionNestedEnumsRequest2({required this.enums});
 
-factory UnionNestedEnumsRequest2.fromJson(Map<String, dynamic> json) { return UnionNestedEnumsRequest2(
+factory UnionNestedEnumsRequest2.fromJson(Map<String, dynamic> json) {return UnionNestedEnumsRequest2(
   enums: OneOf2.parse(json['enums'], fromA: (v) => (v as List<dynamic>).map((e) => Enum.fromJson(e as String)).toList(), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, Enum.fromJson(v as String))), greedy: const {1},),
-); }
+);}
 
 final Enums enums;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enums': enums.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enums'); } 
-UnionNestedEnumsRequest2 copyWith({Enums? enums}) { return UnionNestedEnumsRequest2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enums');}
+UnionNestedEnumsRequest2 copyWith({Enums? enums}) {return UnionNestedEnumsRequest2(
   enums: enums ?? this.enums,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UnionNestedEnumsRequest2 &&
           enums == other.enums;
@@ -24,4 +24,4 @@ UnionNestedEnumsRequest2 copyWith({Enums? enums}) { return UnionNestedEnumsReque
 
 @override String toString() => 'UnionNestedEnumsRequest2(enums: $enums)';
 
- }
+}

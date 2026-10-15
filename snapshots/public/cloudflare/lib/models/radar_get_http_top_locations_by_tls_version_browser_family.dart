@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily();
 
-factory RadarGetHttpTopLocationsByTlsVersionBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByTlsVersionBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByTlsVersionBrowserFamily chrome = RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome._();
 
@@ -22,36 +22,36 @@ static const RadarGetHttpTopLocationsByTlsVersionBrowserFamily safari = RadarGet
 static const List<RadarGetHttpTopLocationsByTlsVersionBrowserFamily> values = [chrome, edge, firefox, safari];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CHROME' => 'chrome',
   'EDGE' => 'edge',
   'FIREFOX' => 'firefox',
   'SAFARI' => 'safari',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome() => chrome(),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$edge() => edge(),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$firefox() => firefox(),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$safari() => safari(),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$edge() => edge != null ? edge() : orElse(value),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$safari() => safari != null ? safari() : orElse(value),
       RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopLocationsByTlsVersionBrowserFamily($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome extends RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome._();
 
 @override String get value => 'CHROME';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'CHROME'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily$edge extends RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily$edge._();
 
 @override String get value => 'EDGE';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'EDGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily$firefox extends RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily$firefox._();
 
 @override String get value => 'FIREFOX';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'FIREFOX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily$safari extends RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily$safari._();
 
 @override String get value => 'SAFARI';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'SAFARI'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown extends RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

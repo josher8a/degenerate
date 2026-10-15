@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_asns.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_domains.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_geo.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_ips.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_links.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_meta.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_page.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_performance.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/scan_verdicts.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/urlscanner_get_scan_response_result_scan_task.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/lists_certificates.dart';@immutable final class UrlscannerGetScanResponseResultScan {const UrlscannerGetScanResponseResultScan({required this.certificates, required this.geo, required this.meta, required this.page, required this.performance, required this.task, required this.verdicts, this.asns, this.domains, this.ips, this.links, });
 
-factory UrlscannerGetScanResponseResultScan.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScan(
+factory UrlscannerGetScanResponseResultScan.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScan(
   asns: json['asns'] != null ? ScanAsns.fromJson(json['asns'] as Map<String, dynamic>) : null,
   certificates: (json['certificates'] as List<dynamic>).map((e) => ListsCertificates.fromJson(e as Map<String, dynamic>)).toList(),
   domains: json['domains'] != null ? ScanDomains.fromJson(json['domains'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory UrlscannerGetScanResponseResultScan.fromJson(Map<String, dynamic> json) 
   performance: (json['performance'] as List<dynamic>).map((e) => ScanPerformance.fromJson(e as Map<String, dynamic>)).toList(),
   task: UrlscannerGetScanResponseResultScanTask.fromJson(json['task'] as Map<String, dynamic>),
   verdicts: ScanVerdicts.fromJson(json['verdicts'] as Map<String, dynamic>),
-); }
+);}
 
 /// Dictionary of Autonomous System Numbers where ASN's are the keys
 final ScanAsns? asns;
@@ -40,7 +40,7 @@ final UrlscannerGetScanResponseResultScanTask task;
 
 final ScanVerdicts verdicts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asns != null) 'asns': asns?.toJson(),
   'certificates': certificates.map((e) => e.toJson()).toList(),
   if (domains != null) 'domains': domains?.toJson(),
@@ -52,15 +52,15 @@ Map<String, dynamic> toJson() { return {
   'performance': performance.map((e) => e.toJson()).toList(),
   'task': task.toJson(),
   'verdicts': verdicts.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificates') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificates') &&
       json.containsKey('geo') &&
       json.containsKey('meta') &&
       json.containsKey('page') &&
       json.containsKey('performance') &&
       json.containsKey('task') &&
-      json.containsKey('verdicts'); } 
-UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<ListsCertificates>? certificates, ScanDomains? Function()? domains, ScanGeo? geo, ScanIps? Function()? ips, ScanLinks? Function()? links, ScanMeta? meta, ScanPage? page, List<ScanPerformance>? performance, UrlscannerGetScanResponseResultScanTask? task, ScanVerdicts? verdicts, }) { return UrlscannerGetScanResponseResultScan(
+      json.containsKey('verdicts');}
+UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<ListsCertificates>? certificates, ScanDomains? Function()? domains, ScanGeo? geo, ScanIps? Function()? ips, ScanLinks? Function()? links, ScanMeta? meta, ScanPage? page, List<ScanPerformance>? performance, UrlscannerGetScanResponseResultScanTask? task, ScanVerdicts? verdicts, }) {return UrlscannerGetScanResponseResultScan(
   asns: asns != null ? asns() : this.asns,
   certificates: certificates ?? this.certificates,
   domains: domains != null ? domains() : this.domains,
@@ -72,7 +72,7 @@ UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<L
   performance: performance ?? this.performance,
   task: task ?? this.task,
   verdicts: verdicts ?? this.verdicts,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponseResultScan &&
           asns == other.asns &&
@@ -91,4 +91,4 @@ UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<L
 
 @override String toString() => 'UrlscannerGetScanResponseResultScan(\n  asns: $asns,\n  certificates: $certificates,\n  domains: $domains,\n  geo: $geo,\n  ips: $ips,\n  links: $links,\n  meta: $meta,\n  page: $page,\n  performance: $performance,\n  task: $task,\n  verdicts: $verdicts,\n)';
 
- }
+}

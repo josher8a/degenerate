@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';@immutable final class ActionsListSelectedReposForOrgSecretResponse {const ActionsListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
 
-factory ActionsListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedReposForOrgSecretResponse(
+factory ActionsListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelectedReposForOrgSecretResponse(
   totalCount: (json['total_count'] as num).toInt(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<MinimalRepository> repositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'repositories': repositories.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('repositories'); } 
-ActionsListSelectedReposForOrgSecretResponse copyWith({int? totalCount, List<MinimalRepository>? repositories, }) { return ActionsListSelectedReposForOrgSecretResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('repositories');}
+ActionsListSelectedReposForOrgSecretResponse copyWith({int? totalCount, List<MinimalRepository>? repositories, }) {return ActionsListSelectedReposForOrgSecretResponse(
   totalCount: totalCount ?? this.totalCount,
   repositories: repositories ?? this.repositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelectedReposForOrgSecretResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListSelectedReposForOrgSecretResponse copyWith({int? totalCount, List<Min
 
 @override String toString() => 'ActionsListSelectedReposForOrgSecretResponse(totalCount: $totalCount, repositories: $repositories)';
 
- }
+}

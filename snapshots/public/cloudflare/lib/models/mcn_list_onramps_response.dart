@@ -1,27 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McnListOnrampsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_onramp.dart';@immutable final class McnListOnrampsResponse {const McnListOnrampsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_onramp.dart';@immutable final class McnListOnrampsResponse {const McnListOnrampsResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory McnListOnrampsResponse.fromJson(Map<String, dynamic> json) { return McnListOnrampsResponse(
-  result: (json['result'] as List<dynamic>?)?.map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+factory McnListOnrampsResponse.fromJson(Map<String, dynamic> json) {return McnListOnrampsResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList(),
+);}
 
-final List<McnOnramp>? result;
+final List<McnError> messages;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-McnListOnrampsResponse copyWith({List<McnOnramp>? Function()? result}) { return McnListOnrampsResponse(
-  result: result != null ? result() : this.result,
-); } 
+final bool success;
+
+final List<McnError> errors;
+
+final List<McnOnramp> result;
+
+Map<String, dynamic> toJson() {return {
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e.toJson()).toList(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result');}
+McnListOnrampsResponse copyWith({List<McnError>? messages, bool? success, List<McnError>? errors, List<McnOnramp>? result, }) {return McnListOnrampsResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnListOnrampsResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           listEquals(result, other.result);
 
-@override int get hashCode => Object.hashAll(result ?? const []);
+@override int get hashCode => Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), Object.hashAll(result));
 
-@override String toString() => 'McnListOnrampsResponse(result: $result)';
+@override String toString() => 'McnListOnrampsResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

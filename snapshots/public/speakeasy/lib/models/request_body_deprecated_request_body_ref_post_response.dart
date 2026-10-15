@@ -11,19 +11,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class RequestBodyDeprecatedRequestBodyRefPostResponse {const RequestBodyDeprecatedRequestBodyRefPostResponse({required this.json});
 
-factory RequestBodyDeprecatedRequestBodyRefPostResponse.fromJson(Map<String, dynamic> json) { return RequestBodyDeprecatedRequestBodyRefPostResponse(
+factory RequestBodyDeprecatedRequestBodyRefPostResponse.fromJson(Map<String, dynamic> json) {return RequestBodyDeprecatedRequestBodyRefPostResponse(
   json: DeprecatedObjectWithExample.fromJson(json['json'] as Map<String, dynamic>),
-); }
+);}
 
 final DeprecatedObjectWithExample json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json': json.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json'); } 
-RequestBodyDeprecatedRequestBodyRefPostResponse copyWith({DeprecatedObjectWithExample? json}) { return RequestBodyDeprecatedRequestBodyRefPostResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json');}
+RequestBodyDeprecatedRequestBodyRefPostResponse copyWith({DeprecatedObjectWithExample? json}) {return RequestBodyDeprecatedRequestBodyRefPostResponse(
   json: json ?? this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyDeprecatedRequestBodyRefPostResponse &&
           json == other.json;
@@ -32,4 +32,4 @@ RequestBodyDeprecatedRequestBodyRefPostResponse copyWith({DeprecatedObjectWithEx
 
 @override String toString() => 'RequestBodyDeprecatedRequestBodyRefPostResponse(json: $json)';
 
- }
+}

@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Short Blob
 @immutable final class ShortBlob {const ShortBlob({required this.url, required this.sha, });
 
-factory ShortBlob.fromJson(Map<String, dynamic> json) { return ShortBlob(
+factory ShortBlob.fromJson(Map<String, dynamic> json) {return ShortBlob(
   url: json['url'] as String,
   sha: json['sha'] as String,
-); }
+);}
 
 final String url;
 
 final String sha;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
   'sha': sha,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
-      json.containsKey('sha') && json['sha'] is String; } 
-ShortBlob copyWith({String? url, String? sha, }) { return ShortBlob(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('sha') && json['sha'] is String;}
+ShortBlob copyWith({String? url, String? sha, }) {return ShortBlob(
   url: url ?? this.url,
   sha: sha ?? this.sha,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShortBlob &&
           url == other.url &&
@@ -32,4 +32,4 @@ ShortBlob copyWith({String? url, String? sha, }) { return ShortBlob(
 
 @override String toString() => 'ShortBlob(url: $url, sha: $sha)';
 
- }
+}

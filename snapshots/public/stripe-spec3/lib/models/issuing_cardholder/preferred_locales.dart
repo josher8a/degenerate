@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PreferredLocales {const PreferredLocales();
 
-factory PreferredLocales.fromJson(String json) { return switch (json) {
+factory PreferredLocales.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'es' => es,
   'fr' => fr,
   'it' => it,
   _ => PreferredLocales$Unknown(json),
-}; }
+};}
 
 static const PreferredLocales de = PreferredLocales$de._();
 
@@ -25,39 +25,39 @@ static const PreferredLocales it = PreferredLocales$it._();
 static const List<PreferredLocales> values = [de, en, es, fr, it];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'de' => 'de',
   'en' => 'en',
   'es' => 'es',
   'fr' => 'fr',
   'it' => 'it',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PreferredLocales$Unknown; } 
+bool get isUnknown {return this is PreferredLocales$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function(String value) $unknown, }) {return switch (this) {
       PreferredLocales$de() => de(),
       PreferredLocales$en() => en(),
       PreferredLocales$es() => es(),
       PreferredLocales$fr() => fr(),
       PreferredLocales$it() => it(),
       PreferredLocales$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function(String value)? $unknown, }) {return switch (this) {
       PreferredLocales$de() => de != null ? de() : orElse(value),
       PreferredLocales$en() => en != null ? en() : orElse(value),
       PreferredLocales$es() => es != null ? es() : orElse(value),
       PreferredLocales$fr() => fr != null ? fr() : orElse(value),
       PreferredLocales$it() => it != null ? it() : orElse(value),
       PreferredLocales$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PreferredLocales($value)';
 
- }
+}
 @immutable final class PreferredLocales$de extends PreferredLocales {const PreferredLocales$de._();
 
 @override String get value => 'de';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'de'.hashCode;
 
- }
+}
 @immutable final class PreferredLocales$en extends PreferredLocales {const PreferredLocales$en._();
 
 @override String get value => 'en';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'en'.hashCode;
 
- }
+}
 @immutable final class PreferredLocales$es extends PreferredLocales {const PreferredLocales$es._();
 
 @override String get value => 'es';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'es'.hashCode;
 
- }
+}
 @immutable final class PreferredLocales$fr extends PreferredLocales {const PreferredLocales$fr._();
 
 @override String get value => 'fr';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'fr'.hashCode;
 
- }
+}
 @immutable final class PreferredLocales$it extends PreferredLocales {const PreferredLocales$it._();
 
 @override String get value => 'it';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'it'.hashCode;
 
- }
+}
 @immutable final class PreferredLocales$Unknown extends PreferredLocales {const PreferredLocales$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

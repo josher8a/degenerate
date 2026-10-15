@@ -10,24 +10,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class PostCheckoutSessionsRequestNameCollection {const PostCheckoutSessionsRequestNameCollection({this.business, this.individual, });
 
-factory PostCheckoutSessionsRequestNameCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestNameCollection(
+factory PostCheckoutSessionsRequestNameCollection.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestNameCollection(
   business: json['business'] != null ? Business.fromJson(json['business'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? NameCollectionParamsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Business? business;
 
 final NameCollectionParamsIndividual? individual;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-PostCheckoutSessionsRequestNameCollection copyWith({Business? Function()? business, NameCollectionParamsIndividual? Function()? individual, }) { return PostCheckoutSessionsRequestNameCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business', 'individual'}.contains(key));}
+PostCheckoutSessionsRequestNameCollection copyWith({Business? Function()? business, NameCollectionParamsIndividual? Function()? individual, }) {return PostCheckoutSessionsRequestNameCollection(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestNameCollection &&
           business == other.business &&
@@ -37,4 +37,4 @@ PostCheckoutSessionsRequestNameCollection copyWith({Business? Function()? busine
 
 @override String toString() => 'PostCheckoutSessionsRequestNameCollection(business: $business, individual: $individual)';
 
- }
+}

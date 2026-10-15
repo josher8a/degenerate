@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/issues_reprioritize_sub_issue_response503.dart';import 'package:pub_github_rest_3_1/models/validation_error_simple.dart';sealed class IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError();
 
-factory IssuesReprioritizeSubIssueError.fromResponse(ApiResponse response) {     try {
+factory IssuesReprioritizeSubIssueError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         403 => IssuesReprioritizeSubIssueError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => IssuesReprioritizeSubIssueError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -12,12 +12,12 @@ factory IssuesReprioritizeSubIssueError.fromResponse(ApiResponse response) {    
       };
     } on Object {
       return IssuesReprioritizeSubIssueError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class IssuesReprioritizeSubIssueError$403 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$403(this.error);
 
 final BasicError error;
@@ -26,7 +26,7 @@ final BasicError error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class IssuesReprioritizeSubIssueError$404 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$404(this.error);
 
 final BasicError error;
@@ -35,7 +35,7 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class IssuesReprioritizeSubIssueError$422 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$422(this.error);
 
 final ValidationErrorSimple error;
@@ -44,7 +44,7 @@ final ValidationErrorSimple error;
 
 @override int get statusCode => 422;
 
- }
+}
 final class IssuesReprioritizeSubIssueError$503 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$503(this.error);
 
 final IssuesReprioritizeSubIssueResponse503 error;
@@ -53,11 +53,11 @@ final IssuesReprioritizeSubIssueResponse503 error;
 
 @override int get statusCode => 503;
 
- }
+}
 final class IssuesReprioritizeSubIssueError$Unknown extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

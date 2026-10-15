@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
 sealed class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason();
 
-factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory CodeScanningAlertDismissedReason.fromJson(String json) {return switch (json) {
   'false positive' => falsePositive,
   "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => CodeScanningAlertDismissedReason$Unknown(json),
-}; }
+};}
 
 static const CodeScanningAlertDismissedReason falsePositive = CodeScanningAlertDismissedReason$falsePositive._();
 
@@ -23,36 +23,36 @@ static const CodeScanningAlertDismissedReason $null = CodeScanningAlertDismissed
 static const List<CodeScanningAlertDismissedReason> values = [falsePositive, wontFix, usedInTests, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'false positive' => 'falsePositive',
   "won't fix" => 'wontFix',
   'used in tests' => 'usedInTests',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningAlertDismissedReason$Unknown; } 
+bool get isUnknown {return this is CodeScanningAlertDismissedReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() usedInTests, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() usedInTests, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningAlertDismissedReason$falsePositive() => falsePositive(),
       CodeScanningAlertDismissedReason$wontFix() => wontFix(),
       CodeScanningAlertDismissedReason$usedInTests() => usedInTests(),
       CodeScanningAlertDismissedReason$$null() => $null(),
       CodeScanningAlertDismissedReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? usedInTests, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? usedInTests, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningAlertDismissedReason$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
       CodeScanningAlertDismissedReason$wontFix() => wontFix != null ? wontFix() : orElse(value),
       CodeScanningAlertDismissedReason$usedInTests() => usedInTests != null ? usedInTests() : orElse(value),
       CodeScanningAlertDismissedReason$$null() => $null != null ? $null() : orElse(value),
       CodeScanningAlertDismissedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningAlertDismissedReason($value)';
 
- }
+}
 @immutable final class CodeScanningAlertDismissedReason$falsePositive extends CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason$falsePositive._();
 
 @override String get value => 'false positive';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'false positive'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertDismissedReason$wontFix extends CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason$wontFix._();
 
 @override String get value => "won't fix";
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => "won't fix".hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertDismissedReason$usedInTests extends CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason$usedInTests._();
 
 @override String get value => 'used in tests';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'used in tests'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertDismissedReason$$null extends CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason$$null._();
 
 @override String get value => 'null';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertDismissedReason$Unknown extends CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => value.hashCode;
 
- }
+}

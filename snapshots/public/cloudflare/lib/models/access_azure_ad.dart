@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAzureAd
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/access_azure_ad_config.dart';import 'package:pub_cloudflare/models/access_azure_ad/access_azure_ad_scim_config.dart';import 'package:pub_cloudflare/models/access_azure_ad_request/access_azure_ad_request_type.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessAzureAd {const AccessAzureAd({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
+
+factory AccessAzureAd.fromJson(Map<String, dynamic> json) {return AccessAzureAd(
+  config: AccessAzureAdConfig.fromJson(json['config'] as Map<String, dynamic>),
+  id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
+  name: AccessComponentsSchemasName.fromJson(json['name'] as String),
+  scimConfig: json['scim_config'] != null ? AccessAzureAdScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  type: AccessAzureAdRequestType.fromJson(json['type'] as String),
+);}
+
+final AccessAzureAdConfig config;
+
+final AccessUuid? id;
+
+final AccessComponentsSchemasName name;
+
+/// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
+final AccessAzureAdScimConfig? scimConfig;
+
+/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// 
+/// Example: `'onetimepin'`
+final AccessAzureAdRequestType type;
+
+Map<String, dynamic> toJson() {return {
+  'config': config.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  'name': name.toJson(),
+  if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
+  'type': type.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
+      json.containsKey('name') &&
+      json.containsKey('type');}
+AccessAzureAd copyWith({AccessAzureAdConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig? Function()? scimConfig, AccessAzureAdRequestType? type, }) {return AccessAzureAd(
+  config: config ?? this.config,
+  id: id != null ? id() : this.id,
+  name: name ?? this.name,
+  scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
+  type: type ?? this.type,
+);}
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AccessAzureAd &&
+          config == other.config &&
+          id == other.id &&
+          name == other.name &&
+          scimConfig == other.scimConfig &&
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, id, name, scimConfig, type);
+
+@override String toString() => 'AccessAzureAd(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)';
+
+}

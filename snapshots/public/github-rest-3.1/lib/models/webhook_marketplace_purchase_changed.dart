@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_changed/webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';sealed class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction();
 
-factory WebhookMarketplacePurchaseChangedAction.fromJson(String json) { return switch (json) {
+factory WebhookMarketplacePurchaseChangedAction.fromJson(String json) {return switch (json) {
   'changed' => changed,
   _ => WebhookMarketplacePurchaseChangedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookMarketplacePurchaseChangedAction changed = WebhookMarketplacePurchaseChangedAction$changed._();
 
 static const List<WebhookMarketplacePurchaseChangedAction> values = [changed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'changed' => 'changed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookMarketplacePurchaseChangedAction$Unknown; } 
+bool get isUnknown {return this is WebhookMarketplacePurchaseChangedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() changed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() changed, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookMarketplacePurchaseChangedAction$changed() => changed(),
       WebhookMarketplacePurchaseChangedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? changed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? changed, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookMarketplacePurchaseChangedAction$changed() => changed != null ? changed() : orElse(value),
       WebhookMarketplacePurchaseChangedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookMarketplacePurchaseChangedAction($value)';
 
- }
+}
 @immutable final class WebhookMarketplacePurchaseChangedAction$changed extends WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction$changed._();
 
 @override String get value => 'changed';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? changed,
 
 @override int get hashCode => 'changed'.hashCode;
 
- }
+}
 @immutable final class WebhookMarketplacePurchaseChangedAction$Unknown extends WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? changed,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookMarketplacePurchaseChanged {const WebhookMarketplacePurchaseChanged({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
-factory WebhookMarketplacePurchaseChanged.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChanged(
+factory WebhookMarketplacePurchaseChanged.fromJson(Map<String, dynamic> json) {return WebhookMarketplacePurchaseChanged(
   action: WebhookMarketplacePurchaseChangedAction.fromJson(json['action'] as String),
   effectiveDate: json['effective_date'] as String,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -65,7 +65,7 @@ factory WebhookMarketplacePurchaseChanged.fromJson(Map<String, dynamic> json) { 
   previousMarketplacePurchase: json['previous_marketplace_purchase'] != null ? WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase.fromJson(json['previous_marketplace_purchase'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookMarketplacePurchaseChangedAction action;
 
@@ -85,7 +85,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'effective_date': effectiveDate,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -95,12 +95,12 @@ Map<String, dynamic> toJson() { return {
   if (previousMarketplacePurchase != null) 'previous_marketplace_purchase': previousMarketplacePurchase?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('effective_date') && json['effective_date'] is String &&
       json.containsKey('marketplace_purchase') &&
-      json.containsKey('sender'); } 
-WebhookMarketplacePurchaseChanged copyWith({WebhookMarketplacePurchaseChangedAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookMarketplacePurchaseChanged(
+      json.containsKey('sender');}
+WebhookMarketplacePurchaseChanged copyWith({WebhookMarketplacePurchaseChangedAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookMarketplacePurchaseChanged(
   action: action ?? this.action,
   effectiveDate: effectiveDate ?? this.effectiveDate,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -110,7 +110,7 @@ WebhookMarketplacePurchaseChanged copyWith({WebhookMarketplacePurchaseChangedAct
   previousMarketplacePurchase: previousMarketplacePurchase != null ? previousMarketplacePurchase() : this.previousMarketplacePurchase,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMarketplacePurchaseChanged &&
           action == other.action &&
@@ -127,4 +127,4 @@ WebhookMarketplacePurchaseChanged copyWith({WebhookMarketplacePurchaseChangedAct
 
 @override String toString() => 'WebhookMarketplacePurchaseChanged(\n  action: $action,\n  effectiveDate: $effectiveDate,\n  enterprise: $enterprise,\n  installation: $installation,\n  marketplacePurchase: $marketplacePurchase,\n  organization: $organization,\n  previousMarketplacePurchase: $previousMarketplacePurchase,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

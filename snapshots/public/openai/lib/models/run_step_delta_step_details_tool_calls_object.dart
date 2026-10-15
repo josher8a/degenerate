@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_file_search_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_function_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_object/run_step_delta_step_details_tool_calls_object_tool_calls.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_object/run_step_delta_step_details_tool_calls_object_type.dart';/// Details of the tool call.
 @immutable final class RunStepDeltaStepDetailsToolCallsObject {const RunStepDeltaStepDetailsToolCallsObject({required this.type, this.toolCalls, });
 
-factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsObject(
+factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsToolCallsObject(
   type: RunStepDeltaStepDetailsToolCallsObjectType.fromJson(json['type'] as String),
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => switch (e) {
   final Map<String, dynamic> m when m['type'] == 'code_interpreter' => OneOf3<RunStepDeltaStepDetailsToolCallsCodeObject, RunStepDeltaStepDetailsToolCallsFileSearchObject, RunStepDeltaStepDetailsToolCallsFunctionObject>.a(RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(m)),
@@ -12,7 +12,7 @@ factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> jso
   final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<RunStepDeltaStepDetailsToolCallsCodeObject, RunStepDeltaStepDetailsToolCallsFileSearchObject, RunStepDeltaStepDetailsToolCallsFunctionObject>.c(RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(m)),
   _ => OneOf3.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),),
 }).toList(),
-); }
+);}
 
 /// Always `tool_calls`.
 final RunStepDeltaStepDetailsToolCallsObjectType type;
@@ -21,15 +21,15 @@ final RunStepDeltaStepDetailsToolCallsObjectType type;
 /// 
 final List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? toolCalls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'tool_calls'; } 
-RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? Function()? toolCalls, }) { return RunStepDeltaStepDetailsToolCallsObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'tool_calls';}
+RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? Function()? toolCalls, }) {return RunStepDeltaStepDetailsToolCallsObject(
   type: type ?? this.type,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsObject &&
           type == other.type &&
@@ -39,4 +39,4 @@ RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCall
 
 @override String toString() => 'RunStepDeltaStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)';
 
- }
+}

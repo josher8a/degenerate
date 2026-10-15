@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class McpToolApprovalSetting {const McpToolApprovalSetting();
 
-factory McpToolApprovalSetting.fromJson(String json) { return switch (json) {
+factory McpToolApprovalSetting.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   _ => McpToolApprovalSetting$Unknown(json),
-}; }
+};}
 
 static const McpToolApprovalSetting always = McpToolApprovalSetting$always._();
 
@@ -20,30 +20,30 @@ static const McpToolApprovalSetting never = McpToolApprovalSetting$never._();
 static const List<McpToolApprovalSetting> values = [always, never];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'always' => 'always',
   'never' => 'never',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McpToolApprovalSetting$Unknown; } 
+bool get isUnknown {return this is McpToolApprovalSetting$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() always, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() always, required W Function() never, required W Function(String value) $unknown, }) {return switch (this) {
       McpToolApprovalSetting$always() => always(),
       McpToolApprovalSetting$never() => never(),
       McpToolApprovalSetting$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) {return switch (this) {
       McpToolApprovalSetting$always() => always != null ? always() : orElse(value),
       McpToolApprovalSetting$never() => never != null ? never() : orElse(value),
       McpToolApprovalSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'McpToolApprovalSetting($value)';
 
- }
+}
 @immutable final class McpToolApprovalSetting$always extends McpToolApprovalSetting {const McpToolApprovalSetting$always._();
 
 @override String get value => 'always';
@@ -52,7 +52,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'always'.hashCode;
 
- }
+}
 @immutable final class McpToolApprovalSetting$never extends McpToolApprovalSetting {const McpToolApprovalSetting$never._();
 
 @override String get value => 'never';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'never'.hashCode;
 
- }
+}
 @immutable final class McpToolApprovalSetting$Unknown extends McpToolApprovalSetting {const McpToolApprovalSetting$Unknown(this.value);
 
 @override final String value;
@@ -71,7 +71,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Specify which of the MCP server's tools require approval.
 ///
 /// Variants:

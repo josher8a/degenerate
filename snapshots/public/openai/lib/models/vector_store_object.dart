@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';import 'package:pub_openai/models/vector_store_file_batch_object/file_counts.dart';/// The object type, which is always `vector_store`.
 sealed class VectorStoreObjectObject {const VectorStoreObjectObject();
 
-factory VectorStoreObjectObject.fromJson(String json) { return switch (json) {
+factory VectorStoreObjectObject.fromJson(String json) {return switch (json) {
   'vector_store' => vectorStore,
   _ => VectorStoreObjectObject$Unknown(json),
-}; }
+};}
 
 static const VectorStoreObjectObject vectorStore = VectorStoreObjectObject$vectorStore._();
 
 static const List<VectorStoreObjectObject> values = [vectorStore];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'vector_store' => 'vectorStore',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VectorStoreObjectObject$Unknown; } 
+bool get isUnknown {return this is VectorStoreObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() vectorStore, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() vectorStore, required W Function(String value) $unknown, }) {return switch (this) {
       VectorStoreObjectObject$vectorStore() => vectorStore(),
       VectorStoreObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorStore, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorStore, W Function(String value)? $unknown, }) {return switch (this) {
       VectorStoreObjectObject$vectorStore() => vectorStore != null ? vectorStore() : orElse(value),
       VectorStoreObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VectorStoreObjectObject($value)';
 
- }
+}
 @immutable final class VectorStoreObjectObject$vectorStore extends VectorStoreObjectObject {const VectorStoreObjectObject$vectorStore._();
 
 @override String get value => 'vector_store';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorSt
 
 @override int get hashCode => 'vector_store'.hashCode;
 
- }
+}
 @immutable final class VectorStoreObjectObject$Unknown extends VectorStoreObjectObject {const VectorStoreObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorSt
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
 sealed class VectorStoreObjectStatus {const VectorStoreObjectStatus();
 
-factory VectorStoreObjectStatus.fromJson(String json) { return switch (json) {
+factory VectorStoreObjectStatus.fromJson(String json) {return switch (json) {
   'expired' => expired,
   'in_progress' => inProgress,
   'completed' => completed,
   _ => VectorStoreObjectStatus$Unknown(json),
-}; }
+};}
 
 static const VectorStoreObjectStatus expired = VectorStoreObjectStatus$expired._();
 
@@ -73,33 +73,33 @@ static const VectorStoreObjectStatus completed = VectorStoreObjectStatus$complet
 static const List<VectorStoreObjectStatus> values = [expired, inProgress, completed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'expired' => 'expired',
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VectorStoreObjectStatus$Unknown; } 
+bool get isUnknown {return this is VectorStoreObjectStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() expired, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() expired, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) {return switch (this) {
       VectorStoreObjectStatus$expired() => expired(),
       VectorStoreObjectStatus$inProgress() => inProgress(),
       VectorStoreObjectStatus$completed() => completed(),
       VectorStoreObjectStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) {return switch (this) {
       VectorStoreObjectStatus$expired() => expired != null ? expired() : orElse(value),
       VectorStoreObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       VectorStoreObjectStatus$completed() => completed != null ? completed() : orElse(value),
       VectorStoreObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VectorStoreObjectStatus($value)';
 
- }
+}
 @immutable final class VectorStoreObjectStatus$expired extends VectorStoreObjectStatus {const VectorStoreObjectStatus$expired._();
 
 @override String get value => 'expired';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class VectorStoreObjectStatus$inProgress extends VectorStoreObjectStatus {const VectorStoreObjectStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class VectorStoreObjectStatus$completed extends VectorStoreObjectStatus {const VectorStoreObjectStatus$completed._();
 
 @override String get value => 'completed';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class VectorStoreObjectStatus$Unknown extends VectorStoreObjectStatus {const VectorStoreObjectStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A vector store is a collection of processed files can be used by the `file_search` tool.
-@immutable final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, required this.lastActiveAt, required this.metadata, this.expiresAfter, this.expiresAt, });
+@immutable final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, required this.lastActiveAt, required this.metadata, this.expiresAfter, this.expiresAt = const Omittable.absent(), });
 
-factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorStoreObject(
+factory VectorStoreObject.fromJson(Map<String, dynamic> json) {return VectorStoreObject(
   id: json['id'] as String,
   object: VectorStoreObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -149,10 +149,10 @@ factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorSto
   fileCounts: FileCounts.fromJson(json['file_counts'] as Map<String, dynamic>),
   status: VectorStoreObjectStatus.fromJson(json['status'] as String),
   expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   lastActiveAt: json['last_active_at'] != null ? (json['last_active_at'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -177,7 +177,7 @@ final VectorStoreObjectStatus status;
 final VectorStoreExpirationAfter? expiresAfter;
 
 /// The Unix timestamp (in seconds) for when the vector store will expire.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// The Unix timestamp (in seconds) for when the vector store was last active.
 final int? lastActiveAt;
@@ -191,7 +191,7 @@ final int? lastActiveAt;
 /// 
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -200,20 +200,20 @@ Map<String, dynamic> toJson() { return {
   'file_counts': fileCounts.toJson(),
   'status': status.toJson(),
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
-  'expires_at': ?expiresAt,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'last_active_at': lastActiveAt,
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('usage_bytes') && json['usage_bytes'] is num &&
       json.containsKey('file_counts') &&
       json.containsKey('status') &&
-      json.containsKey('last_active_at') && json['last_active_at'] is num &&
-      json.containsKey('metadata'); } 
-VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, FileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter? Function()? expiresAfter, int? Function()? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) { return VectorStoreObject(
+      json.containsKey('last_active_at') && (json['last_active_at'] == null || json['last_active_at'] is num) &&
+      json.containsKey('metadata');}
+VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, FileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter? Function()? expiresAfter, Omittable<int?>? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) {return VectorStoreObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -222,10 +222,10 @@ VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? cr
   fileCounts: fileCounts ?? this.fileCounts,
   status: status ?? this.status,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   lastActiveAt: lastActiveAt != null ? lastActiveAt() : this.lastActiveAt,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreObject &&
           id == other.id &&
@@ -244,4 +244,4 @@ VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? cr
 
 @override String toString() => 'VectorStoreObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  name: $name,\n  usageBytes: $usageBytes,\n  fileCounts: $fileCounts,\n  status: $status,\n  expiresAfter: $expiresAfter,\n  expiresAt: $expiresAt,\n  lastActiveAt: $lastActiveAt,\n  metadata: $metadata,\n)';
 
- }
+}

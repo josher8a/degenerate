@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/installation.dart';@immutable final class OrgsListAppInstallationsResponse {const OrgsListAppInstallationsResponse({required this.totalCount, required this.installations, });
 
-factory OrgsListAppInstallationsResponse.fromJson(Map<String, dynamic> json) { return OrgsListAppInstallationsResponse(
+factory OrgsListAppInstallationsResponse.fromJson(Map<String, dynamic> json) {return OrgsListAppInstallationsResponse(
   totalCount: (json['total_count'] as num).toInt(),
   installations: (json['installations'] as List<dynamic>).map((e) => Installation.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<Installation> installations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'installations': installations.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('installations'); } 
-OrgsListAppInstallationsResponse copyWith({int? totalCount, List<Installation>? installations, }) { return OrgsListAppInstallationsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('installations');}
+OrgsListAppInstallationsResponse copyWith({int? totalCount, List<Installation>? installations, }) {return OrgsListAppInstallationsResponse(
   totalCount: totalCount ?? this.totalCount,
   installations: installations ?? this.installations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsListAppInstallationsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ OrgsListAppInstallationsResponse copyWith({int? totalCount, List<Installation>? 
 
 @override String toString() => 'OrgsListAppInstallationsResponse(totalCount: $totalCount, installations: $installations)';
 
- }
+}

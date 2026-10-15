@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PromotionCodeCurrencyOption {const PromotionCodeCurrencyOption({required this.minimumAmount});
 
-factory PromotionCodeCurrencyOption.fromJson(Map<String, dynamic> json) { return PromotionCodeCurrencyOption(
+factory PromotionCodeCurrencyOption.fromJson(Map<String, dynamic> json) {return PromotionCodeCurrencyOption(
   minimumAmount: (json['minimum_amount'] as num).toInt(),
-); }
+);}
 
 /// Minimum amount required to redeem this Promotion Code into a Coupon (e.g., a purchase must be $100 or more to work).
 final int minimumAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'minimum_amount': minimumAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('minimum_amount') && json['minimum_amount'] is num; } 
-PromotionCodeCurrencyOption copyWith({int? minimumAmount}) { return PromotionCodeCurrencyOption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('minimum_amount') && json['minimum_amount'] is num;}
+PromotionCodeCurrencyOption copyWith({int? minimumAmount}) {return PromotionCodeCurrencyOption(
   minimumAmount: minimumAmount ?? this.minimumAmount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PromotionCodeCurrencyOption &&
           minimumAmount == other.minimumAmount;
@@ -26,4 +26,4 @@ PromotionCodeCurrencyOption copyWith({int? minimumAmount}) { return PromotionCod
 
 @override String toString() => 'PromotionCodeCurrencyOption(minimumAmount: $minimumAmount)';
 
- }
+}

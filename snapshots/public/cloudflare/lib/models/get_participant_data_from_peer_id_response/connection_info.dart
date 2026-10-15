@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/connection_info_connectivity.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/connection_info_location.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/ip_details.dart';@immutable final class ConnectionInfo {const ConnectionInfo({this.backendRTT, this.connectivity, this.effectiveNetworkType, this.fractionalLoss, this.ipDetails, this.jitter, this.location, this.rTT, this.throughput, this.turnConnectivity, });
 
-factory ConnectionInfo.fromJson(Map<String, dynamic> json) { return ConnectionInfo(
+factory ConnectionInfo.fromJson(Map<String, dynamic> json) {return ConnectionInfo(
   backendRTT: json['backend_r_t_t'] != null ? (json['backend_r_t_t'] as num).toDouble() : null,
   connectivity: json['connectivity'] != null ? ConnectionInfoConnectivity.fromJson(json['connectivity'] as Map<String, dynamic>) : null,
   effectiveNetworkType: json['effective_network_type'] as String?,
@@ -14,7 +14,7 @@ factory ConnectionInfo.fromJson(Map<String, dynamic> json) { return ConnectionIn
   rTT: json['r_t_t'] != null ? (json['r_t_t'] as num).toDouble() : null,
   throughput: json['throughput'] != null ? (json['throughput'] as num).toInt() : null,
   turnConnectivity: json['turn_connectivity'] as bool?,
-); }
+);}
 
 final double? backendRTT;
 
@@ -36,7 +36,7 @@ final int? throughput;
 
 final bool? turnConnectivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'backend_r_t_t': ?backendRTT,
   if (connectivity != null) 'connectivity': connectivity?.toJson(),
   'effective_network_type': ?effectiveNetworkType,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'r_t_t': ?rTT,
   'throughput': ?throughput,
   'turn_connectivity': ?turnConnectivity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'backend_r_t_t', 'connectivity', 'effective_network_type', 'fractional_loss', 'ip_details', 'jitter', 'location', 'r_t_t', 'throughput', 'turn_connectivity'}.contains(key)); } 
-ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectivity? Function()? connectivity, String? Function()? effectiveNetworkType, int? Function()? fractionalLoss, IpDetails? Function()? ipDetails, int? Function()? jitter, ConnectionInfoLocation? Function()? location, double? Function()? rTT, int? Function()? throughput, bool? Function()? turnConnectivity, }) { return ConnectionInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'backend_r_t_t', 'connectivity', 'effective_network_type', 'fractional_loss', 'ip_details', 'jitter', 'location', 'r_t_t', 'throughput', 'turn_connectivity'}.contains(key));}
+ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectivity? Function()? connectivity, String? Function()? effectiveNetworkType, int? Function()? fractionalLoss, IpDetails? Function()? ipDetails, int? Function()? jitter, ConnectionInfoLocation? Function()? location, double? Function()? rTT, int? Function()? throughput, bool? Function()? turnConnectivity, }) {return ConnectionInfo(
   backendRTT: backendRTT != null ? backendRTT() : this.backendRTT,
   connectivity: connectivity != null ? connectivity() : this.connectivity,
   effectiveNetworkType: effectiveNetworkType != null ? effectiveNetworkType() : this.effectiveNetworkType,
@@ -60,7 +60,7 @@ ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectiv
   rTT: rTT != null ? rTT() : this.rTT,
   throughput: throughput != null ? throughput() : this.throughput,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectionInfo &&
           backendRTT == other.backendRTT &&
@@ -78,4 +78,4 @@ ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectiv
 
 @override String toString() => 'ConnectionInfo(\n  backendRTT: $backendRTT,\n  connectivity: $connectivity,\n  effectiveNetworkType: $effectiveNetworkType,\n  fractionalLoss: $fractionalLoss,\n  ipDetails: $ipDetails,\n  jitter: $jitter,\n  location: $location,\n  rTT: $rTT,\n  throughput: $throughput,\n  turnConnectivity: $turnConnectivity,\n)';
 
- }
+}

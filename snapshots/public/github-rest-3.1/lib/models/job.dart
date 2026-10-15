@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_conclusion.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/job/job_steps.dart';/// Information of a job execution in a workflow run
 @immutable final class Job {const Job({required this.id, required this.runId, required this.runUrl, required this.nodeId, required this.headSha, required this.url, required this.htmlUrl, required this.status, required this.conclusion, required this.createdAt, required this.startedAt, required this.completedAt, required this.name, required this.checkRunUrl, required this.labels, required this.runnerId, required this.runnerName, required this.runnerGroupId, required this.runnerGroupName, required this.workflowName, required this.headBranch, this.runAttempt, this.steps, });
 
-factory Job.fromJson(Map<String, dynamic> json) { return Job(
+factory Job.fromJson(Map<String, dynamic> json) {return Job(
   id: (json['id'] as num).toInt(),
   runId: (json['run_id'] as num).toInt(),
   runUrl: json['run_url'] as String,
@@ -28,7 +28,7 @@ factory Job.fromJson(Map<String, dynamic> json) { return Job(
   runnerGroupName: json['runner_group_name'] as String?,
   workflowName: json['workflow_name'] as String?,
   headBranch: json['head_branch'] as String?,
-); }
+);}
 
 /// The id of the job.
 final int id;
@@ -94,7 +94,7 @@ final String? workflowName;
 /// The name of the current branch.
 final String? headBranch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'run_id': runId,
   'run_url': runUrl,
@@ -118,29 +118,29 @@ Map<String, dynamic> toJson() { return {
   'runner_group_name': runnerGroupName,
   'workflow_name': workflowName,
   'head_branch': headBranch,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('run_id') && json['run_id'] is num &&
       json.containsKey('run_url') && json['run_url'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('status') &&
       json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('started_at') && json['started_at'] is String &&
-      json.containsKey('completed_at') && json['completed_at'] is String &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('check_run_url') && json['check_run_url'] is String &&
       json.containsKey('labels') &&
-      json.containsKey('runner_id') && json['runner_id'] is num &&
-      json.containsKey('runner_name') && json['runner_name'] is String &&
-      json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
-      json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
-      json.containsKey('workflow_name') && json['workflow_name'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String; } 
-Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps>? Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
+      json.containsKey('runner_id') && (json['runner_id'] == null || json['runner_id'] is num) &&
+      json.containsKey('runner_name') && (json['runner_name'] == null || json['runner_name'] is String) &&
+      json.containsKey('runner_group_id') && (json['runner_group_id'] == null || json['runner_group_id'] is num) &&
+      json.containsKey('runner_group_name') && (json['runner_group_name'] == null || json['runner_group_name'] is String) &&
+      json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String);}
+Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps>? Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) {return Job(
   id: id ?? this.id,
   runId: runId ?? this.runId,
   runUrl: runUrl ?? this.runUrl,
@@ -164,7 +164,7 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
   runnerGroupName: runnerGroupName != null ? runnerGroupName() : this.runnerGroupName,
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   headBranch: headBranch != null ? headBranch() : this.headBranch,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Job &&
           id == other.id &&
@@ -195,4 +195,4 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
 
 @override String toString() => 'Job(\n  id: $id,\n  runId: $runId,\n  runUrl: $runUrl,\n  runAttempt: $runAttempt,\n  nodeId: $nodeId,\n  headSha: $headSha,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  status: $status,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  startedAt: $startedAt,\n  completedAt: $completedAt,\n  name: $name,\n  steps: $steps,\n  checkRunUrl: $checkRunUrl,\n  labels: $labels,\n  runnerId: $runnerId,\n  runnerName: $runnerName,\n  runnerGroupId: $runnerGroupId,\n  runnerGroupName: $runnerGroupName,\n  workflowName: $workflowName,\n  headBranch: $headBranch,\n)';
 
- }
+}

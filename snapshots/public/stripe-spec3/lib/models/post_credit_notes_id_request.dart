@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreditNotesIdRequest {const PostCreditNotesIdRequest({this.expand, this.memo, this.metadata, });
 
-factory PostCreditNotesIdRequest.fromJson(Map<String, dynamic> json) { return PostCreditNotesIdRequest(
+factory PostCreditNotesIdRequest.fromJson(Map<String, dynamic> json) {return PostCreditNotesIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   memo: json['memo'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,24 +18,24 @@ final String? memo;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'memo': ?memo,
   'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'memo', 'metadata'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'memo', 'metadata'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final memo$ = memo;
 if (memo$ != null) {
   if (memo$.runes.length > 5000) { errors.add('memo: length must be <= 5000'); }
 }
-return errors; } 
-PostCreditNotesIdRequest copyWith({List<String>? Function()? expand, String? Function()? memo, Map<String, String>? Function()? metadata, }) { return PostCreditNotesIdRequest(
+return errors;}
+PostCreditNotesIdRequest copyWith({List<String>? Function()? expand, String? Function()? memo, Map<String, String>? Function()? metadata, }) {return PostCreditNotesIdRequest(
   expand: expand != null ? expand() : this.expand,
   memo: memo != null ? memo() : this.memo,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreditNotesIdRequest &&
           listEquals(expand, other.expand) &&
@@ -46,4 +46,4 @@ PostCreditNotesIdRequest copyWith({List<String>? Function()? expand, String? Fun
 
 @override String toString() => 'PostCreditNotesIdRequest(expand: $expand, memo: $memo, metadata: $metadata)';
 
- }
+}

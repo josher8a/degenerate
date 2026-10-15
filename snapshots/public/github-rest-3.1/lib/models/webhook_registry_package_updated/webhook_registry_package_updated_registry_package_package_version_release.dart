@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/package_version_author.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
 
-factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
+factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
   author: PackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>),
   createdAt: json['created_at'] as String,
   draft: json['draft'] as bool,
@@ -15,7 +15,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJs
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final PackageVersionAuthor author;
 
@@ -39,7 +39,7 @@ final String targetCommitish;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author.toJson(),
   'created_at': createdAt,
   'draft': draft,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'tag_name': tagName,
   'target_commitish': targetCommitish,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('draft') && json['draft'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('tag_name') && json['tag_name'] is String &&
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({PackageVersionAuthor? author, String? createdAt, bool? draft, String? htmlUrl, int? id, String? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, String? url, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
+      json.containsKey('url') && json['url'] is String;}
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({PackageVersionAuthor? author, String? createdAt, bool? draft, String? htmlUrl, int? id, String? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, String? url, }) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
   author: author ?? this.author,
   createdAt: createdAt ?? this.createdAt,
   draft: draft ?? this.draft,
@@ -75,7 +75,7 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Pack
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish ?? this.targetCommitish,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease &&
           author == other.author &&
@@ -94,4 +94,4 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Pack
 
 @override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(\n  author: $author,\n  createdAt: $createdAt,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  prerelease: $prerelease,\n  publishedAt: $publishedAt,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  url: $url,\n)';
 
- }
+}

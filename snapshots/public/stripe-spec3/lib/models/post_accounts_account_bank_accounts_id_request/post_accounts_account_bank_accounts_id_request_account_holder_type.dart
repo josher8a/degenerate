@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
 sealed class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType();
 
-factory PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'company' => company,
   'individual' => individual,
   _ => PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown(json),
-}; }
+};}
 
 static const PostAccountsAccountBankAccountsIdRequestAccountHolderType $empty = PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty._();
 
@@ -20,33 +20,33 @@ static const PostAccountsAccountBankAccountsIdRequestAccountHolderType individua
 static const List<PostAccountsAccountBankAccountsIdRequestAccountHolderType> values = [$empty, company, individual];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'company' => 'company',
   'individual' => 'individual',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown; } 
+bool get isUnknown {return this is PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() company, required W Function() individual, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() company, required W Function() individual, required W Function(String value) $unknown, }) {return switch (this) {
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty() => $empty(),
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$company() => company(),
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual() => individual(),
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? company, W Function()? individual, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? company, W Function()? individual, W Function(String value)? $unknown, }) {return switch (this) {
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty() => $empty != null ? $empty() : orElse(value),
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$company() => company != null ? company() : orElse(value),
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual() => individual != null ? individual() : orElse(value),
       PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostAccountsAccountBankAccountsIdRequestAccountHolderType($value)';
 
- }
+}
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty._();
 
 @override String get value => '';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$company extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$company._();
 
 @override String get value => 'company';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'company'.hashCode;
 
- }
+}
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual._();
 
 @override String get value => 'individual';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'individual'.hashCode;
 
- }
+}
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

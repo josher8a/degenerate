@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional_properties.dart';sealed class ConditionalType {const ConditionalType();
 
-factory ConditionalType.fromJson(String json) { return switch (json) {
+factory ConditionalType.fromJson(String json) {return switch (json) {
   'conditional' => conditional,
   _ => ConditionalType$Unknown(json),
-}; }
+};}
 
 static const ConditionalType conditional = ConditionalType$conditional._();
 
 static const List<ConditionalType> values = [conditional];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'conditional' => 'conditional',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConditionalType$Unknown; } 
+bool get isUnknown {return this is ConditionalType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() conditional, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() conditional, required W Function(String value) $unknown, }) {return switch (this) {
       ConditionalType$conditional() => conditional(),
       ConditionalType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? conditional, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? conditional, W Function(String value)? $unknown, }) {return switch (this) {
       ConditionalType$conditional() => conditional != null ? conditional() : orElse(value),
       ConditionalType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConditionalType($value)';
 
- }
+}
 @immutable final class ConditionalType$conditional extends ConditionalType {const ConditionalType$conditional._();
 
 @override String get value => 'conditional';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? conditio
 
 @override int get hashCode => 'conditional'.hashCode;
 
- }
+}
 @immutable final class ConditionalType$Unknown extends ConditionalType {const ConditionalType$Unknown(this.value);
 
 @override final String value;
@@ -52,15 +52,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? conditio
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Conditional {const Conditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
-factory Conditional.fromJson(Map<String, dynamic> json) { return Conditional(
+factory Conditional.fromJson(Map<String, dynamic> json) {return Conditional(
   id: json['id'] as String,
   outputs: ConditionalOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
   properties: ConditionalProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: ConditionalType.fromJson(json['type'] as String),
-); }
+);}
 
 final String id;
 
@@ -70,22 +70,22 @@ final ConditionalProperties properties;
 
 final ConditionalType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'outputs': outputs.toJson(),
   'properties': properties.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type') && json['type'] == 'conditional'; } 
-Conditional copyWith({String? id, ConditionalOutputs? outputs, ConditionalProperties? properties, ConditionalType? type, }) { return Conditional(
+      json.containsKey('type') && json['type'] == 'conditional';}
+Conditional copyWith({String? id, ConditionalOutputs? outputs, ConditionalProperties? properties, ConditionalType? type, }) {return Conditional(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Conditional &&
           id == other.id &&
@@ -97,4 +97,4 @@ Conditional copyWith({String? id, ConditionalOutputs? outputs, ConditionalProper
 
 @override String toString() => 'Conditional(id: $id, outputs: $outputs, properties: $properties, type: $type)';
 
- }
+}

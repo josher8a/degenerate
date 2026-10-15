@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDeleteDomainsRequest {const EmailSecurityDeleteDomainsRequest({required this.id});
 
-factory EmailSecurityDeleteDomainsRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteDomainsRequest(
+factory EmailSecurityDeleteDomainsRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityDeleteDomainsRequest(
   id: (json['id'] as num).toInt(),
-); }
+);}
 
 /// The unique identifier for the domain.
 /// 
 /// Example: `2400`
 final int id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-EmailSecurityDeleteDomainsRequest copyWith({int? id}) { return EmailSecurityDeleteDomainsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num;}
+EmailSecurityDeleteDomainsRequest copyWith({int? id}) {return EmailSecurityDeleteDomainsRequest(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityDeleteDomainsRequest &&
           id == other.id;
@@ -27,4 +27,4 @@ EmailSecurityDeleteDomainsRequest copyWith({int? id}) { return EmailSecurityDele
 
 @override String toString() => 'EmailSecurityDeleteDomainsRequest(id: $id)';
 
- }
+}

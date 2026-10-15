@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which headers to include in the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyHeader {const RulesetsSetCacheSettingsCustomCacheKeyHeader({this.checkPresence, this.contains, this.excludeOrigin, this.include, });
 
-factory RulesetsSetCacheSettingsCustomCacheKeyHeader.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
+factory RulesetsSetCacheSettingsCustomCacheKeyHeader.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheSettingsCustomCacheKeyHeader(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),
   contains: (json['contains'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   excludeOrigin: json['exclude_origin'] as bool?,
   include: (json['include'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// A list of headers to check for the presence of. The presence of these headers is included in the cache key.
 final List<String>? checkPresence;
@@ -27,15 +27,15 @@ final bool? excludeOrigin;
 /// A list of headers to include in the cache key.
 final List<String>? include;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_presence': ?checkPresence,
   'contains': ?contains,
   'exclude_origin': ?excludeOrigin,
   'include': ?include,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'contains', 'exclude_origin', 'include'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'check_presence', 'contains', 'exclude_origin', 'include'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final checkPresence$ = checkPresence;
 if (checkPresence$ != null) {
   if (checkPresence$.isEmpty) { errors.add('checkPresence: must have >= 1 items'); }
@@ -46,13 +46,13 @@ if (include$ != null) {
   if (include$.isEmpty) { errors.add('include: must have >= 1 items'); }
   if (include$.toSet().length != include$.length) { errors.add('include: items must be unique'); }
 }
-return errors; } 
-RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()? checkPresence, Map<String, List<String>>? Function()? contains, bool? Function()? excludeOrigin, List<String>? Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
+return errors;}
+RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()? checkPresence, Map<String, List<String>>? Function()? contains, bool? Function()? excludeOrigin, List<String>? Function()? include, }) {return RulesetsSetCacheSettingsCustomCacheKeyHeader(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   contains: contains != null ? contains() : this.contains,
   excludeOrigin: excludeOrigin != null ? excludeOrigin() : this.excludeOrigin,
   include: include != null ? include() : this.include,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCustomCacheKeyHeader &&
           listEquals(checkPresence, other.checkPresence) &&
@@ -64,4 +64,4 @@ RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()?
 
 @override String toString() => 'RulesetsSetCacheSettingsCustomCacheKeyHeader(checkPresence: $checkPresence, contains: $contains, excludeOrigin: $excludeOrigin, include: $include)';
 
- }
+}

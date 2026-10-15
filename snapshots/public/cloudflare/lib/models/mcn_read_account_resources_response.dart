@@ -1,33 +1,54 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McnReadAccountResourcesResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';import 'package:pub_cloudflare/models/mcn_result_info.dart';@immutable final class McnReadAccountResourcesResponse {const McnReadAccountResourcesResponse({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';import 'package:pub_cloudflare/models/mcn_result_info.dart';@immutable final class McnReadAccountResourcesResponse {const McnReadAccountResourcesResponse({required this.messages, required this.success, required this.errors, required this.result, this.resultInfo, });
 
-factory McnReadAccountResourcesResponse.fromJson(Map<String, dynamic> json) { return McnReadAccountResourcesResponse(
-  result: (json['result'] as List<dynamic>?)?.map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList(),
+factory McnReadAccountResourcesResponse.fromJson(Map<String, dynamic> json) {return McnReadAccountResourcesResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? McnResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList(),
+);}
 
-final List<McnResourceDetails>? result;
+final List<McnError> messages;
 
 final McnResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
+final bool success;
+
+final List<McnError> errors;
+
+final List<McnResourceDetails> result;
+
+Map<String, dynamic> toJson() {return {
+  'messages': messages.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result', 'result_info'}.contains(key)); } 
-McnReadAccountResourcesResponse copyWith({List<McnResourceDetails>? Function()? result, McnResultInfo? Function()? resultInfo, }) { return McnReadAccountResourcesResponse(
-  result: result != null ? result() : this.result,
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e.toJson()).toList(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result');}
+McnReadAccountResourcesResponse copyWith({List<McnError>? messages, McnResultInfo? Function()? resultInfo, bool? success, List<McnError>? errors, List<McnResourceDetails>? result, }) {return McnReadAccountResourcesResponse(
+  messages: messages ?? this.messages,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnReadAccountResourcesResponse &&
-          listEquals(result, other.result) &&
-          resultInfo == other.resultInfo;
+          listEquals(messages, other.messages) &&
+          resultInfo == other.resultInfo &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
+          listEquals(result, other.result);
 
-@override int get hashCode => Object.hash(Object.hashAll(result ?? const []), resultInfo);
+@override int get hashCode => Object.hash(Object.hashAll(messages), resultInfo, success, Object.hashAll(errors), Object.hashAll(result));
 
-@override String toString() => 'McnReadAccountResourcesResponse(result: $result, resultInfo: $resultInfo)';
+@override String toString() => 'McnReadAccountResourcesResponse(messages: $messages, resultInfo: $resultInfo, success: $success, errors: $errors, result: $result)';
 
- }
+}

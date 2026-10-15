@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order zones.
 sealed class ZonesGetDirection {const ZonesGetDirection();
 
-factory ZonesGetDirection.fromJson(String json) { return switch (json) {
+factory ZonesGetDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => ZonesGetDirection$Unknown(json),
-}; }
+};}
 
 static const ZonesGetDirection asc = ZonesGetDirection$asc._();
 
@@ -17,30 +17,30 @@ static const ZonesGetDirection desc = ZonesGetDirection$desc._();
 static const List<ZonesGetDirection> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesGetDirection$Unknown; } 
+bool get isUnknown {return this is ZonesGetDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesGetDirection$asc() => asc(),
       ZonesGetDirection$desc() => desc(),
       ZonesGetDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesGetDirection$asc() => asc != null ? asc() : orElse(value),
       ZonesGetDirection$desc() => desc != null ? desc() : orElse(value),
       ZonesGetDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesGetDirection($value)';
 
- }
+}
 @immutable final class ZonesGetDirection$asc extends ZonesGetDirection {const ZonesGetDirection$asc._();
 
 @override String get value => 'asc';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class ZonesGetDirection$desc extends ZonesGetDirection {const ZonesGetDirection$desc._();
 
 @override String get value => 'desc';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class ZonesGetDirection$Unknown extends ZonesGetDirection {const ZonesGetDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

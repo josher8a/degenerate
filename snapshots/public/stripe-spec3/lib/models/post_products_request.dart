@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_marketing_features.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
-factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostProductsRequest(
+factory PostProductsRequest.fromJson(Map<String, dynamic> json) {return PostProductsRequest(
   active: json['active'] as bool?,
   defaultPriceData: json['default_price_data'] != null ? DefaultPriceData.fromJson(json['default_price_data'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
@@ -19,7 +19,7 @@ factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostPro
   taxCode: json['tax_code'] as String?,
   unitLabel: json['unit_label'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 /// Whether the product is currently available for purchase. Defaults to `true`.
 final bool? active;
@@ -69,7 +69,7 @@ final String? unitLabel;
 /// A URL of a publicly-accessible webpage for this product.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (defaultPriceData != null) 'default_price_data': defaultPriceData?.toJson(),
   'description': ?description,
@@ -85,10 +85,10 @@ Map<String, dynamic> toJson() { return {
   'tax_code': ?taxCode,
   'unit_label': ?unitLabel,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 40000) { errors.add('description: length must be <= 40000'); }
@@ -110,8 +110,8 @@ final url$ = url;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
-return errors; } 
-PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Function()? defaultPriceData, String? Function()? description, List<String>? Function()? expand, String? Function()? id, List<String>? Function()? images, List<PostProductsRequestMarketingFeatures>? Function()? marketingFeatures, Map<String, String>? Function()? metadata, String? name, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, String? Function()? url, }) { return PostProductsRequest(
+return errors;}
+PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Function()? defaultPriceData, String? Function()? description, List<String>? Function()? expand, String? Function()? id, List<String>? Function()? images, List<PostProductsRequestMarketingFeatures>? Function()? marketingFeatures, Map<String, String>? Function()? metadata, String? name, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, String? Function()? url, }) {return PostProductsRequest(
   active: active != null ? active() : this.active,
   defaultPriceData: defaultPriceData != null ? defaultPriceData() : this.defaultPriceData,
   description: description != null ? description() : this.description,
@@ -127,7 +127,7 @@ PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Functi
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsRequest &&
           active == other.active &&
@@ -150,4 +150,4 @@ PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Functi
 
 @override String toString() => 'PostProductsRequest(\n  active: $active,\n  defaultPriceData: $defaultPriceData,\n  description: $description,\n  expand: $expand,\n  id: $id,\n  images: $images,\n  marketingFeatures: $marketingFeatures,\n  metadata: $metadata,\n  name: $name,\n  packageDimensions: $packageDimensions,\n  shippable: $shippable,\n  statementDescriptor: $statementDescriptor,\n  taxCode: $taxCode,\n  unitLabel: $unitLabel,\n  url: $url,\n)';
 
- }
+}

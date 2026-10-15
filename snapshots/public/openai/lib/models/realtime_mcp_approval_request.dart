@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Realtime item 
 /// 
 @immutable final class RealtimeMcpApprovalRequest {const RealtimeMcpApprovalRequest({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, });
 
-factory RealtimeMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return RealtimeMcpApprovalRequest(
+factory RealtimeMcpApprovalRequest.fromJson(Map<String, dynamic> json) {return RealtimeMcpApprovalRequest(
   type: json['type'] as String,
   id: json['id'] as String,
   serverLabel: json['server_label'] as String,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-); }
+);}
 
 /// The type of the item. Always `mcp_approval_request`.
 final String type;
@@ -28,25 +28,25 @@ final String name;
 /// A JSON string of arguments for the tool.
 final String arguments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'server_label': serverLabel,
   'name': name,
   'arguments': arguments,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeMcpApprovalRequest copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, }) { return RealtimeMcpApprovalRequest(
+      json.containsKey('arguments') && json['arguments'] is String;}
+RealtimeMcpApprovalRequest copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, }) {return RealtimeMcpApprovalRequest(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcpApprovalRequest &&
           type == other.type &&
@@ -59,4 +59,4 @@ RealtimeMcpApprovalRequest copyWith({String? type, String? id, String? serverLab
 
 @override String toString() => 'RealtimeMcpApprovalRequest(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments)';
 
- }
+}

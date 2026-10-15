@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
 sealed class Vcs {const Vcs();
 
-factory Vcs.fromJson(String json) { return switch (json) {
+factory Vcs.fromJson(String json) {return switch (json) {
   'subversion' => subversion,
   'git' => git,
   'mercurial' => mercurial,
   'tfvc' => tfvc,
   _ => Vcs$Unknown(json),
-}; }
+};}
 
 static const Vcs subversion = Vcs$subversion._();
 
@@ -23,36 +23,36 @@ static const Vcs tfvc = Vcs$tfvc._();
 static const List<Vcs> values = [subversion, git, mercurial, tfvc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'subversion' => 'subversion',
   'git' => 'git',
   'mercurial' => 'mercurial',
   'tfvc' => 'tfvc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Vcs$Unknown; } 
+bool get isUnknown {return this is Vcs$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() subversion, required W Function() git, required W Function() mercurial, required W Function() tfvc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() subversion, required W Function() git, required W Function() mercurial, required W Function() tfvc, required W Function(String value) $unknown, }) {return switch (this) {
       Vcs$subversion() => subversion(),
       Vcs$git() => git(),
       Vcs$mercurial() => mercurial(),
       Vcs$tfvc() => tfvc(),
       Vcs$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversion, W Function()? git, W Function()? mercurial, W Function()? tfvc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversion, W Function()? git, W Function()? mercurial, W Function()? tfvc, W Function(String value)? $unknown, }) {return switch (this) {
       Vcs$subversion() => subversion != null ? subversion() : orElse(value),
       Vcs$git() => git != null ? git() : orElse(value),
       Vcs$mercurial() => mercurial != null ? mercurial() : orElse(value),
       Vcs$tfvc() => tfvc != null ? tfvc() : orElse(value),
       Vcs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Vcs($value)';
 
- }
+}
 @immutable final class Vcs$subversion extends Vcs {const Vcs$subversion._();
 
 @override String get value => 'subversion';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversi
 
 @override int get hashCode => 'subversion'.hashCode;
 
- }
+}
 @immutable final class Vcs$git extends Vcs {const Vcs$git._();
 
 @override String get value => 'git';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversi
 
 @override int get hashCode => 'git'.hashCode;
 
- }
+}
 @immutable final class Vcs$mercurial extends Vcs {const Vcs$mercurial._();
 
 @override String get value => 'mercurial';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversi
 
 @override int get hashCode => 'mercurial'.hashCode;
 
- }
+}
 @immutable final class Vcs$tfvc extends Vcs {const Vcs$tfvc._();
 
 @override String get value => 'tfvc';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversi
 
 @override int get hashCode => 'tfvc'.hashCode;
 
- }
+}
 @immutable final class Vcs$Unknown extends Vcs {const Vcs$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

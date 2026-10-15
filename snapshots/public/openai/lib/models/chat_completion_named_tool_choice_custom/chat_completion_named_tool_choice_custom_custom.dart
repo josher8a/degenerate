@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionNamedToolChoiceCustomCustom {const ChatCompletionNamedToolChoiceCustomCustom({required this.name});
 
-factory ChatCompletionNamedToolChoiceCustomCustom.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoiceCustomCustom(
+factory ChatCompletionNamedToolChoiceCustomCustom.fromJson(Map<String, dynamic> json) {return ChatCompletionNamedToolChoiceCustomCustom(
   name: json['name'] as String,
-); }
+);}
 
 /// The name of the custom tool to call.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ChatCompletionNamedToolChoiceCustomCustom copyWith({String? name}) { return ChatCompletionNamedToolChoiceCustomCustom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ChatCompletionNamedToolChoiceCustomCustom copyWith({String? name}) {return ChatCompletionNamedToolChoiceCustomCustom(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionNamedToolChoiceCustomCustom &&
           name == other.name;
@@ -25,4 +25,4 @@ ChatCompletionNamedToolChoiceCustomCustom copyWith({String? name}) { return Chat
 
 @override String toString() => 'ChatCompletionNamedToolChoiceCustomCustom(name: $name)';
 
- }
+}

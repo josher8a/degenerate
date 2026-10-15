@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldOldResponseUserSchemasHosts {const ShieldOldResponseUserSchemasHosts({required this.createdAt, required this.hosts, required this.name, required this.schemaId, });
 
-factory ShieldOldResponseUserSchemasHosts.fromJson(Map<String, dynamic> json) { return ShieldOldResponseUserSchemasHosts(
+factory ShieldOldResponseUserSchemasHosts.fromJson(Map<String, dynamic> json) {return ShieldOldResponseUserSchemasHosts(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),
   hosts: (json['hosts'] as List<dynamic>).map((e) => e as String).toList(),
   name: json['name'] as String,
   schemaId: ShieldUuid.fromJson(json['schema_id'] as String),
-); }
+);}
 
 final ShieldTimestamp createdAt;
 
@@ -22,22 +22,22 @@ final String name;
 
 final ShieldUuid schemaId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toJson(),
   'hosts': hosts,
   'name': name,
   'schema_id': schemaId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') &&
       json.containsKey('hosts') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('schema_id'); } 
-ShieldOldResponseUserSchemasHosts copyWith({ShieldTimestamp? createdAt, List<String>? hosts, String? name, ShieldUuid? schemaId, }) { return ShieldOldResponseUserSchemasHosts(
+      json.containsKey('schema_id');}
+ShieldOldResponseUserSchemasHosts copyWith({ShieldTimestamp? createdAt, List<String>? hosts, String? name, ShieldUuid? schemaId, }) {return ShieldOldResponseUserSchemasHosts(
   createdAt: createdAt ?? this.createdAt,
   hosts: hosts ?? this.hosts,
   name: name ?? this.name,
   schemaId: schemaId ?? this.schemaId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldResponseUserSchemasHosts &&
           createdAt == other.createdAt &&
@@ -49,4 +49,4 @@ ShieldOldResponseUserSchemasHosts copyWith({ShieldTimestamp? createdAt, List<Str
 
 @override String toString() => 'ShieldOldResponseUserSchemasHosts(createdAt: $createdAt, hosts: $hosts, name: $name, schemaId: $schemaId)';
 
- }
+}

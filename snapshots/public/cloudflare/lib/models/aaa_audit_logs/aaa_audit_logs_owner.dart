@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_identifier.dart';@immutable final class AaaAuditLogsOwner {const AaaAuditLogsOwner({this.id});
 
-factory AaaAuditLogsOwner.fromJson(Map<String, dynamic> json) { return AaaAuditLogsOwner(
+factory AaaAuditLogsOwner.fromJson(Map<String, dynamic> json) {return AaaAuditLogsOwner(
   id: json['id'] != null ? AaaIdentifier.fromJson(json['id'] as String) : null,
-); }
+);}
 
 final AaaIdentifier? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-AaaAuditLogsOwner copyWith({AaaIdentifier? Function()? id}) { return AaaAuditLogsOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+AaaAuditLogsOwner copyWith({AaaIdentifier? Function()? id}) {return AaaAuditLogsOwner(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsOwner &&
           id == other.id;
@@ -24,4 +24,4 @@ AaaAuditLogsOwner copyWith({AaaIdentifier? Function()? id}) { return AaaAuditLog
 
 @override String toString() => 'AaaAuditLogsOwner(id: $id)';
 
- }
+}

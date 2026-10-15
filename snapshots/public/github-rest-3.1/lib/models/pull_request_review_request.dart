@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// Pull Request Review Request
 @immutable final class PullRequestReviewRequest {const PullRequestReviewRequest({required this.users, required this.teams, });
 
-factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) { return PullRequestReviewRequest(
+factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) {return PullRequestReviewRequest(
   users: (json['users'] as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   teams: (json['teams'] as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<SimpleUser> users;
 
 final List<Team> teams;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'users': users.map((e) => e.toJson()).toList(),
   'teams': teams.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('users') &&
-      json.containsKey('teams'); } 
-PullRequestReviewRequest copyWith({List<SimpleUser>? users, List<Team>? teams, }) { return PullRequestReviewRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('users') &&
+      json.containsKey('teams');}
+PullRequestReviewRequest copyWith({List<SimpleUser>? users, List<Team>? teams, }) {return PullRequestReviewRequest(
   users: users ?? this.users,
   teams: teams ?? this.teams,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewRequest &&
           listEquals(users, other.users) &&
@@ -32,4 +32,4 @@ PullRequestReviewRequest copyWith({List<SimpleUser>? users, List<Team>? teams, }
 
 @override String toString() => 'PullRequestReviewRequest(users: $users, teams: $teams)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_revoke_response/tls_certificates_and_hostnames_certificate_revoke_response_result.dart';@immutable final class TlsCertificatesAndHostnamesCertificateRevokeResponse {const TlsCertificatesAndHostnamesCertificateRevokeResponse({this.result});
 
-factory TlsCertificatesAndHostnamesCertificateRevokeResponse.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateRevokeResponse(
+factory TlsCertificatesAndHostnamesCertificateRevokeResponse.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCertificateRevokeResponse(
   result: json['result'] != null ? TlsCertificatesAndHostnamesCertificateRevokeResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesCertificateRevokeResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-TlsCertificatesAndHostnamesCertificateRevokeResponse copyWith({TlsCertificatesAndHostnamesCertificateRevokeResponseResult? Function()? result}) { return TlsCertificatesAndHostnamesCertificateRevokeResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'result'}.contains(key));}
+TlsCertificatesAndHostnamesCertificateRevokeResponse copyWith({TlsCertificatesAndHostnamesCertificateRevokeResponseResult? Function()? result}) {return TlsCertificatesAndHostnamesCertificateRevokeResponse(
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificateRevokeResponse &&
           result == other.result;
@@ -24,4 +24,4 @@ TlsCertificatesAndHostnamesCertificateRevokeResponse copyWith({TlsCertificatesAn
 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificateRevokeResponse(result: $result)';
 
- }
+}

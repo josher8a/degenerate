@@ -12,7 +12,7 @@ final class Api20100401PaymentApi with ApiExecutor {const Api20100401PaymentApi(
 /// create an instance of payments. This will start a new payments session
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json`
-Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -34,7 +34,7 @@ final request = ApiRequest(
       'Input=${Uri.encodeQueryComponent(input$)}',
     if (body.minPostalCodeLength case final minPostalCodeLength$?)
       'MinPostalCodeLength=${Uri.encodeQueryComponent(minPostalCodeLength$.toString())}',
-    if (body.parameter case final parameter$?)
+    if (body.parameter.value case final parameter$?)
       'Parameter=${Uri.encodeQueryComponent(parameter$.toString())}',
     if (body.paymentConnector case final paymentConnector$?)
       'PaymentConnector=${Uri.encodeQueryComponent(paymentConnector$)}',
@@ -54,17 +54,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCallPayments.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// update an instance of payments with different phases of payment flows.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json`
-Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -82,11 +82,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCallPayments.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

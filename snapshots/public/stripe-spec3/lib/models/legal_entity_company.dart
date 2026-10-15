@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/legal_entity_company_verification.dart';import 'package:pub_stripe_spec3/models/legal_entity_directorship_declaration.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';import 'package:pub_stripe_spec3/models/legal_entity_registration_date.dart';import 'package:pub_stripe_spec3/models/legal_entity_representative_declaration.dart';import 'package:pub_stripe_spec3/models/legal_entity_ubo_declaration.dart';/// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
 sealed class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason();
 
-factory LegalEntityCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
+factory LegalEntityCompanyOwnershipExemptionReason.fromJson(String json) {return switch (json) {
   'qualified_entity_exceeds_ownership_threshold' => qualifiedEntityExceedsOwnershipThreshold,
   'qualifies_as_financial_institution' => qualifiesAsFinancialInstitution,
   _ => LegalEntityCompanyOwnershipExemptionReason$Unknown(json),
-}; }
+};}
 
 static const LegalEntityCompanyOwnershipExemptionReason qualifiedEntityExceedsOwnershipThreshold = LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold._();
 
@@ -17,30 +17,30 @@ static const LegalEntityCompanyOwnershipExemptionReason qualifiesAsFinancialInst
 static const List<LegalEntityCompanyOwnershipExemptionReason> values = [qualifiedEntityExceedsOwnershipThreshold, qualifiesAsFinancialInstitution];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'qualified_entity_exceeds_ownership_threshold' => 'qualifiedEntityExceedsOwnershipThreshold',
   'qualifies_as_financial_institution' => 'qualifiesAsFinancialInstitution',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LegalEntityCompanyOwnershipExemptionReason$Unknown; } 
+bool get isUnknown {return this is LegalEntityCompanyOwnershipExemptionReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() qualifiedEntityExceedsOwnershipThreshold, required W Function() qualifiesAsFinancialInstitution, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() qualifiedEntityExceedsOwnershipThreshold, required W Function() qualifiesAsFinancialInstitution, required W Function(String value) $unknown, }) {return switch (this) {
       LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold(),
       LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution(),
       LegalEntityCompanyOwnershipExemptionReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? qualifiedEntityExceedsOwnershipThreshold, W Function()? qualifiesAsFinancialInstitution, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? qualifiedEntityExceedsOwnershipThreshold, W Function()? qualifiesAsFinancialInstitution, W Function(String value)? $unknown, }) {return switch (this) {
       LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold != null ? qualifiedEntityExceedsOwnershipThreshold() : orElse(value),
       LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution != null ? qualifiesAsFinancialInstitution() : orElse(value),
       LegalEntityCompanyOwnershipExemptionReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LegalEntityCompanyOwnershipExemptionReason($value)';
 
- }
+}
 @immutable final class LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold extends LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold._();
 
 @override String get value => 'qualified_entity_exceeds_ownership_threshold';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? qualifie
 
 @override int get hashCode => 'qualified_entity_exceeds_ownership_threshold'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution extends LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution._();
 
 @override String get value => 'qualifies_as_financial_institution';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? qualifie
 
 @override int get hashCode => 'qualifies_as_financial_institution'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyOwnershipExemptionReason$Unknown extends LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason$Unknown(this.value);
 
 @override final String value;
@@ -68,11 +68,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? qualifie
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
 sealed class LegalEntityCompanyStructure {const LegalEntityCompanyStructure();
 
-factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json) {
+factory LegalEntityCompanyStructure.fromJson(String json) {return switch (json) {
   'free_zone_establishment' => freeZoneEstablishment,
   'free_zone_llc' => freeZoneLlc,
   'government_instrumentality' => governmentInstrumentality,
@@ -97,7 +97,7 @@ factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json)
   'unincorporated_non_profit' => unincorporatedNonProfit,
   'unincorporated_partnership' => unincorporatedPartnership,
   _ => LegalEntityCompanyStructure$Unknown(json),
-}; }
+};}
 
 static const LegalEntityCompanyStructure freeZoneEstablishment = LegalEntityCompanyStructure$freeZoneEstablishment._();
 
@@ -148,9 +148,9 @@ static const LegalEntityCompanyStructure unincorporatedPartnership = LegalEntity
 static const List<LegalEntityCompanyStructure> values = [freeZoneEstablishment, freeZoneLlc, governmentInstrumentality, governmentalUnit, incorporatedNonProfit, incorporatedPartnership, limitedLiabilityPartnership, llc, multiMemberLlc, privateCompany, privateCorporation, privatePartnership, publicCompany, publicCorporation, publicPartnership, registeredCharity, singleMemberLlc, soleEstablishment, soleProprietorship, taxExemptGovernmentInstrumentality, unincorporatedAssociation, unincorporatedNonProfit, unincorporatedPartnership];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'free_zone_establishment' => 'freeZoneEstablishment',
   'free_zone_llc' => 'freeZoneLlc',
   'government_instrumentality' => 'governmentInstrumentality',
@@ -175,11 +175,11 @@ String get name { return switch (value) {
   'unincorporated_non_profit' => 'unincorporatedNonProfit',
   'unincorporated_partnership' => 'unincorporatedPartnership',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LegalEntityCompanyStructure$Unknown; } 
+bool get isUnknown {return this is LegalEntityCompanyStructure$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() freeZoneEstablishment, required W Function() freeZoneLlc, required W Function() governmentInstrumentality, required W Function() governmentalUnit, required W Function() incorporatedNonProfit, required W Function() incorporatedPartnership, required W Function() limitedLiabilityPartnership, required W Function() llc, required W Function() multiMemberLlc, required W Function() privateCompany, required W Function() privateCorporation, required W Function() privatePartnership, required W Function() publicCompany, required W Function() publicCorporation, required W Function() publicPartnership, required W Function() registeredCharity, required W Function() singleMemberLlc, required W Function() soleEstablishment, required W Function() soleProprietorship, required W Function() taxExemptGovernmentInstrumentality, required W Function() unincorporatedAssociation, required W Function() unincorporatedNonProfit, required W Function() unincorporatedPartnership, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() freeZoneEstablishment, required W Function() freeZoneLlc, required W Function() governmentInstrumentality, required W Function() governmentalUnit, required W Function() incorporatedNonProfit, required W Function() incorporatedPartnership, required W Function() limitedLiabilityPartnership, required W Function() llc, required W Function() multiMemberLlc, required W Function() privateCompany, required W Function() privateCorporation, required W Function() privatePartnership, required W Function() publicCompany, required W Function() publicCorporation, required W Function() publicPartnership, required W Function() registeredCharity, required W Function() singleMemberLlc, required W Function() soleEstablishment, required W Function() soleProprietorship, required W Function() taxExemptGovernmentInstrumentality, required W Function() unincorporatedAssociation, required W Function() unincorporatedNonProfit, required W Function() unincorporatedPartnership, required W Function(String value) $unknown, }) {return switch (this) {
       LegalEntityCompanyStructure$freeZoneEstablishment() => freeZoneEstablishment(),
       LegalEntityCompanyStructure$freeZoneLlc() => freeZoneLlc(),
       LegalEntityCompanyStructure$governmentInstrumentality() => governmentInstrumentality(),
@@ -204,9 +204,9 @@ W when<W>({required W Function() freeZoneEstablishment, required W Function() fr
       LegalEntityCompanyStructure$unincorporatedNonProfit() => unincorporatedNonProfit(),
       LegalEntityCompanyStructure$unincorporatedPartnership() => unincorporatedPartnership(),
       LegalEntityCompanyStructure$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZoneEstablishment, W Function()? freeZoneLlc, W Function()? governmentInstrumentality, W Function()? governmentalUnit, W Function()? incorporatedNonProfit, W Function()? incorporatedPartnership, W Function()? limitedLiabilityPartnership, W Function()? llc, W Function()? multiMemberLlc, W Function()? privateCompany, W Function()? privateCorporation, W Function()? privatePartnership, W Function()? publicCompany, W Function()? publicCorporation, W Function()? publicPartnership, W Function()? registeredCharity, W Function()? singleMemberLlc, W Function()? soleEstablishment, W Function()? soleProprietorship, W Function()? taxExemptGovernmentInstrumentality, W Function()? unincorporatedAssociation, W Function()? unincorporatedNonProfit, W Function()? unincorporatedPartnership, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZoneEstablishment, W Function()? freeZoneLlc, W Function()? governmentInstrumentality, W Function()? governmentalUnit, W Function()? incorporatedNonProfit, W Function()? incorporatedPartnership, W Function()? limitedLiabilityPartnership, W Function()? llc, W Function()? multiMemberLlc, W Function()? privateCompany, W Function()? privateCorporation, W Function()? privatePartnership, W Function()? publicCompany, W Function()? publicCorporation, W Function()? publicPartnership, W Function()? registeredCharity, W Function()? singleMemberLlc, W Function()? soleEstablishment, W Function()? soleProprietorship, W Function()? taxExemptGovernmentInstrumentality, W Function()? unincorporatedAssociation, W Function()? unincorporatedNonProfit, W Function()? unincorporatedPartnership, W Function(String value)? $unknown, }) {return switch (this) {
       LegalEntityCompanyStructure$freeZoneEstablishment() => freeZoneEstablishment != null ? freeZoneEstablishment() : orElse(value),
       LegalEntityCompanyStructure$freeZoneLlc() => freeZoneLlc != null ? freeZoneLlc() : orElse(value),
       LegalEntityCompanyStructure$governmentInstrumentality() => governmentInstrumentality != null ? governmentInstrumentality() : orElse(value),
@@ -231,10 +231,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
       LegalEntityCompanyStructure$unincorporatedNonProfit() => unincorporatedNonProfit != null ? unincorporatedNonProfit() : orElse(value),
       LegalEntityCompanyStructure$unincorporatedPartnership() => unincorporatedPartnership != null ? unincorporatedPartnership() : orElse(value),
       LegalEntityCompanyStructure$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LegalEntityCompanyStructure($value)';
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$freeZoneEstablishment extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$freeZoneEstablishment._();
 
 @override String get value => 'free_zone_establishment';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'free_zone_establishment'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$freeZoneLlc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$freeZoneLlc._();
 
 @override String get value => 'free_zone_llc';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'free_zone_llc'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$governmentInstrumentality extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$governmentInstrumentality._();
 
 @override String get value => 'government_instrumentality';
@@ -261,7 +261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'government_instrumentality'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$governmentalUnit extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$governmentalUnit._();
 
 @override String get value => 'governmental_unit';
@@ -270,7 +270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'governmental_unit'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$incorporatedNonProfit extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$incorporatedNonProfit._();
 
 @override String get value => 'incorporated_non_profit';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'incorporated_non_profit'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$incorporatedPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$incorporatedPartnership._();
 
 @override String get value => 'incorporated_partnership';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'incorporated_partnership'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$limitedLiabilityPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$limitedLiabilityPartnership._();
 
 @override String get value => 'limited_liability_partnership';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'limited_liability_partnership'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$llc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$llc._();
 
 @override String get value => 'llc';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'llc'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$multiMemberLlc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$multiMemberLlc._();
 
 @override String get value => 'multi_member_llc';
@@ -315,7 +315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'multi_member_llc'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$privateCompany extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$privateCompany._();
 
 @override String get value => 'private_company';
@@ -324,7 +324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'private_company'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$privateCorporation extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$privateCorporation._();
 
 @override String get value => 'private_corporation';
@@ -333,7 +333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'private_corporation'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$privatePartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$privatePartnership._();
 
 @override String get value => 'private_partnership';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'private_partnership'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$publicCompany extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$publicCompany._();
 
 @override String get value => 'public_company';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'public_company'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$publicCorporation extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$publicCorporation._();
 
 @override String get value => 'public_corporation';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'public_corporation'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$publicPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$publicPartnership._();
 
 @override String get value => 'public_partnership';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'public_partnership'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$registeredCharity extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$registeredCharity._();
 
 @override String get value => 'registered_charity';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'registered_charity'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$singleMemberLlc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$singleMemberLlc._();
 
 @override String get value => 'single_member_llc';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'single_member_llc'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$soleEstablishment extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$soleEstablishment._();
 
 @override String get value => 'sole_establishment';
@@ -396,7 +396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'sole_establishment'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$soleProprietorship extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$soleProprietorship._();
 
 @override String get value => 'sole_proprietorship';
@@ -405,7 +405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'sole_proprietorship'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality._();
 
 @override String get value => 'tax_exempt_government_instrumentality';
@@ -414,7 +414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'tax_exempt_government_instrumentality'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$unincorporatedAssociation extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$unincorporatedAssociation._();
 
 @override String get value => 'unincorporated_association';
@@ -423,7 +423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'unincorporated_association'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$unincorporatedNonProfit extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$unincorporatedNonProfit._();
 
 @override String get value => 'unincorporated_non_profit';
@@ -432,7 +432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'unincorporated_non_profit'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$unincorporatedPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$unincorporatedPartnership._();
 
 @override String get value => 'unincorporated_partnership';
@@ -441,7 +441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => 'unincorporated_partnership'.hashCode;
 
- }
+}
 @immutable final class LegalEntityCompanyStructure$Unknown extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$Unknown(this.value);
 
 @override final String value;
@@ -451,48 +451,48 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZone
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.representativeDeclaration, this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification, });
+@immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana = const Omittable.absent(), this.addressKanji = const Omittable.absent(), this.directorsProvided, this.directorshipDeclaration = const Omittable.absent(), this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name = const Omittable.absent(), this.nameKana = const Omittable.absent(), this.nameKanji = const Omittable.absent(), this.ownersProvided, this.ownershipDeclaration = const Omittable.absent(), this.ownershipExemptionReason, this.phone = const Omittable.absent(), this.registrationDate, this.representativeDeclaration = const Omittable.absent(), this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification = const Omittable.absent(), });
 
-factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEntityCompany(
+factory LegalEntityCompany.fromJson(Map<String, dynamic> json) {return LegalEntityCompany(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
-  addressKana: json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
-  addressKanji: json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  addressKana: json.containsKey('address_kana') ? Omittable(json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  addressKanji: json.containsKey('address_kanji') ? Omittable(json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   directorsProvided: json['directors_provided'] as bool?,
-  directorshipDeclaration: json['directorship_declaration'] != null ? LegalEntityDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>) : null,
+  directorshipDeclaration: json.containsKey('directorship_declaration') ? Omittable(json['directorship_declaration'] != null ? LegalEntityDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   executivesProvided: json['executives_provided'] as bool?,
   exportLicenseId: json['export_license_id'] as String?,
   exportPurposeCode: json['export_purpose_code'] as String?,
-  name: json['name'] as String?,
-  nameKana: json['name_kana'] as String?,
-  nameKanji: json['name_kanji'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  nameKana: json.containsKey('name_kana') ? Omittable(json['name_kana'] as String?) : const Omittable.absent(),
+  nameKanji: json.containsKey('name_kanji') ? Omittable(json['name_kanji'] as String?) : const Omittable.absent(),
   ownersProvided: json['owners_provided'] as bool?,
-  ownershipDeclaration: json['ownership_declaration'] != null ? LegalEntityUboDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null,
+  ownershipDeclaration: json.containsKey('ownership_declaration') ? Omittable(json['ownership_declaration'] != null ? LegalEntityUboDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? LegalEntityCompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
-  phone: json['phone'] as String?,
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
   registrationDate: json['registration_date'] != null ? LegalEntityRegistrationDate.fromJson(json['registration_date'] as Map<String, dynamic>) : null,
-  representativeDeclaration: json['representative_declaration'] != null ? LegalEntityRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
+  representativeDeclaration: json.containsKey('representative_declaration') ? Omittable(json['representative_declaration'] != null ? LegalEntityRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   structure: json['structure'] != null ? LegalEntityCompanyStructure.fromJson(json['structure'] as String) : null,
   taxIdProvided: json['tax_id_provided'] as bool?,
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatIdProvided: json['vat_id_provided'] as bool?,
-  verification: json['verification'] != null ? LegalEntityCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+  verification: json.containsKey('verification') ? Omittable(json['verification'] != null ? LegalEntityCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 final Address? address;
 
 /// The Kana variation of the company's primary address (Japan only).
-final LegalEntityJapanAddress? addressKana;
+final Omittable<LegalEntityJapanAddress?> addressKana;
 
 /// The Kanji variation of the company's primary address (Japan only).
-final LegalEntityJapanAddress? addressKanji;
+final Omittable<LegalEntityJapanAddress?> addressKanji;
 
 /// Whether the company's directors have been provided. This Boolean will be `true` if you've manually indicated that all directors are provided via [the `directors_provided` parameter](https://docs.stripe.com/api/accounts/update#update_account-company-directors_provided).
 final bool? directorsProvided;
 
 /// This hash is used to attest that the director information provided to Stripe is both current and correct.
-final LegalEntityDirectorshipDeclaration? directorshipDeclaration;
+final Omittable<LegalEntityDirectorshipDeclaration?> directorshipDeclaration;
 
 /// Whether the company's executives have been provided. This Boolean will be `true` if you've manually indicated that all executives are provided via [the `executives_provided` parameter](https://docs.stripe.com/api/accounts/update#update_account-company-executives_provided), or if Stripe determined that sufficient executives were provided.
 final bool? executivesProvided;
@@ -504,30 +504,30 @@ final String? exportLicenseId;
 final String? exportPurposeCode;
 
 /// The company's legal name. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
-final String? name;
+final Omittable<String?> name;
 
 /// The Kana variation of the company's legal name (Japan only). Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
-final String? nameKana;
+final Omittable<String?> nameKana;
 
 /// The Kanji variation of the company's legal name (Japan only). Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
-final String? nameKanji;
+final Omittable<String?> nameKanji;
 
 /// Whether the company's owners have been provided. This Boolean will be `true` if you've manually indicated that all owners are provided via [the `owners_provided` parameter](https://docs.stripe.com/api/accounts/update#update_account-company-owners_provided), or if Stripe determined that sufficient owners were provided. Stripe determines ownership requirements using both the number of owners provided and their total percent ownership (calculated by adding the `percent_ownership` of each owner together).
 final bool? ownersProvided;
 
 /// This hash is used to attest that the beneficial owner information provided to Stripe is both current and correct.
-final LegalEntityUboDeclaration? ownershipDeclaration;
+final Omittable<LegalEntityUboDeclaration?> ownershipDeclaration;
 
 /// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
 final LegalEntityCompanyOwnershipExemptionReason? ownershipExemptionReason;
 
 /// The company's phone number (used for verification).
-final String? phone;
+final Omittable<String?> phone;
 
 final LegalEntityRegistrationDate? registrationDate;
 
 /// This hash is used to attest that the representative is authorized to act as the representative of their legal entity.
-final LegalEntityRepresentativeDeclaration? representativeDeclaration;
+final Omittable<LegalEntityRepresentativeDeclaration?> representativeDeclaration;
 
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
 final LegalEntityCompanyStructure? structure;
@@ -542,35 +542,35 @@ final String? taxIdRegistrar;
 final bool? vatIdProvided;
 
 /// Information on the verification state of the company.
-final LegalEntityCompanyVerification? verification;
+final Omittable<LegalEntityCompanyVerification?> verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
-  if (addressKana != null) 'address_kana': addressKana?.toJson(),
-  if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
+  if (addressKana.isPresent) 'address_kana': addressKana.value?.toJson(),
+  if (addressKanji.isPresent) 'address_kanji': addressKanji.value?.toJson(),
   'directors_provided': ?directorsProvided,
-  if (directorshipDeclaration != null) 'directorship_declaration': directorshipDeclaration?.toJson(),
+  if (directorshipDeclaration.isPresent) 'directorship_declaration': directorshipDeclaration.value?.toJson(),
   'executives_provided': ?executivesProvided,
   'export_license_id': ?exportLicenseId,
   'export_purpose_code': ?exportPurposeCode,
-  'name': ?name,
-  'name_kana': ?nameKana,
-  'name_kanji': ?nameKanji,
+  if (name.isPresent) 'name': name.value,
+  if (nameKana.isPresent) 'name_kana': nameKana.value,
+  if (nameKanji.isPresent) 'name_kanji': nameKanji.value,
   'owners_provided': ?ownersProvided,
-  if (ownershipDeclaration != null) 'ownership_declaration': ownershipDeclaration?.toJson(),
+  if (ownershipDeclaration.isPresent) 'ownership_declaration': ownershipDeclaration.value?.toJson(),
   if (ownershipExemptionReason != null) 'ownership_exemption_reason': ownershipExemptionReason?.toJson(),
-  'phone': ?phone,
+  if (phone.isPresent) 'phone': phone.value,
   if (registrationDate != null) 'registration_date': registrationDate?.toJson(),
-  if (representativeDeclaration != null) 'representative_declaration': representativeDeclaration?.toJson(),
+  if (representativeDeclaration.isPresent) 'representative_declaration': representativeDeclaration.value?.toJson(),
   if (structure != null) 'structure': structure?.toJson(),
   'tax_id_provided': ?taxIdProvided,
   'tax_id_registrar': ?taxIdRegistrar,
   'vat_id_provided': ?vatIdProvided,
-  if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'representative_declaration', 'structure', 'tax_id_provided', 'tax_id_registrar', 'vat_id_provided', 'verification'}.contains(key)); } 
+  if (verification.isPresent) 'verification': verification.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'representative_declaration', 'structure', 'tax_id_provided', 'tax_id_registrar', 'vat_id_provided', 'verification'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final exportLicenseId$ = exportLicenseId;
 if (exportLicenseId$ != null) {
   if (exportLicenseId$.runes.length > 5000) { errors.add('exportLicenseId: length must be <= 5000'); }
@@ -579,19 +579,19 @@ final exportPurposeCode$ = exportPurposeCode;
 if (exportPurposeCode$ != null) {
   if (exportPurposeCode$.runes.length > 5000) { errors.add('exportPurposeCode: length must be <= 5000'); }
 }
-final name$ = name;
+final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-final nameKana$ = nameKana;
+final nameKana$ = nameKana.value;
 if (nameKana$ != null) {
   if (nameKana$.runes.length > 5000) { errors.add('nameKana: length must be <= 5000'); }
 }
-final nameKanji$ = nameKanji;
+final nameKanji$ = nameKanji.value;
 if (nameKanji$ != null) {
   if (nameKanji$.runes.length > 5000) { errors.add('nameKanji: length must be <= 5000'); }
 }
-final phone$ = phone;
+final phone$ = phone.value;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
@@ -599,31 +599,31 @@ final taxIdRegistrar$ = taxIdRegistrar;
 if (taxIdRegistrar$ != null) {
   if (taxIdRegistrar$.runes.length > 5000) { errors.add('taxIdRegistrar: length must be <= 5000'); }
 }
-return errors; } 
-LegalEntityCompany copyWith({Address? Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, bool? Function()? directorsProvided, LegalEntityDirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, LegalEntityUboDeclaration? Function()? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, LegalEntityRegistrationDate? Function()? registrationDate, LegalEntityRepresentativeDeclaration? Function()? representativeDeclaration, LegalEntityCompanyStructure? Function()? structure, bool? Function()? taxIdProvided, String? Function()? taxIdRegistrar, bool? Function()? vatIdProvided, LegalEntityCompanyVerification? Function()? verification, }) { return LegalEntityCompany(
+return errors;}
+LegalEntityCompany copyWith({Address? Function()? address, Omittable<LegalEntityJapanAddress?>? addressKana, Omittable<LegalEntityJapanAddress?>? addressKanji, bool? Function()? directorsProvided, Omittable<LegalEntityDirectorshipDeclaration?>? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, Omittable<String?>? name, Omittable<String?>? nameKana, Omittable<String?>? nameKanji, bool? Function()? ownersProvided, Omittable<LegalEntityUboDeclaration?>? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, Omittable<String?>? phone, LegalEntityRegistrationDate? Function()? registrationDate, Omittable<LegalEntityRepresentativeDeclaration?>? representativeDeclaration, LegalEntityCompanyStructure? Function()? structure, bool? Function()? taxIdProvided, String? Function()? taxIdRegistrar, bool? Function()? vatIdProvided, Omittable<LegalEntityCompanyVerification?>? verification, }) {return LegalEntityCompany(
   address: address != null ? address() : this.address,
-  addressKana: addressKana != null ? addressKana() : this.addressKana,
-  addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
+  addressKana: addressKana ?? this.addressKana,
+  addressKanji: addressKanji ?? this.addressKanji,
   directorsProvided: directorsProvided != null ? directorsProvided() : this.directorsProvided,
-  directorshipDeclaration: directorshipDeclaration != null ? directorshipDeclaration() : this.directorshipDeclaration,
+  directorshipDeclaration: directorshipDeclaration ?? this.directorshipDeclaration,
   executivesProvided: executivesProvided != null ? executivesProvided() : this.executivesProvided,
   exportLicenseId: exportLicenseId != null ? exportLicenseId() : this.exportLicenseId,
   exportPurposeCode: exportPurposeCode != null ? exportPurposeCode() : this.exportPurposeCode,
-  name: name != null ? name() : this.name,
-  nameKana: nameKana != null ? nameKana() : this.nameKana,
-  nameKanji: nameKanji != null ? nameKanji() : this.nameKanji,
+  name: name ?? this.name,
+  nameKana: nameKana ?? this.nameKana,
+  nameKanji: nameKanji ?? this.nameKanji,
   ownersProvided: ownersProvided != null ? ownersProvided() : this.ownersProvided,
-  ownershipDeclaration: ownershipDeclaration != null ? ownershipDeclaration() : this.ownershipDeclaration,
+  ownershipDeclaration: ownershipDeclaration ?? this.ownershipDeclaration,
   ownershipExemptionReason: ownershipExemptionReason != null ? ownershipExemptionReason() : this.ownershipExemptionReason,
-  phone: phone != null ? phone() : this.phone,
+  phone: phone ?? this.phone,
   registrationDate: registrationDate != null ? registrationDate() : this.registrationDate,
-  representativeDeclaration: representativeDeclaration != null ? representativeDeclaration() : this.representativeDeclaration,
+  representativeDeclaration: representativeDeclaration ?? this.representativeDeclaration,
   structure: structure != null ? structure() : this.structure,
   taxIdProvided: taxIdProvided != null ? taxIdProvided() : this.taxIdProvided,
   taxIdRegistrar: taxIdRegistrar != null ? taxIdRegistrar() : this.taxIdRegistrar,
   vatIdProvided: vatIdProvided != null ? vatIdProvided() : this.vatIdProvided,
-  verification: verification != null ? verification() : this.verification,
-); } 
+  verification: verification ?? this.verification,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityCompany &&
           address == other.address &&
@@ -653,4 +653,4 @@ LegalEntityCompany copyWith({Address? Function()? address, LegalEntityJapanAddre
 
 @override String toString() => 'LegalEntityCompany(\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  directorsProvided: $directorsProvided,\n  directorshipDeclaration: $directorshipDeclaration,\n  executivesProvided: $executivesProvided,\n  exportLicenseId: $exportLicenseId,\n  exportPurposeCode: $exportPurposeCode,\n  name: $name,\n  nameKana: $nameKana,\n  nameKanji: $nameKanji,\n  ownersProvided: $ownersProvided,\n  ownershipDeclaration: $ownershipDeclaration,\n  ownershipExemptionReason: $ownershipExemptionReason,\n  phone: $phone,\n  registrationDate: $registrationDate,\n  representativeDeclaration: $representativeDeclaration,\n  structure: $structure,\n  taxIdProvided: $taxIdProvided,\n  taxIdRegistrar: $taxIdRegistrar,\n  vatIdProvided: $vatIdProvided,\n  verification: $verification,\n)';
 
- }
+}

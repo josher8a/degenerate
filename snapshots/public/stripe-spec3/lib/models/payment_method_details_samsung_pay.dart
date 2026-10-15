@@ -2,39 +2,39 @@
 // Source: #/components/schemas/PaymentMethodDetailsSamsungPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsSamsungPay {const PaymentMethodDetailsSamsungPay({this.buyerId, this.transactionId, });
+@immutable final class PaymentMethodDetailsSamsungPay {const PaymentMethodDetailsSamsungPay({this.buyerId = const Omittable.absent(), this.transactionId = const Omittable.absent(), });
 
-factory PaymentMethodDetailsSamsungPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsSamsungPay(
-  buyerId: json['buyer_id'] as String?,
-  transactionId: json['transaction_id'] as String?,
-); }
+factory PaymentMethodDetailsSamsungPay.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsSamsungPay(
+  buyerId: json.containsKey('buyer_id') ? Omittable(json['buyer_id'] as String?) : const Omittable.absent(),
+  transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
+);}
 
 /// A unique identifier for the buyer as determined by the local payment processor.
-final String? buyerId;
+final Omittable<String?> buyerId;
 
 /// The Samsung Pay transaction ID associated with this payment.
-final String? transactionId;
+final Omittable<String?> transactionId;
 
-Map<String, dynamic> toJson() { return {
-  'buyer_id': ?buyerId,
-  'transaction_id': ?transactionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'transaction_id'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (buyerId.isPresent) 'buyer_id': buyerId.value,
+  if (transactionId.isPresent) 'transaction_id': transactionId.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'buyer_id', 'transaction_id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final buyerId$ = buyerId;
+List<String> validate() {final errors = <String>[];
+final buyerId$ = buyerId.value;
 if (buyerId$ != null) {
   if (buyerId$.runes.length > 5000) { errors.add('buyerId: length must be <= 5000'); }
 }
-final transactionId$ = transactionId;
+final transactionId$ = transactionId.value;
 if (transactionId$ != null) {
   if (transactionId$.runes.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsSamsungPay copyWith({String? Function()? buyerId, String? Function()? transactionId, }) { return PaymentMethodDetailsSamsungPay(
-  buyerId: buyerId != null ? buyerId() : this.buyerId,
-  transactionId: transactionId != null ? transactionId() : this.transactionId,
-); } 
+return errors;}
+PaymentMethodDetailsSamsungPay copyWith({Omittable<String?>? buyerId, Omittable<String?>? transactionId, }) {return PaymentMethodDetailsSamsungPay(
+  buyerId: buyerId ?? this.buyerId,
+  transactionId: transactionId ?? this.transactionId,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsSamsungPay &&
           buyerId == other.buyerId &&
@@ -44,4 +44,4 @@ PaymentMethodDetailsSamsungPay copyWith({String? Function()? buyerId, String? Fu
 
 @override String toString() => 'PaymentMethodDetailsSamsungPay(buyerId: $buyerId, transactionId: $transactionId)';
 
- }
+}

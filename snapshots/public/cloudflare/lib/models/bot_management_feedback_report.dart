@@ -1,77 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BotManagementFeedbackReport
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_metric_requests.dart';/// Type of feedback report.
-sealed class BotManagementFeedbackType {const BotManagementFeedbackType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_feedback_type.dart';import 'package:pub_cloudflare/models/bot_management_metric_requests.dart';@immutable final class BotManagementFeedbackReport {const BotManagementFeedbackReport({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.createdAt, this.subtype, });
 
-factory BotManagementFeedbackType.fromJson(String json) { return switch (json) {
-  'false_positive' => falsePositive,
-  'false_negative' => falseNegative,
-  _ => BotManagementFeedbackType$Unknown(json),
-}; }
-
-static const BotManagementFeedbackType falsePositive = BotManagementFeedbackType$falsePositive._();
-
-static const BotManagementFeedbackType falseNegative = BotManagementFeedbackType$falseNegative._();
-
-static const List<BotManagementFeedbackType> values = [falsePositive, falseNegative];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'false_positive' => 'falsePositive',
-  'false_negative' => 'falseNegative',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BotManagementFeedbackType$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() falsePositive, required W Function() falseNegative, required W Function(String value) $unknown, }) { return switch (this) {
-      BotManagementFeedbackType$falsePositive() => falsePositive(),
-      BotManagementFeedbackType$falseNegative() => falseNegative(),
-      BotManagementFeedbackType$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? falseNegative, W Function(String value)? $unknown, }) { return switch (this) {
-      BotManagementFeedbackType$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
-      BotManagementFeedbackType$falseNegative() => falseNegative != null ? falseNegative() : orElse(value),
-      BotManagementFeedbackType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'BotManagementFeedbackType($value)';
-
- }
-@immutable final class BotManagementFeedbackType$falsePositive extends BotManagementFeedbackType {const BotManagementFeedbackType$falsePositive._();
-
-@override String get value => 'false_positive';
-
-@override bool operator ==(Object other) => identical(this, other) || other is BotManagementFeedbackType$falsePositive;
-
-@override int get hashCode => 'false_positive'.hashCode;
-
- }
-@immutable final class BotManagementFeedbackType$falseNegative extends BotManagementFeedbackType {const BotManagementFeedbackType$falseNegative._();
-
-@override String get value => 'false_negative';
-
-@override bool operator ==(Object other) => identical(this, other) || other is BotManagementFeedbackType$falseNegative;
-
-@override int get hashCode => 'false_negative'.hashCode;
-
- }
-@immutable final class BotManagementFeedbackType$Unknown extends BotManagementFeedbackType {const BotManagementFeedbackType$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BotManagementFeedbackType$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
-@immutable final class BotManagementFeedbackReport {const BotManagementFeedbackReport({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.createdAt, this.subtype, });
-
-factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) { return BotManagementFeedbackReport(
+factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) {return BotManagementFeedbackReport(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String,
   expression: json['expression'] as String,
@@ -83,7 +15,7 @@ factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) { return
   requestsByScoreSrc: (json['requests_by_score_src'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   subtype: json['subtype'] as String?,
   type: BotManagementFeedbackType.fromJson(json['type'] as String),
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -108,7 +40,7 @@ final String? subtype;
 
 final BotManagementFeedbackType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'description': description,
   'expression': expression,
@@ -120,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'requests_by_score_src': requestsByScoreSrc,
   'subtype': ?subtype,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('expression') && json['expression'] is String &&
       json.containsKey('first_request_seen_at') && json['first_request_seen_at'] is String &&
       json.containsKey('last_request_seen_at') && json['last_request_seen_at'] is String &&
@@ -129,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('requests_by_attribute') &&
       json.containsKey('requests_by_score') &&
       json.containsKey('requests_by_score_src') &&
-      json.containsKey('type'); } 
-BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) { return BotManagementFeedbackReport(
+      json.containsKey('type');}
+BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) {return BotManagementFeedbackReport(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
   expression: expression ?? this.expression,
@@ -142,7 +74,7 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
   requestsByScoreSrc: requestsByScoreSrc ?? this.requestsByScoreSrc,
   subtype: subtype != null ? subtype() : this.subtype,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementFeedbackReport &&
           createdAt == other.createdAt &&
@@ -161,4 +93,4 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
 
 @override String toString() => 'BotManagementFeedbackReport(\n  createdAt: $createdAt,\n  description: $description,\n  expression: $expression,\n  firstRequestSeenAt: $firstRequestSeenAt,\n  lastRequestSeenAt: $lastRequestSeenAt,\n  requests: $requests,\n  requestsByAttribute: $requestsByAttribute,\n  requestsByScore: $requestsByScore,\n  requestsByScoreSrc: $requestsByScoreSrc,\n  subtype: $subtype,\n  type: $type,\n)';
 
- }
+}

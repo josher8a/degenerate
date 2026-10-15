@@ -2,9 +2,9 @@
 // Source: #/components/schemas/PodCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// PodCondition contains details for the current condition of this pod.
-@immutable final class PodCondition {const PodCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.observedGeneration, this.reason, this.status = '', this.type = '', });
+@immutable final class PodCondition {const PodCondition({required this.status, required this.type, this.lastProbeTime, this.lastTransitionTime, this.message, this.observedGeneration, this.reason, });
 
-factory PodCondition.fromJson(Map<String, dynamic> json) { return PodCondition(
+factory PodCondition.fromJson(Map<String, dynamic> json) {return PodCondition(
   lastProbeTime: json['lastProbeTime'] != null ? Time.fromJson(json['lastProbeTime'] as String) : null,
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,
   message: json['message'] as String?,
@@ -12,7 +12,7 @@ factory PodCondition.fromJson(Map<String, dynamic> json) { return PodCondition(
   reason: json['reason'] as String?,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// Last time we probed the condition.
 final Time? lastProbeTime;
@@ -35,7 +35,7 @@ final String status;
 /// Type is the type of the condition. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lastProbeTime != null) 'lastProbeTime': lastProbeTime?.toJson(),
   if (lastTransitionTime != null) 'lastTransitionTime': lastTransitionTime?.toJson(),
   'message': ?message,
@@ -43,10 +43,10 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTransitionTime, String? Function()? message, int? Function()? observedGeneration, String? Function()? reason, String? status, String? type, }) { return PodCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTransitionTime, String? Function()? message, int? Function()? observedGeneration, String? Function()? reason, String? status, String? type, }) {return PodCondition(
   lastProbeTime: lastProbeTime != null ? lastProbeTime() : this.lastProbeTime,
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
@@ -54,7 +54,7 @@ PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTr
   reason: reason != null ? reason() : this.reason,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodCondition &&
           lastProbeTime == other.lastProbeTime &&
@@ -69,4 +69,4 @@ PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTr
 
 @override String toString() => 'PodCondition(lastProbeTime: $lastProbeTime, lastTransitionTime: $lastTransitionTime, message: $message, observedGeneration: $observedGeneration, reason: $reason, status: $status, type: $type)';
 
- }
+}

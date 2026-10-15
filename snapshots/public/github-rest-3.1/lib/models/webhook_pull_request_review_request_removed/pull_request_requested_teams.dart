@@ -2,9 +2,9 @@
 // Source: #/components/schemas/WebhookPullRequestReviewRequestRemoved (inline: ReviewRequestRemoved > PullRequest > RequestedTeams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_parent.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';/// Groups of organization members that gives permissions on specified repositories.
-@immutable final class PullRequestRequestedTeams {const PullRequestRequestedTeams({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
+@immutable final class PullRequestRequestedTeams {const PullRequestRequestedTeams({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent = const Omittable.absent(), });
 
-factory PullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return PullRequestRequestedTeams(
+factory PullRequestRequestedTeams.fromJson(Map<String, dynamic> json) {return PullRequestRequestedTeams(
   deleted: json['deleted'] as bool?,
   description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -12,13 +12,13 @@ factory PullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return P
   membersUrl: json['members_url'] as String,
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-  parent: json['parent'] != null ? TeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? TeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permission: json['permission'] as String,
   privacy: TeamPrivacy.fromJson(json['privacy'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final bool? deleted;
 
@@ -37,7 +37,7 @@ final String name;
 
 final String nodeId;
 
-final TeamParent? parent;
+final Omittable<TeamParent?> parent;
 
 /// Permission that the team will have for its repositories
 final String permission;
@@ -51,7 +51,7 @@ final String slug;
 /// URL for the team
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   'description': description,
   'html_url': htmlUrl.toString(),
@@ -59,14 +59,14 @@ Map<String, dynamic> toJson() { return {
   'members_url': membersUrl,
   'name': name,
   'node_id': nodeId,
-  if (parent != null) 'parent': parent?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'permission': permission,
   'privacy': privacy.toJson(),
   'repositories_url': repositoriesUrl.toString(),
   'slug': slug,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -76,8 +76,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('privacy') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-PullRequestRequestedTeams copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, TeamParent? Function()? parent, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return PullRequestRequestedTeams(
+      json.containsKey('url') && json['url'] is String;}
+PullRequestRequestedTeams copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Omittable<TeamParent?>? parent, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) {return PullRequestRequestedTeams(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -85,13 +85,13 @@ PullRequestRequestedTeams copyWith({bool? Function()? deleted, String? Function(
   membersUrl: membersUrl ?? this.membersUrl,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
-  parent: parent != null ? parent() : this.parent,
+  parent: parent ?? this.parent,
   permission: permission ?? this.permission,
   privacy: privacy ?? this.privacy,
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   slug: slug ?? this.slug,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestRequestedTeams &&
           deleted == other.deleted &&
@@ -112,4 +112,4 @@ PullRequestRequestedTeams copyWith({bool? Function()? deleted, String? Function(
 
 @override String toString() => 'PullRequestRequestedTeams(\n  deleted: $deleted,\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  parent: $parent,\n  permission: $permission,\n  privacy: $privacy,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n)';
 
- }
+}

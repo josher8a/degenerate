@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key/key_owner.dart';/// Represents an individual Admin API key in an org.
 @immutable final class Key {const Key({required this.object, required this.id, required this.name, required this.redactedValue, required this.createdAt, required this.lastUsedAt, required this.owner, this.value, });
 
-factory Key.fromJson(Map<String, dynamic> json) { return Key(
+factory Key.fromJson(Map<String, dynamic> json) {return Key(
   object: json['object'] as String,
   id: json['id'] as String,
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory Key.fromJson(Map<String, dynamic> json) { return Key(
   createdAt: (json['created_at'] as num).toInt(),
   lastUsedAt: json['last_used_at'] != null ? (json['last_used_at'] as num).toInt() : null,
   owner: KeyOwner.fromJson(json['owner'] as Map<String, dynamic>),
-); }
+);}
 
 /// The object type, which is always `organization.admin_api_key`
 /// 
@@ -50,7 +50,7 @@ final int? lastUsedAt;
 
 final KeyOwner owner;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object,
   'id': id,
   'name': name,
@@ -59,15 +59,15 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'last_used_at': lastUsedAt,
   'owner': owner.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('redacted_value') && json['redacted_value'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('last_used_at') && json['last_used_at'] is num &&
-      json.containsKey('owner'); } 
-Key copyWith({String? object, String? id, String? name, String? redactedValue, String? Function()? value, int? createdAt, int? Function()? lastUsedAt, KeyOwner? owner, }) { return Key(
+      json.containsKey('last_used_at') && (json['last_used_at'] == null || json['last_used_at'] is num) &&
+      json.containsKey('owner');}
+Key copyWith({String? object, String? id, String? name, String? redactedValue, String? Function()? value, int? createdAt, int? Function()? lastUsedAt, KeyOwner? owner, }) {return Key(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
@@ -76,7 +76,7 @@ Key copyWith({String? object, String? id, String? name, String? redactedValue, S
   createdAt: createdAt ?? this.createdAt,
   lastUsedAt: lastUsedAt != null ? lastUsedAt() : this.lastUsedAt,
   owner: owner ?? this.owner,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Key &&
           object == other.object &&
@@ -92,4 +92,4 @@ Key copyWith({String? object, String? id, String? name, String? redactedValue, S
 
 @override String toString() => 'Key(object: $object, id: $id, name: $name, redactedValue: $redactedValue, value: $value, createdAt: $createdAt, lastUsedAt: $lastUsedAt, owner: $owner)';
 
- }
+}

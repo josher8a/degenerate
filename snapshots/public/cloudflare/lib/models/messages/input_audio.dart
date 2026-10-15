@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InputAudioFormat {const InputAudioFormat();
 
-factory InputAudioFormat.fromJson(String json) { return switch (json) {
+factory InputAudioFormat.fromJson(String json) {return switch (json) {
   'wav' => wav,
   'mp3' => mp3,
   _ => InputAudioFormat$Unknown(json),
-}; }
+};}
 
 static const InputAudioFormat wav = InputAudioFormat$wav._();
 
@@ -16,30 +16,30 @@ static const InputAudioFormat mp3 = InputAudioFormat$mp3._();
 static const List<InputAudioFormat> values = [wav, mp3];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'wav' => 'wav',
   'mp3' => 'mp3',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InputAudioFormat$Unknown; } 
+bool get isUnknown {return this is InputAudioFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() wav, required W Function() mp3, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() wav, required W Function() mp3, required W Function(String value) $unknown, }) {return switch (this) {
       InputAudioFormat$wav() => wav(),
       InputAudioFormat$mp3() => mp3(),
       InputAudioFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W Function()? mp3, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W Function()? mp3, W Function(String value)? $unknown, }) {return switch (this) {
       InputAudioFormat$wav() => wav != null ? wav() : orElse(value),
       InputAudioFormat$mp3() => mp3 != null ? mp3() : orElse(value),
       InputAudioFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InputAudioFormat($value)';
 
- }
+}
 @immutable final class InputAudioFormat$wav extends InputAudioFormat {const InputAudioFormat$wav._();
 
 @override String get value => 'wav';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W F
 
 @override int get hashCode => 'wav'.hashCode;
 
- }
+}
 @immutable final class InputAudioFormat$mp3 extends InputAudioFormat {const InputAudioFormat$mp3._();
 
 @override String get value => 'mp3';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W F
 
 @override int get hashCode => 'mp3'.hashCode;
 
- }
+}
 @immutable final class InputAudioFormat$Unknown extends InputAudioFormat {const InputAudioFormat$Unknown(this.value);
 
 @override final String value;
@@ -67,27 +67,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class InputAudio {const InputAudio({this.data, this.format, });
 
-factory InputAudio.fromJson(Map<String, dynamic> json) { return InputAudio(
+factory InputAudio.fromJson(Map<String, dynamic> json) {return InputAudio(
   data: json['data'] as String?,
   format: json['format'] != null ? InputAudioFormat.fromJson(json['format'] as String) : null,
-); }
+);}
 
 final String? data;
 
 final InputAudioFormat? format;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': ?data,
   if (format != null) 'format': format?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'format'}.contains(key)); } 
-InputAudio copyWith({String? Function()? data, InputAudioFormat? Function()? format, }) { return InputAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'format'}.contains(key));}
+InputAudio copyWith({String? Function()? data, InputAudioFormat? Function()? format, }) {return InputAudio(
   data: data != null ? data() : this.data,
   format: format != null ? format() : this.format,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputAudio &&
           data == other.data &&
@@ -97,4 +97,4 @@ InputAudio copyWith({String? Function()? data, InputAudioFormat? Function()? for
 
 @override String toString() => 'InputAudio(data: $data, format: $format)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OnDemand {const OnDemand({this.advertised});
 
-factory OnDemand.fromJson(Map<String, dynamic> json) { return OnDemand(
+factory OnDemand.fromJson(Map<String, dynamic> json) {return OnDemand(
   advertised: json['advertised'] as bool?,
-); }
+);}
 
 final bool? advertised;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'advertised': ?advertised,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised'}.contains(key)); } 
-OnDemand copyWith({bool? Function()? advertised}) { return OnDemand(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'advertised'}.contains(key));}
+OnDemand copyWith({bool? Function()? advertised}) {return OnDemand(
   advertised: advertised != null ? advertised() : this.advertised,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OnDemand &&
           advertised == other.advertised;
@@ -24,4 +24,4 @@ OnDemand copyWith({bool? Function()? advertised}) { return OnDemand(
 
 @override String toString() => 'OnDemand(advertised: $advertised)';
 
- }
+}

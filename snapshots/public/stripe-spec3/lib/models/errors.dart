@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Errors
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/errors/errors_source.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/source.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/errors/errors_source.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
 sealed class ErrorsType {const ErrorsType();
 
-factory ErrorsType.fromJson(String json) { return switch (json) {
+factory ErrorsType.fromJson(String json) {return switch (json) {
   'api_error' => apiError,
   'card_error' => cardError,
   'idempotency_error' => idempotencyError,
   'invalid_request_error' => invalidRequestError,
   _ => ErrorsType$Unknown(json),
-}; }
+};}
 
 static const ErrorsType apiError = ErrorsType$apiError._();
 
@@ -23,36 +23,36 @@ static const ErrorsType invalidRequestError = ErrorsType$invalidRequestError._()
 static const List<ErrorsType> values = [apiError, cardError, idempotencyError, invalidRequestError];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'api_error' => 'apiError',
   'card_error' => 'cardError',
   'idempotency_error' => 'idempotencyError',
   'invalid_request_error' => 'invalidRequestError',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ErrorsType$Unknown; } 
+bool get isUnknown {return this is ErrorsType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() apiError, required W Function() cardError, required W Function() idempotencyError, required W Function() invalidRequestError, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() apiError, required W Function() cardError, required W Function() idempotencyError, required W Function() invalidRequestError, required W Function(String value) $unknown, }) {return switch (this) {
       ErrorsType$apiError() => apiError(),
       ErrorsType$cardError() => cardError(),
       ErrorsType$idempotencyError() => idempotencyError(),
       ErrorsType$invalidRequestError() => invalidRequestError(),
       ErrorsType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError, W Function()? cardError, W Function()? idempotencyError, W Function()? invalidRequestError, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError, W Function()? cardError, W Function()? idempotencyError, W Function()? invalidRequestError, W Function(String value)? $unknown, }) {return switch (this) {
       ErrorsType$apiError() => apiError != null ? apiError() : orElse(value),
       ErrorsType$cardError() => cardError != null ? cardError() : orElse(value),
       ErrorsType$idempotencyError() => idempotencyError != null ? idempotencyError() : orElse(value),
       ErrorsType$invalidRequestError() => invalidRequestError != null ? invalidRequestError() : orElse(value),
       ErrorsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ErrorsType($value)';
 
- }
+}
 @immutable final class ErrorsType$apiError extends ErrorsType {const ErrorsType$apiError._();
 
 @override String get value => 'api_error';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError
 
 @override int get hashCode => 'api_error'.hashCode;
 
- }
+}
 @immutable final class ErrorsType$cardError extends ErrorsType {const ErrorsType$cardError._();
 
 @override String get value => 'card_error';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError
 
 @override int get hashCode => 'card_error'.hashCode;
 
- }
+}
 @immutable final class ErrorsType$idempotencyError extends ErrorsType {const ErrorsType$idempotencyError._();
 
 @override String get value => 'idempotency_error';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError
 
 @override int get hashCode => 'idempotency_error'.hashCode;
 
- }
+}
 @immutable final class ErrorsType$invalidRequestError extends ErrorsType {const ErrorsType$invalidRequestError._();
 
 @override String get value => 'invalid_request_error';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError
 
 @override int get hashCode => 'invalid_request_error'.hashCode;
 
- }
+}
 @immutable final class ErrorsType$Unknown extends ErrorsType {const ErrorsType$Unknown(this.value);
 
 @override final String value;
@@ -98,11 +98,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class Errors {const Errors({required this.type, this.adviceCode, this.charge, this.code, this.declineCode, this.docUrl, this.message, this.networkAdviceCode, this.networkDeclineCode, this.param, this.paymentIntent, this.paymentMethod, this.paymentMethodType, this.requestLogUrl, this.setupIntent, this.source, });
 
-factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
+factory Errors.fromJson(Map<String, dynamic> json) {return Errors(
   adviceCode: json['advice_code'] as String?,
   charge: json['charge'] as String?,
   code: json['code'] as String?,
@@ -117,14 +117,9 @@ factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
   paymentMethodType: json['payment_method_type'] as String?,
   requestLogUrl: json['request_log_url'] as String?,
   setupIntent: json['setup_intent'] != null ? SetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>) : null,
-  source: json['source'] != null ? switch (json['source']) {
-  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf3<BankAccount, Card, Source>.a(BankAccount.fromJson(m)),
-  final Map<String, dynamic> m when m['object'] == 'card' => OneOf3<BankAccount, Card, Source>.b(Card.fromJson(m)),
-  final Map<String, dynamic> m when m['object'] == 'source' => OneOf3<BankAccount, Card, Source>.c(Source.fromJson(m)),
-  _ => OneOf3.parse(json['source'], fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),),
-} : null,
+  source: json['source'] != null ? ErrorsSource.fromJson(json['source']) : null,
   type: ErrorsType.fromJson(json['type'] as String),
-); }
+);}
 
 /// For card errors resulting from a card issuer decline, a short string indicating [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines) if they provide one.
 final String? adviceCode;
@@ -171,7 +166,7 @@ final ErrorsSource? source;
 /// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
 final ErrorsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'advice_code': ?adviceCode,
   'charge': ?charge,
   'code': ?code,
@@ -188,10 +183,10 @@ Map<String, dynamic> toJson() { return {
   if (setupIntent != null) 'setup_intent': setupIntent?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final adviceCode$ = adviceCode;
 if (adviceCode$ != null) {
   if (adviceCode$.runes.length > 5000) { errors.add('adviceCode: length must be <= 5000'); }
@@ -236,8 +231,8 @@ final requestLogUrl$ = requestLogUrl;
 if (requestLogUrl$ != null) {
   if (requestLogUrl$.runes.length > 5000) { errors.add('requestLogUrl: length must be <= 5000'); }
 }
-return errors; } 
-Errors copyWith({String? Function()? adviceCode, String? Function()? charge, String? Function()? code, String? Function()? declineCode, String? Function()? docUrl, String? Function()? message, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? param, PaymentIntent? Function()? paymentIntent, PaymentMethod? Function()? paymentMethod, String? Function()? paymentMethodType, String? Function()? requestLogUrl, SetupIntent? Function()? setupIntent, ErrorsSource? Function()? source, ErrorsType? type, }) { return Errors(
+return errors;}
+Errors copyWith({String? Function()? adviceCode, String? Function()? charge, String? Function()? code, String? Function()? declineCode, String? Function()? docUrl, String? Function()? message, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? param, PaymentIntent? Function()? paymentIntent, PaymentMethod? Function()? paymentMethod, String? Function()? paymentMethodType, String? Function()? requestLogUrl, SetupIntent? Function()? setupIntent, ErrorsSource? Function()? source, ErrorsType? type, }) {return Errors(
   adviceCode: adviceCode != null ? adviceCode() : this.adviceCode,
   charge: charge != null ? charge() : this.charge,
   code: code != null ? code() : this.code,
@@ -254,7 +249,7 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
   setupIntent: setupIntent != null ? setupIntent() : this.setupIntent,
   source: source != null ? source() : this.source,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Errors &&
           adviceCode == other.adviceCode &&
@@ -278,4 +273,4 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
 
 @override String toString() => 'Errors(\n  adviceCode: $adviceCode,\n  charge: $charge,\n  code: $code,\n  declineCode: $declineCode,\n  docUrl: $docUrl,\n  message: $message,\n  networkAdviceCode: $networkAdviceCode,\n  networkDeclineCode: $networkDeclineCode,\n  param: $param,\n  paymentIntent: $paymentIntent,\n  paymentMethod: $paymentMethod,\n  paymentMethodType: $paymentMethodType,\n  requestLogUrl: $requestLogUrl,\n  setupIntent: $setupIntent,\n  source: $source,\n  type: $type,\n)';
 
- }
+}

@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamOptionsVariant1 {const StreamOptionsVariant1({this.includeObfuscation, this.includeUsage, });
 
-factory StreamOptionsVariant1.fromJson(Map<String, dynamic> json) { return StreamOptionsVariant1(
+factory StreamOptionsVariant1.fromJson(Map<String, dynamic> json) {return StreamOptionsVariant1(
   includeObfuscation: json['include_obfuscation'] as bool?,
   includeUsage: json['include_usage'] as bool?,
-); }
+);}
 
 final bool? includeObfuscation;
 
 final bool? includeUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'include_obfuscation': ?includeObfuscation,
   'include_usage': ?includeUsage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include_obfuscation', 'include_usage'}.contains(key)); } 
-StreamOptionsVariant1 copyWith({bool? Function()? includeObfuscation, bool? Function()? includeUsage, }) { return StreamOptionsVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'include_obfuscation', 'include_usage'}.contains(key));}
+StreamOptionsVariant1 copyWith({bool? Function()? includeObfuscation, bool? Function()? includeUsage, }) {return StreamOptionsVariant1(
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
   includeUsage: includeUsage != null ? includeUsage() : this.includeUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamOptionsVariant1 &&
           includeObfuscation == other.includeObfuscation &&
@@ -30,4 +30,4 @@ StreamOptionsVariant1 copyWith({bool? Function()? includeObfuscation, bool? Func
 
 @override String toString() => 'StreamOptionsVariant1(includeObfuscation: $includeObfuscation, includeUsage: $includeUsage)';
 
- }
+}

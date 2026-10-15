@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_clipped_from_video_uid.dart';import 'package:pub_cloudflare/models/stream_creator.dart';import 'package:pub_cloudflare/models/stream_end_time_seconds.dart';import 'package:pub_cloudflare/models/stream_max_duration_seconds.dart';import 'package:pub_cloudflare/models/stream_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/stream_start_time_seconds.dart';import 'package:pub_cloudflare/models/stream_thumbnail_timestamp_pct.dart';import 'package:pub_cloudflare/models/stream_watermark_at_upload2.dart';@immutable final class StreamVideoClipStandard {const StreamVideoClipStandard({required this.clippedFromVideoUid, required this.endTimeSeconds, required this.startTimeSeconds, this.allowedOrigins, this.creator, this.maxDurationSeconds, this.requireSignedUrLs, this.thumbnailTimestampPct, this.watermark, });
 
-factory StreamVideoClipStandard.fromJson(Map<String, dynamic> json) { return StreamVideoClipStandard(
+factory StreamVideoClipStandard.fromJson(Map<String, dynamic> json) {return StreamVideoClipStandard(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   clippedFromVideoUid: StreamClippedFromVideoUid.fromJson(json['clippedFromVideoUID'] as String),
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
@@ -13,7 +13,7 @@ factory StreamVideoClipStandard.fromJson(Map<String, dynamic> json) { return Str
   startTimeSeconds: StreamStartTimeSeconds.fromJson(json['startTimeSeconds'] as num),
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   watermark: json['watermark'] != null ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
@@ -41,7 +41,7 @@ final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
 final StreamWatermarkAtUpload2? watermark;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowedOrigins': ?allowedOrigins,
   'clippedFromVideoUID': clippedFromVideoUid.toJson(),
   if (creator != null) 'creator': creator?.toJson(),
@@ -51,11 +51,11 @@ Map<String, dynamic> toJson() { return {
   'startTimeSeconds': startTimeSeconds.toJson(),
   if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
   if (watermark != null) 'watermark': watermark?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clippedFromVideoUID') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('clippedFromVideoUID') &&
       json.containsKey('endTimeSeconds') &&
-      json.containsKey('startTimeSeconds'); } 
-StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, StreamClippedFromVideoUid? clippedFromVideoUid, StreamCreator? Function()? creator, StreamEndTimeSeconds? endTimeSeconds, StreamMaxDurationSeconds? Function()? maxDurationSeconds, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamStartTimeSeconds? startTimeSeconds, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2? Function()? watermark, }) { return StreamVideoClipStandard(
+      json.containsKey('startTimeSeconds');}
+StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, StreamClippedFromVideoUid? clippedFromVideoUid, StreamCreator? Function()? creator, StreamEndTimeSeconds? endTimeSeconds, StreamMaxDurationSeconds? Function()? maxDurationSeconds, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamStartTimeSeconds? startTimeSeconds, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2? Function()? watermark, }) {return StreamVideoClipStandard(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   clippedFromVideoUid: clippedFromVideoUid ?? this.clippedFromVideoUid,
   creator: creator != null ? creator() : this.creator,
@@ -65,7 +65,7 @@ StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, Stre
   startTimeSeconds: startTimeSeconds ?? this.startTimeSeconds,
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   watermark: watermark != null ? watermark() : this.watermark,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideoClipStandard &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
@@ -82,4 +82,4 @@ StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, Stre
 
 @override String toString() => 'StreamVideoClipStandard(\n  allowedOrigins: $allowedOrigins,\n  clippedFromVideoUid: $clippedFromVideoUid,\n  creator: $creator,\n  endTimeSeconds: $endTimeSeconds,\n  maxDurationSeconds: $maxDurationSeconds,\n  requireSignedUrLs: $requireSignedUrLs,\n  startTimeSeconds: $startTimeSeconds,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  watermark: $watermark,\n)';
 
- }
+}

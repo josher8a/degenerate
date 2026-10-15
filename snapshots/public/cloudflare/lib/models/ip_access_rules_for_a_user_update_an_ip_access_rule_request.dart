@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_notes.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';@immutable final class IpAccessRulesForAUserUpdateAnIpAccessRuleRequest {const IpAccessRulesForAUserUpdateAnIpAccessRuleRequest({this.mode, this.notes, });
 
-factory IpAccessRulesForAUserUpdateAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(
+factory IpAccessRulesForAUserUpdateAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) {return IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(
   mode: json['mode'] != null ? FirewallSchemasMode.fromJson(json['mode'] as String) : null,
   notes: json['notes'] != null ? FirewallNotes.fromJson(json['notes'] as String) : null,
-); }
+);}
 
 /// The action to apply to a matched request.
 final FirewallSchemasMode? mode;
@@ -14,15 +14,15 @@ final FirewallSchemasMode? mode;
 /// An informative summary of the rule, typically used as a reminder or explanation.
 final FirewallNotes? notes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mode != null) 'mode': mode?.toJson(),
   if (notes != null) 'notes': notes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode', 'notes'}.contains(key)); } 
-IpAccessRulesForAUserUpdateAnIpAccessRuleRequest copyWith({FirewallSchemasMode? Function()? mode, FirewallNotes? Function()? notes, }) { return IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mode', 'notes'}.contains(key));}
+IpAccessRulesForAUserUpdateAnIpAccessRuleRequest copyWith({FirewallSchemasMode? Function()? mode, FirewallNotes? Function()? notes, }) {return IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(
   mode: mode != null ? mode() : this.mode,
   notes: notes != null ? notes() : this.notes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAccessRulesForAUserUpdateAnIpAccessRuleRequest &&
           mode == other.mode &&
@@ -32,4 +32,4 @@ IpAccessRulesForAUserUpdateAnIpAccessRuleRequest copyWith({FirewallSchemasMode? 
 
 @override String toString() => 'IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(mode: $mode, notes: $notes)';
 
- }
+}

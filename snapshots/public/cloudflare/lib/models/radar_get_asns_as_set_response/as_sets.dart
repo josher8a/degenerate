@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsSets {const AsSets({required this.asMembersCount, required this.asSetMembersCount, required this.asSetUpstreamsCount, required this.asnConeSize, required this.irrSources, required this.name, this.hierarchicalAsn, this.inferredAsn, this.peeringdbAsn, });
 
-factory AsSets.fromJson(Map<String, dynamic> json) { return AsSets(
+factory AsSets.fromJson(Map<String, dynamic> json) {return AsSets(
   asMembersCount: (json['as_members_count'] as num).toInt(),
   asSetMembersCount: (json['as_set_members_count'] as num).toInt(),
   asSetUpstreamsCount: (json['as_set_upstreams_count'] as num).toInt(),
@@ -13,7 +13,7 @@ factory AsSets.fromJson(Map<String, dynamic> json) { return AsSets(
   irrSources: (json['irr_sources'] as List<dynamic>).map((e) => e as String).toList(),
   name: json['name'] as String,
   peeringdbAsn: json['peeringdb_asn'] != null ? (json['peeringdb_asn'] as num).toInt() : null,
-); }
+);}
 
 /// The number of AS members in the AS-SET
 final int asMembersCount;
@@ -42,7 +42,7 @@ final String name;
 /// The AS number matching PeeringDB record
 final int? peeringdbAsn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'as_members_count': asMembersCount,
   'as_set_members_count': asSetMembersCount,
   'as_set_upstreams_count': asSetUpstreamsCount,
@@ -52,14 +52,14 @@ Map<String, dynamic> toJson() { return {
   'irr_sources': irrSources,
   'name': name,
   'peeringdb_asn': ?peeringdbAsn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_members_count') && json['as_members_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('as_members_count') && json['as_members_count'] is num &&
       json.containsKey('as_set_members_count') && json['as_set_members_count'] is num &&
       json.containsKey('as_set_upstreams_count') && json['as_set_upstreams_count'] is num &&
       json.containsKey('asn_cone_size') && json['asn_cone_size'] is num &&
       json.containsKey('irr_sources') &&
-      json.containsKey('name') && json['name'] is String; } 
-AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstreamsCount, int? asnConeSize, int? Function()? hierarchicalAsn, int? Function()? inferredAsn, List<String>? irrSources, String? name, int? Function()? peeringdbAsn, }) { return AsSets(
+      json.containsKey('name') && json['name'] is String;}
+AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstreamsCount, int? asnConeSize, int? Function()? hierarchicalAsn, int? Function()? inferredAsn, List<String>? irrSources, String? name, int? Function()? peeringdbAsn, }) {return AsSets(
   asMembersCount: asMembersCount ?? this.asMembersCount,
   asSetMembersCount: asSetMembersCount ?? this.asSetMembersCount,
   asSetUpstreamsCount: asSetUpstreamsCount ?? this.asSetUpstreamsCount,
@@ -69,7 +69,7 @@ AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstream
   irrSources: irrSources ?? this.irrSources,
   name: name ?? this.name,
   peeringdbAsn: peeringdbAsn != null ? peeringdbAsn() : this.peeringdbAsn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AsSets &&
           asMembersCount == other.asMembersCount &&
@@ -86,4 +86,4 @@ AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstream
 
 @override String toString() => 'AsSets(\n  asMembersCount: $asMembersCount,\n  asSetMembersCount: $asSetMembersCount,\n  asSetUpstreamsCount: $asSetUpstreamsCount,\n  asnConeSize: $asnConeSize,\n  hierarchicalAsn: $hierarchicalAsn,\n  inferredAsn: $inferredAsn,\n  irrSources: $irrSources,\n  name: $name,\n  peeringdbAsn: $peeringdbAsn,\n)';
 
- }
+}

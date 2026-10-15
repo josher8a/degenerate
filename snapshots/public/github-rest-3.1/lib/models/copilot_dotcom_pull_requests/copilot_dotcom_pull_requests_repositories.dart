@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_dotcom_pull_requests/repositories_models.dart';@immutable final class CopilotDotcomPullRequestsRepositories {const CopilotDotcomPullRequestsRepositories({this.name, this.totalEngagedUsers, this.models, });
 
-factory CopilotDotcomPullRequestsRepositories.fromJson(Map<String, dynamic> json) { return CopilotDotcomPullRequestsRepositories(
+factory CopilotDotcomPullRequestsRepositories.fromJson(Map<String, dynamic> json) {return CopilotDotcomPullRequestsRepositories(
   name: json['name'] as String?,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   models: (json['models'] as List<dynamic>?)?.map((e) => RepositoriesModels.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Repository name
 final String? name;
@@ -18,17 +18,17 @@ final int? totalEngagedUsers;
 /// List of model metrics for custom models and the default model.
 final List<RepositoriesModels>? models;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'total_engaged_users': ?totalEngagedUsers,
   if (models != null) 'models': models?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users', 'models'}.contains(key)); } 
-CopilotDotcomPullRequestsRepositories copyWith({String? Function()? name, int? Function()? totalEngagedUsers, List<RepositoriesModels>? Function()? models, }) { return CopilotDotcomPullRequestsRepositories(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'total_engaged_users', 'models'}.contains(key));}
+CopilotDotcomPullRequestsRepositories copyWith({String? Function()? name, int? Function()? totalEngagedUsers, List<RepositoriesModels>? Function()? models, }) {return CopilotDotcomPullRequestsRepositories(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   models: models != null ? models() : this.models,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotDotcomPullRequestsRepositories &&
           name == other.name &&
@@ -39,4 +39,4 @@ CopilotDotcomPullRequestsRepositories copyWith({String? Function()? name, int? F
 
 @override String toString() => 'CopilotDotcomPullRequestsRepositories(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models)';
 
- }
+}

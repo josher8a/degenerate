@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to select time series resolution.
 sealed class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta();
 
-factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json) { return switch (json) {
+factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json) {return switch (json) {
   'year' => year,
   'quarter' => quarter,
   'month' => month,
@@ -14,7 +14,7 @@ factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json)
   'dekaminute' => dekaminute,
   'minute' => minute,
   _ => SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(json),
-}; }
+};}
 
 static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta year = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year._();
 
@@ -35,9 +35,9 @@ static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta minute = Spectru
 static const List<SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta> values = [year, quarter, month, week, day, hour, dekaminute, minute];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'year' => 'year',
   'quarter' => 'quarter',
   'month' => 'month',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'dekaminute' => 'dekaminute',
   'minute' => 'minute',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown; } 
+bool get isUnknown {return this is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() year, required W Function() quarter, required W Function() month, required W Function() week, required W Function() day, required W Function() hour, required W Function() dekaminute, required W Function() minute, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() year, required W Function() quarter, required W Function() month, required W Function() week, required W Function() day, required W Function() hour, required W Function() dekaminute, required W Function() minute, required W Function(String value) $unknown, }) {return switch (this) {
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year() => year(),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter() => quarter(),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month() => month(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() year, required W Function() quarter, required W
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute() => dekaminute(),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute() => minute(),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W Function()? quarter, W Function()? month, W Function()? week, W Function()? day, W Function()? hour, W Function()? dekaminute, W Function()? minute, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W Function()? quarter, W Function()? month, W Function()? week, W Function()? day, W Function()? hour, W Function()? dekaminute, W Function()? minute, W Function(String value)? $unknown, }) {return switch (this) {
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year() => year != null ? year() : orElse(value),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter() => quarter != null ? quarter() : orElse(value),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month() => month != null ? month() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute() => dekaminute != null ? dekaminute() : orElse(value),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute() => minute != null ? minute() : orElse(value),
       SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta($value)';
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year._();
 
 @override String get value => 'year';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'year'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter._();
 
 @override String get value => 'quarter';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'quarter'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month._();
 
 @override String get value => 'month';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'month'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week._();
 
 @override String get value => 'week';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'week'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day._();
 
 @override String get value => 'day';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'day'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour._();
 
 @override String get value => 'hour';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'hour'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute._();
 
 @override String get value => 'dekaminute';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'dekaminute'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute._();
 
 @override String get value => 'minute';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => 'minute'.hashCode;
 
- }
+}
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

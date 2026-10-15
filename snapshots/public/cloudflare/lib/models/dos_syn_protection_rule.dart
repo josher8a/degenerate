@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosSynProtectionRule {const DosSynProtectionRule({required this.burstSensitivity, required this.createdOn, required this.id, required this.mitigationType, required this.mode, required this.modifiedOn, required this.name, required this.rateSensitivity, required this.scope, });
 
-factory DosSynProtectionRule.fromJson(Map<String, dynamic> json) { return DosSynProtectionRule(
+factory DosSynProtectionRule.fromJson(Map<String, dynamic> json) {return DosSynProtectionRule(
   burstSensitivity: json['burst_sensitivity'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,
@@ -13,7 +13,7 @@ factory DosSynProtectionRule.fromJson(Map<String, dynamic> json) { return DosSyn
   name: json['name'] as String,
   rateSensitivity: json['rate_sensitivity'] as String,
   scope: json['scope'] as String,
-); }
+);}
 
 /// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 final String burstSensitivity;
@@ -42,7 +42,7 @@ final String rateSensitivity;
 /// The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
 final String scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'burst_sensitivity': burstSensitivity,
   'created_on': createdOn.toIso8601String(),
   'id': id,
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'rate_sensitivity': rateSensitivity,
   'scope': scope,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('burst_sensitivity') && json['burst_sensitivity'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('burst_sensitivity') && json['burst_sensitivity'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('mitigation_type') && json['mitigation_type'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('burst
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('rate_sensitivity') && json['rate_sensitivity'] is String &&
-      json.containsKey('scope') && json['scope'] is String; } 
-DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, String? id, String? mitigationType, String? mode, DateTime? modifiedOn, String? name, String? rateSensitivity, String? scope, }) { return DosSynProtectionRule(
+      json.containsKey('scope') && json['scope'] is String;}
+DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, String? id, String? mitigationType, String? mode, DateTime? modifiedOn, String? name, String? rateSensitivity, String? scope, }) {return DosSynProtectionRule(
   burstSensitivity: burstSensitivity ?? this.burstSensitivity,
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
@@ -72,7 +72,7 @@ DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
   name: name ?? this.name,
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DosSynProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
@@ -89,4 +89,4 @@ DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
 
 @override String toString() => 'DosSynProtectionRule(\n  burstSensitivity: $burstSensitivity,\n  createdOn: $createdOn,\n  id: $id,\n  mitigationType: $mitigationType,\n  mode: $mode,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  rateSensitivity: $rateSensitivity,\n  scope: $scope,\n)';
 
- }
+}

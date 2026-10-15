@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Hypermedia Link with Type
 @immutable final class LinkWithType {const LinkWithType({required this.href, required this.type, });
 
-factory LinkWithType.fromJson(Map<String, dynamic> json) { return LinkWithType(
+factory LinkWithType.fromJson(Map<String, dynamic> json) {return LinkWithType(
   href: json['href'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final String href;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-LinkWithType copyWith({String? href, String? type, }) { return LinkWithType(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+LinkWithType copyWith({String? href, String? type, }) {return LinkWithType(
   href: href ?? this.href,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LinkWithType &&
           href == other.href &&
@@ -32,4 +32,4 @@ LinkWithType copyWith({String? href, String? type, }) { return LinkWithType(
 
 @override String toString() => 'LinkWithType(href: $href, type: $type)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify which account types can create policies for this category. `blocked` Blocks unconditionally for all accounts. `removalPending` Allows removal from policies but disables addition. `noBlock` Prevents blocking.
 sealed class ZeroTrustGatewayClass {const ZeroTrustGatewayClass();
 
-factory ZeroTrustGatewayClass.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayClass.fromJson(String json) {return switch (json) {
   'free' => free,
   'premium' => premium,
   'blocked' => blocked,
   'removalPending' => removalPending,
   'noBlock' => noBlock,
   _ => ZeroTrustGatewayClass$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustGatewayClass free = ZeroTrustGatewayClass$free._();
 
@@ -26,39 +26,39 @@ static const ZeroTrustGatewayClass noBlock = ZeroTrustGatewayClass$noBlock._();
 static const List<ZeroTrustGatewayClass> values = [free, premium, blocked, removalPending, noBlock];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'free' => 'free',
   'premium' => 'premium',
   'blocked' => 'blocked',
   'removalPending' => 'removalPending',
   'noBlock' => 'noBlock',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayClass$Unknown; } 
+bool get isUnknown {return this is ZeroTrustGatewayClass$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() free, required W Function() premium, required W Function() blocked, required W Function() removalPending, required W Function() noBlock, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() free, required W Function() premium, required W Function() blocked, required W Function() removalPending, required W Function() noBlock, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustGatewayClass$free() => free(),
       ZeroTrustGatewayClass$premium() => premium(),
       ZeroTrustGatewayClass$blocked() => blocked(),
       ZeroTrustGatewayClass$removalPending() => removalPending(),
       ZeroTrustGatewayClass$noBlock() => noBlock(),
       ZeroTrustGatewayClass$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function()? premium, W Function()? blocked, W Function()? removalPending, W Function()? noBlock, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function()? premium, W Function()? blocked, W Function()? removalPending, W Function()? noBlock, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustGatewayClass$free() => free != null ? free() : orElse(value),
       ZeroTrustGatewayClass$premium() => premium != null ? premium() : orElse(value),
       ZeroTrustGatewayClass$blocked() => blocked != null ? blocked() : orElse(value),
       ZeroTrustGatewayClass$removalPending() => removalPending != null ? removalPending() : orElse(value),
       ZeroTrustGatewayClass$noBlock() => noBlock != null ? noBlock() : orElse(value),
       ZeroTrustGatewayClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustGatewayClass($value)';
 
- }
+}
 @immutable final class ZeroTrustGatewayClass$free extends ZeroTrustGatewayClass {const ZeroTrustGatewayClass$free._();
 
 @override String get value => 'free';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => 'free'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayClass$premium extends ZeroTrustGatewayClass {const ZeroTrustGatewayClass$premium._();
 
 @override String get value => 'premium';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => 'premium'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayClass$blocked extends ZeroTrustGatewayClass {const ZeroTrustGatewayClass$blocked._();
 
 @override String get value => 'blocked';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => 'blocked'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayClass$removalPending extends ZeroTrustGatewayClass {const ZeroTrustGatewayClass$removalPending._();
 
 @override String get value => 'removalPending';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => 'removalPending'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayClass$noBlock extends ZeroTrustGatewayClass {const ZeroTrustGatewayClass$noBlock._();
 
 @override String get value => 'noBlock';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => 'noBlock'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayClass$Unknown extends ZeroTrustGatewayClass {const ZeroTrustGatewayClass$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

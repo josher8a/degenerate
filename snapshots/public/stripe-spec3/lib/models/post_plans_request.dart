@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPlansRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/usage_type.dart';import 'package:pub_stripe_spec3/models/inline_product_params.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_product.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_transform_usage.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';@immutable final class PostPlansRequest {const PostPlansRequest({required this.currency, required this.interval, this.active, this.amount, this.amountDecimal, this.billingScheme, this.expand, this.id, this.intervalCount, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, this.usageType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/usage_type.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_product.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_transform_usage.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';@immutable final class PostPlansRequest {const PostPlansRequest({required this.currency, required this.interval, this.active, this.amount, this.amountDecimal, this.billingScheme, this.expand, this.id, this.intervalCount, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, this.usageType, });
 
-factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansRequest(
+factory PostPlansRequest.fromJson(Map<String, dynamic> json) {return PostPlansRequest(
   active: json['active'] as bool?,
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountDecimal: json['amount_decimal'] as String?,
@@ -13,16 +13,16 @@ factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansR
   id: json['id'] as String?,
   interval: GetPricesRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
-  product: json['product'] != null ? OneOf2.parse(json['product'], fromA: (v) => InlineProductParams.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  product: json['product'] != null ? PostPlansRequestProduct.fromJson(json['product']) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => Tiers.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PostPlansRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transformUsage: json['transform_usage'] != null ? PostPlansRequestTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   usageType: json['usage_type'] != null ? UsageType.fromJson(json['usage_type'] as String) : null,
-); }
+);}
 
 /// Whether the plan is currently available for new subscriptions. Defaults to `true`.
 final bool? active;
@@ -77,7 +77,7 @@ final int? trialPeriodDays;
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 final UsageType? usageType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'amount': ?amount,
   'amount_decimal': ?amountDecimal,
@@ -96,11 +96,11 @@ Map<String, dynamic> toJson() { return {
   if (transformUsage != null) 'transform_usage': transformUsage?.toJson(),
   'trial_period_days': ?trialPeriodDays,
   if (usageType != null) 'usage_type': usageType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('interval'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('interval');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
   if (id$.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
@@ -113,8 +113,8 @@ final nickname$ = nickname;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? Function()? billingScheme, String? currency, List<String>? Function()? expand, String? Function()? id, GetPricesRecurringInterval? interval, int? Function()? intervalCount, Metadata? Function()? metadata, String? Function()? meter, String? Function()? nickname, PostPlansRequestProduct? Function()? product, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, PostPlansRequestTransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? Function()? usageType, }) { return PostPlansRequest(
+return errors;}
+PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? Function()? billingScheme, String? currency, List<String>? Function()? expand, String? Function()? id, GetPricesRecurringInterval? interval, int? Function()? intervalCount, Metadata? Function()? metadata, String? Function()? meter, String? Function()? nickname, PostPlansRequestProduct? Function()? product, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, PostPlansRequestTransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? Function()? usageType, }) {return PostPlansRequest(
   active: active != null ? active() : this.active,
   amount: amount != null ? amount() : this.amount,
   amountDecimal: amountDecimal != null ? amountDecimal() : this.amountDecimal,
@@ -133,7 +133,7 @@ PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, St
   transformUsage: transformUsage != null ? transformUsage() : this.transformUsage,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   usageType: usageType != null ? usageType() : this.usageType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPlansRequest &&
           active == other.active &&
@@ -159,4 +159,4 @@ PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, St
 
 @override String toString() => 'PostPlansRequest(\n  active: $active,\n  amount: $amount,\n  amountDecimal: $amountDecimal,\n  billingScheme: $billingScheme,\n  currency: $currency,\n  expand: $expand,\n  id: $id,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  metadata: $metadata,\n  meter: $meter,\n  nickname: $nickname,\n  product: $product,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformUsage: $transformUsage,\n  trialPeriodDays: $trialPeriodDays,\n  usageType: $usageType,\n)';
 
- }
+}

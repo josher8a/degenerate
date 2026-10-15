@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse (inline: Hops > Location)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HopsLocation {const HopsLocation({this.city, this.state, this.zip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HopsLocation {const HopsLocation({this.city = const Omittable.absent(), this.state = const Omittable.absent(), this.zip = const Omittable.absent(), });
 
-factory HopsLocation.fromJson(Map<String, dynamic> json) { return HopsLocation(
-  city: json['city'] as String?,
-  state: json['state'] as String?,
-  zip: json['zip'] as String?,
-); }
+factory HopsLocation.fromJson(Map<String, dynamic> json) {return HopsLocation(
+  city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
+  zip: json.containsKey('zip') ? Omittable(json['zip'] as String?) : const Omittable.absent(),
+);}
 
-final String? city;
+final Omittable<String?> city;
 
-final String? state;
+final Omittable<String?> state;
 
-final String? zip;
+final Omittable<String?> zip;
 
-Map<String, dynamic> toJson() { return {
-  'city': ?city,
-  'state': ?state,
-  'zip': ?zip,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'state', 'zip'}.contains(key)); } 
-HopsLocation copyWith({String? Function()? city, String? Function()? state, String? Function()? zip, }) { return HopsLocation(
-  city: city != null ? city() : this.city,
-  state: state != null ? state() : this.state,
-  zip: zip != null ? zip() : this.zip,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (city.isPresent) 'city': city.value,
+  if (state.isPresent) 'state': state.value,
+  if (zip.isPresent) 'zip': zip.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'state', 'zip'}.contains(key));}
+HopsLocation copyWith({Omittable<String?>? city, Omittable<String?>? state, Omittable<String?>? zip, }) {return HopsLocation(
+  city: city ?? this.city,
+  state: state ?? this.state,
+  zip: zip ?? this.zip,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HopsLocation &&
           city == other.city &&
@@ -36,4 +36,4 @@ HopsLocation copyWith({String? Function()? city, String? Function()? state, Stri
 
 @override String toString() => 'HopsLocation(city: $city, state: $state, zip: $zip)';
 
- }
+}

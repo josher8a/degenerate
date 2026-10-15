@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/requests_request_headers.dart';@immutable final class RequestsRequestsRequest {const RequestsRequestsRequest({required this.headers, required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, });
 
-factory RequestsRequestsRequest.fromJson(Map<String, dynamic> json) { return RequestsRequestsRequest(
+factory RequestsRequestsRequest.fromJson(Map<String, dynamic> json) {return RequestsRequestsRequest(
   headers: RequestsRequestHeaders.fromJson(json['headers'] as Map<String, dynamic>),
   initialPriority: json['initialPriority'] as String,
   isSameSite: json['isSameSite'] as bool,
@@ -11,7 +11,7 @@ factory RequestsRequestsRequest.fromJson(Map<String, dynamic> json) { return Req
   mixedContentType: json['mixedContentType'] as String,
   referrerPolicy: json['referrerPolicy'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final RequestsRequestHeaders headers;
 
@@ -27,7 +27,7 @@ final String referrerPolicy;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'headers': headers.toJson(),
   'initialPriority': initialPriority,
   'isSameSite': isSameSite,
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'mixedContentType': mixedContentType,
   'referrerPolicy': referrerPolicy,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('headers') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('headers') &&
       json.containsKey('initialPriority') && json['initialPriority'] is String &&
       json.containsKey('isSameSite') && json['isSameSite'] is bool &&
       json.containsKey('method') && json['method'] is String &&
       json.containsKey('mixedContentType') && json['mixedContentType'] is String &&
       json.containsKey('referrerPolicy') && json['referrerPolicy'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RequestsRequestsRequest copyWith({RequestsRequestHeaders? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) { return RequestsRequestsRequest(
+      json.containsKey('url') && json['url'] is String;}
+RequestsRequestsRequest copyWith({RequestsRequestHeaders? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) {return RequestsRequestsRequest(
   headers: headers ?? this.headers,
   initialPriority: initialPriority ?? this.initialPriority,
   isSameSite: isSameSite ?? this.isSameSite,
@@ -51,7 +51,7 @@ RequestsRequestsRequest copyWith({RequestsRequestHeaders? headers, String? initi
   mixedContentType: mixedContentType ?? this.mixedContentType,
   referrerPolicy: referrerPolicy ?? this.referrerPolicy,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestsRequestsRequest &&
           headers == other.headers &&
@@ -66,4 +66,4 @@ RequestsRequestsRequest copyWith({RequestsRequestHeaders? headers, String? initi
 
 @override String toString() => 'RequestsRequestsRequest(headers: $headers, initialPriority: $initialPriority, isSameSite: $isSameSite, method: $method, mixedContentType: $mixedContentType, referrerPolicy: $referrerPolicy, url: $url)';
 
- }
+}

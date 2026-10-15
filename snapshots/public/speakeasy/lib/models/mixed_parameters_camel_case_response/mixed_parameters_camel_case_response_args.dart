@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MixedParametersCamelCaseResponseArgs {const MixedParametersCamelCaseResponseArgs({required this.queryStringParam});
 
-factory MixedParametersCamelCaseResponseArgs.fromJson(Map<String, dynamic> json) { return MixedParametersCamelCaseResponseArgs(
+factory MixedParametersCamelCaseResponseArgs.fromJson(Map<String, dynamic> json) {return MixedParametersCamelCaseResponseArgs(
   queryStringParam: json['query_string_param'] as String,
-); }
+);}
 
 /// Example: `'queryValue'`
 final String queryStringParam;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'query_string_param': queryStringParam,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('query_string_param') && json['query_string_param'] is String; } 
-MixedParametersCamelCaseResponseArgs copyWith({String? queryStringParam}) { return MixedParametersCamelCaseResponseArgs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('query_string_param') && json['query_string_param'] is String;}
+MixedParametersCamelCaseResponseArgs copyWith({String? queryStringParam}) {return MixedParametersCamelCaseResponseArgs(
   queryStringParam: queryStringParam ?? this.queryStringParam,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MixedParametersCamelCaseResponseArgs &&
           queryStringParam == other.queryStringParam;
@@ -25,4 +25,4 @@ MixedParametersCamelCaseResponseArgs copyWith({String? queryStringParam}) { retu
 
 @override String toString() => 'MixedParametersCamelCaseResponseArgs(queryStringParam: $queryStringParam)';
 
- }
+}

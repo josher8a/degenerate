@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A topic aggregates entities that are related to a subject.
 @immutable final class Topic {const Topic({required this.names});
 
-factory Topic.fromJson(Map<String, dynamic> json) { return Topic(
+factory Topic.fromJson(Map<String, dynamic> json) {return Topic(
   names: (json['names'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> names;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'names': names,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('names'); } 
-Topic copyWith({List<String>? names}) { return Topic(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('names');}
+Topic copyWith({List<String>? names}) {return Topic(
   names: names ?? this.names,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Topic &&
           listEquals(names, other.names);
@@ -25,4 +25,4 @@ Topic copyWith({List<String>? names}) { return Topic(
 
 @override String toString() => 'Topic(names: $names)';
 
- }
+}

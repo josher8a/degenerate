@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_scrape_response/attributes.dart';@immutable final class BrapiPostScrapeResponseResultResults {const BrapiPostScrapeResponseResultResults({required this.attributes, required this.height, required this.html, required this.left, required this.text, required this.top, required this.width, });
 
-factory BrapiPostScrapeResponseResultResults.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeResponseResultResults(
+factory BrapiPostScrapeResponseResultResults.fromJson(Map<String, dynamic> json) {return BrapiPostScrapeResponseResultResults(
   attributes: (json['attributes'] as List<dynamic>).map((e) => Attributes.fromJson(e as Map<String, dynamic>)).toList(),
   height: (json['height'] as num).toDouble(),
   html: json['html'] as String,
@@ -11,7 +11,7 @@ factory BrapiPostScrapeResponseResultResults.fromJson(Map<String, dynamic> json)
   text: json['text'] as String,
   top: (json['top'] as num).toDouble(),
   width: (json['width'] as num).toDouble(),
-); }
+);}
 
 final List<Attributes> attributes;
 
@@ -33,7 +33,7 @@ final double top;
 /// Element width
 final double width;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attributes': attributes.map((e) => e.toJson()).toList(),
   'height': height,
   'html': html,
@@ -41,15 +41,15 @@ Map<String, dynamic> toJson() { return {
   'text': text,
   'top': top,
   'width': width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('attributes') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('attributes') &&
       json.containsKey('height') && json['height'] is num &&
       json.containsKey('html') && json['html'] is String &&
       json.containsKey('left') && json['left'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('top') && json['top'] is num &&
-      json.containsKey('width') && json['width'] is num; } 
-BrapiPostScrapeResponseResultResults copyWith({List<Attributes>? attributes, double? height, String? html, double? left, String? text, double? top, double? width, }) { return BrapiPostScrapeResponseResultResults(
+      json.containsKey('width') && json['width'] is num;}
+BrapiPostScrapeResponseResultResults copyWith({List<Attributes>? attributes, double? height, String? html, double? left, String? text, double? top, double? width, }) {return BrapiPostScrapeResponseResultResults(
   attributes: attributes ?? this.attributes,
   height: height ?? this.height,
   html: html ?? this.html,
@@ -57,7 +57,7 @@ BrapiPostScrapeResponseResultResults copyWith({List<Attributes>? attributes, dou
   text: text ?? this.text,
   top: top ?? this.top,
   width: width ?? this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostScrapeResponseResultResults &&
           listEquals(attributes, other.attributes) &&
@@ -72,4 +72,4 @@ BrapiPostScrapeResponseResultResults copyWith({List<Attributes>? attributes, dou
 
 @override String toString() => 'BrapiPostScrapeResponseResultResults(attributes: $attributes, height: $height, html: $html, left: $left, text: $text, top: $top, width: $width)';
 
- }
+}

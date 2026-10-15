@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_failure.dart';sealed class R2GetEventNotificationConfigError {const R2GetEventNotificationConfigError();
 
-factory R2GetEventNotificationConfigError.fromResponse(ApiResponse response) {     try {
+factory R2GetEventNotificationConfigError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         404 => R2GetEventNotificationConfigError$404(ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ when response.statusCode >= 400 && response.statusCode <= 499 => R2GetEventNotificationConfigError$4XX(ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
@@ -10,12 +10,12 @@ factory R2GetEventNotificationConfigError.fromResponse(ApiResponse response) {  
       };
     } on Object {
       return R2GetEventNotificationConfigError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class R2GetEventNotificationConfigError$404 extends R2GetEventNotificationConfigError {const R2GetEventNotificationConfigError$404(this.error);
 
 final ResponseFailure error;
@@ -24,7 +24,7 @@ final ResponseFailure error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class R2GetEventNotificationConfigError$4XX extends R2GetEventNotificationConfigError {const R2GetEventNotificationConfigError$4XX(this.error, this.statusCode, );
 
 final ResponseFailure error;
@@ -33,12 +33,12 @@ final ResponseFailure error;
 
 @override Object get typedError => error;
 
- }
+}
 final class R2GetEventNotificationConfigError$Unknown extends R2GetEventNotificationConfigError {const R2GetEventNotificationConfigError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef R2GetEventNotificationConfigsError = R2GetEventNotificationConfigError;

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindAnalyticsEngine {const WorkersBindingKindAnalyticsEngine({required this.dataset, required this.name, required this.type, });
 
-factory WorkersBindingKindAnalyticsEngine.fromJson(Map<String, dynamic> json) { return WorkersBindingKindAnalyticsEngine(
+factory WorkersBindingKindAnalyticsEngine.fromJson(Map<String, dynamic> json) {return WorkersBindingKindAnalyticsEngine(
   dataset: json['dataset'] as String,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
-); }
+);}
 
 /// The name of the dataset to bind to.
 /// 
@@ -19,19 +19,19 @@ final WorkersBindingName name;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataset': dataset,
   'name': name.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataset') && json['dataset'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataset') && json['dataset'] is String &&
       json.containsKey('name') &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindAnalyticsEngine copyWith({String? dataset, WorkersBindingName? name, String? type, }) { return WorkersBindingKindAnalyticsEngine(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindAnalyticsEngine copyWith({String? dataset, WorkersBindingName? name, String? type, }) {return WorkersBindingKindAnalyticsEngine(
   dataset: dataset ?? this.dataset,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindAnalyticsEngine &&
           dataset == other.dataset &&
@@ -42,4 +42,4 @@ WorkersBindingKindAnalyticsEngine copyWith({String? dataset, WorkersBindingName?
 
 @override String toString() => 'WorkersBindingKindAnalyticsEngine(dataset: $dataset, name: $name, type: $type)';
 
- }
+}

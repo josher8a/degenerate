@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrgsUpdateWebhookRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_request/orgs_update_webhook_request_config.dart';@immutable final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active = true, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_request/orgs_update_webhook_request_config.dart';@immutable final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active, this.name, });
 
-factory OrgsUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateWebhookRequest(
+factory OrgsUpdateWebhookRequest.fromJson(Map<String, dynamic> json) {return OrgsUpdateWebhookRequest(
   config: json['config'] != null ? OrgsUpdateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  active: json.containsKey('active') ? json['active'] as bool : true,
+  active: json['active'] as bool?,
   name: json['name'] as String?,
-); }
+);}
 
 /// Key/value pairs to provide settings for this webhook.
 final OrgsUpdateWebhookRequestConfig? config;
@@ -17,23 +17,26 @@ final OrgsUpdateWebhookRequestConfig? config;
 final List<String>? events;
 
 /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-final bool active;
+final bool? active;
 
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `active`, or its schema default when absent.
+bool get activeOrDefault => active ?? true;
+
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   'events': ?events,
-  'active': active,
+  'active': ?active,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'events', 'active', 'name'}.contains(key)); } 
-OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig? Function()? config, List<String>? Function()? events, bool Function()? active, String? Function()? name, }) { return OrgsUpdateWebhookRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'config', 'events', 'active', 'name'}.contains(key));}
+OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig? Function()? config, List<String>? Function()? events, bool? Function()? active, String? Function()? name, }) {return OrgsUpdateWebhookRequest(
   config: config != null ? config() : this.config,
   events: events != null ? events() : this.events,
   active: active != null ? active() : this.active,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsUpdateWebhookRequest &&
           config == other.config &&
@@ -45,4 +48,4 @@ OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig? Function()? c
 
 @override String toString() => 'OrgsUpdateWebhookRequest(config: $config, events: $events, active: $active, name: $name)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetDuplicateExportCollisionResponse {const GetDuplicateExportCollisionResponse({this.result});
 
-factory GetDuplicateExportCollisionResponse.fromJson(Map<String, dynamic> json) { return GetDuplicateExportCollisionResponse(
+factory GetDuplicateExportCollisionResponse.fromJson(Map<String, dynamic> json) {return GetDuplicateExportCollisionResponse(
   result: json['result'] as String?,
-); }
+);}
 
 final String? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': ?result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-GetDuplicateExportCollisionResponse copyWith({String? Function()? result}) { return GetDuplicateExportCollisionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'result'}.contains(key));}
+GetDuplicateExportCollisionResponse copyWith({String? Function()? result}) {return GetDuplicateExportCollisionResponse(
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetDuplicateExportCollisionResponse &&
           result == other.result;
@@ -24,4 +24,4 @@ GetDuplicateExportCollisionResponse copyWith({String? Function()? result}) { ret
 
 @override String toString() => 'GetDuplicateExportCollisionResponse(result: $result)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_code_scanning.dart';import 'package:pub_github_rest_3_1/models/repository_rule_commit_author_email_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_commit_message_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_committer_email_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_copilot_code_review.dart';import 'package:pub_github_rest_3_1/models/repository_rule_creation.dart';import 'package:pub_github_rest_3_1/models/repository_rule_deletion.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_extension_restriction.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_path_length.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_size.dart';import 'package:pub_github_rest_3_1/models/repository_rule_merge_queue.dart';import 'package:pub_github_rest_3_1/models/repository_rule_non_fast_forward.dart';import 'package:pub_github_rest_3_1/models/repository_rule_pull_request.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_deployments.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_linear_history.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_signatures.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_status_checks.dart';import 'package:pub_github_rest_3_1/models/repository_rule_tag_name_pattern.dart';import 'package:pub_github_rest_3_1/models/repository_rule_update.dart';import 'package:pub_github_rest_3_1/models/repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleMergeQueue`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
 sealed class RepositoryRule {const RepositoryRule();
 
-factory RepositoryRule.fromJson(Object? json) {   if (json is Map<String, dynamic> && RepositoryRuleCreation.canParse(json)) {
+factory RepositoryRule.fromJson(Object? json) {  if (json is Map<String, dynamic> && RepositoryRuleCreation.canParse(json)) {
     return RepositoryRuleRepositoryRuleCreation(RepositoryRuleCreation.fromJson(json));
   }
   if (json is Map<String, dynamic> && RepositoryRuleUpdate.canParse(json)) {
@@ -70,19 +70,19 @@ factory RepositoryRule.fromJson(Object? json) {   if (json is Map<String, dynami
   if (json is Map<String, dynamic> && RepositoryRuleCopilotCodeReview.canParse(json)) {
     return RepositoryRuleRepositoryRuleCopilotCodeReview(RepositoryRuleCopilotCodeReview.fromJson(json));
   }
-  return RepositoryRule$Unknown(json); }
+  return RepositoryRule$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class RepositoryRuleRepositoryRuleCreation extends RepositoryRule {const RepositoryRuleRepositoryRuleCreation(this._value);
 
 final RepositoryRuleCreation _value;
 
 @override RepositoryRuleCreation get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleCreation && _value == other._value;
 
@@ -90,14 +90,14 @@ final RepositoryRuleCreation _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleCreation($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleUpdate extends RepositoryRule {const RepositoryRuleRepositoryRuleUpdate(this._value);
 
 final RepositoryRuleUpdate _value;
 
 @override RepositoryRuleUpdate get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleUpdate && _value == other._value;
 
@@ -105,14 +105,14 @@ final RepositoryRuleUpdate _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleUpdate($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleDeletion extends RepositoryRule {const RepositoryRuleRepositoryRuleDeletion(this._value);
 
 final RepositoryRuleDeletion _value;
 
 @override RepositoryRuleDeletion get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleDeletion && _value == other._value;
 
@@ -120,14 +120,14 @@ final RepositoryRuleDeletion _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleDeletion($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleRequiredLinearHistory extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredLinearHistory(this._value);
 
 final RepositoryRuleRequiredLinearHistory _value;
 
 @override RepositoryRuleRequiredLinearHistory get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleRequiredLinearHistory && _value == other._value;
 
@@ -135,14 +135,14 @@ final RepositoryRuleRequiredLinearHistory _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleRequiredLinearHistory($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleMergeQueue extends RepositoryRule {const RepositoryRuleRepositoryRuleMergeQueue(this._value);
 
 final RepositoryRuleMergeQueue _value;
 
 @override RepositoryRuleMergeQueue get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleMergeQueue && _value == other._value;
 
@@ -150,14 +150,14 @@ final RepositoryRuleMergeQueue _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleMergeQueue($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleRequiredDeployments extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredDeployments(this._value);
 
 final RepositoryRuleRequiredDeployments _value;
 
 @override RepositoryRuleRequiredDeployments get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleRequiredDeployments && _value == other._value;
 
@@ -165,14 +165,14 @@ final RepositoryRuleRequiredDeployments _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleRequiredDeployments($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleRequiredSignatures extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredSignatures(this._value);
 
 final RepositoryRuleRequiredSignatures _value;
 
 @override RepositoryRuleRequiredSignatures get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleRequiredSignatures && _value == other._value;
 
@@ -180,14 +180,14 @@ final RepositoryRuleRequiredSignatures _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleRequiredSignatures($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRulePullRequest extends RepositoryRule {const RepositoryRuleRepositoryRulePullRequest(this._value);
 
 final RepositoryRulePullRequest _value;
 
 @override RepositoryRulePullRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRulePullRequest && _value == other._value;
 
@@ -195,14 +195,14 @@ final RepositoryRulePullRequest _value;
 
 @override String toString() => 'RepositoryRule.repositoryRulePullRequest($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleRequiredStatusChecks extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredStatusChecks(this._value);
 
 final RepositoryRuleRequiredStatusChecks _value;
 
 @override RepositoryRuleRequiredStatusChecks get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleRequiredStatusChecks && _value == other._value;
 
@@ -210,14 +210,14 @@ final RepositoryRuleRequiredStatusChecks _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleRequiredStatusChecks($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleNonFastForward extends RepositoryRule {const RepositoryRuleRepositoryRuleNonFastForward(this._value);
 
 final RepositoryRuleNonFastForward _value;
 
 @override RepositoryRuleNonFastForward get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleNonFastForward && _value == other._value;
 
@@ -225,14 +225,14 @@ final RepositoryRuleNonFastForward _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleNonFastForward($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleCommitMessagePattern extends RepositoryRule {const RepositoryRuleRepositoryRuleCommitMessagePattern(this._value);
 
 final RepositoryRuleCommitMessagePattern _value;
 
 @override RepositoryRuleCommitMessagePattern get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleCommitMessagePattern && _value == other._value;
 
@@ -240,14 +240,14 @@ final RepositoryRuleCommitMessagePattern _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleCommitMessagePattern($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleCommitAuthorEmailPattern extends RepositoryRule {const RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(this._value);
 
 final RepositoryRuleCommitAuthorEmailPattern _value;
 
 @override RepositoryRuleCommitAuthorEmailPattern get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleCommitAuthorEmailPattern && _value == other._value;
 
@@ -255,14 +255,14 @@ final RepositoryRuleCommitAuthorEmailPattern _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleCommitAuthorEmailPattern($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleCommitterEmailPattern extends RepositoryRule {const RepositoryRuleRepositoryRuleCommitterEmailPattern(this._value);
 
 final RepositoryRuleCommitterEmailPattern _value;
 
 @override RepositoryRuleCommitterEmailPattern get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleCommitterEmailPattern && _value == other._value;
 
@@ -270,14 +270,14 @@ final RepositoryRuleCommitterEmailPattern _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleCommitterEmailPattern($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleBranchNamePattern extends RepositoryRule {const RepositoryRuleRepositoryRuleBranchNamePattern(this._value);
 
 final RepositoryRuleBranchNamePattern _value;
 
 @override RepositoryRuleBranchNamePattern get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleBranchNamePattern && _value == other._value;
 
@@ -285,14 +285,14 @@ final RepositoryRuleBranchNamePattern _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleBranchNamePattern($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleTagNamePattern extends RepositoryRule {const RepositoryRuleRepositoryRuleTagNamePattern(this._value);
 
 final RepositoryRuleTagNamePattern _value;
 
 @override RepositoryRuleTagNamePattern get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleTagNamePattern && _value == other._value;
 
@@ -300,14 +300,14 @@ final RepositoryRuleTagNamePattern _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleTagNamePattern($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleFilePathRestriction extends RepositoryRule {const RepositoryRuleRepositoryRuleFilePathRestriction(this._value);
 
 final RepositoryRuleFilePathRestriction _value;
 
 @override RepositoryRuleFilePathRestriction get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleFilePathRestriction && _value == other._value;
 
@@ -315,14 +315,14 @@ final RepositoryRuleFilePathRestriction _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleFilePathRestriction($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleMaxFilePathLength extends RepositoryRule {const RepositoryRuleRepositoryRuleMaxFilePathLength(this._value);
 
 final RepositoryRuleMaxFilePathLength _value;
 
 @override RepositoryRuleMaxFilePathLength get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleMaxFilePathLength && _value == other._value;
 
@@ -330,14 +330,14 @@ final RepositoryRuleMaxFilePathLength _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleMaxFilePathLength($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleFileExtensionRestriction extends RepositoryRule {const RepositoryRuleRepositoryRuleFileExtensionRestriction(this._value);
 
 final RepositoryRuleFileExtensionRestriction _value;
 
 @override RepositoryRuleFileExtensionRestriction get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleFileExtensionRestriction && _value == other._value;
 
@@ -345,14 +345,14 @@ final RepositoryRuleFileExtensionRestriction _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleFileExtensionRestriction($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleMaxFileSize extends RepositoryRule {const RepositoryRuleRepositoryRuleMaxFileSize(this._value);
 
 final RepositoryRuleMaxFileSize _value;
 
 @override RepositoryRuleMaxFileSize get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleMaxFileSize && _value == other._value;
 
@@ -360,14 +360,14 @@ final RepositoryRuleMaxFileSize _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleMaxFileSize($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleWorkflows extends RepositoryRule {const RepositoryRuleRepositoryRuleWorkflows(this._value);
 
 final RepositoryRuleWorkflows _value;
 
 @override RepositoryRuleWorkflows get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleWorkflows && _value == other._value;
 
@@ -375,14 +375,14 @@ final RepositoryRuleWorkflows _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleWorkflows($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleCodeScanning extends RepositoryRule {const RepositoryRuleRepositoryRuleCodeScanning(this._value);
 
 final RepositoryRuleCodeScanning _value;
 
 @override RepositoryRuleCodeScanning get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleCodeScanning && _value == other._value;
 
@@ -390,14 +390,14 @@ final RepositoryRuleCodeScanning _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleCodeScanning($_value)';
 
- }
+}
 @immutable final class RepositoryRuleRepositoryRuleCopilotCodeReview extends RepositoryRule {const RepositoryRuleRepositoryRuleCopilotCodeReview(this._value);
 
 final RepositoryRuleCopilotCodeReview _value;
 
 @override RepositoryRuleCopilotCodeReview get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RepositoryRuleRepositoryRuleCopilotCodeReview && _value == other._value;
 
@@ -405,7 +405,7 @@ final RepositoryRuleCopilotCodeReview _value;
 
 @override String toString() => 'RepositoryRule.repositoryRuleCopilotCodeReview($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class RepositoryRule$Unknown extends RepositoryRule {const RepositoryRule$Unknown(this._value);
 
@@ -420,4 +420,4 @@ final dynamic _value;
 
 @override String toString() => 'RepositoryRule.unknown($_value)';
 
- }
+}

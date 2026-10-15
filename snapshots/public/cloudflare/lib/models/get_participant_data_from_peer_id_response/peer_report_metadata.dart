@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/browser_metadata.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/candidate_pairs.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/metadata_device_info.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/metadata_events.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/metadata_ip_information.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/pc_metadata.dart';@immutable final class PeerReportMetadata {const PeerReportMetadata({this.audioDevicesUpdates, this.browserMetadata, this.candidatePairs, this.deviceInfo, this.events, this.ipInformation, this.pcMetadata, this.roomViewType, this.sdkName, this.sdkVersion, this.selectedDeviceUpdates, this.speakerDevicesUpdates, this.videoDevicesUpdates, });
 
-factory PeerReportMetadata.fromJson(Map<String, dynamic> json) { return PeerReportMetadata(
+factory PeerReportMetadata.fromJson(Map<String, dynamic> json) {return PeerReportMetadata(
   audioDevicesUpdates: (json['audio_devices_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   browserMetadata: json['browser_metadata'] != null ? BrowserMetadata.fromJson(json['browser_metadata'] as Map<String, dynamic>) : null,
   candidatePairs: json['candidate_pairs'] != null ? CandidatePairs.fromJson(json['candidate_pairs'] as Map<String, dynamic>) : null,
@@ -17,7 +17,7 @@ factory PeerReportMetadata.fromJson(Map<String, dynamic> json) { return PeerRepo
   selectedDeviceUpdates: (json['selected_device_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   speakerDevicesUpdates: (json['speaker_devices_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   videoDevicesUpdates: (json['video_devices_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 final List<Map<String,dynamic>>? audioDevicesUpdates;
 
@@ -45,7 +45,7 @@ final List<Map<String,dynamic>>? speakerDevicesUpdates;
 
 final List<Map<String,dynamic>>? videoDevicesUpdates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (audioDevicesUpdates != null) 'audio_devices_updates': audioDevicesUpdates?.map((e) => e).toList(),
   if (browserMetadata != null) 'browser_metadata': browserMetadata?.toJson(),
   if (candidatePairs != null) 'candidate_pairs': candidatePairs?.toJson(),
@@ -59,9 +59,9 @@ Map<String, dynamic> toJson() { return {
   if (selectedDeviceUpdates != null) 'selected_device_updates': selectedDeviceUpdates?.map((e) => e).toList(),
   if (speakerDevicesUpdates != null) 'speaker_devices_updates': speakerDevicesUpdates?.map((e) => e).toList(),
   if (videoDevicesUpdates != null) 'video_devices_updates': videoDevicesUpdates?.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_devices_updates', 'browser_metadata', 'candidate_pairs', 'device_info', 'events', 'ip_information', 'pc_metadata', 'room_view_type', 'sdk_name', 'sdk_version', 'selected_device_updates', 'speaker_devices_updates', 'video_devices_updates'}.contains(key)); } 
-PeerReportMetadata copyWith({List<Map<String, dynamic>>? Function()? audioDevicesUpdates, BrowserMetadata? Function()? browserMetadata, CandidatePairs? Function()? candidatePairs, MetadataDeviceInfo? Function()? deviceInfo, List<MetadataEvents>? Function()? events, MetadataIpInformation? Function()? ipInformation, List<PcMetadata>? Function()? pcMetadata, String? Function()? roomViewType, String? Function()? sdkName, String? Function()? sdkVersion, List<Map<String, dynamic>>? Function()? selectedDeviceUpdates, List<Map<String, dynamic>>? Function()? speakerDevicesUpdates, List<Map<String, dynamic>>? Function()? videoDevicesUpdates, }) { return PeerReportMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'audio_devices_updates', 'browser_metadata', 'candidate_pairs', 'device_info', 'events', 'ip_information', 'pc_metadata', 'room_view_type', 'sdk_name', 'sdk_version', 'selected_device_updates', 'speaker_devices_updates', 'video_devices_updates'}.contains(key));}
+PeerReportMetadata copyWith({List<Map<String, dynamic>>? Function()? audioDevicesUpdates, BrowserMetadata? Function()? browserMetadata, CandidatePairs? Function()? candidatePairs, MetadataDeviceInfo? Function()? deviceInfo, List<MetadataEvents>? Function()? events, MetadataIpInformation? Function()? ipInformation, List<PcMetadata>? Function()? pcMetadata, String? Function()? roomViewType, String? Function()? sdkName, String? Function()? sdkVersion, List<Map<String, dynamic>>? Function()? selectedDeviceUpdates, List<Map<String, dynamic>>? Function()? speakerDevicesUpdates, List<Map<String, dynamic>>? Function()? videoDevicesUpdates, }) {return PeerReportMetadata(
   audioDevicesUpdates: audioDevicesUpdates != null ? audioDevicesUpdates() : this.audioDevicesUpdates,
   browserMetadata: browserMetadata != null ? browserMetadata() : this.browserMetadata,
   candidatePairs: candidatePairs != null ? candidatePairs() : this.candidatePairs,
@@ -75,7 +75,7 @@ PeerReportMetadata copyWith({List<Map<String, dynamic>>? Function()? audioDevice
   selectedDeviceUpdates: selectedDeviceUpdates != null ? selectedDeviceUpdates() : this.selectedDeviceUpdates,
   speakerDevicesUpdates: speakerDevicesUpdates != null ? speakerDevicesUpdates() : this.speakerDevicesUpdates,
   videoDevicesUpdates: videoDevicesUpdates != null ? videoDevicesUpdates() : this.videoDevicesUpdates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PeerReportMetadata &&
           listEquals(audioDevicesUpdates, other.audioDevicesUpdates) &&
@@ -96,4 +96,4 @@ PeerReportMetadata copyWith({List<Map<String, dynamic>>? Function()? audioDevice
 
 @override String toString() => 'PeerReportMetadata(\n  audioDevicesUpdates: $audioDevicesUpdates,\n  browserMetadata: $browserMetadata,\n  candidatePairs: $candidatePairs,\n  deviceInfo: $deviceInfo,\n  events: $events,\n  ipInformation: $ipInformation,\n  pcMetadata: $pcMetadata,\n  roomViewType: $roomViewType,\n  sdkName: $sdkName,\n  sdkVersion: $sdkVersion,\n  selectedDeviceUpdates: $selectedDeviceUpdates,\n  speakerDevicesUpdates: $speakerDevicesUpdates,\n  videoDevicesUpdates: $videoDevicesUpdates,\n)';
 
- }
+}

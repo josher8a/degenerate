@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';sealed class ContentFileType {const ContentFileType();
 
-factory ContentFileType.fromJson(String json) { return switch (json) {
+factory ContentFileType.fromJson(String json) {return switch (json) {
   'file' => file,
   _ => ContentFileType$Unknown(json),
-}; }
+};}
 
 static const ContentFileType file = ContentFileType$file._();
 
 static const List<ContentFileType> values = [file];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'file' => 'file',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ContentFileType$Unknown; } 
+bool get isUnknown {return this is ContentFileType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() file, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() file, required W Function(String value) $unknown, }) {return switch (this) {
       ContentFileType$file() => file(),
       ContentFileType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function(String value)? $unknown, }) {return switch (this) {
       ContentFileType$file() => file != null ? file() : orElse(value),
       ContentFileType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ContentFileType($value)';
 
- }
+}
 @immutable final class ContentFileType$file extends ContentFileType {const ContentFileType$file._();
 
 @override String get value => 'file';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W 
 
 @override int get hashCode => 'file'.hashCode;
 
- }
+}
 @immutable final class ContentFileType$Unknown extends ContentFileType {const ContentFileType$Unknown(this.value);
 
 @override final String value;
@@ -52,11 +52,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Content File
 @immutable final class ContentFile {const ContentFile({required this.type, required this.encoding, required this.size, required this.name, required this.path, required this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.target, this.submoduleGitUrl, });
 
-factory ContentFile.fromJson(Map<String, dynamic> json) { return ContentFile(
+factory ContentFile.fromJson(Map<String, dynamic> json) {return ContentFile(
   type: ContentFileType.fromJson(json['type'] as String),
   encoding: json['encoding'] as String,
   size: (json['size'] as num).toInt(),
@@ -71,7 +71,7 @@ factory ContentFile.fromJson(Map<String, dynamic> json) { return ContentFile(
   links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
   target: json['target'] as String?,
   submoduleGitUrl: json['submodule_git_url'] as String?,
-); }
+);}
 
 final ContentFileType type;
 
@@ -101,7 +101,7 @@ final String? target;
 
 final String? submoduleGitUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'encoding': encoding,
   'size': size,
@@ -116,8 +116,8 @@ Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
   'target': ?target,
   'submodule_git_url': ?submoduleGitUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
@@ -125,11 +125,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('content') && json['content'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('git_url') && json['git_url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
-      json.containsKey('_links'); } 
-ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ContentFile(
+      json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
+      json.containsKey('_links');}
+ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) {return ContentFile(
   type: type ?? this.type,
   encoding: encoding ?? this.encoding,
   size: size ?? this.size,
@@ -144,7 +144,7 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
   links: links ?? this.links,
   target: target != null ? target() : this.target,
   submoduleGitUrl: submoduleGitUrl != null ? submoduleGitUrl() : this.submoduleGitUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContentFile &&
           type == other.type &&
@@ -166,4 +166,4 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
 
 @override String toString() => 'ContentFile(\n  type: $type,\n  encoding: $encoding,\n  size: $size,\n  name: $name,\n  path: $path,\n  content: $content,\n  sha: $sha,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  downloadUrl: $downloadUrl,\n  links: $links,\n  target: $target,\n  submoduleGitUrl: $submoduleGitUrl,\n)';
 
- }
+}

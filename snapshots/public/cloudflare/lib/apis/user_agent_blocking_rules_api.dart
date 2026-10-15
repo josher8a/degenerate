@@ -14,7 +14,7 @@ final class UserAgentBlockingRulesApi with ApiExecutor {const UserAgentBlockingR
 /// Fetches User Agent Blocking rules in a zone. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<List<FirewallFirewalluablock>?, UserAgentBlockingRulesListUserAgentBlockingRulesError>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallFirewalluablock>, UserAgentBlockingRulesListUserAgentBlockingRulesError>> userAgentBlockingRulesListUserAgentBlockingRules({required FirewallIdentifier zoneId, double? page, FirewallDescriptionSearch? description, double? perPage, String? userAgent, bool? paused, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -43,21 +43,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => FirewallFirewalluablock.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => FirewallFirewalluablock.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: UserAgentBlockingRulesListUserAgentBlockingRulesError.fromResponse,
 );
- } 
+}
 /// Create a User Agent Blocking rule
 ///
 /// Creates a new User Agent Blocking rule in a zone.
 ///
 /// `POST /zones/{zone_id}/firewall/ua_rules`
-Future<ApiResult<FirewallFirewalluablock?, UserAgentBlockingRulesCreateAUserAgentBlockingRuleError>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required FirewallIdentifier zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallFirewalluablock, UserAgentBlockingRulesCreateAUserAgentBlockingRuleError>> userAgentBlockingRulesCreateAUserAgentBlockingRule({required FirewallIdentifier zoneId, required UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,21 +68,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: UserAgentBlockingRulesCreateAUserAgentBlockingRuleError.fromResponse,
 );
- } 
+}
 /// Get a User Agent Blocking rule
 ///
 /// Fetches the details of a User Agent Blocking rule.
 ///
 /// `GET /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<FirewallFirewalluablock?, UserAgentBlockingRulesGetAUserAgentBlockingRuleError>> userAgentBlockingRulesGetAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallFirewalluablock, UserAgentBlockingRulesGetAUserAgentBlockingRuleError>> userAgentBlockingRulesGetAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,21 +91,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: UserAgentBlockingRulesGetAUserAgentBlockingRuleError.fromResponse,
 );
- } 
+}
 /// Update a User Agent Blocking rule
 ///
 /// Updates an existing User Agent Blocking rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<FirewallFirewalluablock?, UserAgentBlockingRulesUpdateAUserAgentBlockingRuleError>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallFirewalluablock, UserAgentBlockingRulesUpdateAUserAgentBlockingRuleError>> userAgentBlockingRulesUpdateAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, required UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,21 +116,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: UserAgentBlockingRulesUpdateAUserAgentBlockingRuleError.fromResponse,
 );
- } 
+}
 /// Delete a User Agent Blocking rule
 ///
 /// Deletes an existing User Agent Blocking rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<AaaIdResponseResult?, UserAgentBlockingRulesDeleteAUserAgentBlockingRuleError>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult, UserAgentBlockingRulesDeleteAUserAgentBlockingRuleError>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,13 +139,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: UserAgentBlockingRulesDeleteAUserAgentBlockingRuleError.fromResponse,
 );
- } 
- }
+}
+}

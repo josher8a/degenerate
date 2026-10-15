@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersBindingKindService
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindService {const WorkersBindingKindService({required this.name, required this.service, required this.type, this.entrypoint, this.environment = 'production', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindService {const WorkersBindingKindService({required this.name, required this.service, required this.type, this.entrypoint, this.environment, });
 
-factory WorkersBindingKindService.fromJson(Map<String, dynamic> json) { return WorkersBindingKindService(
+factory WorkersBindingKindService.fromJson(Map<String, dynamic> json) {return WorkersBindingKindService(
   entrypoint: json['entrypoint'] as String?,
-  environment: json.containsKey('environment') ? json['environment'] as String : 'production',
+  environment: json['environment'] as String?,
   name: WorkersBindingName.fromJson(json['name'] as String),
   service: json['service'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// Entrypoint to invoke on the target Worker.
 /// 
@@ -19,7 +19,7 @@ final String? entrypoint;
 /// Optional environment if the Worker utilizes one.
 /// 
 /// Example: `'production'`
-final String environment;
+final String? environment;
 
 final WorkersBindingName name;
 
@@ -31,23 +31,26 @@ final String service;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `environment`, or its schema default when absent.
+String get environmentOrDefault => environment ?? 'production';
+
+Map<String, dynamic> toJson() {return {
   'entrypoint': ?entrypoint,
-  'environment': environment,
+  'environment': ?environment,
   'name': name.toJson(),
   'service': service,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('service') && json['service'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindService copyWith({String? Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, String? type, }) { return WorkersBindingKindService(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindService copyWith({String? Function()? entrypoint, String? Function()? environment, WorkersBindingName? name, String? service, String? type, }) {return WorkersBindingKindService(
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   environment: environment != null ? environment() : this.environment,
   name: name ?? this.name,
   service: service ?? this.service,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindService &&
           entrypoint == other.entrypoint &&
@@ -60,4 +63,4 @@ WorkersBindingKindService copyWith({String? Function()? entrypoint, String Funct
 
 @override String toString() => 'WorkersBindingKindService(entrypoint: $entrypoint, environment: $environment, name: $name, service: $service, type: $type)';
 
- }
+}

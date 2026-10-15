@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SourceTypeAuBecsDebit
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAuBecsDebit {const SourceTypeAuBecsDebit({this.bsbNumber, this.fingerprint, this.last4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAuBecsDebit {const SourceTypeAuBecsDebit({this.bsbNumber = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), });
 
-factory SourceTypeAuBecsDebit.fromJson(Map<String, dynamic> json) { return SourceTypeAuBecsDebit(
-  bsbNumber: json['bsb_number'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
-); }
+factory SourceTypeAuBecsDebit.fromJson(Map<String, dynamic> json) {return SourceTypeAuBecsDebit(
+  bsbNumber: json.containsKey('bsb_number') ? Omittable(json['bsb_number'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+);}
 
-final String? bsbNumber;
+final Omittable<String?> bsbNumber;
 
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
-final String? last4;
+final Omittable<String?> last4;
 
-Map<String, dynamic> toJson() { return {
-  'bsb_number': ?bsbNumber,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'fingerprint', 'last4'}.contains(key)); } 
-SourceTypeAuBecsDebit copyWith({String? Function()? bsbNumber, String? Function()? fingerprint, String? Function()? last4, }) { return SourceTypeAuBecsDebit(
-  bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (bsbNumber.isPresent) 'bsb_number': bsbNumber.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bsb_number', 'fingerprint', 'last4'}.contains(key));}
+SourceTypeAuBecsDebit copyWith({Omittable<String?>? bsbNumber, Omittable<String?>? fingerprint, Omittable<String?>? last4, }) {return SourceTypeAuBecsDebit(
+  bsbNumber: bsbNumber ?? this.bsbNumber,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeAuBecsDebit &&
           bsbNumber == other.bsbNumber &&
@@ -36,4 +36,4 @@ SourceTypeAuBecsDebit copyWith({String? Function()? bsbNumber, String? Function(
 
 @override String toString() => 'SourceTypeAuBecsDebit(bsbNumber: $bsbNumber, fingerprint: $fingerprint, last4: $last4)';
 
- }
+}

@@ -12,7 +12,7 @@ final class MagicNetworkMonitoringVpcFlowLogsApi with ApiExecutor {const MagicNe
 /// Generate authentication token for VPC flow logs export.
 ///
 /// `POST /accounts/{account_id}/mnm/vpc-flows/token`
-Future<ApiResult<MagicVisibilityMnmMnmVpcFlowsToken?, MagicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenError>> magicNetworkMonitoringVpcFlowsGenerateAuthenticationToken({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmVpcFlowsToken, MagicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenError>> magicNetworkMonitoringVpcFlowsGenerateAuthenticationToken({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -21,13 +21,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicVisibilityMnmMnmVpcFlowsToken.fromJson(json['result'] as String) : null;
+    return MagicVisibilityMnmMnmVpcFlowsToken.fromJson(json['result'] as String);
   },
   onError: MagicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenError.fromResponse,
 );
- } 
- }
+}
+}

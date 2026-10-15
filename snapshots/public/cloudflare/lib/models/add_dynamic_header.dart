@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_expression.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_operation.dart';/// A header with a dynamic value to add.
 @immutable final class AddDynamicHeader {const AddDynamicHeader({required this.expression, required this.operation, });
 
-factory AddDynamicHeader.fromJson(Map<String, dynamic> json) { return AddDynamicHeader(
+factory AddDynamicHeader.fromJson(Map<String, dynamic> json) {return AddDynamicHeader(
   expression: RulesetsRewriteHeaderExpression.fromJson(json['expression'] as String),
   operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),
-); }
+);}
 
 /// An expression that evaluates to a value for the header.
 final RulesetsRewriteHeaderExpression expression;
@@ -15,16 +15,16 @@ final RulesetsRewriteHeaderExpression expression;
 /// The operation to perform on the header.
 final RulesetsRewriteHeaderOperation operation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expression': expression.toJson(),
   'operation': operation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expression') &&
-      json.containsKey('operation'); } 
-AddDynamicHeader copyWith({RulesetsRewriteHeaderExpression? expression, RulesetsRewriteHeaderOperation? operation, }) { return AddDynamicHeader(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expression') &&
+      json.containsKey('operation');}
+AddDynamicHeader copyWith({RulesetsRewriteHeaderExpression? expression, RulesetsRewriteHeaderOperation? operation, }) {return AddDynamicHeader(
   expression: expression ?? this.expression,
   operation: operation ?? this.operation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddDynamicHeader &&
           expression == other.expression &&
@@ -34,4 +34,4 @@ AddDynamicHeader copyWith({RulesetsRewriteHeaderExpression? expression, Rulesets
 
 @override String toString() => 'AddDynamicHeader(expression: $expression, operation: $operation)';
 
- }
+}

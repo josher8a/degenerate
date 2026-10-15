@@ -1,85 +1,99 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessAppResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/app_launcher_application2.dart';import 'package:pub_cloudflare/models/bookmark_application2.dart';import 'package:pub_cloudflare/models/browser_isolation_permissions_application2.dart';import 'package:pub_cloudflare/models/browser_rdp_application2.dart';import 'package:pub_cloudflare/models/browser_ssh_application2.dart';import 'package:pub_cloudflare/models/browser_vnc_application2.dart';import 'package:pub_cloudflare/models/device_enrollment_permissions_application2.dart';import 'package:pub_cloudflare/models/gateway_identity_proxy_endpoint_application2.dart';import 'package:pub_cloudflare/models/infrastructure_application2.dart';import 'package:pub_cloudflare/models/mcp_server_application2.dart';import 'package:pub_cloudflare/models/mcp_server_portal_application2.dart';import 'package:pub_cloudflare/models/saa_s_application2.dart';import 'package:pub_cloudflare/models/self_hosted_application2.dart';@immutable final class AccessAppResponse {const AccessAppResponse({this.selfHostedApplication2, this.saaSApplication2, this.browserSshApplication2, this.browserVncApplication2, this.appLauncherApplication2, this.deviceEnrollmentPermissionsApplication2, this.browserIsolationPermissionsApplication2, this.gatewayIdentityProxyEndpointApplication2, this.bookmarkApplication2, this.infrastructureApplication2, this.browserRdpApplication2, this.mcpServerApplication2, this.mcpServerPortalApplication2, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/app_launcher_application2.dart';import 'package:pub_cloudflare/models/bookmark_application2.dart';import 'package:pub_cloudflare/models/browser_isolation_permissions_application2.dart';import 'package:pub_cloudflare/models/browser_rdp_application2.dart';import 'package:pub_cloudflare/models/browser_ssh_application2.dart';import 'package:pub_cloudflare/models/browser_vnc_application2.dart';import 'package:pub_cloudflare/models/device_enrollment_permissions_application2.dart';import 'package:pub_cloudflare/models/gateway_identity_proxy_endpoint_application2.dart';import 'package:pub_cloudflare/models/infrastructure_application2.dart';import 'package:pub_cloudflare/models/mcp_server_application2.dart';import 'package:pub_cloudflare/models/mcp_server_portal_application2.dart';import 'package:pub_cloudflare/models/saa_s_application2.dart';import 'package:pub_cloudflare/models/self_hosted_application2.dart';@immutable final class AccessAppResponse {/// A value built from one or more typed views (at least one must be present).
+const AccessAppResponse({this.selfHostedApplication2 = const Omittable.absent(), this.saaSApplication2 = const Omittable.absent(), this.browserSshApplication2 = const Omittable.absent(), this.browserVncApplication2 = const Omittable.absent(), this.appLauncherApplication2 = const Omittable.absent(), this.deviceEnrollmentPermissionsApplication2 = const Omittable.absent(), this.browserIsolationPermissionsApplication2 = const Omittable.absent(), this.gatewayIdentityProxyEndpointApplication2 = const Omittable.absent(), this.bookmarkApplication2 = const Omittable.absent(), this.infrastructureApplication2 = const Omittable.absent(), this.browserRdpApplication2 = const Omittable.absent(), this.mcpServerApplication2 = const Omittable.absent(), this.mcpServerPortalApplication2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
 
-factory AccessAppResponse.fromJson(Map<String, dynamic> json) { return AccessAppResponse(
-  selfHostedApplication2: SelfHostedApplication2.canParse(json) ? SelfHostedApplication2.fromJson(json) : null,
-  saaSApplication2: SaaSApplication2.canParse(json) ? SaaSApplication2.fromJson(json) : null,
-  browserSshApplication2: BrowserSshApplication2.canParse(json) ? BrowserSshApplication2.fromJson(json) : null,
-  browserVncApplication2: BrowserVncApplication2.canParse(json) ? BrowserVncApplication2.fromJson(json) : null,
-  appLauncherApplication2: AppLauncherApplication2.canParse(json) ? AppLauncherApplication2.fromJson(json) : null,
-  deviceEnrollmentPermissionsApplication2: DeviceEnrollmentPermissionsApplication2.canParse(json) ? DeviceEnrollmentPermissionsApplication2.fromJson(json) : null,
-  browserIsolationPermissionsApplication2: BrowserIsolationPermissionsApplication2.canParse(json) ? BrowserIsolationPermissionsApplication2.fromJson(json) : null,
-  gatewayIdentityProxyEndpointApplication2: GatewayIdentityProxyEndpointApplication2.canParse(json) ? GatewayIdentityProxyEndpointApplication2.fromJson(json) : null,
-  bookmarkApplication2: BookmarkApplication2.canParse(json) ? BookmarkApplication2.fromJson(json) : null,
-  infrastructureApplication2: InfrastructureApplication2.canParse(json) ? InfrastructureApplication2.fromJson(json) : null,
-  browserRdpApplication2: BrowserRdpApplication2.canParse(json) ? BrowserRdpApplication2.fromJson(json) : null,
-  mcpServerApplication2: McpServerApplication2.canParse(json) ? McpServerApplication2.fromJson(json) : null,
-  mcpServerPortalApplication2: McpServerPortalApplication2.canParse(json) ? McpServerPortalApplication2.fromJson(json) : null,
-); }
+const AccessAppResponse._({required this.rawValue, required this.selfHostedApplication2, required this.saaSApplication2, required this.browserSshApplication2, required this.browserVncApplication2, required this.appLauncherApplication2, required this.deviceEnrollmentPermissionsApplication2, required this.browserIsolationPermissionsApplication2, required this.gatewayIdentityProxyEndpointApplication2, required this.bookmarkApplication2, required this.infrastructureApplication2, required this.browserRdpApplication2, required this.mcpServerApplication2, required this.mcpServerPortalApplication2, });
 
-final SelfHostedApplication2? selfHostedApplication2;
+/// Decodes every variant the payload matches, keeping the raw value.
+factory AccessAppResponse.fromJson(Object? json) {return AccessAppResponse._(
+  rawValue: Omittable(json),
+  selfHostedApplication2: json is Map<String, dynamic> && SelfHostedApplication2.canParse(json) ? parseAnyOfVariant<SelfHostedApplication2>(json, (value) => SelfHostedApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  saaSApplication2: json is Map<String, dynamic> && SaaSApplication2.canParse(json) ? parseAnyOfVariant<SaaSApplication2>(json, (value) => SaaSApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  browserSshApplication2: json is Map<String, dynamic> && BrowserSshApplication2.canParse(json) ? parseAnyOfVariant<BrowserSshApplication2>(json, (value) => BrowserSshApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  browserVncApplication2: json is Map<String, dynamic> && BrowserVncApplication2.canParse(json) ? parseAnyOfVariant<BrowserVncApplication2>(json, (value) => BrowserVncApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  appLauncherApplication2: json is Map<String, dynamic> && AppLauncherApplication2.canParse(json) ? parseAnyOfVariant<AppLauncherApplication2>(json, (value) => AppLauncherApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  deviceEnrollmentPermissionsApplication2: json is Map<String, dynamic> && DeviceEnrollmentPermissionsApplication2.canParse(json) ? parseAnyOfVariant<DeviceEnrollmentPermissionsApplication2>(json, (value) => DeviceEnrollmentPermissionsApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  browserIsolationPermissionsApplication2: json is Map<String, dynamic> && BrowserIsolationPermissionsApplication2.canParse(json) ? parseAnyOfVariant<BrowserIsolationPermissionsApplication2>(json, (value) => BrowserIsolationPermissionsApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  gatewayIdentityProxyEndpointApplication2: json is Map<String, dynamic> && GatewayIdentityProxyEndpointApplication2.canParse(json) ? parseAnyOfVariant<GatewayIdentityProxyEndpointApplication2>(json, (value) => GatewayIdentityProxyEndpointApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  bookmarkApplication2: json is Map<String, dynamic> && BookmarkApplication2.canParse(json) ? parseAnyOfVariant<BookmarkApplication2>(json, (value) => BookmarkApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  infrastructureApplication2: json is Map<String, dynamic> && InfrastructureApplication2.canParse(json) ? parseAnyOfVariant<InfrastructureApplication2>(json, (value) => InfrastructureApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  browserRdpApplication2: json is Map<String, dynamic> && BrowserRdpApplication2.canParse(json) ? parseAnyOfVariant<BrowserRdpApplication2>(json, (value) => BrowserRdpApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  mcpServerApplication2: json is Map<String, dynamic> && McpServerApplication2.canParse(json) ? parseAnyOfVariant<McpServerApplication2>(json, (value) => McpServerApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  mcpServerPortalApplication2: json is Map<String, dynamic> && McpServerPortalApplication2.canParse(json) ? parseAnyOfVariant<McpServerPortalApplication2>(json, (value) => McpServerPortalApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+);}
 
-final SaaSApplication2? saaSApplication2;
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
 
-final BrowserSshApplication2? browserSshApplication2;
+/// The payload decoded as `SelfHostedApplication2`, when it matches.
+final Omittable<SelfHostedApplication2> selfHostedApplication2;
 
-final BrowserVncApplication2? browserVncApplication2;
+/// The payload decoded as `SaaSApplication2`, when it matches.
+final Omittable<SaaSApplication2> saaSApplication2;
 
-final AppLauncherApplication2? appLauncherApplication2;
+/// The payload decoded as `BrowserSshApplication2`, when it matches.
+final Omittable<BrowserSshApplication2> browserSshApplication2;
 
-final DeviceEnrollmentPermissionsApplication2? deviceEnrollmentPermissionsApplication2;
+/// The payload decoded as `BrowserVncApplication2`, when it matches.
+final Omittable<BrowserVncApplication2> browserVncApplication2;
 
-final BrowserIsolationPermissionsApplication2? browserIsolationPermissionsApplication2;
+/// The payload decoded as `AppLauncherApplication2`, when it matches.
+final Omittable<AppLauncherApplication2> appLauncherApplication2;
 
-final GatewayIdentityProxyEndpointApplication2? gatewayIdentityProxyEndpointApplication2;
+/// The payload decoded as `DeviceEnrollmentPermissionsApplication2`, when it matches.
+final Omittable<DeviceEnrollmentPermissionsApplication2> deviceEnrollmentPermissionsApplication2;
 
-final BookmarkApplication2? bookmarkApplication2;
+/// The payload decoded as `BrowserIsolationPermissionsApplication2`, when it matches.
+final Omittable<BrowserIsolationPermissionsApplication2> browserIsolationPermissionsApplication2;
 
-final InfrastructureApplication2? infrastructureApplication2;
+/// The payload decoded as `GatewayIdentityProxyEndpointApplication2`, when it matches.
+final Omittable<GatewayIdentityProxyEndpointApplication2> gatewayIdentityProxyEndpointApplication2;
 
-final BrowserRdpApplication2? browserRdpApplication2;
+/// The payload decoded as `BookmarkApplication2`, when it matches.
+final Omittable<BookmarkApplication2> bookmarkApplication2;
 
-final McpServerApplication2? mcpServerApplication2;
+/// The payload decoded as `InfrastructureApplication2`, when it matches.
+final Omittable<InfrastructureApplication2> infrastructureApplication2;
 
-final McpServerPortalApplication2? mcpServerPortalApplication2;
+/// The payload decoded as `BrowserRdpApplication2`, when it matches.
+final Omittable<BrowserRdpApplication2> browserRdpApplication2;
 
-/// At least one variant must be present.
-bool get isValid { return selfHostedApplication2 != null || saaSApplication2 != null || browserSshApplication2 != null || browserVncApplication2 != null || appLauncherApplication2 != null || deviceEnrollmentPermissionsApplication2 != null || browserIsolationPermissionsApplication2 != null || gatewayIdentityProxyEndpointApplication2 != null || bookmarkApplication2 != null || infrastructureApplication2 != null || browserRdpApplication2 != null || mcpServerApplication2 != null || mcpServerPortalApplication2 != null; } 
-dynamic toJson() { return <String, dynamic>{
-  ...?selfHostedApplication2?.toJson(),
-  ...?saaSApplication2?.toJson(),
-  ...?browserSshApplication2?.toJson(),
-  ...?browserVncApplication2?.toJson(),
-  ...?appLauncherApplication2?.toJson(),
-  ...?deviceEnrollmentPermissionsApplication2?.toJson(),
-  ...?browserIsolationPermissionsApplication2?.toJson(),
-  ...?gatewayIdentityProxyEndpointApplication2?.toJson(),
-  ...?bookmarkApplication2?.toJson(),
-  ...?infrastructureApplication2?.toJson(),
-  ...?browserRdpApplication2?.toJson(),
-  ...?mcpServerApplication2?.toJson(),
-  ...?mcpServerPortalApplication2?.toJson(),
-}; } 
+/// The payload decoded as `McpServerApplication2`, when it matches.
+final Omittable<McpServerApplication2> mcpServerApplication2;
+
+/// The payload decoded as `McpServerPortalApplication2`, when it matches.
+final Omittable<McpServerPortalApplication2> mcpServerPortalApplication2;
+
+/// Whether at least one variant matched.
+bool get isValid => selfHostedApplication2.isPresent || saaSApplication2.isPresent || browserSshApplication2.isPresent || browserVncApplication2.isPresent || appLauncherApplication2.isPresent || deviceEnrollmentPermissionsApplication2.isPresent || browserIsolationPermissionsApplication2.isPresent || gatewayIdentityProxyEndpointApplication2.isPresent || bookmarkApplication2.isPresent || infrastructureApplication2.isPresent || browserRdpApplication2.isPresent || mcpServerApplication2.isPresent || mcpServerPortalApplication2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (selfHostedApplication2.isPresent) selfHostedApplication2.value?.toJson(),
+    if (saaSApplication2.isPresent) saaSApplication2.value?.toJson(),
+    if (browserSshApplication2.isPresent) browserSshApplication2.value?.toJson(),
+    if (browserVncApplication2.isPresent) browserVncApplication2.value?.toJson(),
+    if (appLauncherApplication2.isPresent) appLauncherApplication2.value?.toJson(),
+    if (deviceEnrollmentPermissionsApplication2.isPresent) deviceEnrollmentPermissionsApplication2.value?.toJson(),
+    if (browserIsolationPermissionsApplication2.isPresent) browserIsolationPermissionsApplication2.value?.toJson(),
+    if (gatewayIdentityProxyEndpointApplication2.isPresent) gatewayIdentityProxyEndpointApplication2.value?.toJson(),
+    if (bookmarkApplication2.isPresent) bookmarkApplication2.value?.toJson(),
+    if (infrastructureApplication2.isPresent) infrastructureApplication2.value?.toJson(),
+    if (browserRdpApplication2.isPresent) browserRdpApplication2.value?.toJson(),
+    if (mcpServerApplication2.isPresent) mcpServerApplication2.value?.toJson(),
+    if (mcpServerPortalApplication2.isPresent) mcpServerPortalApplication2.value?.toJson(),
+  ]);
+
 @override bool operator ==(Object other) => identical(this, other) ||
-      other is AccessAppResponse &&
-          selfHostedApplication2 == other.selfHostedApplication2 &&
-          saaSApplication2 == other.saaSApplication2 &&
-          browserSshApplication2 == other.browserSshApplication2 &&
-          browserVncApplication2 == other.browserVncApplication2 &&
-          appLauncherApplication2 == other.appLauncherApplication2 &&
-          deviceEnrollmentPermissionsApplication2 == other.deviceEnrollmentPermissionsApplication2 &&
-          browserIsolationPermissionsApplication2 == other.browserIsolationPermissionsApplication2 &&
-          gatewayIdentityProxyEndpointApplication2 == other.gatewayIdentityProxyEndpointApplication2 &&
-          bookmarkApplication2 == other.bookmarkApplication2 &&
-          infrastructureApplication2 == other.infrastructureApplication2 &&
-          browserRdpApplication2 == other.browserRdpApplication2 &&
-          mcpServerApplication2 == other.mcpServerApplication2 &&
-          mcpServerPortalApplication2 == other.mcpServerPortalApplication2;
+      other is AccessAppResponse && jsonValueEquals(toJson(), other.toJson());
 
-@override int get hashCode => Object.hash(selfHostedApplication2, saaSApplication2, browserSshApplication2, browserVncApplication2, appLauncherApplication2, deviceEnrollmentPermissionsApplication2, browserIsolationPermissionsApplication2, gatewayIdentityProxyEndpointApplication2, bookmarkApplication2, infrastructureApplication2, browserRdpApplication2, mcpServerApplication2, mcpServerPortalApplication2);
+@override int get hashCode => jsonValueHash(toJson());
 
-@override String toString() => 'AccessAppResponse(selfHostedApplication2: $selfHostedApplication2, saaSApplication2: $saaSApplication2, browserSshApplication2: $browserSshApplication2, browserVncApplication2: $browserVncApplication2, appLauncherApplication2: $appLauncherApplication2, deviceEnrollmentPermissionsApplication2: $deviceEnrollmentPermissionsApplication2, browserIsolationPermissionsApplication2: $browserIsolationPermissionsApplication2, gatewayIdentityProxyEndpointApplication2: $gatewayIdentityProxyEndpointApplication2, bookmarkApplication2: $bookmarkApplication2, infrastructureApplication2: $infrastructureApplication2, browserRdpApplication2: $browserRdpApplication2, mcpServerApplication2: $mcpServerApplication2, mcpServerPortalApplication2: $mcpServerPortalApplication2)';
+@override String toString() => 'AccessAppResponse(${toJson()})';
 
- }
+}

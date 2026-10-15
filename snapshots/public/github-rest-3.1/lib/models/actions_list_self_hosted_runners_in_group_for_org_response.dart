@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner.dart';@immutable final class ActionsListSelfHostedRunnersInGroupForOrgResponse {const ActionsListSelfHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners, });
 
-factory ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelfHostedRunnersInGroupForOrgResponse(
+factory ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelfHostedRunnersInGroupForOrgResponse(
   totalCount: (json['total_count'] as num).toDouble(),
   runners: (json['runners'] as List<dynamic>).map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double totalCount;
 
 final List<Runner> runners;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'runners': runners.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('runners'); } 
-ActionsListSelfHostedRunnersInGroupForOrgResponse copyWith({double? totalCount, List<Runner>? runners, }) { return ActionsListSelfHostedRunnersInGroupForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('runners');}
+ActionsListSelfHostedRunnersInGroupForOrgResponse copyWith({double? totalCount, List<Runner>? runners, }) {return ActionsListSelfHostedRunnersInGroupForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   runners: runners ?? this.runners,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelfHostedRunnersInGroupForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListSelfHostedRunnersInGroupForOrgResponse copyWith({double? totalCount, 
 
 @override String toString() => 'ActionsListSelfHostedRunnersInGroupForOrgResponse(totalCount: $totalCount, runners: $runners)';
 
- }
+}

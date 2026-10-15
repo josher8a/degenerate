@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_rejected/webhook_deployment_review_rejected_workflow_job_runs.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_rejected/webhook_deployment_review_rejected_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_approver.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers2.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow_job_run.dart';sealed class WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction();
 
-factory WebhookDeploymentReviewRejectedAction.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentReviewRejectedAction.fromJson(String json) {return switch (json) {
   'rejected' => rejected,
   _ => WebhookDeploymentReviewRejectedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookDeploymentReviewRejectedAction rejected = WebhookDeploymentReviewRejectedAction$rejected._();
 
 static const List<WebhookDeploymentReviewRejectedAction> values = [rejected];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'rejected' => 'rejected',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookDeploymentReviewRejectedAction$Unknown; } 
+bool get isUnknown {return this is WebhookDeploymentReviewRejectedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rejected, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookDeploymentReviewRejectedAction$rejected() => rejected(),
       WebhookDeploymentReviewRejectedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rejected, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookDeploymentReviewRejectedAction$rejected() => rejected != null ? rejected() : orElse(value),
       WebhookDeploymentReviewRejectedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookDeploymentReviewRejectedAction($value)';
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedAction$rejected extends WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction$rejected._();
 
 @override String get value => 'rejected';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rejected
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedAction$Unknown extends WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rejected
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejected {const WebhookDeploymentReviewRejected({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
 
-factory WebhookDeploymentReviewRejected.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRejected(
+factory WebhookDeploymentReviewRejected.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewRejected(
   action: WebhookDeploymentReviewRejectedAction.fromJson(json['action'] as String),
   approver: json['approver'] != null ? WebhooksApprover.fromJson(json['approver'] as Map<String, dynamic>) : null,
   comment: json['comment'] as String?,
@@ -69,7 +69,7 @@ factory WebhookDeploymentReviewRejected.fromJson(Map<String, dynamic> json) { re
   workflowJobRun: json['workflow_job_run'] != null ? WebhooksWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>) : null,
   workflowJobRuns: (json['workflow_job_runs'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewRejectedWorkflowJobRuns.fromJson(e as Map<String, dynamic>)).toList(),
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentReviewRejectedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookDeploymentReviewRejectedAction action;
 
@@ -97,7 +97,7 @@ final List<WebhookDeploymentReviewRejectedWorkflowJobRuns>? workflowJobRuns;
 
 final WebhookDeploymentReviewRejectedWorkflowRun? workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (approver != null) 'approver': approver?.toJson(),
   'comment': ?comment,
@@ -111,14 +111,14 @@ Map<String, dynamic> toJson() { return {
   if (workflowJobRun != null) 'workflow_job_run': workflowJobRun?.toJson(),
   if (workflowJobRuns != null) 'workflow_job_runs': workflowJobRuns?.map((e) => e.toJson()).toList(),
   'workflow_run': workflowRun?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('since') && json['since'] is String &&
-      json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewRejectedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewRejectedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRejected(
+      json.containsKey('workflow_run');}
+WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewRejectedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewRejectedWorkflowRun? Function()? workflowRun, }) {return WebhookDeploymentReviewRejected(
   action: action ?? this.action,
   approver: approver != null ? approver() : this.approver,
   comment: comment != null ? comment() : this.comment,
@@ -132,7 +132,7 @@ WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction?
   workflowJobRun: workflowJobRun != null ? workflowJobRun() : this.workflowJobRun,
   workflowJobRuns: workflowJobRuns != null ? workflowJobRuns() : this.workflowJobRuns,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRejected &&
           action == other.action &&
@@ -153,4 +153,4 @@ WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction?
 
 @override String toString() => 'WebhookDeploymentReviewRejected(\n  action: $action,\n  approver: $approver,\n  comment: $comment,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  reviewers: $reviewers,\n  sender: $sender,\n  since: $since,\n  workflowJobRun: $workflowJobRun,\n  workflowJobRuns: $workflowJobRuns,\n  workflowRun: $workflowRun,\n)';
 
- }
+}

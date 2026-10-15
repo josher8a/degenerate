@@ -14,7 +14,7 @@ final class AiSearchInstancesJobsApi with ApiExecutor {const AiSearchInstancesJo
 /// Lists indexing jobs for an AI Search instance.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<List<AiSearchInstanceChangeJobStatusResponseResult>, AiSearchInstanceListJobsError>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchInstanceChangeJobStatusResponseResult>, AiSearchInstanceListJobsError>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -42,13 +42,13 @@ return execute(
   },
   onError: AiSearchInstanceListJobsError.fromResponse,
 );
- } 
+}
 /// Create new job
 ///
 /// Creates a new indexing job for an AI Search instance.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceCreateJobError>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceCreateJobError>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,7 +59,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -67,13 +67,13 @@ return execute(
   },
   onError: AiSearchInstanceCreateJobError.fromResponse,
 );
- } 
+}
 /// Get a Job Details
 ///
 /// Retrieves details for a specific AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceGetJobError>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceGetJobError>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -82,7 +82,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -90,13 +90,13 @@ return execute(
   },
   onError: AiSearchInstanceGetJobError.fromResponse,
 );
- } 
+}
 /// Change Job Status
 ///
 /// Updates the status of an AI Search indexing job.
 ///
 /// `PATCH /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceChangeJobStatusError>> aiSearchInstanceChangeJobStatus({required String id, required String jobId, required String accountId, AiSearchInstanceChangeJobStatusRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceChangeJobStatusError>> aiSearchInstanceChangeJobStatus({required String id, required String jobId, required String accountId, AiSearchInstanceChangeJobStatusRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,7 +107,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -115,13 +115,13 @@ return execute(
   },
   onError: AiSearchInstanceChangeJobStatusError.fromResponse,
 );
- } 
+}
 /// List Job Logs
 ///
 /// Lists log entries for an AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}/logs`
-Future<ApiResult<List<AiSearchInstanceListJobLogsResponseResult>, AiSearchInstanceListJobLogsError>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchInstanceListJobLogsResponseResult>, AiSearchInstanceListJobLogsError>> aiSearchInstanceListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -141,7 +141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -149,5 +149,5 @@ return execute(
   },
   onError: AiSearchInstanceListJobLogsError.fromResponse,
 );
- } 
- }
+}
+}

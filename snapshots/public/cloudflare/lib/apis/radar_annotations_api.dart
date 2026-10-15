@@ -14,7 +14,7 @@ final class RadarAnnotationsApi with ApiExecutor {const RadarAnnotationsApi(this
 /// Retrieves the latest annotations.
 ///
 /// `GET /radar/annotations`
-Future<ApiResult<RadarGetAnnotationsResponseResult, RadarGetAnnotationsError>> radarGetAnnotations({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsDataSource? dataSource, RadarGetAnnotationsEventType? eventType, int? asn, String? location, String? origin, RadarGetAnnotationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAnnotationsResponseResult, RadarGetAnnotationsError>> radarGetAnnotations({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsDataSource? dataSource, RadarGetAnnotationsEventType? eventType, int? asn, String? location, String? origin, RadarGetAnnotationsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -61,7 +61,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -69,13 +69,13 @@ return execute(
   },
   onError: RadarGetAnnotationsError.fromResponse,
 );
- } 
+}
 /// Get latest Internet outages and anomalies
 ///
 /// Retrieves the latest Internet outages and anomalies.
 ///
 /// `GET /radar/annotations/outages`
-Future<ApiResult<RadarGetAnnotationsOutagesResponseResult, RadarGetAnnotationsOutagesError>> radarGetAnnotationsOutages({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, int? asn, String? location, String? origin, RadarGetAnnotationsOutagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAnnotationsOutagesResponseResult, RadarGetAnnotationsOutagesError>> radarGetAnnotationsOutages({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, int? asn, String? location, String? origin, RadarGetAnnotationsOutagesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -116,7 +116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -124,13 +124,13 @@ return execute(
   },
   onError: RadarGetAnnotationsOutagesError.fromResponse,
 );
- } 
+}
 /// Get the number of outages by location
 ///
 /// Retrieves the number of outages by location.
 ///
 /// `GET /radar/annotations/outages/locations`
-Future<ApiResult<RadarGetAnnotationsOutagesTopResponseResult, RadarGetAnnotationsOutagesTopError>> radarGetAnnotationsOutagesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsOutagesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAnnotationsOutagesTopResponseResult, RadarGetAnnotationsOutagesTopError>> radarGetAnnotationsOutagesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetAnnotationsOutagesTopFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -159,7 +159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -167,5 +167,5 @@ return execute(
   },
   onError: RadarGetAnnotationsOutagesTopError.fromResponse,
 );
- } 
- }
+}
+}

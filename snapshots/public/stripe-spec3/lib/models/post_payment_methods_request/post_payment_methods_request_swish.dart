@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestSwish {const PostPaymentMethodsRequestSwish();
 
-factory PostPaymentMethodsRequestSwish.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestSwish(); }
+factory PostPaymentMethodsRequestSwish.fromJson(Map<String, dynamic> _) {return const PostPaymentMethodsRequestSwish();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestSwish copyWith() { return const PostPaymentMethodsRequestSwish(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentMethodsRequestSwish copyWith() {return const PostPaymentMethodsRequestSwish(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestSwish;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'PostPaymentMethodsRequestSwish()';
 
- }
+}

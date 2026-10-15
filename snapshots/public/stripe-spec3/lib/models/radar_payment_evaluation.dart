@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_client_device_metadata.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_customer_details.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_event.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_insights.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_outcome.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject();
 
-factory RadarPaymentEvaluationObject.fromJson(String json) { return switch (json) {
+factory RadarPaymentEvaluationObject.fromJson(String json) {return switch (json) {
   'radar.payment_evaluation' => radarPaymentEvaluation,
   _ => RadarPaymentEvaluationObject$Unknown(json),
-}; }
+};}
 
 static const RadarPaymentEvaluationObject radarPaymentEvaluation = RadarPaymentEvaluationObject$radarPaymentEvaluation._();
 
 static const List<RadarPaymentEvaluationObject> values = [radarPaymentEvaluation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'radar.payment_evaluation' => 'radarPaymentEvaluation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarPaymentEvaluationObject$Unknown; } 
+bool get isUnknown {return this is RadarPaymentEvaluationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() radarPaymentEvaluation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() radarPaymentEvaluation, required W Function(String value) $unknown, }) {return switch (this) {
       RadarPaymentEvaluationObject$radarPaymentEvaluation() => radarPaymentEvaluation(),
       RadarPaymentEvaluationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarPaymentEvaluation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarPaymentEvaluation, W Function(String value)? $unknown, }) {return switch (this) {
       RadarPaymentEvaluationObject$radarPaymentEvaluation() => radarPaymentEvaluation != null ? radarPaymentEvaluation() : orElse(value),
       RadarPaymentEvaluationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarPaymentEvaluationObject($value)';
 
- }
+}
 @immutable final class RadarPaymentEvaluationObject$radarPaymentEvaluation extends RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject$radarPaymentEvaluation._();
 
 @override String get value => 'radar.payment_evaluation';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarPay
 
 @override int get hashCode => 'radar.payment_evaluation'.hashCode;
 
- }
+}
 @immutable final class RadarPaymentEvaluationObject$Unknown extends RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarPay
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Payment Evaluations represent the risk lifecycle of an externally processed payment. It includes the Radar risk score from Stripe, payment outcome taken by the merchant or processor, and any post transaction events, such as refunds or disputes. See the [Radar API guide](/radar/multiprocessor) for integration steps.
-@immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata, this.outcome, this.paymentDetails, });
+@immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata = const Omittable.absent(), this.outcome = const Omittable.absent(), this.paymentDetails, });
 
-factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return RadarPaymentEvaluation(
+factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) {return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
   createdAt: (json['created_at'] as num).toInt(),
   customerDetails: json['customer_details'] != null ? InsightsResourcesPaymentEvaluationCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
@@ -65,11 +65,11 @@ factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return Rada
   id: json['id'] as String,
   insights: InsightsResourcesPaymentEvaluationInsights.fromJson(json['insights'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: RadarPaymentEvaluationObject.fromJson(json['object'] as String),
-  outcome: json['outcome'] != null ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null,
+  outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentDetails: json['payment_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final InsightsResourcesPaymentEvaluationClientDeviceMetadata? clientDeviceMetadataDetails;
 
@@ -90,17 +90,17 @@ final InsightsResourcesPaymentEvaluationInsights insights;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final RadarPaymentEvaluationObject object;
 
 /// Indicates the final outcome for the payment evaluation.
-final InsightsResourcesPaymentEvaluationOutcome? outcome;
+final Omittable<InsightsResourcesPaymentEvaluationOutcome?> outcome;
 
 final InsightsResourcesPaymentEvaluationPaymentDetails? paymentDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientDeviceMetadataDetails != null) 'client_device_metadata_details': clientDeviceMetadataDetails?.toJson(),
   'created_at': createdAt,
   if (customerDetails != null) 'customer_details': customerDetails?.toJson(),
@@ -108,22 +108,22 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'insights': insights.toJson(),
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-  if (outcome != null) 'outcome': outcome?.toJson(),
+  if (outcome.isPresent) 'outcome': outcome.value?.toJson(),
   if (paymentDetails != null) 'payment_details': paymentDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('insights') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata? Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails? Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Map<String, String>? Function()? metadata, RadarPaymentEvaluationObject? object, InsightsResourcesPaymentEvaluationOutcome? Function()? outcome, InsightsResourcesPaymentEvaluationPaymentDetails? Function()? paymentDetails, }) { return RadarPaymentEvaluation(
+return errors;}
+RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata? Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails? Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Omittable<Map<String,String>?>? metadata, RadarPaymentEvaluationObject? object, Omittable<InsightsResourcesPaymentEvaluationOutcome?>? outcome, InsightsResourcesPaymentEvaluationPaymentDetails? Function()? paymentDetails, }) {return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   createdAt: createdAt ?? this.createdAt,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
@@ -131,11 +131,11 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
   id: id ?? this.id,
   insights: insights ?? this.insights,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  outcome: outcome != null ? outcome() : this.outcome,
+  outcome: outcome ?? this.outcome,
   paymentDetails: paymentDetails != null ? paymentDetails() : this.paymentDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarPaymentEvaluation &&
           clientDeviceMetadataDetails == other.clientDeviceMetadataDetails &&
@@ -154,4 +154,4 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
 
 @override String toString() => 'RadarPaymentEvaluation(\n  clientDeviceMetadataDetails: $clientDeviceMetadataDetails,\n  createdAt: $createdAt,\n  customerDetails: $customerDetails,\n  events: $events,\n  id: $id,\n  insights: $insights,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  outcome: $outcome,\n  paymentDetails: $paymentDetails,\n)';
 
- }
+}

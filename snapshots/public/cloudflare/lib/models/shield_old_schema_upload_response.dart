@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_public_schema.dart';import 'package:pub_cloudflare/models/shield_old_schema_upload_details_warnings_only.dart';@immutable final class ShieldOldSchemaUploadResponse {const ShieldOldSchemaUploadResponse({required this.schema, this.uploadDetails, });
 
-factory ShieldOldSchemaUploadResponse.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadResponse(
+factory ShieldOldSchemaUploadResponse.fromJson(Map<String, dynamic> json) {return ShieldOldSchemaUploadResponse(
   schema: ShieldOldPublicSchema.fromJson(json['schema'] as Map<String, dynamic>),
   uploadDetails: json['upload_details'] != null ? ShieldOldSchemaUploadDetailsWarningsOnly.fromJson(json['upload_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ShieldOldPublicSchema schema;
 
 final ShieldOldSchemaUploadDetailsWarningsOnly? uploadDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'schema': schema.toJson(),
   if (uploadDetails != null) 'upload_details': uploadDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('schema'); } 
-ShieldOldSchemaUploadResponse copyWith({ShieldOldPublicSchema? schema, ShieldOldSchemaUploadDetailsWarningsOnly? Function()? uploadDetails, }) { return ShieldOldSchemaUploadResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('schema');}
+ShieldOldSchemaUploadResponse copyWith({ShieldOldPublicSchema? schema, ShieldOldSchemaUploadDetailsWarningsOnly? Function()? uploadDetails, }) {return ShieldOldSchemaUploadResponse(
   schema: schema ?? this.schema,
   uploadDetails: uploadDetails != null ? uploadDetails() : this.uploadDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadResponse &&
           schema == other.schema &&
@@ -30,4 +30,4 @@ ShieldOldSchemaUploadResponse copyWith({ShieldOldPublicSchema? schema, ShieldOld
 
 @override String toString() => 'ShieldOldSchemaUploadResponse(schema: $schema, uploadDetails: $uploadDetails)';
 
- }
+}

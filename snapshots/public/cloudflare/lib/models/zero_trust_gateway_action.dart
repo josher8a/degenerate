@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
 sealed class ZeroTrustGatewayAction {const ZeroTrustGatewayAction();
 
-factory ZeroTrustGatewayAction.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayAction.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   'allow' => allow,
@@ -22,7 +22,7 @@ factory ZeroTrustGatewayAction.fromJson(String json) { return switch (json) {
   'quarantine' => quarantine,
   'redirect' => redirect,
   _ => ZeroTrustGatewayAction$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustGatewayAction $on = ZeroTrustGatewayAction$$on._();
 
@@ -59,9 +59,9 @@ static const ZeroTrustGatewayAction redirect = ZeroTrustGatewayAction$redirect._
 static const List<ZeroTrustGatewayAction> values = [$on, off, allow, block, scan, noscan, safesearch, ytrestricted, isolate, noisolate, $override, l4Override, egress, resolve, quarantine, redirect];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   'allow' => 'allow',
@@ -79,11 +79,11 @@ String get name { return switch (value) {
   'quarantine' => 'quarantine',
   'redirect' => 'redirect',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayAction$Unknown; } 
+bool get isUnknown {return this is ZeroTrustGatewayAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function() allow, required W Function() block, required W Function() scan, required W Function() noscan, required W Function() safesearch, required W Function() ytrestricted, required W Function() isolate, required W Function() noisolate, required W Function() $override, required W Function() l4Override, required W Function() egress, required W Function() resolve, required W Function() quarantine, required W Function() redirect, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function() allow, required W Function() block, required W Function() scan, required W Function() noscan, required W Function() safesearch, required W Function() ytrestricted, required W Function() isolate, required W Function() noisolate, required W Function() $override, required W Function() l4Override, required W Function() egress, required W Function() resolve, required W Function() quarantine, required W Function() redirect, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustGatewayAction$$on() => $on(),
       ZeroTrustGatewayAction$off() => off(),
       ZeroTrustGatewayAction$allow() => allow(),
@@ -101,9 +101,9 @@ W when<W>({required W Function() $on, required W Function() off, required W Func
       ZeroTrustGatewayAction$quarantine() => quarantine(),
       ZeroTrustGatewayAction$redirect() => redirect(),
       ZeroTrustGatewayAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function()? allow, W Function()? block, W Function()? scan, W Function()? noscan, W Function()? safesearch, W Function()? ytrestricted, W Function()? isolate, W Function()? noisolate, W Function()? $override, W Function()? l4Override, W Function()? egress, W Function()? resolve, W Function()? quarantine, W Function()? redirect, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function()? allow, W Function()? block, W Function()? scan, W Function()? noscan, W Function()? safesearch, W Function()? ytrestricted, W Function()? isolate, W Function()? noisolate, W Function()? $override, W Function()? l4Override, W Function()? egress, W Function()? resolve, W Function()? quarantine, W Function()? redirect, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustGatewayAction$$on() => $on != null ? $on() : orElse(value),
       ZeroTrustGatewayAction$off() => off != null ? off() : orElse(value),
       ZeroTrustGatewayAction$allow() => allow != null ? allow() : orElse(value),
@@ -121,10 +121,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
       ZeroTrustGatewayAction$quarantine() => quarantine != null ? quarantine() : orElse(value),
       ZeroTrustGatewayAction$redirect() => redirect != null ? redirect() : orElse(value),
       ZeroTrustGatewayAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustGatewayAction($value)';
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$$on extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$$on._();
 
 @override String get value => 'on';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$off extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$off._();
 
 @override String get value => 'off';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$allow extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$allow._();
 
 @override String get value => 'allow';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'allow'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$block extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$block._();
 
 @override String get value => 'block';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'block'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$scan extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$scan._();
 
 @override String get value => 'scan';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'scan'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$noscan extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$noscan._();
 
 @override String get value => 'noscan';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'noscan'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$safesearch extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$safesearch._();
 
 @override String get value => 'safesearch';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'safesearch'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$ytrestricted extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$ytrestricted._();
 
 @override String get value => 'ytrestricted';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'ytrestricted'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$isolate extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$isolate._();
 
 @override String get value => 'isolate';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'isolate'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$noisolate extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$noisolate._();
 
 @override String get value => 'noisolate';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'noisolate'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$$override extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$$override._();
 
 @override String get value => 'override';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'override'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$l4Override extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$l4Override._();
 
 @override String get value => 'l4_override';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'l4_override'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$egress extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$egress._();
 
 @override String get value => 'egress';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'egress'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$resolve extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$resolve._();
 
 @override String get value => 'resolve';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'resolve'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$quarantine extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$quarantine._();
 
 @override String get value => 'quarantine';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'quarantine'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$redirect extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$redirect._();
 
 @override String get value => 'redirect';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'redirect'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayAction$Unknown extends ZeroTrustGatewayAction {const ZeroTrustGatewayAction$Unknown(this.value);
 
 @override final String value;
@@ -278,4 +278,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

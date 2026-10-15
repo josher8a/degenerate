@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/auto_merge/auto_merge_merge_method.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of auto merging a pull request.
 @immutable final class AutoMerge {const AutoMerge({required this.enabledBy, required this.mergeMethod, required this.commitTitle, required this.commitMessage, });
 
-factory AutoMerge.fromJson(Map<String, dynamic> json) { return AutoMerge(
+factory AutoMerge.fromJson(Map<String, dynamic> json) {return AutoMerge(
   enabledBy: SimpleUser.fromJson(json['enabled_by'] as Map<String, dynamic>),
   mergeMethod: AutoMergeMergeMethod.fromJson(json['merge_method'] as String),
   commitTitle: json['commit_title'] as String,
   commitMessage: json['commit_message'] as String,
-); }
+);}
 
 final SimpleUser enabledBy;
 
@@ -22,22 +22,22 @@ final String commitTitle;
 /// Commit message for the merge commit.
 final String commitMessage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled_by': enabledBy.toJson(),
   'merge_method': mergeMethod.toJson(),
   'commit_title': commitTitle,
   'commit_message': commitMessage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_by') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled_by') &&
       json.containsKey('merge_method') &&
       json.containsKey('commit_title') && json['commit_title'] is String &&
-      json.containsKey('commit_message') && json['commit_message'] is String; } 
-AutoMerge copyWith({SimpleUser? enabledBy, AutoMergeMergeMethod? mergeMethod, String? commitTitle, String? commitMessage, }) { return AutoMerge(
+      json.containsKey('commit_message') && json['commit_message'] is String;}
+AutoMerge copyWith({SimpleUser? enabledBy, AutoMergeMergeMethod? mergeMethod, String? commitTitle, String? commitMessage, }) {return AutoMerge(
   enabledBy: enabledBy ?? this.enabledBy,
   mergeMethod: mergeMethod ?? this.mergeMethod,
   commitTitle: commitTitle ?? this.commitTitle,
   commitMessage: commitMessage ?? this.commitMessage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AutoMerge &&
           enabledBy == other.enabledBy &&
@@ -49,4 +49,4 @@ AutoMerge copyWith({SimpleUser? enabledBy, AutoMergeMergeMethod? mergeMethod, St
 
 @override String toString() => 'AutoMerge(enabledBy: $enabledBy, mergeMethod: $mergeMethod, commitTitle: $commitTitle, commitMessage: $commitMessage)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_region_key.dart';@immutable final class DlsAccountRegionalHostnamesAccountListRegionsResponseResult {const DlsAccountRegionalHostnamesAccountListRegionsResponseResult({this.key, this.label, });
 
-factory DlsAccountRegionalHostnamesAccountListRegionsResponseResult.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
+factory DlsAccountRegionalHostnamesAccountListRegionsResponseResult.fromJson(Map<String, dynamic> json) {return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
   key: json['key'] != null ? DlsRegionKey.fromJson(json['key'] as String) : null,
   label: json['label'] as String?,
-); }
+);}
 
 /// Identifying key for the region
 final DlsRegionKey? key;
@@ -16,15 +16,15 @@ final DlsRegionKey? key;
 /// Example: `'Canada'`
 final String? label;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (key != null) 'key': key?.toJson(),
   'label': ?label,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'label'}.contains(key)); } 
-DlsAccountRegionalHostnamesAccountListRegionsResponseResult copyWith({DlsRegionKey? Function()? key, String? Function()? label, }) { return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'key', 'label'}.contains(key));}
+DlsAccountRegionalHostnamesAccountListRegionsResponseResult copyWith({DlsRegionKey? Function()? key, String? Function()? label, }) {return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
   key: key != null ? key() : this.key,
   label: label != null ? label() : this.label,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountListRegionsResponseResult &&
           key == other.key &&
@@ -34,4 +34,4 @@ DlsAccountRegionalHostnamesAccountListRegionsResponseResult copyWith({DlsRegionK
 
 @override String toString() => 'DlsAccountRegionalHostnamesAccountListRegionsResponseResult(key: $key, label: $label)';
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target's IPv6 address
 @immutable final class Ipv6 {const Ipv6({this.ipAddr, this.virtualNetworkId, });
 
-factory Ipv6.fromJson(Map<String, dynamic> json) { return Ipv6(
+factory Ipv6.fromJson(Map<String, dynamic> json) {return Ipv6(
   ipAddr: json['ip_addr'] as String?,
   virtualNetworkId: json['virtual_network_id'] as String?,
-); }
+);}
 
 /// IP address of the target
 /// 
@@ -19,15 +19,15 @@ final String? ipAddr;
 /// Example: `'c77b744e-acc8-428f-9257-6878c046ed55'`
 final String? virtualNetworkId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip_addr': ?ipAddr,
   'virtual_network_id': ?virtualNetworkId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_addr', 'virtual_network_id'}.contains(key)); } 
-Ipv6 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId, }) { return Ipv6(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ip_addr', 'virtual_network_id'}.contains(key));}
+Ipv6 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId, }) {return Ipv6(
   ipAddr: ipAddr != null ? ipAddr() : this.ipAddr,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Ipv6 &&
           ipAddr == other.ipAddr &&
@@ -37,4 +37,4 @@ Ipv6 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId,
 
 @override String toString() => 'Ipv6(ipAddr: $ipAddr, virtualNetworkId: $virtualNetworkId)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_client_secret_version.dart';import 'package:pub_cloudflare/models/access_duration.dart';import 'package:pub_cloudflare/models/access_previous_client_secret_expires_at.dart';import 'package:pub_cloudflare/models/access_schemas_name.dart';@immutable final class AccessServiceTokensUpdateAServiceTokenRequest {const AccessServiceTokensUpdateAServiceTokenRequest({this.clientSecretVersion, this.duration, this.name, this.previousClientSecretExpiresAt, });
 
-factory AccessServiceTokensUpdateAServiceTokenRequest.fromJson(Map<String, dynamic> json) { return AccessServiceTokensUpdateAServiceTokenRequest(
+factory AccessServiceTokensUpdateAServiceTokenRequest.fromJson(Map<String, dynamic> json) {return AccessServiceTokensUpdateAServiceTokenRequest(
   clientSecretVersion: json['client_secret_version'] != null ? AccessClientSecretVersion.fromJson(json['client_secret_version'] as num) : null,
   duration: json['duration'] != null ? AccessDuration.fromJson(json['duration'] as String) : null,
   name: json['name'] != null ? AccessSchemasName.fromJson(json['name'] as String) : null,
   previousClientSecretExpiresAt: json['previous_client_secret_expires_at'] != null ? AccessPreviousClientSecretExpiresAt.fromJson(json['previous_client_secret_expires_at'] as String) : null,
-); }
+);}
 
 /// A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.
 final AccessClientSecretVersion? clientSecretVersion;
@@ -22,19 +22,19 @@ final AccessSchemasName? name;
 /// The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
 final AccessPreviousClientSecretExpiresAt? previousClientSecretExpiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientSecretVersion != null) 'client_secret_version': clientSecretVersion?.toJson(),
   if (duration != null) 'duration': duration?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (previousClientSecretExpiresAt != null) 'previous_client_secret_expires_at': previousClientSecretExpiresAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_secret_version', 'duration', 'name', 'previous_client_secret_expires_at'}.contains(key)); } 
-AccessServiceTokensUpdateAServiceTokenRequest copyWith({AccessClientSecretVersion? Function()? clientSecretVersion, AccessDuration? Function()? duration, AccessSchemasName? Function()? name, AccessPreviousClientSecretExpiresAt? Function()? previousClientSecretExpiresAt, }) { return AccessServiceTokensUpdateAServiceTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_secret_version', 'duration', 'name', 'previous_client_secret_expires_at'}.contains(key));}
+AccessServiceTokensUpdateAServiceTokenRequest copyWith({AccessClientSecretVersion? Function()? clientSecretVersion, AccessDuration? Function()? duration, AccessSchemasName? Function()? name, AccessPreviousClientSecretExpiresAt? Function()? previousClientSecretExpiresAt, }) {return AccessServiceTokensUpdateAServiceTokenRequest(
   clientSecretVersion: clientSecretVersion != null ? clientSecretVersion() : this.clientSecretVersion,
   duration: duration != null ? duration() : this.duration,
   name: name != null ? name() : this.name,
   previousClientSecretExpiresAt: previousClientSecretExpiresAt != null ? previousClientSecretExpiresAt() : this.previousClientSecretExpiresAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessServiceTokensUpdateAServiceTokenRequest &&
           clientSecretVersion == other.clientSecretVersion &&
@@ -46,4 +46,4 @@ AccessServiceTokensUpdateAServiceTokenRequest copyWith({AccessClientSecretVersio
 
 @override String toString() => 'AccessServiceTokensUpdateAServiceTokenRequest(clientSecretVersion: $clientSecretVersion, duration: $duration, name: $name, previousClientSecretExpiresAt: $previousClientSecretExpiresAt)';
 
- }
+}

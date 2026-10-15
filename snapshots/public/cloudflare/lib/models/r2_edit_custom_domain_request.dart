@@ -10,11 +10,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class R2EditCustomDomainRequest {const R2EditCustomDomainRequest({this.ciphers, this.enabled, this.minTls, });
 
-factory R2EditCustomDomainRequest.fromJson(Map<String, dynamic> json) { return R2EditCustomDomainRequest(
+factory R2EditCustomDomainRequest.fromJson(Map<String, dynamic> json) {return R2EditCustomDomainRequest(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   enabled: json['enabled'] as bool?,
   minTls: json['minTLS'] != null ? MinTls.fromJson(json['minTLS'] as String) : null,
-); }
+);}
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 final List<String>? ciphers;
@@ -25,17 +25,17 @@ final bool? enabled;
 /// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to previous value.
 final MinTls? minTls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ciphers': ?ciphers,
   'enabled': ?enabled,
   if (minTls != null) 'minTLS': minTls?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ciphers', 'enabled', 'minTLS'}.contains(key)); } 
-R2EditCustomDomainRequest copyWith({List<String>? Function()? ciphers, bool? Function()? enabled, MinTls? Function()? minTls, }) { return R2EditCustomDomainRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ciphers', 'enabled', 'minTLS'}.contains(key));}
+R2EditCustomDomainRequest copyWith({List<String>? Function()? ciphers, bool? Function()? enabled, MinTls? Function()? minTls, }) {return R2EditCustomDomainRequest(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   enabled: enabled != null ? enabled() : this.enabled,
   minTls: minTls != null ? minTls() : this.minTls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2EditCustomDomainRequest &&
           listEquals(ciphers, other.ciphers) &&
@@ -46,4 +46,4 @@ R2EditCustomDomainRequest copyWith({List<String>? Function()? ciphers, bool? Fun
 
 @override String toString() => 'R2EditCustomDomainRequest(ciphers: $ciphers, enabled: $enabled, minTls: $minTls)';
 
- }
+}

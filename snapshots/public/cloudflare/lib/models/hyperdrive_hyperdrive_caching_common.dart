@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveHyperdriveCachingCommon {const HyperdriveHyperdriveCachingCommon({this.disabled});
 
-factory HyperdriveHyperdriveCachingCommon.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveCachingCommon(
+factory HyperdriveHyperdriveCachingCommon.fromJson(Map<String, dynamic> json) {return HyperdriveHyperdriveCachingCommon(
   disabled: json['disabled'] as bool?,
-); }
+);}
 
 /// Set to true to disable caching of SQL responses. Default is false.
 final bool? disabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'disabled': ?disabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled'}.contains(key)); } 
-HyperdriveHyperdriveCachingCommon copyWith({bool? Function()? disabled}) { return HyperdriveHyperdriveCachingCommon(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'disabled'}.contains(key));}
+HyperdriveHyperdriveCachingCommon copyWith({bool? Function()? disabled}) {return HyperdriveHyperdriveCachingCommon(
   disabled: disabled != null ? disabled() : this.disabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveCachingCommon &&
           disabled == other.disabled;
@@ -25,4 +25,4 @@ HyperdriveHyperdriveCachingCommon copyWith({bool? Function()? disabled}) { retur
 
 @override String toString() => 'HyperdriveHyperdriveCachingCommon(disabled: $disabled)';
 
- }
+}

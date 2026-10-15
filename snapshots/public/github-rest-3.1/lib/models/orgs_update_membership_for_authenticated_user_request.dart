@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state that the membership should be in. Only `"active"` will be accepted.
 sealed class OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState();
 
-factory OrgsUpdateMembershipForAuthenticatedUserRequestState.fromJson(String json) { return switch (json) {
+factory OrgsUpdateMembershipForAuthenticatedUserRequestState.fromJson(String json) {return switch (json) {
   'active' => active,
   _ => OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown(json),
-}; }
+};}
 
 static const OrgsUpdateMembershipForAuthenticatedUserRequestState active = OrgsUpdateMembershipForAuthenticatedUserRequestState$active._();
 
 static const List<OrgsUpdateMembershipForAuthenticatedUserRequestState> values = [active];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown; } 
+bool get isUnknown {return this is OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function(String value) $unknown, }) {return switch (this) {
       OrgsUpdateMembershipForAuthenticatedUserRequestState$active() => active(),
       OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function(String value)? $unknown, }) {return switch (this) {
       OrgsUpdateMembershipForAuthenticatedUserRequestState$active() => active != null ? active() : orElse(value),
       OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrgsUpdateMembershipForAuthenticatedUserRequestState($value)';
 
- }
+}
 @immutable final class OrgsUpdateMembershipForAuthenticatedUserRequestState$active extends OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState$active._();
 
 @override String get value => 'active';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown extends OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown(this.value);
 
 @override final String value;
@@ -53,23 +53,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class OrgsUpdateMembershipForAuthenticatedUserRequest {const OrgsUpdateMembershipForAuthenticatedUserRequest({required this.state});
 
-factory OrgsUpdateMembershipForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateMembershipForAuthenticatedUserRequest(
+factory OrgsUpdateMembershipForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return OrgsUpdateMembershipForAuthenticatedUserRequest(
   state: OrgsUpdateMembershipForAuthenticatedUserRequestState.fromJson(json['state'] as String),
-); }
+);}
 
 /// The state that the membership should be in. Only `"active"` will be accepted.
 final OrgsUpdateMembershipForAuthenticatedUserRequestState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-OrgsUpdateMembershipForAuthenticatedUserRequest copyWith({OrgsUpdateMembershipForAuthenticatedUserRequestState? state}) { return OrgsUpdateMembershipForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state');}
+OrgsUpdateMembershipForAuthenticatedUserRequest copyWith({OrgsUpdateMembershipForAuthenticatedUserRequestState? state}) {return OrgsUpdateMembershipForAuthenticatedUserRequest(
   state: state ?? this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsUpdateMembershipForAuthenticatedUserRequest &&
           state == other.state;
@@ -78,4 +78,4 @@ OrgsUpdateMembershipForAuthenticatedUserRequest copyWith({OrgsUpdateMembershipFo
 
 @override String toString() => 'OrgsUpdateMembershipForAuthenticatedUserRequest(state: $state)';
 
- }
+}

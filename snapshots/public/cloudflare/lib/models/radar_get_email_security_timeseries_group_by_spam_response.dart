@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_timeseries_group_by_spam_response/radar_get_email_security_timeseries_group_by_spam_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamResponse {const RadarGetEmailSecurityTimeseriesGroupBySpamResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecurityTimeseriesGroupBySpamResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpamResponse(
+factory RadarGetEmailSecurityTimeseriesGroupBySpamResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupBySpamResponse(
   result: RadarGetEmailSecurityTimeseriesGroupBySpamResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecurityTimeseriesGroupBySpamResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecurityTimeseriesGroupBySpamResponse copyWith({RadarGetEmailSecurityTimeseriesGroupBySpamResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTimeseriesGroupBySpamResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecurityTimeseriesGroupBySpamResponse copyWith({RadarGetEmailSecurityTimeseriesGroupBySpamResponseResult? result, bool? success, }) {return RadarGetEmailSecurityTimeseriesGroupBySpamResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpamResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecurityTimeseriesGroupBySpamResponse copyWith({RadarGetEmailSecuri
 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamResponse(result: $result, success: $success)';
 
- }
+}

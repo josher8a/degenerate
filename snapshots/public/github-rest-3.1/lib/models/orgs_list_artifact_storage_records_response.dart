@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_list_artifact_storage_records_response/orgs_list_artifact_storage_records_response_storage_records.dart';@immutable final class OrgsListArtifactStorageRecordsResponse {const OrgsListArtifactStorageRecordsResponse({this.totalCount, this.storageRecords, });
 
-factory OrgsListArtifactStorageRecordsResponse.fromJson(Map<String, dynamic> json) { return OrgsListArtifactStorageRecordsResponse(
+factory OrgsListArtifactStorageRecordsResponse.fromJson(Map<String, dynamic> json) {return OrgsListArtifactStorageRecordsResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   storageRecords: (json['storage_records'] as List<dynamic>?)?.map((e) => OrgsListArtifactStorageRecordsResponseStorageRecords.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The number of storage records for this digest and organization
 final int? totalCount;
 
 final List<OrgsListArtifactStorageRecordsResponseStorageRecords>? storageRecords;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': ?totalCount,
   if (storageRecords != null) 'storage_records': storageRecords?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'storage_records'}.contains(key)); } 
-OrgsListArtifactStorageRecordsResponse copyWith({int? Function()? totalCount, List<OrgsListArtifactStorageRecordsResponseStorageRecords>? Function()? storageRecords, }) { return OrgsListArtifactStorageRecordsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total_count', 'storage_records'}.contains(key));}
+OrgsListArtifactStorageRecordsResponse copyWith({int? Function()? totalCount, List<OrgsListArtifactStorageRecordsResponseStorageRecords>? Function()? storageRecords, }) {return OrgsListArtifactStorageRecordsResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   storageRecords: storageRecords != null ? storageRecords() : this.storageRecords,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsListArtifactStorageRecordsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ OrgsListArtifactStorageRecordsResponse copyWith({int? Function()? totalCount, Li
 
 @override String toString() => 'OrgsListArtifactStorageRecordsResponse(totalCount: $totalCount, storageRecords: $storageRecords)';
 
- }
+}

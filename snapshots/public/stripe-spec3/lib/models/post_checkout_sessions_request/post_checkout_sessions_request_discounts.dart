@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestDiscounts {const PostCheckoutSessionsRequestDiscounts({this.coupon, this.promotionCode, });
 
-factory PostCheckoutSessionsRequestDiscounts.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestDiscounts(
+factory PostCheckoutSessionsRequestDiscounts.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestDiscounts(
   coupon: json['coupon'] as String?,
   promotionCode: json['promotion_code'] as String?,
-); }
+);}
 
 final String? coupon;
 
 final String? promotionCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'coupon': ?coupon,
   'promotion_code': ?promotionCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final coupon$ = coupon;
 if (coupon$ != null) {
   if (coupon$.runes.length > 5000) { errors.add('coupon: length must be <= 5000'); }
@@ -27,11 +27,11 @@ final promotionCode$ = promotionCode;
 if (promotionCode$ != null) {
   if (promotionCode$.runes.length > 5000) { errors.add('promotionCode: length must be <= 5000'); }
 }
-return errors; } 
-PostCheckoutSessionsRequestDiscounts copyWith({String? Function()? coupon, String? Function()? promotionCode, }) { return PostCheckoutSessionsRequestDiscounts(
+return errors;}
+PostCheckoutSessionsRequestDiscounts copyWith({String? Function()? coupon, String? Function()? promotionCode, }) {return PostCheckoutSessionsRequestDiscounts(
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestDiscounts &&
           coupon == other.coupon &&
@@ -41,4 +41,4 @@ PostCheckoutSessionsRequestDiscounts copyWith({String? Function()? coupon, Strin
 
 @override String toString() => 'PostCheckoutSessionsRequestDiscounts(coupon: $coupon, promotionCode: $promotionCode)';
 
- }
+}

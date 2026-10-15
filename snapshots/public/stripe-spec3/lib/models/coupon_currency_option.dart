@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class CouponCurrencyOption {const CouponCurrencyOption({required this.amountOff});
 
-factory CouponCurrencyOption.fromJson(Map<String, dynamic> json) { return CouponCurrencyOption(
+factory CouponCurrencyOption.fromJson(Map<String, dynamic> json) {return CouponCurrencyOption(
   amountOff: (json['amount_off'] as num).toInt(),
-); }
+);}
 
 /// Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer.
 final int amountOff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_off': amountOff,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_off') && json['amount_off'] is num; } 
-CouponCurrencyOption copyWith({int? amountOff}) { return CouponCurrencyOption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_off') && json['amount_off'] is num;}
+CouponCurrencyOption copyWith({int? amountOff}) {return CouponCurrencyOption(
   amountOff: amountOff ?? this.amountOff,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CouponCurrencyOption &&
           amountOff == other.amountOff;
@@ -26,4 +26,4 @@ CouponCurrencyOption copyWith({int? amountOff}) { return CouponCurrencyOption(
 
 @override String toString() => 'CouponCurrencyOption(amountOff: $amountOff)';
 
- }
+}

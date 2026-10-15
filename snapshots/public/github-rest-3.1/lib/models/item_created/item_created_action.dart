@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ItemCreatedAction {const ItemCreatedAction();
 
-factory ItemCreatedAction.fromJson(String json) { return switch (json) {
+factory ItemCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => ItemCreatedAction$Unknown(json),
-}; }
+};}
 
 static const ItemCreatedAction created = ItemCreatedAction$created._();
 
 static const List<ItemCreatedAction> values = [created];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created' => 'created',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ItemCreatedAction$Unknown; } 
+bool get isUnknown {return this is ItemCreatedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() created, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() created, required W Function(String value) $unknown, }) {return switch (this) {
       ItemCreatedAction$created() => created(),
       ItemCreatedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function(String value)? $unknown, }) {return switch (this) {
       ItemCreatedAction$created() => created != null ? created() : orElse(value),
       ItemCreatedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ItemCreatedAction($value)';
 
- }
+}
 @immutable final class ItemCreatedAction$created extends ItemCreatedAction {const ItemCreatedAction$created._();
 
 @override String get value => 'created';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class ItemCreatedAction$Unknown extends ItemCreatedAction {const ItemCreatedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

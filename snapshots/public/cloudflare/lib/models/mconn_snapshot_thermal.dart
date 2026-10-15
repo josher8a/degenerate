@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Thermal
 @immutable final class MconnSnapshotThermal {const MconnSnapshotThermal({required this.label, this.connectorId, this.criticalCelcius, this.currentCelcius, this.maxCelcius, });
 
-factory MconnSnapshotThermal.fromJson(Map<String, dynamic> json) { return MconnSnapshotThermal(
+factory MconnSnapshotThermal.fromJson(Map<String, dynamic> json) {return MconnSnapshotThermal(
   connectorId: json['connector_id'] as String?,
   criticalCelcius: json['critical_celcius'] != null ? (json['critical_celcius'] as num).toDouble() : null,
   currentCelcius: json['current_celcius'] != null ? (json['current_celcius'] as num).toDouble() : null,
   label: json['label'] as String,
   maxCelcius: json['max_celcius'] != null ? (json['max_celcius'] as num).toDouble() : null,
-); }
+);}
 
 /// Connector identifier
 final String? connectorId;
@@ -27,21 +27,21 @@ final String label;
 /// Maximum temperature of the component (degrees Celsius)
 final double? maxCelcius;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector_id': ?connectorId,
   'critical_celcius': ?criticalCelcius,
   'current_celcius': ?currentCelcius,
   'label': label,
   'max_celcius': ?maxCelcius,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String; } 
-MconnSnapshotThermal copyWith({String? Function()? connectorId, double? Function()? criticalCelcius, double? Function()? currentCelcius, String? label, double? Function()? maxCelcius, }) { return MconnSnapshotThermal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && json['label'] is String;}
+MconnSnapshotThermal copyWith({String? Function()? connectorId, double? Function()? criticalCelcius, double? Function()? currentCelcius, String? label, double? Function()? maxCelcius, }) {return MconnSnapshotThermal(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   criticalCelcius: criticalCelcius != null ? criticalCelcius() : this.criticalCelcius,
   currentCelcius: currentCelcius != null ? currentCelcius() : this.currentCelcius,
   label: label ?? this.label,
   maxCelcius: maxCelcius != null ? maxCelcius() : this.maxCelcius,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotThermal &&
           connectorId == other.connectorId &&
@@ -54,4 +54,4 @@ MconnSnapshotThermal copyWith({String? Function()? connectorId, double? Function
 
 @override String toString() => 'MconnSnapshotThermal(connectorId: $connectorId, criticalCelcius: $criticalCelcius, currentCelcius: $currentCelcius, label: $label, maxCelcius: $maxCelcius)';
 
- }
+}

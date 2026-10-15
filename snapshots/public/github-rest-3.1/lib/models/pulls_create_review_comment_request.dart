@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/pulls_create_review_comment_request/pulls_create_review_comment_request_side.dart';/// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
 sealed class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide();
 
-factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) { return switch (json) {
+factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   'side' => side,
   _ => PullsCreateReviewCommentRequestStartSide$Unknown(json),
-}; }
+};}
 
 static const PullsCreateReviewCommentRequestStartSide left = PullsCreateReviewCommentRequestStartSide$left._();
 
@@ -20,33 +20,33 @@ static const PullsCreateReviewCommentRequestStartSide side = PullsCreateReviewCo
 static const List<PullsCreateReviewCommentRequestStartSide> values = [left, right, side];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'LEFT' => 'left',
   'RIGHT' => 'right',
   'side' => 'side',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PullsCreateReviewCommentRequestStartSide$Unknown; } 
+bool get isUnknown {return this is PullsCreateReviewCommentRequestStartSide$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() left, required W Function() right, required W Function() side, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() left, required W Function() right, required W Function() side, required W Function(String value) $unknown, }) {return switch (this) {
       PullsCreateReviewCommentRequestStartSide$left() => left(),
       PullsCreateReviewCommentRequestStartSide$right() => right(),
       PullsCreateReviewCommentRequestStartSide$side() => side(),
       PullsCreateReviewCommentRequestStartSide$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W Function()? right, W Function()? side, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W Function()? right, W Function()? side, W Function(String value)? $unknown, }) {return switch (this) {
       PullsCreateReviewCommentRequestStartSide$left() => left != null ? left() : orElse(value),
       PullsCreateReviewCommentRequestStartSide$right() => right != null ? right() : orElse(value),
       PullsCreateReviewCommentRequestStartSide$side() => side != null ? side() : orElse(value),
       PullsCreateReviewCommentRequestStartSide$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PullsCreateReviewCommentRequestStartSide($value)';
 
- }
+}
 @immutable final class PullsCreateReviewCommentRequestStartSide$left extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$left._();
 
 @override String get value => 'LEFT';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W 
 
 @override int get hashCode => 'LEFT'.hashCode;
 
- }
+}
 @immutable final class PullsCreateReviewCommentRequestStartSide$right extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$right._();
 
 @override String get value => 'RIGHT';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W 
 
 @override int get hashCode => 'RIGHT'.hashCode;
 
- }
+}
 @immutable final class PullsCreateReviewCommentRequestStartSide$side extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$side._();
 
 @override String get value => 'side';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W 
 
 @override int get hashCode => 'side'.hashCode;
 
- }
+}
 @immutable final class PullsCreateReviewCommentRequestStartSide$Unknown extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PullsCreateReviewCommentRequest {const PullsCreateReviewCommentRequest({required this.body, required this.commitId, required this.path, this.position, this.side, this.line, this.startLine, this.startSide, this.inReplyTo, this.subjectType, });
 
-factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) { return PullsCreateReviewCommentRequest(
+factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) {return PullsCreateReviewCommentRequest(
   body: json['body'] as String,
   commitId: json['commit_id'] as String,
   path: json['path'] as String,
@@ -97,7 +97,7 @@ factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) { re
   startSide: json['start_side'] != null ? PullsCreateReviewCommentRequestStartSide.fromJson(json['start_side'] as String) : null,
   inReplyTo: json['in_reply_to'] != null ? (json['in_reply_to'] as num).toInt() : null,
   subjectType: json['subject_type'] != null ? SubjectType.fromJson(json['subject_type'] as String) : null,
-); }
+);}
 
 /// The text of the review comment.
 final String body;
@@ -129,7 +129,7 @@ final int? inReplyTo;
 /// The level at which the comment is targeted.
 final SubjectType? subjectType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
   'commit_id': commitId,
   'path': path,
@@ -140,11 +140,11 @@ Map<String, dynamic> toJson() { return {
   if (startSide != null) 'start_side': startSide?.toJson(),
   'in_reply_to': ?inReplyTo,
   if (subjectType != null) 'subject_type': subjectType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, PullsCreateReviewCommentRequestSide? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, SubjectType? Function()? subjectType, }) { return PullsCreateReviewCommentRequest(
+      json.containsKey('path') && json['path'] is String;}
+PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, PullsCreateReviewCommentRequestSide? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, SubjectType? Function()? subjectType, }) {return PullsCreateReviewCommentRequest(
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,
   path: path ?? this.path,
@@ -155,7 +155,7 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
   startSide: startSide != null ? startSide() : this.startSide,
   inReplyTo: inReplyTo != null ? inReplyTo() : this.inReplyTo,
   subjectType: subjectType != null ? subjectType() : this.subjectType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullsCreateReviewCommentRequest &&
           body == other.body &&
@@ -173,4 +173,4 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
 
 @override String toString() => 'PullsCreateReviewCommentRequest(\n  body: $body,\n  commitId: $commitId,\n  path: $path,\n  position: $position,\n  side: $side,\n  line: $line,\n  startLine: $startLine,\n  startSide: $startSide,\n  inReplyTo: $inReplyTo,\n  subjectType: $subjectType,\n)';
 
- }
+}

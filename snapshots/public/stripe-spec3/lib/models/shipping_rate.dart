@@ -1,40 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ShippingRate
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_type.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate.dart';import 'package:pub_stripe_spec3/models/shipping_rate_fixed_amount.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_type.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate.dart';import 'package:pub_stripe_spec3/models/shipping_rate_fixed_amount.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ShippingRateObject {const ShippingRateObject();
 
-factory ShippingRateObject.fromJson(String json) { return switch (json) {
+factory ShippingRateObject.fromJson(String json) {return switch (json) {
   'shipping_rate' => shippingRate,
   _ => ShippingRateObject$Unknown(json),
-}; }
+};}
 
 static const ShippingRateObject shippingRate = ShippingRateObject$shippingRate._();
 
 static const List<ShippingRateObject> values = [shippingRate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'shipping_rate' => 'shippingRate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShippingRateObject$Unknown; } 
+bool get isUnknown {return this is ShippingRateObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() shippingRate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() shippingRate, required W Function(String value) $unknown, }) {return switch (this) {
       ShippingRateObject$shippingRate() => shippingRate(),
       ShippingRateObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? shippingRate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? shippingRate, W Function(String value)? $unknown, }) {return switch (this) {
       ShippingRateObject$shippingRate() => shippingRate != null ? shippingRate() : orElse(value),
       ShippingRateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShippingRateObject($value)';
 
- }
+}
 @immutable final class ShippingRateObject$shippingRate extends ShippingRateObject {const ShippingRateObject$shippingRate._();
 
 @override String get value => 'shipping_rate';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? shipping
 
 @override int get hashCode => 'shipping_rate'.hashCode;
 
- }
+}
 @immutable final class ShippingRateObject$Unknown extends ShippingRateObject {const ShippingRateObject$Unknown(this.value);
 
 @override final String value;
@@ -53,25 +53,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? shipping
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
-@immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate, this.displayName, this.fixedAmount, this.taxBehavior, this.taxCode, });
+@immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate = const Omittable.absent(), this.displayName = const Omittable.absent(), this.fixedAmount, this.taxBehavior = const Omittable.absent(), this.taxCode = const Omittable.absent(), });
 
-factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
+factory ShippingRate.fromJson(Map<String, dynamic> json) {return ShippingRate(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  deliveryEstimate: json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
-  displayName: json['display_name'] as String?,
+  deliveryEstimate: json.containsKey('delivery_estimate') ? Omittable(json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   fixedAmount: json['fixed_amount'] != null ? ShippingRateFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ShippingRateObject.fromJson(json['object'] as String),
-  taxBehavior: json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null,
+  taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
+  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? ProductTaxCode.fromJson(json['tax_code']) : null) : const Omittable.absent(),
   type: PostShippingRatesRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Whether the shipping rate can be used for new purchases. Defaults to `true`.
 final bool active;
@@ -80,10 +80,10 @@ final bool active;
 final int created;
 
 /// The estimated range for how long shipping will take, meant to be displayable to the customer. This will appear on CheckoutSessions.
-final ShippingRateDeliveryEstimate? deliveryEstimate;
+final Omittable<ShippingRateDeliveryEstimate?> deliveryEstimate;
 
 /// The name of the shipping rate, meant to be displayable to the customer. This will appear on CheckoutSessions.
-final String? displayName;
+final Omittable<String?> displayName;
 
 final ShippingRateFixedAmount? fixedAmount;
 
@@ -100,57 +100,57 @@ final Map<String,String> metadata;
 final ShippingRateObject object;
 
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final CurrencyOptionTaxBehavior? taxBehavior;
+final Omittable<CurrencyOptionTaxBehavior?> taxBehavior;
 
 /// A [tax code](https://docs.stripe.com/tax/tax-categories) ID. The Shipping tax code is `txcd_92010001`.
-final ProductTaxCode? taxCode;
+final Omittable<ProductTaxCode?> taxCode;
 
 /// The type of calculation to use on the shipping rate.
 final PostShippingRatesRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'created': created,
-  if (deliveryEstimate != null) 'delivery_estimate': deliveryEstimate?.toJson(),
-  'display_name': ?displayName,
+  if (deliveryEstimate.isPresent) 'delivery_estimate': deliveryEstimate.value?.toJson(),
+  if (displayName.isPresent) 'display_name': displayName.value,
   if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
   'id': id,
   'livemode': livemode,
   'metadata': metadata,
   'object': object.toJson(),
-  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
-  if (taxCode != null) 'tax_code': taxCode?.toJson(),
+  if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
+  if (taxCode.isPresent) 'tax_code': taxCode.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final displayName$ = displayName;
+List<String> validate() {final errors = <String>[];
+final displayName$ = displayName.value;
 if (displayName$ != null) {
   if (displayName$.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, CurrencyOptionTaxBehavior? Function()? taxBehavior, ProductTaxCode? Function()? taxCode, PostShippingRatesRequestType? type, }) { return ShippingRate(
+return errors;}
+ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliveryEstimate?>? deliveryEstimate, Omittable<String?>? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, Omittable<ProductTaxCode?>? taxCode, PostShippingRatesRequestType? type, }) {return ShippingRate(
   active: active ?? this.active,
   created: created ?? this.created,
-  deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,
-  displayName: displayName != null ? displayName() : this.displayName,
+  deliveryEstimate: deliveryEstimate ?? this.deliveryEstimate,
+  displayName: displayName ?? this.displayName,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
-  taxCode: taxCode != null ? taxCode() : this.taxCode,
+  taxBehavior: taxBehavior ?? this.taxBehavior,
+  taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRate &&
           active == other.active &&
@@ -170,4 +170,4 @@ ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate?
 
 @override String toString() => 'ShippingRate(\n  active: $active,\n  created: $created,\n  deliveryEstimate: $deliveryEstimate,\n  displayName: $displayName,\n  fixedAmount: $fixedAmount,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  type: $type,\n)';
 
- }
+}

@@ -10,20 +10,20 @@ String toJson() => value.toString();
 }
 @immutable final class IntelUrlParam {const IntelUrlParam({this.url});
 
-factory IntelUrlParam.fromJson(Map<String, dynamic> json) { return IntelUrlParam(
+factory IntelUrlParam.fromJson(Map<String, dynamic> json) {return IntelUrlParam(
   url: json['url'] != null ? IntelUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 /// URL(s) to filter submissions results by.
 final IntelUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
-IntelUrlParam copyWith({IntelUrl? Function()? url}) { return IntelUrlParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url'}.contains(key));}
+IntelUrlParam copyWith({IntelUrl? Function()? url}) {return IntelUrlParam(
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IntelUrlParam &&
           url == other.url;
@@ -32,4 +32,4 @@ IntelUrlParam copyWith({IntelUrl? Function()? url}) { return IntelUrlParam(
 
 @override String toString() => 'IntelUrlParam(url: $url)';
 
- }
+}

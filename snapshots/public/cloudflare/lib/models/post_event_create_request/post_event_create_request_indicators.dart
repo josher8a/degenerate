@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventCreateRequestIndicators {const PostEventCreateRequestIndicators({required this.indicatorType, required this.value, });
 
-factory PostEventCreateRequestIndicators.fromJson(Map<String, dynamic> json) { return PostEventCreateRequestIndicators(
+factory PostEventCreateRequestIndicators.fromJson(Map<String, dynamic> json) {return PostEventCreateRequestIndicators(
   indicatorType: json['indicatorType'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// The type of indicator (e.g., DOMAIN, IP, JA3, HASH)
 /// 
@@ -18,16 +18,16 @@ final String indicatorType;
 /// Example: `'malicious.com'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'indicatorType': indicatorType,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostEventCreateRequestIndicators copyWith({String? indicatorType, String? value, }) { return PostEventCreateRequestIndicators(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indicatorType') && json['indicatorType'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostEventCreateRequestIndicators copyWith({String? indicatorType, String? value, }) {return PostEventCreateRequestIndicators(
   indicatorType: indicatorType ?? this.indicatorType,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventCreateRequestIndicators &&
           indicatorType == other.indicatorType &&
@@ -37,4 +37,4 @@ PostEventCreateRequestIndicators copyWith({String? indicatorType, String? value,
 
 @override String toString() => 'PostEventCreateRequestIndicators(indicatorType: $indicatorType, value: $value)';
 
- }
+}

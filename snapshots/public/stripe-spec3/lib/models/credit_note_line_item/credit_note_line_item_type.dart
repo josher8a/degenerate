@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the credit note line item, one of `invoice_line_item` or `custom_line_item`. When the type is `invoice_line_item` there is an additional `invoice_line_item` property on the resource the value of which is the id of the credited line item on the invoice.
 sealed class CreditNoteLineItemType {const CreditNoteLineItemType();
 
-factory CreditNoteLineItemType.fromJson(String json) { return switch (json) {
+factory CreditNoteLineItemType.fromJson(String json) {return switch (json) {
   'custom_line_item' => customLineItem,
   'invoice_line_item' => invoiceLineItem,
   _ => CreditNoteLineItemType$Unknown(json),
-}; }
+};}
 
 static const CreditNoteLineItemType customLineItem = CreditNoteLineItemType$customLineItem._();
 
@@ -17,30 +17,30 @@ static const CreditNoteLineItemType invoiceLineItem = CreditNoteLineItemType$inv
 static const List<CreditNoteLineItemType> values = [customLineItem, invoiceLineItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom_line_item' => 'customLineItem',
   'invoice_line_item' => 'invoiceLineItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreditNoteLineItemType$Unknown; } 
+bool get isUnknown {return this is CreditNoteLineItemType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customLineItem, required W Function() invoiceLineItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customLineItem, required W Function() invoiceLineItem, required W Function(String value) $unknown, }) {return switch (this) {
       CreditNoteLineItemType$customLineItem() => customLineItem(),
       CreditNoteLineItemType$invoiceLineItem() => invoiceLineItem(),
       CreditNoteLineItemType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customLineItem, W Function()? invoiceLineItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customLineItem, W Function()? invoiceLineItem, W Function(String value)? $unknown, }) {return switch (this) {
       CreditNoteLineItemType$customLineItem() => customLineItem != null ? customLineItem() : orElse(value),
       CreditNoteLineItemType$invoiceLineItem() => invoiceLineItem != null ? invoiceLineItem() : orElse(value),
       CreditNoteLineItemType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreditNoteLineItemType($value)';
 
- }
+}
 @immutable final class CreditNoteLineItemType$customLineItem extends CreditNoteLineItemType {const CreditNoteLineItemType$customLineItem._();
 
 @override String get value => 'custom_line_item';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customLi
 
 @override int get hashCode => 'custom_line_item'.hashCode;
 
- }
+}
 @immutable final class CreditNoteLineItemType$invoiceLineItem extends CreditNoteLineItemType {const CreditNoteLineItemType$invoiceLineItem._();
 
 @override String get value => 'invoice_line_item';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customLi
 
 @override int get hashCode => 'invoice_line_item'.hashCode;
 
- }
+}
 @immutable final class CreditNoteLineItemType$Unknown extends CreditNoteLineItemType {const CreditNoteLineItemType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customLi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

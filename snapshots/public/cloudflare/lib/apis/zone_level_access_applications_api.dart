@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneLevelAccessApplicationsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_id.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_settings_request.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';import 'package:pub_cloudflare/models/access_apps.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_schemas_policy_check_response/access_schemas_policy_check_response_result.dart';import 'package:pub_cloudflare/models/app_launcher_application3.dart';import 'package:pub_cloudflare/models/bookmark_application3.dart';import 'package:pub_cloudflare/models/browser_isolation_permissions_application3.dart';import 'package:pub_cloudflare/models/browser_ssh_application3.dart';import 'package:pub_cloudflare/models/browser_vnc_application3.dart';import 'package:pub_cloudflare/models/device_enrollment_permissions_application3.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';import 'package:pub_cloudflare/models/saa_s_application3.dart';import 'package:pub_cloudflare/models/self_hosted_application3.dart';/// ZoneLevelAccessApplicationsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_id.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_settings_request.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';import 'package:pub_cloudflare/models/access_apps.dart';import 'package:pub_cloudflare/models/access_apps_request.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_schemas_policy_check_response/access_schemas_policy_check_response_result.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// ZoneLevelAccessApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZoneLevelAccessApplicationsApi with ApiExecutor {const ZoneLevelAcce
 /// List all Access Applications in a zone.
 ///
 /// `GET /zones/{zone_id}/access/apps`
-Future<ApiResult<List<AccessApps>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsListAccessApplications({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessApps>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsListAccessApplications({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf8.parse(e, fromA: (v) => SelfHostedApplication3.fromJson(v as Map<String, dynamic>), fromB: (v) => SaaSApplication3.fromJson(v as Map<String, dynamic>), fromC: (v) => BrowserSshApplication3.fromJson(v as Map<String, dynamic>), fromD: (v) => BrowserVncApplication3.fromJson(v as Map<String, dynamic>), fromE: (v) => AppLauncherApplication3.fromJson(v as Map<String, dynamic>), fromF: (v) => DeviceEnrollmentPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromG: (v) => BrowserIsolationPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromH: (v) => BookmarkApplication3.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map(AccessApps.fromJson).toList();
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Add an Access application
 ///
 /// Adds a new application to Access.
 ///
 /// `POST /zones/{zone_id}/access/apps`
-Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsAddABookmarkApplication({required AccessIdentifier zoneId, required AccessApps body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsAddABookmarkApplication({required AccessIdentifier zoneId, required AccessAppsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,21 +48,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => SelfHostedApplication3.fromJson(v as Map<String, dynamic>), fromB: (v) => SaaSApplication3.fromJson(v as Map<String, dynamic>), fromC: (v) => BrowserSshApplication3.fromJson(v as Map<String, dynamic>), fromD: (v) => BrowserVncApplication3.fromJson(v as Map<String, dynamic>), fromE: (v) => AppLauncherApplication3.fromJson(v as Map<String, dynamic>), fromF: (v) => DeviceEnrollmentPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromG: (v) => BrowserIsolationPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromH: (v) => BookmarkApplication3.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? AccessApps.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access application
 ///
 /// Fetches information about an Access application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,21 +71,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => SelfHostedApplication3.fromJson(v as Map<String, dynamic>), fromB: (v) => SaaSApplication3.fromJson(v as Map<String, dynamic>), fromC: (v) => BrowserSshApplication3.fromJson(v as Map<String, dynamic>), fromD: (v) => BrowserVncApplication3.fromJson(v as Map<String, dynamic>), fromE: (v) => AppLauncherApplication3.fromJson(v as Map<String, dynamic>), fromF: (v) => DeviceEnrollmentPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromG: (v) => BrowserIsolationPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromH: (v) => BookmarkApplication3.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? AccessApps.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access application
 ///
 /// Updates an Access application.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsUpdateABookmarkApplication({required AccessAppId appId, required AccessIdentifier zoneId, required AccessApps body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsUpdateABookmarkApplication({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,21 +96,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => SelfHostedApplication3.fromJson(v as Map<String, dynamic>), fromB: (v) => SaaSApplication3.fromJson(v as Map<String, dynamic>), fromC: (v) => BrowserSshApplication3.fromJson(v as Map<String, dynamic>), fromD: (v) => BrowserVncApplication3.fromJson(v as Map<String, dynamic>), fromE: (v) => AppLauncherApplication3.fromJson(v as Map<String, dynamic>), fromF: (v) => DeviceEnrollmentPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromG: (v) => BrowserIsolationPermissionsApplication3.fromJson(v as Map<String, dynamic>), fromH: (v) => BookmarkApplication3.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? AccessApps.fromJson(json['result']) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access application
 ///
 /// Deletes an application from Access.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -127,13 +127,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Revoke application tokens
 ///
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -142,7 +142,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -150,13 +150,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update application settings
 ///
 /// Updates application settings.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -167,7 +167,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -175,13 +175,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update application settings
 ///
 /// Updates application settings.
 ///
 /// `PATCH /zones/{zone_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -192,7 +192,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -200,13 +200,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Test Access policies
 ///
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<AccessSchemasPolicyCheckResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasPolicyCheckResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -215,7 +215,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -223,5 +223,5 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

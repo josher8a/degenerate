@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_search_result_item/commit_search_result_item_parents.dart';import 'package:pub_github_rest_3_1/models/file_commit/commit_tree.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_author.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_committer.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_verification.dart';@immutable final class FileCommitCommit {const FileCommitCommit({this.sha, this.nodeId, this.url, this.htmlUrl, this.author, this.committer, this.message, this.tree, this.parents, this.verification, });
 
-factory FileCommitCommit.fromJson(Map<String, dynamic> json) { return FileCommitCommit(
+factory FileCommitCommit.fromJson(Map<String, dynamic> json) {return FileCommitCommit(
   sha: json['sha'] as String?,
   nodeId: json['node_id'] as String?,
   url: json['url'] as String?,
@@ -14,7 +14,7 @@ factory FileCommitCommit.fromJson(Map<String, dynamic> json) { return FileCommit
   tree: json['tree'] != null ? CommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null,
   parents: (json['parents'] as List<dynamic>?)?.map((e) => CommitSearchResultItemParents.fromJson(e as Map<String, dynamic>)).toList(),
   verification: json['verification'] != null ? FileCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? sha;
 
@@ -36,7 +36,7 @@ final List<CommitSearchResultItemParents>? parents;
 
 final FileCommitCommitVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sha': ?sha,
   'node_id': ?nodeId,
   'url': ?url,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (tree != null) 'tree': tree?.toJson(),
   if (parents != null) 'parents': parents?.map((e) => e.toJson()).toList(),
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sha', 'node_id', 'url', 'html_url', 'author', 'committer', 'message', 'tree', 'parents', 'verification'}.contains(key)); } 
-FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, String? Function()? url, String? Function()? htmlUrl, FileCommitCommitAuthor? Function()? author, FileCommitCommitCommitter? Function()? committer, String? Function()? message, CommitTree? Function()? tree, List<CommitSearchResultItemParents>? Function()? parents, FileCommitCommitVerification? Function()? verification, }) { return FileCommitCommit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sha', 'node_id', 'url', 'html_url', 'author', 'committer', 'message', 'tree', 'parents', 'verification'}.contains(key));}
+FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, String? Function()? url, String? Function()? htmlUrl, FileCommitCommitAuthor? Function()? author, FileCommitCommitCommitter? Function()? committer, String? Function()? message, CommitTree? Function()? tree, List<CommitSearchResultItemParents>? Function()? parents, FileCommitCommitVerification? Function()? verification, }) {return FileCommitCommit(
   sha: sha != null ? sha() : this.sha,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   url: url != null ? url() : this.url,
@@ -60,7 +60,7 @@ FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, 
   tree: tree != null ? tree() : this.tree,
   parents: parents != null ? parents() : this.parents,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommitCommit &&
           sha == other.sha &&
@@ -78,4 +78,4 @@ FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, 
 
 @override String toString() => 'FileCommitCommit(\n  sha: $sha,\n  nodeId: $nodeId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  author: $author,\n  committer: $committer,\n  message: $message,\n  tree: $tree,\n  parents: $parents,\n  verification: $verification,\n)';
 
- }
+}

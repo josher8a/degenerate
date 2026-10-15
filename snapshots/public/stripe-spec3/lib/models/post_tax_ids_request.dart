@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request/post_customers_customer_tax_ids_request_type.dart';import 'package:pub_stripe_spec3/models/post_tax_ids_request/post_tax_ids_request_owner.dart';@immutable final class PostTaxIdsRequest {const PostTaxIdsRequest({required this.type, required this.value, this.expand, this.owner, });
 
-factory PostTaxIdsRequest.fromJson(Map<String, dynamic> json) { return PostTaxIdsRequest(
+factory PostTaxIdsRequest.fromJson(Map<String, dynamic> json) {return PostTaxIdsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   owner: json['owner'] != null ? PostTaxIdsRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   type: PostCustomersCustomerTaxIdsRequestType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -22,20 +22,20 @@ final PostCustomersCustomerTaxIdsRequestType type;
 /// Value of the tax ID.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (owner != null) 'owner': owner?.toJson(),
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PostTaxIdsRequest copyWith({List<String>? Function()? expand, PostTaxIdsRequestOwner? Function()? owner, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) { return PostTaxIdsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PostTaxIdsRequest copyWith({List<String>? Function()? expand, PostTaxIdsRequestOwner? Function()? owner, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) {return PostTaxIdsRequest(
   expand: expand != null ? expand() : this.expand,
   owner: owner != null ? owner() : this.owner,
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxIdsRequest &&
           listEquals(expand, other.expand) &&
@@ -47,4 +47,4 @@ PostTaxIdsRequest copyWith({List<String>? Function()? expand, PostTaxIdsRequestO
 
 @override String toString() => 'PostTaxIdsRequest(expand: $expand, owner: $owner, type: $type, value: $value)';
 
- }
+}

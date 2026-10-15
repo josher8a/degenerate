@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Serie0Variant4 {const Serie0Variant4({required this.certificate, required this.precertificate, });
 
-factory Serie0Variant4.fromJson(Map<String, dynamic> json) { return Serie0Variant4(
+factory Serie0Variant4.fromJson(Map<String, dynamic> json) {return Serie0Variant4(
   certificate: (json['CERTIFICATE'] as List<dynamic>).map((e) => e as String).toList(),
   precertificate: (json['PRECERTIFICATE'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> certificate;
 
 final List<String> precertificate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'CERTIFICATE': certificate,
   'PRECERTIFICATE': precertificate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('CERTIFICATE') &&
-      json.containsKey('PRECERTIFICATE'); } 
-Serie0Variant4 copyWith({List<String>? certificate, List<String>? precertificate, }) { return Serie0Variant4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('CERTIFICATE') &&
+      json.containsKey('PRECERTIFICATE');}
+Serie0Variant4 copyWith({List<String>? certificate, List<String>? precertificate, }) {return Serie0Variant4(
   certificate: certificate ?? this.certificate,
   precertificate: precertificate ?? this.precertificate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant4 &&
           listEquals(certificate, other.certificate) &&
@@ -31,4 +31,4 @@ Serie0Variant4 copyWith({List<String>? certificate, List<String>? precertificate
 
 @override String toString() => 'Serie0Variant4(certificate: $certificate, precertificate: $precertificate)';
 
- }
+}

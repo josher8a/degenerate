@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item_asn.dart';@immutable final class ListsListItemAsnObject {const ListsListItemAsnObject({required this.asn});
 
-factory ListsListItemAsnObject.fromJson(Map<String, dynamic> json) { return ListsListItemAsnObject(
+factory ListsListItemAsnObject.fromJson(Map<String, dynamic> json) {return ListsListItemAsnObject(
   asn: ListsItemAsn.fromJson(json['asn'] as num),
-); }
+);}
 
 /// Defines a non-negative 32 bit integer.
 final ListsItemAsn asn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn'); } 
-ListsListItemAsnObject copyWith({ListsItemAsn? asn}) { return ListsListItemAsnObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn');}
+ListsListItemAsnObject copyWith({ListsItemAsn? asn}) {return ListsListItemAsnObject(
   asn: asn ?? this.asn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsListItemAsnObject &&
           asn == other.asn;
@@ -25,4 +25,4 @@ ListsListItemAsnObject copyWith({ListsItemAsn? asn}) { return ListsListItemAsnOb
 
 @override String toString() => 'ListsListItemAsnObject(asn: $asn)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite/check_run_with_simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite.dart';sealed class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion();
 
-factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
+factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) {return switch (json) {
   'waiting' => waiting,
   'pending' => pending,
   'startup_failure' => startupFailure,
@@ -17,7 +17,7 @@ factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return sw
   'action_required' => actionRequired,
   'null' => $null,
   _ => CheckRunWithSimpleCheckSuiteConclusion$Unknown(json),
-}; }
+};}
 
 static const CheckRunWithSimpleCheckSuiteConclusion waiting = CheckRunWithSimpleCheckSuiteConclusion$waiting._();
 
@@ -46,9 +46,9 @@ static const CheckRunWithSimpleCheckSuiteConclusion $null = CheckRunWithSimpleCh
 static const List<CheckRunWithSimpleCheckSuiteConclusion> values = [waiting, pending, startupFailure, stale, success, failure, neutral, cancelled, skipped, timedOut, actionRequired, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'waiting' => 'waiting',
   'pending' => 'pending',
   'startup_failure' => 'startupFailure',
@@ -62,11 +62,11 @@ String get name { return switch (value) {
   'action_required' => 'actionRequired',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckRunWithSimpleCheckSuiteConclusion$Unknown; } 
+bool get isUnknown {return this is CheckRunWithSimpleCheckSuiteConclusion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() waiting, required W Function() pending, required W Function() startupFailure, required W Function() stale, required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() skipped, required W Function() timedOut, required W Function() actionRequired, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() waiting, required W Function() pending, required W Function() startupFailure, required W Function() stale, required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() skipped, required W Function() timedOut, required W Function() actionRequired, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       CheckRunWithSimpleCheckSuiteConclusion$waiting() => waiting(),
       CheckRunWithSimpleCheckSuiteConclusion$pending() => pending(),
       CheckRunWithSimpleCheckSuiteConclusion$startupFailure() => startupFailure(),
@@ -80,9 +80,9 @@ W when<W>({required W Function() waiting, required W Function() pending, require
       CheckRunWithSimpleCheckSuiteConclusion$actionRequired() => actionRequired(),
       CheckRunWithSimpleCheckSuiteConclusion$$null() => $null(),
       CheckRunWithSimpleCheckSuiteConclusion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting, W Function()? pending, W Function()? startupFailure, W Function()? stale, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? skipped, W Function()? timedOut, W Function()? actionRequired, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting, W Function()? pending, W Function()? startupFailure, W Function()? stale, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? skipped, W Function()? timedOut, W Function()? actionRequired, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       CheckRunWithSimpleCheckSuiteConclusion$waiting() => waiting != null ? waiting() : orElse(value),
       CheckRunWithSimpleCheckSuiteConclusion$pending() => pending != null ? pending() : orElse(value),
       CheckRunWithSimpleCheckSuiteConclusion$startupFailure() => startupFailure != null ? startupFailure() : orElse(value),
@@ -96,10 +96,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
       CheckRunWithSimpleCheckSuiteConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
       CheckRunWithSimpleCheckSuiteConclusion$$null() => $null != null ? $null() : orElse(value),
       CheckRunWithSimpleCheckSuiteConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckRunWithSimpleCheckSuiteConclusion($value)';
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$waiting extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$waiting._();
 
 @override String get value => 'waiting';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'waiting'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$pending extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$pending._();
 
 @override String get value => 'pending';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$startupFailure extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$startupFailure._();
 
 @override String get value => 'startup_failure';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'startup_failure'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$stale extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$stale._();
 
 @override String get value => 'stale';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'stale'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$success extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$success._();
 
 @override String get value => 'success';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$failure extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$failure._();
 
 @override String get value => 'failure';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$neutral extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$neutral._();
 
 @override String get value => 'neutral';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'neutral'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$cancelled extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$cancelled._();
 
 @override String get value => 'cancelled';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$skipped extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$skipped._();
 
 @override String get value => 'skipped';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'skipped'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$timedOut extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$timedOut._();
 
 @override String get value => 'timed_out';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'timed_out'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$actionRequired extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$actionRequired._();
 
 @override String get value => 'action_required';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'action_required'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$$null extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$$null._();
 
 @override String get value => 'null';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class CheckRunWithSimpleCheckSuiteConclusion$Unknown extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$Unknown(this.value);
 
 @override final String value;
@@ -217,12 +217,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A check performed on the code of a given code change
 @immutable final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, this.deployment, });
 
-factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuite(
-  app: Integration.fromJson(json['app'] as Map<String, dynamic>),
+factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) {return CheckRunWithSimpleCheckSuite(
+  app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   checkSuite: SimpleCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
   conclusion: json['conclusion'] != null ? CheckRunWithSimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
@@ -239,9 +239,9 @@ factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { retur
   startedAt: DateTime.parse(json['started_at'] as String),
   status: CheckRunWithSimpleCheckSuiteStatus.fromJson(json['status'] as String),
   url: json['url'] as String,
-); }
+);}
 
-final Integration app;
+final Integration? app;
 
 final SimpleCheckSuite checkSuite;
 
@@ -279,8 +279,8 @@ final CheckRunWithSimpleCheckSuiteStatus status;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
-  'app': app.toJson(),
+Map<String, dynamic> toJson() {return {
+  'app': app?.toJson(),
   'check_suite': checkSuite.toJson(),
   'completed_at': completedAt?.toIso8601String(),
   'conclusion': conclusion?.toJson(),
@@ -297,10 +297,10 @@ Map<String, dynamic> toJson() { return {
   'started_at': startedAt.toIso8601String(),
   'status': status.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('app') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('app') &&
       json.containsKey('check_suite') &&
-      json.containsKey('completed_at') && json['completed_at'] is String &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
       json.containsKey('details_url') && json['details_url'] is String &&
       json.containsKey('external_id') && json['external_id'] is String &&
@@ -313,9 +313,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app')
       json.containsKey('pull_requests') &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
-      json.containsKey('url') && json['url'] is String; } 
-CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, Output? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
-  app: app ?? this.app,
+      json.containsKey('url') && json['url'] is String;}
+CheckRunWithSimpleCheckSuite copyWith({Integration? Function()? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, Output? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) {return CheckRunWithSimpleCheckSuite(
+  app: app != null ? app() : this.app,
   checkSuite: checkSuite ?? this.checkSuite,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
@@ -332,7 +332,7 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? check
   startedAt: startedAt ?? this.startedAt,
   status: status ?? this.status,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckRunWithSimpleCheckSuite &&
           app == other.app &&
@@ -357,4 +357,4 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? check
 
 @override String toString() => 'CheckRunWithSimpleCheckSuite(\n  app: $app,\n  checkSuite: $checkSuite,\n  completedAt: $completedAt,\n  conclusion: $conclusion,\n  deployment: $deployment,\n  detailsUrl: $detailsUrl,\n  externalId: $externalId,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  output: $output,\n  pullRequests: $pullRequests,\n  startedAt: $startedAt,\n  status: $status,\n  url: $url,\n)';
 
- }
+}

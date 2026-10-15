@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/discovery_origin.dart';import 'package:pub_cloudflare/models/discovery_state.dart';import 'package:pub_cloudflare/models/shield_endpoint.dart';import 'package:pub_cloudflare/models/shield_host.dart';import 'package:pub_cloudflare/models/shield_method.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_traffic_stats.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldDiscoveryOperation {const ShieldDiscoveryOperation({required this.endpoint, required this.host, required this.method, required this.id, required this.lastUpdated, required this.origin, required this.state, this.features, });
 
-factory ShieldDiscoveryOperation.fromJson(Map<String, dynamic> json) { return ShieldDiscoveryOperation(
+factory ShieldDiscoveryOperation.fromJson(Map<String, dynamic> json) {return ShieldDiscoveryOperation(
   endpoint: ShieldEndpoint.fromJson(json['endpoint'] as String),
   host: ShieldHost.fromJson(json['host'] as String),
   method: ShieldMethod.fromJson(json['method'] as String),
@@ -12,7 +12,7 @@ factory ShieldDiscoveryOperation.fromJson(Map<String, dynamic> json) { return Sh
   lastUpdated: ShieldTimestamp.fromJson(json['last_updated'] as String),
   origin: (json['origin'] as List<dynamic>).map((e) => DiscoveryOrigin.fromJson(e as String)).toList(),
   state: DiscoveryState.fromJson(json['state'] as String),
-); }
+);}
 
 final ShieldEndpoint endpoint;
 
@@ -36,7 +36,7 @@ final List<DiscoveryOrigin> origin;
 /// 
 final DiscoveryState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'endpoint': endpoint.toJson(),
   'host': host.toJson(),
   'method': method.toJson(),
@@ -45,15 +45,15 @@ Map<String, dynamic> toJson() { return {
   'last_updated': lastUpdated.toJson(),
   'origin': origin.map((e) => e.toJson()).toList(),
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoint') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('endpoint') &&
       json.containsKey('host') &&
       json.containsKey('method') &&
       json.containsKey('id') &&
       json.containsKey('last_updated') &&
       json.containsKey('origin') &&
-      json.containsKey('state'); } 
-ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, ShieldMethod? method, ShieldTrafficStats? Function()? features, ShieldUuid? id, ShieldTimestamp? lastUpdated, List<DiscoveryOrigin>? origin, DiscoveryState? state, }) { return ShieldDiscoveryOperation(
+      json.containsKey('state');}
+ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, ShieldMethod? method, ShieldTrafficStats? Function()? features, ShieldUuid? id, ShieldTimestamp? lastUpdated, List<DiscoveryOrigin>? origin, DiscoveryState? state, }) {return ShieldDiscoveryOperation(
   endpoint: endpoint ?? this.endpoint,
   host: host ?? this.host,
   method: method ?? this.method,
@@ -62,7 +62,7 @@ ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, S
   lastUpdated: lastUpdated ?? this.lastUpdated,
   origin: origin ?? this.origin,
   state: state ?? this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldDiscoveryOperation &&
           endpoint == other.endpoint &&
@@ -78,4 +78,4 @@ ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, S
 
 @override String toString() => 'ShieldDiscoveryOperation(endpoint: $endpoint, host: $host, method: $method, features: $features, id: $id, lastUpdated: $lastUpdated, origin: $origin, state: $state)';
 
- }
+}

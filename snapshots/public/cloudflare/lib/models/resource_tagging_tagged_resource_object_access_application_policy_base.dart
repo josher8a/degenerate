@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';/// Base schema for access_application_policy resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase {const ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase({required this.accessApplicationId, required this.etag, required this.id, required this.name, required this.tags, required this.zoneId, });
 
-factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(
+factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(
   accessApplicationId: ResourceTaggingAccessApplicationId.fromJson(json['access_application_id'] as String),
   etag: ResourceTaggingEtag.fromJson(json['etag'] as String),
   id: ResourceTaggingResourceId.fromJson(json['id'] as String),
   name: ResourceTaggingResourceName.fromJson(json['name'] as String),
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   zoneId: ResourceTaggingIdentifier.fromJson(json['zone_id'] as String),
-); }
+);}
 
 /// Access application ID is required only for access_application_policy resources
 final ResourceTaggingAccessApplicationId accessApplicationId;
@@ -33,28 +33,28 @@ final Map<String,String> tags;
 
 final ResourceTaggingIdentifier zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_application_id': accessApplicationId.toJson(),
   'etag': etag.toJson(),
   'id': id.toJson(),
   'name': name.toJson(),
   'tags': tags,
   'zone_id': zoneId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_application_id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('access_application_id') &&
       json.containsKey('etag') &&
       json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('tags') &&
-      json.containsKey('zone_id'); } 
-ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase copyWith({ResourceTaggingAccessApplicationId? accessApplicationId, ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(
+      json.containsKey('zone_id');}
+ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase copyWith({ResourceTaggingAccessApplicationId? accessApplicationId, ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) {return ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(
   accessApplicationId: accessApplicationId ?? this.accessApplicationId,
   etag: etag ?? this.etag,
   id: id ?? this.id,
   name: name ?? this.name,
   tags: tags ?? this.tags,
   zoneId: zoneId ?? this.zoneId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase &&
           accessApplicationId == other.accessApplicationId &&
@@ -68,4 +68,4 @@ ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase copyWith({Resourc
 
 @override String toString() => 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(accessApplicationId: $accessApplicationId, etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)';
 
- }
+}

@@ -2,22 +2,25 @@
 // Source: #/components/schemas/ZonesNelValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
-@immutable final class ZonesNelValue {const ZonesNelValue({this.enabled = false});
+@immutable final class ZonesNelValue {const ZonesNelValue({this.enabled});
 
-factory ZonesNelValue.fromJson(Map<String, dynamic> json) { return ZonesNelValue(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
-); }
+factory ZonesNelValue.fromJson(Map<String, dynamic> json) {return ZonesNelValue(
+  enabled: json['enabled'] as bool?,
+);}
 
 /// Example: `false`
-final bool enabled;
+final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-ZonesNelValue copyWith({bool Function()? enabled}) { return ZonesNelValue(
+/// The value of `enabled`, or its schema default when absent.
+bool get enabledOrDefault => enabled ?? false;
+
+Map<String, dynamic> toJson() {return {
+  'enabled': ?enabled,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled'}.contains(key));}
+ZonesNelValue copyWith({bool? Function()? enabled}) {return ZonesNelValue(
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesNelValue &&
           enabled == other.enabled;
@@ -26,4 +29,4 @@ ZonesNelValue copyWith({bool Function()? enabled}) { return ZonesNelValue(
 
 @override String toString() => 'ZonesNelValue(enabled: $enabled)';
 
- }
+}

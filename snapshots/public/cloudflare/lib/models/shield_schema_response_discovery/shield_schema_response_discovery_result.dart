@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';@immutable final class ShieldSchemaResponseDiscoveryResult {const ShieldSchemaResponseDiscoveryResult({required this.schemas, required this.timestamp, });
 
-factory ShieldSchemaResponseDiscoveryResult.fromJson(Map<String, dynamic> json) { return ShieldSchemaResponseDiscoveryResult(
+factory ShieldSchemaResponseDiscoveryResult.fromJson(Map<String, dynamic> json) {return ShieldSchemaResponseDiscoveryResult(
   schemas: (json['schemas'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   timestamp: ShieldTimestamp.fromJson(json['timestamp'] as String),
-); }
+);}
 
 final List<Map<String,dynamic>> schemas;
 
 final ShieldTimestamp timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'schemas': schemas.map((e) => e).toList(),
   'timestamp': timestamp.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('schemas') &&
-      json.containsKey('timestamp'); } 
-ShieldSchemaResponseDiscoveryResult copyWith({List<Map<String,dynamic>>? schemas, ShieldTimestamp? timestamp, }) { return ShieldSchemaResponseDiscoveryResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('schemas') &&
+      json.containsKey('timestamp');}
+ShieldSchemaResponseDiscoveryResult copyWith({List<Map<String,dynamic>>? schemas, ShieldTimestamp? timestamp, }) {return ShieldSchemaResponseDiscoveryResult(
   schemas: schemas ?? this.schemas,
   timestamp: timestamp ?? this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaResponseDiscoveryResult &&
           listEquals(schemas, other.schemas) &&
@@ -31,4 +31,4 @@ ShieldSchemaResponseDiscoveryResult copyWith({List<Map<String,dynamic>>? schemas
 
 @override String toString() => 'ShieldSchemaResponseDiscoveryResult(schemas: $schemas, timestamp: $timestamp)';
 
- }
+}

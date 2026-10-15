@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class CouponAppliesTo {const CouponAppliesTo({required this.products});
 
-factory CouponAppliesTo.fromJson(Map<String, dynamic> json) { return CouponAppliesTo(
+factory CouponAppliesTo.fromJson(Map<String, dynamic> json) {return CouponAppliesTo(
   products: (json['products'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// A list of product IDs this coupon applies to
 final List<String> products;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'products': products,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('products'); } 
-CouponAppliesTo copyWith({List<String>? products}) { return CouponAppliesTo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('products');}
+CouponAppliesTo copyWith({List<String>? products}) {return CouponAppliesTo(
   products: products ?? this.products,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CouponAppliesTo &&
           listEquals(products, other.products);
@@ -26,4 +26,4 @@ CouponAppliesTo copyWith({List<String>? products}) { return CouponAppliesTo(
 
 @override String toString() => 'CouponAppliesTo(products: $products)';
 
- }
+}

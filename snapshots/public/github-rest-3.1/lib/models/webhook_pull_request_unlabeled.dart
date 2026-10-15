@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_unlabeled/webhook_discussion_unlabeled_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_unlabeled/webhook_pull_request_unlabeled_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestUnlabeled {const WebhookPullRequestUnlabeled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
 
-factory WebhookPullRequestUnlabeled.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlabeled(
+factory WebhookPullRequestUnlabeled.fromJson(Map<String, dynamic> json) {return WebhookPullRequestUnlabeled(
   action: WebhookDiscussionUnlabeledAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory WebhookPullRequestUnlabeled.fromJson(Map<String, dynamic> json) { return
   pullRequest: WebhookPullRequestUnlabeledPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionUnlabeledAction action;
 
@@ -34,7 +34,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -44,13 +44,13 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? Function()? label, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestUnlabeledPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestUnlabeled(
+      json.containsKey('sender');}
+WebhookPullRequestUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? Function()? label, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestUnlabeledPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookPullRequestUnlabeled(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -60,7 +60,7 @@ WebhookPullRequestUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, 
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestUnlabeled &&
           action == other.action &&
@@ -77,4 +77,4 @@ WebhookPullRequestUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, 
 
 @override String toString() => 'WebhookPullRequestUnlabeled(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  label: $label,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

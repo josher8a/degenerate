@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MuteAllParticipantsRequest {const MuteAllParticipantsRequest({required this.allowUnmute});
 
-factory MuteAllParticipantsRequest.fromJson(Map<String, dynamic> json) { return MuteAllParticipantsRequest(
+factory MuteAllParticipantsRequest.fromJson(Map<String, dynamic> json) {return MuteAllParticipantsRequest(
   allowUnmute: json['allow_unmute'] as bool,
-); }
+);}
 
 /// if false, participants won't be able to unmute themselves after they are muted
 final bool allowUnmute;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allow_unmute': allowUnmute,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_unmute') && json['allow_unmute'] is bool; } 
-MuteAllParticipantsRequest copyWith({bool? allowUnmute}) { return MuteAllParticipantsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allow_unmute') && json['allow_unmute'] is bool;}
+MuteAllParticipantsRequest copyWith({bool? allowUnmute}) {return MuteAllParticipantsRequest(
   allowUnmute: allowUnmute ?? this.allowUnmute,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MuteAllParticipantsRequest &&
           allowUnmute == other.allowUnmute;
@@ -25,4 +25,4 @@ MuteAllParticipantsRequest copyWith({bool? allowUnmute}) { return MuteAllPartici
 
 @override String toString() => 'MuteAllParticipantsRequest(allowUnmute: $allowUnmute)';
 
- }
+}

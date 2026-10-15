@@ -5,14 +5,14 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// 
 sealed class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat();
 
-factory CreateTranslationRequestResponseFormat.fromJson(String json) { return switch (json) {
+factory CreateTranslationRequestResponseFormat.fromJson(String json) {return switch (json) {
   'json' => $json,
   'text' => text,
   'srt' => srt,
   'verbose_json' => verboseJson,
   'vtt' => vtt,
   _ => CreateTranslationRequestResponseFormat$Unknown(json),
-}; }
+};}
 
 static const CreateTranslationRequestResponseFormat $json = CreateTranslationRequestResponseFormat$$json._();
 
@@ -27,39 +27,39 @@ static const CreateTranslationRequestResponseFormat vtt = CreateTranslationReque
 static const List<CreateTranslationRequestResponseFormat> values = [$json, text, srt, verboseJson, vtt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'json' => r'$json',
   'text' => 'text',
   'srt' => 'srt',
   'verbose_json' => 'verboseJson',
   'vtt' => 'vtt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateTranslationRequestResponseFormat$Unknown; } 
+bool get isUnknown {return this is CreateTranslationRequestResponseFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() text, required W Function() srt, required W Function() verboseJson, required W Function() vtt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() text, required W Function() srt, required W Function() verboseJson, required W Function() vtt, required W Function(String value) $unknown, }) {return switch (this) {
       CreateTranslationRequestResponseFormat$$json() => $json(),
       CreateTranslationRequestResponseFormat$text() => text(),
       CreateTranslationRequestResponseFormat$srt() => srt(),
       CreateTranslationRequestResponseFormat$verboseJson() => verboseJson(),
       CreateTranslationRequestResponseFormat$vtt() => vtt(),
       CreateTranslationRequestResponseFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? text, W Function()? srt, W Function()? verboseJson, W Function()? vtt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? text, W Function()? srt, W Function()? verboseJson, W Function()? vtt, W Function(String value)? $unknown, }) {return switch (this) {
       CreateTranslationRequestResponseFormat$$json() => $json != null ? $json() : orElse(value),
       CreateTranslationRequestResponseFormat$text() => text != null ? text() : orElse(value),
       CreateTranslationRequestResponseFormat$srt() => srt != null ? srt() : orElse(value),
       CreateTranslationRequestResponseFormat$verboseJson() => verboseJson != null ? verboseJson() : orElse(value),
       CreateTranslationRequestResponseFormat$vtt() => vtt != null ? vtt() : orElse(value),
       CreateTranslationRequestResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateTranslationRequestResponseFormat($value)';
 
- }
+}
 @immutable final class CreateTranslationRequestResponseFormat$$json extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$$json._();
 
 @override String get value => 'json';
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'json'.hashCode;
 
- }
+}
 @immutable final class CreateTranslationRequestResponseFormat$text extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$text._();
 
 @override String get value => 'text';
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class CreateTranslationRequestResponseFormat$srt extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$srt._();
 
 @override String get value => 'srt';
@@ -86,7 +86,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'srt'.hashCode;
 
- }
+}
 @immutable final class CreateTranslationRequestResponseFormat$verboseJson extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$verboseJson._();
 
 @override String get value => 'verbose_json';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'verbose_json'.hashCode;
 
- }
+}
 @immutable final class CreateTranslationRequestResponseFormat$vtt extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$vtt._();
 
 @override String get value => 'vtt';
@@ -104,7 +104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'vtt'.hashCode;
 
- }
+}
 @immutable final class CreateTranslationRequestResponseFormat$Unknown extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$Unknown(this.value);
 
 @override final String value;
@@ -114,16 +114,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat = CreateTranslationRequestResponseFormat.$json, this.temperature = 0.0, });
+}
+@immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat, this.temperature, });
 
-factory CreateTranslationRequest.fromJson(Map<String, dynamic> json) { return CreateTranslationRequest(
+factory CreateTranslationRequest.fromJson(Map<String, dynamic> json) {return CreateTranslationRequest(
   file: base64Decode(json['file'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateTranslationRequestModelVariant2.fromJson(v as String),),
+  model: CreateTranslationRequestModel.fromJson(json['model']),
   prompt: json['prompt'] as String?,
-  responseFormat: json.containsKey('response_format') ? CreateTranslationRequestResponseFormat.fromJson(json['response_format'] as String) : CreateTranslationRequestResponseFormat.$json,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.0,
-); }
+  responseFormat: json['response_format'] != null ? CreateTranslationRequestResponseFormat.fromJson(json['response_format'] as String) : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+);}
 
 /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
 /// 
@@ -141,38 +141,44 @@ final String? prompt;
 
 /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 /// 
-final CreateTranslationRequestResponseFormat responseFormat;
+final CreateTranslationRequestResponseFormat? responseFormat;
 
 /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
 /// 
-final double temperature;
+final double? temperature;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `responseFormat`, or its schema default when absent.
+CreateTranslationRequestResponseFormat get responseFormatOrDefault => responseFormat ?? CreateTranslationRequestResponseFormat.fromJson('json');
+
+/// The value of `temperature`, or its schema default when absent.
+double get temperatureOrDefault => temperature ?? 0.0;
+
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'model': model.toJson(),
   'prompt': ?prompt,
-  'response_format': responseFormat.toJson(),
-  'temperature': temperature,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('model'); } 
-CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return CreateTranslationRequest(
+  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  'temperature': ?temperature,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('model');}
+CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) {return CreateTranslationRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   temperature: temperature != null ? temperature() : this.temperature,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranslationRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           model == other.model &&
           prompt == other.prompt &&
           responseFormat == other.responseFormat &&
           temperature == other.temperature;
 
-@override int get hashCode => Object.hash(file, model, prompt, responseFormat, temperature);
+@override int get hashCode => Object.hash(Object.hashAll(file), model, prompt, responseFormat, temperature);
 
 @override String toString() => 'CreateTranslationRequest(file: $file, model: $model, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature)';
 
- }
+}

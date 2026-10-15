@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_update/repository_rule_update_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_update/repository_rule_update_type.dart';/// Only allow users with bypass permission to update matching refs.
 @immutable final class RepositoryRuleUpdate {const RepositoryRuleUpdate({required this.type, this.parameters, });
 
-factory RepositoryRuleUpdate.fromJson(Map<String, dynamic> json) { return RepositoryRuleUpdate(
+factory RepositoryRuleUpdate.fromJson(Map<String, dynamic> json) {return RepositoryRuleUpdate(
   type: RepositoryRuleUpdateType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleUpdateParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleUpdateType type;
 
 final RepositoryRuleUpdateParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'update'; } 
-RepositoryRuleUpdate copyWith({RepositoryRuleUpdateType? type, RepositoryRuleUpdateParameters? Function()? parameters, }) { return RepositoryRuleUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'update';}
+RepositoryRuleUpdate copyWith({RepositoryRuleUpdateType? type, RepositoryRuleUpdateParameters? Function()? parameters, }) {return RepositoryRuleUpdate(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleUpdate &&
           type == other.type &&
@@ -31,4 +31,4 @@ RepositoryRuleUpdate copyWith({RepositoryRuleUpdateType? type, RepositoryRuleUpd
 
 @override String toString() => 'RepositoryRuleUpdate(type: $type, parameters: $parameters)';
 
- }
+}

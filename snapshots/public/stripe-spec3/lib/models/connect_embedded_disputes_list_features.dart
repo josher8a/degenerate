@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedDisputesListFeatures {const ConnectEmbeddedDisputesListFeatures({required this.capturePayments, required this.destinationOnBehalfOfChargeManagement, required this.disputeManagement, required this.refundManagement, });
 
-factory ConnectEmbeddedDisputesListFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedDisputesListFeatures(
+factory ConnectEmbeddedDisputesListFeatures.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedDisputesListFeatures(
   capturePayments: json['capture_payments'] as bool,
   destinationOnBehalfOfChargeManagement: json['destination_on_behalf_of_charge_management'] as bool,
   disputeManagement: json['dispute_management'] as bool,
   refundManagement: json['refund_management'] as bool,
-); }
+);}
 
 /// Whether to allow capturing and cancelling payment intents. This is `true` by default.
 final bool capturePayments;
@@ -23,22 +23,22 @@ final bool disputeManagement;
 /// Whether sending refunds is enabled. This is `true` by default.
 final bool refundManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'capture_payments': capturePayments,
   'destination_on_behalf_of_charge_management': destinationOnBehalfOfChargeManagement,
   'dispute_management': disputeManagement,
   'refund_management': refundManagement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('capture_payments') && json['capture_payments'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('capture_payments') && json['capture_payments'] is bool &&
       json.containsKey('destination_on_behalf_of_charge_management') && json['destination_on_behalf_of_charge_management'] is bool &&
       json.containsKey('dispute_management') && json['dispute_management'] is bool &&
-      json.containsKey('refund_management') && json['refund_management'] is bool; } 
-ConnectEmbeddedDisputesListFeatures copyWith({bool? capturePayments, bool? destinationOnBehalfOfChargeManagement, bool? disputeManagement, bool? refundManagement, }) { return ConnectEmbeddedDisputesListFeatures(
+      json.containsKey('refund_management') && json['refund_management'] is bool;}
+ConnectEmbeddedDisputesListFeatures copyWith({bool? capturePayments, bool? destinationOnBehalfOfChargeManagement, bool? disputeManagement, bool? refundManagement, }) {return ConnectEmbeddedDisputesListFeatures(
   capturePayments: capturePayments ?? this.capturePayments,
   destinationOnBehalfOfChargeManagement: destinationOnBehalfOfChargeManagement ?? this.destinationOnBehalfOfChargeManagement,
   disputeManagement: disputeManagement ?? this.disputeManagement,
   refundManagement: refundManagement ?? this.refundManagement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedDisputesListFeatures &&
           capturePayments == other.capturePayments &&
@@ -50,4 +50,4 @@ ConnectEmbeddedDisputesListFeatures copyWith({bool? capturePayments, bool? desti
 
 @override String toString() => 'ConnectEmbeddedDisputesListFeatures(capturePayments: $capturePayments, destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/issuing_cardholder_type.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/preferred_locales.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_address.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_company.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_individual.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingCardholderObject {const IssuingCardholderObject();
 
-factory IssuingCardholderObject.fromJson(String json) { return switch (json) {
+factory IssuingCardholderObject.fromJson(String json) {return switch (json) {
   'issuing.cardholder' => issuingCardholder,
   _ => IssuingCardholderObject$Unknown(json),
-}; }
+};}
 
 static const IssuingCardholderObject issuingCardholder = IssuingCardholderObject$issuingCardholder._();
 
 static const List<IssuingCardholderObject> values = [issuingCardholder];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.cardholder' => 'issuingCardholder',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardholderObject$Unknown; } 
+bool get isUnknown {return this is IssuingCardholderObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingCardholder, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingCardholder, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardholderObject$issuingCardholder() => issuingCardholder(),
       IssuingCardholderObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingCardholder, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingCardholder, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardholderObject$issuingCardholder() => issuingCardholder != null ? issuingCardholder() : orElse(value),
       IssuingCardholderObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardholderObject($value)';
 
- }
+}
 @immutable final class IssuingCardholderObject$issuingCardholder extends IssuingCardholderObject {const IssuingCardholderObject$issuingCardholder._();
 
 @override String get value => 'issuing.cardholder';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingC
 
 @override int get hashCode => 'issuing.cardholder'.hashCode;
 
- }
+}
 @immutable final class IssuingCardholderObject$Unknown extends IssuingCardholderObject {const IssuingCardholderObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Specifies whether to permit authorizations on this cardholder's cards.
 sealed class IssuingCardholderStatus {const IssuingCardholderStatus();
 
-factory IssuingCardholderStatus.fromJson(String json) { return switch (json) {
+factory IssuingCardholderStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'blocked' => blocked,
   'inactive' => inactive,
   _ => IssuingCardholderStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingCardholderStatus active = IssuingCardholderStatus$active._();
 
@@ -73,33 +73,33 @@ static const IssuingCardholderStatus inactive = IssuingCardholderStatus$inactive
 static const List<IssuingCardholderStatus> values = [active, blocked, inactive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'blocked' => 'blocked',
   'inactive' => 'inactive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardholderStatus$Unknown; } 
+bool get isUnknown {return this is IssuingCardholderStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() blocked, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() blocked, required W Function() inactive, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardholderStatus$active() => active(),
       IssuingCardholderStatus$blocked() => blocked(),
       IssuingCardholderStatus$inactive() => inactive(),
       IssuingCardholderStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? blocked, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? blocked, W Function()? inactive, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardholderStatus$active() => active != null ? active() : orElse(value),
       IssuingCardholderStatus$blocked() => blocked != null ? blocked() : orElse(value),
       IssuingCardholderStatus$inactive() => inactive != null ? inactive() : orElse(value),
       IssuingCardholderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardholderStatus($value)';
 
- }
+}
 @immutable final class IssuingCardholderStatus$active extends IssuingCardholderStatus {const IssuingCardholderStatus$active._();
 
 @override String get value => 'active';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class IssuingCardholderStatus$blocked extends IssuingCardholderStatus {const IssuingCardholderStatus$blocked._();
 
 @override String get value => 'blocked';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'blocked'.hashCode;
 
- }
+}
 @immutable final class IssuingCardholderStatus$inactive extends IssuingCardholderStatus {const IssuingCardholderStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class IssuingCardholderStatus$Unknown extends IssuingCardholderStatus {const IssuingCardholderStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,47 +136,47 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.
 /// 
 /// Related guide: [How to create a cardholder](https://docs.stripe.com/issuing/cards/virtual/issue-cards#create-cardholder)
-@immutable final class IssuingCardholder {const IssuingCardholder({required this.billing, required this.created, required this.id, required this.livemode, required this.metadata, required this.name, required this.object, required this.requirements, required this.status, required this.type, this.company, this.email, this.individual, this.phoneNumber, this.preferredLocales, this.spendingControls, });
+@immutable final class IssuingCardholder {const IssuingCardholder({required this.billing, required this.created, required this.id, required this.livemode, required this.metadata, required this.name, required this.object, required this.requirements, required this.status, required this.type, this.company = const Omittable.absent(), this.email = const Omittable.absent(), this.individual = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.spendingControls = const Omittable.absent(), });
 
-factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCardholder(
+factory IssuingCardholder.fromJson(Map<String, dynamic> json) {return IssuingCardholder(
   billing: IssuingCardholderAddress.fromJson(json['billing'] as Map<String, dynamic>),
-  company: json['company'] != null ? IssuingCardholderCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
+  company: json.containsKey('company') ? Omittable(json['company'] != null ? IssuingCardholderCompany.fromJson(json['company'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  individual: json['individual'] != null ? IssuingCardholderIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  individual: json.containsKey('individual') ? Omittable(json['individual'] != null ? IssuingCardholderIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: IssuingCardholderObject.fromJson(json['object'] as String),
-  phoneNumber: json['phone_number'] as String?,
-  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PreferredLocales.fromJson(e as String)).toList(),
+  phoneNumber: json.containsKey('phone_number') ? Omittable(json['phone_number'] as String?) : const Omittable.absent(),
+  preferredLocales: json.containsKey('preferred_locales') ? Omittable((json['preferred_locales'] as List<dynamic>?)?.map((e) => PreferredLocales.fromJson(e as String)).toList()) : const Omittable.absent(),
   requirements: IssuingCardholderRequirements.fromJson(json['requirements'] as Map<String, dynamic>),
-  spendingControls: json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
+  spendingControls: json.containsKey('spending_controls') ? Omittable(json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: IssuingCardholderStatus.fromJson(json['status'] as String),
   type: IssuingCardholderType.fromJson(json['type'] as String),
-); }
+);}
 
 final IssuingCardholderAddress billing;
 
 /// Additional information about a `company` cardholder.
-final IssuingCardholderCompany? company;
+final Omittable<IssuingCardholderCompany?> company;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// The cardholder's email address.
-final String? email;
+final Omittable<String?> email;
 
 /// Unique identifier for the object.
 final String id;
 
 /// Additional information about an `individual` cardholder.
-final IssuingCardholderIndividual? individual;
+final Omittable<IssuingCardholderIndividual?> individual;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -191,16 +191,16 @@ final String name;
 final IssuingCardholderObject object;
 
 /// The cardholder's phone number. This is required for all cardholders who will be creating EU cards. See the [3D Secure documentation](https://docs.stripe.com/issuing/3d-secure#when-is-3d-secure-applied) for more details.
-final String? phoneNumber;
+final Omittable<String?> phoneNumber;
 
 /// The cardholder’s preferred locales (languages), ordered by preference. Locales can be `de`, `en`, `es`, `fr`, or `it`.
 ///  This changes the language of the [3D Secure flow](https://docs.stripe.com/issuing/3d-secure) and one-time password messages sent to the cardholder.
-final List<PreferredLocales>? preferredLocales;
+final Omittable<List<PreferredLocales>?> preferredLocales;
 
 final IssuingCardholderRequirements requirements;
 
 /// Rules that control spending across this cardholder's cards. Refer to our [documentation](https://docs.stripe.com/issuing/controls/spending-controls) for more details.
-final IssuingCardholderAuthorizationControls? spendingControls;
+final Omittable<IssuingCardholderAuthorizationControls?> spendingControls;
 
 /// Specifies whether to permit authorizations on this cardholder's cards.
 final IssuingCardholderStatus status;
@@ -208,25 +208,25 @@ final IssuingCardholderStatus status;
 /// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
 final IssuingCardholderType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing': billing.toJson(),
-  if (company != null) 'company': company?.toJson(),
+  if (company.isPresent) 'company': company.value?.toJson(),
   'created': created,
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   'id': id,
-  if (individual != null) 'individual': individual?.toJson(),
+  if (individual.isPresent) 'individual': individual.value?.toJson(),
   'livemode': livemode,
   'metadata': metadata,
   'name': name,
   'object': object.toJson(),
-  'phone_number': ?phoneNumber,
-  if (preferredLocales != null) 'preferred_locales': preferredLocales?.map((e) => e.toJson()).toList(),
+  if (phoneNumber.isPresent) 'phone_number': phoneNumber.value,
+  if (preferredLocales.isPresent) 'preferred_locales': preferredLocales.value?.map((e) => e.toJson()).toList(),
   'requirements': requirements.toJson(),
-  if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
+  if (spendingControls.isPresent) 'spending_controls': spendingControls.value?.toJson(),
   'status': status.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -235,38 +235,38 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('requirements') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final email$ = email;
+List<String> validate() {final errors = <String>[];
+final email$ = email.value;
 if (email$ != null) {
   if (email$.runes.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-final phoneNumber$ = phoneNumber;
+final phoneNumber$ = phoneNumber.value;
 if (phoneNumber$ != null) {
   if (phoneNumber$.runes.length > 5000) { errors.add('phoneNumber: length must be <= 5000'); }
 }
-return errors; } 
-IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<PreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderAuthorizationControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
+return errors;}
+IssuingCardholder copyWith({IssuingCardholderAddress? billing, Omittable<IssuingCardholderCompany?>? company, int? created, Omittable<String?>? email, String? id, Omittable<IssuingCardholderIndividual?>? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, Omittable<String?>? phoneNumber, Omittable<List<PreferredLocales>?>? preferredLocales, IssuingCardholderRequirements? requirements, Omittable<IssuingCardholderAuthorizationControls?>? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) {return IssuingCardholder(
   billing: billing ?? this.billing,
-  company: company != null ? company() : this.company,
+  company: company ?? this.company,
   created: created ?? this.created,
-  email: email != null ? email() : this.email,
+  email: email ?? this.email,
   id: id ?? this.id,
-  individual: individual != null ? individual() : this.individual,
+  individual: individual ?? this.individual,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
   object: object ?? this.object,
-  phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
-  preferredLocales: preferredLocales != null ? preferredLocales() : this.preferredLocales,
+  phoneNumber: phoneNumber ?? this.phoneNumber,
+  preferredLocales: preferredLocales ?? this.preferredLocales,
   requirements: requirements ?? this.requirements,
-  spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
+  spendingControls: spendingControls ?? this.spendingControls,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholder &&
           billing == other.billing &&
@@ -280,14 +280,15 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholder
           name == other.name &&
           object == other.object &&
           phoneNumber == other.phoneNumber &&
-          listEquals(preferredLocales, other.preferredLocales) &&
+          preferredLocales.isPresent == other.preferredLocales.isPresent &&
+          listEquals(preferredLocales.value, other.preferredLocales.value) &&
           requirements == other.requirements &&
           spendingControls == other.spendingControls &&
           status == other.status &&
           type == other.type;
 
-@override int get hashCode => Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales ?? const []), requirements, spendingControls, status, type);
+@override int get hashCode => Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales.value ?? const []), requirements, spendingControls, status, type);
 
 @override String toString() => 'IssuingCardholder(\n  billing: $billing,\n  company: $company,\n  created: $created,\n  email: $email,\n  id: $id,\n  individual: $individual,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  phoneNumber: $phoneNumber,\n  preferredLocales: $preferredLocales,\n  requirements: $requirements,\n  spendingControls: $spendingControls,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

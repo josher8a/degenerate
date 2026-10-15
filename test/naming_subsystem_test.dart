@@ -11,15 +11,54 @@ import 'package:test/test.dart';
 
 void main() {
   group('StructuralSigner', () {
+    test('signature size tracks the type graph, not its expanded tree', () {
+      // T_i references T_{i-1} twice, so the expanded tree has ~2^20 nodes
+      // while the graph has 21. A signature that inlines child signatures
+      // grows with the tree (Stripe-sized specs exhaust memory); one that
+      // refers to interned child shapes stays proportional to the graph.
+      const depth = 20;
+      final registry = <String, IrType>{
+        'T0': const IrObject('T0', [
+          IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.string)),
+        ]),
+        for (var i = 1; i <= depth; i++)
+          'T$i': IrObject('T$i', [
+            IrField('a', const SpecString('a'), IrTypeRef('T${i - 1}')),
+            IrField('b', const SpecString('b'), IrTypeRef('T${i - 1}')),
+          ]),
+      };
+      final signer = StructuralSigner(registry);
+      expect(signer.signatureOf(registry['T$depth']!).length, lessThan(1000));
+    });
+
+    test('equal shapes share a signature after interning', () {
+      final registry = <String, IrType>{
+        'Leaf': const IrObject('Leaf', [
+          IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.string)),
+        ]),
+        'LeafCopy': const IrObject('LeafCopy', [
+          IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.string)),
+        ]),
+        'P': const IrObject('P', [
+          IrField('x', SpecString('x'), IrTypeRef('Leaf')),
+        ]),
+        'Q': const IrObject('Q', [
+          IrField('x', SpecString('x'), IrTypeRef('LeafCopy')),
+        ]),
+      };
+      final signer = StructuralSigner(registry);
+      expect(signer.signatureOf(registry['P']!), signer.signatureOf(registry['Q']!));
+    });
+
     test('identical objects produce the same signature', () {
       const a = IrObject('A', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.int), isRequired: true),
-        IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('name', SpecString('name'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       const b = IrObject('B', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.int), isRequired: true),
-        IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('name', SpecString('name'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       final registry = <String, IrType>{'A': a, 'B': b};
@@ -29,10 +68,10 @@ void main() {
 
     test('different field sets produce different signatures', () {
       const a = IrObject('A', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.int), isRequired: true),
       ]);
       const b = IrObject('B', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       final registry = <String, IrType>{'A': a, 'B': b};
@@ -45,10 +84,10 @@ void main() {
       // Dart nullability, and toJson guards — same-shape types differing
       // only in a default must not merge.
       const a = IrObject('A', [
-        IrField('x', 'x', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.int), isRequired: true),
       ]);
       const b = IrObject('B', [
-        IrField('x', 'x', IrPrimitive(PrimitiveKind.int),
+        IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.int),
             isRequired: true, defaultValue: 0),
       ]);
       final registry = <String, IrType>{'A': a, 'B': b};
@@ -61,15 +100,15 @@ void main() {
       // which gets the numeric suffix — swapped mappings read each key into
       // the other Dart field and must not merge.
       const a = IrObject('A', [
-        IrField('testProp', 'testProp', IrPrimitive(PrimitiveKind.string),
+        IrField('testProp', SpecString('testProp'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
-        IrField('testProp2', 'test_prop', IrPrimitive(PrimitiveKind.string),
+        IrField('testProp2', SpecString('test_prop'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       const b = IrObject('B', [
-        IrField('testProp2', 'testProp', IrPrimitive(PrimitiveKind.string),
+        IrField('testProp2', SpecString('testProp'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
-        IrField('testProp', 'test_prop', IrPrimitive(PrimitiveKind.string),
+        IrField('testProp', SpecString('test_prop'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       final registry = <String, IrType>{'A': a, 'B': b};
@@ -79,11 +118,11 @@ void main() {
 
     test('required vs optional produces different signatures', () {
       const a = IrObject('A', [
-        IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.string), isRequired: true),
       ]);
       const b = IrObject('B', [
         IrField(
-            'x', 'x', IrPrimitive(PrimitiveKind.string)),
+            'x', SpecString('x'), IrPrimitive(PrimitiveKind.string)),
       ]);
       final registry = <String, IrType>{'A': a, 'B': b};
       final signer = StructuralSigner(registry);
@@ -92,13 +131,13 @@ void main() {
 
     test('nullable vs non-nullable produces different signatures', () {
       const a = IrObject('A', [
-        IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.string), isRequired: true),
       ]);
       const aNullable = IrObject(
         'AN',
         [
           IrField(
-              'x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+              'x', SpecString('x'), IrPrimitive(PrimitiveKind.string), isRequired: true),
         ],
         isNullable: true,
       );
@@ -109,14 +148,14 @@ void main() {
 
     test('field order does not affect signature', () {
       const a = IrObject('A', [
-        IrField('x', 'x', IrPrimitive(PrimitiveKind.int), isRequired: true),
-        IrField('y', 'y', IrPrimitive(PrimitiveKind.string),
+        IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('y', SpecString('y'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       const b = IrObject('B', [
-        IrField('y', 'y', IrPrimitive(PrimitiveKind.string),
+        IrField('y', SpecString('y'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
-        IrField('x', 'x', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('x', SpecString('x'), IrPrimitive(PrimitiveKind.int), isRequired: true),
       ]);
       final registry = <String, IrType>{'A': a, 'B': b};
       final signer = StructuralSigner(registry);
@@ -125,7 +164,7 @@ void main() {
 
     test('resolves IrTypeRef through registry', () {
       const inner = IrObject('Inner', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.string), isRequired: true),
       ]);
       const ref = IrTypeRef('Inner');
       final registry = <String, IrType>{'Inner': inner};
@@ -135,12 +174,23 @@ void main() {
 
     test('handles cyclic refs without infinite recursion', () {
       const self = IrObject('Node', [
-        IrField('child', 'child', IrTypeRef('Node')),
+        IrField('child', SpecString('child'), IrTypeRef('Node')),
       ]);
-      final registry = <String, IrType>{'Node': self};
+      const twin = IrObject('Twin', [
+        IrField('child', SpecString('child'), IrTypeRef('Twin')),
+      ]);
+      const other = IrObject('Other', [
+        IrField('next', SpecString('next'), IrTypeRef('Other')),
+      ]);
+      final registry = <String, IrType>{
+        'Node': self,
+        'Twin': twin,
+        'Other': other,
+      };
       final signer = StructuralSigner(registry);
-      final sig = signer.signatureOf(self);
-      expect(sig, contains('cyc'));
+      // Terminates; isomorphic cycles share a signature, different ones don't.
+      expect(signer.signatureOf(self), signer.signatureOf(twin));
+      expect(signer.signatureOf(self), isNot(signer.signatureOf(other)));
     });
 
     test('constraints affect signature', () {
@@ -175,7 +225,7 @@ void main() {
 
     test('memoizes results for repeated calls', () {
       const t = IrObject('X', [
-        IrField('a', 'a', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('a', SpecString('a'), IrPrimitive(PrimitiveKind.int), isRequired: true),
       ]);
       final registry = <String, IrType>{'X': t};
       final signer = StructuralSigner(registry);
@@ -311,7 +361,7 @@ void main() {
   group('resolveNames', () {
     test('reserved names survive unchanged', () {
       const pet = IrObject('Pet', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.int), isRequired: true),
       ]);
       final registry = <String, IrType>{'Pet': pet};
       final result = resolveNames(
@@ -328,11 +378,11 @@ void main() {
 
     test('deduplicates structurally identical inline types with same leaf', () {
       const a = IrObject('FooBarRate', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.double),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.double),
             isRequired: true),
       ]);
       const b = IrObject('BazQuxRate', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.double),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.double),
             isRequired: true),
       ]);
       final registry = <String, IrType>{'FooBarRate': a, 'BazQuxRate': b};
@@ -355,20 +405,20 @@ void main() {
       // with different mapping keys. Merging them gives the survivor's
       // fromJson the wrong dispatch for the merged-away use site.
       const x = IrObject('X', [
-        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+        IrField('type', SpecString('type'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
       const y = IrObject('Y', [
-        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+        IrField('type', SpecString('type'), IrPrimitive(PrimitiveKind.string),
             isRequired: true),
       ]);
-      const u1 = IrDiscriminatedUnion('FooEvent', 'type', {
-        'cat': IrTypeRef('X'),
-        'dog': IrTypeRef('Y'),
+      final u1 = IrDiscriminatedUnion('FooEvent', SpecString('type'), {
+        SpecString('cat'): IrTypeRef('X'),
+        SpecString('dog'): IrTypeRef('Y'),
       });
-      const u2 = IrDiscriminatedUnion('BarEvent', 'kind', {
-        'feline': IrTypeRef('X'),
-        'canine': IrTypeRef('Y'),
+      final u2 = IrDiscriminatedUnion('BarEvent', SpecString('kind'), {
+        SpecString('feline'): IrTypeRef('X'),
+        SpecString('canine'): IrTypeRef('Y'),
       });
       final registry = <String, IrType>{
         'X': x,
@@ -393,11 +443,11 @@ void main() {
 
     test('does NOT dedupe types with different leaves', () {
       const a = IrObject('FooCost', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.double),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.double),
             isRequired: true),
       ]);
       const b = IrObject('BarPrice', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.double),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.double),
             isRequired: true),
       ]);
       final registry = <String, IrType>{'FooCost': a, 'BarPrice': b};
@@ -417,11 +467,11 @@ void main() {
 
     test('dedupe=false skips structural deduplication', () {
       const a = IrObject('FooBarRate', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.double),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.double),
             isRequired: true),
       ]);
       const b = IrObject('BazQuxRate', [
-        IrField('v', 'v', IrPrimitive(PrimitiveKind.double),
+        IrField('v', SpecString('v'), IrPrimitive(PrimitiveKind.double),
             isRequired: true),
       ]);
       final registry = <String, IrType>{'FooBarRate': a, 'BazQuxRate': b};
@@ -474,7 +524,7 @@ void main() {
           names.add(name);
           paths[name] = [prefix, leaf];
           types[name] = IrObject(name, [
-            IrField('f${fieldIndex++}', 'f$fieldIndex',
+            IrField('f${fieldIndex++}', SpecString('f$fieldIndex'),
                 const IrPrimitive(PrimitiveKind.string),
                 isRequired: true),
           ]);
@@ -500,7 +550,7 @@ void main() {
   group('rewriteTypeNames', () {
     test('renames IrObject', () {
       const obj = IrObject('OldName', [
-        IrField('f', 'f', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        IrField('f', SpecString('f'), IrPrimitive(PrimitiveKind.int), isRequired: true),
       ]);
       final result = rewriteTypeNames(obj, (n) => n == 'OldName' ? 'NewName' : n);
       expect((result as IrObject).name, 'NewName');
@@ -526,7 +576,7 @@ void main() {
 
     test('recursively renames field types in IrObject', () {
       const obj = IrObject('Parent', [
-        IrField('child', 'child', IrTypeRef('ChildType'), isRequired: true),
+        IrField('child', SpecString('child'), IrTypeRef('ChildType'), isRequired: true),
       ]);
       String rename(String n) => switch (n) {
         'Parent' => 'NewParent',
@@ -539,16 +589,16 @@ void main() {
     });
 
     test('recursively renames union variants', () {
-      const union = IrDiscriminatedUnion(
+      final union = IrDiscriminatedUnion(
         'MyUnion',
-        'type',
-        {'a': IrTypeRef('TypeA'), 'b': IrTypeRef('TypeB')},
+        SpecString('type'),
+        {SpecString('a'): IrTypeRef('TypeA'), SpecString('b'): IrTypeRef('TypeB')},
       );
       String rename(String n) => 'New$n';
       final result = rewriteTypeNames(union, rename) as IrDiscriminatedUnion;
       expect(result.name, 'NewMyUnion');
-      expect((result.mapping['a']! as IrTypeRef).name, 'NewTypeA');
-      expect((result.mapping['b']! as IrTypeRef).name, 'NewTypeB');
+      expect((result.mapping[SpecString('a')]! as IrTypeRef).name, 'NewTypeA');
+      expect((result.mapping[SpecString('b')]! as IrTypeRef).name, 'NewTypeB');
     });
 
     test('renames list item types', () {
@@ -586,9 +636,9 @@ void main() {
     });
 
     test('preserves description', () {
-      const obj = IrObject('X', [], description: 'my desc');
+      const obj = IrObject('X', [], description: SpecString('my desc'));
       final result = rewriteTypeNames(obj, (n) => 'Y') as IrObject;
-      expect(result.description, 'my desc');
+      expect(result.description, const SpecString('my desc'));
     });
   });
 }

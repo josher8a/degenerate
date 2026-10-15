@@ -12,7 +12,7 @@ final class CategoryApi with ApiExecutor {const CategoryApi(this.apiConfig);
 /// Lists categories across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories`
-Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListError>> getCategoryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListError>> getCategoryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -31,7 +31,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -39,11 +39,11 @@ return execute(
   },
   onError: GetCategoryListError.fromResponse,
 );
- } 
+}
 /// Reads a category
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<GetCategoryReadResponse, GetCategoryReadError>> getCategoryRead({required String accountId, required String categoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetCategoryReadResponse, GetCategoryReadError>> getCategoryRead({required String accountId, required String categoryId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -52,18 +52,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetCategoryReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: GetCategoryReadError.fromResponse,
 );
- } 
+}
 /// Updates a category
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<PostCategoryUpdateResponse, PostCategoryUpdateError>> postCategoryUpdate({required String accountId, required String categoryId, PostCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCategoryUpdateResponse, PostCategoryUpdateError>> postCategoryUpdate({required String accountId, required String categoryId, PostCategoryUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -74,18 +74,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostCategoryUpdateError.fromResponse,
 );
- } 
+}
 /// Updates a category
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<PatchCategoryUpdateResponse, PatchCategoryUpdateError>> patchCategoryUpdate({required String accountId, required String categoryId, PatchCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchCategoryUpdateResponse, PatchCategoryUpdateError>> patchCategoryUpdate({required String accountId, required String categoryId, PatchCategoryUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,18 +96,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PatchCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PatchCategoryUpdateError.fromResponse,
 );
- } 
+}
 /// Deletes a category
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<DeleteCategoryDeleteResponse, DeleteCategoryDeleteError>> deleteCategoryDelete({required String accountId, required String categoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCategoryDeleteResponse, DeleteCategoryDeleteError>> deleteCategoryDelete({required String accountId, required String categoryId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -116,18 +116,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeleteCategoryDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: DeleteCategoryDeleteError.fromResponse,
 );
- } 
+}
 /// Lists categories
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories/catalog`
-Future<ApiResult<List<GetCategoryListCompleteResponse>, GetCategoryListCompleteError>> getCategoryListComplete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetCategoryListCompleteResponse>, GetCategoryListCompleteError>> getCategoryListComplete({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -144,11 +144,11 @@ return execute(
   },
   onError: GetCategoryListCompleteError.fromResponse,
 );
- } 
+}
 /// Creates a new category
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/categories/create`
-Future<ApiResult<PostCategoryCreateResponse, PostCategoryCreateError>> postCategoryCreate({required String accountId, PostCategoryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCategoryCreateResponse, PostCategoryCreateError>> postCategoryCreate({required String accountId, PostCategoryCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,20 +159,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostCategoryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostCategoryCreateError.fromResponse,
 );
- } 
+}
 /// Get all application categories
 ///
 /// Get all application categories.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories`
-Future<ApiResult<List<AlexandriaCategory>?, GetCategoriesError>> getCategories({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AlexandriaCategory>?, GetCategoriesError>> getCategories({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -181,7 +181,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -189,13 +189,13 @@ return execute(
   },
   onError: GetCategoriesError.fromResponse,
 );
- } 
+}
 /// Show application category by ID
 ///
 /// Get application category by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories/{id}`
-Future<ApiResult<AlexandriaCategory?, GetCategoryByIdError>> getCategoryById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaCategory?, GetCategoryByIdError>> getCategoryById({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -204,7 +204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -212,5 +212,5 @@ return execute(
   },
   onError: GetCategoryByIdError.fromResponse,
 );
- } 
- }
+}
+}

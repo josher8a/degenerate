@@ -14,7 +14,7 @@ final class PagesDomainsApi with ApiExecutor {const PagesDomainsApi(this.apiConf
 /// Fetch a list of all domains associated with a Pages project.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/domains`
-Future<ApiResult<List<PagesDomain>, PagesDeploymentCreateDeploymentError>> pagesDomainsGetDomains({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<PagesDomain>, PagesDeploymentCreateDeploymentError>> pagesDomainsGetDomains({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Add domain
 ///
 /// Add a new domain for the Pages project.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/domains`
-Future<ApiResult<PagesDomain, PagesDeploymentCreateDeploymentError>> pagesDomainsAddDomain({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDomainsAddDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDomain, PagesDeploymentCreateDeploymentError>> pagesDomainsAddDomain({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDomainsAddDomainRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,13 +56,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Get domain
 ///
 /// Fetch a single domain.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<PagesDomain, PagesDeploymentCreateDeploymentError>> pagesDomainsGetDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDomain, PagesDeploymentCreateDeploymentError>> pagesDomainsGetDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,13 +79,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Patch domain
 ///
 /// Retry the validation status of a single domain.
 ///
 /// `PATCH /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<PagesDomain, PagesDeploymentCreateDeploymentError>> pagesDomainsPatchDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDomain, PagesDeploymentCreateDeploymentError>> pagesDomainsPatchDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -94,7 +94,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -102,13 +102,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Delete domain
 ///
 /// Delete a Pages project's domain.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesDomainsDeleteDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesDomainsDeleteDomain({required PagesDomainName domainName, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -117,7 +117,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -125,5 +125,5 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Job {const Job({required this.id, required this.status, });
 
-factory Job.fromJson(Map<String, dynamic> json) { return Job(
+factory Job.fromJson(Map<String, dynamic> json) {return Job(
   id: json['id'] as String,
   status: json['status'] as String,
-); }
+);}
 
 final String id;
 
 final String status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('status') && json['status'] is String; } 
-Job copyWith({String? id, String? status, }) { return Job(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('status') && json['status'] is String;}
+Job copyWith({String? id, String? status, }) {return Job(
   id: id ?? this.id,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Job &&
           id == other.id &&
@@ -31,4 +31,4 @@ Job copyWith({String? id, String? status, }) { return Job(
 
 @override String toString() => 'Job(id: $id, status: $status)';
 
- }
+}

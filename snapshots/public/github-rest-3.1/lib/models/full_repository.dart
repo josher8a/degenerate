@@ -2,9 +2,9 @@
 // Source: #/components/schemas/FullRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_of_conduct_simple.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/security_and_analysis.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Full Repository
-@immutable final class FullRepository {const FullRepository({required this.milestonesUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.id, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.watchers, required this.openIssues, required this.hasIssues, required this.hasProjects, required this.hasWiki, required this.hasPages, required this.forks, required this.hasDiscussions, required this.license, required this.networkCount, required this.subscribersCount, required this.disabled, required this.updatedAt, required this.pushedAt, required this.createdAt, required this.archived, this.permissions, this.allowRebaseMerge, this.templateRepository, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowMergeCommit, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowForking, this.webCommitSignoffRequired, this.customProperties, this.pullRequestCreationPolicy, this.hasPullRequests, this.organization, this.parent, this.source, this.hasDownloads, this.masterBranch, this.topics, this.isTemplate, this.anonymousAccessEnabled = true, this.codeOfConduct, this.securityAndAnalysis, this.visibility, });
+@immutable final class FullRepository {const FullRepository({required this.milestonesUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.id, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.watchers, required this.openIssues, required this.hasIssues, required this.hasProjects, required this.hasWiki, required this.hasPages, required this.forks, required this.hasDiscussions, required this.license, required this.networkCount, required this.subscribersCount, required this.disabled, required this.updatedAt, required this.pushedAt, required this.createdAt, required this.archived, this.permissions, this.allowRebaseMerge, this.templateRepository = const Omittable.absent(), this.tempCloneToken = const Omittable.absent(), this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowMergeCommit, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowForking, this.webCommitSignoffRequired, this.customProperties, this.pullRequestCreationPolicy, this.hasPullRequests, this.organization = const Omittable.absent(), this.parent, this.source, this.hasDownloads, this.masterBranch, this.topics, this.isTemplate, this.anonymousAccessEnabled, this.codeOfConduct, this.securityAndAnalysis = const Omittable.absent(), this.visibility, });
 
-factory FullRepository.fromJson(Map<String, dynamic> json) { return FullRepository(
+factory FullRepository.fromJson(Map<String, dynamic> json) {return FullRepository(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -82,8 +82,8 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   updatedAt: DateTime.parse(json['updated_at'] as String),
   permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   allowRebaseMerge: json['allow_rebase_merge'] as bool?,
-  templateRepository: json['template_repository'] != null ? Repository.fromJson(json['template_repository'] as Map<String, dynamic>) : null,
-  tempCloneToken: json['temp_clone_token'] as String?,
+  templateRepository: json.containsKey('template_repository') ? Omittable(json['template_repository'] != null ? Repository.fromJson(json['template_repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  tempCloneToken: json.containsKey('temp_clone_token') ? Omittable(json['temp_clone_token'] as String?) : const Omittable.absent(),
   allowSquashMerge: json['allow_squash_merge'] as bool?,
   allowAutoMerge: json['allow_auto_merge'] as bool?,
   deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
@@ -99,18 +99,18 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   subscribersCount: (json['subscribers_count'] as num).toInt(),
   networkCount: (json['network_count'] as num).toInt(),
   license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
-  organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  organization: json.containsKey('organization') ? Omittable(json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   parent: json['parent'] != null ? Repository.fromJson(json['parent'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? Repository.fromJson(json['source'] as Map<String, dynamic>) : null,
   forks: (json['forks'] as num).toInt(),
   masterBranch: json['master_branch'] as String?,
   openIssues: (json['open_issues'] as num).toInt(),
   watchers: (json['watchers'] as num).toInt(),
-  anonymousAccessEnabled: json.containsKey('anonymous_access_enabled') ? json['anonymous_access_enabled'] as bool : true,
+  anonymousAccessEnabled: json['anonymous_access_enabled'] as bool?,
   codeOfConduct: json['code_of_conduct'] != null ? CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,
-  securityAndAnalysis: json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
+  securityAndAnalysis: json.containsKey('security_and_analysis') ? Omittable(json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   customProperties: json['custom_properties'] as Map<String, dynamic>?,
-); }
+);}
 
 final int id;
 
@@ -270,9 +270,9 @@ final CollaboratorPermissions? permissions;
 
 final bool? allowRebaseMerge;
 
-final Repository? templateRepository;
+final Omittable<Repository?> templateRepository;
 
-final String? tempCloneToken;
+final Omittable<String?> tempCloneToken;
 
 final bool? allowSquashMerge;
 
@@ -322,7 +322,7 @@ final int networkCount;
 
 final LicenseSimple? license;
 
-final SimpleUser? organization;
+final Omittable<SimpleUser?> organization;
 
 final Repository? parent;
 
@@ -337,16 +337,19 @@ final int openIssues;
 final int watchers;
 
 /// Whether anonymous git access is allowed.
-final bool anonymousAccessEnabled;
+final bool? anonymousAccessEnabled;
 
 final CodeOfConductSimple? codeOfConduct;
 
-final SecurityAndAnalysis? securityAndAnalysis;
+final Omittable<SecurityAndAnalysis?> securityAndAnalysis;
 
 /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
 final Map<String,dynamic>? customProperties;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `anonymousAccessEnabled`, or its schema default when absent.
+bool get anonymousAccessEnabledOrDefault => anonymousAccessEnabled ?? true;
+
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -424,8 +427,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   if (permissions != null) 'permissions': permissions?.toJson(),
   'allow_rebase_merge': ?allowRebaseMerge,
-  if (templateRepository != null) 'template_repository': templateRepository?.toJson(),
-  'temp_clone_token': ?tempCloneToken,
+  if (templateRepository.isPresent) 'template_repository': templateRepository.value?.toJson(),
+  if (tempCloneToken.isPresent) 'temp_clone_token': tempCloneToken.value,
   'allow_squash_merge': ?allowSquashMerge,
   'allow_auto_merge': ?allowAutoMerge,
   'delete_branch_on_merge': ?deleteBranchOnMerge,
@@ -441,26 +444,26 @@ Map<String, dynamic> toJson() { return {
   'subscribers_count': subscribersCount,
   'network_count': networkCount,
   'license': license?.toJson(),
-  if (organization != null) 'organization': organization?.toJson(),
+  if (organization.isPresent) 'organization': organization.value?.toJson(),
   if (parent != null) 'parent': parent?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'forks': forks,
   'master_branch': ?masterBranch,
   'open_issues': openIssues,
   'watchers': watchers,
-  'anonymous_access_enabled': anonymousAccessEnabled,
+  'anonymous_access_enabled': ?anonymousAccessEnabled,
   if (codeOfConduct != null) 'code_of_conduct': codeOfConduct?.toJson(),
-  if (securityAndAnalysis != null) 'security_and_analysis': securityAndAnalysis?.toJson(),
+  if (securityAndAnalysis.isPresent) 'security_and_analysis': securityAndAnalysis.value?.toJson(),
   'custom_properties': ?customProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_url') && json['archive_url'] is String &&
@@ -501,11 +504,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
       json.containsKey('clone_url') && json['clone_url'] is String &&
-      json.containsKey('mirror_url') && json['mirror_url'] is String &&
+      json.containsKey('mirror_url') && (json['mirror_url'] == null || json['mirror_url'] is String) &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
       json.containsKey('svn_url') && json['svn_url'] is String &&
-      json.containsKey('homepage') && json['homepage'] is String &&
-      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('homepage') && (json['homepage'] == null || json['homepage'] is String) &&
+      json.containsKey('language') && (json['language'] == null || json['language'] is String) &&
       json.containsKey('forks_count') && json['forks_count'] is num &&
       json.containsKey('stargazers_count') && json['stargazers_count'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num &&
@@ -527,8 +530,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('license') &&
       json.containsKey('forks') && json['forks'] is num &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
-      json.containsKey('watchers') && json['watchers'] is num; } 
-FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? Function()? hasDownloads, bool? hasDiscussions, bool? Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, DateTime? pushedAt, DateTime? createdAt, DateTime? updatedAt, CollaboratorPermissions? Function()? permissions, bool? Function()? allowRebaseMerge, Repository? Function()? templateRepository, String? Function()? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowMergeCommit, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? subscribersCount, int? networkCount, LicenseSimple? Function()? license, SimpleUser? Function()? organization, Repository? Function()? parent, Repository? Function()? source, int? forks, String? Function()? masterBranch, int? openIssues, int? watchers, bool Function()? anonymousAccessEnabled, CodeOfConductSimple? Function()? codeOfConduct, SecurityAndAnalysis? Function()? securityAndAnalysis, Map<String, dynamic>? Function()? customProperties, }) { return FullRepository(
+      json.containsKey('watchers') && json['watchers'] is num;}
+FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? Function()? hasDownloads, bool? hasDiscussions, bool? Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, DateTime? pushedAt, DateTime? createdAt, DateTime? updatedAt, CollaboratorPermissions? Function()? permissions, bool? Function()? allowRebaseMerge, Omittable<Repository?>? templateRepository, Omittable<String?>? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowMergeCommit, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? subscribersCount, int? networkCount, LicenseSimple? Function()? license, Omittable<SimpleUser?>? organization, Repository? Function()? parent, Repository? Function()? source, int? forks, String? Function()? masterBranch, int? openIssues, int? watchers, bool? Function()? anonymousAccessEnabled, CodeOfConductSimple? Function()? codeOfConduct, Omittable<SecurityAndAnalysis?>? securityAndAnalysis, Map<String, dynamic>? Function()? customProperties, }) {return FullRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -606,8 +609,8 @@ FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName
   updatedAt: updatedAt ?? this.updatedAt,
   permissions: permissions != null ? permissions() : this.permissions,
   allowRebaseMerge: allowRebaseMerge != null ? allowRebaseMerge() : this.allowRebaseMerge,
-  templateRepository: templateRepository != null ? templateRepository() : this.templateRepository,
-  tempCloneToken: tempCloneToken != null ? tempCloneToken() : this.tempCloneToken,
+  templateRepository: templateRepository ?? this.templateRepository,
+  tempCloneToken: tempCloneToken ?? this.tempCloneToken,
   allowSquashMerge: allowSquashMerge != null ? allowSquashMerge() : this.allowSquashMerge,
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   deleteBranchOnMerge: deleteBranchOnMerge != null ? deleteBranchOnMerge() : this.deleteBranchOnMerge,
@@ -623,7 +626,7 @@ FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName
   subscribersCount: subscribersCount ?? this.subscribersCount,
   networkCount: networkCount ?? this.networkCount,
   license: license != null ? license() : this.license,
-  organization: organization != null ? organization() : this.organization,
+  organization: organization ?? this.organization,
   parent: parent != null ? parent() : this.parent,
   source: source != null ? source() : this.source,
   forks: forks ?? this.forks,
@@ -632,9 +635,9 @@ FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName
   watchers: watchers ?? this.watchers,
   anonymousAccessEnabled: anonymousAccessEnabled != null ? anonymousAccessEnabled() : this.anonymousAccessEnabled,
   codeOfConduct: codeOfConduct != null ? codeOfConduct() : this.codeOfConduct,
-  securityAndAnalysis: securityAndAnalysis != null ? securityAndAnalysis() : this.securityAndAnalysis,
+  securityAndAnalysis: securityAndAnalysis ?? this.securityAndAnalysis,
   customProperties: customProperties != null ? customProperties() : this.customProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FullRepository &&
           id == other.id &&
@@ -747,4 +750,4 @@ FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName
 
 @override String toString() => 'FullRepository(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  fullName: $fullName,\n  owner: $owner,\n  private: $private,\n  htmlUrl: $htmlUrl,\n  description: $description,\n  fork: $fork,\n  url: $url,\n  archiveUrl: $archiveUrl,\n  assigneesUrl: $assigneesUrl,\n  blobsUrl: $blobsUrl,\n  branchesUrl: $branchesUrl,\n  collaboratorsUrl: $collaboratorsUrl,\n  commentsUrl: $commentsUrl,\n  commitsUrl: $commitsUrl,\n  compareUrl: $compareUrl,\n  contentsUrl: $contentsUrl,\n  contributorsUrl: $contributorsUrl,\n  deploymentsUrl: $deploymentsUrl,\n  downloadsUrl: $downloadsUrl,\n  eventsUrl: $eventsUrl,\n  forksUrl: $forksUrl,\n  gitCommitsUrl: $gitCommitsUrl,\n  gitRefsUrl: $gitRefsUrl,\n  gitTagsUrl: $gitTagsUrl,\n  gitUrl: $gitUrl,\n  issueCommentUrl: $issueCommentUrl,\n  issueEventsUrl: $issueEventsUrl,\n  issuesUrl: $issuesUrl,\n  keysUrl: $keysUrl,\n  labelsUrl: $labelsUrl,\n  languagesUrl: $languagesUrl,\n  mergesUrl: $mergesUrl,\n  milestonesUrl: $milestonesUrl,\n  notificationsUrl: $notificationsUrl,\n  pullsUrl: $pullsUrl,\n  releasesUrl: $releasesUrl,\n  sshUrl: $sshUrl,\n  stargazersUrl: $stargazersUrl,\n  statusesUrl: $statusesUrl,\n  subscribersUrl: $subscribersUrl,\n  subscriptionUrl: $subscriptionUrl,\n  tagsUrl: $tagsUrl,\n  teamsUrl: $teamsUrl,\n  treesUrl: $treesUrl,\n  cloneUrl: $cloneUrl,\n  mirrorUrl: $mirrorUrl,\n  hooksUrl: $hooksUrl,\n  svnUrl: $svnUrl,\n  homepage: $homepage,\n  language: $language,\n  forksCount: $forksCount,\n  stargazersCount: $stargazersCount,\n  watchersCount: $watchersCount,\n  size: $size,\n  defaultBranch: $defaultBranch,\n  openIssuesCount: $openIssuesCount,\n  isTemplate: $isTemplate,\n  topics: $topics,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasWiki: $hasWiki,\n  hasPages: $hasPages,\n  hasDownloads: $hasDownloads,\n  hasDiscussions: $hasDiscussions,\n  hasPullRequests: $hasPullRequests,\n  pullRequestCreationPolicy: $pullRequestCreationPolicy,\n  archived: $archived,\n  disabled: $disabled,\n  visibility: $visibility,\n  pushedAt: $pushedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  permissions: $permissions,\n  allowRebaseMerge: $allowRebaseMerge,\n  templateRepository: $templateRepository,\n  tempCloneToken: $tempCloneToken,\n  allowSquashMerge: $allowSquashMerge,\n  allowAutoMerge: $allowAutoMerge,\n  deleteBranchOnMerge: $deleteBranchOnMerge,\n  allowMergeCommit: $allowMergeCommit,\n  allowUpdateBranch: $allowUpdateBranch,\n  useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault,\n  squashMergeCommitTitle: $squashMergeCommitTitle,\n  squashMergeCommitMessage: $squashMergeCommitMessage,\n  mergeCommitTitle: $mergeCommitTitle,\n  mergeCommitMessage: $mergeCommitMessage,\n  allowForking: $allowForking,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n  subscribersCount: $subscribersCount,\n  networkCount: $networkCount,\n  license: $license,\n  organization: $organization,\n  parent: $parent,\n  source: $source,\n  forks: $forks,\n  masterBranch: $masterBranch,\n  openIssues: $openIssues,\n  watchers: $watchers,\n  anonymousAccessEnabled: $anonymousAccessEnabled,\n  codeOfConduct: $codeOfConduct,\n  securityAndAnalysis: $securityAndAnalysis,\n  customProperties: $customProperties,\n)';
 
- }
+}

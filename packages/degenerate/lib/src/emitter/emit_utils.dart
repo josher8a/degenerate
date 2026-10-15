@@ -1,7 +1,16 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
+import 'package:degenerate/src/emitter/field_defaults.dart';
+import 'package:degenerate/src/escaping.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
+
+// Dart-source escaping primitives live in their own IR-free library so that
+// SpecString can call them; re-export here for the emitters that already
+// import emit_utils.
+export 'package:degenerate/src/emitter/field_defaults.dart';
+export 'package:degenerate/src/emitter/omittable_mode.dart';
+export 'package:degenerate/src/escaping.dart';
 
 // ─── EmitContext convenience methods ───────────────────
 // Defined as an extension here (rather than on EmitContext itself) to avoid
@@ -39,31 +48,8 @@ extension EmitContextX on EmitContext {
 
   bool isOneOfType(IrType type) {
     final resolved = type.resolveRef(typeRegistry);
-    final vs = resolved.unionVariants;
+    final vs = resolved.oneOfVariants;
     return vs != null && isOneOfTypedef(resolved.name!, vs);
-  }
-
-  /// Whether the `fromJson` emitted for an anyOf over [variants] takes a
-  /// `Map<String, dynamic>` rather than the raw wire value.
-  ///
-  /// Every caller that writes a call to that `fromJson` has to agree with the
-  /// anyOf emitter on this, or it passes an `Object?` to a map parameter.
-  bool anyOfFromJsonTakesMap(List<IrType> variants) {
-    // Deduped by `irTypeName` because `AnyOfEmitter` dedupes before it decides
-    // the parameter type. A caller holding the raw variant list would compute
-    // a different answer than the signature it is calling, which is the
-    // divergence this predicate exists to prevent.
-    final seen = <String>{};
-    return variants
-        .where((v) => seen.add(irTypeName(v)))
-        .every(
-          (v) =>
-              v is IrObject ||
-              v is IrTypeRef ||
-              v is IrDiscriminatedUnion ||
-              v is IrUntaggedUnion ||
-              v is IrAnyOf,
-        );
   }
 
   bool isUnionType(IrType type) {
@@ -82,10 +68,33 @@ final _dartEmitter = DartEmitter(
 /// Emit a [Library] to raw (unformatted) Dart source.
 ///
 /// Ensures the output ends with exactly one trailing newline.
+///
+/// Asserts that no [SpecString] leak sentinel survived into the output. A
+/// sentinel means spec-controlled text was interpolated directly (via
+/// `toString`) instead of through an escape gate; failing here turns that
+/// from a silent injection into a generation-time error with the file in hand.
 String emitRaw(Library library) {
   final raw = library.accept(_dartEmitter).toString();
+  assert(
+    !SpecString.containsMarker(raw),
+    'Un-gated spec text reached generated source: a SpecString was '
+    'interpolated directly instead of through a gate '
+    '(.literal/.escaped/.docComment/.commentText/.interpolatedLiteral). '
+    'Near: ${SpecString.leakContext(raw)}',
+  );
   return '${raw.trimRight()}\n';
 }
+
+/// `Omittable<T?>` for a presence-wrapped field. The inner type is always
+/// nullable so `Omittable(null)` (explicit null on the wire) is legal even in
+/// `all` mode, where the spec type itself isn't nullable. [nullable] makes
+/// the wrapper itself nullable (`copyWith` parameters).
+Reference omittableTypeRef(IrField f, {bool nullable = false}) => TypeReference(
+  (b) => b
+    ..symbol = 'Omittable'
+    ..types.add(irTypeToReference(f.type, forceNullable: true))
+    ..isNullable = nullable,
+);
 
 /// Build a type [Reference] from an [IrType].
 Reference irTypeToReference(
@@ -193,7 +202,7 @@ IrType _resolveOneOfRef(
   if (!resolving.add(type.name)) return type; // cycle detected
   final target = ctx.typeRegistry[type.name];
   if (target == null) return type;
-  final vs = target.unionVariants;
+  final vs = target.oneOfVariants;
   if (vs != null && isOneOfTypedef(type.name, vs)) return target;
   return type;
 }
@@ -324,8 +333,7 @@ String _buildFromJsonNonNull(
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>'
           : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', ctx: ctx, resolving: resolving)}))',
-    IrUntaggedUnion(:final variants) || IrAnyOf(:final variants)
-        when isOneOfEligible(variants) =>
+    IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
     // Sealed untagged unions accept any JSON value (Object?) — both the
     // all-primitive and mixed fromJson constructors dispatch on wire type.
@@ -340,20 +348,15 @@ String _buildFromJsonNonNull(
     IrTypeRef(:final name)
         when ctx.typeRegistry[name] is IrUntaggedUnion =>
       '$name.fromJson($accessor)',
-    // A sealed anyOf whose `fromJson` takes `dynamic` — because some variant
-    // is not object-like — must be passed the payload uncast. Its body
-    // branches on `json is String` and friends, and a map cast throws before
-    // the branch it was written for can run.
-    IrAnyOf(:final name, :final variants)
-        when !ctx.anyOfFromJsonTakesMap(variants) =>
+    // An anyOf class decodes any wire value (`Object?`): every typed view is
+    // attempted and the raw payload is retained.
+    IrAnyOf(:final name) => '$name.fromJson($accessor)',
+    IrTypeRef(:final name) when ctx.typeRegistry[name] is IrAnyOf =>
       '$name.fromJson($accessor)',
-    IrTypeRef(:final name) when _refIsNonMapAnyOf(name, ctx) =>
-      '$name.fromJson($accessor)',
-    // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
+    // Object, TypeRef and DiscriminatedUnion use .fromJson(map)
     IrObject(:final name) ||
     IrTypeRef(:final name) ||
-    IrDiscriminatedUnion(:final name) ||
-    IrAnyOf(:final name) =>
+    IrDiscriminatedUnion(:final name) =>
       '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
   };
 }
@@ -429,21 +432,20 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
 
 /// Whether a name in the type registry maps to a OneOf-eligible union
 /// (excluding self-referencing types which can't be Dart typedefs).
-/// Whether [name] refers to a sealed anyOf whose `fromJson` takes `dynamic`.
-bool _refIsNonMapAnyOf(String name, EmitContext ctx) {
-  final target = ctx.typeRegistry[name];
-  return target is IrAnyOf && !ctx.anyOfFromJsonTakesMap(target.variants);
-}
-
 bool _isOneOfInRegistry(String name, EmitContext ctx) {
   final target = ctx.typeRegistry[name];
   if (target == null) return false;
-  final vs = target.unionVariants;
+  final vs = target.oneOfVariants;
   return vs != null && isOneOfTypedef(name, vs);
 }
 
 /// Check whether an [IrType] represents a list (used for equality checks).
-bool isListType(IrType type) => type is IrList;
+/// Whether a field of this type is a Dart `List` at runtime — `IrList`, or
+/// bytes (`Uint8List` implements `List<int>`). These need `listEquals` /
+/// `Object.hashAll` for value equality instead of `==`/`hashCode`.
+bool isListType(IrType type) =>
+    type is IrList ||
+    (type is IrPrimitive && type.kind == PrimitiveKind.bytes);
 
 /// Whether [type] is or contains a `bytes` primitive (recurses through
 /// List/Map wrappers). Used to determine `dart:typed_data` / `dart:convert`
@@ -502,7 +504,12 @@ const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 /// Strip angle brackets, commas, and whitespace from type names to produce
 /// a safe Dart identifier fragment.
-String safeTypeName(String name) => name.replaceAll(_typeNameUnsafe, '');
+///
+/// Item nullability renders as `OrNull` (`List<String?>` →
+/// `ListStringOrNull`) rather than being stripped, so a union over both
+/// `List<String>` and `List<String?>` gets distinct variant class names.
+String safeTypeName(String name) =>
+    name.replaceAll('?', 'OrNull').replaceAll(_typeNameUnsafe, '');
 
 /// Whether a named union should become a `typedef` (eligible for OneOf and
 /// not self-referencing through its variants).
@@ -513,7 +520,7 @@ bool isOneOfTypedef(String name, List<IrType> variants) =>
 /// [IrTypeRef] through [ctx].
 bool isOneOfType(IrType type, [EmitContext? ctx]) {
   final resolved = ctx != null ? type.resolveRef(ctx.typeRegistry) : type;
-  final vs = resolved.unionVariants;
+  final vs = resolved.oneOfVariants;
   return vs != null && isOneOfTypedef(resolved.name!, vs);
 }
 
@@ -600,7 +607,7 @@ String buildOneOfParseCode(
   final dispatch = _pinDispatch(variants, ctx);
   if (dispatch != null) {
     final unionType = 'OneOf$n<${variants.map(irTypeName).join(', ')}>';
-    final key = dartStringLiteral(dispatch.property);
+    final key = dispatch.property.literal;
     final arms = [
       for (final (index, literal, type) in dispatch.arms)
         '  final Map<String, dynamic> m when m[$key] == $literal => '
@@ -619,11 +626,11 @@ String buildOneOfParseCode(
 ///
 /// Requires at least two object variants and distinct values: a pin shared
 /// by two variants (Stripe's `Customer`/`DeletedCustomer`) decides nothing.
-({String property, List<(int, String, String)> arms})? _pinDispatch(
+({SpecString property, List<(int, String, String)> arms})? _pinDispatch(
   List<IrType> variants,
   EmitContext ctx,
 ) {
-  final pins = <int, Map<String, String>>{};
+  final pins = <int, Map<SpecString, String>>{};
   for (final (i, variant) in variants.indexed) {
     final model = variant.resolveRef(ctx.typeRegistry);
     if (model is! IrObject) continue;
@@ -680,164 +687,17 @@ String variantClassName(String baseName, String variantKey) {
 }
 
 final _typeNameUnsafe = RegExp(r'[<>,?\s]');
-final _bareAngleBrackets = RegExp('<([^>]+)>');
-final _bareBrackets = RegExp(r'\[([^\]]+)\](?!\()');
 final _nonIdentChar = RegExp('[^a-zA-Z0-9_]');
 final _leadingDigit = RegExp('^[0-9]');
-
-/// Unicode characters that Dart warns about in string literals
-/// (text direction overrides, zero-width joiners/spaces, bidi isolates, etc.).
-final _unicodeControlChars = RegExp(
-  '[\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]',
-);
-
-/// Escape a string value for use inside a Dart single-quoted string literal.
-String escapeDartString(String value) {
-  return value
-      .replaceAll(r'\', r'\\')
-      .replaceAll("'", r"\'")
-      .replaceAll(r'$', r'\$')
-      .replaceAll('\n', r'\n')
-      .replaceAll('\r', r'\r')
-      .replaceAll('\t', r'\t')
-      .replaceAllMapped(_unicodeControlChars, (m) {
-        final code = m[0]!.codeUnitAt(0).toRadixString(16).toUpperCase();
-        return '\\u${code.padLeft(4, '0')}';
-      });
-}
-
-/// Produce a Dart string literal for [value], preferring raw strings when
-/// the value contains characters that would otherwise need escaping.
-///
-/// Tries in order:
-/// 1. `'...'` — plain single-quoted when nothing needs escaping
-/// 2. `"..."` — plain double-quoted when value has `'` but no `"` or `$`
-/// 3. `r'...'` — raw single-quoted when value has `$` or `\` but no `'`
-/// 4. `r"..."` — raw double-quoted when value has `$`/`\` and `'` but no `"`
-/// 5. `'${escaped}'` — fallback with escapes
-String dartStringLiteral(String value) {
-  final hasSingleQuote = value.contains("'");
-  final hasDoubleQuote = value.contains('"');
-  final hasDollar = value.contains(r'$');
-  final hasBackslash = value.contains(r'\');
-  final hasControl =
-      value.contains('\n') ||
-      value.contains('\r') ||
-      value.contains('\t') ||
-      _unicodeControlChars.hasMatch(value);
-
-  // Plain single-quoted when nothing needs escaping.
-  if (!hasSingleQuote && !hasDollar && !hasBackslash && !hasControl) {
-    return "'$value'";
-  }
-  // Plain double-quoted when value has ' but no " or $ or control chars.
-  if (hasSingleQuote && !hasDoubleQuote && !hasDollar && !hasControl) {
-    return '"$value"';
-  }
-  // Raw strings for values with $ or \ (but no control chars).
-  if ((hasDollar || hasBackslash) && !hasControl) {
-    if (!hasSingleQuote) return "r'$value'";
-    if (!hasDoubleQuote) return 'r"$value"';
-  }
-  return "'${escapeDartString(value)}'";
-}
-
-/// Convert an enum string value to a valid Dart enum constant name.
-final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
-// A leading +/- before a letter (not a digit) isn't handled by _splitWords
-// and would corrupt casing. Strip it before passing to toCamelCase.
-// Only matches at the start of the string to preserve interior hyphens
-// that serve as word separators (e.g. 'google-apps' → 'googleApps').
-final _leadingSignBeforeLetter = RegExp('^[+-](?=[a-zA-Z])');
-
-/// Convert an enum string value to a valid Dart enum constant name.
-String enumValueName(String value) {
-  // Strip characters that are invalid in identifiers and not recognized as
-  // word separators by _splitWords, so they don't interfere with casing.
-  // e.g. "[DONE]" -> "DONE" -> toCamelCase -> "done"
-  // (not "[Done]" -> "Done").
-  var cleaned = value.replaceAll(_nonIdentChars, '');
-  cleaned = cleaned.replaceFirst(_leadingSignBeforeLetter, '');
-  var name = toCamelCase(cleaned);
-  name = sanitizeFieldName(name);
-  // Also escape enum-internal reserved names (value, values, json, etc.)
-  if (enumReservedNames.contains(name)) {
-    name = '\$$name';
-  }
-  return name;
-}
 
 /// Escape `$` in a name for use inside a Dart single-quoted string literal.
 ///
 /// Names like `$0Request` need `$` escaped to avoid string interpolation.
 String escapeNameForString(String name) => name.replaceAll(r'$', r'\$');
 
-/// Escape angle brackets in doc comments to prevent
-/// unintended HTML interpretation.
-/// Wraps `<content>` in backticks: `<content>` → `` `<content>` ``.
-/// Skips content already inside backtick-delimited code spans.
-String escapeDocComment(String line) {
-  // Split on backtick boundaries, alternating between prose and code spans.
-  final parts = line.split('`');
-  final buf = StringBuffer();
-  for (var i = 0; i < parts.length; i++) {
-    if (i.isOdd) {
-      // Inside backticks - pass through unchanged.
-      buf.write('`${parts[i]}`');
-    } else {
-      // Outside backticks - escape bare <...> tags and [references].
-      var prose = parts[i];
-      prose = prose.replaceAllMapped(_bareAngleBrackets, (m) => '`<${m[1]}>`');
-      // Escape bare [text] that aren't markdown links [text](...).
-      prose = prose.replaceAllMapped(
-        _bareBrackets,
-        (m) => '`[${m[1]}]`',
-      );
-      buf.write(prose);
-    }
-  }
-  return buf.toString();
-}
-
-/// Regex matching a fenced code block delimiter with optional language hint.
-final _codeFence = RegExp(r'^(`{3,})(\w*)$');
-
-/// Format a description string as `///` doc comment lines.
-///
-/// Returns `///` doc-comment lines for [description], or `[]` if null.
-List<String> docCommentLines(String? description) =>
-    description == null ? const [] : formatDocComment(description);
-
-/// Matches any line break Dart's scanner recognizes: `\r\n`, `\r`, or `\n`.
-/// A bare `\r` surviving into a `///` line would terminate the comment and
-/// turn the rest of the spec string into live source code.
-final _lineBreak = RegExp(r'\r\n?|\n');
-
-/// Collapse line breaks so spec-controlled text stays inside a single-line
-/// `//` comment — a raw `\r`/`\n` would end the comment and inject source.
-String sanitizeCommentText(String text) => text.replaceAll(_lineBreak, ' ');
-
-/// Splits on newlines, trims trailing whitespace, and escapes HTML-like tags.
-/// Code fence interiors are passed through verbatim; bare opening fences get
-/// a `text` language hint so dartdoc doesn't treat them as Dart.
-List<String> formatDocComment(String description) {
-  var inCodeBlock = false;
-  return description.split(_lineBreak).map((l) {
-    final trimmed = l.trimRight();
-    final fenceMatch = _codeFence.firstMatch(trimmed);
-    if (fenceMatch != null) {
-      if (inCodeBlock) {
-        inCodeBlock = false;
-        return '/// ${fenceMatch[1]!}';
-      }
-      inCodeBlock = true;
-      final lang = fenceMatch[2]!;
-      return lang.isEmpty ? '/// ${fenceMatch[1]!}text' : '/// $trimmed';
-    }
-    if (inCodeBlock) return '/// $trimmed';
-    return '/// ${escapeDocComment(trimmed)}';
-  }).toList();
-}
+/// `///` doc-comment lines for [description], or `[]` if null.
+List<String> docCommentLines(SpecString? description) =>
+    description?.docComment ?? const [];
 
 /// Convert a field name to a file-system-friendly snake_case name.
 String toSnakeCase(String input) {
@@ -923,7 +783,19 @@ Method buildToStringOverride(String body) => Method(
 /// set-or-leave it (`toJson` emits `?field`, omitting a null → reads back as
 /// absent). A defaulted-optional field is declared non-nullable `T`, so its
 /// thunk returns `T` and can't be cleared — matching the field type.
-Parameter copyWithParam(IrField f) {
+///
+/// An [omittable] field takes the wrapper itself (`Omittable<T?>?`): `null`
+/// means "not passed", while the wrapper already spells absent, explicit null
+/// or a value — no thunk needed.
+Parameter copyWithParam(IrField f, {bool omittable = false}) {
+  if (omittable) {
+    return Parameter(
+      (p) => p
+        ..name = f.name
+        ..named = true
+        ..type = omittableTypeRef(f, nullable: true),
+    );
+  }
   final usesThunk = !f.isRequired || f.type.isNullable;
   if (usesThunk) {
     final fieldIsNullable = fieldIsNullableInDart(f);
@@ -949,7 +821,8 @@ Parameter copyWithParam(IrField f) {
 
 /// The constructor-call assignment line for [f] in a `copyWith` body
 /// (e.g. `  name: name != null ? name() : this.name,`).
-String copyWithAssignment(IrField f) {
+String copyWithAssignment(IrField f, {bool omittable = false}) {
+  if (omittable) return '  ${f.name}: ${f.name} ?? this.${f.name},';
   final isNullable = !f.isRequired || f.type.isNullable;
   if (isNullable) {
     return '  ${f.name}: ${f.name} != null ? ${f.name}() : this.${f.name},';
@@ -960,8 +833,12 @@ String copyWithAssignment(IrField f) {
 /// The `operator ==` comparison expression for [f], using `listEquals` for
 /// list-typed fields. [self] overrides the receiver expression for the field
 /// (used when the field name shadows the `other` parameter).
-String equalsComparison(IrField f, {String? self}) {
+String equalsComparison(IrField f, {String? self, bool omittable = false}) {
   final lhs = self ?? f.name;
+  if (isListType(f.type) && omittable) {
+    return '$lhs.isPresent == other.${f.name}.isPresent &&\n'
+        '          listEquals($lhs.value, other.${f.name}.value)';
+  }
   if (isListType(f.type)) {
     return 'listEquals($lhs, other.${f.name})';
   }
@@ -970,7 +847,15 @@ String equalsComparison(IrField f, {String? self}) {
 
 /// The `hashCode` expression for [f], using `Object.hashAll` for list-typed
 /// fields (with `?? const []` when [isNullable]).
-String hashCodeExpr(IrField f, {required bool isNullable}) {
+String hashCodeExpr(
+  IrField f, {
+  required bool isNullable,
+  bool omittable = false,
+}) {
+  // Absent and present-null collide here; equality still separates them.
+  if (isListType(f.type) && omittable) {
+    return 'Object.hashAll(${f.name}.value ?? const [])';
+  }
   if (isListType(f.type)) {
     if (isNullable) return 'Object.hashAll(${f.name} ?? const [])';
     return 'Object.hashAll(${f.name})';
@@ -1022,60 +907,30 @@ String primitiveToJsonExpr(
   PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
   PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
   PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-  PrimitiveKind.bytes =>
-    q.isEmpty ? 'base64Encode($accessor)' : 'base64Encode($accessor!)',
+  PrimitiveKind.bytes => q.isEmpty
+      ? 'base64Encode($accessor)'
+      : 'switch ($accessor) { final bytes? => base64Encode(bytes), _ => null }',
   _ => accessor,
 };
-
-/// Whether [type] is an object-like type (object, ref, or union) for which an
-/// empty `{}` literal is not a valid Dart default.
-bool _isObjectLikeType(IrType type) =>
-    type.isClassType && type is! IrEnum || type is IrTypeRef;
-
-/// The Dart default-value expression for [f]'s constructor parameter, or null
-/// when the field has no representable default. Shared by the model emitter
-/// and the sealed-union variant factories so their parameters stay in sync.
-Code? fieldDefaultCode(IrField f) {
-  if (f.defaultValue == null) return null;
-  return switch ((f.defaultValue, f.type)) {
-    (Map(isEmpty: true), _) when _isObjectLikeType(f.type) => null,
-    (final String v, IrEnum(:final name)) => Code('$name.${enumValueName(v)}'),
-    (final String v, IrPrimitive(kind: PrimitiveKind.string)) => Code(
-      dartStringLiteral(v),
-    ),
-    (String(), _) => null,
-    (final bool v, IrPrimitive(kind: PrimitiveKind.bool)) => Code('$v'),
-    (bool(), _) => null,
-    (final num v, IrPrimitive(kind: PrimitiveKind.int)) => Code('${v.toInt()}'),
-    (final num v, IrPrimitive(kind: PrimitiveKind.double)) => Code(
-      '${v.toDouble()}',
-    ),
-    (final num v, IrPrimitive()) => Code('$v'),
-    (num(), _) => null,
-    (List(isEmpty: true), _) => const Code('const []'),
-    (Map(isEmpty: true), _) => const Code('const {}'),
-    _ => null,
-  };
-}
-
-/// Whether [f] has a representable Dart constructor default.
-bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;
-
-/// Whether [f] must be a `required` named parameter in the Dart constructor
-/// (required in the spec and no default value to fall back on).
-bool fieldIsRequiredInCtor(IrField f) => f.isRequired && !fieldHasDefault(f);
-
-/// Whether [f]'s Dart declaration type is nullable (optional without default,
-/// or explicitly nullable in the spec).
-bool fieldIsNullableInDart(IrField f) =>
-    (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
 
 /// Build a toJson map entry string for [f] with the given serialized [key].
 ///
 /// [isNullable] controls whether null-guarding is applied. Each emitter
 /// computes this differently (model emitter respects defaults; sealed union
 /// uses simple optionality).
-String toJsonEntry(IrField f, String key, {required bool isNullable}) {
+///
+/// An [omittable] field serializes only when present, including a present
+/// explicit null.
+String toJsonEntry(
+  IrField f,
+  String key, {
+  required bool isNullable,
+  bool omittable = false,
+}) {
+  if (omittable) {
+    final value = buildToJsonCode(f.type, '${f.name}.value', nullable: true);
+    return '  if (${f.name}.isPresent) $key: $value,';
+  }
   if (isNullable) {
     final value = buildToJsonCode(f.type, f.name, nullable: true);
     // Required-but-nullable: always emit the key (value may be null).

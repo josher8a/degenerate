@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_request_headers.dart';@immutable final class EntriesRequest {const EntriesRequest({required this.bodySize, required this.headers, required this.headersSize, required this.httpVersion, required this.method, required this.url, });
 
-factory EntriesRequest.fromJson(Map<String, dynamic> json) { return EntriesRequest(
+factory EntriesRequest.fromJson(Map<String, dynamic> json) {return EntriesRequest(
   bodySize: (json['bodySize'] as num).toDouble(),
   headers: (json['headers'] as List<dynamic>).map((e) => EntriesRequestHeaders.fromJson(e as Map<String, dynamic>)).toList(),
   headersSize: (json['headersSize'] as num).toDouble(),
   httpVersion: json['httpVersion'] as String,
   method: json['method'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final double bodySize;
 
@@ -28,28 +28,28 @@ final String method;
 /// Example: `'http://example.com/'`
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bodySize': bodySize,
   'headers': headers.map((e) => e.toJson()).toList(),
   'headersSize': headersSize,
   'httpVersion': httpVersion,
   'method': method,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bodySize') && json['bodySize'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bodySize') && json['bodySize'] is num &&
       json.containsKey('headers') &&
       json.containsKey('headersSize') && json['headersSize'] is num &&
       json.containsKey('httpVersion') && json['httpVersion'] is String &&
       json.containsKey('method') && json['method'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-EntriesRequest copyWith({double? bodySize, List<EntriesRequestHeaders>? headers, double? headersSize, String? httpVersion, String? method, String? url, }) { return EntriesRequest(
+      json.containsKey('url') && json['url'] is String;}
+EntriesRequest copyWith({double? bodySize, List<EntriesRequestHeaders>? headers, double? headersSize, String? httpVersion, String? method, String? url, }) {return EntriesRequest(
   bodySize: bodySize ?? this.bodySize,
   headers: headers ?? this.headers,
   headersSize: headersSize ?? this.headersSize,
   httpVersion: httpVersion ?? this.httpVersion,
   method: method ?? this.method,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EntriesRequest &&
           bodySize == other.bodySize &&
@@ -63,4 +63,4 @@ EntriesRequest copyWith({double? bodySize, List<EntriesRequestHeaders>? headers,
 
 @override String toString() => 'EntriesRequest(bodySize: $bodySize, headers: $headers, headersSize: $headersSize, httpVersion: $httpVersion, method: $method, url: $url)';
 
- }
+}

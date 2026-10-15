@@ -17,25 +17,25 @@ num toJson() => value;
 }
 @immutable final class ImagesImagesStatsCount {const ImagesImagesStatsCount({this.allowed, this.current, });
 
-factory ImagesImagesStatsCount.fromJson(Map<String, dynamic> json) { return ImagesImagesStatsCount(
+factory ImagesImagesStatsCount.fromJson(Map<String, dynamic> json) {return ImagesImagesStatsCount(
   allowed: json['allowed'] != null ? ImagesImagesStatsAllowed.fromJson(json['allowed'] as num) : null,
   current: json['current'] != null ? ImagesImagesStatsCurrent.fromJson(json['current'] as num) : null,
-); }
+);}
 
 /// Cloudflare Images allowed usage.
 final ImagesImagesStatsAllowed? allowed;
 
 final ImagesImagesStatsCurrent? current;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowed != null) 'allowed': allowed?.toJson(),
   if (current != null) 'current': current?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed', 'current'}.contains(key)); } 
-ImagesImagesStatsCount copyWith({ImagesImagesStatsAllowed? Function()? allowed, ImagesImagesStatsCurrent? Function()? current, }) { return ImagesImagesStatsCount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowed', 'current'}.contains(key));}
+ImagesImagesStatsCount copyWith({ImagesImagesStatsAllowed? Function()? allowed, ImagesImagesStatsCurrent? Function()? current, }) {return ImagesImagesStatsCount(
   allowed: allowed != null ? allowed() : this.allowed,
   current: current != null ? current() : this.current,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImagesStatsCount &&
           allowed == other.allowed &&
@@ -45,4 +45,4 @@ ImagesImagesStatsCount copyWith({ImagesImagesStatsAllowed? Function()? allowed, 
 
 @override String toString() => 'ImagesImagesStatsCount(allowed: $allowed, current: $current)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class VerificationDataStatus {const VerificationDataStatus();
 
-factory VerificationDataStatus.fromJson(String json) { return switch (json) {
+factory VerificationDataStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'active' => active,
   'deactivated' => deactivated,
   'blocked' => blocked,
   'error' => error,
   _ => VerificationDataStatus$Unknown(json),
-}; }
+};}
 
 static const VerificationDataStatus pending = VerificationDataStatus$pending._();
 
@@ -25,39 +25,39 @@ static const VerificationDataStatus error = VerificationDataStatus$error._();
 static const List<VerificationDataStatus> values = [pending, active, deactivated, blocked, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'active' => 'active',
   'deactivated' => 'deactivated',
   'blocked' => 'blocked',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VerificationDataStatus$Unknown; } 
+bool get isUnknown {return this is VerificationDataStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() blocked, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() blocked, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       VerificationDataStatus$pending() => pending(),
       VerificationDataStatus$active() => active(),
       VerificationDataStatus$deactivated() => deactivated(),
       VerificationDataStatus$blocked() => blocked(),
       VerificationDataStatus$error() => error(),
       VerificationDataStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? blocked, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? blocked, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       VerificationDataStatus$pending() => pending != null ? pending() : orElse(value),
       VerificationDataStatus$active() => active != null ? active() : orElse(value),
       VerificationDataStatus$deactivated() => deactivated != null ? deactivated() : orElse(value),
       VerificationDataStatus$blocked() => blocked != null ? blocked() : orElse(value),
       VerificationDataStatus$error() => error != null ? error() : orElse(value),
       VerificationDataStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VerificationDataStatus($value)';
 
- }
+}
 @immutable final class VerificationDataStatus$pending extends VerificationDataStatus {const VerificationDataStatus$pending._();
 
 @override String get value => 'pending';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class VerificationDataStatus$active extends VerificationDataStatus {const VerificationDataStatus$active._();
 
 @override String get value => 'active';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class VerificationDataStatus$deactivated extends VerificationDataStatus {const VerificationDataStatus$deactivated._();
 
 @override String get value => 'deactivated';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'deactivated'.hashCode;
 
- }
+}
 @immutable final class VerificationDataStatus$blocked extends VerificationDataStatus {const VerificationDataStatus$blocked._();
 
 @override String get value => 'blocked';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'blocked'.hashCode;
 
- }
+}
 @immutable final class VerificationDataStatus$error extends VerificationDataStatus {const VerificationDataStatus$error._();
 
 @override String get value => 'error';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class VerificationDataStatus$Unknown extends VerificationDataStatus {const VerificationDataStatus$Unknown(this.value);
 
 @override final String value;
@@ -112,27 +112,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class VerificationData {const VerificationData({required this.status, this.errorMessage, });
 
-factory VerificationData.fromJson(Map<String, dynamic> json) { return VerificationData(
+factory VerificationData.fromJson(Map<String, dynamic> json) {return VerificationData(
   errorMessage: json['error_message'] as String?,
   status: VerificationDataStatus.fromJson(json['status'] as String),
-); }
+);}
 
 final String? errorMessage;
 
 final VerificationDataStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error_message': ?errorMessage,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-VerificationData copyWith({String? Function()? errorMessage, VerificationDataStatus? status, }) { return VerificationData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+VerificationData copyWith({String? Function()? errorMessage, VerificationDataStatus? status, }) {return VerificationData(
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VerificationData &&
           errorMessage == other.errorMessage &&
@@ -142,4 +142,4 @@ VerificationData copyWith({String? Function()? errorMessage, VerificationDataSta
 
 @override String toString() => 'VerificationData(errorMessage: $errorMessage, status: $status)';
 
- }
+}

@@ -12,7 +12,7 @@ final class UserApi with ApiExecutor {const UserApi(this.apiConfig);
 /// User Details
 ///
 /// `GET /user`
-Future<ApiResult<IamSingleUserResponseResult?, TokensCreateTokenError>> userDetails({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleUserResponseResult?, TokensCreateTokenError>> userDetails({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -29,13 +29,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Edit User
 ///
 /// Edit part of your user details.
 ///
 /// `PATCH /user`
-Future<ApiResult<IamSingleUserResponseResult?, TokensCreateTokenError>> userEditUser({required UserEditUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleUserResponseResult?, TokensCreateTokenError>> userEditUser({required UserEditUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// List user tenants
 ///
 /// Retrieves list of tenants the authenticated user / method has access to.
 ///
 /// `GET /users/tenants`
-Future<ApiResult<List<Organization>, AccountsBatchMoveAccountsError>> userListUserTenants({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Organization>, AccountsBatchMoveAccountsError>> userListUserTenants({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +69,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -77,5 +77,5 @@ return execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
- }
+}
+}

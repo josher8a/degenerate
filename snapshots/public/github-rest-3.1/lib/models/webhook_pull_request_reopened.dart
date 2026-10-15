@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestReopened {const WebhookPullRequestReopened({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestReopened.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReopened(
+factory WebhookPullRequestReopened.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReopened(
   action: ProjectReopenedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookPullRequestReopened.fromJson(Map<String, dynamic> json) { return 
   pullRequest: PullRequestWebhook.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ProjectReopenedAction action;
 
@@ -31,7 +31,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -40,13 +40,13 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestReopened copyWith({ProjectReopenedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestReopened(
+      json.containsKey('sender');}
+WebhookPullRequestReopened copyWith({ProjectReopenedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookPullRequestReopened(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -55,7 +55,7 @@ WebhookPullRequestReopened copyWith({ProjectReopenedAction? action, EnterpriseWe
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReopened &&
           action == other.action &&
@@ -71,4 +71,4 @@ WebhookPullRequestReopened copyWith({ProjectReopenedAction? action, EnterpriseWe
 
 @override String toString() => 'WebhookPullRequestReopened(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
 
- }
+}

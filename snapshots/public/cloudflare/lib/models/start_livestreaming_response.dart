@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/start_livestreaming_response/start_livestreaming_response_data.dart';@immutable final class StartLivestreamingResponse {const StartLivestreamingResponse({this.data, this.success, });
 
-factory StartLivestreamingResponse.fromJson(Map<String, dynamic> json) { return StartLivestreamingResponse(
+factory StartLivestreamingResponse.fromJson(Map<String, dynamic> json) {return StartLivestreamingResponse(
   data: json['data'] != null ? StartLivestreamingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final StartLivestreamingResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-StartLivestreamingResponse copyWith({StartLivestreamingResponseData? Function()? data, bool? Function()? success, }) { return StartLivestreamingResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+StartLivestreamingResponse copyWith({StartLivestreamingResponseData? Function()? data, bool? Function()? success, }) {return StartLivestreamingResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StartLivestreamingResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ StartLivestreamingResponse copyWith({StartLivestreamingResponseData? Function()?
 
 @override String toString() => 'StartLivestreamingResponse(data: $data, success: $success)';
 
- }
+}

@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MeetingsMeetingIdActiveLivestreamResponse (inline: Data)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class MeetingsMeetingIdActiveLivestreamResponseData {const MeetingsMeetingIdActiveLivestreamResponseData({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class MeetingsMeetingIdActiveLivestreamResponseData {const MeetingsMeetingIdActiveLivestreamResponseData({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name = const Omittable.absent(), this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
-factory MeetingsMeetingIdActiveLivestreamResponseData.fromJson(Map<String, dynamic> json) { return MeetingsMeetingIdActiveLivestreamResponseData(
+factory MeetingsMeetingIdActiveLivestreamResponseData.fromJson(Map<String, dynamic> json) {return MeetingsMeetingIdActiveLivestreamResponseData(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   disabled: json['disabled'] as String?,
   id: json['id'] as String?,
   ingestServer: json['ingest_server'] as String?,
   meetingId: json['meeting_id'] as String?,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   playbackUrl: json['playback_url'] as String?,
   status: json['status'] != null ? RealtimekitLivestreamBaseStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -31,7 +31,7 @@ final String? ingestServer;
 final String? meetingId;
 
 /// Name of the livestream.
-final String? name;
+final Omittable<String?> name;
 
 /// The web address that viewers can use to watch the livestream.
 final String? playbackUrl;
@@ -44,31 +44,31 @@ final String? streamKey;
 /// Timestamp the object was updated at. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'disabled': ?disabled,
   'id': ?id,
   'ingest_server': ?ingestServer,
   'meeting_id': ?meetingId,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'playback_url': ?playbackUrl,
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key)); } 
-MeetingsMeetingIdActiveLivestreamResponseData copyWith({DateTime? Function()? createdAt, String? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) { return MeetingsMeetingIdActiveLivestreamResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key));}
+MeetingsMeetingIdActiveLivestreamResponseData copyWith({DateTime? Function()? createdAt, String? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, Omittable<String?>? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) {return MeetingsMeetingIdActiveLivestreamResponseData(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
   ingestServer: ingestServer != null ? ingestServer() : this.ingestServer,
   meetingId: meetingId != null ? meetingId() : this.meetingId,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   playbackUrl: playbackUrl != null ? playbackUrl() : this.playbackUrl,
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MeetingsMeetingIdActiveLivestreamResponseData &&
           createdAt == other.createdAt &&
@@ -86,4 +86,4 @@ MeetingsMeetingIdActiveLivestreamResponseData copyWith({DateTime? Function()? cr
 
 @override String toString() => 'MeetingsMeetingIdActiveLivestreamResponseData(\n  createdAt: $createdAt,\n  disabled: $disabled,\n  id: $id,\n  ingestServer: $ingestServer,\n  meetingId: $meetingId,\n  name: $name,\n  playbackUrl: $playbackUrl,\n  status: $status,\n  streamKey: $streamKey,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

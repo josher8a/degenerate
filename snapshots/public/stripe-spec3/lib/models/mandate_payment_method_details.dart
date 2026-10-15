@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card_mandate_payment_method_details.dart';import 'package:pub_stripe_spec3/models/mandate_acss_debit.dart';import 'package:pub_stripe_spec3/models/mandate_amazon_pay.dart';import 'package:pub_stripe_spec3/models/mandate_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/mandate_bacs_debit.dart';import 'package:pub_stripe_spec3/models/mandate_cashapp.dart';import 'package:pub_stripe_spec3/models/mandate_kakao_pay.dart';import 'package:pub_stripe_spec3/models/mandate_klarna.dart';import 'package:pub_stripe_spec3/models/mandate_kr_card.dart';import 'package:pub_stripe_spec3/models/mandate_link.dart';import 'package:pub_stripe_spec3/models/mandate_naver_pay.dart';import 'package:pub_stripe_spec3/models/mandate_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/mandate_paypal.dart';import 'package:pub_stripe_spec3/models/mandate_payto.dart';import 'package:pub_stripe_spec3/models/mandate_revolut_pay.dart';import 'package:pub_stripe_spec3/models/mandate_sepa_debit.dart';import 'package:pub_stripe_spec3/models/mandate_us_bank_account.dart';/// 
 @immutable final class MandatePaymentMethodDetails {const MandatePaymentMethodDetails({required this.type, this.acssDebit, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.card, this.cashapp, this.kakaoPay, this.klarna, this.krCard, this.link, this.naverPay, this.nzBankAccount, this.paypal, this.payto, this.revolutPay, this.sepaDebit, this.usBankAccount, });
 
-factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return MandatePaymentMethodDetails(
+factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) {return MandatePaymentMethodDetails(
   acssDebit: json['acss_debit'] != null ? MandateAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   amazonPay: json['amazon_pay'] != null ? MandateAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
   auBecsDebit: json['au_becs_debit'] != null ? MandateAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
@@ -23,7 +23,7 @@ factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return
   sepaDebit: json['sepa_debit'] != null ? MandateSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
   usBankAccount: json['us_bank_account'] != null ? MandateUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final MandateAcssDebit? acssDebit;
 
@@ -62,7 +62,7 @@ final String type;
 
 final MandateUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (amazonPay != null) 'amazon_pay': amazonPay?.toJson(),
   if (auBecsDebit != null) 'au_becs_debit': auBecsDebit?.toJson(),
@@ -81,13 +81,13 @@ Map<String, dynamic> toJson() { return {
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   'type': type,
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, MandateAmazonPay? Function()? amazonPay, MandateAuBecsDebit? Function()? auBecsDebit, MandateBacsDebit? Function()? bacsDebit, CardMandatePaymentMethodDetails? Function()? card, MandateCashapp? Function()? cashapp, MandateKakaoPay? Function()? kakaoPay, MandateKlarna? Function()? klarna, MandateKrCard? Function()? krCard, MandateLink? Function()? link, MandateNaverPay? Function()? naverPay, MandateNzBankAccount? Function()? nzBankAccount, MandatePaypal? Function()? paypal, MandatePayto? Function()? payto, MandateRevolutPay? Function()? revolutPay, MandateSepaDebit? Function()? sepaDebit, String? type, MandateUsBankAccount? Function()? usBankAccount, }) { return MandatePaymentMethodDetails(
+return errors;}
+MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, MandateAmazonPay? Function()? amazonPay, MandateAuBecsDebit? Function()? auBecsDebit, MandateBacsDebit? Function()? bacsDebit, CardMandatePaymentMethodDetails? Function()? card, MandateCashapp? Function()? cashapp, MandateKakaoPay? Function()? kakaoPay, MandateKlarna? Function()? klarna, MandateKrCard? Function()? krCard, MandateLink? Function()? link, MandateNaverPay? Function()? naverPay, MandateNzBankAccount? Function()? nzBankAccount, MandatePaypal? Function()? paypal, MandatePayto? Function()? payto, MandateRevolutPay? Function()? revolutPay, MandateSepaDebit? Function()? sepaDebit, String? type, MandateUsBankAccount? Function()? usBankAccount, }) {return MandatePaymentMethodDetails(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
   auBecsDebit: auBecsDebit != null ? auBecsDebit() : this.auBecsDebit,
@@ -106,7 +106,7 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MandatePaymentMethodDetails &&
           acssDebit == other.acssDebit &&
@@ -132,4 +132,4 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
 
 @override String toString() => 'MandatePaymentMethodDetails(\n  acssDebit: $acssDebit,\n  amazonPay: $amazonPay,\n  auBecsDebit: $auBecsDebit,\n  bacsDebit: $bacsDebit,\n  card: $card,\n  cashapp: $cashapp,\n  kakaoPay: $kakaoPay,\n  klarna: $klarna,\n  krCard: $krCard,\n  link: $link,\n  naverPay: $naverPay,\n  nzBankAccount: $nzBankAccount,\n  paypal: $paypal,\n  payto: $payto,\n  revolutPay: $revolutPay,\n  sepaDebit: $sepaDebit,\n  type: $type,\n  usBankAccount: $usBankAccount,\n)';
 
- }
+}

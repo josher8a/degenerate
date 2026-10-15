@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTaxRatesTaxRateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request/post_tax_rates_request_tax_type.dart';@immutable final class PostTaxRatesTaxRateRequest {const PostTaxRatesTaxRateRequest({this.active, this.country, this.description, this.displayName, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request/post_tax_rates_request_tax_type.dart';@immutable final class PostTaxRatesTaxRateRequest {const PostTaxRatesTaxRateRequest({this.active, this.country, this.description, this.displayName, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
 
-factory PostTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) { return PostTaxRatesTaxRateRequest(
+factory PostTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) {return PostTaxRatesTaxRateRequest(
   active: json['active'] as bool?,
   country: json['country'] as String?,
   description: json['description'] as String?,
   displayName: json['display_name'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   jurisdiction: json['jurisdiction'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   state: json['state'] as String?,
   taxType: json['tax_type'] != null ? PostTaxRatesRequestTaxType.fromJson(json['tax_type'] as String) : null,
-); }
+);}
 
 /// Flag determining whether the tax rate is active or inactive (archived). Inactive tax rates cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.
 final bool? active;
@@ -42,7 +42,7 @@ final String? state;
 /// The high-level tax type, such as `vat` or `sales_tax`.
 final PostTaxRatesRequestTaxType? taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'country': ?country,
   'description': ?description,
@@ -52,10 +52,10 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'state': ?state,
   if (taxType != null) 'tax_type': taxType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'country', 'description', 'display_name', 'expand', 'jurisdiction', 'metadata', 'state', 'tax_type'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'country', 'description', 'display_name', 'expand', 'jurisdiction', 'metadata', 'state', 'tax_type'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final country$ = country;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
@@ -76,8 +76,8 @@ final state$ = state;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
-return errors; } 
-PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? Function()? displayName, List<String>? Function()? expand, String? Function()? jurisdiction, Metadata? Function()? metadata, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) { return PostTaxRatesTaxRateRequest(
+return errors;}
+PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? Function()? displayName, List<String>? Function()? expand, String? Function()? jurisdiction, Metadata? Function()? metadata, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) {return PostTaxRatesTaxRateRequest(
   active: active != null ? active() : this.active,
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
@@ -87,7 +87,7 @@ PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function(
   metadata: metadata != null ? metadata() : this.metadata,
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxRatesTaxRateRequest &&
           active == other.active &&
@@ -104,4 +104,4 @@ PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function(
 
 @override String toString() => 'PostTaxRatesTaxRateRequest(\n  active: $active,\n  country: $country,\n  description: $description,\n  displayName: $displayName,\n  expand: $expand,\n  jurisdiction: $jurisdiction,\n  metadata: $metadata,\n  state: $state,\n  taxType: $taxType,\n)';
 
- }
+}

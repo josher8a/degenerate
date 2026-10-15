@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/audio_producer.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/audio_producer_cumulative.dart';@immutable final class PeerReportQuality {const PeerReportQuality({this.audioConsumer, this.audioConsumerCumulative, this.audioProducer, this.audioProducerCumulative, this.screenshareAudioConsumer, this.screenshareAudioConsumerCumulative, this.screenshareAudioProducer, this.screenshareAudioProducerCumulative, this.screenshareVideoConsumer, this.screenshareVideoConsumerCumulative, this.screenshareVideoProducer, this.screenshareVideoProducerCumulative, this.videoConsumer, this.videoConsumerCumulative, this.videoProducer, this.videoProducerCumulative, });
 
-factory PeerReportQuality.fromJson(Map<String, dynamic> json) { return PeerReportQuality(
+factory PeerReportQuality.fromJson(Map<String, dynamic> json) {return PeerReportQuality(
   audioConsumer: (json['audio_consumer'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   audioConsumerCumulative: json['audio_consumer_cumulative'] as Map<String, dynamic>?,
   audioProducer: (json['audio_producer'] as List<dynamic>?)?.map((e) => AudioProducer.fromJson(e as Map<String, dynamic>)).toList(),
@@ -20,7 +20,7 @@ factory PeerReportQuality.fromJson(Map<String, dynamic> json) { return PeerRepor
   videoConsumerCumulative: json['video_consumer_cumulative'] as Map<String, dynamic>?,
   videoProducer: (json['video_producer'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   videoProducerCumulative: json['video_producer_cumulative'] as Map<String, dynamic>?,
-); }
+);}
 
 final List<Map<String,dynamic>>? audioConsumer;
 
@@ -54,7 +54,7 @@ final List<Map<String,dynamic>>? videoProducer;
 
 final Map<String,dynamic>? videoProducerCumulative;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (audioConsumer != null) 'audio_consumer': audioConsumer?.map((e) => e).toList(),
   'audio_consumer_cumulative': ?audioConsumerCumulative,
   if (audioProducer != null) 'audio_producer': audioProducer?.map((e) => e.toJson()).toList(),
@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   'video_consumer_cumulative': ?videoConsumerCumulative,
   if (videoProducer != null) 'video_producer': videoProducer?.map((e) => e).toList(),
   'video_producer_cumulative': ?videoProducerCumulative,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_consumer', 'audio_consumer_cumulative', 'audio_producer', 'audio_producer_cumulative', 'screenshare_audio_consumer', 'screenshare_audio_consumer_cumulative', 'screenshare_audio_producer', 'screenshare_audio_producer_cumulative', 'screenshare_video_consumer', 'screenshare_video_consumer_cumulative', 'screenshare_video_producer', 'screenshare_video_producer_cumulative', 'video_consumer', 'video_consumer_cumulative', 'video_producer', 'video_producer_cumulative'}.contains(key)); } 
-PeerReportQuality copyWith({List<Map<String, dynamic>>? Function()? audioConsumer, Map<String, dynamic>? Function()? audioConsumerCumulative, List<AudioProducer>? Function()? audioProducer, AudioProducerCumulative? Function()? audioProducerCumulative, List<Map<String, dynamic>>? Function()? screenshareAudioConsumer, Map<String, dynamic>? Function()? screenshareAudioConsumerCumulative, List<Map<String, dynamic>>? Function()? screenshareAudioProducer, Map<String, dynamic>? Function()? screenshareAudioProducerCumulative, List<Map<String, dynamic>>? Function()? screenshareVideoConsumer, Map<String, dynamic>? Function()? screenshareVideoConsumerCumulative, List<Map<String, dynamic>>? Function()? screenshareVideoProducer, Map<String, dynamic>? Function()? screenshareVideoProducerCumulative, List<Map<String, dynamic>>? Function()? videoConsumer, Map<String, dynamic>? Function()? videoConsumerCumulative, List<Map<String, dynamic>>? Function()? videoProducer, Map<String, dynamic>? Function()? videoProducerCumulative, }) { return PeerReportQuality(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'audio_consumer', 'audio_consumer_cumulative', 'audio_producer', 'audio_producer_cumulative', 'screenshare_audio_consumer', 'screenshare_audio_consumer_cumulative', 'screenshare_audio_producer', 'screenshare_audio_producer_cumulative', 'screenshare_video_consumer', 'screenshare_video_consumer_cumulative', 'screenshare_video_producer', 'screenshare_video_producer_cumulative', 'video_consumer', 'video_consumer_cumulative', 'video_producer', 'video_producer_cumulative'}.contains(key));}
+PeerReportQuality copyWith({List<Map<String, dynamic>>? Function()? audioConsumer, Map<String, dynamic>? Function()? audioConsumerCumulative, List<AudioProducer>? Function()? audioProducer, AudioProducerCumulative? Function()? audioProducerCumulative, List<Map<String, dynamic>>? Function()? screenshareAudioConsumer, Map<String, dynamic>? Function()? screenshareAudioConsumerCumulative, List<Map<String, dynamic>>? Function()? screenshareAudioProducer, Map<String, dynamic>? Function()? screenshareAudioProducerCumulative, List<Map<String, dynamic>>? Function()? screenshareVideoConsumer, Map<String, dynamic>? Function()? screenshareVideoConsumerCumulative, List<Map<String, dynamic>>? Function()? screenshareVideoProducer, Map<String, dynamic>? Function()? screenshareVideoProducerCumulative, List<Map<String, dynamic>>? Function()? videoConsumer, Map<String, dynamic>? Function()? videoConsumerCumulative, List<Map<String, dynamic>>? Function()? videoProducer, Map<String, dynamic>? Function()? videoProducerCumulative, }) {return PeerReportQuality(
   audioConsumer: audioConsumer != null ? audioConsumer() : this.audioConsumer,
   audioConsumerCumulative: audioConsumerCumulative != null ? audioConsumerCumulative() : this.audioConsumerCumulative,
   audioProducer: audioProducer != null ? audioProducer() : this.audioProducer,
@@ -90,7 +90,7 @@ PeerReportQuality copyWith({List<Map<String, dynamic>>? Function()? audioConsume
   videoConsumerCumulative: videoConsumerCumulative != null ? videoConsumerCumulative() : this.videoConsumerCumulative,
   videoProducer: videoProducer != null ? videoProducer() : this.videoProducer,
   videoProducerCumulative: videoProducerCumulative != null ? videoProducerCumulative() : this.videoProducerCumulative,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PeerReportQuality &&
           listEquals(audioConsumer, other.audioConsumer) &&
@@ -114,4 +114,4 @@ PeerReportQuality copyWith({List<Map<String, dynamic>>? Function()? audioConsume
 
 @override String toString() => 'PeerReportQuality(\n  audioConsumer: $audioConsumer,\n  audioConsumerCumulative: $audioConsumerCumulative,\n  audioProducer: $audioProducer,\n  audioProducerCumulative: $audioProducerCumulative,\n  screenshareAudioConsumer: $screenshareAudioConsumer,\n  screenshareAudioConsumerCumulative: $screenshareAudioConsumerCumulative,\n  screenshareAudioProducer: $screenshareAudioProducer,\n  screenshareAudioProducerCumulative: $screenshareAudioProducerCumulative,\n  screenshareVideoConsumer: $screenshareVideoConsumer,\n  screenshareVideoConsumerCumulative: $screenshareVideoConsumerCumulative,\n  screenshareVideoProducer: $screenshareVideoProducer,\n  screenshareVideoProducerCumulative: $screenshareVideoProducerCumulative,\n  videoConsumer: $videoConsumer,\n  videoConsumerCumulative: $videoConsumerCumulative,\n  videoProducer: $videoProducer,\n  videoProducerCumulative: $videoProducerCumulative,\n)';
 
- }
+}

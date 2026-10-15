@@ -14,7 +14,7 @@ final class ResourcesApi with ApiExecutor {const ResourcesApi(this.apiConfig);
 /// List resources in the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources`
-Future<ApiResult<List<McnResourceDetails>?, CatalogSyncsListError>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<McnResourceDetails>, CatalogSyncsListError>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (providerId != null) {
   queryParameters['provider_id'] = providerId;
@@ -73,21 +73,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CatalogSyncsListError.fromResponse,
 );
- } 
+}
 /// Read Resource
 ///
 /// Read an resource from the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/{resource_id}`
-Future<ApiResult<McnResourceDetails?, CatalogSyncsListError>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnResourceDetails, CatalogSyncsListError>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (v2 != null) {
   queryParameters['v2'] = v2.toString();
@@ -104,21 +104,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsListError.fromResponse,
 );
- } 
+}
 /// Export Resources
 ///
 /// Export resources in the Resource Catalog as a JSON file (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/export`
-Future<ApiResult<Uint8List, CatalogSyncsListError>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Uint8List, CatalogSyncsListError>> resourcesCatalogExport({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, List<String>? search, String? orderBy, bool? desc, bool? v2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (providerId != null) {
   queryParameters['provider_id'] = providerId;
@@ -165,20 +165,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
   onError: CatalogSyncsListError.fromResponse,
 );
- } 
+}
 /// Preview Rego Query
 ///
 /// Preview Rego query result against the latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/resources/policy-preview`
-Future<ApiResult<McnResourcesCatalogPolicyPreview?, ResourcesCatalogPolicyPreviewError>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnResourcesCatalogPolicyPreview, ResourcesCatalogPolicyPreviewError>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -189,13 +189,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String) : null;
+    return McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String);
   },
   onError: ResourcesCatalogPolicyPreviewError.fromResponse,
 );
- } 
- }
+}
+}

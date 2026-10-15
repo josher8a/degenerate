@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_ip_address.dart';@immutable final class MagicLanDhcpServer {const MagicLanDhcpServer({this.dhcpPoolEnd, this.dhcpPoolStart, this.dnsServer, this.dnsServers, this.reservations, });
 
-factory MagicLanDhcpServer.fromJson(Map<String, dynamic> json) { return MagicLanDhcpServer(
+factory MagicLanDhcpServer.fromJson(Map<String, dynamic> json) {return MagicLanDhcpServer(
   dhcpPoolEnd: json['dhcp_pool_end'] != null ? MagicIpAddress.fromJson(json['dhcp_pool_end'] as String) : null,
   dhcpPoolStart: json['dhcp_pool_start'] != null ? MagicIpAddress.fromJson(json['dhcp_pool_start'] as String) : null,
   dnsServer: json['dns_server'] != null ? MagicIpAddress.fromJson(json['dns_server'] as String) : null,
   dnsServers: (json['dns_servers'] as List<dynamic>?)?.map((e) => MagicIpAddress.fromJson(e as String)).toList(),
   reservations: (json['reservations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// A valid IPv4 address.
 final MagicIpAddress? dhcpPoolEnd;
@@ -27,21 +27,21 @@ final List<MagicIpAddress>? dnsServers;
 /// Example: `{00:11:22:33:44:55: 192.0.2.100, AA:BB:CC:DD:EE:FF: 192.168.1.101}`
 final Map<String,String>? reservations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dhcpPoolEnd != null) 'dhcp_pool_end': dhcpPoolEnd?.toJson(),
   if (dhcpPoolStart != null) 'dhcp_pool_start': dhcpPoolStart?.toJson(),
   if (dnsServer != null) 'dns_server': dnsServer?.toJson(),
   if (dnsServers != null) 'dns_servers': dnsServers?.map((e) => e.toJson()).toList(),
   'reservations': ?reservations,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dhcp_pool_end', 'dhcp_pool_start', 'dns_server', 'dns_servers', 'reservations'}.contains(key)); } 
-MagicLanDhcpServer copyWith({MagicIpAddress? Function()? dhcpPoolEnd, MagicIpAddress? Function()? dhcpPoolStart, MagicIpAddress? Function()? dnsServer, List<MagicIpAddress>? Function()? dnsServers, Map<String, String>? Function()? reservations, }) { return MagicLanDhcpServer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dhcp_pool_end', 'dhcp_pool_start', 'dns_server', 'dns_servers', 'reservations'}.contains(key));}
+MagicLanDhcpServer copyWith({MagicIpAddress? Function()? dhcpPoolEnd, MagicIpAddress? Function()? dhcpPoolStart, MagicIpAddress? Function()? dnsServer, List<MagicIpAddress>? Function()? dnsServers, Map<String, String>? Function()? reservations, }) {return MagicLanDhcpServer(
   dhcpPoolEnd: dhcpPoolEnd != null ? dhcpPoolEnd() : this.dhcpPoolEnd,
   dhcpPoolStart: dhcpPoolStart != null ? dhcpPoolStart() : this.dhcpPoolStart,
   dnsServer: dnsServer != null ? dnsServer() : this.dnsServer,
   dnsServers: dnsServers != null ? dnsServers() : this.dnsServers,
   reservations: reservations != null ? reservations() : this.reservations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLanDhcpServer &&
           dhcpPoolEnd == other.dhcpPoolEnd &&
@@ -54,4 +54,4 @@ MagicLanDhcpServer copyWith({MagicIpAddress? Function()? dhcpPoolEnd, MagicIpAdd
 
 @override String toString() => 'MagicLanDhcpServer(dhcpPoolEnd: $dhcpPoolEnd, dhcpPoolStart: $dhcpPoolStart, dnsServer: $dnsServer, dnsServers: $dnsServers, reservations: $reservations)';
 
- }
+}

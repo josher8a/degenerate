@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingSummaryByDkimEncrypted {const RadarGetEmailRoutingSummaryByDkimEncrypted();
 
-factory RadarGetEmailRoutingSummaryByDkimEncrypted.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingSummaryByDkimEncrypted.fromJson(String json) {return switch (json) {
   'ENCRYPTED' => encrypted,
   'NOT_ENCRYPTED' => notEncrypted,
   _ => RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingSummaryByDkimEncrypted encrypted = RadarGetEmailRoutingSummaryByDkimEncrypted$encrypted._();
 
@@ -16,30 +16,30 @@ static const RadarGetEmailRoutingSummaryByDkimEncrypted notEncrypted = RadarGetE
 static const List<RadarGetEmailRoutingSummaryByDkimEncrypted> values = [encrypted, notEncrypted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ENCRYPTED' => 'encrypted',
   'NOT_ENCRYPTED' => 'notEncrypted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() encrypted, required W Function() notEncrypted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() encrypted, required W Function() notEncrypted, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailRoutingSummaryByDkimEncrypted$encrypted() => encrypted(),
       RadarGetEmailRoutingSummaryByDkimEncrypted$notEncrypted() => notEncrypted(),
       RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypted, W Function()? notEncrypted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypted, W Function()? notEncrypted, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailRoutingSummaryByDkimEncrypted$encrypted() => encrypted != null ? encrypted() : orElse(value),
       RadarGetEmailRoutingSummaryByDkimEncrypted$notEncrypted() => notEncrypted != null ? notEncrypted() : orElse(value),
       RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailRoutingSummaryByDkimEncrypted($value)';
 
- }
+}
 @immutable final class RadarGetEmailRoutingSummaryByDkimEncrypted$encrypted extends RadarGetEmailRoutingSummaryByDkimEncrypted {const RadarGetEmailRoutingSummaryByDkimEncrypted$encrypted._();
 
 @override String get value => 'ENCRYPTED';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypte
 
 @override int get hashCode => 'ENCRYPTED'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingSummaryByDkimEncrypted$notEncrypted extends RadarGetEmailRoutingSummaryByDkimEncrypted {const RadarGetEmailRoutingSummaryByDkimEncrypted$notEncrypted._();
 
 @override String get value => 'NOT_ENCRYPTED';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypte
 
 @override int get hashCode => 'NOT_ENCRYPTED'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown extends RadarGetEmailRoutingSummaryByDkimEncrypted {const RadarGetEmailRoutingSummaryByDkimEncrypted$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypte
 
 @override int get hashCode => value.hashCode;
 
- }
+}

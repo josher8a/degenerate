@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the 
 /// 
 sealed class CreateMessageRequestRole {const CreateMessageRequestRole();
 
-factory CreateMessageRequestRole.fromJson(String json) { return switch (json) {
+factory CreateMessageRequestRole.fromJson(String json) {return switch (json) {
   'user' => user,
   'assistant' => assistant,
   _ => CreateMessageRequestRole$Unknown(json),
-}; }
+};}
 
 static const CreateMessageRequestRole user = CreateMessageRequestRole$user._();
 
@@ -20,30 +20,30 @@ static const CreateMessageRequestRole assistant = CreateMessageRequestRole$assis
 static const List<CreateMessageRequestRole> values = [user, assistant];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'user' => 'user',
   'assistant' => 'assistant',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateMessageRequestRole$Unknown; } 
+bool get isUnknown {return this is CreateMessageRequestRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() user, required W Function() assistant, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() user, required W Function() assistant, required W Function(String value) $unknown, }) {return switch (this) {
       CreateMessageRequestRole$user() => user(),
       CreateMessageRequestRole$assistant() => assistant(),
       CreateMessageRequestRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? assistant, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? assistant, W Function(String value)? $unknown, }) {return switch (this) {
       CreateMessageRequestRole$user() => user != null ? user() : orElse(value),
       CreateMessageRequestRole$assistant() => assistant != null ? assistant() : orElse(value),
       CreateMessageRequestRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateMessageRequestRole($value)';
 
- }
+}
 @immutable final class CreateMessageRequestRole$user extends CreateMessageRequestRole {const CreateMessageRequestRole$user._();
 
 @override String get value => 'user';
@@ -52,7 +52,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class CreateMessageRequestRole$assistant extends CreateMessageRequestRole {const CreateMessageRequestRole$assistant._();
 
 @override String get value => 'assistant';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'assistant'.hashCode;
 
- }
+}
 @immutable final class CreateMessageRequestRole$Unknown extends CreateMessageRequestRole {const CreateMessageRequestRole$Unknown(this.value);
 
 @override final String value;
@@ -71,4 +71,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -14,7 +14,7 @@ final class AccountPermissionGroupsApi with ApiExecutor {const AccountPermission
 /// List all the permissions groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups`
-Future<ApiResult<List<IamPermissionGroup>?, TokensCreateTokenError>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamPermissionGroup>?, TokensCreateTokenError>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -43,7 +43,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -51,13 +51,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Permission Group Details
 ///
 /// Get information about a specific permission group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups/{permission_group_id}`
-Future<ApiResult<IamPermissionGroup?, TokensCreateTokenError>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamPermissionGroup?, TokensCreateTokenError>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,7 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -74,5 +74,5 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

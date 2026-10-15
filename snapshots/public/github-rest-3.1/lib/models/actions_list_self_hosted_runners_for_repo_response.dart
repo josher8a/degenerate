@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner.dart';@immutable final class ActionsListSelfHostedRunnersForRepoResponse {const ActionsListSelfHostedRunnersForRepoResponse({required this.totalCount, required this.runners, });
 
-factory ActionsListSelfHostedRunnersForRepoResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelfHostedRunnersForRepoResponse(
+factory ActionsListSelfHostedRunnersForRepoResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelfHostedRunnersForRepoResponse(
   totalCount: (json['total_count'] as num).toInt(),
   runners: (json['runners'] as List<dynamic>).map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<Runner> runners;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'runners': runners.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('runners'); } 
-ActionsListSelfHostedRunnersForRepoResponse copyWith({int? totalCount, List<Runner>? runners, }) { return ActionsListSelfHostedRunnersForRepoResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('runners');}
+ActionsListSelfHostedRunnersForRepoResponse copyWith({int? totalCount, List<Runner>? runners, }) {return ActionsListSelfHostedRunnersForRepoResponse(
   totalCount: totalCount ?? this.totalCount,
   runners: runners ?? this.runners,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelfHostedRunnersForRepoResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListSelfHostedRunnersForRepoResponse copyWith({int? totalCount, List<Runn
 
 @override String toString() => 'ActionsListSelfHostedRunnersForRepoResponse(totalCount: $totalCount, runners: $runners)';
 
- }
+}

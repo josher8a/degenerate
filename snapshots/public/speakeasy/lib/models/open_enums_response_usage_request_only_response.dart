@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OpenEnumsResponseUsageRequestOnlyResponse {const OpenEnumsResponseUsageRequestOnlyResponse({required this.json});
 
-factory OpenEnumsResponseUsageRequestOnlyResponse.fromJson(Map<String, dynamic> json) { return OpenEnumsResponseUsageRequestOnlyResponse(
+factory OpenEnumsResponseUsageRequestOnlyResponse.fromJson(Map<String, dynamic> json) {return OpenEnumsResponseUsageRequestOnlyResponse(
   json: json['json'] as Map<String, dynamic>,
-); }
+);}
 
 final Map<String,dynamic> json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json': json,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json'); } 
-OpenEnumsResponseUsageRequestOnlyResponse copyWith({Map<String,dynamic>? json}) { return OpenEnumsResponseUsageRequestOnlyResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json');}
+OpenEnumsResponseUsageRequestOnlyResponse copyWith({Map<String,dynamic>? json}) {return OpenEnumsResponseUsageRequestOnlyResponse(
   json: json ?? this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OpenEnumsResponseUsageRequestOnlyResponse &&
           json == other.json;
@@ -24,4 +24,4 @@ OpenEnumsResponseUsageRequestOnlyResponse copyWith({Map<String,dynamic>? json}) 
 
 @override String toString() => 'OpenEnumsResponseUsageRequestOnlyResponse(json: $json)';
 
- }
+}

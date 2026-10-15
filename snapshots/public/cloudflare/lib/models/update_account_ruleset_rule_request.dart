@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateAccountRulesetRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_block_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_challenge_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_compress_response_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_d_do_s_dynamic_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_execute_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_force_connection_close_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_js_challenge_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_custom_field_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_managed_challenge_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_redirect_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_rewrite_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_route_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_score_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_serve_error_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_control_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_settings_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_tags_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_config_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_skip_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_position.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_compress_response_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_log_custom_field_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_redirect_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_rewrite_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_route_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_score_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_serve_error_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_cache_control_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_cache_settings_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_config_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_skip_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';sealed class UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_block_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_challenge_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_compress_response_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_d_do_s_dynamic_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_execute_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_force_connection_close_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_js_challenge_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_custom_field_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_managed_challenge_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_redirect_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_rewrite_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_route_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_score_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_serve_error_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_control_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_settings_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_tags_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_config_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_skip_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_request_position.dart';import 'package:pub_cloudflare/models/rulesets_block_rule/rulesets_block_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_compress_response_rule/rulesets_compress_response_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_log_custom_field_rule/rulesets_log_custom_field_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_redirect_rule/rulesets_redirect_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_rule_request/rulesets_rewrite_rule_request_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_route_rule/rulesets_route_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';import 'package:pub_cloudflare/models/rulesets_score_rule/rulesets_score_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_serve_error_rule/rulesets_serve_error_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_rule/rulesets_set_cache_control_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_rule/rulesets_set_cache_settings_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_tags_rule/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_config_rule/rulesets_set_config_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_skip_rule/rulesets_skip_rule_action_parameters.dart';sealed class UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction();
 
-factory UpdateAccountRulesetRuleRequestAction.fromJson(String json) { return switch (json) {
+factory UpdateAccountRulesetRuleRequestAction.fromJson(String json) {return switch (json) {
   'block' => block,
   'challenge' => challenge,
   'compress_response' => compressResponse,
@@ -25,7 +25,7 @@ factory UpdateAccountRulesetRuleRequestAction.fromJson(String json) { return swi
   'set_config' => setConfig,
   'skip' => skip,
   _ => UpdateAccountRulesetRuleRequestAction$Unknown(json),
-}; }
+};}
 
 static const UpdateAccountRulesetRuleRequestAction block = UpdateAccountRulesetRuleRequestAction$block._();
 
@@ -74,7 +74,7 @@ String toJson() => value;
 
 bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$block extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$block._();
 
 @override String get value => 'block';
@@ -85,7 +85,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(block)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$challenge extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$challenge._();
 
 @override String get value => 'challenge';
@@ -96,7 +96,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(challenge)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$compressResponse extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$compressResponse._();
 
 @override String get value => 'compress_response';
@@ -107,7 +107,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(compress_response)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$ddosDynamic extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$ddosDynamic._();
 
 @override String get value => 'ddos_dynamic';
@@ -118,7 +118,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(ddos_dynamic)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$execute extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$execute._();
 
 @override String get value => 'execute';
@@ -129,7 +129,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(execute)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$forceConnectionClose extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$forceConnectionClose._();
 
 @override String get value => 'force_connection_close';
@@ -140,7 +140,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(force_connection_close)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$jsChallenge extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$jsChallenge._();
 
 @override String get value => 'js_challenge';
@@ -151,7 +151,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(js_challenge)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$log extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$log._();
 
 @override String get value => 'log';
@@ -162,7 +162,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(log)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$logCustomField extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$logCustomField._();
 
 @override String get value => 'log_custom_field';
@@ -173,7 +173,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(log_custom_field)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$managedChallenge extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$managedChallenge._();
 
 @override String get value => 'managed_challenge';
@@ -184,7 +184,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(managed_challenge)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$redirect extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$redirect._();
 
 @override String get value => 'redirect';
@@ -195,7 +195,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(redirect)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$rewrite extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$rewrite._();
 
 @override String get value => 'rewrite';
@@ -206,7 +206,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(rewrite)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$route extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$route._();
 
 @override String get value => 'route';
@@ -217,7 +217,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(route)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$score extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$score._();
 
 @override String get value => 'score';
@@ -228,7 +228,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(score)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$serveError extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$serveError._();
 
 @override String get value => 'serve_error';
@@ -239,7 +239,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(serve_error)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$setCacheControl extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$setCacheControl._();
 
 @override String get value => 'set_cache_control';
@@ -250,7 +250,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(set_cache_control)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$setCacheSettings extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$setCacheSettings._();
 
 @override String get value => 'set_cache_settings';
@@ -261,7 +261,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(set_cache_settings)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$setCacheTags extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$setCacheTags._();
 
 @override String get value => 'set_cache_tags';
@@ -272,7 +272,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(set_cache_tags)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$setConfig extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$setConfig._();
 
 @override String get value => 'set_config';
@@ -283,7 +283,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(set_config)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$skip extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$skip._();
 
 @override String get value => 'skip';
@@ -294,7 +294,7 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction(skip)';
 
- }
+}
 @immutable final class UpdateAccountRulesetRuleRequestAction$Unknown extends UpdateAccountRulesetRuleRequestAction {const UpdateAccountRulesetRuleRequestAction$Unknown(this.value);
 
 @override final String value;
@@ -305,11 +305,11 @@ bool get isUnknown => this is UpdateAccountRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequestAction($value)';
 
- }
+}
 sealed class UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequest();
 
 /// Deserialize from JSON, dispatching on the `action` discriminator.
-factory UpdateAccountRulesetRuleRequest.fromJson(Map<String, dynamic> json) { return switch (json['action']) {
+factory UpdateAccountRulesetRuleRequest.fromJson(Map<String, dynamic> json) {return switch (json['action']) {
   'block' => UpdateAccountRulesetRuleRequestBlock.fromJson(json),
   'challenge' => UpdateAccountRulesetRuleRequestChallenge.fromJson(json),
   'compress_response' => UpdateAccountRulesetRuleRequestCompressResponse.fromJson(json),
@@ -331,67 +331,67 @@ factory UpdateAccountRulesetRuleRequest.fromJson(Map<String, dynamic> json) { re
   'set_config' => UpdateAccountRulesetRuleRequestSetConfig.fromJson(json),
   'skip' => UpdateAccountRulesetRuleRequestSkip.fromJson(json),
   _ => UpdateAccountRulesetRuleRequest$Unknown(json),
-}; }
+};}
 
 /// Build the `block` variant.
-factory UpdateAccountRulesetRuleRequest.block({required DateTime lastUpdated, required String version, RulesetsBlockRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRule(action: 'block', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.block({RulesetsBlockRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRuleRequest(action: Omittable('block'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `challenge` variant.
-factory UpdateAccountRulesetRuleRequest.challenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRule(action: 'challenge', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.challenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRuleRequest(action: Omittable('challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `compress_response` variant.
-factory UpdateAccountRulesetRuleRequest.compressResponse({required DateTime lastUpdated, required String version, RulesetsCompressResponseRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRule(action: 'compress_response', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.compressResponse({RulesetsCompressResponseRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest(action: Omittable('compress_response'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `ddos_dynamic` variant.
-factory UpdateAccountRulesetRuleRequest.ddosDynamic({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRule(action: 'ddos_dynamic', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.ddosDynamic({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest(action: Omittable('ddos_dynamic'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `execute` variant.
-factory UpdateAccountRulesetRuleRequest.execute({required DateTime lastUpdated, required String version, RulesetsExecuteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRule(action: 'execute', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.execute({RulesetsExecuteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRuleRequest(action: Omittable('execute'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `force_connection_close` variant.
-factory UpdateAccountRulesetRuleRequest.forceConnectionClose({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRule(action: 'force_connection_close', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.forceConnectionClose({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest(action: Omittable('force_connection_close'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `js_challenge` variant.
-factory UpdateAccountRulesetRuleRequest.jsChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRule(action: 'js_challenge', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.jsChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest(action: Omittable('js_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `log` variant.
-factory UpdateAccountRulesetRuleRequest.log({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRule(action: 'log', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.log({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRuleRequest(action: Omittable('log'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `log_custom_field` variant.
-factory UpdateAccountRulesetRuleRequest.logCustomField({required DateTime lastUpdated, required String version, RulesetsLogCustomFieldRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRule(action: 'log_custom_field', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.logCustomField({RulesetsLogCustomFieldRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest(action: Omittable('log_custom_field'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `managed_challenge` variant.
-factory UpdateAccountRulesetRuleRequest.managedChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRule(action: 'managed_challenge', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.managedChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest(action: Omittable('managed_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `redirect` variant.
-factory UpdateAccountRulesetRuleRequest.redirect({required DateTime lastUpdated, required String version, RulesetsRedirectRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRule(action: 'redirect', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.redirect({RulesetsRedirectRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRuleRequest(action: Omittable('redirect'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `rewrite` variant.
-factory UpdateAccountRulesetRuleRequest.rewrite({required DateTime lastUpdated, required String version, RulesetsRewriteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRule(action: 'rewrite', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.rewrite({RulesetsRewriteRuleRequestActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRuleRequest(action: Omittable('rewrite'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `route` variant.
-factory UpdateAccountRulesetRuleRequest.route({required DateTime lastUpdated, required String version, RulesetsRouteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRule(action: 'route', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.route({RulesetsRouteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRuleRequest(action: Omittable('route'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `score` variant.
-factory UpdateAccountRulesetRuleRequest.score({required DateTime lastUpdated, required String version, RulesetsScoreRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRule(action: 'score', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.score({RulesetsScoreRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRuleRequest(action: Omittable('score'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `serve_error` variant.
-factory UpdateAccountRulesetRuleRequest.serveError({required DateTime lastUpdated, required String version, RulesetsServeErrorRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRule(action: 'serve_error', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.serveError({RulesetsServeErrorRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRuleRequest(action: Omittable('serve_error'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_cache_control` variant.
-factory UpdateAccountRulesetRuleRequest.setCacheControl({required DateTime lastUpdated, required String version, RulesetsSetCacheControlRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRule(action: 'set_cache_control', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.setCacheControl({RulesetsSetCacheControlRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest(action: Omittable('set_cache_control'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_cache_settings` variant.
-factory UpdateAccountRulesetRuleRequest.setCacheSettings({required DateTime lastUpdated, required String version, RulesetsSetCacheSettingsRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRule(action: 'set_cache_settings', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.setCacheSettings({RulesetsSetCacheSettingsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest(action: Omittable('set_cache_settings'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_cache_tags` variant.
-factory UpdateAccountRulesetRuleRequest.setCacheTags({required DateTime lastUpdated, required String version, RulesetsSetCacheTagsRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule(action: 'set_cache_tags', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.setCacheTags({RulesetsSetCacheTagsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest(action: Omittable('set_cache_tags'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_config` variant.
-factory UpdateAccountRulesetRuleRequest.setConfig({required DateTime lastUpdated, required String version, RulesetsSetConfigRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRule(action: 'set_config', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.setConfig({RulesetsSetConfigRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRuleRequest(action: Omittable('set_config'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `skip` variant.
-factory UpdateAccountRulesetRuleRequest.skip({required DateTime lastUpdated, required String version, RulesetsSkipRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return UpdateAccountRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRule(action: 'skip', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory UpdateAccountRulesetRuleRequest.skip({RulesetsSkipRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return UpdateAccountRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRuleRequest(action: Omittable('skip'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// The discriminator value identifying this variant.
 UpdateAccountRulesetRuleRequestAction get action;
@@ -399,10 +399,6 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is UpdateAccountRulesetRuleRequest$Unknown;
 
-/// Shared by all variants of this union.
-List<RulesetsRuleCategory>? get categories;
-/// Shared by all variants of this union.
-dynamic get description;
 /// Shared by all variants of this union.
 RulesetsRuleEnabled? get enabled;
 /// Shared by all variants of this union.
@@ -412,16 +408,12 @@ String? get expression;
 /// Shared by all variants of this union.
 RulesetsRuleId? get id;
 /// Shared by all variants of this union.
-DateTime get lastUpdated;
-/// Shared by all variants of this union.
 RulesetsRuleLogging? get logging;
 /// Shared by all variants of this union.
 RulesetsRuleRatelimit? get ratelimit;
 /// Shared by all variants of this union.
 String? get ref;
-/// Shared by all variants of this union.
-String get version;
-R when<R>({required R Function(UpdateAccountRulesetRuleRequestBlock) block, required R Function(UpdateAccountRulesetRuleRequestChallenge) challenge, required R Function(UpdateAccountRulesetRuleRequestCompressResponse) compressResponse, required R Function(UpdateAccountRulesetRuleRequestDdosDynamic) ddosDynamic, required R Function(UpdateAccountRulesetRuleRequestExecute) execute, required R Function(UpdateAccountRulesetRuleRequestForceConnectionClose) forceConnectionClose, required R Function(UpdateAccountRulesetRuleRequestJsChallenge) jsChallenge, required R Function(UpdateAccountRulesetRuleRequestLog) log, required R Function(UpdateAccountRulesetRuleRequestLogCustomField) logCustomField, required R Function(UpdateAccountRulesetRuleRequestManagedChallenge) managedChallenge, required R Function(UpdateAccountRulesetRuleRequestRedirect) redirect, required R Function(UpdateAccountRulesetRuleRequestRewrite) rewrite, required R Function(UpdateAccountRulesetRuleRequestRoute) route, required R Function(UpdateAccountRulesetRuleRequestScore) score, required R Function(UpdateAccountRulesetRuleRequestServeError) serveError, required R Function(UpdateAccountRulesetRuleRequestSetCacheControl) setCacheControl, required R Function(UpdateAccountRulesetRuleRequestSetCacheSettings) setCacheSettings, required R Function(UpdateAccountRulesetRuleRequestSetCacheTags) setCacheTags, required R Function(UpdateAccountRulesetRuleRequestSetConfig) setConfig, required R Function(UpdateAccountRulesetRuleRequestSkip) skip, required R Function(UpdateAccountRulesetRuleRequest$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(UpdateAccountRulesetRuleRequestBlock) block, required R Function(UpdateAccountRulesetRuleRequestChallenge) challenge, required R Function(UpdateAccountRulesetRuleRequestCompressResponse) compressResponse, required R Function(UpdateAccountRulesetRuleRequestDdosDynamic) ddosDynamic, required R Function(UpdateAccountRulesetRuleRequestExecute) execute, required R Function(UpdateAccountRulesetRuleRequestForceConnectionClose) forceConnectionClose, required R Function(UpdateAccountRulesetRuleRequestJsChallenge) jsChallenge, required R Function(UpdateAccountRulesetRuleRequestLog) log, required R Function(UpdateAccountRulesetRuleRequestLogCustomField) logCustomField, required R Function(UpdateAccountRulesetRuleRequestManagedChallenge) managedChallenge, required R Function(UpdateAccountRulesetRuleRequestRedirect) redirect, required R Function(UpdateAccountRulesetRuleRequestRewrite) rewrite, required R Function(UpdateAccountRulesetRuleRequestRoute) route, required R Function(UpdateAccountRulesetRuleRequestScore) score, required R Function(UpdateAccountRulesetRuleRequestServeError) serveError, required R Function(UpdateAccountRulesetRuleRequestSetCacheControl) setCacheControl, required R Function(UpdateAccountRulesetRuleRequestSetCacheSettings) setCacheSettings, required R Function(UpdateAccountRulesetRuleRequestSetCacheTags) setCacheTags, required R Function(UpdateAccountRulesetRuleRequestSetConfig) setConfig, required R Function(UpdateAccountRulesetRuleRequestSkip) skip, required R Function(UpdateAccountRulesetRuleRequest$Unknown) unknown, }) {return switch (this) {
   final UpdateAccountRulesetRuleRequestBlock v => block(v),
   final UpdateAccountRulesetRuleRequestChallenge v => challenge(v),
   final UpdateAccountRulesetRuleRequestCompressResponse v => compressResponse(v),
@@ -443,1117 +435,893 @@ R when<R>({required R Function(UpdateAccountRulesetRuleRequestBlock) block, requ
   final UpdateAccountRulesetRuleRequestSetConfig v => setConfig(v),
   final UpdateAccountRulesetRuleRequestSkip v => skip(v),
   final UpdateAccountRulesetRuleRequest$Unknown v => unknown(v),
-}; } 
- }
-@immutable final class UpdateAccountRulesetRuleRequestBlock extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestBlock(this.createAccountRulesetRuleRequestRulesetsBlockRule);
+};}
+}
+@immutable final class UpdateAccountRulesetRuleRequestBlock extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestBlock(this.createAccountRulesetRuleRequestRulesetsBlockRuleRequest);
 
-factory UpdateAccountRulesetRuleRequestBlock.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRule.fromJson(json)); }
+factory UpdateAccountRulesetRuleRequestBlock.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRuleRequest.fromJson(json));}
 
-final CreateAccountRulesetRuleRequestRulesetsBlockRule createAccountRulesetRuleRequestRulesetsBlockRule;
+final CreateAccountRulesetRuleRequestRulesetsBlockRuleRequest createAccountRulesetRuleRequestRulesetsBlockRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('block');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsBlockRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsBlockRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestBlock(createAccountRulesetRuleRequestRulesetsBlockRule.copyWith(
+UpdateAccountRulesetRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestBlock(createAccountRulesetRuleRequestRulesetsBlockRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestBlock && createAccountRulesetRuleRequestRulesetsBlockRule == other.createAccountRulesetRuleRequestRulesetsBlockRule;
+    other is UpdateAccountRulesetRuleRequestBlock && createAccountRulesetRuleRequestRulesetsBlockRuleRequest == other.createAccountRulesetRuleRequestRulesetsBlockRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsBlockRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.block($createAccountRulesetRuleRequestRulesetsBlockRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.block($createAccountRulesetRuleRequestRulesetsBlockRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsBlockRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsBlockRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsBlockRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsBlockRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsBlockRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsBlockRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsBlockRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsBlockRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestChallenge extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestChallenge(this.createAccountRulesetRuleRequestRulesetsChallengeRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsBlockRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestChallenge.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsBlockRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsBlockRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestChallenge extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestChallenge(this.createAccountRulesetRuleRequestRulesetsChallengeRule);
-
-factory UpdateAccountRulesetRuleRequestChallenge.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsChallengeRule createAccountRulesetRuleRequestRulesetsChallengeRule;
+final CreateAccountRulesetRuleRequestRulesetsChallengeRuleRequest createAccountRulesetRuleRequestRulesetsChallengeRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('challenge');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsChallengeRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestChallenge(createAccountRulesetRuleRequestRulesetsChallengeRule.copyWith(
+UpdateAccountRulesetRuleRequestChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestChallenge(createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestChallenge && createAccountRulesetRuleRequestRulesetsChallengeRule == other.createAccountRulesetRuleRequestRulesetsChallengeRule;
+    other is UpdateAccountRulesetRuleRequestChallenge && createAccountRulesetRuleRequestRulesetsChallengeRuleRequest == other.createAccountRulesetRuleRequestRulesetsChallengeRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsChallengeRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.challenge($createAccountRulesetRuleRequestRulesetsChallengeRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.challenge($createAccountRulesetRuleRequestRulesetsChallengeRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsChallengeRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsChallengeRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsChallengeRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsChallengeRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsChallengeRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsChallengeRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsChallengeRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsChallengeRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestCompressResponse extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestCompressResponse(this.createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsChallengeRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestCompressResponse.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsChallengeRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsChallengeRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestCompressResponse extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestCompressResponse(this.createAccountRulesetRuleRequestRulesetsCompressResponseRule);
-
-factory UpdateAccountRulesetRuleRequestCompressResponse.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsCompressResponseRule createAccountRulesetRuleRequestRulesetsCompressResponseRule;
+final CreateAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('compress_response');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsCompressResponseRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestCompressResponse copyWith({RulesetsCompressResponseRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestCompressResponse(createAccountRulesetRuleRequestRulesetsCompressResponseRule.copyWith(
+UpdateAccountRulesetRuleRequestCompressResponse copyWith({RulesetsCompressResponseRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestCompressResponse(createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestCompressResponse && createAccountRulesetRuleRequestRulesetsCompressResponseRule == other.createAccountRulesetRuleRequestRulesetsCompressResponseRule;
+    other is UpdateAccountRulesetRuleRequestCompressResponse && createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest == other.createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsCompressResponseRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.compressResponse($createAccountRulesetRuleRequestRulesetsCompressResponseRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.compressResponse($createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsCompressResponseRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsCompressResponseRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsCompressResponseRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsCompressResponseRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsCompressResponseRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsCompressResponseRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsCompressResponseRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsCompressResponseRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestDdosDynamic extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestDdosDynamic(this.createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsCompressResponseRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestDdosDynamic.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsCompressResponseRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsCompressResponseRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestDdosDynamic extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestDdosDynamic(this.createAccountRulesetRuleRequestRulesetsDDoSDynamicRule);
-
-factory UpdateAccountRulesetRuleRequestDdosDynamic.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRule createAccountRulesetRuleRequestRulesetsDDoSDynamicRule;
+final CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('ddos_dynamic');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestDdosDynamic copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestDdosDynamic(createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.copyWith(
+UpdateAccountRulesetRuleRequestDdosDynamic copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestDdosDynamic(createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestDdosDynamic && createAccountRulesetRuleRequestRulesetsDDoSDynamicRule == other.createAccountRulesetRuleRequestRulesetsDDoSDynamicRule;
+    other is UpdateAccountRulesetRuleRequestDdosDynamic && createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest == other.createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.ddosDynamic($createAccountRulesetRuleRequestRulesetsDDoSDynamicRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.ddosDynamic($createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestExecute extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestExecute(this.createAccountRulesetRuleRequestRulesetsExecuteRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestExecute.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestExecute extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestExecute(this.createAccountRulesetRuleRequestRulesetsExecuteRule);
-
-factory UpdateAccountRulesetRuleRequestExecute.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsExecuteRule createAccountRulesetRuleRequestRulesetsExecuteRule;
+final CreateAccountRulesetRuleRequestRulesetsExecuteRuleRequest createAccountRulesetRuleRequestRulesetsExecuteRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('execute');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsExecuteRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestExecute(createAccountRulesetRuleRequestRulesetsExecuteRule.copyWith(
+UpdateAccountRulesetRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestExecute(createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestExecute && createAccountRulesetRuleRequestRulesetsExecuteRule == other.createAccountRulesetRuleRequestRulesetsExecuteRule;
+    other is UpdateAccountRulesetRuleRequestExecute && createAccountRulesetRuleRequestRulesetsExecuteRuleRequest == other.createAccountRulesetRuleRequestRulesetsExecuteRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsExecuteRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.execute($createAccountRulesetRuleRequestRulesetsExecuteRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.execute($createAccountRulesetRuleRequestRulesetsExecuteRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsExecuteRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsExecuteRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsExecuteRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsExecuteRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsExecuteRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsExecuteRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsExecuteRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsExecuteRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestForceConnectionClose extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestForceConnectionClose(this.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsExecuteRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestForceConnectionClose.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsExecuteRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsExecuteRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestForceConnectionClose extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestForceConnectionClose(this.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule);
-
-factory UpdateAccountRulesetRuleRequestForceConnectionClose.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRule createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule;
+final CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('force_connection_close');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestForceConnectionClose copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestForceConnectionClose(createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.copyWith(
+UpdateAccountRulesetRuleRequestForceConnectionClose copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestForceConnectionClose(createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestForceConnectionClose && createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule == other.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule;
+    other is UpdateAccountRulesetRuleRequestForceConnectionClose && createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest == other.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.forceConnectionClose($createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.forceConnectionClose($createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestJsChallenge extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestJsChallenge(this.createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestJsChallenge.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestJsChallenge extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestJsChallenge(this.createAccountRulesetRuleRequestRulesetsJsChallengeRule);
-
-factory UpdateAccountRulesetRuleRequestJsChallenge.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsJsChallengeRule createAccountRulesetRuleRequestRulesetsJsChallengeRule;
+final CreateAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('js_challenge');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsJsChallengeRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestJsChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestJsChallenge(createAccountRulesetRuleRequestRulesetsJsChallengeRule.copyWith(
+UpdateAccountRulesetRuleRequestJsChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestJsChallenge(createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestJsChallenge && createAccountRulesetRuleRequestRulesetsJsChallengeRule == other.createAccountRulesetRuleRequestRulesetsJsChallengeRule;
+    other is UpdateAccountRulesetRuleRequestJsChallenge && createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest == other.createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsJsChallengeRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.jsChallenge($createAccountRulesetRuleRequestRulesetsJsChallengeRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.jsChallenge($createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsJsChallengeRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsJsChallengeRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsJsChallengeRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsJsChallengeRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsJsChallengeRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsJsChallengeRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsJsChallengeRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsJsChallengeRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestLog extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestLog(this.createAccountRulesetRuleRequestRulesetsLogRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsJsChallengeRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestLog.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsJsChallengeRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsJsChallengeRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestLog extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestLog(this.createAccountRulesetRuleRequestRulesetsLogRule);
-
-factory UpdateAccountRulesetRuleRequestLog.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsLogRule createAccountRulesetRuleRequestRulesetsLogRule;
+final CreateAccountRulesetRuleRequestRulesetsLogRuleRequest createAccountRulesetRuleRequestRulesetsLogRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('log');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestLog copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestLog(createAccountRulesetRuleRequestRulesetsLogRule.copyWith(
+UpdateAccountRulesetRuleRequestLog copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestLog(createAccountRulesetRuleRequestRulesetsLogRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestLog && createAccountRulesetRuleRequestRulesetsLogRule == other.createAccountRulesetRuleRequestRulesetsLogRule;
+    other is UpdateAccountRulesetRuleRequestLog && createAccountRulesetRuleRequestRulesetsLogRuleRequest == other.createAccountRulesetRuleRequestRulesetsLogRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.log($createAccountRulesetRuleRequestRulesetsLogRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.log($createAccountRulesetRuleRequestRulesetsLogRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsLogRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsLogRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsLogRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsLogRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsLogRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsLogRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestLogCustomField extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestLogCustomField(this.createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestLogCustomField.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsLogRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsLogRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestLogCustomField extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestLogCustomField(this.createAccountRulesetRuleRequestRulesetsLogCustomFieldRule);
-
-factory UpdateAccountRulesetRuleRequestLogCustomField.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRule createAccountRulesetRuleRequestRulesetsLogCustomFieldRule;
+final CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('log_custom_field');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestLogCustomField(createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.copyWith(
+UpdateAccountRulesetRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestLogCustomField(createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestLogCustomField && createAccountRulesetRuleRequestRulesetsLogCustomFieldRule == other.createAccountRulesetRuleRequestRulesetsLogCustomFieldRule;
+    other is UpdateAccountRulesetRuleRequestLogCustomField && createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest == other.createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.logCustomField($createAccountRulesetRuleRequestRulesetsLogCustomFieldRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.logCustomField($createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestManagedChallenge extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestManagedChallenge(this.createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestManagedChallenge.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestManagedChallenge extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestManagedChallenge(this.createAccountRulesetRuleRequestRulesetsManagedChallengeRule);
-
-factory UpdateAccountRulesetRuleRequestManagedChallenge.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsManagedChallengeRule createAccountRulesetRuleRequestRulesetsManagedChallengeRule;
+final CreateAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('managed_challenge');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsManagedChallengeRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestManagedChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestManagedChallenge(createAccountRulesetRuleRequestRulesetsManagedChallengeRule.copyWith(
+UpdateAccountRulesetRuleRequestManagedChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestManagedChallenge(createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestManagedChallenge && createAccountRulesetRuleRequestRulesetsManagedChallengeRule == other.createAccountRulesetRuleRequestRulesetsManagedChallengeRule;
+    other is UpdateAccountRulesetRuleRequestManagedChallenge && createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest == other.createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.managedChallenge($createAccountRulesetRuleRequestRulesetsManagedChallengeRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.managedChallenge($createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestRedirect extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestRedirect(this.createAccountRulesetRuleRequestRulesetsRedirectRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestRedirect.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestRedirect extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestRedirect(this.createAccountRulesetRuleRequestRulesetsRedirectRule);
-
-factory UpdateAccountRulesetRuleRequestRedirect.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsRedirectRule createAccountRulesetRuleRequestRulesetsRedirectRule;
+final CreateAccountRulesetRuleRequestRulesetsRedirectRuleRequest createAccountRulesetRuleRequestRulesetsRedirectRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('redirect');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRedirectRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestRedirect(createAccountRulesetRuleRequestRulesetsRedirectRule.copyWith(
+UpdateAccountRulesetRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestRedirect(createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestRedirect && createAccountRulesetRuleRequestRulesetsRedirectRule == other.createAccountRulesetRuleRequestRulesetsRedirectRule;
+    other is UpdateAccountRulesetRuleRequestRedirect && createAccountRulesetRuleRequestRulesetsRedirectRuleRequest == other.createAccountRulesetRuleRequestRulesetsRedirectRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsRedirectRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.redirect($createAccountRulesetRuleRequestRulesetsRedirectRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.redirect($createAccountRulesetRuleRequestRulesetsRedirectRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsRedirectRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsRedirectRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRedirectRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRedirectRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsRedirectRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRedirectRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsRedirectRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRedirectRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestRewrite extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestRewrite(this.createAccountRulesetRuleRequestRulesetsRewriteRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRedirectRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestRewrite.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsRedirectRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsRedirectRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestRewrite extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestRewrite(this.createAccountRulesetRuleRequestRulesetsRewriteRule);
-
-factory UpdateAccountRulesetRuleRequestRewrite.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsRewriteRule createAccountRulesetRuleRequestRulesetsRewriteRule;
+final CreateAccountRulesetRuleRequestRulesetsRewriteRuleRequest createAccountRulesetRuleRequestRulesetsRewriteRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('rewrite');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRewriteRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestRewrite copyWith({RulesetsRewriteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestRewrite(createAccountRulesetRuleRequestRulesetsRewriteRule.copyWith(
+UpdateAccountRulesetRuleRequestRewrite copyWith({RulesetsRewriteRuleRequestActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestRewrite(createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestRewrite && createAccountRulesetRuleRequestRulesetsRewriteRule == other.createAccountRulesetRuleRequestRulesetsRewriteRule;
+    other is UpdateAccountRulesetRuleRequestRewrite && createAccountRulesetRuleRequestRulesetsRewriteRuleRequest == other.createAccountRulesetRuleRequestRulesetsRewriteRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsRewriteRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.rewrite($createAccountRulesetRuleRequestRulesetsRewriteRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.rewrite($createAccountRulesetRuleRequestRulesetsRewriteRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsRewriteRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsRewriteRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRewriteRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRewriteRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsRewriteRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRewriteRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsRewriteRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRewriteRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestRoute extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestRoute(this.createAccountRulesetRuleRequestRulesetsRouteRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRewriteRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestRoute.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsRewriteRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsRewriteRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestRoute extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestRoute(this.createAccountRulesetRuleRequestRulesetsRouteRule);
-
-factory UpdateAccountRulesetRuleRequestRoute.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsRouteRule createAccountRulesetRuleRequestRulesetsRouteRule;
+final CreateAccountRulesetRuleRequestRulesetsRouteRuleRequest createAccountRulesetRuleRequestRulesetsRouteRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('route');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRouteRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRouteRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestRoute(createAccountRulesetRuleRequestRulesetsRouteRule.copyWith(
+UpdateAccountRulesetRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestRoute(createAccountRulesetRuleRequestRulesetsRouteRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestRoute && createAccountRulesetRuleRequestRulesetsRouteRule == other.createAccountRulesetRuleRequestRulesetsRouteRule;
+    other is UpdateAccountRulesetRuleRequestRoute && createAccountRulesetRuleRequestRulesetsRouteRuleRequest == other.createAccountRulesetRuleRequestRulesetsRouteRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsRouteRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.route($createAccountRulesetRuleRequestRulesetsRouteRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.route($createAccountRulesetRuleRequestRulesetsRouteRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsRouteRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsRouteRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRouteRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRouteRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsRouteRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRouteRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsRouteRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRouteRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestScore extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestScore(this.createAccountRulesetRuleRequestRulesetsScoreRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRouteRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestScore.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsRouteRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsRouteRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestScore extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestScore(this.createAccountRulesetRuleRequestRulesetsScoreRule);
-
-factory UpdateAccountRulesetRuleRequestScore.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsScoreRule createAccountRulesetRuleRequestRulesetsScoreRule;
+final CreateAccountRulesetRuleRequestRulesetsScoreRuleRequest createAccountRulesetRuleRequestRulesetsScoreRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('score');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsScoreRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsScoreRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestScore(createAccountRulesetRuleRequestRulesetsScoreRule.copyWith(
+UpdateAccountRulesetRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestScore(createAccountRulesetRuleRequestRulesetsScoreRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestScore && createAccountRulesetRuleRequestRulesetsScoreRule == other.createAccountRulesetRuleRequestRulesetsScoreRule;
+    other is UpdateAccountRulesetRuleRequestScore && createAccountRulesetRuleRequestRulesetsScoreRuleRequest == other.createAccountRulesetRuleRequestRulesetsScoreRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsScoreRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.score($createAccountRulesetRuleRequestRulesetsScoreRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.score($createAccountRulesetRuleRequestRulesetsScoreRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsScoreRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsScoreRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsScoreRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsScoreRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsScoreRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsScoreRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsScoreRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsScoreRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestServeError extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestServeError(this.createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsScoreRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestServeError.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsScoreRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsScoreRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestServeError extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestServeError(this.createAccountRulesetRuleRequestRulesetsServeErrorRule);
-
-factory UpdateAccountRulesetRuleRequestServeError.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsServeErrorRule createAccountRulesetRuleRequestRulesetsServeErrorRule;
+final CreateAccountRulesetRuleRequestRulesetsServeErrorRuleRequest createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('serve_error');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsServeErrorRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestServeError(createAccountRulesetRuleRequestRulesetsServeErrorRule.copyWith(
+UpdateAccountRulesetRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestServeError(createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestServeError && createAccountRulesetRuleRequestRulesetsServeErrorRule == other.createAccountRulesetRuleRequestRulesetsServeErrorRule;
+    other is UpdateAccountRulesetRuleRequestServeError && createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest == other.createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsServeErrorRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.serveError($createAccountRulesetRuleRequestRulesetsServeErrorRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.serveError($createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsServeErrorRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsServeErrorRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsServeErrorRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsServeErrorRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsServeErrorRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsServeErrorRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsServeErrorRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsServeErrorRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestSetCacheControl extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetCacheControl(this.createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsServeErrorRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestSetCacheControl.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsServeErrorRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsServeErrorRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestSetCacheControl extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetCacheControl(this.createAccountRulesetRuleRequestRulesetsSetCacheControlRule);
-
-factory UpdateAccountRulesetRuleRequestSetCacheControl.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetCacheControlRule createAccountRulesetRuleRequestRulesetsSetCacheControlRule;
+final CreateAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('set_cache_control');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheControlRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestSetCacheControl(createAccountRulesetRuleRequestRulesetsSetCacheControlRule.copyWith(
+UpdateAccountRulesetRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestSetCacheControl(createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestSetCacheControl && createAccountRulesetRuleRequestRulesetsSetCacheControlRule == other.createAccountRulesetRuleRequestRulesetsSetCacheControlRule;
+    other is UpdateAccountRulesetRuleRequestSetCacheControl && createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.setCacheControl($createAccountRulesetRuleRequestRulesetsSetCacheControlRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.setCacheControl($createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestSetCacheSettings extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetCacheSettings(this.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestSetCacheSettings.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestSetCacheSettings extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetCacheSettings(this.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule);
-
-factory UpdateAccountRulesetRuleRequestSetCacheSettings.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRule createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule;
+final CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('set_cache_settings');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestSetCacheSettings(createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.copyWith(
+UpdateAccountRulesetRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestSetCacheSettings(createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestSetCacheSettings && createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule == other.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule;
+    other is UpdateAccountRulesetRuleRequestSetCacheSettings && createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.setCacheSettings($createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.setCacheSettings($createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestSetCacheTags extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetCacheTags(this.createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestSetCacheTags.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestSetCacheTags extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetCacheTags(this.createAccountRulesetRuleRequestRulesetsSetCacheTagsRule);
-
-factory UpdateAccountRulesetRuleRequestSetCacheTags.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule createAccountRulesetRuleRequestRulesetsSetCacheTagsRule;
+final CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('set_cache_tags');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestSetCacheTags(createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.copyWith(
+UpdateAccountRulesetRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestSetCacheTags(createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestSetCacheTags && createAccountRulesetRuleRequestRulesetsSetCacheTagsRule == other.createAccountRulesetRuleRequestRulesetsSetCacheTagsRule;
+    other is UpdateAccountRulesetRuleRequestSetCacheTags && createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.setCacheTags($createAccountRulesetRuleRequestRulesetsSetCacheTagsRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.setCacheTags($createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestSetConfig extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetConfig(this.createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestSetConfig.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestSetConfig extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSetConfig(this.createAccountRulesetRuleRequestRulesetsSetConfigRule);
-
-factory UpdateAccountRulesetRuleRequestSetConfig.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetConfigRule createAccountRulesetRuleRequestRulesetsSetConfigRule;
+final CreateAccountRulesetRuleRequestRulesetsSetConfigRuleRequest createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('set_config');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetConfigRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestSetConfig(createAccountRulesetRuleRequestRulesetsSetConfigRule.copyWith(
+UpdateAccountRulesetRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestSetConfig(createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestSetConfig && createAccountRulesetRuleRequestRulesetsSetConfigRule == other.createAccountRulesetRuleRequestRulesetsSetConfigRule;
+    other is UpdateAccountRulesetRuleRequestSetConfig && createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetConfigRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.setConfig($createAccountRulesetRuleRequestRulesetsSetConfigRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.setConfig($createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetConfigRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetConfigRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetConfigRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetConfigRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetConfigRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetConfigRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetConfigRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetConfigRule.logging;
+}
+@immutable final class UpdateAccountRulesetRuleRequestSkip extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSkip(this.createAccountRulesetRuleRequestRulesetsSkipRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetConfigRule.ratelimit;
+factory UpdateAccountRulesetRuleRequestSkip.fromJson(Map<String, dynamic> json) {return UpdateAccountRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetConfigRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetConfigRule.version;
-
- }
-@immutable final class UpdateAccountRulesetRuleRequestSkip extends UpdateAccountRulesetRuleRequest {const UpdateAccountRulesetRuleRequestSkip(this.createAccountRulesetRuleRequestRulesetsSkipRule);
-
-factory UpdateAccountRulesetRuleRequestSkip.fromJson(Map<String, dynamic> json) { return UpdateAccountRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSkipRule createAccountRulesetRuleRequestRulesetsSkipRule;
+final CreateAccountRulesetRuleRequestRulesetsSkipRuleRequest createAccountRulesetRuleRequestRulesetsSkipRuleRequest;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson('skip');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSkipRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSkipRuleRequest.toJson(), 'action': action.toJson()};
 
-UpdateAccountRulesetRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return UpdateAccountRulesetRuleRequestSkip(createAccountRulesetRuleRequestRulesetsSkipRule.copyWith(
+UpdateAccountRulesetRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return UpdateAccountRulesetRuleRequestSkip(createAccountRulesetRuleRequestRulesetsSkipRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateAccountRulesetRuleRequestSkip && createAccountRulesetRuleRequestRulesetsSkipRule == other.createAccountRulesetRuleRequestRulesetsSkipRule;
+    other is UpdateAccountRulesetRuleRequestSkip && createAccountRulesetRuleRequestRulesetsSkipRuleRequest == other.createAccountRulesetRuleRequestRulesetsSkipRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSkipRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.hashCode;
 
-@override String toString() => 'UpdateAccountRulesetRuleRequest.skip($createAccountRulesetRuleRequestRulesetsSkipRule)';
+@override String toString() => 'UpdateAccountRulesetRuleRequest.skip($createAccountRulesetRuleRequestRulesetsSkipRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSkipRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSkipRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSkipRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSkipRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSkipRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSkipRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSkipRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSkipRule.logging;
-
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSkipRule.ratelimit;
-
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSkipRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSkipRule.version;
-
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class UpdateAccountRulesetRuleRequest$Unknown extends UpdateAccountRulesetRuleRequest {UpdateAccountRulesetRuleRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
-
-late final List<RulesetsRuleCategory>? _categories = (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList();
-
-late final dynamic _description = json['description'];
 
 late final RulesetsRuleEnabled? _enabled = json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null;
 
@@ -1563,15 +1331,11 @@ late final String? _expression = json['expression'] as String?;
 
 late final RulesetsRuleId? _id = json['id'] != null ? RulesetsRuleId.fromJson(json['id'] as String) : null;
 
-late final DateTime _lastUpdated = DateTime.parse(json['last_updated'] as String);
-
 late final RulesetsRuleLogging? _logging = json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null;
 
 late final RulesetsRuleRatelimit? _ratelimit = json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null;
 
 late final String? _ref = json['ref'] as String?;
-
-late final String _version = json['version'] as String;
 
 @override UpdateAccountRulesetRuleRequestAction get action => UpdateAccountRulesetRuleRequestAction.fromJson(json['action'] as String? ?? '');
 
@@ -1584,10 +1348,6 @@ late final String _version = json['version'] as String;
 
 @override String toString() => 'UpdateAccountRulesetRuleRequest.unknown($json)';
 
-@override List<RulesetsRuleCategory>? get categories => _categories;
-
-@override dynamic get description => _description;
-
 @override RulesetsRuleEnabled? get enabled => _enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => _exposedCredentialCheck;
@@ -1596,14 +1356,10 @@ late final String _version = json['version'] as String;
 
 @override RulesetsRuleId? get id => _id;
 
-@override DateTime get lastUpdated => _lastUpdated;
-
 @override RulesetsRuleLogging? get logging => _logging;
 
 @override RulesetsRuleRatelimit? get ratelimit => _ratelimit;
 
 @override String? get ref => _ref;
 
-@override String get version => _version;
-
- }
+}

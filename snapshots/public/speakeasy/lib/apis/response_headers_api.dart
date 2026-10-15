@@ -10,7 +10,7 @@ final class ResponseHeadersApi with ApiExecutor {const ResponseHeadersApi(this.a
 @override final ApiConfig apiConfig;
 
 /// `POST /response-headers`
-Future<ApiResult<void, Never>> responseBodyEmptyWithHeaders({required String xStringHeader, required double xNumberHeader, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> responseBodyEmptyWithHeaders({required String xStringHeader, required double xNumberHeader, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['X-String-Header'] = xStringHeader;
 queryParameters['X-Number-Header'] = xNumberHeader.toString();
@@ -26,13 +26,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /response-headers/{statusCode}`
-Future<ApiResult<AuthToken, ResponseHeadersError>> responseHeaders({required int statusCode, required bool includeRequiredHeader, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AuthToken, ResponseHeadersError>> responseHeaders({required int statusCode, required bool includeRequiredHeader, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['includeRequiredHeader'] = includeRequiredHeader.toString();
 
@@ -47,16 +47,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AuthToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ResponseHeadersError.fromResponse,
 );
- } 
+}
 /// `GET /error-response-headers/{statusCode}`
-Future<ApiResult<AuthToken, ErrorResponseHeadersError>> errorResponseHeaders({required int statusCode, required bool includeHeader, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AuthToken, ErrorResponseHeadersError>> errorResponseHeaders({required int statusCode, required bool includeHeader, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['includeHeader'] = includeHeader.toString();
 
@@ -71,14 +71,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AuthToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ErrorResponseHeadersError.fromResponse,
 );
- } 
+}
 /// Test operation where a 200 response has both headers and a JSON body,
 /// but a 204 response has no body. In flat response format, the headers
 /// force a response envelope with a Result field. The 204 no-body path
@@ -86,7 +86,7 @@ return execute(
 /// 
 ///
 /// `GET /response-headers-with-no-body-success`
-Future<ApiResult<AuthToken, Never>> responseHeadersWithNoBodySuccess({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AuthToken?, Never>> responseHeadersWithNoBodySuccess({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -95,11 +95,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
+    if (response.statusCode == 204) return null;
     return AuthToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

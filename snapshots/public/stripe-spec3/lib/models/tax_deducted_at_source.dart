@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject();
 
-factory TaxDeductedAtSourceObject.fromJson(String json) { return switch (json) {
+factory TaxDeductedAtSourceObject.fromJson(String json) {return switch (json) {
   'tax_deducted_at_source' => taxDeductedAtSource,
   _ => TaxDeductedAtSourceObject$Unknown(json),
-}; }
+};}
 
 static const TaxDeductedAtSourceObject taxDeductedAtSource = TaxDeductedAtSourceObject$taxDeductedAtSource._();
 
 static const List<TaxDeductedAtSourceObject> values = [taxDeductedAtSource];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax_deducted_at_source' => 'taxDeductedAtSource',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxDeductedAtSourceObject$Unknown; } 
+bool get isUnknown {return this is TaxDeductedAtSourceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxDeductedAtSource, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxDeductedAtSource, required W Function(String value) $unknown, }) {return switch (this) {
       TaxDeductedAtSourceObject$taxDeductedAtSource() => taxDeductedAtSource(),
       TaxDeductedAtSourceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxDeductedAtSource, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxDeductedAtSource, W Function(String value)? $unknown, }) {return switch (this) {
       TaxDeductedAtSourceObject$taxDeductedAtSource() => taxDeductedAtSource != null ? taxDeductedAtSource() : orElse(value),
       TaxDeductedAtSourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxDeductedAtSourceObject($value)';
 
- }
+}
 @immutable final class TaxDeductedAtSourceObject$taxDeductedAtSource extends TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject$taxDeductedAtSource._();
 
 @override String get value => 'tax_deducted_at_source';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxDeduc
 
 @override int get hashCode => 'tax_deducted_at_source'.hashCode;
 
- }
+}
 @immutable final class TaxDeductedAtSourceObject$Unknown extends TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxDeduc
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class TaxDeductedAtSource {const TaxDeductedAtSource({required this.id, required this.object, required this.periodEnd, required this.periodStart, required this.taxDeductionAccountNumber, });
 
-factory TaxDeductedAtSource.fromJson(Map<String, dynamic> json) { return TaxDeductedAtSource(
+factory TaxDeductedAtSource.fromJson(Map<String, dynamic> json) {return TaxDeductedAtSource(
   id: json['id'] as String,
   object: TaxDeductedAtSourceObject.fromJson(json['object'] as String),
   periodEnd: (json['period_end'] as num).toInt(),
   periodStart: (json['period_start'] as num).toInt(),
   taxDeductionAccountNumber: json['tax_deduction_account_number'] as String,
-); }
+);}
 
 /// Unique identifier for the object.
 final String id;
@@ -80,30 +80,30 @@ final int periodStart;
 /// The TAN that was supplied to Stripe when TDS was assessed
 final String taxDeductionAccountNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'period_end': periodEnd,
   'period_start': periodStart,
   'tax_deduction_account_number': taxDeductionAccountNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') && json['object'] == 'tax_deducted_at_source' &&
       json.containsKey('period_end') && json['period_end'] is num &&
       json.containsKey('period_start') && json['period_start'] is num &&
-      json.containsKey('tax_deduction_account_number') && json['tax_deduction_account_number'] is String; } 
+      json.containsKey('tax_deduction_account_number') && json['tax_deduction_account_number'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (taxDeductionAccountNumber.runes.length > 5000) { errors.add('taxDeductionAccountNumber: length must be <= 5000'); }
-return errors; } 
-TaxDeductedAtSource copyWith({String? id, TaxDeductedAtSourceObject? object, int? periodEnd, int? periodStart, String? taxDeductionAccountNumber, }) { return TaxDeductedAtSource(
+return errors;}
+TaxDeductedAtSource copyWith({String? id, TaxDeductedAtSourceObject? object, int? periodEnd, int? periodStart, String? taxDeductionAccountNumber, }) {return TaxDeductedAtSource(
   id: id ?? this.id,
   object: object ?? this.object,
   periodEnd: periodEnd ?? this.periodEnd,
   periodStart: periodStart ?? this.periodStart,
   taxDeductionAccountNumber: taxDeductionAccountNumber ?? this.taxDeductionAccountNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxDeductedAtSource &&
           id == other.id &&
@@ -116,4 +116,4 @@ TaxDeductedAtSource copyWith({String? id, TaxDeductedAtSourceObject? object, int
 
 @override String toString() => 'TaxDeductedAtSource(id: $id, object: $object, periodEnd: $periodEnd, periodStart: $periodStart, taxDeductionAccountNumber: $taxDeductionAccountNumber)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';@immutable final class ResponseCommon6 {const ResponseCommon6({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon6.fromJson(Map<String, dynamic> json) { return ResponseCommon6(
+factory ResponseCommon6.fromJson(Map<String, dynamic> json) {return ResponseCommon6(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<ShieldMessages2> errors;
 
@@ -18,19 +18,19 @@ final List<ShieldMessages2> messages;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon6 copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, }) { return ResponseCommon6(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon6 copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, }) {return ResponseCommon6(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon6 &&
           listEquals(errors, other.errors) &&
@@ -41,4 +41,4 @@ ResponseCommon6 copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? 
 
 @override String toString() => 'ResponseCommon6(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

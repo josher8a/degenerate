@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseQueuedEvent {const ResponseQueuedEvent({required this.type, required this.response, required this.sequenceNumber, });
 
-factory ResponseQueuedEvent.fromJson(Map<String, dynamic> json) { return ResponseQueuedEvent(
+factory ResponseQueuedEvent.fromJson(Map<String, dynamic> json) {return ResponseQueuedEvent(
   type: json['type'] as String,
   response: Response.fromJson(json['response'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always 'response.queued'.
 final String type;
@@ -20,19 +20,19 @@ final Response response;
 /// The sequence number for this event.
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'response': response.toJson(),
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('response') &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseQueuedEvent copyWith({String? type, Response? response, int? sequenceNumber, }) { return ResponseQueuedEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseQueuedEvent copyWith({String? type, Response? response, int? sequenceNumber, }) {return ResponseQueuedEvent(
   type: type ?? this.type,
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseQueuedEvent &&
           type == other.type &&
@@ -43,4 +43,4 @@ ResponseQueuedEvent copyWith({String? type, Response? response, int? sequenceNum
 
 @override String toString() => 'ResponseQueuedEvent(type: $type, response: $response, sequenceNumber: $sequenceNumber)';
 
- }
+}

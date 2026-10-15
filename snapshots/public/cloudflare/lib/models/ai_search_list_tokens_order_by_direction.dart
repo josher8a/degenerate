@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Direction
 sealed class AiSearchListTokensOrderByDirection {const AiSearchListTokensOrderByDirection();
 
-factory AiSearchListTokensOrderByDirection.fromJson(String json) { return switch (json) {
+factory AiSearchListTokensOrderByDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => AiSearchListTokensOrderByDirection$Unknown(json),
-}; }
+};}
 
 static const AiSearchListTokensOrderByDirection asc = AiSearchListTokensOrderByDirection$asc._();
 
@@ -17,30 +17,30 @@ static const AiSearchListTokensOrderByDirection desc = AiSearchListTokensOrderBy
 static const List<AiSearchListTokensOrderByDirection> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AiSearchListTokensOrderByDirection$Unknown; } 
+bool get isUnknown {return this is AiSearchListTokensOrderByDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       AiSearchListTokensOrderByDirection$asc() => asc(),
       AiSearchListTokensOrderByDirection$desc() => desc(),
       AiSearchListTokensOrderByDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       AiSearchListTokensOrderByDirection$asc() => asc != null ? asc() : orElse(value),
       AiSearchListTokensOrderByDirection$desc() => desc != null ? desc() : orElse(value),
       AiSearchListTokensOrderByDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AiSearchListTokensOrderByDirection($value)';
 
- }
+}
 @immutable final class AiSearchListTokensOrderByDirection$asc extends AiSearchListTokensOrderByDirection {const AiSearchListTokensOrderByDirection$asc._();
 
 @override String get value => 'asc';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class AiSearchListTokensOrderByDirection$desc extends AiSearchListTokensOrderByDirection {const AiSearchListTokensOrderByDirection$desc._();
 
 @override String get value => 'desc';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class AiSearchListTokensOrderByDirection$Unknown extends AiSearchListTokensOrderByDirection {const AiSearchListTokensOrderByDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

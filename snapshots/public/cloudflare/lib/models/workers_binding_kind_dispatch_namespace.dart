@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace/workers_binding_kind_dispatch_namespace_outbound.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindDispatchNamespace {const WorkersBindingKindDispatchNamespace({required this.name, required this.namespace, required this.type, this.outbound, });
 
-factory WorkersBindingKindDispatchNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespace(
+factory WorkersBindingKindDispatchNamespace.fromJson(Map<String, dynamic> json) {return WorkersBindingKindDispatchNamespace(
   name: WorkersBindingName.fromJson(json['name'] as String),
   namespace: json['namespace'] as String,
   outbound: json['outbound'] != null ? WorkersBindingKindDispatchNamespaceOutbound.fromJson(json['outbound'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
@@ -23,21 +23,21 @@ final WorkersBindingKindDispatchNamespaceOutbound? outbound;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'namespace': namespace,
   if (outbound != null) 'outbound': outbound?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('namespace') && json['namespace'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound? Function()? outbound, String? type, }) { return WorkersBindingKindDispatchNamespace(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound? Function()? outbound, String? type, }) {return WorkersBindingKindDispatchNamespace(
   name: name ?? this.name,
   namespace: namespace ?? this.namespace,
   outbound: outbound != null ? outbound() : this.outbound,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindDispatchNamespace &&
           name == other.name &&
@@ -49,4 +49,4 @@ WorkersBindingKindDispatchNamespace copyWith({WorkersBindingName? name, String? 
 
 @override String toString() => 'WorkersBindingKindDispatchNamespace(name: $name, namespace: $namespace, outbound: $outbound, type: $type)';
 
- }
+}

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksProjectColumn
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectColumn {const WebhooksProjectColumn({required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectColumn {const WebhooksProjectColumn({required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, this.afterId = const Omittable.absent(), });
 
-factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) { return WebhooksProjectColumn(
-  afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,
+factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) {return WebhooksProjectColumn(
+  afterId: json.containsKey('after_id') ? Omittable(json['after_id'] != null ? (json['after_id'] as num).toInt() : null) : const Omittable.absent(),
   cardsUrl: Uri.parse(json['cards_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   id: (json['id'] as num).toInt(),
@@ -13,9 +13,9 @@ factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) { return Webho
   projectUrl: Uri.parse(json['project_url'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
-final int? afterId;
+final Omittable<int?> afterId;
 
 final Uri cardsUrl;
 
@@ -35,8 +35,8 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
-  'after_id': ?afterId,
+Map<String, dynamic> toJson() {return {
+  if (afterId.isPresent) 'after_id': afterId.value,
   'cards_url': cardsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
   'id': id,
@@ -45,17 +45,17 @@ Map<String, dynamic> toJson() { return {
   'project_url': projectUrl.toString(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cards_url') && json['cards_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cards_url') && json['cards_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTime? createdAt, int? id, String? name, String? nodeId, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectColumn(
-  afterId: afterId != null ? afterId() : this.afterId,
+      json.containsKey('url') && json['url'] is String;}
+WebhooksProjectColumn copyWith({Omittable<int?>? afterId, Uri? cardsUrl, DateTime? createdAt, int? id, String? name, String? nodeId, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) {return WebhooksProjectColumn(
+  afterId: afterId ?? this.afterId,
   cardsUrl: cardsUrl ?? this.cardsUrl,
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
@@ -64,7 +64,7 @@ WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTim
   projectUrl: projectUrl ?? this.projectUrl,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksProjectColumn &&
           afterId == other.afterId &&
@@ -81,4 +81,4 @@ WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTim
 
 @override String toString() => 'WebhooksProjectColumn(\n  afterId: $afterId,\n  cardsUrl: $cardsUrl,\n  createdAt: $createdAt,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

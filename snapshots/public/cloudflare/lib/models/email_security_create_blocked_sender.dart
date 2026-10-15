@@ -10,16 +10,16 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "pattern_type": "EMAIL"
 /// }
 /// ```
-@immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments, });
+@immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSender(
-  comments: json['comments'] as String?,
+factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateBlockedSender(
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
-); }
+);}
 
-final String? comments;
+final Omittable<String?> comments;
 
 final bool isRegex;
 
@@ -27,30 +27,30 @@ final String pattern;
 
 final EmailSecurityPatternType? patternType;
 
-Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+Map<String, dynamic> toJson() {return {
+  if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
   'pattern_type': patternType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
-      json.containsKey('pattern_type'); } 
+      json.containsKey('pattern_type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+List<String> validate() {final errors = <String>[];
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityCreateBlockedSender copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityCreateBlockedSender(
-  comments: comments != null ? comments() : this.comments,
+return errors;}
+EmailSecurityCreateBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) {return EmailSecurityCreateBlockedSender(
+  comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateBlockedSender &&
           comments == other.comments &&
@@ -62,4 +62,4 @@ EmailSecurityCreateBlockedSender copyWith({String? Function()? comments, bool? i
 
 @override String toString() => 'EmailSecurityCreateBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/other_chunking_strategy_response_param.dart';import 'package:pub_openai/models/static_chunking_strategy_response_param.dart';import 'package:pub_openai/models/vector_store_file_batch_object/vector_store_file_batch_object_status.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_chunking_strategy.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
 sealed class VectorStoreFileObjectObject {const VectorStoreFileObjectObject();
 
-factory VectorStoreFileObjectObject.fromJson(String json) { return switch (json) {
+factory VectorStoreFileObjectObject.fromJson(String json) {return switch (json) {
   'vector_store.file' => vectorStoreFile,
   _ => VectorStoreFileObjectObject$Unknown(json),
-}; }
+};}
 
 static const VectorStoreFileObjectObject vectorStoreFile = VectorStoreFileObjectObject$vectorStoreFile._();
 
 static const List<VectorStoreFileObjectObject> values = [vectorStoreFile];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'vector_store.file' => 'vectorStoreFile',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VectorStoreFileObjectObject$Unknown; } 
+bool get isUnknown {return this is VectorStoreFileObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() vectorStoreFile, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() vectorStoreFile, required W Function(String value) $unknown, }) {return switch (this) {
       VectorStoreFileObjectObject$vectorStoreFile() => vectorStoreFile(),
       VectorStoreFileObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorStoreFile, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorStoreFile, W Function(String value)? $unknown, }) {return switch (this) {
       VectorStoreFileObjectObject$vectorStoreFile() => vectorStoreFile != null ? vectorStoreFile() : orElse(value),
       VectorStoreFileObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VectorStoreFileObjectObject($value)';
 
- }
+}
 @immutable final class VectorStoreFileObjectObject$vectorStoreFile extends VectorStoreFileObjectObject {const VectorStoreFileObjectObject$vectorStoreFile._();
 
 @override String get value => 'vector_store.file';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorSt
 
 @override int get hashCode => 'vector_store.file'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileObjectObject$Unknown extends VectorStoreFileObjectObject {const VectorStoreFileObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorSt
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A list of files attached to a vector store.
-@immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes, });
+@immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes = const Omittable.absent(), });
 
-factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return VectorStoreFileObject(
+factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) {return VectorStoreFileObject(
   id: json['id'] as String,
   object: VectorStoreFileObjectObject.fromJson(json['object'] as String),
   usageBytes: (json['usage_bytes'] as num).toInt(),
@@ -70,8 +70,8 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   final Map<String, dynamic> m when m['type'] == 'other' => OneOf2<StaticChunkingStrategyResponseParam, OtherChunkingStrategyResponseParam>.b(OtherChunkingStrategyResponseParam.fromJson(m)),
   _ => OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),),
 } : null,
-  attributes: json['attributes'] as Map<String, dynamic>?,
-); }
+  attributes: json.containsKey('attributes') ? Omittable(json['attributes'] as Map<String, dynamic>?) : const Omittable.absent(),
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -103,9 +103,9 @@ final VectorStoreFileObjectChunkingStrategy? chunkingStrategy;
 /// with a maximum length of 64 characters. Values are strings with a maximum
 /// length of 512 characters, booleans, or numbers.
 /// 
-final Map<String,dynamic>? attributes;
+final Omittable<Map<String,dynamic>?> attributes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'usage_bytes': usageBytes,
@@ -114,16 +114,16 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'last_error': lastError?.toJson(),
   if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
-  'attributes': ?attributes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+  if (attributes.isPresent) 'attributes': attributes.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('usage_bytes') && json['usage_bytes'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('last_error'); } 
-VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileBatchObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy? Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
+      json.containsKey('last_error');}
+VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileBatchObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy? Function()? chunkingStrategy, Omittable<Map<String,dynamic>?>? attributes, }) {return VectorStoreFileObject(
   id: id ?? this.id,
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,
@@ -132,8 +132,8 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
   status: status ?? this.status,
   lastError: lastError != null ? lastError() : this.lastError,
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
-  attributes: attributes != null ? attributes() : this.attributes,
-); } 
+  attributes: attributes ?? this.attributes,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreFileObject &&
           id == other.id &&
@@ -150,4 +150,4 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
 
 @override String toString() => 'VectorStoreFileObject(\n  id: $id,\n  object: $object,\n  usageBytes: $usageBytes,\n  createdAt: $createdAt,\n  vectorStoreId: $vectorStoreId,\n  status: $status,\n  lastError: $lastError,\n  chunkingStrategy: $chunkingStrategy,\n  attributes: $attributes,\n)';
 
- }
+}

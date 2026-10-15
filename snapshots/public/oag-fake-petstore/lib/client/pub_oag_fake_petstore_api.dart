@@ -26,8 +26,8 @@ late final FakeApi fake = FakeApi(_config);
 
 late final $anotherFakeApi $anotherFake = $anotherFakeApi(_config);
 
-PubOagFakePetstoreApi withApiKey(String value) { return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyApiKey(_config, value)); } 
-PubOagFakePetstoreApi withApiKeyQuery(String value) { return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyApiKeyQuery(_config, value)); } 
-PubOagFakePetstoreApi withHttpBasicTest({required String username, required String password, }) { return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyHttpBasicTest(_config, username: username, password: password)); } 
-PubOagFakePetstoreApi withBearerTest(String token) { return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyBearerTest(_config, token)); } 
- }
+PubOagFakePetstoreApi withApiKey(String value) {return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyApiKey(_config, value));}
+PubOagFakePetstoreApi withApiKeyQuery(String value) {return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyApiKeyQuery(_config, value));}
+PubOagFakePetstoreApi withHttpBasicTest({required String username, required String password, }) {return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyHttpBasicTest(_config, username: username, password: password));}
+PubOagFakePetstoreApi withBearerTest(String token) {return PubOagFakePetstoreApi(PubOagFakePetstoreSecurity.applyBearerTest(_config, token));}
+}

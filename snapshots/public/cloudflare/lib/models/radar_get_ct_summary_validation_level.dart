@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtSummaryValidationLevel {const RadarGetCtSummaryValidationLevel();
 
-factory RadarGetCtSummaryValidationLevel.fromJson(String json) { return switch (json) {
+factory RadarGetCtSummaryValidationLevel.fromJson(String json) {return switch (json) {
   'DOMAIN' => domain,
   'ORGANIZATION' => organization,
   'EXTENDED' => extended,
   _ => RadarGetCtSummaryValidationLevel$Unknown(json),
-}; }
+};}
 
 static const RadarGetCtSummaryValidationLevel domain = RadarGetCtSummaryValidationLevel$domain._();
 
@@ -19,33 +19,33 @@ static const RadarGetCtSummaryValidationLevel extended = RadarGetCtSummaryValida
 static const List<RadarGetCtSummaryValidationLevel> values = [domain, organization, extended];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DOMAIN' => 'domain',
   'ORGANIZATION' => 'organization',
   'EXTENDED' => 'extended',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetCtSummaryValidationLevel$Unknown; } 
+bool get isUnknown {return this is RadarGetCtSummaryValidationLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() domain, required W Function() organization, required W Function() extended, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() domain, required W Function() organization, required W Function() extended, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetCtSummaryValidationLevel$domain() => domain(),
       RadarGetCtSummaryValidationLevel$organization() => organization(),
       RadarGetCtSummaryValidationLevel$extended() => extended(),
       RadarGetCtSummaryValidationLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? organization, W Function()? extended, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? organization, W Function()? extended, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetCtSummaryValidationLevel$domain() => domain != null ? domain() : orElse(value),
       RadarGetCtSummaryValidationLevel$organization() => organization != null ? organization() : orElse(value),
       RadarGetCtSummaryValidationLevel$extended() => extended != null ? extended() : orElse(value),
       RadarGetCtSummaryValidationLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetCtSummaryValidationLevel($value)';
 
- }
+}
 @immutable final class RadarGetCtSummaryValidationLevel$domain extends RadarGetCtSummaryValidationLevel {const RadarGetCtSummaryValidationLevel$domain._();
 
 @override String get value => 'DOMAIN';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'DOMAIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtSummaryValidationLevel$organization extends RadarGetCtSummaryValidationLevel {const RadarGetCtSummaryValidationLevel$organization._();
 
 @override String get value => 'ORGANIZATION';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'ORGANIZATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtSummaryValidationLevel$extended extends RadarGetCtSummaryValidationLevel {const RadarGetCtSummaryValidationLevel$extended._();
 
 @override String get value => 'EXTENDED';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'EXTENDED'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtSummaryValidationLevel$Unknown extends RadarGetCtSummaryValidationLevel {const RadarGetCtSummaryValidationLevel$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

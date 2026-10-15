@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account`
 sealed class ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject();
 
-factory ProjectServiceAccountCreateResponseObject.fromJson(String json) { return switch (json) {
+factory ProjectServiceAccountCreateResponseObject.fromJson(String json) {return switch (json) {
   'organization.project.service_account' => organizationProjectServiceAccount,
   _ => ProjectServiceAccountCreateResponseObject$Unknown(json),
-}; }
+};}
 
 static const ProjectServiceAccountCreateResponseObject organizationProjectServiceAccount = ProjectServiceAccountCreateResponseObject$organizationProjectServiceAccount._();
 
 static const List<ProjectServiceAccountCreateResponseObject> values = [organizationProjectServiceAccount];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.project.service_account' => 'organizationProjectServiceAccount',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ProjectServiceAccountCreateResponseObject$Unknown; } 
+bool get isUnknown {return this is ProjectServiceAccountCreateResponseObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationProjectServiceAccount, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationProjectServiceAccount, required W Function(String value) $unknown, }) {return switch (this) {
       ProjectServiceAccountCreateResponseObject$organizationProjectServiceAccount() => organizationProjectServiceAccount(),
       ProjectServiceAccountCreateResponseObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProjectServiceAccount, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProjectServiceAccount, W Function(String value)? $unknown, }) {return switch (this) {
       ProjectServiceAccountCreateResponseObject$organizationProjectServiceAccount() => organizationProjectServiceAccount != null ? organizationProjectServiceAccount() : orElse(value),
       ProjectServiceAccountCreateResponseObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ProjectServiceAccountCreateResponseObject($value)';
 
- }
+}
 @immutable final class ProjectServiceAccountCreateResponseObject$organizationProjectServiceAccount extends ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject$organizationProjectServiceAccount._();
 
 @override String get value => 'organization.project.service_account';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.project.service_account'.hashCode;
 
- }
+}
 @immutable final class ProjectServiceAccountCreateResponseObject$Unknown extends ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamPlayback {const StreamPlayback({this.dash, this.hls, });
 
-factory StreamPlayback.fromJson(Map<String, dynamic> json) { return StreamPlayback(
+factory StreamPlayback.fromJson(Map<String, dynamic> json) {return StreamPlayback(
   dash: json['dash'] as String?,
   hls: json['hls'] as String?,
-); }
+);}
 
 /// DASH Media Presentation Description for the video.
 /// 
@@ -18,15 +18,15 @@ final String? dash;
 /// Example: `'https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/manifest/video.m3u8'`
 final String? hls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dash': ?dash,
   'hls': ?hls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dash', 'hls'}.contains(key)); } 
-StreamPlayback copyWith({String? Function()? dash, String? Function()? hls, }) { return StreamPlayback(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dash', 'hls'}.contains(key));}
+StreamPlayback copyWith({String? Function()? dash, String? Function()? hls, }) {return StreamPlayback(
   dash: dash != null ? dash() : this.dash,
   hls: hls != null ? hls() : this.hls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamPlayback &&
           dash == other.dash &&
@@ -36,4 +36,4 @@ StreamPlayback copyWith({String? Function()? dash, String? Function()? hls, }) {
 
 @override String toString() => 'StreamPlayback(dash: $dash, hls: $hls)';
 
- }
+}

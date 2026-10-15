@@ -2,23 +2,23 @@
 // Source: #/components/schemas/PaymentMethodOptionsPix
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_pix_payment_method_options/amount_includes_iof.dart';/// 
-@immutable final class PaymentMethodOptionsPix {const PaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsPix {const PaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsPix(
+factory PaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsPix(
   amountIncludesIof: json['amount_includes_iof'] != null ? AmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
-  expiresAfterSeconds: json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAfterSeconds: json.containsKey('expires_after_seconds') ? Omittable(json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null) : const Omittable.absent(),
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Determines if the amount includes the IOF tax.
 final AmountIncludesIof? amountIncludesIof;
 
 /// The number of seconds (between 10 and 1209600) after which Pix payment will expire.
-final int? expiresAfterSeconds;
+final Omittable<int?> expiresAfterSeconds;
 
 /// The timestamp at which the Pix expires.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -29,19 +29,19 @@ final int? expiresAt;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountIncludesIof != null) 'amount_includes_iof': amountIncludesIof?.toJson(),
-  'expires_after_seconds': ?expiresAfterSeconds,
-  'expires_at': ?expiresAt,
+  if (expiresAfterSeconds.isPresent) 'expires_after_seconds': expiresAfterSeconds.value,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsPix copyWith({AmountIncludesIof? Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, int? Function()? expiresAt, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsPix(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsPix copyWith({AmountIncludesIof? Function()? amountIncludesIof, Omittable<int?>? expiresAfterSeconds, Omittable<int?>? expiresAt, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsPix(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
-  expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAfterSeconds: expiresAfterSeconds ?? this.expiresAfterSeconds,
+  expiresAt: expiresAt ?? this.expiresAt,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsPix &&
           amountIncludesIof == other.amountIncludesIof &&
@@ -53,4 +53,4 @@ PaymentMethodOptionsPix copyWith({AmountIncludesIof? Function()? amountIncludesI
 
 @override String toString() => 'PaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, expiresAt: $expiresAt, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

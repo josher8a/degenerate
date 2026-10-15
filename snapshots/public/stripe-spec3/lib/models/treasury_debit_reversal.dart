@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TreasuryDebitReversal
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// The rails used to reverse the funds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_status_transitions.dart';/// The rails used to reverse the funds.
 sealed class TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork();
 
-factory TreasuryDebitReversalNetwork.fromJson(String json) { return switch (json) {
+factory TreasuryDebitReversalNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'card' => card,
   _ => TreasuryDebitReversalNetwork$Unknown(json),
-}; }
+};}
 
 static const TreasuryDebitReversalNetwork ach = TreasuryDebitReversalNetwork$ach._();
 
@@ -17,30 +17,30 @@ static const TreasuryDebitReversalNetwork card = TreasuryDebitReversalNetwork$ca
 static const List<TreasuryDebitReversalNetwork> values = [ach, card];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach' => 'ach',
   'card' => 'card',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryDebitReversalNetwork$Unknown; } 
+bool get isUnknown {return this is TreasuryDebitReversalNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ach, required W Function() card, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ach, required W Function() card, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryDebitReversalNetwork$ach() => ach(),
       TreasuryDebitReversalNetwork$card() => card(),
       TreasuryDebitReversalNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? card, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? card, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryDebitReversalNetwork$ach() => ach != null ? ach() : orElse(value),
       TreasuryDebitReversalNetwork$card() => card != null ? card() : orElse(value),
       TreasuryDebitReversalNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryDebitReversalNetwork($value)';
 
- }
+}
 @immutable final class TreasuryDebitReversalNetwork$ach extends TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork$ach._();
 
 @override String get value => 'ach';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'ach'.hashCode;
 
- }
+}
 @immutable final class TreasuryDebitReversalNetwork$card extends TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork$card._();
 
 @override String get value => 'card';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class TreasuryDebitReversalNetwork$Unknown extends TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork$Unknown(this.value);
 
 @override final String value;
@@ -68,41 +68,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class TreasuryDebitReversalObject {const TreasuryDebitReversalObject();
 
-factory TreasuryDebitReversalObject.fromJson(String json) { return switch (json) {
+factory TreasuryDebitReversalObject.fromJson(String json) {return switch (json) {
   'treasury.debit_reversal' => treasuryDebitReversal,
   _ => TreasuryDebitReversalObject$Unknown(json),
-}; }
+};}
 
 static const TreasuryDebitReversalObject treasuryDebitReversal = TreasuryDebitReversalObject$treasuryDebitReversal._();
 
 static const List<TreasuryDebitReversalObject> values = [treasuryDebitReversal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'treasury.debit_reversal' => 'treasuryDebitReversal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryDebitReversalObject$Unknown; } 
+bool get isUnknown {return this is TreasuryDebitReversalObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() treasuryDebitReversal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() treasuryDebitReversal, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryDebitReversalObject$treasuryDebitReversal() => treasuryDebitReversal(),
       TreasuryDebitReversalObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryDebitReversal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryDebitReversal, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryDebitReversalObject$treasuryDebitReversal() => treasuryDebitReversal != null ? treasuryDebitReversal() : orElse(value),
       TreasuryDebitReversalObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryDebitReversalObject($value)';
 
- }
+}
 @immutable final class TreasuryDebitReversalObject$treasuryDebitReversal extends TreasuryDebitReversalObject {const TreasuryDebitReversalObject$treasuryDebitReversal._();
 
 @override String get value => 'treasury.debit_reversal';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => 'treasury.debit_reversal'.hashCode;
 
- }
+}
 @immutable final class TreasuryDebitReversalObject$Unknown extends TreasuryDebitReversalObject {const TreasuryDebitReversalObject$Unknown(this.value);
 
 @override final String value;
@@ -121,16 +121,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Status of the DebitReversal
 sealed class TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus();
 
-factory TreasuryDebitReversalStatus.fromJson(String json) { return switch (json) {
+factory TreasuryDebitReversalStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'processing' => processing,
   'succeeded' => succeeded,
   _ => TreasuryDebitReversalStatus$Unknown(json),
-}; }
+};}
 
 static const TreasuryDebitReversalStatus failed = TreasuryDebitReversalStatus$failed._();
 
@@ -141,33 +141,33 @@ static const TreasuryDebitReversalStatus succeeded = TreasuryDebitReversalStatus
 static const List<TreasuryDebitReversalStatus> values = [failed, processing, succeeded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'failed' => 'failed',
   'processing' => 'processing',
   'succeeded' => 'succeeded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryDebitReversalStatus$Unknown; } 
+bool get isUnknown {return this is TreasuryDebitReversalStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() failed, required W Function() processing, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() failed, required W Function() processing, required W Function() succeeded, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryDebitReversalStatus$failed() => failed(),
       TreasuryDebitReversalStatus$processing() => processing(),
       TreasuryDebitReversalStatus$succeeded() => succeeded(),
       TreasuryDebitReversalStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? processing, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? processing, W Function()? succeeded, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryDebitReversalStatus$failed() => failed != null ? failed() : orElse(value),
       TreasuryDebitReversalStatus$processing() => processing != null ? processing() : orElse(value),
       TreasuryDebitReversalStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
       TreasuryDebitReversalStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryDebitReversalStatus($value)';
 
- }
+}
 @immutable final class TreasuryDebitReversalStatus$failed extends TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus$failed._();
 
 @override String get value => 'failed';
@@ -176,7 +176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class TreasuryDebitReversalStatus$processing extends TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus$processing._();
 
 @override String get value => 'processing';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class TreasuryDebitReversalStatus$succeeded extends TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class TreasuryDebitReversalStatus$Unknown extends TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus$Unknown(this.value);
 
 @override final String value;
@@ -204,18 +204,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// You can reverse some [ReceivedDebits](https://api.stripe.com#received_debits) depending on their network and source flow. Reversing a ReceivedDebit leads to the creation of a new object known as a DebitReversal.
-@immutable final class TreasuryDebitReversal {const TreasuryDebitReversal({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedDebit, required this.status, required this.statusTransitions, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.linkedFlows, this.transaction, });
+@immutable final class TreasuryDebitReversal {const TreasuryDebitReversal({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedDebit, required this.status, required this.statusTransitions, this.financialAccount = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.linkedFlows = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return TreasuryDebitReversal(
+factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) {return TreasuryDebitReversal(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  financialAccount: json['financial_account'] as String?,
-  hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
+  financialAccount: json.containsKey('financial_account') ? Omittable(json['financial_account'] as String?) : const Omittable.absent(),
+  hostedRegulatoryReceiptUrl: json.containsKey('hosted_regulatory_receipt_url') ? Omittable(json['hosted_regulatory_receipt_url'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  linkedFlows: json['linked_flows'] != null ? TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null,
+  linkedFlows: json.containsKey('linked_flows') ? Omittable(json['linked_flows'] != null ? TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   network: TreasuryDebitReversalNetwork.fromJson(json['network'] as String),
@@ -223,8 +223,8 @@ factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return Treas
   receivedDebit: json['received_debit'] as String,
   status: TreasuryDebitReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedDebitsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null,
-); }
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryCreditReversalTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -236,16 +236,16 @@ final int created;
 final String currency;
 
 /// The FinancialAccount to reverse funds from.
-final String? financialAccount;
+final Omittable<String?> financialAccount;
 
 /// A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses.
-final String? hostedRegulatoryReceiptUrl;
+final Omittable<String?> hostedRegulatoryReceiptUrl;
 
 /// Unique identifier for the object.
 final String id;
 
 /// Other flows linked to a DebitReversal.
-final TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? linkedFlows;
+final Omittable<TreasuryReceivedDebitsResourceDebitReversalLinkedFlows?> linkedFlows;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -268,16 +268,16 @@ final TreasuryDebitReversalStatus status;
 final TreasuryReceivedDebitsResourceStatusTransitions statusTransitions;
 
 /// The Transaction associated with this object.
-final TreasuryCreditReversalTransaction? transaction;
+final Omittable<TreasuryCreditReversalTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'created': created,
   'currency': currency,
-  'financial_account': ?financialAccount,
-  'hosted_regulatory_receipt_url': ?hostedRegulatoryReceiptUrl,
+  if (financialAccount.isPresent) 'financial_account': financialAccount.value,
+  if (hostedRegulatoryReceiptUrl.isPresent) 'hosted_regulatory_receipt_url': hostedRegulatoryReceiptUrl.value,
   'id': id,
-  if (linkedFlows != null) 'linked_flows': linkedFlows?.toJson(),
+  if (linkedFlows.isPresent) 'linked_flows': linkedFlows.value?.toJson(),
   'livemode': livemode,
   'metadata': metadata,
   'network': network.toJson(),
@@ -285,9 +285,9 @@ Map<String, dynamic> toJson() { return {
   'received_debit': receivedDebit,
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
-  if (transaction != null) 'transaction': transaction?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+  if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -297,28 +297,28 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('received_debit') && json['received_debit'] is String &&
       json.containsKey('status') &&
-      json.containsKey('status_transitions'); } 
+      json.containsKey('status_transitions');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final financialAccount$ = financialAccount;
+List<String> validate() {final errors = <String>[];
+final financialAccount$ = financialAccount.value;
 if (financialAccount$ != null) {
   if (financialAccount$.runes.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 }
-final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
+final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl.value;
 if (hostedRegulatoryReceiptUrl$ != null) {
   if (hostedRegulatoryReceiptUrl$.runes.length > 5000) { errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (receivedDebit.runes.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
-return errors; } 
-TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
+return errors;}
+TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, Omittable<TreasuryReceivedDebitsResourceDebitReversalLinkedFlows?>? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) {return TreasuryDebitReversal(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
-  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl != null ? hostedRegulatoryReceiptUrl() : this.hostedRegulatoryReceiptUrl,
+  financialAccount: financialAccount ?? this.financialAccount,
+  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl ?? this.hostedRegulatoryReceiptUrl,
   id: id ?? this.id,
-  linkedFlows: linkedFlows != null ? linkedFlows() : this.linkedFlows,
+  linkedFlows: linkedFlows ?? this.linkedFlows,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   network: network ?? this.network,
@@ -326,8 +326,8 @@ TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, Str
   receivedDebit: receivedDebit ?? this.receivedDebit,
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
-  transaction: transaction != null ? transaction() : this.transaction,
-); } 
+  transaction: transaction ?? this.transaction,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryDebitReversal &&
           amount == other.amount &&
@@ -350,4 +350,4 @@ TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, Str
 
 @override String toString() => 'TreasuryDebitReversal(\n  amount: $amount,\n  created: $created,\n  currency: $currency,\n  financialAccount: $financialAccount,\n  hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl,\n  id: $id,\n  linkedFlows: $linkedFlows,\n  livemode: $livemode,\n  metadata: $metadata,\n  network: $network,\n  object: $object,\n  receivedDebit: $receivedDebit,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  transaction: $transaction,\n)';
 
- }
+}

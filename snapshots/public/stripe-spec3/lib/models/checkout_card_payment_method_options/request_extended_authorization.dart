@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to [capture beyond the standard authorization validity window](/payments/extended-authorization) for this CheckoutSession.
 sealed class RequestExtendedAuthorization {const RequestExtendedAuthorization();
 
-factory RequestExtendedAuthorization.fromJson(String json) { return switch (json) {
+factory RequestExtendedAuthorization.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => RequestExtendedAuthorization$Unknown(json),
-}; }
+};}
 
 static const RequestExtendedAuthorization ifAvailable = RequestExtendedAuthorization$ifAvailable._();
 
@@ -17,30 +17,30 @@ static const RequestExtendedAuthorization never = RequestExtendedAuthorization$n
 static const List<RequestExtendedAuthorization> values = [ifAvailable, never];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'if_available' => 'ifAvailable',
   'never' => 'never',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RequestExtendedAuthorization$Unknown; } 
+bool get isUnknown {return this is RequestExtendedAuthorization$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ifAvailable, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ifAvailable, required W Function() never, required W Function(String value) $unknown, }) {return switch (this) {
       RequestExtendedAuthorization$ifAvailable() => ifAvailable(),
       RequestExtendedAuthorization$never() => never(),
       RequestExtendedAuthorization$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvailable, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvailable, W Function()? never, W Function(String value)? $unknown, }) {return switch (this) {
       RequestExtendedAuthorization$ifAvailable() => ifAvailable != null ? ifAvailable() : orElse(value),
       RequestExtendedAuthorization$never() => never != null ? never() : orElse(value),
       RequestExtendedAuthorization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RequestExtendedAuthorization($value)';
 
- }
+}
 @immutable final class RequestExtendedAuthorization$ifAvailable extends RequestExtendedAuthorization {const RequestExtendedAuthorization$ifAvailable._();
 
 @override String get value => 'if_available';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvaila
 
 @override int get hashCode => 'if_available'.hashCode;
 
- }
+}
 @immutable final class RequestExtendedAuthorization$never extends RequestExtendedAuthorization {const RequestExtendedAuthorization$never._();
 
 @override String get value => 'never';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvaila
 
 @override int get hashCode => 'never'.hashCode;
 
- }
+}
 @immutable final class RequestExtendedAuthorization$Unknown extends RequestExtendedAuthorization {const RequestExtendedAuthorization$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvaila
 
 @override int get hashCode => value.hashCode;
 
- }
+}

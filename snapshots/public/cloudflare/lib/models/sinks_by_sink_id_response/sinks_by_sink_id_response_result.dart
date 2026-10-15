@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_connection_schema.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table_public.dart';import 'package:pub_cloudflare/models/sinks_by_sink_id_response/result_config.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_type.dart';@immutable final class SinksBySinkIdResponseResult {const SinksBySinkIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.type, this.config, this.format, this.schema, });
 
-factory SinksBySinkIdResponseResult.fromJson(Map<String, dynamic> json) { return SinksBySinkIdResponseResult(
+factory SinksBySinkIdResponseResult.fromJson(Map<String, dynamic> json) {return SinksBySinkIdResponseResult(
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2TablePublic.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTablePublic.fromJson(v as Map<String, dynamic>),) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory SinksBySinkIdResponseResult.fromJson(Map<String, dynamic> json) { return
   name: json['name'] as String,
   schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   type: SinksRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Defines the configuration of the R2 Sink.
 final ResultConfig? config;
@@ -40,7 +40,7 @@ final CloudflarePipelinesConnectionSchema? schema;
 /// Example: `'r2'`
 final SinksRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   'created_at': createdAt.toIso8601String(),
   if (format != null) 'format': format?.toJson(),
@@ -49,18 +49,18 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   if (schema != null) 'schema': schema?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-SinksBySinkIdResponseResult copyWith({ResultConfig? Function()? config, DateTime? createdAt, CloudflarePipelinesFormat? Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) { return SinksBySinkIdResponseResult(
+return errors;}
+SinksBySinkIdResponseResult copyWith({ResultConfig? Function()? config, DateTime? createdAt, CloudflarePipelinesFormat? Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) {return SinksBySinkIdResponseResult(
   config: config != null ? config() : this.config,
   createdAt: createdAt ?? this.createdAt,
   format: format != null ? format() : this.format,
@@ -69,7 +69,7 @@ SinksBySinkIdResponseResult copyWith({ResultConfig? Function()? config, DateTime
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SinksBySinkIdResponseResult &&
           config == other.config &&
@@ -85,4 +85,4 @@ SinksBySinkIdResponseResult copyWith({ResultConfig? Function()? config, DateTime
 
 @override String toString() => 'SinksBySinkIdResponseResult(config: $config, createdAt: $createdAt, format: $format, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, type: $type)';
 
- }
+}

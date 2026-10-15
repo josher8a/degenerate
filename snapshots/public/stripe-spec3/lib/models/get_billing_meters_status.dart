@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetBillingMetersStatus {const GetBillingMetersStatus();
 
-factory GetBillingMetersStatus.fromJson(String json) { return switch (json) {
+factory GetBillingMetersStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   _ => GetBillingMetersStatus$Unknown(json),
-}; }
+};}
 
 static const GetBillingMetersStatus active = GetBillingMetersStatus$active._();
 
@@ -16,30 +16,30 @@ static const GetBillingMetersStatus inactive = GetBillingMetersStatus$inactive._
 static const List<GetBillingMetersStatus> values = [active, inactive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'inactive' => 'inactive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetBillingMetersStatus$Unknown; } 
+bool get isUnknown {return this is GetBillingMetersStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() inactive, required W Function(String value) $unknown, }) {return switch (this) {
       GetBillingMetersStatus$active() => active(),
       GetBillingMetersStatus$inactive() => inactive(),
       GetBillingMetersStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function(String value)? $unknown, }) {return switch (this) {
       GetBillingMetersStatus$active() => active != null ? active() : orElse(value),
       GetBillingMetersStatus$inactive() => inactive != null ? inactive() : orElse(value),
       GetBillingMetersStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetBillingMetersStatus($value)';
 
- }
+}
 @immutable final class GetBillingMetersStatus$active extends GetBillingMetersStatus {const GetBillingMetersStatus$active._();
 
 @override String get value => 'active';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class GetBillingMetersStatus$inactive extends GetBillingMetersStatus {const GetBillingMetersStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class GetBillingMetersStatus$Unknown extends GetBillingMetersStatus {const GetBillingMetersStatus$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

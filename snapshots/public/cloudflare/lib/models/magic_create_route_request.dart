@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_description.dart';import 'package:pub_cloudflare/models/magic_nexthop.dart';import 'package:pub_cloudflare/models/magic_prefix.dart';import 'package:pub_cloudflare/models/magic_priority.dart';import 'package:pub_cloudflare/models/magic_scope.dart';import 'package:pub_cloudflare/models/magic_weight.dart';@immutable final class MagicCreateRouteRequest {const MagicCreateRouteRequest({required this.nexthop, required this.prefix, required this.priority, this.description, this.scope, this.weight, });
 
-factory MagicCreateRouteRequest.fromJson(Map<String, dynamic> json) { return MagicCreateRouteRequest(
+factory MagicCreateRouteRequest.fromJson(Map<String, dynamic> json) {return MagicCreateRouteRequest(
   description: json['description'] != null ? MagicDescription.fromJson(json['description'] as String) : null,
   nexthop: MagicNexthop.fromJson(json['nexthop'] as String),
   prefix: MagicPrefix.fromJson(json['prefix'] as String),
   priority: MagicPriority.fromJson(json['priority'] as num),
   scope: json['scope'] != null ? MagicScope.fromJson(json['scope'] as Map<String, dynamic>) : null,
   weight: json['weight'] != null ? MagicWeight.fromJson(json['weight'] as num) : null,
-); }
+);}
 
 final MagicDescription? description;
 
@@ -24,25 +24,25 @@ final MagicScope? scope;
 
 final MagicWeight? weight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'nexthop': nexthop.toJson(),
   'prefix': prefix.toJson(),
   'priority': priority.toJson(),
   if (scope != null) 'scope': scope?.toJson(),
   if (weight != null) 'weight': weight?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('nexthop') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('nexthop') &&
       json.containsKey('prefix') &&
-      json.containsKey('priority'); } 
-MagicCreateRouteRequest copyWith({MagicDescription? Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, }) { return MagicCreateRouteRequest(
+      json.containsKey('priority');}
+MagicCreateRouteRequest copyWith({MagicDescription? Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, }) {return MagicCreateRouteRequest(
   description: description != null ? description() : this.description,
   nexthop: nexthop ?? this.nexthop,
   prefix: prefix ?? this.prefix,
   priority: priority ?? this.priority,
   scope: scope != null ? scope() : this.scope,
   weight: weight != null ? weight() : this.weight,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicCreateRouteRequest &&
           description == other.description &&
@@ -56,4 +56,4 @@ MagicCreateRouteRequest copyWith({MagicDescription? Function()? description, Mag
 
 @override String toString() => 'MagicCreateRouteRequest(description: $description, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)';
 
- }
+}

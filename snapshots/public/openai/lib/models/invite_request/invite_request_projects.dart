@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';@immutable final class InviteRequestProjects {const InviteRequestProjects({required this.id, required this.role, });
 
-factory InviteRequestProjects.fromJson(Map<String, dynamic> json) { return InviteRequestProjects(
+factory InviteRequestProjects.fromJson(Map<String, dynamic> json) {return InviteRequestProjects(
   id: json['id'] as String,
   role: ProjectServiceAccountRole.fromJson(json['role'] as String),
-); }
+);}
 
 /// Project's public ID
 final String id;
@@ -14,16 +14,16 @@ final String id;
 /// Project membership role
 final ProjectServiceAccountRole role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'role': role.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('role'); } 
-InviteRequestProjects copyWith({String? id, ProjectServiceAccountRole? role, }) { return InviteRequestProjects(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('role');}
+InviteRequestProjects copyWith({String? id, ProjectServiceAccountRole? role, }) {return InviteRequestProjects(
   id: id ?? this.id,
   role: role ?? this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InviteRequestProjects &&
           id == other.id &&
@@ -33,4 +33,4 @@ InviteRequestProjects copyWith({String? id, ProjectServiceAccountRole? role, }) 
 
 @override String toString() => 'InviteRequestProjects(id: $id, role: $role)';
 
- }
+}

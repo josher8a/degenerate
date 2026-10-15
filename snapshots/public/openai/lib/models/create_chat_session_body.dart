@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chatkit_configuration_param.dart';import 'package:pub_openai/models/expires_after_param.dart';import 'package:pub_openai/models/rate_limits_param.dart';import 'package:pub_openai/models/workflow_param.dart';/// Parameters for provisioning a new ChatKit session.
 @immutable final class CreateChatSessionBody {const CreateChatSessionBody({required this.workflow, required this.user, this.expiresAfter, this.rateLimits, this.chatkitConfiguration, });
 
-factory CreateChatSessionBody.fromJson(Map<String, dynamic> json) { return CreateChatSessionBody(
+factory CreateChatSessionBody.fromJson(Map<String, dynamic> json) {return CreateChatSessionBody(
   workflow: WorkflowParam.fromJson(json['workflow'] as Map<String, dynamic>),
   user: json['user'] as String,
   expiresAfter: json['expires_after'] != null ? ExpiresAfterParam.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   rateLimits: json['rate_limits'] != null ? RateLimitsParam.fromJson(json['rate_limits'] as Map<String, dynamic>) : null,
   chatkitConfiguration: json['chatkit_configuration'] != null ? ChatkitConfigurationParam.fromJson(json['chatkit_configuration'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Workflow that powers the session.
 final WorkflowParam workflow;
@@ -27,26 +27,26 @@ final RateLimitsParam? rateLimits;
 /// Optional overrides for ChatKit runtime configuration features
 final ChatkitConfigurationParam? chatkitConfiguration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'workflow': workflow.toJson(),
   'user': user,
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   if (rateLimits != null) 'rate_limits': rateLimits?.toJson(),
   if (chatkitConfiguration != null) 'chatkit_configuration': chatkitConfiguration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('workflow') &&
-      json.containsKey('user') && json['user'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('workflow') &&
+      json.containsKey('user') && json['user'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (user.isEmpty) { errors.add('user: length must be >= 1'); }
-return errors; } 
-CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAfterParam? Function()? expiresAfter, RateLimitsParam? Function()? rateLimits, ChatkitConfigurationParam? Function()? chatkitConfiguration, }) { return CreateChatSessionBody(
+return errors;}
+CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAfterParam? Function()? expiresAfter, RateLimitsParam? Function()? rateLimits, ChatkitConfigurationParam? Function()? chatkitConfiguration, }) {return CreateChatSessionBody(
   workflow: workflow ?? this.workflow,
   user: user ?? this.user,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   rateLimits: rateLimits != null ? rateLimits() : this.rateLimits,
   chatkitConfiguration: chatkitConfiguration != null ? chatkitConfiguration() : this.chatkitConfiguration,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatSessionBody &&
           workflow == other.workflow &&
@@ -59,4 +59,4 @@ CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAf
 
 @override String toString() => 'CreateChatSessionBody(workflow: $workflow, user: $user, expiresAfter: $expiresAfter, rateLimits: $rateLimits, chatkitConfiguration: $chatkitConfiguration)';
 
- }
+}

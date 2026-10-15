@@ -1,37 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaginationCursorNonNumericNullableResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaginationCursorNonNumericNullableResponse {const PaginationCursorNonNumericNullableResponse({required this.numPages, required this.resultArray, this.next, this.cursor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaginationCursorNonNumericNullableResponse {const PaginationCursorNonNumericNullableResponse({required this.numPages, required this.resultArray, this.next, this.cursor = const Omittable.absent(), });
 
-factory PaginationCursorNonNumericNullableResponse.fromJson(Map<String, dynamic> json) { return PaginationCursorNonNumericNullableResponse(
+factory PaginationCursorNonNumericNullableResponse.fromJson(Map<String, dynamic> json) {return PaginationCursorNonNumericNullableResponse(
   numPages: (json['numPages'] as num).toInt(),
   next: json['next'] as String?,
-  cursor: json['cursor'] as String?,
+  cursor: json.containsKey('cursor') ? Omittable(json['cursor'] as String?) : const Omittable.absent(),
   resultArray: (json['resultArray'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final int numPages;
 
 final String? next;
 
-final String? cursor;
+final Omittable<String?> cursor;
 
 final List<String> resultArray;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'numPages': numPages,
   'next': ?next,
-  'cursor': ?cursor,
+  if (cursor.isPresent) 'cursor': cursor.value,
   'resultArray': resultArray,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('numPages') && json['numPages'] is num &&
-      json.containsKey('resultArray'); } 
-PaginationCursorNonNumericNullableResponse copyWith({int? numPages, String? Function()? next, String? Function()? cursor, List<String>? resultArray, }) { return PaginationCursorNonNumericNullableResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('numPages') && json['numPages'] is num &&
+      json.containsKey('resultArray');}
+PaginationCursorNonNumericNullableResponse copyWith({int? numPages, String? Function()? next, Omittable<String?>? cursor, List<String>? resultArray, }) {return PaginationCursorNonNumericNullableResponse(
   numPages: numPages ?? this.numPages,
   next: next != null ? next() : this.next,
-  cursor: cursor != null ? cursor() : this.cursor,
+  cursor: cursor ?? this.cursor,
   resultArray: resultArray ?? this.resultArray,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaginationCursorNonNumericNullableResponse &&
           numPages == other.numPages &&
@@ -43,4 +43,4 @@ PaginationCursorNonNumericNullableResponse copyWith({int? numPages, String? Func
 
 @override String toString() => 'PaginationCursorNonNumericNullableResponse(numPages: $numPages, next: $next, cursor: $cursor, resultArray: $resultArray)';
 
- }
+}

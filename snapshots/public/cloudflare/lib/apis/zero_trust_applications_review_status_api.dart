@@ -14,7 +14,7 @@ final class ZeroTrustApplicationsReviewStatusApi with ApiExecutor {const ZeroTru
 /// Retrieve the statuses of your applications.
 ///
 /// `GET /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusListError>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusListError>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: ZeroTrustApplicationsReviewStatusListError.fromResponse,
 );
- } 
+}
 /// Update applications review statuses
 ///
 /// Update the statuses of your applications.
 ///
 /// `PUT /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusUpdateError>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusUpdateError>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,5 +56,5 @@ return execute(
   },
   onError: ZeroTrustApplicationsReviewStatusUpdateError.fromResponse,
 );
- } 
- }
+}
+}

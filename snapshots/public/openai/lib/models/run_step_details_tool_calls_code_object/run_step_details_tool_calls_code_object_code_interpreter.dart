@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_details_tool_calls_code_object/run_step_details_tool_calls_code_object_code_interpreter_outputs.dart';import 'package:pub_openai/models/run_step_details_tool_calls_code_output_image_object.dart';import 'package:pub_openai/models/run_step_details_tool_calls_code_output_logs_object.dart';/// The Code Interpreter tool call definition.
 @immutable final class RunStepDetailsToolCallsCodeObjectCodeInterpreter {const RunStepDetailsToolCallsCodeObjectCodeInterpreter({required this.input, required this.outputs, });
 
-factory RunStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeObjectCodeInterpreter(
+factory RunStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: json['input'] as String,
   outputs: (json['outputs'] as List<dynamic>).map((e) => switch (e) {
   final Map<String, dynamic> m when m['type'] == 'logs' => OneOf2<RunStepDetailsToolCallsCodeOutputLogsObject, RunStepDetailsToolCallsCodeOutputImageObject>.a(RunStepDetailsToolCallsCodeOutputLogsObject.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'image' => OneOf2<RunStepDetailsToolCallsCodeOutputLogsObject, RunStepDetailsToolCallsCodeOutputImageObject>.b(RunStepDetailsToolCallsCodeOutputImageObject.fromJson(m)),
   _ => OneOf2.parse(e, fromA: (v) => RunStepDetailsToolCallsCodeOutputLogsObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsCodeOutputImageObject.fromJson(v as Map<String, dynamic>),),
 }).toList(),
-); }
+);}
 
 /// The input to the Code Interpreter tool call.
 final String input;
@@ -19,16 +19,16 @@ final String input;
 /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
 final List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputs> outputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input': input,
   'outputs': outputs.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input') && json['input'] is String &&
-      json.containsKey('outputs'); } 
-RunStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? input, List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputs>? outputs, }) { return RunStepDetailsToolCallsCodeObjectCodeInterpreter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input') && json['input'] is String &&
+      json.containsKey('outputs');}
+RunStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? input, List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputs>? outputs, }) {return RunStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: input ?? this.input,
   outputs: outputs ?? this.outputs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeObjectCodeInterpreter &&
           input == other.input &&
@@ -38,4 +38,4 @@ RunStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? input, List<R
 
 @override String toString() => 'RunStepDetailsToolCallsCodeObjectCodeInterpreter(input: $input, outputs: $outputs)';
 
- }
+}

@@ -14,7 +14,7 @@ final class ContentScanningApi with ApiExecutor {const ContentScanningApi(this.a
 /// Disable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/disable`
-Future<ApiResult<ResponseCommon75Result, WafContentScanningDisableError>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon75Result?, WafContentScanningDisableError>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return json['result'] != null ? ResponseCommon75Result.fromJson(json['result']) : null;
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
+}
 /// Enable Content Scanning
 ///
 /// Enable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/enable`
-Future<ApiResult<ResponseCommon75Result, WafContentScanningDisableError>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon75Result?, WafContentScanningDisableError>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -46,21 +46,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return json['result'] != null ? ResponseCommon75Result.fromJson(json['result']) : null;
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
+}
 /// List Existing Custom Scan Expressions
 ///
 /// Get a list of existing custom scan expressions for Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<List<BundleCustomScan>?, WafContentScanningListCustomScanExpressionsError>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>, WafContentScanningListCustomScanExpressionsError>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,21 +69,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: WafContentScanningListCustomScanExpressionsError.fromResponse,
 );
- } 
+}
 /// Add Custom Scan Expressions
 ///
 /// Add custom scan expressions for Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<List<BundleCustomScan>?, WafContentScanningAddCustomScanExpressionsError>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>, WafContentScanningAddCustomScanExpressionsError>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,21 +94,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: WafContentScanningAddCustomScanExpressionsError.fromResponse,
 );
- } 
+}
 /// Delete a Custom Scan Expression
 ///
 /// Delete a Content Scan Custom Expression.
 ///
 /// `DELETE /zones/{zone_id}/content-upload-scan/payloads/{expression_id}`
-Future<ApiResult<List<BundleCustomScan>?, WafContentScanningDeleteCustomScanExpressionsError>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>, WafContentScanningDeleteCustomScanExpressionsError>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -117,21 +117,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: WafContentScanningDeleteCustomScanExpressionsError.fromResponse,
 );
- } 
+}
 /// Get Content Scanning Status
 ///
 /// Retrieve the current status of Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<BundleSchemasStatus?, WafContentScanningDisableError>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleSchemasStatus, WafContentScanningDisableError>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -140,21 +140,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
+}
 /// Update Content Scanning Status
 ///
 /// Update the Content Scanning status.
 ///
 /// `PUT /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<BundleSchemasStatus?, WafContentScanningDisableError>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleSchemasStatus, WafContentScanningDisableError>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,13 +165,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
- }
+}
+}

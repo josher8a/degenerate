@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Hate {const Hate();
 
-factory Hate.fromJson(String json) { return switch (json) {
+factory Hate.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => Hate$Unknown(json),
-}; }
+};}
 
 static const Hate text = Hate$text._();
 
 static const List<Hate> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Hate$Unknown; } 
+bool get isUnknown {return this is Hate$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       Hate$text() => text(),
       Hate$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       Hate$text() => text != null ? text() : orElse(value),
       Hate$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Hate($value)';
 
- }
+}
 @immutable final class Hate$text extends Hate {const Hate$text._();
 
 @override String get value => 'text';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class Hate$Unknown extends Hate {const Hate$Unknown(this.value);
 
 @override final String value;
@@ -52,40 +52,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class HateThreatening {const HateThreatening();
 
-factory HateThreatening.fromJson(String json) { return switch (json) {
+factory HateThreatening.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => HateThreatening$Unknown(json),
-}; }
+};}
 
 static const HateThreatening text = HateThreatening$text._();
 
 static const List<HateThreatening> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HateThreatening$Unknown; } 
+bool get isUnknown {return this is HateThreatening$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       HateThreatening$text() => text(),
       HateThreatening$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       HateThreatening$text() => text != null ? text() : orElse(value),
       HateThreatening$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HateThreatening($value)';
 
- }
+}
 @immutable final class HateThreatening$text extends HateThreatening {const HateThreatening$text._();
 
 @override String get value => 'text';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class HateThreatening$Unknown extends HateThreatening {const HateThreatening$Unknown(this.value);
 
 @override final String value;
@@ -104,40 +104,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class Harassment {const Harassment();
 
-factory Harassment.fromJson(String json) { return switch (json) {
+factory Harassment.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => Harassment$Unknown(json),
-}; }
+};}
 
 static const Harassment text = Harassment$text._();
 
 static const List<Harassment> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Harassment$Unknown; } 
+bool get isUnknown {return this is Harassment$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       Harassment$text() => text(),
       Harassment$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       Harassment$text() => text != null ? text() : orElse(value),
       Harassment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Harassment($value)';
 
- }
+}
 @immutable final class Harassment$text extends Harassment {const Harassment$text._();
 
 @override String get value => 'text';
@@ -146,7 +146,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class Harassment$Unknown extends Harassment {const Harassment$Unknown(this.value);
 
 @override final String value;
@@ -156,40 +156,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class HarassmentThreatening {const HarassmentThreatening();
 
-factory HarassmentThreatening.fromJson(String json) { return switch (json) {
+factory HarassmentThreatening.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => HarassmentThreatening$Unknown(json),
-}; }
+};}
 
 static const HarassmentThreatening text = HarassmentThreatening$text._();
 
 static const List<HarassmentThreatening> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HarassmentThreatening$Unknown; } 
+bool get isUnknown {return this is HarassmentThreatening$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       HarassmentThreatening$text() => text(),
       HarassmentThreatening$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       HarassmentThreatening$text() => text != null ? text() : orElse(value),
       HarassmentThreatening$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HarassmentThreatening($value)';
 
- }
+}
 @immutable final class HarassmentThreatening$text extends HarassmentThreatening {const HarassmentThreatening$text._();
 
 @override String get value => 'text';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class HarassmentThreatening$Unknown extends HarassmentThreatening {const HarassmentThreatening$Unknown(this.value);
 
 @override final String value;
@@ -208,40 +208,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class Illicit {const Illicit();
 
-factory Illicit.fromJson(String json) { return switch (json) {
+factory Illicit.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => Illicit$Unknown(json),
-}; }
+};}
 
 static const Illicit text = Illicit$text._();
 
 static const List<Illicit> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Illicit$Unknown; } 
+bool get isUnknown {return this is Illicit$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       Illicit$text() => text(),
       Illicit$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       Illicit$text() => text != null ? text() : orElse(value),
       Illicit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Illicit($value)';
 
- }
+}
 @immutable final class Illicit$text extends Illicit {const Illicit$text._();
 
 @override String get value => 'text';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class Illicit$Unknown extends Illicit {const Illicit$Unknown(this.value);
 
 @override final String value;
@@ -260,40 +260,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class IllicitViolent {const IllicitViolent();
 
-factory IllicitViolent.fromJson(String json) { return switch (json) {
+factory IllicitViolent.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => IllicitViolent$Unknown(json),
-}; }
+};}
 
 static const IllicitViolent text = IllicitViolent$text._();
 
 static const List<IllicitViolent> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IllicitViolent$Unknown; } 
+bool get isUnknown {return this is IllicitViolent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       IllicitViolent$text() => text(),
       IllicitViolent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       IllicitViolent$text() => text != null ? text() : orElse(value),
       IllicitViolent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IllicitViolent($value)';
 
- }
+}
 @immutable final class IllicitViolent$text extends IllicitViolent {const IllicitViolent$text._();
 
 @override String get value => 'text';
@@ -302,7 +302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class IllicitViolent$Unknown extends IllicitViolent {const IllicitViolent$Unknown(this.value);
 
 @override final String value;
@@ -312,14 +312,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SelfHarm {const SelfHarm();
 
-factory SelfHarm.fromJson(String json) { return switch (json) {
+factory SelfHarm.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => SelfHarm$Unknown(json),
-}; }
+};}
 
 static const SelfHarm text = SelfHarm$text._();
 
@@ -328,30 +328,30 @@ static const SelfHarm image = SelfHarm$image._();
 static const List<SelfHarm> values = [text, image];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'image' => 'image',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SelfHarm$Unknown; } 
+bool get isUnknown {return this is SelfHarm$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) {return switch (this) {
       SelfHarm$text() => text(),
       SelfHarm$image() => image(),
       SelfHarm$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) {return switch (this) {
       SelfHarm$text() => text != null ? text() : orElse(value),
       SelfHarm$image() => image != null ? image() : orElse(value),
       SelfHarm$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SelfHarm($value)';
 
- }
+}
 @immutable final class SelfHarm$text extends SelfHarm {const SelfHarm$text._();
 
 @override String get value => 'text';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class SelfHarm$image extends SelfHarm {const SelfHarm$image._();
 
 @override String get value => 'image';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class SelfHarm$Unknown extends SelfHarm {const SelfHarm$Unknown(this.value);
 
 @override final String value;
@@ -379,14 +379,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SelfHarmIntent {const SelfHarmIntent();
 
-factory SelfHarmIntent.fromJson(String json) { return switch (json) {
+factory SelfHarmIntent.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => SelfHarmIntent$Unknown(json),
-}; }
+};}
 
 static const SelfHarmIntent text = SelfHarmIntent$text._();
 
@@ -395,30 +395,30 @@ static const SelfHarmIntent image = SelfHarmIntent$image._();
 static const List<SelfHarmIntent> values = [text, image];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'image' => 'image',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SelfHarmIntent$Unknown; } 
+bool get isUnknown {return this is SelfHarmIntent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) {return switch (this) {
       SelfHarmIntent$text() => text(),
       SelfHarmIntent$image() => image(),
       SelfHarmIntent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) {return switch (this) {
       SelfHarmIntent$text() => text != null ? text() : orElse(value),
       SelfHarmIntent$image() => image != null ? image() : orElse(value),
       SelfHarmIntent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SelfHarmIntent($value)';
 
- }
+}
 @immutable final class SelfHarmIntent$text extends SelfHarmIntent {const SelfHarmIntent$text._();
 
 @override String get value => 'text';
@@ -427,7 +427,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class SelfHarmIntent$image extends SelfHarmIntent {const SelfHarmIntent$image._();
 
 @override String get value => 'image';
@@ -436,7 +436,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class SelfHarmIntent$Unknown extends SelfHarmIntent {const SelfHarmIntent$Unknown(this.value);
 
 @override final String value;
@@ -446,14 +446,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SelfHarmInstructions {const SelfHarmInstructions();
 
-factory SelfHarmInstructions.fromJson(String json) { return switch (json) {
+factory SelfHarmInstructions.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => SelfHarmInstructions$Unknown(json),
-}; }
+};}
 
 static const SelfHarmInstructions text = SelfHarmInstructions$text._();
 
@@ -462,30 +462,30 @@ static const SelfHarmInstructions image = SelfHarmInstructions$image._();
 static const List<SelfHarmInstructions> values = [text, image];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'image' => 'image',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SelfHarmInstructions$Unknown; } 
+bool get isUnknown {return this is SelfHarmInstructions$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) {return switch (this) {
       SelfHarmInstructions$text() => text(),
       SelfHarmInstructions$image() => image(),
       SelfHarmInstructions$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) {return switch (this) {
       SelfHarmInstructions$text() => text != null ? text() : orElse(value),
       SelfHarmInstructions$image() => image != null ? image() : orElse(value),
       SelfHarmInstructions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SelfHarmInstructions($value)';
 
- }
+}
 @immutable final class SelfHarmInstructions$text extends SelfHarmInstructions {const SelfHarmInstructions$text._();
 
 @override String get value => 'text';
@@ -494,7 +494,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class SelfHarmInstructions$image extends SelfHarmInstructions {const SelfHarmInstructions$image._();
 
 @override String get value => 'image';
@@ -503,7 +503,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class SelfHarmInstructions$Unknown extends SelfHarmInstructions {const SelfHarmInstructions$Unknown(this.value);
 
 @override final String value;
@@ -513,14 +513,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class Sexual {const Sexual();
 
-factory Sexual.fromJson(String json) { return switch (json) {
+factory Sexual.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => Sexual$Unknown(json),
-}; }
+};}
 
 static const Sexual text = Sexual$text._();
 
@@ -529,30 +529,30 @@ static const Sexual image = Sexual$image._();
 static const List<Sexual> values = [text, image];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'image' => 'image',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Sexual$Unknown; } 
+bool get isUnknown {return this is Sexual$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) {return switch (this) {
       Sexual$text() => text(),
       Sexual$image() => image(),
       Sexual$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) {return switch (this) {
       Sexual$text() => text != null ? text() : orElse(value),
       Sexual$image() => image != null ? image() : orElse(value),
       Sexual$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Sexual($value)';
 
- }
+}
 @immutable final class Sexual$text extends Sexual {const Sexual$text._();
 
 @override String get value => 'text';
@@ -561,7 +561,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class Sexual$image extends Sexual {const Sexual$image._();
 
 @override String get value => 'image';
@@ -570,7 +570,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class Sexual$Unknown extends Sexual {const Sexual$Unknown(this.value);
 
 @override final String value;
@@ -580,40 +580,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SexualMinors {const SexualMinors();
 
-factory SexualMinors.fromJson(String json) { return switch (json) {
+factory SexualMinors.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => SexualMinors$Unknown(json),
-}; }
+};}
 
 static const SexualMinors text = SexualMinors$text._();
 
 static const List<SexualMinors> values = [text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SexualMinors$Unknown; } 
+bool get isUnknown {return this is SexualMinors$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       SexualMinors$text() => text(),
       SexualMinors$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       SexualMinors$text() => text != null ? text() : orElse(value),
       SexualMinors$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SexualMinors($value)';
 
- }
+}
 @immutable final class SexualMinors$text extends SexualMinors {const SexualMinors$text._();
 
 @override String get value => 'text';
@@ -622,7 +622,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class SexualMinors$Unknown extends SexualMinors {const SexualMinors$Unknown(this.value);
 
 @override final String value;
@@ -632,14 +632,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class Violence {const Violence();
 
-factory Violence.fromJson(String json) { return switch (json) {
+factory Violence.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => Violence$Unknown(json),
-}; }
+};}
 
 static const Violence text = Violence$text._();
 
@@ -648,30 +648,30 @@ static const Violence image = Violence$image._();
 static const List<Violence> values = [text, image];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'image' => 'image',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Violence$Unknown; } 
+bool get isUnknown {return this is Violence$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) {return switch (this) {
       Violence$text() => text(),
       Violence$image() => image(),
       Violence$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) {return switch (this) {
       Violence$text() => text != null ? text() : orElse(value),
       Violence$image() => image != null ? image() : orElse(value),
       Violence$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Violence($value)';
 
- }
+}
 @immutable final class Violence$text extends Violence {const Violence$text._();
 
 @override String get value => 'text';
@@ -680,7 +680,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class Violence$image extends Violence {const Violence$image._();
 
 @override String get value => 'image';
@@ -689,7 +689,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class Violence$Unknown extends Violence {const Violence$Unknown(this.value);
 
 @override final String value;
@@ -699,14 +699,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class ViolenceGraphic {const ViolenceGraphic();
 
-factory ViolenceGraphic.fromJson(String json) { return switch (json) {
+factory ViolenceGraphic.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => ViolenceGraphic$Unknown(json),
-}; }
+};}
 
 static const ViolenceGraphic text = ViolenceGraphic$text._();
 
@@ -715,30 +715,30 @@ static const ViolenceGraphic image = ViolenceGraphic$image._();
 static const List<ViolenceGraphic> values = [text, image];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'image' => 'image',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ViolenceGraphic$Unknown; } 
+bool get isUnknown {return this is ViolenceGraphic$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) {return switch (this) {
       ViolenceGraphic$text() => text(),
       ViolenceGraphic$image() => image(),
       ViolenceGraphic$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) {return switch (this) {
       ViolenceGraphic$text() => text != null ? text() : orElse(value),
       ViolenceGraphic$image() => image != null ? image() : orElse(value),
       ViolenceGraphic$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ViolenceGraphic($value)';
 
- }
+}
 @immutable final class ViolenceGraphic$text extends ViolenceGraphic {const ViolenceGraphic$text._();
 
 @override String get value => 'text';
@@ -747,7 +747,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class ViolenceGraphic$image extends ViolenceGraphic {const ViolenceGraphic$image._();
 
 @override String get value => 'image';
@@ -756,7 +756,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class ViolenceGraphic$Unknown extends ViolenceGraphic {const ViolenceGraphic$Unknown(this.value);
 
 @override final String value;
@@ -766,11 +766,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A list of the categories along with the input type(s) that the score applies to.
 @immutable final class CategoryAppliedInputTypes {const CategoryAppliedInputTypes({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
-factory CategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) { return CategoryAppliedInputTypes(
+factory CategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) {return CategoryAppliedInputTypes(
   hate: (json['hate'] as List<dynamic>).map((e) => Hate.fromJson(e as String)).toList(),
   hateThreatening: (json['hate/threatening'] as List<dynamic>).map((e) => HateThreatening.fromJson(e as String)).toList(),
   harassment: (json['harassment'] as List<dynamic>).map((e) => Harassment.fromJson(e as String)).toList(),
@@ -784,7 +784,7 @@ factory CategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) { return C
   sexualMinors: (json['sexual/minors'] as List<dynamic>).map((e) => SexualMinors.fromJson(e as String)).toList(),
   violence: (json['violence'] as List<dynamic>).map((e) => Violence.fromJson(e as String)).toList(),
   violenceGraphic: (json['violence/graphic'] as List<dynamic>).map((e) => ViolenceGraphic.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The applied input type(s) for the category 'hate'.
 final List<Hate> hate;
@@ -825,7 +825,7 @@ final List<Violence> violence;
 /// The applied input type(s) for the category 'violence/graphic'.
 final List<ViolenceGraphic> violenceGraphic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hate': hate.map((e) => e.toJson()).toList(),
   'hate/threatening': hateThreatening.map((e) => e.toJson()).toList(),
   'harassment': harassment.map((e) => e.toJson()).toList(),
@@ -839,8 +839,8 @@ Map<String, dynamic> toJson() { return {
   'sexual/minors': sexualMinors.map((e) => e.toJson()).toList(),
   'violence': violence.map((e) => e.toJson()).toList(),
   'violence/graphic': violenceGraphic.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hate') &&
       json.containsKey('hate/threatening') &&
       json.containsKey('harassment') &&
       json.containsKey('harassment/threatening') &&
@@ -852,8 +852,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate'
       json.containsKey('sexual') &&
       json.containsKey('sexual/minors') &&
       json.containsKey('violence') &&
-      json.containsKey('violence/graphic'); } 
-CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hateThreatening, List<Harassment>? harassment, List<HarassmentThreatening>? harassmentThreatening, List<Illicit>? illicit, List<IllicitViolent>? illicitViolent, List<SelfHarm>? selfHarm, List<SelfHarmIntent>? selfHarmIntent, List<SelfHarmInstructions>? selfHarmInstructions, List<Sexual>? sexual, List<SexualMinors>? sexualMinors, List<Violence>? violence, List<ViolenceGraphic>? violenceGraphic, }) { return CategoryAppliedInputTypes(
+      json.containsKey('violence/graphic');}
+CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hateThreatening, List<Harassment>? harassment, List<HarassmentThreatening>? harassmentThreatening, List<Illicit>? illicit, List<IllicitViolent>? illicitViolent, List<SelfHarm>? selfHarm, List<SelfHarmIntent>? selfHarmIntent, List<SelfHarmInstructions>? selfHarmInstructions, List<Sexual>? sexual, List<SexualMinors>? sexualMinors, List<Violence>? violence, List<ViolenceGraphic>? violenceGraphic, }) {return CategoryAppliedInputTypes(
   hate: hate ?? this.hate,
   hateThreatening: hateThreatening ?? this.hateThreatening,
   harassment: harassment ?? this.harassment,
@@ -867,7 +867,7 @@ CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hat
   sexualMinors: sexualMinors ?? this.sexualMinors,
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CategoryAppliedInputTypes &&
           listEquals(hate, other.hate) &&
@@ -888,4 +888,4 @@ CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hat
 
 @override String toString() => 'CategoryAppliedInputTypes(\n  hate: $hate,\n  hateThreatening: $hateThreatening,\n  harassment: $harassment,\n  harassmentThreatening: $harassmentThreatening,\n  illicit: $illicit,\n  illicitViolent: $illicitViolent,\n  selfHarm: $selfHarm,\n  selfHarmIntent: $selfHarmIntent,\n  selfHarmInstructions: $selfHarmInstructions,\n  sexual: $sexual,\n  sexualMinors: $sexualMinors,\n  violence: $violence,\n  violenceGraphic: $violenceGraphic,\n)';
 
- }
+}

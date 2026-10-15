@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexDeleteVectorsByIdResponse {const VectorizeIndexDeleteVectorsByIdResponse({this.count, this.ids, });
 
-factory VectorizeIndexDeleteVectorsByIdResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexDeleteVectorsByIdResponse(
+factory VectorizeIndexDeleteVectorsByIdResponse.fromJson(Map<String, dynamic> json) {return VectorizeIndexDeleteVectorsByIdResponse(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   ids: (json['ids'] as List<dynamic>?)?.map((e) => VectorizeVectorIdentifier.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The count of the vectors successfully deleted.
 /// 
@@ -16,15 +16,15 @@ final int? count;
 /// Array of vector identifiers of the vectors that were successfully processed for deletion.
 final List<VectorizeVectorIdentifier>? ids;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   if (ids != null) 'ids': ids?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'ids'}.contains(key)); } 
-VectorizeIndexDeleteVectorsByIdResponse copyWith({int? Function()? count, List<VectorizeVectorIdentifier>? Function()? ids, }) { return VectorizeIndexDeleteVectorsByIdResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'ids'}.contains(key));}
+VectorizeIndexDeleteVectorsByIdResponse copyWith({int? Function()? count, List<VectorizeVectorIdentifier>? Function()? ids, }) {return VectorizeIndexDeleteVectorsByIdResponse(
   count: count != null ? count() : this.count,
   ids: ids != null ? ids() : this.ids,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexDeleteVectorsByIdResponse &&
           count == other.count &&
@@ -34,4 +34,4 @@ VectorizeIndexDeleteVectorsByIdResponse copyWith({int? Function()? count, List<V
 
 @override String toString() => 'VectorizeIndexDeleteVectorsByIdResponse(count: $count, ids: $ids)';
 
- }
+}

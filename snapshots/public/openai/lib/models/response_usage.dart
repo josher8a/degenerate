@@ -6,13 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseUsage {const ResponseUsage({required this.inputTokens, required this.inputTokensDetails, required this.outputTokens, required this.outputTokensDetails, required this.totalTokens, });
 
-factory ResponseUsage.fromJson(Map<String, dynamic> json) { return ResponseUsage(
+factory ResponseUsage.fromJson(Map<String, dynamic> json) {return ResponseUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),
   inputTokensDetails: ResponseUsageInputTokensDetails.fromJson(json['input_tokens_details'] as Map<String, dynamic>),
   outputTokens: (json['output_tokens'] as num).toInt(),
   outputTokensDetails: OutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>),
   totalTokens: (json['total_tokens'] as num).toInt(),
-); }
+);}
 
 /// The number of input tokens.
 final int inputTokens;
@@ -29,25 +29,25 @@ final OutputTokensDetails outputTokensDetails;
 /// The total number of tokens used.
 final int totalTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input_tokens': inputTokens,
   'input_tokens_details': inputTokensDetails.toJson(),
   'output_tokens': outputTokens,
   'output_tokens_details': outputTokensDetails.toJson(),
   'total_tokens': totalTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_tokens') && json['input_tokens'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('input_tokens_details') &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('output_tokens_details') &&
-      json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-ResponseUsage copyWith({int? inputTokens, ResponseUsageInputTokensDetails? inputTokensDetails, int? outputTokens, OutputTokensDetails? outputTokensDetails, int? totalTokens, }) { return ResponseUsage(
+      json.containsKey('total_tokens') && json['total_tokens'] is num;}
+ResponseUsage copyWith({int? inputTokens, ResponseUsageInputTokensDetails? inputTokensDetails, int? outputTokens, OutputTokensDetails? outputTokensDetails, int? totalTokens, }) {return ResponseUsage(
   inputTokens: inputTokens ?? this.inputTokens,
   inputTokensDetails: inputTokensDetails ?? this.inputTokensDetails,
   outputTokens: outputTokens ?? this.outputTokens,
   outputTokensDetails: outputTokensDetails ?? this.outputTokensDetails,
   totalTokens: totalTokens ?? this.totalTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseUsage &&
           inputTokens == other.inputTokens &&
@@ -60,4 +60,4 @@ ResponseUsage copyWith({int? inputTokens, ResponseUsageInputTokensDetails? input
 
 @override String toString() => 'ResponseUsage(inputTokens: $inputTokens, inputTokensDetails: $inputTokensDetails, outputTokens: $outputTokens, outputTokensDetails: $outputTokensDetails, totalTokens: $totalTokens)';
 
- }
+}

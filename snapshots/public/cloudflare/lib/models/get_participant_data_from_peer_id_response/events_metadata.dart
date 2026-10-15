@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/connection_info.dart';@immutable final class EventsMetadata {const EventsMetadata({this.connectionInfo});
 
-factory EventsMetadata.fromJson(Map<String, dynamic> json) { return EventsMetadata(
+factory EventsMetadata.fromJson(Map<String, dynamic> json) {return EventsMetadata(
   connectionInfo: json['connection_info'] != null ? ConnectionInfo.fromJson(json['connection_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ConnectionInfo? connectionInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (connectionInfo != null) 'connection_info': connectionInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connection_info'}.contains(key)); } 
-EventsMetadata copyWith({ConnectionInfo? Function()? connectionInfo}) { return EventsMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'connection_info'}.contains(key));}
+EventsMetadata copyWith({ConnectionInfo? Function()? connectionInfo}) {return EventsMetadata(
   connectionInfo: connectionInfo != null ? connectionInfo() : this.connectionInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EventsMetadata &&
           connectionInfo == other.connectionInfo;
@@ -24,4 +24,4 @@ EventsMetadata copyWith({ConnectionInfo? Function()? connectionInfo}) { return E
 
 @override String toString() => 'EventsMetadata(connectionInfo: $connectionInfo)';
 
- }
+}

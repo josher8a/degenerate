@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';import 'package:pub_cloudflare/models/zones_always_use_https.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites.dart';import 'package:pub_cloudflare/models/zones_browser_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_browser_check.dart';import 'package:pub_cloudflare/models/zones_bypass_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_by_device_type.dart';import 'package:pub_cloudflare/models/zones_cache_deception_armor.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/zones_cache_key_fields_value.dart';import 'package:pub_cloudflare/models/zones_cache_level.dart';import 'package:pub_cloudflare/models/zones_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';import 'package:pub_cloudflare/models/zones_disable_apps.dart';import 'package:pub_cloudflare/models/zones_disable_performance.dart';import 'package:pub_cloudflare/models/zones_disable_security.dart';import 'package:pub_cloudflare/models/zones_disable_zaraz.dart';import 'package:pub_cloudflare/models/zones_edge_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation.dart';import 'package:pub_cloudflare/models/zones_explicit_cache_control.dart';import 'package:pub_cloudflare/models/zones_forwarding_url.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';import 'package:pub_cloudflare/models/zones_host_header_override.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation.dart';import 'package:pub_cloudflare/models/zones_mirage.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru.dart';import 'package:pub_cloudflare/models/zones_polish.dart';import 'package:pub_cloudflare/models/zones_resolve_override.dart';import 'package:pub_cloudflare/models/zones_respect_strong_etag.dart';import 'package:pub_cloudflare/models/zones_response_buffering.dart';import 'package:pub_cloudflare/models/zones_rocket_loader.dart';import 'package:pub_cloudflare/models/zones_security_level.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache.dart';import 'package:pub_cloudflare/models/zones_ssl.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header.dart';import 'package:pub_cloudflare/models/zones_waf.dart';sealed class ZonesActions2Id {const ZonesActions2Id();
 
-factory ZonesActions2Id.fromJson(String json) { return switch (json) {
+factory ZonesActions2Id.fromJson(String json) {return switch (json) {
   'always_use_https' => alwaysUseHttps,
   'automatic_https_rewrites' => automaticHttpsRewrites,
   'browser_cache_ttl' => browserCacheTtl,
@@ -39,7 +39,7 @@ factory ZonesActions2Id.fromJson(String json) { return switch (json) {
   'true_client_ip_header' => trueClientIpHeader,
   'waf' => waf,
   _ => ZonesActions2Id$Unknown(json),
-}; }
+};}
 
 static const ZonesActions2Id alwaysUseHttps = ZonesActions2Id$alwaysUseHttps._();
 
@@ -116,7 +116,7 @@ String toJson() => value;
 
 bool get isUnknown => this is ZonesActions2Id$Unknown;
 
- }
+}
 @immutable final class ZonesActions2Id$alwaysUseHttps extends ZonesActions2Id {const ZonesActions2Id$alwaysUseHttps._();
 
 @override String get value => 'always_use_https';
@@ -127,7 +127,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(always_use_https)';
 
- }
+}
 @immutable final class ZonesActions2Id$automaticHttpsRewrites extends ZonesActions2Id {const ZonesActions2Id$automaticHttpsRewrites._();
 
 @override String get value => 'automatic_https_rewrites';
@@ -138,7 +138,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(automatic_https_rewrites)';
 
- }
+}
 @immutable final class ZonesActions2Id$browserCacheTtl extends ZonesActions2Id {const ZonesActions2Id$browserCacheTtl._();
 
 @override String get value => 'browser_cache_ttl';
@@ -149,7 +149,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(browser_cache_ttl)';
 
- }
+}
 @immutable final class ZonesActions2Id$browserCheck extends ZonesActions2Id {const ZonesActions2Id$browserCheck._();
 
 @override String get value => 'browser_check';
@@ -160,7 +160,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(browser_check)';
 
- }
+}
 @immutable final class ZonesActions2Id$bypassCacheOnCookie extends ZonesActions2Id {const ZonesActions2Id$bypassCacheOnCookie._();
 
 @override String get value => 'bypass_cache_on_cookie';
@@ -171,7 +171,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(bypass_cache_on_cookie)';
 
- }
+}
 @immutable final class ZonesActions2Id$cacheByDeviceType extends ZonesActions2Id {const ZonesActions2Id$cacheByDeviceType._();
 
 @override String get value => 'cache_by_device_type';
@@ -182,7 +182,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(cache_by_device_type)';
 
- }
+}
 @immutable final class ZonesActions2Id$cacheDeceptionArmor extends ZonesActions2Id {const ZonesActions2Id$cacheDeceptionArmor._();
 
 @override String get value => 'cache_deception_armor';
@@ -193,7 +193,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(cache_deception_armor)';
 
- }
+}
 @immutable final class ZonesActions2Id$cacheKeyFields extends ZonesActions2Id {const ZonesActions2Id$cacheKeyFields._();
 
 @override String get value => 'cache_key_fields';
@@ -204,7 +204,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(cache_key_fields)';
 
- }
+}
 @immutable final class ZonesActions2Id$cacheLevel extends ZonesActions2Id {const ZonesActions2Id$cacheLevel._();
 
 @override String get value => 'cache_level';
@@ -215,7 +215,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(cache_level)';
 
- }
+}
 @immutable final class ZonesActions2Id$cacheOnCookie extends ZonesActions2Id {const ZonesActions2Id$cacheOnCookie._();
 
 @override String get value => 'cache_on_cookie';
@@ -226,7 +226,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(cache_on_cookie)';
 
- }
+}
 @immutable final class ZonesActions2Id$cacheTtlByStatus extends ZonesActions2Id {const ZonesActions2Id$cacheTtlByStatus._();
 
 @override String get value => 'cache_ttl_by_status';
@@ -237,7 +237,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(cache_ttl_by_status)';
 
- }
+}
 @immutable final class ZonesActions2Id$disableApps extends ZonesActions2Id {const ZonesActions2Id$disableApps._();
 
 @override String get value => 'disable_apps';
@@ -248,7 +248,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(disable_apps)';
 
- }
+}
 @immutable final class ZonesActions2Id$disablePerformance extends ZonesActions2Id {const ZonesActions2Id$disablePerformance._();
 
 @override String get value => 'disable_performance';
@@ -259,7 +259,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(disable_performance)';
 
- }
+}
 @immutable final class ZonesActions2Id$disableSecurity extends ZonesActions2Id {const ZonesActions2Id$disableSecurity._();
 
 @override String get value => 'disable_security';
@@ -270,7 +270,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(disable_security)';
 
- }
+}
 @immutable final class ZonesActions2Id$disableZaraz extends ZonesActions2Id {const ZonesActions2Id$disableZaraz._();
 
 @override String get value => 'disable_zaraz';
@@ -281,7 +281,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(disable_zaraz)';
 
- }
+}
 @immutable final class ZonesActions2Id$edgeCacheTtl extends ZonesActions2Id {const ZonesActions2Id$edgeCacheTtl._();
 
 @override String get value => 'edge_cache_ttl';
@@ -292,7 +292,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(edge_cache_ttl)';
 
- }
+}
 @immutable final class ZonesActions2Id$emailObfuscation extends ZonesActions2Id {const ZonesActions2Id$emailObfuscation._();
 
 @override String get value => 'email_obfuscation';
@@ -303,7 +303,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(email_obfuscation)';
 
- }
+}
 @immutable final class ZonesActions2Id$explicitCacheControl extends ZonesActions2Id {const ZonesActions2Id$explicitCacheControl._();
 
 @override String get value => 'explicit_cache_control';
@@ -314,7 +314,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(explicit_cache_control)';
 
- }
+}
 @immutable final class ZonesActions2Id$forwardingUrl extends ZonesActions2Id {const ZonesActions2Id$forwardingUrl._();
 
 @override String get value => 'forwarding_url';
@@ -325,7 +325,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(forwarding_url)';
 
- }
+}
 @immutable final class ZonesActions2Id$hostHeaderOverride extends ZonesActions2Id {const ZonesActions2Id$hostHeaderOverride._();
 
 @override String get value => 'host_header_override';
@@ -336,7 +336,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(host_header_override)';
 
- }
+}
 @immutable final class ZonesActions2Id$ipGeolocation extends ZonesActions2Id {const ZonesActions2Id$ipGeolocation._();
 
 @override String get value => 'ip_geolocation';
@@ -347,7 +347,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(ip_geolocation)';
 
- }
+}
 @immutable final class ZonesActions2Id$mirage extends ZonesActions2Id {const ZonesActions2Id$mirage._();
 
 @override String get value => 'mirage';
@@ -358,7 +358,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(mirage)';
 
- }
+}
 @immutable final class ZonesActions2Id$opportunisticEncryption extends ZonesActions2Id {const ZonesActions2Id$opportunisticEncryption._();
 
 @override String get value => 'opportunistic_encryption';
@@ -369,7 +369,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(opportunistic_encryption)';
 
- }
+}
 @immutable final class ZonesActions2Id$originErrorPagePassThru extends ZonesActions2Id {const ZonesActions2Id$originErrorPagePassThru._();
 
 @override String get value => 'origin_error_page_pass_thru';
@@ -380,7 +380,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(origin_error_page_pass_thru)';
 
- }
+}
 @immutable final class ZonesActions2Id$polish extends ZonesActions2Id {const ZonesActions2Id$polish._();
 
 @override String get value => 'polish';
@@ -391,7 +391,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(polish)';
 
- }
+}
 @immutable final class ZonesActions2Id$resolveOverride extends ZonesActions2Id {const ZonesActions2Id$resolveOverride._();
 
 @override String get value => 'resolve_override';
@@ -402,7 +402,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(resolve_override)';
 
- }
+}
 @immutable final class ZonesActions2Id$respectStrongEtag extends ZonesActions2Id {const ZonesActions2Id$respectStrongEtag._();
 
 @override String get value => 'respect_strong_etag';
@@ -413,7 +413,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(respect_strong_etag)';
 
- }
+}
 @immutable final class ZonesActions2Id$responseBuffering extends ZonesActions2Id {const ZonesActions2Id$responseBuffering._();
 
 @override String get value => 'response_buffering';
@@ -424,7 +424,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(response_buffering)';
 
- }
+}
 @immutable final class ZonesActions2Id$rocketLoader extends ZonesActions2Id {const ZonesActions2Id$rocketLoader._();
 
 @override String get value => 'rocket_loader';
@@ -435,7 +435,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(rocket_loader)';
 
- }
+}
 @immutable final class ZonesActions2Id$securityLevel extends ZonesActions2Id {const ZonesActions2Id$securityLevel._();
 
 @override String get value => 'security_level';
@@ -446,7 +446,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(security_level)';
 
- }
+}
 @immutable final class ZonesActions2Id$sortQueryStringForCache extends ZonesActions2Id {const ZonesActions2Id$sortQueryStringForCache._();
 
 @override String get value => 'sort_query_string_for_cache';
@@ -457,7 +457,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(sort_query_string_for_cache)';
 
- }
+}
 @immutable final class ZonesActions2Id$ssl extends ZonesActions2Id {const ZonesActions2Id$ssl._();
 
 @override String get value => 'ssl';
@@ -468,7 +468,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(ssl)';
 
- }
+}
 @immutable final class ZonesActions2Id$trueClientIpHeader extends ZonesActions2Id {const ZonesActions2Id$trueClientIpHeader._();
 
 @override String get value => 'true_client_ip_header';
@@ -479,7 +479,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(true_client_ip_header)';
 
- }
+}
 @immutable final class ZonesActions2Id$waf extends ZonesActions2Id {const ZonesActions2Id$waf._();
 
 @override String get value => 'waf';
@@ -490,7 +490,7 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id(waf)';
 
- }
+}
 @immutable final class ZonesActions2Id$Unknown extends ZonesActions2Id {const ZonesActions2Id$Unknown(this.value);
 
 @override final String value;
@@ -501,11 +501,11 @@ bool get isUnknown => this is ZonesActions2Id$Unknown;
 
 @override String toString() => 'ZonesActions2Id($value)';
 
- }
+}
 sealed class ZonesActions2 {const ZonesActions2();
 
 /// Deserialize from JSON, dispatching on the `id` discriminator.
-factory ZonesActions2.fromJson(Map<String, dynamic> json) { return switch (json['id']) {
+factory ZonesActions2.fromJson(Map<String, dynamic> json) {return switch (json['id']) {
   'always_use_https' => ZonesActions2AlwaysUseHttps.fromJson(json),
   'automatic_https_rewrites' => ZonesActions2AutomaticHttpsRewrites.fromJson(json),
   'browser_cache_ttl' => ZonesActions2BrowserCacheTtl.fromJson(json),
@@ -541,94 +541,94 @@ factory ZonesActions2.fromJson(Map<String, dynamic> json) { return switch (json[
   'true_client_ip_header' => ZonesActions2TrueClientIpHeader.fromJson(json),
   'waf' => ZonesActions2Waf.fromJson(json),
   _ => ZonesActions2$Unknown(json),
-}; }
+};}
 
 /// Build the `automatic_https_rewrites` variant.
-factory ZonesActions2.automaticHttpsRewrites({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites(id: ZonesAutomaticHttpsRewritesId.fromJson('automatic_https_rewrites'), value: value)); }
+factory ZonesActions2.automaticHttpsRewrites({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites(id: ZonesAutomaticHttpsRewritesId.fromJson('automatic_https_rewrites'), value: value));}
 
 /// Build the `browser_cache_ttl` variant.
-factory ZonesActions2.browserCacheTtl({int? value}) { return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl(id: ZonesBrowserCacheTtlId.fromJson('browser_cache_ttl'), value: value)); }
+factory ZonesActions2.browserCacheTtl({int? value}) {return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl(id: ZonesBrowserCacheTtlId.fromJson('browser_cache_ttl'), value: value));}
 
 /// Build the `browser_check` variant.
-factory ZonesActions2.browserCheck({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2BrowserCheck(ZonesBrowserCheck(id: ZonesBrowserCheckId.fromJson('browser_check'), value: value)); }
+factory ZonesActions2.browserCheck({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2BrowserCheck(ZonesBrowserCheck(id: ZonesBrowserCheckId.fromJson('browser_check'), value: value));}
 
 /// Build the `bypass_cache_on_cookie` variant.
-factory ZonesActions2.bypassCacheOnCookie({String? value}) { return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie(id: ZonesBypassCacheOnCookieId.fromJson('bypass_cache_on_cookie'), value: value)); }
+factory ZonesActions2.bypassCacheOnCookie({String? value}) {return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie(id: ZonesBypassCacheOnCookieId.fromJson('bypass_cache_on_cookie'), value: value));}
 
 /// Build the `cache_by_device_type` variant.
-factory ZonesActions2.cacheByDeviceType({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2CacheByDeviceType(ZonesCacheByDeviceType(id: ZonesCacheByDeviceTypeId.fromJson('cache_by_device_type'), value: value)); }
+factory ZonesActions2.cacheByDeviceType({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2CacheByDeviceType(ZonesCacheByDeviceType(id: ZonesCacheByDeviceTypeId.fromJson('cache_by_device_type'), value: value));}
 
 /// Build the `cache_deception_armor` variant.
-factory ZonesActions2.cacheDeceptionArmor({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2CacheDeceptionArmor(ZonesCacheDeceptionArmor(id: ZonesCacheDeceptionArmorId.fromJson('cache_deception_armor'), value: value)); }
+factory ZonesActions2.cacheDeceptionArmor({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2CacheDeceptionArmor(ZonesCacheDeceptionArmor(id: ZonesCacheDeceptionArmorId.fromJson('cache_deception_armor'), value: value));}
 
 /// Build the `cache_key_fields` variant.
-factory ZonesActions2.cacheKeyFields({ZonesCacheKeyFieldsValue? value}) { return ZonesActions2CacheKeyFields(ZonesCacheKeyFields(id: ZonesCacheKeyFieldsId.fromJson('cache_key_fields'), value: value)); }
+factory ZonesActions2.cacheKeyFields({ZonesCacheKeyFieldsValue? value}) {return ZonesActions2CacheKeyFields(ZonesCacheKeyFields(id: ZonesCacheKeyFieldsId.fromJson('cache_key_fields'), value: value));}
 
 /// Build the `cache_level` variant.
-factory ZonesActions2.cacheLevel({ZonesCacheLevelValue2? value}) { return ZonesActions2CacheLevel(ZonesCacheLevel(id: ZonesCacheLevelId.fromJson('cache_level'), value: value)); }
+factory ZonesActions2.cacheLevel({ZonesCacheLevelValue2? value}) {return ZonesActions2CacheLevel(ZonesCacheLevel(id: ZonesCacheLevelId.fromJson('cache_level'), value: value));}
 
 /// Build the `cache_on_cookie` variant.
-factory ZonesActions2.cacheOnCookie({String? value}) { return ZonesActions2CacheOnCookie(ZonesCacheOnCookie(id: ZonesCacheOnCookieId.fromJson('cache_on_cookie'), value: value)); }
+factory ZonesActions2.cacheOnCookie({String? value}) {return ZonesActions2CacheOnCookie(ZonesCacheOnCookie(id: ZonesCacheOnCookieId.fromJson('cache_on_cookie'), value: value));}
 
 /// Build the `cache_ttl_by_status` variant.
-factory ZonesActions2.cacheTtlByStatus({Map<String,ValueValue>? value}) { return ZonesActions2CacheTtlByStatus(ZonesCacheTtlByStatus(id: ZonesCacheTtlByStatusId.fromJson('cache_ttl_by_status'), value: value)); }
+factory ZonesActions2.cacheTtlByStatus({Map<String,ValueValue>? value}) {return ZonesActions2CacheTtlByStatus(ZonesCacheTtlByStatus(id: ZonesCacheTtlByStatusId.fromJson('cache_ttl_by_status'), value: value));}
 
 /// Build the `edge_cache_ttl` variant.
-factory ZonesActions2.edgeCacheTtl({int? value}) { return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl(id: ZonesEdgeCacheTtlId.fromJson('edge_cache_ttl'), value: value)); }
+factory ZonesActions2.edgeCacheTtl({int? value}) {return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl(id: ZonesEdgeCacheTtlId.fromJson('edge_cache_ttl'), value: value));}
 
 /// Build the `email_obfuscation` variant.
-factory ZonesActions2.emailObfuscation({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2EmailObfuscation(ZonesEmailObfuscation(id: ZonesEmailObfuscationId.fromJson('email_obfuscation'), value: value)); }
+factory ZonesActions2.emailObfuscation({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2EmailObfuscation(ZonesEmailObfuscation(id: ZonesEmailObfuscationId.fromJson('email_obfuscation'), value: value));}
 
 /// Build the `explicit_cache_control` variant.
-factory ZonesActions2.explicitCacheControl({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl(id: ZonesExplicitCacheControlId.fromJson('explicit_cache_control'), value: value)); }
+factory ZonesActions2.explicitCacheControl({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl(id: ZonesExplicitCacheControlId.fromJson('explicit_cache_control'), value: value));}
 
 /// Build the `forwarding_url` variant.
-factory ZonesActions2.forwardingUrl({ZonesForwardingUrlValue? value}) { return ZonesActions2ForwardingUrl(ZonesForwardingUrl(id: ZonesForwardingUrlId.fromJson('forwarding_url'), value: value)); }
+factory ZonesActions2.forwardingUrl({ZonesForwardingUrlValue? value}) {return ZonesActions2ForwardingUrl(ZonesForwardingUrl(id: ZonesForwardingUrlId.fromJson('forwarding_url'), value: value));}
 
 /// Build the `host_header_override` variant.
-factory ZonesActions2.hostHeaderOverride({String? value}) { return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride(id: ZonesHostHeaderOverrideId.fromJson('host_header_override'), value: value)); }
+factory ZonesActions2.hostHeaderOverride({String? value}) {return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride(id: ZonesHostHeaderOverrideId.fromJson('host_header_override'), value: value));}
 
 /// Build the `ip_geolocation` variant.
-factory ZonesActions2.ipGeolocation({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2IpGeolocation(ZonesIpGeolocation(id: ZonesIpGeolocationId.fromJson('ip_geolocation'), value: value)); }
+factory ZonesActions2.ipGeolocation({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2IpGeolocation(ZonesIpGeolocation(id: ZonesIpGeolocationId.fromJson('ip_geolocation'), value: value));}
 
 /// Build the `mirage` variant.
-factory ZonesActions2.mirage({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2Mirage(ZonesMirage(id: ZonesMirageId.fromJson('mirage'), value: value)); }
+factory ZonesActions2.mirage({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2Mirage(ZonesMirage(id: ZonesMirageId.fromJson('mirage'), value: value));}
 
 /// Build the `opportunistic_encryption` variant.
-factory ZonesActions2.opportunisticEncryption({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption(id: ZonesOpportunisticEncryptionId.fromJson('opportunistic_encryption'), value: value)); }
+factory ZonesActions2.opportunisticEncryption({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption(id: ZonesOpportunisticEncryptionId.fromJson('opportunistic_encryption'), value: value));}
 
 /// Build the `origin_error_page_pass_thru` variant.
-factory ZonesActions2.originErrorPagePassThru({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru(id: ZonesOriginErrorPagePassThruId.fromJson('origin_error_page_pass_thru'), value: value)); }
+factory ZonesActions2.originErrorPagePassThru({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru(id: ZonesOriginErrorPagePassThruId.fromJson('origin_error_page_pass_thru'), value: value));}
 
 /// Build the `polish` variant.
-factory ZonesActions2.polish({ZonesPolishValue2? value}) { return ZonesActions2Polish(ZonesPolish(id: ZonesPolishId.fromJson('polish'), value: value)); }
+factory ZonesActions2.polish({ZonesPolishValue2? value}) {return ZonesActions2Polish(ZonesPolish(id: ZonesPolishId.fromJson('polish'), value: value));}
 
 /// Build the `resolve_override` variant.
-factory ZonesActions2.resolveOverride({String? value}) { return ZonesActions2ResolveOverride(ZonesResolveOverride(id: ZonesResolveOverrideId.fromJson('resolve_override'), value: value)); }
+factory ZonesActions2.resolveOverride({String? value}) {return ZonesActions2ResolveOverride(ZonesResolveOverride(id: ZonesResolveOverrideId.fromJson('resolve_override'), value: value));}
 
 /// Build the `respect_strong_etag` variant.
-factory ZonesActions2.respectStrongEtag({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag(id: ZonesRespectStrongEtagId.fromJson('respect_strong_etag'), value: value)); }
+factory ZonesActions2.respectStrongEtag({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag(id: ZonesRespectStrongEtagId.fromJson('respect_strong_etag'), value: value));}
 
 /// Build the `response_buffering` variant.
-factory ZonesActions2.responseBuffering({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2ResponseBuffering(ZonesResponseBuffering(id: ZonesResponseBufferingId.fromJson('response_buffering'), value: value)); }
+factory ZonesActions2.responseBuffering({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2ResponseBuffering(ZonesResponseBuffering(id: ZonesResponseBufferingId.fromJson('response_buffering'), value: value));}
 
 /// Build the `rocket_loader` variant.
-factory ZonesActions2.rocketLoader({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2RocketLoader(ZonesRocketLoader(id: ZonesRocketLoaderId.fromJson('rocket_loader'), value: value)); }
+factory ZonesActions2.rocketLoader({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2RocketLoader(ZonesRocketLoader(id: ZonesRocketLoaderId.fromJson('rocket_loader'), value: value));}
 
 /// Build the `security_level` variant.
-factory ZonesActions2.securityLevel({ZonesSecurityLevelValue2? value}) { return ZonesActions2SecurityLevel(ZonesSecurityLevel(id: ZonesSecurityLevelId.fromJson('security_level'), value: value)); }
+factory ZonesActions2.securityLevel({ZonesSecurityLevelValue2? value}) {return ZonesActions2SecurityLevel(ZonesSecurityLevel(id: ZonesSecurityLevelId.fromJson('security_level'), value: value));}
 
 /// Build the `sort_query_string_for_cache` variant.
-factory ZonesActions2.sortQueryStringForCache({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache(id: ZonesSortQueryStringForCacheId.fromJson('sort_query_string_for_cache'), value: value)); }
+factory ZonesActions2.sortQueryStringForCache({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache(id: ZonesSortQueryStringForCacheId.fromJson('sort_query_string_for_cache'), value: value));}
 
 /// Build the `ssl` variant.
-factory ZonesActions2.ssl({ZonesSslValue2? value}) { return ZonesActions2Ssl(ZonesSsl(id: ZonesSslId.fromJson('ssl'), value: value)); }
+factory ZonesActions2.ssl({ZonesSslValue2? value}) {return ZonesActions2Ssl(ZonesSsl(id: ZonesSslId.fromJson('ssl'), value: value));}
 
 /// Build the `true_client_ip_header` variant.
-factory ZonesActions2.trueClientIpHeader({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader(id: ZonesTrueClientIpHeaderId.fromJson('true_client_ip_header'), value: value)); }
+factory ZonesActions2.trueClientIpHeader({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader(id: ZonesTrueClientIpHeaderId.fromJson('true_client_ip_header'), value: value));}
 
 /// Build the `waf` variant.
-factory ZonesActions2.waf({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2Waf(ZonesWaf(id: ZonesWafId.fromJson('waf'), value: value)); }
+factory ZonesActions2.waf({CacheRulesSmartTieredCachePatchValue? value}) {return ZonesActions2Waf(ZonesWaf(id: ZonesWafId.fromJson('waf'), value: value));}
 
 /// The discriminator value identifying this variant.
 ZonesActions2Id get id;
@@ -636,7 +636,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ZonesActions2$Unknown;
 
-R when<R>({required R Function(ZonesActions2AlwaysUseHttps) alwaysUseHttps, required R Function(ZonesActions2AutomaticHttpsRewrites) automaticHttpsRewrites, required R Function(ZonesActions2BrowserCacheTtl) browserCacheTtl, required R Function(ZonesActions2BrowserCheck) browserCheck, required R Function(ZonesActions2BypassCacheOnCookie) bypassCacheOnCookie, required R Function(ZonesActions2CacheByDeviceType) cacheByDeviceType, required R Function(ZonesActions2CacheDeceptionArmor) cacheDeceptionArmor, required R Function(ZonesActions2CacheKeyFields) cacheKeyFields, required R Function(ZonesActions2CacheLevel) cacheLevel, required R Function(ZonesActions2CacheOnCookie) cacheOnCookie, required R Function(ZonesActions2CacheTtlByStatus) cacheTtlByStatus, required R Function(ZonesActions2DisableApps) disableApps, required R Function(ZonesActions2DisablePerformance) disablePerformance, required R Function(ZonesActions2DisableSecurity) disableSecurity, required R Function(ZonesActions2DisableZaraz) disableZaraz, required R Function(ZonesActions2EdgeCacheTtl) edgeCacheTtl, required R Function(ZonesActions2EmailObfuscation) emailObfuscation, required R Function(ZonesActions2ExplicitCacheControl) explicitCacheControl, required R Function(ZonesActions2ForwardingUrl) forwardingUrl, required R Function(ZonesActions2HostHeaderOverride) hostHeaderOverride, required R Function(ZonesActions2IpGeolocation) ipGeolocation, required R Function(ZonesActions2Mirage) mirage, required R Function(ZonesActions2OpportunisticEncryption) opportunisticEncryption, required R Function(ZonesActions2OriginErrorPagePassThru) originErrorPagePassThru, required R Function(ZonesActions2Polish) polish, required R Function(ZonesActions2ResolveOverride) resolveOverride, required R Function(ZonesActions2RespectStrongEtag) respectStrongEtag, required R Function(ZonesActions2ResponseBuffering) responseBuffering, required R Function(ZonesActions2RocketLoader) rocketLoader, required R Function(ZonesActions2SecurityLevel) securityLevel, required R Function(ZonesActions2SortQueryStringForCache) sortQueryStringForCache, required R Function(ZonesActions2Ssl) ssl, required R Function(ZonesActions2TrueClientIpHeader) trueClientIpHeader, required R Function(ZonesActions2Waf) waf, required R Function(ZonesActions2$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ZonesActions2AlwaysUseHttps) alwaysUseHttps, required R Function(ZonesActions2AutomaticHttpsRewrites) automaticHttpsRewrites, required R Function(ZonesActions2BrowserCacheTtl) browserCacheTtl, required R Function(ZonesActions2BrowserCheck) browserCheck, required R Function(ZonesActions2BypassCacheOnCookie) bypassCacheOnCookie, required R Function(ZonesActions2CacheByDeviceType) cacheByDeviceType, required R Function(ZonesActions2CacheDeceptionArmor) cacheDeceptionArmor, required R Function(ZonesActions2CacheKeyFields) cacheKeyFields, required R Function(ZonesActions2CacheLevel) cacheLevel, required R Function(ZonesActions2CacheOnCookie) cacheOnCookie, required R Function(ZonesActions2CacheTtlByStatus) cacheTtlByStatus, required R Function(ZonesActions2DisableApps) disableApps, required R Function(ZonesActions2DisablePerformance) disablePerformance, required R Function(ZonesActions2DisableSecurity) disableSecurity, required R Function(ZonesActions2DisableZaraz) disableZaraz, required R Function(ZonesActions2EdgeCacheTtl) edgeCacheTtl, required R Function(ZonesActions2EmailObfuscation) emailObfuscation, required R Function(ZonesActions2ExplicitCacheControl) explicitCacheControl, required R Function(ZonesActions2ForwardingUrl) forwardingUrl, required R Function(ZonesActions2HostHeaderOverride) hostHeaderOverride, required R Function(ZonesActions2IpGeolocation) ipGeolocation, required R Function(ZonesActions2Mirage) mirage, required R Function(ZonesActions2OpportunisticEncryption) opportunisticEncryption, required R Function(ZonesActions2OriginErrorPagePassThru) originErrorPagePassThru, required R Function(ZonesActions2Polish) polish, required R Function(ZonesActions2ResolveOverride) resolveOverride, required R Function(ZonesActions2RespectStrongEtag) respectStrongEtag, required R Function(ZonesActions2ResponseBuffering) responseBuffering, required R Function(ZonesActions2RocketLoader) rocketLoader, required R Function(ZonesActions2SecurityLevel) securityLevel, required R Function(ZonesActions2SortQueryStringForCache) sortQueryStringForCache, required R Function(ZonesActions2Ssl) ssl, required R Function(ZonesActions2TrueClientIpHeader) trueClientIpHeader, required R Function(ZonesActions2Waf) waf, required R Function(ZonesActions2$Unknown) unknown, }) {return switch (this) {
   final ZonesActions2AlwaysUseHttps v => alwaysUseHttps(v),
   final ZonesActions2AutomaticHttpsRewrites v => automaticHttpsRewrites(v),
   final ZonesActions2BrowserCacheTtl v => browserCacheTtl(v),
@@ -672,11 +672,11 @@ R when<R>({required R Function(ZonesActions2AlwaysUseHttps) alwaysUseHttps, requ
   final ZonesActions2TrueClientIpHeader v => trueClientIpHeader(v),
   final ZonesActions2Waf v => waf(v),
   final ZonesActions2$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class ZonesActions2AlwaysUseHttps extends ZonesActions2 {const ZonesActions2AlwaysUseHttps(this.zonesAlwaysUseHttps);
 
-factory ZonesActions2AlwaysUseHttps.fromJson(Map<String, dynamic> json) { return ZonesActions2AlwaysUseHttps(ZonesAlwaysUseHttps.fromJson(json)); }
+factory ZonesActions2AlwaysUseHttps.fromJson(Map<String, dynamic> json) {return ZonesActions2AlwaysUseHttps(ZonesAlwaysUseHttps.fromJson(json));}
 
 final ZonesAlwaysUseHttps zonesAlwaysUseHttps;
 
@@ -684,7 +684,7 @@ final ZonesAlwaysUseHttps zonesAlwaysUseHttps;
 
 @override Map<String, dynamic> toJson() => {...zonesAlwaysUseHttps.toJson(), 'id': id.toJson()};
 
-ZonesActions2AlwaysUseHttps copyWith({ZonesAlwaysUseHttps? zonesAlwaysUseHttps}) { return ZonesActions2AlwaysUseHttps(zonesAlwaysUseHttps ?? this.zonesAlwaysUseHttps); } 
+ZonesActions2AlwaysUseHttps copyWith({ZonesAlwaysUseHttps? zonesAlwaysUseHttps}) {return ZonesActions2AlwaysUseHttps(zonesAlwaysUseHttps ?? this.zonesAlwaysUseHttps);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2AlwaysUseHttps && zonesAlwaysUseHttps == other.zonesAlwaysUseHttps;
 
@@ -692,10 +692,10 @@ ZonesActions2AlwaysUseHttps copyWith({ZonesAlwaysUseHttps? zonesAlwaysUseHttps})
 
 @override String toString() => 'ZonesActions2.alwaysUseHttps($zonesAlwaysUseHttps)';
 
- }
+}
 @immutable final class ZonesActions2AutomaticHttpsRewrites extends ZonesActions2 {const ZonesActions2AutomaticHttpsRewrites(this.zonesAutomaticHttpsRewrites);
 
-factory ZonesActions2AutomaticHttpsRewrites.fromJson(Map<String, dynamic> json) { return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites.fromJson(json)); }
+factory ZonesActions2AutomaticHttpsRewrites.fromJson(Map<String, dynamic> json) {return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites.fromJson(json));}
 
 final ZonesAutomaticHttpsRewrites zonesAutomaticHttpsRewrites;
 
@@ -703,9 +703,9 @@ final ZonesAutomaticHttpsRewrites zonesAutomaticHttpsRewrites;
 
 @override Map<String, dynamic> toJson() => {...zonesAutomaticHttpsRewrites.toJson(), 'id': id.toJson()};
 
-ZonesActions2AutomaticHttpsRewrites copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites.copyWith(
+ZonesActions2AutomaticHttpsRewrites copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2AutomaticHttpsRewrites && zonesAutomaticHttpsRewrites == other.zonesAutomaticHttpsRewrites;
 
@@ -713,10 +713,10 @@ ZonesActions2AutomaticHttpsRewrites copyWith({CacheRulesSmartTieredCachePatchVal
 
 @override String toString() => 'ZonesActions2.automaticHttpsRewrites($zonesAutomaticHttpsRewrites)';
 
- }
+}
 @immutable final class ZonesActions2BrowserCacheTtl extends ZonesActions2 {const ZonesActions2BrowserCacheTtl(this.zonesBrowserCacheTtl);
 
-factory ZonesActions2BrowserCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl.fromJson(json)); }
+factory ZonesActions2BrowserCacheTtl.fromJson(Map<String, dynamic> json) {return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl.fromJson(json));}
 
 final ZonesBrowserCacheTtl zonesBrowserCacheTtl;
 
@@ -724,9 +724,9 @@ final ZonesBrowserCacheTtl zonesBrowserCacheTtl;
 
 @override Map<String, dynamic> toJson() => {...zonesBrowserCacheTtl.toJson(), 'id': id.toJson()};
 
-ZonesActions2BrowserCacheTtl copyWith({int? Function()? value}) { return ZonesActions2BrowserCacheTtl(zonesBrowserCacheTtl.copyWith(
+ZonesActions2BrowserCacheTtl copyWith({int? Function()? value}) {return ZonesActions2BrowserCacheTtl(zonesBrowserCacheTtl.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2BrowserCacheTtl && zonesBrowserCacheTtl == other.zonesBrowserCacheTtl;
 
@@ -734,10 +734,10 @@ ZonesActions2BrowserCacheTtl copyWith({int? Function()? value}) { return ZonesAc
 
 @override String toString() => 'ZonesActions2.browserCacheTtl($zonesBrowserCacheTtl)';
 
- }
+}
 @immutable final class ZonesActions2BrowserCheck extends ZonesActions2 {const ZonesActions2BrowserCheck(this.zonesBrowserCheck);
 
-factory ZonesActions2BrowserCheck.fromJson(Map<String, dynamic> json) { return ZonesActions2BrowserCheck(ZonesBrowserCheck.fromJson(json)); }
+factory ZonesActions2BrowserCheck.fromJson(Map<String, dynamic> json) {return ZonesActions2BrowserCheck(ZonesBrowserCheck.fromJson(json));}
 
 final ZonesBrowserCheck zonesBrowserCheck;
 
@@ -745,9 +745,9 @@ final ZonesBrowserCheck zonesBrowserCheck;
 
 @override Map<String, dynamic> toJson() => {...zonesBrowserCheck.toJson(), 'id': id.toJson()};
 
-ZonesActions2BrowserCheck copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2BrowserCheck(zonesBrowserCheck.copyWith(
+ZonesActions2BrowserCheck copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2BrowserCheck(zonesBrowserCheck.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2BrowserCheck && zonesBrowserCheck == other.zonesBrowserCheck;
 
@@ -755,10 +755,10 @@ ZonesActions2BrowserCheck copyWith({CacheRulesSmartTieredCachePatchValue? Functi
 
 @override String toString() => 'ZonesActions2.browserCheck($zonesBrowserCheck)';
 
- }
+}
 @immutable final class ZonesActions2BypassCacheOnCookie extends ZonesActions2 {const ZonesActions2BypassCacheOnCookie(this.zonesBypassCacheOnCookie);
 
-factory ZonesActions2BypassCacheOnCookie.fromJson(Map<String, dynamic> json) { return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie.fromJson(json)); }
+factory ZonesActions2BypassCacheOnCookie.fromJson(Map<String, dynamic> json) {return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie.fromJson(json));}
 
 final ZonesBypassCacheOnCookie zonesBypassCacheOnCookie;
 
@@ -766,9 +766,9 @@ final ZonesBypassCacheOnCookie zonesBypassCacheOnCookie;
 
 @override Map<String, dynamic> toJson() => {...zonesBypassCacheOnCookie.toJson(), 'id': id.toJson()};
 
-ZonesActions2BypassCacheOnCookie copyWith({String? Function()? value}) { return ZonesActions2BypassCacheOnCookie(zonesBypassCacheOnCookie.copyWith(
+ZonesActions2BypassCacheOnCookie copyWith({String? Function()? value}) {return ZonesActions2BypassCacheOnCookie(zonesBypassCacheOnCookie.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2BypassCacheOnCookie && zonesBypassCacheOnCookie == other.zonesBypassCacheOnCookie;
 
@@ -776,10 +776,10 @@ ZonesActions2BypassCacheOnCookie copyWith({String? Function()? value}) { return 
 
 @override String toString() => 'ZonesActions2.bypassCacheOnCookie($zonesBypassCacheOnCookie)';
 
- }
+}
 @immutable final class ZonesActions2CacheByDeviceType extends ZonesActions2 {const ZonesActions2CacheByDeviceType(this.zonesCacheByDeviceType);
 
-factory ZonesActions2CacheByDeviceType.fromJson(Map<String, dynamic> json) { return ZonesActions2CacheByDeviceType(ZonesCacheByDeviceType.fromJson(json)); }
+factory ZonesActions2CacheByDeviceType.fromJson(Map<String, dynamic> json) {return ZonesActions2CacheByDeviceType(ZonesCacheByDeviceType.fromJson(json));}
 
 final ZonesCacheByDeviceType zonesCacheByDeviceType;
 
@@ -787,9 +787,9 @@ final ZonesCacheByDeviceType zonesCacheByDeviceType;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheByDeviceType.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheByDeviceType copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2CacheByDeviceType(zonesCacheByDeviceType.copyWith(
+ZonesActions2CacheByDeviceType copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2CacheByDeviceType(zonesCacheByDeviceType.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2CacheByDeviceType && zonesCacheByDeviceType == other.zonesCacheByDeviceType;
 
@@ -797,10 +797,10 @@ ZonesActions2CacheByDeviceType copyWith({CacheRulesSmartTieredCachePatchValue? F
 
 @override String toString() => 'ZonesActions2.cacheByDeviceType($zonesCacheByDeviceType)';
 
- }
+}
 @immutable final class ZonesActions2CacheDeceptionArmor extends ZonesActions2 {const ZonesActions2CacheDeceptionArmor(this.zonesCacheDeceptionArmor);
 
-factory ZonesActions2CacheDeceptionArmor.fromJson(Map<String, dynamic> json) { return ZonesActions2CacheDeceptionArmor(ZonesCacheDeceptionArmor.fromJson(json)); }
+factory ZonesActions2CacheDeceptionArmor.fromJson(Map<String, dynamic> json) {return ZonesActions2CacheDeceptionArmor(ZonesCacheDeceptionArmor.fromJson(json));}
 
 final ZonesCacheDeceptionArmor zonesCacheDeceptionArmor;
 
@@ -808,9 +808,9 @@ final ZonesCacheDeceptionArmor zonesCacheDeceptionArmor;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheDeceptionArmor.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheDeceptionArmor copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2CacheDeceptionArmor(zonesCacheDeceptionArmor.copyWith(
+ZonesActions2CacheDeceptionArmor copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2CacheDeceptionArmor(zonesCacheDeceptionArmor.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2CacheDeceptionArmor && zonesCacheDeceptionArmor == other.zonesCacheDeceptionArmor;
 
@@ -818,10 +818,10 @@ ZonesActions2CacheDeceptionArmor copyWith({CacheRulesSmartTieredCachePatchValue?
 
 @override String toString() => 'ZonesActions2.cacheDeceptionArmor($zonesCacheDeceptionArmor)';
 
- }
+}
 @immutable final class ZonesActions2CacheKeyFields extends ZonesActions2 {const ZonesActions2CacheKeyFields(this.zonesCacheKeyFields);
 
-factory ZonesActions2CacheKeyFields.fromJson(Map<String, dynamic> json) { return ZonesActions2CacheKeyFields(ZonesCacheKeyFields.fromJson(json)); }
+factory ZonesActions2CacheKeyFields.fromJson(Map<String, dynamic> json) {return ZonesActions2CacheKeyFields(ZonesCacheKeyFields.fromJson(json));}
 
 final ZonesCacheKeyFields zonesCacheKeyFields;
 
@@ -829,9 +829,9 @@ final ZonesCacheKeyFields zonesCacheKeyFields;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheKeyFields.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheKeyFields copyWith({ZonesCacheKeyFieldsValue? Function()? value}) { return ZonesActions2CacheKeyFields(zonesCacheKeyFields.copyWith(
+ZonesActions2CacheKeyFields copyWith({ZonesCacheKeyFieldsValue? Function()? value}) {return ZonesActions2CacheKeyFields(zonesCacheKeyFields.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2CacheKeyFields && zonesCacheKeyFields == other.zonesCacheKeyFields;
 
@@ -839,10 +839,10 @@ ZonesActions2CacheKeyFields copyWith({ZonesCacheKeyFieldsValue? Function()? valu
 
 @override String toString() => 'ZonesActions2.cacheKeyFields($zonesCacheKeyFields)';
 
- }
+}
 @immutable final class ZonesActions2CacheLevel extends ZonesActions2 {const ZonesActions2CacheLevel(this.zonesCacheLevel);
 
-factory ZonesActions2CacheLevel.fromJson(Map<String, dynamic> json) { return ZonesActions2CacheLevel(ZonesCacheLevel.fromJson(json)); }
+factory ZonesActions2CacheLevel.fromJson(Map<String, dynamic> json) {return ZonesActions2CacheLevel(ZonesCacheLevel.fromJson(json));}
 
 final ZonesCacheLevel zonesCacheLevel;
 
@@ -850,9 +850,9 @@ final ZonesCacheLevel zonesCacheLevel;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheLevel.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue2? Function()? value}) { return ZonesActions2CacheLevel(zonesCacheLevel.copyWith(
+ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue2? Function()? value}) {return ZonesActions2CacheLevel(zonesCacheLevel.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2CacheLevel && zonesCacheLevel == other.zonesCacheLevel;
 
@@ -860,10 +860,10 @@ ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue2? Function()? value}) { r
 
 @override String toString() => 'ZonesActions2.cacheLevel($zonesCacheLevel)';
 
- }
+}
 @immutable final class ZonesActions2CacheOnCookie extends ZonesActions2 {const ZonesActions2CacheOnCookie(this.zonesCacheOnCookie);
 
-factory ZonesActions2CacheOnCookie.fromJson(Map<String, dynamic> json) { return ZonesActions2CacheOnCookie(ZonesCacheOnCookie.fromJson(json)); }
+factory ZonesActions2CacheOnCookie.fromJson(Map<String, dynamic> json) {return ZonesActions2CacheOnCookie(ZonesCacheOnCookie.fromJson(json));}
 
 final ZonesCacheOnCookie zonesCacheOnCookie;
 
@@ -871,9 +871,9 @@ final ZonesCacheOnCookie zonesCacheOnCookie;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheOnCookie.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheOnCookie copyWith({String? Function()? value}) { return ZonesActions2CacheOnCookie(zonesCacheOnCookie.copyWith(
+ZonesActions2CacheOnCookie copyWith({String? Function()? value}) {return ZonesActions2CacheOnCookie(zonesCacheOnCookie.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2CacheOnCookie && zonesCacheOnCookie == other.zonesCacheOnCookie;
 
@@ -881,10 +881,10 @@ ZonesActions2CacheOnCookie copyWith({String? Function()? value}) { return ZonesA
 
 @override String toString() => 'ZonesActions2.cacheOnCookie($zonesCacheOnCookie)';
 
- }
+}
 @immutable final class ZonesActions2CacheTtlByStatus extends ZonesActions2 {const ZonesActions2CacheTtlByStatus(this.zonesCacheTtlByStatus);
 
-factory ZonesActions2CacheTtlByStatus.fromJson(Map<String, dynamic> json) { return ZonesActions2CacheTtlByStatus(ZonesCacheTtlByStatus.fromJson(json)); }
+factory ZonesActions2CacheTtlByStatus.fromJson(Map<String, dynamic> json) {return ZonesActions2CacheTtlByStatus(ZonesCacheTtlByStatus.fromJson(json));}
 
 final ZonesCacheTtlByStatus zonesCacheTtlByStatus;
 
@@ -892,9 +892,9 @@ final ZonesCacheTtlByStatus zonesCacheTtlByStatus;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheTtlByStatus.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheTtlByStatus copyWith({Map<String, ValueValue>? Function()? value}) { return ZonesActions2CacheTtlByStatus(zonesCacheTtlByStatus.copyWith(
+ZonesActions2CacheTtlByStatus copyWith({Map<String, ValueValue>? Function()? value}) {return ZonesActions2CacheTtlByStatus(zonesCacheTtlByStatus.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2CacheTtlByStatus && zonesCacheTtlByStatus == other.zonesCacheTtlByStatus;
 
@@ -902,10 +902,10 @@ ZonesActions2CacheTtlByStatus copyWith({Map<String, ValueValue>? Function()? val
 
 @override String toString() => 'ZonesActions2.cacheTtlByStatus($zonesCacheTtlByStatus)';
 
- }
+}
 @immutable final class ZonesActions2DisableApps extends ZonesActions2 {const ZonesActions2DisableApps(this.zonesDisableApps);
 
-factory ZonesActions2DisableApps.fromJson(Map<String, dynamic> json) { return ZonesActions2DisableApps(ZonesDisableApps.fromJson(json)); }
+factory ZonesActions2DisableApps.fromJson(Map<String, dynamic> json) {return ZonesActions2DisableApps(ZonesDisableApps.fromJson(json));}
 
 final ZonesDisableApps zonesDisableApps;
 
@@ -913,7 +913,7 @@ final ZonesDisableApps zonesDisableApps;
 
 @override Map<String, dynamic> toJson() => {...zonesDisableApps.toJson(), 'id': id.toJson()};
 
-ZonesActions2DisableApps copyWith({ZonesDisableApps? zonesDisableApps}) { return ZonesActions2DisableApps(zonesDisableApps ?? this.zonesDisableApps); } 
+ZonesActions2DisableApps copyWith({ZonesDisableApps? zonesDisableApps}) {return ZonesActions2DisableApps(zonesDisableApps ?? this.zonesDisableApps);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2DisableApps && zonesDisableApps == other.zonesDisableApps;
 
@@ -921,10 +921,10 @@ ZonesActions2DisableApps copyWith({ZonesDisableApps? zonesDisableApps}) { return
 
 @override String toString() => 'ZonesActions2.disableApps($zonesDisableApps)';
 
- }
+}
 @immutable final class ZonesActions2DisablePerformance extends ZonesActions2 {const ZonesActions2DisablePerformance(this.zonesDisablePerformance);
 
-factory ZonesActions2DisablePerformance.fromJson(Map<String, dynamic> json) { return ZonesActions2DisablePerformance(ZonesDisablePerformance.fromJson(json)); }
+factory ZonesActions2DisablePerformance.fromJson(Map<String, dynamic> json) {return ZonesActions2DisablePerformance(ZonesDisablePerformance.fromJson(json));}
 
 final ZonesDisablePerformance zonesDisablePerformance;
 
@@ -932,7 +932,7 @@ final ZonesDisablePerformance zonesDisablePerformance;
 
 @override Map<String, dynamic> toJson() => {...zonesDisablePerformance.toJson(), 'id': id.toJson()};
 
-ZonesActions2DisablePerformance copyWith({ZonesDisablePerformance? zonesDisablePerformance}) { return ZonesActions2DisablePerformance(zonesDisablePerformance ?? this.zonesDisablePerformance); } 
+ZonesActions2DisablePerformance copyWith({ZonesDisablePerformance? zonesDisablePerformance}) {return ZonesActions2DisablePerformance(zonesDisablePerformance ?? this.zonesDisablePerformance);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2DisablePerformance && zonesDisablePerformance == other.zonesDisablePerformance;
 
@@ -940,10 +940,10 @@ ZonesActions2DisablePerformance copyWith({ZonesDisablePerformance? zonesDisableP
 
 @override String toString() => 'ZonesActions2.disablePerformance($zonesDisablePerformance)';
 
- }
+}
 @immutable final class ZonesActions2DisableSecurity extends ZonesActions2 {const ZonesActions2DisableSecurity(this.zonesDisableSecurity);
 
-factory ZonesActions2DisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesActions2DisableSecurity(ZonesDisableSecurity.fromJson(json)); }
+factory ZonesActions2DisableSecurity.fromJson(Map<String, dynamic> json) {return ZonesActions2DisableSecurity(ZonesDisableSecurity.fromJson(json));}
 
 final ZonesDisableSecurity zonesDisableSecurity;
 
@@ -951,7 +951,7 @@ final ZonesDisableSecurity zonesDisableSecurity;
 
 @override Map<String, dynamic> toJson() => {...zonesDisableSecurity.toJson(), 'id': id.toJson()};
 
-ZonesActions2DisableSecurity copyWith({ZonesDisableSecurity? zonesDisableSecurity}) { return ZonesActions2DisableSecurity(zonesDisableSecurity ?? this.zonesDisableSecurity); } 
+ZonesActions2DisableSecurity copyWith({ZonesDisableSecurity? zonesDisableSecurity}) {return ZonesActions2DisableSecurity(zonesDisableSecurity ?? this.zonesDisableSecurity);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2DisableSecurity && zonesDisableSecurity == other.zonesDisableSecurity;
 
@@ -959,10 +959,10 @@ ZonesActions2DisableSecurity copyWith({ZonesDisableSecurity? zonesDisableSecurit
 
 @override String toString() => 'ZonesActions2.disableSecurity($zonesDisableSecurity)';
 
- }
+}
 @immutable final class ZonesActions2DisableZaraz extends ZonesActions2 {const ZonesActions2DisableZaraz(this.zonesDisableZaraz);
 
-factory ZonesActions2DisableZaraz.fromJson(Map<String, dynamic> json) { return ZonesActions2DisableZaraz(ZonesDisableZaraz.fromJson(json)); }
+factory ZonesActions2DisableZaraz.fromJson(Map<String, dynamic> json) {return ZonesActions2DisableZaraz(ZonesDisableZaraz.fromJson(json));}
 
 final ZonesDisableZaraz zonesDisableZaraz;
 
@@ -970,7 +970,7 @@ final ZonesDisableZaraz zonesDisableZaraz;
 
 @override Map<String, dynamic> toJson() => {...zonesDisableZaraz.toJson(), 'id': id.toJson()};
 
-ZonesActions2DisableZaraz copyWith({ZonesDisableZaraz? zonesDisableZaraz}) { return ZonesActions2DisableZaraz(zonesDisableZaraz ?? this.zonesDisableZaraz); } 
+ZonesActions2DisableZaraz copyWith({ZonesDisableZaraz? zonesDisableZaraz}) {return ZonesActions2DisableZaraz(zonesDisableZaraz ?? this.zonesDisableZaraz);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2DisableZaraz && zonesDisableZaraz == other.zonesDisableZaraz;
 
@@ -978,10 +978,10 @@ ZonesActions2DisableZaraz copyWith({ZonesDisableZaraz? zonesDisableZaraz}) { ret
 
 @override String toString() => 'ZonesActions2.disableZaraz($zonesDisableZaraz)';
 
- }
+}
 @immutable final class ZonesActions2EdgeCacheTtl extends ZonesActions2 {const ZonesActions2EdgeCacheTtl(this.zonesEdgeCacheTtl);
 
-factory ZonesActions2EdgeCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl.fromJson(json)); }
+factory ZonesActions2EdgeCacheTtl.fromJson(Map<String, dynamic> json) {return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl.fromJson(json));}
 
 final ZonesEdgeCacheTtl zonesEdgeCacheTtl;
 
@@ -989,9 +989,9 @@ final ZonesEdgeCacheTtl zonesEdgeCacheTtl;
 
 @override Map<String, dynamic> toJson() => {...zonesEdgeCacheTtl.toJson(), 'id': id.toJson()};
 
-ZonesActions2EdgeCacheTtl copyWith({int? Function()? value}) { return ZonesActions2EdgeCacheTtl(zonesEdgeCacheTtl.copyWith(
+ZonesActions2EdgeCacheTtl copyWith({int? Function()? value}) {return ZonesActions2EdgeCacheTtl(zonesEdgeCacheTtl.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2EdgeCacheTtl && zonesEdgeCacheTtl == other.zonesEdgeCacheTtl;
 
@@ -999,10 +999,10 @@ ZonesActions2EdgeCacheTtl copyWith({int? Function()? value}) { return ZonesActio
 
 @override String toString() => 'ZonesActions2.edgeCacheTtl($zonesEdgeCacheTtl)';
 
- }
+}
 @immutable final class ZonesActions2EmailObfuscation extends ZonesActions2 {const ZonesActions2EmailObfuscation(this.zonesEmailObfuscation);
 
-factory ZonesActions2EmailObfuscation.fromJson(Map<String, dynamic> json) { return ZonesActions2EmailObfuscation(ZonesEmailObfuscation.fromJson(json)); }
+factory ZonesActions2EmailObfuscation.fromJson(Map<String, dynamic> json) {return ZonesActions2EmailObfuscation(ZonesEmailObfuscation.fromJson(json));}
 
 final ZonesEmailObfuscation zonesEmailObfuscation;
 
@@ -1010,9 +1010,9 @@ final ZonesEmailObfuscation zonesEmailObfuscation;
 
 @override Map<String, dynamic> toJson() => {...zonesEmailObfuscation.toJson(), 'id': id.toJson()};
 
-ZonesActions2EmailObfuscation copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2EmailObfuscation(zonesEmailObfuscation.copyWith(
+ZonesActions2EmailObfuscation copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2EmailObfuscation(zonesEmailObfuscation.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2EmailObfuscation && zonesEmailObfuscation == other.zonesEmailObfuscation;
 
@@ -1020,10 +1020,10 @@ ZonesActions2EmailObfuscation copyWith({CacheRulesSmartTieredCachePatchValue? Fu
 
 @override String toString() => 'ZonesActions2.emailObfuscation($zonesEmailObfuscation)';
 
- }
+}
 @immutable final class ZonesActions2ExplicitCacheControl extends ZonesActions2 {const ZonesActions2ExplicitCacheControl(this.zonesExplicitCacheControl);
 
-factory ZonesActions2ExplicitCacheControl.fromJson(Map<String, dynamic> json) { return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl.fromJson(json)); }
+factory ZonesActions2ExplicitCacheControl.fromJson(Map<String, dynamic> json) {return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl.fromJson(json));}
 
 final ZonesExplicitCacheControl zonesExplicitCacheControl;
 
@@ -1031,9 +1031,9 @@ final ZonesExplicitCacheControl zonesExplicitCacheControl;
 
 @override Map<String, dynamic> toJson() => {...zonesExplicitCacheControl.toJson(), 'id': id.toJson()};
 
-ZonesActions2ExplicitCacheControl copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2ExplicitCacheControl(zonesExplicitCacheControl.copyWith(
+ZonesActions2ExplicitCacheControl copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2ExplicitCacheControl(zonesExplicitCacheControl.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2ExplicitCacheControl && zonesExplicitCacheControl == other.zonesExplicitCacheControl;
 
@@ -1041,10 +1041,10 @@ ZonesActions2ExplicitCacheControl copyWith({CacheRulesSmartTieredCachePatchValue
 
 @override String toString() => 'ZonesActions2.explicitCacheControl($zonesExplicitCacheControl)';
 
- }
+}
 @immutable final class ZonesActions2ForwardingUrl extends ZonesActions2 {const ZonesActions2ForwardingUrl(this.zonesForwardingUrl);
 
-factory ZonesActions2ForwardingUrl.fromJson(Map<String, dynamic> json) { return ZonesActions2ForwardingUrl(ZonesForwardingUrl.fromJson(json)); }
+factory ZonesActions2ForwardingUrl.fromJson(Map<String, dynamic> json) {return ZonesActions2ForwardingUrl(ZonesForwardingUrl.fromJson(json));}
 
 final ZonesForwardingUrl zonesForwardingUrl;
 
@@ -1052,9 +1052,9 @@ final ZonesForwardingUrl zonesForwardingUrl;
 
 @override Map<String, dynamic> toJson() => {...zonesForwardingUrl.toJson(), 'id': id.toJson()};
 
-ZonesActions2ForwardingUrl copyWith({ZonesForwardingUrlValue? Function()? value}) { return ZonesActions2ForwardingUrl(zonesForwardingUrl.copyWith(
+ZonesActions2ForwardingUrl copyWith({ZonesForwardingUrlValue? Function()? value}) {return ZonesActions2ForwardingUrl(zonesForwardingUrl.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2ForwardingUrl && zonesForwardingUrl == other.zonesForwardingUrl;
 
@@ -1062,10 +1062,10 @@ ZonesActions2ForwardingUrl copyWith({ZonesForwardingUrlValue? Function()? value}
 
 @override String toString() => 'ZonesActions2.forwardingUrl($zonesForwardingUrl)';
 
- }
+}
 @immutable final class ZonesActions2HostHeaderOverride extends ZonesActions2 {const ZonesActions2HostHeaderOverride(this.zonesHostHeaderOverride);
 
-factory ZonesActions2HostHeaderOverride.fromJson(Map<String, dynamic> json) { return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride.fromJson(json)); }
+factory ZonesActions2HostHeaderOverride.fromJson(Map<String, dynamic> json) {return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride.fromJson(json));}
 
 final ZonesHostHeaderOverride zonesHostHeaderOverride;
 
@@ -1073,9 +1073,9 @@ final ZonesHostHeaderOverride zonesHostHeaderOverride;
 
 @override Map<String, dynamic> toJson() => {...zonesHostHeaderOverride.toJson(), 'id': id.toJson()};
 
-ZonesActions2HostHeaderOverride copyWith({String? Function()? value}) { return ZonesActions2HostHeaderOverride(zonesHostHeaderOverride.copyWith(
+ZonesActions2HostHeaderOverride copyWith({String? Function()? value}) {return ZonesActions2HostHeaderOverride(zonesHostHeaderOverride.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2HostHeaderOverride && zonesHostHeaderOverride == other.zonesHostHeaderOverride;
 
@@ -1083,10 +1083,10 @@ ZonesActions2HostHeaderOverride copyWith({String? Function()? value}) { return Z
 
 @override String toString() => 'ZonesActions2.hostHeaderOverride($zonesHostHeaderOverride)';
 
- }
+}
 @immutable final class ZonesActions2IpGeolocation extends ZonesActions2 {const ZonesActions2IpGeolocation(this.zonesIpGeolocation);
 
-factory ZonesActions2IpGeolocation.fromJson(Map<String, dynamic> json) { return ZonesActions2IpGeolocation(ZonesIpGeolocation.fromJson(json)); }
+factory ZonesActions2IpGeolocation.fromJson(Map<String, dynamic> json) {return ZonesActions2IpGeolocation(ZonesIpGeolocation.fromJson(json));}
 
 final ZonesIpGeolocation zonesIpGeolocation;
 
@@ -1094,9 +1094,9 @@ final ZonesIpGeolocation zonesIpGeolocation;
 
 @override Map<String, dynamic> toJson() => {...zonesIpGeolocation.toJson(), 'id': id.toJson()};
 
-ZonesActions2IpGeolocation copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2IpGeolocation(zonesIpGeolocation.copyWith(
+ZonesActions2IpGeolocation copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2IpGeolocation(zonesIpGeolocation.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2IpGeolocation && zonesIpGeolocation == other.zonesIpGeolocation;
 
@@ -1104,10 +1104,10 @@ ZonesActions2IpGeolocation copyWith({CacheRulesSmartTieredCachePatchValue? Funct
 
 @override String toString() => 'ZonesActions2.ipGeolocation($zonesIpGeolocation)';
 
- }
+}
 @immutable final class ZonesActions2Mirage extends ZonesActions2 {const ZonesActions2Mirage(this.zonesMirage);
 
-factory ZonesActions2Mirage.fromJson(Map<String, dynamic> json) { return ZonesActions2Mirage(ZonesMirage.fromJson(json)); }
+factory ZonesActions2Mirage.fromJson(Map<String, dynamic> json) {return ZonesActions2Mirage(ZonesMirage.fromJson(json));}
 
 final ZonesMirage zonesMirage;
 
@@ -1115,9 +1115,9 @@ final ZonesMirage zonesMirage;
 
 @override Map<String, dynamic> toJson() => {...zonesMirage.toJson(), 'id': id.toJson()};
 
-ZonesActions2Mirage copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2Mirage(zonesMirage.copyWith(
+ZonesActions2Mirage copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2Mirage(zonesMirage.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2Mirage && zonesMirage == other.zonesMirage;
 
@@ -1125,10 +1125,10 @@ ZonesActions2Mirage copyWith({CacheRulesSmartTieredCachePatchValue? Function()? 
 
 @override String toString() => 'ZonesActions2.mirage($zonesMirage)';
 
- }
+}
 @immutable final class ZonesActions2OpportunisticEncryption extends ZonesActions2 {const ZonesActions2OpportunisticEncryption(this.zonesOpportunisticEncryption);
 
-factory ZonesActions2OpportunisticEncryption.fromJson(Map<String, dynamic> json) { return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption.fromJson(json)); }
+factory ZonesActions2OpportunisticEncryption.fromJson(Map<String, dynamic> json) {return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption.fromJson(json));}
 
 final ZonesOpportunisticEncryption zonesOpportunisticEncryption;
 
@@ -1136,9 +1136,9 @@ final ZonesOpportunisticEncryption zonesOpportunisticEncryption;
 
 @override Map<String, dynamic> toJson() => {...zonesOpportunisticEncryption.toJson(), 'id': id.toJson()};
 
-ZonesActions2OpportunisticEncryption copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption.copyWith(
+ZonesActions2OpportunisticEncryption copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2OpportunisticEncryption && zonesOpportunisticEncryption == other.zonesOpportunisticEncryption;
 
@@ -1146,10 +1146,10 @@ ZonesActions2OpportunisticEncryption copyWith({CacheRulesSmartTieredCachePatchVa
 
 @override String toString() => 'ZonesActions2.opportunisticEncryption($zonesOpportunisticEncryption)';
 
- }
+}
 @immutable final class ZonesActions2OriginErrorPagePassThru extends ZonesActions2 {const ZonesActions2OriginErrorPagePassThru(this.zonesOriginErrorPagePassThru);
 
-factory ZonesActions2OriginErrorPagePassThru.fromJson(Map<String, dynamic> json) { return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru.fromJson(json)); }
+factory ZonesActions2OriginErrorPagePassThru.fromJson(Map<String, dynamic> json) {return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru.fromJson(json));}
 
 final ZonesOriginErrorPagePassThru zonesOriginErrorPagePassThru;
 
@@ -1157,9 +1157,9 @@ final ZonesOriginErrorPagePassThru zonesOriginErrorPagePassThru;
 
 @override Map<String, dynamic> toJson() => {...zonesOriginErrorPagePassThru.toJson(), 'id': id.toJson()};
 
-ZonesActions2OriginErrorPagePassThru copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru.copyWith(
+ZonesActions2OriginErrorPagePassThru copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2OriginErrorPagePassThru && zonesOriginErrorPagePassThru == other.zonesOriginErrorPagePassThru;
 
@@ -1167,10 +1167,10 @@ ZonesActions2OriginErrorPagePassThru copyWith({CacheRulesSmartTieredCachePatchVa
 
 @override String toString() => 'ZonesActions2.originErrorPagePassThru($zonesOriginErrorPagePassThru)';
 
- }
+}
 @immutable final class ZonesActions2Polish extends ZonesActions2 {const ZonesActions2Polish(this.zonesPolish);
 
-factory ZonesActions2Polish.fromJson(Map<String, dynamic> json) { return ZonesActions2Polish(ZonesPolish.fromJson(json)); }
+factory ZonesActions2Polish.fromJson(Map<String, dynamic> json) {return ZonesActions2Polish(ZonesPolish.fromJson(json));}
 
 final ZonesPolish zonesPolish;
 
@@ -1178,9 +1178,9 @@ final ZonesPolish zonesPolish;
 
 @override Map<String, dynamic> toJson() => {...zonesPolish.toJson(), 'id': id.toJson()};
 
-ZonesActions2Polish copyWith({ZonesPolishValue2? Function()? value}) { return ZonesActions2Polish(zonesPolish.copyWith(
+ZonesActions2Polish copyWith({ZonesPolishValue2? Function()? value}) {return ZonesActions2Polish(zonesPolish.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2Polish && zonesPolish == other.zonesPolish;
 
@@ -1188,10 +1188,10 @@ ZonesActions2Polish copyWith({ZonesPolishValue2? Function()? value}) { return Zo
 
 @override String toString() => 'ZonesActions2.polish($zonesPolish)';
 
- }
+}
 @immutable final class ZonesActions2ResolveOverride extends ZonesActions2 {const ZonesActions2ResolveOverride(this.zonesResolveOverride);
 
-factory ZonesActions2ResolveOverride.fromJson(Map<String, dynamic> json) { return ZonesActions2ResolveOverride(ZonesResolveOverride.fromJson(json)); }
+factory ZonesActions2ResolveOverride.fromJson(Map<String, dynamic> json) {return ZonesActions2ResolveOverride(ZonesResolveOverride.fromJson(json));}
 
 final ZonesResolveOverride zonesResolveOverride;
 
@@ -1199,9 +1199,9 @@ final ZonesResolveOverride zonesResolveOverride;
 
 @override Map<String, dynamic> toJson() => {...zonesResolveOverride.toJson(), 'id': id.toJson()};
 
-ZonesActions2ResolveOverride copyWith({String? Function()? value}) { return ZonesActions2ResolveOverride(zonesResolveOverride.copyWith(
+ZonesActions2ResolveOverride copyWith({String? Function()? value}) {return ZonesActions2ResolveOverride(zonesResolveOverride.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2ResolveOverride && zonesResolveOverride == other.zonesResolveOverride;
 
@@ -1209,10 +1209,10 @@ ZonesActions2ResolveOverride copyWith({String? Function()? value}) { return Zone
 
 @override String toString() => 'ZonesActions2.resolveOverride($zonesResolveOverride)';
 
- }
+}
 @immutable final class ZonesActions2RespectStrongEtag extends ZonesActions2 {const ZonesActions2RespectStrongEtag(this.zonesRespectStrongEtag);
 
-factory ZonesActions2RespectStrongEtag.fromJson(Map<String, dynamic> json) { return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag.fromJson(json)); }
+factory ZonesActions2RespectStrongEtag.fromJson(Map<String, dynamic> json) {return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag.fromJson(json));}
 
 final ZonesRespectStrongEtag zonesRespectStrongEtag;
 
@@ -1220,9 +1220,9 @@ final ZonesRespectStrongEtag zonesRespectStrongEtag;
 
 @override Map<String, dynamic> toJson() => {...zonesRespectStrongEtag.toJson(), 'id': id.toJson()};
 
-ZonesActions2RespectStrongEtag copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2RespectStrongEtag(zonesRespectStrongEtag.copyWith(
+ZonesActions2RespectStrongEtag copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2RespectStrongEtag(zonesRespectStrongEtag.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2RespectStrongEtag && zonesRespectStrongEtag == other.zonesRespectStrongEtag;
 
@@ -1230,10 +1230,10 @@ ZonesActions2RespectStrongEtag copyWith({CacheRulesSmartTieredCachePatchValue? F
 
 @override String toString() => 'ZonesActions2.respectStrongEtag($zonesRespectStrongEtag)';
 
- }
+}
 @immutable final class ZonesActions2ResponseBuffering extends ZonesActions2 {const ZonesActions2ResponseBuffering(this.zonesResponseBuffering);
 
-factory ZonesActions2ResponseBuffering.fromJson(Map<String, dynamic> json) { return ZonesActions2ResponseBuffering(ZonesResponseBuffering.fromJson(json)); }
+factory ZonesActions2ResponseBuffering.fromJson(Map<String, dynamic> json) {return ZonesActions2ResponseBuffering(ZonesResponseBuffering.fromJson(json));}
 
 final ZonesResponseBuffering zonesResponseBuffering;
 
@@ -1241,9 +1241,9 @@ final ZonesResponseBuffering zonesResponseBuffering;
 
 @override Map<String, dynamic> toJson() => {...zonesResponseBuffering.toJson(), 'id': id.toJson()};
 
-ZonesActions2ResponseBuffering copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2ResponseBuffering(zonesResponseBuffering.copyWith(
+ZonesActions2ResponseBuffering copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2ResponseBuffering(zonesResponseBuffering.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2ResponseBuffering && zonesResponseBuffering == other.zonesResponseBuffering;
 
@@ -1251,10 +1251,10 @@ ZonesActions2ResponseBuffering copyWith({CacheRulesSmartTieredCachePatchValue? F
 
 @override String toString() => 'ZonesActions2.responseBuffering($zonesResponseBuffering)';
 
- }
+}
 @immutable final class ZonesActions2RocketLoader extends ZonesActions2 {const ZonesActions2RocketLoader(this.zonesRocketLoader);
 
-factory ZonesActions2RocketLoader.fromJson(Map<String, dynamic> json) { return ZonesActions2RocketLoader(ZonesRocketLoader.fromJson(json)); }
+factory ZonesActions2RocketLoader.fromJson(Map<String, dynamic> json) {return ZonesActions2RocketLoader(ZonesRocketLoader.fromJson(json));}
 
 final ZonesRocketLoader zonesRocketLoader;
 
@@ -1262,9 +1262,9 @@ final ZonesRocketLoader zonesRocketLoader;
 
 @override Map<String, dynamic> toJson() => {...zonesRocketLoader.toJson(), 'id': id.toJson()};
 
-ZonesActions2RocketLoader copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2RocketLoader(zonesRocketLoader.copyWith(
+ZonesActions2RocketLoader copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2RocketLoader(zonesRocketLoader.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2RocketLoader && zonesRocketLoader == other.zonesRocketLoader;
 
@@ -1272,10 +1272,10 @@ ZonesActions2RocketLoader copyWith({CacheRulesSmartTieredCachePatchValue? Functi
 
 @override String toString() => 'ZonesActions2.rocketLoader($zonesRocketLoader)';
 
- }
+}
 @immutable final class ZonesActions2SecurityLevel extends ZonesActions2 {const ZonesActions2SecurityLevel(this.zonesSecurityLevel);
 
-factory ZonesActions2SecurityLevel.fromJson(Map<String, dynamic> json) { return ZonesActions2SecurityLevel(ZonesSecurityLevel.fromJson(json)); }
+factory ZonesActions2SecurityLevel.fromJson(Map<String, dynamic> json) {return ZonesActions2SecurityLevel(ZonesSecurityLevel.fromJson(json));}
 
 final ZonesSecurityLevel zonesSecurityLevel;
 
@@ -1283,9 +1283,9 @@ final ZonesSecurityLevel zonesSecurityLevel;
 
 @override Map<String, dynamic> toJson() => {...zonesSecurityLevel.toJson(), 'id': id.toJson()};
 
-ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue2? Function()? value}) { return ZonesActions2SecurityLevel(zonesSecurityLevel.copyWith(
+ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue2? Function()? value}) {return ZonesActions2SecurityLevel(zonesSecurityLevel.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2SecurityLevel && zonesSecurityLevel == other.zonesSecurityLevel;
 
@@ -1293,10 +1293,10 @@ ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue2? Function()? value
 
 @override String toString() => 'ZonesActions2.securityLevel($zonesSecurityLevel)';
 
- }
+}
 @immutable final class ZonesActions2SortQueryStringForCache extends ZonesActions2 {const ZonesActions2SortQueryStringForCache(this.zonesSortQueryStringForCache);
 
-factory ZonesActions2SortQueryStringForCache.fromJson(Map<String, dynamic> json) { return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache.fromJson(json)); }
+factory ZonesActions2SortQueryStringForCache.fromJson(Map<String, dynamic> json) {return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache.fromJson(json));}
 
 final ZonesSortQueryStringForCache zonesSortQueryStringForCache;
 
@@ -1304,9 +1304,9 @@ final ZonesSortQueryStringForCache zonesSortQueryStringForCache;
 
 @override Map<String, dynamic> toJson() => {...zonesSortQueryStringForCache.toJson(), 'id': id.toJson()};
 
-ZonesActions2SortQueryStringForCache copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache.copyWith(
+ZonesActions2SortQueryStringForCache copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2SortQueryStringForCache && zonesSortQueryStringForCache == other.zonesSortQueryStringForCache;
 
@@ -1314,10 +1314,10 @@ ZonesActions2SortQueryStringForCache copyWith({CacheRulesSmartTieredCachePatchVa
 
 @override String toString() => 'ZonesActions2.sortQueryStringForCache($zonesSortQueryStringForCache)';
 
- }
+}
 @immutable final class ZonesActions2Ssl extends ZonesActions2 {const ZonesActions2Ssl(this.zonesSsl);
 
-factory ZonesActions2Ssl.fromJson(Map<String, dynamic> json) { return ZonesActions2Ssl(ZonesSsl.fromJson(json)); }
+factory ZonesActions2Ssl.fromJson(Map<String, dynamic> json) {return ZonesActions2Ssl(ZonesSsl.fromJson(json));}
 
 final ZonesSsl zonesSsl;
 
@@ -1325,9 +1325,9 @@ final ZonesSsl zonesSsl;
 
 @override Map<String, dynamic> toJson() => {...zonesSsl.toJson(), 'id': id.toJson()};
 
-ZonesActions2Ssl copyWith({ZonesSslValue2? Function()? value}) { return ZonesActions2Ssl(zonesSsl.copyWith(
+ZonesActions2Ssl copyWith({ZonesSslValue2? Function()? value}) {return ZonesActions2Ssl(zonesSsl.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2Ssl && zonesSsl == other.zonesSsl;
 
@@ -1335,10 +1335,10 @@ ZonesActions2Ssl copyWith({ZonesSslValue2? Function()? value}) { return ZonesAct
 
 @override String toString() => 'ZonesActions2.ssl($zonesSsl)';
 
- }
+}
 @immutable final class ZonesActions2TrueClientIpHeader extends ZonesActions2 {const ZonesActions2TrueClientIpHeader(this.zonesTrueClientIpHeader);
 
-factory ZonesActions2TrueClientIpHeader.fromJson(Map<String, dynamic> json) { return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader.fromJson(json)); }
+factory ZonesActions2TrueClientIpHeader.fromJson(Map<String, dynamic> json) {return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader.fromJson(json));}
 
 final ZonesTrueClientIpHeader zonesTrueClientIpHeader;
 
@@ -1346,9 +1346,9 @@ final ZonesTrueClientIpHeader zonesTrueClientIpHeader;
 
 @override Map<String, dynamic> toJson() => {...zonesTrueClientIpHeader.toJson(), 'id': id.toJson()};
 
-ZonesActions2TrueClientIpHeader copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader.copyWith(
+ZonesActions2TrueClientIpHeader copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2TrueClientIpHeader && zonesTrueClientIpHeader == other.zonesTrueClientIpHeader;
 
@@ -1356,10 +1356,10 @@ ZonesActions2TrueClientIpHeader copyWith({CacheRulesSmartTieredCachePatchValue? 
 
 @override String toString() => 'ZonesActions2.trueClientIpHeader($zonesTrueClientIpHeader)';
 
- }
+}
 @immutable final class ZonesActions2Waf extends ZonesActions2 {const ZonesActions2Waf(this.zonesWaf);
 
-factory ZonesActions2Waf.fromJson(Map<String, dynamic> json) { return ZonesActions2Waf(ZonesWaf.fromJson(json)); }
+factory ZonesActions2Waf.fromJson(Map<String, dynamic> json) {return ZonesActions2Waf(ZonesWaf.fromJson(json));}
 
 final ZonesWaf zonesWaf;
 
@@ -1367,9 +1367,9 @@ final ZonesWaf zonesWaf;
 
 @override Map<String, dynamic> toJson() => {...zonesWaf.toJson(), 'id': id.toJson()};
 
-ZonesActions2Waf copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2Waf(zonesWaf.copyWith(
+ZonesActions2Waf copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) {return ZonesActions2Waf(zonesWaf.copyWith(
   value: value,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesActions2Waf && zonesWaf == other.zonesWaf;
 
@@ -1377,7 +1377,7 @@ ZonesActions2Waf copyWith({CacheRulesSmartTieredCachePatchValue? Function()? val
 
 @override String toString() => 'ZonesActions2.waf($zonesWaf)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ZonesActions2$Unknown extends ZonesActions2 {const ZonesActions2$Unknown(this.json);
@@ -1395,4 +1395,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ZonesActions2.unknown($json)';
 
- }
+}

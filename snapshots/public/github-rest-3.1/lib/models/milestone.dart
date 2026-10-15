@@ -2,9 +2,9 @@
 // Source: #/components/schemas/Milestone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A collection of related issues and pull requests.
-@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, this.state = IssuesCreateMilestoneRequestState.open, });
+@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.state, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, });
 
-factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
+factory Milestone.fromJson(Map<String, dynamic> json) {return Milestone(
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   labelsUrl: Uri.parse(json['labels_url'] as String),
@@ -21,7 +21,7 @@ factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
-); }
+);}
 
 final Uri url;
 
@@ -58,7 +58,7 @@ final DateTime? closedAt;
 
 final DateTime? dueOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'labels_url': labelsUrl.toString(),
@@ -75,8 +75,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'closed_at': closedAt?.toIso8601String(),
   'due_on': dueOn?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('labels_url') && json['labels_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -84,15 +84,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('state') &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('creator') &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('closed_issues') && json['closed_issues'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
-      json.containsKey('due_on') && json['due_on'] is String; } 
-Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, IssuesCreateMilestoneRequestState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) { return Milestone(
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+      json.containsKey('due_on') && (json['due_on'] == null || json['due_on'] is String);}
+Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, IssuesCreateMilestoneRequestState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) {return Milestone(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,
@@ -109,7 +109,7 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
   updatedAt: updatedAt ?? this.updatedAt,
   closedAt: closedAt != null ? closedAt() : this.closedAt,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Milestone &&
           url == other.url &&
@@ -133,4 +133,4 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
 
 @override String toString() => 'Milestone(\n  url: $url,\n  htmlUrl: $htmlUrl,\n  labelsUrl: $labelsUrl,\n  id: $id,\n  nodeId: $nodeId,\n  number: $number,\n  state: $state,\n  title: $title,\n  description: $description,\n  creator: $creator,\n  openIssues: $openIssues,\n  closedIssues: $closedIssues,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  closedAt: $closedAt,\n  dueOn: $dueOn,\n)';
 
- }
+}

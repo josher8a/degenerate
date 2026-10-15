@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/preconditions.dart';/// DeleteOptions may be provided when deleting an API object.
 @immutable final class DeleteOptions {const DeleteOptions({this.apiVersion, this.dryRun, this.gracePeriodSeconds, this.ignoreStoreReadErrorWithClusterBreakingPotential, this.kind, this.orphanDependents, this.preconditions, this.propagationPolicy, });
 
-factory DeleteOptions.fromJson(Map<String, dynamic> json) { return DeleteOptions(
+factory DeleteOptions.fromJson(Map<String, dynamic> json) {return DeleteOptions(
   apiVersion: json['apiVersion'] as String?,
   dryRun: (json['dryRun'] as List<dynamic>?)?.map((e) => e as String).toList(),
   gracePeriodSeconds: json['gracePeriodSeconds'] != null ? (json['gracePeriodSeconds'] as num).toInt() : null,
@@ -13,7 +13,7 @@ factory DeleteOptions.fromJson(Map<String, dynamic> json) { return DeleteOptions
   orphanDependents: json['orphanDependents'] as bool?,
   preconditions: json['preconditions'] != null ? Preconditions.fromJson(json['preconditions'] as Map<String, dynamic>) : null,
   propagationPolicy: json['propagationPolicy'] as String?,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -39,7 +39,7 @@ final Preconditions? preconditions;
 /// Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
 final String? propagationPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'dryRun': ?dryRun,
   'gracePeriodSeconds': ?gracePeriodSeconds,
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   'orphanDependents': ?orphanDependents,
   if (preconditions != null) 'preconditions': preconditions?.toJson(),
   'propagationPolicy': ?propagationPolicy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'dryRun', 'gracePeriodSeconds', 'ignoreStoreReadErrorWithClusterBreakingPotential', 'kind', 'orphanDependents', 'preconditions', 'propagationPolicy'}.contains(key)); } 
-DeleteOptions copyWith({String? Function()? apiVersion, List<String>? Function()? dryRun, int? Function()? gracePeriodSeconds, bool? Function()? ignoreStoreReadErrorWithClusterBreakingPotential, String? Function()? kind, bool? Function()? orphanDependents, Preconditions? Function()? preconditions, String? Function()? propagationPolicy, }) { return DeleteOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'dryRun', 'gracePeriodSeconds', 'ignoreStoreReadErrorWithClusterBreakingPotential', 'kind', 'orphanDependents', 'preconditions', 'propagationPolicy'}.contains(key));}
+DeleteOptions copyWith({String? Function()? apiVersion, List<String>? Function()? dryRun, int? Function()? gracePeriodSeconds, bool? Function()? ignoreStoreReadErrorWithClusterBreakingPotential, String? Function()? kind, bool? Function()? orphanDependents, Preconditions? Function()? preconditions, String? Function()? propagationPolicy, }) {return DeleteOptions(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   dryRun: dryRun != null ? dryRun() : this.dryRun,
   gracePeriodSeconds: gracePeriodSeconds != null ? gracePeriodSeconds() : this.gracePeriodSeconds,
@@ -59,7 +59,7 @@ DeleteOptions copyWith({String? Function()? apiVersion, List<String>? Function()
   orphanDependents: orphanDependents != null ? orphanDependents() : this.orphanDependents,
   preconditions: preconditions != null ? preconditions() : this.preconditions,
   propagationPolicy: propagationPolicy != null ? propagationPolicy() : this.propagationPolicy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteOptions &&
           apiVersion == other.apiVersion &&
@@ -75,4 +75,4 @@ DeleteOptions copyWith({String? Function()? apiVersion, List<String>? Function()
 
 @override String toString() => 'DeleteOptions(apiVersion: $apiVersion, dryRun: $dryRun, gracePeriodSeconds: $gracePeriodSeconds, ignoreStoreReadErrorWithClusterBreakingPotential: $ignoreStoreReadErrorWithClusterBreakingPotential, kind: $kind, orphanDependents: $orphanDependents, preconditions: $preconditions, propagationPolicy: $propagationPolicy)';
 
- }
+}

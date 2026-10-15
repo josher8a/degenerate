@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/confidence_info_annotations.dart';@immutable final class RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo {const RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
-factory RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(
+factory RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => ConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
   level: (json['level'] as num).toInt(),
-); }
+);}
 
 final List<ConfidenceInfoAnnotations> annotations;
 
 /// Provides an indication of how much confidence Cloudflare has in the data.
 final int level;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'annotations': annotations.map((e) => e.toJson()).toList(),
   'level': level,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations') &&
-      json.containsKey('level') && json['level'] is num; } 
-RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo copyWith({List<ConfidenceInfoAnnotations>? annotations, int? level, }) { return RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('annotations') &&
+      json.containsKey('level') && json['level'] is num;}
+RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo copyWith({List<ConfidenceInfoAnnotations>? annotations, int? level, }) {return RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(
   annotations: annotations ?? this.annotations,
   level: level ?? this.level,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo &&
           listEquals(annotations, other.annotations) &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo copyWith({List<C
 
 @override String toString() => 'RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)';
 
- }
+}

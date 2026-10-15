@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/projects.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ProjectReopened {const ProjectReopened({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
-factory ProjectReopened.fromJson(Map<String, dynamic> json) { return ProjectReopened(
+factory ProjectReopened.fromJson(Map<String, dynamic> json) {return ProjectReopened(
   action: ProjectReopenedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2: Projects.fromJson(json['projects_v2'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ProjectReopenedAction action;
 
@@ -21,24 +21,24 @@ final Projects projectsV2;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
   'projects_v2': projectsV2.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('projects_v2') &&
-      json.containsKey('sender'); } 
-ProjectReopened copyWith({ProjectReopenedAction? action, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectReopened(
+      json.containsKey('sender');}
+ProjectReopened copyWith({ProjectReopenedAction? action, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) {return ProjectReopened(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,
   projectsV2: projectsV2 ?? this.projectsV2,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectReopened &&
           action == other.action &&
@@ -51,4 +51,4 @@ ProjectReopened copyWith({ProjectReopenedAction? action, SimpleInstallation? Fun
 
 @override String toString() => 'ProjectReopened(action: $action, installation: $installation, organization: $organization, projectsV2: $projectsV2, sender: $sender)';
 
- }
+}

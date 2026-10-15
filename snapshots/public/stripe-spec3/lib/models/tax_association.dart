@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_association_transaction_attempts.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxAssociationObject {const TaxAssociationObject();
 
-factory TaxAssociationObject.fromJson(String json) { return switch (json) {
+factory TaxAssociationObject.fromJson(String json) {return switch (json) {
   'tax.association' => taxAssociation,
   _ => TaxAssociationObject$Unknown(json),
-}; }
+};}
 
 static const TaxAssociationObject taxAssociation = TaxAssociationObject$taxAssociation._();
 
 static const List<TaxAssociationObject> values = [taxAssociation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax.association' => 'taxAssociation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxAssociationObject$Unknown; } 
+bool get isUnknown {return this is TaxAssociationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxAssociation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxAssociation, required W Function(String value) $unknown, }) {return switch (this) {
       TaxAssociationObject$taxAssociation() => taxAssociation(),
       TaxAssociationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxAssociation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxAssociation, W Function(String value)? $unknown, }) {return switch (this) {
       TaxAssociationObject$taxAssociation() => taxAssociation != null ? taxAssociation() : orElse(value),
       TaxAssociationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxAssociationObject($value)';
 
- }
+}
 @immutable final class TaxAssociationObject$taxAssociation extends TaxAssociationObject {const TaxAssociationObject$taxAssociation._();
 
 @override String get value => 'tax.association';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxAssoc
 
 @override int get hashCode => 'tax.association'.hashCode;
 
- }
+}
 @immutable final class TaxAssociationObject$Unknown extends TaxAssociationObject {const TaxAssociationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxAssoc
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Tax Association exposes the Tax Transactions that Stripe attempted to create on your behalf based on the PaymentIntent input
-@immutable final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts, });
+@immutable final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts = const Omittable.absent(), });
 
-factory TaxAssociation.fromJson(Map<String, dynamic> json) { return TaxAssociation(
+factory TaxAssociation.fromJson(Map<String, dynamic> json) {return TaxAssociation(
   calculation: json['calculation'] as String,
   id: json['id'] as String,
   object: TaxAssociationObject.fromJson(json['object'] as String),
   paymentIntent: json['payment_intent'] as String,
-  taxTransactionAttempts: (json['tax_transaction_attempts'] as List<dynamic>?)?.map((e) => TaxProductResourceTaxAssociationTransactionAttempts.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+  taxTransactionAttempts: json.containsKey('tax_transaction_attempts') ? Omittable((json['tax_transaction_attempts'] as List<dynamic>?)?.map((e) => TaxProductResourceTaxAssociationTransactionAttempts.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+);}
 
 /// The [Tax Calculation](https://docs.stripe.com/api/tax/calculations/object) that was included in PaymentIntent.
 final String calculation;
@@ -78,42 +78,43 @@ final TaxAssociationObject object;
 final String paymentIntent;
 
 /// Information about the tax transactions linked to this payment intent
-final List<TaxProductResourceTaxAssociationTransactionAttempts>? taxTransactionAttempts;
+final Omittable<List<TaxProductResourceTaxAssociationTransactionAttempts>?> taxTransactionAttempts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'calculation': calculation,
   'id': id,
   'object': object.toJson(),
   'payment_intent': paymentIntent,
-  if (taxTransactionAttempts != null) 'tax_transaction_attempts': taxTransactionAttempts?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String &&
+  if (taxTransactionAttempts.isPresent) 'tax_transaction_attempts': taxTransactionAttempts.value?.map((e) => e.toJson()).toList(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('calculation') && json['calculation'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('payment_intent') && json['payment_intent'] is String; } 
+      json.containsKey('payment_intent') && json['payment_intent'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (calculation.runes.length > 5000) { errors.add('calculation: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (paymentIntent.runes.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
-return errors; } 
-TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? object, String? paymentIntent, List<TaxProductResourceTaxAssociationTransactionAttempts>? Function()? taxTransactionAttempts, }) { return TaxAssociation(
+return errors;}
+TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? object, String? paymentIntent, Omittable<List<TaxProductResourceTaxAssociationTransactionAttempts>?>? taxTransactionAttempts, }) {return TaxAssociation(
   calculation: calculation ?? this.calculation,
   id: id ?? this.id,
   object: object ?? this.object,
   paymentIntent: paymentIntent ?? this.paymentIntent,
-  taxTransactionAttempts: taxTransactionAttempts != null ? taxTransactionAttempts() : this.taxTransactionAttempts,
-); } 
+  taxTransactionAttempts: taxTransactionAttempts ?? this.taxTransactionAttempts,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxAssociation &&
           calculation == other.calculation &&
           id == other.id &&
           object == other.object &&
           paymentIntent == other.paymentIntent &&
-          listEquals(taxTransactionAttempts, other.taxTransactionAttempts);
+          taxTransactionAttempts.isPresent == other.taxTransactionAttempts.isPresent &&
+          listEquals(taxTransactionAttempts.value, other.taxTransactionAttempts.value);
 
-@override int get hashCode => Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts ?? const []));
+@override int get hashCode => Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts.value ?? const []));
 
 @override String toString() => 'TaxAssociation(calculation: $calculation, id: $id, object: $object, paymentIntent: $paymentIntent, taxTransactionAttempts: $taxTransactionAttempts)';
 
- }
+}

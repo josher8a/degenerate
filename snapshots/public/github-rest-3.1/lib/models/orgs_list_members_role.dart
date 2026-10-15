@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrgsListMembersRole {const OrgsListMembersRole();
 
-factory OrgsListMembersRole.fromJson(String json) { return switch (json) {
+factory OrgsListMembersRole.fromJson(String json) {return switch (json) {
   'all' => all,
   'admin' => admin,
   'member' => member,
   _ => OrgsListMembersRole$Unknown(json),
-}; }
+};}
 
 static const OrgsListMembersRole all = OrgsListMembersRole$all._();
 
@@ -19,33 +19,33 @@ static const OrgsListMembersRole member = OrgsListMembersRole$member._();
 static const List<OrgsListMembersRole> values = [all, admin, member];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'all' => 'all',
   'admin' => 'admin',
   'member' => 'member',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrgsListMembersRole$Unknown; } 
+bool get isUnknown {return this is OrgsListMembersRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() all, required W Function() admin, required W Function() member, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() all, required W Function() admin, required W Function() member, required W Function(String value) $unknown, }) {return switch (this) {
       OrgsListMembersRole$all() => all(),
       OrgsListMembersRole$admin() => admin(),
       OrgsListMembersRole$member() => member(),
       OrgsListMembersRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? admin, W Function()? member, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? admin, W Function()? member, W Function(String value)? $unknown, }) {return switch (this) {
       OrgsListMembersRole$all() => all != null ? all() : orElse(value),
       OrgsListMembersRole$admin() => admin != null ? admin() : orElse(value),
       OrgsListMembersRole$member() => member != null ? member() : orElse(value),
       OrgsListMembersRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrgsListMembersRole($value)';
 
- }
+}
 @immutable final class OrgsListMembersRole$all extends OrgsListMembersRole {const OrgsListMembersRole$all._();
 
 @override String get value => 'all';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class OrgsListMembersRole$admin extends OrgsListMembersRole {const OrgsListMembersRole$admin._();
 
 @override String get value => 'admin';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'admin'.hashCode;
 
- }
+}
 @immutable final class OrgsListMembersRole$member extends OrgsListMembersRole {const OrgsListMembersRole$member._();
 
 @override String get value => 'member';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'member'.hashCode;
 
- }
+}
 @immutable final class OrgsListMembersRole$Unknown extends OrgsListMembersRole {const OrgsListMembersRole$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

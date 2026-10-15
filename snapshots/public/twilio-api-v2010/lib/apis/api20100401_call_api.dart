@@ -12,7 +12,7 @@ final class Api20100401CallApi with ApiExecutor {const Api20100401CallApi(this.a
 /// Retrieves a collection of calls made to and from your account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListCallResponse, Never>> listCall({required String accountSid, String? to, String? from, String? parentCallSid, CallEnumStatus? status, DateTime? startTime, DateTime? startTimeBefore, DateTime? startTimeAfter, DateTime? endTime, DateTime? endTimeBefore, DateTime? endTimeAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (to != null) {
   queryParameters['To'] = to;
@@ -65,17 +65,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListCallResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new outgoing call to phones, SIP-enabled endpoints or Twilio Client connections
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls.json`
-Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCall, Never>> createCall({required String accountSid, CreateCallRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -157,17 +157,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCall.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fetch the call specified by the provided Call SID
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCall, Never>> fetchCall({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -176,17 +176,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCall.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Initiates a call redirect or terminates a call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCall, Never>> updateCall({required String accountSid, required String sid, UpdateCallRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -216,17 +216,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCall.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
-Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCall({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -235,9 +235,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

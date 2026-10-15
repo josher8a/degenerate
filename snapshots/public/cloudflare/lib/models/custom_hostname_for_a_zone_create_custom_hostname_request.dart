@@ -10,11 +10,11 @@ String toJson() => value;
 }
 @immutable final class CustomHostnameForAZoneCreateCustomHostnameRequest {const CustomHostnameForAZoneCreateCustomHostnameRequest({required this.hostname, this.customMetadata, this.ssl, });
 
-factory CustomHostnameForAZoneCreateCustomHostnameRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneCreateCustomHostnameRequest(
+factory CustomHostnameForAZoneCreateCustomHostnameRequest.fromJson(Map<String, dynamic> json) {return CustomHostnameForAZoneCreateCustomHostnameRequest(
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   hostname: TlsCertificatesAndHostnamesHostnamePost.fromJson(json['hostname'] as String),
   ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl']) : null,
-); }
+);}
 
 /// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
 final Map<String,String>? customMetadata;
@@ -24,17 +24,17 @@ final TlsCertificatesAndHostnamesHostnamePost hostname;
 
 final TlsCertificatesAndHostnamesSslpost? ssl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom_metadata': ?customMetadata,
   'hostname': hostname.toJson(),
   if (ssl != null) 'ssl': ssl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname'); } 
-CustomHostnameForAZoneCreateCustomHostnameRequest copyWith({Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesHostnamePost? hostname, TlsCertificatesAndHostnamesSslpost? Function()? ssl, }) { return CustomHostnameForAZoneCreateCustomHostnameRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname');}
+CustomHostnameForAZoneCreateCustomHostnameRequest copyWith({Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesHostnamePost? hostname, TlsCertificatesAndHostnamesSslpost? Function()? ssl, }) {return CustomHostnameForAZoneCreateCustomHostnameRequest(
   customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
   hostname: hostname ?? this.hostname,
   ssl: ssl != null ? ssl() : this.ssl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameForAZoneCreateCustomHostnameRequest &&
           customMetadata == other.customMetadata &&
@@ -45,4 +45,4 @@ CustomHostnameForAZoneCreateCustomHostnameRequest copyWith({Map<String, String>?
 
 @override String toString() => 'CustomHostnameForAZoneCreateCustomHostnameRequest(customMetadata: $customMetadata, hostname: $hostname, ssl: $ssl)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';@immutable final class ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse {const ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse({required this.totalCount, required this.repositories, });
 
-factory ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
+factory ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
   totalCount: (json['total_count'] as num).toDouble(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double totalCount;
 
 final List<Repository> repositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'repositories': repositories.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('repositories'); } 
-ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse copyWith({double? totalCount, List<Repository>? repositories, }) { return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('repositories');}
+ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse copyWith({double? totalCount, List<Repository>? repositories, }) {return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
   totalCount: totalCount ?? this.totalCount,
   repositories: repositories ?? this.repositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse copyWith
 
 @override String toString() => 'ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(totalCount: $totalCount, repositories: $repositories)';
 
- }
+}

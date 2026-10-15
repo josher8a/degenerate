@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/heartbeat_event.dart';import 'package:pub_speakeasy/models/rich_completion_event.dart';import 'package:pub_speakeasy/models/rich_completion_event_data.dart';sealed class RichStreamEvent {const RichStreamEvent();
 
-factory RichStreamEvent.fromJson(String json) { return switch (json) {
+factory RichStreamEvent.fromJson(String json) {return switch (json) {
   'completion' => completion,
   'heartbeat' => heartbeat,
   _ => RichStreamEvent$Unknown(json),
-}; }
+};}
 
 static const RichStreamEvent completion = RichStreamEvent$completion._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is RichStreamEvent$Unknown;
 
- }
+}
 @immutable final class RichStreamEvent$completion extends RichStreamEvent {const RichStreamEvent$completion._();
 
 @override String get value => 'completion';
@@ -31,7 +31,7 @@ bool get isUnknown => this is RichStreamEvent$Unknown;
 
 @override String toString() => 'RichStreamEvent(completion)';
 
- }
+}
 @immutable final class RichStreamEvent$heartbeat extends RichStreamEvent {const RichStreamEvent$heartbeat._();
 
 @override String get value => 'heartbeat';
@@ -42,7 +42,7 @@ bool get isUnknown => this is RichStreamEvent$Unknown;
 
 @override String toString() => 'RichStreamEvent(heartbeat)';
 
- }
+}
 @immutable final class RichStreamEvent$Unknown extends RichStreamEvent {const RichStreamEvent$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is RichStreamEvent$Unknown;
 
 @override String toString() => 'RichStreamEvent($value)';
 
- }
+}
 sealed class RichStream {const RichStream();
 
 /// Deserialize from JSON, dispatching on the `event` discriminator.
-factory RichStream.fromJson(Map<String, dynamic> json) { return switch (json['event']) {
+factory RichStream.fromJson(Map<String, dynamic> json) {return switch (json['event']) {
   'completion' => RichStreamCompletion.fromJson(json),
   'heartbeat' => RichStreamHeartbeat.fromJson(json),
   _ => RichStream$Unknown(json),
-}; }
+};}
 
 /// Build the `completion` variant.
-factory RichStream.completion({required String id, required RichCompletionEventData data, }) { return RichStreamCompletion(RichCompletionEvent(event: 'completion', id: id, data: data)); }
+factory RichStream.completion({required String id, required RichCompletionEventData data, }) {return RichStreamCompletion(RichCompletionEvent(event: 'completion', id: id, data: data));}
 
 /// Build the `heartbeat` variant.
-factory RichStream.heartbeat({required String data, int? retry, }) { return RichStreamHeartbeat(HeartbeatEvent(event: 'heartbeat', data: data, retry: retry)); }
+factory RichStream.heartbeat({required String data, int? retry, }) {return RichStreamHeartbeat(HeartbeatEvent(event: 'heartbeat', data: data, retry: retry));}
 
 /// The discriminator value identifying this variant.
 RichStreamEvent get event;
@@ -75,15 +75,15 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is RichStream$Unknown;
 
-R when<R>({required R Function(RichStreamCompletion) completion, required R Function(RichStreamHeartbeat) heartbeat, required R Function(RichStream$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(RichStreamCompletion) completion, required R Function(RichStreamHeartbeat) heartbeat, required R Function(RichStream$Unknown) unknown, }) {return switch (this) {
   final RichStreamCompletion v => completion(v),
   final RichStreamHeartbeat v => heartbeat(v),
   final RichStream$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class RichStreamCompletion extends RichStream {const RichStreamCompletion(this.richCompletionEvent);
 
-factory RichStreamCompletion.fromJson(Map<String, dynamic> json) { return RichStreamCompletion(RichCompletionEvent.fromJson(json)); }
+factory RichStreamCompletion.fromJson(Map<String, dynamic> json) {return RichStreamCompletion(RichCompletionEvent.fromJson(json));}
 
 final RichCompletionEvent richCompletionEvent;
 
@@ -91,10 +91,10 @@ final RichCompletionEvent richCompletionEvent;
 
 @override Map<String, dynamic> toJson() => {...richCompletionEvent.toJson(), 'event': event.toJson()};
 
-RichStreamCompletion copyWith({String? id, RichCompletionEventData? data, }) { return RichStreamCompletion(richCompletionEvent.copyWith(
+RichStreamCompletion copyWith({String? id, RichCompletionEventData? data, }) {return RichStreamCompletion(richCompletionEvent.copyWith(
   id: id,
   data: data,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RichStreamCompletion && richCompletionEvent == other.richCompletionEvent;
 
@@ -102,10 +102,10 @@ RichStreamCompletion copyWith({String? id, RichCompletionEventData? data, }) { r
 
 @override String toString() => 'RichStream.completion($richCompletionEvent)';
 
- }
+}
 @immutable final class RichStreamHeartbeat extends RichStream {const RichStreamHeartbeat(this.heartbeatEvent);
 
-factory RichStreamHeartbeat.fromJson(Map<String, dynamic> json) { return RichStreamHeartbeat(HeartbeatEvent.fromJson(json)); }
+factory RichStreamHeartbeat.fromJson(Map<String, dynamic> json) {return RichStreamHeartbeat(HeartbeatEvent.fromJson(json));}
 
 final HeartbeatEvent heartbeatEvent;
 
@@ -113,10 +113,10 @@ final HeartbeatEvent heartbeatEvent;
 
 @override Map<String, dynamic> toJson() => {...heartbeatEvent.toJson(), 'event': event.toJson()};
 
-RichStreamHeartbeat copyWith({String? data, int? Function()? retry, }) { return RichStreamHeartbeat(heartbeatEvent.copyWith(
+RichStreamHeartbeat copyWith({String? data, int? Function()? retry, }) {return RichStreamHeartbeat(heartbeatEvent.copyWith(
   data: data,
   retry: retry,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RichStreamHeartbeat && heartbeatEvent == other.heartbeatEvent;
 
@@ -124,7 +124,7 @@ RichStreamHeartbeat copyWith({String? data, int? Function()? retry, }) { return 
 
 @override String toString() => 'RichStream.heartbeat($heartbeatEvent)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class RichStream$Unknown extends RichStream {const RichStream$Unknown(this.json);
@@ -142,4 +142,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'RichStream.unknown($json)';
 
- }
+}

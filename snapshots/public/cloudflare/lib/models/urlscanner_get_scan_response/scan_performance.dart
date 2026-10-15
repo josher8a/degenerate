@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScanPerformance {const ScanPerformance({required this.connectEnd, required this.connectStart, required this.decodedBodySize, required this.domComplete, required this.domContentLoadedEventEnd, required this.domContentLoadedEventStart, required this.domInteractive, required this.domainLookupEnd, required this.domainLookupStart, required this.duration, required this.encodedBodySize, required this.entryType, required this.fetchStart, required this.initiatorType, required this.loadEventEnd, required this.loadEventStart, required this.name, required this.nextHopProtocol, required this.redirectCount, required this.redirectEnd, required this.redirectStart, required this.requestStart, required this.responseEnd, required this.responseStart, required this.secureConnectionStart, required this.startTime, required this.transferSize, required this.type, required this.unloadEventEnd, required this.unloadEventStart, required this.workerStart, });
 
-factory ScanPerformance.fromJson(Map<String, dynamic> json) { return ScanPerformance(
+factory ScanPerformance.fromJson(Map<String, dynamic> json) {return ScanPerformance(
   connectEnd: (json['connectEnd'] as num).toDouble(),
   connectStart: (json['connectStart'] as num).toDouble(),
   decodedBodySize: (json['decodedBodySize'] as num).toDouble(),
@@ -35,7 +35,7 @@ factory ScanPerformance.fromJson(Map<String, dynamic> json) { return ScanPerform
   unloadEventEnd: (json['unloadEventEnd'] as num).toDouble(),
   unloadEventStart: (json['unloadEventStart'] as num).toDouble(),
   workerStart: (json['workerStart'] as num).toDouble(),
-); }
+);}
 
 /// Example: `82.59999999403954`
 final double connectEnd;
@@ -122,7 +122,7 @@ final double unloadEventStart;
 
 final double workerStart;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connectEnd': connectEnd,
   'connectStart': connectStart,
   'decodedBodySize': decodedBodySize,
@@ -154,8 +154,8 @@ Map<String, dynamic> toJson() { return {
   'unloadEventEnd': unloadEventEnd,
   'unloadEventStart': unloadEventStart,
   'workerStart': workerStart,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connectEnd') && json['connectEnd'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connectEnd') && json['connectEnd'] is num &&
       json.containsKey('connectStart') && json['connectStart'] is num &&
       json.containsKey('decodedBodySize') && json['decodedBodySize'] is num &&
       json.containsKey('domComplete') && json['domComplete'] is num &&
@@ -185,8 +185,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conne
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('unloadEventEnd') && json['unloadEventEnd'] is num &&
       json.containsKey('unloadEventStart') && json['unloadEventStart'] is num &&
-      json.containsKey('workerStart') && json['workerStart'] is num; } 
-ScanPerformance copyWith({double? connectEnd, double? connectStart, double? decodedBodySize, double? domComplete, double? domContentLoadedEventEnd, double? domContentLoadedEventStart, double? domInteractive, double? domainLookupEnd, double? domainLookupStart, double? duration, double? encodedBodySize, String? entryType, double? fetchStart, String? initiatorType, double? loadEventEnd, double? loadEventStart, String? name, String? nextHopProtocol, double? redirectCount, double? redirectEnd, double? redirectStart, double? requestStart, double? responseEnd, double? responseStart, double? secureConnectionStart, double? startTime, double? transferSize, String? type, double? unloadEventEnd, double? unloadEventStart, double? workerStart, }) { return ScanPerformance(
+      json.containsKey('workerStart') && json['workerStart'] is num;}
+ScanPerformance copyWith({double? connectEnd, double? connectStart, double? decodedBodySize, double? domComplete, double? domContentLoadedEventEnd, double? domContentLoadedEventStart, double? domInteractive, double? domainLookupEnd, double? domainLookupStart, double? duration, double? encodedBodySize, String? entryType, double? fetchStart, String? initiatorType, double? loadEventEnd, double? loadEventStart, String? name, String? nextHopProtocol, double? redirectCount, double? redirectEnd, double? redirectStart, double? requestStart, double? responseEnd, double? responseStart, double? secureConnectionStart, double? startTime, double? transferSize, String? type, double? unloadEventEnd, double? unloadEventStart, double? workerStart, }) {return ScanPerformance(
   connectEnd: connectEnd ?? this.connectEnd,
   connectStart: connectStart ?? this.connectStart,
   decodedBodySize: decodedBodySize ?? this.decodedBodySize,
@@ -218,7 +218,7 @@ ScanPerformance copyWith({double? connectEnd, double? connectStart, double? deco
   unloadEventEnd: unloadEventEnd ?? this.unloadEventEnd,
   unloadEventStart: unloadEventStart ?? this.unloadEventStart,
   workerStart: workerStart ?? this.workerStart,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScanPerformance &&
           connectEnd == other.connectEnd &&
@@ -257,4 +257,4 @@ ScanPerformance copyWith({double? connectEnd, double? connectStart, double? deco
 
 @override String toString() => 'ScanPerformance(\n  connectEnd: $connectEnd,\n  connectStart: $connectStart,\n  decodedBodySize: $decodedBodySize,\n  domComplete: $domComplete,\n  domContentLoadedEventEnd: $domContentLoadedEventEnd,\n  domContentLoadedEventStart: $domContentLoadedEventStart,\n  domInteractive: $domInteractive,\n  domainLookupEnd: $domainLookupEnd,\n  domainLookupStart: $domainLookupStart,\n  duration: $duration,\n  encodedBodySize: $encodedBodySize,\n  entryType: $entryType,\n  fetchStart: $fetchStart,\n  initiatorType: $initiatorType,\n  loadEventEnd: $loadEventEnd,\n  loadEventStart: $loadEventStart,\n  name: $name,\n  nextHopProtocol: $nextHopProtocol,\n  redirectCount: $redirectCount,\n  redirectEnd: $redirectEnd,\n  redirectStart: $redirectStart,\n  requestStart: $requestStart,\n  responseEnd: $responseEnd,\n  responseStart: $responseStart,\n  secureConnectionStart: $secureConnectionStart,\n  startTime: $startTime,\n  transferSize: $transferSize,\n  type: $type,\n  unloadEventEnd: $unloadEventEnd,\n  unloadEventStart: $unloadEventStart,\n  workerStart: $workerStart,\n)';
 
- }
+}

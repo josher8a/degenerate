@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions_plugins_config.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions_plugins_config_variant2.dart';/// Plugin permissions
 @immutable final class RealtimekitUpdatePresetPermissionsPlugins {const RealtimekitUpdatePresetPermissionsPlugins({this.canClose, this.canEditConfig, this.canStart, this.config, });
 
-factory RealtimekitUpdatePresetPermissionsPlugins.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsPlugins(
+factory RealtimekitUpdatePresetPermissionsPlugins.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetPermissionsPlugins(
   canClose: json['can_close'] as bool?,
   canEditConfig: json['can_edit_config'] as bool?,
   canStart: json['can_start'] as bool?,
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => v as String, fromB: (v) => RealtimekitUpdatePresetPermissionsPluginsConfigVariant2.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// Can close plugins that are already open
 final bool? canClose;
@@ -22,19 +22,19 @@ final bool? canStart;
 
 final RealtimekitUpdatePresetPermissionsPluginsConfig? config;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_close': ?canClose,
   'can_edit_config': ?canEditConfig,
   'can_start': ?canStart,
   if (config != null) 'config': config?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_close', 'can_edit_config', 'can_start', 'config'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsPlugins copyWith({bool? Function()? canClose, bool? Function()? canEditConfig, bool? Function()? canStart, RealtimekitUpdatePresetPermissionsPluginsConfig? Function()? config, }) { return RealtimekitUpdatePresetPermissionsPlugins(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_close', 'can_edit_config', 'can_start', 'config'}.contains(key));}
+RealtimekitUpdatePresetPermissionsPlugins copyWith({bool? Function()? canClose, bool? Function()? canEditConfig, bool? Function()? canStart, RealtimekitUpdatePresetPermissionsPluginsConfig? Function()? config, }) {return RealtimekitUpdatePresetPermissionsPlugins(
   canClose: canClose != null ? canClose() : this.canClose,
   canEditConfig: canEditConfig != null ? canEditConfig() : this.canEditConfig,
   canStart: canStart != null ? canStart() : this.canStart,
   config: config != null ? config() : this.config,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsPlugins &&
           canClose == other.canClose &&
@@ -46,4 +46,4 @@ RealtimekitUpdatePresetPermissionsPlugins copyWith({bool? Function()? canClose, 
 
 @override String toString() => 'RealtimekitUpdatePresetPermissionsPlugins(canClose: $canClose, canEditConfig: $canEditConfig, canStart: $canStart, config: $config)';
 
- }
+}

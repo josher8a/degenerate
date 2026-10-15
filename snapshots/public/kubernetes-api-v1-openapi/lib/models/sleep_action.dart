@@ -2,22 +2,22 @@
 // Source: #/components/schemas/SleepAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SleepAction describes a "sleep" action.
-@immutable final class SleepAction {const SleepAction({this.seconds = 0});
+@immutable final class SleepAction {const SleepAction({required this.seconds});
 
-factory SleepAction.fromJson(Map<String, dynamic> json) { return SleepAction(
+factory SleepAction.fromJson(Map<String, dynamic> json) {return SleepAction(
   seconds: (json['seconds'] as num).toInt(),
-); }
+);}
 
 /// Seconds is the number of seconds to sleep.
 final int seconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'seconds': seconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('seconds') && json['seconds'] is num; } 
-SleepAction copyWith({int? seconds}) { return SleepAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('seconds') && json['seconds'] is num;}
+SleepAction copyWith({int? seconds}) {return SleepAction(
   seconds: seconds ?? this.seconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SleepAction &&
           seconds == other.seconds;
@@ -26,4 +26,4 @@ SleepAction copyWith({int? seconds}) { return SleepAction(
 
 @override String toString() => 'SleepAction(seconds: $seconds)';
 
- }
+}

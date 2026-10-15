@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_status_code.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_over_time.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_pct_over_time.dart';@immutable final class HttpStats {const HttpStats({required this.availabilityPct, required this.dnsResponseTimeMs, required this.httpStatusCode, required this.resourceFetchTimeMs, required this.serverResponseTimeMs, required this.uniqueDevicesTotal, });
 
-factory HttpStats.fromJson(Map<String, dynamic> json) { return HttpStats(
+factory HttpStats.fromJson(Map<String, dynamic> json) {return HttpStats(
   availabilityPct: DigitalExperienceMonitoringTestStatPctOverTime.fromJson(json['availabilityPct'] as Map<String, dynamic>),
   dnsResponseTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['dnsResponseTimeMs'] as Map<String, dynamic>),
   httpStatusCode: (json['httpStatusCode'] as List<dynamic>).map((e) => HttpStatusCode.fromJson(e as Map<String, dynamic>)).toList(),
   resourceFetchTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['resourceFetchTimeMs'] as Map<String, dynamic>),
   serverResponseTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['serverResponseTimeMs'] as Map<String, dynamic>),
   uniqueDevicesTotal: (json['uniqueDevicesTotal'] as num).toInt(),
-); }
+);}
 
 final DigitalExperienceMonitoringTestStatPctOverTime availabilityPct;
 
@@ -27,28 +27,28 @@ final DigitalExperienceMonitoringTestStatOverTime serverResponseTimeMs;
 /// Example: `57`
 final int uniqueDevicesTotal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'availabilityPct': availabilityPct.toJson(),
   'dnsResponseTimeMs': dnsResponseTimeMs.toJson(),
   'httpStatusCode': httpStatusCode.map((e) => e.toJson()).toList(),
   'resourceFetchTimeMs': resourceFetchTimeMs.toJson(),
   'serverResponseTimeMs': serverResponseTimeMs.toJson(),
   'uniqueDevicesTotal': uniqueDevicesTotal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('availabilityPct') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('availabilityPct') &&
       json.containsKey('dnsResponseTimeMs') &&
       json.containsKey('httpStatusCode') &&
       json.containsKey('resourceFetchTimeMs') &&
       json.containsKey('serverResponseTimeMs') &&
-      json.containsKey('uniqueDevicesTotal') && json['uniqueDevicesTotal'] is num; } 
-HttpStats copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availabilityPct, DigitalExperienceMonitoringTestStatOverTime? dnsResponseTimeMs, List<HttpStatusCode>? httpStatusCode, DigitalExperienceMonitoringTestStatOverTime? resourceFetchTimeMs, DigitalExperienceMonitoringTestStatOverTime? serverResponseTimeMs, int? uniqueDevicesTotal, }) { return HttpStats(
+      json.containsKey('uniqueDevicesTotal') && json['uniqueDevicesTotal'] is num;}
+HttpStats copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availabilityPct, DigitalExperienceMonitoringTestStatOverTime? dnsResponseTimeMs, List<HttpStatusCode>? httpStatusCode, DigitalExperienceMonitoringTestStatOverTime? resourceFetchTimeMs, DigitalExperienceMonitoringTestStatOverTime? serverResponseTimeMs, int? uniqueDevicesTotal, }) {return HttpStats(
   availabilityPct: availabilityPct ?? this.availabilityPct,
   dnsResponseTimeMs: dnsResponseTimeMs ?? this.dnsResponseTimeMs,
   httpStatusCode: httpStatusCode ?? this.httpStatusCode,
   resourceFetchTimeMs: resourceFetchTimeMs ?? this.resourceFetchTimeMs,
   serverResponseTimeMs: serverResponseTimeMs ?? this.serverResponseTimeMs,
   uniqueDevicesTotal: uniqueDevicesTotal ?? this.uniqueDevicesTotal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HttpStats &&
           availabilityPct == other.availabilityPct &&
@@ -62,4 +62,4 @@ HttpStats copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availability
 
 @override String toString() => 'HttpStats(availabilityPct: $availabilityPct, dnsResponseTimeMs: $dnsResponseTimeMs, httpStatusCode: $httpStatusCode, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)';
 
- }
+}

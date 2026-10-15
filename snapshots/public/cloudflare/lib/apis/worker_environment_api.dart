@@ -14,7 +14,7 @@ final class WorkerEnvironmentApi with ApiExecutor {const WorkerEnvironmentApi(th
 /// Get script content from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<String, CreateWorkerVersionError>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, CreateWorkerVersionError>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,20 +23,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Put script content
 ///
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<WorkersScriptResponse, CreateWorkerVersionError>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkerEnvironmentPutScriptContentRequest body, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptResponse, CreateWorkerVersionError>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkerEnvironmentPutScriptContentRequest body, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfWorkerBodyPart != null) {
   headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 }
@@ -57,7 +57,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -65,13 +65,13 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Get Script Settings
 ///
 /// Get script settings from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<WorkersScriptSettingsItem, CreateWorkerVersionError>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsItem, CreateWorkerVersionError>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,7 +80,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,13 +88,13 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Patch Script Settings
 ///
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<WorkersScriptSettingsItem, CreateWorkerVersionError>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkersScriptSettingsResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsItem, CreateWorkerVersionError>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkersScriptSettingsResponse body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,7 +105,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -113,5 +113,5 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

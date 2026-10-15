@@ -13,7 +13,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeClientEventSessionUpdate {const RealtimeClientEventSessionUpdate({required this.type, required this.session, this.eventId, });
 
-factory RealtimeClientEventSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventSessionUpdate(
+factory RealtimeClientEventSessionUpdate.fromJson(Map<String, dynamic> json) {return RealtimeClientEventSessionUpdate(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   session: switch (json['session']) {
@@ -21,7 +21,7 @@ factory RealtimeClientEventSessionUpdate.fromJson(Map<String, dynamic> json) { r
   final Map<String, dynamic> m when m['type'] == 'transcription' => OneOf2<RealtimeSessionCreateRequestGa, RealtimeTranscriptionSessionCreateRequestGa>.b(RealtimeTranscriptionSessionCreateRequestGa.fromJson(m)),
   _ => OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),),
 },
-); }
+);}
 
 /// Optional client-generated ID used to identify this event. This is an arbitrary string that a client may assign. It will be passed back if there is an error with the event, but the corresponding `session.updated` event will not include it.
 final String? eventId;
@@ -34,25 +34,25 @@ final String type;
 /// 
 final RealtimeClientEventSessionUpdateSession session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'session': session.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('session'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('session');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventSessionUpdate copyWith({String? Function()? eventId, String? type, RealtimeClientEventSessionUpdateSession? session, }) { return RealtimeClientEventSessionUpdate(
+return errors;}
+RealtimeClientEventSessionUpdate copyWith({String? Function()? eventId, String? type, RealtimeClientEventSessionUpdateSession? session, }) {return RealtimeClientEventSessionUpdate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventSessionUpdate &&
           eventId == other.eventId &&
@@ -63,4 +63,4 @@ RealtimeClientEventSessionUpdate copyWith({String? Function()? eventId, String? 
 
 @override String toString() => 'RealtimeClientEventSessionUpdate(eventId: $eventId, type: $type, session: $session)';
 
- }
+}

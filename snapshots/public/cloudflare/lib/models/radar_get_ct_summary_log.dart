@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtSummaryLog {const RadarGetCtSummaryLog();
 
-factory RadarGetCtSummaryLog.fromJson(String json) { return switch (json) {
+factory RadarGetCtSummaryLog.fromJson(String json) {return switch (json) {
   'RFC6962' => rfc6962,
   'STATIC' => $static,
   _ => RadarGetCtSummaryLog$Unknown(json),
-}; }
+};}
 
 static const RadarGetCtSummaryLog rfc6962 = RadarGetCtSummaryLog$rfc6962._();
 
@@ -16,30 +16,30 @@ static const RadarGetCtSummaryLog $static = RadarGetCtSummaryLog$$static._();
 static const List<RadarGetCtSummaryLog> values = [rfc6962, $static];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'RFC6962' => 'rfc6962',
   'STATIC' => r'$static',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetCtSummaryLog$Unknown; } 
+bool get isUnknown {return this is RadarGetCtSummaryLog$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rfc6962, required W Function() $static, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rfc6962, required W Function() $static, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetCtSummaryLog$rfc6962() => rfc6962(),
       RadarGetCtSummaryLog$$static() => $static(),
       RadarGetCtSummaryLog$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962, W Function()? $static, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962, W Function()? $static, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetCtSummaryLog$rfc6962() => rfc6962 != null ? rfc6962() : orElse(value),
       RadarGetCtSummaryLog$$static() => $static != null ? $static() : orElse(value),
       RadarGetCtSummaryLog$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetCtSummaryLog($value)';
 
- }
+}
 @immutable final class RadarGetCtSummaryLog$rfc6962 extends RadarGetCtSummaryLog {const RadarGetCtSummaryLog$rfc6962._();
 
 @override String get value => 'RFC6962';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962,
 
 @override int get hashCode => 'RFC6962'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtSummaryLog$$static extends RadarGetCtSummaryLog {const RadarGetCtSummaryLog$$static._();
 
 @override String get value => 'STATIC';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962,
 
 @override int get hashCode => 'STATIC'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtSummaryLog$Unknown extends RadarGetCtSummaryLog {const RadarGetCtSummaryLog$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

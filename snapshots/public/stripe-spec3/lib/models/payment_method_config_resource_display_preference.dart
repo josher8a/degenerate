@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_display_preference/preference.dart';/// The effective display preference value.
 sealed class PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue();
 
-factory PaymentMethodConfigResourceDisplayPreferenceValue.fromJson(String json) { return switch (json) {
+factory PaymentMethodConfigResourceDisplayPreferenceValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'on' => $on,
   _ => PaymentMethodConfigResourceDisplayPreferenceValue$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodConfigResourceDisplayPreferenceValue off = PaymentMethodConfigResourceDisplayPreferenceValue$off._();
 
@@ -17,30 +17,30 @@ static const PaymentMethodConfigResourceDisplayPreferenceValue $on = PaymentMeth
 static const List<PaymentMethodConfigResourceDisplayPreferenceValue> values = [off, $on];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'on' => r'$on',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodConfigResourceDisplayPreferenceValue$Unknown; } 
+bool get isUnknown {return this is PaymentMethodConfigResourceDisplayPreferenceValue$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodConfigResourceDisplayPreferenceValue$off() => off(),
       PaymentMethodConfigResourceDisplayPreferenceValue$$on() => $on(),
       PaymentMethodConfigResourceDisplayPreferenceValue$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodConfigResourceDisplayPreferenceValue$off() => off != null ? off() : orElse(value),
       PaymentMethodConfigResourceDisplayPreferenceValue$$on() => $on != null ? $on() : orElse(value),
       PaymentMethodConfigResourceDisplayPreferenceValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodConfigResourceDisplayPreferenceValue($value)';
 
- }
+}
 @immutable final class PaymentMethodConfigResourceDisplayPreferenceValue$off extends PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue$off._();
 
 @override String get value => 'off';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodConfigResourceDisplayPreferenceValue$$on extends PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue$$on._();
 
 @override String get value => 'on';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodConfigResourceDisplayPreferenceValue$Unknown extends PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue$Unknown(this.value);
 
 @override final String value;
@@ -68,18 +68,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({required this.preference, required this.value, this.overridable, });
+@immutable final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({required this.preference, required this.value, this.overridable = const Omittable.absent(), });
 
-factory PaymentMethodConfigResourceDisplayPreference.fromJson(Map<String, dynamic> json) { return PaymentMethodConfigResourceDisplayPreference(
-  overridable: json['overridable'] as bool?,
+factory PaymentMethodConfigResourceDisplayPreference.fromJson(Map<String, dynamic> json) {return PaymentMethodConfigResourceDisplayPreference(
+  overridable: json.containsKey('overridable') ? Omittable(json['overridable'] as bool?) : const Omittable.absent(),
   preference: Preference.fromJson(json['preference'] as String),
   value: PaymentMethodConfigResourceDisplayPreferenceValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// For child configs, whether or not the account's preference will be observed. If `false`, the parent configuration's default is used.
-final bool? overridable;
+final Omittable<bool?> overridable;
 
 /// The account's display preference.
 final Preference preference;
@@ -87,18 +87,18 @@ final Preference preference;
 /// The effective display preference value.
 final PaymentMethodConfigResourceDisplayPreferenceValue value;
 
-Map<String, dynamic> toJson() { return {
-  'overridable': ?overridable,
+Map<String, dynamic> toJson() {return {
+  if (overridable.isPresent) 'overridable': overridable.value,
   'preference': preference.toJson(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('preference') &&
-      json.containsKey('value'); } 
-PaymentMethodConfigResourceDisplayPreference copyWith({bool? Function()? overridable, Preference? preference, PaymentMethodConfigResourceDisplayPreferenceValue? value, }) { return PaymentMethodConfigResourceDisplayPreference(
-  overridable: overridable != null ? overridable() : this.overridable,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('preference') &&
+      json.containsKey('value');}
+PaymentMethodConfigResourceDisplayPreference copyWith({Omittable<bool?>? overridable, Preference? preference, PaymentMethodConfigResourceDisplayPreferenceValue? value, }) {return PaymentMethodConfigResourceDisplayPreference(
+  overridable: overridable ?? this.overridable,
   preference: preference ?? this.preference,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfigResourceDisplayPreference &&
           overridable == other.overridable &&
@@ -109,4 +109,4 @@ PaymentMethodConfigResourceDisplayPreference copyWith({bool? Function()? overrid
 
 @override String toString() => 'PaymentMethodConfigResourceDisplayPreference(overridable: $overridable, preference: $preference, value: $value)';
 
- }
+}

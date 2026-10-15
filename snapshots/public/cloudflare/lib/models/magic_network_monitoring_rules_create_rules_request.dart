@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicNetworkMonitoringRulesCreateRulesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_duration.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_packet_threshold.dart';@immutable final class MagicNetworkMonitoringRulesCreateRulesRequest {const MagicNetworkMonitoringRulesCreateRulesRequest({required this.duration, required this.name, this.automaticAdvertisement, this.bandwidth, this.packetThreshold, this.prefixes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_duration.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_packet_threshold.dart';@immutable final class MagicNetworkMonitoringRulesCreateRulesRequest {const MagicNetworkMonitoringRulesCreateRulesRequest({required this.duration, required this.name, this.automaticAdvertisement = const Omittable.absent(), this.bandwidth, this.packetThreshold, this.prefixes, });
 
-factory MagicNetworkMonitoringRulesCreateRulesRequest.fromJson(Map<String, dynamic> json) { return MagicNetworkMonitoringRulesCreateRulesRequest(
-  automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
+factory MagicNetworkMonitoringRulesCreateRulesRequest.fromJson(Map<String, dynamic> json) {return MagicNetworkMonitoringRulesCreateRulesRequest(
+  automaticAdvertisement: json.containsKey('automatic_advertisement') ? Omittable(json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null) : const Omittable.absent(),
   bandwidth: json['bandwidth'] != null ? MagicVisibilityMnmMnmRuleBandwidthThreshold.fromJson(json['bandwidth'] as num) : null,
   duration: MagicVisibilityMnmMnmRuleDuration.fromJson(json['duration'] as String),
   name: MagicVisibilityMnmMnmRuleName.fromJson(json['name'] as String),
   packetThreshold: json['packet_threshold'] != null ? MagicVisibilityMnmMnmRulePacketThreshold.fromJson(json['packet_threshold'] as num) : null,
   prefixes: (json['prefixes'] as List<dynamic>?)?.map((e) => MagicVisibilityMnmMnmRuleIpPrefix.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
-final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
+final Omittable<MagicVisibilityMnmMnmRuleAutomaticAdvertisement?> automaticAdvertisement;
 
 /// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 final MagicVisibilityMnmMnmRuleBandwidthThreshold? bandwidth;
@@ -29,24 +29,24 @@ final MagicVisibilityMnmMnmRulePacketThreshold? packetThreshold;
 
 final List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes;
 
-Map<String, dynamic> toJson() { return {
-  if (automaticAdvertisement != null) 'automatic_advertisement': automaticAdvertisement?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (automaticAdvertisement.isPresent) 'automatic_advertisement': automaticAdvertisement.value?.toJson(),
   if (bandwidth != null) 'bandwidth': bandwidth?.toJson(),
   'duration': duration.toJson(),
   'name': name.toJson(),
   if (packetThreshold != null) 'packet_threshold': packetThreshold?.toJson(),
   if (prefixes != null) 'prefixes': prefixes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('duration') &&
-      json.containsKey('name'); } 
-MagicNetworkMonitoringRulesCreateRulesRequest copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration? duration, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix>? Function()? prefixes, }) { return MagicNetworkMonitoringRulesCreateRulesRequest(
-  automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('duration') &&
+      json.containsKey('name');}
+MagicNetworkMonitoringRulesCreateRulesRequest copyWith({Omittable<MagicVisibilityMnmMnmRuleAutomaticAdvertisement?>? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration? duration, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix>? Function()? prefixes, }) {return MagicNetworkMonitoringRulesCreateRulesRequest(
+  automaticAdvertisement: automaticAdvertisement ?? this.automaticAdvertisement,
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   duration: duration ?? this.duration,
   name: name ?? this.name,
   packetThreshold: packetThreshold != null ? packetThreshold() : this.packetThreshold,
   prefixes: prefixes != null ? prefixes() : this.prefixes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNetworkMonitoringRulesCreateRulesRequest &&
           automaticAdvertisement == other.automaticAdvertisement &&
@@ -60,4 +60,4 @@ MagicNetworkMonitoringRulesCreateRulesRequest copyWith({MagicVisibilityMnmMnmRul
 
 @override String toString() => 'MagicNetworkMonitoringRulesCreateRulesRequest(automaticAdvertisement: $automaticAdvertisement, bandwidth: $bandwidth, duration: $duration, name: $name, packetThreshold: $packetThreshold, prefixes: $prefixes)';
 
- }
+}

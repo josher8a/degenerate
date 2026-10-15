@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_route_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';@immutable final class TunnelRoute {const TunnelRoute({this.comment, this.createdAt, this.deletedAt, this.id, this.network, this.tunnelId, this.virtualNetworkId, });
 
-factory TunnelRoute.fromJson(Map<String, dynamic> json) { return TunnelRoute(
+factory TunnelRoute.fromJson(Map<String, dynamic> json) {return TunnelRoute(
   comment: json['comment'] != null ? TunnelRouteComment.fromJson(json['comment'] as String) : null,
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
@@ -11,7 +11,7 @@ factory TunnelRoute.fromJson(Map<String, dynamic> json) { return TunnelRoute(
   network: json['network'] != null ? TunnelIpNetwork.fromJson(json['network'] as String) : null,
   tunnelId: json['tunnel_id'] != null ? TunnelTunnelId.fromJson(json['tunnel_id'] as String) : null,
   virtualNetworkId: json['virtual_network_id'] != null ? TunnelVirtualNetworkId.fromJson(json['virtual_network_id'] as String) : null,
-); }
+);}
 
 final TunnelRouteComment? comment;
 
@@ -30,7 +30,7 @@ final TunnelTunnelId? tunnelId;
 
 final TunnelVirtualNetworkId? virtualNetworkId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (deletedAt != null) 'deleted_at': deletedAt?.toJson(),
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   if (network != null) 'network': network?.toJson(),
   if (tunnelId != null) 'tunnel_id': tunnelId?.toJson(),
   if (virtualNetworkId != null) 'virtual_network_id': virtualNetworkId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'network', 'tunnel_id', 'virtual_network_id'}.contains(key)); } 
-TunnelRoute copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelRouteId? Function()? id, TunnelIpNetwork? Function()? network, TunnelTunnelId? Function()? tunnelId, TunnelVirtualNetworkId? Function()? virtualNetworkId, }) { return TunnelRoute(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'network', 'tunnel_id', 'virtual_network_id'}.contains(key));}
+TunnelRoute copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelRouteId? Function()? id, TunnelIpNetwork? Function()? network, TunnelTunnelId? Function()? tunnelId, TunnelVirtualNetworkId? Function()? virtualNetworkId, }) {return TunnelRoute(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
@@ -48,7 +48,7 @@ TunnelRoute copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt? 
   network: network != null ? network() : this.network,
   tunnelId: tunnelId != null ? tunnelId() : this.tunnelId,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelRoute &&
           comment == other.comment &&
@@ -63,4 +63,4 @@ TunnelRoute copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt? 
 
 @override String toString() => 'TunnelRoute(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, network: $network, tunnelId: $tunnelId, virtualNetworkId: $virtualNetworkId)';
 
- }
+}

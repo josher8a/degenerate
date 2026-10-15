@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleInputMessage {const SimpleInputMessage({required this.role, required this.content, });
 
-factory SimpleInputMessage.fromJson(Map<String, dynamic> json) { return SimpleInputMessage(
+factory SimpleInputMessage.fromJson(Map<String, dynamic> json) {return SimpleInputMessage(
   role: json['role'] as String,
   content: json['content'] as String,
-); }
+);}
 
 /// The role of the message (e.g. "system", "assistant", "user").
 final String role;
@@ -14,16 +14,16 @@ final String role;
 /// The content of the message.
 final String content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role,
   'content': content,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] is String &&
-      json.containsKey('content') && json['content'] is String; } 
-SimpleInputMessage copyWith({String? role, String? content, }) { return SimpleInputMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') && json['role'] is String &&
+      json.containsKey('content') && json['content'] is String;}
+SimpleInputMessage copyWith({String? role, String? content, }) {return SimpleInputMessage(
   role: role ?? this.role,
   content: content ?? this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleInputMessage &&
           role == other.role &&
@@ -33,4 +33,4 @@ SimpleInputMessage copyWith({String? role, String? content, }) { return SimpleIn
 
 @override String toString() => 'SimpleInputMessage(role: $role, content: $content)';
 
- }
+}

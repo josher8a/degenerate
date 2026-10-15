@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Dimension to sort results by
 sealed class DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy();
 
-factory DigitalExperienceMonitoringSortBy.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringSortBy.fromJson(String json) {return switch (json) {
   'colo' => colo,
   'device_id' => deviceId,
   'mode' => mode,
@@ -13,7 +13,7 @@ factory DigitalExperienceMonitoringSortBy.fromJson(String json) { return switch 
   'timestamp' => timestamp,
   'version' => version,
   _ => DigitalExperienceMonitoringSortBy$Unknown(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringSortBy colo = DigitalExperienceMonitoringSortBy$colo._();
 
@@ -32,9 +32,9 @@ static const DigitalExperienceMonitoringSortBy version = DigitalExperienceMonito
 static const List<DigitalExperienceMonitoringSortBy> values = [colo, deviceId, mode, platform, status, timestamp, version];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'colo' => 'colo',
   'device_id' => 'deviceId',
   'mode' => 'mode',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'timestamp' => 'timestamp',
   'version' => 'version',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DigitalExperienceMonitoringSortBy$Unknown; } 
+bool get isUnknown {return this is DigitalExperienceMonitoringSortBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() colo, required W Function() deviceId, required W Function() mode, required W Function() platform, required W Function() status, required W Function() timestamp, required W Function() version, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() colo, required W Function() deviceId, required W Function() mode, required W Function() platform, required W Function() status, required W Function() timestamp, required W Function() version, required W Function(String value) $unknown, }) {return switch (this) {
       DigitalExperienceMonitoringSortBy$colo() => colo(),
       DigitalExperienceMonitoringSortBy$deviceId() => deviceId(),
       DigitalExperienceMonitoringSortBy$mode() => mode(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() colo, required W Function() deviceId, required 
       DigitalExperienceMonitoringSortBy$timestamp() => timestamp(),
       DigitalExperienceMonitoringSortBy$version() => version(),
       DigitalExperienceMonitoringSortBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W Function()? deviceId, W Function()? mode, W Function()? platform, W Function()? status, W Function()? timestamp, W Function()? version, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W Function()? deviceId, W Function()? mode, W Function()? platform, W Function()? status, W Function()? timestamp, W Function()? version, W Function(String value)? $unknown, }) {return switch (this) {
       DigitalExperienceMonitoringSortBy$colo() => colo != null ? colo() : orElse(value),
       DigitalExperienceMonitoringSortBy$deviceId() => deviceId != null ? deviceId() : orElse(value),
       DigitalExperienceMonitoringSortBy$mode() => mode != null ? mode() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
       DigitalExperienceMonitoringSortBy$timestamp() => timestamp != null ? timestamp() : orElse(value),
       DigitalExperienceMonitoringSortBy$version() => version != null ? version() : orElse(value),
       DigitalExperienceMonitoringSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DigitalExperienceMonitoringSortBy($value)';
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$colo extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$colo._();
 
 @override String get value => 'colo';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'colo'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$deviceId extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$deviceId._();
 
 @override String get value => 'device_id';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'device_id'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$mode extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$mode._();
 
 @override String get value => 'mode';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'mode'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$platform extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$platform._();
 
 @override String get value => 'platform';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'platform'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$status extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$status._();
 
 @override String get value => 'status';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'status'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$timestamp extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$timestamp._();
 
 @override String get value => 'timestamp';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'timestamp'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$version extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$version._();
 
 @override String get value => 'version';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => 'version'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSortBy$Unknown extends DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

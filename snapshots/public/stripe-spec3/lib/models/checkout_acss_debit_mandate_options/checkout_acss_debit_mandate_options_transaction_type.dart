@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Transaction type of the mandate.
 sealed class CheckoutAcssDebitMandateOptionsTransactionType {const CheckoutAcssDebitMandateOptionsTransactionType();
 
-factory CheckoutAcssDebitMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
+factory CheckoutAcssDebitMandateOptionsTransactionType.fromJson(String json) {return switch (json) {
   'business' => business,
   'personal' => personal,
   _ => CheckoutAcssDebitMandateOptionsTransactionType$Unknown(json),
-}; }
+};}
 
 static const CheckoutAcssDebitMandateOptionsTransactionType business = CheckoutAcssDebitMandateOptionsTransactionType$business._();
 
@@ -17,30 +17,30 @@ static const CheckoutAcssDebitMandateOptionsTransactionType personal = CheckoutA
 static const List<CheckoutAcssDebitMandateOptionsTransactionType> values = [business, personal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'business' => 'business',
   'personal' => 'personal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutAcssDebitMandateOptionsTransactionType$Unknown; } 
+bool get isUnknown {return this is CheckoutAcssDebitMandateOptionsTransactionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() business, required W Function() personal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() business, required W Function() personal, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutAcssDebitMandateOptionsTransactionType$business() => business(),
       CheckoutAcssDebitMandateOptionsTransactionType$personal() => personal(),
       CheckoutAcssDebitMandateOptionsTransactionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? business, W Function()? personal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? business, W Function()? personal, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutAcssDebitMandateOptionsTransactionType$business() => business != null ? business() : orElse(value),
       CheckoutAcssDebitMandateOptionsTransactionType$personal() => personal != null ? personal() : orElse(value),
       CheckoutAcssDebitMandateOptionsTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutAcssDebitMandateOptionsTransactionType($value)';
 
- }
+}
 @immutable final class CheckoutAcssDebitMandateOptionsTransactionType$business extends CheckoutAcssDebitMandateOptionsTransactionType {const CheckoutAcssDebitMandateOptionsTransactionType$business._();
 
 @override String get value => 'business';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'business'.hashCode;
 
- }
+}
 @immutable final class CheckoutAcssDebitMandateOptionsTransactionType$personal extends CheckoutAcssDebitMandateOptionsTransactionType {const CheckoutAcssDebitMandateOptionsTransactionType$personal._();
 
 @override String get value => 'personal';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'personal'.hashCode;
 
- }
+}
 @immutable final class CheckoutAcssDebitMandateOptionsTransactionType$Unknown extends CheckoutAcssDebitMandateOptionsTransactionType {const CheckoutAcssDebitMandateOptionsTransactionType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => value.hashCode;
 
- }
+}

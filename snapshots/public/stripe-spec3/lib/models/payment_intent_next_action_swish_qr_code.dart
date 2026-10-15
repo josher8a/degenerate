@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionSwishQrCode {const PaymentIntentNextActionSwishQrCode({required this.data, required this.imageUrlPng, required this.imageUrlSvg, });
 
-factory PaymentIntentNextActionSwishQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionSwishQrCode(
+factory PaymentIntentNextActionSwishQrCode.fromJson(Map<String, dynamic> json) {return PaymentIntentNextActionSwishQrCode(
   data: json['data'] as String,
   imageUrlPng: json['image_url_png'] as String,
   imageUrlSvg: json['image_url_svg'] as String,
-); }
+);}
 
 /// The raw data string used to generate QR code, it should be used together with QR code library.
 final String data;
@@ -19,25 +19,25 @@ final String imageUrlPng;
 /// The image_url_svg string used to render QR code
 final String imageUrlSvg;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data,
   'image_url_png': imageUrlPng,
   'image_url_svg': imageUrlSvg,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') && json['data'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') && json['data'] is String &&
       json.containsKey('image_url_png') && json['image_url_png'] is String &&
-      json.containsKey('image_url_svg') && json['image_url_svg'] is String; } 
+      json.containsKey('image_url_svg') && json['image_url_svg'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (data.runes.length > 5000) { errors.add('data: length must be <= 5000'); }
 if (imageUrlPng.runes.length > 5000) { errors.add('imageUrlPng: length must be <= 5000'); }
 if (imageUrlSvg.runes.length > 5000) { errors.add('imageUrlSvg: length must be <= 5000'); }
-return errors; } 
-PaymentIntentNextActionSwishQrCode copyWith({String? data, String? imageUrlPng, String? imageUrlSvg, }) { return PaymentIntentNextActionSwishQrCode(
+return errors;}
+PaymentIntentNextActionSwishQrCode copyWith({String? data, String? imageUrlPng, String? imageUrlSvg, }) {return PaymentIntentNextActionSwishQrCode(
   data: data ?? this.data,
   imageUrlPng: imageUrlPng ?? this.imageUrlPng,
   imageUrlSvg: imageUrlSvg ?? this.imageUrlSvg,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionSwishQrCode &&
           data == other.data &&
@@ -48,4 +48,4 @@ PaymentIntentNextActionSwishQrCode copyWith({String? data, String? imageUrlPng, 
 
 @override String toString() => 'PaymentIntentNextActionSwishQrCode(data: $data, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
 
- }
+}

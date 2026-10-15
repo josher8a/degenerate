@@ -2,15 +2,15 @@
 // Source: #/components/schemas/ScrollParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A scroll action.
-@immutable final class ScrollParam {const ScrollParam({required this.x, required this.y, required this.scrollX, required this.scrollY, this.type = 'scroll', });
+@immutable final class ScrollParam {const ScrollParam({required this.type, required this.x, required this.y, required this.scrollX, required this.scrollY, });
 
-factory ScrollParam.fromJson(Map<String, dynamic> json) { return ScrollParam(
+factory ScrollParam.fromJson(Map<String, dynamic> json) {return ScrollParam(
   type: json['type'] as String,
   x: (json['x'] as num).toInt(),
   y: (json['y'] as num).toInt(),
   scrollX: (json['scroll_x'] as num).toInt(),
   scrollY: (json['scroll_y'] as num).toInt(),
-); }
+);}
 
 /// Specifies the event type. For a scroll action, this property is always set to `scroll`.
 final String type;
@@ -27,25 +27,25 @@ final int scrollX;
 /// The vertical scroll distance.
 final int scrollY;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'x': x,
   'y': y,
   'scroll_x': scrollX,
   'scroll_y': scrollY,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('x') && json['x'] is num &&
       json.containsKey('y') && json['y'] is num &&
       json.containsKey('scroll_x') && json['scroll_x'] is num &&
-      json.containsKey('scroll_y') && json['scroll_y'] is num; } 
-ScrollParam copyWith({String? type, int? x, int? y, int? scrollX, int? scrollY, }) { return ScrollParam(
+      json.containsKey('scroll_y') && json['scroll_y'] is num;}
+ScrollParam copyWith({String? type, int? x, int? y, int? scrollX, int? scrollY, }) {return ScrollParam(
   type: type ?? this.type,
   x: x ?? this.x,
   y: y ?? this.y,
   scrollX: scrollX ?? this.scrollX,
   scrollY: scrollY ?? this.scrollY,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScrollParam &&
           type == other.type &&
@@ -58,4 +58,4 @@ ScrollParam copyWith({String? type, int? x, int? y, int? scrollX, int? scrollY, 
 
 @override String toString() => 'ScrollParam(type: $type, x: $x, y: $y, scrollX: $scrollX, scrollY: $scrollY)';
 
- }
+}

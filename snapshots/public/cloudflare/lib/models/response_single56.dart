@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseSingle56
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single56/response_single56_result.dart';@immutable final class ResponseSingle56 {const ResponseSingle56({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single24/response_single24_result.dart';@immutable final class ResponseSingle56 {const ResponseSingle56({required this.result});
 
-factory ResponseSingle56.fromJson(Map<String, dynamic> json) { return ResponseSingle56(
+factory ResponseSingle56.fromJson(Map<String, dynamic> json) {return ResponseSingle56(
   result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},),
-); }
+);}
 
-final ResponseSingle56Result result;
+final ResponseSingle24Result result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result'); } 
-ResponseSingle56 copyWith({ResponseSingle56Result? result}) { return ResponseSingle56(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result');}
+ResponseSingle56 copyWith({ResponseSingle24Result? result}) {return ResponseSingle56(
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseSingle56 &&
           result == other.result;
@@ -24,4 +24,4 @@ ResponseSingle56 copyWith({ResponseSingle56Result? result}) { return ResponseSin
 
 @override String toString() => 'ResponseSingle56(result: $result)';
 
- }
+}

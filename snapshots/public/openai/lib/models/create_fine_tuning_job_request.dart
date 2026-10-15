@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateFineTuningJobRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_hyperparameters.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_model.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/integrations.dart';import 'package:pub_openai/models/fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix, this.validationFile, this.integrations, this.seed, this.method, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_hyperparameters.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_model.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/integrations.dart';import 'package:pub_openai/models/fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix = const Omittable.absent(), this.validationFile = const Omittable.absent(), this.integrations = const Omittable.absent(), this.seed = const Omittable.absent(), this.method, this.metadata = const Omittable.absent(), });
 
-factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequest(
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateFineTuningJobRequestModelVariant2.fromJson(v as String),),
+factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) {return CreateFineTuningJobRequest(
+  model: CreateFineTuningJobRequestModel.fromJson(json['model']),
   trainingFile: json['training_file'] as String,
   hyperparameters: json['hyperparameters'] != null ? CreateFineTuningJobRequestHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
-  suffix: json['suffix'] as String?,
-  validationFile: json['validation_file'] as String?,
-  integrations: (json['integrations'] as List<dynamic>?)?.map((e) => Integrations.fromJson(e as Map<String, dynamic>)).toList(),
-  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
+  suffix: json.containsKey('suffix') ? Omittable(json['suffix'] as String?) : const Omittable.absent(),
+  validationFile: json.containsKey('validation_file') ? Omittable(json['validation_file'] as String?) : const Omittable.absent(),
+  integrations: json.containsKey('integrations') ? Omittable((json['integrations'] as List<dynamic>?)?.map((e) => Integrations.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
   method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+);}
 
 /// The name of the model to fine-tune. You can select one of the
 /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
@@ -45,7 +45,7 @@ final CreateFineTuningJobRequestHyperparameters? hyperparameters;
 /// 
 /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
 /// 
-final String? suffix;
+final Omittable<String?> suffix;
 
 /// The ID of an uploaded file that contains validation data.
 /// 
@@ -60,59 +60,59 @@ final String? suffix;
 /// 
 /// 
 /// Example: `'file-abc123'`
-final String? validationFile;
+final Omittable<String?> validationFile;
 
 /// A list of integrations to enable for your fine-tuning job.
-final List<Integrations>? integrations;
+final Omittable<List<Integrations>?> integrations;
 
 /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
 /// If a seed is not specified, one will be generated for you.
 /// 
 /// 
 /// Example: `42`
-final int? seed;
+final Omittable<int?> seed;
 
 final FineTuneMethod? method;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': model.toJson(),
   'training_file': trainingFile,
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
-  'suffix': ?suffix,
-  'validation_file': ?validationFile,
-  if (integrations != null) 'integrations': integrations?.map((e) => e.toJson()).toList(),
-  'seed': ?seed,
+  if (suffix.isPresent) 'suffix': suffix.value,
+  if (validationFile.isPresent) 'validation_file': validationFile.value,
+  if (integrations.isPresent) 'integrations': integrations.value?.map((e) => e.toJson()).toList(),
+  if (seed.isPresent) 'seed': seed.value,
   if (method != null) 'method': method?.toJson(),
-  'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
-      json.containsKey('training_file') && json['training_file'] is String; } 
+  if (metadata.isPresent) 'metadata': metadata.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model') &&
+      json.containsKey('training_file') && json['training_file'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final suffix$ = suffix;
+List<String> validate() {final errors = <String>[];
+final suffix$ = suffix.value;
 if (suffix$ != null) {
   if (suffix$.isEmpty) { errors.add('suffix: length must be >= 1'); }
   if (suffix$.runes.length > 64) { errors.add('suffix: length must be <= 64'); }
 }
-final seed$ = seed;
+final seed$ = seed.value;
 if (seed$ != null) {
   if (seed$ < 0) { errors.add('seed: must be >= 0'); }
   if (seed$ > 2147483647) { errors.add('seed: must be <= 2147483647'); }
 }
-return errors; } 
-CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters? Function()? hyperparameters, String? Function()? suffix, String? Function()? validationFile, List<Integrations>? Function()? integrations, int? Function()? seed, FineTuneMethod? Function()? method, Map<String, String>? Function()? metadata, }) { return CreateFineTuningJobRequest(
+return errors;}
+CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters? Function()? hyperparameters, Omittable<String?>? suffix, Omittable<String?>? validationFile, Omittable<List<Integrations>?>? integrations, Omittable<int?>? seed, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) {return CreateFineTuningJobRequest(
   model: model ?? this.model,
   trainingFile: trainingFile ?? this.trainingFile,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
-  suffix: suffix != null ? suffix() : this.suffix,
-  validationFile: validationFile != null ? validationFile() : this.validationFile,
-  integrations: integrations != null ? integrations() : this.integrations,
-  seed: seed != null ? seed() : this.seed,
+  suffix: suffix ?? this.suffix,
+  validationFile: validationFile ?? this.validationFile,
+  integrations: integrations ?? this.integrations,
+  seed: seed ?? this.seed,
   method: method != null ? method() : this.method,
-  metadata: metadata != null ? metadata() : this.metadata,
-); } 
+  metadata: metadata ?? this.metadata,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFineTuningJobRequest &&
           model == other.model &&
@@ -120,13 +120,14 @@ CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, Str
           hyperparameters == other.hyperparameters &&
           suffix == other.suffix &&
           validationFile == other.validationFile &&
-          listEquals(integrations, other.integrations) &&
+          integrations.isPresent == other.integrations.isPresent &&
+          listEquals(integrations.value, other.integrations.value) &&
           seed == other.seed &&
           method == other.method &&
           metadata == other.metadata;
 
-@override int get hashCode => Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations ?? const []), seed, method, metadata);
+@override int get hashCode => Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations.value ?? const []), seed, method, metadata);
 
 @override String toString() => 'CreateFineTuningJobRequest(\n  model: $model,\n  trainingFile: $trainingFile,\n  hyperparameters: $hyperparameters,\n  suffix: $suffix,\n  validationFile: $validationFile,\n  integrations: $integrations,\n  seed: $seed,\n  method: $method,\n  metadata: $metadata,\n)';
 
- }
+}

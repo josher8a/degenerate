@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 {const TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1({this.httpBody, this.httpUrl, });
 
-factory TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
+factory TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
   httpBody: json['http_body'] as String?,
   httpUrl: json['http_url'] as String?,
-); }
+);}
 
 /// Token to be served.
 /// 
@@ -18,15 +18,15 @@ final String? httpBody;
 /// Example: `'http://custom.test.com/.well-known/cf-custom-hostname-challenge/0d89c70d-ad9f-4843-b99f-6cc0252067e9'`
 final String? httpUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'http_body': ?httpBody,
   'http_url': ?httpUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'http_body', 'http_url'}.contains(key)); } 
-TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 copyWith({String? Function()? httpBody, String? Function()? httpUrl, }) { return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'http_body', 'http_url'}.contains(key));}
+TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 copyWith({String? Function()? httpBody, String? Function()? httpUrl, }) {return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
   httpBody: httpBody != null ? httpBody() : this.httpBody,
   httpUrl: httpUrl != null ? httpUrl() : this.httpUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 &&
           httpBody == other.httpBody &&
@@ -36,4 +36,4 @@ TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 copyWith({String? F
 
 @override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(httpBody: $httpBody, httpUrl: $httpUrl)';
 
- }
+}

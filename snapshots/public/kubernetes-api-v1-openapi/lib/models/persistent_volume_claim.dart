@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_status.dart';/// PersistentVolumeClaim is a user's request for and claim to a persistent volume
 @immutable final class PersistentVolumeClaim {const PersistentVolumeClaim({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
-factory PersistentVolumeClaim.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaim(
+factory PersistentVolumeClaim.fromJson(Map<String, dynamic> json) {return PersistentVolumeClaim(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   spec: json['spec'] != null ? PersistentVolumeClaimSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PersistentVolumeClaimStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -27,21 +27,21 @@ final PersistentVolumeClaimSpec? spec;
 /// status represents the current information/status of a persistent volume claim. Read-only. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
 final PersistentVolumeClaimStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (spec != null) 'spec': spec?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
-PersistentVolumeClaim copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, PersistentVolumeClaimSpec? Function()? spec, PersistentVolumeClaimStatus? Function()? status, }) { return PersistentVolumeClaim(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key));}
+PersistentVolumeClaim copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, PersistentVolumeClaimSpec? Function()? spec, PersistentVolumeClaimStatus? Function()? status, }) {return PersistentVolumeClaim(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaim &&
           apiVersion == other.apiVersion &&
@@ -54,4 +54,4 @@ PersistentVolumeClaim copyWith({String? Function()? apiVersion, String? Function
 
 @override String toString() => 'PersistentVolumeClaim(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)';
 
- }
+}

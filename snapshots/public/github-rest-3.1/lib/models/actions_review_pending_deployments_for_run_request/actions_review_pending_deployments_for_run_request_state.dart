@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to approve or reject deployment to the specified environments.
 sealed class ActionsReviewPendingDeploymentsForRunRequestState {const ActionsReviewPendingDeploymentsForRunRequestState();
 
-factory ActionsReviewPendingDeploymentsForRunRequestState.fromJson(String json) { return switch (json) {
+factory ActionsReviewPendingDeploymentsForRunRequestState.fromJson(String json) {return switch (json) {
   'approved' => approved,
   'rejected' => rejected,
   _ => ActionsReviewPendingDeploymentsForRunRequestState$Unknown(json),
-}; }
+};}
 
 static const ActionsReviewPendingDeploymentsForRunRequestState approved = ActionsReviewPendingDeploymentsForRunRequestState$approved._();
 
@@ -17,30 +17,30 @@ static const ActionsReviewPendingDeploymentsForRunRequestState rejected = Action
 static const List<ActionsReviewPendingDeploymentsForRunRequestState> values = [approved, rejected];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'approved' => 'approved',
   'rejected' => 'rejected',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ActionsReviewPendingDeploymentsForRunRequestState$Unknown; } 
+bool get isUnknown {return this is ActionsReviewPendingDeploymentsForRunRequestState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() approved, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() approved, required W Function() rejected, required W Function(String value) $unknown, }) {return switch (this) {
       ActionsReviewPendingDeploymentsForRunRequestState$approved() => approved(),
       ActionsReviewPendingDeploymentsForRunRequestState$rejected() => rejected(),
       ActionsReviewPendingDeploymentsForRunRequestState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved, W Function()? rejected, W Function(String value)? $unknown, }) {return switch (this) {
       ActionsReviewPendingDeploymentsForRunRequestState$approved() => approved != null ? approved() : orElse(value),
       ActionsReviewPendingDeploymentsForRunRequestState$rejected() => rejected != null ? rejected() : orElse(value),
       ActionsReviewPendingDeploymentsForRunRequestState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ActionsReviewPendingDeploymentsForRunRequestState($value)';
 
- }
+}
 @immutable final class ActionsReviewPendingDeploymentsForRunRequestState$approved extends ActionsReviewPendingDeploymentsForRunRequestState {const ActionsReviewPendingDeploymentsForRunRequestState$approved._();
 
 @override String get value => 'approved';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => 'approved'.hashCode;
 
- }
+}
 @immutable final class ActionsReviewPendingDeploymentsForRunRequestState$rejected extends ActionsReviewPendingDeploymentsForRunRequestState {const ActionsReviewPendingDeploymentsForRunRequestState$rejected._();
 
 @override String get value => 'rejected';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class ActionsReviewPendingDeploymentsForRunRequestState$Unknown extends ActionsReviewPendingDeploymentsForRunRequestState {const ActionsReviewPendingDeploymentsForRunRequestState$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => value.hashCode;
 
- }
+}

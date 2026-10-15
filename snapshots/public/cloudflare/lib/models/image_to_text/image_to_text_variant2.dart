@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageToText (inline: Variant2)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_image.dart';@immutable final class ImageToTextVariant2 {const ImageToTextVariant2({required this.image, this.frequencyPenalty, this.maxTokens = 512, this.presencePenalty, this.prompt, this.raw = false, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_image.dart';@immutable final class ImageToTextVariant2 {const ImageToTextVariant2({required this.image, this.frequencyPenalty, this.maxTokens, this.presencePenalty, this.prompt, this.raw, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
-factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageToTextVariant2(
+factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) {return ImageToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   image: OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => base64Decode(v as String),),
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 512,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String?,
-  raw: json.containsKey('raw') ? json['raw'] as bool : false,
+  raw: json['raw'] as bool?,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
   seed: json['seed'] != null ? (json['seed'] as num).toDouble() : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -23,7 +23,7 @@ final double? frequencyPenalty;
 final MessagesImage image;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// Increases the likelihood of the model introducing new topics.
 final double? presencePenalty;
@@ -32,7 +32,7 @@ final double? presencePenalty;
 final String? prompt;
 
 /// If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
-final bool raw;
+final bool? raw;
 
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
@@ -49,21 +49,27 @@ final double? topK;
 /// Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `maxTokens`, or its schema default when absent.
+int get maxTokensOrDefault => maxTokens ?? 512;
+
+/// The value of `raw`, or its schema default when absent.
+bool get rawOrDefault => raw ?? false;
+
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'image': image.toJson(),
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'presence_penalty': ?presencePenalty,
   'prompt': ?prompt,
-  'raw': raw,
+  'raw': ?raw,
   'repetition_penalty': ?repetitionPenalty,
   'seed': ?seed,
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
-ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImage? image, int Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, bool Function()? raw, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageToTextVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image');}
+ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImage? image, int? Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) {return ImageToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   image: image ?? this.image,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -75,7 +81,7 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImag
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageToTextVariant2 &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -94,4 +100,4 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImag
 
 @override String toString() => 'ImageToTextVariant2(\n  frequencyPenalty: $frequencyPenalty,\n  image: $image,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
- }
+}

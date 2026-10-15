@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class McnResourceType {const McnResourceType();
 
-factory McnResourceType.fromJson(String json) { return switch (json) {
+factory McnResourceType.fromJson(String json) {return switch (json) {
   'aws_customer_gateway' => awsCustomerGateway,
   'aws_egress_only_internet_gateway' => awsEgressOnlyInternetGateway,
   'aws_internet_gateway' => awsInternetGateway,
@@ -62,7 +62,7 @@ factory McnResourceType.fromJson(String json) { return switch (json) {
   'cloudflare_static_route' => cloudflareStaticRoute,
   'cloudflare_ipsec_tunnel' => cloudflareIpsecTunnel,
   _ => McnResourceType$Unknown(json),
-}; }
+};}
 
 static const McnResourceType awsCustomerGateway = McnResourceType$awsCustomerGateway._();
 
@@ -181,9 +181,9 @@ static const McnResourceType cloudflareIpsecTunnel = McnResourceType$cloudflareI
 static const List<McnResourceType> values = [awsCustomerGateway, awsEgressOnlyInternetGateway, awsInternetGateway, awsInstance, awsNetworkInterface, awsRoute, awsRouteTable, awsRouteTableAssociation, awsSubnet, awsVpc, awsVpcIpv4CidrBlockAssociation, awsVpnConnection, awsVpnConnectionRoute, awsVpnGateway, awsSecurityGroup, awsVpcSecurityGroupIngressRule, awsVpcSecurityGroupEgressRule, awsEc2ManagedPrefixList, awsEc2TransitGateway, awsEc2TransitGatewayPrefixListReference, awsEc2TransitGatewayVpcAttachment, azurermApplicationSecurityGroup, azurermLb, azurermLbBackendAddressPool, azurermLbNatPool, azurermLbNatRule, azurermLbRule, azurermLocalNetworkGateway, azurermNetworkInterface, azurermNetworkInterfaceApplicationSecurityGroupAssociation, azurermNetworkInterfaceBackendAddressPoolAssociation, azurermNetworkInterfaceSecurityGroupAssociation, azurermNetworkSecurityGroup, azurermPublicIp, azurermRoute, azurermRouteTable, azurermSubnet, azurermSubnetRouteTableAssociation, azurermVirtualMachine, azurermVirtualNetworkGatewayConnection, azurermVirtualNetwork, azurermVirtualNetworkGateway, googleComputeNetwork, googleComputeSubnetwork, googleComputeVpnGateway, googleComputeVpnTunnel, googleComputeRoute, googleComputeAddress, googleComputeGlobalAddress, googleComputeRouter, googleComputeInterconnectAttachment, googleComputeHaVpnGateway, googleComputeForwardingRule, googleComputeNetworkFirewallPolicy, googleComputeNetworkFirewallPolicyRule, cloudflareStaticRoute, cloudflareIpsecTunnel];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'aws_customer_gateway' => 'awsCustomerGateway',
   'aws_egress_only_internet_gateway' => 'awsEgressOnlyInternetGateway',
   'aws_internet_gateway' => 'awsInternetGateway',
@@ -242,11 +242,11 @@ String get name { return switch (value) {
   'cloudflare_static_route' => 'cloudflareStaticRoute',
   'cloudflare_ipsec_tunnel' => 'cloudflareIpsecTunnel',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McnResourceType$Unknown; } 
+bool get isUnknown {return this is McnResourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() awsCustomerGateway, required W Function() awsEgressOnlyInternetGateway, required W Function() awsInternetGateway, required W Function() awsInstance, required W Function() awsNetworkInterface, required W Function() awsRoute, required W Function() awsRouteTable, required W Function() awsRouteTableAssociation, required W Function() awsSubnet, required W Function() awsVpc, required W Function() awsVpcIpv4CidrBlockAssociation, required W Function() awsVpnConnection, required W Function() awsVpnConnectionRoute, required W Function() awsVpnGateway, required W Function() awsSecurityGroup, required W Function() awsVpcSecurityGroupIngressRule, required W Function() awsVpcSecurityGroupEgressRule, required W Function() awsEc2ManagedPrefixList, required W Function() awsEc2TransitGateway, required W Function() awsEc2TransitGatewayPrefixListReference, required W Function() awsEc2TransitGatewayVpcAttachment, required W Function() azurermApplicationSecurityGroup, required W Function() azurermLb, required W Function() azurermLbBackendAddressPool, required W Function() azurermLbNatPool, required W Function() azurermLbNatRule, required W Function() azurermLbRule, required W Function() azurermLocalNetworkGateway, required W Function() azurermNetworkInterface, required W Function() azurermNetworkInterfaceApplicationSecurityGroupAssociation, required W Function() azurermNetworkInterfaceBackendAddressPoolAssociation, required W Function() azurermNetworkInterfaceSecurityGroupAssociation, required W Function() azurermNetworkSecurityGroup, required W Function() azurermPublicIp, required W Function() azurermRoute, required W Function() azurermRouteTable, required W Function() azurermSubnet, required W Function() azurermSubnetRouteTableAssociation, required W Function() azurermVirtualMachine, required W Function() azurermVirtualNetworkGatewayConnection, required W Function() azurermVirtualNetwork, required W Function() azurermVirtualNetworkGateway, required W Function() googleComputeNetwork, required W Function() googleComputeSubnetwork, required W Function() googleComputeVpnGateway, required W Function() googleComputeVpnTunnel, required W Function() googleComputeRoute, required W Function() googleComputeAddress, required W Function() googleComputeGlobalAddress, required W Function() googleComputeRouter, required W Function() googleComputeInterconnectAttachment, required W Function() googleComputeHaVpnGateway, required W Function() googleComputeForwardingRule, required W Function() googleComputeNetworkFirewallPolicy, required W Function() googleComputeNetworkFirewallPolicyRule, required W Function() cloudflareStaticRoute, required W Function() cloudflareIpsecTunnel, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() awsCustomerGateway, required W Function() awsEgressOnlyInternetGateway, required W Function() awsInternetGateway, required W Function() awsInstance, required W Function() awsNetworkInterface, required W Function() awsRoute, required W Function() awsRouteTable, required W Function() awsRouteTableAssociation, required W Function() awsSubnet, required W Function() awsVpc, required W Function() awsVpcIpv4CidrBlockAssociation, required W Function() awsVpnConnection, required W Function() awsVpnConnectionRoute, required W Function() awsVpnGateway, required W Function() awsSecurityGroup, required W Function() awsVpcSecurityGroupIngressRule, required W Function() awsVpcSecurityGroupEgressRule, required W Function() awsEc2ManagedPrefixList, required W Function() awsEc2TransitGateway, required W Function() awsEc2TransitGatewayPrefixListReference, required W Function() awsEc2TransitGatewayVpcAttachment, required W Function() azurermApplicationSecurityGroup, required W Function() azurermLb, required W Function() azurermLbBackendAddressPool, required W Function() azurermLbNatPool, required W Function() azurermLbNatRule, required W Function() azurermLbRule, required W Function() azurermLocalNetworkGateway, required W Function() azurermNetworkInterface, required W Function() azurermNetworkInterfaceApplicationSecurityGroupAssociation, required W Function() azurermNetworkInterfaceBackendAddressPoolAssociation, required W Function() azurermNetworkInterfaceSecurityGroupAssociation, required W Function() azurermNetworkSecurityGroup, required W Function() azurermPublicIp, required W Function() azurermRoute, required W Function() azurermRouteTable, required W Function() azurermSubnet, required W Function() azurermSubnetRouteTableAssociation, required W Function() azurermVirtualMachine, required W Function() azurermVirtualNetworkGatewayConnection, required W Function() azurermVirtualNetwork, required W Function() azurermVirtualNetworkGateway, required W Function() googleComputeNetwork, required W Function() googleComputeSubnetwork, required W Function() googleComputeVpnGateway, required W Function() googleComputeVpnTunnel, required W Function() googleComputeRoute, required W Function() googleComputeAddress, required W Function() googleComputeGlobalAddress, required W Function() googleComputeRouter, required W Function() googleComputeInterconnectAttachment, required W Function() googleComputeHaVpnGateway, required W Function() googleComputeForwardingRule, required W Function() googleComputeNetworkFirewallPolicy, required W Function() googleComputeNetworkFirewallPolicyRule, required W Function() cloudflareStaticRoute, required W Function() cloudflareIpsecTunnel, required W Function(String value) $unknown, }) {return switch (this) {
       McnResourceType$awsCustomerGateway() => awsCustomerGateway(),
       McnResourceType$awsEgressOnlyInternetGateway() => awsEgressOnlyInternetGateway(),
       McnResourceType$awsInternetGateway() => awsInternetGateway(),
@@ -305,9 +305,9 @@ W when<W>({required W Function() awsCustomerGateway, required W Function() awsEg
       McnResourceType$cloudflareStaticRoute() => cloudflareStaticRoute(),
       McnResourceType$cloudflareIpsecTunnel() => cloudflareIpsecTunnel(),
       McnResourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCustomerGateway, W Function()? awsEgressOnlyInternetGateway, W Function()? awsInternetGateway, W Function()? awsInstance, W Function()? awsNetworkInterface, W Function()? awsRoute, W Function()? awsRouteTable, W Function()? awsRouteTableAssociation, W Function()? awsSubnet, W Function()? awsVpc, W Function()? awsVpcIpv4CidrBlockAssociation, W Function()? awsVpnConnection, W Function()? awsVpnConnectionRoute, W Function()? awsVpnGateway, W Function()? awsSecurityGroup, W Function()? awsVpcSecurityGroupIngressRule, W Function()? awsVpcSecurityGroupEgressRule, W Function()? awsEc2ManagedPrefixList, W Function()? awsEc2TransitGateway, W Function()? awsEc2TransitGatewayPrefixListReference, W Function()? awsEc2TransitGatewayVpcAttachment, W Function()? azurermApplicationSecurityGroup, W Function()? azurermLb, W Function()? azurermLbBackendAddressPool, W Function()? azurermLbNatPool, W Function()? azurermLbNatRule, W Function()? azurermLbRule, W Function()? azurermLocalNetworkGateway, W Function()? azurermNetworkInterface, W Function()? azurermNetworkInterfaceApplicationSecurityGroupAssociation, W Function()? azurermNetworkInterfaceBackendAddressPoolAssociation, W Function()? azurermNetworkInterfaceSecurityGroupAssociation, W Function()? azurermNetworkSecurityGroup, W Function()? azurermPublicIp, W Function()? azurermRoute, W Function()? azurermRouteTable, W Function()? azurermSubnet, W Function()? azurermSubnetRouteTableAssociation, W Function()? azurermVirtualMachine, W Function()? azurermVirtualNetworkGatewayConnection, W Function()? azurermVirtualNetwork, W Function()? azurermVirtualNetworkGateway, W Function()? googleComputeNetwork, W Function()? googleComputeSubnetwork, W Function()? googleComputeVpnGateway, W Function()? googleComputeVpnTunnel, W Function()? googleComputeRoute, W Function()? googleComputeAddress, W Function()? googleComputeGlobalAddress, W Function()? googleComputeRouter, W Function()? googleComputeInterconnectAttachment, W Function()? googleComputeHaVpnGateway, W Function()? googleComputeForwardingRule, W Function()? googleComputeNetworkFirewallPolicy, W Function()? googleComputeNetworkFirewallPolicyRule, W Function()? cloudflareStaticRoute, W Function()? cloudflareIpsecTunnel, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCustomerGateway, W Function()? awsEgressOnlyInternetGateway, W Function()? awsInternetGateway, W Function()? awsInstance, W Function()? awsNetworkInterface, W Function()? awsRoute, W Function()? awsRouteTable, W Function()? awsRouteTableAssociation, W Function()? awsSubnet, W Function()? awsVpc, W Function()? awsVpcIpv4CidrBlockAssociation, W Function()? awsVpnConnection, W Function()? awsVpnConnectionRoute, W Function()? awsVpnGateway, W Function()? awsSecurityGroup, W Function()? awsVpcSecurityGroupIngressRule, W Function()? awsVpcSecurityGroupEgressRule, W Function()? awsEc2ManagedPrefixList, W Function()? awsEc2TransitGateway, W Function()? awsEc2TransitGatewayPrefixListReference, W Function()? awsEc2TransitGatewayVpcAttachment, W Function()? azurermApplicationSecurityGroup, W Function()? azurermLb, W Function()? azurermLbBackendAddressPool, W Function()? azurermLbNatPool, W Function()? azurermLbNatRule, W Function()? azurermLbRule, W Function()? azurermLocalNetworkGateway, W Function()? azurermNetworkInterface, W Function()? azurermNetworkInterfaceApplicationSecurityGroupAssociation, W Function()? azurermNetworkInterfaceBackendAddressPoolAssociation, W Function()? azurermNetworkInterfaceSecurityGroupAssociation, W Function()? azurermNetworkSecurityGroup, W Function()? azurermPublicIp, W Function()? azurermRoute, W Function()? azurermRouteTable, W Function()? azurermSubnet, W Function()? azurermSubnetRouteTableAssociation, W Function()? azurermVirtualMachine, W Function()? azurermVirtualNetworkGatewayConnection, W Function()? azurermVirtualNetwork, W Function()? azurermVirtualNetworkGateway, W Function()? googleComputeNetwork, W Function()? googleComputeSubnetwork, W Function()? googleComputeVpnGateway, W Function()? googleComputeVpnTunnel, W Function()? googleComputeRoute, W Function()? googleComputeAddress, W Function()? googleComputeGlobalAddress, W Function()? googleComputeRouter, W Function()? googleComputeInterconnectAttachment, W Function()? googleComputeHaVpnGateway, W Function()? googleComputeForwardingRule, W Function()? googleComputeNetworkFirewallPolicy, W Function()? googleComputeNetworkFirewallPolicyRule, W Function()? cloudflareStaticRoute, W Function()? cloudflareIpsecTunnel, W Function(String value)? $unknown, }) {return switch (this) {
       McnResourceType$awsCustomerGateway() => awsCustomerGateway != null ? awsCustomerGateway() : orElse(value),
       McnResourceType$awsEgressOnlyInternetGateway() => awsEgressOnlyInternetGateway != null ? awsEgressOnlyInternetGateway() : orElse(value),
       McnResourceType$awsInternetGateway() => awsInternetGateway != null ? awsInternetGateway() : orElse(value),
@@ -366,10 +366,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
       McnResourceType$cloudflareStaticRoute() => cloudflareStaticRoute != null ? cloudflareStaticRoute() : orElse(value),
       McnResourceType$cloudflareIpsecTunnel() => cloudflareIpsecTunnel != null ? cloudflareIpsecTunnel() : orElse(value),
       McnResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'McnResourceType($value)';
 
- }
+}
 @immutable final class McnResourceType$awsCustomerGateway extends McnResourceType {const McnResourceType$awsCustomerGateway._();
 
 @override String get value => 'aws_customer_gateway';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_customer_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsEgressOnlyInternetGateway extends McnResourceType {const McnResourceType$awsEgressOnlyInternetGateway._();
 
 @override String get value => 'aws_egress_only_internet_gateway';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_egress_only_internet_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsInternetGateway extends McnResourceType {const McnResourceType$awsInternetGateway._();
 
 @override String get value => 'aws_internet_gateway';
@@ -396,7 +396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_internet_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsInstance extends McnResourceType {const McnResourceType$awsInstance._();
 
 @override String get value => 'aws_instance';
@@ -405,7 +405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_instance'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsNetworkInterface extends McnResourceType {const McnResourceType$awsNetworkInterface._();
 
 @override String get value => 'aws_network_interface';
@@ -414,7 +414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_network_interface'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsRoute extends McnResourceType {const McnResourceType$awsRoute._();
 
 @override String get value => 'aws_route';
@@ -423,7 +423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_route'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsRouteTable extends McnResourceType {const McnResourceType$awsRouteTable._();
 
 @override String get value => 'aws_route_table';
@@ -432,7 +432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_route_table'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsRouteTableAssociation extends McnResourceType {const McnResourceType$awsRouteTableAssociation._();
 
 @override String get value => 'aws_route_table_association';
@@ -441,7 +441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_route_table_association'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsSubnet extends McnResourceType {const McnResourceType$awsSubnet._();
 
 @override String get value => 'aws_subnet';
@@ -450,7 +450,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_subnet'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpc extends McnResourceType {const McnResourceType$awsVpc._();
 
 @override String get value => 'aws_vpc';
@@ -459,7 +459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpc'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpcIpv4CidrBlockAssociation extends McnResourceType {const McnResourceType$awsVpcIpv4CidrBlockAssociation._();
 
 @override String get value => 'aws_vpc_ipv4_cidr_block_association';
@@ -468,7 +468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpc_ipv4_cidr_block_association'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpnConnection extends McnResourceType {const McnResourceType$awsVpnConnection._();
 
 @override String get value => 'aws_vpn_connection';
@@ -477,7 +477,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpn_connection'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpnConnectionRoute extends McnResourceType {const McnResourceType$awsVpnConnectionRoute._();
 
 @override String get value => 'aws_vpn_connection_route';
@@ -486,7 +486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpn_connection_route'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpnGateway extends McnResourceType {const McnResourceType$awsVpnGateway._();
 
 @override String get value => 'aws_vpn_gateway';
@@ -495,7 +495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpn_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsSecurityGroup extends McnResourceType {const McnResourceType$awsSecurityGroup._();
 
 @override String get value => 'aws_security_group';
@@ -504,7 +504,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_security_group'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpcSecurityGroupIngressRule extends McnResourceType {const McnResourceType$awsVpcSecurityGroupIngressRule._();
 
 @override String get value => 'aws_vpc_security_group_ingress_rule';
@@ -513,7 +513,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpc_security_group_ingress_rule'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsVpcSecurityGroupEgressRule extends McnResourceType {const McnResourceType$awsVpcSecurityGroupEgressRule._();
 
 @override String get value => 'aws_vpc_security_group_egress_rule';
@@ -522,7 +522,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_vpc_security_group_egress_rule'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsEc2ManagedPrefixList extends McnResourceType {const McnResourceType$awsEc2ManagedPrefixList._();
 
 @override String get value => 'aws_ec2_managed_prefix_list';
@@ -531,7 +531,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_ec2_managed_prefix_list'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsEc2TransitGateway extends McnResourceType {const McnResourceType$awsEc2TransitGateway._();
 
 @override String get value => 'aws_ec2_transit_gateway';
@@ -540,7 +540,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_ec2_transit_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsEc2TransitGatewayPrefixListReference extends McnResourceType {const McnResourceType$awsEc2TransitGatewayPrefixListReference._();
 
 @override String get value => 'aws_ec2_transit_gateway_prefix_list_reference';
@@ -549,7 +549,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_ec2_transit_gateway_prefix_list_reference'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$awsEc2TransitGatewayVpcAttachment extends McnResourceType {const McnResourceType$awsEc2TransitGatewayVpcAttachment._();
 
 @override String get value => 'aws_ec2_transit_gateway_vpc_attachment';
@@ -558,7 +558,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'aws_ec2_transit_gateway_vpc_attachment'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermApplicationSecurityGroup extends McnResourceType {const McnResourceType$azurermApplicationSecurityGroup._();
 
 @override String get value => 'azurerm_application_security_group';
@@ -567,7 +567,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_application_security_group'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermLb extends McnResourceType {const McnResourceType$azurermLb._();
 
 @override String get value => 'azurerm_lb';
@@ -576,7 +576,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_lb'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermLbBackendAddressPool extends McnResourceType {const McnResourceType$azurermLbBackendAddressPool._();
 
 @override String get value => 'azurerm_lb_backend_address_pool';
@@ -585,7 +585,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_lb_backend_address_pool'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermLbNatPool extends McnResourceType {const McnResourceType$azurermLbNatPool._();
 
 @override String get value => 'azurerm_lb_nat_pool';
@@ -594,7 +594,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_lb_nat_pool'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermLbNatRule extends McnResourceType {const McnResourceType$azurermLbNatRule._();
 
 @override String get value => 'azurerm_lb_nat_rule';
@@ -603,7 +603,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_lb_nat_rule'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermLbRule extends McnResourceType {const McnResourceType$azurermLbRule._();
 
 @override String get value => 'azurerm_lb_rule';
@@ -612,7 +612,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_lb_rule'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermLocalNetworkGateway extends McnResourceType {const McnResourceType$azurermLocalNetworkGateway._();
 
 @override String get value => 'azurerm_local_network_gateway';
@@ -621,7 +621,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_local_network_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermNetworkInterface extends McnResourceType {const McnResourceType$azurermNetworkInterface._();
 
 @override String get value => 'azurerm_network_interface';
@@ -630,7 +630,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_network_interface'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermNetworkInterfaceApplicationSecurityGroupAssociation extends McnResourceType {const McnResourceType$azurermNetworkInterfaceApplicationSecurityGroupAssociation._();
 
 @override String get value => 'azurerm_network_interface_application_security_group_association';
@@ -639,7 +639,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_network_interface_application_security_group_association'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermNetworkInterfaceBackendAddressPoolAssociation extends McnResourceType {const McnResourceType$azurermNetworkInterfaceBackendAddressPoolAssociation._();
 
 @override String get value => 'azurerm_network_interface_backend_address_pool_association';
@@ -648,7 +648,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_network_interface_backend_address_pool_association'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermNetworkInterfaceSecurityGroupAssociation extends McnResourceType {const McnResourceType$azurermNetworkInterfaceSecurityGroupAssociation._();
 
 @override String get value => 'azurerm_network_interface_security_group_association';
@@ -657,7 +657,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_network_interface_security_group_association'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermNetworkSecurityGroup extends McnResourceType {const McnResourceType$azurermNetworkSecurityGroup._();
 
 @override String get value => 'azurerm_network_security_group';
@@ -666,7 +666,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_network_security_group'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermPublicIp extends McnResourceType {const McnResourceType$azurermPublicIp._();
 
 @override String get value => 'azurerm_public_ip';
@@ -675,7 +675,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_public_ip'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermRoute extends McnResourceType {const McnResourceType$azurermRoute._();
 
 @override String get value => 'azurerm_route';
@@ -684,7 +684,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_route'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermRouteTable extends McnResourceType {const McnResourceType$azurermRouteTable._();
 
 @override String get value => 'azurerm_route_table';
@@ -693,7 +693,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_route_table'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermSubnet extends McnResourceType {const McnResourceType$azurermSubnet._();
 
 @override String get value => 'azurerm_subnet';
@@ -702,7 +702,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_subnet'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermSubnetRouteTableAssociation extends McnResourceType {const McnResourceType$azurermSubnetRouteTableAssociation._();
 
 @override String get value => 'azurerm_subnet_route_table_association';
@@ -711,7 +711,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_subnet_route_table_association'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermVirtualMachine extends McnResourceType {const McnResourceType$azurermVirtualMachine._();
 
 @override String get value => 'azurerm_virtual_machine';
@@ -720,7 +720,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_virtual_machine'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermVirtualNetworkGatewayConnection extends McnResourceType {const McnResourceType$azurermVirtualNetworkGatewayConnection._();
 
 @override String get value => 'azurerm_virtual_network_gateway_connection';
@@ -729,7 +729,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_virtual_network_gateway_connection'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermVirtualNetwork extends McnResourceType {const McnResourceType$azurermVirtualNetwork._();
 
 @override String get value => 'azurerm_virtual_network';
@@ -738,7 +738,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_virtual_network'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$azurermVirtualNetworkGateway extends McnResourceType {const McnResourceType$azurermVirtualNetworkGateway._();
 
 @override String get value => 'azurerm_virtual_network_gateway';
@@ -747,7 +747,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'azurerm_virtual_network_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeNetwork extends McnResourceType {const McnResourceType$googleComputeNetwork._();
 
 @override String get value => 'google_compute_network';
@@ -756,7 +756,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_network'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeSubnetwork extends McnResourceType {const McnResourceType$googleComputeSubnetwork._();
 
 @override String get value => 'google_compute_subnetwork';
@@ -765,7 +765,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_subnetwork'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeVpnGateway extends McnResourceType {const McnResourceType$googleComputeVpnGateway._();
 
 @override String get value => 'google_compute_vpn_gateway';
@@ -774,7 +774,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_vpn_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeVpnTunnel extends McnResourceType {const McnResourceType$googleComputeVpnTunnel._();
 
 @override String get value => 'google_compute_vpn_tunnel';
@@ -783,7 +783,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_vpn_tunnel'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeRoute extends McnResourceType {const McnResourceType$googleComputeRoute._();
 
 @override String get value => 'google_compute_route';
@@ -792,7 +792,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_route'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeAddress extends McnResourceType {const McnResourceType$googleComputeAddress._();
 
 @override String get value => 'google_compute_address';
@@ -801,7 +801,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_address'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeGlobalAddress extends McnResourceType {const McnResourceType$googleComputeGlobalAddress._();
 
 @override String get value => 'google_compute_global_address';
@@ -810,7 +810,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_global_address'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeRouter extends McnResourceType {const McnResourceType$googleComputeRouter._();
 
 @override String get value => 'google_compute_router';
@@ -819,7 +819,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_router'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeInterconnectAttachment extends McnResourceType {const McnResourceType$googleComputeInterconnectAttachment._();
 
 @override String get value => 'google_compute_interconnect_attachment';
@@ -828,7 +828,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_interconnect_attachment'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeHaVpnGateway extends McnResourceType {const McnResourceType$googleComputeHaVpnGateway._();
 
 @override String get value => 'google_compute_ha_vpn_gateway';
@@ -837,7 +837,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_ha_vpn_gateway'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeForwardingRule extends McnResourceType {const McnResourceType$googleComputeForwardingRule._();
 
 @override String get value => 'google_compute_forwarding_rule';
@@ -846,7 +846,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_forwarding_rule'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeNetworkFirewallPolicy extends McnResourceType {const McnResourceType$googleComputeNetworkFirewallPolicy._();
 
 @override String get value => 'google_compute_network_firewall_policy';
@@ -855,7 +855,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_network_firewall_policy'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$googleComputeNetworkFirewallPolicyRule extends McnResourceType {const McnResourceType$googleComputeNetworkFirewallPolicyRule._();
 
 @override String get value => 'google_compute_network_firewall_policy_rule';
@@ -864,7 +864,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'google_compute_network_firewall_policy_rule'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$cloudflareStaticRoute extends McnResourceType {const McnResourceType$cloudflareStaticRoute._();
 
 @override String get value => 'cloudflare_static_route';
@@ -873,7 +873,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'cloudflare_static_route'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$cloudflareIpsecTunnel extends McnResourceType {const McnResourceType$cloudflareIpsecTunnel._();
 
 @override String get value => 'cloudflare_ipsec_tunnel';
@@ -882,7 +882,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => 'cloudflare_ipsec_tunnel'.hashCode;
 
- }
+}
 @immutable final class McnResourceType$Unknown extends McnResourceType {const McnResourceType$Unknown(this.value);
 
 @override final String value;
@@ -892,4 +892,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsCusto
 
 @override int get hashCode => value.hashCode;
 
- }
+}

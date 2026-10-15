@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request/post_promotion_codes_request_restrictions.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request/promotion.dart';@immutable final class PostPromotionCodesRequest {const PostPromotionCodesRequest({required this.promotion, this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, this.restrictions, });
 
-factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequest(
+factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) {return PostPromotionCodesRequest(
   active: json['active'] as bool?,
   code: json['code'] as String?,
   customer: json['customer'] as String?,
@@ -14,7 +14,7 @@ factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return P
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   promotion: Promotion.fromJson(json['promotion'] as Map<String, dynamic>),
   restrictions: json['restrictions'] != null ? PostPromotionCodesRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Whether the promotion code is currently active.
 final bool? active;
@@ -48,7 +48,7 @@ final Promotion promotion;
 /// Settings that restrict the redemption of the promotion code.
 final PostPromotionCodesRequestRestrictions? restrictions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'code': ?code,
   'customer': ?customer,
@@ -59,10 +59,10 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'promotion': promotion.toJson(),
   if (restrictions != null) 'restrictions': restrictions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('promotion'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('promotion');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final code$ = code;
 if (code$ != null) {
   if (code$.runes.length > 500) { errors.add('code: length must be <= 500'); }
@@ -75,8 +75,8 @@ final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()? code, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, int? Function()? expiresAt, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, Promotion? promotion, PostPromotionCodesRequestRestrictions? Function()? restrictions, }) { return PostPromotionCodesRequest(
+return errors;}
+PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()? code, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, int? Function()? expiresAt, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, Promotion? promotion, PostPromotionCodesRequestRestrictions? Function()? restrictions, }) {return PostPromotionCodesRequest(
   active: active != null ? active() : this.active,
   code: code != null ? code() : this.code,
   customer: customer != null ? customer() : this.customer,
@@ -87,7 +87,7 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
   metadata: metadata != null ? metadata() : this.metadata,
   promotion: promotion ?? this.promotion,
   restrictions: restrictions != null ? restrictions() : this.restrictions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPromotionCodesRequest &&
           active == other.active &&
@@ -105,4 +105,4 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
 
 @override String toString() => 'PostPromotionCodesRequest(\n  active: $active,\n  code: $code,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  expand: $expand,\n  expiresAt: $expiresAt,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  promotion: $promotion,\n  restrictions: $restrictions,\n)';
 
- }
+}

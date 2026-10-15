@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_session_document_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_email_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_id_number_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_matching_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_phone_options.dart';/// 
 @immutable final class GelatoVerificationSessionOptions {const GelatoVerificationSessionOptions({this.document, this.email, this.idNumber, this.matching, this.phone, });
 
-factory GelatoVerificationSessionOptions.fromJson(Map<String, dynamic> json) { return GelatoVerificationSessionOptions(
+factory GelatoVerificationSessionOptions.fromJson(Map<String, dynamic> json) {return GelatoVerificationSessionOptions(
   document: json['document'] != null ? GelatoSessionDocumentOptions.fromJson(json['document'] as Map<String, dynamic>) : null,
   email: json['email'] != null ? GelatoSessionEmailOptions.fromJson(json['email'] as Map<String, dynamic>) : null,
   idNumber: json['id_number'] != null ? GelatoSessionIdNumberOptions.fromJson(json['id_number'] as Map<String, dynamic>) : null,
   matching: json['matching'] != null ? GelatoSessionMatchingOptions.fromJson(json['matching'] as Map<String, dynamic>) : null,
   phone: json['phone'] != null ? GelatoSessionPhoneOptions.fromJson(json['phone'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final GelatoSessionDocumentOptions? document;
 
@@ -22,21 +22,21 @@ final GelatoSessionMatchingOptions? matching;
 
 final GelatoSessionPhoneOptions? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (document != null) 'document': document?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (idNumber != null) 'id_number': idNumber?.toJson(),
   if (matching != null) 'matching': matching?.toJson(),
   if (phone != null) 'phone': phone?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document', 'email', 'id_number', 'matching', 'phone'}.contains(key)); } 
-GelatoVerificationSessionOptions copyWith({GelatoSessionDocumentOptions? Function()? document, GelatoSessionEmailOptions? Function()? email, GelatoSessionIdNumberOptions? Function()? idNumber, GelatoSessionMatchingOptions? Function()? matching, GelatoSessionPhoneOptions? Function()? phone, }) { return GelatoVerificationSessionOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'document', 'email', 'id_number', 'matching', 'phone'}.contains(key));}
+GelatoVerificationSessionOptions copyWith({GelatoSessionDocumentOptions? Function()? document, GelatoSessionEmailOptions? Function()? email, GelatoSessionIdNumberOptions? Function()? idNumber, GelatoSessionMatchingOptions? Function()? matching, GelatoSessionPhoneOptions? Function()? phone, }) {return GelatoVerificationSessionOptions(
   document: document != null ? document() : this.document,
   email: email != null ? email() : this.email,
   idNumber: idNumber != null ? idNumber() : this.idNumber,
   matching: matching != null ? matching() : this.matching,
   phone: phone != null ? phone() : this.phone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoVerificationSessionOptions &&
           document == other.document &&
@@ -49,4 +49,4 @@ GelatoVerificationSessionOptions copyWith({GelatoSessionDocumentOptions? Functio
 
 @override String toString() => 'GelatoVerificationSessionOptions(document: $document, email: $email, idNumber: $idNumber, matching: $matching, phone: $phone)';
 
- }
+}

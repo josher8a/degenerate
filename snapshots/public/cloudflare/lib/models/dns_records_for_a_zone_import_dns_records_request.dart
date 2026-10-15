@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsForAZoneImportDnsRecordsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied = 'false', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied, });
 
-factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) {return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: json['file'] as String,
-  proxied: json.containsKey('proxied') ? json['proxied'] as String : 'false',
-); }
+  proxied: json['proxied'] as String?,
+);}
 
 /// BIND config to import.
 /// 
@@ -21,17 +21,20 @@ final String file;
 /// The value should be either `true` or `false`.
 /// 
 /// Example: `'true'`
-final String proxied;
+final String? proxied;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `proxied`, or its schema default when absent.
+String get proxiedOrDefault => proxied ?? 'false';
+
+Map<String, dynamic> toJson() {return {
   'file': file,
-  'proxied': proxied,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String Function()? proxied, }) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+  'proxied': ?proxied,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') && json['file'] is String;}
+DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Function()? proxied, }) {return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: file ?? this.file,
   proxied: proxied != null ? proxied() : this.proxied,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsForAZoneImportDnsRecordsRequest &&
           file == other.file &&
@@ -41,4 +44,4 @@ DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String Functio
 
 @override String toString() => 'DnsRecordsForAZoneImportDnsRecordsRequest(file: $file, proxied: $proxied)';
 
- }
+}

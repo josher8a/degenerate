@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';@immutable final class WebhookProjectColumnEditedChanges {const WebhookProjectColumnEditedChanges({this.name});
 
-factory WebhookProjectColumnEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnEditedChanges(
+factory WebhookProjectColumnEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookProjectColumnEditedChanges(
   name: json['name'] != null ? WebhookLabelEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookLabelEditedChangesName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-WebhookProjectColumnEditedChanges copyWith({WebhookLabelEditedChangesName? Function()? name}) { return WebhookProjectColumnEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name'}.contains(key));}
+WebhookProjectColumnEditedChanges copyWith({WebhookLabelEditedChangesName? Function()? name}) {return WebhookProjectColumnEditedChanges(
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectColumnEditedChanges &&
           name == other.name;
@@ -24,4 +24,4 @@ WebhookProjectColumnEditedChanges copyWith({WebhookLabelEditedChangesName? Funct
 
 @override String toString() => 'WebhookProjectColumnEditedChanges(name: $name)';
 
- }
+}

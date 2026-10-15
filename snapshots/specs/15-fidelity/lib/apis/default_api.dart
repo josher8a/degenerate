@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /test`
-Future<ApiResult<BasicObject, Never>> getTest({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BasicObject, Never>> getTest({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -19,15 +19,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BasicObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /events`
-Future<ApiResult<String, Never>> streamEvents({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> streamEvents({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -36,15 +36,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
   },
 );
- } 
+}
 /// `GET /lines`
-Future<ApiResult<StreamLinesEvent, Never>> streamLines({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamLinesEvent, Never>> streamLines({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -53,18 +53,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     // TODO: Unsupported non-JSON response schema Cannot decode application/x-ndjson response into StreamLinesEvent
 throw UnsupportedError('Cannot decode application/x-ndjson response into StreamLinesEvent');
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /events`
-Stream<BasicObject> streamEventsStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<BasicObject> streamEventsStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,11 +79,11 @@ return executeStreaming(
     return BasicObject.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /lines`
-Stream<StreamLinesEvent> streamLinesStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<StreamLinesEvent> streamLinesStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,5 +98,5 @@ return executeJsonlStreaming(
     return StreamLinesEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

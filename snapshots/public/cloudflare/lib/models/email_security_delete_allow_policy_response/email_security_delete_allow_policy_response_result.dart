@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDeleteAllowPolicyResponseResult {const EmailSecurityDeleteAllowPolicyResponseResult({required this.id});
 
-factory EmailSecurityDeleteAllowPolicyResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteAllowPolicyResponseResult(
+factory EmailSecurityDeleteAllowPolicyResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityDeleteAllowPolicyResponseResult(
   id: (json['id'] as num).toInt(),
-); }
+);}
 
 /// The unique identifier for the allow policy.
 /// 
 /// Example: `2401`
 final int id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-EmailSecurityDeleteAllowPolicyResponseResult copyWith({int? id}) { return EmailSecurityDeleteAllowPolicyResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num;}
+EmailSecurityDeleteAllowPolicyResponseResult copyWith({int? id}) {return EmailSecurityDeleteAllowPolicyResponseResult(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityDeleteAllowPolicyResponseResult &&
           id == other.id;
@@ -27,4 +27,4 @@ EmailSecurityDeleteAllowPolicyResponseResult copyWith({int? id}) { return EmailS
 
 @override String toString() => 'EmailSecurityDeleteAllowPolicyResponseResult(id: $id)';
 
- }
+}

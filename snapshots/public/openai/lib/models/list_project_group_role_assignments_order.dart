@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListProjectGroupRoleAssignmentsOrder {const ListProjectGroupRoleAssignmentsOrder();
 
-factory ListProjectGroupRoleAssignmentsOrder.fromJson(String json) { return switch (json) {
+factory ListProjectGroupRoleAssignmentsOrder.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => ListProjectGroupRoleAssignmentsOrder$Unknown(json),
-}; }
+};}
 
 static const ListProjectGroupRoleAssignmentsOrder asc = ListProjectGroupRoleAssignmentsOrder$asc._();
 
@@ -16,30 +16,30 @@ static const ListProjectGroupRoleAssignmentsOrder desc = ListProjectGroupRoleAss
 static const List<ListProjectGroupRoleAssignmentsOrder> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ListProjectGroupRoleAssignmentsOrder$Unknown; } 
+bool get isUnknown {return this is ListProjectGroupRoleAssignmentsOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       ListProjectGroupRoleAssignmentsOrder$asc() => asc(),
       ListProjectGroupRoleAssignmentsOrder$desc() => desc(),
       ListProjectGroupRoleAssignmentsOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       ListProjectGroupRoleAssignmentsOrder$asc() => asc != null ? asc() : orElse(value),
       ListProjectGroupRoleAssignmentsOrder$desc() => desc != null ? desc() : orElse(value),
       ListProjectGroupRoleAssignmentsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ListProjectGroupRoleAssignmentsOrder($value)';
 
- }
+}
 @immutable final class ListProjectGroupRoleAssignmentsOrder$asc extends ListProjectGroupRoleAssignmentsOrder {const ListProjectGroupRoleAssignmentsOrder$asc._();
 
 @override String get value => 'asc';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class ListProjectGroupRoleAssignmentsOrder$desc extends ListProjectGroupRoleAssignmentsOrder {const ListProjectGroupRoleAssignmentsOrder$desc._();
 
 @override String get value => 'desc';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class ListProjectGroupRoleAssignmentsOrder$Unknown extends ListProjectGroupRoleAssignmentsOrder {const ListProjectGroupRoleAssignmentsOrder$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

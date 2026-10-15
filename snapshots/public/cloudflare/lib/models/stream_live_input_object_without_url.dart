@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_live_input_created.dart';import 'package:pub_cloudflare/models/stream_live_input_enabled.dart';import 'package:pub_cloudflare/models/stream_live_input_identifier.dart';import 'package:pub_cloudflare/models/stream_live_input_modified.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_deletion.dart';@immutable final class StreamLiveInputObjectWithoutUrl {const StreamLiveInputObjectWithoutUrl({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.uid, });
 
-factory StreamLiveInputObjectWithoutUrl.fromJson(Map<String, dynamic> json) { return StreamLiveInputObjectWithoutUrl(
+factory StreamLiveInputObjectWithoutUrl.fromJson(Map<String, dynamic> json) {return StreamLiveInputObjectWithoutUrl(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
   meta: json['meta'] as Map<String, dynamic>?,
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
-); }
+);}
 
 /// The date and time the live input was created.
 final StreamLiveInputCreated? created;
@@ -29,23 +29,23 @@ final StreamLiveInputModified? modified;
 /// A unique identifier for a live input.
 final StreamLiveInputIdentifier? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (deleteRecordingAfterDays != null) 'deleteRecordingAfterDays': deleteRecordingAfterDays?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   'meta': ?meta,
   if (modified != null) 'modified': modified?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'uid'}.contains(key)); } 
-StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputIdentifier? Function()? uid, }) { return StreamLiveInputObjectWithoutUrl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'uid'}.contains(key));}
+StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputIdentifier? Function()? uid, }) {return StreamLiveInputObjectWithoutUrl(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,
   meta: meta != null ? meta() : this.meta,
   modified: modified != null ? modified() : this.modified,
   uid: uid != null ? uid() : this.uid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamLiveInputObjectWithoutUrl &&
           created == other.created &&
@@ -59,4 +59,4 @@ StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated? Function()? cr
 
 @override String toString() => 'StreamLiveInputObjectWithoutUrl(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, uid: $uid)';
 
- }
+}

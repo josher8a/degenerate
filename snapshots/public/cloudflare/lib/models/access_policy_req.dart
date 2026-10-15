@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_approval_group.dart';import 'package:pub_cloudflare/models/access_approval_required.dart';import 'package:pub_cloudflare/models/access_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_connection_rules.dart';import 'package:pub_cloudflare/models/access_decision.dart';import 'package:pub_cloudflare/models/access_isolation_required.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_policy_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_purpose_justification_prompt.dart';import 'package:pub_cloudflare/models/access_purpose_justification_required.dart';import 'package:pub_cloudflare/models/access_rule.dart';@immutable final class AccessPolicyReq {const AccessPolicyReq({required this.decision, required this.include, required this.name, this.exclude, this.require, this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, });
 
-factory AccessPolicyReq.fromJson(Map<String, dynamic> json) { return AccessPolicyReq(
+factory AccessPolicyReq.fromJson(Map<String, dynamic> json) {return AccessPolicyReq(
   decision: AccessDecision.fromJson(json['decision'] as String),
   exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   include: (json['include'] as List<dynamic>).map(AccessRule.fromJson).toList(),
@@ -17,7 +17,7 @@ factory AccessPolicyReq.fromJson(Map<String, dynamic> json) { return AccessPolic
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
   sessionDuration: json['session_duration'] != null ? AccessComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
-); }
+);}
 
 /// The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
 final AccessDecision decision;
@@ -51,7 +51,7 @@ final AccessPurposeJustificationRequired? purposeJustificationRequired;
 /// The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 final AccessComponentsSchemasSessionDuration? sessionDuration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'decision': decision.toJson(),
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'include': include.map((e) => e.toJson()).toList(),
@@ -65,11 +65,11 @@ Map<String, dynamic> toJson() { return {
   if (purposeJustificationPrompt != null) 'purpose_justification_prompt': purposeJustificationPrompt?.toJson(),
   if (purposeJustificationRequired != null) 'purpose_justification_required': purposeJustificationRequired?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('decision') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('decision') &&
       json.containsKey('include') &&
-      json.containsKey('name'); } 
-AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, }) { return AccessPolicyReq(
+      json.containsKey('name');}
+AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, }) {return AccessPolicyReq(
   decision: decision ?? this.decision,
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,
@@ -83,7 +83,7 @@ AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()
   purposeJustificationPrompt: purposeJustificationPrompt != null ? purposeJustificationPrompt() : this.purposeJustificationPrompt,
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyReq &&
           decision == other.decision &&
@@ -104,4 +104,4 @@ AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()
 
 @override String toString() => 'AccessPolicyReq(\n  decision: $decision,\n  exclude: $exclude,\n  include: $include,\n  name: $name,\n  require: $require,\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n)';
 
- }
+}

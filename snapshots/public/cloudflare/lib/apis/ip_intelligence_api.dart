@@ -14,7 +14,7 @@ final class IpIntelligenceApi with ApiExecutor {const IpIntelligenceApi(this.api
 /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`.
 ///
 /// `GET /accounts/{account_id}/intel/ip`
-Future<ApiResult<List<IntelSchemasIp>?, IpIntelligenceGetIpOverviewError>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelSchemasIp>, IpIntelligenceGetIpOverviewError>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ipv4 != null) {
   queryParameters['ipv4'] = ipv4;
@@ -34,13 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => IntelSchemasIp.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => IntelSchemasIp.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: IpIntelligenceGetIpOverviewError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_message/rulesets_message_source.dart';/// A message.
 @immutable final class RulesetsMessage {const RulesetsMessage({required this.message, this.code, this.source, });
 
-factory RulesetsMessage.fromJson(Map<String, dynamic> json) { return RulesetsMessage(
+factory RulesetsMessage.fromJson(Map<String, dynamic> json) {return RulesetsMessage(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   message: json['message'] as String,
   source: json['source'] != null ? RulesetsMessageSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A unique code for this message.
 /// 
@@ -23,21 +23,21 @@ final String message;
 /// The source of this message.
 final RulesetsMessageSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': message,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (message.isEmpty) { errors.add('message: length must be >= 1'); }
-return errors; } 
-RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessageSource? Function()? source, }) { return RulesetsMessage(
+return errors;}
+RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessageSource? Function()? source, }) {return RulesetsMessage(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
   source: source != null ? source() : this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsMessage &&
           code == other.code &&
@@ -48,4 +48,4 @@ RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessag
 
 @override String toString() => 'RulesetsMessage(code: $code, message: $message, source: $source)';
 
- }
+}

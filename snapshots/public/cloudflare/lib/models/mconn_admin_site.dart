@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnAdminSite {const MconnAdminSite({required this.id});
 
-factory MconnAdminSite.fromJson(Map<String, dynamic> json) { return MconnAdminSite(
+factory MconnAdminSite.fromJson(Map<String, dynamic> json) {return MconnAdminSite(
   id: MconnUuid.fromJson(json['id'] as String),
-); }
+);}
 
 final MconnUuid id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-MconnAdminSite copyWith({MconnUuid? id}) { return MconnAdminSite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+MconnAdminSite copyWith({MconnUuid? id}) {return MconnAdminSite(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminSite &&
           id == other.id;
@@ -24,4 +24,4 @@ MconnAdminSite copyWith({MconnUuid? id}) { return MconnAdminSite(
 
 @override String toString() => 'MconnAdminSite(id: $id)';
 
- }
+}

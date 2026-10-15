@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Geodata for tracing request
 @immutable final class Geoloc {const Geoloc({this.city, this.continent, this.isEuCountry, this.isoCode, this.latitude, this.longitude, this.postalCode, this.regionCode, this.subdivision2IsoCode, this.timezone, });
 
-factory Geoloc.fromJson(Map<String, dynamic> json) { return Geoloc(
+factory Geoloc.fromJson(Map<String, dynamic> json) {return Geoloc(
   city: json['city'] as String?,
   continent: json['continent'] as String?,
   isEuCountry: json['is_eu_country'] as bool?,
@@ -15,7 +15,7 @@ factory Geoloc.fromJson(Map<String, dynamic> json) { return Geoloc(
   regionCode: json['region_code'] as String?,
   subdivision2IsoCode: json['subdivision_2_iso_code'] as String?,
   timezone: json['timezone'] as String?,
-); }
+);}
 
 /// Example: `'London'`
 final String? city;
@@ -38,7 +38,7 @@ final String? subdivision2IsoCode;
 
 final String? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'city': ?city,
   'continent': ?continent,
   'is_eu_country': ?isEuCountry,
@@ -49,9 +49,9 @@ Map<String, dynamic> toJson() { return {
   'region_code': ?regionCode,
   'subdivision_2_iso_code': ?subdivision2IsoCode,
   'timezone': ?timezone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'continent', 'is_eu_country', 'iso_code', 'latitude', 'longitude', 'postal_code', 'region_code', 'subdivision_2_iso_code', 'timezone'}.contains(key)); } 
-Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? Function()? isEuCountry, String? Function()? isoCode, double? Function()? latitude, double? Function()? longitude, String? Function()? postalCode, String? Function()? regionCode, String? Function()? subdivision2IsoCode, String? Function()? timezone, }) { return Geoloc(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'continent', 'is_eu_country', 'iso_code', 'latitude', 'longitude', 'postal_code', 'region_code', 'subdivision_2_iso_code', 'timezone'}.contains(key));}
+Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? Function()? isEuCountry, String? Function()? isoCode, double? Function()? latitude, double? Function()? longitude, String? Function()? postalCode, String? Function()? regionCode, String? Function()? subdivision2IsoCode, String? Function()? timezone, }) {return Geoloc(
   city: city != null ? city() : this.city,
   continent: continent != null ? continent() : this.continent,
   isEuCountry: isEuCountry != null ? isEuCountry() : this.isEuCountry,
@@ -62,7 +62,7 @@ Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? 
   regionCode: regionCode != null ? regionCode() : this.regionCode,
   subdivision2IsoCode: subdivision2IsoCode != null ? subdivision2IsoCode() : this.subdivision2IsoCode,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Geoloc &&
           city == other.city &&
@@ -80,4 +80,4 @@ Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? 
 
 @override String toString() => 'Geoloc(\n  city: $city,\n  continent: $continent,\n  isEuCountry: $isEuCountry,\n  isoCode: $isoCode,\n  latitude: $latitude,\n  longitude: $longitude,\n  postalCode: $postalCode,\n  regionCode: $regionCode,\n  subdivision2IsoCode: $subdivision2IsoCode,\n  timezone: $timezone,\n)';
 
- }
+}

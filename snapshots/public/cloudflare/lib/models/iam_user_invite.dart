@@ -29,9 +29,9 @@ factory IamSchemasExpiresOn.fromJson(String json) => IamSchemasExpiresOn(DateTim
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class IamUserInvite {const IamUserInvite({required this.invitedMemberId, required this.organizationId, this.expiresOn, this.id, this.invitedBy, this.invitedMemberEmail, this.invitedOn, this.organizationIsEnforcingTwofactor, this.organizationName, this.roles, this.status, });
+@immutable final class IamUserInvite {const IamUserInvite({required this.invitedMemberId, required this.organizationId, this.expiresOn, this.id, this.invitedBy, this.invitedMemberEmail, this.invitedOn, this.organizationIsEnforcingTwofactor, this.organizationName, this.roles, this.status = const Omittable.absent(), });
 
-factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite(
+factory IamUserInvite.fromJson(Map<String, dynamic> json) {return IamUserInvite(
   expiresOn: json['expires_on'] != null ? IamSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,
   id: json['id'] != null ? IamInviteComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   invitedBy: json['invited_by'] != null ? IamInvitedBy.fromJson(json['invited_by'] as String) : null,
@@ -42,8 +42,8 @@ factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite
   organizationIsEnforcingTwofactor: json['organization_is_enforcing_twofactor'] as bool?,
   organizationName: json['organization_name'] as String?,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  status: json['status'],
-); }
+  status: json.containsKey('status') ? Omittable(json['status']) : const Omittable.absent(),
+);}
 
 /// When the invite is no longer active.
 final IamSchemasExpiresOn? expiresOn;
@@ -84,9 +84,9 @@ final List<String>? roles;
 /// Current status of the invitation.
 /// 
 /// Example: `'accepted'`
-final dynamic status;
+final Omittable<dynamic> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (invitedBy != null) 'invited_by': invitedBy?.toJson(),
@@ -97,12 +97,12 @@ Map<String, dynamic> toJson() { return {
   'organization_is_enforcing_twofactor': ?organizationIsEnforcingTwofactor,
   'organization_name': ?organizationName,
   'roles': ?roles,
-  'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('invited_member_id') && json['invited_member_id'] is String &&
-      json.containsKey('organization_id') && json['organization_id'] is String; } 
+  if (status.isPresent) 'status': status.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('invited_member_id') && (json['invited_member_id'] == null || json['invited_member_id'] is String) &&
+      json.containsKey('organization_id') && json['organization_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final invitedMemberId$ = invitedMemberId;
 if (invitedMemberId$ != null) {
   if (invitedMemberId$.runes.length > 32) { errors.add('invitedMemberId: length must be <= 32'); }
@@ -112,8 +112,8 @@ final organizationName$ = organizationName;
 if (organizationName$ != null) {
   if (organizationName$.runes.length > 100) { errors.add('organizationName: length must be <= 100'); }
 }
-return errors; } 
-IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteComponentsSchemasIdentifier? Function()? id, IamInvitedBy? Function()? invitedBy, IamInvitedMemberEmail? Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn? Function()? invitedOn, String? organizationId, bool? Function()? organizationIsEnforcingTwofactor, String? Function()? organizationName, List<String>? Function()? roles, dynamic Function()? status, }) { return IamUserInvite(
+return errors;}
+IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteComponentsSchemasIdentifier? Function()? id, IamInvitedBy? Function()? invitedBy, IamInvitedMemberEmail? Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn? Function()? invitedOn, String? organizationId, bool? Function()? organizationIsEnforcingTwofactor, String? Function()? organizationName, List<String>? Function()? roles, Omittable<dynamic>? status, }) {return IamUserInvite(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,
   invitedBy: invitedBy != null ? invitedBy() : this.invitedBy,
@@ -124,8 +124,8 @@ IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteCom
   organizationIsEnforcingTwofactor: organizationIsEnforcingTwofactor != null ? organizationIsEnforcingTwofactor() : this.organizationIsEnforcingTwofactor,
   organizationName: organizationName != null ? organizationName() : this.organizationName,
   roles: roles != null ? roles() : this.roles,
-  status: status != null ? status() : this.status,
-); } 
+  status: status ?? this.status,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserInvite &&
           expiresOn == other.expiresOn &&
@@ -144,4 +144,4 @@ IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteCom
 
 @override String toString() => 'IamUserInvite(\n  expiresOn: $expiresOn,\n  id: $id,\n  invitedBy: $invitedBy,\n  invitedMemberEmail: $invitedMemberEmail,\n  invitedMemberId: $invitedMemberId,\n  invitedOn: $invitedOn,\n  organizationId: $organizationId,\n  organizationIsEnforcingTwofactor: $organizationIsEnforcingTwofactor,\n  organizationName: $organizationName,\n  roles: $roles,\n  status: $status,\n)';
 
- }
+}

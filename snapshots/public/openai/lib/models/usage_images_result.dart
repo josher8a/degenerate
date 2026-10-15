@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageImagesResultObject {const UsageImagesResultObject();
 
-factory UsageImagesResultObject.fromJson(String json) { return switch (json) {
+factory UsageImagesResultObject.fromJson(String json) {return switch (json) {
   'organization.usage.images.result' => organizationUsageImagesResult,
   _ => UsageImagesResultObject$Unknown(json),
-}; }
+};}
 
 static const UsageImagesResultObject organizationUsageImagesResult = UsageImagesResultObject$organizationUsageImagesResult._();
 
 static const List<UsageImagesResultObject> values = [organizationUsageImagesResult];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.usage.images.result' => 'organizationUsageImagesResult',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageImagesResultObject$Unknown; } 
+bool get isUnknown {return this is UsageImagesResultObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationUsageImagesResult, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationUsageImagesResult, required W Function(String value) $unknown, }) {return switch (this) {
       UsageImagesResultObject$organizationUsageImagesResult() => organizationUsageImagesResult(),
       UsageImagesResultObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageImagesResult, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageImagesResult, W Function(String value)? $unknown, }) {return switch (this) {
       UsageImagesResultObject$organizationUsageImagesResult() => organizationUsageImagesResult != null ? organizationUsageImagesResult() : orElse(value),
       UsageImagesResultObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageImagesResultObject($value)';
 
- }
+}
 @immutable final class UsageImagesResultObject$organizationUsageImagesResult extends UsageImagesResultObject {const UsageImagesResultObject$organizationUsageImagesResult._();
 
 @override String get value => 'organization.usage.images.result';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.usage.images.result'.hashCode;
 
- }
+}
 @immutable final class UsageImagesResultObject$Unknown extends UsageImagesResultObject {const UsageImagesResultObject$Unknown(this.value);
 
 @override final String value;
@@ -52,21 +52,21 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The aggregated images usage details of the specific time bucket.
-@immutable final class UsageImagesResult {const UsageImagesResult({required this.object, required this.images, required this.numModelRequests, this.source, this.size, this.projectId, this.userId, this.apiKeyId, this.model, });
+@immutable final class UsageImagesResult {const UsageImagesResult({required this.object, required this.images, required this.numModelRequests, this.source = const Omittable.absent(), this.size = const Omittable.absent(), this.projectId = const Omittable.absent(), this.userId = const Omittable.absent(), this.apiKeyId = const Omittable.absent(), this.model = const Omittable.absent(), });
 
-factory UsageImagesResult.fromJson(Map<String, dynamic> json) { return UsageImagesResult(
+factory UsageImagesResult.fromJson(Map<String, dynamic> json) {return UsageImagesResult(
   object: UsageImagesResultObject.fromJson(json['object'] as String),
   images: (json['images'] as num).toInt(),
   numModelRequests: (json['num_model_requests'] as num).toInt(),
-  source: json['source'] as String?,
-  size: json['size'] as String?,
-  projectId: json['project_id'] as String?,
-  userId: json['user_id'] as String?,
-  apiKeyId: json['api_key_id'] as String?,
-  model: json['model'] as String?,
-); }
+  source: json.containsKey('source') ? Omittable(json['source'] as String?) : const Omittable.absent(),
+  size: json.containsKey('size') ? Omittable(json['size'] as String?) : const Omittable.absent(),
+  projectId: json.containsKey('project_id') ? Omittable(json['project_id'] as String?) : const Omittable.absent(),
+  userId: json.containsKey('user_id') ? Omittable(json['user_id'] as String?) : const Omittable.absent(),
+  apiKeyId: json.containsKey('api_key_id') ? Omittable(json['api_key_id'] as String?) : const Omittable.absent(),
+  model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
+);}
 
 final UsageImagesResultObject object;
 
@@ -77,48 +77,48 @@ final int images;
 final int numModelRequests;
 
 /// When `group_by=source`, this field provides the source of the grouped usage result, possible values are `image.generation`, `image.edit`, `image.variation`.
-final String? source;
+final Omittable<String?> source;
 
 /// When `group_by=size`, this field provides the image size of the grouped usage result.
-final String? size;
+final Omittable<String?> size;
 
 /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
-final String? projectId;
+final Omittable<String?> projectId;
 
 /// When `group_by=user_id`, this field provides the user ID of the grouped usage result.
-final String? userId;
+final Omittable<String?> userId;
 
 /// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
-final String? apiKeyId;
+final Omittable<String?> apiKeyId;
 
 /// When `group_by=model`, this field provides the model name of the grouped usage result.
-final String? model;
+final Omittable<String?> model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'images': images,
   'num_model_requests': numModelRequests,
-  'source': ?source,
-  'size': ?size,
-  'project_id': ?projectId,
-  'user_id': ?userId,
-  'api_key_id': ?apiKeyId,
-  'model': ?model,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.images.result' &&
+  if (source.isPresent) 'source': source.value,
+  if (size.isPresent) 'size': size.value,
+  if (projectId.isPresent) 'project_id': projectId.value,
+  if (userId.isPresent) 'user_id': userId.value,
+  if (apiKeyId.isPresent) 'api_key_id': apiKeyId.value,
+  if (model.isPresent) 'model': model.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] == 'organization.usage.images.result' &&
       json.containsKey('images') && json['images'] is num &&
-      json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
-UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? numModelRequests, String? Function()? source, String? Function()? size, String? Function()? projectId, String? Function()? userId, String? Function()? apiKeyId, String? Function()? model, }) { return UsageImagesResult(
+      json.containsKey('num_model_requests') && json['num_model_requests'] is num;}
+UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? numModelRequests, Omittable<String?>? source, Omittable<String?>? size, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, }) {return UsageImagesResult(
   object: object ?? this.object,
   images: images ?? this.images,
   numModelRequests: numModelRequests ?? this.numModelRequests,
-  source: source != null ? source() : this.source,
-  size: size != null ? size() : this.size,
-  projectId: projectId != null ? projectId() : this.projectId,
-  userId: userId != null ? userId() : this.userId,
-  apiKeyId: apiKeyId != null ? apiKeyId() : this.apiKeyId,
-  model: model != null ? model() : this.model,
-); } 
+  source: source ?? this.source,
+  size: size ?? this.size,
+  projectId: projectId ?? this.projectId,
+  userId: userId ?? this.userId,
+  apiKeyId: apiKeyId ?? this.apiKeyId,
+  model: model ?? this.model,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageImagesResult &&
           object == other.object &&
@@ -135,4 +135,4 @@ UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? n
 
 @override String toString() => 'UsageImagesResult(\n  object: $object,\n  images: $images,\n  numModelRequests: $numModelRequests,\n  source: $source,\n  size: $size,\n  projectId: $projectId,\n  userId: $userId,\n  apiKeyId: $apiKeyId,\n  model: $model,\n)';
 
- }
+}

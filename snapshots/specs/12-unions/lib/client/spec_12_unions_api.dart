@@ -14,4 +14,4 @@ static const defaultBaseUrl = 'https://api.example.com/v1';
 
 late final DefaultApi $default = DefaultApi(_config);
 
- }
+}

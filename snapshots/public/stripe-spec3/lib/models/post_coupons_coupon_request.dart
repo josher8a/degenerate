@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCouponsCouponRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';@immutable final class PostCouponsCouponRequest {const PostCouponsCouponRequest({this.currencyOptions, this.expand, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';@immutable final class PostCouponsCouponRequest {const PostCouponsCouponRequest({this.currencyOptions, this.expand, this.metadata, this.name, });
 
-factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) { return PostCouponsCouponRequest(
+factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) {return PostCouponsCouponRequest(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCouponsCouponRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Coupons defined in each available currency option (only supported if the coupon is amount-based). Each key must be a three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) and a [supported currency](https://stripe.com/docs/currencies).
 final Map<String,PostCouponsCouponRequestCurrencyOptionsValue>? currencyOptions;
@@ -22,26 +22,26 @@ final Metadata? metadata;
 /// Name of the coupon displayed to customers on, for instance invoices, or receipts. By default the `id` is shown if `name` is not set.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency_options', 'expand', 'metadata', 'name'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'currency_options', 'expand', 'metadata', 'name'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 40) { errors.add('name: length must be <= 40'); }
 }
-return errors; } 
-PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) { return PostCouponsCouponRequest(
+return errors;}
+PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) {return PostCouponsCouponRequest(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCouponsCouponRequest &&
           currencyOptions == other.currencyOptions &&
@@ -53,4 +53,4 @@ PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyO
 
 @override String toString() => 'PostCouponsCouponRequest(currencyOptions: $currencyOptions, expand: $expand, metadata: $metadata, name: $name)';
 
- }
+}

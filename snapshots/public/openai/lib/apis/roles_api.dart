@@ -12,7 +12,7 @@ final class RolesApi with ApiExecutor {const RolesApi(this.apiConfig);
 /// Lists the roles configured for the organization.
 ///
 /// `GET /organization/roles`
-Future<ApiResult<PublicRoleListResource, Never>> listRoles({int? limit, String? after, ListRolesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PublicRoleListResource, Never>> listRoles({int? limit, String? after, ListRolesOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -35,17 +35,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PublicRoleListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates a custom role for the organization.
 ///
 /// `POST /organization/roles`
-Future<ApiResult<Role, Never>> createRole({required PublicCreateOrganizationRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Role, Never>> createRole({required PublicCreateOrganizationRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,17 +56,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updates an existing organization role.
 ///
 /// `POST /organization/roles/{role_id}`
-Future<ApiResult<Role, Never>> updateRole({required String roleId, required PublicUpdateOrganizationRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Role, Never>> updateRole({required String roleId, required PublicUpdateOrganizationRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,17 +77,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes a custom role from the organization.
 ///
 /// `DELETE /organization/roles/{role_id}`
-Future<ApiResult<RoleDeletedResource, Never>> deleteRole({required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RoleDeletedResource, Never>> deleteRole({required String roleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -96,17 +96,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RoleDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Lists the roles configured for a project.
 ///
 /// `GET /projects/{project_id}/roles`
-Future<ApiResult<PublicRoleListResource, Never>> listProjectRoles({required String projectId, int? limit, String? after, ListProjectRolesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PublicRoleListResource, Never>> listProjectRoles({required String projectId, int? limit, String? after, ListProjectRolesOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -129,17 +129,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PublicRoleListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates a custom role for a project.
 ///
 /// `POST /projects/{project_id}/roles`
-Future<ApiResult<Role, Never>> createProjectRole({required String projectId, required PublicCreateOrganizationRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Role, Never>> createProjectRole({required String projectId, required PublicCreateOrganizationRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,17 +150,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updates an existing project role.
 ///
 /// `POST /projects/{project_id}/roles/{role_id}`
-Future<ApiResult<Role, Never>> updateProjectRole({required String projectId, required String roleId, required PublicUpdateOrganizationRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Role, Never>> updateProjectRole({required String projectId, required String roleId, required PublicUpdateOrganizationRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -171,17 +171,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes a custom role from a project.
 ///
 /// `DELETE /projects/{project_id}/roles/{role_id}`
-Future<ApiResult<RoleDeletedResource, Never>> deleteProjectRole({required String projectId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RoleDeletedResource, Never>> deleteProjectRole({required String projectId, required String roleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -190,11 +190,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RoleDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

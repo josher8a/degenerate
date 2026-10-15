@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FileSearchTool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/comparison_filter.dart';import 'package:pub_openai/models/compound_filter.dart';import 'package:pub_openai/models/filters.dart';import 'package:pub_openai/models/ranking_options.dart';/// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
-@immutable final class FileSearchTool {const FileSearchTool({required this.vectorStoreIds, this.type = 'file_search', this.maxNumResults, this.rankingOptions, this.filters, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/filters.dart';import 'package:pub_openai/models/ranking_options.dart';/// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
+@immutable final class FileSearchTool {const FileSearchTool({required this.type, required this.vectorStoreIds, this.maxNumResults, this.rankingOptions, this.filters = const Omittable.absent(), });
 
-factory FileSearchTool.fromJson(Map<String, dynamic> json) { return FileSearchTool(
+factory FileSearchTool.fromJson(Map<String, dynamic> json) {return FileSearchTool(
   type: json['type'] as String,
   vectorStoreIds: (json['vector_store_ids'] as List<dynamic>).map((e) => e as String).toList(),
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   rankingOptions: json['ranking_options'] != null ? RankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
-  filters: json['filters'] != null ? OneOf2.parse(json['filters'], fromA: (v) => ComparisonFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => CompoundFilter.fromJson(v as Map<String, dynamic>),) : null,
-); }
+  filters: json.containsKey('filters') ? Omittable(json['filters'] != null ? Filters.fromJson(json['filters']) : null) : const Omittable.absent(),
+);}
 
 /// The type of the file search tool. Always `file_search`.
 final String type;
@@ -25,24 +25,24 @@ final int? maxNumResults;
 final RankingOptions? rankingOptions;
 
 /// A filter to apply.
-final Filters? filters;
+final Omittable<Filters?> filters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'vector_store_ids': vectorStoreIds,
   'max_num_results': ?maxNumResults,
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
-  if (filters != null) 'filters': filters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('vector_store_ids'); } 
-FileSearchTool copyWith({String? type, List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Filters? Function()? filters, }) { return FileSearchTool(
+  if (filters.isPresent) 'filters': filters.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('vector_store_ids');}
+FileSearchTool copyWith({String? type, List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Omittable<Filters?>? filters, }) {return FileSearchTool(
   type: type ?? this.type,
   vectorStoreIds: vectorStoreIds ?? this.vectorStoreIds,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
-  filters: filters != null ? filters() : this.filters,
-); } 
+  filters: filters ?? this.filters,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchTool &&
           type == other.type &&
@@ -55,4 +55,4 @@ FileSearchTool copyWith({String? type, List<String>? vectorStoreIds, int? Functi
 
 @override String toString() => 'FileSearchTool(type: $type, vectorStoreIds: $vectorStoreIds, maxNumResults: $maxNumResults, rankingOptions: $rankingOptions, filters: $filters)';
 
- }
+}

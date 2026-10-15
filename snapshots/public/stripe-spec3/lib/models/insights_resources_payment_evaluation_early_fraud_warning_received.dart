@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud labeled by the issuer.
 sealed class FraudType {const FraudType();
 
-factory FraudType.fromJson(String json) { return switch (json) {
+factory FraudType.fromJson(String json) {return switch (json) {
   'made_with_lost_card' => madeWithLostCard,
   'made_with_stolen_card' => madeWithStolenCard,
   'other' => $other,
   'unauthorized_use_of_card' => unauthorizedUseOfCard,
   _ => FraudType$Unknown(json),
-}; }
+};}
 
 static const FraudType madeWithLostCard = FraudType$madeWithLostCard._();
 
@@ -23,36 +23,36 @@ static const FraudType unauthorizedUseOfCard = FraudType$unauthorizedUseOfCard._
 static const List<FraudType> values = [madeWithLostCard, madeWithStolenCard, $other, unauthorizedUseOfCard];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'made_with_lost_card' => 'madeWithLostCard',
   'made_with_stolen_card' => 'madeWithStolenCard',
   'other' => r'$other',
   'unauthorized_use_of_card' => 'unauthorizedUseOfCard',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FraudType$Unknown; } 
+bool get isUnknown {return this is FraudType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() madeWithLostCard, required W Function() madeWithStolenCard, required W Function() $other, required W Function() unauthorizedUseOfCard, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() madeWithLostCard, required W Function() madeWithStolenCard, required W Function() $other, required W Function() unauthorizedUseOfCard, required W Function(String value) $unknown, }) {return switch (this) {
       FraudType$madeWithLostCard() => madeWithLostCard(),
       FraudType$madeWithStolenCard() => madeWithStolenCard(),
       FraudType$$other() => $other(),
       FraudType$unauthorizedUseOfCard() => unauthorizedUseOfCard(),
       FraudType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWithLostCard, W Function()? madeWithStolenCard, W Function()? $other, W Function()? unauthorizedUseOfCard, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWithLostCard, W Function()? madeWithStolenCard, W Function()? $other, W Function()? unauthorizedUseOfCard, W Function(String value)? $unknown, }) {return switch (this) {
       FraudType$madeWithLostCard() => madeWithLostCard != null ? madeWithLostCard() : orElse(value),
       FraudType$madeWithStolenCard() => madeWithStolenCard != null ? madeWithStolenCard() : orElse(value),
       FraudType$$other() => $other != null ? $other() : orElse(value),
       FraudType$unauthorizedUseOfCard() => unauthorizedUseOfCard != null ? unauthorizedUseOfCard() : orElse(value),
       FraudType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FraudType($value)';
 
- }
+}
 @immutable final class FraudType$madeWithLostCard extends FraudType {const FraudType$madeWithLostCard._();
 
 @override String get value => 'made_with_lost_card';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWith
 
 @override int get hashCode => 'made_with_lost_card'.hashCode;
 
- }
+}
 @immutable final class FraudType$madeWithStolenCard extends FraudType {const FraudType$madeWithStolenCard._();
 
 @override String get value => 'made_with_stolen_card';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWith
 
 @override int get hashCode => 'made_with_stolen_card'.hashCode;
 
- }
+}
 @immutable final class FraudType$$other extends FraudType {const FraudType$$other._();
 
 @override String get value => 'other';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWith
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class FraudType$unauthorizedUseOfCard extends FraudType {const FraudType$unauthorizedUseOfCard._();
 
 @override String get value => 'unauthorized_use_of_card';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWith
 
 @override int get hashCode => 'unauthorized_use_of_card'.hashCode;
 
- }
+}
 @immutable final class FraudType$Unknown extends FraudType {const FraudType$Unknown(this.value);
 
 @override final String value;
@@ -98,24 +98,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWith
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Early Fraud Warning Received event details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived {const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived({required this.fraudType});
 
-factory InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(
+factory InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(
   fraudType: FraudType.fromJson(json['fraud_type'] as String),
-); }
+);}
 
 /// The type of fraud labeled by the issuer.
 final FraudType fraudType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fraud_type': fraudType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('fraud_type'); } 
-InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived copyWith({FraudType? fraudType}) { return InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('fraud_type');}
+InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived copyWith({FraudType? fraudType}) {return InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(
   fraudType: fraudType ?? this.fraudType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived &&
           fraudType == other.fraudType;
@@ -124,4 +124,4 @@ InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived copyWith({FraudType?
 
 @override String toString() => 'InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(fraudType: $fraudType)';
 
- }
+}

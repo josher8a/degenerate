@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Property to sort results by. Results are sorted in ascending order.
 sealed class WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy();
 
-factory WorkerScriptSearchWorkersOrderBy.fromJson(String json) { return switch (json) {
+factory WorkerScriptSearchWorkersOrderBy.fromJson(String json) {return switch (json) {
   'created_on' => createdOn,
   'modified_on' => modifiedOn,
   'name' => $name,
   _ => WorkerScriptSearchWorkersOrderBy$Unknown(json),
-}; }
+};}
 
 static const WorkerScriptSearchWorkersOrderBy createdOn = WorkerScriptSearchWorkersOrderBy$createdOn._();
 
@@ -20,33 +20,33 @@ static const WorkerScriptSearchWorkersOrderBy $name = WorkerScriptSearchWorkersO
 static const List<WorkerScriptSearchWorkersOrderBy> values = [createdOn, modifiedOn, $name];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created_on' => 'createdOn',
   'modified_on' => 'modifiedOn',
   'name' => r'$name',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkerScriptSearchWorkersOrderBy$Unknown; } 
+bool get isUnknown {return this is WorkerScriptSearchWorkersOrderBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() createdOn, required W Function() modifiedOn, required W Function() $name, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() createdOn, required W Function() modifiedOn, required W Function() $name, required W Function(String value) $unknown, }) {return switch (this) {
       WorkerScriptSearchWorkersOrderBy$createdOn() => createdOn(),
       WorkerScriptSearchWorkersOrderBy$modifiedOn() => modifiedOn(),
       WorkerScriptSearchWorkersOrderBy$$name() => $name(),
       WorkerScriptSearchWorkersOrderBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdOn, W Function()? modifiedOn, W Function()? $name, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdOn, W Function()? modifiedOn, W Function()? $name, W Function(String value)? $unknown, }) {return switch (this) {
       WorkerScriptSearchWorkersOrderBy$createdOn() => createdOn != null ? createdOn() : orElse(value),
       WorkerScriptSearchWorkersOrderBy$modifiedOn() => modifiedOn != null ? modifiedOn() : orElse(value),
       WorkerScriptSearchWorkersOrderBy$$name() => $name != null ? $name() : orElse(value),
       WorkerScriptSearchWorkersOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkerScriptSearchWorkersOrderBy($value)';
 
- }
+}
 @immutable final class WorkerScriptSearchWorkersOrderBy$createdOn extends WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy$createdOn._();
 
 @override String get value => 'created_on';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdO
 
 @override int get hashCode => 'created_on'.hashCode;
 
- }
+}
 @immutable final class WorkerScriptSearchWorkersOrderBy$modifiedOn extends WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy$modifiedOn._();
 
 @override String get value => 'modified_on';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdO
 
 @override int get hashCode => 'modified_on'.hashCode;
 
- }
+}
 @immutable final class WorkerScriptSearchWorkersOrderBy$$name extends WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy$$name._();
 
 @override String get value => 'name';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdO
 
 @override int get hashCode => 'name'.hashCode;
 
- }
+}
 @immutable final class WorkerScriptSearchWorkersOrderBy$Unknown extends WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdO
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -14,7 +14,7 @@ final class AccessReusablePoliciesApi with ApiExecutor {const AccessReusablePoli
 /// Lists Access reusable policies.
 ///
 /// `GET /accounts/{account_id}/access/policies`
-Future<ApiResult<List<AccessReusablePolicyResp>?, AccessApplicationsAddAnApplicationError>> accessPoliciesListAccessReusablePolicies({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessReusablePolicyResp>?, AccessApplicationsAddAnApplicationError>> accessPoliciesListAccessReusablePolicies({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -42,13 +42,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create an Access reusable policy
 ///
 /// Creates a new Access reusable policy.
 ///
 /// `POST /accounts/{account_id}/access/policies`
-Future<ApiResult<AccessReusablePolicyResp?, AccessApplicationsAddAnApplicationError>> accessPoliciesCreateAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessPolicyReq body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessReusablePolicyResp?, AccessApplicationsAddAnApplicationError>> accessPoliciesCreateAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessPolicyReq body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,7 +59,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -67,13 +67,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access reusable policy
 ///
 /// Fetches a single Access reusable policy.
 ///
 /// `GET /accounts/{account_id}/access/policies/{policy_id}`
-Future<ApiResult<AccessReusablePolicyResp?, AccessApplicationsAddAnApplicationError>> accessPoliciesGetAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessSchemasUuid policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessReusablePolicyResp?, AccessApplicationsAddAnApplicationError>> accessPoliciesGetAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessSchemasUuid policyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -82,7 +82,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -90,13 +90,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access reusable policy
 ///
 /// Updates a Access reusable policy.
 ///
 /// `PUT /accounts/{account_id}/access/policies/{policy_id}`
-Future<ApiResult<AccessReusablePolicyResp?, AccessApplicationsAddAnApplicationError>> accessPoliciesUpdateAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessSchemasUuid policyId, required AccessPolicyReq body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessReusablePolicyResp?, AccessApplicationsAddAnApplicationError>> accessPoliciesUpdateAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessSchemasUuid policyId, required AccessPolicyReq body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,7 +107,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -115,13 +115,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access reusable policy
 ///
 /// Deletes an Access reusable policy.
 ///
 /// `DELETE /accounts/{account_id}/access/policies/{policy_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessPoliciesDeleteAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessSchemasUuid policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessPoliciesDeleteAnAccessReusablePolicy({required AccessIdentifier accountId, required AccessSchemasUuid policyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -130,7 +130,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -138,5 +138,5 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

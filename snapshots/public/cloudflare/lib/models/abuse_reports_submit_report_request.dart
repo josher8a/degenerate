@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_csam_report.dart';import 'package:pub_cloudflare/models/abuse_reports_csam_report/abuse_reports_csam_report_host_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_csam_report/abuse_reports_csam_report_owner_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report/abuse_reports_dmca_report_host_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report/abuse_reports_dmca_report_owner_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_general_report.dart';import 'package:pub_cloudflare/models/abuse_reports_general_report/abuse_reports_general_report_owner_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_ncsei_report.dart';import 'package:pub_cloudflare/models/abuse_reports_phishing_report.dart';import 'package:pub_cloudflare/models/abuse_reports_registrar_whois_report.dart';import 'package:pub_cloudflare/models/abuse_reports_threat_report.dart';import 'package:pub_cloudflare/models/abuse_reports_trademark_report.dart';sealed class AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct();
 
-factory AbuseReportsSubmitReportRequestAct.fromJson(String json) { return switch (json) {
+factory AbuseReportsSubmitReportRequestAct.fromJson(String json) {return switch (json) {
   'abuse_children' => abuseChildren,
   'abuse_dmca' => abuseDmca,
   'abuse_general' => abuseGeneral,
@@ -13,7 +13,7 @@ factory AbuseReportsSubmitReportRequestAct.fromJson(String json) { return switch
   'abuse_threat' => abuseThreat,
   'abuse_trademark' => abuseTrademark,
   _ => AbuseReportsSubmitReportRequestAct$Unknown(json),
-}; }
+};}
 
 static const AbuseReportsSubmitReportRequestAct abuseChildren = AbuseReportsSubmitReportRequestAct$abuseChildren._();
 
@@ -38,7 +38,7 @@ String toJson() => value;
 
 bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseChildren extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseChildren._();
 
 @override String get value => 'abuse_children';
@@ -49,7 +49,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_children)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseDmca extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseDmca._();
 
 @override String get value => 'abuse_dmca';
@@ -60,7 +60,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_dmca)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseGeneral extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseGeneral._();
 
 @override String get value => 'abuse_general';
@@ -71,7 +71,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_general)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseNcsei extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseNcsei._();
 
 @override String get value => 'abuse_ncsei';
@@ -82,7 +82,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_ncsei)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abusePhishing extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abusePhishing._();
 
 @override String get value => 'abuse_phishing';
@@ -93,7 +93,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_phishing)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseRegistrarWhois extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseRegistrarWhois._();
 
 @override String get value => 'abuse_registrar_whois';
@@ -104,7 +104,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_registrar_whois)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseThreat extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseThreat._();
 
 @override String get value => 'abuse_threat';
@@ -115,7 +115,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_threat)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$abuseTrademark extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$abuseTrademark._();
 
 @override String get value => 'abuse_trademark';
@@ -126,7 +126,7 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct(abuse_trademark)';
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAct$Unknown extends AbuseReportsSubmitReportRequestAct {const AbuseReportsSubmitReportRequestAct$Unknown(this.value);
 
 @override final String value;
@@ -137,11 +137,11 @@ bool get isUnknown => this is AbuseReportsSubmitReportRequestAct$Unknown;
 
 @override String toString() => 'AbuseReportsSubmitReportRequestAct($value)';
 
- }
+}
 sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
 
 /// Deserialize from JSON, dispatching on the `act` discriminator.
-factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { return switch (json['act']) {
+factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) {return switch (json['act']) {
   'abuse_children' => AbuseReportsSubmitReportRequestAbuseChildren.fromJson(json),
   'abuse_dmca' => AbuseReportsSubmitReportRequestAbuseDmca.fromJson(json),
   'abuse_general' => AbuseReportsSubmitReportRequestAbuseGeneral.fromJson(json),
@@ -151,31 +151,31 @@ factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { re
   'abuse_threat' => AbuseReportsSubmitReportRequestAbuseThreat.fromJson(json),
   'abuse_trademark' => AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(json),
   _ => AbuseReportsSubmitReportRequest$Unknown(json),
-}; }
+};}
 
 /// Build the `abuse_children` variant.
-factory AbuseReportsSubmitReportRequest.abuseChildren({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required NcmecNotification ncmecNotification, required AbuseReportsCsamReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? country, }) { return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsCsamReport(act: 'abuse_children', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, country: country, hostNotification: hostNotification, justification: justification, ncmecNotification: ncmecNotification, ownerNotification: ownerNotification)); }
+factory AbuseReportsSubmitReportRequest.abuseChildren({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required NcmecNotification ncmecNotification, required AbuseReportsCsamReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? country, }) {return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsCsamReport(act: 'abuse_children', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, country: country, hostNotification: hostNotification, justification: justification, ncmecNotification: ncmecNotification, ownerNotification: ownerNotification));}
 
 /// Build the `abuse_dmca` variant.
-factory AbuseReportsSubmitReportRequest.abuseDmca({required String email, required String email2, required String name, required String urls, required String address1, required String agentName, required Agree agree, required String city, required String country, required AbuseReportsDmcaReportHostNotification hostNotification, required String originalWork, required AbuseReportsDmcaReportOwnerNotification ownerNotification, required String signature, required String state, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsDmcaReport(act: 'abuse_dmca', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, address1: address1, agentName: agentName, agree: agree, city: city, country: country, hostNotification: hostNotification, originalWork: originalWork, ownerNotification: ownerNotification, signature: signature, state: state)); }
+factory AbuseReportsSubmitReportRequest.abuseDmca({required String email, required String email2, required String name, required String urls, required String address1, required String agentName, required Agree agree, required String city, required String country, required AbuseReportsDmcaReportHostNotification hostNotification, required String originalWork, required AbuseReportsDmcaReportOwnerNotification ownerNotification, required String signature, required String state, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) {return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsDmcaReport(act: 'abuse_dmca', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, address1: address1, agentName: agentName, agree: agree, city: city, country: country, hostNotification: hostNotification, originalWork: originalWork, ownerNotification: ownerNotification, signature: signature, state: state));}
 
 /// Build the `abuse_general` variant.
-factory AbuseReportsSubmitReportRequest.abuseGeneral({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required AbuseReportsGeneralReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? destinationIps, String? portsProtocols, String? sourceIps, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsGeneralReport(act: 'abuse_general', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, destinationIps: destinationIps, hostNotification: hostNotification, justification: justification, ownerNotification: ownerNotification, portsProtocols: portsProtocols, sourceIps: sourceIps)); }
+factory AbuseReportsSubmitReportRequest.abuseGeneral({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required AbuseReportsGeneralReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? destinationIps, String? portsProtocols, String? sourceIps, }) {return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsGeneralReport(act: 'abuse_general', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, destinationIps: destinationIps, hostNotification: hostNotification, justification: justification, ownerNotification: ownerNotification, portsProtocols: portsProtocols, sourceIps: sourceIps));}
 
 /// Build the `abuse_ncsei` variant.
-factory AbuseReportsSubmitReportRequest.abuseNcsei({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required bool ncseiSubjectRepresentation, required AbuseReportsCsamReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? country, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsNcseiReport(act: 'abuse_ncsei', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, country: country, hostNotification: hostNotification, ncseiSubjectRepresentation: ncseiSubjectRepresentation, ownerNotification: ownerNotification)); }
+factory AbuseReportsSubmitReportRequest.abuseNcsei({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required bool ncseiSubjectRepresentation, required AbuseReportsCsamReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? country, }) {return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsNcseiReport(act: 'abuse_ncsei', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, country: country, hostNotification: hostNotification, ncseiSubjectRepresentation: ncseiSubjectRepresentation, ownerNotification: ownerNotification));}
 
 /// Build the `abuse_phishing` variant.
-factory AbuseReportsSubmitReportRequest.abusePhishing({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required AbuseReportsGeneralReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? originalWork, }) { return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsPhishingReport(act: 'abuse_phishing', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, hostNotification: hostNotification, justification: justification, originalWork: originalWork, ownerNotification: ownerNotification)); }
+factory AbuseReportsSubmitReportRequest.abusePhishing({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required AbuseReportsGeneralReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, String? originalWork, }) {return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsPhishingReport(act: 'abuse_phishing', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, hostNotification: hostNotification, justification: justification, originalWork: originalWork, ownerNotification: ownerNotification));}
 
 /// Build the `abuse_registrar_whois` variant.
-factory AbuseReportsSubmitReportRequest.abuseRegistrarWhois({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsRegistrarWhoisReport(act: 'abuse_registrar_whois', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, ownerNotification: ownerNotification)); }
+factory AbuseReportsSubmitReportRequest.abuseRegistrarWhois({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) {return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsRegistrarWhoisReport(act: 'abuse_registrar_whois', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, ownerNotification: ownerNotification));}
 
 /// Build the `abuse_threat` variant.
-factory AbuseReportsSubmitReportRequest.abuseThreat({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required AbuseReportsGeneralReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsThreatReport(act: 'abuse_threat', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, hostNotification: hostNotification, justification: justification, ownerNotification: ownerNotification)); }
+factory AbuseReportsSubmitReportRequest.abuseThreat({required String email, required String email2, required String name, required String urls, required AbuseReportsCsamReportHostNotification hostNotification, required String justification, required AbuseReportsGeneralReportOwnerNotification ownerNotification, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) {return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsThreatReport(act: 'abuse_threat', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, hostNotification: hostNotification, justification: justification, ownerNotification: ownerNotification));}
 
 /// Build the `abuse_trademark` variant.
-factory AbuseReportsSubmitReportRequest.abuseTrademark({required String email, required String email2, required String name, required String urls, required AbuseReportsDmcaReportHostNotification hostNotification, required String justification, required AbuseReportsDmcaReportOwnerNotification ownerNotification, required String trademarkNumber, required String trademarkOffice, required String trademarkSymbol, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsTrademarkReport(act: 'abuse_trademark', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, hostNotification: hostNotification, justification: justification, ownerNotification: ownerNotification, trademarkNumber: trademarkNumber, trademarkOffice: trademarkOffice, trademarkSymbol: trademarkSymbol)); }
+factory AbuseReportsSubmitReportRequest.abuseTrademark({required String email, required String email2, required String name, required String urls, required AbuseReportsDmcaReportHostNotification hostNotification, required String justification, required AbuseReportsDmcaReportOwnerNotification ownerNotification, required String trademarkNumber, required String trademarkOffice, required String trademarkSymbol, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) {return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsTrademarkReport(act: 'abuse_trademark', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls, hostNotification: hostNotification, justification: justification, ownerNotification: ownerNotification, trademarkNumber: trademarkNumber, trademarkOffice: trademarkOffice, trademarkSymbol: trademarkSymbol));}
 
 /// The discriminator value identifying this variant.
 AbuseReportsSubmitReportRequestAct get act;
@@ -203,7 +203,7 @@ String? get tele;
 String? get title;
 /// Shared by all variants of this union.
 String get urls;
-R when<R>({required R Function(AbuseReportsSubmitReportRequestAbuseChildren) abuseChildren, required R Function(AbuseReportsSubmitReportRequestAbuseDmca) abuseDmca, required R Function(AbuseReportsSubmitReportRequestAbuseGeneral) abuseGeneral, required R Function(AbuseReportsSubmitReportRequestAbuseNcsei) abuseNcsei, required R Function(AbuseReportsSubmitReportRequestAbusePhishing) abusePhishing, required R Function(AbuseReportsSubmitReportRequestAbuseRegistrarWhois) abuseRegistrarWhois, required R Function(AbuseReportsSubmitReportRequestAbuseThreat) abuseThreat, required R Function(AbuseReportsSubmitReportRequestAbuseTrademark) abuseTrademark, required R Function(AbuseReportsSubmitReportRequest$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(AbuseReportsSubmitReportRequestAbuseChildren) abuseChildren, required R Function(AbuseReportsSubmitReportRequestAbuseDmca) abuseDmca, required R Function(AbuseReportsSubmitReportRequestAbuseGeneral) abuseGeneral, required R Function(AbuseReportsSubmitReportRequestAbuseNcsei) abuseNcsei, required R Function(AbuseReportsSubmitReportRequestAbusePhishing) abusePhishing, required R Function(AbuseReportsSubmitReportRequestAbuseRegistrarWhois) abuseRegistrarWhois, required R Function(AbuseReportsSubmitReportRequestAbuseThreat) abuseThreat, required R Function(AbuseReportsSubmitReportRequestAbuseTrademark) abuseTrademark, required R Function(AbuseReportsSubmitReportRequest$Unknown) unknown, }) {return switch (this) {
   final AbuseReportsSubmitReportRequestAbuseChildren v => abuseChildren(v),
   final AbuseReportsSubmitReportRequestAbuseDmca v => abuseDmca(v),
   final AbuseReportsSubmitReportRequestAbuseGeneral v => abuseGeneral(v),
@@ -213,11 +213,11 @@ R when<R>({required R Function(AbuseReportsSubmitReportRequestAbuseChildren) abu
   final AbuseReportsSubmitReportRequestAbuseThreat v => abuseThreat(v),
   final AbuseReportsSubmitReportRequestAbuseTrademark v => abuseTrademark(v),
   final AbuseReportsSubmitReportRequest$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseChildren extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseChildren(this.abuseReportsCsamReport);
 
-factory AbuseReportsSubmitReportRequestAbuseChildren.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsCsamReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseChildren.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsCsamReport.fromJson(json));}
 
 final AbuseReportsCsamReport abuseReportsCsamReport;
 
@@ -225,7 +225,7 @@ final AbuseReportsCsamReport abuseReportsCsamReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsCsamReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, NcmecNotification? ncmecNotification, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsCsamReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, NcmecNotification? ncmecNotification, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) {return AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsCsamReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -241,7 +241,7 @@ AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comme
   justification: justification,
   ncmecNotification: ncmecNotification,
   ownerNotification: ownerNotification,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseChildren && abuseReportsCsamReport == other.abuseReportsCsamReport;
 
@@ -269,10 +269,10 @@ AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comme
 
 @override String get urls => abuseReportsCsamReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseDmca extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseDmca(this.abuseReportsDmcaReport);
 
-factory AbuseReportsSubmitReportRequestAbuseDmca.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsDmcaReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseDmca.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsDmcaReport.fromJson(json));}
 
 final AbuseReportsDmcaReport abuseReportsDmcaReport;
 
@@ -280,7 +280,7 @@ final AbuseReportsDmcaReport abuseReportsDmcaReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsDmcaReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? address1, String? agentName, Agree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) { return AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsDmcaReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? address1, String? agentName, Agree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) {return AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsDmcaReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -301,7 +301,7 @@ AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments,
   ownerNotification: ownerNotification,
   signature: signature,
   state: state,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseDmca && abuseReportsDmcaReport == other.abuseReportsDmcaReport;
 
@@ -329,10 +329,10 @@ AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments,
 
 @override String get urls => abuseReportsDmcaReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseGeneral extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseGeneral(this.abuseReportsGeneralReport);
 
-factory AbuseReportsSubmitReportRequestAbuseGeneral.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsGeneralReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseGeneral.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsGeneralReport.fromJson(json));}
 
 final AbuseReportsGeneralReport abuseReportsGeneralReport;
 
@@ -340,7 +340,7 @@ final AbuseReportsGeneralReport abuseReportsGeneralReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsGeneralReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? destinationIps, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsGeneralReportOwnerNotification? ownerNotification, String? Function()? portsProtocols, String? Function()? sourceIps, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsGeneralReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? destinationIps, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsGeneralReportOwnerNotification? ownerNotification, String? Function()? portsProtocols, String? Function()? sourceIps, }) {return AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsGeneralReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -357,7 +357,7 @@ AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? commen
   ownerNotification: ownerNotification,
   portsProtocols: portsProtocols,
   sourceIps: sourceIps,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseGeneral && abuseReportsGeneralReport == other.abuseReportsGeneralReport;
 
@@ -385,10 +385,10 @@ AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? commen
 
 @override String get urls => abuseReportsGeneralReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseNcsei extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseNcsei(this.abuseReportsNcseiReport);
 
-factory AbuseReportsSubmitReportRequestAbuseNcsei.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsNcseiReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseNcsei.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsNcseiReport.fromJson(json));}
 
 final AbuseReportsNcseiReport abuseReportsNcseiReport;
 
@@ -396,7 +396,7 @@ final AbuseReportsNcseiReport abuseReportsNcseiReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsNcseiReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, bool? ncseiSubjectRepresentation, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsNcseiReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, bool? ncseiSubjectRepresentation, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) {return AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsNcseiReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -411,7 +411,7 @@ AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments
   hostNotification: hostNotification,
   ncseiSubjectRepresentation: ncseiSubjectRepresentation,
   ownerNotification: ownerNotification,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseNcsei && abuseReportsNcseiReport == other.abuseReportsNcseiReport;
 
@@ -439,10 +439,10 @@ AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments
 
 @override String get urls => abuseReportsNcseiReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbusePhishing extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbusePhishing(this.abuseReportsPhishingReport);
 
-factory AbuseReportsSubmitReportRequestAbusePhishing.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsPhishingReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbusePhishing.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsPhishingReport.fromJson(json));}
 
 final AbuseReportsPhishingReport abuseReportsPhishingReport;
 
@@ -450,7 +450,7 @@ final AbuseReportsPhishingReport abuseReportsPhishingReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsPhishingReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, String? Function()? originalWork, AbuseReportsGeneralReportOwnerNotification? ownerNotification, }) { return AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsPhishingReport.copyWith(
+AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, String? Function()? originalWork, AbuseReportsGeneralReportOwnerNotification? ownerNotification, }) {return AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsPhishingReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -465,7 +465,7 @@ AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comme
   justification: justification,
   originalWork: originalWork,
   ownerNotification: ownerNotification,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbusePhishing && abuseReportsPhishingReport == other.abuseReportsPhishingReport;
 
@@ -493,10 +493,10 @@ AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comme
 
 @override String get urls => abuseReportsPhishingReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseRegistrarWhois extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseRegistrarWhois(this.abuseReportsRegistrarWhoisReport);
 
-factory AbuseReportsSubmitReportRequestAbuseRegistrarWhois.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsRegistrarWhoisReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseRegistrarWhois.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsRegistrarWhoisReport.fromJson(json));}
 
 final AbuseReportsRegistrarWhoisReport abuseReportsRegistrarWhoisReport;
 
@@ -504,7 +504,7 @@ final AbuseReportsRegistrarWhoisReport abuseReportsRegistrarWhoisReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsRegistrarWhoisReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsRegistrarWhoisReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) {return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsRegistrarWhoisReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -516,7 +516,7 @@ AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()?
   title: title,
   urls: urls,
   ownerNotification: ownerNotification,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseRegistrarWhois && abuseReportsRegistrarWhoisReport == other.abuseReportsRegistrarWhoisReport;
 
@@ -544,10 +544,10 @@ AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()?
 
 @override String get urls => abuseReportsRegistrarWhoisReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseThreat extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseThreat(this.abuseReportsThreatReport);
 
-factory AbuseReportsSubmitReportRequestAbuseThreat.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsThreatReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseThreat.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsThreatReport.fromJson(json));}
 
 final AbuseReportsThreatReport abuseReportsThreatReport;
 
@@ -555,7 +555,7 @@ final AbuseReportsThreatReport abuseReportsThreatReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsThreatReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsGeneralReportOwnerNotification? ownerNotification, }) { return AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsThreatReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsGeneralReportOwnerNotification? ownerNotification, }) {return AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsThreatReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -569,7 +569,7 @@ AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comment
   hostNotification: hostNotification,
   justification: justification,
   ownerNotification: ownerNotification,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseThreat && abuseReportsThreatReport == other.abuseReportsThreatReport;
 
@@ -597,10 +597,10 @@ AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comment
 
 @override String get urls => abuseReportsThreatReport.urls;
 
- }
+}
 @immutable final class AbuseReportsSubmitReportRequestAbuseTrademark extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseTrademark(this.abuseReportsTrademarkReport);
 
-factory AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsTrademarkReport.fromJson(json)); }
+factory AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsTrademarkReport.fromJson(json));}
 
 final AbuseReportsTrademarkReport abuseReportsTrademarkReport;
 
@@ -608,7 +608,7 @@ final AbuseReportsTrademarkReport abuseReportsTrademarkReport;
 
 @override Map<String, dynamic> toJson() => {...abuseReportsTrademarkReport.toJson(), 'act': act.toJson()};
 
-AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsDmcaReportHostNotification? hostNotification, String? justification, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsTrademarkReport.copyWith(
+AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsDmcaReportHostNotification? hostNotification, String? justification, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) {return AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsTrademarkReport.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -625,7 +625,7 @@ AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comm
   trademarkNumber: trademarkNumber,
   trademarkOffice: trademarkOffice,
   trademarkSymbol: trademarkSymbol,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseTrademark && abuseReportsTrademarkReport == other.abuseReportsTrademarkReport;
 
@@ -653,7 +653,7 @@ AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comm
 
 @override String get urls => abuseReportsTrademarkReport.urls;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class AbuseReportsSubmitReportRequest$Unknown extends AbuseReportsSubmitReportRequest {AbuseReportsSubmitReportRequest$Unknown(this.json);
@@ -711,4 +711,4 @@ late final String _urls = json['urls'] as String;
 
 @override String get urls => _urls;
 
- }
+}

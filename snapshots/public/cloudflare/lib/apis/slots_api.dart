@@ -12,7 +12,7 @@ final class SlotsApi with ApiExecutor {const SlotsApi(this.apiConfig);
 /// Retrieve a list of all slots matching the specified parameters
 ///
 /// `GET /accounts/{account_id}/cni/slots`
-Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<NscSlotList, Never>> listSlots({required NscAccountTag accountId, String? addressContains, String? site, String? speed, bool? occupied, int? cursor, int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (addressContains != null) {
   queryParameters['address_contains'] = addressContains;
@@ -44,17 +44,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscSlotList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get information about the specified slot
 ///
 /// `GET /accounts/{account_id}/cni/slots/{slot}`
-Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -63,11 +63,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscSlotInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

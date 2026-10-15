@@ -2,49 +2,49 @@
 // Source: #/components/schemas/IssuingTransactionNetworkData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingTransactionNetworkData {const IssuingTransactionNetworkData({this.authorizationCode, this.processingDate, this.transactionId, });
+@immutable final class IssuingTransactionNetworkData {const IssuingTransactionNetworkData({this.authorizationCode = const Omittable.absent(), this.processingDate = const Omittable.absent(), this.transactionId = const Omittable.absent(), });
 
-factory IssuingTransactionNetworkData.fromJson(Map<String, dynamic> json) { return IssuingTransactionNetworkData(
-  authorizationCode: json['authorization_code'] as String?,
-  processingDate: json['processing_date'] as String?,
-  transactionId: json['transaction_id'] as String?,
-); }
+factory IssuingTransactionNetworkData.fromJson(Map<String, dynamic> json) {return IssuingTransactionNetworkData(
+  authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
+  processingDate: json.containsKey('processing_date') ? Omittable(json['processing_date'] as String?) : const Omittable.absent(),
+  transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
+);}
 
 /// A code created by Stripe which is shared with the merchant to validate the authorization. This field will be populated if the authorization message was approved. The code typically starts with the letter "S", followed by a six-digit number. For example, "S498162". Please note that the code is not guaranteed to be unique across authorizations.
-final String? authorizationCode;
+final Omittable<String?> authorizationCode;
 
 /// The date the transaction was processed by the card network. This can be different from the date the seller recorded the transaction depending on when the acquirer submits the transaction to the network.
-final String? processingDate;
+final Omittable<String?> processingDate;
 
 /// Unique identifier for the authorization assigned by the card network used to match subsequent messages, disputes, and transactions.
-final String? transactionId;
+final Omittable<String?> transactionId;
 
-Map<String, dynamic> toJson() { return {
-  'authorization_code': ?authorizationCode,
-  'processing_date': ?processingDate,
-  'transaction_id': ?transactionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorization_code', 'processing_date', 'transaction_id'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
+  if (processingDate.isPresent) 'processing_date': processingDate.value,
+  if (transactionId.isPresent) 'transaction_id': transactionId.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authorization_code', 'processing_date', 'transaction_id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final authorizationCode$ = authorizationCode;
+List<String> validate() {final errors = <String>[];
+final authorizationCode$ = authorizationCode.value;
 if (authorizationCode$ != null) {
   if (authorizationCode$.runes.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
 }
-final processingDate$ = processingDate;
+final processingDate$ = processingDate.value;
 if (processingDate$ != null) {
   if (processingDate$.runes.length > 5000) { errors.add('processingDate: length must be <= 5000'); }
 }
-final transactionId$ = transactionId;
+final transactionId$ = transactionId.value;
 if (transactionId$ != null) {
   if (transactionId$.runes.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
-return errors; } 
-IssuingTransactionNetworkData copyWith({String? Function()? authorizationCode, String? Function()? processingDate, String? Function()? transactionId, }) { return IssuingTransactionNetworkData(
-  authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
-  processingDate: processingDate != null ? processingDate() : this.processingDate,
-  transactionId: transactionId != null ? transactionId() : this.transactionId,
-); } 
+return errors;}
+IssuingTransactionNetworkData copyWith({Omittable<String?>? authorizationCode, Omittable<String?>? processingDate, Omittable<String?>? transactionId, }) {return IssuingTransactionNetworkData(
+  authorizationCode: authorizationCode ?? this.authorizationCode,
+  processingDate: processingDate ?? this.processingDate,
+  transactionId: transactionId ?? this.transactionId,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionNetworkData &&
           authorizationCode == other.authorizationCode &&
@@ -55,4 +55,4 @@ IssuingTransactionNetworkData copyWith({String? Function()? authorizationCode, S
 
 @override String toString() => 'IssuingTransactionNetworkData(authorizationCode: $authorizationCode, processingDate: $processingDate, transactionId: $transactionId)';
 
- }
+}

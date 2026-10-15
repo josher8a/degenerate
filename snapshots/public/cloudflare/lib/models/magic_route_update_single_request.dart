@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_description.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_nexthop.dart';import 'package:pub_cloudflare/models/magic_prefix.dart';import 'package:pub_cloudflare/models/magic_priority.dart';import 'package:pub_cloudflare/models/magic_scope.dart';import 'package:pub_cloudflare/models/magic_weight.dart';@immutable final class MagicRouteUpdateSingleRequest {const MagicRouteUpdateSingleRequest({required this.nexthop, required this.prefix, required this.priority, required this.id, this.description, this.scope, this.weight, });
 
-factory MagicRouteUpdateSingleRequest.fromJson(Map<String, dynamic> json) { return MagicRouteUpdateSingleRequest(
+factory MagicRouteUpdateSingleRequest.fromJson(Map<String, dynamic> json) {return MagicRouteUpdateSingleRequest(
   description: json['description'] != null ? MagicDescription.fromJson(json['description'] as String) : null,
   nexthop: MagicNexthop.fromJson(json['nexthop'] as String),
   prefix: MagicPrefix.fromJson(json['prefix'] as String),
@@ -11,7 +11,7 @@ factory MagicRouteUpdateSingleRequest.fromJson(Map<String, dynamic> json) { retu
   scope: json['scope'] != null ? MagicScope.fromJson(json['scope'] as Map<String, dynamic>) : null,
   weight: json['weight'] != null ? MagicWeight.fromJson(json['weight'] as num) : null,
   id: MagicIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 /// An optional human provided description of the static route.
 final MagicDescription? description;
@@ -32,7 +32,7 @@ final MagicWeight? weight;
 /// Identifier
 final MagicIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'nexthop': nexthop.toJson(),
   'prefix': prefix.toJson(),
@@ -40,12 +40,12 @@ Map<String, dynamic> toJson() { return {
   if (scope != null) 'scope': scope?.toJson(),
   if (weight != null) 'weight': weight?.toJson(),
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('nexthop') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('nexthop') &&
       json.containsKey('prefix') &&
       json.containsKey('priority') &&
-      json.containsKey('id'); } 
-MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, MagicIdentifier? id, }) { return MagicRouteUpdateSingleRequest(
+      json.containsKey('id');}
+MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, MagicIdentifier? id, }) {return MagicRouteUpdateSingleRequest(
   description: description != null ? description() : this.description,
   nexthop: nexthop ?? this.nexthop,
   prefix: prefix ?? this.prefix,
@@ -53,7 +53,7 @@ MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? descriptio
   scope: scope != null ? scope() : this.scope,
   weight: weight != null ? weight() : this.weight,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteUpdateSingleRequest &&
           description == other.description &&
@@ -68,4 +68,4 @@ MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? descriptio
 
 @override String toString() => 'MagicRouteUpdateSingleRequest(description: $description, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight, id: $id)';
 
- }
+}

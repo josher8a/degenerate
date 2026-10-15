@@ -12,7 +12,7 @@ final class HeaderApi with ApiExecutor {const HeaderApi(this.apiConfig);
 /// Test header parameter(s)
 ///
 /// `GET /header/integer/boolean/string/enums`
-Future<ApiResult<String, Never>> testHeaderIntegerBooleanStringEnums({int? integerHeader, bool? booleanHeader, String? stringHeader, TestHeaderIntegerBooleanStringEnumsEnumNonrefStringHeader? enumNonrefStringHeader, StringEnumRef? enumRefStringHeader, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testHeaderIntegerBooleanStringEnums({int? integerHeader, bool? booleanHeader, String? stringHeader, TestHeaderIntegerBooleanStringEnumsEnumNonrefStringHeader? enumNonrefStringHeader, StringEnumRef? enumRefStringHeader, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (integerHeader != null) {
   headers['integer_header'] = integerHeader.toString();
 }
@@ -36,11 +36,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
   },
 );
- } 
- }
+}
+}

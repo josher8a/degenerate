@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/role.dart';/// Paginated list of roles available on an organization or project.
 @immutable final class PublicRoleListResource {const PublicRoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
-factory PublicRoleListResource.fromJson(Map<String, dynamic> json) { return PublicRoleListResource(
+factory PublicRoleListResource.fromJson(Map<String, dynamic> json) {return PublicRoleListResource(
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => Role.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
-); }
+);}
 
 /// Always `list`.
 final ContainerFileListResourceObject object;
@@ -23,22 +23,22 @@ final bool hasMore;
 /// Cursor to fetch the next page of results, or `null` when there are no additional roles.
 final String? next;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'next': next,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next') && json['next'] is String; } 
-PublicRoleListResource copyWith({ContainerFileListResourceObject? object, List<Role>? data, bool? hasMore, String? Function()? next, }) { return PublicRoleListResource(
+      json.containsKey('next') && (json['next'] == null || json['next'] is String);}
+PublicRoleListResource copyWith({ContainerFileListResourceObject? object, List<Role>? data, bool? hasMore, String? Function()? next, }) {return PublicRoleListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PublicRoleListResource &&
           object == other.object &&
@@ -50,4 +50,4 @@ PublicRoleListResource copyWith({ContainerFileListResourceObject? object, List<R
 
 @override String toString() => 'PublicRoleListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';
 
- }
+}

@@ -14,7 +14,7 @@ final class RadarIpApi with ApiExecutor {const RadarIpApi(this.apiConfig);
 /// Retrieves IP address information.
 ///
 /// `GET /radar/entities/ip`
-Future<ApiResult<RadarGetEntitiesIpResponseResult, RadarGetEntitiesIpError>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesIpResponseResult, RadarGetEntitiesIpError>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ip'] = ip;
 if (format != null) {
@@ -32,7 +32,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -40,5 +40,5 @@ return execute(
   },
   onError: RadarGetEntitiesIpError.fromResponse,
 );
- } 
- }
+}
+}

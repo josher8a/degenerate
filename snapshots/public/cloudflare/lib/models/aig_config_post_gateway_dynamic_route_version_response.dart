@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_delete_gateway_dynamic_route_response/aig_config_delete_gateway_dynamic_route_response_result.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponse {const AigConfigPostGatewayDynamicRouteVersionResponse({required this.result, required this.success, });
 
-factory AigConfigPostGatewayDynamicRouteVersionResponse.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponse(
+factory AigConfigPostGatewayDynamicRouteVersionResponse.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteVersionResponse(
   result: AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigDeleteGatewayDynamicRouteResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigPostGatewayDynamicRouteVersionResponse copyWith({AigConfigDeleteGatewayDynamicRouteResponseResult? result, bool? success, }) { return AigConfigPostGatewayDynamicRouteVersionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigPostGatewayDynamicRouteVersionResponse copyWith({AigConfigDeleteGatewayDynamicRouteResponseResult? result, bool? success, }) {return AigConfigPostGatewayDynamicRouteVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteVersionResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AigConfigPostGatewayDynamicRouteVersionResponse copyWith({AigConfigDeleteGateway
 
 @override String toString() => 'AigConfigPostGatewayDynamicRouteVersionResponse(result: $result, success: $success)';
 
- }
+}

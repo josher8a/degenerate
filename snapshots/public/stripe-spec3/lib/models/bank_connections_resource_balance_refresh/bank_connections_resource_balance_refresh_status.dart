@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the last refresh attempt.
 sealed class BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus();
 
-factory BankConnectionsResourceBalanceRefreshStatus.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceBalanceRefreshStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'pending' => pending,
   'succeeded' => succeeded,
   _ => BankConnectionsResourceBalanceRefreshStatus$Unknown(json),
-}; }
+};}
 
 static const BankConnectionsResourceBalanceRefreshStatus failed = BankConnectionsResourceBalanceRefreshStatus$failed._();
 
@@ -20,33 +20,33 @@ static const BankConnectionsResourceBalanceRefreshStatus succeeded = BankConnect
 static const List<BankConnectionsResourceBalanceRefreshStatus> values = [failed, pending, succeeded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'failed' => 'failed',
   'pending' => 'pending',
   'succeeded' => 'succeeded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BankConnectionsResourceBalanceRefreshStatus$Unknown; } 
+bool get isUnknown {return this is BankConnectionsResourceBalanceRefreshStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() failed, required W Function() pending, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() failed, required W Function() pending, required W Function() succeeded, required W Function(String value) $unknown, }) {return switch (this) {
       BankConnectionsResourceBalanceRefreshStatus$failed() => failed(),
       BankConnectionsResourceBalanceRefreshStatus$pending() => pending(),
       BankConnectionsResourceBalanceRefreshStatus$succeeded() => succeeded(),
       BankConnectionsResourceBalanceRefreshStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? pending, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? pending, W Function()? succeeded, W Function(String value)? $unknown, }) {return switch (this) {
       BankConnectionsResourceBalanceRefreshStatus$failed() => failed != null ? failed() : orElse(value),
       BankConnectionsResourceBalanceRefreshStatus$pending() => pending != null ? pending() : orElse(value),
       BankConnectionsResourceBalanceRefreshStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
       BankConnectionsResourceBalanceRefreshStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BankConnectionsResourceBalanceRefreshStatus($value)';
 
- }
+}
 @immutable final class BankConnectionsResourceBalanceRefreshStatus$failed extends BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus$failed._();
 
 @override String get value => 'failed';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceBalanceRefreshStatus$pending extends BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus$pending._();
 
 @override String get value => 'pending';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceBalanceRefreshStatus$succeeded extends BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceBalanceRefreshStatus$Unknown extends BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

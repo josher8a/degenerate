@@ -5,21 +5,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
 final class Input {
-  const Input({this.limit = 100, this.offset = 0});
+  const Input({this.limit, this.offset});
 
   factory Input.fromJson(Map<String, dynamic> json) {
     return Input(
-      limit: json.containsKey('limit') ? (json['limit'] as num).toInt() : 100,
-      offset: json.containsKey('offset') ? (json['offset'] as num).toInt() : 0,
+      limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
+      offset: json['offset'] != null ? (json['offset'] as num).toInt() : null,
     );
   }
 
-  final int limit;
+  final int? limit;
 
-  final int offset;
+  final int? offset;
+
+  /// The value of `limit`, or its schema default when absent.
+  int get limitOrDefault => limit ?? 100;
+
+  /// The value of `offset`, or its schema default when absent.
+  int get offsetOrDefault => offset ?? 0;
 
   Map<String, dynamic> toJson() {
-    return {'limit': limit, 'offset': offset};
+    return {'limit': ?limit, 'offset': ?offset};
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -29,16 +35,22 @@ final class Input {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    if (limit < 1) {
-      errors.add('limit: must be >= 1');
+    final limit$ = limit;
+    if (limit$ != null) {
+      if (limit$ < 1) {
+        errors.add('limit: must be >= 1');
+      }
     }
-    if (offset < 0) {
-      errors.add('offset: must be >= 0');
+    final offset$ = offset;
+    if (offset$ != null) {
+      if (offset$ < 0) {
+        errors.add('offset: must be >= 0');
+      }
     }
     return errors;
   }
 
-  Input copyWith({int Function()? limit, int Function()? offset}) {
+  Input copyWith({int? Function()? limit, int? Function()? offset}) {
     return Input(
       limit: limit != null ? limit() : this.limit,
       offset: offset != null ? offset() : this.offset,

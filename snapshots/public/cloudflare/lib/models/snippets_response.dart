@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_message.dart';/// Return all API responses using this object.
 @immutable final class SnippetsResponse {const SnippetsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory SnippetsResponse.fromJson(Map<String, dynamic> json) { return SnippetsResponse(
+factory SnippetsResponse.fromJson(Map<String, dynamic> json) {return SnippetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SnippetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SnippetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
-); }
+);}
 
 /// Lists error messages.
 final List<SnippetsMessage> errors;
@@ -23,22 +23,22 @@ final Map<String,dynamic> result;
 /// Indicate whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-SnippetsResponse copyWith({List<SnippetsMessage>? errors, List<SnippetsMessage>? messages, Map<String,dynamic>? result, bool? success, }) { return SnippetsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+SnippetsResponse copyWith({List<SnippetsMessage>? errors, List<SnippetsMessage>? messages, Map<String,dynamic>? result, bool? success, }) {return SnippetsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsResponse &&
           listEquals(errors, other.errors) &&
@@ -50,4 +50,4 @@ SnippetsResponse copyWith({List<SnippetsMessage>? errors, List<SnippetsMessage>?
 
 @override String toString() => 'SnippetsResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -3,30 +3,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazTimerRuleSettings {const ZarazTimerRuleSettings({required this.interval, required this.limit, });
 
-factory ZarazTimerRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazTimerRuleSettings(
+factory ZarazTimerRuleSettings.fromJson(Map<String, dynamic> json) {return ZarazTimerRuleSettings(
   interval: (json['interval'] as num).toInt(),
   limit: (json['limit'] as num).toInt(),
-); }
+);}
 
 final int interval;
 
 final int limit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval,
   'limit': limit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') && json['interval'] is num &&
-      json.containsKey('limit') && json['limit'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval') && json['interval'] is num &&
+      json.containsKey('limit') && json['limit'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (interval < 50) { errors.add('interval: must be >= 50'); }
 if (limit < 0) { errors.add('limit: must be >= 0'); }
-return errors; } 
-ZarazTimerRuleSettings copyWith({int? interval, int? limit, }) { return ZarazTimerRuleSettings(
+return errors;}
+ZarazTimerRuleSettings copyWith({int? interval, int? limit, }) {return ZarazTimerRuleSettings(
   interval: interval ?? this.interval,
   limit: limit ?? this.limit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazTimerRuleSettings &&
           interval == other.interval &&
@@ -36,4 +36,4 @@ ZarazTimerRuleSettings copyWith({int? interval, int? limit, }) { return ZarazTim
 
 @override String toString() => 'ZarazTimerRuleSettings(interval: $interval, limit: $limit)';
 
- }
+}

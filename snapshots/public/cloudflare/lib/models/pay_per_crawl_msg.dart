@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PayPerCrawlMsg
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_source.dart';@immutable final class PayPerCrawlMsg {const PayPerCrawlMsg({this.code, this.documentationUrl, this.errorChain, this.message, this.meta, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_source.dart';@immutable final class PayPerCrawlMsg {const PayPerCrawlMsg({this.code, this.documentationUrl, this.errorChain, this.message, this.meta = const Omittable.absent(), this.source, });
 
-factory PayPerCrawlMsg.fromJson(Map<String, dynamic> json) { return PayPerCrawlMsg(
+factory PayPerCrawlMsg.fromJson(Map<String, dynamic> json) {return PayPerCrawlMsg(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   documentationUrl: json['documentation_url'] as String?,
   errorChain: (json['error_chain'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String?,
-  meta: json['meta'],
+  meta: json.containsKey('meta') ? Omittable(json['meta']) : const Omittable.absent(),
   source: json['source'] != null ? PayPerCrawlSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int? code;
 
@@ -22,27 +22,27 @@ final String? message;
 
 /// Meta object containing non-standard meta-information about the error.
 /// This field must be an object or null!
-final dynamic meta;
+final Omittable<dynamic> meta;
 
 final PayPerCrawlSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'documentation_url': ?documentationUrl,
   if (errorChain != null) 'error_chain': errorChain?.map((e) => e.toJson()).toList(),
   'message': ?message,
-  'meta': ?meta,
+  if (meta.isPresent) 'meta': meta.value,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'documentation_url', 'error_chain', 'message', 'meta', 'source'}.contains(key)); } 
-PayPerCrawlMsg copyWith({int? Function()? code, String? Function()? documentationUrl, List<PayPerCrawlMsg>? Function()? errorChain, String? Function()? message, dynamic Function()? meta, PayPerCrawlSource? Function()? source, }) { return PayPerCrawlMsg(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'documentation_url', 'error_chain', 'message', 'meta', 'source'}.contains(key));}
+PayPerCrawlMsg copyWith({int? Function()? code, String? Function()? documentationUrl, List<PayPerCrawlMsg>? Function()? errorChain, String? Function()? message, Omittable<dynamic>? meta, PayPerCrawlSource? Function()? source, }) {return PayPerCrawlMsg(
   code: code != null ? code() : this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   errorChain: errorChain != null ? errorChain() : this.errorChain,
   message: message != null ? message() : this.message,
-  meta: meta != null ? meta() : this.meta,
+  meta: meta ?? this.meta,
   source: source != null ? source() : this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlMsg &&
           code == other.code &&
@@ -56,4 +56,4 @@ PayPerCrawlMsg copyWith({int? Function()? code, String? Function()? documentatio
 
 @override String toString() => 'PayPerCrawlMsg(code: $code, documentationUrl: $documentationUrl, errorChain: $errorChain, message: $message, meta: $meta, source: $source)';
 
- }
+}

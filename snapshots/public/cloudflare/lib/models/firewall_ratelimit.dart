@@ -17,8 +17,8 @@ String toJson() => value;
 }
 @immutable final class FirewallRatelimit {const FirewallRatelimit({this.action, this.bypass, this.description, this.disabled, this.id, this.match, this.period, this.threshold, });
 
-factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallRatelimit(
-  action: json['action'] != null ? FirewallAction.fromJson(json['action'] as Map<String, dynamic>) : null,
+factory FirewallRatelimit.fromJson(Map<String, dynamic> json) {return FirewallRatelimit(
+  action: json['action'] != null ? FirewallAction.fromJson(json['action']) : null,
   bypass: (json['bypass'] as List<dynamic>?)?.map((e) => FirewallBypass2.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] != null ? FirewallDescription.fromJson(json['description'] as String) : null,
   disabled: json['disabled'] != null ? FirewallDisabled.fromJson(json['disabled'] as bool) : null,
@@ -26,7 +26,7 @@ factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallR
   match: json['match'] != null ? FirewallMatch.fromJson(json['match']) : null,
   period: json['period'] != null ? FirewallPeriod.fromJson(json['period'] as num) : null,
   threshold: json['threshold'] != null ? FirewallThreshold.fromJson(json['threshold'] as num) : null,
-); }
+);}
 
 final FirewallAction? action;
 
@@ -49,7 +49,7 @@ final FirewallPeriod? period;
 
 final FirewallThreshold? threshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (bypass != null) 'bypass': bypass?.map((e) => e.toJson()).toList(),
   if (description != null) 'description': description?.toJson(),
@@ -58,9 +58,9 @@ Map<String, dynamic> toJson() { return {
   if (match != null) 'match': match?.toJson(),
   if (period != null) 'period': period?.toJson(),
   if (threshold != null) 'threshold': threshold?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'bypass', 'description', 'disabled', 'id', 'match', 'period', 'threshold'}.contains(key)); } 
-FirewallRatelimit copyWith({FirewallAction? Function()? action, List<FirewallBypass2>? Function()? bypass, FirewallDescription? Function()? description, FirewallDisabled? Function()? disabled, FirewallId? Function()? id, FirewallMatch? Function()? match, FirewallPeriod? Function()? period, FirewallThreshold? Function()? threshold, }) { return FirewallRatelimit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'bypass', 'description', 'disabled', 'id', 'match', 'period', 'threshold'}.contains(key));}
+FirewallRatelimit copyWith({FirewallAction? Function()? action, List<FirewallBypass2>? Function()? bypass, FirewallDescription? Function()? description, FirewallDisabled? Function()? disabled, FirewallId? Function()? id, FirewallMatch? Function()? match, FirewallPeriod? Function()? period, FirewallThreshold? Function()? threshold, }) {return FirewallRatelimit(
   action: action != null ? action() : this.action,
   bypass: bypass != null ? bypass() : this.bypass,
   description: description != null ? description() : this.description,
@@ -69,7 +69,7 @@ FirewallRatelimit copyWith({FirewallAction? Function()? action, List<FirewallByp
   match: match != null ? match() : this.match,
   period: period != null ? period() : this.period,
   threshold: threshold != null ? threshold() : this.threshold,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRatelimit &&
           action == other.action &&
@@ -85,4 +85,4 @@ FirewallRatelimit copyWith({FirewallAction? Function()? action, List<FirewallByp
 
 @override String toString() => 'FirewallRatelimit(action: $action, bypass: $bypass, description: $description, disabled: $disabled, id: $id, match: $match, period: $period, threshold: $threshold)';
 
- }
+}

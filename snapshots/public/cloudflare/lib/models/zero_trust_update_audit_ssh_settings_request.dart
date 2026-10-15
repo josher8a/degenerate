@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_public_key.dart';@immutable final class ZeroTrustUpdateAuditSshSettingsRequest {const ZeroTrustUpdateAuditSshSettingsRequest({required this.publicKey});
 
-factory ZeroTrustUpdateAuditSshSettingsRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustUpdateAuditSshSettingsRequest(
+factory ZeroTrustUpdateAuditSshSettingsRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustUpdateAuditSshSettingsRequest(
   publicKey: ZeroTrustGatewayPublicKey.fromJson(json['public_key'] as String),
-); }
+);}
 
 /// Provide the Base64-encoded HPKE public key that encrypts SSH session logs. See https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/#enable-ssh-command-logging.
 final ZeroTrustGatewayPublicKey publicKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'public_key': publicKey.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('public_key'); } 
-ZeroTrustUpdateAuditSshSettingsRequest copyWith({ZeroTrustGatewayPublicKey? publicKey}) { return ZeroTrustUpdateAuditSshSettingsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('public_key');}
+ZeroTrustUpdateAuditSshSettingsRequest copyWith({ZeroTrustGatewayPublicKey? publicKey}) {return ZeroTrustUpdateAuditSshSettingsRequest(
   publicKey: publicKey ?? this.publicKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustUpdateAuditSshSettingsRequest &&
           publicKey == other.publicKey;
@@ -25,4 +25,4 @@ ZeroTrustUpdateAuditSshSettingsRequest copyWith({ZeroTrustGatewayPublicKey? publ
 
 @override String toString() => 'ZeroTrustUpdateAuditSshSettingsRequest(publicKey: $publicKey)';
 
- }
+}

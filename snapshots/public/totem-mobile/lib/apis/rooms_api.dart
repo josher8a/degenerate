@@ -2,6 +2,7 @@
 // Source: tag "RoomsApi" (6 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/errors/get_state_error.dart';
 import 'package:pub_totem_mobile/models/event_request.dart';
@@ -42,7 +43,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return RoomState.fromJson(
@@ -72,7 +73,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return RoomState.fromJson(
@@ -102,7 +103,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return JoinResponse.fromJson(
@@ -133,7 +134,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: GetStateError.fromResponse,
@@ -159,7 +160,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: GetStateError.fromResponse,
@@ -198,7 +199,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return RemoveParticipantPayload.fromJson(

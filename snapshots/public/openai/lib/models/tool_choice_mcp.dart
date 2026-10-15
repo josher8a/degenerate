@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For MCP tools, the type is always `mcp`.
 sealed class ToolChoiceMcpType {const ToolChoiceMcpType();
 
-factory ToolChoiceMcpType.fromJson(String json) { return switch (json) {
+factory ToolChoiceMcpType.fromJson(String json) {return switch (json) {
   'mcp' => mcp,
   _ => ToolChoiceMcpType$Unknown(json),
-}; }
+};}
 
 static const ToolChoiceMcpType mcp = ToolChoiceMcpType$mcp._();
 
 static const List<ToolChoiceMcpType> values = [mcp];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mcp' => 'mcp',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ToolChoiceMcpType$Unknown; } 
+bool get isUnknown {return this is ToolChoiceMcpType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mcp, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mcp, required W Function(String value) $unknown, }) {return switch (this) {
       ToolChoiceMcpType$mcp() => mcp(),
       ToolChoiceMcpType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcp, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcp, W Function(String value)? $unknown, }) {return switch (this) {
       ToolChoiceMcpType$mcp() => mcp != null ? mcp() : orElse(value),
       ToolChoiceMcpType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ToolChoiceMcpType($value)';
 
- }
+}
 @immutable final class ToolChoiceMcpType$mcp extends ToolChoiceMcpType {const ToolChoiceMcpType$mcp._();
 
 @override String get value => 'mcp';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcp, W F
 
 @override int get hashCode => 'mcp'.hashCode;
 
- }
+}
 @immutable final class ToolChoiceMcpType$Unknown extends ToolChoiceMcpType {const ToolChoiceMcpType$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcp, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Use this option to force the model to call a specific tool on a remote MCP server.
 /// 
-@immutable final class ToolChoiceMcp {const ToolChoiceMcp({required this.type, required this.serverLabel, this.name, });
+@immutable final class ToolChoiceMcp {const ToolChoiceMcp({required this.type, required this.serverLabel, this.name = const Omittable.absent(), });
 
-factory ToolChoiceMcp.fromJson(Map<String, dynamic> json) { return ToolChoiceMcp(
+factory ToolChoiceMcp.fromJson(Map<String, dynamic> json) {return ToolChoiceMcp(
   type: ToolChoiceMcpType.fromJson(json['type'] as String),
   serverLabel: json['server_label'] as String,
-  name: json['name'] as String?,
-); }
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+);}
 
 /// For MCP tools, the type is always `mcp`.
 final ToolChoiceMcpType type;
@@ -73,20 +73,20 @@ final String serverLabel;
 
 /// The name of the tool to call on the server.
 /// 
-final String? name;
+final Omittable<String?> name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'server_label': serverLabel,
-  'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'mcp' &&
-      json.containsKey('server_label') && json['server_label'] is String; } 
-ToolChoiceMcp copyWith({ToolChoiceMcpType? type, String? serverLabel, String? Function()? name, }) { return ToolChoiceMcp(
+  if (name.isPresent) 'name': name.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'mcp' &&
+      json.containsKey('server_label') && json['server_label'] is String;}
+ToolChoiceMcp copyWith({ToolChoiceMcpType? type, String? serverLabel, Omittable<String?>? name, }) {return ToolChoiceMcp(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
-  name: name != null ? name() : this.name,
-); } 
+  name: name ?? this.name,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceMcp &&
           type == other.type &&
@@ -97,4 +97,4 @@ ToolChoiceMcp copyWith({ToolChoiceMcpType? type, String? serverLabel, String? Fu
 
 @override String toString() => 'ToolChoiceMcp(type: $type, serverLabel: $serverLabel, name: $name)';
 
- }
+}

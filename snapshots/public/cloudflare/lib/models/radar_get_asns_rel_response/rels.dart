@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rels {const Rels({required this.asn1, required this.asn1Country, required this.asn1Name, required this.asn2, required this.asn2Country, required this.asn2Name, required this.rel, });
 
-factory Rels.fromJson(Map<String, dynamic> json) { return Rels(
+factory Rels.fromJson(Map<String, dynamic> json) {return Rels(
   asn1: (json['asn1'] as num).toInt(),
   asn1Country: json['asn1_country'] as String,
   asn1Name: json['asn1_name'] as String,
@@ -11,7 +11,7 @@ factory Rels.fromJson(Map<String, dynamic> json) { return Rels(
   asn2Country: json['asn2_country'] as String,
   asn2Name: json['asn2_name'] as String,
   rel: json['rel'] as String,
-); }
+);}
 
 final int asn1;
 
@@ -27,7 +27,7 @@ final String asn2Name;
 
 final String rel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn1': asn1,
   'asn1_country': asn1Country,
   'asn1_name': asn1Name,
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'asn2_country': asn2Country,
   'asn2_name': asn2Name,
   'rel': rel,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn1') && json['asn1'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn1') && json['asn1'] is num &&
       json.containsKey('asn1_country') && json['asn1_country'] is String &&
       json.containsKey('asn1_name') && json['asn1_name'] is String &&
       json.containsKey('asn2') && json['asn2'] is num &&
       json.containsKey('asn2_country') && json['asn2_country'] is String &&
       json.containsKey('asn2_name') && json['asn2_name'] is String &&
-      json.containsKey('rel') && json['rel'] is String; } 
-Rels copyWith({int? asn1, String? asn1Country, String? asn1Name, int? asn2, String? asn2Country, String? asn2Name, String? rel, }) { return Rels(
+      json.containsKey('rel') && json['rel'] is String;}
+Rels copyWith({int? asn1, String? asn1Country, String? asn1Name, int? asn2, String? asn2Country, String? asn2Name, String? rel, }) {return Rels(
   asn1: asn1 ?? this.asn1,
   asn1Country: asn1Country ?? this.asn1Country,
   asn1Name: asn1Name ?? this.asn1Name,
@@ -51,7 +51,7 @@ Rels copyWith({int? asn1, String? asn1Country, String? asn1Name, int? asn2, Stri
   asn2Country: asn2Country ?? this.asn2Country,
   asn2Name: asn2Name ?? this.asn2Name,
   rel: rel ?? this.rel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Rels &&
           asn1 == other.asn1 &&
@@ -66,4 +66,4 @@ Rels copyWith({int? asn1, String? asn1Country, String? asn1Name, int? asn2, Stri
 
 @override String toString() => 'Rels(asn1: $asn1, asn1Country: $asn1Country, asn1Name: $asn1Name, asn2: $asn2, asn2Country: $asn2Country, asn2Name: $asn2Name, rel: $rel)';
 
- }
+}

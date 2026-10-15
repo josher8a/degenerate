@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListEvaluatorsResponseResult {const AigConfigListEvaluatorsResponseResult({required this.createdAt, required this.description, required this.enable, required this.id, required this.mandatory, required this.modifiedAt, required this.name, required this.type, });
 
-factory AigConfigListEvaluatorsResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluatorsResponseResult(
+factory AigConfigListEvaluatorsResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigListEvaluatorsResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String,
   enable: json['enable'] as bool,
@@ -12,7 +12,7 @@ factory AigConfigListEvaluatorsResponseResult.fromJson(Map<String, dynamic> json
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -30,7 +30,7 @@ final String name;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': description,
   'enable': enable,
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('enable') && json['enable'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('mandatory') && json['mandatory'] is bool &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-AigConfigListEvaluatorsResponseResult copyWith({DateTime? createdAt, String? description, bool? enable, String? id, bool? mandatory, DateTime? modifiedAt, String? name, String? type, }) { return AigConfigListEvaluatorsResponseResult(
+      json.containsKey('type') && json['type'] is String;}
+AigConfigListEvaluatorsResponseResult copyWith({DateTime? createdAt, String? description, bool? enable, String? id, bool? mandatory, DateTime? modifiedAt, String? name, String? type, }) {return AigConfigListEvaluatorsResponseResult(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   enable: enable ?? this.enable,
@@ -57,7 +57,7 @@ AigConfigListEvaluatorsResponseResult copyWith({DateTime? createdAt, String? des
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListEvaluatorsResponseResult &&
           createdAt == other.createdAt &&
@@ -73,4 +73,4 @@ AigConfigListEvaluatorsResponseResult copyWith({DateTime? createdAt, String? des
 
 @override String toString() => 'AigConfigListEvaluatorsResponseResult(createdAt: $createdAt, description: $description, enable: $enable, id: $id, mandatory: $mandatory, modifiedAt: $modifiedAt, name: $name, type: $type)';
 
- }
+}

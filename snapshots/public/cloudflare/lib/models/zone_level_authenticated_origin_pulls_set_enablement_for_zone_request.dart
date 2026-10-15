@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';@immutable final class ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest {const ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest({required this.enabled});
 
-factory ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(
+factory ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest.fromJson(Map<String, dynamic> json) {return ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(
   enabled: TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(json['enabled'] as bool),
-); }
+);}
 
 /// Indicates whether zone-level authenticated origin pulls is enabled.
 final TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled'); } 
-ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest copyWith({TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled? enabled}) { return ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled');}
+ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest copyWith({TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled? enabled}) {return ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest &&
           enabled == other.enabled;
@@ -25,4 +25,4 @@ ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest copyWith({TlsCertif
 
 @override String toString() => 'ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(enabled: $enabled)';
 
- }
+}

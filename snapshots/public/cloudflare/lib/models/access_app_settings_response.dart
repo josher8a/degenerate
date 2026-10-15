@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_allow_iframe.dart';import 'package:pub_cloudflare/models/access_skip_interstitial.dart';@immutable final class AccessAppSettingsResponse {const AccessAppSettingsResponse({this.allowIframe, this.skipInterstitial, });
 
-factory AccessAppSettingsResponse.fromJson(Map<String, dynamic> json) { return AccessAppSettingsResponse(
+factory AccessAppSettingsResponse.fromJson(Map<String, dynamic> json) {return AccessAppSettingsResponse(
   allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,
   skipInterstitial: json['skip_interstitial'] != null ? AccessSkipInterstitial.fromJson(json['skip_interstitial'] as bool) : null,
-); }
+);}
 
 /// Enables loading application content in an iFrame.
 final AccessAllowIframe? allowIframe;
 
 final AccessSkipInterstitial? skipInterstitial;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowIframe != null) 'allow_iframe': allowIframe?.toJson(),
   if (skipInterstitial != null) 'skip_interstitial': skipInterstitial?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_iframe', 'skip_interstitial'}.contains(key)); } 
-AccessAppSettingsResponse copyWith({AccessAllowIframe? Function()? allowIframe, AccessSkipInterstitial? Function()? skipInterstitial, }) { return AccessAppSettingsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_iframe', 'skip_interstitial'}.contains(key));}
+AccessAppSettingsResponse copyWith({AccessAllowIframe? Function()? allowIframe, AccessSkipInterstitial? Function()? skipInterstitial, }) {return AccessAppSettingsResponse(
   allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
   skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppSettingsResponse &&
           allowIframe == other.allowIframe &&
@@ -31,4 +31,4 @@ AccessAppSettingsResponse copyWith({AccessAllowIframe? Function()? allowIframe, 
 
 @override String toString() => 'AccessAppSettingsResponse(allowIframe: $allowIframe, skipInterstitial: $skipInterstitial)';
 
- }
+}

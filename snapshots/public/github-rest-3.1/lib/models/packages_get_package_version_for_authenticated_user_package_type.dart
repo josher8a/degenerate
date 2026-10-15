@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType();
 
-factory PackagesGetPackageVersionForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
+factory PackagesGetPackageVersionForAuthenticatedUserPackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -11,7 +11,7 @@ factory PackagesGetPackageVersionForAuthenticatedUserPackageType.fromJson(String
   'nuget' => nuget,
   'container' => container,
   _ => PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(json),
-}; }
+};}
 
 static const PackagesGetPackageVersionForAuthenticatedUserPackageType npm = PackagesGetPackageVersionForAuthenticatedUserPackageType$npm._();
 
@@ -28,9 +28,9 @@ static const PackagesGetPackageVersionForAuthenticatedUserPackageType container 
 static const List<PackagesGetPackageVersionForAuthenticatedUserPackageType> values = [npm, maven, rubygems, docker, nuget, container];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'npm' => 'npm',
   'maven' => 'maven',
   'rubygems' => 'rubygems',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'nuget' => 'nuget',
   'container' => 'container',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown; } 
+bool get isUnknown {return this is PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) {return switch (this) {
       PackagesGetPackageVersionForAuthenticatedUserPackageType$npm() => npm(),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$maven() => maven(),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems() => rubygems(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() npm, required W Function() maven, required W Fu
       PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget() => nuget(),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$container() => container(),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) {return switch (this) {
       PackagesGetPackageVersionForAuthenticatedUserPackageType$npm() => npm != null ? npm() : orElse(value),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$maven() => maven != null ? maven() : orElse(value),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
       PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget() => nuget != null ? nuget() : orElse(value),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$container() => container != null ? container() : orElse(value),
       PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PackagesGetPackageVersionForAuthenticatedUserPackageType($value)';
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$npm extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$npm._();
 
 @override String get value => 'npm';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'npm'.hashCode;
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$maven extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$maven._();
 
 @override String get value => 'maven';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'maven'.hashCode;
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems._();
 
 @override String get value => 'rubygems';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'rubygems'.hashCode;
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$docker extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$docker._();
 
 @override String get value => 'docker';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'docker'.hashCode;
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget._();
 
 @override String get value => 'nuget';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'nuget'.hashCode;
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$container extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$container._();
 
 @override String get value => 'container';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'container'.hashCode;
 
- }
+}
 @immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

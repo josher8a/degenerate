@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TrialEndVariant1 {const TrialEndVariant1();
 
-factory TrialEndVariant1.fromJson(String json) { return switch (json) {
+factory TrialEndVariant1.fromJson(String json) {return switch (json) {
   'now' => now,
   _ => TrialEndVariant1$Unknown(json),
-}; }
+};}
 
 static const TrialEndVariant1 now = TrialEndVariant1$now._();
 
 static const List<TrialEndVariant1> values = [now];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'now' => 'now',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TrialEndVariant1$Unknown; } 
+bool get isUnknown {return this is TrialEndVariant1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() now, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() now, required W Function(String value) $unknown, }) {return switch (this) {
       TrialEndVariant1$now() => now(),
       TrialEndVariant1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function(String value)? $unknown, }) {return switch (this) {
       TrialEndVariant1$now() => now != null ? now() : orElse(value),
       TrialEndVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TrialEndVariant1($value)';
 
- }
+}
 @immutable final class TrialEndVariant1$now extends TrialEndVariant1 {const TrialEndVariant1$now._();
 
 @override String get value => 'now';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => 'now'.hashCode;
 
- }
+}
 @immutable final class TrialEndVariant1$Unknown extends TrialEndVariant1 {const TrialEndVariant1$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

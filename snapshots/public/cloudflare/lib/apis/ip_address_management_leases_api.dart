@@ -14,7 +14,7 @@ final class IpAddressManagementLeasesApi with ApiExecutor {const IpAddressManage
 /// List all leases owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/leases`
-Future<ApiResult<List<AddressingLease>?, IpAddressManagementListLeasesError>> ipAddressManagementListLeases({required AddressingSchemasAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingLease>?, IpAddressManagementListLeasesError>> ipAddressManagementListLeases({required AddressingSchemasAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,5 +31,5 @@ return execute(
   },
   onError: IpAddressManagementListLeasesError.fromResponse,
 );
- } 
- }
+}
+}

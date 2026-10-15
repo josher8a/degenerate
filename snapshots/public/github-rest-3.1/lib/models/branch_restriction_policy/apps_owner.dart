@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsOwner {const AppsOwner({this.login, this.id, this.nodeId, this.url, this.reposUrl, this.eventsUrl, this.hooksUrl, this.issuesUrl, this.membersUrl, this.publicMembersUrl, this.avatarUrl, this.description, this.gravatarId, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, this.userViewType, });
 
-factory AppsOwner.fromJson(Map<String, dynamic> json) { return AppsOwner(
+factory AppsOwner.fromJson(Map<String, dynamic> json) {return AppsOwner(
   login: json['login'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
@@ -28,7 +28,7 @@ factory AppsOwner.fromJson(Map<String, dynamic> json) { return AppsOwner(
   type: json['type'] as String?,
   siteAdmin: json['site_admin'] as bool?,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String? login;
 
@@ -78,7 +78,7 @@ final bool? siteAdmin;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': ?login,
   'id': ?id,
   'node_id': ?nodeId,
@@ -103,9 +103,9 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'site_admin': ?siteAdmin,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'id', 'node_id', 'url', 'repos_url', 'events_url', 'hooks_url', 'issues_url', 'members_url', 'public_members_url', 'avatar_url', 'description', 'gravatar_id', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key)); } 
-AppsOwner copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? url, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? hooksUrl, String? Function()? issuesUrl, String? Function()? membersUrl, String? Function()? publicMembersUrl, String? Function()? avatarUrl, String? Function()? description, String? Function()? gravatarId, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, String? Function()? userViewType, }) { return AppsOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'login', 'id', 'node_id', 'url', 'repos_url', 'events_url', 'hooks_url', 'issues_url', 'members_url', 'public_members_url', 'avatar_url', 'description', 'gravatar_id', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key));}
+AppsOwner copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? url, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? hooksUrl, String? Function()? issuesUrl, String? Function()? membersUrl, String? Function()? publicMembersUrl, String? Function()? avatarUrl, String? Function()? description, String? Function()? gravatarId, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, String? Function()? userViewType, }) {return AppsOwner(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
@@ -130,7 +130,7 @@ AppsOwner copyWith({String? Function()? login, int? Function()? id, String? Func
   type: type != null ? type() : this.type,
   siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsOwner &&
           login == other.login &&
@@ -162,4 +162,4 @@ AppsOwner copyWith({String? Function()? login, int? Function()? id, String? Func
 
 @override String toString() => 'AppsOwner(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  issuesUrl: $issuesUrl,\n  membersUrl: $membersUrl,\n  publicMembersUrl: $publicMembersUrl,\n  avatarUrl: $avatarUrl,\n  description: $description,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n  userViewType: $userViewType,\n)';
 
- }
+}

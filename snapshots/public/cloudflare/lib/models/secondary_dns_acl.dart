@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_acl_components_schemas_name.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_ip_range.dart';@immutable final class SecondaryDnsAcl {const SecondaryDnsAcl({required this.id, required this.ipRange, required this.name, });
 
-factory SecondaryDnsAcl.fromJson(Map<String, dynamic> json) { return SecondaryDnsAcl(
+factory SecondaryDnsAcl.fromJson(Map<String, dynamic> json) {return SecondaryDnsAcl(
   id: SecondaryDnsComponentsSchemasIdentifier.fromJson(json['id'] as String),
   ipRange: SecondaryDnsIpRange.fromJson(json['ip_range'] as String),
   name: SecondaryDnsAclComponentsSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 final SecondaryDnsComponentsSchemasIdentifier id;
 
@@ -15,19 +15,19 @@ final SecondaryDnsIpRange ipRange;
 
 final SecondaryDnsAclComponentsSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   'ip_range': ipRange.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('ip_range') &&
-      json.containsKey('name'); } 
-SecondaryDnsAcl copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIpRange? ipRange, SecondaryDnsAclComponentsSchemasName? name, }) { return SecondaryDnsAcl(
+      json.containsKey('name');}
+SecondaryDnsAcl copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIpRange? ipRange, SecondaryDnsAclComponentsSchemasName? name, }) {return SecondaryDnsAcl(
   id: id ?? this.id,
   ipRange: ipRange ?? this.ipRange,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsAcl &&
           id == other.id &&
@@ -38,4 +38,4 @@ SecondaryDnsAcl copyWith({SecondaryDnsComponentsSchemasIdentifier? id, Secondary
 
 @override String toString() => 'SecondaryDnsAcl(id: $id, ipRange: $ipRange, name: $name)';
 
- }
+}

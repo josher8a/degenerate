@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_creator.dart';import 'package:pub_cloudflare/models/stream_max_duration_seconds.dart';import 'package:pub_cloudflare/models/stream_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/stream_scheduled_deletion.dart';import 'package:pub_cloudflare/models/stream_thumbnail_timestamp_pct.dart';import 'package:pub_cloudflare/models/stream_watermark_at_upload.dart';@immutable final class StreamDirectUploadRequest {const StreamDirectUploadRequest({required this.maxDurationSeconds, this.allowedOrigins, this.creator, this.expiry, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.watermark, });
 
-factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return StreamDirectUploadRequest(
+factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) {return StreamDirectUploadRequest(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
@@ -13,7 +13,7 @@ factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return S
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   watermark: json['watermark'] != null ? StreamWatermarkAtUpload.fromJson(json['watermark'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
@@ -38,7 +38,7 @@ final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
 final StreamWatermarkAtUpload? watermark;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowedOrigins': ?allowedOrigins,
   if (creator != null) 'creator': creator?.toJson(),
   if (expiry != null) 'expiry': expiry?.toIso8601String(),
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   if (scheduledDeletion != null) 'scheduledDeletion': scheduledDeletion?.toJson(),
   if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
   if (watermark != null) 'watermark': watermark?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxDurationSeconds'); } 
-StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, StreamCreator? Function()? creator, DateTime? Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload? Function()? watermark, }) { return StreamDirectUploadRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('maxDurationSeconds');}
+StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, StreamCreator? Function()? creator, DateTime? Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload? Function()? watermark, }) {return StreamDirectUploadRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,
@@ -60,7 +60,7 @@ StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, St
   scheduledDeletion: scheduledDeletion != null ? scheduledDeletion() : this.scheduledDeletion,
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   watermark: watermark != null ? watermark() : this.watermark,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamDirectUploadRequest &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
@@ -77,4 +77,4 @@ StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, St
 
 @override String toString() => 'StreamDirectUploadRequest(\n  allowedOrigins: $allowedOrigins,\n  creator: $creator,\n  expiry: $expiry,\n  maxDurationSeconds: $maxDurationSeconds,\n  meta: $meta,\n  requireSignedUrLs: $requireSignedUrLs,\n  scheduledDeletion: $scheduledDeletion,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  watermark: $watermark,\n)';
 
- }
+}

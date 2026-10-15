@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRankingTopInternetServicesResponseResultTop0 {const RadarGetRankingTopInternetServicesResponseResultTop0({required this.rank, required this.service, });
 
-factory RadarGetRankingTopInternetServicesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopInternetServicesResponseResultTop0(
+factory RadarGetRankingTopInternetServicesResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetRankingTopInternetServicesResponseResultTop0(
   rank: (json['rank'] as num).toInt(),
   service: json['service'] as String,
-); }
+);}
 
 /// Example: `1`
 final int rank;
@@ -14,16 +14,16 @@ final int rank;
 /// Example: `'Google'`
 final String service;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'rank': rank,
   'service': service,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('rank') && json['rank'] is num &&
-      json.containsKey('service') && json['service'] is String; } 
-RadarGetRankingTopInternetServicesResponseResultTop0 copyWith({int? rank, String? service, }) { return RadarGetRankingTopInternetServicesResponseResultTop0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('rank') && json['rank'] is num &&
+      json.containsKey('service') && json['service'] is String;}
+RadarGetRankingTopInternetServicesResponseResultTop0 copyWith({int? rank, String? service, }) {return RadarGetRankingTopInternetServicesResponseResultTop0(
   rank: rank ?? this.rank,
   service: service ?? this.service,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRankingTopInternetServicesResponseResultTop0 &&
           rank == other.rank &&
@@ -33,4 +33,4 @@ RadarGetRankingTopInternetServicesResponseResultTop0 copyWith({int? rank, String
 
 @override String toString() => 'RadarGetRankingTopInternetServicesResponseResultTop0(rank: $rank, service: $service)';
 
- }
+}

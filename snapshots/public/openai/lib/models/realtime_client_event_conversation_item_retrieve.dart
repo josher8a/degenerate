@@ -8,11 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventConversationItemRetrieve {const RealtimeClientEventConversationItemRetrieve({required this.type, required this.itemId, this.eventId, });
 
-factory RealtimeClientEventConversationItemRetrieve.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemRetrieve(
+factory RealtimeClientEventConversationItemRetrieve.fromJson(Map<String, dynamic> json) {return RealtimeClientEventConversationItemRetrieve(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -23,25 +23,25 @@ final String type;
 /// The ID of the item to retrieve.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('item_id') && json['item_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventConversationItemRetrieve copyWith({String? Function()? eventId, String? type, String? itemId, }) { return RealtimeClientEventConversationItemRetrieve(
+return errors;}
+RealtimeClientEventConversationItemRetrieve copyWith({String? Function()? eventId, String? type, String? itemId, }) {return RealtimeClientEventConversationItemRetrieve(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventConversationItemRetrieve &&
           eventId == other.eventId &&
@@ -52,4 +52,4 @@ RealtimeClientEventConversationItemRetrieve copyWith({String? Function()? eventI
 
 @override String toString() => 'RealtimeClientEventConversationItemRetrieve(eventId: $eventId, type: $type, itemId: $itemId)';
 
- }
+}

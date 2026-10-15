@@ -12,7 +12,7 @@ final class AutoRagRagSearchApi with ApiExecutor {const AutoRagRagSearchApi(this
 /// AI Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/ai-search`
-Future<ApiResult<AutoragConfigAiSearchResponseResult, AutoragConfigAiSearchError>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigAiSearchResponseResult, AutoragConfigAiSearchError>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,11 +31,11 @@ return execute(
   },
   onError: AutoragConfigAiSearchError.fromResponse,
 );
- } 
+}
 /// Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/search`
-Future<ApiResult<AutoragConfigSearchResponseResult, AutoragConfigSearchError>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigSearchResponseResult, AutoragConfigSearchError>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,5 +54,5 @@ return execute(
   },
   onError: AutoragConfigSearchError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchEventRawUpdateResponse {const PatchEventRawUpdateResponse({required this.data, required this.id, });
 
-factory PatchEventRawUpdateResponse.fromJson(Map<String, dynamic> json) { return PatchEventRawUpdateResponse(
+factory PatchEventRawUpdateResponse.fromJson(Map<String, dynamic> json) {return PatchEventRawUpdateResponse(
   data: json['data'] as Map<String, dynamic>,
   id: json['id'] as String,
-); }
+);}
 
 final Map<String,dynamic> data;
 
 /// Example: `'1234'`
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data,
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('id') && json['id'] is String; } 
-PatchEventRawUpdateResponse copyWith({Map<String,dynamic>? data, String? id, }) { return PatchEventRawUpdateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
+      json.containsKey('id') && json['id'] is String;}
+PatchEventRawUpdateResponse copyWith({Map<String,dynamic>? data, String? id, }) {return PatchEventRawUpdateResponse(
   data: data ?? this.data,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PatchEventRawUpdateResponse &&
           data == other.data &&
@@ -32,4 +32,4 @@ PatchEventRawUpdateResponse copyWith({Map<String,dynamic>? data, String? id, }) 
 
 @override String toString() => 'PatchEventRawUpdateResponse(data: $data, id: $id)';
 
- }
+}

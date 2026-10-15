@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/patterns_series.dart';@immutable final class WorkersObservabilityQueryResultsPatterns {const WorkersObservabilityQueryResultsPatterns({required this.count, required this.pattern, required this.series, required this.service, });
 
-factory WorkersObservabilityQueryResultsPatterns.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsPatterns(
+factory WorkersObservabilityQueryResultsPatterns.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryResultsPatterns(
   count: (json['count'] as num).toDouble(),
   pattern: json['pattern'] as String,
   series: (json['series'] as List<dynamic>).map((e) => PatternsSeries.fromJson(e as Map<String, dynamic>)).toList(),
   service: json['service'] as String,
-); }
+);}
 
 final double count;
 
@@ -18,22 +18,22 @@ final List<PatternsSeries> series;
 
 final String service;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'pattern': pattern,
   'series': series.map((e) => e.toJson()).toList(),
   'service': service,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('series') &&
-      json.containsKey('service') && json['service'] is String; } 
-WorkersObservabilityQueryResultsPatterns copyWith({double? count, String? pattern, List<PatternsSeries>? series, String? service, }) { return WorkersObservabilityQueryResultsPatterns(
+      json.containsKey('service') && json['service'] is String;}
+WorkersObservabilityQueryResultsPatterns copyWith({double? count, String? pattern, List<PatternsSeries>? series, String? service, }) {return WorkersObservabilityQueryResultsPatterns(
   count: count ?? this.count,
   pattern: pattern ?? this.pattern,
   series: series ?? this.series,
   service: service ?? this.service,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryResultsPatterns &&
           count == other.count &&
@@ -45,4 +45,4 @@ WorkersObservabilityQueryResultsPatterns copyWith({double? count, String? patter
 
 @override String toString() => 'WorkersObservabilityQueryResultsPatterns(count: $count, pattern: $pattern, series: $series, service: $service)';
 
- }
+}

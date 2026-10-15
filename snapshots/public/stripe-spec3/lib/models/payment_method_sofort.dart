@@ -2,29 +2,29 @@
 // Source: #/components/schemas/PaymentMethodSofort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodSofort {const PaymentMethodSofort({this.country});
+@immutable final class PaymentMethodSofort {const PaymentMethodSofort({this.country = const Omittable.absent()});
 
-factory PaymentMethodSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodSofort(
-  country: json['country'] as String?,
-); }
+factory PaymentMethodSofort.fromJson(Map<String, dynamic> json) {return PaymentMethodSofort(
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+);}
 
 /// Two-letter ISO code representing the country the bank account is located in.
-final String? country;
+final Omittable<String?> country;
 
-Map<String, dynamic> toJson() { return {
-  'country': ?country,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (country.isPresent) 'country': country.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'country'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final country$ = country;
+List<String> validate() {final errors = <String>[];
+final country$ = country.value;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodSofort copyWith({String? Function()? country}) { return PaymentMethodSofort(
-  country: country != null ? country() : this.country,
-); } 
+return errors;}
+PaymentMethodSofort copyWith({Omittable<String?>? country}) {return PaymentMethodSofort(
+  country: country ?? this.country,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodSofort &&
           country == other.country;
@@ -33,4 +33,4 @@ PaymentMethodSofort copyWith({String? Function()? country}) { return PaymentMeth
 
 @override String toString() => 'PaymentMethodSofort(country: $country)';
 
- }
+}

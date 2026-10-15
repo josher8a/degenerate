@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredDeploymentsParameters {const RepositoryRuleRequiredDeploymentsParameters({required this.requiredDeploymentEnvironments});
 
-factory RepositoryRuleRequiredDeploymentsParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredDeploymentsParameters(
+factory RepositoryRuleRequiredDeploymentsParameters.fromJson(Map<String, dynamic> json) {return RepositoryRuleRequiredDeploymentsParameters(
   requiredDeploymentEnvironments: (json['required_deployment_environments'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The environments that must be successfully deployed to before branches can be merged.
 final List<String> requiredDeploymentEnvironments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'required_deployment_environments': requiredDeploymentEnvironments,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_deployment_environments'); } 
-RepositoryRuleRequiredDeploymentsParameters copyWith({List<String>? requiredDeploymentEnvironments}) { return RepositoryRuleRequiredDeploymentsParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('required_deployment_environments');}
+RepositoryRuleRequiredDeploymentsParameters copyWith({List<String>? requiredDeploymentEnvironments}) {return RepositoryRuleRequiredDeploymentsParameters(
   requiredDeploymentEnvironments: requiredDeploymentEnvironments ?? this.requiredDeploymentEnvironments,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredDeploymentsParameters &&
           listEquals(requiredDeploymentEnvironments, other.requiredDeploymentEnvironments);
@@ -25,4 +25,4 @@ RepositoryRuleRequiredDeploymentsParameters copyWith({List<String>? requiredDepl
 
 @override String toString() => 'RepositoryRuleRequiredDeploymentsParameters(requiredDeploymentEnvironments: $requiredDeploymentEnvironments)';
 
- }
+}

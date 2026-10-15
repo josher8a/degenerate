@@ -158,12 +158,14 @@ bool Function(String, Map<String, String>) _wrapperNameGuard(
   Set<String> derived,
 ) {
   final unions = <String, Set<String>>{};
+  // Discriminator values stay spec text; they are compared, never emitted.
+  final discKeys = <String, Iterable<SpecString>>{};
   for (final MapEntry(:key, :value) in registry.entries) {
     if (derived.contains(key)) continue;
     switch (value) {
       case IrDiscriminatedUnion(:final mapping):
+        discKeys[key] = mapping.keys;
         unions[key] = {
-          for (final k in mapping.keys) toPascalCase(k),
           for (final v in mapping.values) ?v.emittableName,
           for (final v in mapping.values)
             if (v is IrTypeRef) v.name,
@@ -191,7 +193,9 @@ bool Function(String, Map<String, String>) _wrapperNameGuard(
       final rest = candidate.substring(unionName.length);
       if (primitives.contains(rest) ||
           registry.containsKey(rest) ||
-          variants.any((v) => v == rest || resolved[v] == rest)) {
+          variants.any((v) => v == rest || resolved[v] == rest) ||
+          (discKeys[union]?.any((k) => k.test((v) => toPascalCase(v) == rest)) ??
+              false)) {
         return true;
       }
     }
@@ -295,10 +299,10 @@ bool Function(String, Map<String, String>) _wrapperNameGuard(
       final pairs =
           [
               for (final e in t.mapping.entries)
-                '${e.key}=${variantIdentity(e.value)}',
+                '${e.key.literal}=${variantIdentity(e.value)}',
             ]
             ..sort();
-      return 'du:${t.discriminatorProperty}{${pairs.join('|')}} ${leafOf(n)}';
+      return 'du:${t.discriminatorProperty.literal}{${pairs.join('|')}} ${leafOf(n)}';
     }
     final parts = unionVariants(t).map(variantIdentity);
     return '${t.runtimeType}(${parts.join('|')}) ${leafOf(n)}';

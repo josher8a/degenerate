@@ -14,7 +14,7 @@ final class UserSAccountMembershipsApi with ApiExecutor {const UserSAccountMembe
 /// List memberships of accounts the user can access.
 ///
 /// `GET /memberships`
-Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, TokensCreateTokenError>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, TokensCreateTokenError>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountName != null) {
   queryParameters['account.name'] = accountName.toJson();
@@ -49,20 +49,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => IamCollectionMembershipResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => IamCollectionMembershipResponseWithPolicies.fromJson(v as Map<String, dynamic>),);
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Membership Details
 ///
 /// Get a specific membership.
 ///
 /// `GET /memberships/{membership_id}`
-Future<ApiResult<IamMembershipWithPolicies?, TokensCreateTokenError>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMembershipWithPolicies?, TokensCreateTokenError>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,13 +79,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Update Membership
 ///
 /// Accept or reject this account invitation.
 ///
 /// `PUT /memberships/{membership_id}`
-Future<ApiResult<IamMembershipWithPolicies?, TokensCreateTokenError>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMembershipWithPolicies?, TokensCreateTokenError>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -104,13 +104,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Delete Membership
 ///
 /// Remove the associated member from an account.
 ///
 /// `DELETE /memberships/{membership_id}`
-Future<ApiResult<AaaIdResponseResult?, TokensCreateTokenError>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, TokensCreateTokenError>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -127,5 +127,5 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

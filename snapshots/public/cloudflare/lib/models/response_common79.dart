@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';@immutable final class ResponseCommon79 {const ResponseCommon79({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon79.fromJson(Map<String, dynamic> json) { return ResponseCommon79(
+factory ResponseCommon79.fromJson(Map<String, dynamic> json) {return ResponseCommon79(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<WorkersKvMessages2> errors;
 
@@ -18,24 +18,24 @@ final List<WorkersKvMessages2> messages;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && json['success'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 if (errors.toSet().length != errors.length) { errors$.add('errors: items must be unique'); }
 if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
-return errors$; } 
-ResponseCommon79 copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, }) { return ResponseCommon79(
+return errors$;}
+ResponseCommon79 copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, }) {return ResponseCommon79(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon79 &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ ResponseCommon79 copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessa
 
 @override String toString() => 'ResponseCommon79(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

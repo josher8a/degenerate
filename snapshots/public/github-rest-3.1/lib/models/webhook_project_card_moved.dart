@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_changes.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_project_card.dart';@immutable final class WebhookProjectCardMoved {const WebhookProjectCardMoved({required this.action, required this.projectCard, required this.sender, this.changes, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookProjectCardMoved.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMoved(
+factory WebhookProjectCardMoved.fromJson(Map<String, dynamic> json) {return WebhookProjectCardMoved(
   action: WebhookProjectCardMovedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookProjectCardMovedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookProjectCardMoved.fromJson(Map<String, dynamic> json) { return Web
   projectCard: WebhookProjectCardMovedProjectCard.fromJson(json['project_card'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookProjectCardMovedAction action;
 
@@ -30,7 +30,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -39,11 +39,11 @@ Map<String, dynamic> toJson() { return {
   'project_card': projectCard.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('project_card') &&
-      json.containsKey('sender'); } 
-WebhookProjectCardMoved copyWith({WebhookProjectCardMovedAction? action, WebhookProjectCardMovedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardMovedProjectCard? projectCard, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookProjectCardMoved(
+      json.containsKey('sender');}
+WebhookProjectCardMoved copyWith({WebhookProjectCardMovedAction? action, WebhookProjectCardMovedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardMovedProjectCard? projectCard, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookProjectCardMoved(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -52,7 +52,7 @@ WebhookProjectCardMoved copyWith({WebhookProjectCardMovedAction? action, Webhook
   projectCard: projectCard ?? this.projectCard,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectCardMoved &&
           action == other.action &&
@@ -68,4 +68,4 @@ WebhookProjectCardMoved copyWith({WebhookProjectCardMovedAction? action, Webhook
 
 @override String toString() => 'WebhookProjectCardMoved(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, projectCard: $projectCard, repository: $repository, sender: $sender)';
 
- }
+}

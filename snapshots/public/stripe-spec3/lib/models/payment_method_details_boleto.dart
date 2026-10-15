@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsBoleto {const PaymentMethodDetailsBoleto({required this.taxId});
 
-factory PaymentMethodDetailsBoleto.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsBoleto(
+factory PaymentMethodDetailsBoleto.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsBoleto(
   taxId: json['tax_id'] as String,
-); }
+);}
 
 /// The tax ID of the customer (CPF for individuals consumers or CNPJ for businesses consumers)
 final String taxId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tax_id': taxId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_id') && json['tax_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tax_id') && json['tax_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (taxId.runes.length > 5000) { errors.add('taxId: length must be <= 5000'); }
-return errors; } 
-PaymentMethodDetailsBoleto copyWith({String? taxId}) { return PaymentMethodDetailsBoleto(
+return errors;}
+PaymentMethodDetailsBoleto copyWith({String? taxId}) {return PaymentMethodDetailsBoleto(
   taxId: taxId ?? this.taxId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsBoleto &&
           taxId == other.taxId;
@@ -30,4 +30,4 @@ PaymentMethodDetailsBoleto copyWith({String? taxId}) { return PaymentMethodDetai
 
 @override String toString() => 'PaymentMethodDetailsBoleto(taxId: $taxId)';
 
- }
+}

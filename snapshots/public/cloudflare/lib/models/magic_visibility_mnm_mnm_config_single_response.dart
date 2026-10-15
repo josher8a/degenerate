@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicVisibilityMnmMnmConfigSingleResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config.dart';@immutable final class MagicVisibilityMnmMnmConfigSingleResponse {const MagicVisibilityMnmMnmConfigSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_messages2.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config.dart';@immutable final class MagicVisibilityMnmMnmConfigSingleResponse {const MagicVisibilityMnmMnmConfigSingleResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicVisibilityMnmMnmConfigSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmConfigSingleResponse(
-  result: json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory MagicVisibilityMnmMnmConfigSingleResponse.fromJson(Map<String, dynamic> json) {return MagicVisibilityMnmMnmConfigSingleResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final MagicVisibilityMnmMnmConfig? result;
+final List<MagicVisibilityMnmMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MagicVisibilityMnmMnmConfigSingleResponse copyWith({MagicVisibilityMnmMnmConfig? Function()? result}) { return MagicVisibilityMnmMnmConfigSingleResponse(
-  result: result != null ? result() : this.result,
-); } 
+final List<MagicVisibilityMnmMessages2> messages;
+
+final MagicVisibilityMnmMnmConfig result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+MagicVisibilityMnmMnmConfigSingleResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, MagicVisibilityMnmMnmConfig? result, bool? success, }) {return MagicVisibilityMnmMnmConfigSingleResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmConfigSingleResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'MagicVisibilityMnmMnmConfigSingleResponse(result: $result)';
+@override String toString() => 'MagicVisibilityMnmMnmConfigSingleResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

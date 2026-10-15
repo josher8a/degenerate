@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Metadata {const Metadata({required this.id, this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
 
-factory Metadata.fromJson(Map<String, dynamic> json) { return Metadata(
+factory Metadata.fromJson(Map<String, dynamic> json) {return Metadata(
   account: json['account'] as String?,
   cloudService: json['cloudService'] as String?,
   coldStart: json['coldStart'] != null ? (json['coldStart'] as num).toInt() : null,
@@ -35,7 +35,7 @@ factory Metadata.fromJson(Map<String, dynamic> json) { return Metadata(
   trigger: json['trigger'] as String?,
   type: json['type'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final String? account;
 
@@ -99,7 +99,7 @@ final String? type;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'cloudService': ?cloudService,
   'coldStart': ?coldStart,
@@ -131,10 +131,10 @@ Map<String, dynamic> toJson() { return {
   'trigger': ?trigger,
   'type': ?type,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final coldStart$ = coldStart;
 if (coldStart$ != null) {
   if (coldStart$ < 0) { errors.add('coldStart: must be >= 0'); }
@@ -163,8 +163,8 @@ final traceDuration$ = traceDuration;
 if (traceDuration$ != null) {
   if (traceDuration$ < 0) { errors.add('traceDuration: must be >= 0'); }
 }
-return errors; } 
-Metadata copyWith({String? Function()? account, String? Function()? cloudService, int? Function()? coldStart, int? Function()? cost, int? Function()? duration, int? Function()? endTime, String? Function()? error, String? Function()? errorTemplate, String? Function()? fingerprint, String? id, String? Function()? level, String? Function()? message, String? Function()? messageTemplate, String? Function()? metricName, String? Function()? origin, String? Function()? parentSpanId, String? Function()? provider, String? Function()? region, String? Function()? requestId, String? Function()? service, String? Function()? spanId, String? Function()? spanName, String? Function()? stackId, int? Function()? startTime, int? Function()? statusCode, int? Function()? traceDuration, String? Function()? traceId, String? Function()? transactionName, String? Function()? trigger, String? Function()? type, String? Function()? url, }) { return Metadata(
+return errors;}
+Metadata copyWith({String? Function()? account, String? Function()? cloudService, int? Function()? coldStart, int? Function()? cost, int? Function()? duration, int? Function()? endTime, String? Function()? error, String? Function()? errorTemplate, String? Function()? fingerprint, String? id, String? Function()? level, String? Function()? message, String? Function()? messageTemplate, String? Function()? metricName, String? Function()? origin, String? Function()? parentSpanId, String? Function()? provider, String? Function()? region, String? Function()? requestId, String? Function()? service, String? Function()? spanId, String? Function()? spanName, String? Function()? stackId, int? Function()? startTime, int? Function()? statusCode, int? Function()? traceDuration, String? Function()? traceId, String? Function()? transactionName, String? Function()? trigger, String? Function()? type, String? Function()? url, }) {return Metadata(
   account: account != null ? account() : this.account,
   cloudService: cloudService != null ? cloudService() : this.cloudService,
   coldStart: coldStart != null ? coldStart() : this.coldStart,
@@ -196,7 +196,7 @@ Metadata copyWith({String? Function()? account, String? Function()? cloudService
   trigger: trigger != null ? trigger() : this.trigger,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Metadata &&
           account == other.account &&
@@ -235,4 +235,4 @@ Metadata copyWith({String? Function()? account, String? Function()? cloudService
 
 @override String toString() => 'Metadata(\n  account: $account,\n  cloudService: $cloudService,\n  coldStart: $coldStart,\n  cost: $cost,\n  duration: $duration,\n  endTime: $endTime,\n  error: $error,\n  errorTemplate: $errorTemplate,\n  fingerprint: $fingerprint,\n  id: $id,\n  level: $level,\n  message: $message,\n  messageTemplate: $messageTemplate,\n  metricName: $metricName,\n  origin: $origin,\n  parentSpanId: $parentSpanId,\n  provider: $provider,\n  region: $region,\n  requestId: $requestId,\n  service: $service,\n  spanId: $spanId,\n  spanName: $spanName,\n  stackId: $stackId,\n  startTime: $startTime,\n  statusCode: $statusCode,\n  traceDuration: $traceDuration,\n  traceId: $traceId,\n  transactionName: $transactionName,\n  trigger: $trigger,\n  type: $type,\n  url: $url,\n)';
 
- }
+}

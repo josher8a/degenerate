@@ -7,21 +7,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class NoiseReduction {const NoiseReduction({this.type});
 
-factory NoiseReduction.fromJson(Map<String, dynamic> json) { return NoiseReduction(
+factory NoiseReduction.fromJson(Map<String, dynamic> json) {return NoiseReduction(
   type: json['type'] != null ? NoiseReductionType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
 /// 
 final NoiseReductionType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-NoiseReduction copyWith({NoiseReductionType? Function()? type}) { return NoiseReduction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type'}.contains(key));}
+NoiseReduction copyWith({NoiseReductionType? Function()? type}) {return NoiseReduction(
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NoiseReduction &&
           type == other.type;
@@ -30,4 +30,4 @@ NoiseReduction copyWith({NoiseReductionType? Function()? type}) { return NoiseRe
 
 @override String toString() => 'NoiseReduction(type: $type)';
 
- }
+}

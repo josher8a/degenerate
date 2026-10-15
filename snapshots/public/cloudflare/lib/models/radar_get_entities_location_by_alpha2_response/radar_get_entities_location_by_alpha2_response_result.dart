@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_response/result_location.dart';@immutable final class RadarGetEntitiesLocationByAlpha2ResponseResult {const RadarGetEntitiesLocationByAlpha2ResponseResult({required this.location});
 
-factory RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesLocationByAlpha2ResponseResult(
+factory RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesLocationByAlpha2ResponseResult(
   location: ResultLocation.fromJson(json['location'] as Map<String, dynamic>),
-); }
+);}
 
 final ResultLocation location;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'location': location.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('location'); } 
-RadarGetEntitiesLocationByAlpha2ResponseResult copyWith({ResultLocation? location}) { return RadarGetEntitiesLocationByAlpha2ResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('location');}
+RadarGetEntitiesLocationByAlpha2ResponseResult copyWith({ResultLocation? location}) {return RadarGetEntitiesLocationByAlpha2ResponseResult(
   location: location ?? this.location,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesLocationByAlpha2ResponseResult &&
           location == other.location;
@@ -24,4 +24,4 @@ RadarGetEntitiesLocationByAlpha2ResponseResult copyWith({ResultLocation? locatio
 
 @override String toString() => 'RadarGetEntitiesLocationByAlpha2ResponseResult(location: $location)';
 
- }
+}

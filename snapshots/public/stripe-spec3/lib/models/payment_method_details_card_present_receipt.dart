@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account being debited or credited
 sealed class PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType();
 
-factory PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'credit' => credit,
   'prepaid' => prepaid,
   'unknown' => unknown,
   _ => PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCardPresentReceiptAccountType checking = PaymentMethodDetailsCardPresentReceiptAccountType$checking._();
 
@@ -23,36 +23,36 @@ static const PaymentMethodDetailsCardPresentReceiptAccountType unknown = Payment
 static const List<PaymentMethodDetailsCardPresentReceiptAccountType> values = [checking, credit, prepaid, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'checking' => 'checking',
   'credit' => 'credit',
   'prepaid' => 'prepaid',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDetailsCardPresentReceiptAccountType$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDetailsCardPresentReceiptAccountType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() checking, required W Function() credit, required W Function() prepaid, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() checking, required W Function() credit, required W Function() prepaid, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDetailsCardPresentReceiptAccountType$checking() => checking(),
       PaymentMethodDetailsCardPresentReceiptAccountType$credit() => credit(),
       PaymentMethodDetailsCardPresentReceiptAccountType$prepaid() => prepaid(),
       PaymentMethodDetailsCardPresentReceiptAccountType$unknown() => unknown(),
       PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? credit, W Function()? prepaid, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? credit, W Function()? prepaid, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDetailsCardPresentReceiptAccountType$checking() => checking != null ? checking() : orElse(value),
       PaymentMethodDetailsCardPresentReceiptAccountType$credit() => credit != null ? credit() : orElse(value),
       PaymentMethodDetailsCardPresentReceiptAccountType$prepaid() => prepaid != null ? prepaid() : orElse(value),
       PaymentMethodDetailsCardPresentReceiptAccountType$unknown() => unknown != null ? unknown() : orElse(value),
       PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDetailsCardPresentReceiptAccountType($value)';
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$checking extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$checking._();
 
 @override String get value => 'checking';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'checking'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$credit extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$credit._();
 
 @override String get value => 'credit';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'credit'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$prepaid extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$prepaid._();
 
 @override String get value => 'prepaid';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'prepaid'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$unknown extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$unknown._();
 
 @override String get value => 'unknown';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$Unknown extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(this.value);
 
 @override final String value;
@@ -98,107 +98,107 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class PaymentMethodDetailsCardPresentReceipt {const PaymentMethodDetailsCardPresentReceipt({this.accountType, this.applicationCryptogram, this.applicationPreferredName, this.authorizationCode, this.authorizationResponseCode, this.cardholderVerificationMethod, this.dedicatedFileName, this.terminalVerificationResults, this.transactionStatusInformation, });
+@immutable final class PaymentMethodDetailsCardPresentReceipt {const PaymentMethodDetailsCardPresentReceipt({this.accountType, this.applicationCryptogram = const Omittable.absent(), this.applicationPreferredName = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.authorizationResponseCode = const Omittable.absent(), this.cardholderVerificationMethod = const Omittable.absent(), this.dedicatedFileName = const Omittable.absent(), this.terminalVerificationResults = const Omittable.absent(), this.transactionStatusInformation = const Omittable.absent(), });
 
-factory PaymentMethodDetailsCardPresentReceipt.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresentReceipt(
+factory PaymentMethodDetailsCardPresentReceipt.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCardPresentReceipt(
   accountType: json['account_type'] != null ? PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(json['account_type'] as String) : null,
-  applicationCryptogram: json['application_cryptogram'] as String?,
-  applicationPreferredName: json['application_preferred_name'] as String?,
-  authorizationCode: json['authorization_code'] as String?,
-  authorizationResponseCode: json['authorization_response_code'] as String?,
-  cardholderVerificationMethod: json['cardholder_verification_method'] as String?,
-  dedicatedFileName: json['dedicated_file_name'] as String?,
-  terminalVerificationResults: json['terminal_verification_results'] as String?,
-  transactionStatusInformation: json['transaction_status_information'] as String?,
-); }
+  applicationCryptogram: json.containsKey('application_cryptogram') ? Omittable(json['application_cryptogram'] as String?) : const Omittable.absent(),
+  applicationPreferredName: json.containsKey('application_preferred_name') ? Omittable(json['application_preferred_name'] as String?) : const Omittable.absent(),
+  authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
+  authorizationResponseCode: json.containsKey('authorization_response_code') ? Omittable(json['authorization_response_code'] as String?) : const Omittable.absent(),
+  cardholderVerificationMethod: json.containsKey('cardholder_verification_method') ? Omittable(json['cardholder_verification_method'] as String?) : const Omittable.absent(),
+  dedicatedFileName: json.containsKey('dedicated_file_name') ? Omittable(json['dedicated_file_name'] as String?) : const Omittable.absent(),
+  terminalVerificationResults: json.containsKey('terminal_verification_results') ? Omittable(json['terminal_verification_results'] as String?) : const Omittable.absent(),
+  transactionStatusInformation: json.containsKey('transaction_status_information') ? Omittable(json['transaction_status_information'] as String?) : const Omittable.absent(),
+);}
 
 /// The type of account being debited or credited
 final PaymentMethodDetailsCardPresentReceiptAccountType? accountType;
 
 /// The Application Cryptogram, a unique value generated by the card to authenticate the transaction with issuers.
-final String? applicationCryptogram;
+final Omittable<String?> applicationCryptogram;
 
 /// The Application Identifier (AID) on the card used to determine which networks are eligible to process the transaction. Referenced from EMV tag 9F12, data encoded on the card's chip.
-final String? applicationPreferredName;
+final Omittable<String?> applicationPreferredName;
 
 /// Identifier for this transaction.
-final String? authorizationCode;
+final Omittable<String?> authorizationCode;
 
 /// EMV tag 8A. A code returned by the card issuer.
-final String? authorizationResponseCode;
+final Omittable<String?> authorizationResponseCode;
 
 /// Describes the method used by the cardholder to verify ownership of the card. One of the following: `approval`, `failure`, `none`, `offline_pin`, `offline_pin_and_signature`, `online_pin`, or `signature`.
-final String? cardholderVerificationMethod;
+final Omittable<String?> cardholderVerificationMethod;
 
 /// Similar to the application_preferred_name, identifying the applications (AIDs) available on the card. Referenced from EMV tag 84.
-final String? dedicatedFileName;
+final Omittable<String?> dedicatedFileName;
 
 /// A 5-byte string that records the checks and validations that occur between the card and the terminal. These checks determine how the terminal processes the transaction and what risk tolerance is acceptable. Referenced from EMV Tag 95.
-final String? terminalVerificationResults;
+final Omittable<String?> terminalVerificationResults;
 
 /// An indication of which steps were completed during the card read process. Referenced from EMV Tag 9B.
-final String? transactionStatusInformation;
+final Omittable<String?> transactionStatusInformation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountType != null) 'account_type': accountType?.toJson(),
-  'application_cryptogram': ?applicationCryptogram,
-  'application_preferred_name': ?applicationPreferredName,
-  'authorization_code': ?authorizationCode,
-  'authorization_response_code': ?authorizationResponseCode,
-  'cardholder_verification_method': ?cardholderVerificationMethod,
-  'dedicated_file_name': ?dedicatedFileName,
-  'terminal_verification_results': ?terminalVerificationResults,
-  'transaction_status_information': ?transactionStatusInformation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key)); } 
+  if (applicationCryptogram.isPresent) 'application_cryptogram': applicationCryptogram.value,
+  if (applicationPreferredName.isPresent) 'application_preferred_name': applicationPreferredName.value,
+  if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
+  if (authorizationResponseCode.isPresent) 'authorization_response_code': authorizationResponseCode.value,
+  if (cardholderVerificationMethod.isPresent) 'cardholder_verification_method': cardholderVerificationMethod.value,
+  if (dedicatedFileName.isPresent) 'dedicated_file_name': dedicatedFileName.value,
+  if (terminalVerificationResults.isPresent) 'terminal_verification_results': terminalVerificationResults.value,
+  if (transactionStatusInformation.isPresent) 'transaction_status_information': transactionStatusInformation.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final applicationCryptogram$ = applicationCryptogram;
+List<String> validate() {final errors = <String>[];
+final applicationCryptogram$ = applicationCryptogram.value;
 if (applicationCryptogram$ != null) {
   if (applicationCryptogram$.runes.length > 5000) { errors.add('applicationCryptogram: length must be <= 5000'); }
 }
-final applicationPreferredName$ = applicationPreferredName;
+final applicationPreferredName$ = applicationPreferredName.value;
 if (applicationPreferredName$ != null) {
   if (applicationPreferredName$.runes.length > 5000) { errors.add('applicationPreferredName: length must be <= 5000'); }
 }
-final authorizationCode$ = authorizationCode;
+final authorizationCode$ = authorizationCode.value;
 if (authorizationCode$ != null) {
   if (authorizationCode$.runes.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
 }
-final authorizationResponseCode$ = authorizationResponseCode;
+final authorizationResponseCode$ = authorizationResponseCode.value;
 if (authorizationResponseCode$ != null) {
   if (authorizationResponseCode$.runes.length > 5000) { errors.add('authorizationResponseCode: length must be <= 5000'); }
 }
-final cardholderVerificationMethod$ = cardholderVerificationMethod;
+final cardholderVerificationMethod$ = cardholderVerificationMethod.value;
 if (cardholderVerificationMethod$ != null) {
   if (cardholderVerificationMethod$.runes.length > 5000) { errors.add('cardholderVerificationMethod: length must be <= 5000'); }
 }
-final dedicatedFileName$ = dedicatedFileName;
+final dedicatedFileName$ = dedicatedFileName.value;
 if (dedicatedFileName$ != null) {
   if (dedicatedFileName$.runes.length > 5000) { errors.add('dedicatedFileName: length must be <= 5000'); }
 }
-final terminalVerificationResults$ = terminalVerificationResults;
+final terminalVerificationResults$ = terminalVerificationResults.value;
 if (terminalVerificationResults$ != null) {
   if (terminalVerificationResults$.runes.length > 5000) { errors.add('terminalVerificationResults: length must be <= 5000'); }
 }
-final transactionStatusInformation$ = transactionStatusInformation;
+final transactionStatusInformation$ = transactionStatusInformation.value;
 if (transactionStatusInformation$ != null) {
   if (transactionStatusInformation$.runes.length > 5000) { errors.add('transactionStatusInformation: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresentReceiptAccountType? Function()? accountType, String? Function()? applicationCryptogram, String? Function()? applicationPreferredName, String? Function()? authorizationCode, String? Function()? authorizationResponseCode, String? Function()? cardholderVerificationMethod, String? Function()? dedicatedFileName, String? Function()? terminalVerificationResults, String? Function()? transactionStatusInformation, }) { return PaymentMethodDetailsCardPresentReceipt(
+return errors;}
+PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresentReceiptAccountType? Function()? accountType, Omittable<String?>? applicationCryptogram, Omittable<String?>? applicationPreferredName, Omittable<String?>? authorizationCode, Omittable<String?>? authorizationResponseCode, Omittable<String?>? cardholderVerificationMethod, Omittable<String?>? dedicatedFileName, Omittable<String?>? terminalVerificationResults, Omittable<String?>? transactionStatusInformation, }) {return PaymentMethodDetailsCardPresentReceipt(
   accountType: accountType != null ? accountType() : this.accountType,
-  applicationCryptogram: applicationCryptogram != null ? applicationCryptogram() : this.applicationCryptogram,
-  applicationPreferredName: applicationPreferredName != null ? applicationPreferredName() : this.applicationPreferredName,
-  authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
-  authorizationResponseCode: authorizationResponseCode != null ? authorizationResponseCode() : this.authorizationResponseCode,
-  cardholderVerificationMethod: cardholderVerificationMethod != null ? cardholderVerificationMethod() : this.cardholderVerificationMethod,
-  dedicatedFileName: dedicatedFileName != null ? dedicatedFileName() : this.dedicatedFileName,
-  terminalVerificationResults: terminalVerificationResults != null ? terminalVerificationResults() : this.terminalVerificationResults,
-  transactionStatusInformation: transactionStatusInformation != null ? transactionStatusInformation() : this.transactionStatusInformation,
-); } 
+  applicationCryptogram: applicationCryptogram ?? this.applicationCryptogram,
+  applicationPreferredName: applicationPreferredName ?? this.applicationPreferredName,
+  authorizationCode: authorizationCode ?? this.authorizationCode,
+  authorizationResponseCode: authorizationResponseCode ?? this.authorizationResponseCode,
+  cardholderVerificationMethod: cardholderVerificationMethod ?? this.cardholderVerificationMethod,
+  dedicatedFileName: dedicatedFileName ?? this.dedicatedFileName,
+  terminalVerificationResults: terminalVerificationResults ?? this.terminalVerificationResults,
+  transactionStatusInformation: transactionStatusInformation ?? this.transactionStatusInformation,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardPresentReceipt &&
           accountType == other.accountType &&
@@ -215,4 +215,4 @@ PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresent
 
 @override String toString() => 'PaymentMethodDetailsCardPresentReceipt(\n  accountType: $accountType,\n  applicationCryptogram: $applicationCryptogram,\n  applicationPreferredName: $applicationPreferredName,\n  authorizationCode: $authorizationCode,\n  authorizationResponseCode: $authorizationResponseCode,\n  cardholderVerificationMethod: $cardholderVerificationMethod,\n  dedicatedFileName: $dedicatedFileName,\n  terminalVerificationResults: $terminalVerificationResults,\n  transactionStatusInformation: $transactionStatusInformation,\n)';
 
- }
+}

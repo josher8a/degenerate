@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostEventUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/patch_event_update_request/patch_event_update_request_raw.dart';@immutable final class PostEventUpdateRequest {const PostEventUpdateRequest({this.attacker, this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/patch_event_update_request/patch_event_update_request_raw.dart';@immutable final class PostEventUpdateRequest {const PostEventUpdateRequest({this.attacker = const Omittable.absent(), this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
 
-factory PostEventUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventUpdateRequest(
-  attacker: json['attacker'] as String?,
+factory PostEventUpdateRequest.fromJson(Map<String, dynamic> json) {return PostEventUpdateRequest(
+  attacker: json.containsKey('attacker') ? Omittable(json['attacker'] as String?) : const Omittable.absent(),
   attackerCountry: json['attackerCountry'] as String?,
   category: json['category'] as String?,
   createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : null,
@@ -18,10 +18,10 @@ factory PostEventUpdateRequest.fromJson(Map<String, dynamic> json) { return Post
   targetCountry: json['targetCountry'] as String?,
   targetIndustry: json['targetIndustry'] as String?,
   tlp: json['tlp'] as String?,
-); }
+);}
 
 /// Example: `'Flying Yeti'`
-final String? attacker;
+final Omittable<String?> attacker;
 
 /// Example: `'CN'`
 final String? attackerCountry;
@@ -61,8 +61,8 @@ final String? targetIndustry;
 /// Example: `'amber'`
 final String? tlp;
 
-Map<String, dynamic> toJson() { return {
-  'attacker': ?attacker,
+Map<String, dynamic> toJson() {return {
+  if (attacker.isPresent) 'attacker': attacker.value,
   'attackerCountry': ?attackerCountry,
   'category': ?category,
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
@@ -76,10 +76,10 @@ Map<String, dynamic> toJson() { return {
   'targetCountry': ?targetCountry,
   'targetIndustry': ?targetIndustry,
   'tlp': ?tlp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attacker', 'attackerCountry', 'category', 'createdAt', 'datasetId', 'date', 'event', 'indicator', 'indicatorType', 'insight', 'raw', 'targetCountry', 'targetIndustry', 'tlp'}.contains(key)); } 
-PostEventUpdateRequest copyWith({String? Function()? attacker, String? Function()? attackerCountry, String? Function()? category, DateTime? Function()? createdAt, String? Function()? datasetId, DateTime? Function()? date, String? Function()? event, String? Function()? indicator, String? Function()? indicatorType, String? Function()? insight, PatchEventUpdateRequestRaw? Function()? raw, String? Function()? targetCountry, String? Function()? targetIndustry, String? Function()? tlp, }) { return PostEventUpdateRequest(
-  attacker: attacker != null ? attacker() : this.attacker,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attacker', 'attackerCountry', 'category', 'createdAt', 'datasetId', 'date', 'event', 'indicator', 'indicatorType', 'insight', 'raw', 'targetCountry', 'targetIndustry', 'tlp'}.contains(key));}
+PostEventUpdateRequest copyWith({Omittable<String?>? attacker, String? Function()? attackerCountry, String? Function()? category, DateTime? Function()? createdAt, String? Function()? datasetId, DateTime? Function()? date, String? Function()? event, String? Function()? indicator, String? Function()? indicatorType, String? Function()? insight, PatchEventUpdateRequestRaw? Function()? raw, String? Function()? targetCountry, String? Function()? targetIndustry, String? Function()? tlp, }) {return PostEventUpdateRequest(
+  attacker: attacker ?? this.attacker,
   attackerCountry: attackerCountry != null ? attackerCountry() : this.attackerCountry,
   category: category != null ? category() : this.category,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -93,7 +93,7 @@ PostEventUpdateRequest copyWith({String? Function()? attacker, String? Function(
   targetCountry: targetCountry != null ? targetCountry() : this.targetCountry,
   targetIndustry: targetIndustry != null ? targetIndustry() : this.targetIndustry,
   tlp: tlp != null ? tlp() : this.tlp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventUpdateRequest &&
           attacker == other.attacker &&
@@ -115,4 +115,4 @@ PostEventUpdateRequest copyWith({String? Function()? attacker, String? Function(
 
 @override String toString() => 'PostEventUpdateRequest(\n  attacker: $attacker,\n  attackerCountry: $attackerCountry,\n  category: $category,\n  createdAt: $createdAt,\n  datasetId: $datasetId,\n  date: $date,\n  event: $event,\n  indicator: $indicator,\n  indicatorType: $indicatorType,\n  insight: $insight,\n  raw: $raw,\n  targetCountry: $targetCountry,\n  targetIndustry: $targetIndustry,\n  tlp: $tlp,\n)';
 
- }
+}

@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/legal_entity_company_verification_document.dart';/// 
 @immutable final class LegalEntityCompanyVerification {const LegalEntityCompanyVerification({required this.document});
 
-factory LegalEntityCompanyVerification.fromJson(Map<String, dynamic> json) { return LegalEntityCompanyVerification(
+factory LegalEntityCompanyVerification.fromJson(Map<String, dynamic> json) {return LegalEntityCompanyVerification(
   document: LegalEntityCompanyVerificationDocument.fromJson(json['document'] as Map<String, dynamic>),
-); }
+);}
 
 final LegalEntityCompanyVerificationDocument document;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'document': document.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('document'); } 
-LegalEntityCompanyVerification copyWith({LegalEntityCompanyVerificationDocument? document}) { return LegalEntityCompanyVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('document');}
+LegalEntityCompanyVerification copyWith({LegalEntityCompanyVerificationDocument? document}) {return LegalEntityCompanyVerification(
   document: document ?? this.document,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityCompanyVerification &&
           document == other.document;
@@ -25,4 +25,4 @@ LegalEntityCompanyVerification copyWith({LegalEntityCompanyVerificationDocument?
 
 @override String toString() => 'LegalEntityCompanyVerification(document: $document)';
 
- }
+}

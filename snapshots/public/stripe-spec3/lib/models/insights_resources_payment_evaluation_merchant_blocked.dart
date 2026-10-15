@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the payment was blocked by the merchant.
 sealed class InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason();
 
-factory InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(String json) {return switch (json) {
   'authentication_required' => authenticationRequired,
   'blocked_for_fraud' => blockedForFraud,
   'invalid_payment' => invalidPayment,
   'other' => $other,
   _ => InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationMerchantBlockedReason authenticationRequired = InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired._();
 
@@ -23,36 +23,36 @@ static const InsightsResourcesPaymentEvaluationMerchantBlockedReason $other = In
 static const List<InsightsResourcesPaymentEvaluationMerchantBlockedReason> values = [authenticationRequired, blockedForFraud, invalidPayment, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'authentication_required' => 'authenticationRequired',
   'blocked_for_fraud' => 'blockedForFraud',
   'invalid_payment' => 'invalidPayment',
   'other' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown; } 
+bool get isUnknown {return this is InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() authenticationRequired, required W Function() blockedForFraud, required W Function() invalidPayment, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() authenticationRequired, required W Function() blockedForFraud, required W Function() invalidPayment, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired() => authenticationRequired(),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$blockedForFraud() => blockedForFraud(),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$invalidPayment() => invalidPayment(),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$$other() => $other(),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenticationRequired, W Function()? blockedForFraud, W Function()? invalidPayment, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenticationRequired, W Function()? blockedForFraud, W Function()? invalidPayment, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired() => authenticationRequired != null ? authenticationRequired() : orElse(value),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$blockedForFraud() => blockedForFraud != null ? blockedForFraud() : orElse(value),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$invalidPayment() => invalidPayment != null ? invalidPayment() : orElse(value),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$$other() => $other != null ? $other() : orElse(value),
       InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)';
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired extends InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired._();
 
 @override String get value => 'authentication_required';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'authentication_required'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason$blockedForFraud extends InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason$blockedForFraud._();
 
 @override String get value => 'blocked_for_fraud';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'blocked_for_fraud'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason$invalidPayment extends InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason$invalidPayment._();
 
 @override String get value => 'invalid_payment';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'invalid_payment'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason$$other extends InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason$$other._();
 
 @override String get value => 'other';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown extends InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown(this.value);
 
 @override final String value;
@@ -98,24 +98,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details of a merchant_blocked outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlocked {const InsightsResourcesPaymentEvaluationMerchantBlocked({required this.reason});
 
-factory InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMerchantBlocked(
+factory InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationMerchantBlocked(
   reason: InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// The reason the payment was blocked by the merchant.
 final InsightsResourcesPaymentEvaluationMerchantBlockedReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason'); } 
-InsightsResourcesPaymentEvaluationMerchantBlocked copyWith({InsightsResourcesPaymentEvaluationMerchantBlockedReason? reason}) { return InsightsResourcesPaymentEvaluationMerchantBlocked(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reason');}
+InsightsResourcesPaymentEvaluationMerchantBlocked copyWith({InsightsResourcesPaymentEvaluationMerchantBlockedReason? reason}) {return InsightsResourcesPaymentEvaluationMerchantBlocked(
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationMerchantBlocked &&
           reason == other.reason;
@@ -124,4 +124,4 @@ InsightsResourcesPaymentEvaluationMerchantBlocked copyWith({InsightsResourcesPay
 
 @override String toString() => 'InsightsResourcesPaymentEvaluationMerchantBlocked(reason: $reason)';
 
- }
+}

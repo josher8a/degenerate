@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AssistantContentVariant2Type {const AssistantContentVariant2Type();
 
-factory AssistantContentVariant2Type.fromJson(String json) { return switch (json) {
+factory AssistantContentVariant2Type.fromJson(String json) {return switch (json) {
   'text' => text,
   'refusal' => refusal,
   _ => AssistantContentVariant2Type$Unknown(json),
-}; }
+};}
 
 static const AssistantContentVariant2Type text = AssistantContentVariant2Type$text._();
 
@@ -16,30 +16,30 @@ static const AssistantContentVariant2Type refusal = AssistantContentVariant2Type
 static const List<AssistantContentVariant2Type> values = [text, refusal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'refusal' => 'refusal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AssistantContentVariant2Type$Unknown; } 
+bool get isUnknown {return this is AssistantContentVariant2Type$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() refusal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() refusal, required W Function(String value) $unknown, }) {return switch (this) {
       AssistantContentVariant2Type$text() => text(),
       AssistantContentVariant2Type$refusal() => refusal(),
       AssistantContentVariant2Type$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? refusal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? refusal, W Function(String value)? $unknown, }) {return switch (this) {
       AssistantContentVariant2Type$text() => text != null ? text() : orElse(value),
       AssistantContentVariant2Type$refusal() => refusal != null ? refusal() : orElse(value),
       AssistantContentVariant2Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AssistantContentVariant2Type($value)';
 
- }
+}
 @immutable final class AssistantContentVariant2Type$text extends AssistantContentVariant2Type {const AssistantContentVariant2Type$text._();
 
 @override String get value => 'text';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class AssistantContentVariant2Type$refusal extends AssistantContentVariant2Type {const AssistantContentVariant2Type$refusal._();
 
 @override String get value => 'refusal';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'refusal'.hashCode;
 
- }
+}
 @immutable final class AssistantContentVariant2Type$Unknown extends AssistantContentVariant2Type {const AssistantContentVariant2Type$Unknown(this.value);
 
 @override final String value;
@@ -67,14 +67,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AssistantContentVariant2 {const AssistantContentVariant2({required this.type, this.refusal, this.text, });
 
-factory AssistantContentVariant2.fromJson(Map<String, dynamic> json) { return AssistantContentVariant2(
+factory AssistantContentVariant2.fromJson(Map<String, dynamic> json) {return AssistantContentVariant2(
   refusal: json['refusal'] as String?,
   text: json['text'] as String?,
   type: AssistantContentVariant2Type.fromJson(json['type'] as String),
-); }
+);}
 
 final String? refusal;
 
@@ -82,17 +82,17 @@ final String? text;
 
 final AssistantContentVariant2Type type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'refusal': ?refusal,
   'text': ?text,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AssistantContentVariant2 copyWith({String? Function()? refusal, String? Function()? text, AssistantContentVariant2Type? type, }) { return AssistantContentVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AssistantContentVariant2 copyWith({String? Function()? refusal, String? Function()? text, AssistantContentVariant2Type? type, }) {return AssistantContentVariant2(
   refusal: refusal != null ? refusal() : this.refusal,
   text: text != null ? text() : this.text,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantContentVariant2 &&
           refusal == other.refusal &&
@@ -103,4 +103,4 @@ AssistantContentVariant2 copyWith({String? Function()? refusal, String? Function
 
 @override String toString() => 'AssistantContentVariant2(refusal: $refusal, text: $text, type: $type)';
 
- }
+}

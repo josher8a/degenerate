@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report/abuse_reports_dmca_report_host_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report/abuse_reports_dmca_report_owner_notification.dart';/// Can be `0` for false or `1` for true. Must be value: 1 for DMCA reports
 sealed class Agree {const Agree();
 
-factory Agree.fromJson(int json) { return switch (json) {
+factory Agree.fromJson(int json) {return switch (json) {
   1 => $1,
   _ => Agree$Unknown(json),
-}; }
+};}
 
 static const Agree $1 = Agree$$1._();
 
 static const List<Agree> values = [$1];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Agree$Unknown; } 
+bool get isUnknown {return this is Agree$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function(int value) $unknown, }) {return switch (this) {
       Agree$$1() => $1(),
       Agree$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function(int value)? $unknown, }) {return switch (this) {
       Agree$$1() => $1 != null ? $1() : orElse(value),
       Agree$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Agree($value)';
 
- }
+}
 @immutable final class Agree$$1 extends Agree {const Agree$$1._();
 
 @override int get value => 1;
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class Agree$Unknown extends Agree {const Agree$Unknown(this.value);
 
 @override final int value;
@@ -53,10 +53,10 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AbuseReportsDmcaReport {const AbuseReportsDmcaReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.address1, required this.agentName, required this.agree, required this.city, required this.country, required this.hostNotification, required this.originalWork, required this.ownerNotification, required this.signature, required this.state, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 
-factory AbuseReportsDmcaReport.fromJson(Map<String, dynamic> json) { return AbuseReportsDmcaReport(
+factory AbuseReportsDmcaReport.fromJson(Map<String, dynamic> json) {return AbuseReportsDmcaReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -78,7 +78,7 @@ factory AbuseReportsDmcaReport.fromJson(Map<String, dynamic> json) { return Abus
   ownerNotification: AbuseReportsDmcaReportOwnerNotification.fromJson(json['owner_notification'] as String),
   signature: json['signature'] as String,
   state: json['state'] as String,
-); }
+);}
 
 final dynamic act;
 
@@ -146,7 +146,7 @@ final String signature;
 /// Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 final String state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -168,8 +168,8 @@ Map<String, dynamic> toJson() { return {
   'owner_notification': ownerNotification.toJson(),
   'signature': signature,
   'state': state,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -183,9 +183,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('original_work') && json['original_work'] is String &&
       json.containsKey('owner_notification') &&
       json.containsKey('signature') && json['signature'] is String &&
-      json.containsKey('state') && json['state'] is String; } 
+      json.containsKey('state') && json['state'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -230,8 +230,8 @@ if (originalWork.isEmpty) { errors.add('originalWork: length must be >= 1'); }
 if (originalWork.runes.length > 255) { errors.add('originalWork: length must be <= 255'); }
 if (state.isEmpty) { errors.add('state: length must be >= 1'); }
 if (state.runes.length > 255) { errors.add('state: length must be <= 255'); }
-return errors; } 
-AbuseReportsDmcaReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? address1, String? agentName, Agree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) { return AbuseReportsDmcaReport(
+return errors;}
+AbuseReportsDmcaReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? address1, String? agentName, Agree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) {return AbuseReportsDmcaReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -253,7 +253,7 @@ AbuseReportsDmcaReport copyWith({dynamic Function()? act, String? Function()? co
   ownerNotification: ownerNotification ?? this.ownerNotification,
   signature: signature ?? this.signature,
   state: state ?? this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsDmcaReport &&
           act == other.act &&
@@ -282,4 +282,4 @@ AbuseReportsDmcaReport copyWith({dynamic Function()? act, String? Function()? co
 
 @override String toString() => 'AbuseReportsDmcaReport(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n  address1: $address1,\n  agentName: $agentName,\n  agree: $agree,\n  city: $city,\n  country: $country,\n  hostNotification: $hostNotification,\n  originalWork: $originalWork,\n  ownerNotification: $ownerNotification,\n  signature: $signature,\n  state: $state,\n)';
 
- }
+}

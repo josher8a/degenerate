@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_manifest_value.dart';@immutable final class WorkersCreateAssetsUploadSessionObject {const WorkersCreateAssetsUploadSessionObject({required this.manifest});
 
-factory WorkersCreateAssetsUploadSessionObject.fromJson(Map<String, dynamic> json) { return WorkersCreateAssetsUploadSessionObject(
+factory WorkersCreateAssetsUploadSessionObject.fromJson(Map<String, dynamic> json) {return WorkersCreateAssetsUploadSessionObject(
   manifest: (json['manifest'] as Map<String, dynamic>).map((k, v) => MapEntry(k, WorkersManifestValue.fromJson(v as Map<String, dynamic>))),
-); }
+);}
 
 /// A manifest (`[path]`: {hash, size}) map of files to upload. As an example, `/blog/hello-world.html` would be a valid path key.
 final Map<String,WorkersManifestValue> manifest;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'manifest': manifest.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('manifest'); } 
-WorkersCreateAssetsUploadSessionObject copyWith({Map<String,WorkersManifestValue>? manifest}) { return WorkersCreateAssetsUploadSessionObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('manifest');}
+WorkersCreateAssetsUploadSessionObject copyWith({Map<String,WorkersManifestValue>? manifest}) {return WorkersCreateAssetsUploadSessionObject(
   manifest: manifest ?? this.manifest,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersCreateAssetsUploadSessionObject &&
           manifest == other.manifest;
@@ -25,4 +25,4 @@ WorkersCreateAssetsUploadSessionObject copyWith({Map<String,WorkersManifestValue
 
 @override String toString() => 'WorkersCreateAssetsUploadSessionObject(manifest: $manifest)';
 
- }
+}

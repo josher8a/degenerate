@@ -11,6 +11,7 @@ library;
 import 'dart:io';
 
 import 'package:degenerate/src/dart_names.dart' show toTypeName;
+import 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
 import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/ir/ir_rewriter.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
@@ -22,14 +23,17 @@ import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/naming/name_resolution.dart';
+import 'package:degenerate/src/normalizer/directional_schemas.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/parser/ref_inliner.dart';
 import 'package:path/path.dart' as p;
 
+export 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
+
 // packageVersion updated by scripts/release.dart
 /// Current package version.
-const packageVersion = '0.4.1';
+const packageVersion = '0.5.0';
 
 /// Default name for generated API client packages.
 const defaultPackageName = 'api_client';
@@ -63,6 +67,7 @@ final class GeneratorConfig {
     this.emitTypedParams = false,
     this.barrelHide = const [],
     this.optionalHeaders = const [],
+    this.omittable = OmittableMode.nullableOnly,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -149,6 +154,9 @@ final class GeneratorConfig {
   /// provided via `ApiConfig.defaultHeaders` or an interceptor rather than
   /// per-call. Matched case-insensitively against the original param name.
   final List<String> optionalHeaders;
+  /// How generated models represent "field omitted" vs "field set to null"
+  /// on optional fields. See [OmittableMode].
+  final OmittableMode omittable;
 }
 
 /// The main code generator pipeline.
@@ -224,6 +232,7 @@ final class Generator {
       unionMeta,
     );
 
+    checkNoSpecTextLeaks(files);
     return _writeFiles(files, outputDir);
   }
 
@@ -273,7 +282,8 @@ final class Generator {
         ? Directory.current.path
         : p.dirname(p.absolute(config.inputPath));
     final inliner = RefInliner(baseDir);
-    return OpenApiDocument(inliner.inline(doc.root));
+    // Project readOnly/writeOnly schemas into request/response models.
+    return DirectionalSchemas(OpenApiDocument(inliner.inline(doc.root))).project();
   }
 
   (List<IrType>, List<IrApi>, IrMapper) _lowerToIr(OpenApiDocument doc) {
@@ -400,7 +410,7 @@ final class Generator {
       final filtered = <IrApi>[];
       for (final api in apis) {
         final ops = api.operations.where((op) {
-          return config.paths.any((prefix) => op.path.startsWith(prefix));
+          return config.paths.any((prefix) => op.path.test((s) => s.startsWith(prefix)));
         }).toList();
         if (ops.isNotEmpty) {
           filtered.add(IrApi(api.name, ops));
@@ -470,8 +480,11 @@ final class Generator {
             final p = op.parameters[i];
             if (p.location == ParameterLocation.header &&
                 p.isRequired &&
-                (securityHeaderNames.contains(p.name) ||
-                    optionalHeaderNames.contains(p.name.toLowerCase()))) {
+                p.name.test(
+                  (n) =>
+                      securityHeaderNames.contains(n) ||
+                      optionalHeaderNames.contains(n.toLowerCase()),
+                )) {
               op.parameters[i] = p.asOptional();
             }
           }
@@ -496,6 +509,7 @@ final class Generator {
       emitRoundtripFixtures: config.emitRoundtripFixtures,
       unionMetadata: unionMetadata,
       barrelHide: config.barrelHide,
+      omittable: config.omittable,
     );
 
     if (config.workspace) {
@@ -628,7 +642,7 @@ final class Generator {
       }
       schemes.add(
         IrSecurityScheme(
-          name: key,
+          name: SpecString(key),
           type: type,
           scheme: value['scheme'] as String?,
           bearerFormat: value['bearerFormat'] as String?,
@@ -647,9 +661,9 @@ final class Generator {
   ) {
     if (raw == null) return null;
     return raw.map((requirement) {
-      final schemes = <String, List<String>>{};
+      final schemes = <SpecString, List<String>>{};
       for (final MapEntry(:key, :value) in requirement.entries) {
-        schemes[key] = value is List
+        schemes[SpecString(key)] = value is List
             ? value.map((e) => e.toString()).toList()
             : const <String>[];
       }
@@ -772,7 +786,7 @@ final class Generator {
         .toSet();
 
     // Collect unique path param names that are plain strings.
-    final paramNames = <String>{};
+    final paramNames = <SpecString>{};
     for (final api in irApis) {
       for (final op in api.operations) {
         for (final p in op.parameters) {
@@ -787,14 +801,14 @@ final class Generator {
     if (paramNames.isEmpty) return;
 
     // Generate extension types and build a name mapping.
-    final paramToType = <String, String>{};
+    final paramToType = <SpecString, String>{};
     for (final paramName in paramNames) {
-      var typeName = toTypeName(paramName);
+      var typeName = paramName.toIdentifier(toTypeName);
       if (existingNames.contains(typeName)) {
         typeName = '${typeName}Param';
       }
       if (!existingNames.add(typeName)) {
-        _log('  Warning: typed param "$paramName" skipped '
+        _log('  Warning: typed param "${paramName.forDiagnostics}" skipped '
             '("$typeName" name collision)');
         continue;
       }
@@ -866,4 +880,23 @@ final class GeneratorException implements Exception {
 
   @override
   String toString() => 'GeneratorException: $message';
+}
+
+/// Throws if any generated file still carries a [SpecString] leak sentinel.
+///
+/// `emitRaw` asserts the same for code_builder output, but some files (round-
+/// trip and negative fixtures, barrels) are assembled as plain strings. This
+/// covers every file, in release builds too: a sentinel means spec text was
+/// interpolated without an escape gate, so the file is corrupt.
+void checkNoSpecTextLeaks(Map<String, String> files) {
+  for (final MapEntry(:key, :value) in files.entries) {
+    if (SpecString.containsMarker(value)) {
+      throw StateError(
+        'Un-gated spec text reached generated file $key: a SpecString was '
+        'interpolated directly instead of through a gate '
+        '(.literal/.escaped/.docComment/.commentText/.interpolatedLiteral). '
+        'Near: ${SpecString.leakContext(value)}',
+      );
+    }
+  }
 }

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DateOfBirthSpecs {const DateOfBirthSpecs({required this.day, required this.month, required this.year, });
 
-factory DateOfBirthSpecs.fromJson(Map<String, dynamic> json) { return DateOfBirthSpecs(
+factory DateOfBirthSpecs.fromJson(Map<String, dynamic> json) {return DateOfBirthSpecs(
   day: (json['day'] as num).toInt(),
   month: (json['month'] as num).toInt(),
   year: (json['year'] as num).toInt(),
-); }
+);}
 
 final int day;
 
@@ -15,19 +15,19 @@ final int month;
 
 final int year;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'day': day,
   'month': month,
   'year': year,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('day') && json['day'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('day') && json['day'] is num &&
       json.containsKey('month') && json['month'] is num &&
-      json.containsKey('year') && json['year'] is num; } 
-DateOfBirthSpecs copyWith({int? day, int? month, int? year, }) { return DateOfBirthSpecs(
+      json.containsKey('year') && json['year'] is num;}
+DateOfBirthSpecs copyWith({int? day, int? month, int? year, }) {return DateOfBirthSpecs(
   day: day ?? this.day,
   month: month ?? this.month,
   year: year ?? this.year,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DateOfBirthSpecs &&
           day == other.day &&
@@ -38,4 +38,4 @@ DateOfBirthSpecs copyWith({int? day, int? month, int? year, }) { return DateOfBi
 
 @override String toString() => 'DateOfBirthSpecs(day: $day, month: $month, year: $year)';
 
- }
+}

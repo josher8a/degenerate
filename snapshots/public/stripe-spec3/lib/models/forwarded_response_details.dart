@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_header.dart';/// Details about the response from the destination endpoint.
 @immutable final class ForwardedResponseDetails {const ForwardedResponseDetails({required this.body, required this.headers, required this.status, });
 
-factory ForwardedResponseDetails.fromJson(Map<String, dynamic> json) { return ForwardedResponseDetails(
+factory ForwardedResponseDetails.fromJson(Map<String, dynamic> json) {return ForwardedResponseDetails(
   body: json['body'] as String,
   headers: (json['headers'] as List<dynamic>).map((e) => ForwardedRequestHeader.fromJson(e as Map<String, dynamic>)).toList(),
   status: (json['status'] as num).toInt(),
-); }
+);}
 
 /// The response body from the destination endpoint to Stripe.
 final String body;
@@ -19,23 +19,23 @@ final List<ForwardedRequestHeader> headers;
 /// The HTTP status code that the destination endpoint returned.
 final int status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
   'headers': headers.map((e) => e.toJson()).toList(),
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String &&
       json.containsKey('headers') &&
-      json.containsKey('status') && json['status'] is num; } 
+      json.containsKey('status') && json['status'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (body.runes.length > 5000) { errors.add('body: length must be <= 5000'); }
-return errors; } 
-ForwardedResponseDetails copyWith({String? body, List<ForwardedRequestHeader>? headers, int? status, }) { return ForwardedResponseDetails(
+return errors;}
+ForwardedResponseDetails copyWith({String? body, List<ForwardedRequestHeader>? headers, int? status, }) {return ForwardedResponseDetails(
   body: body ?? this.body,
   headers: headers ?? this.headers,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardedResponseDetails &&
           body == other.body &&
@@ -46,4 +46,4 @@ ForwardedResponseDetails copyWith({String? body, List<ForwardedRequestHeader>? h
 
 @override String toString() => 'ForwardedResponseDetails(body: $body, headers: $headers, status: $status)';
 
- }
+}

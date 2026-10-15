@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Fields {const Fields({required this.id, required this.value, });
 
-factory Fields.fromJson(Map<String, dynamic> json) { return Fields(
+factory Fields.fromJson(Map<String, dynamic> json) {return Fields(
   id: (json['id'] as num).toInt(),
   value: json['value'],
-); }
+);}
 
 /// The ID of the project field to update.
 final int id;
@@ -24,16 +24,16 @@ final int id;
 /// One of: String, double
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('value'); } 
-Fields copyWith({int? id, dynamic Function()? value, }) { return Fields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('value');}
+Fields copyWith({int? id, dynamic Function()? value, }) {return Fields(
   id: id ?? this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Fields &&
           id == other.id &&
@@ -43,4 +43,4 @@ Fields copyWith({int? id, dynamic Function()? value, }) { return Fields(
 
 @override String toString() => 'Fields(id: $id, value: $value)';
 
- }
+}

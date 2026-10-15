@@ -2,13 +2,13 @@
 // Source: #/components/schemas/PaymentMethodDetailsPaynow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsPaynow {const PaymentMethodDetailsPaynow({this.location, this.reader, this.reference, });
+@immutable final class PaymentMethodDetailsPaynow {const PaymentMethodDetailsPaynow({this.location, this.reader, this.reference = const Omittable.absent(), });
 
-factory PaymentMethodDetailsPaynow.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaynow(
+factory PaymentMethodDetailsPaynow.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsPaynow(
   location: json['location'] as String?,
   reader: json['reader'] as String?,
-  reference: json['reference'] as String?,
-); }
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
+);}
 
 /// ID of the [location](https://docs.stripe.com/api/terminal/locations) that this transaction's reader is assigned to.
 final String? location;
@@ -17,16 +17,16 @@ final String? location;
 final String? reader;
 
 /// Reference number associated with this PayNow payment
-final String? reference;
+final Omittable<String?> reference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'location': ?location,
   'reader': ?reader,
-  'reference': ?reference,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'reference'}.contains(key)); } 
+  if (reference.isPresent) 'reference': reference.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'location', 'reader', 'reference'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final location$ = location;
 if (location$ != null) {
   if (location$.runes.length > 5000) { errors.add('location: length must be <= 5000'); }
@@ -35,16 +35,16 @@ final reader$ = reader;
 if (reader$ != null) {
   if (reader$.runes.length > 5000) { errors.add('reader: length must be <= 5000'); }
 }
-final reference$ = reference;
+final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsPaynow copyWith({String? Function()? location, String? Function()? reader, String? Function()? reference, }) { return PaymentMethodDetailsPaynow(
+return errors;}
+PaymentMethodDetailsPaynow copyWith({String? Function()? location, String? Function()? reader, Omittable<String?>? reference, }) {return PaymentMethodDetailsPaynow(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,
-  reference: reference != null ? reference() : this.reference,
-); } 
+  reference: reference ?? this.reference,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaynow &&
           location == other.location &&
@@ -55,4 +55,4 @@ PaymentMethodDetailsPaynow copyWith({String? Function()? location, String? Funct
 
 @override String toString() => 'PaymentMethodDetailsPaynow(location: $location, reader: $reader, reference: $reference)';
 
- }
+}

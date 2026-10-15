@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';import 'package:pub_github_rest_3_1/models/public_user.dart';sealed class UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType();
 
-factory UsersGetAuthenticatedResponseUserViewType.fromJson(String json) { return switch (json) {
+factory UsersGetAuthenticatedResponseUserViewType.fromJson(String json) {return switch (json) {
   'public' => public,
   'private' => private,
   _ => UsersGetAuthenticatedResponseUserViewType$Unknown(json),
-}; }
+};}
 
 static const UsersGetAuthenticatedResponseUserViewType public = UsersGetAuthenticatedResponseUserViewType$public._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is UsersGetAuthenticatedResponseUserViewType$Unknown;
 
- }
+}
 @immutable final class UsersGetAuthenticatedResponseUserViewType$public extends UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType$public._();
 
 @override String get value => 'public';
@@ -31,7 +31,7 @@ bool get isUnknown => this is UsersGetAuthenticatedResponseUserViewType$Unknown;
 
 @override String toString() => 'UsersGetAuthenticatedResponseUserViewType(public)';
 
- }
+}
 @immutable final class UsersGetAuthenticatedResponseUserViewType$private extends UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType$private._();
 
 @override String get value => 'private';
@@ -42,7 +42,7 @@ bool get isUnknown => this is UsersGetAuthenticatedResponseUserViewType$Unknown;
 
 @override String toString() => 'UsersGetAuthenticatedResponseUserViewType(private)';
 
- }
+}
 @immutable final class UsersGetAuthenticatedResponseUserViewType$Unknown extends UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is UsersGetAuthenticatedResponseUserViewType$Unknown;
 
 @override String toString() => 'UsersGetAuthenticatedResponseUserViewType($value)';
 
- }
+}
 sealed class UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponse();
 
 /// Deserialize from JSON, dispatching on the `user_view_type` discriminator.
-factory UsersGetAuthenticatedResponse.fromJson(Map<String, dynamic> json) { return switch (json['user_view_type']) {
+factory UsersGetAuthenticatedResponse.fromJson(Map<String, dynamic> json) {return switch (json['user_view_type']) {
   'public' => UsersGetAuthenticatedResponsePublic.fromJson(json),
   'private' => UsersGetAuthenticatedResponsePrivate.fromJson(json),
   _ => UsersGetAuthenticatedResponse$Unknown(json),
-}; }
+};}
 
 /// Build the `public` variant.
-factory UsersGetAuthenticatedResponse.public({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required DateTime updatedAt, required bool? hireable, required DateTime createdAt, required int following, required int publicRepos, required int publicGists, required int followers, required String? bio, int? collaborators, String? notificationEmail, PrivateUserPlan? plan, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, String? twitterUsername, }) { return UsersGetAuthenticatedResponsePublic(PublicUser(userViewType: 'public', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, plan: plan, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators)); }
+factory UsersGetAuthenticatedResponse.public({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required DateTime updatedAt, required bool? hireable, required DateTime createdAt, required int following, required int publicRepos, required int publicGists, required int followers, required String? bio, int? collaborators, Omittable<String?> notificationEmail = const Omittable.absent(), PrivateUserPlan? plan, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, Omittable<String?> twitterUsername = const Omittable.absent(), }) {return UsersGetAuthenticatedResponsePublic(PublicUser(userViewType: 'public', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, plan: plan, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators));}
 
 /// Build the `private` variant.
-factory UsersGetAuthenticatedResponse.private({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required bool twoFactorAuthentication, required bool? hireable, required String? bio, required int collaborators, required int diskUsage, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, required int privateGists, required int totalPrivateRepos, required int ownedPrivateRepos, required int publicRepos, String? twitterUsername, String? notificationEmail, PrivateUserPlan? plan, bool? businessPlus, String? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(PrivateUser(userViewType: 'private', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators, twoFactorAuthentication: twoFactorAuthentication, plan: plan, businessPlus: businessPlus, ldapDn: ldapDn)); }
+factory UsersGetAuthenticatedResponse.private({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required bool twoFactorAuthentication, required bool? hireable, required String? bio, required int collaborators, required int diskUsage, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, required int privateGists, required int totalPrivateRepos, required int ownedPrivateRepos, required int publicRepos, Omittable<String?> twitterUsername = const Omittable.absent(), Omittable<String?> notificationEmail = const Omittable.absent(), PrivateUserPlan? plan, bool? businessPlus, String? ldapDn, }) {return UsersGetAuthenticatedResponsePrivate(PrivateUser(userViewType: 'private', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators, twoFactorAuthentication: twoFactorAuthentication, plan: plan, businessPlus: businessPlus, ldapDn: ldapDn));}
 
 /// The discriminator value identifying this variant.
 UsersGetAuthenticatedResponseUserViewType get userViewType;
@@ -122,13 +122,9 @@ String? get location;
 /// Shared by all variants of this union.
 String? get email;
 /// Shared by all variants of this union.
-String? get notificationEmail;
-/// Shared by all variants of this union.
 bool? get hireable;
 /// Shared by all variants of this union.
 String? get bio;
-/// Shared by all variants of this union.
-String? get twitterUsername;
 /// Shared by all variants of this union.
 int get publicRepos;
 /// Shared by all variants of this union.
@@ -153,15 +149,15 @@ int? get ownedPrivateRepos;
 int? get diskUsage;
 /// Shared by all variants of this union.
 int? get collaborators;
-R when<R>({required R Function(UsersGetAuthenticatedResponsePublic) public, required R Function(UsersGetAuthenticatedResponsePrivate) private, required R Function(UsersGetAuthenticatedResponse$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(UsersGetAuthenticatedResponsePublic) public, required R Function(UsersGetAuthenticatedResponsePrivate) private, required R Function(UsersGetAuthenticatedResponse$Unknown) unknown, }) {return switch (this) {
   final UsersGetAuthenticatedResponsePublic v => public(v),
   final UsersGetAuthenticatedResponsePrivate v => private(v),
   final UsersGetAuthenticatedResponse$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class UsersGetAuthenticatedResponsePublic extends UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponsePublic(this.publicUser);
 
-factory UsersGetAuthenticatedResponsePublic.fromJson(Map<String, dynamic> json) { return UsersGetAuthenticatedResponsePublic(PublicUser.fromJson(json)); }
+factory UsersGetAuthenticatedResponsePublic.fromJson(Map<String, dynamic> json) {return UsersGetAuthenticatedResponsePublic(PublicUser.fromJson(json));}
 
 final PublicUser publicUser;
 
@@ -169,7 +165,7 @@ final PublicUser publicUser;
 
 @override Map<String, dynamic> toJson() => {...publicUser.toJson(), 'user_view_type': userViewType.toJson()};
 
-UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) { return UsersGetAuthenticatedResponsePublic(publicUser.copyWith(
+UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) {return UsersGetAuthenticatedResponsePublic(publicUser.copyWith(
   login: login,
   id: id,
   nodeId: nodeId,
@@ -209,7 +205,7 @@ UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? no
   ownedPrivateRepos: ownedPrivateRepos,
   diskUsage: diskUsage,
   collaborators: collaborators,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is UsersGetAuthenticatedResponsePublic && publicUser == other.publicUser;
 
@@ -263,13 +259,9 @@ UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? no
 
 @override String? get email => publicUser.email;
 
-@override String? get notificationEmail => publicUser.notificationEmail;
-
 @override bool? get hireable => publicUser.hireable;
 
 @override String? get bio => publicUser.bio;
-
-@override String? get twitterUsername => publicUser.twitterUsername;
 
 @override int get publicRepos => publicUser.publicRepos;
 
@@ -295,10 +287,10 @@ UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? no
 
 @override int? get collaborators => publicUser.collaborators;
 
- }
+}
 @immutable final class UsersGetAuthenticatedResponsePrivate extends UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponsePrivate(this.privateUser);
 
-factory UsersGetAuthenticatedResponsePrivate.fromJson(Map<String, dynamic> json) { return UsersGetAuthenticatedResponsePrivate(PrivateUser.fromJson(json)); }
+factory UsersGetAuthenticatedResponsePrivate.fromJson(Map<String, dynamic> json) {return UsersGetAuthenticatedResponsePrivate(PrivateUser.fromJson(json));}
 
 final PrivateUser privateUser;
 
@@ -306,7 +298,7 @@ final PrivateUser privateUser;
 
 @override Map<String, dynamic> toJson() => {...privateUser.toJson(), 'user_view_type': userViewType.toJson()};
 
-UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(privateUser.copyWith(
+UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) {return UsersGetAuthenticatedResponsePrivate(privateUser.copyWith(
   login: login,
   id: id,
   nodeId: nodeId,
@@ -349,7 +341,7 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
   plan: plan,
   businessPlus: businessPlus,
   ldapDn: ldapDn,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is UsersGetAuthenticatedResponsePrivate && privateUser == other.privateUser;
 
@@ -403,13 +395,9 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
 
 @override String? get email => privateUser.email;
 
-@override String? get notificationEmail => privateUser.notificationEmail;
-
 @override bool? get hireable => privateUser.hireable;
 
 @override String? get bio => privateUser.bio;
-
-@override String? get twitterUsername => privateUser.twitterUsername;
 
 @override int get publicRepos => privateUser.publicRepos;
 
@@ -435,7 +423,7 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
 
 @override int? get collaborators => privateUser.collaborators;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class UsersGetAuthenticatedResponse$Unknown extends UsersGetAuthenticatedResponse {UsersGetAuthenticatedResponse$Unknown(this.json);
@@ -488,13 +476,9 @@ late final String? _location = json['location'] as String?;
 
 late final String? _email = json['email'] as String?;
 
-late final String? _notificationEmail = json['notification_email'] as String?;
-
 late final bool? _hireable = json['hireable'] as bool?;
 
 late final String? _bio = json['bio'] as String?;
-
-late final String? _twitterUsername = json['twitter_username'] as String?;
 
 late final int _publicRepos = (json['public_repos'] as num).toInt();
 
@@ -577,13 +561,9 @@ late final int? _collaborators = json['collaborators'] != null ? (json['collabor
 
 @override String? get email => _email;
 
-@override String? get notificationEmail => _notificationEmail;
-
 @override bool? get hireable => _hireable;
 
 @override String? get bio => _bio;
-
-@override String? get twitterUsername => _twitterUsername;
 
 @override int get publicRepos => _publicRepos;
 
@@ -609,4 +589,4 @@ late final int? _collaborators = json['collaborators'] != null ? (json['collabor
 
 @override int? get collaborators => _collaborators;
 
- }
+}

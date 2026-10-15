@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_response/token_validation_config_edit_response_result.dart';@immutable final class TokenValidationConfigEditResponse {const TokenValidationConfigEditResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory TokenValidationConfigEditResponse.fromJson(Map<String, dynamic> json) { return TokenValidationConfigEditResponse(
+factory TokenValidationConfigEditResponse.fromJson(Map<String, dynamic> json) {return TokenValidationConfigEditResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: TokenValidationConfigEditResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<ShieldMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final TokenValidationConfigEditResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-TokenValidationConfigEditResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, TokenValidationConfigEditResponseResult? result, }) { return TokenValidationConfigEditResponse(
+      json.containsKey('result');}
+TokenValidationConfigEditResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, TokenValidationConfigEditResponseResult? result, }) {return TokenValidationConfigEditResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationConfigEditResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ TokenValidationConfigEditResponse copyWith({List<ShieldMessages2>? errors, List<
 
 @override String toString() => 'TokenValidationConfigEditResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

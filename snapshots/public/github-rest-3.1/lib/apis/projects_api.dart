@@ -14,7 +14,7 @@ final class ProjectsApi with ApiExecutor {const ProjectsApi(this.apiConfig);
 /// List all projects owned by a specific organization accessible by the authenticated user.
 ///
 /// `GET /orgs/{org}/projectsV2`
-Future<ApiResult<List<Projects>, ActivityDeleteThreadSubscriptionError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Projects>, ActivityDeleteThreadSubscriptionError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (q != null) {
   queryParameters['q'] = q;
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -48,13 +48,13 @@ return execute(
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Get project for organization
 ///
 /// Get a specific organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}`
-Future<ApiResult<Projects, ActivityDeleteThreadSubscriptionError>> projectsGetForOrg({required int projectNumber, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Projects, ActivityDeleteThreadSubscriptionError>> projectsGetForOrg({required int projectNumber, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -63,20 +63,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Projects.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Create draft item for organization owned project
 ///
 /// Create draft issue item for the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/drafts`
-Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsCreateDraftItemForOrg({required String org, required int projectNumber, required ProjectsCreateDraftItemForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsCreateDraftItemForOrg({required String org, required int projectNumber, required ProjectsCreateDraftItemForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,20 +87,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// List project fields for organization
 ///
 /// List all fields for a specific organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields`
-Future<ApiResult<List<Field>, ActivityDeleteThreadSubscriptionError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Field>, ActivityDeleteThreadSubscriptionError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -123,7 +123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -131,11 +131,11 @@ return execute(
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Add a field to an organization-owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/fields`
-Future<ApiResult<Field, ActivityListNotificationsForAuthenticatedUserError>> projectsAddFieldForOrg({required int projectNumber, required String org, required ProjectsAddFieldForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ActivityListNotificationsForAuthenticatedUserError>> projectsAddFieldForOrg({required int projectNumber, required String org, required ProjectsAddFieldForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,20 +146,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
- } 
+}
 /// Get project field for organization
 ///
 /// Get a specific field for an organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}`
-Future<ApiResult<Field, ActivityDeleteThreadSubscriptionError>> projectsGetFieldForOrg({required int projectNumber, required int fieldId, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ActivityDeleteThreadSubscriptionError>> projectsGetFieldForOrg({required int projectNumber, required int fieldId, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -168,20 +168,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// List items for an organization owned project
 ///
 /// List all items for a specific organization-owned project accessible by the authenticated user.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<List<ItemWithContent>, ActivityDeleteThreadSubscriptionError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ActivityDeleteThreadSubscriptionError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (q != null) {
   queryParameters['q'] = q;
@@ -210,7 +210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -218,13 +218,13 @@ return execute(
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Add item to organization owned project
 ///
 /// Add an issue or pull request item to the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsAddItemForOrg({required String org, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsAddItemForOrg({required String org, required int projectNumber, required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -235,20 +235,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Get an item for an organization owned project
 ///
 /// Get a specific item from an organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, ActivityDeleteThreadSubscriptionError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ItemWithContent, ActivityDeleteThreadSubscriptionError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -265,20 +265,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Update project item for organization
 ///
 /// Update a specific item in an organization-owned project.
 ///
 /// `PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, AppsCreateInstallationAccessTokenError>> projectsUpdateItemForOrg({required int projectNumber, required String org, required int itemId, required ProjectsUpdateItemForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemWithContent, AppsCreateInstallationAccessTokenError>> projectsUpdateItemForOrg({required int projectNumber, required String org, required int itemId, required ProjectsUpdateItemForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -289,20 +289,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
- } 
+}
 /// Delete project item for organization
 ///
 /// Delete a specific item from an organization-owned project.
 ///
 /// `DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<void, ActivityDeleteThreadSubscriptionError>> projectsDeleteItemForOrg({required int projectNumber, required String org, required int itemId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityDeleteThreadSubscriptionError>> projectsDeleteItemForOrg({required int projectNumber, required String org, required int itemId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -311,18 +311,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Create a view for an organization-owned project
 ///
 /// Create a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/views`
-Future<ApiResult<View, ProjectsCreateViewForOrgError>> projectsCreateViewForOrg({required String org, required int projectNumber, required ProjectsCreateViewForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<View, ProjectsCreateViewForOrgError>> projectsCreateViewForOrg({required String org, required int projectNumber, required ProjectsCreateViewForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -333,20 +333,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return View.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ProjectsCreateViewForOrgError.fromResponse,
 );
- } 
+}
 /// List items for an organization project view
 ///
 /// List items in an organization project with the saved view's filter applied.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items`
-Future<ApiResult<List<ItemWithContent>, ActivityCheckRepoIsStarredByAuthenticatedUserError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ActivityCheckRepoIsStarredByAuthenticatedUserError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -372,7 +372,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -380,13 +380,13 @@ return execute(
   },
   onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
- } 
+}
 /// Create draft item for user owned project
 ///
 /// Create draft issue item for the specified user owned project.
 ///
 /// `POST /user/{user_id}/projectsV2/{project_number}/drafts`
-Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsCreateDraftItemForAuthenticatedUser({required String userId, required int projectNumber, required ProjectsCreateDraftItemForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsCreateDraftItemForAuthenticatedUser({required String userId, required int projectNumber, required ProjectsCreateDraftItemForAuthenticatedUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -397,20 +397,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Create a view for a user-owned project
 ///
 /// Create a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
 /// `POST /users/{user_id}/projectsV2/{project_number}/views`
-Future<ApiResult<View, ProjectsCreateViewForOrgError>> projectsCreateViewForUser({required String userId, required int projectNumber, required ProjectsCreateViewForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<View, ProjectsCreateViewForOrgError>> projectsCreateViewForUser({required String userId, required int projectNumber, required ProjectsCreateViewForUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -421,20 +421,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return View.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ProjectsCreateViewForOrgError.fromResponse,
 );
- } 
+}
 /// List projects for user
 ///
 /// List all projects owned by a specific user accessible by the authenticated user.
 ///
 /// `GET /users/{username}/projectsV2`
-Future<ApiResult<List<Projects>, ActivityDeleteThreadSubscriptionError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Projects>, ActivityDeleteThreadSubscriptionError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (q != null) {
   queryParameters['q'] = q;
@@ -460,7 +460,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -468,13 +468,13 @@ return execute(
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Get project for user
 ///
 /// Get a specific user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}`
-Future<ApiResult<Projects, ActivityDeleteThreadSubscriptionError>> projectsGetForUser({required int projectNumber, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Projects, ActivityDeleteThreadSubscriptionError>> projectsGetForUser({required int projectNumber, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -483,20 +483,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Projects.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// List project fields for user
 ///
 /// List all fields for a specific user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/fields`
-Future<ApiResult<List<Field>, ActivityDeleteThreadSubscriptionError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Field>, ActivityDeleteThreadSubscriptionError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -519,7 +519,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -527,13 +527,13 @@ return execute(
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Add field to user owned project
 ///
 /// Add a field to a specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/fields`
-Future<ApiResult<Field, ActivityListNotificationsForAuthenticatedUserError>> projectsAddFieldForUser({required String username, required int projectNumber, required ProjectsAddFieldForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ActivityListNotificationsForAuthenticatedUserError>> projectsAddFieldForUser({required String username, required int projectNumber, required ProjectsAddFieldForUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -544,20 +544,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
- } 
+}
 /// Get project field for user
 ///
 /// Get a specific field for a user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/fields/{field_id}`
-Future<ApiResult<Field, ActivityDeleteThreadSubscriptionError>> projectsGetFieldForUser({required int projectNumber, required int fieldId, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ActivityDeleteThreadSubscriptionError>> projectsGetFieldForUser({required int projectNumber, required int fieldId, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -566,20 +566,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// List items for a user owned project
 ///
 /// List all items for a specific user-owned project accessible by the authenticated user.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<List<ItemWithContent>, ActivityDeleteThreadSubscriptionError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ActivityDeleteThreadSubscriptionError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (before != null) {
   queryParameters['before'] = before;
@@ -608,7 +608,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -616,13 +616,13 @@ return execute(
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Add item to user owned project
 ///
 /// Add an issue or pull request item to the specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsAddItemForUser({required String username, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ActivityDeleteThreadSubscriptionError>> projectsAddItemForUser({required String username, required int projectNumber, required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -633,20 +633,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Get an item for a user owned project
 ///
 /// Get a specific item from a user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, ActivityDeleteThreadSubscriptionError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ItemWithContent, ActivityDeleteThreadSubscriptionError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -663,20 +663,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// Update project item for user
 ///
 /// Update a specific item in a user-owned project.
 ///
 /// `PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, AppsCreateInstallationAccessTokenError>> projectsUpdateItemForUser({required int projectNumber, required String username, required int itemId, required ProjectsUpdateItemForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemWithContent, AppsCreateInstallationAccessTokenError>> projectsUpdateItemForUser({required int projectNumber, required String username, required int itemId, required ProjectsUpdateItemForUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -687,20 +687,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
- } 
+}
 /// Delete project item for user
 ///
 /// Delete a specific item from a user-owned project.
 ///
 /// `DELETE /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<void, ActivityDeleteThreadSubscriptionError>> projectsDeleteItemForUser({required int projectNumber, required String username, required int itemId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityDeleteThreadSubscriptionError>> projectsDeleteItemForUser({required int projectNumber, required String username, required int itemId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -709,18 +709,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
- } 
+}
 /// List items for a user project view
 ///
 /// List items in a user project with the saved view's filter applied.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items`
-Future<ApiResult<List<ItemWithContent>, ActivityCheckRepoIsStarredByAuthenticatedUserError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ActivityCheckRepoIsStarredByAuthenticatedUserError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -746,7 +746,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -754,5 +754,5 @@ return execute(
   },
   onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
- } 
- }
+}
+}

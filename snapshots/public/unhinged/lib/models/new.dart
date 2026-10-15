@@ -3,6 +3,7 @@
 
 import 'dart:convert';
 import 'dart:typed_data';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_unhinged/models/n3_incident.dart';
 import 'package:pub_unhinged/models/new/new0.dart';
@@ -224,11 +225,11 @@ final class NewType$Unknown extends NewType {
 @immutable
 final class New {
   const New({
+    required this.$false,
     required this.none,
+    required this.$null,
     required this.$0,
     required this.$empty,
-    this.$false = true,
-    this.$null = NewNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,
@@ -238,7 +239,7 @@ final class New {
     this.xExtensionLookalike,
     this.$class,
     this.$import,
-    this.$return = false,
+    this.$return,
     this.$void,
     this.package,
   });
@@ -263,7 +264,7 @@ final class New {
       $import: (json['import'] as List<dynamic>?)
           ?.map((e) => $3Incident.fromJson(e as Map<String, dynamic>))
           .toList(),
-      $return: json.containsKey('return') ? json['return'] as bool : false,
+      $return: json['return'] as bool?,
       $void: json['void'] != null ? base64Decode(json['void'] as String) : null,
       package: json['package'] as String?,
     );
@@ -299,11 +300,14 @@ final class New {
 
   final List<$3Incident>? $import;
 
-  final bool $return;
+  final bool? $return;
 
   final Uint8List? $void;
 
   final String? package;
+
+  /// The value of `$return`, or its schema default when absent.
+  bool get $returnOrDefault => $return ?? false;
 
   Map<String, dynamic> toJson() {
     return {
@@ -321,8 +325,12 @@ final class New {
       'x-extension-lookalike': ?xExtensionLookalike,
       'class': ?$class,
       if ($import != null) 'import': $import?.map((e) => e.toJson()).toList(),
-      'return': $return,
-      if ($void != null) 'void': base64Encode($void!),
+      'return': ?$return,
+      if ($void != null)
+        'void': switch ($void) {
+          final bytes? => base64Encode(bytes),
+          _ => null,
+        },
       'package': ?package,
     };
   }
@@ -342,9 +350,8 @@ final class New {
     final errors = <String>[];
     final package$ = package;
     if (package$ != null) {
-      if (!RegExp(
-        r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
-      ).hasMatch(package$)) {
+      if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$')
+          .hasMatch(package$)) {
         errors.add(
           r'package: must match pattern ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
         );
@@ -368,7 +375,7 @@ final class New {
     String? Function()? xExtensionLookalike,
     String? Function()? $class,
     List<$3Incident>? Function()? $import,
-    bool Function()? $return,
+    bool? Function()? $return,
     Uint8List? Function()? $void,
     String? Function()? package,
   }) {
@@ -416,7 +423,7 @@ final class New {
           $class == other.$class &&
           listEquals($import, other.$import) &&
           $return == other.$return &&
-          $void == other.$void &&
+          listEquals($void, other.$void) &&
           package == other.package;
 
   @override
@@ -436,7 +443,7 @@ final class New {
     $class,
     Object.hashAll($import ?? const []),
     $return,
-    $void,
+    Object.hashAll($void ?? const []),
     package,
   );
 

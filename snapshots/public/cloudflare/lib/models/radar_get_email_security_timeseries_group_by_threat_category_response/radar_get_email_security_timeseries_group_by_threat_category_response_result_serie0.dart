@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0({required this.brandImpersonation, required this.credentialHarvester, required this.identityDeception, required this.link, });
 
-factory RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(
+factory RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(
   brandImpersonation: (json['BrandImpersonation'] as List<dynamic>).map((e) => e as String).toList(),
   credentialHarvester: (json['CredentialHarvester'] as List<dynamic>).map((e) => e as String).toList(),
   identityDeception: (json['IdentityDeception'] as List<dynamic>).map((e) => e as String).toList(),
   link: (json['Link'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> brandImpersonation;
 
@@ -18,22 +18,22 @@ final List<String> identityDeception;
 
 final List<String> link;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'BrandImpersonation': brandImpersonation,
   'CredentialHarvester': credentialHarvester,
   'IdentityDeception': identityDeception,
   'Link': link,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('BrandImpersonation') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('BrandImpersonation') &&
       json.containsKey('CredentialHarvester') &&
       json.containsKey('IdentityDeception') &&
-      json.containsKey('Link'); } 
-RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 copyWith({List<String>? brandImpersonation, List<String>? credentialHarvester, List<String>? identityDeception, List<String>? link, }) { return RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(
+      json.containsKey('Link');}
+RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 copyWith({List<String>? brandImpersonation, List<String>? credentialHarvester, List<String>? identityDeception, List<String>? link, }) {return RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(
   brandImpersonation: brandImpersonation ?? this.brandImpersonation,
   credentialHarvester: credentialHarvester ?? this.credentialHarvester,
   identityDeception: identityDeception ?? this.identityDeception,
   link: link ?? this.link,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 &&
           listEquals(brandImpersonation, other.brandImpersonation) &&
@@ -45,4 +45,4 @@ RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 copyWit
 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(brandImpersonation: $brandImpersonation, credentialHarvester: $credentialHarvester, identityDeception: $identityDeception, link: $link)';
 
- }
+}

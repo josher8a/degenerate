@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > User)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_content.dart';import 'package:pub_cloudflare/models/messages/user_content_variant2.dart';sealed class UserRole {const UserRole();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_content.dart';sealed class UserRole {const UserRole();
 
-factory UserRole.fromJson(String json) { return switch (json) {
+factory UserRole.fromJson(String json) {return switch (json) {
   'user' => user,
   _ => UserRole$Unknown(json),
-}; }
+};}
 
 static const UserRole user = UserRole$user._();
 
 static const List<UserRole> values = [user];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'user' => 'user',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UserRole$Unknown; } 
+bool get isUnknown {return this is UserRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() user, required W Function(String value) $unknown, }) {return switch (this) {
       UserRole$user() => user(),
       UserRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function(String value)? $unknown, }) {return switch (this) {
       UserRole$user() => user != null ? user() : orElse(value),
       UserRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UserRole($value)';
 
- }
+}
 @immutable final class UserRole$user extends UserRole {const UserRole$user._();
 
 @override String get value => 'user';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class UserRole$Unknown extends UserRole {const UserRole$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class MessagesUser {const MessagesUser({required this.content, required this.role, this.name, });
 
-factory MessagesUser.fromJson(Map<String, dynamic> json) { return MessagesUser(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => UserContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+factory MessagesUser.fromJson(Map<String, dynamic> json) {return MessagesUser(
+  content: UserContent.fromJson(json['content']),
   name: json['name'] as String?,
   role: UserRole.fromJson(json['role'] as String),
-); }
+);}
 
 final UserContent content;
 
@@ -67,18 +67,18 @@ final String? name;
 
 final UserRole role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'name': ?name,
   'role': role.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('role') && json['role'] == 'user'; } 
-MessagesUser copyWith({UserContent? content, String? Function()? name, UserRole? role, }) { return MessagesUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('role') && json['role'] == 'user';}
+MessagesUser copyWith({UserContent? content, String? Function()? name, UserRole? role, }) {return MessagesUser(
   content: content ?? this.content,
   name: name != null ? name() : this.name,
   role: role ?? this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessagesUser &&
           content == other.content &&
@@ -89,4 +89,4 @@ MessagesUser copyWith({UserContent? content, String? Function()? name, UserRole?
 
 @override String toString() => 'MessagesUser(content: $content, name: $name, role: $role)';
 
- }
+}

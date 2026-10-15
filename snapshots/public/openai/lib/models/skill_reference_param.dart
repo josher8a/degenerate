@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a skill created with the /v1/skills endpoint.
 sealed class SkillReferenceParamType {const SkillReferenceParamType();
 
-factory SkillReferenceParamType.fromJson(String json) { return switch (json) {
+factory SkillReferenceParamType.fromJson(String json) {return switch (json) {
   'skill_reference' => skillReference,
   _ => SkillReferenceParamType$Unknown(json),
-}; }
+};}
 
 static const SkillReferenceParamType skillReference = SkillReferenceParamType$skillReference._();
 
 static const List<SkillReferenceParamType> values = [skillReference];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'skill_reference' => 'skillReference',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SkillReferenceParamType$Unknown; } 
+bool get isUnknown {return this is SkillReferenceParamType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() skillReference, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() skillReference, required W Function(String value) $unknown, }) {return switch (this) {
       SkillReferenceParamType$skillReference() => skillReference(),
       SkillReferenceParamType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillReference, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillReference, W Function(String value)? $unknown, }) {return switch (this) {
       SkillReferenceParamType$skillReference() => skillReference != null ? skillReference() : orElse(value),
       SkillReferenceParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SkillReferenceParamType($value)';
 
- }
+}
 @immutable final class SkillReferenceParamType$skillReference extends SkillReferenceParamType {const SkillReferenceParamType$skillReference._();
 
 @override String get value => 'skill_reference';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillRef
 
 @override int get hashCode => 'skill_reference'.hashCode;
 
- }
+}
 @immutable final class SkillReferenceParamType$Unknown extends SkillReferenceParamType {const SkillReferenceParamType$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillRef
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.skillId, this.type = SkillReferenceParamType.skillReference, this.version, });
+}
+@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.type, required this.skillId, this.version, });
 
-factory SkillReferenceParam.fromJson(Map<String, dynamic> json) { return SkillReferenceParam(
+factory SkillReferenceParam.fromJson(Map<String, dynamic> json) {return SkillReferenceParam(
   type: SkillReferenceParamType.fromJson(json['type'] as String),
   skillId: json['skill_id'] as String,
   version: json['version'] as String?,
-); }
+);}
 
 /// References a skill created with the /v1/skills endpoint.
 final SkillReferenceParamType type;
@@ -71,23 +71,23 @@ final String skillId;
 /// Optional skill version. Use a positive integer or 'latest'. Omit for default.
 final String? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'skill_id': skillId,
   'version': ?version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('skill_id') && json['skill_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('skill_id') && json['skill_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (skillId.isEmpty) { errors.add('skillId: length must be >= 1'); }
 if (skillId.runes.length > 64) { errors.add('skillId: length must be <= 64'); }
-return errors; } 
-SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, String? Function()? version, }) { return SkillReferenceParam(
+return errors;}
+SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, String? Function()? version, }) {return SkillReferenceParam(
   type: type ?? this.type,
   skillId: skillId ?? this.skillId,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SkillReferenceParam &&
           type == other.type &&
@@ -98,4 +98,4 @@ SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, St
 
 @override String toString() => 'SkillReferenceParam(type: $type, skillId: $skillId, version: $version)';
 
- }
+}

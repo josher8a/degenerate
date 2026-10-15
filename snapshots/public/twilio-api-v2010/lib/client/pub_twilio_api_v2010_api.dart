@@ -162,5 +162,5 @@ late final Api20100401UserDefinedMessageApi api20100401UserDefinedMessage = Api2
 
 late final Api20100401UserDefinedMessageSubscriptionApi api20100401UserDefinedMessageSubscription = Api20100401UserDefinedMessageSubscriptionApi(_config);
 
-PubTwilioApi withAccountSidAuthToken({required String username, required String password, }) { return PubTwilioApi(PubTwilioSecurity.applyAccountSidAuthToken(_config, username: username, password: password)); } 
- }
+PubTwilioApi withAccountSidAuthToken({required String username, required String password, }) {return PubTwilioApi(PubTwilioSecurity.applyAccountSidAuthToken(_config, username: username, password: password));}
+}

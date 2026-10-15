@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetIssuingTransactionsType {const GetIssuingTransactionsType();
 
-factory GetIssuingTransactionsType.fromJson(String json) { return switch (json) {
+factory GetIssuingTransactionsType.fromJson(String json) {return switch (json) {
   'capture' => capture,
   'refund' => refund,
   _ => GetIssuingTransactionsType$Unknown(json),
-}; }
+};}
 
 static const GetIssuingTransactionsType capture = GetIssuingTransactionsType$capture._();
 
@@ -16,30 +16,30 @@ static const GetIssuingTransactionsType refund = GetIssuingTransactionsType$refu
 static const List<GetIssuingTransactionsType> values = [capture, refund];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'capture' => 'capture',
   'refund' => 'refund',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetIssuingTransactionsType$Unknown; } 
+bool get isUnknown {return this is GetIssuingTransactionsType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() capture, required W Function() refund, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() capture, required W Function() refund, required W Function(String value) $unknown, }) {return switch (this) {
       GetIssuingTransactionsType$capture() => capture(),
       GetIssuingTransactionsType$refund() => refund(),
       GetIssuingTransactionsType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? capture, W Function()? refund, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? capture, W Function()? refund, W Function(String value)? $unknown, }) {return switch (this) {
       GetIssuingTransactionsType$capture() => capture != null ? capture() : orElse(value),
       GetIssuingTransactionsType$refund() => refund != null ? refund() : orElse(value),
       GetIssuingTransactionsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetIssuingTransactionsType($value)';
 
- }
+}
 @immutable final class GetIssuingTransactionsType$capture extends GetIssuingTransactionsType {const GetIssuingTransactionsType$capture._();
 
 @override String get value => 'capture';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? capture,
 
 @override int get hashCode => 'capture'.hashCode;
 
- }
+}
 @immutable final class GetIssuingTransactionsType$refund extends GetIssuingTransactionsType {const GetIssuingTransactionsType$refund._();
 
 @override String get value => 'refund';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? capture,
 
 @override int get hashCode => 'refund'.hashCode;
 
- }
+}
 @immutable final class GetIssuingTransactionsType$Unknown extends GetIssuingTransactionsType {const GetIssuingTransactionsType$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? capture,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -14,7 +14,7 @@ final class PpcStripeApi with ApiExecutor {const PpcStripeApi(this.apiConfig);
 /// Gets the stripe config for a crawler.
 ///
 /// `GET /accounts/{account_id}/pay-per-crawl/crawler/stripe`
-Future<ApiResult<PayPerCrawlStripeConnection?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCrawlerGetStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlStripeConnection?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCrawlerGetStripeConfig({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Creates the stripe config for a crawler
 ///
 /// Creates the stripe config for a crawler.
 ///
 /// `POST /accounts/{account_id}/pay-per-crawl/crawler/stripe`
-Future<ApiResult<PayPerCrawlStripeConnectResp?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCrawlerCreateStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlStripeConnectResp?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCrawlerCreateStripeConfig({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Deletes the stripe config for a crawler
 ///
 /// Deletes the stripe config for a crawler.
 ///
 /// `DELETE /accounts/{account_id}/pay-per-crawl/crawler/stripe`
-Future<ApiResult<NoResultResponse, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCrawlerDeleteStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NoResultResponse, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlCrawlerDeleteStripeConfig({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -69,20 +69,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Gets the stripe config for a publisher
 ///
 /// Gets the stripe config for a publisher.
 ///
 /// `GET /accounts/{account_id}/pay-per-crawl/publisher/stripe`
-Future<ApiResult<PayPerCrawlStripeConnection?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPublisherGetStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlStripeConnection?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPublisherGetStripeConfig({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,7 +91,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -99,13 +99,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Creates the stripe config for a publisher
 ///
 /// Creates the stripe config for a publisher.
 ///
 /// `POST /accounts/{account_id}/pay-per-crawl/publisher/stripe`
-Future<ApiResult<PayPerCrawlStripeConnectResp?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPublisherCreateStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PayPerCrawlStripeConnectResp?, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPublisherCreateStripeConfig({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -114,7 +114,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -122,13 +122,13 @@ return execute(
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
+}
 /// Deletes the stripe config for a publisher
 ///
 /// Deletes the stripe config for a publisher.
 ///
 /// `DELETE /accounts/{account_id}/pay-per-crawl/publisher/stripe`
-Future<ApiResult<NoResultResponse, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPublisherDeleteStripeConfig({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NoResultResponse, PayPerCrawlCrawlerCreateStripeConfigError>> payPerCrawlPublisherDeleteStripeConfig({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -137,12 +137,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
- } 
- }
+}
+}

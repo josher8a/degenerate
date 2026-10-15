@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleset (inline: Links)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links_html.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links_self.dart';@immutable final class RepositoryRulesetLinks {const RepositoryRulesetLinks({this.self, this.html, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links_html.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links_self.dart';@immutable final class RepositoryRulesetLinks {const RepositoryRulesetLinks({this.self, this.html = const Omittable.absent(), });
 
-factory RepositoryRulesetLinks.fromJson(Map<String, dynamic> json) { return RepositoryRulesetLinks(
+factory RepositoryRulesetLinks.fromJson(Map<String, dynamic> json) {return RepositoryRulesetLinks(
   self: json['self'] != null ? RepositoryRulesetLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null,
-  html: json['html'] != null ? RepositoryRulesetLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null,
-); }
+  html: json.containsKey('html') ? Omittable(json['html'] != null ? RepositoryRulesetLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 final RepositoryRulesetLinksSelf? self;
 
-final RepositoryRulesetLinksHtml? html;
+final Omittable<RepositoryRulesetLinksHtml?> html;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (self != null) 'self': self?.toJson(),
-  if (html != null) 'html': html?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'self', 'html'}.contains(key)); } 
-RepositoryRulesetLinks copyWith({RepositoryRulesetLinksSelf? Function()? self, RepositoryRulesetLinksHtml? Function()? html, }) { return RepositoryRulesetLinks(
+  if (html.isPresent) 'html': html.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'self', 'html'}.contains(key));}
+RepositoryRulesetLinks copyWith({RepositoryRulesetLinksSelf? Function()? self, Omittable<RepositoryRulesetLinksHtml?>? html, }) {return RepositoryRulesetLinks(
   self: self != null ? self() : this.self,
-  html: html != null ? html() : this.html,
-); } 
+  html: html ?? this.html,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetLinks &&
           self == other.self &&
@@ -30,4 +30,4 @@ RepositoryRulesetLinks copyWith({RepositoryRulesetLinksSelf? Function()? self, R
 
 @override String toString() => 'RepositoryRulesetLinks(self: $self, html: $html)';
 
- }
+}

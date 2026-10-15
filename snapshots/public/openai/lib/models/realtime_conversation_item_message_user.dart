@@ -1,40 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItemMessageUser
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_user/realtime_conversation_item_message_user_content.dart';/// The role of the message sender. Always `user`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_user/realtime_conversation_item_message_user_content.dart';/// The role of the message sender. Always `user`.
 sealed class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole();
 
-factory RealtimeConversationItemMessageUserRole.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserRole.fromJson(String json) {return switch (json) {
   'user' => user,
   _ => RealtimeConversationItemMessageUserRole$Unknown(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserRole user = RealtimeConversationItemMessageUserRole$user._();
 
 static const List<RealtimeConversationItemMessageUserRole> values = [user];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'user' => 'user',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeConversationItemMessageUserRole$Unknown; } 
+bool get isUnknown {return this is RealtimeConversationItemMessageUserRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() user, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeConversationItemMessageUserRole$user() => user(),
       RealtimeConversationItemMessageUserRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeConversationItemMessageUserRole$user() => user != null ? user() : orElse(value),
       RealtimeConversationItemMessageUserRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeConversationItemMessageUserRole($value)';
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserRole$user extends RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole$user._();
 
 @override String get value => 'user';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserRole$Unknown extends RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A user message item in a Realtime conversation.
 @immutable final class RealtimeConversationItemMessageUser {const RealtimeConversationItemMessageUser({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
-factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUser(
+factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemMessageUser(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageUserRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageUserContent.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of the item. This may be provided by the client or generated by the server.
 final String? id;
@@ -76,7 +76,7 @@ final RealtimeConversationItemFunctionCallObject? object;
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 /// The role of the message sender. Always `user`.
 final RealtimeConversationItemMessageUserRole role;
@@ -84,25 +84,25 @@ final RealtimeConversationItemMessageUserRole role;
 /// The content of the message.
 final List<RealtimeConversationItemMessageUserContent> content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   'type': type,
   if (status != null) 'status': status?.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
-      json.containsKey('content'); } 
-RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputStatus? Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
+      json.containsKey('content');}
+RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) {return RealtimeConversationItemMessageUser(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
   status: status != null ? status() : this.status,
   role: role ?? this.role,
   content: content ?? this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageUser &&
           id == other.id &&
@@ -116,4 +116,4 @@ RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeCo
 
 @override String toString() => 'RealtimeConversationItemMessageUser(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)';
 
- }
+}

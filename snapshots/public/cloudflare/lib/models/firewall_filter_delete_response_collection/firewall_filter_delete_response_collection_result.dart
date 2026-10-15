@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filters_components_schemas_id.dart';@immutable final class FirewallFilterDeleteResponseCollectionResult {const FirewallFilterDeleteResponseCollectionResult({this.id});
 
-factory FirewallFilterDeleteResponseCollectionResult.fromJson(Map<String, dynamic> json) { return FirewallFilterDeleteResponseCollectionResult(
+factory FirewallFilterDeleteResponseCollectionResult.fromJson(Map<String, dynamic> json) {return FirewallFilterDeleteResponseCollectionResult(
   id: json['id'] != null ? FirewallFiltersComponentsSchemasId.fromJson(json['id'] as String) : null,
-); }
+);}
 
 final FirewallFiltersComponentsSchemasId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-FirewallFilterDeleteResponseCollectionResult copyWith({FirewallFiltersComponentsSchemasId? Function()? id}) { return FirewallFilterDeleteResponseCollectionResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+FirewallFilterDeleteResponseCollectionResult copyWith({FirewallFiltersComponentsSchemasId? Function()? id}) {return FirewallFilterDeleteResponseCollectionResult(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFilterDeleteResponseCollectionResult &&
           id == other.id;
@@ -24,4 +24,4 @@ FirewallFilterDeleteResponseCollectionResult copyWith({FirewallFiltersComponents
 
 @override String toString() => 'FirewallFilterDeleteResponseCollectionResult(id: $id)';
 
- }
+}

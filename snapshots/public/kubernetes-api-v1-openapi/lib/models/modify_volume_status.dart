@@ -2,12 +2,12 @@
 // Source: #/components/schemas/ModifyVolumeStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ModifyVolumeStatus represents the status object of ControllerModifyVolume operation
-@immutable final class ModifyVolumeStatus {const ModifyVolumeStatus({this.status = '', this.targetVolumeAttributesClassName, });
+@immutable final class ModifyVolumeStatus {const ModifyVolumeStatus({required this.status, this.targetVolumeAttributesClassName, });
 
-factory ModifyVolumeStatus.fromJson(Map<String, dynamic> json) { return ModifyVolumeStatus(
+factory ModifyVolumeStatus.fromJson(Map<String, dynamic> json) {return ModifyVolumeStatus(
   status: json['status'] as String,
   targetVolumeAttributesClassName: json['targetVolumeAttributesClassName'] as String?,
-); }
+);}
 
 /// status is the status of the ControllerModifyVolume operation. It can be in any of following states:
 ///  - Pending
@@ -24,15 +24,15 @@ final String status;
 /// targetVolumeAttributesClassName is the name of the VolumeAttributesClass the PVC currently being reconciled
 final String? targetVolumeAttributesClassName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status,
   'targetVolumeAttributesClassName': ?targetVolumeAttributesClassName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
-ModifyVolumeStatus copyWith({String? status, String? Function()? targetVolumeAttributesClassName, }) { return ModifyVolumeStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String;}
+ModifyVolumeStatus copyWith({String? status, String? Function()? targetVolumeAttributesClassName, }) {return ModifyVolumeStatus(
   status: status ?? this.status,
   targetVolumeAttributesClassName: targetVolumeAttributesClassName != null ? targetVolumeAttributesClassName() : this.targetVolumeAttributesClassName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ModifyVolumeStatus &&
           status == other.status &&
@@ -42,4 +42,4 @@ ModifyVolumeStatus copyWith({String? status, String? Function()? targetVolumeAtt
 
 @override String toString() => 'ModifyVolumeStatus(status: $status, targetVolumeAttributesClassName: $targetVolumeAttributesClassName)';
 
- }
+}

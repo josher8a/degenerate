@@ -14,7 +14,7 @@ final class AccessKeyConfigurationApi with ApiExecutor {const AccessKeyConfigura
 /// Gets the Access key rotation settings for an account.
 ///
 /// `GET /accounts/{account_id}/access/keys`
-Future<ApiResult<AccessKeyConfig?, AccessApplicationsAddAnApplicationError>> accessKeyConfigurationGetTheAccessKeyConfiguration({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessKeyConfig?, AccessApplicationsAddAnApplicationError>> accessKeyConfigurationGetTheAccessKeyConfiguration({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update the Access key configuration
 ///
 /// Updates the Access key rotation settings for an account.
 ///
 /// `PUT /accounts/{account_id}/access/keys`
-Future<ApiResult<AccessKeyConfig?, AccessApplicationsAddAnApplicationError>> accessKeyConfigurationUpdateTheAccessKeyConfiguration({required AccessIdentifier accountId, required AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessKeyConfig?, AccessApplicationsAddAnApplicationError>> accessKeyConfigurationUpdateTheAccessKeyConfiguration({required AccessIdentifier accountId, required AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,13 +56,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Rotate Access keys
 ///
 /// Perfoms a key rotation for an account.
 ///
 /// `POST /accounts/{account_id}/access/keys/rotate`
-Future<ApiResult<AccessKeyConfig?, AccessApplicationsAddAnApplicationError>> accessKeyConfigurationRotateAccessKeys({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessKeyConfig?, AccessApplicationsAddAnApplicationError>> accessKeyConfigurationRotateAccessKeys({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,5 +79,5 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

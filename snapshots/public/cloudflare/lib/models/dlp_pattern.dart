@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpValidation {const DlpValidation();
 
-factory DlpValidation.fromJson(String json) { return switch (json) {
+factory DlpValidation.fromJson(String json) {return switch (json) {
   'luhn' => luhn,
   _ => DlpValidation$Unknown(json),
-}; }
+};}
 
 static const DlpValidation luhn = DlpValidation$luhn._();
 
 static const List<DlpValidation> values = [luhn];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'luhn' => 'luhn',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DlpValidation$Unknown; } 
+bool get isUnknown {return this is DlpValidation$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() luhn, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() luhn, required W Function(String value) $unknown, }) {return switch (this) {
       DlpValidation$luhn() => luhn(),
       DlpValidation$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? luhn, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? luhn, W Function(String value)? $unknown, }) {return switch (this) {
       DlpValidation$luhn() => luhn != null ? luhn() : orElse(value),
       DlpValidation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DlpValidation($value)';
 
- }
+}
 @immutable final class DlpValidation$luhn extends DlpValidation {const DlpValidation$luhn._();
 
 @override String get value => 'luhn';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? luhn, W 
 
 @override int get hashCode => 'luhn'.hashCode;
 
- }
+}
 @immutable final class DlpValidation$Unknown extends DlpValidation {const DlpValidation$Unknown(this.value);
 
 @override final String value;
@@ -52,27 +52,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? luhn, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DlpPattern {const DlpPattern({required this.regex, this.validation, });
 
-factory DlpPattern.fromJson(Map<String, dynamic> json) { return DlpPattern(
+factory DlpPattern.fromJson(Map<String, dynamic> json) {return DlpPattern(
   regex: json['regex'] as String,
   validation: json['validation'] != null ? DlpValidation.fromJson(json['validation'] as String) : null,
-); }
+);}
 
 final String regex;
 
 final DlpValidation? validation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'regex': regex,
   if (validation != null) 'validation': validation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('regex') && json['regex'] is String; } 
-DlpPattern copyWith({String? regex, DlpValidation? Function()? validation, }) { return DlpPattern(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('regex') && json['regex'] is String;}
+DlpPattern copyWith({String? regex, DlpValidation? Function()? validation, }) {return DlpPattern(
   regex: regex ?? this.regex,
   validation: validation != null ? validation() : this.validation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPattern &&
           regex == other.regex &&
@@ -82,4 +82,4 @@ DlpPattern copyWith({String? regex, DlpValidation? Function()? validation, }) { 
 
 @override String toString() => 'DlpPattern(regex: $regex, validation: $validation)';
 
- }
+}

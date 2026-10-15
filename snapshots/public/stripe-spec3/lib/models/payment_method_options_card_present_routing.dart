@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Requested routing priority
 sealed class PaymentMethodOptionsCardPresentRoutingRequestedPriority {const PaymentMethodOptionsCardPresentRoutingRequestedPriority();
 
-factory PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(String json) {return switch (json) {
   'domestic' => domestic,
   'international' => international,
   _ => PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodOptionsCardPresentRoutingRequestedPriority domestic = PaymentMethodOptionsCardPresentRoutingRequestedPriority$domestic._();
 
@@ -17,30 +17,30 @@ static const PaymentMethodOptionsCardPresentRoutingRequestedPriority internation
 static const List<PaymentMethodOptionsCardPresentRoutingRequestedPriority> values = [domestic, international];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'domestic' => 'domestic',
   'international' => 'international',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown; } 
+bool get isUnknown {return this is PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() domestic, required W Function() international, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() domestic, required W Function() international, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodOptionsCardPresentRoutingRequestedPriority$domestic() => domestic(),
       PaymentMethodOptionsCardPresentRoutingRequestedPriority$international() => international(),
       PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? domestic, W Function()? international, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domestic, W Function()? international, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodOptionsCardPresentRoutingRequestedPriority$domestic() => domestic != null ? domestic() : orElse(value),
       PaymentMethodOptionsCardPresentRoutingRequestedPriority$international() => international != null ? international() : orElse(value),
       PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodOptionsCardPresentRoutingRequestedPriority($value)';
 
- }
+}
 @immutable final class PaymentMethodOptionsCardPresentRoutingRequestedPriority$domestic extends PaymentMethodOptionsCardPresentRoutingRequestedPriority {const PaymentMethodOptionsCardPresentRoutingRequestedPriority$domestic._();
 
 @override String get value => 'domestic';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domestic
 
 @override int get hashCode => 'domestic'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsCardPresentRoutingRequestedPriority$international extends PaymentMethodOptionsCardPresentRoutingRequestedPriority {const PaymentMethodOptionsCardPresentRoutingRequestedPriority$international._();
 
 @override String get value => 'international';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domestic
 
 @override int get hashCode => 'international'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown extends PaymentMethodOptionsCardPresentRoutingRequestedPriority {const PaymentMethodOptionsCardPresentRoutingRequestedPriority$Unknown(this.value);
 
 @override final String value;
@@ -68,24 +68,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domestic
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class PaymentMethodOptionsCardPresentRouting {const PaymentMethodOptionsCardPresentRouting({this.requestedPriority});
+@immutable final class PaymentMethodOptionsCardPresentRouting {const PaymentMethodOptionsCardPresentRouting({this.requestedPriority = const Omittable.absent()});
 
-factory PaymentMethodOptionsCardPresentRouting.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardPresentRouting(
-  requestedPriority: json['requested_priority'] != null ? PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null,
-); }
+factory PaymentMethodOptionsCardPresentRouting.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsCardPresentRouting(
+  requestedPriority: json.containsKey('requested_priority') ? Omittable(json['requested_priority'] != null ? PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null) : const Omittable.absent(),
+);}
 
 /// Requested routing priority
-final PaymentMethodOptionsCardPresentRoutingRequestedPriority? requestedPriority;
+final Omittable<PaymentMethodOptionsCardPresentRoutingRequestedPriority?> requestedPriority;
 
-Map<String, dynamic> toJson() { return {
-  if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
-PaymentMethodOptionsCardPresentRouting copyWith({PaymentMethodOptionsCardPresentRoutingRequestedPriority? Function()? requestedPriority}) { return PaymentMethodOptionsCardPresentRouting(
-  requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (requestedPriority.isPresent) 'requested_priority': requestedPriority.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested_priority'}.contains(key));}
+PaymentMethodOptionsCardPresentRouting copyWith({Omittable<PaymentMethodOptionsCardPresentRoutingRequestedPriority?>? requestedPriority}) {return PaymentMethodOptionsCardPresentRouting(
+  requestedPriority: requestedPriority ?? this.requestedPriority,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsCardPresentRouting &&
           requestedPriority == other.requestedPriority;
@@ -94,4 +94,4 @@ PaymentMethodOptionsCardPresentRouting copyWith({PaymentMethodOptionsCardPresent
 
 @override String toString() => 'PaymentMethodOptionsCardPresentRouting(requestedPriority: $requestedPriority)';
 
- }
+}

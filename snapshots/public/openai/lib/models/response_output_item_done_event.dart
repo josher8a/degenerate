@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_item.dart';/// Emitted when an output item is marked done.
 @immutable final class ResponseOutputItemDoneEvent {const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
-factory ResponseOutputItemDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemDoneEvent(
+factory ResponseOutputItemDoneEvent.fromJson(Map<String, dynamic> json) {return ResponseOutputItemDoneEvent(
   type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   item: OutputItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the event. Always `response.output_item.done`.
 /// 
@@ -27,22 +27,22 @@ final int sequenceNumber;
 /// 
 final OutputItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'output_index': outputIndex,
   'sequence_number': sequenceNumber,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('item'); } 
-ResponseOutputItemDoneEvent copyWith({String? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseOutputItemDoneEvent(
+      json.containsKey('item');}
+ResponseOutputItemDoneEvent copyWith({String? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) {return ResponseOutputItemDoneEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   item: item ?? this.item,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseOutputItemDoneEvent &&
           type == other.type &&
@@ -54,4 +54,4 @@ ResponseOutputItemDoneEvent copyWith({String? type, int? outputIndex, int? seque
 
 @override String toString() => 'ResponseOutputItemDoneEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, item: $item)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.completed`.
 sealed class RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType();
 
-factory RealtimeBetaServerEventResponseMcpCallCompletedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseMcpCallCompletedType.fromJson(String json) {return switch (json) {
   'response.mcp_call.completed' => responseMcpCallCompleted,
   _ => RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseMcpCallCompletedType responseMcpCallCompleted = RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted._();
 
 static const List<RealtimeBetaServerEventResponseMcpCallCompletedType> values = [responseMcpCallCompleted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.mcp_call.completed' => 'responseMcpCallCompleted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseMcpCallCompleted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseMcpCallCompleted, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted() => responseMcpCallCompleted(),
       RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseMcpCallCompleted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseMcpCallCompleted, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted() => responseMcpCallCompleted != null ? responseMcpCallCompleted() : orElse(value),
       RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventResponseMcpCallCompletedType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted extends RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted._();
 
 @override String get value => 'response.mcp_call.completed';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.mcp_call.completed'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown extends RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when an MCP tool call has completed successfully.
 @immutable final class RealtimeBetaServerEventResponseMcpCallCompleted {const RealtimeBetaServerEventResponseMcpCallCompleted({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
 
-factory RealtimeBetaServerEventResponseMcpCallCompleted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseMcpCallCompleted(
+factory RealtimeBetaServerEventResponseMcpCallCompleted.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseMcpCallCompleted(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseMcpCallCompletedType.fromJson(json['type'] as String),
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -76,22 +76,22 @@ final int outputIndex;
 /// The ID of the MCP tool call item.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'output_index': outputIndex,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventResponseMcpCallCompleted copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallCompletedType? type, int? outputIndex, String? itemId, }) { return RealtimeBetaServerEventResponseMcpCallCompleted(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeBetaServerEventResponseMcpCallCompleted copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallCompletedType? type, int? outputIndex, String? itemId, }) {return RealtimeBetaServerEventResponseMcpCallCompleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallCompleted &&
           eventId == other.eventId &&
@@ -103,4 +103,4 @@ RealtimeBetaServerEventResponseMcpCallCompleted copyWith({String? eventId, Realt
 
 @override String toString() => 'RealtimeBetaServerEventResponseMcpCallCompleted(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)';
 
- }
+}

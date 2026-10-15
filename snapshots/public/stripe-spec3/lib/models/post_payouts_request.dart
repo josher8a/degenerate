@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payouts_request/source_type.dart';/// The method used to send this payout, which is `standard` or `instant`. We support `instant` for payouts to debit cards and bank accounts in certain countries. Learn more about [bank support for Instant Payouts](https://stripe.com/docs/payouts/instant-payouts-banks).
 sealed class Method {const Method();
 
-factory Method.fromJson(String json) { return switch (json) {
+factory Method.fromJson(String json) {return switch (json) {
   'instant' => instant,
   'standard' => standard,
   _ => Method$Unknown(json),
-}; }
+};}
 
 static const Method instant = Method$instant._();
 
@@ -17,30 +17,30 @@ static const Method standard = Method$standard._();
 static const List<Method> values = [instant, standard];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'instant' => 'instant',
   'standard' => 'standard',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Method$Unknown; } 
+bool get isUnknown {return this is Method$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() instant, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() instant, required W Function() standard, required W Function(String value) $unknown, }) {return switch (this) {
       Method$instant() => instant(),
       Method$standard() => standard(),
       Method$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? instant, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? instant, W Function()? standard, W Function(String value)? $unknown, }) {return switch (this) {
       Method$instant() => instant != null ? instant() : orElse(value),
       Method$standard() => standard != null ? standard() : orElse(value),
       Method$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Method($value)';
 
- }
+}
 @immutable final class Method$instant extends Method {const Method$instant._();
 
 @override String get value => 'instant';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? instant,
 
 @override int get hashCode => 'instant'.hashCode;
 
- }
+}
 @immutable final class Method$standard extends Method {const Method$standard._();
 
 @override String get value => 'standard';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? instant,
 
 @override int get hashCode => 'standard'.hashCode;
 
- }
+}
 @immutable final class Method$Unknown extends Method {const Method$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? instant,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostPayoutsRequest {const PostPayoutsRequest({required this.amount, required this.currency, this.description, this.destination, this.expand, this.metadata, this.method, this.payoutMethod, this.sourceType, this.statementDescriptor, });
 
-factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) { return PostPayoutsRequest(
+factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) {return PostPayoutsRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -82,7 +82,7 @@ factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) { return PostPayo
   payoutMethod: json['payout_method'] as String?,
   sourceType: json['source_type'] != null ? SourceType.fromJson(json['source_type'] as String) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
-); }
+);}
 
 /// A positive integer in cents representing how much to payout.
 final int amount;
@@ -114,7 +114,7 @@ final SourceType? sourceType;
 /// A string that displays on the recipient's bank or card statement (up to 22 characters). A `statement_descriptor` that's longer than 22 characters return an error. Most banks truncate this information and display it inconsistently. Some banks might not display it at all.
 final String? statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -125,11 +125,11 @@ Map<String, dynamic> toJson() { return {
   'payout_method': ?payoutMethod,
   if (sourceType != null) 'source_type': sourceType?.toJson(),
   'statement_descriptor': ?statementDescriptor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -138,8 +138,8 @@ final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
-return errors; } 
-PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, Method? Function()? method, String? Function()? payoutMethod, SourceType? Function()? sourceType, String? Function()? statementDescriptor, }) { return PostPayoutsRequest(
+return errors;}
+PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, Method? Function()? method, String? Function()? payoutMethod, SourceType? Function()? sourceType, String? Function()? statementDescriptor, }) {return PostPayoutsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -150,7 +150,7 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
   payoutMethod: payoutMethod != null ? payoutMethod() : this.payoutMethod,
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPayoutsRequest &&
           amount == other.amount &&
@@ -168,4 +168,4 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
 
 @override String toString() => 'PostPayoutsRequest(\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  destination: $destination,\n  expand: $expand,\n  metadata: $metadata,\n  method: $method,\n  payoutMethod: $payoutMethod,\n  sourceType: $sourceType,\n  statementDescriptor: $statementDescriptor,\n)';
 
- }
+}

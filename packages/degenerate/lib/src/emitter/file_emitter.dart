@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
+import 'package:degenerate/src/emitter/success_union_emitter.dart';
 import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
@@ -51,6 +52,7 @@ const runtimeExportedNames = <String>{
   'Handler',
   'Interceptor',
   'LoggingInterceptor',
+  'Omittable',
   'OneOf2',
   'OneOf3',
   'OneOf4',
@@ -109,6 +111,7 @@ final class FileEmitter {
     bool emitRoundtripFixtures = false,
     Map<String, DiscUnionMetadata> unionMetadata = const {},
     List<String> barrelHide = const [],
+    OmittableMode omittable = OmittableMode.nullableOnly,
   }) {
     final files = <String, String>{};
 
@@ -133,6 +136,7 @@ final class FileEmitter {
       typeRegistryMap,
       unionMetadata: unionMetadata,
       constDiscriminators: analyzeConstDiscriminators(types, typeRegistryMap),
+      omittable: omittable,
     );
 
     final inlining = _computeInlining(types, apis, typeToFile);
@@ -156,9 +160,35 @@ final class FileEmitter {
       typeToFile,
     );
 
+    final successUnionMap = buildSuccessUnionMap(apis, ctx);
+    final successUnionFileStems = <String>{};
+    for (final info in successUnionMap.values) {
+      final fileStem = 'responses/${toSnakeCase(info.className)}';
+      typeToFile[info.className] = fileStem;
+      successUnionFileStems.add(fileStem);
+      files['models/$fileStem.dart'] = emitRaw(
+        emitSuccessUnionLibrary(
+          info: info,
+          ctx: ctx,
+          packageName: packageName,
+          typeToFile: typeToFile,
+        ),
+      );
+    }
+    final statusUnionFileStems = {
+      ...errorUnionFileStems,
+      ...successUnionFileStems,
+    };
+
     final apiAnalysisCache = {
       for (final api in apis)
-        api.name: analyzeApiImports(api, ctx, unwrapFields, errorUnionMap),
+        api.name: analyzeApiImports(
+          api,
+          ctx,
+          unwrapFields,
+          errorUnionMap,
+          successUnionMap,
+        ),
     };
 
     _emitApiFiles(
@@ -169,6 +199,7 @@ final class FileEmitter {
       typeToFile,
       unwrapFields,
       errorUnionMap,
+      successUnionMap,
       warnings,
       apiAnalysisCache,
     );
@@ -200,7 +231,7 @@ final class FileEmitter {
       typeToFile: typeToFile,
       inlinedTypes: inlining.inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
-      errorUnionFiles: errorUnionFileStems,
+      errorUnionFiles: statusUnionFileStems,
       barrelHide: barrelHide,
     );
 
@@ -215,8 +246,9 @@ final class FileEmitter {
           packageName: packageName,
           typeToFile: typeToFile,
           inlinedTypes: inlining.inlinedInto.keys.toSet(),
-          errorUnionFiles: errorUnionFileStems,
+          errorUnionFiles: statusUnionFileStems,
           errorUnionMap: errorUnionMap,
+          successUnionMap: successUnionMap,
           barrelHide: barrelHide,
         );
       }
@@ -426,6 +458,7 @@ final class FileEmitter {
     Map<String, String> typeToFile,
     List<String> unwrapFields,
     Map<String, ErrorUnionInfo> errorUnionMap,
+    Map<String, SuccessUnionInfo> successUnionMap,
     List<String>? warnings,
     Map<String, ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})> apiAnalysisCache,
   ) {
@@ -436,6 +469,7 @@ final class FileEmitter {
         ctx: ctx,
         unwrapFields: unwrapFields,
         errorUnionMap: errorUnionMap,
+        successUnionMap: successUnionMap,
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
@@ -490,8 +524,7 @@ final class FileEmitter {
         type,
         ctx: ctx,
       ).emit(),
-      IrUntaggedUnion(:final name, :final variants) ||
-      IrAnyOf(:final name, :final variants)
+      IrUntaggedUnion(:final name, :final variants)
           when isOneOfTypedef(name, variants) =>
         _emitOneOfTypedef(name, variants, type.description, ctx),
       IrUntaggedUnion() => UntaggedUnionEmitter(type, ctx: ctx).emit(),
@@ -510,14 +543,14 @@ final class FileEmitter {
   List<Spec> _emitOneOfTypedef(
     String name,
     List<IrType> variants,
-    String? description,
+    SpecString? description,
     EmitContext ctx,
   ) {
     final oneOfRef = oneOfTypeReference(variants);
     final letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
     final docLines = <String>[];
     if (description != null) {
-      docLines.addAll(formatDocComment(description));
+      docLines.addAll(description.docComment);
       docLines.add('///');
     }
     docLines.add('/// Variants:');
@@ -610,6 +643,7 @@ final class FileEmitter {
     Set<String> inlinedTypes = const {},
     Set<String> errorUnionFiles = const {},
     Map<String, ErrorUnionInfo> errorUnionMap = const {},
+    Map<String, SuccessUnionInfo> successUnionMap = const {},
     List<String> barrelHide = const [],
   }) {
     final apiFileName = toSnakeCase(api.name);
@@ -621,6 +655,9 @@ final class FileEmitter {
       if (info != null) {
         final target = info.resolvedClassName;
         usedErrorStems.add('errors/${toSnakeCase(target)}');
+      }
+      if (successUnionMap[op.operationId] case final success?) {
+        usedErrorStems.add('responses/${toSnakeCase(success.className)}');
       }
     }
 
@@ -829,7 +866,7 @@ final class FileEmitter {
           final schemesEntries = securitySchemes
               .map(
                 (s) =>
-                    "'${escapeDartString(s.name)}': ${_securitySchemeLiteral(s)}",
+                    '${s.name.literal}: ${_securitySchemeLiteral(s)}',
               )
               .join(', ');
           b.fields.add(
@@ -928,7 +965,7 @@ final class FileEmitter {
     };
     // Only include optional parameters that differ from their defaults.
     final args = <String>[
-      "name: '${escapeDartString(scheme.name)}'",
+      "name: '${scheme.name.escaped}'",
       'type: $type',
     ];
     if (scheme.scheme != null) {
@@ -989,7 +1026,7 @@ final class FileEmitter {
           final entries = requirement.schemes.entries
               .map(
                 (entry) =>
-                    "'${escapeDartString(entry.key)}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
+                    "${entry.key.literal}: [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
           return 'const ApiSecurityRequirement({$entries})';
@@ -1024,10 +1061,14 @@ final class FileEmitter {
   }
 
   _HelperMethodInfo? _securityApplyMethod(IrSecurityScheme scheme) {
-    final methodName = 'apply${_securityMethodSuffix(scheme.name)}';
+    final methodName = 'apply${scheme.name.toIdentifier(_securityMethodSuffix)}';
     const configParam = _HelperParam('config', 'ApiConfig');
-    _HelperMethodInfo apiKey(String collection, String? paramName) {
-      final key = _stringOrNull(paramName);
+    // The key the value is sent under: the declared parameter name, else the
+    // scheme key.
+    final key = scheme.parameterName != null
+        ? _stringOrNull(scheme.parameterName)
+        : scheme.name.literal;
+    _HelperMethodInfo apiKey(String collection) {
       return _HelperMethodInfo(
         methodName,
         [configParam, const _HelperParam('value', 'String')],
@@ -1040,13 +1081,10 @@ final class FileEmitter {
     // depth for directly-constructed schemes.
     return switch (scheme.type) {
       'apiKey' => switch (scheme.location) {
-        'header' => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
-        'query' => apiKey(
-          'defaultQueryParameters',
-          scheme.parameterName ?? scheme.name,
-        ),
-        'cookie' => apiKey('defaultCookies', scheme.parameterName ?? scheme.name),
-        _ => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
+        'header' => apiKey('defaultHeaders'),
+        'query' => apiKey('defaultQueryParameters'),
+        'cookie' => apiKey('defaultCookies'),
+        _ => apiKey('defaultHeaders'),
       },
       'http' => switch (scheme.scheme) {
         'bearer' => _HelperMethodInfo(
@@ -1085,7 +1123,7 @@ final class FileEmitter {
     IrSecurityScheme scheme,
   ) {
     final securityClass = '${toTypeName(packageName)}Security';
-    final suffix = _securityMethodSuffix(scheme.name);
+    final suffix = scheme.name.toIdentifier(_securityMethodSuffix);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
     return switch (scheme.type) {

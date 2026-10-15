@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentApplyCustomerBalanceRequest {const PostPaymentIntentsIntentApplyCustomerBalanceRequest({this.amount, this.currency, this.expand, });
 
-factory PostPaymentIntentsIntentApplyCustomerBalanceRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
+factory PostPaymentIntentsIntentApplyCustomerBalanceRequest.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Amount that you intend to apply to this PaymentIntent from the customer’s cash balance. If the PaymentIntent was created by an Invoice, the full amount of the PaymentIntent is applied regardless of this parameter.
 /// 
@@ -22,17 +22,17 @@ final String? currency;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': ?currency,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'expand'}.contains(key)); } 
-PostPaymentIntentsIntentApplyCustomerBalanceRequest copyWith({int? Function()? amount, String? Function()? currency, List<String>? Function()? expand, }) { return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'currency', 'expand'}.contains(key));}
+PostPaymentIntentsIntentApplyCustomerBalanceRequest copyWith({int? Function()? amount, String? Function()? currency, List<String>? Function()? expand, }) {return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentApplyCustomerBalanceRequest &&
           amount == other.amount &&
@@ -43,4 +43,4 @@ PostPaymentIntentsIntentApplyCustomerBalanceRequest copyWith({int? Function()? a
 
 @override String toString() => 'PostPaymentIntentsIntentApplyCustomerBalanceRequest(amount: $amount, currency: $currency, expand: $expand)';
 
- }
+}

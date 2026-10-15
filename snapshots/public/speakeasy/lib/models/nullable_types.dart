@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NullableTypes
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullableTypes {const NullableTypes({this.nullableTypeArray, this.nullableType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullableTypes {const NullableTypes({this.nullableTypeArray = const Omittable.absent(), this.nullableType = const Omittable.absent(), });
 
-factory NullableTypes.fromJson(Map<String, dynamic> json) { return NullableTypes(
-  nullableTypeArray: json['nullableTypeArray'] as String?,
-  nullableType: json['nullableType'] as String?,
-); }
+factory NullableTypes.fromJson(Map<String, dynamic> json) {return NullableTypes(
+  nullableTypeArray: json.containsKey('nullableTypeArray') ? Omittable(json['nullableTypeArray'] as String?) : const Omittable.absent(),
+  nullableType: json.containsKey('nullableType') ? Omittable(json['nullableType'] as String?) : const Omittable.absent(),
+);}
 
-final String? nullableTypeArray;
+final Omittable<String?> nullableTypeArray;
 
-final String? nullableType;
+final Omittable<String?> nullableType;
 
-Map<String, dynamic> toJson() { return {
-  'nullableTypeArray': ?nullableTypeArray,
-  'nullableType': ?nullableType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'nullableTypeArray', 'nullableType'}.contains(key)); } 
-NullableTypes copyWith({String? Function()? nullableTypeArray, String? Function()? nullableType, }) { return NullableTypes(
-  nullableTypeArray: nullableTypeArray != null ? nullableTypeArray() : this.nullableTypeArray,
-  nullableType: nullableType != null ? nullableType() : this.nullableType,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (nullableTypeArray.isPresent) 'nullableTypeArray': nullableTypeArray.value,
+  if (nullableType.isPresent) 'nullableType': nullableType.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'nullableTypeArray', 'nullableType'}.contains(key));}
+NullableTypes copyWith({Omittable<String?>? nullableTypeArray, Omittable<String?>? nullableType, }) {return NullableTypes(
+  nullableTypeArray: nullableTypeArray ?? this.nullableTypeArray,
+  nullableType: nullableType ?? this.nullableType,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NullableTypes &&
           nullableTypeArray == other.nullableTypeArray &&
@@ -30,4 +30,4 @@ NullableTypes copyWith({String? Function()? nullableTypeArray, String? Function(
 
 @override String toString() => 'NullableTypes(nullableTypeArray: $nullableTypeArray, nullableType: $nullableType)';
 
- }
+}

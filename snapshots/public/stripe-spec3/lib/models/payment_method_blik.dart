@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodBlik {const PaymentMethodBlik();
 
-factory PaymentMethodBlik.fromJson(Map<String, dynamic> _) { return const PaymentMethodBlik(); }
+factory PaymentMethodBlik.fromJson(Map<String, dynamic> _) {return const PaymentMethodBlik();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodBlik copyWith() { return const PaymentMethodBlik(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PaymentMethodBlik copyWith() {return const PaymentMethodBlik(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodBlik;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'PaymentMethodBlik()';
 
- }
+}

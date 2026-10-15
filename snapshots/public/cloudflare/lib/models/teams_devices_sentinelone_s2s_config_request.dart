@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesSentineloneS2sConfigRequest {const TeamsDevicesSentineloneS2sConfigRequest({required this.apiUrl, required this.clientSecret, });
 
-factory TeamsDevicesSentineloneS2sConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneS2sConfigRequest(
+factory TeamsDevicesSentineloneS2sConfigRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesSentineloneS2sConfigRequest(
   apiUrl: json['api_url'] as String,
   clientSecret: json['client_secret'] as String,
-); }
+);}
 
 /// The SentinelOne S2S API URL.
 /// 
@@ -18,16 +18,16 @@ final String apiUrl;
 /// Example: `'example client secret'`
 final String clientSecret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'api_url': apiUrl,
   'client_secret': clientSecret,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('api_url') && json['api_url'] is String &&
-      json.containsKey('client_secret') && json['client_secret'] is String; } 
-TeamsDevicesSentineloneS2sConfigRequest copyWith({String? apiUrl, String? clientSecret, }) { return TeamsDevicesSentineloneS2sConfigRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('api_url') && json['api_url'] is String &&
+      json.containsKey('client_secret') && json['client_secret'] is String;}
+TeamsDevicesSentineloneS2sConfigRequest copyWith({String? apiUrl, String? clientSecret, }) {return TeamsDevicesSentineloneS2sConfigRequest(
   apiUrl: apiUrl ?? this.apiUrl,
   clientSecret: clientSecret ?? this.clientSecret,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesSentineloneS2sConfigRequest &&
           apiUrl == other.apiUrl &&
@@ -37,4 +37,4 @@ TeamsDevicesSentineloneS2sConfigRequest copyWith({String? apiUrl, String? client
 
 @override String toString() => 'TeamsDevicesSentineloneS2sConfigRequest(apiUrl: $apiUrl, clientSecret: $clientSecret)';
 
- }
+}

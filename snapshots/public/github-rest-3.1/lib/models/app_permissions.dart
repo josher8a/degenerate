@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_attestations.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_organization_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/artifact_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/merge_queues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';/// The level of permission to grant the access token to create, edit, delete, and list Codespaces.
 sealed class Codespaces {const Codespaces();
 
-factory Codespaces.fromJson(String json) { return switch (json) {
+factory Codespaces.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => Codespaces$Unknown(json),
-}; }
+};}
 
 static const Codespaces read = Codespaces$read._();
 
@@ -17,30 +17,30 @@ static const Codespaces write = Codespaces$write._();
 static const List<Codespaces> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Codespaces$Unknown; } 
+bool get isUnknown {return this is Codespaces$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       Codespaces$read() => read(),
       Codespaces$write() => write(),
       Codespaces$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       Codespaces$read() => read != null ? read() : orElse(value),
       Codespaces$write() => write != null ? write() : orElse(value),
       Codespaces$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Codespaces($value)';
 
- }
+}
 @immutable final class Codespaces$read extends Codespaces {const Codespaces$read._();
 
 @override String get value => 'read';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class Codespaces$write extends Codespaces {const Codespaces$write._();
 
 @override String get value => 'write';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class Codespaces$Unknown extends Codespaces {const Codespaces$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to manage Dependabot secrets.
 sealed class DependabotSecrets {const DependabotSecrets();
 
-factory DependabotSecrets.fromJson(String json) { return switch (json) {
+factory DependabotSecrets.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => DependabotSecrets$Unknown(json),
-}; }
+};}
 
 static const DependabotSecrets read = DependabotSecrets$read._();
 
@@ -85,30 +85,30 @@ static const DependabotSecrets write = DependabotSecrets$write._();
 static const List<DependabotSecrets> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DependabotSecrets$Unknown; } 
+bool get isUnknown {return this is DependabotSecrets$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       DependabotSecrets$read() => read(),
       DependabotSecrets$write() => write(),
       DependabotSecrets$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       DependabotSecrets$read() => read != null ? read() : orElse(value),
       DependabotSecrets$write() => write != null ? write() : orElse(value),
       DependabotSecrets$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DependabotSecrets($value)';
 
- }
+}
 @immutable final class DependabotSecrets$read extends DependabotSecrets {const DependabotSecrets$read._();
 
 @override String get value => 'read';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class DependabotSecrets$write extends DependabotSecrets {const DependabotSecrets$write._();
 
 @override String get value => 'write';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class DependabotSecrets$Unknown extends DependabotSecrets {const DependabotSecrets$Unknown(this.value);
 
 @override final String value;
@@ -136,15 +136,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
 sealed class RepositoryCustomProperties {const RepositoryCustomProperties();
 
-factory RepositoryCustomProperties.fromJson(String json) { return switch (json) {
+factory RepositoryCustomProperties.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => RepositoryCustomProperties$Unknown(json),
-}; }
+};}
 
 static const RepositoryCustomProperties read = RepositoryCustomProperties$read._();
 
@@ -153,30 +153,30 @@ static const RepositoryCustomProperties write = RepositoryCustomProperties$write
 static const List<RepositoryCustomProperties> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RepositoryCustomProperties$Unknown; } 
+bool get isUnknown {return this is RepositoryCustomProperties$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       RepositoryCustomProperties$read() => read(),
       RepositoryCustomProperties$write() => write(),
       RepositoryCustomProperties$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       RepositoryCustomProperties$read() => read != null ? read() : orElse(value),
       RepositoryCustomProperties$write() => write != null ? write() : orElse(value),
       RepositoryCustomProperties$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RepositoryCustomProperties($value)';
 
- }
+}
 @immutable final class RepositoryCustomProperties$read extends RepositoryCustomProperties {const RepositoryCustomProperties$read._();
 
 @override String get value => 'read';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class RepositoryCustomProperties$write extends RepositoryCustomProperties {const RepositoryCustomProperties$write._();
 
 @override String get value => 'write';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class RepositoryCustomProperties$Unknown extends RepositoryCustomProperties {const RepositoryCustomProperties$Unknown(this.value);
 
 @override final String value;
@@ -204,41 +204,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to update GitHub Actions workflow files.
 sealed class AppPermissionsWorkflows {const AppPermissionsWorkflows();
 
-factory AppPermissionsWorkflows.fromJson(String json) { return switch (json) {
+factory AppPermissionsWorkflows.fromJson(String json) {return switch (json) {
   'write' => write,
   _ => AppPermissionsWorkflows$Unknown(json),
-}; }
+};}
 
 static const AppPermissionsWorkflows write = AppPermissionsWorkflows$write._();
 
 static const List<AppPermissionsWorkflows> values = [write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AppPermissionsWorkflows$Unknown; } 
+bool get isUnknown {return this is AppPermissionsWorkflows$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       AppPermissionsWorkflows$write() => write(),
       AppPermissionsWorkflows$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       AppPermissionsWorkflows$write() => write != null ? write() : orElse(value),
       AppPermissionsWorkflows$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AppPermissionsWorkflows($value)';
 
- }
+}
 @immutable final class AppPermissionsWorkflows$write extends AppPermissionsWorkflows {const AppPermissionsWorkflows$write._();
 
 @override String get value => 'write';
@@ -247,7 +247,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class AppPermissionsWorkflows$Unknown extends AppPermissionsWorkflows {const AppPermissionsWorkflows$Unknown(this.value);
 
 @override final String value;
@@ -257,15 +257,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
 sealed class CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations();
 
-factory CustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
+factory CustomPropertiesForOrganizations.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => CustomPropertiesForOrganizations$Unknown(json),
-}; }
+};}
 
 static const CustomPropertiesForOrganizations read = CustomPropertiesForOrganizations$read._();
 
@@ -274,30 +274,30 @@ static const CustomPropertiesForOrganizations write = CustomPropertiesForOrganiz
 static const List<CustomPropertiesForOrganizations> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomPropertiesForOrganizations$Unknown; } 
+bool get isUnknown {return this is CustomPropertiesForOrganizations$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       CustomPropertiesForOrganizations$read() => read(),
       CustomPropertiesForOrganizations$write() => write(),
       CustomPropertiesForOrganizations$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       CustomPropertiesForOrganizations$read() => read != null ? read() : orElse(value),
       CustomPropertiesForOrganizations$write() => write != null ? write() : orElse(value),
       CustomPropertiesForOrganizations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomPropertiesForOrganizations($value)';
 
- }
+}
 @immutable final class CustomPropertiesForOrganizations$read extends CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations$read._();
 
 @override String get value => 'read';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class CustomPropertiesForOrganizations$write extends CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations$write._();
 
 @override String get value => 'write';
@@ -315,7 +315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class CustomPropertiesForOrganizations$Unknown extends CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations$Unknown(this.value);
 
 @override final String value;
@@ -325,15 +325,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for custom repository roles management.
 sealed class OrganizationCustomRoles {const OrganizationCustomRoles();
 
-factory OrganizationCustomRoles.fromJson(String json) { return switch (json) {
+factory OrganizationCustomRoles.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => OrganizationCustomRoles$Unknown(json),
-}; }
+};}
 
 static const OrganizationCustomRoles read = OrganizationCustomRoles$read._();
 
@@ -342,30 +342,30 @@ static const OrganizationCustomRoles write = OrganizationCustomRoles$write._();
 static const List<OrganizationCustomRoles> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationCustomRoles$Unknown; } 
+bool get isUnknown {return this is OrganizationCustomRoles$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationCustomRoles$read() => read(),
       OrganizationCustomRoles$write() => write(),
       OrganizationCustomRoles$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationCustomRoles$read() => read != null ? read() : orElse(value),
       OrganizationCustomRoles$write() => write != null ? write() : orElse(value),
       OrganizationCustomRoles$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationCustomRoles($value)';
 
- }
+}
 @immutable final class OrganizationCustomRoles$read extends OrganizationCustomRoles {const OrganizationCustomRoles$read._();
 
 @override String get value => 'read';
@@ -374,7 +374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomRoles$write extends OrganizationCustomRoles {const OrganizationCustomRoles$write._();
 
 @override String get value => 'write';
@@ -383,7 +383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomRoles$Unknown extends OrganizationCustomRoles {const OrganizationCustomRoles$Unknown(this.value);
 
 @override final String value;
@@ -393,15 +393,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for custom organization roles management.
 sealed class OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles();
 
-factory OrganizationCustomOrgRoles.fromJson(String json) { return switch (json) {
+factory OrganizationCustomOrgRoles.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => OrganizationCustomOrgRoles$Unknown(json),
-}; }
+};}
 
 static const OrganizationCustomOrgRoles read = OrganizationCustomOrgRoles$read._();
 
@@ -410,30 +410,30 @@ static const OrganizationCustomOrgRoles write = OrganizationCustomOrgRoles$write
 static const List<OrganizationCustomOrgRoles> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationCustomOrgRoles$Unknown; } 
+bool get isUnknown {return this is OrganizationCustomOrgRoles$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationCustomOrgRoles$read() => read(),
       OrganizationCustomOrgRoles$write() => write(),
       OrganizationCustomOrgRoles$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationCustomOrgRoles$read() => read != null ? read() : orElse(value),
       OrganizationCustomOrgRoles$write() => write != null ? write() : orElse(value),
       OrganizationCustomOrgRoles$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationCustomOrgRoles($value)';
 
- }
+}
 @immutable final class OrganizationCustomOrgRoles$read extends OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles$read._();
 
 @override String get value => 'read';
@@ -442,7 +442,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomOrgRoles$write extends OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles$write._();
 
 @override String get value => 'write';
@@ -451,7 +451,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomOrgRoles$Unknown extends OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles$Unknown(this.value);
 
 @override final String value;
@@ -461,16 +461,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for repository custom properties management at the organization level.
 sealed class OrganizationCustomProperties {const OrganizationCustomProperties();
 
-factory OrganizationCustomProperties.fromJson(String json) { return switch (json) {
+factory OrganizationCustomProperties.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   _ => OrganizationCustomProperties$Unknown(json),
-}; }
+};}
 
 static const OrganizationCustomProperties read = OrganizationCustomProperties$read._();
 
@@ -481,33 +481,33 @@ static const OrganizationCustomProperties admin = OrganizationCustomProperties$a
 static const List<OrganizationCustomProperties> values = [read, write, admin];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   'admin' => 'admin',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationCustomProperties$Unknown; } 
+bool get isUnknown {return this is OrganizationCustomProperties$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationCustomProperties$read() => read(),
       OrganizationCustomProperties$write() => write(),
       OrganizationCustomProperties$admin() => admin(),
       OrganizationCustomProperties$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationCustomProperties$read() => read != null ? read() : orElse(value),
       OrganizationCustomProperties$write() => write != null ? write() : orElse(value),
       OrganizationCustomProperties$admin() => admin != null ? admin() : orElse(value),
       OrganizationCustomProperties$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationCustomProperties($value)';
 
- }
+}
 @immutable final class OrganizationCustomProperties$read extends OrganizationCustomProperties {const OrganizationCustomProperties$read._();
 
 @override String get value => 'read';
@@ -516,7 +516,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomProperties$write extends OrganizationCustomProperties {const OrganizationCustomProperties$write._();
 
 @override String get value => 'write';
@@ -525,7 +525,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomProperties$admin extends OrganizationCustomProperties {const OrganizationCustomProperties$admin._();
 
 @override String get value => 'admin';
@@ -534,7 +534,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'admin'.hashCode;
 
- }
+}
 @immutable final class OrganizationCustomProperties$Unknown extends OrganizationCustomProperties {const OrganizationCustomProperties$Unknown(this.value);
 
 @override final String value;
@@ -544,41 +544,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 sealed class OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement();
 
-factory OrganizationCopilotSeatManagement.fromJson(String json) { return switch (json) {
+factory OrganizationCopilotSeatManagement.fromJson(String json) {return switch (json) {
   'write' => write,
   _ => OrganizationCopilotSeatManagement$Unknown(json),
-}; }
+};}
 
 static const OrganizationCopilotSeatManagement write = OrganizationCopilotSeatManagement$write._();
 
 static const List<OrganizationCopilotSeatManagement> values = [write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationCopilotSeatManagement$Unknown; } 
+bool get isUnknown {return this is OrganizationCopilotSeatManagement$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationCopilotSeatManagement$write() => write(),
       OrganizationCopilotSeatManagement$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationCopilotSeatManagement$write() => write != null ? write() : orElse(value),
       OrganizationCopilotSeatManagement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationCopilotSeatManagement($value)';
 
- }
+}
 @immutable final class OrganizationCopilotSeatManagement$write extends OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement$write._();
 
 @override String get value => 'write';
@@ -587,7 +587,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationCopilotSeatManagement$Unknown extends OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement$Unknown(this.value);
 
 @override final String value;
@@ -597,15 +597,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to view and manage announcement banners for an organization.
 sealed class OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners();
 
-factory OrganizationAnnouncementBanners.fromJson(String json) { return switch (json) {
+factory OrganizationAnnouncementBanners.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => OrganizationAnnouncementBanners$Unknown(json),
-}; }
+};}
 
 static const OrganizationAnnouncementBanners read = OrganizationAnnouncementBanners$read._();
 
@@ -614,30 +614,30 @@ static const OrganizationAnnouncementBanners write = OrganizationAnnouncementBan
 static const List<OrganizationAnnouncementBanners> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationAnnouncementBanners$Unknown; } 
+bool get isUnknown {return this is OrganizationAnnouncementBanners$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationAnnouncementBanners$read() => read(),
       OrganizationAnnouncementBanners$write() => write(),
       OrganizationAnnouncementBanners$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationAnnouncementBanners$read() => read != null ? read() : orElse(value),
       OrganizationAnnouncementBanners$write() => write != null ? write() : orElse(value),
       OrganizationAnnouncementBanners$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationAnnouncementBanners($value)';
 
- }
+}
 @immutable final class OrganizationAnnouncementBanners$read extends OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners$read._();
 
 @override String get value => 'read';
@@ -646,7 +646,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationAnnouncementBanners$write extends OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners$write._();
 
 @override String get value => 'write';
@@ -655,7 +655,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationAnnouncementBanners$Unknown extends OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners$Unknown(this.value);
 
 @override final String value;
@@ -665,41 +665,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to view events triggered by an activity in an organization.
 sealed class OrganizationEvents {const OrganizationEvents();
 
-factory OrganizationEvents.fromJson(String json) { return switch (json) {
+factory OrganizationEvents.fromJson(String json) {return switch (json) {
   'read' => read,
   _ => OrganizationEvents$Unknown(json),
-}; }
+};}
 
 static const OrganizationEvents read = OrganizationEvents$read._();
 
 static const List<OrganizationEvents> values = [read];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationEvents$Unknown; } 
+bool get isUnknown {return this is OrganizationEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationEvents$read() => read(),
       OrganizationEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationEvents$read() => read != null ? read() : orElse(value),
       OrganizationEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationEvents($value)';
 
- }
+}
 @immutable final class OrganizationEvents$read extends OrganizationEvents {const OrganizationEvents$read._();
 
 @override String get value => 'read';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationEvents$Unknown extends OrganizationEvents {const OrganizationEvents$Unknown(this.value);
 
 @override final String value;
@@ -718,15 +718,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
 sealed class OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens();
 
-factory OrganizationPersonalAccessTokens.fromJson(String json) { return switch (json) {
+factory OrganizationPersonalAccessTokens.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => OrganizationPersonalAccessTokens$Unknown(json),
-}; }
+};}
 
 static const OrganizationPersonalAccessTokens read = OrganizationPersonalAccessTokens$read._();
 
@@ -735,30 +735,30 @@ static const OrganizationPersonalAccessTokens write = OrganizationPersonalAccess
 static const List<OrganizationPersonalAccessTokens> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationPersonalAccessTokens$Unknown; } 
+bool get isUnknown {return this is OrganizationPersonalAccessTokens$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationPersonalAccessTokens$read() => read(),
       OrganizationPersonalAccessTokens$write() => write(),
       OrganizationPersonalAccessTokens$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationPersonalAccessTokens$read() => read != null ? read() : orElse(value),
       OrganizationPersonalAccessTokens$write() => write != null ? write() : orElse(value),
       OrganizationPersonalAccessTokens$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationPersonalAccessTokens($value)';
 
- }
+}
 @immutable final class OrganizationPersonalAccessTokens$read extends OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens$read._();
 
 @override String get value => 'read';
@@ -767,7 +767,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationPersonalAccessTokens$write extends OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens$write._();
 
 @override String get value => 'write';
@@ -776,7 +776,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationPersonalAccessTokens$Unknown extends OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens$Unknown(this.value);
 
 @override final String value;
@@ -786,15 +786,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
 sealed class OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests();
 
-factory OrganizationPersonalAccessTokenRequests.fromJson(String json) { return switch (json) {
+factory OrganizationPersonalAccessTokenRequests.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => OrganizationPersonalAccessTokenRequests$Unknown(json),
-}; }
+};}
 
 static const OrganizationPersonalAccessTokenRequests read = OrganizationPersonalAccessTokenRequests$read._();
 
@@ -803,30 +803,30 @@ static const OrganizationPersonalAccessTokenRequests write = OrganizationPersona
 static const List<OrganizationPersonalAccessTokenRequests> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationPersonalAccessTokenRequests$Unknown; } 
+bool get isUnknown {return this is OrganizationPersonalAccessTokenRequests$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationPersonalAccessTokenRequests$read() => read(),
       OrganizationPersonalAccessTokenRequests$write() => write(),
       OrganizationPersonalAccessTokenRequests$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationPersonalAccessTokenRequests$read() => read != null ? read() : orElse(value),
       OrganizationPersonalAccessTokenRequests$write() => write != null ? write() : orElse(value),
       OrganizationPersonalAccessTokenRequests$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationPersonalAccessTokenRequests($value)';
 
- }
+}
 @immutable final class OrganizationPersonalAccessTokenRequests$read extends OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests$read._();
 
 @override String get value => 'read';
@@ -835,7 +835,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class OrganizationPersonalAccessTokenRequests$write extends OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests$write._();
 
 @override String get value => 'write';
@@ -844,7 +844,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class OrganizationPersonalAccessTokenRequests$Unknown extends OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests$Unknown(this.value);
 
 @override final String value;
@@ -854,41 +854,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for viewing an organization's plan.
 sealed class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan();
 
-factory AppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
+factory AppPermissionsOrganizationPlan.fromJson(String json) {return switch (json) {
   'read' => read,
   _ => AppPermissionsOrganizationPlan$Unknown(json),
-}; }
+};}
 
 static const AppPermissionsOrganizationPlan read = AppPermissionsOrganizationPlan$read._();
 
 static const List<AppPermissionsOrganizationPlan> values = [read];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AppPermissionsOrganizationPlan$Unknown; } 
+bool get isUnknown {return this is AppPermissionsOrganizationPlan$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function(String value) $unknown, }) {return switch (this) {
       AppPermissionsOrganizationPlan$read() => read(),
       AppPermissionsOrganizationPlan$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function(String value)? $unknown, }) {return switch (this) {
       AppPermissionsOrganizationPlan$read() => read != null ? read() : orElse(value),
       AppPermissionsOrganizationPlan$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AppPermissionsOrganizationPlan($value)';
 
- }
+}
 @immutable final class AppPermissionsOrganizationPlan$read extends AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan$read._();
 
 @override String get value => 'read';
@@ -897,7 +897,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class AppPermissionsOrganizationPlan$Unknown extends AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan$Unknown(this.value);
 
 @override final String value;
@@ -907,15 +907,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to manage the email addresses belonging to a user.
 sealed class EmailAddresses {const EmailAddresses();
 
-factory EmailAddresses.fromJson(String json) { return switch (json) {
+factory EmailAddresses.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => EmailAddresses$Unknown(json),
-}; }
+};}
 
 static const EmailAddresses read = EmailAddresses$read._();
 
@@ -924,30 +924,30 @@ static const EmailAddresses write = EmailAddresses$write._();
 static const List<EmailAddresses> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailAddresses$Unknown; } 
+bool get isUnknown {return this is EmailAddresses$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       EmailAddresses$read() => read(),
       EmailAddresses$write() => write(),
       EmailAddresses$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       EmailAddresses$read() => read != null ? read() : orElse(value),
       EmailAddresses$write() => write != null ? write() : orElse(value),
       EmailAddresses$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailAddresses($value)';
 
- }
+}
 @immutable final class EmailAddresses$read extends EmailAddresses {const EmailAddresses$read._();
 
 @override String get value => 'read';
@@ -956,7 +956,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class EmailAddresses$write extends EmailAddresses {const EmailAddresses$write._();
 
 @override String get value => 'write';
@@ -965,7 +965,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class EmailAddresses$Unknown extends EmailAddresses {const EmailAddresses$Unknown(this.value);
 
 @override final String value;
@@ -975,15 +975,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to manage the followers belonging to a user.
 sealed class Followers {const Followers();
 
-factory Followers.fromJson(String json) { return switch (json) {
+factory Followers.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => Followers$Unknown(json),
-}; }
+};}
 
 static const Followers read = Followers$read._();
 
@@ -992,30 +992,30 @@ static const Followers write = Followers$write._();
 static const List<Followers> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Followers$Unknown; } 
+bool get isUnknown {return this is Followers$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       Followers$read() => read(),
       Followers$write() => write(),
       Followers$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       Followers$read() => read != null ? read() : orElse(value),
       Followers$write() => write != null ? write() : orElse(value),
       Followers$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Followers($value)';
 
- }
+}
 @immutable final class Followers$read extends Followers {const Followers$read._();
 
 @override String get value => 'read';
@@ -1024,7 +1024,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class Followers$write extends Followers {const Followers$write._();
 
 @override String get value => 'write';
@@ -1033,7 +1033,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class Followers$Unknown extends Followers {const Followers$Unknown(this.value);
 
 @override final String value;
@@ -1043,15 +1043,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to manage git SSH keys.
 sealed class GitSshKeys {const GitSshKeys();
 
-factory GitSshKeys.fromJson(String json) { return switch (json) {
+factory GitSshKeys.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => GitSshKeys$Unknown(json),
-}; }
+};}
 
 static const GitSshKeys read = GitSshKeys$read._();
 
@@ -1060,30 +1060,30 @@ static const GitSshKeys write = GitSshKeys$write._();
 static const List<GitSshKeys> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GitSshKeys$Unknown; } 
+bool get isUnknown {return this is GitSshKeys$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       GitSshKeys$read() => read(),
       GitSshKeys$write() => write(),
       GitSshKeys$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       GitSshKeys$read() => read != null ? read() : orElse(value),
       GitSshKeys$write() => write != null ? write() : orElse(value),
       GitSshKeys$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GitSshKeys($value)';
 
- }
+}
 @immutable final class GitSshKeys$read extends GitSshKeys {const GitSshKeys$read._();
 
 @override String get value => 'read';
@@ -1092,7 +1092,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class GitSshKeys$write extends GitSshKeys {const GitSshKeys$write._();
 
 @override String get value => 'write';
@@ -1101,7 +1101,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class GitSshKeys$Unknown extends GitSshKeys {const GitSshKeys$Unknown(this.value);
 
 @override final String value;
@@ -1111,15 +1111,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
 sealed class GpgKeys {const GpgKeys();
 
-factory GpgKeys.fromJson(String json) { return switch (json) {
+factory GpgKeys.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => GpgKeys$Unknown(json),
-}; }
+};}
 
 static const GpgKeys read = GpgKeys$read._();
 
@@ -1128,30 +1128,30 @@ static const GpgKeys write = GpgKeys$write._();
 static const List<GpgKeys> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GpgKeys$Unknown; } 
+bool get isUnknown {return this is GpgKeys$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       GpgKeys$read() => read(),
       GpgKeys$write() => write(),
       GpgKeys$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       GpgKeys$read() => read != null ? read() : orElse(value),
       GpgKeys$write() => write != null ? write() : orElse(value),
       GpgKeys$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GpgKeys($value)';
 
- }
+}
 @immutable final class GpgKeys$read extends GpgKeys {const GpgKeys$read._();
 
 @override String get value => 'read';
@@ -1160,7 +1160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class GpgKeys$write extends GpgKeys {const GpgKeys$write._();
 
 @override String get value => 'write';
@@ -1169,7 +1169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class GpgKeys$Unknown extends GpgKeys {const GpgKeys$Unknown(this.value);
 
 @override final String value;
@@ -1179,15 +1179,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to view and manage interaction limits on a repository.
 sealed class InteractionLimits {const InteractionLimits();
 
-factory InteractionLimits.fromJson(String json) { return switch (json) {
+factory InteractionLimits.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => InteractionLimits$Unknown(json),
-}; }
+};}
 
 static const InteractionLimits read = InteractionLimits$read._();
 
@@ -1196,30 +1196,30 @@ static const InteractionLimits write = InteractionLimits$write._();
 static const List<InteractionLimits> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InteractionLimits$Unknown; } 
+bool get isUnknown {return this is InteractionLimits$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       InteractionLimits$read() => read(),
       InteractionLimits$write() => write(),
       InteractionLimits$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       InteractionLimits$read() => read != null ? read() : orElse(value),
       InteractionLimits$write() => write != null ? write() : orElse(value),
       InteractionLimits$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InteractionLimits($value)';
 
- }
+}
 @immutable final class InteractionLimits$read extends InteractionLimits {const InteractionLimits$read._();
 
 @override String get value => 'read';
@@ -1228,7 +1228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class InteractionLimits$write extends InteractionLimits {const InteractionLimits$write._();
 
 @override String get value => 'write';
@@ -1237,7 +1237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class InteractionLimits$Unknown extends InteractionLimits {const InteractionLimits$Unknown(this.value);
 
 @override final String value;
@@ -1247,41 +1247,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to manage the profile settings belonging to a user.
 sealed class Profile {const Profile();
 
-factory Profile.fromJson(String json) { return switch (json) {
+factory Profile.fromJson(String json) {return switch (json) {
   'write' => write,
   _ => Profile$Unknown(json),
-}; }
+};}
 
 static const Profile write = Profile$write._();
 
 static const List<Profile> values = [write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Profile$Unknown; } 
+bool get isUnknown {return this is Profile$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       Profile$write() => write(),
       Profile$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       Profile$write() => write != null ? write() : orElse(value),
       Profile$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Profile($value)';
 
- }
+}
 @immutable final class Profile$write extends Profile {const Profile$write._();
 
 @override String get value => 'write';
@@ -1290,7 +1290,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class Profile$Unknown extends Profile {const Profile$Unknown(this.value);
 
 @override final String value;
@@ -1300,15 +1300,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token to list and manage repositories a user is starring.
 sealed class Starring {const Starring();
 
-factory Starring.fromJson(String json) { return switch (json) {
+factory Starring.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => Starring$Unknown(json),
-}; }
+};}
 
 static const Starring read = Starring$read._();
 
@@ -1317,30 +1317,30 @@ static const Starring write = Starring$write._();
 static const List<Starring> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Starring$Unknown; } 
+bool get isUnknown {return this is Starring$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       Starring$read() => read(),
       Starring$write() => write(),
       Starring$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       Starring$read() => read != null ? read() : orElse(value),
       Starring$write() => write != null ? write() : orElse(value),
       Starring$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Starring($value)';
 
- }
+}
 @immutable final class Starring$read extends Starring {const Starring$read._();
 
 @override String get value => 'read';
@@ -1349,7 +1349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class Starring$write extends Starring {const Starring$write._();
 
 @override String get value => 'write';
@@ -1358,7 +1358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class Starring$Unknown extends Starring {const Starring$Unknown(this.value);
 
 @override final String value;
@@ -1368,16 +1368,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The level of permission to grant the access token for organization custom properties management at the enterprise level.
 sealed class EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations();
 
-factory EnterpriseCustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
+factory EnterpriseCustomPropertiesForOrganizations.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   _ => EnterpriseCustomPropertiesForOrganizations$Unknown(json),
-}; }
+};}
 
 static const EnterpriseCustomPropertiesForOrganizations read = EnterpriseCustomPropertiesForOrganizations$read._();
 
@@ -1388,33 +1388,33 @@ static const EnterpriseCustomPropertiesForOrganizations admin = EnterpriseCustom
 static const List<EnterpriseCustomPropertiesForOrganizations> values = [read, write, admin];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   'admin' => 'admin',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnterpriseCustomPropertiesForOrganizations$Unknown; } 
+bool get isUnknown {return this is EnterpriseCustomPropertiesForOrganizations$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) {return switch (this) {
       EnterpriseCustomPropertiesForOrganizations$read() => read(),
       EnterpriseCustomPropertiesForOrganizations$write() => write(),
       EnterpriseCustomPropertiesForOrganizations$admin() => admin(),
       EnterpriseCustomPropertiesForOrganizations$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) {return switch (this) {
       EnterpriseCustomPropertiesForOrganizations$read() => read != null ? read() : orElse(value),
       EnterpriseCustomPropertiesForOrganizations$write() => write != null ? write() : orElse(value),
       EnterpriseCustomPropertiesForOrganizations$admin() => admin != null ? admin() : orElse(value),
       EnterpriseCustomPropertiesForOrganizations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnterpriseCustomPropertiesForOrganizations($value)';
 
- }
+}
 @immutable final class EnterpriseCustomPropertiesForOrganizations$read extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$read._();
 
 @override String get value => 'read';
@@ -1423,7 +1423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class EnterpriseCustomPropertiesForOrganizations$write extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$write._();
 
 @override String get value => 'write';
@@ -1432,7 +1432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class EnterpriseCustomPropertiesForOrganizations$admin extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$admin._();
 
 @override String get value => 'admin';
@@ -1441,7 +1441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'admin'.hashCode;
 
- }
+}
 @immutable final class EnterpriseCustomPropertiesForOrganizations$Unknown extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$Unknown(this.value);
 
 @override final String value;
@@ -1451,7 +1451,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The permissions granted to the user access token.
 /// 
 /// Example:
@@ -1465,7 +1465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 /// ```
 @immutable final class AppPermissions {const AppPermissions({this.repositoryHooks, this.administration, this.artifactMetadata, this.attestations, this.checks, this.codespaces, this.contents, this.dependabotSecrets, this.deployments, this.discussions, this.environments, this.issues, this.mergeQueues, this.metadata, this.packages, this.pages, this.pullRequests, this.repositoryCustomProperties, this.actions, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, this.customPropertiesForOrganizations, this.members, this.organizationAdministration, this.organizationCustomRoles, this.organizationCustomOrgRoles, this.organizationCustomProperties, this.organizationCopilotSeatManagement, this.enterpriseCustomPropertiesForOrganizations, this.organizationEvents, this.organizationHooks, this.organizationPersonalAccessTokens, this.organizationPersonalAccessTokenRequests, this.organizationPlan, this.organizationProjects, this.organizationPackages, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.emailAddresses, this.followers, this.gitSshKeys, this.gpgKeys, this.interactionLimits, this.profile, this.starring, this.organizationAnnouncementBanners, });
 
-factory AppPermissions.fromJson(Map<String, dynamic> json) { return AppPermissions(
+factory AppPermissions.fromJson(Map<String, dynamic> json) {return AppPermissions(
   actions: json['actions'] != null ? Actions.fromJson(json['actions'] as String) : null,
   administration: json['administration'] != null ? Administration.fromJson(json['administration'] as String) : null,
   artifactMetadata: json['artifact_metadata'] != null ? ArtifactMetadata.fromJson(json['artifact_metadata'] as String) : null,
@@ -1519,7 +1519,7 @@ factory AppPermissions.fromJson(Map<String, dynamic> json) { return AppPermissio
   profile: json['profile'] != null ? Profile.fromJson(json['profile'] as String) : null,
   starring: json['starring'] != null ? Starring.fromJson(json['starring'] as String) : null,
   enterpriseCustomPropertiesForOrganizations: json['enterprise_custom_properties_for_organizations'] != null ? EnterpriseCustomPropertiesForOrganizations.fromJson(json['enterprise_custom_properties_for_organizations'] as String) : null,
-); }
+);}
 
 /// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
 final Actions? actions;
@@ -1680,7 +1680,7 @@ final Starring? starring;
 /// The level of permission to grant the access token for organization custom properties management at the enterprise level.
 final EnterpriseCustomPropertiesForOrganizations? enterpriseCustomPropertiesForOrganizations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actions != null) 'actions': actions?.toJson(),
   if (administration != null) 'administration': administration?.toJson(),
   if (artifactMetadata != null) 'artifact_metadata': artifactMetadata?.toJson(),
@@ -1734,9 +1734,9 @@ Map<String, dynamic> toJson() { return {
   if (profile != null) 'profile': profile?.toJson(),
   if (starring != null) 'starring': starring?.toJson(),
   if (enterpriseCustomPropertiesForOrganizations != null) 'enterprise_custom_properties_for_organizations': enterpriseCustomPropertiesForOrganizations?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'administration', 'artifact_metadata', 'attestations', 'checks', 'codespaces', 'contents', 'dependabot_secrets', 'deployments', 'discussions', 'environments', 'issues', 'merge_queues', 'metadata', 'packages', 'pages', 'pull_requests', 'repository_custom_properties', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows', 'custom_properties_for_organizations', 'members', 'organization_administration', 'organization_custom_roles', 'organization_custom_org_roles', 'organization_custom_properties', 'organization_copilot_seat_management', 'organization_announcement_banners', 'organization_events', 'organization_hooks', 'organization_personal_access_tokens', 'organization_personal_access_token_requests', 'organization_plan', 'organization_projects', 'organization_packages', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'email_addresses', 'followers', 'git_ssh_keys', 'gpg_keys', 'interaction_limits', 'profile', 'starring', 'enterprise_custom_properties_for_organizations'}.contains(key)); } 
-AppPermissions copyWith({Actions? Function()? actions, Administration? Function()? administration, ArtifactMetadata? Function()? artifactMetadata, AppPermissionsAttestations? Function()? attestations, AppPermissionsChecks? Function()? checks, Codespaces? Function()? codespaces, Contents? Function()? contents, DependabotSecrets? Function()? dependabotSecrets, AppPermissionsDeployments? Function()? deployments, Discussions? Function()? discussions, AppPermissionsEnvironments? Function()? environments, Issues? Function()? issues, MergeQueues? Function()? mergeQueues, AppPermissionsMetadata? Function()? metadata, AppPermissionsPackages? Function()? packages, AppPermissionsPages? Function()? pages, AppPermissionsPullRequests? Function()? pullRequests, RepositoryCustomProperties? Function()? repositoryCustomProperties, RepositoryHooks? Function()? repositoryHooks, AppPermissionsRepositoryProjects? Function()? repositoryProjects, SecretScanningAlerts? Function()? secretScanningAlerts, Secrets? Function()? secrets, SecurityEvents? Function()? securityEvents, SingleFile? Function()? singleFile, AppPermissionsStatuses? Function()? statuses, VulnerabilityAlerts? Function()? vulnerabilityAlerts, AppPermissionsWorkflows? Function()? workflows, CustomPropertiesForOrganizations? Function()? customPropertiesForOrganizations, Members? Function()? members, OrganizationAdministration? Function()? organizationAdministration, OrganizationCustomRoles? Function()? organizationCustomRoles, OrganizationCustomOrgRoles? Function()? organizationCustomOrgRoles, OrganizationCustomProperties? Function()? organizationCustomProperties, OrganizationCopilotSeatManagement? Function()? organizationCopilotSeatManagement, OrganizationAnnouncementBanners? Function()? organizationAnnouncementBanners, OrganizationEvents? Function()? organizationEvents, OrganizationHooks? Function()? organizationHooks, OrganizationPersonalAccessTokens? Function()? organizationPersonalAccessTokens, OrganizationPersonalAccessTokenRequests? Function()? organizationPersonalAccessTokenRequests, AppPermissionsOrganizationPlan? Function()? organizationPlan, AppPermissionsOrganizationProjects? Function()? organizationProjects, OrganizationPackages? Function()? organizationPackages, OrganizationSecrets? Function()? organizationSecrets, OrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, OrganizationUserBlocking? Function()? organizationUserBlocking, EmailAddresses? Function()? emailAddresses, Followers? Function()? followers, GitSshKeys? Function()? gitSshKeys, GpgKeys? Function()? gpgKeys, InteractionLimits? Function()? interactionLimits, Profile? Function()? profile, Starring? Function()? starring, EnterpriseCustomPropertiesForOrganizations? Function()? enterpriseCustomPropertiesForOrganizations, }) { return AppPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'administration', 'artifact_metadata', 'attestations', 'checks', 'codespaces', 'contents', 'dependabot_secrets', 'deployments', 'discussions', 'environments', 'issues', 'merge_queues', 'metadata', 'packages', 'pages', 'pull_requests', 'repository_custom_properties', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows', 'custom_properties_for_organizations', 'members', 'organization_administration', 'organization_custom_roles', 'organization_custom_org_roles', 'organization_custom_properties', 'organization_copilot_seat_management', 'organization_announcement_banners', 'organization_events', 'organization_hooks', 'organization_personal_access_tokens', 'organization_personal_access_token_requests', 'organization_plan', 'organization_projects', 'organization_packages', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'email_addresses', 'followers', 'git_ssh_keys', 'gpg_keys', 'interaction_limits', 'profile', 'starring', 'enterprise_custom_properties_for_organizations'}.contains(key));}
+AppPermissions copyWith({Actions? Function()? actions, Administration? Function()? administration, ArtifactMetadata? Function()? artifactMetadata, AppPermissionsAttestations? Function()? attestations, AppPermissionsChecks? Function()? checks, Codespaces? Function()? codespaces, Contents? Function()? contents, DependabotSecrets? Function()? dependabotSecrets, AppPermissionsDeployments? Function()? deployments, Discussions? Function()? discussions, AppPermissionsEnvironments? Function()? environments, Issues? Function()? issues, MergeQueues? Function()? mergeQueues, AppPermissionsMetadata? Function()? metadata, AppPermissionsPackages? Function()? packages, AppPermissionsPages? Function()? pages, AppPermissionsPullRequests? Function()? pullRequests, RepositoryCustomProperties? Function()? repositoryCustomProperties, RepositoryHooks? Function()? repositoryHooks, AppPermissionsRepositoryProjects? Function()? repositoryProjects, SecretScanningAlerts? Function()? secretScanningAlerts, Secrets? Function()? secrets, SecurityEvents? Function()? securityEvents, SingleFile? Function()? singleFile, AppPermissionsStatuses? Function()? statuses, VulnerabilityAlerts? Function()? vulnerabilityAlerts, AppPermissionsWorkflows? Function()? workflows, CustomPropertiesForOrganizations? Function()? customPropertiesForOrganizations, Members? Function()? members, OrganizationAdministration? Function()? organizationAdministration, OrganizationCustomRoles? Function()? organizationCustomRoles, OrganizationCustomOrgRoles? Function()? organizationCustomOrgRoles, OrganizationCustomProperties? Function()? organizationCustomProperties, OrganizationCopilotSeatManagement? Function()? organizationCopilotSeatManagement, OrganizationAnnouncementBanners? Function()? organizationAnnouncementBanners, OrganizationEvents? Function()? organizationEvents, OrganizationHooks? Function()? organizationHooks, OrganizationPersonalAccessTokens? Function()? organizationPersonalAccessTokens, OrganizationPersonalAccessTokenRequests? Function()? organizationPersonalAccessTokenRequests, AppPermissionsOrganizationPlan? Function()? organizationPlan, AppPermissionsOrganizationProjects? Function()? organizationProjects, OrganizationPackages? Function()? organizationPackages, OrganizationSecrets? Function()? organizationSecrets, OrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, OrganizationUserBlocking? Function()? organizationUserBlocking, EmailAddresses? Function()? emailAddresses, Followers? Function()? followers, GitSshKeys? Function()? gitSshKeys, GpgKeys? Function()? gpgKeys, InteractionLimits? Function()? interactionLimits, Profile? Function()? profile, Starring? Function()? starring, EnterpriseCustomPropertiesForOrganizations? Function()? enterpriseCustomPropertiesForOrganizations, }) {return AppPermissions(
   actions: actions != null ? actions() : this.actions,
   administration: administration != null ? administration() : this.administration,
   artifactMetadata: artifactMetadata != null ? artifactMetadata() : this.artifactMetadata,
@@ -1790,7 +1790,7 @@ AppPermissions copyWith({Actions? Function()? actions, Administration? Function(
   profile: profile != null ? profile() : this.profile,
   starring: starring != null ? starring() : this.starring,
   enterpriseCustomPropertiesForOrganizations: enterpriseCustomPropertiesForOrganizations != null ? enterpriseCustomPropertiesForOrganizations() : this.enterpriseCustomPropertiesForOrganizations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppPermissions &&
           actions == other.actions &&
@@ -1851,4 +1851,4 @@ AppPermissions copyWith({Actions? Function()? actions, Administration? Function(
 
 @override String toString() => 'AppPermissions(\n  actions: $actions,\n  administration: $administration,\n  artifactMetadata: $artifactMetadata,\n  attestations: $attestations,\n  checks: $checks,\n  codespaces: $codespaces,\n  contents: $contents,\n  dependabotSecrets: $dependabotSecrets,\n  deployments: $deployments,\n  discussions: $discussions,\n  environments: $environments,\n  issues: $issues,\n  mergeQueues: $mergeQueues,\n  metadata: $metadata,\n  packages: $packages,\n  pages: $pages,\n  pullRequests: $pullRequests,\n  repositoryCustomProperties: $repositoryCustomProperties,\n  repositoryHooks: $repositoryHooks,\n  repositoryProjects: $repositoryProjects,\n  secretScanningAlerts: $secretScanningAlerts,\n  secrets: $secrets,\n  securityEvents: $securityEvents,\n  singleFile: $singleFile,\n  statuses: $statuses,\n  vulnerabilityAlerts: $vulnerabilityAlerts,\n  workflows: $workflows,\n  customPropertiesForOrganizations: $customPropertiesForOrganizations,\n  members: $members,\n  organizationAdministration: $organizationAdministration,\n  organizationCustomRoles: $organizationCustomRoles,\n  organizationCustomOrgRoles: $organizationCustomOrgRoles,\n  organizationCustomProperties: $organizationCustomProperties,\n  organizationCopilotSeatManagement: $organizationCopilotSeatManagement,\n  organizationAnnouncementBanners: $organizationAnnouncementBanners,\n  organizationEvents: $organizationEvents,\n  organizationHooks: $organizationHooks,\n  organizationPersonalAccessTokens: $organizationPersonalAccessTokens,\n  organizationPersonalAccessTokenRequests: $organizationPersonalAccessTokenRequests,\n  organizationPlan: $organizationPlan,\n  organizationProjects: $organizationProjects,\n  organizationPackages: $organizationPackages,\n  organizationSecrets: $organizationSecrets,\n  organizationSelfHostedRunners: $organizationSelfHostedRunners,\n  organizationUserBlocking: $organizationUserBlocking,\n  emailAddresses: $emailAddresses,\n  followers: $followers,\n  gitSshKeys: $gitSshKeys,\n  gpgKeys: $gpgKeys,\n  interactionLimits: $interactionLimits,\n  profile: $profile,\n  starring: $starring,\n  enterpriseCustomPropertiesForOrganizations: $enterpriseCustomPropertiesForOrganizations,\n)';
 
- }
+}

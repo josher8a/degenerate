@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
 sealed class MicrodepositType {const MicrodepositType();
 
-factory MicrodepositType.fromJson(String json) { return switch (json) {
+factory MicrodepositType.fromJson(String json) {return switch (json) {
   'amounts' => amounts,
   'descriptor_code' => descriptorCode,
   _ => MicrodepositType$Unknown(json),
-}; }
+};}
 
 static const MicrodepositType amounts = MicrodepositType$amounts._();
 
@@ -17,30 +17,30 @@ static const MicrodepositType descriptorCode = MicrodepositType$descriptorCode._
 static const List<MicrodepositType> values = [amounts, descriptorCode];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'amounts' => 'amounts',
   'descriptor_code' => 'descriptorCode',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MicrodepositType$Unknown; } 
+bool get isUnknown {return this is MicrodepositType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() amounts, required W Function() descriptorCode, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() amounts, required W Function() descriptorCode, required W Function(String value) $unknown, }) {return switch (this) {
       MicrodepositType$amounts() => amounts(),
       MicrodepositType$descriptorCode() => descriptorCode(),
       MicrodepositType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? amounts, W Function()? descriptorCode, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amounts, W Function()? descriptorCode, W Function(String value)? $unknown, }) {return switch (this) {
       MicrodepositType$amounts() => amounts != null ? amounts() : orElse(value),
       MicrodepositType$descriptorCode() => descriptorCode != null ? descriptorCode() : orElse(value),
       MicrodepositType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MicrodepositType($value)';
 
- }
+}
 @immutable final class MicrodepositType$amounts extends MicrodepositType {const MicrodepositType$amounts._();
 
 @override String get value => 'amounts';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amounts,
 
 @override int get hashCode => 'amounts'.hashCode;
 
- }
+}
 @immutable final class MicrodepositType$descriptorCode extends MicrodepositType {const MicrodepositType$descriptorCode._();
 
 @override String get value => 'descriptor_code';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amounts,
 
 @override int get hashCode => 'descriptor_code'.hashCode;
 
- }
+}
 @immutable final class MicrodepositType$Unknown extends MicrodepositType {const MicrodepositType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amounts,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

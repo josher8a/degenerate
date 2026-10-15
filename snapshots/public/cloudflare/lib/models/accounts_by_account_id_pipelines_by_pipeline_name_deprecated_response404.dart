@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404 {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404({required this.errors, required this.results, required this.success, });
 
-factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(
+factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404.fromJson(Map<String, dynamic> json) {return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   results: json['results'] as Map<String, dynamic>?,
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
-); }
+);}
 
 /// Example: `[]`
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
@@ -19,19 +19,19 @@ final Map<String,dynamic>? results;
 /// Example: `false`
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'results': results,
   'success': success.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('results') &&
-      json.containsKey('success'); } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, Map<String, dynamic>? Function()? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(
+      json.containsKey('success');}
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, Map<String, dynamic>? Function()? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) {return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(
   errors: errors ?? this.errors,
   results: results != null ? results() : this.results,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404 &&
           listEquals(errors, other.errors) &&
@@ -42,4 +42,4 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404 copyWith({List<A
 
 @override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(errors: $errors, results: $results, success: $success)';
 
- }
+}

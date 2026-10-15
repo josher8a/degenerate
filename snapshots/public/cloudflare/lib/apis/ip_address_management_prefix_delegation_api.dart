@@ -14,7 +14,7 @@ final class IpAddressManagementPrefixDelegationApi with ApiExecutor {const IpAdd
 /// List all delegations for a given account IP prefix.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations`
-Future<ApiResult<List<AddressingIpamDelegations>?, IpAddressManagementPrefixDelegationListPrefixDelegationsError>> ipAddressManagementPrefixDelegationListPrefixDelegations({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingIpamDelegations>?, IpAddressManagementPrefixDelegationListPrefixDelegationsError>> ipAddressManagementPrefixDelegationListPrefixDelegations({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: IpAddressManagementPrefixDelegationListPrefixDelegationsError.fromResponse,
 );
- } 
+}
 /// Create Prefix Delegation
 ///
 /// Create a new account delegation for a given IP prefix.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations`
-Future<ApiResult<AddressingIpamDelegations?, IpAddressManagementPrefixDelegationCreatePrefixDelegationError>> ipAddressManagementPrefixDelegationCreatePrefixDelegation({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamDelegations?, IpAddressManagementPrefixDelegationCreatePrefixDelegationError>> ipAddressManagementPrefixDelegationCreatePrefixDelegation({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,13 +56,13 @@ return execute(
   },
   onError: IpAddressManagementPrefixDelegationCreatePrefixDelegationError.fromResponse,
 );
- } 
+}
 /// Delete Prefix Delegation
 ///
 /// Delete an account delegation for a given IP prefix.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations/{delegation_id}`
-Future<ApiResult<AaaIdResponseResult?, IpAddressManagementPrefixDelegationDeletePrefixDelegationError>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, IpAddressManagementPrefixDelegationDeletePrefixDelegationError>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,5 +79,5 @@ return execute(
   },
   onError: IpAddressManagementPrefixDelegationDeletePrefixDelegationError.fromResponse,
 );
- } 
- }
+}
+}

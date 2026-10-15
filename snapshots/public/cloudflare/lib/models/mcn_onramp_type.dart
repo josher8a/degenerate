@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class McnOnrampType {const McnOnrampType();
 
-factory McnOnrampType.fromJson(String json) { return switch (json) {
+factory McnOnrampType.fromJson(String json) {return switch (json) {
   'OnrampTypeSingle' => onrampTypeSingle,
   'OnrampTypeHub' => onrampTypeHub,
   _ => McnOnrampType$Unknown(json),
-}; }
+};}
 
 static const McnOnrampType onrampTypeSingle = McnOnrampType$onrampTypeSingle._();
 
@@ -16,30 +16,30 @@ static const McnOnrampType onrampTypeHub = McnOnrampType$onrampTypeHub._();
 static const List<McnOnrampType> values = [onrampTypeSingle, onrampTypeHub];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'OnrampTypeSingle' => 'onrampTypeSingle',
   'OnrampTypeHub' => 'onrampTypeHub',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McnOnrampType$Unknown; } 
+bool get isUnknown {return this is McnOnrampType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() onrampTypeSingle, required W Function() onrampTypeHub, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() onrampTypeSingle, required W Function() onrampTypeHub, required W Function(String value) $unknown, }) {return switch (this) {
       McnOnrampType$onrampTypeSingle() => onrampTypeSingle(),
       McnOnrampType$onrampTypeHub() => onrampTypeHub(),
       McnOnrampType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampTypeSingle, W Function()? onrampTypeHub, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampTypeSingle, W Function()? onrampTypeHub, W Function(String value)? $unknown, }) {return switch (this) {
       McnOnrampType$onrampTypeSingle() => onrampTypeSingle != null ? onrampTypeSingle() : orElse(value),
       McnOnrampType$onrampTypeHub() => onrampTypeHub != null ? onrampTypeHub() : orElse(value),
       McnOnrampType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'McnOnrampType($value)';
 
- }
+}
 @immutable final class McnOnrampType$onrampTypeSingle extends McnOnrampType {const McnOnrampType$onrampTypeSingle._();
 
 @override String get value => 'OnrampTypeSingle';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampTy
 
 @override int get hashCode => 'OnrampTypeSingle'.hashCode;
 
- }
+}
 @immutable final class McnOnrampType$onrampTypeHub extends McnOnrampType {const McnOnrampType$onrampTypeHub._();
 
 @override String get value => 'OnrampTypeHub';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampTy
 
 @override int get hashCode => 'OnrampTypeHub'.hashCode;
 
- }
+}
 @immutable final class McnOnrampType$Unknown extends McnOnrampType {const McnOnrampType$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampTy
 
 @override int get hashCode => value.hashCode;
 
- }
+}

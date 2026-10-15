@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_ip_profile_response/delete_ip_profile_response_result.dart';import 'package:pub_cloudflare/models/error_model32.dart';@immutable final class SlurperCreateJobResponse {const SlurperCreateJobResponse({this.errors, this.messages, this.success, this.result, });
 
-factory SlurperCreateJobResponse.fromJson(Map<String, dynamic> json) { return SlurperCreateJobResponse(
+factory SlurperCreateJobResponse.fromJson(Map<String, dynamic> json) {return SlurperCreateJobResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel32.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as String).toList(),
   success: json['success'] as bool?,
   result: json['result'] != null ? DeleteIpProfileResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ErrorModel32>? errors;
 
@@ -19,25 +19,25 @@ final bool? success;
 
 final DeleteIpProfileResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'messages': ?messages,
   'success': ?success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 final errors$$ = errors;
 if (errors$$ != null) {
 }
-return errors$; } 
-SlurperCreateJobResponse copyWith({List<ErrorModel32>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, DeleteIpProfileResponseResult? Function()? result, }) { return SlurperCreateJobResponse(
+return errors$;}
+SlurperCreateJobResponse copyWith({List<ErrorModel32>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, DeleteIpProfileResponseResult? Function()? result, }) {return SlurperCreateJobResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SlurperCreateJobResponse &&
           listEquals(errors, other.errors) &&
@@ -49,4 +49,4 @@ SlurperCreateJobResponse copyWith({List<ErrorModel32>? Function()? errors, List<
 
 @override String toString() => 'SlurperCreateJobResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

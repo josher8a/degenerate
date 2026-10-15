@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountPeopleRelationship {const GetAccountsAccountPeopleRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.representative, });
 
-factory GetAccountsAccountPeopleRelationship.fromJson(Map<String, dynamic> json) { return GetAccountsAccountPeopleRelationship(
+factory GetAccountsAccountPeopleRelationship.fromJson(Map<String, dynamic> json) {return GetAccountsAccountPeopleRelationship(
   authorizer: json['authorizer'] as bool?,
   director: json['director'] as bool?,
   executive: json['executive'] as bool?,
   legalGuardian: json['legal_guardian'] as bool?,
   owner: json['owner'] as bool?,
   representative: json['representative'] as bool?,
-); }
+);}
 
 final bool? authorizer;
 
@@ -24,23 +24,23 @@ final bool? owner;
 
 final bool? representative;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authorizer': ?authorizer,
   'director': ?director,
   'executive': ?executive,
   'legal_guardian': ?legalGuardian,
   'owner': ?owner,
   'representative': ?representative,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'representative'}.contains(key)); } 
-GetAccountsAccountPeopleRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, bool? Function()? representative, }) { return GetAccountsAccountPeopleRelationship(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'representative'}.contains(key));}
+GetAccountsAccountPeopleRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, bool? Function()? representative, }) {return GetAccountsAccountPeopleRelationship(
   authorizer: authorizer != null ? authorizer() : this.authorizer,
   director: director != null ? director() : this.director,
   executive: executive != null ? executive() : this.executive,
   legalGuardian: legalGuardian != null ? legalGuardian() : this.legalGuardian,
   owner: owner != null ? owner() : this.owner,
   representative: representative != null ? representative() : this.representative,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetAccountsAccountPeopleRelationship &&
           authorizer == other.authorizer &&
@@ -54,4 +54,4 @@ GetAccountsAccountPeopleRelationship copyWith({bool? Function()? authorizer, boo
 
 @override String toString() => 'GetAccountsAccountPeopleRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, representative: $representative)';
 
- }
+}

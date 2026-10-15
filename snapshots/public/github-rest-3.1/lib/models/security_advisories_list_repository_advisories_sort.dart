@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort();
 
-factory SecurityAdvisoriesListRepositoryAdvisoriesSort.fromJson(String json) { return switch (json) {
+factory SecurityAdvisoriesListRepositoryAdvisoriesSort.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   'published' => published,
   _ => SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown(json),
-}; }
+};}
 
 static const SecurityAdvisoriesListRepositoryAdvisoriesSort created = SecurityAdvisoriesListRepositoryAdvisoriesSort$created._();
 
@@ -19,33 +19,33 @@ static const SecurityAdvisoriesListRepositoryAdvisoriesSort published = Security
 static const List<SecurityAdvisoriesListRepositoryAdvisoriesSort> values = [created, updated, published];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created' => 'created',
   'updated' => 'updated',
   'published' => 'published',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown; } 
+bool get isUnknown {return this is SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() created, required W Function() updated, required W Function() published, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() created, required W Function() updated, required W Function() published, required W Function(String value) $unknown, }) {return switch (this) {
       SecurityAdvisoriesListRepositoryAdvisoriesSort$created() => created(),
       SecurityAdvisoriesListRepositoryAdvisoriesSort$updated() => updated(),
       SecurityAdvisoriesListRepositoryAdvisoriesSort$published() => published(),
       SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? published, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? published, W Function(String value)? $unknown, }) {return switch (this) {
       SecurityAdvisoriesListRepositoryAdvisoriesSort$created() => created != null ? created() : orElse(value),
       SecurityAdvisoriesListRepositoryAdvisoriesSort$updated() => updated != null ? updated() : orElse(value),
       SecurityAdvisoriesListRepositoryAdvisoriesSort$published() => published != null ? published() : orElse(value),
       SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecurityAdvisoriesListRepositoryAdvisoriesSort($value)';
 
- }
+}
 @immutable final class SecurityAdvisoriesListRepositoryAdvisoriesSort$created extends SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort$created._();
 
 @override String get value => 'created';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoriesListRepositoryAdvisoriesSort$updated extends SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort$updated._();
 
 @override String get value => 'updated';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'updated'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoriesListRepositoryAdvisoriesSort$published extends SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort$published._();
 
 @override String get value => 'published';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'published'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown extends SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -12,5 +12,5 @@ final ApiConfig _config;
 
 late final CoreApi core = CoreApi(_config);
 
-OpenapiApi withBearerToken(String value) { return OpenapiApi(OpenapiSecurity.applyBearerToken(_config, value)); } 
- }
+OpenapiApi withBearerToken(String value) {return OpenapiApi(OpenapiSecurity.applyBearerToken(_config, value));}
+}

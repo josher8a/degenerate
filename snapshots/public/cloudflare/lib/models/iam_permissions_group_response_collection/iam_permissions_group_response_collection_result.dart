@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ResultScopes {const ResultScopes();
 
-factory ResultScopes.fromJson(String json) { return switch (json) {
+factory ResultScopes.fromJson(String json) {return switch (json) {
   'com.cloudflare.api.account' => comCloudflareApiAccount,
   'com.cloudflare.api.account.zone' => comCloudflareApiAccountZone,
   'com.cloudflare.api.user' => comCloudflareApiUser,
   'com.cloudflare.edge.r2.bucket' => comCloudflareEdgeR2Bucket,
   _ => ResultScopes$Unknown(json),
-}; }
+};}
 
 static const ResultScopes comCloudflareApiAccount = ResultScopes$comCloudflareApiAccount._();
 
@@ -22,36 +22,36 @@ static const ResultScopes comCloudflareEdgeR2Bucket = ResultScopes$comCloudflare
 static const List<ResultScopes> values = [comCloudflareApiAccount, comCloudflareApiAccountZone, comCloudflareApiUser, comCloudflareEdgeR2Bucket];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'com.cloudflare.api.account' => 'comCloudflareApiAccount',
   'com.cloudflare.api.account.zone' => 'comCloudflareApiAccountZone',
   'com.cloudflare.api.user' => 'comCloudflareApiUser',
   'com.cloudflare.edge.r2.bucket' => 'comCloudflareEdgeR2Bucket',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResultScopes$Unknown; } 
+bool get isUnknown {return this is ResultScopes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() comCloudflareApiAccount, required W Function() comCloudflareApiAccountZone, required W Function() comCloudflareApiUser, required W Function() comCloudflareEdgeR2Bucket, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() comCloudflareApiAccount, required W Function() comCloudflareApiAccountZone, required W Function() comCloudflareApiUser, required W Function() comCloudflareEdgeR2Bucket, required W Function(String value) $unknown, }) {return switch (this) {
       ResultScopes$comCloudflareApiAccount() => comCloudflareApiAccount(),
       ResultScopes$comCloudflareApiAccountZone() => comCloudflareApiAccountZone(),
       ResultScopes$comCloudflareApiUser() => comCloudflareApiUser(),
       ResultScopes$comCloudflareEdgeR2Bucket() => comCloudflareEdgeR2Bucket(),
       ResultScopes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloudflareApiAccount, W Function()? comCloudflareApiAccountZone, W Function()? comCloudflareApiUser, W Function()? comCloudflareEdgeR2Bucket, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloudflareApiAccount, W Function()? comCloudflareApiAccountZone, W Function()? comCloudflareApiUser, W Function()? comCloudflareEdgeR2Bucket, W Function(String value)? $unknown, }) {return switch (this) {
       ResultScopes$comCloudflareApiAccount() => comCloudflareApiAccount != null ? comCloudflareApiAccount() : orElse(value),
       ResultScopes$comCloudflareApiAccountZone() => comCloudflareApiAccountZone != null ? comCloudflareApiAccountZone() : orElse(value),
       ResultScopes$comCloudflareApiUser() => comCloudflareApiUser != null ? comCloudflareApiUser() : orElse(value),
       ResultScopes$comCloudflareEdgeR2Bucket() => comCloudflareEdgeR2Bucket != null ? comCloudflareEdgeR2Bucket() : orElse(value),
       ResultScopes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResultScopes($value)';
 
- }
+}
 @immutable final class ResultScopes$comCloudflareApiAccount extends ResultScopes {const ResultScopes$comCloudflareApiAccount._();
 
 @override String get value => 'com.cloudflare.api.account';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloud
 
 @override int get hashCode => 'com.cloudflare.api.account'.hashCode;
 
- }
+}
 @immutable final class ResultScopes$comCloudflareApiAccountZone extends ResultScopes {const ResultScopes$comCloudflareApiAccountZone._();
 
 @override String get value => 'com.cloudflare.api.account.zone';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloud
 
 @override int get hashCode => 'com.cloudflare.api.account.zone'.hashCode;
 
- }
+}
 @immutable final class ResultScopes$comCloudflareApiUser extends ResultScopes {const ResultScopes$comCloudflareApiUser._();
 
 @override String get value => 'com.cloudflare.api.user';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloud
 
 @override int get hashCode => 'com.cloudflare.api.user'.hashCode;
 
- }
+}
 @immutable final class ResultScopes$comCloudflareEdgeR2Bucket extends ResultScopes {const ResultScopes$comCloudflareEdgeR2Bucket._();
 
 @override String get value => 'com.cloudflare.edge.r2.bucket';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloud
 
 @override int get hashCode => 'com.cloudflare.edge.r2.bucket'.hashCode;
 
- }
+}
 @immutable final class ResultScopes$Unknown extends ResultScopes {const ResultScopes$Unknown(this.value);
 
 @override final String value;
@@ -97,14 +97,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloud
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class IamPermissionsGroupResponseCollectionResult {const IamPermissionsGroupResponseCollectionResult({this.id, this.name, this.scopes, });
 
-factory IamPermissionsGroupResponseCollectionResult.fromJson(Map<String, dynamic> json) { return IamPermissionsGroupResponseCollectionResult(
+factory IamPermissionsGroupResponseCollectionResult.fromJson(Map<String, dynamic> json) {return IamPermissionsGroupResponseCollectionResult(
   id: json['id'] as String?,
   name: json['name'] as String?,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => ResultScopes.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Public ID.
 final String? id;
@@ -115,17 +115,17 @@ final String? name;
 /// Resources to which the Permission Group is scoped
 final List<ResultScopes>? scopes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'name': ?name,
   if (scopes != null) 'scopes': scopes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'scopes'}.contains(key)); } 
-IamPermissionsGroupResponseCollectionResult copyWith({String? Function()? id, String? Function()? name, List<ResultScopes>? Function()? scopes, }) { return IamPermissionsGroupResponseCollectionResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'scopes'}.contains(key));}
+IamPermissionsGroupResponseCollectionResult copyWith({String? Function()? id, String? Function()? name, List<ResultScopes>? Function()? scopes, }) {return IamPermissionsGroupResponseCollectionResult(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   scopes: scopes != null ? scopes() : this.scopes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissionsGroupResponseCollectionResult &&
           id == other.id &&
@@ -136,4 +136,4 @@ IamPermissionsGroupResponseCollectionResult copyWith({String? Function()? id, St
 
 @override String toString() => 'IamPermissionsGroupResponseCollectionResult(id: $id, name: $name, scopes: $scopes)';
 
- }
+}

@@ -1,40 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BillingCreditGrant
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_applicability_config.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_applicability_config.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class BillingCreditGrantObject {const BillingCreditGrantObject();
 
-factory BillingCreditGrantObject.fromJson(String json) { return switch (json) {
+factory BillingCreditGrantObject.fromJson(String json) {return switch (json) {
   'billing.credit_grant' => billingCreditGrant,
   _ => BillingCreditGrantObject$Unknown(json),
-}; }
+};}
 
 static const BillingCreditGrantObject billingCreditGrant = BillingCreditGrantObject$billingCreditGrant._();
 
 static const List<BillingCreditGrantObject> values = [billingCreditGrant];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing.credit_grant' => 'billingCreditGrant',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingCreditGrantObject$Unknown; } 
+bool get isUnknown {return this is BillingCreditGrantObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billingCreditGrant, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billingCreditGrant, required W Function(String value) $unknown, }) {return switch (this) {
       BillingCreditGrantObject$billingCreditGrant() => billingCreditGrant(),
       BillingCreditGrantObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingCreditGrant, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingCreditGrant, W Function(String value)? $unknown, }) {return switch (this) {
       BillingCreditGrantObject$billingCreditGrant() => billingCreditGrant != null ? billingCreditGrant() : orElse(value),
       BillingCreditGrantObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingCreditGrantObject($value)';
 
- }
+}
 @immutable final class BillingCreditGrantObject$billingCreditGrant extends BillingCreditGrantObject {const BillingCreditGrantObject$billingCreditGrant._();
 
 @override String get value => 'billing.credit_grant';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingC
 
 @override int get hashCode => 'billing.credit_grant'.hashCode;
 
- }
+}
 @immutable final class BillingCreditGrantObject$Unknown extends BillingCreditGrantObject {const BillingCreditGrantObject$Unknown(this.value);
 
 @override final String value;
@@ -53,31 +53,31 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A credit grant is an API resource that documents the allocation of some billing credits to a customer.
 /// 
 /// Related guide: [Billing credits](https://docs.stripe.com/billing/subscriptions/usage-based/billing-credits)
-@immutable final class BillingCreditGrant {const BillingCreditGrant({required this.amount, required this.applicabilityConfig, required this.category, required this.created, required this.customer, required this.id, required this.livemode, required this.metadata, required this.object, required this.updated, this.customerAccount, this.effectiveAt, this.expiresAt, this.name, this.priority, this.testClock, this.voidedAt, });
+@immutable final class BillingCreditGrant {const BillingCreditGrant({required this.amount, required this.applicabilityConfig, required this.category, required this.created, required this.customer, required this.id, required this.livemode, required this.metadata, required this.object, required this.updated, this.customerAccount = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.name = const Omittable.absent(), this.priority = const Omittable.absent(), this.testClock = const Omittable.absent(), this.voidedAt = const Omittable.absent(), });
 
-factory BillingCreditGrant.fromJson(Map<String, dynamic> json) { return BillingCreditGrant(
+factory BillingCreditGrant.fromJson(Map<String, dynamic> json) {return BillingCreditGrant(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
   applicabilityConfig: BillingCreditGrantsResourceApplicabilityConfig.fromJson(json['applicability_config'] as Map<String, dynamic>),
   category: BillingCreditGrantCategory.fromJson(json['category'] as String),
   created: (json['created'] as num).toInt(),
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
-  effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  customer: BankAccountCustomer.fromJson(json['customer']),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  effectiveAt: json.containsKey('effective_at') ? Omittable(json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null) : const Omittable.absent(),
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: BillingCreditGrantObject.fromJson(json['object'] as String),
-  priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
-  testClock: json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null,
+  priority: json.containsKey('priority') ? Omittable(json['priority'] != null ? (json['priority'] as num).toInt() : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? TestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   updated: (json['updated'] as num).toInt(),
-  voidedAt: json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null,
-); }
+  voidedAt: json.containsKey('voided_at') ? Omittable(json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null) : const Omittable.absent(),
+);}
 
 final BillingCreditGrantsResourceAmount amount;
 
@@ -93,13 +93,13 @@ final int created;
 final BankAccountCustomer customer;
 
 /// ID of the account representing the customer receiving the billing credits
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The time when the billing credits become effective-when they're eligible for use.
-final int? effectiveAt;
+final Omittable<int?> effectiveAt;
 
 /// The time when the billing credits expire. If not present, the billing credits don't expire.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -111,43 +111,43 @@ final bool livemode;
 final Map<String,String> metadata;
 
 /// A descriptive name shown in dashboard.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final BillingCreditGrantObject object;
 
 /// The priority for applying this credit grant. The highest priority is 0 and the lowest is 100.
-final int? priority;
+final Omittable<int?> priority;
 
 /// ID of the test clock this credit grant belongs to.
-final TestClock? testClock;
+final Omittable<TestClock?> testClock;
 
 /// Time at which the object was last updated. Measured in seconds since the Unix epoch.
 final int updated;
 
 /// The time when this credit grant was voided. If not present, the credit grant hasn't been voided.
-final int? voidedAt;
+final Omittable<int?> voidedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount.toJson(),
   'applicability_config': applicabilityConfig.toJson(),
   'category': category.toJson(),
   'created': created,
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
-  'effective_at': ?effectiveAt,
-  'expires_at': ?expiresAt,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (effectiveAt.isPresent) 'effective_at': effectiveAt.value,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
   'livemode': livemode,
   'metadata': metadata,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
-  'priority': ?priority,
-  if (testClock != null) 'test_clock': testClock?.toJson(),
+  if (priority.isPresent) 'priority': priority.value,
+  if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
   'updated': updated,
-  'voided_at': ?voidedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
+  if (voidedAt.isPresent) 'voided_at': voidedAt.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') &&
       json.containsKey('applicability_config') &&
       json.containsKey('category') &&
       json.containsKey('created') && json['created'] is num &&
@@ -156,38 +156,38 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('updated') && json['updated'] is num; } 
+      json.containsKey('updated') && json['updated'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final customerAccount$ = customerAccount;
+List<String> validate() {final errors = <String>[];
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final name$ = name;
+final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory? category, int? created, BankAccountCustomer? customer, String? Function()? customerAccount, int? Function()? effectiveAt, int? Function()? expiresAt, String? id, bool? livemode, Map<String,String>? metadata, String? Function()? name, BillingCreditGrantObject? object, int? Function()? priority, TestClock? Function()? testClock, int? updated, int? Function()? voidedAt, }) { return BillingCreditGrant(
+return errors;}
+BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory? category, int? created, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<int?>? effectiveAt, Omittable<int?>? expiresAt, String? id, bool? livemode, Map<String,String>? metadata, Omittable<String?>? name, BillingCreditGrantObject? object, Omittable<int?>? priority, Omittable<TestClock?>? testClock, int? updated, Omittable<int?>? voidedAt, }) {return BillingCreditGrant(
   amount: amount ?? this.amount,
   applicabilityConfig: applicabilityConfig ?? this.applicabilityConfig,
   category: category ?? this.category,
   created: created ?? this.created,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  customerAccount: customerAccount ?? this.customerAccount,
+  effectiveAt: effectiveAt ?? this.effectiveAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
-  priority: priority != null ? priority() : this.priority,
-  testClock: testClock != null ? testClock() : this.testClock,
+  priority: priority ?? this.priority,
+  testClock: testClock ?? this.testClock,
   updated: updated ?? this.updated,
-  voidedAt: voidedAt != null ? voidedAt() : this.voidedAt,
-); } 
+  voidedAt: voidedAt ?? this.voidedAt,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditGrant &&
           amount == other.amount &&
@@ -212,4 +212,4 @@ BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingC
 
 @override String toString() => 'BillingCreditGrant(\n  amount: $amount,\n  applicabilityConfig: $applicabilityConfig,\n  category: $category,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  effectiveAt: $effectiveAt,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  priority: $priority,\n  testClock: $testClock,\n  updated: $updated,\n  voidedAt: $voidedAt,\n)';
 
- }
+}

@@ -12,7 +12,7 @@ final class Api20100401AllTimeApi with ApiExecutor {const Api20100401AllTimeApi(
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Records/AllTime.json`
-Future<ApiResult<ListUsageRecordAllTimeResponse, Never>> listUsageRecordAllTime({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListUsageRecordAllTimeResponse, Never>> listUsageRecordAllTime({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (category != null) {
   queryParameters['Category'] = category;
@@ -47,11 +47,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListUsageRecordAllTimeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

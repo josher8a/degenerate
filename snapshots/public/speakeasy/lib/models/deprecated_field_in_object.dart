@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeprecatedEnum {const DeprecatedEnum();
 
-factory DeprecatedEnum.fromJson(String json) { return switch (json) {
+factory DeprecatedEnum.fromJson(String json) {return switch (json) {
   'a' => a,
   'b' => b,
   'c' => c,
   _ => DeprecatedEnum$Unknown(json),
-}; }
+};}
 
 static const DeprecatedEnum a = DeprecatedEnum$a._();
 
@@ -19,33 +19,33 @@ static const DeprecatedEnum c = DeprecatedEnum$c._();
 static const List<DeprecatedEnum> values = [a, b, c];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'a' => 'a',
   'b' => 'b',
   'c' => 'c',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DeprecatedEnum$Unknown; } 
+bool get isUnknown {return this is DeprecatedEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() a, required W Function() b, required W Function() c, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() a, required W Function() b, required W Function() c, required W Function(String value) $unknown, }) {return switch (this) {
       DeprecatedEnum$a() => a(),
       DeprecatedEnum$b() => b(),
       DeprecatedEnum$c() => c(),
       DeprecatedEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? b, W Function()? c, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? b, W Function()? c, W Function(String value)? $unknown, }) {return switch (this) {
       DeprecatedEnum$a() => a != null ? a() : orElse(value),
       DeprecatedEnum$b() => b != null ? b() : orElse(value),
       DeprecatedEnum$c() => c != null ? c() : orElse(value),
       DeprecatedEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DeprecatedEnum($value)';
 
- }
+}
 @immutable final class DeprecatedEnum$a extends DeprecatedEnum {const DeprecatedEnum$a._();
 
 @override String get value => 'a';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'a'.hashCode;
 
- }
+}
 @immutable final class DeprecatedEnum$b extends DeprecatedEnum {const DeprecatedEnum$b._();
 
 @override String get value => 'b';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'b'.hashCode;
 
- }
+}
 @immutable final class DeprecatedEnum$c extends DeprecatedEnum {const DeprecatedEnum$c._();
 
 @override String get value => 'c';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'c'.hashCode;
 
- }
+}
 @immutable final class DeprecatedEnum$Unknown extends DeprecatedEnum {const DeprecatedEnum$Unknown(this.value);
 
 @override final String value;
@@ -82,14 +82,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DeprecatedFieldInObject {const DeprecatedFieldInObject({this.deprecatedField, this.deprecatedEnum, this.newField, });
 
-factory DeprecatedFieldInObject.fromJson(Map<String, dynamic> json) { return DeprecatedFieldInObject(
+factory DeprecatedFieldInObject.fromJson(Map<String, dynamic> json) {return DeprecatedFieldInObject(
   deprecatedField: json['deprecatedField'] as String?,
   deprecatedEnum: json['deprecatedEnum'] != null ? DeprecatedEnum.fromJson(json['deprecatedEnum'] as String) : null,
   newField: json['newField'] as String?,
-); }
+);}
 
 final String? deprecatedField;
 
@@ -97,17 +97,17 @@ final DeprecatedEnum? deprecatedEnum;
 
 final String? newField;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deprecatedField': ?deprecatedField,
   if (deprecatedEnum != null) 'deprecatedEnum': deprecatedEnum?.toJson(),
   'newField': ?newField,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deprecatedField', 'deprecatedEnum', 'newField'}.contains(key)); } 
-DeprecatedFieldInObject copyWith({String? Function()? deprecatedField, DeprecatedEnum? Function()? deprecatedEnum, String? Function()? newField, }) { return DeprecatedFieldInObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'deprecatedField', 'deprecatedEnum', 'newField'}.contains(key));}
+DeprecatedFieldInObject copyWith({String? Function()? deprecatedField, DeprecatedEnum? Function()? deprecatedEnum, String? Function()? newField, }) {return DeprecatedFieldInObject(
   deprecatedField: deprecatedField != null ? deprecatedField() : this.deprecatedField,
   deprecatedEnum: deprecatedEnum != null ? deprecatedEnum() : this.deprecatedEnum,
   newField: newField != null ? newField() : this.newField,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeprecatedFieldInObject &&
           deprecatedField == other.deprecatedField &&
@@ -118,4 +118,4 @@ DeprecatedFieldInObject copyWith({String? Function()? deprecatedField, Deprecate
 
 @override String toString() => 'DeprecatedFieldInObject(deprecatedField: $deprecatedField, deprecatedEnum: $deprecatedEnum, newField: $newField)';
 
- }
+}

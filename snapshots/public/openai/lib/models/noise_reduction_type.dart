@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of noise re
 /// 
 sealed class NoiseReductionType {const NoiseReductionType();
 
-factory NoiseReductionType.fromJson(String json) { return switch (json) {
+factory NoiseReductionType.fromJson(String json) {return switch (json) {
   'near_field' => nearField,
   'far_field' => farField,
   _ => NoiseReductionType$Unknown(json),
-}; }
+};}
 
 static const NoiseReductionType nearField = NoiseReductionType$nearField._();
 
@@ -18,30 +18,30 @@ static const NoiseReductionType farField = NoiseReductionType$farField._();
 static const List<NoiseReductionType> values = [nearField, farField];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'near_field' => 'nearField',
   'far_field' => 'farField',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NoiseReductionType$Unknown; } 
+bool get isUnknown {return this is NoiseReductionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() nearField, required W Function() farField, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() nearField, required W Function() farField, required W Function(String value) $unknown, }) {return switch (this) {
       NoiseReductionType$nearField() => nearField(),
       NoiseReductionType$farField() => farField(),
       NoiseReductionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? nearField, W Function()? farField, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? nearField, W Function()? farField, W Function(String value)? $unknown, }) {return switch (this) {
       NoiseReductionType$nearField() => nearField != null ? nearField() : orElse(value),
       NoiseReductionType$farField() => farField != null ? farField() : orElse(value),
       NoiseReductionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'NoiseReductionType($value)';
 
- }
+}
 @immutable final class NoiseReductionType$nearField extends NoiseReductionType {const NoiseReductionType$nearField._();
 
 @override String get value => 'near_field';
@@ -50,7 +50,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? nearFiel
 
 @override int get hashCode => 'near_field'.hashCode;
 
- }
+}
 @immutable final class NoiseReductionType$farField extends NoiseReductionType {const NoiseReductionType$farField._();
 
 @override String get value => 'far_field';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? nearFiel
 
 @override int get hashCode => 'far_field'.hashCode;
 
- }
+}
 @immutable final class NoiseReductionType$Unknown extends NoiseReductionType {const NoiseReductionType$Unknown(this.value);
 
 @override final String value;
@@ -69,4 +69,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? nearFiel
 
 @override int get hashCode => value.hashCode;
 
- }
+}

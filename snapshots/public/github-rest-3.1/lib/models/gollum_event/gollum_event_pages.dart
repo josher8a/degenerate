@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GollumEvent (inline: Pages)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GollumEventPages {const GollumEventPages({this.pageName, this.title, this.summary, this.action, this.sha, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GollumEventPages {const GollumEventPages({this.pageName = const Omittable.absent(), this.title = const Omittable.absent(), this.summary = const Omittable.absent(), this.action, this.sha, this.htmlUrl, });
 
-factory GollumEventPages.fromJson(Map<String, dynamic> json) { return GollumEventPages(
-  pageName: json['page_name'] as String?,
-  title: json['title'] as String?,
-  summary: json['summary'] as String?,
+factory GollumEventPages.fromJson(Map<String, dynamic> json) {return GollumEventPages(
+  pageName: json.containsKey('page_name') ? Omittable(json['page_name'] as String?) : const Omittable.absent(),
+  title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
+  summary: json.containsKey('summary') ? Omittable(json['summary'] as String?) : const Omittable.absent(),
   action: json['action'] as String?,
   sha: json['sha'] as String?,
   htmlUrl: json['html_url'] as String?,
-); }
+);}
 
-final String? pageName;
+final Omittable<String?> pageName;
 
-final String? title;
+final Omittable<String?> title;
 
-final String? summary;
+final Omittable<String?> summary;
 
 final String? action;
 
@@ -24,23 +24,23 @@ final String? sha;
 
 final String? htmlUrl;
 
-Map<String, dynamic> toJson() { return {
-  'page_name': ?pageName,
-  'title': ?title,
-  'summary': ?summary,
+Map<String, dynamic> toJson() {return {
+  if (pageName.isPresent) 'page_name': pageName.value,
+  if (title.isPresent) 'title': title.value,
+  if (summary.isPresent) 'summary': summary.value,
   'action': ?action,
   'sha': ?sha,
   'html_url': ?htmlUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'page_name', 'title', 'summary', 'action', 'sha', 'html_url'}.contains(key)); } 
-GollumEventPages copyWith({String? Function()? pageName, String? Function()? title, String? Function()? summary, String? Function()? action, String? Function()? sha, String? Function()? htmlUrl, }) { return GollumEventPages(
-  pageName: pageName != null ? pageName() : this.pageName,
-  title: title != null ? title() : this.title,
-  summary: summary != null ? summary() : this.summary,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'page_name', 'title', 'summary', 'action', 'sha', 'html_url'}.contains(key));}
+GollumEventPages copyWith({Omittable<String?>? pageName, Omittable<String?>? title, Omittable<String?>? summary, String? Function()? action, String? Function()? sha, String? Function()? htmlUrl, }) {return GollumEventPages(
+  pageName: pageName ?? this.pageName,
+  title: title ?? this.title,
+  summary: summary ?? this.summary,
   action: action != null ? action() : this.action,
   sha: sha != null ? sha() : this.sha,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GollumEventPages &&
           pageName == other.pageName &&
@@ -54,4 +54,4 @@ GollumEventPages copyWith({String? Function()? pageName, String? Function()? tit
 
 @override String toString() => 'GollumEventPages(pageName: $pageName, title: $title, summary: $summary, action: $action, sha: $sha, htmlUrl: $htmlUrl)';
 
- }
+}

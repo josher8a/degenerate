@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/rate_properties.dart';sealed class RateType {const RateType();
 
-factory RateType.fromJson(String json) { return switch (json) {
+factory RateType.fromJson(String json) {return switch (json) {
   'rate' => rate,
   _ => RateType$Unknown(json),
-}; }
+};}
 
 static const RateType rate = RateType$rate._();
 
 static const List<RateType> values = [rate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'rate' => 'rate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RateType$Unknown; } 
+bool get isUnknown {return this is RateType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rate, required W Function(String value) $unknown, }) {return switch (this) {
       RateType$rate() => rate(),
       RateType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rate, W Function(String value)? $unknown, }) {return switch (this) {
       RateType$rate() => rate != null ? rate() : orElse(value),
       RateType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RateType($value)';
 
- }
+}
 @immutable final class RateType$rate extends RateType {const RateType$rate._();
 
 @override String get value => 'rate';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rate, W 
 
 @override int get hashCode => 'rate'.hashCode;
 
- }
+}
 @immutable final class RateType$Unknown extends RateType {const RateType$Unknown(this.value);
 
 @override final String value;
@@ -52,15 +52,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rate, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ElementsRate {const ElementsRate({required this.id, required this.outputs, required this.properties, required this.type, });
 
-factory ElementsRate.fromJson(Map<String, dynamic> json) { return ElementsRate(
+factory ElementsRate.fromJson(Map<String, dynamic> json) {return ElementsRate(
   id: json['id'] as String,
   outputs: ModelOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
   properties: RateProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: RateType.fromJson(json['type'] as String),
-); }
+);}
 
 final String id;
 
@@ -70,22 +70,22 @@ final RateProperties properties;
 
 final RateType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'outputs': outputs.toJson(),
   'properties': properties.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type') && json['type'] == 'rate'; } 
-ElementsRate copyWith({String? id, ModelOutputs? outputs, RateProperties? properties, RateType? type, }) { return ElementsRate(
+      json.containsKey('type') && json['type'] == 'rate';}
+ElementsRate copyWith({String? id, ModelOutputs? outputs, RateProperties? properties, RateType? type, }) {return ElementsRate(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ElementsRate &&
           id == other.id &&
@@ -97,4 +97,4 @@ ElementsRate copyWith({String? id, ModelOutputs? outputs, RateProperties? proper
 
 @override String toString() => 'ElementsRate(id: $id, outputs: $outputs, properties: $properties, type: $type)';
 
- }
+}

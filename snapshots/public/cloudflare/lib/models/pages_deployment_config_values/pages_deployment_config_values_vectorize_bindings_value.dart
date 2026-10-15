@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Vectorize binding.
 @immutable final class PagesDeploymentConfigValuesVectorizeBindingsValue {const PagesDeploymentConfigValuesVectorizeBindingsValue({required this.indexName});
 
-factory PagesDeploymentConfigValuesVectorizeBindingsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesVectorizeBindingsValue(
+factory PagesDeploymentConfigValuesVectorizeBindingsValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesVectorizeBindingsValue(
   indexName: json['index_name'] as String,
-); }
+);}
 
 /// Example: `'my_index'`
 final String indexName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'index_name': indexName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('index_name') && json['index_name'] is String; } 
-PagesDeploymentConfigValuesVectorizeBindingsValue copyWith({String? indexName}) { return PagesDeploymentConfigValuesVectorizeBindingsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('index_name') && json['index_name'] is String;}
+PagesDeploymentConfigValuesVectorizeBindingsValue copyWith({String? indexName}) {return PagesDeploymentConfigValuesVectorizeBindingsValue(
   indexName: indexName ?? this.indexName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesVectorizeBindingsValue &&
           indexName == other.indexName;
@@ -26,4 +26,4 @@ PagesDeploymentConfigValuesVectorizeBindingsValue copyWith({String? indexName}) 
 
 @override String toString() => 'PagesDeploymentConfigValuesVectorizeBindingsValue(indexName: $indexName)';
 
- }
+}

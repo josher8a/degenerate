@@ -1,37 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoiceRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request/post_customers_customer_subscriptions_subscription_exposed_id_request_default_source.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/effective_at.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/number.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_custom_fields_variant1.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_payment_settings.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_shipping_cost.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/rendering.dart';import 'package:pub_stripe_spec3/models/recipient_shipping_with_optional_fields_address.dart';import 'package:pub_stripe_spec3/models/shipping_cost.dart';import 'package:pub_stripe_spec3/models/transfer_data_specs2.dart';@immutable final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request/post_customers_customer_subscriptions_subscription_exposed_id_request_default_source.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/effective_at.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/number.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_payment_settings.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_shipping_cost.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/rendering.dart';@immutable final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
 
-factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequest(
-  accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceRequest(
+  accountTaxIds: json['account_tax_ids'] != null ? PostInvoicesInvoiceRequestAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   autoAdvance: json['auto_advance'] as bool?,
   automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
   collectionMethod: json['collection_method'] != null ? InvoiceCollectionMethod.fromJson(json['collection_method'] as String) : null,
-  customFields: json['custom_fields'] != null ? OneOf2.parse(json['custom_fields'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceRequestCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  customFields: json['custom_fields'] != null ? PostInvoicesInvoiceRequestCustomFields.fromJson(json['custom_fields']) : null,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  defaultSource: json['default_source'] != null ? OneOf2.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  defaultSource: json['default_source'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultSource.fromJson(json['default_source']) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostCustomersCustomerSubscriptionsRequestDefaultTaxRates.fromJson(json['default_tax_rates']) : null,
   description: json['description'] as String?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts']) : null,
   dueDate: json['due_date'] != null ? (json['due_date'] as num).toInt() : null,
-  effectiveAt: json['effective_at'] != null ? OneOf2.parse(json['effective_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  effectiveAt: json['effective_at'] != null ? EffectiveAt.fromJson(json['effective_at']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   footer: json['footer'] as String?,
   issuer: json['issuer'] != null ? Issuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
-  number: json['number'] != null ? OneOf2.parse(json['number'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
+  number: json['number'] != null ? Number.fromJson(json['number']) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostInvoicesCreatePreviewRequestOnBehalfOf.fromJson(json['on_behalf_of']) : null,
   paymentSettings: json['payment_settings'] != null ? PostInvoicesInvoiceRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
   rendering: json['rendering'] != null ? Rendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? OneOf2.parse(json['shipping_cost'], fromA: (v) => ShippingCost.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => RecipientShippingWithOptionalFieldsAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingCost: json['shipping_cost'] != null ? PostInvoicesInvoiceRequestShippingCost.fromJson(json['shipping_cost']) : null,
+  shippingDetails: json['shipping_details'] != null ? PostInvoicesInvoiceRequestShippingDetails.fromJson(json['shipping_details']) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
-  transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs2.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+  transferData: json['transfer_data'] != null ? PostInvoicesInvoiceRequestTransferData.fromJson(json['transfer_data']) : null,
+);}
 
 /// The account tax IDs associated with the invoice. Only editable when the invoice is a draft.
 final PostInvoicesInvoiceRequestAccountTaxIds? accountTaxIds;
@@ -114,7 +114,7 @@ final String? statementDescriptor;
 /// If specified, the funds from the invoice will be transferred to the destination and the ID of the resulting transfer will be found on the invoice's charge. This will be unset if you POST an empty value.
 final PostInvoicesInvoiceRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   'application_fee_amount': ?applicationFeeAmount,
   'auto_advance': ?autoAdvance,
@@ -142,10 +142,10 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
   'statement_descriptor': ?statementDescriptor,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'application_fee_amount', 'auto_advance', 'automatic_tax', 'automatically_finalizes_at', 'collection_method', 'custom_fields', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'description', 'discounts', 'due_date', 'effective_at', 'expand', 'footer', 'issuer', 'metadata', 'number', 'on_behalf_of', 'payment_settings', 'rendering', 'shipping_cost', 'shipping_details', 'statement_descriptor', 'transfer_data'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'application_fee_amount', 'auto_advance', 'automatic_tax', 'automatically_finalizes_at', 'collection_method', 'custom_fields', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'description', 'discounts', 'due_date', 'effective_at', 'expand', 'footer', 'issuer', 'metadata', 'number', 'on_behalf_of', 'payment_settings', 'rendering', 'shipping_cost', 'shipping_details', 'statement_descriptor', 'transfer_data'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
   if (defaultPaymentMethod$.runes.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
@@ -162,8 +162,8 @@ final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
-return errors; } 
-PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? applicationFeeAmount, bool? Function()? autoAdvance, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceCollectionMethod? Function()? collectionMethod, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultSource? Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, int? Function()? dueDate, EffectiveAt? Function()? effectiveAt, List<String>? Function()? expand, String? Function()? footer, Issuer? Function()? issuer, Metadata? Function()? metadata, Number? Function()? number, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings? Function()? paymentSettings, Rendering? Function()? rendering, PostInvoicesInvoiceRequestShippingCost? Function()? shippingCost, PostInvoicesInvoiceRequestShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, PostInvoicesInvoiceRequestTransferData? Function()? transferData, }) { return PostInvoicesInvoiceRequest(
+return errors;}
+PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? applicationFeeAmount, bool? Function()? autoAdvance, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceCollectionMethod? Function()? collectionMethod, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultSource? Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, int? Function()? dueDate, EffectiveAt? Function()? effectiveAt, List<String>? Function()? expand, String? Function()? footer, Issuer? Function()? issuer, Metadata? Function()? metadata, Number? Function()? number, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings? Function()? paymentSettings, Rendering? Function()? rendering, PostInvoicesInvoiceRequestShippingCost? Function()? shippingCost, PostInvoicesInvoiceRequestShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, PostInvoicesInvoiceRequestTransferData? Function()? transferData, }) {return PostInvoicesInvoiceRequest(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   autoAdvance: autoAdvance != null ? autoAdvance() : this.autoAdvance,
@@ -191,7 +191,7 @@ PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Fu
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceRequest &&
           accountTaxIds == other.accountTaxIds &&
@@ -226,4 +226,4 @@ PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Fu
 
 @override String toString() => 'PostInvoicesInvoiceRequest(\n  accountTaxIds: $accountTaxIds,\n  applicationFeeAmount: $applicationFeeAmount,\n  autoAdvance: $autoAdvance,\n  automaticTax: $automaticTax,\n  automaticallyFinalizesAt: $automaticallyFinalizesAt,\n  collectionMethod: $collectionMethod,\n  customFields: $customFields,\n  daysUntilDue: $daysUntilDue,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  defaultSource: $defaultSource,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  dueDate: $dueDate,\n  effectiveAt: $effectiveAt,\n  expand: $expand,\n  footer: $footer,\n  issuer: $issuer,\n  metadata: $metadata,\n  number: $number,\n  onBehalfOf: $onBehalfOf,\n  paymentSettings: $paymentSettings,\n  rendering: $rendering,\n  shippingCost: $shippingCost,\n  shippingDetails: $shippingDetails,\n  statementDescriptor: $statementDescriptor,\n  transferData: $transferData,\n)';
 
- }
+}

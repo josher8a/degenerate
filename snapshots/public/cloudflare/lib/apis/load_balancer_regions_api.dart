@@ -14,7 +14,7 @@ final class LoadBalancerRegionsApi with ApiExecutor {const LoadBalancerRegionsAp
 /// List all region mappings.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions`
-Future<ApiResult<Map<String, dynamic>?, LoadBalancerRegionsListRegionsError>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, LoadBalancerRegionsListRegionsError>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subdivisionCode != null) {
   queryParameters['subdivision_code'] = subdivisionCode.toJson();
@@ -37,21 +37,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return json['result'] as Map<String, dynamic>;
   },
   onError: LoadBalancerRegionsListRegionsError.fromResponse,
 );
- } 
+}
 /// Get Region
 ///
 /// Get a single region mapping.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions/{region_id}`
-Future<ApiResult<Map<String, dynamic>?, LoadBalancerRegionsGetRegionError>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, LoadBalancerRegionsGetRegionError>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,13 +60,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return json['result'] as Map<String, dynamic>;
   },
   onError: LoadBalancerRegionsGetRegionError.fromResponse,
 );
- } 
- }
+}
+}

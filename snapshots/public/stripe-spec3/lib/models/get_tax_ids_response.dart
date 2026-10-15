@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// 
 @immutable final class GetTaxIdsResponse {const GetTaxIdsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetTaxIdsResponse.fromJson(Map<String, dynamic> json) { return GetTaxIdsResponse(
+factory GetTaxIdsResponse.fromJson(Map<String, dynamic> json) {return GetTaxIdsResponse(
   data: (json['data'] as List<dynamic>).map((e) => TaxId.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<TaxId> data;
@@ -23,26 +23,26 @@ final GetAccountsAccountCapabilitiesResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-GetTaxIdsResponse copyWith({List<TaxId>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetTaxIdsResponse(
+return errors;}
+GetTaxIdsResponse copyWith({List<TaxId>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) {return GetTaxIdsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetTaxIdsResponse &&
           listEquals(data, other.data) &&
@@ -54,4 +54,4 @@ GetTaxIdsResponse copyWith({List<TaxId>? data, bool? hasMore, GetAccountsAccount
 
 @override String toString() => 'GetTaxIdsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
 
- }
+}

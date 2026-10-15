@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_performed_via_github_app_permissions.dart';sealed class WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents();
 
-factory WebhookIssuesLockedIssuePerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
+factory WebhookIssuesLockedIssuePerformedViaGithubAppEvents.fromJson(String json) {return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
   'check_run' => checkRun,
   'check_suite' => checkSuite,
@@ -52,7 +52,7 @@ factory WebhookIssuesLockedIssuePerformedViaGithubAppEvents.fromJson(String json
   'reminder' => reminder,
   'security_and_analysis' => securityAndAnalysis,
   _ => WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown(json),
-}; }
+};}
 
 static const WebhookIssuesLockedIssuePerformedViaGithubAppEvents branchProtectionRule = WebhookIssuesLockedIssuePerformedViaGithubAppEvents$branchProtectionRule._();
 
@@ -151,9 +151,9 @@ static const WebhookIssuesLockedIssuePerformedViaGithubAppEvents securityAndAnal
 static const List<WebhookIssuesLockedIssuePerformedViaGithubAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, reminder, securityAndAnalysis];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'branch_protection_rule' => 'branchProtectionRule',
   'check_run' => 'checkRun',
   'check_suite' => 'checkSuite',
@@ -202,11 +202,11 @@ String get name { return switch (value) {
   'reminder' => 'reminder',
   'security_and_analysis' => 'securityAndAnalysis',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown; } 
+bool get isUnknown {return this is WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() branchProtectionRule, required W Function() checkRun, required W Function() checkSuite, required W Function() codeScanningAlert, required W Function() commitComment, required W Function() contentReference, required W Function() create, required W Function() delete, required W Function() deployment, required W Function() deploymentReview, required W Function() deploymentStatus, required W Function() deployKey, required W Function() discussion, required W Function() discussionComment, required W Function() fork, required W Function() gollum, required W Function() issues, required W Function() issueComment, required W Function() label, required W Function() member, required W Function() membership, required W Function() milestone, required W Function() organization, required W Function() orgBlock, required W Function() pageBuild, required W Function() project, required W Function() projectCard, required W Function() projectColumn, required W Function() public, required W Function() pullRequest, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function() push, required W Function() registryPackage, required W Function() release, required W Function() repository, required W Function() repositoryDispatch, required W Function() secretScanningAlert, required W Function() star, required W Function() status, required W Function() team, required W Function() teamAdd, required W Function() watch, required W Function() workflowDispatch, required W Function() workflowRun, required W Function() reminder, required W Function() securityAndAnalysis, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() branchProtectionRule, required W Function() checkRun, required W Function() checkSuite, required W Function() codeScanningAlert, required W Function() commitComment, required W Function() contentReference, required W Function() create, required W Function() delete, required W Function() deployment, required W Function() deploymentReview, required W Function() deploymentStatus, required W Function() deployKey, required W Function() discussion, required W Function() discussionComment, required W Function() fork, required W Function() gollum, required W Function() issues, required W Function() issueComment, required W Function() label, required W Function() member, required W Function() membership, required W Function() milestone, required W Function() organization, required W Function() orgBlock, required W Function() pageBuild, required W Function() project, required W Function() projectCard, required W Function() projectColumn, required W Function() public, required W Function() pullRequest, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function() push, required W Function() registryPackage, required W Function() release, required W Function() repository, required W Function() repositoryDispatch, required W Function() secretScanningAlert, required W Function() star, required W Function() status, required W Function() team, required W Function() teamAdd, required W Function() watch, required W Function() workflowDispatch, required W Function() workflowRun, required W Function() reminder, required W Function() securityAndAnalysis, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$branchProtectionRule() => branchProtectionRule(),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkRun() => checkRun(),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkSuite() => checkSuite(),
@@ -255,9 +255,9 @@ W when<W>({required W Function() branchProtectionRule, required W Function() che
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$reminder() => reminder(),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$securityAndAnalysis() => securityAndAnalysis(),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchProtectionRule, W Function()? checkRun, W Function()? checkSuite, W Function()? codeScanningAlert, W Function()? commitComment, W Function()? contentReference, W Function()? create, W Function()? delete, W Function()? deployment, W Function()? deploymentReview, W Function()? deploymentStatus, W Function()? deployKey, W Function()? discussion, W Function()? discussionComment, W Function()? fork, W Function()? gollum, W Function()? issues, W Function()? issueComment, W Function()? label, W Function()? member, W Function()? membership, W Function()? milestone, W Function()? organization, W Function()? orgBlock, W Function()? pageBuild, W Function()? project, W Function()? projectCard, W Function()? projectColumn, W Function()? public, W Function()? pullRequest, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function()? push, W Function()? registryPackage, W Function()? release, W Function()? repository, W Function()? repositoryDispatch, W Function()? secretScanningAlert, W Function()? star, W Function()? status, W Function()? team, W Function()? teamAdd, W Function()? watch, W Function()? workflowDispatch, W Function()? workflowRun, W Function()? reminder, W Function()? securityAndAnalysis, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchProtectionRule, W Function()? checkRun, W Function()? checkSuite, W Function()? codeScanningAlert, W Function()? commitComment, W Function()? contentReference, W Function()? create, W Function()? delete, W Function()? deployment, W Function()? deploymentReview, W Function()? deploymentStatus, W Function()? deployKey, W Function()? discussion, W Function()? discussionComment, W Function()? fork, W Function()? gollum, W Function()? issues, W Function()? issueComment, W Function()? label, W Function()? member, W Function()? membership, W Function()? milestone, W Function()? organization, W Function()? orgBlock, W Function()? pageBuild, W Function()? project, W Function()? projectCard, W Function()? projectColumn, W Function()? public, W Function()? pullRequest, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function()? push, W Function()? registryPackage, W Function()? release, W Function()? repository, W Function()? repositoryDispatch, W Function()? secretScanningAlert, W Function()? star, W Function()? status, W Function()? team, W Function()? teamAdd, W Function()? watch, W Function()? workflowDispatch, W Function()? workflowRun, W Function()? reminder, W Function()? securityAndAnalysis, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$branchProtectionRule() => branchProtectionRule != null ? branchProtectionRule() : orElse(value),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkRun() => checkRun != null ? checkRun() : orElse(value),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkSuite() => checkSuite != null ? checkSuite() : orElse(value),
@@ -306,10 +306,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$reminder() => reminder != null ? reminder() : orElse(value),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$securityAndAnalysis() => securityAndAnalysis != null ? securityAndAnalysis() : orElse(value),
       WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookIssuesLockedIssuePerformedViaGithubAppEvents($value)';
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$branchProtectionRule extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$branchProtectionRule._();
 
 @override String get value => 'branch_protection_rule';
@@ -318,7 +318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'branch_protection_rule'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkRun extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkRun._();
 
 @override String get value => 'check_run';
@@ -327,7 +327,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'check_run'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkSuite extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$checkSuite._();
 
 @override String get value => 'check_suite';
@@ -336,7 +336,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'check_suite'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$codeScanningAlert extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$codeScanningAlert._();
 
 @override String get value => 'code_scanning_alert';
@@ -345,7 +345,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'code_scanning_alert'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$commitComment extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$commitComment._();
 
 @override String get value => 'commit_comment';
@@ -354,7 +354,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'commit_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$contentReference extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$contentReference._();
 
 @override String get value => 'content_reference';
@@ -363,7 +363,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'content_reference'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$create extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$create._();
 
 @override String get value => 'create';
@@ -372,7 +372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'create'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$delete extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$delete._();
 
 @override String get value => 'delete';
@@ -381,7 +381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'delete'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deployment extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deployment._();
 
 @override String get value => 'deployment';
@@ -390,7 +390,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deployment'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deploymentReview extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deploymentReview._();
 
 @override String get value => 'deployment_review';
@@ -399,7 +399,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deployment_review'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deploymentStatus extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deploymentStatus._();
 
 @override String get value => 'deployment_status';
@@ -408,7 +408,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deployment_status'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deployKey extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$deployKey._();
 
 @override String get value => 'deploy_key';
@@ -417,7 +417,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deploy_key'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$discussion extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$discussion._();
 
 @override String get value => 'discussion';
@@ -426,7 +426,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'discussion'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$discussionComment extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$discussionComment._();
 
 @override String get value => 'discussion_comment';
@@ -435,7 +435,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'discussion_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$fork extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$fork._();
 
 @override String get value => 'fork';
@@ -444,7 +444,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'fork'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$gollum extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$gollum._();
 
 @override String get value => 'gollum';
@@ -453,7 +453,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'gollum'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$issues extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$issues._();
 
 @override String get value => 'issues';
@@ -462,7 +462,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'issues'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$issueComment extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$issueComment._();
 
 @override String get value => 'issue_comment';
@@ -471,7 +471,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'issue_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$label extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$label._();
 
 @override String get value => 'label';
@@ -480,7 +480,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'label'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$member extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$member._();
 
 @override String get value => 'member';
@@ -489,7 +489,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'member'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$membership extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$membership._();
 
 @override String get value => 'membership';
@@ -498,7 +498,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'membership'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$milestone extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$milestone._();
 
 @override String get value => 'milestone';
@@ -507,7 +507,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'milestone'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$organization extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$organization._();
 
 @override String get value => 'organization';
@@ -516,7 +516,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'organization'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$orgBlock extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$orgBlock._();
 
 @override String get value => 'org_block';
@@ -525,7 +525,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'org_block'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pageBuild extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pageBuild._();
 
 @override String get value => 'page_build';
@@ -534,7 +534,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'page_build'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$project extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$project._();
 
 @override String get value => 'project';
@@ -543,7 +543,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'project'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$projectCard extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$projectCard._();
 
 @override String get value => 'project_card';
@@ -552,7 +552,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'project_card'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$projectColumn extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$projectColumn._();
 
 @override String get value => 'project_column';
@@ -561,7 +561,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'project_column'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$public extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$public._();
 
 @override String get value => 'public';
@@ -570,7 +570,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'public'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pullRequest extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pullRequest._();
 
 @override String get value => 'pull_request';
@@ -579,7 +579,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pullRequestReview extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pullRequestReview._();
 
 @override String get value => 'pull_request_review';
@@ -588,7 +588,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request_review'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pullRequestReviewComment extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$pullRequestReviewComment._();
 
 @override String get value => 'pull_request_review_comment';
@@ -597,7 +597,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request_review_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$push extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$push._();
 
 @override String get value => 'push';
@@ -606,7 +606,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'push'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$registryPackage extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$registryPackage._();
 
 @override String get value => 'registry_package';
@@ -615,7 +615,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'registry_package'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$release extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$release._();
 
 @override String get value => 'release';
@@ -624,7 +624,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'release'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$repository extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$repository._();
 
 @override String get value => 'repository';
@@ -633,7 +633,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'repository'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$repositoryDispatch extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$repositoryDispatch._();
 
 @override String get value => 'repository_dispatch';
@@ -642,7 +642,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'repository_dispatch'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$secretScanningAlert extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$secretScanningAlert._();
 
 @override String get value => 'secret_scanning_alert';
@@ -651,7 +651,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'secret_scanning_alert'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$star extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$star._();
 
 @override String get value => 'star';
@@ -660,7 +660,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'star'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$status extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$status._();
 
 @override String get value => 'status';
@@ -669,7 +669,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'status'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$team extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$team._();
 
 @override String get value => 'team';
@@ -678,7 +678,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'team'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$teamAdd extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$teamAdd._();
 
 @override String get value => 'team_add';
@@ -687,7 +687,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'team_add'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$watch extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$watch._();
 
 @override String get value => 'watch';
@@ -696,7 +696,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'watch'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$workflowDispatch extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$workflowDispatch._();
 
 @override String get value => 'workflow_dispatch';
@@ -705,7 +705,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'workflow_dispatch'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$workflowRun extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$workflowRun._();
 
 @override String get value => 'workflow_run';
@@ -714,7 +714,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'workflow_run'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$reminder extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$reminder._();
 
 @override String get value => 'reminder';
@@ -723,7 +723,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'reminder'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$securityAndAnalysis extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$securityAndAnalysis._();
 
 @override String get value => 'security_and_analysis';
@@ -732,7 +732,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'security_and_analysis'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown extends WebhookIssuesLockedIssuePerformedViaGithubAppEvents {const WebhookIssuesLockedIssuePerformedViaGithubAppEvents$Unknown(this.value);
 
 @override final String value;
@@ -742,11 +742,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class WebhookIssuesLockedIssuePerformedViaGithubApp {const WebhookIssuesLockedIssuePerformedViaGithubApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.permissions, this.slug, });
 
-factory WebhookIssuesLockedIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) { return WebhookIssuesLockedIssuePerformedViaGithubApp(
+factory WebhookIssuesLockedIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) {return WebhookIssuesLockedIssuePerformedViaGithubApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String?,
   events: (json['events'] as List<dynamic>?)?.map((e) => WebhookIssuesLockedIssuePerformedViaGithubAppEvents.fromJson(e as String)).toList(),
@@ -759,7 +759,7 @@ factory WebhookIssuesLockedIssuePerformedViaGithubApp.fromJson(Map<String, dynam
   permissions: json['permissions'] != null ? WebhooksIssue2PerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -790,7 +790,7 @@ final String? slug;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt?.toIso8601String(),
   'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
@@ -803,17 +803,17 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
   'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('external_url') && json['external_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('external_url') && (json['external_url'] == null || json['external_url'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('id') && (json['id'] == null || json['id'] is num) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookIssuesLockedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesLockedIssuePerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, PackageOwner? Function()? owner, WebhooksIssue2PerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesLockedIssuePerformedViaGithubApp(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String);}
+WebhookIssuesLockedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesLockedIssuePerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, PackageOwner? Function()? owner, WebhooksIssue2PerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) {return WebhookIssuesLockedIssuePerformedViaGithubApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,
@@ -826,7 +826,7 @@ WebhookIssuesLockedIssuePerformedViaGithubApp copyWith({DateTime? Function()? cr
   permissions: permissions != null ? permissions() : this.permissions,
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesLockedIssuePerformedViaGithubApp &&
           createdAt == other.createdAt &&
@@ -846,4 +846,4 @@ WebhookIssuesLockedIssuePerformedViaGithubApp copyWith({DateTime? Function()? cr
 
 @override String toString() => 'WebhookIssuesLockedIssuePerformedViaGithubApp(\n  createdAt: $createdAt,\n  description: $description,\n  events: $events,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  owner: $owner,\n  permissions: $permissions,\n  slug: $slug,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

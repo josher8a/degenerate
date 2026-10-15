@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_release_request/repos_create_release_request_make_latest.dart';@immutable final class ReposUpdateReleaseRequest {const ReposUpdateReleaseRequest({this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.makeLatest, this.discussionCategoryName, });
 
-factory ReposUpdateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateReleaseRequest(
+factory ReposUpdateReleaseRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateReleaseRequest(
   tagName: json['tag_name'] as String?,
   targetCommitish: json['target_commitish'] as String?,
   name: json['name'] as String?,
@@ -12,7 +12,7 @@ factory ReposUpdateReleaseRequest.fromJson(Map<String, dynamic> json) { return R
   prerelease: json['prerelease'] as bool?,
   makeLatest: json['make_latest'] != null ? ReposCreateReleaseRequestMakeLatest.fromJson(json['make_latest'] as String) : null,
   discussionCategoryName: json['discussion_category_name'] as String?,
-); }
+);}
 
 /// The name of the tag.
 final String? tagName;
@@ -38,7 +38,7 @@ final ReposCreateReleaseRequestMakeLatest? makeLatest;
 /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
 final String? discussionCategoryName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tag_name': ?tagName,
   'target_commitish': ?targetCommitish,
   'name': ?name,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'prerelease': ?prerelease,
   if (makeLatest != null) 'make_latest': makeLatest?.toJson(),
   'discussion_category_name': ?discussionCategoryName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tag_name', 'target_commitish', 'name', 'body', 'draft', 'prerelease', 'make_latest', 'discussion_category_name'}.contains(key)); } 
-ReposUpdateReleaseRequest copyWith({String? Function()? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool? Function()? draft, bool? Function()? prerelease, ReposCreateReleaseRequestMakeLatest? Function()? makeLatest, String? Function()? discussionCategoryName, }) { return ReposUpdateReleaseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tag_name', 'target_commitish', 'name', 'body', 'draft', 'prerelease', 'make_latest', 'discussion_category_name'}.contains(key));}
+ReposUpdateReleaseRequest copyWith({String? Function()? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool? Function()? draft, bool? Function()? prerelease, ReposCreateReleaseRequestMakeLatest? Function()? makeLatest, String? Function()? discussionCategoryName, }) {return ReposUpdateReleaseRequest(
   tagName: tagName != null ? tagName() : this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   name: name != null ? name() : this.name,
@@ -58,7 +58,7 @@ ReposUpdateReleaseRequest copyWith({String? Function()? tagName, String? Functio
   prerelease: prerelease != null ? prerelease() : this.prerelease,
   makeLatest: makeLatest != null ? makeLatest() : this.makeLatest,
   discussionCategoryName: discussionCategoryName != null ? discussionCategoryName() : this.discussionCategoryName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateReleaseRequest &&
           tagName == other.tagName &&
@@ -74,4 +74,4 @@ ReposUpdateReleaseRequest copyWith({String? Function()? tagName, String? Functio
 
 @override String toString() => 'ReposUpdateReleaseRequest(tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, makeLatest: $makeLatest, discussionCategoryName: $discussionCategoryName)';
 
- }
+}

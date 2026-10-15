@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record/runtime_risks.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_request/orgs_create_artifact_deployment_record_request_status.dart';@immutable final class OrgsSetClusterDeploymentRecordsRequestDeployments {const OrgsSetClusterDeploymentRecordsRequestDeployments({required this.name, required this.digest, required this.deploymentName, this.version, this.status, this.githubRepository, this.tags, this.runtimeRisks, });
 
-factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, dynamic> json) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
+factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, dynamic> json) {return OrgsSetClusterDeploymentRecordsRequestDeployments(
   name: json['name'] as String,
   digest: json['digest'] as String,
   version: json['version'] as String?,
@@ -12,7 +12,7 @@ factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, d
   githubRepository: json['github_repository'] as String?,
   tags: (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => RuntimeRisks.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The name of the artifact. Note that if multiple deployments have identical 'digest' parameter values,
 /// the name parameter must also be identical across all entries.
@@ -53,7 +53,7 @@ final Map<String,String>? tags;
 /// A list of runtime risks associated with the deployment.
 final List<RuntimeRisks>? runtimeRisks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'digest': digest,
   'version': ?version,
@@ -62,12 +62,12 @@ Map<String, dynamic> toJson() { return {
   'github_repository': ?githubRepository,
   'tags': ?tags,
   if (runtimeRisks != null) 'runtime_risks': runtimeRisks?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
-      json.containsKey('deployment_name') && json['deployment_name'] is String; } 
+      json.containsKey('deployment_name') && json['deployment_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 256) { errors.add('name: length must be <= 256'); }
 if (digest.runes.length < 71) { errors.add('digest: length must be >= 71'); }
@@ -91,8 +91,8 @@ if (runtimeRisks$ != null) {
   if (runtimeRisks$.length > 4) { errors.add('runtimeRisks: must have <= 4 items'); }
   if (runtimeRisks$.toSet().length != runtimeRisks$.length) { errors.add('runtimeRisks: items must be unique'); }
 }
-return errors; } 
-OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? Function()? status, String? deploymentName, String? Function()? githubRepository, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, }) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
+return errors;}
+OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? Function()? status, String? deploymentName, String? Function()? githubRepository, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, }) {return OrgsSetClusterDeploymentRecordsRequestDeployments(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,
@@ -101,7 +101,7 @@ OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
   tags: tags != null ? tags() : this.tags,
   runtimeRisks: runtimeRisks != null ? runtimeRisks() : this.runtimeRisks,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsSetClusterDeploymentRecordsRequestDeployments &&
           name == other.name &&
@@ -117,4 +117,4 @@ OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String
 
 @override String toString() => 'OrgsSetClusterDeploymentRecordsRequestDeployments(name: $name, digest: $digest, version: $version, status: $status, deploymentName: $deploymentName, githubRepository: $githubRepository, tags: $tags, runtimeRisks: $runtimeRisks)';
 
- }
+}

@@ -2,13 +2,13 @@
 // Source: #/components/schemas/MoveParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A mouse move action.
-@immutable final class MoveParam {const MoveParam({required this.x, required this.y, this.type = 'move', });
+@immutable final class MoveParam {const MoveParam({required this.type, required this.x, required this.y, });
 
-factory MoveParam.fromJson(Map<String, dynamic> json) { return MoveParam(
+factory MoveParam.fromJson(Map<String, dynamic> json) {return MoveParam(
   type: json['type'] as String,
   x: (json['x'] as num).toInt(),
   y: (json['y'] as num).toInt(),
-); }
+);}
 
 /// Specifies the event type. For a move action, this property is always set to `move`.
 final String type;
@@ -19,19 +19,19 @@ final int x;
 /// The y-coordinate to move to.
 final int y;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'x': x,
   'y': y,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('x') && json['x'] is num &&
-      json.containsKey('y') && json['y'] is num; } 
-MoveParam copyWith({String? type, int? x, int? y, }) { return MoveParam(
+      json.containsKey('y') && json['y'] is num;}
+MoveParam copyWith({String? type, int? x, int? y, }) {return MoveParam(
   type: type ?? this.type,
   x: x ?? this.x,
   y: y ?? this.y,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MoveParam &&
           type == other.type &&
@@ -42,4 +42,4 @@ MoveParam copyWith({String? type, int? x, int? y, }) { return MoveParam(
 
 @override String toString() => 'MoveParam(type: $type, x: $x, y: $y)';
 
- }
+}

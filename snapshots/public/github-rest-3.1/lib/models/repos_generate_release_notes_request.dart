@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGenerateReleaseNotesRequest {const ReposGenerateReleaseNotesRequest({required this.tagName, this.targetCommitish, this.previousTagName, this.configurationFilePath, });
 
-factory ReposGenerateReleaseNotesRequest.fromJson(Map<String, dynamic> json) { return ReposGenerateReleaseNotesRequest(
+factory ReposGenerateReleaseNotesRequest.fromJson(Map<String, dynamic> json) {return ReposGenerateReleaseNotesRequest(
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String?,
   previousTagName: json['previous_tag_name'] as String?,
   configurationFilePath: json['configuration_file_path'] as String?,
-); }
+);}
 
 /// The tag name for the release. This can be an existing tag or a new one.
 final String tagName;
@@ -22,19 +22,19 @@ final String? previousTagName;
 /// Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
 final String? configurationFilePath;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tag_name': tagName,
   'target_commitish': ?targetCommitish,
   'previous_tag_name': ?previousTagName,
   'configuration_file_path': ?configurationFilePath,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag_name') && json['tag_name'] is String; } 
-ReposGenerateReleaseNotesRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? previousTagName, String? Function()? configurationFilePath, }) { return ReposGenerateReleaseNotesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tag_name') && json['tag_name'] is String;}
+ReposGenerateReleaseNotesRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? previousTagName, String? Function()? configurationFilePath, }) {return ReposGenerateReleaseNotesRequest(
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   previousTagName: previousTagName != null ? previousTagName() : this.previousTagName,
   configurationFilePath: configurationFilePath != null ? configurationFilePath() : this.configurationFilePath,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposGenerateReleaseNotesRequest &&
           tagName == other.tagName &&
@@ -46,4 +46,4 @@ ReposGenerateReleaseNotesRequest copyWith({String? tagName, String? Function()? 
 
 @override String toString() => 'ReposGenerateReleaseNotesRequest(tagName: $tagName, targetCommitish: $targetCommitish, previousTagName: $previousTagName, configurationFilePath: $configurationFilePath)';
 
- }
+}

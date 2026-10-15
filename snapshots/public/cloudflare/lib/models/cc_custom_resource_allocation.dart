@@ -8,11 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom resource 
 /// 
 @immutable final class CcCustomResourceAllocation {const CcCustomResourceAllocation({required this.diskMb, required this.memoryMib, required this.vcpu, });
 
-factory CcCustomResourceAllocation.fromJson(Map<String, dynamic> json) { return CcCustomResourceAllocation(
+factory CcCustomResourceAllocation.fromJson(Map<String, dynamic> json) {return CcCustomResourceAllocation(
   diskMb: (json['disk_mb'] as num).toInt(),
   memoryMib: (json['memory_mib'] as num).toInt(),
   vcpu: (json['vcpu'] as num).toDouble(),
-); }
+);}
 
 /// The disk size in MB.
 final int diskMb;
@@ -25,19 +25,19 @@ final int memoryMib;
 /// 
 final double vcpu;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'disk_mb': diskMb,
   'memory_mib': memoryMib,
   'vcpu': vcpu,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('disk_mb') && json['disk_mb'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('disk_mb') && json['disk_mb'] is num &&
       json.containsKey('memory_mib') && json['memory_mib'] is num &&
-      json.containsKey('vcpu') && json['vcpu'] is num; } 
-CcCustomResourceAllocation copyWith({int? diskMb, int? memoryMib, double? vcpu, }) { return CcCustomResourceAllocation(
+      json.containsKey('vcpu') && json['vcpu'] is num;}
+CcCustomResourceAllocation copyWith({int? diskMb, int? memoryMib, double? vcpu, }) {return CcCustomResourceAllocation(
   diskMb: diskMb ?? this.diskMb,
   memoryMib: memoryMib ?? this.memoryMib,
   vcpu: vcpu ?? this.vcpu,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CcCustomResourceAllocation &&
           diskMb == other.diskMb &&
@@ -48,4 +48,4 @@ CcCustomResourceAllocation copyWith({int? diskMb, int? memoryMib, double? vcpu, 
 
 @override String toString() => 'CcCustomResourceAllocation(diskMb: $diskMb, memoryMib: $memoryMib, vcpu: $vcpu)';
 
- }
+}

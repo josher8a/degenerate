@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';sealed class ReposCreateForkError {const ReposCreateForkError();
 
-factory ReposCreateForkError.fromResponse(ApiResponse response) {     try {
+factory ReposCreateForkError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         400 => ReposCreateForkError$400(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         403 => ReposCreateForkError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -12,12 +12,12 @@ factory ReposCreateForkError.fromResponse(ApiResponse response) {     try {
       };
     } on Object {
       return ReposCreateForkError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class ReposCreateForkError$400 extends ReposCreateForkError {const ReposCreateForkError$400(this.error);
 
 final BasicError error;
@@ -26,7 +26,7 @@ final BasicError error;
 
 @override int get statusCode => 400;
 
- }
+}
 final class ReposCreateForkError$403 extends ReposCreateForkError {const ReposCreateForkError$403(this.error);
 
 final BasicError error;
@@ -35,7 +35,7 @@ final BasicError error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class ReposCreateForkError$404 extends ReposCreateForkError {const ReposCreateForkError$404(this.error);
 
 final BasicError error;
@@ -44,7 +44,7 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class ReposCreateForkError$422 extends ReposCreateForkError {const ReposCreateForkError$422(this.error);
 
 final ValidationError error;
@@ -53,13 +53,13 @@ final ValidationError error;
 
 @override int get statusCode => 422;
 
- }
+}
 final class ReposCreateForkError$Unknown extends ReposCreateForkError {const ReposCreateForkError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef SecurityAdvisoriesCreateForkError = ReposCreateForkError;
 typedef SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError = ReposCreateForkError;

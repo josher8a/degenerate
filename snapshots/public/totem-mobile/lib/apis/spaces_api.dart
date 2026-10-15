@@ -2,6 +2,7 @@
 // Source: tag "SpacesApi" (13 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/mobile_space_detail_schema.dart';
 import 'package:pub_totem_mobile/models/paged_mobile_space_detail_schema.dart';
@@ -37,7 +38,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return jsonDecode(response.body) as bool;
@@ -62,7 +63,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return jsonDecode(response.body) as bool;
@@ -84,7 +85,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body) as List<dynamic>;
@@ -126,7 +127,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return PagedMobileSpaceDetailSchema.fromJson(
@@ -154,7 +155,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return MobileSpaceDetailSchema.fromJson(
@@ -181,7 +182,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body) as List<dynamic>;
@@ -213,7 +214,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return SessionDetailSchema.fromJson(
@@ -243,7 +244,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// Get Sessions History
@@ -260,7 +261,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body) as List<dynamic>;
@@ -301,7 +302,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body) as List<dynamic>;
@@ -326,7 +327,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return SummarySpacesSchema.fromJson(
@@ -354,7 +355,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return SessionDetailSchema.fromJson(
@@ -381,7 +382,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return SessionDetailSchema.fromJson(

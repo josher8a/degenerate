@@ -1,33 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PullRequestReviewEvent (inline: Review)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestReviewEventReview {const PullRequestReviewEventReview({this.id, this.nodeId, this.user, this.body, this.commitId, this.submittedAt, this.state, this.htmlUrl, this.pullRequestUrl, this.links, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestReviewEventReview {const PullRequestReviewEventReview({this.id, this.nodeId, this.user = const Omittable.absent(), this.body, this.commitId, this.submittedAt = const Omittable.absent(), this.state, this.htmlUrl, this.pullRequestUrl, this.links, this.updatedAt, });
 
-factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) { return PullRequestReviewEventReview(
+factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) {return PullRequestReviewEventReview(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
-  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json.containsKey('user') ? Omittable(json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   body: json['body'] as String?,
   commitId: json['commit_id'] as String?,
-  submittedAt: json['submitted_at'] as String?,
+  submittedAt: json.containsKey('submitted_at') ? Omittable(json['submitted_at'] as String?) : const Omittable.absent(),
   state: json['state'] as String?,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   pullRequestUrl: json['pull_request_url'] != null ? Uri.parse(json['pull_request_url'] as String) : null,
   links: json['_links'] != null ? PullRequestReviewLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final int? id;
 
 final String? nodeId;
 
-final SimpleUser? user;
+final Omittable<SimpleUser?> user;
 
 final String? body;
 
 final String? commitId;
 
-final String? submittedAt;
+final Omittable<String?> submittedAt;
 
 final String? state;
 
@@ -39,33 +39,33 @@ final PullRequestReviewLinks? links;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'node_id': ?nodeId,
-  if (user != null) 'user': user?.toJson(),
+  if (user.isPresent) 'user': user.value?.toJson(),
   'body': ?body,
   'commit_id': ?commitId,
-  'submitted_at': ?submittedAt,
+  if (submittedAt.isPresent) 'submitted_at': submittedAt.value,
   'state': ?state,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
   if (pullRequestUrl != null) 'pull_request_url': pullRequestUrl?.toString(),
   if (links != null) '_links': links?.toJson(),
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'user', 'body', 'commit_id', 'submitted_at', 'state', 'html_url', 'pull_request_url', '_links', 'updated_at'}.contains(key)); } 
-PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? nodeId, SimpleUser? Function()? user, String? Function()? body, String? Function()? commitId, String? Function()? submittedAt, String? Function()? state, Uri? Function()? htmlUrl, Uri? Function()? pullRequestUrl, PullRequestReviewLinks? Function()? links, String? Function()? updatedAt, }) { return PullRequestReviewEventReview(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'node_id', 'user', 'body', 'commit_id', 'submitted_at', 'state', 'html_url', 'pull_request_url', '_links', 'updated_at'}.contains(key));}
+PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? nodeId, Omittable<SimpleUser?>? user, String? Function()? body, String? Function()? commitId, Omittable<String?>? submittedAt, String? Function()? state, Uri? Function()? htmlUrl, Uri? Function()? pullRequestUrl, PullRequestReviewLinks? Function()? links, String? Function()? updatedAt, }) {return PullRequestReviewEventReview(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
-  user: user != null ? user() : this.user,
+  user: user ?? this.user,
   body: body != null ? body() : this.body,
   commitId: commitId != null ? commitId() : this.commitId,
-  submittedAt: submittedAt != null ? submittedAt() : this.submittedAt,
+  submittedAt: submittedAt ?? this.submittedAt,
   state: state != null ? state() : this.state,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   pullRequestUrl: pullRequestUrl != null ? pullRequestUrl() : this.pullRequestUrl,
   links: links != null ? links() : this.links,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewEventReview &&
           id == other.id &&
@@ -84,4 +84,4 @@ PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? 
 
 @override String toString() => 'PullRequestReviewEventReview(\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  commitId: $commitId,\n  submittedAt: $submittedAt,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

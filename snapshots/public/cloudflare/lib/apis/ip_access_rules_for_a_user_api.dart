@@ -14,7 +14,7 @@ final class IpAccessRulesForAUserApi with ApiExecutor {const IpAccessRulesForAUs
 /// Fetches IP Access rules of the user. You can filter the results using several optional parameters.
 ///
 /// `GET /user/firewall/access_rules/rules`
-Future<ApiResult<List<FirewallRule>?, IpAccessRulesForAUserListIpAccessRulesError>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallRule>, IpAccessRulesForAUserListIpAccessRulesError>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -55,15 +55,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => FirewallRule.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => FirewallRule.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: IpAccessRulesForAUserListIpAccessRulesError.fromResponse,
 );
- } 
+}
 /// Create an IP Access rule
 ///
 /// Creates a new IP Access rule for all zones owned by the current user.
@@ -71,7 +71,7 @@ return execute(
 /// Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /user/firewall/access_rules/rules`
-Future<ApiResult<FirewallRule?, IpAccessRulesForAUserCreateAnIpAccessRuleError>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAUserCreateAnIpAccessRuleError>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -82,21 +82,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? FirewallRule.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return FirewallRule.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: IpAccessRulesForAUserCreateAnIpAccessRuleError.fromResponse,
 );
- } 
+}
 /// Update an IP Access rule
 ///
 /// Updates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRule?, IpAccessRulesForAUserUpdateAnIpAccessRuleError>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAUserUpdateAnIpAccessRuleError>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,15 +107,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? FirewallRule.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return FirewallRule.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: IpAccessRulesForAUserUpdateAnIpAccessRuleError.fromResponse,
 );
- } 
+}
 /// Delete an IP Access rule
 ///
 /// Deletes an IP Access rule at the user level.
@@ -123,7 +123,7 @@ return execute(
 /// Note: Deleting a user-level rule will affect all zones owned by the user.
 ///
 /// `DELETE /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<AaaIdResponseResult?, IpAccessRulesForAUserDeleteAnIpAccessRuleError>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult, IpAccessRulesForAUserDeleteAnIpAccessRuleError>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,13 +132,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: IpAccessRulesForAUserDeleteAnIpAccessRuleError.fromResponse,
 );
- } 
- }
+}
+}

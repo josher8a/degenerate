@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksWorkflowJobRun {const WebhooksWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt, });
 
-factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) { return WebhooksWorkflowJobRun(
+factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) {return WebhooksWorkflowJobRun(
   conclusion: json['conclusion'],
   createdAt: json['created_at'] as String,
   environment: json['environment'] as String,
@@ -12,7 +12,7 @@ factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) { return Webh
   name: json['name'],
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final dynamic conclusion;
 
@@ -30,7 +30,7 @@ final String status;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'conclusion': conclusion,
   'created_at': createdAt,
   'environment': environment,
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'status': status,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('conclusion') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhooksWorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, dynamic Function()? name, String? status, String? updatedAt, }) { return WebhooksWorkflowJobRun(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhooksWorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, dynamic Function()? name, String? status, String? updatedAt, }) {return WebhooksWorkflowJobRun(
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   createdAt: createdAt ?? this.createdAt,
   environment: environment ?? this.environment,
@@ -57,7 +57,7 @@ WebhooksWorkflowJobRun copyWith({dynamic Function()? conclusion, String? created
   name: name != null ? name() : this.name,
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksWorkflowJobRun &&
           conclusion == other.conclusion &&
@@ -73,4 +73,4 @@ WebhooksWorkflowJobRun copyWith({dynamic Function()? conclusion, String? created
 
 @override String toString() => 'WebhooksWorkflowJobRun(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)';
 
- }
+}

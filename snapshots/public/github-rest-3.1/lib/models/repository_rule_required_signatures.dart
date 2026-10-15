@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_signatures/repository_rule_required_signatures_type.dart';/// Commits pushed to matching refs must have verified signatures.
 @immutable final class RepositoryRuleRequiredSignatures {const RepositoryRuleRequiredSignatures({required this.type});
 
-factory RepositoryRuleRequiredSignatures.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredSignatures(
+factory RepositoryRuleRequiredSignatures.fromJson(Map<String, dynamic> json) {return RepositoryRuleRequiredSignatures(
   type: RepositoryRuleRequiredSignaturesType.fromJson(json['type'] as String),
-); }
+);}
 
 final RepositoryRuleRequiredSignaturesType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'required_signatures'; } 
-RepositoryRuleRequiredSignatures copyWith({RepositoryRuleRequiredSignaturesType? type}) { return RepositoryRuleRequiredSignatures(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'required_signatures';}
+RepositoryRuleRequiredSignatures copyWith({RepositoryRuleRequiredSignaturesType? type}) {return RepositoryRuleRequiredSignatures(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredSignatures &&
           type == other.type;
@@ -25,4 +25,4 @@ RepositoryRuleRequiredSignatures copyWith({RepositoryRuleRequiredSignaturesType?
 
 @override String toString() => 'RepositoryRuleRequiredSignatures(type: $type)';
 
- }
+}

@@ -17,11 +17,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventInputAudioBufferAppend {const RealtimeClientEventInputAudioBufferAppend({required this.type, required this.audio, this.eventId, });
 
-factory RealtimeClientEventInputAudioBufferAppend.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferAppend(
+factory RealtimeClientEventInputAudioBufferAppend.fromJson(Map<String, dynamic> json) {return RealtimeClientEventInputAudioBufferAppend(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   audio: json['audio'] as String,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -34,25 +34,25 @@ final String type;
 /// 
 final String audio;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'audio': audio,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('audio') && json['audio'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('audio') && json['audio'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventInputAudioBufferAppend copyWith({String? Function()? eventId, String? type, String? audio, }) { return RealtimeClientEventInputAudioBufferAppend(
+return errors;}
+RealtimeClientEventInputAudioBufferAppend copyWith({String? Function()? eventId, String? type, String? audio, }) {return RealtimeClientEventInputAudioBufferAppend(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   audio: audio ?? this.audio,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventInputAudioBufferAppend &&
           eventId == other.eventId &&
@@ -63,4 +63,4 @@ RealtimeClientEventInputAudioBufferAppend copyWith({String? Function()? eventId,
 
 @override String toString() => 'RealtimeClientEventInputAudioBufferAppend(eventId: $eventId, type: $type, audio: $audio)';
 
- }
+}

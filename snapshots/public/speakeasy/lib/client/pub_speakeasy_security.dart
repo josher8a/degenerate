@@ -78,11 +78,11 @@ static final authenticatedRequestDuplicateNameARequirements = [const ApiSecurity
 
 static final authenticatedRequestDuplicateNameBRequirements = [const ApiSecurityRequirement({'alternateClientCredentials2': ['read', 'write']})];
 
-static ApiConfig applyBasicAuth(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
-static ApiConfig applyBasicHttp(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
-static ApiConfig applyApiKeyAuth(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': value}); } 
-static ApiConfig applyBearerAuth(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
-static ApiConfig applyApiKeyAuthNew(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value}); } 
-static ApiConfig applyPaginationAuth(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value}); } 
-static ApiConfig applyAccessToken(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
- }
+static ApiConfig applyBasicAuth(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+static ApiConfig applyBasicHttp(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+static ApiConfig applyApiKeyAuth(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': value});}
+static ApiConfig applyBearerAuth(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+static ApiConfig applyApiKeyAuthNew(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});}
+static ApiConfig applyPaginationAuth(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});}
+static ApiConfig applyAccessToken(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+}

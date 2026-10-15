@@ -15,7 +15,7 @@ final class InfrastructureAccessTargetsApi with ApiExecutor {const Infrastructur
 /// together.
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<List<InfraTarget>?, ConnectivityServicesDeleteError>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InfraTarget>?, ConnectivityServicesDeleteError>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hostname != null) {
   queryParameters['hostname'] = hostname;
@@ -93,7 +93,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -101,11 +101,11 @@ return execute(
   },
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
+}
 /// Create new target
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<InfraTarget?, ConnectivityServicesDeleteError>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTarget?, ConnectivityServicesDeleteError>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,7 +116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -124,11 +124,11 @@ return execute(
   },
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
+}
 /// Get target
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<InfraTarget?, ConnectivityServicesDeleteError>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTarget?, ConnectivityServicesDeleteError>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -137,7 +137,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -145,11 +145,11 @@ return execute(
   },
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
+}
 /// Update target
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<InfraTarget?, ConnectivityServicesDeleteError>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTarget?, ConnectivityServicesDeleteError>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -160,7 +160,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -168,11 +168,11 @@ return execute(
   },
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
+}
 /// Delete target
 ///
 /// `DELETE /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<void, ConnectivityServicesDeleteError>> infraTargetsDelete({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ConnectivityServicesDeleteError>> infraTargetsDelete({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -181,18 +181,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
+}
 /// Create new targets
 ///
 /// Adds one or more targets.
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/batch`
-Future<ApiResult<List<InfraTarget>?, ConnectivityServicesDeleteError>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<InfraTarget>?, ConnectivityServicesDeleteError>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -203,7 +203,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -211,13 +211,13 @@ return execute(
   },
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
+}
 /// Delete targets
 ///
 /// Removes one or more targets.
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets/batch_delete`
-Future<ApiResult<void, ConnectivityServicesDeleteError>> infraTargetsDeleteBatchPost({required InfraAccountTag accountId, required InfraTargetsDeleteBatchPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ConnectivityServicesDeleteError>> infraTargetsDeleteBatchPost({required InfraAccountTag accountId, required InfraTargetsDeleteBatchPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -228,10 +228,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ConnectivityServicesDeleteError.fromResponse,
 );
- } 
- }
+}
+}

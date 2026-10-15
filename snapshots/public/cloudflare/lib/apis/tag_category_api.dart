@@ -14,7 +14,7 @@ final class TagCategoryApi with ApiExecutor {const TagCategoryApi(this.apiConfig
 /// Returns all Source-of-Truth tag categories for an account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags/categories`
-Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListError>> getTagCategoryList({required String accountId, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListError>> getTagCategoryList({required String accountId, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (search != null) {
   queryParameters['search'] = search;
@@ -31,20 +31,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTagCategoryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: GetTagCategoryListError.fromResponse,
 );
- } 
+}
 /// Updates a tag category (SoT)
 ///
 /// Updates a Source-of-Truth tag category by UUID.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
-Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateError>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateError>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,20 +55,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PatchTagCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PatchTagCategoryUpdateError.fromResponse,
 );
- } 
+}
 /// Deletes a tag category (SoT)
 ///
 /// Deletes a Source-of-Truth tag category by UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
-Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteError>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteError>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -77,20 +77,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeleteTagCategoryDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: DeleteTagCategoryDeleteError.fromResponse,
 );
- } 
+}
 /// Creates a new tag category (SoT)
 ///
 /// Creates a new Source-of-Truth tag category for an account.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/tags/categories/create`
-Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateError>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateError>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,12 +101,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostTagCategoryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostTagCategoryCreateError.fromResponse,
 );
- } 
- }
+}
+}

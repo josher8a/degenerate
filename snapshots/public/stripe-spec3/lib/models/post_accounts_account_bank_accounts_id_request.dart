@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountBankAccountsIdRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_documents.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/post_accounts_account_bank_accounts_id_request_account_holder_type.dart';@immutable final class PostAccountsAccountBankAccountsIdRequest {const PostAccountsAccountBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_documents.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/post_accounts_account_bank_accounts_id_request_account_holder_type.dart';@immutable final class PostAccountsAccountBankAccountsIdRequest {const PostAccountsAccountBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
 
-factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsIdRequest(
+factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] != null ? PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountType: json['account_type'] != null ? ExternalAccountPayoutBankAccountAccountType.fromJson(json['account_type'] as String) : null,
@@ -18,9 +18,9 @@ factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> j
   expMonth: json['exp_month'] as String?,
   expYear: json['exp_year'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// The name of the person or business that owns the bank account.
 final String? accountHolderName;
@@ -70,7 +70,7 @@ final Metadata? metadata;
 /// Cardholder name.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_name': ?accountHolderName,
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   if (accountType != null) 'account_type': accountType?.toJson(),
@@ -87,10 +87,10 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'account_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'default_for_currency', 'documents', 'exp_month', 'exp_year', 'expand', 'metadata', 'name'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'account_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'default_for_currency', 'documents', 'exp_month', 'exp_year', 'expand', 'metadata', 'name'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountHolderName$ = accountHolderName;
 if (accountHolderName$ != null) {
   if (accountHolderName$.runes.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
@@ -131,8 +131,8 @@ final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHolderName, PostAccountsAccountBankAccountsIdRequestAccountHolderType? Function()? accountHolderType, ExternalAccountPayoutBankAccountAccountType? Function()? accountType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, bool? Function()? defaultForCurrency, ExternalAccountPayoutBankAccountDocuments? Function()? documents, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) { return PostAccountsAccountBankAccountsIdRequest(
+return errors;}
+PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHolderName, PostAccountsAccountBankAccountsIdRequestAccountHolderType? Function()? accountHolderType, ExternalAccountPayoutBankAccountAccountType? Function()? accountType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, bool? Function()? defaultForCurrency, ExternalAccountPayoutBankAccountDocuments? Function()? documents, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) {return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
@@ -149,7 +149,7 @@ PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHo
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountBankAccountsIdRequest &&
           accountHolderName == other.accountHolderName &&
@@ -173,4 +173,4 @@ PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHo
 
 @override String toString() => 'PostAccountsAccountBankAccountsIdRequest(\n  accountHolderName: $accountHolderName,\n  accountHolderType: $accountHolderType,\n  accountType: $accountType,\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  defaultForCurrency: $defaultForCurrency,\n  documents: $documents,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  expand: $expand,\n  metadata: $metadata,\n  name: $name,\n)';
 
- }
+}

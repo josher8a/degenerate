@@ -10,7 +10,7 @@ final class CustomClientApi with ApiExecutor {const CustomClientApi(this.apiConf
 @override final ApiConfig apiConfig;
 
 /// `POST /anything/customClient/{pathParam}`
-Future<ApiResult<CustomClientPostResponse, Never>> customClientPost({required String pathParam, required String queryStringParam, required String headerParam, SimpleObject? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CustomClientPostResponse, Never>> customClientPost({required String pathParam, required String queryStringParam, required String headerParam, SimpleObject? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['queryStringParam'] = queryStringParam;
 
@@ -28,13 +28,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CustomClientPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Tests HTTP proxy support. The server URL is set to an unreachable host
 /// so the request only succeeds if proxied through the localhost:35456 where
 /// the api test service handles the CONNECT tunnel and forwards the request
@@ -42,7 +42,7 @@ return execute(
 /// 
 ///
 /// `POST /proxy`
-Future<ApiResult<String, Never>> proxy({String? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> proxy({String? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,11 +53,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
- }
+}
+}

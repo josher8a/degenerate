@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guide: [Fleet management](https://docs.stripe.com/terminal/fleet/locations)
 @immutable final class TerminalLocation {const TerminalLocation({required this.address, required this.displayName, required this.id, required this.livemode, required this.metadata, required this.object, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayNameKana, this.displayNameKanji, this.phone, });
 
-factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLocation(
+factory TerminalLocation.fromJson(Map<String, dynamic> json) {return TerminalLocation(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   addressKana: json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -19,7 +19,7 @@ factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLo
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DeletedTerminalLocationObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
-); }
+);}
 
 final Address address;
 
@@ -54,7 +54,7 @@ final DeletedTerminalLocationObject object;
 /// The phone number of the location.
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -67,15 +67,15 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'object': object.toJson(),
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
-      json.containsKey('object') && json['object'] == 'terminal.location'; } 
+      json.containsKey('object') && json['object'] == 'terminal.location';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final configurationOverrides$ = configurationOverrides;
 if (configurationOverrides$ != null) {
   if (configurationOverrides$.runes.length > 5000) { errors.add('configurationOverrides: length must be <= 5000'); }
@@ -94,8 +94,8 @@ final phone$ = phone;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, String? Function()? configurationOverrides, String? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, DeletedTerminalLocationObject? object, String? Function()? phone, }) { return TerminalLocation(
+return errors;}
+TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, String? Function()? configurationOverrides, String? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, DeletedTerminalLocationObject? object, String? Function()? phone, }) {return TerminalLocation(
   address: address ?? this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -108,7 +108,7 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   phone: phone != null ? phone() : this.phone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalLocation &&
           address == other.address &&
@@ -128,4 +128,4 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
 
 @override String toString() => 'TerminalLocation(\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  configurationOverrides: $configurationOverrides,\n  displayName: $displayName,\n  displayNameKana: $displayNameKana,\n  displayNameKanji: $displayNameKanji,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  phone: $phone,\n)';
 
- }
+}

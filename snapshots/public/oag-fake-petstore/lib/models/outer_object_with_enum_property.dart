@@ -9,19 +9,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class OuterObjectWithEnumProperty {const OuterObjectWithEnumProperty({required this.value});
 
-factory OuterObjectWithEnumProperty.fromJson(Map<String, dynamic> json) { return OuterObjectWithEnumProperty(
+factory OuterObjectWithEnumProperty.fromJson(Map<String, dynamic> json) {return OuterObjectWithEnumProperty(
   value: OuterEnumInteger.fromJson((json['value'] as num).toInt()),
-); }
+);}
 
 final OuterEnumInteger value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-OuterObjectWithEnumProperty copyWith({OuterEnumInteger? value}) { return OuterObjectWithEnumProperty(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+OuterObjectWithEnumProperty copyWith({OuterEnumInteger? value}) {return OuterObjectWithEnumProperty(
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OuterObjectWithEnumProperty &&
           value == other.value;
@@ -30,4 +30,4 @@ OuterObjectWithEnumProperty copyWith({OuterEnumInteger? value}) { return OuterOb
 
 @override String toString() => 'OuterObjectWithEnumProperty(value: $value)';
 
- }
+}

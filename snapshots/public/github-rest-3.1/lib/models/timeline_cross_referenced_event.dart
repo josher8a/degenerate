@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/timeline_cross_referenced_event/timeline_cross_referenced_event_source.dart';/// Timeline Cross Referenced Event
 @immutable final class TimelineCrossReferencedEvent {const TimelineCrossReferencedEvent({required this.event, required this.createdAt, required this.updatedAt, required this.source, this.actor, });
 
-factory TimelineCrossReferencedEvent.fromJson(Map<String, dynamic> json) { return TimelineCrossReferencedEvent(
+factory TimelineCrossReferencedEvent.fromJson(Map<String, dynamic> json) {return TimelineCrossReferencedEvent(
   event: json['event'] as String,
   actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   source: TimelineCrossReferencedEventSource.fromJson(json['source'] as Map<String, dynamic>),
-); }
+);}
 
 final String event;
 
@@ -22,24 +22,24 @@ final DateTime updatedAt;
 
 final TimelineCrossReferencedEventSource source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event,
   if (actor != null) 'actor': actor?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'source': source.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') && json['event'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('source'); } 
-TimelineCrossReferencedEvent copyWith({String? event, SimpleUser? Function()? actor, DateTime? createdAt, DateTime? updatedAt, TimelineCrossReferencedEventSource? source, }) { return TimelineCrossReferencedEvent(
+      json.containsKey('source');}
+TimelineCrossReferencedEvent copyWith({String? event, SimpleUser? Function()? actor, DateTime? createdAt, DateTime? updatedAt, TimelineCrossReferencedEventSource? source, }) {return TimelineCrossReferencedEvent(
   event: event ?? this.event,
   actor: actor != null ? actor() : this.actor,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   source: source ?? this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCrossReferencedEvent &&
           event == other.event &&
@@ -52,4 +52,4 @@ TimelineCrossReferencedEvent copyWith({String? event, SimpleUser? Function()? ac
 
 @override String toString() => 'TimelineCrossReferencedEvent(event: $event, actor: $actor, createdAt: $createdAt, updatedAt: $updatedAt, source: $source)';
 
- }
+}

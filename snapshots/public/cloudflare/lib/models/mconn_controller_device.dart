@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnControllerDevice {const MconnControllerDevice({required this.cryptKey, required this.id, this.cryptKeyRotationFinishedAt, this.imagedAt, this.lastCryptKey, this.serialNumber, });
 
-factory MconnControllerDevice.fromJson(Map<String, dynamic> json) { return MconnControllerDevice(
+factory MconnControllerDevice.fromJson(Map<String, dynamic> json) {return MconnControllerDevice(
   cryptKey: json['crypt_key'] as String,
   cryptKeyRotationFinishedAt: json['crypt_key_rotation_finished_at'] as String?,
   id: MconnUuid.fromJson(json['id'] as String),
   imagedAt: json['imaged_at'] as String?,
   lastCryptKey: json['last_crypt_key'] as String?,
   serialNumber: json['serial_number'] as String?,
-); }
+);}
 
 final String cryptKey;
 
@@ -24,24 +24,24 @@ final String? lastCryptKey;
 
 final String? serialNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'crypt_key': cryptKey,
   'crypt_key_rotation_finished_at': ?cryptKeyRotationFinishedAt,
   'id': id.toJson(),
   'imaged_at': ?imagedAt,
   'last_crypt_key': ?lastCryptKey,
   'serial_number': ?serialNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('crypt_key') && json['crypt_key'] is String &&
-      json.containsKey('id'); } 
-MconnControllerDevice copyWith({String? cryptKey, String? Function()? cryptKeyRotationFinishedAt, MconnUuid? id, String? Function()? imagedAt, String? Function()? lastCryptKey, String? Function()? serialNumber, }) { return MconnControllerDevice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('crypt_key') && json['crypt_key'] is String &&
+      json.containsKey('id');}
+MconnControllerDevice copyWith({String? cryptKey, String? Function()? cryptKeyRotationFinishedAt, MconnUuid? id, String? Function()? imagedAt, String? Function()? lastCryptKey, String? Function()? serialNumber, }) {return MconnControllerDevice(
   cryptKey: cryptKey ?? this.cryptKey,
   cryptKeyRotationFinishedAt: cryptKeyRotationFinishedAt != null ? cryptKeyRotationFinishedAt() : this.cryptKeyRotationFinishedAt,
   id: id ?? this.id,
   imagedAt: imagedAt != null ? imagedAt() : this.imagedAt,
   lastCryptKey: lastCryptKey != null ? lastCryptKey() : this.lastCryptKey,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerDevice &&
           cryptKey == other.cryptKey &&
@@ -55,4 +55,4 @@ MconnControllerDevice copyWith({String? cryptKey, String? Function()? cryptKeyRo
 
 @override String toString() => 'MconnControllerDevice(cryptKey: $cryptKey, cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt, id: $id, imagedAt: $imagedAt, lastCryptKey: $lastCryptKey, serialNumber: $serialNumber)';
 
- }
+}

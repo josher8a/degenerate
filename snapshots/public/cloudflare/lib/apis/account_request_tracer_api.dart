@@ -12,7 +12,7 @@ final class AccountRequestTracerApi with ApiExecutor {const AccountRequestTracer
 /// Request Trace
 ///
 /// `POST /accounts/{account_id}/request-tracer/trace`
-Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, AccountRequestTracerRequestTraceError>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, AccountRequestTracerRequestTraceError>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,5 +31,5 @@ return execute(
   },
   onError: AccountRequestTracerRequestTraceError.fromResponse,
 );
- } 
- }
+}
+}

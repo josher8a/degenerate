@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersMultipartScript (inline: Metadata)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_assets.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_limits.dart';import 'package:pub_cloudflare/models/workers_logpush.dart';import 'package:pub_cloudflare/models/workers_multiple_step_migrations.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item/migrations.dart';import 'package:pub_cloudflare/models/workers_observability.dart';import 'package:pub_cloudflare/models/workers_placement_info.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_smart.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant4.dart';import 'package:pub_cloudflare/models/workers_single_step_migrations.dart';import 'package:pub_cloudflare/models/workers_tail_consumers_script.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
-@immutable final class WorkersMultipartScriptMetadata {const WorkersMultipartScriptMetadata({this.assets, this.bindings, this.bodyPart, this.compatibilityDate, this.compatibilityFlags, this.keepAssets, this.keepBindings, this.limits, this.logpush, this.mainModule, this.migrations, this.observability, this.placement, this.tags, this.tailConsumers, this.usageModel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_assets.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_limits.dart';import 'package:pub_cloudflare/models/workers_logpush.dart';import 'package:pub_cloudflare/models/workers_multiple_step_migrations.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item/workers_namespace_script_and_version_settings_item_migrations.dart';import 'package:pub_cloudflare/models/workers_observability.dart';import 'package:pub_cloudflare/models/workers_placement_info.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_smart.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant4.dart';import 'package:pub_cloudflare/models/workers_single_step_migrations.dart';import 'package:pub_cloudflare/models/workers_tail_consumers_script.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
+@immutable final class WorkersMultipartScriptMetadata {const WorkersMultipartScriptMetadata({this.assets, this.bindings, this.bodyPart, this.compatibilityDate, this.compatibilityFlags, this.keepAssets, this.keepBindings, this.limits, this.logpush, this.mainModule, this.migrations, this.observability, this.placement, this.tags, this.tailConsumers = const Omittable.absent(), this.usageModel, });
 
-factory WorkersMultipartScriptMetadata.fromJson(Map<String, dynamic> json) { return WorkersMultipartScriptMetadata(
+factory WorkersMultipartScriptMetadata.fromJson(Map<String, dynamic> json) {return WorkersMultipartScriptMetadata(
   assets: json['assets'] != null ? WorkersAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   bodyPart: json['body_part'] as String?,
@@ -19,9 +19,9 @@ factory WorkersMultipartScriptMetadata.fromJson(Map<String, dynamic> json) { ret
   observability: json['observability'] != null ? WorkersObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
   placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => WorkersPlacementInfoSmart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoTargeted4.fromJson(v as Map<String, dynamic>),) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
+  tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 final WorkersAssets? assets;
 
@@ -58,7 +58,7 @@ final WorkersLogpush? logpush;
 final String? mainModule;
 
 /// Migrations to apply for Durable Objects associated with this Worker.
-final Migrations? migrations;
+final WorkersNamespaceScriptAndVersionSettingsItemMigrations? migrations;
 
 final WorkersObservability? observability;
 
@@ -67,11 +67,11 @@ final WorkersPlacementInfo? placement;
 /// List of strings to use as tags for this Worker.
 final List<String>? tags;
 
-final List<WorkersTailConsumersScript>? tailConsumers;
+final Omittable<List<WorkersTailConsumersScript>?> tailConsumers;
 
 final WorkersUsageModel? usageModel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assets != null) 'assets': assets?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
   'body_part': ?bodyPart,
@@ -86,11 +86,11 @@ Map<String, dynamic> toJson() { return {
   if (observability != null) 'observability': observability?.toJson(),
   if (placement != null) 'placement': placement?.toJson(),
   'tags': ?tags,
-  if (tailConsumers != null) 'tail_consumers': tailConsumers?.map((e) => e.toJson()).toList(),
+  if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'assets', 'bindings', 'body_part', 'compatibility_date', 'compatibility_flags', 'keep_assets', 'keep_bindings', 'limits', 'logpush', 'main_module', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
-WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, String? Function()? bodyPart, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, bool? Function()? keepAssets, List<String>? Function()? keepBindings, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, String? Function()? mainModule, Migrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, List<String>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersMultipartScriptMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'assets', 'bindings', 'body_part', 'compatibility_date', 'compatibility_flags', 'keep_assets', 'keep_bindings', 'limits', 'logpush', 'main_module', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key));}
+WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, String? Function()? bodyPart, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, bool? Function()? keepAssets, List<String>? Function()? keepBindings, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, String? Function()? mainModule, WorkersNamespaceScriptAndVersionSettingsItemMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, List<String>? Function()? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) {return WorkersMultipartScriptMetadata(
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,
   bodyPart: bodyPart != null ? bodyPart() : this.bodyPart,
@@ -105,9 +105,9 @@ WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List
   observability: observability != null ? observability() : this.observability,
   placement: placement != null ? placement() : this.placement,
   tags: tags != null ? tags() : this.tags,
-  tailConsumers: tailConsumers != null ? tailConsumers() : this.tailConsumers,
+  tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersMultipartScriptMetadata &&
           assets == other.assets &&
@@ -124,11 +124,12 @@ WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List
           observability == other.observability &&
           placement == other.placement &&
           listEquals(tags, other.tags) &&
-          listEquals(tailConsumers, other.tailConsumers) &&
+          tailConsumers.isPresent == other.tailConsumers.isPresent &&
+          listEquals(tailConsumers.value, other.tailConsumers.value) &&
           usageModel == other.usageModel;
 
-@override int get hashCode => Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel);
+@override int get hashCode => Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel);
 
 @override String toString() => 'WorkersMultipartScriptMetadata(\n  assets: $assets,\n  bindings: $bindings,\n  bodyPart: $bodyPart,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  keepAssets: $keepAssets,\n  keepBindings: $keepBindings,\n  limits: $limits,\n  logpush: $logpush,\n  mainModule: $mainModule,\n  migrations: $migrations,\n  observability: $observability,\n  placement: $placement,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  usageModel: $usageModel,\n)';
 
- }
+}

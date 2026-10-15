@@ -14,7 +14,7 @@ final class RadarLocationsApi with ApiExecutor {const RadarLocationsApi(this.api
 /// Retrieves a list of locations.
 ///
 /// `GET /radar/entities/locations`
-Future<ApiResult<RadarGetEntitiesLocationsResponseResult, RadarGetEntitiesLocationsError>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesLocationsResponseResult, RadarGetEntitiesLocationsError>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -49,7 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -57,13 +57,13 @@ return execute(
   },
   onError: RadarGetEntitiesLocationsError.fromResponse,
 );
- } 
+}
 /// Get location details
 ///
 /// Retrieves the requested location information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this location).
 ///
 /// `GET /radar/entities/locations/{location}`
-Future<ApiResult<RadarGetEntitiesLocationByAlpha2ResponseResult, RadarGetEntitiesLocationByAlpha2Error>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesLocationByAlpha2ResponseResult, RadarGetEntitiesLocationByAlpha2Error>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -80,7 +80,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,5 +88,5 @@ return execute(
   },
   onError: RadarGetEntitiesLocationByAlpha2Error.fromResponse,
 );
- } 
- }
+}
+}

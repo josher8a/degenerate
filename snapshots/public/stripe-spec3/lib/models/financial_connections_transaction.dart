@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject();
 
-factory FinancialConnectionsTransactionObject.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsTransactionObject.fromJson(String json) {return switch (json) {
   'financial_connections.transaction' => financialConnectionsTransaction,
   _ => FinancialConnectionsTransactionObject$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsTransactionObject financialConnectionsTransaction = FinancialConnectionsTransactionObject$financialConnectionsTransaction._();
 
 static const List<FinancialConnectionsTransactionObject> values = [financialConnectionsTransaction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'financial_connections.transaction' => 'financialConnectionsTransaction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsTransactionObject$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsTransactionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() financialConnectionsTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() financialConnectionsTransaction, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsTransactionObject$financialConnectionsTransaction() => financialConnectionsTransaction(),
       FinancialConnectionsTransactionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsTransaction, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsTransactionObject$financialConnectionsTransaction() => financialConnectionsTransaction != null ? financialConnectionsTransaction() : orElse(value),
       FinancialConnectionsTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsTransactionObject($value)';
 
- }
+}
 @immutable final class FinancialConnectionsTransactionObject$financialConnectionsTransaction extends FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject$financialConnectionsTransaction._();
 
 @override String get value => 'financial_connections.transaction';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? financia
 
 @override int get hashCode => 'financial_connections.transaction'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsTransactionObject$Unknown extends FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? financia
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the transaction.
 sealed class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus();
 
-factory FinancialConnectionsTransactionStatus.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsTransactionStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'posted' => posted,
   'void' => $void,
   _ => FinancialConnectionsTransactionStatus$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsTransactionStatus pending = FinancialConnectionsTransactionStatus$pending._();
 
@@ -73,33 +73,33 @@ static const FinancialConnectionsTransactionStatus $void = FinancialConnectionsT
 static const List<FinancialConnectionsTransactionStatus> values = [pending, posted, $void];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'posted' => 'posted',
   'void' => r'$void',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsTransactionStatus$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsTransactionStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() posted, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() posted, required W Function() $void, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsTransactionStatus$pending() => pending(),
       FinancialConnectionsTransactionStatus$posted() => posted(),
       FinancialConnectionsTransactionStatus$$void() => $void(),
       FinancialConnectionsTransactionStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? posted, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? posted, W Function()? $void, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsTransactionStatus$pending() => pending != null ? pending() : orElse(value),
       FinancialConnectionsTransactionStatus$posted() => posted != null ? posted() : orElse(value),
       FinancialConnectionsTransactionStatus$$void() => $void != null ? $void() : orElse(value),
       FinancialConnectionsTransactionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsTransactionStatus($value)';
 
- }
+}
 @immutable final class FinancialConnectionsTransactionStatus$pending extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$pending._();
 
 @override String get value => 'pending';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsTransactionStatus$posted extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$posted._();
 
 @override String get value => 'posted';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'posted'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsTransactionStatus$$void extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$$void._();
 
 @override String get value => 'void';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'void'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsTransactionStatus$Unknown extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Transaction represents a real transaction that affects a Financial Connections Account balance.
 @immutable final class FinancialConnectionsTransaction {const FinancialConnectionsTransaction({required this.account, required this.amount, required this.currency, required this.description, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.transactedAt, required this.transactionRefresh, required this.updated, });
 
-factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) { return FinancialConnectionsTransaction(
+factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) {return FinancialConnectionsTransaction(
   account: json['account'] as String,
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
@@ -153,7 +153,7 @@ factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) { re
   transactedAt: (json['transacted_at'] as num).toInt(),
   transactionRefresh: json['transaction_refresh'] as String,
   updated: (json['updated'] as num).toInt(),
-); }
+);}
 
 /// The ID of the Financial Connections Account this transaction belongs to.
 final String account;
@@ -190,7 +190,7 @@ final String transactionRefresh;
 /// Time at which the object was last updated. Measured in seconds since the Unix epoch.
 final int updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'amount': amount,
   'currency': currency,
@@ -203,8 +203,8 @@ Map<String, dynamic> toJson() { return {
   'transacted_at': transactedAt,
   'transaction_refresh': transactionRefresh,
   'updated': updated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -215,16 +215,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('status_transitions') &&
       json.containsKey('transacted_at') && json['transacted_at'] is num &&
       json.containsKey('transaction_refresh') && json['transaction_refresh'] is String &&
-      json.containsKey('updated') && json['updated'] is num; } 
+      json.containsKey('updated') && json['updated'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (account.runes.length > 5000) { errors.add('account: length must be <= 5000'); }
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 if (description.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (transactionRefresh.runes.length > 5000) { errors.add('transactionRefresh: length must be <= 5000'); }
-return errors; } 
-FinancialConnectionsTransaction copyWith({String? account, int? amount, String? currency, String? description, String? id, bool? livemode, FinancialConnectionsTransactionObject? object, FinancialConnectionsTransactionStatus? status, BankConnectionsResourceTransactionResourceStatusTransitions? statusTransitions, int? transactedAt, String? transactionRefresh, int? updated, }) { return FinancialConnectionsTransaction(
+return errors;}
+FinancialConnectionsTransaction copyWith({String? account, int? amount, String? currency, String? description, String? id, bool? livemode, FinancialConnectionsTransactionObject? object, FinancialConnectionsTransactionStatus? status, BankConnectionsResourceTransactionResourceStatusTransitions? statusTransitions, int? transactedAt, String? transactionRefresh, int? updated, }) {return FinancialConnectionsTransaction(
   account: account ?? this.account,
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
@@ -237,7 +237,7 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
   transactedAt: transactedAt ?? this.transactedAt,
   transactionRefresh: transactionRefresh ?? this.transactionRefresh,
   updated: updated ?? this.updated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsTransaction &&
           account == other.account &&
@@ -257,4 +257,4 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
 
 @override String toString() => 'FinancialConnectionsTransaction(\n  account: $account,\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  transactedAt: $transactedAt,\n  transactionRefresh: $transactionRefresh,\n  updated: $updated,\n)';
 
- }
+}

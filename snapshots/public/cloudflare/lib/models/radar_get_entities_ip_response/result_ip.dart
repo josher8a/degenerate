@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultIp {const ResultIp({required this.asn, required this.asnLocation, required this.asnName, required this.asnOrgName, required this.ip, required this.ipVersion, required this.location, required this.locationName, });
 
-factory ResultIp.fromJson(Map<String, dynamic> json) { return ResultIp(
+factory ResultIp.fromJson(Map<String, dynamic> json) {return ResultIp(
   asn: json['asn'] as String,
   asnLocation: json['asnLocation'] as String,
   asnName: json['asnName'] as String,
@@ -12,7 +12,7 @@ factory ResultIp.fromJson(Map<String, dynamic> json) { return ResultIp(
   ipVersion: json['ipVersion'] as String,
   location: json['location'] as String,
   locationName: json['locationName'] as String,
-); }
+);}
 
 /// Example: `'15169'`
 final String asn;
@@ -38,7 +38,7 @@ final String location;
 /// Example: `'United Kingdom'`
 final String locationName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'asnLocation': asnLocation,
   'asnName': asnName,
@@ -47,16 +47,16 @@ Map<String, dynamic> toJson() { return {
   'ipVersion': ipVersion,
   'location': location,
   'locationName': locationName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('asnLocation') && json['asnLocation'] is String &&
       json.containsKey('asnName') && json['asnName'] is String &&
       json.containsKey('asnOrgName') && json['asnOrgName'] is String &&
       json.containsKey('ip') && json['ip'] is String &&
       json.containsKey('ipVersion') && json['ipVersion'] is String &&
       json.containsKey('location') && json['location'] is String &&
-      json.containsKey('locationName') && json['locationName'] is String; } 
-ResultIp copyWith({String? asn, String? asnLocation, String? asnName, String? asnOrgName, String? ip, String? ipVersion, String? location, String? locationName, }) { return ResultIp(
+      json.containsKey('locationName') && json['locationName'] is String;}
+ResultIp copyWith({String? asn, String? asnLocation, String? asnName, String? asnOrgName, String? ip, String? ipVersion, String? location, String? locationName, }) {return ResultIp(
   asn: asn ?? this.asn,
   asnLocation: asnLocation ?? this.asnLocation,
   asnName: asnName ?? this.asnName,
@@ -65,7 +65,7 @@ ResultIp copyWith({String? asn, String? asnLocation, String? asnName, String? as
   ipVersion: ipVersion ?? this.ipVersion,
   location: location ?? this.location,
   locationName: locationName ?? this.locationName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultIp &&
           asn == other.asn &&
@@ -81,4 +81,4 @@ ResultIp copyWith({String? asn, String? asnLocation, String? asnName, String? as
 
 @override String toString() => 'ResultIp(asn: $asn, asnLocation: $asnLocation, asnName: $asnName, asnOrgName: $asnOrgName, ip: $ip, ipVersion: $ipVersion, location: $location, locationName: $locationName)';
 
- }
+}

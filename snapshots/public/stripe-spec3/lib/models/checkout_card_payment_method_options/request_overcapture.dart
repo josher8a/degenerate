@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to [overcapture](/payments/overcapture) for this CheckoutSession.
 sealed class RequestOvercapture {const RequestOvercapture();
 
-factory RequestOvercapture.fromJson(String json) { return switch (json) {
+factory RequestOvercapture.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => RequestOvercapture$Unknown(json),
-}; }
+};}
 
 static const RequestOvercapture ifAvailable = RequestOvercapture$ifAvailable._();
 
@@ -17,30 +17,30 @@ static const RequestOvercapture never = RequestOvercapture$never._();
 static const List<RequestOvercapture> values = [ifAvailable, never];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'if_available' => 'ifAvailable',
   'never' => 'never',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RequestOvercapture$Unknown; } 
+bool get isUnknown {return this is RequestOvercapture$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ifAvailable, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ifAvailable, required W Function() never, required W Function(String value) $unknown, }) {return switch (this) {
       RequestOvercapture$ifAvailable() => ifAvailable(),
       RequestOvercapture$never() => never(),
       RequestOvercapture$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvailable, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvailable, W Function()? never, W Function(String value)? $unknown, }) {return switch (this) {
       RequestOvercapture$ifAvailable() => ifAvailable != null ? ifAvailable() : orElse(value),
       RequestOvercapture$never() => never != null ? never() : orElse(value),
       RequestOvercapture$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RequestOvercapture($value)';
 
- }
+}
 @immutable final class RequestOvercapture$ifAvailable extends RequestOvercapture {const RequestOvercapture$ifAvailable._();
 
 @override String get value => 'if_available';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvaila
 
 @override int get hashCode => 'if_available'.hashCode;
 
- }
+}
 @immutable final class RequestOvercapture$never extends RequestOvercapture {const RequestOvercapture$never._();
 
 @override String get value => 'never';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvaila
 
 @override int get hashCode => 'never'.hashCode;
 
- }
+}
 @immutable final class RequestOvercapture$Unknown extends RequestOvercapture {const RequestOvercapture$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvaila
 
 @override int get hashCode => value.hashCode;
 
- }
+}

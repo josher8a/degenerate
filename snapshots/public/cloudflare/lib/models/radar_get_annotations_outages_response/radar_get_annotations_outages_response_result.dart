@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/radar_get_annotations_outages_response_result_annotations.dart';@immutable final class RadarGetAnnotationsOutagesResponseResult {const RadarGetAnnotationsOutagesResponseResult({required this.annotations});
 
-factory RadarGetAnnotationsOutagesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResult(
+factory RadarGetAnnotationsOutagesResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsOutagesResponseResult(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetAnnotationsOutagesResponseResultAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<RadarGetAnnotationsOutagesResponseResultAnnotations> annotations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'annotations': annotations.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations'); } 
-RadarGetAnnotationsOutagesResponseResult copyWith({List<RadarGetAnnotationsOutagesResponseResultAnnotations>? annotations}) { return RadarGetAnnotationsOutagesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('annotations');}
+RadarGetAnnotationsOutagesResponseResult copyWith({List<RadarGetAnnotationsOutagesResponseResultAnnotations>? annotations}) {return RadarGetAnnotationsOutagesResponseResult(
   annotations: annotations ?? this.annotations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAnnotationsOutagesResponseResult &&
           listEquals(annotations, other.annotations);
@@ -24,4 +24,4 @@ RadarGetAnnotationsOutagesResponseResult copyWith({List<RadarGetAnnotationsOutag
 
 @override String toString() => 'RadarGetAnnotationsOutagesResponseResult(annotations: $annotations)';
 
- }
+}

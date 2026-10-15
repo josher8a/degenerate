@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookDependabotAlertCreated {const WebhookDependabotAlertCreated({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
-factory WebhookDependabotAlertCreated.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertCreated(
+factory WebhookDependabotAlertCreated.fromJson(Map<String, dynamic> json) {return WebhookDependabotAlertCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookDependabotAlertCreated.fromJson(Map<String, dynamic> json) { retu
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDependabotAlertCreated copyWith({ItemCreatedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertCreated(
+      json.containsKey('sender');}
+WebhookDependabotAlertCreated copyWith({ItemCreatedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDependabotAlertCreated(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -48,7 +48,7 @@ WebhookDependabotAlertCreated copyWith({ItemCreatedAction? action, DependabotAle
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertCreated &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookDependabotAlertCreated copyWith({ItemCreatedAction? action, DependabotAle
 
 @override String toString() => 'WebhookDependabotAlertCreated(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
 
- }
+}

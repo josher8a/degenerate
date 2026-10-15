@@ -4,27 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit {const SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit({this.referencePrefix});
 
-factory SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit(
+factory SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit(
   referencePrefix: json['reference_prefix'] as String?,
-); }
+);}
 
 /// Prefix used to generate the Mandate reference. Must be at most 12 characters long. Must consist of only uppercase letters, numbers, spaces, or the following special characters: '/', '_', '-', '&', '.'. Cannot begin with 'DDIC' or 'STRIPE'.
 final String? referencePrefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reference_prefix': ?referencePrefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_prefix'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final referencePrefix$ = referencePrefix;
 if (referencePrefix$ != null) {
   if (referencePrefix$.runes.length > 5000) { errors.add('referencePrefix: length must be <= 5000'); }
 }
-return errors; } 
-SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String? Function()? referencePrefix}) { return SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit(
+return errors;}
+SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String? Function()? referencePrefix}) {return SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit &&
           referencePrefix == other.referencePrefix;
@@ -33,4 +33,4 @@ SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String? Functio
 
 @override String toString() => 'SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit(referencePrefix: $referencePrefix)';
 
- }
+}

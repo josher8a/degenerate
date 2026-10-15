@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Tunnels
 @immutable final class MconnSnapshotTunnel {const MconnSnapshotTunnel({required this.healthState, required this.healthValue, required this.interfaceName, required this.tunnelId, this.connectorId, this.probedMtu, this.recentHealthyPings, this.recentUnhealthyPings, });
 
-factory MconnSnapshotTunnel.fromJson(Map<String, dynamic> json) { return MconnSnapshotTunnel(
+factory MconnSnapshotTunnel.fromJson(Map<String, dynamic> json) {return MconnSnapshotTunnel(
   connectorId: json['connector_id'] as String?,
   healthState: json['health_state'] as String,
   healthValue: (json['health_value'] as num).toDouble(),
@@ -13,7 +13,7 @@ factory MconnSnapshotTunnel.fromJson(Map<String, dynamic> json) { return MconnSn
   recentHealthyPings: json['recent_healthy_pings'] != null ? (json['recent_healthy_pings'] as num).toDouble() : null,
   recentUnhealthyPings: json['recent_unhealthy_pings'] != null ? (json['recent_unhealthy_pings'] as num).toDouble() : null,
   tunnelId: json['tunnel_id'] as String,
-); }
+);}
 
 /// Connector identifier
 final String? connectorId;
@@ -39,7 +39,7 @@ final double? recentUnhealthyPings;
 /// Tunnel identifier
 final String tunnelId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector_id': ?connectorId,
   'health_state': healthState,
   'health_value': healthValue,
@@ -48,12 +48,12 @@ Map<String, dynamic> toJson() { return {
   'recent_healthy_pings': ?recentHealthyPings,
   'recent_unhealthy_pings': ?recentUnhealthyPings,
   'tunnel_id': tunnelId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('health_state') && json['health_state'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('health_state') && json['health_state'] is String &&
       json.containsKey('health_value') && json['health_value'] is num &&
       json.containsKey('interface_name') && json['interface_name'] is String &&
-      json.containsKey('tunnel_id') && json['tunnel_id'] is String; } 
-MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthState, double? healthValue, String? interfaceName, double? Function()? probedMtu, double? Function()? recentHealthyPings, double? Function()? recentUnhealthyPings, String? tunnelId, }) { return MconnSnapshotTunnel(
+      json.containsKey('tunnel_id') && json['tunnel_id'] is String;}
+MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthState, double? healthValue, String? interfaceName, double? Function()? probedMtu, double? Function()? recentHealthyPings, double? Function()? recentUnhealthyPings, String? tunnelId, }) {return MconnSnapshotTunnel(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   healthState: healthState ?? this.healthState,
   healthValue: healthValue ?? this.healthValue,
@@ -62,7 +62,7 @@ MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthSta
   recentHealthyPings: recentHealthyPings != null ? recentHealthyPings() : this.recentHealthyPings,
   recentUnhealthyPings: recentUnhealthyPings != null ? recentUnhealthyPings() : this.recentUnhealthyPings,
   tunnelId: tunnelId ?? this.tunnelId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotTunnel &&
           connectorId == other.connectorId &&
@@ -78,4 +78,4 @@ MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthSta
 
 @override String toString() => 'MconnSnapshotTunnel(connectorId: $connectorId, healthState: $healthState, healthValue: $healthValue, interfaceName: $interfaceName, probedMtu: $probedMtu, recentHealthyPings: $recentHealthyPings, recentUnhealthyPings: $recentUnhealthyPings, tunnelId: $tunnelId)';
 
- }
+}

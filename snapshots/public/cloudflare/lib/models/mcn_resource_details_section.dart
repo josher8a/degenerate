@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_details_section_item.dart';@immutable final class McnResourceDetailsSection {const McnResourceDetailsSection({required this.hiddenItems, required this.name, required this.visibleItems, this.helpText, });
 
-factory McnResourceDetailsSection.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSection(
+factory McnResourceDetailsSection.fromJson(Map<String, dynamic> json) {return McnResourceDetailsSection(
   helpText: json['help_text'] as String?,
   hiddenItems: (json['hidden_items'] as List<dynamic>).map((e) => McnResourceDetailsSectionItem.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String,
   visibleItems: (json['visible_items'] as List<dynamic>).map((e) => McnResourceDetailsSectionItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String? helpText;
 
@@ -18,21 +18,21 @@ final String name;
 
 final List<McnResourceDetailsSectionItem> visibleItems;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'help_text': ?helpText,
   'hidden_items': hiddenItems.map((e) => e.toJson()).toList(),
   'name': name,
   'visible_items': visibleItems.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hidden_items') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hidden_items') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('visible_items'); } 
-McnResourceDetailsSection copyWith({String? Function()? helpText, List<McnResourceDetailsSectionItem>? hiddenItems, String? name, List<McnResourceDetailsSectionItem>? visibleItems, }) { return McnResourceDetailsSection(
+      json.containsKey('visible_items');}
+McnResourceDetailsSection copyWith({String? Function()? helpText, List<McnResourceDetailsSectionItem>? hiddenItems, String? name, List<McnResourceDetailsSectionItem>? visibleItems, }) {return McnResourceDetailsSection(
   helpText: helpText != null ? helpText() : this.helpText,
   hiddenItems: hiddenItems ?? this.hiddenItems,
   name: name ?? this.name,
   visibleItems: visibleItems ?? this.visibleItems,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourceDetailsSection &&
           helpText == other.helpText &&
@@ -44,4 +44,4 @@ McnResourceDetailsSection copyWith({String? Function()? helpText, List<McnResour
 
 @override String toString() => 'McnResourceDetailsSection(helpText: $helpText, hiddenItems: $hiddenItems, name: $name, visibleItems: $visibleItems)';
 
- }
+}

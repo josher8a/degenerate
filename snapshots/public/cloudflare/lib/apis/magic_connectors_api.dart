@@ -12,7 +12,7 @@ final class MagicConnectorsApi with ApiExecutor {const MagicConnectorsApi(this.a
 /// List Connectors
 ///
 /// `GET /accounts/{account_id}/magic/connectors`
-Future<ApiResult<List<MconnCustomerConnector>?, MconnConnectorListError>> mconnConnectorList({required MconnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MconnCustomerConnector>, MconnConnectorListError>> mconnConnectorList({required MconnAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,19 +21,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: MconnConnectorListError.fromResponse,
 );
- } 
+}
 /// Add a connector to your account
 ///
 /// `POST /accounts/{account_id}/magic/connectors`
-Future<ApiResult<MconnCustomerConnector?, MconnConnectorCreateError>> mconnConnectorCreate({required MconnAccountId accountId, required MconnCustomerConnectorCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerConnector, MconnConnectorCreateError>> mconnConnectorCreate({required MconnAccountId accountId, required MconnCustomerConnectorCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,19 +44,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MconnConnectorCreateError.fromResponse,
 );
- } 
+}
 /// Fetch Connector
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnCustomerConnector?, MconnConnectorDeleteError>> mconnConnectorFetch({required MconnAccountId accountId, required MconnUuid connectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerConnector, MconnConnectorDeleteError>> mconnConnectorFetch({required MconnAccountId accountId, required MconnUuid connectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -65,19 +65,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MconnConnectorDeleteError.fromResponse,
 );
- } 
+}
 /// Replace Connector or Re-provision License Key
 ///
 /// `PUT /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnCustomerConnector?, MconnConnectorDeleteError>> mconnConnectorReplace({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerConnector, MconnConnectorDeleteError>> mconnConnectorReplace({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,19 +88,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MconnConnectorDeleteError.fromResponse,
 );
- } 
+}
 /// Edit Connector to update specific properties or Re-provision License Key
 ///
 /// `PATCH /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnCustomerConnector?, MconnConnectorDeleteError>> mconnConnectorUpdate({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerConnector, MconnConnectorDeleteError>> mconnConnectorUpdate({required MconnAccountId accountId, required MconnUuid connectorId, required MconnCustomerConnectorUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -111,19 +111,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MconnConnectorDeleteError.fromResponse,
 );
- } 
+}
 /// Remove a connector from your account
 ///
 /// `DELETE /accounts/{account_id}/magic/connectors/{connector_id}`
-Future<ApiResult<MconnCustomerConnector?, MconnConnectorDeleteError>> mconnConnectorDelete({required MconnAccountId accountId, required MconnUuid connectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerConnector, MconnConnectorDeleteError>> mconnConnectorDelete({required MconnAccountId accountId, required MconnUuid connectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,19 +132,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MconnConnectorDeleteError.fromResponse,
 );
- } 
+}
 /// List Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events`
-Future<ApiResult<MconnCustomerEventsGetResult, MconnConnectorTelemetryEventsListError>> mconnConnectorTelemetryEventsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<MconnCustomerEventsGetResult, MconnConnectorTelemetryEventsListError>> mconnConnectorTelemetryEventsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, String? k, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from.toString();
 queryParameters['to'] = to.toString();
@@ -169,7 +169,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -177,11 +177,11 @@ return execute(
   },
   onError: MconnConnectorTelemetryEventsListError.fromResponse,
 );
- } 
+}
 /// Get Event
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}`
-Future<ApiResult<MconnRecordedEvent, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetryEventsGet({required MconnAccountId accountId, required String connectorId, required double eventT, required double eventN, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnRecordedEvent, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetryEventsGet({required MconnAccountId accountId, required String connectorId, required double eventT, required double eventN, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -190,7 +190,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -198,11 +198,11 @@ return execute(
   },
   onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
- } 
+}
 /// Get latest Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest`
-Future<ApiResult<MconnCustomerEventsGetLatestResult, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetryEventsListLatest({required MconnAccountId accountId, required String connectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerEventsGetLatestResult, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetryEventsListLatest({required MconnAccountId accountId, required String connectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -211,7 +211,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -219,11 +219,11 @@ return execute(
   },
   onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
- } 
+}
 /// List Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots`
-Future<ApiResult<MconnCustomerSnapshotsGetResult, MconnConnectorTelemetryEventsListError>> mconnConnectorTelemetrySnapshotsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<MconnCustomerSnapshotsGetResult, MconnConnectorTelemetryEventsListError>> mconnConnectorTelemetrySnapshotsList({required MconnAccountId accountId, required String connectorId, required double from, required double to, double? limit, String? cursor, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from.toString();
 queryParameters['to'] = to.toString();
@@ -245,7 +245,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -253,11 +253,11 @@ return execute(
   },
   onError: MconnConnectorTelemetryEventsListError.fromResponse,
 );
- } 
+}
 /// Get Snapshot
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}`
-Future<ApiResult<MconnSnapshot, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetrySnapshotsGet({required MconnAccountId accountId, required String connectorId, required double snapshotT, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnSnapshot, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetrySnapshotsGet({required MconnAccountId accountId, required String connectorId, required double snapshotT, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -266,7 +266,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -274,11 +274,11 @@ return execute(
   },
   onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
- } 
+}
 /// Get latest Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest`
-Future<ApiResult<MconnCustomerSnapshotsGetLatestResult, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetrySnapshotsListLatest({required MconnAccountId accountId, required String connectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MconnCustomerSnapshotsGetLatestResult, MconnConnectorTelemetryEventsGetError>> mconnConnectorTelemetrySnapshotsListLatest({required MconnAccountId accountId, required String connectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -287,7 +287,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -295,5 +295,5 @@ return execute(
   },
   onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
- } 
- }
+}
+}

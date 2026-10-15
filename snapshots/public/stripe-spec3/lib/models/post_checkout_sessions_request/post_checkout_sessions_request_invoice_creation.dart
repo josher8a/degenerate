@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
 @immutable final class PostCheckoutSessionsRequestInvoiceCreation {const PostCheckoutSessionsRequestInvoiceCreation({required this.enabled, this.invoiceData, });
 
-factory PostCheckoutSessionsRequestInvoiceCreation.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestInvoiceCreation(
+factory PostCheckoutSessionsRequestInvoiceCreation.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestInvoiceCreation(
   enabled: json['enabled'] as bool,
   invoiceData: json['invoice_data'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostCheckoutSessionsRequestInvoiceCreationInvoiceData? invoiceData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (invoiceData != null) 'invoice_data': invoiceData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCheckoutSessionsRequestInvoiceCreation copyWith({bool? enabled, PostCheckoutSessionsRequestInvoiceCreationInvoiceData? Function()? invoiceData, }) { return PostCheckoutSessionsRequestInvoiceCreation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostCheckoutSessionsRequestInvoiceCreation copyWith({bool? enabled, PostCheckoutSessionsRequestInvoiceCreationInvoiceData? Function()? invoiceData, }) {return PostCheckoutSessionsRequestInvoiceCreation(
   enabled: enabled ?? this.enabled,
   invoiceData: invoiceData != null ? invoiceData() : this.invoiceData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestInvoiceCreation &&
           enabled == other.enabled &&
@@ -31,4 +31,4 @@ PostCheckoutSessionsRequestInvoiceCreation copyWith({bool? enabled, PostCheckout
 
 @override String toString() => 'PostCheckoutSessionsRequestInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)';
 
- }
+}

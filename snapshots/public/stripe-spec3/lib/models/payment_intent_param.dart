@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_extended_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_multicapture.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_overcapture.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_installments.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_network.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/statement_descriptor_suffix_kana.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/statement_descriptor_suffix_kanji.dart';@immutable final class PaymentIntentParam {const PaymentIntentParam({this.captureMethod, this.cvcToken, this.installments, this.mandateOptions, this.network, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.requireCvcRecollection, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, this.threeDSecure, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_extended_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_multicapture.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_overcapture.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_installments.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_network.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/statement_descriptor_suffix_kana.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/statement_descriptor_suffix_kanji.dart';@immutable final class PaymentIntentParam {const PaymentIntentParam({this.captureMethod, this.cvcToken, this.installments, this.mandateOptions, this.network, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.requireCvcRecollection, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, this.threeDSecure, });
 
-factory PaymentIntentParam.fromJson(Map<String, dynamic> json) { return PaymentIntentParam(
+factory PaymentIntentParam.fromJson(Map<String, dynamic> json) {return PaymentIntentParam(
   captureMethod: json['capture_method'] != null ? PaymentIntentParamCaptureMethod.fromJson(json['capture_method'] as String) : null,
   cvcToken: json['cvc_token'] as String?,
   installments: json['installments'] != null ? InvoicePaymentMethodOptionsParamInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
@@ -16,10 +16,10 @@ factory PaymentIntentParam.fromJson(Map<String, dynamic> json) { return PaymentI
   requestThreeDSecure: json['request_three_d_secure'] != null ? CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
   requireCvcRecollection: json['require_cvc_recollection'] as bool?,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentParamSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null ? OneOf2.parse(json['statement_descriptor_suffix_kana'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null ? OneOf2.parse(json['statement_descriptor_suffix_kanji'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null ? StatementDescriptorSuffixKana.fromJson(json['statement_descriptor_suffix_kana']) : null,
+  statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null ? StatementDescriptorSuffixKanji.fromJson(json['statement_descriptor_suffix_kanji']) : null,
   threeDSecure: json['three_d_secure'] != null ? PaymentIntentParamThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentIntentParamCaptureMethod? captureMethod;
 
@@ -51,7 +51,7 @@ final StatementDescriptorSuffixKanji? statementDescriptorSuffixKanji;
 
 final PaymentIntentParamThreeDSecure? threeDSecure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   'cvc_token': ?cvcToken,
   if (installments != null) 'installments': installments?.toJson(),
@@ -67,16 +67,16 @@ Map<String, dynamic> toJson() { return {
   if (statementDescriptorSuffixKana != null) 'statement_descriptor_suffix_kana': statementDescriptorSuffixKana?.toJson(),
   if (statementDescriptorSuffixKanji != null) 'statement_descriptor_suffix_kanji': statementDescriptorSuffixKanji?.toJson(),
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'cvc_token', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji', 'three_d_secure'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'cvc_token', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji', 'three_d_secure'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cvcToken$ = cvcToken;
 if (cvcToken$ != null) {
   if (cvcToken$.runes.length > 5000) { errors.add('cvcToken: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? cvcToken, InvoicePaymentMethodOptionsParamInstallments? Function()? installments, PaymentIntentParamMandateOptions? Function()? mandateOptions, PaymentIntentParamNetwork? Function()? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, StatementDescriptorSuffixKana? Function()? statementDescriptorSuffixKana, StatementDescriptorSuffixKanji? Function()? statementDescriptorSuffixKanji, PaymentIntentParamThreeDSecure? Function()? threeDSecure, }) { return PaymentIntentParam(
+return errors;}
+PaymentIntentParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? cvcToken, InvoicePaymentMethodOptionsParamInstallments? Function()? installments, PaymentIntentParamMandateOptions? Function()? mandateOptions, PaymentIntentParamNetwork? Function()? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, StatementDescriptorSuffixKana? Function()? statementDescriptorSuffixKana, StatementDescriptorSuffixKanji? Function()? statementDescriptorSuffixKanji, PaymentIntentParamThreeDSecure? Function()? threeDSecure, }) {return PaymentIntentParam(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   cvcToken: cvcToken != null ? cvcToken() : this.cvcToken,
   installments: installments != null ? installments() : this.installments,
@@ -92,7 +92,7 @@ PaymentIntentParam copyWith({PaymentIntentParamCaptureMethod? Function()? captur
   statementDescriptorSuffixKana: statementDescriptorSuffixKana != null ? statementDescriptorSuffixKana() : this.statementDescriptorSuffixKana,
   statementDescriptorSuffixKanji: statementDescriptorSuffixKanji != null ? statementDescriptorSuffixKanji() : this.statementDescriptorSuffixKanji,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentParam &&
           captureMethod == other.captureMethod &&
@@ -115,4 +115,4 @@ PaymentIntentParam copyWith({PaymentIntentParamCaptureMethod? Function()? captur
 
 @override String toString() => 'PaymentIntentParam(\n  captureMethod: $captureMethod,\n  cvcToken: $cvcToken,\n  installments: $installments,\n  mandateOptions: $mandateOptions,\n  network: $network,\n  requestExtendedAuthorization: $requestExtendedAuthorization,\n  requestIncrementalAuthorization: $requestIncrementalAuthorization,\n  requestMulticapture: $requestMulticapture,\n  requestOvercapture: $requestOvercapture,\n  requestThreeDSecure: $requestThreeDSecure,\n  requireCvcRecollection: $requireCvcRecollection,\n  setupFutureUsage: $setupFutureUsage,\n  statementDescriptorSuffixKana: $statementDescriptorSuffixKana,\n  statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji,\n  threeDSecure: $threeDSecure,\n)';
 
- }
+}

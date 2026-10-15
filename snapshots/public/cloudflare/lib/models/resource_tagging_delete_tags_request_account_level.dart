@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResourceTaggingDeleteTagsRequestAccountLevel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_worker_version.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_worker_version_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level_worker_version.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType();
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelResourceType.fromJson(String json) { return switch (json) {
+factory ResourceTaggingDeleteTagsRequestAccountLevelResourceType.fromJson(String json) {return switch (json) {
   'access_application' => accessApplication,
   'access_group' => accessGroup,
   'account' => account,
@@ -25,7 +25,7 @@ factory ResourceTaggingDeleteTagsRequestAccountLevelResourceType.fromJson(String
   'worker' => worker,
   'worker_version' => workerVersion,
   _ => ResourceTaggingDeleteTagsRequestAccountLevelResourceType$Unknown(json),
-}; }
+};}
 
 static const ResourceTaggingDeleteTagsRequestAccountLevelResourceType accessApplication = ResourceTaggingDeleteTagsRequestAccountLevelResourceType$accessApplication._();
 
@@ -74,7 +74,7 @@ String toJson() => value;
 
 bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResourceType$Unknown;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$accessApplication extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$accessApplication._();
 
 @override String get value => 'access_application';
@@ -85,7 +85,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(access_application)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$accessGroup extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$accessGroup._();
 
 @override String get value => 'access_group';
@@ -96,7 +96,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(access_group)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$account extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$account._();
 
 @override String get value => 'account';
@@ -107,7 +107,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(account)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$aiGateway extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$aiGateway._();
 
 @override String get value => 'ai_gateway';
@@ -118,7 +118,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(ai_gateway)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$alertingPolicy extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$alertingPolicy._();
 
 @override String get value => 'alerting_policy';
@@ -129,7 +129,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(alerting_policy)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$alertingWebhook extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$alertingWebhook._();
 
 @override String get value => 'alerting_webhook';
@@ -140,7 +140,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(alerting_webhook)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$cloudflaredTunnel extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$cloudflaredTunnel._();
 
 @override String get value => 'cloudflared_tunnel';
@@ -151,7 +151,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(cloudflared_tunnel)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$d1Database extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$d1Database._();
 
 @override String get value => 'd1_database';
@@ -162,7 +162,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(d1_database)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$durableObjectNamespace extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$durableObjectNamespace._();
 
 @override String get value => 'durable_object_namespace';
@@ -173,7 +173,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(durable_object_namespace)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$gatewayList extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$gatewayList._();
 
 @override String get value => 'gateway_list';
@@ -184,7 +184,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(gateway_list)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$gatewayRule extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$gatewayRule._();
 
 @override String get value => 'gateway_rule';
@@ -195,7 +195,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(gateway_rule)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$image extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$image._();
 
 @override String get value => 'image';
@@ -206,7 +206,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(image)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$kvNamespace extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$kvNamespace._();
 
 @override String get value => 'kv_namespace';
@@ -217,7 +217,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(kv_namespace)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$queue extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$queue._();
 
 @override String get value => 'queue';
@@ -228,7 +228,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(queue)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$r2Bucket extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$r2Bucket._();
 
 @override String get value => 'r2_bucket';
@@ -239,7 +239,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(r2_bucket)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$resourceShare extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$resourceShare._();
 
 @override String get value => 'resource_share';
@@ -250,7 +250,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(resource_share)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$streamLiveInput extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$streamLiveInput._();
 
 @override String get value => 'stream_live_input';
@@ -261,7 +261,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(stream_live_input)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$streamVideo extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$streamVideo._();
 
 @override String get value => 'stream_video';
@@ -272,7 +272,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(stream_video)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$worker extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$worker._();
 
 @override String get value => 'worker';
@@ -283,7 +283,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(worker)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$workerVersion extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$workerVersion._();
 
 @override String get value => 'worker_version';
@@ -294,7 +294,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType(worker_version)';
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceType$Unknown extends ResourceTaggingDeleteTagsRequestAccountLevelResourceType {const ResourceTaggingDeleteTagsRequestAccountLevelResourceType$Unknown(this.value);
 
 @override final String value;
@@ -305,12 +305,12 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevelResour
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelResourceType($value)';
 
- }
+}
 /// Request body schema for deleting tags from account-level resources. Use /zones/{zone_id}/tags for zone-level resources.
 sealed class ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevel();
 
 /// Deserialize from JSON, dispatching on the `resource_type` discriminator.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.fromJson(Map<String, dynamic> json) { return switch (json['resource_type']) {
+factory ResourceTaggingDeleteTagsRequestAccountLevel.fromJson(Map<String, dynamic> json) {return switch (json['resource_type']) {
   'access_application' => ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication.fromJson(json),
   'access_group' => ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup.fromJson(json),
   'account' => ResourceTaggingDeleteTagsRequestAccountLevelAccount.fromJson(json),
@@ -332,67 +332,67 @@ factory ResourceTaggingDeleteTagsRequestAccountLevel.fromJson(Map<String, dynami
   'worker' => ResourceTaggingDeleteTagsRequestAccountLevelWorker.fromJson(json),
   'worker_version' => ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant.fromJson(json),
   _ => ResourceTaggingDeleteTagsRequestAccountLevel$Unknown(json),
-}; }
+};}
 
 /// Build the `access_application` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_application'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_application'), resourceId: resourceId));}
 
 /// Build the `access_group` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_group'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_group'), resourceId: resourceId));}
 
 /// Build the `account` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('account'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('account'), resourceId: resourceId));}
 
 /// Build the `ai_gateway` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('ai_gateway'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('ai_gateway'), resourceId: resourceId));}
 
 /// Build the `alerting_policy` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_policy'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_policy'), resourceId: resourceId));}
 
 /// Build the `alerting_webhook` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_webhook'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_webhook'), resourceId: resourceId));}
 
 /// Build the `cloudflared_tunnel` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('cloudflared_tunnel'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('cloudflared_tunnel'), resourceId: resourceId));}
 
 /// Build the `d1_database` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('d1_database'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('d1_database'), resourceId: resourceId));}
 
 /// Build the `durable_object_namespace` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('durable_object_namespace'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('durable_object_namespace'), resourceId: resourceId));}
 
 /// Build the `gateway_list` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_list'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_list'), resourceId: resourceId));}
 
 /// Build the `gateway_rule` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_rule'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_rule'), resourceId: resourceId));}
 
 /// Build the `image` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('image'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('image'), resourceId: resourceId));}
 
 /// Build the `kv_namespace` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('kv_namespace'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('kv_namespace'), resourceId: resourceId));}
 
 /// Build the `queue` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('queue'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('queue'), resourceId: resourceId));}
 
 /// Build the `r2_bucket` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('r2_bucket'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('r2_bucket'), resourceId: resourceId));}
 
 /// Build the `resource_share` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('resource_share'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('resource_share'), resourceId: resourceId));}
 
 /// Build the `stream_live_input` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_live_input'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_live_input'), resourceId: resourceId));}
 
 /// Build the `stream_video` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_video'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_video'), resourceId: resourceId));}
 
 /// Build the `worker` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker'), resourceId: resourceId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker'), resourceId: resourceId));}
 
 /// Build the `worker_version` variant.
-factory ResourceTaggingDeleteTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId, required ResourceTaggingWorkerId workerId, }) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(resourceType: ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson('worker_version'), resourceId: resourceId, workerId: workerId)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId, required ResourceTaggingWorkerId workerId, }) {return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(resourceType: ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson('worker_version'), resourceId: resourceId, workerId: workerId));}
 
 /// The discriminator value identifying this variant.
 ResourceTaggingDeleteTagsRequestAccountLevelResourceType get resourceType;
@@ -402,7 +402,7 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestAccountLevel$Unkno
 
 /// Shared by all variants of this union.
 ResourceTaggingResourceId get resourceId;
-R when<R>({required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication) accessApplication, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup) accessGroup, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAccount) account, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAiGateway) aiGateway, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelD1Database) d1Database, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelGatewayList) gatewayList, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule) gatewayRule, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelImage) image, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace) kvNamespace, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelQueue) queue, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket) r2Bucket, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelResourceShare) resourceShare, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo) streamVideo, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelWorker) worker, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant) workerVersion, required R Function(ResourceTaggingDeleteTagsRequestAccountLevel$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication) accessApplication, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup) accessGroup, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAccount) account, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAiGateway) aiGateway, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelD1Database) d1Database, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelGatewayList) gatewayList, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule) gatewayRule, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelImage) image, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace) kvNamespace, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelQueue) queue, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket) r2Bucket, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelResourceShare) resourceShare, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo) streamVideo, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelWorker) worker, required R Function(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant) workerVersion, required R Function(ResourceTaggingDeleteTagsRequestAccountLevel$Unknown) unknown, }) {return switch (this) {
   final ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication v => accessApplication(v),
   final ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup v => accessGroup(v),
   final ResourceTaggingDeleteTagsRequestAccountLevelAccount v => account(v),
@@ -424,11 +424,11 @@ R when<R>({required R Function(ResourceTaggingDeleteTagsRequestAccountLevelAcces
   final ResourceTaggingDeleteTagsRequestAccountLevelWorker v => worker(v),
   final ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant v => workerVersion(v),
   final ResourceTaggingDeleteTagsRequestAccountLevel$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -436,9 +436,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -448,10 +448,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication copyWith({Resource
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -459,9 +459,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -471,10 +471,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggin
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelAccount extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelAccount(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelAccount.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelAccount.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -482,9 +482,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelAccount copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccount(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelAccount copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAccount(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelAccount && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -494,10 +494,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelAccount copyWith({ResourceTaggingRes
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelAiGateway extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelAiGateway.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelAiGateway.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -505,9 +505,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelAiGateway && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -517,10 +517,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingR
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -528,9 +528,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -540,10 +540,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTag
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -551,9 +551,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -563,10 +563,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTa
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -574,9 +574,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -586,10 +586,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel copyWith({Resource
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelD1Database extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelD1Database(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelD1Database.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelD1Database.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -597,9 +597,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelD1Database copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelD1Database copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelD1Database && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -609,10 +609,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelD1Database copyWith({ResourceTagging
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -620,9 +620,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -632,10 +632,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace copyWith({Res
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelGatewayList extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelGatewayList.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelGatewayList.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -643,9 +643,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelGatewayList && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -655,10 +655,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelGatewayList copyWith({ResourceTaggin
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -666,9 +666,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -678,10 +678,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggin
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelImage extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelImage(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelImage.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelImage.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -689,9 +689,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelImage copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelImage(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelImage copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelImage(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelImage && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -701,10 +701,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelImage copyWith({ResourceTaggingResou
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -712,9 +712,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -724,10 +724,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggin
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelQueue extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelQueue(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelQueue.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelQueue.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -735,9 +735,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelQueue copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelQueue(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelQueue copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelQueue(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelQueue && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -747,10 +747,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelQueue copyWith({ResourceTaggingResou
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -758,9 +758,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -770,10 +770,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingRe
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelResourceShare extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelResourceShare.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelResourceShare.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -781,9 +781,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelResourceShare copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelResourceShare copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelResourceShare && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -793,10 +793,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelResourceShare copyWith({ResourceTagg
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -804,9 +804,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -816,10 +816,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTa
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -827,9 +827,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -839,10 +839,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggin
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelWorker extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelWorker(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelWorker.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelWorker.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -850,9 +850,9 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelWorker(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourceId? resourceId}) {return ResourceTaggingDeleteTagsRequestAccountLevelWorker(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelWorker && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase;
 
@@ -862,10 +862,10 @@ ResourceTaggingDeleteTagsRequestAccountLevelWorker copyWith({ResourceTaggingReso
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId;
 
- }
+}
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(this.resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.fromJson(json));}
 
 final ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion;
 
@@ -873,10 +873,10 @@ final ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion resourceTaggingD
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingWorkerId? workerId, }) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.copyWith(
+ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingWorkerId? workerId, }) {return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant(resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.copyWith(
   resourceId: resourceId,
   workerId: workerId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant && resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == other.resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion;
 
@@ -886,7 +886,7 @@ ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion$Variant copyWith({Reso
 
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.resourceId;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevel$Unknown extends ResourceTaggingDeleteTagsRequestAccountLevel {ResourceTaggingDeleteTagsRequestAccountLevel$Unknown(this.json);
@@ -908,4 +908,4 @@ late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fro
 
 @override ResourceTaggingResourceId get resourceId => _resourceId;
 
- }
+}

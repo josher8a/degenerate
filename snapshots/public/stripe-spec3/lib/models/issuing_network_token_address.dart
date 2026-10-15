@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingNetworkTokenAddress {const IssuingNetworkTokenAddress({required this.line1, required this.postalCode, });
 
-factory IssuingNetworkTokenAddress.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenAddress(
+factory IssuingNetworkTokenAddress.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenAddress(
   line1: json['line1'] as String,
   postalCode: json['postal_code'] as String,
-); }
+);}
 
 /// The street address of the cardholder tokenizing the card.
 final String line1;
@@ -15,21 +15,21 @@ final String line1;
 /// The postal code of the cardholder tokenizing the card.
 final String postalCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'line1': line1,
   'postal_code': postalCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('line1') && json['line1'] is String &&
-      json.containsKey('postal_code') && json['postal_code'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('line1') && json['line1'] is String &&
+      json.containsKey('postal_code') && json['postal_code'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (line1.runes.length > 5000) { errors.add('line1: length must be <= 5000'); }
 if (postalCode.runes.length > 5000) { errors.add('postalCode: length must be <= 5000'); }
-return errors; } 
-IssuingNetworkTokenAddress copyWith({String? line1, String? postalCode, }) { return IssuingNetworkTokenAddress(
+return errors;}
+IssuingNetworkTokenAddress copyWith({String? line1, String? postalCode, }) {return IssuingNetworkTokenAddress(
   line1: line1 ?? this.line1,
   postalCode: postalCode ?? this.postalCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenAddress &&
           line1 == other.line1 &&
@@ -39,4 +39,4 @@ IssuingNetworkTokenAddress copyWith({String? line1, String? postalCode, }) { ret
 
 @override String toString() => 'IssuingNetworkTokenAddress(line1: $line1, postalCode: $postalCode)';
 
- }
+}

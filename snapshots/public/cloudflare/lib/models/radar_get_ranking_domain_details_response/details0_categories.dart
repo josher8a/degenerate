@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Details0Categories {const Details0Categories({required this.id, required this.name, required this.superCategoryId, });
 
-factory Details0Categories.fromJson(Map<String, dynamic> json) { return Details0Categories(
+factory Details0Categories.fromJson(Map<String, dynamic> json) {return Details0Categories(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   superCategoryId: (json['superCategoryId'] as num).toInt(),
-); }
+);}
 
 /// Example: `81`
 final int id;
@@ -18,19 +18,19 @@ final String name;
 /// Example: `26`
 final int superCategoryId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'superCategoryId': superCategoryId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('superCategoryId') && json['superCategoryId'] is num; } 
-Details0Categories copyWith({int? id, String? name, int? superCategoryId, }) { return Details0Categories(
+      json.containsKey('superCategoryId') && json['superCategoryId'] is num;}
+Details0Categories copyWith({int? id, String? name, int? superCategoryId, }) {return Details0Categories(
   id: id ?? this.id,
   name: name ?? this.name,
   superCategoryId: superCategoryId ?? this.superCategoryId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Details0Categories &&
           id == other.id &&
@@ -41,4 +41,4 @@ Details0Categories copyWith({int? id, String? name, int? superCategoryId, }) { r
 
 @override String toString() => 'Details0Categories(id: $id, name: $name, superCategoryId: $superCategoryId)';
 
- }
+}

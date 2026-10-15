@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rendering mode.
 sealed class MarkdownRenderRequestMode {const MarkdownRenderRequestMode();
 
-factory MarkdownRenderRequestMode.fromJson(String json) { return switch (json) {
+factory MarkdownRenderRequestMode.fromJson(String json) {return switch (json) {
   'markdown' => markdown,
   'gfm' => gfm,
   _ => MarkdownRenderRequestMode$Unknown(json),
-}; }
+};}
 
 static const MarkdownRenderRequestMode markdown = MarkdownRenderRequestMode$markdown._();
 
@@ -17,30 +17,30 @@ static const MarkdownRenderRequestMode gfm = MarkdownRenderRequestMode$gfm._();
 static const List<MarkdownRenderRequestMode> values = [markdown, gfm];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'markdown' => 'markdown',
   'gfm' => 'gfm',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MarkdownRenderRequestMode$Unknown; } 
+bool get isUnknown {return this is MarkdownRenderRequestMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() markdown, required W Function() gfm, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() markdown, required W Function() gfm, required W Function(String value) $unknown, }) {return switch (this) {
       MarkdownRenderRequestMode$markdown() => markdown(),
       MarkdownRenderRequestMode$gfm() => gfm(),
       MarkdownRenderRequestMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? markdown, W Function()? gfm, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? markdown, W Function()? gfm, W Function(String value)? $unknown, }) {return switch (this) {
       MarkdownRenderRequestMode$markdown() => markdown != null ? markdown() : orElse(value),
       MarkdownRenderRequestMode$gfm() => gfm != null ? gfm() : orElse(value),
       MarkdownRenderRequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MarkdownRenderRequestMode($value)';
 
- }
+}
 @immutable final class MarkdownRenderRequestMode$markdown extends MarkdownRenderRequestMode {const MarkdownRenderRequestMode$markdown._();
 
 @override String get value => 'markdown';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? markdown
 
 @override int get hashCode => 'markdown'.hashCode;
 
- }
+}
 @immutable final class MarkdownRenderRequestMode$gfm extends MarkdownRenderRequestMode {const MarkdownRenderRequestMode$gfm._();
 
 @override String get value => 'gfm';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? markdown
 
 @override int get hashCode => 'gfm'.hashCode;
 
- }
+}
 @immutable final class MarkdownRenderRequestMode$Unknown extends MarkdownRenderRequestMode {const MarkdownRenderRequestMode$Unknown(this.value);
 
 @override final String value;
@@ -68,35 +68,38 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? markdown
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode = MarkdownRenderRequestMode.markdown, this.context, });
+}
+@immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode, this.context, });
 
-factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) { return MarkdownRenderRequest(
+factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) {return MarkdownRenderRequest(
   text: json['text'] as String,
-  mode: json.containsKey('mode') ? MarkdownRenderRequestMode.fromJson(json['mode'] as String) : MarkdownRenderRequestMode.markdown,
+  mode: json['mode'] != null ? MarkdownRenderRequestMode.fromJson(json['mode'] as String) : null,
   context: json['context'] as String?,
-); }
+);}
 
 /// The Markdown text to render in HTML.
 final String text;
 
 /// The rendering mode.
-final MarkdownRenderRequestMode mode;
+final MarkdownRenderRequestMode? mode;
 
 /// The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
 final String? context;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `mode`, or its schema default when absent.
+MarkdownRenderRequestMode get modeOrDefault => mode ?? MarkdownRenderRequestMode.fromJson('markdown');
+
+Map<String, dynamic> toJson() {return {
   'text': text,
-  'mode': mode.toJson(),
+  if (mode != null) 'mode': mode?.toJson(),
   'context': ?context,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode Function()? mode, String? Function()? context, }) { return MarkdownRenderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
+MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode? Function()? mode, String? Function()? context, }) {return MarkdownRenderRequest(
   text: text ?? this.text,
   mode: mode != null ? mode() : this.mode,
   context: context != null ? context() : this.context,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MarkdownRenderRequest &&
           text == other.text &&
@@ -107,4 +110,4 @@ MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode Function
 
 @override String toString() => 'MarkdownRenderRequest(text: $text, mode: $mode, context: $context)';
 
- }
+}

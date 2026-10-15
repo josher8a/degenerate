@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ItemDeleted {const ItemDeleted({required this.action, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
-factory ItemDeleted.fromJson(Map<String, dynamic> json) { return ItemDeleted(
+factory ItemDeleted.fromJson(Map<String, dynamic> json) {return ItemDeleted(
   action: ItemDeletedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemDeletedAction action;
 
@@ -21,24 +21,24 @@ final Item projectsV2Item;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
   'projects_v2_item': projectsV2Item.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('projects_v2_item') &&
-      json.containsKey('sender'); } 
-ItemDeleted copyWith({ItemDeletedAction? action, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemDeleted(
+      json.containsKey('sender');}
+ItemDeleted copyWith({ItemDeletedAction? action, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) {return ItemDeleted(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ItemDeleted &&
           action == other.action &&
@@ -51,4 +51,4 @@ ItemDeleted copyWith({ItemDeletedAction? action, SimpleInstallation? Function()?
 
 @override String toString() => 'ItemDeleted(action: $action, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';
 
- }
+}

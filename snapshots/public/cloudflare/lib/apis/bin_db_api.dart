@@ -12,7 +12,7 @@ final class BinDbApi with ApiExecutor {const BinDbApi(this.apiConfig);
 /// Posts a file to Binary Storage
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/binary`
-Future<ApiResult<PostBinDbPostResponse, PostBinDbPostError>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostBinDbPostResponse, PostBinDbPostError>> postBinDbPost({required double accountId, required PostBinDbPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -25,18 +25,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PostBinDbPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: PostBinDbPostError.fromResponse,
 );
- } 
+}
 /// Retrieves a file from Binary Storage
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/binary/{hash}`
-Future<ApiResult<void, GetBinDbGetBinaryError>> getBinDbGetBinary({required double accountId, required String hash, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GetBinDbGetBinaryError>> getBinDbGetBinary({required double accountId, required String hash, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -45,10 +45,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: GetBinDbGetBinaryError.fromResponse,
 );
- } 
- }
+}
+}

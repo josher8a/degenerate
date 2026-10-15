@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';@immutable final class PostChargesChargeCaptureRequest {const PostChargesChargeCaptureRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.expand, this.receiptEmail, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
-factory PostChargesChargeCaptureRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeCaptureRequest(
+factory PostChargesChargeCaptureRequest.fromJson(Map<String, dynamic> json) {return PostChargesChargeCaptureRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
@@ -13,7 +13,7 @@ factory PostChargesChargeCaptureRequest.fromJson(Map<String, dynamic> json) { re
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// The amount to capture, which must be less than or equal to the original amount.
 final int? amount;
@@ -44,7 +44,7 @@ final PostChargesChargeCaptureRequestTransferData? transferData;
 /// A string that identifies this transaction as part of a group. `transfer_group` may only be provided if it has not been set. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'application_fee': ?applicationFee,
   'application_fee_amount': ?applicationFeeAmount,
@@ -54,10 +54,10 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'expand', 'receipt_email', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'expand', 'receipt_email', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
@@ -66,8 +66,8 @@ final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
   if (statementDescriptorSuffix$.runes.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
-return errors; } 
-PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, List<String>? Function()? expand, String? Function()? receiptEmail, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostChargesChargeCaptureRequest(
+return errors;}
+PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, List<String>? Function()? expand, String? Function()? receiptEmail, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) {return PostChargesChargeCaptureRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -77,7 +77,7 @@ PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeCaptureRequest &&
           amount == other.amount &&
@@ -94,4 +94,4 @@ PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function
 
 @override String toString() => 'PostChargesChargeCaptureRequest(\n  amount: $amount,\n  applicationFee: $applicationFee,\n  applicationFeeAmount: $applicationFeeAmount,\n  expand: $expand,\n  receiptEmail: $receiptEmail,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  transferData: $transferData,\n  transferGroup: $transferGroup,\n)';
 
- }
+}

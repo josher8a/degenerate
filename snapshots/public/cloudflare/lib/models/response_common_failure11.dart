@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message.dart';/// Represents a failed API response.
 @immutable final class ResponseCommonFailure11 {const ResponseCommonFailure11({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure11(
+factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) {return ResponseCommonFailure11(
   errors: (json['errors'] as List<dynamic>).map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 /// Contains error details describing why the request failed.
 /// 
@@ -27,26 +27,26 @@ final Map<String,dynamic>? result;
 /// Example: `false`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages?.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && json['success'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 if (errors.isEmpty) { errors$.add('errors: must have >= 1 items'); }
-return errors$; } 
-ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure11(
+return errors$;}
+ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) {return ResponseCommonFailure11(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure11 &&
           listEquals(errors, other.errors) &&
@@ -58,4 +58,4 @@ ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function
 
 @override String toString() => 'ResponseCommonFailure11(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

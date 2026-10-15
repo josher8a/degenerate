@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rename {const Rename({required this.from, required this.to, });
 
-factory Rename.fromJson(Map<String, dynamic> json) { return Rename(
+factory Rename.fromJson(Map<String, dynamic> json) {return Rename(
   from: json['from'] as String,
   to: json['to'] as String,
-); }
+);}
 
 final String from;
 
 final String to;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
   'to': to,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String &&
-      json.containsKey('to') && json['to'] is String; } 
-Rename copyWith({String? from, String? to, }) { return Rename(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String &&
+      json.containsKey('to') && json['to'] is String;}
+Rename copyWith({String? from, String? to, }) {return Rename(
   from: from ?? this.from,
   to: to ?? this.to,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Rename &&
           from == other.from &&
@@ -31,4 +31,4 @@ Rename copyWith({String? from, String? to, }) { return Rename(
 
 @override String toString() => 'Rename(from: $from, to: $to)';
 
- }
+}

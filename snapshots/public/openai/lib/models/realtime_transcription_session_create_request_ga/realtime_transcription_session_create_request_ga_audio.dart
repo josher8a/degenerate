@@ -5,19 +5,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeTranscriptionSessionCreateRequestGaAudio {const RealtimeTranscriptionSessionCreateRequestGaAudio({this.input});
 
-factory RealtimeTranscriptionSessionCreateRequestGaAudio.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestGaAudio(
+factory RealtimeTranscriptionSessionCreateRequestGaAudio.fromJson(Map<String, dynamic> json) {return RealtimeTranscriptionSessionCreateRequestGaAudio(
   input: json['input'] != null ? RealtimeSessionCreateRequestGaAudioInput.fromJson(json['input'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RealtimeSessionCreateRequestGaAudioInput? input;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (input != null) 'input': input?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateRequestGaAudio copyWith({RealtimeSessionCreateRequestGaAudioInput? Function()? input}) { return RealtimeTranscriptionSessionCreateRequestGaAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'input'}.contains(key));}
+RealtimeTranscriptionSessionCreateRequestGaAudio copyWith({RealtimeSessionCreateRequestGaAudioInput? Function()? input}) {return RealtimeTranscriptionSessionCreateRequestGaAudio(
   input: input != null ? input() : this.input,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequestGaAudio &&
           input == other.input;
@@ -26,4 +26,4 @@ RealtimeTranscriptionSessionCreateRequestGaAudio copyWith({RealtimeSessionCreate
 
 @override String toString() => 'RealtimeTranscriptionSessionCreateRequestGaAudio(input: $input)';
 
- }
+}

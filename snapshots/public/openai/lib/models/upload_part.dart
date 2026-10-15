@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `upload.part`.
 sealed class UploadPartObject {const UploadPartObject();
 
-factory UploadPartObject.fromJson(String json) { return switch (json) {
+factory UploadPartObject.fromJson(String json) {return switch (json) {
   'upload.part' => uploadPart,
   _ => UploadPartObject$Unknown(json),
-}; }
+};}
 
 static const UploadPartObject uploadPart = UploadPartObject$uploadPart._();
 
 static const List<UploadPartObject> values = [uploadPart];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'upload.part' => 'uploadPart',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UploadPartObject$Unknown; } 
+bool get isUnknown {return this is UploadPartObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() uploadPart, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() uploadPart, required W Function(String value) $unknown, }) {return switch (this) {
       UploadPartObject$uploadPart() => uploadPart(),
       UploadPartObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploadPart, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploadPart, W Function(String value)? $unknown, }) {return switch (this) {
       UploadPartObject$uploadPart() => uploadPart != null ? uploadPart() : orElse(value),
       UploadPartObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UploadPartObject($value)';
 
- }
+}
 @immutable final class UploadPartObject$uploadPart extends UploadPartObject {const UploadPartObject$uploadPart._();
 
 @override String get value => 'upload.part';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploadPa
 
 @override int get hashCode => 'upload.part'.hashCode;
 
- }
+}
 @immutable final class UploadPartObject$Unknown extends UploadPartObject {const UploadPartObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploadPa
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The upload Part represents a chunk of bytes we can add to an Upload object.
 /// 
 @immutable final class UploadPart {const UploadPart({required this.id, required this.createdAt, required this.uploadId, required this.object, });
 
-factory UploadPart.fromJson(Map<String, dynamic> json) { return UploadPart(
+factory UploadPart.fromJson(Map<String, dynamic> json) {return UploadPart(
   id: json['id'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   uploadId: json['upload_id'] as String,
   object: UploadPartObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The upload Part unique identifier, which can be referenced in API endpoints.
 final String id;
@@ -77,22 +77,22 @@ final String uploadId;
 /// The object type, which is always `upload.part`.
 final UploadPartObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'created_at': createdAt,
   'upload_id': uploadId,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('upload_id') && json['upload_id'] is String &&
-      json.containsKey('object'); } 
-UploadPart copyWith({String? id, int? createdAt, String? uploadId, UploadPartObject? object, }) { return UploadPart(
+      json.containsKey('object');}
+UploadPart copyWith({String? id, int? createdAt, String? uploadId, UploadPartObject? object, }) {return UploadPart(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   uploadId: uploadId ?? this.uploadId,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UploadPart &&
           id == other.id &&
@@ -104,4 +104,4 @@ UploadPart copyWith({String? id, int? createdAt, String? uploadId, UploadPartObj
 
 @override String toString() => 'UploadPart(id: $id, createdAt: $createdAt, uploadId: $uploadId, object: $object)';
 
- }
+}

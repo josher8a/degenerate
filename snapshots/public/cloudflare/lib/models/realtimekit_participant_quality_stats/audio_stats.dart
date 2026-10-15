@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioStats {const AudioStats({this.concealmentEvents, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 
-factory AudioStats.fromJson(Map<String, dynamic> json) { return AudioStats(
+factory AudioStats.fromJson(Map<String, dynamic> json) {return AudioStats(
   concealmentEvents: json['concealment_events'] != null ? (json['concealment_events'] as num).toDouble() : null,
   jitter: json['jitter'] != null ? (json['jitter'] as num).toDouble() : null,
   packetsLost: json['packets_lost'] != null ? (json['packets_lost'] as num).toDouble() : null,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
   timestamp: json['timestamp'] as String?,
-); }
+);}
 
 final double? concealmentEvents;
 
@@ -21,21 +21,21 @@ final double? quality;
 
 final String? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'concealment_events': ?concealmentEvents,
   'jitter': ?jitter,
   'packets_lost': ?packetsLost,
   'quality': ?quality,
   'timestamp': ?timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'concealment_events', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key)); } 
-AudioStats copyWith({double? Function()? concealmentEvents, double? Function()? jitter, double? Function()? packetsLost, double? Function()? quality, String? Function()? timestamp, }) { return AudioStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'concealment_events', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key));}
+AudioStats copyWith({double? Function()? concealmentEvents, double? Function()? jitter, double? Function()? packetsLost, double? Function()? quality, String? Function()? timestamp, }) {return AudioStats(
   concealmentEvents: concealmentEvents != null ? concealmentEvents() : this.concealmentEvents,
   jitter: jitter != null ? jitter() : this.jitter,
   packetsLost: packetsLost != null ? packetsLost() : this.packetsLost,
   quality: quality != null ? quality() : this.quality,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AudioStats &&
           concealmentEvents == other.concealmentEvents &&
@@ -48,4 +48,4 @@ AudioStats copyWith({double? Function()? concealmentEvents, double? Function()? 
 
 @override String toString() => 'AudioStats(concealmentEvents: $concealmentEvents, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)';
 
- }
+}

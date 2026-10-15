@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/post_identity_verification_sessions_request_options.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/post_identity_verification_sessions_request_type.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/provided_details.dart';@immutable final class PostIdentityVerificationSessionsSessionRequest {const PostIdentityVerificationSessionsSessionRequest({this.expand, this.metadata, this.options, this.providedDetails, this.type, });
 
-factory PostIdentityVerificationSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsSessionRequest(
+factory PostIdentityVerificationSessionsSessionRequest.fromJson(Map<String, dynamic> json) {return PostIdentityVerificationSessionsSessionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   options: json['options'] != null ? PostIdentityVerificationSessionsRequestOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
   providedDetails: json['provided_details'] != null ? ProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostIdentityVerificationSessionsRequestType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -26,21 +26,21 @@ final ProvidedDetails? providedDetails;
 /// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed.
 final PostIdentityVerificationSessionsRequestType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'metadata': ?metadata,
   if (options != null) 'options': options?.toJson(),
   if (providedDetails != null) 'provided_details': providedDetails?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'metadata', 'options', 'provided_details', 'type'}.contains(key)); } 
-PostIdentityVerificationSessionsSessionRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostIdentityVerificationSessionsRequestOptions? Function()? options, ProvidedDetails? Function()? providedDetails, PostIdentityVerificationSessionsRequestType? Function()? type, }) { return PostIdentityVerificationSessionsSessionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'metadata', 'options', 'provided_details', 'type'}.contains(key));}
+PostIdentityVerificationSessionsSessionRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostIdentityVerificationSessionsRequestOptions? Function()? options, ProvidedDetails? Function()? providedDetails, PostIdentityVerificationSessionsRequestType? Function()? type, }) {return PostIdentityVerificationSessionsSessionRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   options: options != null ? options() : this.options,
   providedDetails: providedDetails != null ? providedDetails() : this.providedDetails,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIdentityVerificationSessionsSessionRequest &&
           listEquals(expand, other.expand) &&
@@ -53,4 +53,4 @@ PostIdentityVerificationSessionsSessionRequest copyWith({List<String>? Function(
 
 @override String toString() => 'PostIdentityVerificationSessionsSessionRequest(expand: $expand, metadata: $metadata, options: $options, providedDetails: $providedDetails, type: $type)';
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnterpriseTeamMembershipsBulkRemoveRequest {const EnterpriseTeamMembershipsBulkRemoveRequest({required this.usernames});
 
-factory EnterpriseTeamMembershipsBulkRemoveRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamMembershipsBulkRemoveRequest(
+factory EnterpriseTeamMembershipsBulkRemoveRequest.fromJson(Map<String, dynamic> json) {return EnterpriseTeamMembershipsBulkRemoveRequest(
   usernames: (json['usernames'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The GitHub user handles to be removed from the team.
 final List<String> usernames;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'usernames': usernames,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('usernames'); } 
-EnterpriseTeamMembershipsBulkRemoveRequest copyWith({List<String>? usernames}) { return EnterpriseTeamMembershipsBulkRemoveRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('usernames');}
+EnterpriseTeamMembershipsBulkRemoveRequest copyWith({List<String>? usernames}) {return EnterpriseTeamMembershipsBulkRemoveRequest(
   usernames: usernames ?? this.usernames,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseTeamMembershipsBulkRemoveRequest &&
           listEquals(usernames, other.usernames);
@@ -25,4 +25,4 @@ EnterpriseTeamMembershipsBulkRemoveRequest copyWith({List<String>? usernames}) {
 
 @override String toString() => 'EnterpriseTeamMembershipsBulkRemoveRequest(usernames: $usernames)';
 
- }
+}

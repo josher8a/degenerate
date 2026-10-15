@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionMessageCustomToolCall {const ChatCompletionMessageCustomToolCall({required this.id, required this.type, required this.custom, });
 
-factory ChatCompletionMessageCustomToolCall.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageCustomToolCall(
+factory ChatCompletionMessageCustomToolCall.fromJson(Map<String, dynamic> json) {return ChatCompletionMessageCustomToolCall(
   id: json['id'] as String,
   type: ChatCompletionMessageCustomToolCallType.fromJson(json['type'] as String),
   custom: ChatCompletionMessageCustomToolCallCustom.fromJson(json['custom'] as Map<String, dynamic>),
-); }
+);}
 
 /// The ID of the tool call.
 final String id;
@@ -20,19 +20,19 @@ final ChatCompletionMessageCustomToolCallType type;
 /// The custom tool that the model called.
 final ChatCompletionMessageCustomToolCallCustom custom;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type.toJson(),
   'custom': custom.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('custom'); } 
-ChatCompletionMessageCustomToolCall copyWith({String? id, ChatCompletionMessageCustomToolCallType? type, ChatCompletionMessageCustomToolCallCustom? custom, }) { return ChatCompletionMessageCustomToolCall(
+      json.containsKey('custom');}
+ChatCompletionMessageCustomToolCall copyWith({String? id, ChatCompletionMessageCustomToolCallType? type, ChatCompletionMessageCustomToolCallCustom? custom, }) {return ChatCompletionMessageCustomToolCall(
   id: id ?? this.id,
   type: type ?? this.type,
   custom: custom ?? this.custom,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionMessageCustomToolCall &&
           id == other.id &&
@@ -43,4 +43,4 @@ ChatCompletionMessageCustomToolCall copyWith({String? id, ChatCompletionMessageC
 
 @override String toString() => 'ChatCompletionMessageCustomToolCall(id: $id, type: $type, custom: $custom)';
 
- }
+}

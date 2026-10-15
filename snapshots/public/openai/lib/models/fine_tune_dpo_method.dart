@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters.dart';/// Configuration for the DPO fine-tuning method.
 @immutable final class FineTuneDpoMethod {const FineTuneDpoMethod({this.hyperparameters});
 
-factory FineTuneDpoMethod.fromJson(Map<String, dynamic> json) { return FineTuneDpoMethod(
+factory FineTuneDpoMethod.fromJson(Map<String, dynamic> json) {return FineTuneDpoMethod(
   hyperparameters: json['hyperparameters'] != null ? FineTuneDpoHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final FineTuneDpoHyperparameters? hyperparameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hyperparameters'}.contains(key)); } 
-FineTuneDpoMethod copyWith({FineTuneDpoHyperparameters? Function()? hyperparameters}) { return FineTuneDpoMethod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hyperparameters'}.contains(key));}
+FineTuneDpoMethod copyWith({FineTuneDpoHyperparameters? Function()? hyperparameters}) {return FineTuneDpoMethod(
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneDpoMethod &&
           hyperparameters == other.hyperparameters;
@@ -25,4 +25,4 @@ FineTuneDpoMethod copyWith({FineTuneDpoHyperparameters? Function()? hyperparamet
 
 @override String toString() => 'FineTuneDpoMethod(hyperparameters: $hyperparameters)';
 
- }
+}

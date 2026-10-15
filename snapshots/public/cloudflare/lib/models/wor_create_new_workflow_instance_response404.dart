@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class WorCreateNewWorkflowInstanceResponse404 {const WorCreateNewWorkflowInstanceResponse404({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory WorCreateNewWorkflowInstanceResponse404.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceResponse404(
+factory WorCreateNewWorkflowInstanceResponse404.fromJson(Map<String, dynamic> json) {return WorCreateNewWorkflowInstanceResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
@@ -18,22 +18,22 @@ final Map<String,dynamic>? result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorCreateNewWorkflowInstanceResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorCreateNewWorkflowInstanceResponse404(
+      json.containsKey('success') && json['success'] is bool;}
+WorCreateNewWorkflowInstanceResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) {return WorCreateNewWorkflowInstanceResponse404(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorCreateNewWorkflowInstanceResponse404 &&
           listEquals(errors, other.errors) &&
@@ -45,4 +45,4 @@ WorCreateNewWorkflowInstanceResponse404 copyWith({List<AccountsByAccountIdPipeli
 
 @override String toString() => 'WorCreateNewWorkflowInstanceResponse404(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

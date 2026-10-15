@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCounts {const FileCounts({required this.inProgress, required this.completed, required this.failed, required this.cancelled, required this.total, });
 
-factory FileCounts.fromJson(Map<String, dynamic> json) { return FileCounts(
+factory FileCounts.fromJson(Map<String, dynamic> json) {return FileCounts(
   inProgress: (json['in_progress'] as num).toInt(),
   completed: (json['completed'] as num).toInt(),
   failed: (json['failed'] as num).toInt(),
   cancelled: (json['cancelled'] as num).toInt(),
   total: (json['total'] as num).toInt(),
-); }
+);}
 
 /// The number of files that are currently being processed.
 final int inProgress;
@@ -26,25 +26,25 @@ final int cancelled;
 /// The total number of files.
 final int total;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'in_progress': inProgress,
   'completed': completed,
   'failed': failed,
   'cancelled': cancelled,
   'total': total,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('in_progress') && json['in_progress'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('in_progress') && json['in_progress'] is num &&
       json.containsKey('completed') && json['completed'] is num &&
       json.containsKey('failed') && json['failed'] is num &&
       json.containsKey('cancelled') && json['cancelled'] is num &&
-      json.containsKey('total') && json['total'] is num; } 
-FileCounts copyWith({int? inProgress, int? completed, int? failed, int? cancelled, int? total, }) { return FileCounts(
+      json.containsKey('total') && json['total'] is num;}
+FileCounts copyWith({int? inProgress, int? completed, int? failed, int? cancelled, int? total, }) {return FileCounts(
   inProgress: inProgress ?? this.inProgress,
   completed: completed ?? this.completed,
   failed: failed ?? this.failed,
   cancelled: cancelled ?? this.cancelled,
   total: total ?? this.total,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileCounts &&
           inProgress == other.inProgress &&
@@ -57,4 +57,4 @@ FileCounts copyWith({int? inProgress, int? completed, int? failed, int? cancelle
 
 @override String toString() => 'FileCounts(inProgress: $inProgress, completed: $completed, failed: $failed, cancelled: $cancelled, total: $total)';
 
- }
+}

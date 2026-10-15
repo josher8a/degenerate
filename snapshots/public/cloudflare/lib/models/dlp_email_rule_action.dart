@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action/block.dart';/// A value that is one of: `Block`.
 sealed class DlpEmailRuleAction {const DlpEmailRuleAction();
 
-factory DlpEmailRuleAction.fromJson(Object? json) {   if (json is Map<String, dynamic> && Block.canParse(json)) {
+factory DlpEmailRuleAction.fromJson(Object? json) {  if (json is Map<String, dynamic> && Block.canParse(json)) {
     return DlpEmailRuleActionBlock(Block.fromJson(json));
   }
-  return DlpEmailRuleAction$Unknown(json); }
+  return DlpEmailRuleAction$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class DlpEmailRuleActionBlock extends DlpEmailRuleAction {const DlpEmailRuleActionBlock(this._value);
 
 final Block _value;
 
 @override Block get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DlpEmailRuleActionBlock && _value == other._value;
 
@@ -27,7 +27,7 @@ final Block _value;
 
 @override String toString() => 'DlpEmailRuleAction.block($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class DlpEmailRuleAction$Unknown extends DlpEmailRuleAction {const DlpEmailRuleAction$Unknown(this._value);
 
@@ -42,4 +42,4 @@ final dynamic _value;
 
 @override String toString() => 'DlpEmailRuleAction.unknown($_value)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/webhooks_release1_author.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionRelease {const WebhookPackagePublishedPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
 
-factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionRelease(
+factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) {return WebhookPackagePublishedPackagePackageVersionRelease(
   author: json['author'] != null ? WebhooksRelease1Author.fromJson(json['author'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String,
   draft: json['draft'] as bool,
@@ -15,7 +15,7 @@ factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String,
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final WebhooksRelease1Author? author;
 
@@ -39,7 +39,7 @@ final String targetCommitish;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author?.toJson(),
   'created_at': createdAt,
   'draft': draft,
@@ -51,19 +51,19 @@ Map<String, dynamic> toJson() { return {
   'tag_name': tagName,
   'target_commitish': targetCommitish,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('draft') && json['draft'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('prerelease') && json['prerelease'] is bool &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('tag_name') && json['tag_name'] is String &&
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhooksRelease1Author? Function()? author, String? createdAt, bool? draft, Uri? htmlUrl, int? id, String? Function()? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, Uri? url, }) { return WebhookPackagePublishedPackagePackageVersionRelease(
+      json.containsKey('url') && json['url'] is String;}
+WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhooksRelease1Author? Function()? author, String? createdAt, bool? draft, Uri? htmlUrl, int? id, String? Function()? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, Uri? url, }) {return WebhookPackagePublishedPackagePackageVersionRelease(
   author: author != null ? author() : this.author,
   createdAt: createdAt ?? this.createdAt,
   draft: draft ?? this.draft,
@@ -75,7 +75,7 @@ WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhooksRelease1Au
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish ?? this.targetCommitish,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPackagePublishedPackagePackageVersionRelease &&
           author == other.author &&
@@ -94,4 +94,4 @@ WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhooksRelease1Au
 
 @override String toString() => 'WebhookPackagePublishedPackagePackageVersionRelease(\n  author: $author,\n  createdAt: $createdAt,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  prerelease: $prerelease,\n  publishedAt: $publishedAt,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  url: $url,\n)';
 
- }
+}

@@ -14,7 +14,7 @@ final class EnterpriseTeamOrganizationsApi with ApiExecutor {const EnterpriseTea
 /// Get all organizations assigned to an enterprise team
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations`
-Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -34,20 +34,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Add organization assignments
 ///
 /// Assign an enterprise team to multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add`
-Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,20 +58,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Remove organization assignments
 ///
 /// Unassign an enterprise team from multiple organizations.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove`
-Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -82,17 +82,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get organization assignment
 ///
 /// Check if an enterprise team is assigned to an organization
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,19 +101,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OrganizationSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Add an organization assignment
 ///
 /// Assign an enterprise team to an organization.
 ///
 /// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -122,19 +122,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OrganizationSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an organization assignment
 ///
 /// Unassign an enterprise team from an organization.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
-Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -143,9 +143,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

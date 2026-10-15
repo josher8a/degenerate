@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_reopened/webhook_code_scanning_alert_reopened_alert.dart';@immutable final class WebhookCodeScanningAlertReopened {const WebhookCodeScanningAlertReopened({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCodeScanningAlertReopened.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopened(
+factory WebhookCodeScanningAlertReopened.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertReopened(
   action: ProjectReopenedAction.fromJson(json['action'] as String),
   alert: WebhookCodeScanningAlertReopenedAlert.fromJson(json['alert'] as Map<String, dynamic>),
   commitOid: json['commit_oid'] as String?,
@@ -13,7 +13,7 @@ factory WebhookCodeScanningAlertReopened.fromJson(Map<String, dynamic> json) { r
   ref: json['ref'] as String?,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ProjectReopenedAction action;
 
@@ -36,7 +36,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   'commit_oid': commitOid,
@@ -46,14 +46,14 @@ Map<String, dynamic> toJson() { return {
   'ref': ref,
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
-      json.containsKey('commit_oid') && json['commit_oid'] is String &&
-      json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('commit_oid') && (json['commit_oid'] == null || json['commit_oid'] is String) &&
+      json.containsKey('ref') && (json['ref'] == null || json['ref'] is String) &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
+      json.containsKey('sender');}
+WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCodeScanningAlertReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid != null ? commitOid() : this.commitOid,
@@ -63,7 +63,7 @@ WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, Webhoo
   ref: ref != null ? ref() : this.ref,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertReopened &&
           action == other.action &&
@@ -80,4 +80,4 @@ WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, Webhoo
 
 @override String toString() => 'WebhookCodeScanningAlertReopened(\n  action: $action,\n  alert: $alert,\n  commitOid: $commitOid,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  ref: $ref,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub organization.
 @immutable final class OrganizationSimple {const OrganizationSimple({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, });
 
-factory OrganizationSimple.fromJson(Map<String, dynamic> json) { return OrganizationSimple(
+factory OrganizationSimple.fromJson(Map<String, dynamic> json) {return OrganizationSimple(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -17,7 +17,7 @@ factory OrganizationSimple.fromJson(Map<String, dynamic> json) { return Organiza
   publicMembersUrl: json['public_members_url'] as String,
   avatarUrl: json['avatar_url'] as String,
   description: json['description'] as String?,
-); }
+);}
 
 final String login;
 
@@ -43,7 +43,7 @@ final String avatarUrl;
 
 final String? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'node_id': nodeId,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'public_members_url': publicMembersUrl,
   'avatar_url': avatarUrl,
   'description': description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
@@ -68,8 +68,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
-OrganizationSimple copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, }) { return OrganizationSimple(
+      json.containsKey('description') && (json['description'] == null || json['description'] is String);}
+OrganizationSimple copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, }) {return OrganizationSimple(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -82,7 +82,7 @@ OrganizationSimple copyWith({String? login, int? id, String? nodeId, Uri? url, U
   publicMembersUrl: publicMembersUrl ?? this.publicMembersUrl,
   avatarUrl: avatarUrl ?? this.avatarUrl,
   description: description != null ? description() : this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationSimple &&
           login == other.login &&
@@ -102,4 +102,4 @@ OrganizationSimple copyWith({String? login, int? id, String? nodeId, Uri? url, U
 
 @override String toString() => 'OrganizationSimple(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  issuesUrl: $issuesUrl,\n  membersUrl: $membersUrl,\n  publicMembersUrl: $publicMembersUrl,\n  avatarUrl: $avatarUrl,\n  description: $description,\n)';
 
- }
+}

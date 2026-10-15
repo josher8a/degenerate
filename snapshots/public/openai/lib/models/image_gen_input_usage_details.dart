@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The input tokens detailed information for the image generation.
 @immutable final class ImageGenInputUsageDetails {const ImageGenInputUsageDetails({required this.textTokens, required this.imageTokens, });
 
-factory ImageGenInputUsageDetails.fromJson(Map<String, dynamic> json) { return ImageGenInputUsageDetails(
+factory ImageGenInputUsageDetails.fromJson(Map<String, dynamic> json) {return ImageGenInputUsageDetails(
   textTokens: (json['text_tokens'] as num).toInt(),
   imageTokens: (json['image_tokens'] as num).toInt(),
-); }
+);}
 
 /// The number of text tokens in the input prompt.
 final int textTokens;
@@ -15,16 +15,16 @@ final int textTokens;
 /// The number of image tokens in the input prompt.
 final int imageTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text_tokens': textTokens,
   'image_tokens': imageTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text_tokens') && json['text_tokens'] is num &&
-      json.containsKey('image_tokens') && json['image_tokens'] is num; } 
-ImageGenInputUsageDetails copyWith({int? textTokens, int? imageTokens, }) { return ImageGenInputUsageDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text_tokens') && json['text_tokens'] is num &&
+      json.containsKey('image_tokens') && json['image_tokens'] is num;}
+ImageGenInputUsageDetails copyWith({int? textTokens, int? imageTokens, }) {return ImageGenInputUsageDetails(
   textTokens: textTokens ?? this.textTokens,
   imageTokens: imageTokens ?? this.imageTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenInputUsageDetails &&
           textTokens == other.textTokens &&
@@ -34,4 +34,4 @@ ImageGenInputUsageDetails copyWith({int? textTokens, int? imageTokens, }) { retu
 
 @override String toString() => 'ImageGenInputUsageDetails(textTokens: $textTokens, imageTokens: $imageTokens)';
 
- }
+}

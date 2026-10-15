@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsBotnetThreatFeedResponseResultMeta {const RadarGetAsBotnetThreatFeedResponseResultMeta({required this.date, required this.total, this.compareDate, });
 
-factory RadarGetAsBotnetThreatFeedResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAsBotnetThreatFeedResponseResultMeta(
+factory RadarGetAsBotnetThreatFeedResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetAsBotnetThreatFeedResponseResultMeta(
   compareDate: json['compareDate'] as String?,
   date: json['date'] as String,
   total: (json['total'] as num).toInt(),
-); }
+);}
 
 /// Example: `'2026-01-28'`
 final String? compareDate;
@@ -18,18 +18,18 @@ final String date;
 /// Example: `50`
 final int total;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'compareDate': ?compareDate,
   'date': date,
   'total': total,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
-      json.containsKey('total') && json['total'] is num; } 
-RadarGetAsBotnetThreatFeedResponseResultMeta copyWith({String? Function()? compareDate, String? date, int? total, }) { return RadarGetAsBotnetThreatFeedResponseResultMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('date') && json['date'] is String &&
+      json.containsKey('total') && json['total'] is num;}
+RadarGetAsBotnetThreatFeedResponseResultMeta copyWith({String? Function()? compareDate, String? date, int? total, }) {return RadarGetAsBotnetThreatFeedResponseResultMeta(
   compareDate: compareDate != null ? compareDate() : this.compareDate,
   date: date ?? this.date,
   total: total ?? this.total,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsBotnetThreatFeedResponseResultMeta &&
           compareDate == other.compareDate &&
@@ -40,4 +40,4 @@ RadarGetAsBotnetThreatFeedResponseResultMeta copyWith({String? Function()? compa
 
 @override String toString() => 'RadarGetAsBotnetThreatFeedResponseResultMeta(compareDate: $compareDate, date: $date, total: $total)';
 
- }
+}

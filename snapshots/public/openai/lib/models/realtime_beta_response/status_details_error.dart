@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of
 /// 
 @immutable final class StatusDetailsError {const StatusDetailsError({this.type, this.code, });
 
-factory StatusDetailsError.fromJson(Map<String, dynamic> json) { return StatusDetailsError(
+factory StatusDetailsError.fromJson(Map<String, dynamic> json) {return StatusDetailsError(
   type: json['type'] as String?,
   code: json['code'] as String?,
-); }
+);}
 
 /// The type of error.
 final String? type;
@@ -17,15 +17,15 @@ final String? type;
 /// Error code, if any.
 final String? code;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'code': ?code,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'code'}.contains(key)); } 
-StatusDetailsError copyWith({String? Function()? type, String? Function()? code, }) { return StatusDetailsError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'code'}.contains(key));}
+StatusDetailsError copyWith({String? Function()? type, String? Function()? code, }) {return StatusDetailsError(
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StatusDetailsError &&
           type == other.type &&
@@ -35,4 +35,4 @@ StatusDetailsError copyWith({String? Function()? type, String? Function()? code,
 
 @override String toString() => 'StatusDetailsError(type: $type, code: $code)';
 
- }
+}

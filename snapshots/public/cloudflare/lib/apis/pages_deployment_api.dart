@@ -14,7 +14,7 @@ final class PagesDeploymentApi with ApiExecutor {const PagesDeploymentApi(this.a
 /// Fetch a list of project deployments.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments`
-Future<ApiResult<List<PagesDeployment>, PagesDeploymentCreateDeploymentError>> pagesDeploymentGetDeployments({required PagesProjectName projectName, required PagesIdentifier accountId, PagesDeploymentGetDeploymentsEnv? env, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PagesDeployment>, PagesDeploymentCreateDeploymentError>> pagesDeploymentGetDeployments({required PagesProjectName projectName, required PagesIdentifier accountId, PagesDeploymentGetDeploymentsEnv? env, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (env != null) {
   queryParameters['env'] = env.toJson();
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -45,13 +45,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Create deployment
 ///
 /// Start a new deployment from production. The repository and account must have already been authorized on the Cloudflare Pages dashboard.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments`
-Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentCreateDeployment({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDeploymentCreateDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentCreateDeployment({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesDeploymentCreateDeploymentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -89,7 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -97,13 +97,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Get deployment info
 ///
 /// Fetch information about a deployment.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}`
-Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentGetDeploymentInfo({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentGetDeploymentInfo({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,7 +112,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -120,13 +120,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Delete deployment
 ///
 /// Delete a deployment.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}`
-Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesDeploymentDeleteDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesDeploymentDeleteDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -135,7 +135,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -143,13 +143,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Get deployment logs
 ///
 /// Fetch deployment logs for a project.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/history/logs`
-Future<ApiResult<PagesDeploymentLog, PagesDeploymentCreateDeploymentError>> pagesDeploymentGetDeploymentLogs({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDeploymentLog, PagesDeploymentCreateDeploymentError>> pagesDeploymentGetDeploymentLogs({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -158,7 +158,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -166,13 +166,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Retry deployment
 ///
 /// Retry a previous deployment.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/retry`
-Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentRetryDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentRetryDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -181,7 +181,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -189,13 +189,13 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
+}
 /// Rollback deployment
 ///
 /// Rollback the production deployment to a previous deployment. You can only rollback to succesful builds on production.
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/rollback`
-Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentRollbackDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesDeployment, PagesDeploymentCreateDeploymentError>> pagesDeploymentRollbackDeployment({required PagesIdentifier deploymentId, required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -204,7 +204,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -212,5 +212,5 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
- }
+}
+}

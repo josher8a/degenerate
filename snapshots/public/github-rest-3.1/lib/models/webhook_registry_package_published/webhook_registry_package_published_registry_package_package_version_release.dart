@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookRegistryPackagePublished (inline: RegistryPackage > PackageVersion > Release)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/release_author.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name, this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/release_author.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name = const Omittable.absent(), this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
 
-factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
+factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
   author: json['author'] != null ? ReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String?,
   draft: json['draft'] as bool?,
   htmlUrl: json['html_url'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   prerelease: json['prerelease'] as bool?,
   publishedAt: json['published_at'] as String?,
   tagName: json['tag_name'] as String?,
   targetCommitish: json['target_commitish'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final ReleaseAuthor? author;
 
@@ -27,7 +27,7 @@ final String? htmlUrl;
 
 final int? id;
 
-final String? name;
+final Omittable<String?> name;
 
 final bool? prerelease;
 
@@ -39,33 +39,33 @@ final String? targetCommitish;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (author != null) 'author': author?.toJson(),
   'created_at': ?createdAt,
   'draft': ?draft,
   'html_url': ?htmlUrl,
   'id': ?id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'prerelease': ?prerelease,
   'published_at': ?publishedAt,
   'tag_name': ?tagName,
   'target_commitish': ?targetCommitish,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author', 'created_at', 'draft', 'html_url', 'id', 'name', 'prerelease', 'published_at', 'tag_name', 'target_commitish', 'url'}.contains(key)); } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease copyWith({ReleaseAuthor? Function()? author, String? Function()? createdAt, bool? Function()? draft, String? Function()? htmlUrl, int? Function()? id, String? Function()? name, bool? Function()? prerelease, String? Function()? publishedAt, String? Function()? tagName, String? Function()? targetCommitish, String? Function()? url, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'author', 'created_at', 'draft', 'html_url', 'id', 'name', 'prerelease', 'published_at', 'tag_name', 'target_commitish', 'url'}.contains(key));}
+WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease copyWith({ReleaseAuthor? Function()? author, String? Function()? createdAt, bool? Function()? draft, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, bool? Function()? prerelease, String? Function()? publishedAt, String? Function()? tagName, String? Function()? targetCommitish, String? Function()? url, }) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
   author: author != null ? author() : this.author,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   draft: draft != null ? draft() : this.draft,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   id: id != null ? id() : this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   prerelease: prerelease != null ? prerelease() : this.prerelease,
   publishedAt: publishedAt != null ? publishedAt() : this.publishedAt,
   tagName: tagName != null ? tagName() : this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease &&
           author == other.author &&
@@ -84,4 +84,4 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease copyWith({Re
 
 @override String toString() => 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(\n  author: $author,\n  createdAt: $createdAt,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  prerelease: $prerelease,\n  publishedAt: $publishedAt,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  url: $url,\n)';
 
- }
+}

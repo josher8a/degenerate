@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_response/radar_get_traffic_anomalies_response_result.dart';@immutable final class RadarGetTrafficAnomaliesResponse {const RadarGetTrafficAnomaliesResponse({required this.result, required this.success, });
 
-factory RadarGetTrafficAnomaliesResponse.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesResponse(
+factory RadarGetTrafficAnomaliesResponse.fromJson(Map<String, dynamic> json) {return RadarGetTrafficAnomaliesResponse(
   result: RadarGetTrafficAnomaliesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetTrafficAnomaliesResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetTrafficAnomaliesResponse copyWith({RadarGetTrafficAnomaliesResponseResult? result, bool? success, }) { return RadarGetTrafficAnomaliesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetTrafficAnomaliesResponse copyWith({RadarGetTrafficAnomaliesResponseResult? result, bool? success, }) {return RadarGetTrafficAnomaliesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetTrafficAnomaliesResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetTrafficAnomaliesResponse copyWith({RadarGetTrafficAnomaliesResponseResul
 
 @override String toString() => 'RadarGetTrafficAnomaliesResponse(result: $result, success: $success)';
 
- }
+}

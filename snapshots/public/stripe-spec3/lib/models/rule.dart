@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class Rule {const Rule({required this.action, required this.id, required this.predicate, });
 
-factory Rule.fromJson(Map<String, dynamic> json) { return Rule(
+factory Rule.fromJson(Map<String, dynamic> json) {return Rule(
   action: json['action'] as String,
   id: json['id'] as String,
   predicate: json['predicate'] as String,
-); }
+);}
 
 /// The action taken on the payment.
 final String action;
@@ -19,25 +19,25 @@ final String id;
 /// The predicate to evaluate the payment against.
 final String predicate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'id': id,
   'predicate': predicate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('predicate') && json['predicate'] is String; } 
+      json.containsKey('predicate') && json['predicate'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (action.runes.length > 5000) { errors.add('action: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (predicate.runes.length > 5000) { errors.add('predicate: length must be <= 5000'); }
-return errors; } 
-Rule copyWith({String? action, String? id, String? predicate, }) { return Rule(
+return errors;}
+Rule copyWith({String? action, String? id, String? predicate, }) {return Rule(
   action: action ?? this.action,
   id: id ?? this.id,
   predicate: predicate ?? this.predicate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Rule &&
           action == other.action &&
@@ -48,4 +48,4 @@ Rule copyWith({String? action, String? id, String? predicate, }) { return Rule(
 
 @override String toString() => 'Rule(action: $action, id: $id, predicate: $predicate)';
 
- }
+}

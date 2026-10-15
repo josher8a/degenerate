@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A detailed breakdown of the input tokens.
 @immutable final class ResponseUsageInputTokensDetails {const ResponseUsageInputTokensDetails({required this.cachedTokens});
 
-factory ResponseUsageInputTokensDetails.fromJson(Map<String, dynamic> json) { return ResponseUsageInputTokensDetails(
+factory ResponseUsageInputTokensDetails.fromJson(Map<String, dynamic> json) {return ResponseUsageInputTokensDetails(
   cachedTokens: (json['cached_tokens'] as num).toInt(),
-); }
+);}
 
 /// The number of tokens that were retrieved from the cache. [More on
 /// prompt caching](/docs/guides/prompt-caching).
 /// 
 final int cachedTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cached_tokens': cachedTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cached_tokens') && json['cached_tokens'] is num; } 
-ResponseUsageInputTokensDetails copyWith({int? cachedTokens}) { return ResponseUsageInputTokensDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cached_tokens') && json['cached_tokens'] is num;}
+ResponseUsageInputTokensDetails copyWith({int? cachedTokens}) {return ResponseUsageInputTokensDetails(
   cachedTokens: cachedTokens ?? this.cachedTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseUsageInputTokensDetails &&
           cachedTokens == other.cachedTokens;
@@ -28,4 +28,4 @@ ResponseUsageInputTokensDetails copyWith({int? cachedTokens}) { return ResponseU
 
 @override String toString() => 'ResponseUsageInputTokensDetails(cachedTokens: $cachedTokens)';
 
- }
+}

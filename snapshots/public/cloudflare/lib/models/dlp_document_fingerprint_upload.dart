@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDocumentFingerprintUpload {const DlpDocumentFingerprintUpload({required this.createdAt, required this.description, required this.entryId, required this.fileName, required this.id, required this.matchPercent, required this.name, required this.status, required this.updatedAt, required this.version, });
 
-factory DlpDocumentFingerprintUpload.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintUpload(
+factory DlpDocumentFingerprintUpload.fromJson(Map<String, dynamic> json) {return DlpDocumentFingerprintUpload(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String,
   entryId: json['entry_id'] as String,
@@ -14,7 +14,7 @@ factory DlpDocumentFingerprintUpload.fromJson(Map<String, dynamic> json) { retur
   status: DlpDatasetUploadStatus.fromJson(json['status'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -36,7 +36,7 @@ final DateTime updatedAt;
 
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': description,
   'entry_id': entryId,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('entry_id') && json['entry_id'] is String &&
       json.containsKey('file_name') && json['file_name'] is String &&
@@ -57,8 +57,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('version') && json['version'] is num; } 
-DlpDocumentFingerprintUpload copyWith({DateTime? createdAt, String? description, String? entryId, String? fileName, String? id, int? matchPercent, String? name, DlpDatasetUploadStatus? status, DateTime? updatedAt, int? version, }) { return DlpDocumentFingerprintUpload(
+      json.containsKey('version') && json['version'] is num;}
+DlpDocumentFingerprintUpload copyWith({DateTime? createdAt, String? description, String? entryId, String? fileName, String? id, int? matchPercent, String? name, DlpDatasetUploadStatus? status, DateTime? updatedAt, int? version, }) {return DlpDocumentFingerprintUpload(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   entryId: entryId ?? this.entryId,
@@ -69,7 +69,7 @@ DlpDocumentFingerprintUpload copyWith({DateTime? createdAt, String? description,
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprintUpload &&
           createdAt == other.createdAt &&
@@ -87,4 +87,4 @@ DlpDocumentFingerprintUpload copyWith({DateTime? createdAt, String? description,
 
 @override String toString() => 'DlpDocumentFingerprintUpload(\n  createdAt: $createdAt,\n  description: $description,\n  entryId: $entryId,\n  fileName: $fileName,\n  id: $id,\n  matchPercent: $matchPercent,\n  name: $name,\n  status: $status,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
- }
+}

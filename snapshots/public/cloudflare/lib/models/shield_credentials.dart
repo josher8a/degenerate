@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_credentials_jwt_key.dart';import 'package:pub_cloudflare/models/shield_credentials_jwt_key_ec_es256.dart';import 'package:pub_cloudflare/models/shield_credentials_jwt_key_ec_es384.dart';import 'package:pub_cloudflare/models/shield_credentials_jwt_key_rsa.dart';@immutable final class ShieldCredentials {const ShieldCredentials({required this.keys});
 
-factory ShieldCredentials.fromJson(Map<String, dynamic> json) { return ShieldCredentials(
+factory ShieldCredentials.fromJson(Map<String, dynamic> json) {return ShieldCredentials(
   keys: (json['keys'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => ShieldCredentialsJwtKeyRsa.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldCredentialsJwtKeyEcEs256.fromJson(v as Map<String, dynamic>), fromC: (v) => ShieldCredentialsJwtKeyEcEs384.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 final List<ShieldCredentialsJwtKey> keys;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'keys': keys.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('keys'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('keys');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (keys.isEmpty) { errors.add('keys: must have >= 1 items'); }
 if (keys.length > 4) { errors.add('keys: must have <= 4 items'); }
-return errors; } 
-ShieldCredentials copyWith({List<ShieldCredentialsJwtKey>? keys}) { return ShieldCredentials(
+return errors;}
+ShieldCredentials copyWith({List<ShieldCredentialsJwtKey>? keys}) {return ShieldCredentials(
   keys: keys ?? this.keys,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldCredentials &&
           listEquals(keys, other.keys);
@@ -29,4 +29,4 @@ ShieldCredentials copyWith({List<ShieldCredentialsJwtKey>? keys}) { return Shiel
 
 @override String toString() => 'ShieldCredentials(keys: $keys)';
 
- }
+}

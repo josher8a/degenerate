@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_account_id.dart';import 'package:pub_cloudflare/models/mconn_day_of_week.dart';import 'package:pub_cloudflare/models/mconn_embargo_date.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnSupportConnector {const MconnSupportConnector({required this.accountId, required this.activated, required this.id, required this.interruptWindowDaysOfWeek, required this.interruptWindowDurationHours, required this.interruptWindowEmbargoDates, required this.interruptWindowHourOfDay, required this.lastUpdated, required this.notes, required this.timezone, required this.upgradeAsap, this.cohortId, this.desiredVersion, this.deviceId, this.lastHeartbeat, this.lastSeenVersion, });
 
-factory MconnSupportConnector.fromJson(Map<String, dynamic> json) { return MconnSupportConnector(
+factory MconnSupportConnector.fromJson(Map<String, dynamic> json) {return MconnSupportConnector(
   accountId: MconnAccountId.fromJson(json['account_id'] as String),
   activated: json['activated'] as bool,
   cohortId: json['cohort_id'] != null ? MconnUuid.fromJson(json['cohort_id'] as String) : null,
@@ -20,7 +20,7 @@ factory MconnSupportConnector.fromJson(Map<String, dynamic> json) { return Mconn
   notes: json['notes'] as String,
   timezone: json['timezone'] as String,
   upgradeAsap: json['upgrade_asap'] as bool,
-); }
+);}
 
 /// Account identifier
 final MconnAccountId accountId;
@@ -55,7 +55,7 @@ final String timezone;
 
 final bool upgradeAsap;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId.toJson(),
   'activated': activated,
   if (cohortId != null) 'cohort_id': cohortId?.toJson(),
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   'notes': notes,
   'timezone': timezone,
   'upgrade_asap': upgradeAsap,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') &&
       json.containsKey('activated') && json['activated'] is bool &&
       json.containsKey('id') &&
       json.containsKey('interrupt_window_days_of_week') &&
@@ -83,14 +83,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('notes') && json['notes'] is String &&
       json.containsKey('timezone') && json['timezone'] is String &&
-      json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
+      json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (interruptWindowDurationHours < 1) { errors.add('interruptWindowDurationHours: must be >= 1'); }
 if (interruptWindowDurationHours > 24) { errors.add('interruptWindowDurationHours: must be <= 24'); }
 if (interruptWindowEmbargoDates.length > 100) { errors.add('interruptWindowEmbargoDates: must have <= 100 items'); }
-return errors; } 
-MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnSupportConnector(
+return errors;}
+MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) {return MconnSupportConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,
   cohortId: cohortId != null ? cohortId() : this.cohortId,
@@ -107,7 +107,7 @@ MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, Mcon
   notes: notes ?? this.notes,
   timezone: timezone ?? this.timezone,
   upgradeAsap: upgradeAsap ?? this.upgradeAsap,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportConnector &&
           accountId == other.accountId &&
@@ -131,4 +131,4 @@ MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, Mcon
 
 @override String toString() => 'MconnSupportConnector(\n  accountId: $accountId,\n  activated: $activated,\n  cohortId: $cohortId,\n  desiredVersion: $desiredVersion,\n  deviceId: $deviceId,\n  id: $id,\n  interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek,\n  interruptWindowDurationHours: $interruptWindowDurationHours,\n  interruptWindowEmbargoDates: $interruptWindowEmbargoDates,\n  interruptWindowHourOfDay: $interruptWindowHourOfDay,\n  lastHeartbeat: $lastHeartbeat,\n  lastSeenVersion: $lastSeenVersion,\n  lastUpdated: $lastUpdated,\n  notes: $notes,\n  timezone: $timezone,\n  upgradeAsap: $upgradeAsap,\n)';
 
- }
+}

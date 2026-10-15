@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/exec_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/grpc_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/http_get_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/tcp_socket_action.dart';/// Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
 @immutable final class Probe {const Probe({this.exec, this.failureThreshold, this.grpc, this.httpGet, this.initialDelaySeconds, this.periodSeconds, this.successThreshold, this.tcpSocket, this.terminationGracePeriodSeconds, this.timeoutSeconds, });
 
-factory Probe.fromJson(Map<String, dynamic> json) { return Probe(
+factory Probe.fromJson(Map<String, dynamic> json) {return Probe(
   exec: json['exec'] != null ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>) : null,
   failureThreshold: json['failureThreshold'] != null ? (json['failureThreshold'] as num).toInt() : null,
   grpc: json['grpc'] != null ? GrpcAction.fromJson(json['grpc'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory Probe.fromJson(Map<String, dynamic> json) { return Probe(
   tcpSocket: json['tcpSocket'] != null ? TcpSocketAction.fromJson(json['tcpSocket'] as Map<String, dynamic>) : null,
   terminationGracePeriodSeconds: json['terminationGracePeriodSeconds'] != null ? (json['terminationGracePeriodSeconds'] as num).toInt() : null,
   timeoutSeconds: json['timeoutSeconds'] != null ? (json['timeoutSeconds'] as num).toInt() : null,
-); }
+);}
 
 /// Exec specifies a command to execute in the container.
 final ExecAction? exec;
@@ -47,7 +47,7 @@ final int? terminationGracePeriodSeconds;
 /// Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
 final int? timeoutSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (exec != null) 'exec': exec?.toJson(),
   'failureThreshold': ?failureThreshold,
   if (grpc != null) 'grpc': grpc?.toJson(),
@@ -58,9 +58,9 @@ Map<String, dynamic> toJson() { return {
   if (tcpSocket != null) 'tcpSocket': tcpSocket?.toJson(),
   'terminationGracePeriodSeconds': ?terminationGracePeriodSeconds,
   'timeoutSeconds': ?timeoutSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exec', 'failureThreshold', 'grpc', 'httpGet', 'initialDelaySeconds', 'periodSeconds', 'successThreshold', 'tcpSocket', 'terminationGracePeriodSeconds', 'timeoutSeconds'}.contains(key)); } 
-Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold, GrpcAction? Function()? grpc, HttpGetAction? Function()? httpGet, int? Function()? initialDelaySeconds, int? Function()? periodSeconds, int? Function()? successThreshold, TcpSocketAction? Function()? tcpSocket, int? Function()? terminationGracePeriodSeconds, int? Function()? timeoutSeconds, }) { return Probe(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'exec', 'failureThreshold', 'grpc', 'httpGet', 'initialDelaySeconds', 'periodSeconds', 'successThreshold', 'tcpSocket', 'terminationGracePeriodSeconds', 'timeoutSeconds'}.contains(key));}
+Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold, GrpcAction? Function()? grpc, HttpGetAction? Function()? httpGet, int? Function()? initialDelaySeconds, int? Function()? periodSeconds, int? Function()? successThreshold, TcpSocketAction? Function()? tcpSocket, int? Function()? terminationGracePeriodSeconds, int? Function()? timeoutSeconds, }) {return Probe(
   exec: exec != null ? exec() : this.exec,
   failureThreshold: failureThreshold != null ? failureThreshold() : this.failureThreshold,
   grpc: grpc != null ? grpc() : this.grpc,
@@ -71,7 +71,7 @@ Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold,
   tcpSocket: tcpSocket != null ? tcpSocket() : this.tcpSocket,
   terminationGracePeriodSeconds: terminationGracePeriodSeconds != null ? terminationGracePeriodSeconds() : this.terminationGracePeriodSeconds,
   timeoutSeconds: timeoutSeconds != null ? timeoutSeconds() : this.timeoutSeconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Probe &&
           exec == other.exec &&
@@ -89,4 +89,4 @@ Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold,
 
 @override String toString() => 'Probe(\n  exec: $exec,\n  failureThreshold: $failureThreshold,\n  grpc: $grpc,\n  httpGet: $httpGet,\n  initialDelaySeconds: $initialDelaySeconds,\n  periodSeconds: $periodSeconds,\n  successThreshold: $successThreshold,\n  tcpSocket: $tcpSocket,\n  terminationGracePeriodSeconds: $terminationGracePeriodSeconds,\n  timeoutSeconds: $timeoutSeconds,\n)';
 
- }
+}

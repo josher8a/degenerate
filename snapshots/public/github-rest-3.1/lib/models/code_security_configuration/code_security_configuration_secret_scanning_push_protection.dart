@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning push protection
 sealed class CodeSecurityConfigurationSecretScanningPushProtection {const CodeSecurityConfigurationSecretScanningPushProtection();
 
-factory CodeSecurityConfigurationSecretScanningPushProtection.fromJson(String json) { return switch (json) {
+factory CodeSecurityConfigurationSecretScanningPushProtection.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityConfigurationSecretScanningPushProtection$Unknown(json),
-}; }
+};}
 
 static const CodeSecurityConfigurationSecretScanningPushProtection enabled = CodeSecurityConfigurationSecretScanningPushProtection$enabled._();
 
@@ -20,33 +20,33 @@ static const CodeSecurityConfigurationSecretScanningPushProtection notSet = Code
 static const List<CodeSecurityConfigurationSecretScanningPushProtection> values = [enabled, disabled, notSet];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'not_set' => 'notSet',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeSecurityConfigurationSecretScanningPushProtection$Unknown; } 
+bool get isUnknown {return this is CodeSecurityConfigurationSecretScanningPushProtection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) {return switch (this) {
       CodeSecurityConfigurationSecretScanningPushProtection$enabled() => enabled(),
       CodeSecurityConfigurationSecretScanningPushProtection$disabled() => disabled(),
       CodeSecurityConfigurationSecretScanningPushProtection$notSet() => notSet(),
       CodeSecurityConfigurationSecretScanningPushProtection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) {return switch (this) {
       CodeSecurityConfigurationSecretScanningPushProtection$enabled() => enabled != null ? enabled() : orElse(value),
       CodeSecurityConfigurationSecretScanningPushProtection$disabled() => disabled != null ? disabled() : orElse(value),
       CodeSecurityConfigurationSecretScanningPushProtection$notSet() => notSet != null ? notSet() : orElse(value),
       CodeSecurityConfigurationSecretScanningPushProtection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeSecurityConfigurationSecretScanningPushProtection($value)';
 
- }
+}
 @immutable final class CodeSecurityConfigurationSecretScanningPushProtection$enabled extends CodeSecurityConfigurationSecretScanningPushProtection {const CodeSecurityConfigurationSecretScanningPushProtection$enabled._();
 
 @override String get value => 'enabled';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityConfigurationSecretScanningPushProtection$disabled extends CodeSecurityConfigurationSecretScanningPushProtection {const CodeSecurityConfigurationSecretScanningPushProtection$disabled._();
 
 @override String get value => 'disabled';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityConfigurationSecretScanningPushProtection$notSet extends CodeSecurityConfigurationSecretScanningPushProtection {const CodeSecurityConfigurationSecretScanningPushProtection$notSet._();
 
 @override String get value => 'not_set';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'not_set'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityConfigurationSecretScanningPushProtection$Unknown extends CodeSecurityConfigurationSecretScanningPushProtection {const CodeSecurityConfigurationSecretScanningPushProtection$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

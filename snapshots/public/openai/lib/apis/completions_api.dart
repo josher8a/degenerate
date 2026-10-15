@@ -15,7 +15,7 @@ final class CompletionsApi with ApiExecutor {const CompletionsApi(this.apiConfig
 /// 
 ///
 /// `POST /completions`
-Future<ApiResult<CreateCompletionResponse, Never>> createCompletion({required CreateCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateCompletionResponse, Never>> createCompletion({required CreateCompletionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,11 +26,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreateCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

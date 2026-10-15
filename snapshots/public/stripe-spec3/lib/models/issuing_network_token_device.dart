@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device used for tokenization.
 sealed class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType();
 
-factory IssuingNetworkTokenDeviceType.fromJson(String json) { return switch (json) {
+factory IssuingNetworkTokenDeviceType.fromJson(String json) {return switch (json) {
   'other' => $other,
   'phone' => phone,
   'watch' => watch,
   _ => IssuingNetworkTokenDeviceType$Unknown(json),
-}; }
+};}
 
 static const IssuingNetworkTokenDeviceType $other = IssuingNetworkTokenDeviceType$$other._();
 
@@ -20,33 +20,33 @@ static const IssuingNetworkTokenDeviceType watch = IssuingNetworkTokenDeviceType
 static const List<IssuingNetworkTokenDeviceType> values = [$other, phone, watch];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'other' => r'$other',
   'phone' => 'phone',
   'watch' => 'watch',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingNetworkTokenDeviceType$Unknown; } 
+bool get isUnknown {return this is IssuingNetworkTokenDeviceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $other, required W Function() phone, required W Function() watch, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $other, required W Function() phone, required W Function() watch, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingNetworkTokenDeviceType$$other() => $other(),
       IssuingNetworkTokenDeviceType$phone() => phone(),
       IssuingNetworkTokenDeviceType$watch() => watch(),
       IssuingNetworkTokenDeviceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, W Function()? phone, W Function()? watch, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, W Function()? phone, W Function()? watch, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingNetworkTokenDeviceType$$other() => $other != null ? $other() : orElse(value),
       IssuingNetworkTokenDeviceType$phone() => phone != null ? phone() : orElse(value),
       IssuingNetworkTokenDeviceType$watch() => watch != null ? watch() : orElse(value),
       IssuingNetworkTokenDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingNetworkTokenDeviceType($value)';
 
- }
+}
 @immutable final class IssuingNetworkTokenDeviceType$$other extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$$other._();
 
 @override String get value => 'other';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, 
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class IssuingNetworkTokenDeviceType$phone extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$phone._();
 
 @override String get value => 'phone';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, 
 
 @override int get hashCode => 'phone'.hashCode;
 
- }
+}
 @immutable final class IssuingNetworkTokenDeviceType$watch extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$watch._();
 
 @override String get value => 'watch';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, 
 
 @override int get hashCode => 'watch'.hashCode;
 
- }
+}
 @immutable final class IssuingNetworkTokenDeviceType$Unknown extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$Unknown(this.value);
 
 @override final String value;
@@ -83,18 +83,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class IssuingNetworkTokenDevice {const IssuingNetworkTokenDevice({this.deviceFingerprint, this.ipAddress, this.location, this.name, this.phoneNumber, this.type, });
 
-factory IssuingNetworkTokenDevice.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenDevice(
+factory IssuingNetworkTokenDevice.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenDevice(
   deviceFingerprint: json['device_fingerprint'] as String?,
   ipAddress: json['ip_address'] as String?,
   location: json['location'] as String?,
   name: json['name'] as String?,
   phoneNumber: json['phone_number'] as String?,
   type: json['type'] != null ? IssuingNetworkTokenDeviceType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// An obfuscated ID derived from the device ID.
 final String? deviceFingerprint;
@@ -114,17 +114,17 @@ final String? phoneNumber;
 /// The type of device used for tokenization.
 final IssuingNetworkTokenDeviceType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'device_fingerprint': ?deviceFingerprint,
   'ip_address': ?ipAddress,
   'location': ?location,
   'name': ?name,
   'phone_number': ?phoneNumber,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_fingerprint', 'ip_address', 'location', 'name', 'phone_number', 'type'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'device_fingerprint', 'ip_address', 'location', 'name', 'phone_number', 'type'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final deviceFingerprint$ = deviceFingerprint;
 if (deviceFingerprint$ != null) {
   if (deviceFingerprint$.runes.length > 5000) { errors.add('deviceFingerprint: length must be <= 5000'); }
@@ -145,15 +145,15 @@ final phoneNumber$ = phoneNumber;
 if (phoneNumber$ != null) {
   if (phoneNumber$.runes.length > 5000) { errors.add('phoneNumber: length must be <= 5000'); }
 }
-return errors; } 
-IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, String? Function()? ipAddress, String? Function()? location, String? Function()? name, String? Function()? phoneNumber, IssuingNetworkTokenDeviceType? Function()? type, }) { return IssuingNetworkTokenDevice(
+return errors;}
+IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, String? Function()? ipAddress, String? Function()? location, String? Function()? name, String? Function()? phoneNumber, IssuingNetworkTokenDeviceType? Function()? type, }) {return IssuingNetworkTokenDevice(
   deviceFingerprint: deviceFingerprint != null ? deviceFingerprint() : this.deviceFingerprint,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   location: location != null ? location() : this.location,
   name: name != null ? name() : this.name,
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenDevice &&
           deviceFingerprint == other.deviceFingerprint &&
@@ -167,4 +167,4 @@ IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, Strin
 
 @override String toString() => 'IssuingNetworkTokenDevice(deviceFingerprint: $deviceFingerprint, ipAddress: $ipAddress, location: $location, name: $name, phoneNumber: $phoneNumber, type: $type)';
 
- }
+}

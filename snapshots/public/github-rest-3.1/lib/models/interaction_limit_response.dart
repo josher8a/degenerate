@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/interaction_group.dart';/// Interaction limit settings.
 @immutable final class InteractionLimitResponse {const InteractionLimitResponse({required this.limit, required this.origin, required this.expiresAt, });
 
-factory InteractionLimitResponse.fromJson(Map<String, dynamic> json) { return InteractionLimitResponse(
+factory InteractionLimitResponse.fromJson(Map<String, dynamic> json) {return InteractionLimitResponse(
   limit: InteractionGroup.fromJson(json['limit'] as String),
   origin: json['origin'] as String,
   expiresAt: DateTime.parse(json['expires_at'] as String),
-); }
+);}
 
 /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
 final InteractionGroup limit;
@@ -17,19 +17,19 @@ final String origin;
 
 final DateTime expiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'limit': limit.toJson(),
   'origin': origin,
   'expires_at': expiresAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('limit') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('limit') &&
       json.containsKey('origin') && json['origin'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String; } 
-InteractionLimitResponse copyWith({InteractionGroup? limit, String? origin, DateTime? expiresAt, }) { return InteractionLimitResponse(
+      json.containsKey('expires_at') && json['expires_at'] is String;}
+InteractionLimitResponse copyWith({InteractionGroup? limit, String? origin, DateTime? expiresAt, }) {return InteractionLimitResponse(
   limit: limit ?? this.limit,
   origin: origin ?? this.origin,
   expiresAt: expiresAt ?? this.expiresAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InteractionLimitResponse &&
           limit == other.limit &&
@@ -40,4 +40,4 @@ InteractionLimitResponse copyWith({InteractionGroup? limit, String? origin, Date
 
 @override String toString() => 'InteractionLimitResponse(limit: $limit, origin: $origin, expiresAt: $expiresAt)';
 
- }
+}

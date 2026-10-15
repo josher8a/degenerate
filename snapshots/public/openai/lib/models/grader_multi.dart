@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/grader_label_model.dart';import 'package:pub_openai/models/grader_multi/graders.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';/// The object type, which is always `multi`.
 sealed class GraderMultiType {const GraderMultiType();
 
-factory GraderMultiType.fromJson(String json) { return switch (json) {
+factory GraderMultiType.fromJson(String json) {return switch (json) {
   'multi' => multi,
   _ => GraderMultiType$Unknown(json),
-}; }
+};}
 
 static const GraderMultiType multi = GraderMultiType$multi._();
 
 static const List<GraderMultiType> values = [multi];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'multi' => 'multi',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GraderMultiType$Unknown; } 
+bool get isUnknown {return this is GraderMultiType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() multi, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() multi, required W Function(String value) $unknown, }) {return switch (this) {
       GraderMultiType$multi() => multi(),
       GraderMultiType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? multi, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? multi, W Function(String value)? $unknown, }) {return switch (this) {
       GraderMultiType$multi() => multi != null ? multi() : orElse(value),
       GraderMultiType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GraderMultiType($value)';
 
- }
+}
 @immutable final class GraderMultiType$multi extends GraderMultiType {const GraderMultiType$multi._();
 
 @override String get value => 'multi';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? multi, W
 
 @override int get hashCode => 'multi'.hashCode;
 
- }
+}
 @immutable final class GraderMultiType$Unknown extends GraderMultiType {const GraderMultiType$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? multi, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A MultiGrader object combines the output of multiple graders to produce a single score.
-@immutable final class GraderMulti {const GraderMulti({required this.name, required this.graders, required this.calculateOutput, this.type = GraderMultiType.multi, });
+@immutable final class GraderMulti {const GraderMulti({required this.type, required this.name, required this.graders, required this.calculateOutput, });
 
-factory GraderMulti.fromJson(Map<String, dynamic> json) { return GraderMulti(
+factory GraderMulti.fromJson(Map<String, dynamic> json) {return GraderMulti(
   type: GraderMultiType.fromJson(json['type'] as String),
   name: json['name'] as String,
   graders: switch (json['graders']) {
@@ -69,7 +69,7 @@ factory GraderMulti.fromJson(Map<String, dynamic> json) { return GraderMulti(
   _ => OneOf5.parse(json['graders'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>),),
 },
   calculateOutput: json['calculate_output'] as String,
-); }
+);}
 
 /// The object type, which is always `multi`.
 final GraderMultiType type;
@@ -82,22 +82,22 @@ final Graders graders;
 /// A formula to calculate the output based on grader results.
 final String calculateOutput;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'graders': graders.toJson(),
   'calculate_output': calculateOutput,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'multi' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'multi' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('graders') &&
-      json.containsKey('calculate_output') && json['calculate_output'] is String; } 
-GraderMulti copyWith({GraderMultiType? type, String? name, Graders? graders, String? calculateOutput, }) { return GraderMulti(
+      json.containsKey('calculate_output') && json['calculate_output'] is String;}
+GraderMulti copyWith({GraderMultiType? type, String? name, Graders? graders, String? calculateOutput, }) {return GraderMulti(
   type: type ?? this.type,
   name: name ?? this.name,
   graders: graders ?? this.graders,
   calculateOutput: calculateOutput ?? this.calculateOutput,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GraderMulti &&
           type == other.type &&
@@ -109,4 +109,4 @@ GraderMulti copyWith({GraderMultiType? type, String? name, Graders? graders, Str
 
 @override String toString() => 'GraderMulti(type: $type, name: $name, graders: $graders, calculateOutput: $calculateOutput)';
 
- }
+}

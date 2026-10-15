@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_performance_information.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/compare.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/traces.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/workers_observability_query_results_calculations.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/workers_observability_query_results_events.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/workers_observability_query_results_patterns.dart';import 'package:pub_cloudflare/models/workers_observability_query_run.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event.dart';@immutable final class WorkersObservabilityQueryResults {const WorkersObservabilityQueryResults({required this.run, required this.statistics, this.calculations, this.compare, this.events, this.invocations, this.patterns, this.traces, });
 
-factory WorkersObservabilityQueryResults.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResults(
+factory WorkersObservabilityQueryResults.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryResults(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryResultsCalculations.fromJson(e as Map<String, dynamic>)).toList(),
   compare: (json['compare'] as List<dynamic>?)?.map((e) => Compare.fromJson(e as Map<String, dynamic>)).toList(),
   events: json['events'] != null ? WorkersObservabilityQueryResultsEvents.fromJson(json['events'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WorkersObservabilityQueryResults.fromJson(Map<String, dynamic> json) { r
   run: WorkersObservabilityQueryRun.fromJson(json['run'] as Map<String, dynamic>),
   statistics: WorkersObservabilityPerformanceInformation.fromJson(json['statistics'] as Map<String, dynamic>),
   traces: (json['traces'] as List<dynamic>?)?.map((e) => Traces.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<WorkersObservabilityQueryResultsCalculations>? calculations;
 
@@ -30,7 +30,7 @@ final WorkersObservabilityPerformanceInformation statistics;
 
 final List<Traces>? traces;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (calculations != null) 'calculations': calculations?.map((e) => e.toJson()).toList(),
   if (compare != null) 'compare': compare?.map((e) => e.toJson()).toList(),
   if (events != null) 'events': events?.toJson(),
@@ -39,10 +39,10 @@ Map<String, dynamic> toJson() { return {
   'run': run.toJson(),
   'statistics': statistics.toJson(),
   if (traces != null) 'traces': traces?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('run') &&
-      json.containsKey('statistics'); } 
-WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResultsCalculations>? Function()? calculations, List<Compare>? Function()? compare, WorkersObservabilityQueryResultsEvents? Function()? events, Map<String, List<WorkersObservabilityTelemetryEvent>>? Function()? invocations, List<WorkersObservabilityQueryResultsPatterns>? Function()? patterns, WorkersObservabilityQueryRun? run, WorkersObservabilityPerformanceInformation? statistics, List<Traces>? Function()? traces, }) { return WorkersObservabilityQueryResults(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('run') &&
+      json.containsKey('statistics');}
+WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResultsCalculations>? Function()? calculations, List<Compare>? Function()? compare, WorkersObservabilityQueryResultsEvents? Function()? events, Map<String, List<WorkersObservabilityTelemetryEvent>>? Function()? invocations, List<WorkersObservabilityQueryResultsPatterns>? Function()? patterns, WorkersObservabilityQueryRun? run, WorkersObservabilityPerformanceInformation? statistics, List<Traces>? Function()? traces, }) {return WorkersObservabilityQueryResults(
   calculations: calculations != null ? calculations() : this.calculations,
   compare: compare != null ? compare() : this.compare,
   events: events != null ? events() : this.events,
@@ -51,7 +51,7 @@ WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResults
   run: run ?? this.run,
   statistics: statistics ?? this.statistics,
   traces: traces != null ? traces() : this.traces,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryResults &&
           listEquals(calculations, other.calculations) &&
@@ -67,4 +67,4 @@ WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResults
 
 @override String toString() => 'WorkersObservabilityQueryResults(calculations: $calculations, compare: $compare, events: $events, invocations: $invocations, patterns: $patterns, run: $run, statistics: $statistics, traces: $traces)';
 
- }
+}

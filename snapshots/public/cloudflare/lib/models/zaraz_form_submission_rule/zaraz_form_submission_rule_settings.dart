@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazFormSubmissionRuleSettings {const ZarazFormSubmissionRuleSettings({required this.selector, required this.validate, });
 
-factory ZarazFormSubmissionRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazFormSubmissionRuleSettings(
+factory ZarazFormSubmissionRuleSettings.fromJson(Map<String, dynamic> json) {return ZarazFormSubmissionRuleSettings(
   selector: json['selector'] as String,
   validate: json['validate'] as bool,
-); }
+);}
 
 final String selector;
 
 final bool validate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selector': selector,
   'validate': validate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String &&
-      json.containsKey('validate') && json['validate'] is bool; } 
-ZarazFormSubmissionRuleSettings copyWith({String? selector, bool? validate, }) { return ZarazFormSubmissionRuleSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selector') && json['selector'] is String &&
+      json.containsKey('validate') && json['validate'] is bool;}
+ZarazFormSubmissionRuleSettings copyWith({String? selector, bool? validate, }) {return ZarazFormSubmissionRuleSettings(
   selector: selector ?? this.selector,
   validate: validate ?? this.validate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazFormSubmissionRuleSettings &&
           selector == other.selector &&
@@ -31,4 +31,4 @@ ZarazFormSubmissionRuleSettings copyWith({String? selector, bool? validate, }) {
 
 @override String toString() => 'ZarazFormSubmissionRuleSettings(selector: $selector, validate: $validate)';
 
- }
+}

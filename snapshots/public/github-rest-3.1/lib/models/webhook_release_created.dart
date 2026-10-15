@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_release.dart';@immutable final class WebhookReleaseCreated {const WebhookReleaseCreated({required this.action, required this.release, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookReleaseCreated.fromJson(Map<String, dynamic> json) { return WebhookReleaseCreated(
+factory WebhookReleaseCreated.fromJson(Map<String, dynamic> json) {return WebhookReleaseCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookReleaseCreated.fromJson(Map<String, dynamic> json) { return Webho
   release: WebhooksRelease.fromJson(json['release'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   'release': release.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('release') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookReleaseCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookReleaseCreated(
+      json.containsKey('sender');}
+WebhookReleaseCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookReleaseCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -48,7 +48,7 @@ WebhookReleaseCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? F
   release: release ?? this.release,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookReleaseCreated &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookReleaseCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? F
 
 @override String toString() => 'WebhookReleaseCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)';
 
- }
+}

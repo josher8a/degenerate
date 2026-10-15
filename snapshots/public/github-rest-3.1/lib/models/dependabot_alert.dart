@@ -2,9 +2,9 @@
 // Source: #/components/schemas/DependabotAlert
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_auto_dismissed_at.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_dismissed_at.dart';import 'package:pub_github_rest_3_1/models/alert_fixed_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_dependency.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_state.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_dismissal_request_simple.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_vulnerability.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A Dependabot alert.
-@immutable final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt, this.dismissalRequest, this.assignees, });
+@immutable final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt = const Omittable.absent(), this.dismissalRequest = const Omittable.absent(), this.assignees, });
 
-factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotAlert(
+factory DependabotAlert.fromJson(Map<String, dynamic> json) {return DependabotAlert(
   number: AlertNumber.fromJson(json['number'] as num),
   state: DependabotAlertState.fromJson(json['state'] as String),
   dependency: DependabotAlertDependency.fromJson(json['dependency'] as Map<String, dynamic>),
@@ -19,10 +19,10 @@ factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotA
   dismissedReason: json['dismissed_reason'] != null ? DependabotAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null,
   dismissedComment: json['dismissed_comment'] as String?,
   fixedAt: json['fixed_at'] != null ? AlertFixedAt.fromJson(json['fixed_at'] as String) : null,
-  autoDismissedAt: json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null,
-  dismissalRequest: json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null,
+  autoDismissedAt: json.containsKey('auto_dismissed_at') ? Omittable(json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null) : const Omittable.absent(),
+  dismissalRequest: json.containsKey('dismissal_request') ? Omittable(json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The security alert number.
 final AlertNumber number;
@@ -64,14 +64,14 @@ final String? dismissedComment;
 final AlertFixedAt? fixedAt;
 
 /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final AlertAutoDismissedAt? autoDismissedAt;
+final Omittable<AlertAutoDismissedAt?> autoDismissedAt;
 
-final DependabotAlertDismissalRequestSimple? dismissalRequest;
+final Omittable<DependabotAlertDismissalRequestSimple?> dismissalRequest;
 
 /// The users assigned to this alert.
 final List<SimpleUser>? assignees;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'number': number.toJson(),
   'state': state.toJson(),
   'dependency': dependency.toJson(),
@@ -86,11 +86,11 @@ Map<String, dynamic> toJson() { return {
   'dismissed_reason': dismissedReason?.toJson(),
   'dismissed_comment': dismissedComment,
   'fixed_at': fixedAt?.toJson(),
-  if (autoDismissedAt != null) 'auto_dismissed_at': autoDismissedAt?.toJson(),
-  if (dismissalRequest != null) 'dismissal_request': dismissalRequest?.toJson(),
+  if (autoDismissedAt.isPresent) 'auto_dismissed_at': autoDismissedAt.value?.toJson(),
+  if (dismissalRequest.isPresent) 'dismissal_request': dismissalRequest.value?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('number') &&
       json.containsKey('state') &&
       json.containsKey('dependency') &&
       json.containsKey('security_advisory') &&
@@ -102,16 +102,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_at') &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
-      json.containsKey('dismissed_comment') && json['dismissed_comment'] is String &&
-      json.containsKey('fixed_at'); } 
+      json.containsKey('dismissed_comment') && (json['dismissed_comment'] == null || json['dismissed_comment'] is String) &&
+      json.containsKey('fixed_at');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final dismissedComment$ = dismissedComment;
 if (dismissedComment$ != null) {
   if (dismissedComment$.runes.length > 280) { errors.add('dismissedComment: length must be <= 280'); }
 }
-return errors; } 
-DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, AlertAutoDismissedAt? Function()? autoDismissedAt, DependabotAlertDismissalRequestSimple? Function()? dismissalRequest, List<SimpleUser>? Function()? assignees, }) { return DependabotAlert(
+return errors;}
+DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, Omittable<DependabotAlertDismissalRequestSimple?>? dismissalRequest, List<SimpleUser>? Function()? assignees, }) {return DependabotAlert(
   number: number ?? this.number,
   state: state ?? this.state,
   dependency: dependency ?? this.dependency,
@@ -126,10 +126,10 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
   dismissedReason: dismissedReason != null ? dismissedReason() : this.dismissedReason,
   dismissedComment: dismissedComment != null ? dismissedComment() : this.dismissedComment,
   fixedAt: fixedAt != null ? fixedAt() : this.fixedAt,
-  autoDismissedAt: autoDismissedAt != null ? autoDismissedAt() : this.autoDismissedAt,
-  dismissalRequest: dismissalRequest != null ? dismissalRequest() : this.dismissalRequest,
+  autoDismissedAt: autoDismissedAt ?? this.autoDismissedAt,
+  dismissalRequest: dismissalRequest ?? this.dismissalRequest,
   assignees: assignees != null ? assignees() : this.assignees,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlert &&
           number == other.number &&
@@ -154,4 +154,4 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
 
 @override String toString() => 'DependabotAlert(\n  number: $number,\n  state: $state,\n  dependency: $dependency,\n  securityAdvisory: $securityAdvisory,\n  securityVulnerability: $securityVulnerability,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedReason: $dismissedReason,\n  dismissedComment: $dismissedComment,\n  fixedAt: $fixedAt,\n  autoDismissedAt: $autoDismissedAt,\n  dismissalRequest: $dismissalRequest,\n  assignees: $assignees,\n)';
 
- }
+}

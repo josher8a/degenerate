@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Priority {const Priority();
 
-factory Priority.fromJson(String json) { return switch (json) {
+factory Priority.fromJson(String json) {return switch (json) {
   'Low' => low,
   'Medium' => medium,
   'High' => high,
   _ => Priority$Unknown(json),
-}; }
+};}
 
 static const Priority low = Priority$low._();
 
@@ -19,33 +19,33 @@ static const Priority high = Priority$high._();
 static const List<Priority> values = [low, medium, high];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Low' => 'low',
   'Medium' => 'medium',
   'High' => 'high',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Priority$Unknown; } 
+bool get isUnknown {return this is Priority$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) {return switch (this) {
       Priority$low() => low(),
       Priority$medium() => medium(),
       Priority$high() => high(),
       Priority$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) {return switch (this) {
       Priority$low() => low != null ? low() : orElse(value),
       Priority$medium() => medium != null ? medium() : orElse(value),
       Priority$high() => high != null ? high() : orElse(value),
       Priority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Priority($value)';
 
- }
+}
 @immutable final class Priority$low extends Priority {const Priority$low._();
 
 @override String get value => 'Low';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'Low'.hashCode;
 
- }
+}
 @immutable final class Priority$medium extends Priority {const Priority$medium._();
 
 @override String get value => 'Medium';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'Medium'.hashCode;
 
- }
+}
 @immutable final class Priority$high extends Priority {const Priority$high._();
 
 @override String get value => 'High';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'High'.hashCode;
 
- }
+}
 @immutable final class Priority$Unknown extends Priority {const Priority$Unknown(this.value);
 
 @override final String value;
@@ -82,15 +82,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SameSite {const SameSite();
 
-factory SameSite.fromJson(String json) { return switch (json) {
+factory SameSite.fromJson(String json) {return switch (json) {
   'Strict' => strict,
   'Lax' => lax,
   'None' => none,
   _ => SameSite$Unknown(json),
-}; }
+};}
 
 static const SameSite strict = SameSite$strict._();
 
@@ -101,33 +101,33 @@ static const SameSite none = SameSite$none._();
 static const List<SameSite> values = [strict, lax, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Strict' => 'strict',
   'Lax' => 'lax',
   'None' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SameSite$Unknown; } 
+bool get isUnknown {return this is SameSite$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() strict, required W Function() lax, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() strict, required W Function() lax, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       SameSite$strict() => strict(),
       SameSite$lax() => lax(),
       SameSite$none() => none(),
       SameSite$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, W Function()? lax, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, W Function()? lax, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       SameSite$strict() => strict != null ? strict() : orElse(value),
       SameSite$lax() => lax != null ? lax() : orElse(value),
       SameSite$none() => none != null ? none() : orElse(value),
       SameSite$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SameSite($value)';
 
- }
+}
 @immutable final class SameSite$strict extends SameSite {const SameSite$strict._();
 
 @override String get value => 'Strict';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, 
 
 @override int get hashCode => 'Strict'.hashCode;
 
- }
+}
 @immutable final class SameSite$lax extends SameSite {const SameSite$lax._();
 
 @override String get value => 'Lax';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, 
 
 @override int get hashCode => 'Lax'.hashCode;
 
- }
+}
 @immutable final class SameSite$none extends SameSite {const SameSite$none._();
 
 @override String get value => 'None';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, 
 
 @override int get hashCode => 'None'.hashCode;
 
- }
+}
 @immutable final class SameSite$Unknown extends SameSite {const SameSite$Unknown(this.value);
 
 @override final String value;
@@ -164,15 +164,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SourceScheme {const SourceScheme();
 
-factory SourceScheme.fromJson(String json) { return switch (json) {
+factory SourceScheme.fromJson(String json) {return switch (json) {
   'Unset' => unset,
   'NonSecure' => nonSecure,
   'Secure' => secure,
   _ => SourceScheme$Unknown(json),
-}; }
+};}
 
 static const SourceScheme unset = SourceScheme$unset._();
 
@@ -183,33 +183,33 @@ static const SourceScheme secure = SourceScheme$secure._();
 static const List<SourceScheme> values = [unset, nonSecure, secure];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Unset' => 'unset',
   'NonSecure' => 'nonSecure',
   'Secure' => 'secure',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceScheme$Unknown; } 
+bool get isUnknown {return this is SourceScheme$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() unset, required W Function() nonSecure, required W Function() secure, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() unset, required W Function() nonSecure, required W Function() secure, required W Function(String value) $unknown, }) {return switch (this) {
       SourceScheme$unset() => unset(),
       SourceScheme$nonSecure() => nonSecure(),
       SourceScheme$secure() => secure(),
       SourceScheme$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W Function()? nonSecure, W Function()? secure, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W Function()? nonSecure, W Function()? secure, W Function(String value)? $unknown, }) {return switch (this) {
       SourceScheme$unset() => unset != null ? unset() : orElse(value),
       SourceScheme$nonSecure() => nonSecure != null ? nonSecure() : orElse(value),
       SourceScheme$secure() => secure != null ? secure() : orElse(value),
       SourceScheme$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceScheme($value)';
 
- }
+}
 @immutable final class SourceScheme$unset extends SourceScheme {const SourceScheme$unset._();
 
 @override String get value => 'Unset';
@@ -218,7 +218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W
 
 @override int get hashCode => 'Unset'.hashCode;
 
- }
+}
 @immutable final class SourceScheme$nonSecure extends SourceScheme {const SourceScheme$nonSecure._();
 
 @override String get value => 'NonSecure';
@@ -227,7 +227,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W
 
 @override int get hashCode => 'NonSecure'.hashCode;
 
- }
+}
 @immutable final class SourceScheme$secure extends SourceScheme {const SourceScheme$secure._();
 
 @override String get value => 'Secure';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W
 
 @override int get hashCode => 'Secure'.hashCode;
 
- }
+}
 @immutable final class SourceScheme$Unknown extends SourceScheme {const SourceScheme$Unknown(this.value);
 
 @override final String value;
@@ -246,10 +246,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Variant1Cookies {const Variant1Cookies({required this.name, required this.value, this.domain, this.expires, this.httpOnly, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, });
 
-factory Variant1Cookies.fromJson(Map<String, dynamic> json) { return Variant1Cookies(
+factory Variant1Cookies.fromJson(Map<String, dynamic> json) {return Variant1Cookies(
   domain: json['domain'] as String?,
   expires: json['expires'] != null ? (json['expires'] as num).toDouble() : null,
   httpOnly: json['httpOnly'] as bool?,
@@ -264,7 +264,7 @@ factory Variant1Cookies.fromJson(Map<String, dynamic> json) { return Variant1Coo
   sourceScheme: json['sourceScheme'] != null ? SourceScheme.fromJson(json['sourceScheme'] as String) : null,
   url: json['url'] as String?,
   value: json['value'] as String,
-); }
+);}
 
 final String? domain;
 
@@ -294,7 +294,7 @@ final String? url;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': ?domain,
   'expires': ?expires,
   'httpOnly': ?httpOnly,
@@ -309,10 +309,10 @@ Map<String, dynamic> toJson() { return {
   if (sourceScheme != null) 'sourceScheme': sourceScheme?.toJson(),
   'url': ?url,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-Variant1Cookies copyWith({String? Function()? domain, double? Function()? expires, bool? Function()? httpOnly, String? name, String? Function()? partitionKey, String? Function()? path, Priority? Function()? priority, bool? Function()? sameParty, SameSite? Function()? sameSite, bool? Function()? secure, double? Function()? sourcePort, SourceScheme? Function()? sourceScheme, String? Function()? url, String? value, }) { return Variant1Cookies(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+Variant1Cookies copyWith({String? Function()? domain, double? Function()? expires, bool? Function()? httpOnly, String? name, String? Function()? partitionKey, String? Function()? path, Priority? Function()? priority, bool? Function()? sameParty, SameSite? Function()? sameSite, bool? Function()? secure, double? Function()? sourcePort, SourceScheme? Function()? sourceScheme, String? Function()? url, String? value, }) {return Variant1Cookies(
   domain: domain != null ? domain() : this.domain,
   expires: expires != null ? expires() : this.expires,
   httpOnly: httpOnly != null ? httpOnly() : this.httpOnly,
@@ -327,7 +327,7 @@ Variant1Cookies copyWith({String? Function()? domain, double? Function()? expire
   sourceScheme: sourceScheme != null ? sourceScheme() : this.sourceScheme,
   url: url != null ? url() : this.url,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Cookies &&
           domain == other.domain &&
@@ -349,4 +349,4 @@ Variant1Cookies copyWith({String? Function()? domain, double? Function()? expire
 
 @override String toString() => 'Variant1Cookies(\n  domain: $domain,\n  expires: $expires,\n  httpOnly: $httpOnly,\n  name: $name,\n  partitionKey: $partitionKey,\n  path: $path,\n  priority: $priority,\n  sameParty: $sameParty,\n  sameSite: $sameSite,\n  secure: $secure,\n  sourcePort: $sourcePort,\n  sourceScheme: $sourceScheme,\n  url: $url,\n  value: $value,\n)';
 
- }
+}

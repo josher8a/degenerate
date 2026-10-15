@@ -15,13 +15,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventConversationItemTruncate {const RealtimeClientEventConversationItemTruncate({required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, this.eventId, });
 
-factory RealtimeClientEventConversationItemTruncate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemTruncate(
+factory RealtimeClientEventConversationItemTruncate.fromJson(Map<String, dynamic> json) {return RealtimeClientEventConversationItemTruncate(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -43,31 +43,31 @@ final int contentIndex;
 /// 
 final int audioEndMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'audio_end_ms': audioEndMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 
+      json.containsKey('audio_end_ms') && json['audio_end_ms'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventConversationItemTruncate copyWith({String? Function()? eventId, String? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeClientEventConversationItemTruncate(
+return errors;}
+RealtimeClientEventConversationItemTruncate copyWith({String? Function()? eventId, String? type, String? itemId, int? contentIndex, int? audioEndMs, }) {return RealtimeClientEventConversationItemTruncate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex ?? this.contentIndex,
   audioEndMs: audioEndMs ?? this.audioEndMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventConversationItemTruncate &&
           eventId == other.eventId &&
@@ -80,4 +80,4 @@ RealtimeClientEventConversationItemTruncate copyWith({String? Function()? eventI
 
 @override String toString() => 'RealtimeClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)';
 
- }
+}

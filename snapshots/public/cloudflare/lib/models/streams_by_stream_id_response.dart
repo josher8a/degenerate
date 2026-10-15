@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_response/streams_by_stream_id_response_result.dart';@immutable final class StreamsByStreamIdResponse {const StreamsByStreamIdResponse({required this.result, required this.success, });
 
-factory StreamsByStreamIdResponse.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdResponse(
+factory StreamsByStreamIdResponse.fromJson(Map<String, dynamic> json) {return StreamsByStreamIdResponse(
   result: StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
-); }
+);}
 
 final StreamsByStreamIdResponseResult result;
 
 /// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success'); } 
-StreamsByStreamIdResponse copyWith({StreamsByStreamIdResponseResult? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return StreamsByStreamIdResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success');}
+StreamsByStreamIdResponse copyWith({StreamsByStreamIdResponseResult? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) {return StreamsByStreamIdResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamsByStreamIdResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ StreamsByStreamIdResponse copyWith({StreamsByStreamIdResponseResult? result, Clo
 
 @override String toString() => 'StreamsByStreamIdResponse(result: $result, success: $success)';
 
- }
+}

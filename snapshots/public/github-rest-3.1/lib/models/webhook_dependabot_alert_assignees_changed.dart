@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction();
 
-factory WebhookDependabotAlertAssigneesChangedAction.fromJson(String json) { return switch (json) {
+factory WebhookDependabotAlertAssigneesChangedAction.fromJson(String json) {return switch (json) {
   'assignees_changed' => assigneesChanged,
   _ => WebhookDependabotAlertAssigneesChangedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookDependabotAlertAssigneesChangedAction assigneesChanged = WebhookDependabotAlertAssigneesChangedAction$assigneesChanged._();
 
 static const List<WebhookDependabotAlertAssigneesChangedAction> values = [assigneesChanged];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'assignees_changed' => 'assigneesChanged',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookDependabotAlertAssigneesChangedAction$Unknown; } 
+bool get isUnknown {return this is WebhookDependabotAlertAssigneesChangedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() assigneesChanged, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() assigneesChanged, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookDependabotAlertAssigneesChangedAction$assigneesChanged() => assigneesChanged(),
       WebhookDependabotAlertAssigneesChangedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigneesChanged, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigneesChanged, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookDependabotAlertAssigneesChangedAction$assigneesChanged() => assigneesChanged != null ? assigneesChanged() : orElse(value),
       WebhookDependabotAlertAssigneesChangedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookDependabotAlertAssigneesChangedAction($value)';
 
- }
+}
 @immutable final class WebhookDependabotAlertAssigneesChangedAction$assigneesChanged extends WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction$assigneesChanged._();
 
 @override String get value => 'assignees_changed';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'assignees_changed'.hashCode;
 
- }
+}
 @immutable final class WebhookDependabotAlertAssigneesChangedAction$Unknown extends WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookDependabotAlertAssigneesChanged {const WebhookDependabotAlertAssigneesChanged({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
-factory WebhookDependabotAlertAssigneesChanged.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertAssigneesChanged(
+factory WebhookDependabotAlertAssigneesChanged.fromJson(Map<String, dynamic> json) {return WebhookDependabotAlertAssigneesChanged(
   action: WebhookDependabotAlertAssigneesChangedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -63,7 +63,7 @@ factory WebhookDependabotAlertAssigneesChanged.fromJson(Map<String, dynamic> jso
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDependabotAlertAssigneesChangedAction action;
 
@@ -79,7 +79,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -87,12 +87,12 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDependabotAlertAssigneesChanged copyWith({WebhookDependabotAlertAssigneesChangedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertAssigneesChanged(
+      json.containsKey('sender');}
+WebhookDependabotAlertAssigneesChanged copyWith({WebhookDependabotAlertAssigneesChangedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDependabotAlertAssigneesChanged(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -100,7 +100,7 @@ WebhookDependabotAlertAssigneesChanged copyWith({WebhookDependabotAlertAssignees
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertAssigneesChanged &&
           action == other.action &&
@@ -115,4 +115,4 @@ WebhookDependabotAlertAssigneesChanged copyWith({WebhookDependabotAlertAssignees
 
 @override String toString() => 'WebhookDependabotAlertAssigneesChanged(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
 
- }
+}

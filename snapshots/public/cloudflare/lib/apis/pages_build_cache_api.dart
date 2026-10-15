@@ -14,7 +14,7 @@ final class PagesBuildCacheApi with ApiExecutor {const PagesBuildCacheApi(this.a
 /// Purge all cached build artifacts for a Pages project
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/purge_build_cache`
-Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,5 +31,5 @@ return execute(
   },
   onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
- } 
- }
+}
+}

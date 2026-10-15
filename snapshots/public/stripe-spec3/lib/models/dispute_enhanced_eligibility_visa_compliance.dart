@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visa compliance eligibility status.
 sealed class DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus();
 
-factory DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(String json) { return switch (json) {
+factory DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(String json) {return switch (json) {
   'fee_acknowledged' => feeAcknowledged,
   'requires_fee_acknowledgement' => requiresFeeAcknowledgement,
   _ => DisputeEnhancedEligibilityVisaComplianceStatus$Unknown(json),
-}; }
+};}
 
 static const DisputeEnhancedEligibilityVisaComplianceStatus feeAcknowledged = DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged._();
 
@@ -17,30 +17,30 @@ static const DisputeEnhancedEligibilityVisaComplianceStatus requiresFeeAcknowled
 static const List<DisputeEnhancedEligibilityVisaComplianceStatus> values = [feeAcknowledged, requiresFeeAcknowledgement];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fee_acknowledged' => 'feeAcknowledged',
   'requires_fee_acknowledgement' => 'requiresFeeAcknowledgement',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DisputeEnhancedEligibilityVisaComplianceStatus$Unknown; } 
+bool get isUnknown {return this is DisputeEnhancedEligibilityVisaComplianceStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() feeAcknowledged, required W Function() requiresFeeAcknowledgement, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() feeAcknowledged, required W Function() requiresFeeAcknowledgement, required W Function(String value) $unknown, }) {return switch (this) {
       DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged() => feeAcknowledged(),
       DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement() => requiresFeeAcknowledgement(),
       DisputeEnhancedEligibilityVisaComplianceStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeAcknowledged, W Function()? requiresFeeAcknowledgement, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeAcknowledged, W Function()? requiresFeeAcknowledgement, W Function(String value)? $unknown, }) {return switch (this) {
       DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged() => feeAcknowledged != null ? feeAcknowledged() : orElse(value),
       DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement() => requiresFeeAcknowledgement != null ? requiresFeeAcknowledgement() : orElse(value),
       DisputeEnhancedEligibilityVisaComplianceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DisputeEnhancedEligibilityVisaComplianceStatus($value)';
 
- }
+}
 @immutable final class DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged extends DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged._();
 
 @override String get value => 'fee_acknowledged';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeAckno
 
 @override int get hashCode => 'fee_acknowledged'.hashCode;
 
- }
+}
 @immutable final class DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement extends DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement._();
 
 @override String get value => 'requires_fee_acknowledgement';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeAckno
 
 @override int get hashCode => 'requires_fee_acknowledgement'.hashCode;
 
- }
+}
 @immutable final class DisputeEnhancedEligibilityVisaComplianceStatus$Unknown extends DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus$Unknown(this.value);
 
 @override final String value;
@@ -68,24 +68,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeAckno
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class DisputeEnhancedEligibilityVisaCompliance {const DisputeEnhancedEligibilityVisaCompliance({required this.status});
 
-factory DisputeEnhancedEligibilityVisaCompliance.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibilityVisaCompliance(
+factory DisputeEnhancedEligibilityVisaCompliance.fromJson(Map<String, dynamic> json) {return DisputeEnhancedEligibilityVisaCompliance(
   status: DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Visa compliance eligibility status.
 final DisputeEnhancedEligibilityVisaComplianceStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-DisputeEnhancedEligibilityVisaCompliance copyWith({DisputeEnhancedEligibilityVisaComplianceStatus? status}) { return DisputeEnhancedEligibilityVisaCompliance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+DisputeEnhancedEligibilityVisaCompliance copyWith({DisputeEnhancedEligibilityVisaComplianceStatus? status}) {return DisputeEnhancedEligibilityVisaCompliance(
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DisputeEnhancedEligibilityVisaCompliance &&
           status == other.status;
@@ -94,4 +94,4 @@ DisputeEnhancedEligibilityVisaCompliance copyWith({DisputeEnhancedEligibilityVis
 
 @override String toString() => 'DisputeEnhancedEligibilityVisaCompliance(status: $status)';
 
- }
+}

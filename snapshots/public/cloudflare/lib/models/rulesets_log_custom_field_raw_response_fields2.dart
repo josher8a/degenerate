@@ -2,12 +2,12 @@
 // Source: #/components/schemas/RulesetsLogCustomFieldRawResponseFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The raw response field to log.
-@immutable final class RulesetsLogCustomFieldRawResponseFields2 {const RulesetsLogCustomFieldRawResponseFields2({required this.name, this.preserveDuplicates = false, });
+@immutable final class RulesetsLogCustomFieldRawResponseFields2 {const RulesetsLogCustomFieldRawResponseFields2({required this.name, this.preserveDuplicates, });
 
-factory RulesetsLogCustomFieldRawResponseFields2.fromJson(Map<String, dynamic> json) { return RulesetsLogCustomFieldRawResponseFields2(
+factory RulesetsLogCustomFieldRawResponseFields2.fromJson(Map<String, dynamic> json) {return RulesetsLogCustomFieldRawResponseFields2(
   name: json['name'] as String,
-  preserveDuplicates: json.containsKey('preserve_duplicates') ? json['preserve_duplicates'] as bool : false,
-); }
+  preserveDuplicates: json['preserve_duplicates'] as bool?,
+);}
 
 /// The name of the response header.
 /// 
@@ -17,21 +17,24 @@ final String name;
 /// Whether to log duplicate values of the same header.
 /// 
 /// Example: `true`
-final bool preserveDuplicates;
+final bool? preserveDuplicates;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `preserveDuplicates`, or its schema default when absent.
+bool get preserveDuplicatesOrDefault => preserveDuplicates ?? false;
+
+Map<String, dynamic> toJson() {return {
   'name': name,
-  'preserve_duplicates': preserveDuplicates,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+  'preserve_duplicates': ?preserveDuplicates,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
-return errors; } 
-RulesetsLogCustomFieldRawResponseFields2 copyWith({String? name, bool Function()? preserveDuplicates, }) { return RulesetsLogCustomFieldRawResponseFields2(
+return errors;}
+RulesetsLogCustomFieldRawResponseFields2 copyWith({String? name, bool? Function()? preserveDuplicates, }) {return RulesetsLogCustomFieldRawResponseFields2(
   name: name ?? this.name,
   preserveDuplicates: preserveDuplicates != null ? preserveDuplicates() : this.preserveDuplicates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsLogCustomFieldRawResponseFields2 &&
           name == other.name &&
@@ -41,4 +44,4 @@ RulesetsLogCustomFieldRawResponseFields2 copyWith({String? name, bool Function()
 
 @override String toString() => 'RulesetsLogCustomFieldRawResponseFields2(name: $name, preserveDuplicates: $preserveDuplicates)';
 
- }
+}

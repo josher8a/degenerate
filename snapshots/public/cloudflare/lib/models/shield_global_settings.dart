@@ -7,37 +7,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction();
 
-factory ShieldGlobalSettingsValidationOverrideMitigationAction.fromJson(String json) { return switch (json) {
+factory ShieldGlobalSettingsValidationOverrideMitigationAction.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown(json),
-}; }
+};}
 
 static const ShieldGlobalSettingsValidationOverrideMitigationAction none = ShieldGlobalSettingsValidationOverrideMitigationAction$none._();
 
 static const List<ShieldGlobalSettingsValidationOverrideMitigationAction> values = [none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown; } 
+bool get isUnknown {return this is ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       ShieldGlobalSettingsValidationOverrideMitigationAction$none() => none(),
       ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       ShieldGlobalSettingsValidationOverrideMitigationAction$none() => none != null ? none() : orElse(value),
       ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShieldGlobalSettingsValidationOverrideMitigationAction($value)';
 
- }
+}
 @immutable final class ShieldGlobalSettingsValidationOverrideMitigationAction$none extends ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction$none._();
 
 @override String get value => 'none';
@@ -46,7 +46,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown extends ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown(this.value);
 
 @override final String value;
@@ -56,13 +56,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ShieldGlobalSettings {const ShieldGlobalSettings({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
-factory ShieldGlobalSettings.fromJson(Map<String, dynamic> json) { return ShieldGlobalSettings(
+factory ShieldGlobalSettings.fromJson(Map<String, dynamic> json) {return ShieldGlobalSettings(
   validationDefaultMitigationAction: ValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String),
   validationOverrideMitigationAction: json['validation_override_mitigation_action'] != null ? ShieldGlobalSettingsValidationOverrideMitigationAction.fromJson(json['validation_override_mitigation_action'] as String) : null,
-); }
+);}
 
 /// The default mitigation action used
 /// 
@@ -82,15 +82,15 @@ final ValidationDefaultMitigationAction validationDefaultMitigationAction;
 /// 
 final ShieldGlobalSettingsValidationOverrideMitigationAction? validationOverrideMitigationAction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'validation_default_mitigation_action': validationDefaultMitigationAction.toJson(),
   if (validationOverrideMitigationAction != null) 'validation_override_mitigation_action': validationOverrideMitigationAction?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('validation_default_mitigation_action'); } 
-ShieldGlobalSettings copyWith({ValidationDefaultMitigationAction? validationDefaultMitigationAction, ShieldGlobalSettingsValidationOverrideMitigationAction? Function()? validationOverrideMitigationAction, }) { return ShieldGlobalSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('validation_default_mitigation_action');}
+ShieldGlobalSettings copyWith({ValidationDefaultMitigationAction? validationDefaultMitigationAction, ShieldGlobalSettingsValidationOverrideMitigationAction? Function()? validationOverrideMitigationAction, }) {return ShieldGlobalSettings(
   validationDefaultMitigationAction: validationDefaultMitigationAction ?? this.validationDefaultMitigationAction,
   validationOverrideMitigationAction: validationOverrideMitigationAction != null ? validationOverrideMitigationAction() : this.validationOverrideMitigationAction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldGlobalSettings &&
           validationDefaultMitigationAction == other.validationDefaultMitigationAction &&
@@ -100,4 +100,4 @@ ShieldGlobalSettings copyWith({ValidationDefaultMitigationAction? validationDefa
 
 @override String toString() => 'ShieldGlobalSettings(validationDefaultMitigationAction: $validationDefaultMitigationAction, validationOverrideMitigationAction: $validationOverrideMitigationAction)';
 
- }
+}

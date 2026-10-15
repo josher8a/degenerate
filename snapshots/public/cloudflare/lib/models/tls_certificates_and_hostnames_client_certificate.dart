@@ -11,13 +11,13 @@ String toJson() => value;
 /// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions
 sealed class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus();
 
-factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending_reactivation' => pendingReactivation,
   'pending_revocation' => pendingRevocation,
   'revoked' => revoked,
   _ => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus active = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active._();
 
@@ -30,36 +30,36 @@ static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatu
 static const List<TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus> values = [active, pendingReactivation, pendingRevocation, revoked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'pending_reactivation' => 'pendingReactivation',
   'pending_revocation' => 'pendingRevocation',
   'revoked' => 'revoked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() pendingReactivation, required W Function() pendingRevocation, required W Function() revoked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() pendingReactivation, required W Function() pendingRevocation, required W Function() revoked, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active() => active(),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation() => pendingReactivation(),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation() => pendingRevocation(),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked() => revoked(),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pendingReactivation, W Function()? pendingRevocation, W Function()? revoked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pendingReactivation, W Function()? pendingRevocation, W Function()? revoked, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active() => active != null ? active() : orElse(value),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation() => pendingReactivation != null ? pendingReactivation() : orElse(value),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation() => pendingRevocation != null ? pendingRevocation() : orElse(value),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked() => revoked != null ? revoked() : orElse(value),
       TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active._();
 
 @override String get value => 'active';
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation._();
 
 @override String get value => 'pending_reactivation';
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'pending_reactivation'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation._();
 
 @override String get value => 'pending_revocation';
@@ -86,7 +86,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'pending_revocation'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked._();
 
 @override String get value => 'revoked';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'revoked'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(this.value);
 
 @override final String value;
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Common Name of the Client Certificate
 extension type const TlsCertificatesAndHostnamesCommonName(String value) {
 factory TlsCertificatesAndHostnamesCommonName.fromJson(String json) => TlsCertificatesAndHostnamesCommonName(json);
@@ -192,7 +192,7 @@ String toJson() => value;
 }
 @immutable final class TlsCertificatesAndHostnamesClientCertificate {const TlsCertificatesAndHostnamesClientCertificate({this.certificate, this.certificateAuthority, this.commonName, this.country, this.csr, this.expiresOn, this.fingerprintSha256, this.id, this.issuedOn, this.location, this.organization, this.organizationalUnit, this.serialNumber, this.signature, this.ski, this.state, this.status, this.validityDays, });
 
-factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesClientCertificate(
+factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesClientCertificate(
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as Map<String, dynamic>) : null,
   commonName: json['common_name'] != null ? TlsCertificatesAndHostnamesCommonName.fromJson(json['common_name'] as String) : null,
@@ -211,7 +211,7 @@ factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynami
   state: json['state'] != null ? TlsCertificatesAndHostnamesState.fromJson(json['state'] as String) : null,
   status: json['status'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(json['status'] as String) : null,
   validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesSchemasValidityDays.fromJson(json['validity_days'] as num) : null,
-); }
+);}
 
 /// The Client Certificate PEM
 final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate? certificate;
@@ -251,7 +251,7 @@ final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus? stat
 
 final TlsCertificatesAndHostnamesSchemasValidityDays? validityDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (certificate != null) 'certificate': certificate?.toJson(),
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   if (commonName != null) 'common_name': commonName?.toJson(),
@@ -270,9 +270,9 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (validityDays != null) 'validity_days': validityDays?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificate', 'certificate_authority', 'common_name', 'country', 'csr', 'expires_on', 'fingerprint_sha256', 'id', 'issued_on', 'location', 'organization', 'organizational_unit', 'serial_number', 'signature', 'ski', 'state', 'status', 'validity_days'}.contains(key)); } 
-TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate? Function()? certificate, TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority? Function()? certificateAuthority, TlsCertificatesAndHostnamesCommonName? Function()? commonName, TlsCertificatesAndHostnamesCountry? Function()? country, TlsCertificatesAndHostnamesSchemasCsr? Function()? csr, TlsCertificatesAndHostnamesExpiredOn? Function()? expiresOn, TlsCertificatesAndHostnamesFingerprintSha256? Function()? fingerprintSha256, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesIssuedOn? Function()? issuedOn, TlsCertificatesAndHostnamesLocation? Function()? location, TlsCertificatesAndHostnamesOrganization? Function()? organization, TlsCertificatesAndHostnamesOrganizationalUnit? Function()? organizationalUnit, TlsCertificatesAndHostnamesComponentsSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesComponentsSchemasSignature? Function()? signature, TlsCertificatesAndHostnamesSki? Function()? ski, TlsCertificatesAndHostnamesState? Function()? state, TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesSchemasValidityDays? Function()? validityDays, }) { return TlsCertificatesAndHostnamesClientCertificate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'certificate', 'certificate_authority', 'common_name', 'country', 'csr', 'expires_on', 'fingerprint_sha256', 'id', 'issued_on', 'location', 'organization', 'organizational_unit', 'serial_number', 'signature', 'ski', 'state', 'status', 'validity_days'}.contains(key));}
+TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate? Function()? certificate, TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority? Function()? certificateAuthority, TlsCertificatesAndHostnamesCommonName? Function()? commonName, TlsCertificatesAndHostnamesCountry? Function()? country, TlsCertificatesAndHostnamesSchemasCsr? Function()? csr, TlsCertificatesAndHostnamesExpiredOn? Function()? expiresOn, TlsCertificatesAndHostnamesFingerprintSha256? Function()? fingerprintSha256, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesIssuedOn? Function()? issuedOn, TlsCertificatesAndHostnamesLocation? Function()? location, TlsCertificatesAndHostnamesOrganization? Function()? organization, TlsCertificatesAndHostnamesOrganizationalUnit? Function()? organizationalUnit, TlsCertificatesAndHostnamesComponentsSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesComponentsSchemasSignature? Function()? signature, TlsCertificatesAndHostnamesSki? Function()? ski, TlsCertificatesAndHostnamesState? Function()? state, TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesSchemasValidityDays? Function()? validityDays, }) {return TlsCertificatesAndHostnamesClientCertificate(
   certificate: certificate != null ? certificate() : this.certificate,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   commonName: commonName != null ? commonName() : this.commonName,
@@ -291,7 +291,7 @@ TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnam
   state: state != null ? state() : this.state,
   status: status != null ? status() : this.status,
   validityDays: validityDays != null ? validityDays() : this.validityDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesClientCertificate &&
           certificate == other.certificate &&
@@ -317,4 +317,4 @@ TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnam
 
 @override String toString() => 'TlsCertificatesAndHostnamesClientCertificate(\n  certificate: $certificate,\n  certificateAuthority: $certificateAuthority,\n  commonName: $commonName,\n  country: $country,\n  csr: $csr,\n  expiresOn: $expiresOn,\n  fingerprintSha256: $fingerprintSha256,\n  id: $id,\n  issuedOn: $issuedOn,\n  location: $location,\n  organization: $organization,\n  organizationalUnit: $organizationalUnit,\n  serialNumber: $serialNumber,\n  signature: $signature,\n  ski: $ski,\n  state: $state,\n  status: $status,\n  validityDays: $validityDays,\n)';
 
- }
+}

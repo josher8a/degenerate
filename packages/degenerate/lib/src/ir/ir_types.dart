@@ -3,6 +3,168 @@
 // Every OpenAPI construct maps to exactly one IR node. The IR is fully
 // resolved - no $ref strings, no ambiguity.
 
+import 'package:degenerate/src/escaping.dart';
+
+// ─── Spec-controlled text ──────────────────────────────────
+
+/// Pattern matching a valid Dart identifier (the only safe shape for
+/// spec-derived text that is emitted unquoted, e.g. a class or getter name).
+final _identifier = RegExp(r'^[a-zA-Z_$][a-zA-Z0-9_$]*$');
+
+/// A string whose content comes from the OpenAPI spec and is therefore
+/// untrusted in generated source code.
+///
+/// The raw text is private: there is no way to pull a plain `String` out and
+/// interpolate it into emitted code. Every legitimate use goes through a
+/// typed method, so "remember to escape" becomes "pick the method that fits":
+///
+/// - **emit** — [literal], [escaped], [docComment], [commentText] and
+///   [interpolatedLiteral] return text already escaped for the target Dart
+///   context. These are the only ways spec content reaches generated source.
+/// - **inspect** — [test] and [sameAs] examine the content for a control-flow
+///   decision and return a `bool`; the content cannot leak through them.
+/// - **derive an identifier** — [toIdentifier] runs a name sanitizer and
+///   asserts the result is a bare Dart identifier, so even a misused sanitizer
+///   cannot emit punctuation that would break out of its context.
+/// - **derive more spec text** — [rebuild] maps the content and returns a new
+///   [SpecString], keeping the result tainted until it too passes a gate.
+///
+/// [toString] is not a gate: it wraps the value in private-use sentinels so
+/// that any accidental `'$specString'` interpolation is caught as a leak in
+/// generated output (see [containsMarker]) rather than silently emitting raw
+/// spec text.
+final class SpecString implements Comparable<SpecString> {
+  /// Wraps raw spec text. Called only by the parser/lowering layers that
+  /// construct the IR.
+  const SpecString(this._raw);
+
+  /// Wraps [raw] if non-null, for optional spec fields.
+  static SpecString? orNull(String? raw) =>
+      raw == null ? null : SpecString(raw);
+
+  final String _raw;
+
+  /// Marks the start of unescaped spec text leaked via interpolation.
+  static const startMarker = '\uE000';
+
+  /// Marks the end of unescaped spec text leaked via interpolation.
+  static const endMarker = '\uE001';
+
+  /// Whether [text] contains leak sentinels — used by the generator to fail
+  /// when spec text reached output without passing a gate.
+  static bool containsMarker(String text) =>
+      text.contains(startMarker) || text.contains(endMarker);
+
+  /// The generated source around the first leak sentinel in [text], for
+  /// error messages that point at the offending emitter output.
+  static String leakContext(String text) {
+    final i = text.indexOf(startMarker) >= 0
+        ? text.indexOf(startMarker)
+        : text.indexOf(endMarker);
+    if (i < 0) return '';
+    final start = i < 80 ? 0 : i - 80;
+    final end = i + 80 > text.length ? text.length : i + 80;
+    return text.substring(start, end);
+  }
+
+  // ── Emit gates ──
+  /// A complete Dart string literal (quoted, escaped or raw as needed).
+  String get literal => dartStringLiteral(_raw);
+
+  /// Escaped content for embedding *inside* a larger single-quoted literal
+  /// the caller is assembling (e.g. `'$prefix[${field.escaped}]'`).
+  String get escaped => escapeDartString(_raw);
+
+  /// `///` doc-comment lines.
+  List<String> get docComment => formatDocComment(_raw);
+
+  /// Single-line content with line breaks collapsed, safe inside a `//`
+  /// comment.
+  String get commentText => sanitizeCommentText(_raw);
+
+  /// A Dart `int`, `double` or `bool` literal for content that parses as one
+  /// (e.g. a numeric or boolean discriminator value), or `null` otherwise.
+  /// The literal is re-serialized from the parsed value, so nothing from the
+  /// spec reaches source unvalidated.
+  String? get scalarLiteral {
+    final trimmed = _raw.trim();
+    if (trimmed == 'true' || trimmed == 'false') return trimmed;
+    final asInt = int.tryParse(trimmed);
+    if (asInt != null) return '$asInt';
+    final asDouble = double.tryParse(trimmed);
+    if (asDouble != null && asDouble.isFinite) return '$asDouble';
+    return null;
+  }
+
+  /// A Dart string literal in which substrings matching [placeholder] are
+  /// replaced by live Dart produced by [onMatch] (returned verbatim), while
+  /// every surrounding spec-controlled segment is escaped.
+  ///
+  /// This is the one safe way to interleave escaped spec text with generated
+  /// interpolation expressions — e.g. a URL path template whose `{param}`
+  /// holes become `${Uri.encodeComponent(...)}`.
+  String interpolatedLiteral(
+    Pattern placeholder,
+    String Function(Match) onMatch,
+  ) {
+    final body = _raw.splitMapJoin(
+      placeholder,
+      onMatch: onMatch,
+      onNonMatch: escapeDartString,
+    );
+    return "'$body'";
+  }
+
+  // ── Inspection (content cannot escape) ──
+  /// Examine the raw content for a control-flow decision.
+  bool test(bool Function(String) predicate) => predicate(_raw);
+
+  /// Whether two spec strings carry identical content.
+  bool sameAs(SpecString other) => _raw == other._raw;
+
+  /// Orders spec strings by content, for deterministic emission order. The
+  /// content cannot escape through an `int`.
+  @override
+  int compareTo(SpecString other) => _raw.compareTo(other._raw);
+
+  // ── Derivation ──
+  /// Run a name [sanitizer] over the content to produce a Dart identifier.
+  /// Asserts the result is a bare identifier, so the output is safe to emit
+  /// unquoted even though it derives from spec text.
+  String toIdentifier(String Function(String) sanitizer) {
+    final result = sanitizer(_raw);
+    assert(
+      _identifier.hasMatch(result),
+      'toIdentifier sanitizer produced non-identifier "$result"',
+    );
+    return result;
+  }
+
+  /// Map the content through [f], returning a new [SpecString] that stays
+  /// tainted until it passes a gate.
+  SpecString rebuild(String Function(String) f) => SpecString(f(_raw));
+
+  /// The raw content, for human-facing diagnostics (warnings, log lines)
+  /// only. This is the one accessor that returns unescaped content, so it
+  /// must never be interpolated into generated Dart source — use [literal],
+  /// [escaped], [docComment] or [interpolatedLiteral] for that.
+  String get forDiagnostics => _raw;
+
+  @override
+  String toString() => '$startMarker$_raw$endMarker';
+
+  @override
+  // All fields are final; == on the raw value is safe without depending on
+  // package:meta for @immutable.
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) => other is SpecString && other._raw == _raw;
+
+  @override
+  // All fields are final; hashCode on the raw value is safe without
+  // depending on package:meta for @immutable.
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _raw.hashCode;
+}
 // ─── Status code sentinels ─────────────────────────────────
 
 /// Sentinel key in [IrOperation.responses] for the OAS wildcard status range
@@ -26,7 +188,7 @@ sealed class IrType {
   const IrType({this.description, this.isNullable = false});
 
   /// Human-readable description from the OpenAPI spec.
-  final String? description;
+  final SpecString? description;
 
   /// Whether this type accepts null values.
   final bool isNullable;
@@ -46,6 +208,14 @@ sealed class IrType {
   List<IrType>? get unionVariants => switch (this) {
     IrUntaggedUnion(:final variants) => variants,
     IrAnyOf(:final variants) => variants,
+    _ => null,
+  };
+
+  /// The variants of a union that may be emitted as a `OneOfN` typedef:
+  /// only [IrUntaggedUnion]. An [IrAnyOf] is always a lossless class (every
+  /// matching view is kept), never a single-value `OneOf`.
+  List<IrType>? get oneOfVariants => switch (this) {
+    IrUntaggedUnion(:final variants) => variants,
     _ => null,
   };
 
@@ -320,7 +490,7 @@ final class IrField {
   final String name;
 
   /// The original JSON key (may differ from the Dart name).
-  final String originalName;
+  final SpecString originalName;
 
   /// The field's IR type.
   final IrType type;
@@ -332,7 +502,7 @@ final class IrField {
   final Object? defaultValue;
 
   /// Human-readable description from the schema.
-  final String? description;
+  final SpecString? description;
 
   /// Example value from the schema, if any.
   final Object? example;
@@ -361,10 +531,10 @@ final class IrDiscriminatedUnion extends IrType {
   final String name;
 
   /// The JSON property used as the discriminator.
-  final String discriminatorProperty;
+  final SpecString discriminatorProperty;
 
   /// Discriminator value to variant type mapping.
-  final Map<String, IrType> mapping;
+  final Map<SpecString, IrType> mapping;
 
   @override
   IrDiscriminatedUnion copyAsNullable() => isNullable
@@ -503,7 +673,7 @@ final class IrSecurityRequirement {
   const IrSecurityRequirement(this.schemes);
 
   /// Maps scheme names to required scopes.
-  final Map<String, List<String>> schemes;
+  final Map<SpecString, List<String>> schemes;
 }
 
 /// An OAuth2 flow definition.
@@ -552,7 +722,7 @@ final class IrSecurityScheme {
   });
 
   /// The scheme identifier.
-  final String name;
+  final SpecString name;
 
   /// The scheme type (apiKey, http, oauth2, openIdConnect).
   final String type;
@@ -606,16 +776,16 @@ final class IrOperation {
 
   /// The raw HTTP method string for [HttpMethod.custom]
   /// operations. Null for standard methods.
-  final String? customMethod;
+  final SpecString? customMethod;
 
   /// The URL path template.
-  final String path;
+  final SpecString path;
 
   /// Brief summary from the spec.
-  final String? summary;
+  final SpecString? summary;
 
   /// Detailed description from the spec.
-  final String? description;
+  final SpecString? description;
 
   /// The operation's parameters.
   final List<IrParameter> parameters;
@@ -672,7 +842,7 @@ final class IrParameter {
   });
 
   /// The original parameter name from the spec.
-  final String name;
+  final SpecString name;
 
   /// The sanitized Dart parameter name.
   final String dartName;
@@ -722,7 +892,7 @@ final class IrRequestBody {
   const IrRequestBody(this.content, {this.isRequired = false});
 
   /// Media type to schema mapping.
-  final Map<String, IrMediaType> content;
+  final Map<SpecString, IrMediaType> content;
 
   /// Whether the request body is required.
   final bool isRequired;
@@ -753,22 +923,26 @@ final class IrMediaType {
 final class IrResponse {
   /// Creates a response.
   const IrResponse({
+    this.statusKey,
     this.description,
     this.content = const {},
     this.headers = const [],
   });
 
+  /// Declared status code, range (such as `4XX`), or `default`.
+  final String? statusKey;
+
   /// Human-readable description.
-  final String? description;
+  final SpecString? description;
 
   /// Media type to schema mapping.
-  final Map<String, IrMediaType> content;
+  final Map<SpecString, IrMediaType> content;
 
   /// Response headers.
   final List<IrField> headers;
 
   IrResponse copyWith({
-    Map<String, IrMediaType>? content,
+    Map<SpecString, IrMediaType>? content,
     List<IrField>? headers,
   }) =>
       IrResponse(
@@ -917,7 +1091,6 @@ final class VariantInfo {
     required this.isSpreadable,
     this.payloadFields = const [],
     this.discFieldType,
-    this.discDefault,
   });
 
   /// The variant type after resolving any [IrTypeRef] through the registry.
@@ -935,9 +1108,6 @@ final class VariantInfo {
   /// The type of the discriminator field within the variant's payload object,
   /// or `null` if the variant is not an object or has no such field.
   final IrType? discFieldType;
-
-  /// The default value of the discriminator field, or `null` if none.
-  final String? discDefault;
 }
 
 /// Pre-computed metadata for a discriminated union, replacing the analysis
@@ -954,5 +1124,5 @@ final class DiscUnionMetadata {
   final List<IrField> commonFields;
 
   /// Per-variant metadata keyed by discriminator value.
-  final Map<String, VariantInfo> variants;
+  final Map<SpecString, VariantInfo> variants;
 }

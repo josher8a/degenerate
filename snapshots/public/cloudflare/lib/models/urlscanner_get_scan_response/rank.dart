@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rank {const Rank({required this.bucket, required this.name, this.rank, });
 
-factory Rank.fromJson(Map<String, dynamic> json) { return Rank(
+factory Rank.fromJson(Map<String, dynamic> json) {return Rank(
   bucket: json['bucket'] as String,
   name: json['name'] as String,
   rank: json['rank'] != null ? (json['rank'] as num).toInt() : null,
-); }
+);}
 
 /// Example: `'500'`
 final String bucket;
@@ -18,18 +18,18 @@ final String name;
 /// Rank in the Global Radar Rank, if set. See more at https://blog.cloudflare.com/radar-domain-rankings/
 final int? rank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket': bucket,
   'name': name,
   'rank': ?rank,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-Rank copyWith({String? bucket, String? name, int? Function()? rank, }) { return Rank(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bucket') && json['bucket'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+Rank copyWith({String? bucket, String? name, int? Function()? rank, }) {return Rank(
   bucket: bucket ?? this.bucket,
   name: name ?? this.name,
   rank: rank != null ? rank() : this.rank,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Rank &&
           bucket == other.bucket &&
@@ -40,4 +40,4 @@ Rank copyWith({String? bucket, String? name, int? Function()? rank, }) { return 
 
 @override String toString() => 'Rank(bucket: $bucket, name: $name, rank: $rank)';
 
- }
+}

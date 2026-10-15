@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/payment_flows_installment_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_mandate_options_payto.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client/payment_intent_type_specific_payment_method_options_client_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_present_routing.dart';/// 
 @immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClient {const PaymentIntentTypeSpecificPaymentMethodOptionsClient({this.captureMethod, this.installments, this.mandateOptions, this.requestIncrementalAuthorizationSupport, this.requireCvcRecollection, this.routing, this.setupFutureUsage, this.verificationMethod, });
 
-factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
+factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) {return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: json['capture_method'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(json['capture_method'] as String) : null,
   installments: json['installments'] != null ? PaymentFlowsInstallmentOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String,
   routing: json['routing'] != null ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? captureMethod;
@@ -42,7 +42,7 @@ final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 /// Bank account verification method.
 final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (installments != null) 'installments': installments?.toJson(),
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (routing != null) 'routing': routing?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'request_incremental_authorization_support', 'require_cvc_recollection', 'routing', 'setup_future_usage', 'verification_method'}.contains(key)); } 
-PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? Function()? captureMethod, PaymentFlowsInstallmentOptions? Function()? installments, PaymentIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, bool? Function()? requestIncrementalAuthorizationSupport, bool? Function()? requireCvcRecollection, PaymentMethodOptionsCardPresentRouting? Function()? routing, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'request_incremental_authorization_support', 'require_cvc_recollection', 'routing', 'setup_future_usage', 'verification_method'}.contains(key));}
+PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? Function()? captureMethod, PaymentFlowsInstallmentOptions? Function()? installments, PaymentIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, bool? Function()? requestIncrementalAuthorizationSupport, bool? Function()? requireCvcRecollection, PaymentMethodOptionsCardPresentRouting? Function()? routing, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) {return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
@@ -62,7 +62,7 @@ PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeS
   routing: routing != null ? routing() : this.routing,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentTypeSpecificPaymentMethodOptionsClient &&
           captureMethod == other.captureMethod &&
@@ -78,4 +78,4 @@ PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeS
 
 @override String toString() => 'PaymentIntentTypeSpecificPaymentMethodOptionsClient(captureMethod: $captureMethod, installments: $installments, mandateOptions: $mandateOptions, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, requireCvcRecollection: $requireCvcRecollection, routing: $routing, setupFutureUsage: $setupFutureUsage, verificationMethod: $verificationMethod)';
 
- }
+}

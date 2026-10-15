@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/network_path.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponse({required this.id, this.deviceName, this.interval, this.kind, this.name, this.networkPath, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/network_path.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponse({required this.id, this.deviceName, this.interval, this.kind = const Omittable.absent(), this.name, this.networkPath = const Omittable.absent(), this.url, });
 
-factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
+factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
   deviceName: json['deviceName'] as String?,
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
   interval: json['interval'] as String?,
-  kind: json['kind'],
+  kind: json.containsKey('kind') ? Omittable(json['kind']) : const Omittable.absent(),
   name: json['name'] as String?,
-  networkPath: json['networkPath'] != null ? NetworkPath.fromJson(json['networkPath'] as Map<String, dynamic>) : null,
+  networkPath: json.containsKey('networkPath') ? Omittable(json['networkPath'] != null ? NetworkPath.fromJson(json['networkPath'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: json['url'] as String?,
-); }
+);}
 
 final String? deviceName;
 
@@ -22,36 +22,36 @@ final DigitalExperienceMonitoringUuid id;
 /// Example: `'0h5m0s'`
 final String? interval;
 
-final dynamic kind;
+final Omittable<dynamic> kind;
 
 final String? name;
 
-final NetworkPath? networkPath;
+final Omittable<NetworkPath?> networkPath;
 
 /// The host of the Traceroute synthetic application test
 /// 
 /// Example: `'1.1.1.1'`
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deviceName': ?deviceName,
   'id': id.toJson(),
   'interval': ?interval,
-  'kind': ?kind,
+  if (kind.isPresent) 'kind': kind.value,
   'name': ?name,
-  if (networkPath != null) 'networkPath': networkPath?.toJson(),
+  if (networkPath.isPresent) 'networkPath': networkPath.value?.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String? Function()? deviceName, DigitalExperienceMonitoringUuid? id, String? Function()? interval, dynamic Function()? kind, String? Function()? name, NetworkPath? Function()? networkPath, String? Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String? Function()? deviceName, DigitalExperienceMonitoringUuid? id, String? Function()? interval, Omittable<dynamic>? kind, String? Function()? name, Omittable<NetworkPath?>? networkPath, String? Function()? url, }) {return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   id: id ?? this.id,
   interval: interval != null ? interval() : this.interval,
-  kind: kind != null ? kind() : this.kind,
+  kind: kind ?? this.kind,
   name: name != null ? name() : this.name,
-  networkPath: networkPath != null ? networkPath() : this.networkPath,
+  networkPath: networkPath ?? this.networkPath,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteTestNetworkPathResponse &&
           deviceName == other.deviceName &&
@@ -66,4 +66,4 @@ DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String? F
 
 @override String toString() => 'DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(deviceName: $deviceName, id: $id, interval: $interval, kind: $kind, name: $name, networkPath: $networkPath, url: $url)';
 
- }
+}

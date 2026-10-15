@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_timeseries_group_by_ip_version_response/radar_get_attacks_layer3_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse(
+factory RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse(
   result: RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse copyWith({RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse copyWith({RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult? result, bool? success, }) {return RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse copyWith({RadarGetAttack
 
 @override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByIpVersionResponse(result: $result, success: $success)';
 
- }
+}

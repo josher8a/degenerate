@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `shell`.
 sealed class SpecificFunctionShellParamType {const SpecificFunctionShellParamType();
 
-factory SpecificFunctionShellParamType.fromJson(String json) { return switch (json) {
+factory SpecificFunctionShellParamType.fromJson(String json) {return switch (json) {
   'shell' => shell,
   _ => SpecificFunctionShellParamType$Unknown(json),
-}; }
+};}
 
 static const SpecificFunctionShellParamType shell = SpecificFunctionShellParamType$shell._();
 
 static const List<SpecificFunctionShellParamType> values = [shell];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'shell' => 'shell',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SpecificFunctionShellParamType$Unknown; } 
+bool get isUnknown {return this is SpecificFunctionShellParamType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() shell, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() shell, required W Function(String value) $unknown, }) {return switch (this) {
       SpecificFunctionShellParamType$shell() => shell(),
       SpecificFunctionShellParamType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? shell, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? shell, W Function(String value)? $unknown, }) {return switch (this) {
       SpecificFunctionShellParamType$shell() => shell != null ? shell() : orElse(value),
       SpecificFunctionShellParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SpecificFunctionShellParamType($value)';
 
- }
+}
 @immutable final class SpecificFunctionShellParamType$shell extends SpecificFunctionShellParamType {const SpecificFunctionShellParamType$shell._();
 
 @override String get value => 'shell';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? shell, W
 
 @override int get hashCode => 'shell'.hashCode;
 
- }
+}
 @immutable final class SpecificFunctionShellParamType$Unknown extends SpecificFunctionShellParamType {const SpecificFunctionShellParamType$Unknown(this.value);
 
 @override final String value;
@@ -53,24 +53,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? shell, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Forces the model to call the shell tool when a tool call is required.
-@immutable final class SpecificFunctionShellParam {const SpecificFunctionShellParam({this.type = SpecificFunctionShellParamType.shell});
+@immutable final class SpecificFunctionShellParam {const SpecificFunctionShellParam({required this.type});
 
-factory SpecificFunctionShellParam.fromJson(Map<String, dynamic> json) { return SpecificFunctionShellParam(
+factory SpecificFunctionShellParam.fromJson(Map<String, dynamic> json) {return SpecificFunctionShellParam(
   type: SpecificFunctionShellParamType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The tool to call. Always `shell`.
 final SpecificFunctionShellParamType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'shell'; } 
-SpecificFunctionShellParam copyWith({SpecificFunctionShellParamType? type}) { return SpecificFunctionShellParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'shell';}
+SpecificFunctionShellParam copyWith({SpecificFunctionShellParamType? type}) {return SpecificFunctionShellParam(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpecificFunctionShellParam &&
           type == other.type;
@@ -79,4 +79,4 @@ SpecificFunctionShellParam copyWith({SpecificFunctionShellParamType? type}) { re
 
 @override String toString() => 'SpecificFunctionShellParam(type: $type)';
 
- }
+}

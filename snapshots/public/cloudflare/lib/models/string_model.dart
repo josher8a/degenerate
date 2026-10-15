@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StringModel {const StringModel({required this.type});
 
-factory StringModel.fromJson(Map<String, dynamic> json) { return StringModel(
+factory StringModel.fromJson(Map<String, dynamic> json) {return StringModel(
   type: json['type'] as String,
-); }
+);}
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-StringModel copyWith({String? type}) { return StringModel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+StringModel copyWith({String? type}) {return StringModel(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StringModel &&
           type == other.type;
@@ -24,4 +24,4 @@ StringModel copyWith({String? type}) { return StringModel(
 
 @override String toString() => 'StringModel(type: $type)';
 
- }
+}

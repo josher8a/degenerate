@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Words {const Words({this.end, this.start, this.word, });
 
-factory Words.fromJson(Map<String, dynamic> json) { return Words(
+factory Words.fromJson(Map<String, dynamic> json) {return Words(
   end: json['end'] != null ? (json['end'] as num).toDouble() : null,
   start: json['start'] != null ? (json['start'] as num).toDouble() : null,
   word: json['word'] as String?,
-); }
+);}
 
 /// The ending second when the word completes
 final double? end;
@@ -17,17 +17,17 @@ final double? start;
 
 final String? word;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': ?end,
   'start': ?start,
   'word': ?word,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key)); } 
-Words copyWith({double? Function()? end, double? Function()? start, String? Function()? word, }) { return Words(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key));}
+Words copyWith({double? Function()? end, double? Function()? start, String? Function()? word, }) {return Words(
   end: end != null ? end() : this.end,
   start: start != null ? start() : this.start,
   word: word != null ? word() : this.word,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Words &&
           end == other.end &&
@@ -38,4 +38,4 @@ Words copyWith({double? Function()? end, double? Function()? start, String? Func
 
 @override String toString() => 'Words(end: $end, start: $start, word: $word)';
 
- }
+}

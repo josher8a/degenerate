@@ -14,7 +14,7 @@ final class AsnIntelligenceApi with ApiExecutor {const AsnIntelligenceApi(this.a
 /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}`
-Future<ApiResult<IntelAsn?, AsnIntelligenceGetAsnOverviewError>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IntelAsn?, AsnIntelligenceGetAsnOverviewError>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: AsnIntelligenceGetAsnOverviewError.fromResponse,
 );
- } 
+}
 /// Get ASN Subnets
 ///
 /// Get ASN Subnets.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}/subnets`
-Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, AsnIntelligenceGetAsnSubnetsError>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, AsnIntelligenceGetAsnSubnetsError>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,12 +46,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AsnIntelligenceGetAsnSubnetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: AsnIntelligenceGetAsnSubnetsError.fromResponse,
 );
- } 
- }
+}
+}

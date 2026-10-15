@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by robots.txt directive.
 sealed class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective();
 
-factory RadarGetRobotsTxtTopUserAgentsByDirectiveDirective.fromJson(String json) { return switch (json) {
+factory RadarGetRobotsTxtTopUserAgentsByDirectiveDirective.fromJson(String json) {return switch (json) {
   'ALLOW' => allow,
   'DISALLOW' => disallow,
   _ => RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown(json),
-}; }
+};}
 
 static const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective allow = RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$allow._();
 
@@ -17,30 +17,30 @@ static const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective disallow = Radar
 static const List<RadarGetRobotsTxtTopUserAgentsByDirectiveDirective> values = [allow, disallow];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ALLOW' => 'allow',
   'DISALLOW' => 'disallow',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown; } 
+bool get isUnknown {return this is RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() allow, required W Function() disallow, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() allow, required W Function() disallow, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$allow() => allow(),
       RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$disallow() => disallow(),
       RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? disallow, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? disallow, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$allow() => allow != null ? allow() : orElse(value),
       RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$disallow() => disallow != null ? disallow() : orElse(value),
       RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetRobotsTxtTopUserAgentsByDirectiveDirective($value)';
 
- }
+}
 @immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$allow extends RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$allow._();
 
 @override String get value => 'ALLOW';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W
 
 @override int get hashCode => 'ALLOW'.hashCode;
 
- }
+}
 @immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$disallow extends RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$disallow._();
 
 @override String get value => 'DISALLOW';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W
 
 @override int get hashCode => 'DISALLOW'.hashCode;
 
- }
+}
 @immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown extends RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

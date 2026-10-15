@@ -14,7 +14,7 @@ final class AnalyticsApi with ApiExecutor {const AnalyticsApi(this.apiConfig);
 /// Returns day-wise session and recording analytics data of an App for the specified time range start_date to end_date. If start_date and end_date are not provided, the default time range is set from 30 days ago to the current date.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/analytics/daywise`
-Future<ApiResult<GetOrgAnalyticsResponse, Never>> getOrgAnalytics({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? startDate, String? endDate, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetOrgAnalyticsResponse, Never>> getOrgAnalytics({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? startDate, String? endDate, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startDate != null) {
   queryParameters['start_date'] = startDate;
@@ -34,11 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetOrgAnalyticsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

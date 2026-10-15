@@ -1,7 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentIntentsIntentConfirmRequest (inline: PaymentMethodOptions > P24)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param25.dart';/// Variants:
-/// - `.a` → [PaymentMethodOptionsParam25]
-/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
-typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24 = OneOf2<PaymentMethodOptionsParam25,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param25.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24 {/// A value built from one or more typed views (at least one must be present).
+const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24({this.paymentMethodOptionsParam25 = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24._({required this.rawValue, required this.paymentMethodOptionsParam25, required this.getPaymentMethodConfigurationsApplicationVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24.fromJson(Object? json) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24._(
+  rawValue: Omittable(json),
+  paymentMethodOptionsParam25: json is Map<String, dynamic> && PaymentMethodOptionsParam25.canParse(json) ? parseAnyOfVariant<PaymentMethodOptionsParam25>(json, (value) => PaymentMethodOptionsParam25.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
+  getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
+);}
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `PaymentMethodOptionsParam25`, when it matches.
+final Omittable<PaymentMethodOptionsParam25> paymentMethodOptionsParam25;
+
+/// The payload decoded as `GetPaymentMethodConfigurationsApplicationVariant2`, when it matches.
+final Omittable<GetPaymentMethodConfigurationsApplicationVariant2> getPaymentMethodConfigurationsApplicationVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => paymentMethodOptionsParam25.isPresent || getPaymentMethodConfigurationsApplicationVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsParam25.isPresent) paymentMethodOptionsParam25.value?.toJson(),
+    if (getPaymentMethodConfigurationsApplicationVariant2.isPresent) getPaymentMethodConfigurationsApplicationVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24 && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsP24(${toJson()})';
+
+}

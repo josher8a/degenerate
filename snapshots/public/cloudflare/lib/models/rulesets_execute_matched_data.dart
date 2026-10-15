@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration to use for matched data logging.
 @immutable final class RulesetsExecuteMatchedData {const RulesetsExecuteMatchedData({required this.publicKey});
 
-factory RulesetsExecuteMatchedData.fromJson(Map<String, dynamic> json) { return RulesetsExecuteMatchedData(
+factory RulesetsExecuteMatchedData.fromJson(Map<String, dynamic> json) {return RulesetsExecuteMatchedData(
   publicKey: json['public_key'] as String,
-); }
+);}
 
 /// The public key to encrypt matched data logs with.
 /// 
 /// Example: `'iGqBmyIUxuWt1rvxoAharN9FUXneUBxA/Y19PyyrEG0='`
 final String publicKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'public_key': publicKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('public_key') && json['public_key'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('public_key') && json['public_key'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (publicKey.isEmpty) { errors.add('publicKey: length must be >= 1'); }
-return errors; } 
-RulesetsExecuteMatchedData copyWith({String? publicKey}) { return RulesetsExecuteMatchedData(
+return errors;}
+RulesetsExecuteMatchedData copyWith({String? publicKey}) {return RulesetsExecuteMatchedData(
   publicKey: publicKey ?? this.publicKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsExecuteMatchedData &&
           publicKey == other.publicKey;
@@ -32,4 +32,4 @@ RulesetsExecuteMatchedData copyWith({String? publicKey}) { return RulesetsExecut
 
 @override String toString() => 'RulesetsExecuteMatchedData(publicKey: $publicKey)';
 
- }
+}

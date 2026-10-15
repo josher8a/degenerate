@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/ares_trans_status.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/network_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_electronic_commerce_indicator.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_version.dart';sealed class ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator();
 
-factory ThreeDSecureExemptionIndicator.fromJson(String json) { return switch (json) {
+factory ThreeDSecureExemptionIndicator.fromJson(String json) {return switch (json) {
   'low_risk' => lowRisk,
   'none' => none,
   _ => ThreeDSecureExemptionIndicator$Unknown(json),
-}; }
+};}
 
 static const ThreeDSecureExemptionIndicator lowRisk = ThreeDSecureExemptionIndicator$lowRisk._();
 
@@ -16,30 +16,30 @@ static const ThreeDSecureExemptionIndicator none = ThreeDSecureExemptionIndicato
 static const List<ThreeDSecureExemptionIndicator> values = [lowRisk, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low_risk' => 'lowRisk',
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreeDSecureExemptionIndicator$Unknown; } 
+bool get isUnknown {return this is ThreeDSecureExemptionIndicator$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() lowRisk, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() lowRisk, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       ThreeDSecureExemptionIndicator$lowRisk() => lowRisk(),
       ThreeDSecureExemptionIndicator$none() => none(),
       ThreeDSecureExemptionIndicator$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? lowRisk, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lowRisk, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       ThreeDSecureExemptionIndicator$lowRisk() => lowRisk != null ? lowRisk() : orElse(value),
       ThreeDSecureExemptionIndicator$none() => none != null ? none() : orElse(value),
       ThreeDSecureExemptionIndicator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ThreeDSecureExemptionIndicator($value)';
 
- }
+}
 @immutable final class ThreeDSecureExemptionIndicator$lowRisk extends ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator$lowRisk._();
 
 @override String get value => 'low_risk';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lowRisk,
 
 @override int get hashCode => 'low_risk'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureExemptionIndicator$none extends ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator$none._();
 
 @override String get value => 'none';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lowRisk,
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureExemptionIndicator$Unknown extends ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator$Unknown(this.value);
 
 @override final String value;
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lowRisk,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamThreeDSecure {const PaymentIntentParamThreeDSecure({required this.cryptogram, required this.transactionId, required this.version, this.aresTransStatus, this.electronicCommerceIndicator, this.exemptionIndicator, this.networkOptions, this.requestorChallengeIndicator, });
 
-factory PaymentIntentParamThreeDSecure.fromJson(Map<String, dynamic> json) { return PaymentIntentParamThreeDSecure(
+factory PaymentIntentParamThreeDSecure.fromJson(Map<String, dynamic> json) {return PaymentIntentParamThreeDSecure(
   aresTransStatus: json['ares_trans_status'] != null ? AresTransStatus.fromJson(json['ares_trans_status'] as String) : null,
   cryptogram: json['cryptogram'] as String,
   electronicCommerceIndicator: json['electronic_commerce_indicator'] != null ? ThreeDSecureElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null,
@@ -79,7 +79,7 @@ factory PaymentIntentParamThreeDSecure.fromJson(Map<String, dynamic> json) { ret
   requestorChallengeIndicator: json['requestor_challenge_indicator'] as String?,
   transactionId: json['transaction_id'] as String,
   version: ThreeDSecureVersion.fromJson(json['version'] as String),
-); }
+);}
 
 final AresTransStatus? aresTransStatus;
 
@@ -97,7 +97,7 @@ final String transactionId;
 
 final ThreeDSecureVersion version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aresTransStatus != null) 'ares_trans_status': aresTransStatus?.toJson(),
   'cryptogram': cryptogram,
   if (electronicCommerceIndicator != null) 'electronic_commerce_indicator': electronicCommerceIndicator?.toJson(),
@@ -106,20 +106,20 @@ Map<String, dynamic> toJson() { return {
   'requestor_challenge_indicator': ?requestorChallengeIndicator,
   'transaction_id': transactionId,
   'version': version.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cryptogram') && json['cryptogram'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cryptogram') && json['cryptogram'] is String &&
       json.containsKey('transaction_id') && json['transaction_id'] is String &&
-      json.containsKey('version'); } 
+      json.containsKey('version');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (cryptogram.runes.length > 5000) { errors.add('cryptogram: length must be <= 5000'); }
 final requestorChallengeIndicator$ = requestorChallengeIndicator;
 if (requestorChallengeIndicator$ != null) {
   if (requestorChallengeIndicator$.runes.length > 2) { errors.add('requestorChallengeIndicator: length must be <= 2'); }
 }
 if (transactionId.runes.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
-return errors; } 
-PaymentIntentParamThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator? Function()? exemptionIndicator, NetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) { return PaymentIntentParamThreeDSecure(
+return errors;}
+PaymentIntentParamThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator? Function()? exemptionIndicator, NetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) {return PaymentIntentParamThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram ?? this.cryptogram,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,
@@ -128,7 +128,7 @@ PaymentIntentParamThreeDSecure copyWith({AresTransStatus? Function()? aresTransS
   requestorChallengeIndicator: requestorChallengeIndicator != null ? requestorChallengeIndicator() : this.requestorChallengeIndicator,
   transactionId: transactionId ?? this.transactionId,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentParamThreeDSecure &&
           aresTransStatus == other.aresTransStatus &&
@@ -144,4 +144,4 @@ PaymentIntentParamThreeDSecure copyWith({AresTransStatus? Function()? aresTransS
 
 @override String toString() => 'PaymentIntentParamThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, exemptionIndicator: $exemptionIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_by_arc_response/radar_get_email_routing_timeseries_group_by_arc_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcResponse {const RadarGetEmailSecurityTimeseriesGroupByDmarcResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecurityTimeseriesGroupByDmarcResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByDmarcResponse(
+factory RadarGetEmailSecurityTimeseriesGroupByDmarcResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupByDmarcResponse(
   result: RadarGetEmailRoutingTimeseriesGroupByArcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailRoutingTimeseriesGroupByArcResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecurityTimeseriesGroupByDmarcResponse copyWith({RadarGetEmailRoutingTimeseriesGroupByArcResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTimeseriesGroupByDmarcResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecurityTimeseriesGroupByDmarcResponse copyWith({RadarGetEmailRoutingTimeseriesGroupByArcResponseResult? result, bool? success, }) {return RadarGetEmailSecurityTimeseriesGroupByDmarcResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupByDmarcResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecurityTimeseriesGroupByDmarcResponse copyWith({RadarGetEmailRouti
 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDmarcResponse(result: $result, success: $success)';
 
- }
+}

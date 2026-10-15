@@ -10,11 +10,11 @@ String toJson() => value;
 }
 @immutable final class ZonesPostRequest {const ZonesPostRequest({required this.account, required this.name, this.type, });
 
-factory ZonesPostRequest.fromJson(Map<String, dynamic> json) { return ZonesPostRequest(
+factory ZonesPostRequest.fromJson(Map<String, dynamic> json) {return ZonesPostRequest(
   account: ZonesPostRequestAccount.fromJson(json['account'] as Map<String, dynamic>),
   name: ZonesName.fromJson(json['name'] as String),
   type: json['type'] != null ? ZonesType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final ZonesPostRequestAccount account;
 
@@ -26,18 +26,18 @@ final ZonesName name;
 /// 
 final ZonesType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'name': name.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
-      json.containsKey('name'); } 
-ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, ZonesType? Function()? type, }) { return ZonesPostRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
+      json.containsKey('name');}
+ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, ZonesType? Function()? type, }) {return ZonesPostRequest(
   account: account ?? this.account,
   name: name ?? this.name,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesPostRequest &&
           account == other.account &&
@@ -48,4 +48,4 @@ ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, Zo
 
 @override String toString() => 'ZonesPostRequest(account: $account, name: $name, type: $type)';
 
- }
+}

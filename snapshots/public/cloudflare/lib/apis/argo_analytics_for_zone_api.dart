@@ -12,7 +12,7 @@ final class ArgoAnalyticsForZoneApi with ApiExecutor {const ArgoAnalyticsForZone
 /// Argo Analytics for a zone
 ///
 /// `GET /zones/{zone_id}/analytics/latency`
-Future<ApiResult<Map<String, dynamic>?, ArgoAnalyticsForZoneArgoAnalyticsForAZoneError>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, ArgoAnalyticsForZoneArgoAnalyticsForAZoneError>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bins != null) {
   queryParameters['bins'] = bins;
@@ -29,13 +29,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return json['result'] as Map<String, dynamic>;
   },
   onError: ArgoAnalyticsForZoneArgoAnalyticsForAZoneError.fromResponse,
 );
- } 
- }
+}
+}

@@ -2,40 +2,40 @@
 // Source: #/components/schemas/IssuingCardWallets
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card_apple_pay.dart';import 'package:pub_stripe_spec3/models/issuing_card_google_pay.dart';/// 
-@immutable final class IssuingCardWallets {const IssuingCardWallets({required this.applePay, required this.googlePay, this.primaryAccountIdentifier, });
+@immutable final class IssuingCardWallets {const IssuingCardWallets({required this.applePay, required this.googlePay, this.primaryAccountIdentifier = const Omittable.absent(), });
 
-factory IssuingCardWallets.fromJson(Map<String, dynamic> json) { return IssuingCardWallets(
+factory IssuingCardWallets.fromJson(Map<String, dynamic> json) {return IssuingCardWallets(
   applePay: IssuingCardApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>),
   googlePay: IssuingCardGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>),
-  primaryAccountIdentifier: json['primary_account_identifier'] as String?,
-); }
+  primaryAccountIdentifier: json.containsKey('primary_account_identifier') ? Omittable(json['primary_account_identifier'] as String?) : const Omittable.absent(),
+);}
 
 final IssuingCardApplePay applePay;
 
 final IssuingCardGooglePay googlePay;
 
 /// Unique identifier for a card used with digital wallets
-final String? primaryAccountIdentifier;
+final Omittable<String?> primaryAccountIdentifier;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apple_pay': applePay.toJson(),
   'google_pay': googlePay.toJson(),
-  'primary_account_identifier': ?primaryAccountIdentifier,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('apple_pay') &&
-      json.containsKey('google_pay'); } 
+  if (primaryAccountIdentifier.isPresent) 'primary_account_identifier': primaryAccountIdentifier.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('apple_pay') &&
+      json.containsKey('google_pay');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final primaryAccountIdentifier$ = primaryAccountIdentifier;
+List<String> validate() {final errors = <String>[];
+final primaryAccountIdentifier$ = primaryAccountIdentifier.value;
 if (primaryAccountIdentifier$ != null) {
   if (primaryAccountIdentifier$.runes.length > 5000) { errors.add('primaryAccountIdentifier: length must be <= 5000'); }
 }
-return errors; } 
-IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay? googlePay, String? Function()? primaryAccountIdentifier, }) { return IssuingCardWallets(
+return errors;}
+IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay? googlePay, Omittable<String?>? primaryAccountIdentifier, }) {return IssuingCardWallets(
   applePay: applePay ?? this.applePay,
   googlePay: googlePay ?? this.googlePay,
-  primaryAccountIdentifier: primaryAccountIdentifier != null ? primaryAccountIdentifier() : this.primaryAccountIdentifier,
-); } 
+  primaryAccountIdentifier: primaryAccountIdentifier ?? this.primaryAccountIdentifier,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardWallets &&
           applePay == other.applePay &&
@@ -46,4 +46,4 @@ IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay
 
 @override String toString() => 'IssuingCardWallets(applePay: $applePay, googlePay: $googlePay, primaryAccountIdentifier: $primaryAccountIdentifier)';
 
- }
+}

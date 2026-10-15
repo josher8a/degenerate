@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnSnapshotMetadata {const MconnSnapshotMetadata({required this.a, required this.t, });
 
-factory MconnSnapshotMetadata.fromJson(Map<String, dynamic> json) { return MconnSnapshotMetadata(
+factory MconnSnapshotMetadata.fromJson(Map<String, dynamic> json) {return MconnSnapshotMetadata(
   a: (json['a'] as num).toDouble(),
   t: (json['t'] as num).toDouble(),
-); }
+);}
 
 /// Time the Snapshot was collected (seconds since the Unix epoch)
 final double a;
@@ -14,16 +14,16 @@ final double a;
 /// Time the Snapshot was recorded (seconds since the Unix epoch)
 final double t;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'a': a,
   't': t,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('a') && json['a'] is num &&
-      json.containsKey('t') && json['t'] is num; } 
-MconnSnapshotMetadata copyWith({double? a, double? t, }) { return MconnSnapshotMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('a') && json['a'] is num &&
+      json.containsKey('t') && json['t'] is num;}
+MconnSnapshotMetadata copyWith({double? a, double? t, }) {return MconnSnapshotMetadata(
   a: a ?? this.a,
   t: t ?? this.t,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotMetadata &&
           a == other.a &&
@@ -33,4 +33,4 @@ MconnSnapshotMetadata copyWith({double? a, double? t, }) { return MconnSnapshotM
 
 @override String toString() => 'MconnSnapshotMetadata(a: $a, t: $t)';
 
- }
+}

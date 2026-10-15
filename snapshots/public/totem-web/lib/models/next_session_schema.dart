@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/meeting_provider_enum.dart';@immutable final class NextSessionSchema {const NextSessionSchema({required this.slug, required this.start, required this.link, required this.title, required this.seatsLeft, required this.duration, required this.meetingProvider, required this.calLink, required this.attending, required this.cancelled, required this.open, required this.joinable, });
 
-factory NextSessionSchema.fromJson(Map<String, dynamic> json) { return NextSessionSchema(
+factory NextSessionSchema.fromJson(Map<String, dynamic> json) {return NextSessionSchema(
   slug: json['slug'] as String,
   start: DateTime.parse(json['start'] as String),
   link: json['link'] as String,
@@ -16,7 +16,7 @@ factory NextSessionSchema.fromJson(Map<String, dynamic> json) { return NextSessi
   cancelled: json['cancelled'] as bool,
   open: json['open'] as bool,
   joinable: json['joinable'] as bool,
-); }
+);}
 
 final String slug;
 
@@ -42,7 +42,7 @@ final bool open;
 
 final bool joinable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'slug': slug,
   'start': start.toIso8601String(),
   'link': link,
@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   'cancelled': cancelled,
   'open': open,
   'joinable': joinable,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('start') && json['start'] is String &&
       json.containsKey('link') && json['link'] is String &&
-      json.containsKey('title') && json['title'] is String &&
+      json.containsKey('title') && (json['title'] == null || json['title'] is String) &&
       json.containsKey('seats_left') && json['seats_left'] is num &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('meeting_provider') &&
@@ -67,8 +67,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug'
       json.containsKey('attending') && json['attending'] is bool &&
       json.containsKey('cancelled') && json['cancelled'] is bool &&
       json.containsKey('open') && json['open'] is bool &&
-      json.containsKey('joinable') && json['joinable'] is bool; } 
-NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String? Function()? title, int? seatsLeft, int? duration, MeetingProviderEnum? meetingProvider, String? calLink, bool? attending, bool? cancelled, bool? open, bool? joinable, }) { return NextSessionSchema(
+      json.containsKey('joinable') && json['joinable'] is bool;}
+NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String? Function()? title, int? seatsLeft, int? duration, MeetingProviderEnum? meetingProvider, String? calLink, bool? attending, bool? cancelled, bool? open, bool? joinable, }) {return NextSessionSchema(
   slug: slug ?? this.slug,
   start: start ?? this.start,
   link: link ?? this.link,
@@ -81,7 +81,7 @@ NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String?
   cancelled: cancelled ?? this.cancelled,
   open: open ?? this.open,
   joinable: joinable ?? this.joinable,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NextSessionSchema &&
           slug == other.slug &&
@@ -101,4 +101,4 @@ NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String?
 
 @override String toString() => 'NextSessionSchema(\n  slug: $slug,\n  start: $start,\n  link: $link,\n  title: $title,\n  seatsLeft: $seatsLeft,\n  duration: $duration,\n  meetingProvider: $meetingProvider,\n  calLink: $calLink,\n  attending: $attending,\n  cancelled: $cancelled,\n  open: $open,\n  joinable: $joinable,\n)';
 
- }
+}

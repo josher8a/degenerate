@@ -80,5 +80,5 @@ late final VideosApi videos = VideosApi(_config);
 
 late final SkillsApi skills = SkillsApi(_config);
 
-PubOpenaiApi withApiKeyAuth(String token) { return PubOpenaiApi(PubOpenaiSecurity.applyApiKeyAuth(_config, token)); } 
- }
+PubOpenaiApi withApiKeyAuth(String token) {return PubOpenaiApi(PubOpenaiSecurity.applyApiKeyAuth(_config, token));}
+}

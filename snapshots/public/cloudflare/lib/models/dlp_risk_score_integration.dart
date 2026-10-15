@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_score_integration_type.dart';@immutable final class DlpRiskScoreIntegration {const DlpRiskScoreIntegration({required this.accountTag, required this.active, required this.createdAt, required this.id, required this.integrationType, required this.referenceId, required this.tenantUrl, required this.wellKnownUrl, });
 
-factory DlpRiskScoreIntegration.fromJson(Map<String, dynamic> json) { return DlpRiskScoreIntegration(
+factory DlpRiskScoreIntegration.fromJson(Map<String, dynamic> json) {return DlpRiskScoreIntegration(
   accountTag: json['account_tag'] as String,
   active: json['active'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -12,7 +12,7 @@ factory DlpRiskScoreIntegration.fromJson(Map<String, dynamic> json) { return Dlp
   referenceId: json['reference_id'] as String,
   tenantUrl: json['tenant_url'] as String,
   wellKnownUrl: json['well_known_url'] as String,
-); }
+);}
 
 /// The Cloudflare account tag.
 final String accountTag;
@@ -39,7 +39,7 @@ final String tenantUrl;
 /// The URL for the Shared Signals Framework configuration, e.g. "/.well-known/sse-configuration/{integration_uuid}/". https://openid.net/specs/openid-sse-framework-1_0.html#rfc.section.6.2.1.
 final String wellKnownUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_tag': accountTag,
   'active': active,
   'created_at': createdAt.toIso8601String(),
@@ -48,16 +48,16 @@ Map<String, dynamic> toJson() { return {
   'reference_id': referenceId,
   'tenant_url': tenantUrl,
   'well_known_url': wellKnownUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_tag') && json['account_tag'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_tag') && json['account_tag'] is String &&
       json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('integration_type') &&
       json.containsKey('reference_id') && json['reference_id'] is String &&
       json.containsKey('tenant_url') && json['tenant_url'] is String &&
-      json.containsKey('well_known_url') && json['well_known_url'] is String; } 
-DlpRiskScoreIntegration copyWith({String? accountTag, bool? active, DateTime? createdAt, String? id, DlpRiskScoreIntegrationType? integrationType, String? referenceId, String? tenantUrl, String? wellKnownUrl, }) { return DlpRiskScoreIntegration(
+      json.containsKey('well_known_url') && json['well_known_url'] is String;}
+DlpRiskScoreIntegration copyWith({String? accountTag, bool? active, DateTime? createdAt, String? id, DlpRiskScoreIntegrationType? integrationType, String? referenceId, String? tenantUrl, String? wellKnownUrl, }) {return DlpRiskScoreIntegration(
   accountTag: accountTag ?? this.accountTag,
   active: active ?? this.active,
   createdAt: createdAt ?? this.createdAt,
@@ -66,7 +66,7 @@ DlpRiskScoreIntegration copyWith({String? accountTag, bool? active, DateTime? cr
   referenceId: referenceId ?? this.referenceId,
   tenantUrl: tenantUrl ?? this.tenantUrl,
   wellKnownUrl: wellKnownUrl ?? this.wellKnownUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRiskScoreIntegration &&
           accountTag == other.accountTag &&
@@ -82,4 +82,4 @@ DlpRiskScoreIntegration copyWith({String? accountTag, bool? active, DateTime? cr
 
 @override String toString() => 'DlpRiskScoreIntegration(accountTag: $accountTag, active: $active, createdAt: $createdAt, id: $id, integrationType: $integrationType, referenceId: $referenceId, tenantUrl: $tenantUrl, wellKnownUrl: $wellKnownUrl)';
 
- }
+}

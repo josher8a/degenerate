@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_group_read_response/members.dart';@immutable final class GetGroupReadResponse {const GetGroupReadResponse({required this.createdAt, required this.description, required this.members, required this.name, required this.updatedAt, required this.uuid, });
 
-factory GetGroupReadResponse.fromJson(Map<String, dynamic> json) { return GetGroupReadResponse(
+factory GetGroupReadResponse.fromJson(Map<String, dynamic> json) {return GetGroupReadResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),
   description: json['description'] as String,
   members: (json['members'] as List<dynamic>).map((e) => Members.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String,
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
-); }
+);}
 
 /// Example: `'2022-04-01T00:00:00Z'`
 final DateTime createdAt;
@@ -29,28 +29,28 @@ final DateTime updatedAt;
 /// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': createdAt.toIso8601String(),
   'description': description,
   'members': members.map((e) => e.toJson()).toList(),
   'name': name,
   'updatedAt': updatedAt.toIso8601String(),
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('createdAt') && json['createdAt'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('members') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-GetGroupReadResponse copyWith({DateTime? createdAt, String? description, List<Members>? members, String? name, DateTime? updatedAt, String? uuid, }) { return GetGroupReadResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+GetGroupReadResponse copyWith({DateTime? createdAt, String? description, List<Members>? members, String? name, DateTime? updatedAt, String? uuid, }) {return GetGroupReadResponse(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   members: members ?? this.members,
   name: name ?? this.name,
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetGroupReadResponse &&
           createdAt == other.createdAt &&
@@ -64,4 +64,4 @@ GetGroupReadResponse copyWith({DateTime? createdAt, String? description, List<Me
 
 @override String toString() => 'GetGroupReadResponse(createdAt: $createdAt, description: $description, members: $members, name: $name, updatedAt: $updatedAt, uuid: $uuid)';
 
- }
+}

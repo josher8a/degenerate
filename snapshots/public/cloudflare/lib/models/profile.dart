@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Profile {const Profile({required this.businessAddress, required this.businessEmail, required this.businessName, required this.businessPhone, required this.externalMetadata, });
 
-factory Profile.fromJson(Map<String, dynamic> json) { return Profile(
+factory Profile.fromJson(Map<String, dynamic> json) {return Profile(
   businessAddress: json['business_address'] as String,
   businessEmail: json['business_email'] as String,
   businessName: json['business_name'] as String,
   businessPhone: json['business_phone'] as String,
   externalMetadata: json['external_metadata'] as String,
-); }
+);}
 
 final String businessAddress;
 
@@ -21,25 +21,25 @@ final String businessPhone;
 
 final String externalMetadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'business_address': businessAddress,
   'business_email': businessEmail,
   'business_name': businessName,
   'business_phone': businessPhone,
   'external_metadata': externalMetadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('business_address') && json['business_address'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('business_address') && json['business_address'] is String &&
       json.containsKey('business_email') && json['business_email'] is String &&
       json.containsKey('business_name') && json['business_name'] is String &&
       json.containsKey('business_phone') && json['business_phone'] is String &&
-      json.containsKey('external_metadata') && json['external_metadata'] is String; } 
-Profile copyWith({String? businessAddress, String? businessEmail, String? businessName, String? businessPhone, String? externalMetadata, }) { return Profile(
+      json.containsKey('external_metadata') && json['external_metadata'] is String;}
+Profile copyWith({String? businessAddress, String? businessEmail, String? businessName, String? businessPhone, String? externalMetadata, }) {return Profile(
   businessAddress: businessAddress ?? this.businessAddress,
   businessEmail: businessEmail ?? this.businessEmail,
   businessName: businessName ?? this.businessName,
   businessPhone: businessPhone ?? this.businessPhone,
   externalMetadata: externalMetadata ?? this.externalMetadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Profile &&
           businessAddress == other.businessAddress &&
@@ -52,4 +52,4 @@ Profile copyWith({String? businessAddress, String? businessEmail, String? busine
 
 @override String toString() => 'Profile(businessAddress: $businessAddress, businessEmail: $businessEmail, businessName: $businessName, businessPhone: $businessPhone, externalMetadata: $externalMetadata)';
 
- }
+}

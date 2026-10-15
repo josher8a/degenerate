@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
 sealed class RecordingEnumStatus {const RecordingEnumStatus();
 
-factory RecordingEnumStatus.fromJson(String json) { return switch (json) {
+factory RecordingEnumStatus.fromJson(String json) {return switch (json) {
   'in-progress' => inProgress,
   'paused' => paused,
   'stopped' => stopped,
@@ -13,7 +13,7 @@ factory RecordingEnumStatus.fromJson(String json) { return switch (json) {
   'absent' => absent,
   'deleted' => deleted,
   _ => RecordingEnumStatus$Unknown(json),
-}; }
+};}
 
 static const RecordingEnumStatus inProgress = RecordingEnumStatus$inProgress._();
 
@@ -32,9 +32,9 @@ static const RecordingEnumStatus deleted = RecordingEnumStatus$deleted._();
 static const List<RecordingEnumStatus> values = [inProgress, paused, stopped, processing, completed, absent, deleted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in-progress' => 'inProgress',
   'paused' => 'paused',
   'stopped' => 'stopped',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'absent' => 'absent',
   'deleted' => 'deleted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RecordingEnumStatus$Unknown; } 
+bool get isUnknown {return this is RecordingEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() paused, required W Function() stopped, required W Function() processing, required W Function() completed, required W Function() absent, required W Function() deleted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() paused, required W Function() stopped, required W Function() processing, required W Function() completed, required W Function() absent, required W Function() deleted, required W Function(String value) $unknown, }) {return switch (this) {
       RecordingEnumStatus$inProgress() => inProgress(),
       RecordingEnumStatus$paused() => paused(),
       RecordingEnumStatus$stopped() => stopped(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() inProgress, required W Function() paused, requi
       RecordingEnumStatus$absent() => absent(),
       RecordingEnumStatus$deleted() => deleted(),
       RecordingEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? paused, W Function()? stopped, W Function()? processing, W Function()? completed, W Function()? absent, W Function()? deleted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? paused, W Function()? stopped, W Function()? processing, W Function()? completed, W Function()? absent, W Function()? deleted, W Function(String value)? $unknown, }) {return switch (this) {
       RecordingEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       RecordingEnumStatus$paused() => paused != null ? paused() : orElse(value),
       RecordingEnumStatus$stopped() => stopped != null ? stopped() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
       RecordingEnumStatus$absent() => absent != null ? absent() : orElse(value),
       RecordingEnumStatus$deleted() => deleted != null ? deleted() : orElse(value),
       RecordingEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RecordingEnumStatus($value)';
 
- }
+}
 @immutable final class RecordingEnumStatus$inProgress extends RecordingEnumStatus {const RecordingEnumStatus$inProgress._();
 
 @override String get value => 'in-progress';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in-progress'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$paused extends RecordingEnumStatus {const RecordingEnumStatus$paused._();
 
 @override String get value => 'paused';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'paused'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$stopped extends RecordingEnumStatus {const RecordingEnumStatus$stopped._();
 
 @override String get value => 'stopped';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'stopped'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$processing extends RecordingEnumStatus {const RecordingEnumStatus$processing._();
 
 @override String get value => 'processing';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$completed extends RecordingEnumStatus {const RecordingEnumStatus$completed._();
 
 @override String get value => 'completed';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$absent extends RecordingEnumStatus {const RecordingEnumStatus$absent._();
 
 @override String get value => 'absent';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'absent'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$deleted extends RecordingEnumStatus {const RecordingEnumStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumStatus$Unknown extends RecordingEnumStatus {const RecordingEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -143,11 +143,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
 sealed class RecordingEnumSource {const RecordingEnumSource();
 
-factory RecordingEnumSource.fromJson(String json) { return switch (json) {
+factory RecordingEnumSource.fromJson(String json) {return switch (json) {
   'DialVerb' => dialVerb,
   'Conference' => conference,
   'OutboundAPI' => outboundApi,
@@ -156,7 +156,7 @@ factory RecordingEnumSource.fromJson(String json) { return switch (json) {
   'StartCallRecordingAPI' => startCallRecordingApi,
   'StartConferenceRecordingAPI' => startConferenceRecordingApi,
   _ => RecordingEnumSource$Unknown(json),
-}; }
+};}
 
 static const RecordingEnumSource dialVerb = RecordingEnumSource$dialVerb._();
 
@@ -175,9 +175,9 @@ static const RecordingEnumSource startConferenceRecordingApi = RecordingEnumSour
 static const List<RecordingEnumSource> values = [dialVerb, conference, outboundApi, trunking, recordVerb, startCallRecordingApi, startConferenceRecordingApi];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DialVerb' => 'dialVerb',
   'Conference' => 'conference',
   'OutboundAPI' => 'outboundApi',
@@ -186,11 +186,11 @@ String get name { return switch (value) {
   'StartCallRecordingAPI' => 'startCallRecordingApi',
   'StartConferenceRecordingAPI' => 'startConferenceRecordingApi',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RecordingEnumSource$Unknown; } 
+bool get isUnknown {return this is RecordingEnumSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dialVerb, required W Function() conference, required W Function() outboundApi, required W Function() trunking, required W Function() recordVerb, required W Function() startCallRecordingApi, required W Function() startConferenceRecordingApi, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dialVerb, required W Function() conference, required W Function() outboundApi, required W Function() trunking, required W Function() recordVerb, required W Function() startCallRecordingApi, required W Function() startConferenceRecordingApi, required W Function(String value) $unknown, }) {return switch (this) {
       RecordingEnumSource$dialVerb() => dialVerb(),
       RecordingEnumSource$conference() => conference(),
       RecordingEnumSource$outboundApi() => outboundApi(),
@@ -199,9 +199,9 @@ W when<W>({required W Function() dialVerb, required W Function() conference, req
       RecordingEnumSource$startCallRecordingApi() => startCallRecordingApi(),
       RecordingEnumSource$startConferenceRecordingApi() => startConferenceRecordingApi(),
       RecordingEnumSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb, W Function()? conference, W Function()? outboundApi, W Function()? trunking, W Function()? recordVerb, W Function()? startCallRecordingApi, W Function()? startConferenceRecordingApi, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb, W Function()? conference, W Function()? outboundApi, W Function()? trunking, W Function()? recordVerb, W Function()? startCallRecordingApi, W Function()? startConferenceRecordingApi, W Function(String value)? $unknown, }) {return switch (this) {
       RecordingEnumSource$dialVerb() => dialVerb != null ? dialVerb() : orElse(value),
       RecordingEnumSource$conference() => conference != null ? conference() : orElse(value),
       RecordingEnumSource$outboundApi() => outboundApi != null ? outboundApi() : orElse(value),
@@ -210,10 +210,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
       RecordingEnumSource$startCallRecordingApi() => startCallRecordingApi != null ? startCallRecordingApi() : orElse(value),
       RecordingEnumSource$startConferenceRecordingApi() => startConferenceRecordingApi != null ? startConferenceRecordingApi() : orElse(value),
       RecordingEnumSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RecordingEnumSource($value)';
 
- }
+}
 @immutable final class RecordingEnumSource$dialVerb extends RecordingEnumSource {const RecordingEnumSource$dialVerb._();
 
 @override String get value => 'DialVerb';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'DialVerb'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$conference extends RecordingEnumSource {const RecordingEnumSource$conference._();
 
 @override String get value => 'Conference';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'Conference'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$outboundApi extends RecordingEnumSource {const RecordingEnumSource$outboundApi._();
 
 @override String get value => 'OutboundAPI';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'OutboundAPI'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$trunking extends RecordingEnumSource {const RecordingEnumSource$trunking._();
 
 @override String get value => 'Trunking';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'Trunking'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$recordVerb extends RecordingEnumSource {const RecordingEnumSource$recordVerb._();
 
 @override String get value => 'RecordVerb';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'RecordVerb'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$startCallRecordingApi extends RecordingEnumSource {const RecordingEnumSource$startCallRecordingApi._();
 
 @override String get value => 'StartCallRecordingAPI';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'StartCallRecordingAPI'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$startConferenceRecordingApi extends RecordingEnumSource {const RecordingEnumSource$startConferenceRecordingApi._();
 
 @override String get value => 'StartConferenceRecordingAPI';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'StartConferenceRecordingAPI'.hashCode;
 
- }
+}
 @immutable final class RecordingEnumSource$Unknown extends RecordingEnumSource {const RecordingEnumSource$Unknown(this.value);
 
 @override final String value;
@@ -286,156 +286,156 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class AccountRecording {const AccountRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels, this.source, this.errorCode, this.uri, this.encryptionDetails, this.subresourceUris, this.mediaUrl, });
+}
+@immutable final class AccountRecording {const AccountRecording({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.startTime = const Omittable.absent(), this.duration = const Omittable.absent(), this.sid = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.status, this.channels = const Omittable.absent(), this.source, this.errorCode = const Omittable.absent(), this.uri = const Omittable.absent(), this.encryptionDetails = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.mediaUrl = const Omittable.absent(), });
 
-factory AccountRecording.fromJson(Map<String, dynamic> json) { return AccountRecording(
-  accountSid: json['account_sid'] as String?,
-  apiVersion: json['api_version'] as String?,
-  callSid: json['call_sid'] as String?,
-  conferenceSid: json['conference_sid'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  startTime: json['start_time'] as String?,
-  duration: json['duration'] as String?,
-  sid: json['sid'] as String?,
-  price: json['price'] as String?,
-  priceUnit: json['price_unit'] as String?,
+factory AccountRecording.fromJson(Map<String, dynamic> json) {return AccountRecording(
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
+  conferenceSid: json.containsKey('conference_sid') ? Omittable(json['conference_sid'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  startTime: json.containsKey('start_time') ? Omittable(json['start_time'] as String?) : const Omittable.absent(),
+  duration: json.containsKey('duration') ? Omittable(json['duration'] as String?) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  price: json.containsKey('price') ? Omittable(json['price'] as String?) : const Omittable.absent(),
+  priceUnit: json.containsKey('price_unit') ? Omittable(json['price_unit'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? RecordingEnumStatus.fromJson(json['status'] as String) : null,
-  channels: json['channels'] != null ? (json['channels'] as num).toInt() : null,
+  channels: json.containsKey('channels') ? Omittable(json['channels'] != null ? (json['channels'] as num).toInt() : null) : const Omittable.absent(),
   source: json['source'] != null ? RecordingEnumSource.fromJson(json['source'] as String) : null,
-  errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
-  uri: json['uri'] as String?,
-  encryptionDetails: json['encryption_details'],
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
-  mediaUrl: json['media_url'] != null ? Uri.parse(json['media_url'] as String) : null,
-); }
+  errorCode: json.containsKey('error_code') ? Omittable(json['error_code'] != null ? (json['error_code'] as num).toInt() : null) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
+  encryptionDetails: json.containsKey('encryption_details') ? Omittable(json['encryption_details']) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
+  mediaUrl: json.containsKey('media_url') ? Omittable(json['media_url'] != null ? Uri.parse(json['media_url'] as String) : null) : const Omittable.absent(),
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The API version used during the recording.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Recording resource is associated with. This will always refer to the parent leg of a two-leg call.
-final String? callSid;
+final Omittable<String?> callSid;
 
 /// The Conference SID that identifies the conference associated with the recording, if a conference recording.
-final String? conferenceSid;
+final Omittable<String?> conferenceSid;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The start time of the recording in GMT and in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.
-final String? startTime;
+final Omittable<String?> startTime;
 
 /// The length of the recording in seconds.
-final String? duration;
+final Omittable<String?> duration;
 
 /// The unique string that that we created to identify the Recording resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The one-time cost of creating the recording in the `price_unit` currency.
-final String? price;
+final Omittable<String?> price;
 
 /// The currency used in the `price` property. Example: `USD`.
-final String? priceUnit;
+final Omittable<String?> priceUnit;
 
 final RecordingEnumStatus? status;
 
 /// The number of channels in the recording resource. For information on specifying the number of channels in the downloaded recording file, check out [Fetch a Recording’s media file](https://www.twilio.com/docs/voice/api/recording#download-dual-channel-media-file).
-final int? channels;
+final Omittable<int?> channels;
 
 final RecordingEnumSource? source;
 
 /// The error code that describes why the recording is `absent`. The error code is described in our [Error Dictionary](https://www.twilio.com/docs/api/errors). This value is null if the recording `status` is not `absent`.
-final int? errorCode;
+final Omittable<int?> errorCode;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// How to decrypt the recording if it was encrypted using [Call Recording Encryption](https://www.twilio.com/docs/voice/tutorials/voice-recording-encryption) feature.
-final dynamic encryptionDetails;
+final Omittable<dynamic> encryptionDetails;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 /// The URL of the media file associated with this recording resource. When stored externally, this is the full URL location of the media file.
-final Uri? mediaUrl;
+final Omittable<Uri?> mediaUrl;
 
-Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'api_version': ?apiVersion,
-  'call_sid': ?callSid,
-  'conference_sid': ?conferenceSid,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'start_time': ?startTime,
-  'duration': ?duration,
-  'sid': ?sid,
-  'price': ?price,
-  'price_unit': ?priceUnit,
+Map<String, dynamic> toJson() {return {
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (callSid.isPresent) 'call_sid': callSid.value,
+  if (conferenceSid.isPresent) 'conference_sid': conferenceSid.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (startTime.isPresent) 'start_time': startTime.value,
+  if (duration.isPresent) 'duration': duration.value,
+  if (sid.isPresent) 'sid': sid.value,
+  if (price.isPresent) 'price': price.value,
+  if (priceUnit.isPresent) 'price_unit': priceUnit.value,
   if (status != null) 'status': status?.toJson(),
-  'channels': ?channels,
+  if (channels.isPresent) 'channels': channels.value,
   if (source != null) 'source': source?.toJson(),
-  'error_code': ?errorCode,
-  'uri': ?uri,
-  'encryption_details': ?encryptionDetails,
-  'subresource_uris': ?subresourceUris,
-  if (mediaUrl != null) 'media_url': mediaUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'price_unit', 'status', 'channels', 'source', 'error_code', 'uri', 'encryption_details', 'subresource_uris', 'media_url'}.contains(key)); } 
+  if (errorCode.isPresent) 'error_code': errorCode.value,
+  if (uri.isPresent) 'uri': uri.value,
+  if (encryptionDetails.isPresent) 'encryption_details': encryptionDetails.value,
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
+  if (mediaUrl.isPresent) 'media_url': mediaUrl.value?.toString(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'price_unit', 'status', 'channels', 'source', 'error_code', 'uri', 'encryption_details', 'subresource_uris', 'media_url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final accountSid$ = accountSid;
+List<String> validate() {final errors = <String>[];
+final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
   if (accountSid$.runes.length > 34) { errors.add('accountSid: length must be <= 34'); }
   if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) { errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
-final callSid$ = callSid;
+final callSid$ = callSid.value;
 if (callSid$ != null) {
   if (callSid$.runes.length < 34) { errors.add('callSid: length must be >= 34'); }
   if (callSid$.runes.length > 34) { errors.add('callSid: length must be <= 34'); }
   if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSid$)) { errors.add(r'callSid: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
-final conferenceSid$ = conferenceSid;
+final conferenceSid$ = conferenceSid.value;
 if (conferenceSid$ != null) {
   if (conferenceSid$.runes.length < 34) { errors.add('conferenceSid: length must be >= 34'); }
   if (conferenceSid$.runes.length > 34) { errors.add('conferenceSid: length must be <= 34'); }
   if (!RegExp(r'^CF[0-9a-fA-F]{32}$').hasMatch(conferenceSid$)) { errors.add(r'conferenceSid: must match pattern ^CF[0-9a-fA-F]{32}$'); }
 }
-final sid$ = sid;
+final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^RE[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, RecordingEnumStatus? Function()? status, int? Function()? channels, RecordingEnumSource? Function()? source, int? Function()? errorCode, String? Function()? uri, dynamic Function()? encryptionDetails, Map<String, dynamic>? Function()? subresourceUris, Uri? Function()? mediaUrl, }) { return AccountRecording(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  callSid: callSid != null ? callSid() : this.callSid,
-  conferenceSid: conferenceSid != null ? conferenceSid() : this.conferenceSid,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  startTime: startTime != null ? startTime() : this.startTime,
-  duration: duration != null ? duration() : this.duration,
-  sid: sid != null ? sid() : this.sid,
-  price: price != null ? price() : this.price,
-  priceUnit: priceUnit != null ? priceUnit() : this.priceUnit,
+return errors;}
+AccountRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<String?>? price, Omittable<String?>? priceUnit, RecordingEnumStatus? Function()? status, Omittable<int?>? channels, RecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<String?>? uri, Omittable<dynamic>? encryptionDetails, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<Uri?>? mediaUrl, }) {return AccountRecording(
+  accountSid: accountSid ?? this.accountSid,
+  apiVersion: apiVersion ?? this.apiVersion,
+  callSid: callSid ?? this.callSid,
+  conferenceSid: conferenceSid ?? this.conferenceSid,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  startTime: startTime ?? this.startTime,
+  duration: duration ?? this.duration,
+  sid: sid ?? this.sid,
+  price: price ?? this.price,
+  priceUnit: priceUnit ?? this.priceUnit,
   status: status != null ? status() : this.status,
-  channels: channels != null ? channels() : this.channels,
+  channels: channels ?? this.channels,
   source: source != null ? source() : this.source,
-  errorCode: errorCode != null ? errorCode() : this.errorCode,
-  uri: uri != null ? uri() : this.uri,
-  encryptionDetails: encryptionDetails != null ? encryptionDetails() : this.encryptionDetails,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
-  mediaUrl: mediaUrl != null ? mediaUrl() : this.mediaUrl,
-); } 
+  errorCode: errorCode ?? this.errorCode,
+  uri: uri ?? this.uri,
+  encryptionDetails: encryptionDetails ?? this.encryptionDetails,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
+  mediaUrl: mediaUrl ?? this.mediaUrl,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecording &&
           accountSid == other.accountSid &&
@@ -462,4 +462,4 @@ AccountRecording copyWith({String? Function()? accountSid, String? Function()? a
 
 @override String toString() => 'AccountRecording(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callSid: $callSid,\n  conferenceSid: $conferenceSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  startTime: $startTime,\n  duration: $duration,\n  sid: $sid,\n  price: $price,\n  priceUnit: $priceUnit,\n  status: $status,\n  channels: $channels,\n  source: $source,\n  errorCode: $errorCode,\n  uri: $uri,\n  encryptionDetails: $encryptionDetails,\n  subresourceUris: $subresourceUris,\n  mediaUrl: $mediaUrl,\n)';
 
- }
+}

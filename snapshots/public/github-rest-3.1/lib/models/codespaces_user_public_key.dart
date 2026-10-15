@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting user Codespaces' Secrets.
 @immutable final class CodespacesUserPublicKey {const CodespacesUserPublicKey({required this.keyId, required this.key, });
 
-factory CodespacesUserPublicKey.fromJson(Map<String, dynamic> json) { return CodespacesUserPublicKey(
+factory CodespacesUserPublicKey.fromJson(Map<String, dynamic> json) {return CodespacesUserPublicKey(
   keyId: json['key_id'] as String,
   key: json['key'] as String,
-); }
+);}
 
 /// The identifier for the key.
 final String keyId;
@@ -15,16 +15,16 @@ final String keyId;
 /// The Base64 encoded public key.
 final String key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key_id': keyId,
   'key': key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
-      json.containsKey('key') && json['key'] is String; } 
-CodespacesUserPublicKey copyWith({String? keyId, String? key, }) { return CodespacesUserPublicKey(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_id') && json['key_id'] is String &&
+      json.containsKey('key') && json['key'] is String;}
+CodespacesUserPublicKey copyWith({String? keyId, String? key, }) {return CodespacesUserPublicKey(
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesUserPublicKey &&
           keyId == other.keyId &&
@@ -34,4 +34,4 @@ CodespacesUserPublicKey copyWith({String? keyId, String? key, }) { return Codesp
 
 @override String toString() => 'CodespacesUserPublicKey(keyId: $keyId, key: $key)';
 
- }
+}

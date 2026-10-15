@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner.dart';@immutable final class ActionsGenerateRunnerJitconfigForOrgResponse {const ActionsGenerateRunnerJitconfigForOrgResponse({required this.runner, required this.encodedJitConfig, });
 
-factory ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForOrgResponse(
+factory ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsGenerateRunnerJitconfigForOrgResponse(
   runner: Runner.fromJson(json['runner'] as Map<String, dynamic>),
   encodedJitConfig: json['encoded_jit_config'] as String,
-); }
+);}
 
 final Runner runner;
 
 /// The base64 encoded runner configuration.
 final String encodedJitConfig;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'runner': runner.toJson(),
   'encoded_jit_config': encodedJitConfig,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('runner') &&
-      json.containsKey('encoded_jit_config') && json['encoded_jit_config'] is String; } 
-ActionsGenerateRunnerJitconfigForOrgResponse copyWith({Runner? runner, String? encodedJitConfig, }) { return ActionsGenerateRunnerJitconfigForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('runner') &&
+      json.containsKey('encoded_jit_config') && json['encoded_jit_config'] is String;}
+ActionsGenerateRunnerJitconfigForOrgResponse copyWith({Runner? runner, String? encodedJitConfig, }) {return ActionsGenerateRunnerJitconfigForOrgResponse(
   runner: runner ?? this.runner,
   encodedJitConfig: encodedJitConfig ?? this.encodedJitConfig,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGenerateRunnerJitconfigForOrgResponse &&
           runner == other.runner &&
@@ -32,4 +32,4 @@ ActionsGenerateRunnerJitconfigForOrgResponse copyWith({Runner? runner, String? e
 
 @override String toString() => 'ActionsGenerateRunnerJitconfigForOrgResponse(runner: $runner, encodedJitConfig: $encodedJitConfig)';
 
- }
+}

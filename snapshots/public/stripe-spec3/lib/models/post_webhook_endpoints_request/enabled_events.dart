@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EnabledEvents {const EnabledEvents();
 
-factory EnabledEvents.fromJson(String json) { return switch (json) {
+factory EnabledEvents.fromJson(String json) {return switch (json) {
   '*' => $empty,
   'account.application.authorized' => accountApplicationAuthorized,
   'account.application.deauthorized' => accountApplicationDeauthorized,
@@ -260,7 +260,7 @@ factory EnabledEvents.fromJson(String json) { return switch (json) {
   'treasury.received_credit.succeeded' => treasuryReceivedCreditSucceeded,
   'treasury.received_debit.created' => treasuryReceivedDebitCreated,
   _ => EnabledEvents$Unknown(json),
-}; }
+};}
 
 static const EnabledEvents $empty = EnabledEvents$$empty._();
 
@@ -775,9 +775,9 @@ static const EnabledEvents treasuryReceivedDebitCreated = EnabledEvents$treasury
 static const List<EnabledEvents> values = [$empty, accountApplicationAuthorized, accountApplicationDeauthorized, accountExternalAccountCreated, accountExternalAccountDeleted, accountExternalAccountUpdated, accountUpdated, applicationFeeCreated, applicationFeeRefundUpdated, applicationFeeRefunded, balanceAvailable, balanceSettingsUpdated, billingAlertTriggered, billingCreditGrantCreated, billingPortalConfigurationCreated, billingPortalConfigurationUpdated, billingPortalSessionCreated, capabilityUpdated, cashBalanceFundsAvailable, chargeCaptured, chargeDisputeClosed, chargeDisputeCreated, chargeDisputeFundsReinstated, chargeDisputeFundsWithdrawn, chargeDisputeUpdated, chargeExpired, chargeFailed, chargePending, chargeRefundUpdated, chargeRefunded, chargeSucceeded, chargeUpdated, checkoutSessionAsyncPaymentFailed, checkoutSessionAsyncPaymentSucceeded, checkoutSessionCompleted, checkoutSessionExpired, climateOrderCanceled, climateOrderCreated, climateOrderDelayed, climateOrderDelivered, climateOrderProductSubstituted, climateProductCreated, climateProductPricingUpdated, couponCreated, couponDeleted, couponUpdated, creditNoteCreated, creditNoteUpdated, creditNoteVoided, customerCreated, customerDeleted, customerDiscountCreated, customerDiscountDeleted, customerDiscountUpdated, customerSourceCreated, customerSourceDeleted, customerSourceExpiring, customerSourceUpdated, customerSubscriptionCreated, customerSubscriptionDeleted, customerSubscriptionPaused, customerSubscriptionPendingUpdateApplied, customerSubscriptionPendingUpdateExpired, customerSubscriptionResumed, customerSubscriptionTrialWillEnd, customerSubscriptionUpdated, customerTaxIdCreated, customerTaxIdDeleted, customerTaxIdUpdated, customerUpdated, customerCashBalanceTransactionCreated, entitlementsActiveEntitlementSummaryUpdated, fileCreated, financialConnectionsAccountAccountNumbersUpdated, financialConnectionsAccountCreated, financialConnectionsAccountDeactivated, financialConnectionsAccountDisconnected, financialConnectionsAccountReactivated, financialConnectionsAccountRefreshedBalance, financialConnectionsAccountRefreshedOwnership, financialConnectionsAccountRefreshedTransactions, financialConnectionsAccountUpcomingAccountNumberExpiry, identityVerificationSessionCanceled, identityVerificationSessionCreated, identityVerificationSessionProcessing, identityVerificationSessionRedacted, identityVerificationSessionRequiresInput, identityVerificationSessionVerified, invoiceCreated, invoiceDeleted, invoiceFinalizationFailed, invoiceFinalized, invoiceMarkedUncollectible, invoiceOverdue, invoiceOverpaid, invoicePaid, invoicePaymentActionRequired, invoicePaymentAttemptRequired, invoicePaymentFailed, invoicePaymentSucceeded, invoiceSent, invoiceUpcoming, invoiceUpdated, invoiceVoided, invoiceWillBeDue, invoicePaymentPaid, invoiceitemCreated, invoiceitemDeleted, issuingAuthorizationCreated, issuingAuthorizationRequest, issuingAuthorizationUpdated, issuingCardCreated, issuingCardUpdated, issuingCardholderCreated, issuingCardholderUpdated, issuingDisputeClosed, issuingDisputeCreated, issuingDisputeFundsReinstated, issuingDisputeFundsRescinded, issuingDisputeSubmitted, issuingDisputeUpdated, issuingPersonalizationDesignActivated, issuingPersonalizationDesignDeactivated, issuingPersonalizationDesignRejected, issuingPersonalizationDesignUpdated, issuingTokenCreated, issuingTokenUpdated, issuingTransactionCreated, issuingTransactionPurchaseDetailsReceiptUpdated, issuingTransactionUpdated, mandateUpdated, paymentIntentAmountCapturableUpdated, paymentIntentCanceled, paymentIntentCreated, paymentIntentPartiallyFunded, paymentIntentPaymentFailed, paymentIntentProcessing, paymentIntentRequiresAction, paymentIntentSucceeded, paymentLinkCreated, paymentLinkUpdated, paymentMethodAttached, paymentMethodAutomaticallyUpdated, paymentMethodDetached, paymentMethodUpdated, payoutCanceled, payoutCreated, payoutFailed, payoutPaid, payoutReconciliationCompleted, payoutUpdated, personCreated, personDeleted, personUpdated, planCreated, planDeleted, planUpdated, priceCreated, priceDeleted, priceUpdated, productCreated, productDeleted, productUpdated, promotionCodeCreated, promotionCodeUpdated, quoteAccepted, quoteCanceled, quoteCreated, quoteFinalized, radarEarlyFraudWarningCreated, radarEarlyFraudWarningUpdated, refundCreated, refundFailed, refundUpdated, reportingReportRunFailed, reportingReportRunSucceeded, reportingReportTypeUpdated, reserveHoldCreated, reserveHoldUpdated, reservePlanCreated, reservePlanDisabled, reservePlanExpired, reservePlanUpdated, reserveReleaseCreated, reviewClosed, reviewOpened, setupIntentCanceled, setupIntentCreated, setupIntentRequiresAction, setupIntentSetupFailed, setupIntentSucceeded, sigmaScheduledQueryRunCreated, sourceCanceled, sourceChargeable, sourceFailed, sourceMandateNotification, sourceRefundAttributesRequired, sourceTransactionCreated, sourceTransactionUpdated, subscriptionScheduleAborted, subscriptionScheduleCanceled, subscriptionScheduleCompleted, subscriptionScheduleCreated, subscriptionScheduleExpiring, subscriptionScheduleReleased, subscriptionScheduleUpdated, taxSettingsUpdated, taxRateCreated, taxRateUpdated, terminalReaderActionFailed, terminalReaderActionSucceeded, terminalReaderActionUpdated, testHelpersTestClockAdvancing, testHelpersTestClockCreated, testHelpersTestClockDeleted, testHelpersTestClockInternalFailure, testHelpersTestClockReady, topupCanceled, topupCreated, topupFailed, topupReversed, topupSucceeded, transferCreated, transferReversed, transferUpdated, treasuryCreditReversalCreated, treasuryCreditReversalPosted, treasuryDebitReversalCompleted, treasuryDebitReversalCreated, treasuryDebitReversalInitialCreditGranted, treasuryFinancialAccountClosed, treasuryFinancialAccountCreated, treasuryFinancialAccountFeaturesStatusUpdated, treasuryInboundTransferCanceled, treasuryInboundTransferCreated, treasuryInboundTransferFailed, treasuryInboundTransferSucceeded, treasuryOutboundPaymentCanceled, treasuryOutboundPaymentCreated, treasuryOutboundPaymentExpectedArrivalDateUpdated, treasuryOutboundPaymentFailed, treasuryOutboundPaymentPosted, treasuryOutboundPaymentReturned, treasuryOutboundPaymentTrackingDetailsUpdated, treasuryOutboundTransferCanceled, treasuryOutboundTransferCreated, treasuryOutboundTransferExpectedArrivalDateUpdated, treasuryOutboundTransferFailed, treasuryOutboundTransferPosted, treasuryOutboundTransferReturned, treasuryOutboundTransferTrackingDetailsUpdated, treasuryReceivedCreditCreated, treasuryReceivedCreditFailed, treasuryReceivedCreditSucceeded, treasuryReceivedDebitCreated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '*' => r'$empty',
   'account.application.authorized' => 'accountApplicationAuthorized',
   'account.application.deauthorized' => 'accountApplicationDeauthorized',
@@ -1034,11 +1034,11 @@ String get name { return switch (value) {
   'treasury.received_credit.succeeded' => 'treasuryReceivedCreditSucceeded',
   'treasury.received_debit.created' => 'treasuryReceivedDebitCreated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnabledEvents$Unknown; } 
+bool get isUnknown {return this is EnabledEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() accountApplicationAuthorized, required W Function() accountApplicationDeauthorized, required W Function() accountExternalAccountCreated, required W Function() accountExternalAccountDeleted, required W Function() accountExternalAccountUpdated, required W Function() accountUpdated, required W Function() applicationFeeCreated, required W Function() applicationFeeRefundUpdated, required W Function() applicationFeeRefunded, required W Function() balanceAvailable, required W Function() balanceSettingsUpdated, required W Function() billingAlertTriggered, required W Function() billingCreditGrantCreated, required W Function() billingPortalConfigurationCreated, required W Function() billingPortalConfigurationUpdated, required W Function() billingPortalSessionCreated, required W Function() capabilityUpdated, required W Function() cashBalanceFundsAvailable, required W Function() chargeCaptured, required W Function() chargeDisputeClosed, required W Function() chargeDisputeCreated, required W Function() chargeDisputeFundsReinstated, required W Function() chargeDisputeFundsWithdrawn, required W Function() chargeDisputeUpdated, required W Function() chargeExpired, required W Function() chargeFailed, required W Function() chargePending, required W Function() chargeRefundUpdated, required W Function() chargeRefunded, required W Function() chargeSucceeded, required W Function() chargeUpdated, required W Function() checkoutSessionAsyncPaymentFailed, required W Function() checkoutSessionAsyncPaymentSucceeded, required W Function() checkoutSessionCompleted, required W Function() checkoutSessionExpired, required W Function() climateOrderCanceled, required W Function() climateOrderCreated, required W Function() climateOrderDelayed, required W Function() climateOrderDelivered, required W Function() climateOrderProductSubstituted, required W Function() climateProductCreated, required W Function() climateProductPricingUpdated, required W Function() couponCreated, required W Function() couponDeleted, required W Function() couponUpdated, required W Function() creditNoteCreated, required W Function() creditNoteUpdated, required W Function() creditNoteVoided, required W Function() customerCreated, required W Function() customerDeleted, required W Function() customerDiscountCreated, required W Function() customerDiscountDeleted, required W Function() customerDiscountUpdated, required W Function() customerSourceCreated, required W Function() customerSourceDeleted, required W Function() customerSourceExpiring, required W Function() customerSourceUpdated, required W Function() customerSubscriptionCreated, required W Function() customerSubscriptionDeleted, required W Function() customerSubscriptionPaused, required W Function() customerSubscriptionPendingUpdateApplied, required W Function() customerSubscriptionPendingUpdateExpired, required W Function() customerSubscriptionResumed, required W Function() customerSubscriptionTrialWillEnd, required W Function() customerSubscriptionUpdated, required W Function() customerTaxIdCreated, required W Function() customerTaxIdDeleted, required W Function() customerTaxIdUpdated, required W Function() customerUpdated, required W Function() customerCashBalanceTransactionCreated, required W Function() entitlementsActiveEntitlementSummaryUpdated, required W Function() fileCreated, required W Function() financialConnectionsAccountAccountNumbersUpdated, required W Function() financialConnectionsAccountCreated, required W Function() financialConnectionsAccountDeactivated, required W Function() financialConnectionsAccountDisconnected, required W Function() financialConnectionsAccountReactivated, required W Function() financialConnectionsAccountRefreshedBalance, required W Function() financialConnectionsAccountRefreshedOwnership, required W Function() financialConnectionsAccountRefreshedTransactions, required W Function() financialConnectionsAccountUpcomingAccountNumberExpiry, required W Function() identityVerificationSessionCanceled, required W Function() identityVerificationSessionCreated, required W Function() identityVerificationSessionProcessing, required W Function() identityVerificationSessionRedacted, required W Function() identityVerificationSessionRequiresInput, required W Function() identityVerificationSessionVerified, required W Function() invoiceCreated, required W Function() invoiceDeleted, required W Function() invoiceFinalizationFailed, required W Function() invoiceFinalized, required W Function() invoiceMarkedUncollectible, required W Function() invoiceOverdue, required W Function() invoiceOverpaid, required W Function() invoicePaid, required W Function() invoicePaymentActionRequired, required W Function() invoicePaymentAttemptRequired, required W Function() invoicePaymentFailed, required W Function() invoicePaymentSucceeded, required W Function() invoiceSent, required W Function() invoiceUpcoming, required W Function() invoiceUpdated, required W Function() invoiceVoided, required W Function() invoiceWillBeDue, required W Function() invoicePaymentPaid, required W Function() invoiceitemCreated, required W Function() invoiceitemDeleted, required W Function() issuingAuthorizationCreated, required W Function() issuingAuthorizationRequest, required W Function() issuingAuthorizationUpdated, required W Function() issuingCardCreated, required W Function() issuingCardUpdated, required W Function() issuingCardholderCreated, required W Function() issuingCardholderUpdated, required W Function() issuingDisputeClosed, required W Function() issuingDisputeCreated, required W Function() issuingDisputeFundsReinstated, required W Function() issuingDisputeFundsRescinded, required W Function() issuingDisputeSubmitted, required W Function() issuingDisputeUpdated, required W Function() issuingPersonalizationDesignActivated, required W Function() issuingPersonalizationDesignDeactivated, required W Function() issuingPersonalizationDesignRejected, required W Function() issuingPersonalizationDesignUpdated, required W Function() issuingTokenCreated, required W Function() issuingTokenUpdated, required W Function() issuingTransactionCreated, required W Function() issuingTransactionPurchaseDetailsReceiptUpdated, required W Function() issuingTransactionUpdated, required W Function() mandateUpdated, required W Function() paymentIntentAmountCapturableUpdated, required W Function() paymentIntentCanceled, required W Function() paymentIntentCreated, required W Function() paymentIntentPartiallyFunded, required W Function() paymentIntentPaymentFailed, required W Function() paymentIntentProcessing, required W Function() paymentIntentRequiresAction, required W Function() paymentIntentSucceeded, required W Function() paymentLinkCreated, required W Function() paymentLinkUpdated, required W Function() paymentMethodAttached, required W Function() paymentMethodAutomaticallyUpdated, required W Function() paymentMethodDetached, required W Function() paymentMethodUpdated, required W Function() payoutCanceled, required W Function() payoutCreated, required W Function() payoutFailed, required W Function() payoutPaid, required W Function() payoutReconciliationCompleted, required W Function() payoutUpdated, required W Function() personCreated, required W Function() personDeleted, required W Function() personUpdated, required W Function() planCreated, required W Function() planDeleted, required W Function() planUpdated, required W Function() priceCreated, required W Function() priceDeleted, required W Function() priceUpdated, required W Function() productCreated, required W Function() productDeleted, required W Function() productUpdated, required W Function() promotionCodeCreated, required W Function() promotionCodeUpdated, required W Function() quoteAccepted, required W Function() quoteCanceled, required W Function() quoteCreated, required W Function() quoteFinalized, required W Function() radarEarlyFraudWarningCreated, required W Function() radarEarlyFraudWarningUpdated, required W Function() refundCreated, required W Function() refundFailed, required W Function() refundUpdated, required W Function() reportingReportRunFailed, required W Function() reportingReportRunSucceeded, required W Function() reportingReportTypeUpdated, required W Function() reserveHoldCreated, required W Function() reserveHoldUpdated, required W Function() reservePlanCreated, required W Function() reservePlanDisabled, required W Function() reservePlanExpired, required W Function() reservePlanUpdated, required W Function() reserveReleaseCreated, required W Function() reviewClosed, required W Function() reviewOpened, required W Function() setupIntentCanceled, required W Function() setupIntentCreated, required W Function() setupIntentRequiresAction, required W Function() setupIntentSetupFailed, required W Function() setupIntentSucceeded, required W Function() sigmaScheduledQueryRunCreated, required W Function() sourceCanceled, required W Function() sourceChargeable, required W Function() sourceFailed, required W Function() sourceMandateNotification, required W Function() sourceRefundAttributesRequired, required W Function() sourceTransactionCreated, required W Function() sourceTransactionUpdated, required W Function() subscriptionScheduleAborted, required W Function() subscriptionScheduleCanceled, required W Function() subscriptionScheduleCompleted, required W Function() subscriptionScheduleCreated, required W Function() subscriptionScheduleExpiring, required W Function() subscriptionScheduleReleased, required W Function() subscriptionScheduleUpdated, required W Function() taxSettingsUpdated, required W Function() taxRateCreated, required W Function() taxRateUpdated, required W Function() terminalReaderActionFailed, required W Function() terminalReaderActionSucceeded, required W Function() terminalReaderActionUpdated, required W Function() testHelpersTestClockAdvancing, required W Function() testHelpersTestClockCreated, required W Function() testHelpersTestClockDeleted, required W Function() testHelpersTestClockInternalFailure, required W Function() testHelpersTestClockReady, required W Function() topupCanceled, required W Function() topupCreated, required W Function() topupFailed, required W Function() topupReversed, required W Function() topupSucceeded, required W Function() transferCreated, required W Function() transferReversed, required W Function() transferUpdated, required W Function() treasuryCreditReversalCreated, required W Function() treasuryCreditReversalPosted, required W Function() treasuryDebitReversalCompleted, required W Function() treasuryDebitReversalCreated, required W Function() treasuryDebitReversalInitialCreditGranted, required W Function() treasuryFinancialAccountClosed, required W Function() treasuryFinancialAccountCreated, required W Function() treasuryFinancialAccountFeaturesStatusUpdated, required W Function() treasuryInboundTransferCanceled, required W Function() treasuryInboundTransferCreated, required W Function() treasuryInboundTransferFailed, required W Function() treasuryInboundTransferSucceeded, required W Function() treasuryOutboundPaymentCanceled, required W Function() treasuryOutboundPaymentCreated, required W Function() treasuryOutboundPaymentExpectedArrivalDateUpdated, required W Function() treasuryOutboundPaymentFailed, required W Function() treasuryOutboundPaymentPosted, required W Function() treasuryOutboundPaymentReturned, required W Function() treasuryOutboundPaymentTrackingDetailsUpdated, required W Function() treasuryOutboundTransferCanceled, required W Function() treasuryOutboundTransferCreated, required W Function() treasuryOutboundTransferExpectedArrivalDateUpdated, required W Function() treasuryOutboundTransferFailed, required W Function() treasuryOutboundTransferPosted, required W Function() treasuryOutboundTransferReturned, required W Function() treasuryOutboundTransferTrackingDetailsUpdated, required W Function() treasuryReceivedCreditCreated, required W Function() treasuryReceivedCreditFailed, required W Function() treasuryReceivedCreditSucceeded, required W Function() treasuryReceivedDebitCreated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() accountApplicationAuthorized, required W Function() accountApplicationDeauthorized, required W Function() accountExternalAccountCreated, required W Function() accountExternalAccountDeleted, required W Function() accountExternalAccountUpdated, required W Function() accountUpdated, required W Function() applicationFeeCreated, required W Function() applicationFeeRefundUpdated, required W Function() applicationFeeRefunded, required W Function() balanceAvailable, required W Function() balanceSettingsUpdated, required W Function() billingAlertTriggered, required W Function() billingCreditGrantCreated, required W Function() billingPortalConfigurationCreated, required W Function() billingPortalConfigurationUpdated, required W Function() billingPortalSessionCreated, required W Function() capabilityUpdated, required W Function() cashBalanceFundsAvailable, required W Function() chargeCaptured, required W Function() chargeDisputeClosed, required W Function() chargeDisputeCreated, required W Function() chargeDisputeFundsReinstated, required W Function() chargeDisputeFundsWithdrawn, required W Function() chargeDisputeUpdated, required W Function() chargeExpired, required W Function() chargeFailed, required W Function() chargePending, required W Function() chargeRefundUpdated, required W Function() chargeRefunded, required W Function() chargeSucceeded, required W Function() chargeUpdated, required W Function() checkoutSessionAsyncPaymentFailed, required W Function() checkoutSessionAsyncPaymentSucceeded, required W Function() checkoutSessionCompleted, required W Function() checkoutSessionExpired, required W Function() climateOrderCanceled, required W Function() climateOrderCreated, required W Function() climateOrderDelayed, required W Function() climateOrderDelivered, required W Function() climateOrderProductSubstituted, required W Function() climateProductCreated, required W Function() climateProductPricingUpdated, required W Function() couponCreated, required W Function() couponDeleted, required W Function() couponUpdated, required W Function() creditNoteCreated, required W Function() creditNoteUpdated, required W Function() creditNoteVoided, required W Function() customerCreated, required W Function() customerDeleted, required W Function() customerDiscountCreated, required W Function() customerDiscountDeleted, required W Function() customerDiscountUpdated, required W Function() customerSourceCreated, required W Function() customerSourceDeleted, required W Function() customerSourceExpiring, required W Function() customerSourceUpdated, required W Function() customerSubscriptionCreated, required W Function() customerSubscriptionDeleted, required W Function() customerSubscriptionPaused, required W Function() customerSubscriptionPendingUpdateApplied, required W Function() customerSubscriptionPendingUpdateExpired, required W Function() customerSubscriptionResumed, required W Function() customerSubscriptionTrialWillEnd, required W Function() customerSubscriptionUpdated, required W Function() customerTaxIdCreated, required W Function() customerTaxIdDeleted, required W Function() customerTaxIdUpdated, required W Function() customerUpdated, required W Function() customerCashBalanceTransactionCreated, required W Function() entitlementsActiveEntitlementSummaryUpdated, required W Function() fileCreated, required W Function() financialConnectionsAccountAccountNumbersUpdated, required W Function() financialConnectionsAccountCreated, required W Function() financialConnectionsAccountDeactivated, required W Function() financialConnectionsAccountDisconnected, required W Function() financialConnectionsAccountReactivated, required W Function() financialConnectionsAccountRefreshedBalance, required W Function() financialConnectionsAccountRefreshedOwnership, required W Function() financialConnectionsAccountRefreshedTransactions, required W Function() financialConnectionsAccountUpcomingAccountNumberExpiry, required W Function() identityVerificationSessionCanceled, required W Function() identityVerificationSessionCreated, required W Function() identityVerificationSessionProcessing, required W Function() identityVerificationSessionRedacted, required W Function() identityVerificationSessionRequiresInput, required W Function() identityVerificationSessionVerified, required W Function() invoiceCreated, required W Function() invoiceDeleted, required W Function() invoiceFinalizationFailed, required W Function() invoiceFinalized, required W Function() invoiceMarkedUncollectible, required W Function() invoiceOverdue, required W Function() invoiceOverpaid, required W Function() invoicePaid, required W Function() invoicePaymentActionRequired, required W Function() invoicePaymentAttemptRequired, required W Function() invoicePaymentFailed, required W Function() invoicePaymentSucceeded, required W Function() invoiceSent, required W Function() invoiceUpcoming, required W Function() invoiceUpdated, required W Function() invoiceVoided, required W Function() invoiceWillBeDue, required W Function() invoicePaymentPaid, required W Function() invoiceitemCreated, required W Function() invoiceitemDeleted, required W Function() issuingAuthorizationCreated, required W Function() issuingAuthorizationRequest, required W Function() issuingAuthorizationUpdated, required W Function() issuingCardCreated, required W Function() issuingCardUpdated, required W Function() issuingCardholderCreated, required W Function() issuingCardholderUpdated, required W Function() issuingDisputeClosed, required W Function() issuingDisputeCreated, required W Function() issuingDisputeFundsReinstated, required W Function() issuingDisputeFundsRescinded, required W Function() issuingDisputeSubmitted, required W Function() issuingDisputeUpdated, required W Function() issuingPersonalizationDesignActivated, required W Function() issuingPersonalizationDesignDeactivated, required W Function() issuingPersonalizationDesignRejected, required W Function() issuingPersonalizationDesignUpdated, required W Function() issuingTokenCreated, required W Function() issuingTokenUpdated, required W Function() issuingTransactionCreated, required W Function() issuingTransactionPurchaseDetailsReceiptUpdated, required W Function() issuingTransactionUpdated, required W Function() mandateUpdated, required W Function() paymentIntentAmountCapturableUpdated, required W Function() paymentIntentCanceled, required W Function() paymentIntentCreated, required W Function() paymentIntentPartiallyFunded, required W Function() paymentIntentPaymentFailed, required W Function() paymentIntentProcessing, required W Function() paymentIntentRequiresAction, required W Function() paymentIntentSucceeded, required W Function() paymentLinkCreated, required W Function() paymentLinkUpdated, required W Function() paymentMethodAttached, required W Function() paymentMethodAutomaticallyUpdated, required W Function() paymentMethodDetached, required W Function() paymentMethodUpdated, required W Function() payoutCanceled, required W Function() payoutCreated, required W Function() payoutFailed, required W Function() payoutPaid, required W Function() payoutReconciliationCompleted, required W Function() payoutUpdated, required W Function() personCreated, required W Function() personDeleted, required W Function() personUpdated, required W Function() planCreated, required W Function() planDeleted, required W Function() planUpdated, required W Function() priceCreated, required W Function() priceDeleted, required W Function() priceUpdated, required W Function() productCreated, required W Function() productDeleted, required W Function() productUpdated, required W Function() promotionCodeCreated, required W Function() promotionCodeUpdated, required W Function() quoteAccepted, required W Function() quoteCanceled, required W Function() quoteCreated, required W Function() quoteFinalized, required W Function() radarEarlyFraudWarningCreated, required W Function() radarEarlyFraudWarningUpdated, required W Function() refundCreated, required W Function() refundFailed, required W Function() refundUpdated, required W Function() reportingReportRunFailed, required W Function() reportingReportRunSucceeded, required W Function() reportingReportTypeUpdated, required W Function() reserveHoldCreated, required W Function() reserveHoldUpdated, required W Function() reservePlanCreated, required W Function() reservePlanDisabled, required W Function() reservePlanExpired, required W Function() reservePlanUpdated, required W Function() reserveReleaseCreated, required W Function() reviewClosed, required W Function() reviewOpened, required W Function() setupIntentCanceled, required W Function() setupIntentCreated, required W Function() setupIntentRequiresAction, required W Function() setupIntentSetupFailed, required W Function() setupIntentSucceeded, required W Function() sigmaScheduledQueryRunCreated, required W Function() sourceCanceled, required W Function() sourceChargeable, required W Function() sourceFailed, required W Function() sourceMandateNotification, required W Function() sourceRefundAttributesRequired, required W Function() sourceTransactionCreated, required W Function() sourceTransactionUpdated, required W Function() subscriptionScheduleAborted, required W Function() subscriptionScheduleCanceled, required W Function() subscriptionScheduleCompleted, required W Function() subscriptionScheduleCreated, required W Function() subscriptionScheduleExpiring, required W Function() subscriptionScheduleReleased, required W Function() subscriptionScheduleUpdated, required W Function() taxSettingsUpdated, required W Function() taxRateCreated, required W Function() taxRateUpdated, required W Function() terminalReaderActionFailed, required W Function() terminalReaderActionSucceeded, required W Function() terminalReaderActionUpdated, required W Function() testHelpersTestClockAdvancing, required W Function() testHelpersTestClockCreated, required W Function() testHelpersTestClockDeleted, required W Function() testHelpersTestClockInternalFailure, required W Function() testHelpersTestClockReady, required W Function() topupCanceled, required W Function() topupCreated, required W Function() topupFailed, required W Function() topupReversed, required W Function() topupSucceeded, required W Function() transferCreated, required W Function() transferReversed, required W Function() transferUpdated, required W Function() treasuryCreditReversalCreated, required W Function() treasuryCreditReversalPosted, required W Function() treasuryDebitReversalCompleted, required W Function() treasuryDebitReversalCreated, required W Function() treasuryDebitReversalInitialCreditGranted, required W Function() treasuryFinancialAccountClosed, required W Function() treasuryFinancialAccountCreated, required W Function() treasuryFinancialAccountFeaturesStatusUpdated, required W Function() treasuryInboundTransferCanceled, required W Function() treasuryInboundTransferCreated, required W Function() treasuryInboundTransferFailed, required W Function() treasuryInboundTransferSucceeded, required W Function() treasuryOutboundPaymentCanceled, required W Function() treasuryOutboundPaymentCreated, required W Function() treasuryOutboundPaymentExpectedArrivalDateUpdated, required W Function() treasuryOutboundPaymentFailed, required W Function() treasuryOutboundPaymentPosted, required W Function() treasuryOutboundPaymentReturned, required W Function() treasuryOutboundPaymentTrackingDetailsUpdated, required W Function() treasuryOutboundTransferCanceled, required W Function() treasuryOutboundTransferCreated, required W Function() treasuryOutboundTransferExpectedArrivalDateUpdated, required W Function() treasuryOutboundTransferFailed, required W Function() treasuryOutboundTransferPosted, required W Function() treasuryOutboundTransferReturned, required W Function() treasuryOutboundTransferTrackingDetailsUpdated, required W Function() treasuryReceivedCreditCreated, required W Function() treasuryReceivedCreditFailed, required W Function() treasuryReceivedCreditSucceeded, required W Function() treasuryReceivedDebitCreated, required W Function(String value) $unknown, }) {return switch (this) {
       EnabledEvents$$empty() => $empty(),
       EnabledEvents$accountApplicationAuthorized() => accountApplicationAuthorized(),
       EnabledEvents$accountApplicationDeauthorized() => accountApplicationDeauthorized(),
@@ -1295,9 +1295,9 @@ W when<W>({required W Function() $empty, required W Function() accountApplicatio
       EnabledEvents$treasuryReceivedCreditSucceeded() => treasuryReceivedCreditSucceeded(),
       EnabledEvents$treasuryReceivedDebitCreated() => treasuryReceivedDebitCreated(),
       EnabledEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? accountApplicationAuthorized, W Function()? accountApplicationDeauthorized, W Function()? accountExternalAccountCreated, W Function()? accountExternalAccountDeleted, W Function()? accountExternalAccountUpdated, W Function()? accountUpdated, W Function()? applicationFeeCreated, W Function()? applicationFeeRefundUpdated, W Function()? applicationFeeRefunded, W Function()? balanceAvailable, W Function()? balanceSettingsUpdated, W Function()? billingAlertTriggered, W Function()? billingCreditGrantCreated, W Function()? billingPortalConfigurationCreated, W Function()? billingPortalConfigurationUpdated, W Function()? billingPortalSessionCreated, W Function()? capabilityUpdated, W Function()? cashBalanceFundsAvailable, W Function()? chargeCaptured, W Function()? chargeDisputeClosed, W Function()? chargeDisputeCreated, W Function()? chargeDisputeFundsReinstated, W Function()? chargeDisputeFundsWithdrawn, W Function()? chargeDisputeUpdated, W Function()? chargeExpired, W Function()? chargeFailed, W Function()? chargePending, W Function()? chargeRefundUpdated, W Function()? chargeRefunded, W Function()? chargeSucceeded, W Function()? chargeUpdated, W Function()? checkoutSessionAsyncPaymentFailed, W Function()? checkoutSessionAsyncPaymentSucceeded, W Function()? checkoutSessionCompleted, W Function()? checkoutSessionExpired, W Function()? climateOrderCanceled, W Function()? climateOrderCreated, W Function()? climateOrderDelayed, W Function()? climateOrderDelivered, W Function()? climateOrderProductSubstituted, W Function()? climateProductCreated, W Function()? climateProductPricingUpdated, W Function()? couponCreated, W Function()? couponDeleted, W Function()? couponUpdated, W Function()? creditNoteCreated, W Function()? creditNoteUpdated, W Function()? creditNoteVoided, W Function()? customerCreated, W Function()? customerDeleted, W Function()? customerDiscountCreated, W Function()? customerDiscountDeleted, W Function()? customerDiscountUpdated, W Function()? customerSourceCreated, W Function()? customerSourceDeleted, W Function()? customerSourceExpiring, W Function()? customerSourceUpdated, W Function()? customerSubscriptionCreated, W Function()? customerSubscriptionDeleted, W Function()? customerSubscriptionPaused, W Function()? customerSubscriptionPendingUpdateApplied, W Function()? customerSubscriptionPendingUpdateExpired, W Function()? customerSubscriptionResumed, W Function()? customerSubscriptionTrialWillEnd, W Function()? customerSubscriptionUpdated, W Function()? customerTaxIdCreated, W Function()? customerTaxIdDeleted, W Function()? customerTaxIdUpdated, W Function()? customerUpdated, W Function()? customerCashBalanceTransactionCreated, W Function()? entitlementsActiveEntitlementSummaryUpdated, W Function()? fileCreated, W Function()? financialConnectionsAccountAccountNumbersUpdated, W Function()? financialConnectionsAccountCreated, W Function()? financialConnectionsAccountDeactivated, W Function()? financialConnectionsAccountDisconnected, W Function()? financialConnectionsAccountReactivated, W Function()? financialConnectionsAccountRefreshedBalance, W Function()? financialConnectionsAccountRefreshedOwnership, W Function()? financialConnectionsAccountRefreshedTransactions, W Function()? financialConnectionsAccountUpcomingAccountNumberExpiry, W Function()? identityVerificationSessionCanceled, W Function()? identityVerificationSessionCreated, W Function()? identityVerificationSessionProcessing, W Function()? identityVerificationSessionRedacted, W Function()? identityVerificationSessionRequiresInput, W Function()? identityVerificationSessionVerified, W Function()? invoiceCreated, W Function()? invoiceDeleted, W Function()? invoiceFinalizationFailed, W Function()? invoiceFinalized, W Function()? invoiceMarkedUncollectible, W Function()? invoiceOverdue, W Function()? invoiceOverpaid, W Function()? invoicePaid, W Function()? invoicePaymentActionRequired, W Function()? invoicePaymentAttemptRequired, W Function()? invoicePaymentFailed, W Function()? invoicePaymentSucceeded, W Function()? invoiceSent, W Function()? invoiceUpcoming, W Function()? invoiceUpdated, W Function()? invoiceVoided, W Function()? invoiceWillBeDue, W Function()? invoicePaymentPaid, W Function()? invoiceitemCreated, W Function()? invoiceitemDeleted, W Function()? issuingAuthorizationCreated, W Function()? issuingAuthorizationRequest, W Function()? issuingAuthorizationUpdated, W Function()? issuingCardCreated, W Function()? issuingCardUpdated, W Function()? issuingCardholderCreated, W Function()? issuingCardholderUpdated, W Function()? issuingDisputeClosed, W Function()? issuingDisputeCreated, W Function()? issuingDisputeFundsReinstated, W Function()? issuingDisputeFundsRescinded, W Function()? issuingDisputeSubmitted, W Function()? issuingDisputeUpdated, W Function()? issuingPersonalizationDesignActivated, W Function()? issuingPersonalizationDesignDeactivated, W Function()? issuingPersonalizationDesignRejected, W Function()? issuingPersonalizationDesignUpdated, W Function()? issuingTokenCreated, W Function()? issuingTokenUpdated, W Function()? issuingTransactionCreated, W Function()? issuingTransactionPurchaseDetailsReceiptUpdated, W Function()? issuingTransactionUpdated, W Function()? mandateUpdated, W Function()? paymentIntentAmountCapturableUpdated, W Function()? paymentIntentCanceled, W Function()? paymentIntentCreated, W Function()? paymentIntentPartiallyFunded, W Function()? paymentIntentPaymentFailed, W Function()? paymentIntentProcessing, W Function()? paymentIntentRequiresAction, W Function()? paymentIntentSucceeded, W Function()? paymentLinkCreated, W Function()? paymentLinkUpdated, W Function()? paymentMethodAttached, W Function()? paymentMethodAutomaticallyUpdated, W Function()? paymentMethodDetached, W Function()? paymentMethodUpdated, W Function()? payoutCanceled, W Function()? payoutCreated, W Function()? payoutFailed, W Function()? payoutPaid, W Function()? payoutReconciliationCompleted, W Function()? payoutUpdated, W Function()? personCreated, W Function()? personDeleted, W Function()? personUpdated, W Function()? planCreated, W Function()? planDeleted, W Function()? planUpdated, W Function()? priceCreated, W Function()? priceDeleted, W Function()? priceUpdated, W Function()? productCreated, W Function()? productDeleted, W Function()? productUpdated, W Function()? promotionCodeCreated, W Function()? promotionCodeUpdated, W Function()? quoteAccepted, W Function()? quoteCanceled, W Function()? quoteCreated, W Function()? quoteFinalized, W Function()? radarEarlyFraudWarningCreated, W Function()? radarEarlyFraudWarningUpdated, W Function()? refundCreated, W Function()? refundFailed, W Function()? refundUpdated, W Function()? reportingReportRunFailed, W Function()? reportingReportRunSucceeded, W Function()? reportingReportTypeUpdated, W Function()? reserveHoldCreated, W Function()? reserveHoldUpdated, W Function()? reservePlanCreated, W Function()? reservePlanDisabled, W Function()? reservePlanExpired, W Function()? reservePlanUpdated, W Function()? reserveReleaseCreated, W Function()? reviewClosed, W Function()? reviewOpened, W Function()? setupIntentCanceled, W Function()? setupIntentCreated, W Function()? setupIntentRequiresAction, W Function()? setupIntentSetupFailed, W Function()? setupIntentSucceeded, W Function()? sigmaScheduledQueryRunCreated, W Function()? sourceCanceled, W Function()? sourceChargeable, W Function()? sourceFailed, W Function()? sourceMandateNotification, W Function()? sourceRefundAttributesRequired, W Function()? sourceTransactionCreated, W Function()? sourceTransactionUpdated, W Function()? subscriptionScheduleAborted, W Function()? subscriptionScheduleCanceled, W Function()? subscriptionScheduleCompleted, W Function()? subscriptionScheduleCreated, W Function()? subscriptionScheduleExpiring, W Function()? subscriptionScheduleReleased, W Function()? subscriptionScheduleUpdated, W Function()? taxSettingsUpdated, W Function()? taxRateCreated, W Function()? taxRateUpdated, W Function()? terminalReaderActionFailed, W Function()? terminalReaderActionSucceeded, W Function()? terminalReaderActionUpdated, W Function()? testHelpersTestClockAdvancing, W Function()? testHelpersTestClockCreated, W Function()? testHelpersTestClockDeleted, W Function()? testHelpersTestClockInternalFailure, W Function()? testHelpersTestClockReady, W Function()? topupCanceled, W Function()? topupCreated, W Function()? topupFailed, W Function()? topupReversed, W Function()? topupSucceeded, W Function()? transferCreated, W Function()? transferReversed, W Function()? transferUpdated, W Function()? treasuryCreditReversalCreated, W Function()? treasuryCreditReversalPosted, W Function()? treasuryDebitReversalCompleted, W Function()? treasuryDebitReversalCreated, W Function()? treasuryDebitReversalInitialCreditGranted, W Function()? treasuryFinancialAccountClosed, W Function()? treasuryFinancialAccountCreated, W Function()? treasuryFinancialAccountFeaturesStatusUpdated, W Function()? treasuryInboundTransferCanceled, W Function()? treasuryInboundTransferCreated, W Function()? treasuryInboundTransferFailed, W Function()? treasuryInboundTransferSucceeded, W Function()? treasuryOutboundPaymentCanceled, W Function()? treasuryOutboundPaymentCreated, W Function()? treasuryOutboundPaymentExpectedArrivalDateUpdated, W Function()? treasuryOutboundPaymentFailed, W Function()? treasuryOutboundPaymentPosted, W Function()? treasuryOutboundPaymentReturned, W Function()? treasuryOutboundPaymentTrackingDetailsUpdated, W Function()? treasuryOutboundTransferCanceled, W Function()? treasuryOutboundTransferCreated, W Function()? treasuryOutboundTransferExpectedArrivalDateUpdated, W Function()? treasuryOutboundTransferFailed, W Function()? treasuryOutboundTransferPosted, W Function()? treasuryOutboundTransferReturned, W Function()? treasuryOutboundTransferTrackingDetailsUpdated, W Function()? treasuryReceivedCreditCreated, W Function()? treasuryReceivedCreditFailed, W Function()? treasuryReceivedCreditSucceeded, W Function()? treasuryReceivedDebitCreated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? accountApplicationAuthorized, W Function()? accountApplicationDeauthorized, W Function()? accountExternalAccountCreated, W Function()? accountExternalAccountDeleted, W Function()? accountExternalAccountUpdated, W Function()? accountUpdated, W Function()? applicationFeeCreated, W Function()? applicationFeeRefundUpdated, W Function()? applicationFeeRefunded, W Function()? balanceAvailable, W Function()? balanceSettingsUpdated, W Function()? billingAlertTriggered, W Function()? billingCreditGrantCreated, W Function()? billingPortalConfigurationCreated, W Function()? billingPortalConfigurationUpdated, W Function()? billingPortalSessionCreated, W Function()? capabilityUpdated, W Function()? cashBalanceFundsAvailable, W Function()? chargeCaptured, W Function()? chargeDisputeClosed, W Function()? chargeDisputeCreated, W Function()? chargeDisputeFundsReinstated, W Function()? chargeDisputeFundsWithdrawn, W Function()? chargeDisputeUpdated, W Function()? chargeExpired, W Function()? chargeFailed, W Function()? chargePending, W Function()? chargeRefundUpdated, W Function()? chargeRefunded, W Function()? chargeSucceeded, W Function()? chargeUpdated, W Function()? checkoutSessionAsyncPaymentFailed, W Function()? checkoutSessionAsyncPaymentSucceeded, W Function()? checkoutSessionCompleted, W Function()? checkoutSessionExpired, W Function()? climateOrderCanceled, W Function()? climateOrderCreated, W Function()? climateOrderDelayed, W Function()? climateOrderDelivered, W Function()? climateOrderProductSubstituted, W Function()? climateProductCreated, W Function()? climateProductPricingUpdated, W Function()? couponCreated, W Function()? couponDeleted, W Function()? couponUpdated, W Function()? creditNoteCreated, W Function()? creditNoteUpdated, W Function()? creditNoteVoided, W Function()? customerCreated, W Function()? customerDeleted, W Function()? customerDiscountCreated, W Function()? customerDiscountDeleted, W Function()? customerDiscountUpdated, W Function()? customerSourceCreated, W Function()? customerSourceDeleted, W Function()? customerSourceExpiring, W Function()? customerSourceUpdated, W Function()? customerSubscriptionCreated, W Function()? customerSubscriptionDeleted, W Function()? customerSubscriptionPaused, W Function()? customerSubscriptionPendingUpdateApplied, W Function()? customerSubscriptionPendingUpdateExpired, W Function()? customerSubscriptionResumed, W Function()? customerSubscriptionTrialWillEnd, W Function()? customerSubscriptionUpdated, W Function()? customerTaxIdCreated, W Function()? customerTaxIdDeleted, W Function()? customerTaxIdUpdated, W Function()? customerUpdated, W Function()? customerCashBalanceTransactionCreated, W Function()? entitlementsActiveEntitlementSummaryUpdated, W Function()? fileCreated, W Function()? financialConnectionsAccountAccountNumbersUpdated, W Function()? financialConnectionsAccountCreated, W Function()? financialConnectionsAccountDeactivated, W Function()? financialConnectionsAccountDisconnected, W Function()? financialConnectionsAccountReactivated, W Function()? financialConnectionsAccountRefreshedBalance, W Function()? financialConnectionsAccountRefreshedOwnership, W Function()? financialConnectionsAccountRefreshedTransactions, W Function()? financialConnectionsAccountUpcomingAccountNumberExpiry, W Function()? identityVerificationSessionCanceled, W Function()? identityVerificationSessionCreated, W Function()? identityVerificationSessionProcessing, W Function()? identityVerificationSessionRedacted, W Function()? identityVerificationSessionRequiresInput, W Function()? identityVerificationSessionVerified, W Function()? invoiceCreated, W Function()? invoiceDeleted, W Function()? invoiceFinalizationFailed, W Function()? invoiceFinalized, W Function()? invoiceMarkedUncollectible, W Function()? invoiceOverdue, W Function()? invoiceOverpaid, W Function()? invoicePaid, W Function()? invoicePaymentActionRequired, W Function()? invoicePaymentAttemptRequired, W Function()? invoicePaymentFailed, W Function()? invoicePaymentSucceeded, W Function()? invoiceSent, W Function()? invoiceUpcoming, W Function()? invoiceUpdated, W Function()? invoiceVoided, W Function()? invoiceWillBeDue, W Function()? invoicePaymentPaid, W Function()? invoiceitemCreated, W Function()? invoiceitemDeleted, W Function()? issuingAuthorizationCreated, W Function()? issuingAuthorizationRequest, W Function()? issuingAuthorizationUpdated, W Function()? issuingCardCreated, W Function()? issuingCardUpdated, W Function()? issuingCardholderCreated, W Function()? issuingCardholderUpdated, W Function()? issuingDisputeClosed, W Function()? issuingDisputeCreated, W Function()? issuingDisputeFundsReinstated, W Function()? issuingDisputeFundsRescinded, W Function()? issuingDisputeSubmitted, W Function()? issuingDisputeUpdated, W Function()? issuingPersonalizationDesignActivated, W Function()? issuingPersonalizationDesignDeactivated, W Function()? issuingPersonalizationDesignRejected, W Function()? issuingPersonalizationDesignUpdated, W Function()? issuingTokenCreated, W Function()? issuingTokenUpdated, W Function()? issuingTransactionCreated, W Function()? issuingTransactionPurchaseDetailsReceiptUpdated, W Function()? issuingTransactionUpdated, W Function()? mandateUpdated, W Function()? paymentIntentAmountCapturableUpdated, W Function()? paymentIntentCanceled, W Function()? paymentIntentCreated, W Function()? paymentIntentPartiallyFunded, W Function()? paymentIntentPaymentFailed, W Function()? paymentIntentProcessing, W Function()? paymentIntentRequiresAction, W Function()? paymentIntentSucceeded, W Function()? paymentLinkCreated, W Function()? paymentLinkUpdated, W Function()? paymentMethodAttached, W Function()? paymentMethodAutomaticallyUpdated, W Function()? paymentMethodDetached, W Function()? paymentMethodUpdated, W Function()? payoutCanceled, W Function()? payoutCreated, W Function()? payoutFailed, W Function()? payoutPaid, W Function()? payoutReconciliationCompleted, W Function()? payoutUpdated, W Function()? personCreated, W Function()? personDeleted, W Function()? personUpdated, W Function()? planCreated, W Function()? planDeleted, W Function()? planUpdated, W Function()? priceCreated, W Function()? priceDeleted, W Function()? priceUpdated, W Function()? productCreated, W Function()? productDeleted, W Function()? productUpdated, W Function()? promotionCodeCreated, W Function()? promotionCodeUpdated, W Function()? quoteAccepted, W Function()? quoteCanceled, W Function()? quoteCreated, W Function()? quoteFinalized, W Function()? radarEarlyFraudWarningCreated, W Function()? radarEarlyFraudWarningUpdated, W Function()? refundCreated, W Function()? refundFailed, W Function()? refundUpdated, W Function()? reportingReportRunFailed, W Function()? reportingReportRunSucceeded, W Function()? reportingReportTypeUpdated, W Function()? reserveHoldCreated, W Function()? reserveHoldUpdated, W Function()? reservePlanCreated, W Function()? reservePlanDisabled, W Function()? reservePlanExpired, W Function()? reservePlanUpdated, W Function()? reserveReleaseCreated, W Function()? reviewClosed, W Function()? reviewOpened, W Function()? setupIntentCanceled, W Function()? setupIntentCreated, W Function()? setupIntentRequiresAction, W Function()? setupIntentSetupFailed, W Function()? setupIntentSucceeded, W Function()? sigmaScheduledQueryRunCreated, W Function()? sourceCanceled, W Function()? sourceChargeable, W Function()? sourceFailed, W Function()? sourceMandateNotification, W Function()? sourceRefundAttributesRequired, W Function()? sourceTransactionCreated, W Function()? sourceTransactionUpdated, W Function()? subscriptionScheduleAborted, W Function()? subscriptionScheduleCanceled, W Function()? subscriptionScheduleCompleted, W Function()? subscriptionScheduleCreated, W Function()? subscriptionScheduleExpiring, W Function()? subscriptionScheduleReleased, W Function()? subscriptionScheduleUpdated, W Function()? taxSettingsUpdated, W Function()? taxRateCreated, W Function()? taxRateUpdated, W Function()? terminalReaderActionFailed, W Function()? terminalReaderActionSucceeded, W Function()? terminalReaderActionUpdated, W Function()? testHelpersTestClockAdvancing, W Function()? testHelpersTestClockCreated, W Function()? testHelpersTestClockDeleted, W Function()? testHelpersTestClockInternalFailure, W Function()? testHelpersTestClockReady, W Function()? topupCanceled, W Function()? topupCreated, W Function()? topupFailed, W Function()? topupReversed, W Function()? topupSucceeded, W Function()? transferCreated, W Function()? transferReversed, W Function()? transferUpdated, W Function()? treasuryCreditReversalCreated, W Function()? treasuryCreditReversalPosted, W Function()? treasuryDebitReversalCompleted, W Function()? treasuryDebitReversalCreated, W Function()? treasuryDebitReversalInitialCreditGranted, W Function()? treasuryFinancialAccountClosed, W Function()? treasuryFinancialAccountCreated, W Function()? treasuryFinancialAccountFeaturesStatusUpdated, W Function()? treasuryInboundTransferCanceled, W Function()? treasuryInboundTransferCreated, W Function()? treasuryInboundTransferFailed, W Function()? treasuryInboundTransferSucceeded, W Function()? treasuryOutboundPaymentCanceled, W Function()? treasuryOutboundPaymentCreated, W Function()? treasuryOutboundPaymentExpectedArrivalDateUpdated, W Function()? treasuryOutboundPaymentFailed, W Function()? treasuryOutboundPaymentPosted, W Function()? treasuryOutboundPaymentReturned, W Function()? treasuryOutboundPaymentTrackingDetailsUpdated, W Function()? treasuryOutboundTransferCanceled, W Function()? treasuryOutboundTransferCreated, W Function()? treasuryOutboundTransferExpectedArrivalDateUpdated, W Function()? treasuryOutboundTransferFailed, W Function()? treasuryOutboundTransferPosted, W Function()? treasuryOutboundTransferReturned, W Function()? treasuryOutboundTransferTrackingDetailsUpdated, W Function()? treasuryReceivedCreditCreated, W Function()? treasuryReceivedCreditFailed, W Function()? treasuryReceivedCreditSucceeded, W Function()? treasuryReceivedDebitCreated, W Function(String value)? $unknown, }) {return switch (this) {
       EnabledEvents$$empty() => $empty != null ? $empty() : orElse(value),
       EnabledEvents$accountApplicationAuthorized() => accountApplicationAuthorized != null ? accountApplicationAuthorized() : orElse(value),
       EnabledEvents$accountApplicationDeauthorized() => accountApplicationDeauthorized != null ? accountApplicationDeauthorized() : orElse(value),
@@ -1554,10 +1554,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
       EnabledEvents$treasuryReceivedCreditSucceeded() => treasuryReceivedCreditSucceeded != null ? treasuryReceivedCreditSucceeded() : orElse(value),
       EnabledEvents$treasuryReceivedDebitCreated() => treasuryReceivedDebitCreated != null ? treasuryReceivedDebitCreated() : orElse(value),
       EnabledEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnabledEvents($value)';
 
- }
+}
 @immutable final class EnabledEvents$$empty extends EnabledEvents {const EnabledEvents$$empty._();
 
 @override String get value => '*';
@@ -1566,7 +1566,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '*'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$accountApplicationAuthorized extends EnabledEvents {const EnabledEvents$accountApplicationAuthorized._();
 
 @override String get value => 'account.application.authorized';
@@ -1575,7 +1575,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'account.application.authorized'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$accountApplicationDeauthorized extends EnabledEvents {const EnabledEvents$accountApplicationDeauthorized._();
 
 @override String get value => 'account.application.deauthorized';
@@ -1584,7 +1584,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'account.application.deauthorized'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$accountExternalAccountCreated extends EnabledEvents {const EnabledEvents$accountExternalAccountCreated._();
 
 @override String get value => 'account.external_account.created';
@@ -1593,7 +1593,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'account.external_account.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$accountExternalAccountDeleted extends EnabledEvents {const EnabledEvents$accountExternalAccountDeleted._();
 
 @override String get value => 'account.external_account.deleted';
@@ -1602,7 +1602,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'account.external_account.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$accountExternalAccountUpdated extends EnabledEvents {const EnabledEvents$accountExternalAccountUpdated._();
 
 @override String get value => 'account.external_account.updated';
@@ -1611,7 +1611,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'account.external_account.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$accountUpdated extends EnabledEvents {const EnabledEvents$accountUpdated._();
 
 @override String get value => 'account.updated';
@@ -1620,7 +1620,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'account.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$applicationFeeCreated extends EnabledEvents {const EnabledEvents$applicationFeeCreated._();
 
 @override String get value => 'application_fee.created';
@@ -1629,7 +1629,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'application_fee.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$applicationFeeRefundUpdated extends EnabledEvents {const EnabledEvents$applicationFeeRefundUpdated._();
 
 @override String get value => 'application_fee.refund.updated';
@@ -1638,7 +1638,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'application_fee.refund.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$applicationFeeRefunded extends EnabledEvents {const EnabledEvents$applicationFeeRefunded._();
 
 @override String get value => 'application_fee.refunded';
@@ -1647,7 +1647,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'application_fee.refunded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$balanceAvailable extends EnabledEvents {const EnabledEvents$balanceAvailable._();
 
 @override String get value => 'balance.available';
@@ -1656,7 +1656,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'balance.available'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$balanceSettingsUpdated extends EnabledEvents {const EnabledEvents$balanceSettingsUpdated._();
 
 @override String get value => 'balance_settings.updated';
@@ -1665,7 +1665,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'balance_settings.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$billingAlertTriggered extends EnabledEvents {const EnabledEvents$billingAlertTriggered._();
 
 @override String get value => 'billing.alert.triggered';
@@ -1674,7 +1674,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'billing.alert.triggered'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$billingCreditGrantCreated extends EnabledEvents {const EnabledEvents$billingCreditGrantCreated._();
 
 @override String get value => 'billing.credit_grant.created';
@@ -1683,7 +1683,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'billing.credit_grant.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$billingPortalConfigurationCreated extends EnabledEvents {const EnabledEvents$billingPortalConfigurationCreated._();
 
 @override String get value => 'billing_portal.configuration.created';
@@ -1692,7 +1692,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'billing_portal.configuration.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$billingPortalConfigurationUpdated extends EnabledEvents {const EnabledEvents$billingPortalConfigurationUpdated._();
 
 @override String get value => 'billing_portal.configuration.updated';
@@ -1701,7 +1701,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'billing_portal.configuration.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$billingPortalSessionCreated extends EnabledEvents {const EnabledEvents$billingPortalSessionCreated._();
 
 @override String get value => 'billing_portal.session.created';
@@ -1710,7 +1710,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'billing_portal.session.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$capabilityUpdated extends EnabledEvents {const EnabledEvents$capabilityUpdated._();
 
 @override String get value => 'capability.updated';
@@ -1719,7 +1719,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'capability.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$cashBalanceFundsAvailable extends EnabledEvents {const EnabledEvents$cashBalanceFundsAvailable._();
 
 @override String get value => 'cash_balance.funds_available';
@@ -1728,7 +1728,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'cash_balance.funds_available'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeCaptured extends EnabledEvents {const EnabledEvents$chargeCaptured._();
 
 @override String get value => 'charge.captured';
@@ -1737,7 +1737,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.captured'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeDisputeClosed extends EnabledEvents {const EnabledEvents$chargeDisputeClosed._();
 
 @override String get value => 'charge.dispute.closed';
@@ -1746,7 +1746,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.dispute.closed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeDisputeCreated extends EnabledEvents {const EnabledEvents$chargeDisputeCreated._();
 
 @override String get value => 'charge.dispute.created';
@@ -1755,7 +1755,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.dispute.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeDisputeFundsReinstated extends EnabledEvents {const EnabledEvents$chargeDisputeFundsReinstated._();
 
 @override String get value => 'charge.dispute.funds_reinstated';
@@ -1764,7 +1764,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.dispute.funds_reinstated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeDisputeFundsWithdrawn extends EnabledEvents {const EnabledEvents$chargeDisputeFundsWithdrawn._();
 
 @override String get value => 'charge.dispute.funds_withdrawn';
@@ -1773,7 +1773,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.dispute.funds_withdrawn'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeDisputeUpdated extends EnabledEvents {const EnabledEvents$chargeDisputeUpdated._();
 
 @override String get value => 'charge.dispute.updated';
@@ -1782,7 +1782,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.dispute.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeExpired extends EnabledEvents {const EnabledEvents$chargeExpired._();
 
 @override String get value => 'charge.expired';
@@ -1791,7 +1791,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.expired'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeFailed extends EnabledEvents {const EnabledEvents$chargeFailed._();
 
 @override String get value => 'charge.failed';
@@ -1800,7 +1800,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargePending extends EnabledEvents {const EnabledEvents$chargePending._();
 
 @override String get value => 'charge.pending';
@@ -1809,7 +1809,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.pending'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeRefundUpdated extends EnabledEvents {const EnabledEvents$chargeRefundUpdated._();
 
 @override String get value => 'charge.refund.updated';
@@ -1818,7 +1818,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.refund.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeRefunded extends EnabledEvents {const EnabledEvents$chargeRefunded._();
 
 @override String get value => 'charge.refunded';
@@ -1827,7 +1827,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.refunded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeSucceeded extends EnabledEvents {const EnabledEvents$chargeSucceeded._();
 
 @override String get value => 'charge.succeeded';
@@ -1836,7 +1836,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$chargeUpdated extends EnabledEvents {const EnabledEvents$chargeUpdated._();
 
 @override String get value => 'charge.updated';
@@ -1845,7 +1845,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'charge.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$checkoutSessionAsyncPaymentFailed extends EnabledEvents {const EnabledEvents$checkoutSessionAsyncPaymentFailed._();
 
 @override String get value => 'checkout.session.async_payment_failed';
@@ -1854,7 +1854,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'checkout.session.async_payment_failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$checkoutSessionAsyncPaymentSucceeded extends EnabledEvents {const EnabledEvents$checkoutSessionAsyncPaymentSucceeded._();
 
 @override String get value => 'checkout.session.async_payment_succeeded';
@@ -1863,7 +1863,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'checkout.session.async_payment_succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$checkoutSessionCompleted extends EnabledEvents {const EnabledEvents$checkoutSessionCompleted._();
 
 @override String get value => 'checkout.session.completed';
@@ -1872,7 +1872,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'checkout.session.completed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$checkoutSessionExpired extends EnabledEvents {const EnabledEvents$checkoutSessionExpired._();
 
 @override String get value => 'checkout.session.expired';
@@ -1881,7 +1881,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'checkout.session.expired'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateOrderCanceled extends EnabledEvents {const EnabledEvents$climateOrderCanceled._();
 
 @override String get value => 'climate.order.canceled';
@@ -1890,7 +1890,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.order.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateOrderCreated extends EnabledEvents {const EnabledEvents$climateOrderCreated._();
 
 @override String get value => 'climate.order.created';
@@ -1899,7 +1899,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.order.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateOrderDelayed extends EnabledEvents {const EnabledEvents$climateOrderDelayed._();
 
 @override String get value => 'climate.order.delayed';
@@ -1908,7 +1908,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.order.delayed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateOrderDelivered extends EnabledEvents {const EnabledEvents$climateOrderDelivered._();
 
 @override String get value => 'climate.order.delivered';
@@ -1917,7 +1917,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.order.delivered'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateOrderProductSubstituted extends EnabledEvents {const EnabledEvents$climateOrderProductSubstituted._();
 
 @override String get value => 'climate.order.product_substituted';
@@ -1926,7 +1926,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.order.product_substituted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateProductCreated extends EnabledEvents {const EnabledEvents$climateProductCreated._();
 
 @override String get value => 'climate.product.created';
@@ -1935,7 +1935,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.product.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$climateProductPricingUpdated extends EnabledEvents {const EnabledEvents$climateProductPricingUpdated._();
 
 @override String get value => 'climate.product.pricing_updated';
@@ -1944,7 +1944,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'climate.product.pricing_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$couponCreated extends EnabledEvents {const EnabledEvents$couponCreated._();
 
 @override String get value => 'coupon.created';
@@ -1953,7 +1953,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'coupon.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$couponDeleted extends EnabledEvents {const EnabledEvents$couponDeleted._();
 
 @override String get value => 'coupon.deleted';
@@ -1962,7 +1962,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'coupon.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$couponUpdated extends EnabledEvents {const EnabledEvents$couponUpdated._();
 
 @override String get value => 'coupon.updated';
@@ -1971,7 +1971,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'coupon.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$creditNoteCreated extends EnabledEvents {const EnabledEvents$creditNoteCreated._();
 
 @override String get value => 'credit_note.created';
@@ -1980,7 +1980,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'credit_note.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$creditNoteUpdated extends EnabledEvents {const EnabledEvents$creditNoteUpdated._();
 
 @override String get value => 'credit_note.updated';
@@ -1989,7 +1989,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'credit_note.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$creditNoteVoided extends EnabledEvents {const EnabledEvents$creditNoteVoided._();
 
 @override String get value => 'credit_note.voided';
@@ -1998,7 +1998,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'credit_note.voided'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerCreated extends EnabledEvents {const EnabledEvents$customerCreated._();
 
 @override String get value => 'customer.created';
@@ -2007,7 +2007,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerDeleted extends EnabledEvents {const EnabledEvents$customerDeleted._();
 
 @override String get value => 'customer.deleted';
@@ -2016,7 +2016,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerDiscountCreated extends EnabledEvents {const EnabledEvents$customerDiscountCreated._();
 
 @override String get value => 'customer.discount.created';
@@ -2025,7 +2025,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.discount.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerDiscountDeleted extends EnabledEvents {const EnabledEvents$customerDiscountDeleted._();
 
 @override String get value => 'customer.discount.deleted';
@@ -2034,7 +2034,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.discount.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerDiscountUpdated extends EnabledEvents {const EnabledEvents$customerDiscountUpdated._();
 
 @override String get value => 'customer.discount.updated';
@@ -2043,7 +2043,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.discount.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSourceCreated extends EnabledEvents {const EnabledEvents$customerSourceCreated._();
 
 @override String get value => 'customer.source.created';
@@ -2052,7 +2052,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.source.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSourceDeleted extends EnabledEvents {const EnabledEvents$customerSourceDeleted._();
 
 @override String get value => 'customer.source.deleted';
@@ -2061,7 +2061,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.source.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSourceExpiring extends EnabledEvents {const EnabledEvents$customerSourceExpiring._();
 
 @override String get value => 'customer.source.expiring';
@@ -2070,7 +2070,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.source.expiring'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSourceUpdated extends EnabledEvents {const EnabledEvents$customerSourceUpdated._();
 
 @override String get value => 'customer.source.updated';
@@ -2079,7 +2079,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.source.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionCreated extends EnabledEvents {const EnabledEvents$customerSubscriptionCreated._();
 
 @override String get value => 'customer.subscription.created';
@@ -2088,7 +2088,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionDeleted extends EnabledEvents {const EnabledEvents$customerSubscriptionDeleted._();
 
 @override String get value => 'customer.subscription.deleted';
@@ -2097,7 +2097,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionPaused extends EnabledEvents {const EnabledEvents$customerSubscriptionPaused._();
 
 @override String get value => 'customer.subscription.paused';
@@ -2106,7 +2106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.paused'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionPendingUpdateApplied extends EnabledEvents {const EnabledEvents$customerSubscriptionPendingUpdateApplied._();
 
 @override String get value => 'customer.subscription.pending_update_applied';
@@ -2115,7 +2115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.pending_update_applied'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionPendingUpdateExpired extends EnabledEvents {const EnabledEvents$customerSubscriptionPendingUpdateExpired._();
 
 @override String get value => 'customer.subscription.pending_update_expired';
@@ -2124,7 +2124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.pending_update_expired'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionResumed extends EnabledEvents {const EnabledEvents$customerSubscriptionResumed._();
 
 @override String get value => 'customer.subscription.resumed';
@@ -2133,7 +2133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.resumed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionTrialWillEnd extends EnabledEvents {const EnabledEvents$customerSubscriptionTrialWillEnd._();
 
 @override String get value => 'customer.subscription.trial_will_end';
@@ -2142,7 +2142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.trial_will_end'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerSubscriptionUpdated extends EnabledEvents {const EnabledEvents$customerSubscriptionUpdated._();
 
 @override String get value => 'customer.subscription.updated';
@@ -2151,7 +2151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.subscription.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerTaxIdCreated extends EnabledEvents {const EnabledEvents$customerTaxIdCreated._();
 
 @override String get value => 'customer.tax_id.created';
@@ -2160,7 +2160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.tax_id.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerTaxIdDeleted extends EnabledEvents {const EnabledEvents$customerTaxIdDeleted._();
 
 @override String get value => 'customer.tax_id.deleted';
@@ -2169,7 +2169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.tax_id.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerTaxIdUpdated extends EnabledEvents {const EnabledEvents$customerTaxIdUpdated._();
 
 @override String get value => 'customer.tax_id.updated';
@@ -2178,7 +2178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.tax_id.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerUpdated extends EnabledEvents {const EnabledEvents$customerUpdated._();
 
 @override String get value => 'customer.updated';
@@ -2187,7 +2187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$customerCashBalanceTransactionCreated extends EnabledEvents {const EnabledEvents$customerCashBalanceTransactionCreated._();
 
 @override String get value => 'customer_cash_balance_transaction.created';
@@ -2196,7 +2196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'customer_cash_balance_transaction.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$entitlementsActiveEntitlementSummaryUpdated extends EnabledEvents {const EnabledEvents$entitlementsActiveEntitlementSummaryUpdated._();
 
 @override String get value => 'entitlements.active_entitlement_summary.updated';
@@ -2205,7 +2205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'entitlements.active_entitlement_summary.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$fileCreated extends EnabledEvents {const EnabledEvents$fileCreated._();
 
 @override String get value => 'file.created';
@@ -2214,7 +2214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'file.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountAccountNumbersUpdated extends EnabledEvents {const EnabledEvents$financialConnectionsAccountAccountNumbersUpdated._();
 
 @override String get value => 'financial_connections.account.account_numbers_updated';
@@ -2223,7 +2223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.account_numbers_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountCreated extends EnabledEvents {const EnabledEvents$financialConnectionsAccountCreated._();
 
 @override String get value => 'financial_connections.account.created';
@@ -2232,7 +2232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountDeactivated extends EnabledEvents {const EnabledEvents$financialConnectionsAccountDeactivated._();
 
 @override String get value => 'financial_connections.account.deactivated';
@@ -2241,7 +2241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.deactivated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountDisconnected extends EnabledEvents {const EnabledEvents$financialConnectionsAccountDisconnected._();
 
 @override String get value => 'financial_connections.account.disconnected';
@@ -2250,7 +2250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.disconnected'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountReactivated extends EnabledEvents {const EnabledEvents$financialConnectionsAccountReactivated._();
 
 @override String get value => 'financial_connections.account.reactivated';
@@ -2259,7 +2259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.reactivated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountRefreshedBalance extends EnabledEvents {const EnabledEvents$financialConnectionsAccountRefreshedBalance._();
 
 @override String get value => 'financial_connections.account.refreshed_balance';
@@ -2268,7 +2268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.refreshed_balance'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountRefreshedOwnership extends EnabledEvents {const EnabledEvents$financialConnectionsAccountRefreshedOwnership._();
 
 @override String get value => 'financial_connections.account.refreshed_ownership';
@@ -2277,7 +2277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.refreshed_ownership'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountRefreshedTransactions extends EnabledEvents {const EnabledEvents$financialConnectionsAccountRefreshedTransactions._();
 
 @override String get value => 'financial_connections.account.refreshed_transactions';
@@ -2286,7 +2286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.refreshed_transactions'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$financialConnectionsAccountUpcomingAccountNumberExpiry extends EnabledEvents {const EnabledEvents$financialConnectionsAccountUpcomingAccountNumberExpiry._();
 
 @override String get value => 'financial_connections.account.upcoming_account_number_expiry';
@@ -2295,7 +2295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'financial_connections.account.upcoming_account_number_expiry'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$identityVerificationSessionCanceled extends EnabledEvents {const EnabledEvents$identityVerificationSessionCanceled._();
 
 @override String get value => 'identity.verification_session.canceled';
@@ -2304,7 +2304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'identity.verification_session.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$identityVerificationSessionCreated extends EnabledEvents {const EnabledEvents$identityVerificationSessionCreated._();
 
 @override String get value => 'identity.verification_session.created';
@@ -2313,7 +2313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'identity.verification_session.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$identityVerificationSessionProcessing extends EnabledEvents {const EnabledEvents$identityVerificationSessionProcessing._();
 
 @override String get value => 'identity.verification_session.processing';
@@ -2322,7 +2322,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'identity.verification_session.processing'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$identityVerificationSessionRedacted extends EnabledEvents {const EnabledEvents$identityVerificationSessionRedacted._();
 
 @override String get value => 'identity.verification_session.redacted';
@@ -2331,7 +2331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'identity.verification_session.redacted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$identityVerificationSessionRequiresInput extends EnabledEvents {const EnabledEvents$identityVerificationSessionRequiresInput._();
 
 @override String get value => 'identity.verification_session.requires_input';
@@ -2340,7 +2340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'identity.verification_session.requires_input'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$identityVerificationSessionVerified extends EnabledEvents {const EnabledEvents$identityVerificationSessionVerified._();
 
 @override String get value => 'identity.verification_session.verified';
@@ -2349,7 +2349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'identity.verification_session.verified'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceCreated extends EnabledEvents {const EnabledEvents$invoiceCreated._();
 
 @override String get value => 'invoice.created';
@@ -2358,7 +2358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceDeleted extends EnabledEvents {const EnabledEvents$invoiceDeleted._();
 
 @override String get value => 'invoice.deleted';
@@ -2367,7 +2367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceFinalizationFailed extends EnabledEvents {const EnabledEvents$invoiceFinalizationFailed._();
 
 @override String get value => 'invoice.finalization_failed';
@@ -2376,7 +2376,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.finalization_failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceFinalized extends EnabledEvents {const EnabledEvents$invoiceFinalized._();
 
 @override String get value => 'invoice.finalized';
@@ -2385,7 +2385,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.finalized'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceMarkedUncollectible extends EnabledEvents {const EnabledEvents$invoiceMarkedUncollectible._();
 
 @override String get value => 'invoice.marked_uncollectible';
@@ -2394,7 +2394,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.marked_uncollectible'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceOverdue extends EnabledEvents {const EnabledEvents$invoiceOverdue._();
 
 @override String get value => 'invoice.overdue';
@@ -2403,7 +2403,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.overdue'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceOverpaid extends EnabledEvents {const EnabledEvents$invoiceOverpaid._();
 
 @override String get value => 'invoice.overpaid';
@@ -2412,7 +2412,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.overpaid'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoicePaid extends EnabledEvents {const EnabledEvents$invoicePaid._();
 
 @override String get value => 'invoice.paid';
@@ -2421,7 +2421,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.paid'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoicePaymentActionRequired extends EnabledEvents {const EnabledEvents$invoicePaymentActionRequired._();
 
 @override String get value => 'invoice.payment_action_required';
@@ -2430,7 +2430,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.payment_action_required'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoicePaymentAttemptRequired extends EnabledEvents {const EnabledEvents$invoicePaymentAttemptRequired._();
 
 @override String get value => 'invoice.payment_attempt_required';
@@ -2439,7 +2439,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.payment_attempt_required'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoicePaymentFailed extends EnabledEvents {const EnabledEvents$invoicePaymentFailed._();
 
 @override String get value => 'invoice.payment_failed';
@@ -2448,7 +2448,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.payment_failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoicePaymentSucceeded extends EnabledEvents {const EnabledEvents$invoicePaymentSucceeded._();
 
 @override String get value => 'invoice.payment_succeeded';
@@ -2457,7 +2457,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.payment_succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceSent extends EnabledEvents {const EnabledEvents$invoiceSent._();
 
 @override String get value => 'invoice.sent';
@@ -2466,7 +2466,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.sent'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceUpcoming extends EnabledEvents {const EnabledEvents$invoiceUpcoming._();
 
 @override String get value => 'invoice.upcoming';
@@ -2475,7 +2475,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.upcoming'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceUpdated extends EnabledEvents {const EnabledEvents$invoiceUpdated._();
 
 @override String get value => 'invoice.updated';
@@ -2484,7 +2484,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceVoided extends EnabledEvents {const EnabledEvents$invoiceVoided._();
 
 @override String get value => 'invoice.voided';
@@ -2493,7 +2493,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.voided'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceWillBeDue extends EnabledEvents {const EnabledEvents$invoiceWillBeDue._();
 
 @override String get value => 'invoice.will_be_due';
@@ -2502,7 +2502,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice.will_be_due'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoicePaymentPaid extends EnabledEvents {const EnabledEvents$invoicePaymentPaid._();
 
 @override String get value => 'invoice_payment.paid';
@@ -2511,7 +2511,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoice_payment.paid'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceitemCreated extends EnabledEvents {const EnabledEvents$invoiceitemCreated._();
 
 @override String get value => 'invoiceitem.created';
@@ -2520,7 +2520,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoiceitem.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$invoiceitemDeleted extends EnabledEvents {const EnabledEvents$invoiceitemDeleted._();
 
 @override String get value => 'invoiceitem.deleted';
@@ -2529,7 +2529,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'invoiceitem.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingAuthorizationCreated extends EnabledEvents {const EnabledEvents$issuingAuthorizationCreated._();
 
 @override String get value => 'issuing_authorization.created';
@@ -2538,7 +2538,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_authorization.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingAuthorizationRequest extends EnabledEvents {const EnabledEvents$issuingAuthorizationRequest._();
 
 @override String get value => 'issuing_authorization.request';
@@ -2547,7 +2547,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_authorization.request'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingAuthorizationUpdated extends EnabledEvents {const EnabledEvents$issuingAuthorizationUpdated._();
 
 @override String get value => 'issuing_authorization.updated';
@@ -2556,7 +2556,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_authorization.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingCardCreated extends EnabledEvents {const EnabledEvents$issuingCardCreated._();
 
 @override String get value => 'issuing_card.created';
@@ -2565,7 +2565,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_card.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingCardUpdated extends EnabledEvents {const EnabledEvents$issuingCardUpdated._();
 
 @override String get value => 'issuing_card.updated';
@@ -2574,7 +2574,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_card.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingCardholderCreated extends EnabledEvents {const EnabledEvents$issuingCardholderCreated._();
 
 @override String get value => 'issuing_cardholder.created';
@@ -2583,7 +2583,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_cardholder.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingCardholderUpdated extends EnabledEvents {const EnabledEvents$issuingCardholderUpdated._();
 
 @override String get value => 'issuing_cardholder.updated';
@@ -2592,7 +2592,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_cardholder.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingDisputeClosed extends EnabledEvents {const EnabledEvents$issuingDisputeClosed._();
 
 @override String get value => 'issuing_dispute.closed';
@@ -2601,7 +2601,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_dispute.closed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingDisputeCreated extends EnabledEvents {const EnabledEvents$issuingDisputeCreated._();
 
 @override String get value => 'issuing_dispute.created';
@@ -2610,7 +2610,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_dispute.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingDisputeFundsReinstated extends EnabledEvents {const EnabledEvents$issuingDisputeFundsReinstated._();
 
 @override String get value => 'issuing_dispute.funds_reinstated';
@@ -2619,7 +2619,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_dispute.funds_reinstated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingDisputeFundsRescinded extends EnabledEvents {const EnabledEvents$issuingDisputeFundsRescinded._();
 
 @override String get value => 'issuing_dispute.funds_rescinded';
@@ -2628,7 +2628,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_dispute.funds_rescinded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingDisputeSubmitted extends EnabledEvents {const EnabledEvents$issuingDisputeSubmitted._();
 
 @override String get value => 'issuing_dispute.submitted';
@@ -2637,7 +2637,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_dispute.submitted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingDisputeUpdated extends EnabledEvents {const EnabledEvents$issuingDisputeUpdated._();
 
 @override String get value => 'issuing_dispute.updated';
@@ -2646,7 +2646,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_dispute.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingPersonalizationDesignActivated extends EnabledEvents {const EnabledEvents$issuingPersonalizationDesignActivated._();
 
 @override String get value => 'issuing_personalization_design.activated';
@@ -2655,7 +2655,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_personalization_design.activated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingPersonalizationDesignDeactivated extends EnabledEvents {const EnabledEvents$issuingPersonalizationDesignDeactivated._();
 
 @override String get value => 'issuing_personalization_design.deactivated';
@@ -2664,7 +2664,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_personalization_design.deactivated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingPersonalizationDesignRejected extends EnabledEvents {const EnabledEvents$issuingPersonalizationDesignRejected._();
 
 @override String get value => 'issuing_personalization_design.rejected';
@@ -2673,7 +2673,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_personalization_design.rejected'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingPersonalizationDesignUpdated extends EnabledEvents {const EnabledEvents$issuingPersonalizationDesignUpdated._();
 
 @override String get value => 'issuing_personalization_design.updated';
@@ -2682,7 +2682,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_personalization_design.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingTokenCreated extends EnabledEvents {const EnabledEvents$issuingTokenCreated._();
 
 @override String get value => 'issuing_token.created';
@@ -2691,7 +2691,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_token.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingTokenUpdated extends EnabledEvents {const EnabledEvents$issuingTokenUpdated._();
 
 @override String get value => 'issuing_token.updated';
@@ -2700,7 +2700,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_token.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingTransactionCreated extends EnabledEvents {const EnabledEvents$issuingTransactionCreated._();
 
 @override String get value => 'issuing_transaction.created';
@@ -2709,7 +2709,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_transaction.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingTransactionPurchaseDetailsReceiptUpdated extends EnabledEvents {const EnabledEvents$issuingTransactionPurchaseDetailsReceiptUpdated._();
 
 @override String get value => 'issuing_transaction.purchase_details_receipt_updated';
@@ -2718,7 +2718,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_transaction.purchase_details_receipt_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$issuingTransactionUpdated extends EnabledEvents {const EnabledEvents$issuingTransactionUpdated._();
 
 @override String get value => 'issuing_transaction.updated';
@@ -2727,7 +2727,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issuing_transaction.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$mandateUpdated extends EnabledEvents {const EnabledEvents$mandateUpdated._();
 
 @override String get value => 'mandate.updated';
@@ -2736,7 +2736,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'mandate.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentAmountCapturableUpdated extends EnabledEvents {const EnabledEvents$paymentIntentAmountCapturableUpdated._();
 
 @override String get value => 'payment_intent.amount_capturable_updated';
@@ -2745,7 +2745,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.amount_capturable_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentCanceled extends EnabledEvents {const EnabledEvents$paymentIntentCanceled._();
 
 @override String get value => 'payment_intent.canceled';
@@ -2754,7 +2754,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentCreated extends EnabledEvents {const EnabledEvents$paymentIntentCreated._();
 
 @override String get value => 'payment_intent.created';
@@ -2763,7 +2763,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentPartiallyFunded extends EnabledEvents {const EnabledEvents$paymentIntentPartiallyFunded._();
 
 @override String get value => 'payment_intent.partially_funded';
@@ -2772,7 +2772,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.partially_funded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentPaymentFailed extends EnabledEvents {const EnabledEvents$paymentIntentPaymentFailed._();
 
 @override String get value => 'payment_intent.payment_failed';
@@ -2781,7 +2781,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.payment_failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentProcessing extends EnabledEvents {const EnabledEvents$paymentIntentProcessing._();
 
 @override String get value => 'payment_intent.processing';
@@ -2790,7 +2790,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.processing'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentRequiresAction extends EnabledEvents {const EnabledEvents$paymentIntentRequiresAction._();
 
 @override String get value => 'payment_intent.requires_action';
@@ -2799,7 +2799,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.requires_action'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentIntentSucceeded extends EnabledEvents {const EnabledEvents$paymentIntentSucceeded._();
 
 @override String get value => 'payment_intent.succeeded';
@@ -2808,7 +2808,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_intent.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentLinkCreated extends EnabledEvents {const EnabledEvents$paymentLinkCreated._();
 
 @override String get value => 'payment_link.created';
@@ -2817,7 +2817,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_link.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentLinkUpdated extends EnabledEvents {const EnabledEvents$paymentLinkUpdated._();
 
 @override String get value => 'payment_link.updated';
@@ -2826,7 +2826,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_link.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentMethodAttached extends EnabledEvents {const EnabledEvents$paymentMethodAttached._();
 
 @override String get value => 'payment_method.attached';
@@ -2835,7 +2835,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_method.attached'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentMethodAutomaticallyUpdated extends EnabledEvents {const EnabledEvents$paymentMethodAutomaticallyUpdated._();
 
 @override String get value => 'payment_method.automatically_updated';
@@ -2844,7 +2844,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_method.automatically_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentMethodDetached extends EnabledEvents {const EnabledEvents$paymentMethodDetached._();
 
 @override String get value => 'payment_method.detached';
@@ -2853,7 +2853,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_method.detached'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$paymentMethodUpdated extends EnabledEvents {const EnabledEvents$paymentMethodUpdated._();
 
 @override String get value => 'payment_method.updated';
@@ -2862,7 +2862,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payment_method.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$payoutCanceled extends EnabledEvents {const EnabledEvents$payoutCanceled._();
 
 @override String get value => 'payout.canceled';
@@ -2871,7 +2871,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payout.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$payoutCreated extends EnabledEvents {const EnabledEvents$payoutCreated._();
 
 @override String get value => 'payout.created';
@@ -2880,7 +2880,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payout.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$payoutFailed extends EnabledEvents {const EnabledEvents$payoutFailed._();
 
 @override String get value => 'payout.failed';
@@ -2889,7 +2889,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payout.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$payoutPaid extends EnabledEvents {const EnabledEvents$payoutPaid._();
 
 @override String get value => 'payout.paid';
@@ -2898,7 +2898,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payout.paid'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$payoutReconciliationCompleted extends EnabledEvents {const EnabledEvents$payoutReconciliationCompleted._();
 
 @override String get value => 'payout.reconciliation_completed';
@@ -2907,7 +2907,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payout.reconciliation_completed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$payoutUpdated extends EnabledEvents {const EnabledEvents$payoutUpdated._();
 
 @override String get value => 'payout.updated';
@@ -2916,7 +2916,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'payout.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$personCreated extends EnabledEvents {const EnabledEvents$personCreated._();
 
 @override String get value => 'person.created';
@@ -2925,7 +2925,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'person.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$personDeleted extends EnabledEvents {const EnabledEvents$personDeleted._();
 
 @override String get value => 'person.deleted';
@@ -2934,7 +2934,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'person.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$personUpdated extends EnabledEvents {const EnabledEvents$personUpdated._();
 
 @override String get value => 'person.updated';
@@ -2943,7 +2943,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'person.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$planCreated extends EnabledEvents {const EnabledEvents$planCreated._();
 
 @override String get value => 'plan.created';
@@ -2952,7 +2952,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'plan.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$planDeleted extends EnabledEvents {const EnabledEvents$planDeleted._();
 
 @override String get value => 'plan.deleted';
@@ -2961,7 +2961,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'plan.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$planUpdated extends EnabledEvents {const EnabledEvents$planUpdated._();
 
 @override String get value => 'plan.updated';
@@ -2970,7 +2970,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'plan.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$priceCreated extends EnabledEvents {const EnabledEvents$priceCreated._();
 
 @override String get value => 'price.created';
@@ -2979,7 +2979,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'price.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$priceDeleted extends EnabledEvents {const EnabledEvents$priceDeleted._();
 
 @override String get value => 'price.deleted';
@@ -2988,7 +2988,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'price.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$priceUpdated extends EnabledEvents {const EnabledEvents$priceUpdated._();
 
 @override String get value => 'price.updated';
@@ -2997,7 +2997,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'price.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$productCreated extends EnabledEvents {const EnabledEvents$productCreated._();
 
 @override String get value => 'product.created';
@@ -3006,7 +3006,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'product.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$productDeleted extends EnabledEvents {const EnabledEvents$productDeleted._();
 
 @override String get value => 'product.deleted';
@@ -3015,7 +3015,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'product.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$productUpdated extends EnabledEvents {const EnabledEvents$productUpdated._();
 
 @override String get value => 'product.updated';
@@ -3024,7 +3024,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'product.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$promotionCodeCreated extends EnabledEvents {const EnabledEvents$promotionCodeCreated._();
 
 @override String get value => 'promotion_code.created';
@@ -3033,7 +3033,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'promotion_code.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$promotionCodeUpdated extends EnabledEvents {const EnabledEvents$promotionCodeUpdated._();
 
 @override String get value => 'promotion_code.updated';
@@ -3042,7 +3042,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'promotion_code.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$quoteAccepted extends EnabledEvents {const EnabledEvents$quoteAccepted._();
 
 @override String get value => 'quote.accepted';
@@ -3051,7 +3051,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'quote.accepted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$quoteCanceled extends EnabledEvents {const EnabledEvents$quoteCanceled._();
 
 @override String get value => 'quote.canceled';
@@ -3060,7 +3060,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'quote.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$quoteCreated extends EnabledEvents {const EnabledEvents$quoteCreated._();
 
 @override String get value => 'quote.created';
@@ -3069,7 +3069,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'quote.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$quoteFinalized extends EnabledEvents {const EnabledEvents$quoteFinalized._();
 
 @override String get value => 'quote.finalized';
@@ -3078,7 +3078,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'quote.finalized'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$radarEarlyFraudWarningCreated extends EnabledEvents {const EnabledEvents$radarEarlyFraudWarningCreated._();
 
 @override String get value => 'radar.early_fraud_warning.created';
@@ -3087,7 +3087,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'radar.early_fraud_warning.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$radarEarlyFraudWarningUpdated extends EnabledEvents {const EnabledEvents$radarEarlyFraudWarningUpdated._();
 
 @override String get value => 'radar.early_fraud_warning.updated';
@@ -3096,7 +3096,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'radar.early_fraud_warning.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$refundCreated extends EnabledEvents {const EnabledEvents$refundCreated._();
 
 @override String get value => 'refund.created';
@@ -3105,7 +3105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'refund.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$refundFailed extends EnabledEvents {const EnabledEvents$refundFailed._();
 
 @override String get value => 'refund.failed';
@@ -3114,7 +3114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'refund.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$refundUpdated extends EnabledEvents {const EnabledEvents$refundUpdated._();
 
 @override String get value => 'refund.updated';
@@ -3123,7 +3123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'refund.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reportingReportRunFailed extends EnabledEvents {const EnabledEvents$reportingReportRunFailed._();
 
 @override String get value => 'reporting.report_run.failed';
@@ -3132,7 +3132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reporting.report_run.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reportingReportRunSucceeded extends EnabledEvents {const EnabledEvents$reportingReportRunSucceeded._();
 
 @override String get value => 'reporting.report_run.succeeded';
@@ -3141,7 +3141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reporting.report_run.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reportingReportTypeUpdated extends EnabledEvents {const EnabledEvents$reportingReportTypeUpdated._();
 
 @override String get value => 'reporting.report_type.updated';
@@ -3150,7 +3150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reporting.report_type.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reserveHoldCreated extends EnabledEvents {const EnabledEvents$reserveHoldCreated._();
 
 @override String get value => 'reserve.hold.created';
@@ -3159,7 +3159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.hold.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reserveHoldUpdated extends EnabledEvents {const EnabledEvents$reserveHoldUpdated._();
 
 @override String get value => 'reserve.hold.updated';
@@ -3168,7 +3168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.hold.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reservePlanCreated extends EnabledEvents {const EnabledEvents$reservePlanCreated._();
 
 @override String get value => 'reserve.plan.created';
@@ -3177,7 +3177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.plan.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reservePlanDisabled extends EnabledEvents {const EnabledEvents$reservePlanDisabled._();
 
 @override String get value => 'reserve.plan.disabled';
@@ -3186,7 +3186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.plan.disabled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reservePlanExpired extends EnabledEvents {const EnabledEvents$reservePlanExpired._();
 
 @override String get value => 'reserve.plan.expired';
@@ -3195,7 +3195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.plan.expired'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reservePlanUpdated extends EnabledEvents {const EnabledEvents$reservePlanUpdated._();
 
 @override String get value => 'reserve.plan.updated';
@@ -3204,7 +3204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.plan.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reserveReleaseCreated extends EnabledEvents {const EnabledEvents$reserveReleaseCreated._();
 
 @override String get value => 'reserve.release.created';
@@ -3213,7 +3213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'reserve.release.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reviewClosed extends EnabledEvents {const EnabledEvents$reviewClosed._();
 
 @override String get value => 'review.closed';
@@ -3222,7 +3222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'review.closed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$reviewOpened extends EnabledEvents {const EnabledEvents$reviewOpened._();
 
 @override String get value => 'review.opened';
@@ -3231,7 +3231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'review.opened'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$setupIntentCanceled extends EnabledEvents {const EnabledEvents$setupIntentCanceled._();
 
 @override String get value => 'setup_intent.canceled';
@@ -3240,7 +3240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'setup_intent.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$setupIntentCreated extends EnabledEvents {const EnabledEvents$setupIntentCreated._();
 
 @override String get value => 'setup_intent.created';
@@ -3249,7 +3249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'setup_intent.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$setupIntentRequiresAction extends EnabledEvents {const EnabledEvents$setupIntentRequiresAction._();
 
 @override String get value => 'setup_intent.requires_action';
@@ -3258,7 +3258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'setup_intent.requires_action'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$setupIntentSetupFailed extends EnabledEvents {const EnabledEvents$setupIntentSetupFailed._();
 
 @override String get value => 'setup_intent.setup_failed';
@@ -3267,7 +3267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'setup_intent.setup_failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$setupIntentSucceeded extends EnabledEvents {const EnabledEvents$setupIntentSucceeded._();
 
 @override String get value => 'setup_intent.succeeded';
@@ -3276,7 +3276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'setup_intent.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sigmaScheduledQueryRunCreated extends EnabledEvents {const EnabledEvents$sigmaScheduledQueryRunCreated._();
 
 @override String get value => 'sigma.scheduled_query_run.created';
@@ -3285,7 +3285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'sigma.scheduled_query_run.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceCanceled extends EnabledEvents {const EnabledEvents$sourceCanceled._();
 
 @override String get value => 'source.canceled';
@@ -3294,7 +3294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceChargeable extends EnabledEvents {const EnabledEvents$sourceChargeable._();
 
 @override String get value => 'source.chargeable';
@@ -3303,7 +3303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.chargeable'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceFailed extends EnabledEvents {const EnabledEvents$sourceFailed._();
 
 @override String get value => 'source.failed';
@@ -3312,7 +3312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceMandateNotification extends EnabledEvents {const EnabledEvents$sourceMandateNotification._();
 
 @override String get value => 'source.mandate_notification';
@@ -3321,7 +3321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.mandate_notification'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceRefundAttributesRequired extends EnabledEvents {const EnabledEvents$sourceRefundAttributesRequired._();
 
 @override String get value => 'source.refund_attributes_required';
@@ -3330,7 +3330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.refund_attributes_required'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceTransactionCreated extends EnabledEvents {const EnabledEvents$sourceTransactionCreated._();
 
 @override String get value => 'source.transaction.created';
@@ -3339,7 +3339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.transaction.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$sourceTransactionUpdated extends EnabledEvents {const EnabledEvents$sourceTransactionUpdated._();
 
 @override String get value => 'source.transaction.updated';
@@ -3348,7 +3348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'source.transaction.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleAborted extends EnabledEvents {const EnabledEvents$subscriptionScheduleAborted._();
 
 @override String get value => 'subscription_schedule.aborted';
@@ -3357,7 +3357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.aborted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleCanceled extends EnabledEvents {const EnabledEvents$subscriptionScheduleCanceled._();
 
 @override String get value => 'subscription_schedule.canceled';
@@ -3366,7 +3366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleCompleted extends EnabledEvents {const EnabledEvents$subscriptionScheduleCompleted._();
 
 @override String get value => 'subscription_schedule.completed';
@@ -3375,7 +3375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.completed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleCreated extends EnabledEvents {const EnabledEvents$subscriptionScheduleCreated._();
 
 @override String get value => 'subscription_schedule.created';
@@ -3384,7 +3384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleExpiring extends EnabledEvents {const EnabledEvents$subscriptionScheduleExpiring._();
 
 @override String get value => 'subscription_schedule.expiring';
@@ -3393,7 +3393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.expiring'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleReleased extends EnabledEvents {const EnabledEvents$subscriptionScheduleReleased._();
 
 @override String get value => 'subscription_schedule.released';
@@ -3402,7 +3402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.released'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$subscriptionScheduleUpdated extends EnabledEvents {const EnabledEvents$subscriptionScheduleUpdated._();
 
 @override String get value => 'subscription_schedule.updated';
@@ -3411,7 +3411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'subscription_schedule.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$taxSettingsUpdated extends EnabledEvents {const EnabledEvents$taxSettingsUpdated._();
 
 @override String get value => 'tax.settings.updated';
@@ -3420,7 +3420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'tax.settings.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$taxRateCreated extends EnabledEvents {const EnabledEvents$taxRateCreated._();
 
 @override String get value => 'tax_rate.created';
@@ -3429,7 +3429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'tax_rate.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$taxRateUpdated extends EnabledEvents {const EnabledEvents$taxRateUpdated._();
 
 @override String get value => 'tax_rate.updated';
@@ -3438,7 +3438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'tax_rate.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$terminalReaderActionFailed extends EnabledEvents {const EnabledEvents$terminalReaderActionFailed._();
 
 @override String get value => 'terminal.reader.action_failed';
@@ -3447,7 +3447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'terminal.reader.action_failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$terminalReaderActionSucceeded extends EnabledEvents {const EnabledEvents$terminalReaderActionSucceeded._();
 
 @override String get value => 'terminal.reader.action_succeeded';
@@ -3456,7 +3456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'terminal.reader.action_succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$terminalReaderActionUpdated extends EnabledEvents {const EnabledEvents$terminalReaderActionUpdated._();
 
 @override String get value => 'terminal.reader.action_updated';
@@ -3465,7 +3465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'terminal.reader.action_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$testHelpersTestClockAdvancing extends EnabledEvents {const EnabledEvents$testHelpersTestClockAdvancing._();
 
 @override String get value => 'test_helpers.test_clock.advancing';
@@ -3474,7 +3474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'test_helpers.test_clock.advancing'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$testHelpersTestClockCreated extends EnabledEvents {const EnabledEvents$testHelpersTestClockCreated._();
 
 @override String get value => 'test_helpers.test_clock.created';
@@ -3483,7 +3483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'test_helpers.test_clock.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$testHelpersTestClockDeleted extends EnabledEvents {const EnabledEvents$testHelpersTestClockDeleted._();
 
 @override String get value => 'test_helpers.test_clock.deleted';
@@ -3492,7 +3492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'test_helpers.test_clock.deleted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$testHelpersTestClockInternalFailure extends EnabledEvents {const EnabledEvents$testHelpersTestClockInternalFailure._();
 
 @override String get value => 'test_helpers.test_clock.internal_failure';
@@ -3501,7 +3501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'test_helpers.test_clock.internal_failure'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$testHelpersTestClockReady extends EnabledEvents {const EnabledEvents$testHelpersTestClockReady._();
 
 @override String get value => 'test_helpers.test_clock.ready';
@@ -3510,7 +3510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'test_helpers.test_clock.ready'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$topupCanceled extends EnabledEvents {const EnabledEvents$topupCanceled._();
 
 @override String get value => 'topup.canceled';
@@ -3519,7 +3519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'topup.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$topupCreated extends EnabledEvents {const EnabledEvents$topupCreated._();
 
 @override String get value => 'topup.created';
@@ -3528,7 +3528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'topup.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$topupFailed extends EnabledEvents {const EnabledEvents$topupFailed._();
 
 @override String get value => 'topup.failed';
@@ -3537,7 +3537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'topup.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$topupReversed extends EnabledEvents {const EnabledEvents$topupReversed._();
 
 @override String get value => 'topup.reversed';
@@ -3546,7 +3546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'topup.reversed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$topupSucceeded extends EnabledEvents {const EnabledEvents$topupSucceeded._();
 
 @override String get value => 'topup.succeeded';
@@ -3555,7 +3555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'topup.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$transferCreated extends EnabledEvents {const EnabledEvents$transferCreated._();
 
 @override String get value => 'transfer.created';
@@ -3564,7 +3564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'transfer.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$transferReversed extends EnabledEvents {const EnabledEvents$transferReversed._();
 
 @override String get value => 'transfer.reversed';
@@ -3573,7 +3573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'transfer.reversed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$transferUpdated extends EnabledEvents {const EnabledEvents$transferUpdated._();
 
 @override String get value => 'transfer.updated';
@@ -3582,7 +3582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'transfer.updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryCreditReversalCreated extends EnabledEvents {const EnabledEvents$treasuryCreditReversalCreated._();
 
 @override String get value => 'treasury.credit_reversal.created';
@@ -3591,7 +3591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.credit_reversal.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryCreditReversalPosted extends EnabledEvents {const EnabledEvents$treasuryCreditReversalPosted._();
 
 @override String get value => 'treasury.credit_reversal.posted';
@@ -3600,7 +3600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.credit_reversal.posted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryDebitReversalCompleted extends EnabledEvents {const EnabledEvents$treasuryDebitReversalCompleted._();
 
 @override String get value => 'treasury.debit_reversal.completed';
@@ -3609,7 +3609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.debit_reversal.completed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryDebitReversalCreated extends EnabledEvents {const EnabledEvents$treasuryDebitReversalCreated._();
 
 @override String get value => 'treasury.debit_reversal.created';
@@ -3618,7 +3618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.debit_reversal.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryDebitReversalInitialCreditGranted extends EnabledEvents {const EnabledEvents$treasuryDebitReversalInitialCreditGranted._();
 
 @override String get value => 'treasury.debit_reversal.initial_credit_granted';
@@ -3627,7 +3627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.debit_reversal.initial_credit_granted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryFinancialAccountClosed extends EnabledEvents {const EnabledEvents$treasuryFinancialAccountClosed._();
 
 @override String get value => 'treasury.financial_account.closed';
@@ -3636,7 +3636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.financial_account.closed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryFinancialAccountCreated extends EnabledEvents {const EnabledEvents$treasuryFinancialAccountCreated._();
 
 @override String get value => 'treasury.financial_account.created';
@@ -3645,7 +3645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.financial_account.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryFinancialAccountFeaturesStatusUpdated extends EnabledEvents {const EnabledEvents$treasuryFinancialAccountFeaturesStatusUpdated._();
 
 @override String get value => 'treasury.financial_account.features_status_updated';
@@ -3654,7 +3654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.financial_account.features_status_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryInboundTransferCanceled extends EnabledEvents {const EnabledEvents$treasuryInboundTransferCanceled._();
 
 @override String get value => 'treasury.inbound_transfer.canceled';
@@ -3663,7 +3663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.inbound_transfer.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryInboundTransferCreated extends EnabledEvents {const EnabledEvents$treasuryInboundTransferCreated._();
 
 @override String get value => 'treasury.inbound_transfer.created';
@@ -3672,7 +3672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.inbound_transfer.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryInboundTransferFailed extends EnabledEvents {const EnabledEvents$treasuryInboundTransferFailed._();
 
 @override String get value => 'treasury.inbound_transfer.failed';
@@ -3681,7 +3681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.inbound_transfer.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryInboundTransferSucceeded extends EnabledEvents {const EnabledEvents$treasuryInboundTransferSucceeded._();
 
 @override String get value => 'treasury.inbound_transfer.succeeded';
@@ -3690,7 +3690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.inbound_transfer.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentCanceled extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentCanceled._();
 
 @override String get value => 'treasury.outbound_payment.canceled';
@@ -3699,7 +3699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentCreated extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentCreated._();
 
 @override String get value => 'treasury.outbound_payment.created';
@@ -3708,7 +3708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentExpectedArrivalDateUpdated extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentExpectedArrivalDateUpdated._();
 
 @override String get value => 'treasury.outbound_payment.expected_arrival_date_updated';
@@ -3717,7 +3717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.expected_arrival_date_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentFailed extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentFailed._();
 
 @override String get value => 'treasury.outbound_payment.failed';
@@ -3726,7 +3726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentPosted extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentPosted._();
 
 @override String get value => 'treasury.outbound_payment.posted';
@@ -3735,7 +3735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.posted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentReturned extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentReturned._();
 
 @override String get value => 'treasury.outbound_payment.returned';
@@ -3744,7 +3744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.returned'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundPaymentTrackingDetailsUpdated extends EnabledEvents {const EnabledEvents$treasuryOutboundPaymentTrackingDetailsUpdated._();
 
 @override String get value => 'treasury.outbound_payment.tracking_details_updated';
@@ -3753,7 +3753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_payment.tracking_details_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferCanceled extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferCanceled._();
 
 @override String get value => 'treasury.outbound_transfer.canceled';
@@ -3762,7 +3762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.canceled'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferCreated extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferCreated._();
 
 @override String get value => 'treasury.outbound_transfer.created';
@@ -3771,7 +3771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferExpectedArrivalDateUpdated extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferExpectedArrivalDateUpdated._();
 
 @override String get value => 'treasury.outbound_transfer.expected_arrival_date_updated';
@@ -3780,7 +3780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.expected_arrival_date_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferFailed extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferFailed._();
 
 @override String get value => 'treasury.outbound_transfer.failed';
@@ -3789,7 +3789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferPosted extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferPosted._();
 
 @override String get value => 'treasury.outbound_transfer.posted';
@@ -3798,7 +3798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.posted'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferReturned extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferReturned._();
 
 @override String get value => 'treasury.outbound_transfer.returned';
@@ -3807,7 +3807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.returned'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryOutboundTransferTrackingDetailsUpdated extends EnabledEvents {const EnabledEvents$treasuryOutboundTransferTrackingDetailsUpdated._();
 
 @override String get value => 'treasury.outbound_transfer.tracking_details_updated';
@@ -3816,7 +3816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.outbound_transfer.tracking_details_updated'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryReceivedCreditCreated extends EnabledEvents {const EnabledEvents$treasuryReceivedCreditCreated._();
 
 @override String get value => 'treasury.received_credit.created';
@@ -3825,7 +3825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.received_credit.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryReceivedCreditFailed extends EnabledEvents {const EnabledEvents$treasuryReceivedCreditFailed._();
 
 @override String get value => 'treasury.received_credit.failed';
@@ -3834,7 +3834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.received_credit.failed'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryReceivedCreditSucceeded extends EnabledEvents {const EnabledEvents$treasuryReceivedCreditSucceeded._();
 
 @override String get value => 'treasury.received_credit.succeeded';
@@ -3843,7 +3843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.received_credit.succeeded'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$treasuryReceivedDebitCreated extends EnabledEvents {const EnabledEvents$treasuryReceivedDebitCreated._();
 
 @override String get value => 'treasury.received_debit.created';
@@ -3852,7 +3852,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'treasury.received_debit.created'.hashCode;
 
- }
+}
 @immutable final class EnabledEvents$Unknown extends EnabledEvents {const EnabledEvents$Unknown(this.value);
 
 @override final String value;
@@ -3862,4 +3862,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

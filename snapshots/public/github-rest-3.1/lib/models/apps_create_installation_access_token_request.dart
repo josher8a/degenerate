@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';@immutable final class AppsCreateInstallationAccessTokenRequest {const AppsCreateInstallationAccessTokenRequest({this.repositories, this.repositoryIds, this.permissions, });
 
-factory AppsCreateInstallationAccessTokenRequest.fromJson(Map<String, dynamic> json) { return AppsCreateInstallationAccessTokenRequest(
+factory AppsCreateInstallationAccessTokenRequest.fromJson(Map<String, dynamic> json) {return AppsCreateInstallationAccessTokenRequest(
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// List of repository names that the token should have access to
 final List<String>? repositories;
@@ -17,17 +17,17 @@ final List<int>? repositoryIds;
 
 final AppPermissions? permissions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'repositories': ?repositories,
   'repository_ids': ?repositoryIds,
   if (permissions != null) 'permissions': permissions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'repositories', 'repository_ids', 'permissions'}.contains(key)); } 
-AppsCreateInstallationAccessTokenRequest copyWith({List<String>? Function()? repositories, List<int>? Function()? repositoryIds, AppPermissions? Function()? permissions, }) { return AppsCreateInstallationAccessTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'repositories', 'repository_ids', 'permissions'}.contains(key));}
+AppsCreateInstallationAccessTokenRequest copyWith({List<String>? Function()? repositories, List<int>? Function()? repositoryIds, AppPermissions? Function()? permissions, }) {return AppsCreateInstallationAccessTokenRequest(
   repositories: repositories != null ? repositories() : this.repositories,
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
   permissions: permissions != null ? permissions() : this.permissions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCreateInstallationAccessTokenRequest &&
           listEquals(repositories, other.repositories) &&
@@ -38,4 +38,4 @@ AppsCreateInstallationAccessTokenRequest copyWith({List<String>? Function()? rep
 
 @override String toString() => 'AppsCreateInstallationAccessTokenRequest(repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus();
 
-factory WebhookRepositoryImportStatus.fromJson(String json) { return switch (json) {
+factory WebhookRepositoryImportStatus.fromJson(String json) {return switch (json) {
   'success' => success,
   'cancelled' => cancelled,
   'failure' => failure,
   _ => WebhookRepositoryImportStatus$Unknown(json),
-}; }
+};}
 
 static const WebhookRepositoryImportStatus success = WebhookRepositoryImportStatus$success._();
 
@@ -19,33 +19,33 @@ static const WebhookRepositoryImportStatus failure = WebhookRepositoryImportStat
 static const List<WebhookRepositoryImportStatus> values = [success, cancelled, failure];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'success' => 'success',
   'cancelled' => 'cancelled',
   'failure' => 'failure',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookRepositoryImportStatus$Unknown; } 
+bool get isUnknown {return this is WebhookRepositoryImportStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() success, required W Function() cancelled, required W Function() failure, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() success, required W Function() cancelled, required W Function() failure, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookRepositoryImportStatus$success() => success(),
       WebhookRepositoryImportStatus$cancelled() => cancelled(),
       WebhookRepositoryImportStatus$failure() => failure(),
       WebhookRepositoryImportStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? cancelled, W Function()? failure, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? cancelled, W Function()? failure, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookRepositoryImportStatus$success() => success != null ? success() : orElse(value),
       WebhookRepositoryImportStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
       WebhookRepositoryImportStatus$failure() => failure != null ? failure() : orElse(value),
       WebhookRepositoryImportStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookRepositoryImportStatus($value)';
 
- }
+}
 @immutable final class WebhookRepositoryImportStatus$success extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$success._();
 
 @override String get value => 'success';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class WebhookRepositoryImportStatus$cancelled extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class WebhookRepositoryImportStatus$failure extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$failure._();
 
 @override String get value => 'failure';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class WebhookRepositoryImportStatus$Unknown extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$Unknown(this.value);
 
 @override final String value;
@@ -82,17 +82,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookRepositoryImport {const WebhookRepositoryImport({required this.repository, required this.sender, required this.status, this.enterprise, this.installation, this.organization, });
 
-factory WebhookRepositoryImport.fromJson(Map<String, dynamic> json) { return WebhookRepositoryImport(
+factory WebhookRepositoryImport.fromJson(Map<String, dynamic> json) {return WebhookRepositoryImport(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   status: WebhookRepositoryImportStatus.fromJson(json['status'] as String),
-); }
+);}
 
 final EnterpriseWebhooks? enterprise;
 
@@ -106,25 +106,25 @@ final SimpleUser sender;
 
 final WebhookRepositoryImportStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('status'); } 
-WebhookRepositoryImport copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookRepositoryImportStatus? status, }) { return WebhookRepositoryImport(
+      json.containsKey('status');}
+WebhookRepositoryImport copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookRepositoryImportStatus? status, }) {return WebhookRepositoryImport(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryImport &&
           enterprise == other.enterprise &&
@@ -138,4 +138,4 @@ WebhookRepositoryImport copyWith({EnterpriseWebhooks? Function()? enterprise, Si
 
 @override String toString() => 'WebhookRepositoryImport(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, status: $status)';
 
- }
+}

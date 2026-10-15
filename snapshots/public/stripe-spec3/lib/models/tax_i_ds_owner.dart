@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TaxIDsOwner
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner/get_tax_ids_owner_type.dart';/// 
-@immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner/get_tax_ids_owner_type.dart';/// 
+@immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount = const Omittable.absent(), });
 
-factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
-  account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+factory TaxIDsOwner.fromJson(Map<String, dynamic> json) {return TaxIDsOwner(
+  account: json['account'] != null ? ApplicationFeeAccount.fromJson(json['account']) : null,
+  application: json['application'] != null ? ApplicationFeeApplication.fromJson(json['application']) : null,
+  customer: json['customer'] != null ? BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']) : null,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   type: GetTaxIdsOwnerType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The account being referenced when `type` is `account`.
 final ApplicationFeeAccount? account;
@@ -22,33 +22,33 @@ final ApplicationFeeApplication? application;
 final BankConnectionsResourceAccountholderCustomer? customer;
 
 /// The Account representing the customer being referenced when `type` is `customer`.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Type of owner referenced.
 final GetTaxIdsOwnerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account != null) 'account': account?.toJson(),
   if (application != null) 'application': application?.toJson(),
   if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final customerAccount$ = customerAccount;
+List<String> validate() {final errors = <String>[];
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-TaxIDsOwner copyWith({ApplicationFeeAccount? Function()? account, ApplicationFeeApplication? Function()? application, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, GetTaxIdsOwnerType? type, }) { return TaxIDsOwner(
+return errors;}
+TaxIDsOwner copyWith({ApplicationFeeAccount? Function()? account, ApplicationFeeApplication? Function()? application, BankConnectionsResourceAccountholderCustomer? Function()? customer, Omittable<String?>? customerAccount, GetTaxIdsOwnerType? type, }) {return TaxIDsOwner(
   account: account != null ? account() : this.account,
   application: application != null ? application() : this.application,
   customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxIDsOwner &&
           account == other.account &&
@@ -61,4 +61,4 @@ TaxIDsOwner copyWith({ApplicationFeeAccount? Function()? account, ApplicationFee
 
 @override String toString() => 'TaxIDsOwner(account: $account, application: $application, customer: $customer, customerAccount: $customerAccount, type: $type)';
 
- }
+}

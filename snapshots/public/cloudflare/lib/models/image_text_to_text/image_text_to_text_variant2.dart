@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageTextToText (inline: Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages.dart';@immutable final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({required this.image, required this.messages, this.frequencyPenalty, this.ignoreEos, this.maxTokens = 512, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages.dart';@immutable final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({required this.image, required this.messages, this.frequencyPenalty, this.ignoreEos, this.maxTokens, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
-factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2(
+factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) {return ImageTextToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   ignoreEos: json['ignore_eos'] as bool?,
   image: json['image'] as String,
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 512,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => Variant2Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
@@ -15,7 +15,7 @@ factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) { return Ima
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -27,7 +27,7 @@ final bool? ignoreEos;
 final String image;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// An array of message objects representing the conversation history.
 final List<Variant2Messages> messages;
@@ -50,11 +50,14 @@ final double? topK;
 /// Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `maxTokens`, or its schema default when absent.
+int get maxTokensOrDefault => maxTokens ?? 512;
+
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'ignore_eos': ?ignoreEos,
   'image': image,
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'messages': messages.map((e) => e.toJson()).toList(),
   'presence_penalty': ?presencePenalty,
   'repetition_penalty': ?repetitionPenalty,
@@ -62,10 +65,10 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
-      json.containsKey('messages'); } 
-ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int Function()? maxTokens, List<Variant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image') && json['image'] is String &&
+      json.containsKey('messages');}
+ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int? Function()? maxTokens, List<Variant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) {return ImageTextToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   ignoreEos: ignoreEos != null ? ignoreEos() : this.ignoreEos,
   image: image ?? this.image,
@@ -77,7 +80,7 @@ ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Fu
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageTextToTextVariant2 &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -96,4 +99,4 @@ ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Fu
 
 @override String toString() => 'ImageTextToTextVariant2(\n  frequencyPenalty: $frequencyPenalty,\n  ignoreEos: $ignoreEos,\n  image: $image,\n  maxTokens: $maxTokens,\n  messages: $messages,\n  presencePenalty: $presencePenalty,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
- }
+}

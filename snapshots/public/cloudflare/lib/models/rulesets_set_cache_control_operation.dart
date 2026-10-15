@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache-control directive.
 sealed class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation();
 
-factory RulesetsSetCacheControlOperation.fromJson(String json) { return switch (json) {
+factory RulesetsSetCacheControlOperation.fromJson(String json) {return switch (json) {
   'set' => $set,
   'remove' => remove,
   _ => RulesetsSetCacheControlOperation$Unknown(json),
-}; }
+};}
 
 static const RulesetsSetCacheControlOperation $set = RulesetsSetCacheControlOperation$$set._();
 
@@ -17,30 +17,30 @@ static const RulesetsSetCacheControlOperation remove = RulesetsSetCacheControlOp
 static const List<RulesetsSetCacheControlOperation> values = [$set, remove];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'set' => r'$set',
   'remove' => 'remove',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RulesetsSetCacheControlOperation$Unknown; } 
+bool get isUnknown {return this is RulesetsSetCacheControlOperation$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $set, required W Function() remove, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $set, required W Function() remove, required W Function(String value) $unknown, }) {return switch (this) {
       RulesetsSetCacheControlOperation$$set() => $set(),
       RulesetsSetCacheControlOperation$remove() => remove(),
       RulesetsSetCacheControlOperation$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $set, W Function()? remove, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $set, W Function()? remove, W Function(String value)? $unknown, }) {return switch (this) {
       RulesetsSetCacheControlOperation$$set() => $set != null ? $set() : orElse(value),
       RulesetsSetCacheControlOperation$remove() => remove != null ? remove() : orElse(value),
       RulesetsSetCacheControlOperation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RulesetsSetCacheControlOperation($value)';
 
- }
+}
 @immutable final class RulesetsSetCacheControlOperation$$set extends RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation$$set._();
 
 @override String get value => 'set';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $set, W 
 
 @override int get hashCode => 'set'.hashCode;
 
- }
+}
 @immutable final class RulesetsSetCacheControlOperation$remove extends RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation$remove._();
 
 @override String get value => 'remove';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $set, W 
 
 @override int get hashCode => 'remove'.hashCode;
 
- }
+}
 @immutable final class RulesetsSetCacheControlOperation$Unknown extends RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $set, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

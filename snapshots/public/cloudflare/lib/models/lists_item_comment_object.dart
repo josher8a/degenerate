@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item_comment.dart';@immutable final class ListsItemCommentObject {const ListsItemCommentObject({this.comment});
 
-factory ListsItemCommentObject.fromJson(Map<String, dynamic> json) { return ListsItemCommentObject(
+factory ListsItemCommentObject.fromJson(Map<String, dynamic> json) {return ListsItemCommentObject(
   comment: json['comment'] != null ? ListsItemComment.fromJson(json['comment'] as String) : null,
-); }
+);}
 
 /// Defines an informative summary of the list item.
 final ListsItemComment? comment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment'}.contains(key)); } 
-ListsItemCommentObject copyWith({ListsItemComment? Function()? comment}) { return ListsItemCommentObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment'}.contains(key));}
+ListsItemCommentObject copyWith({ListsItemComment? Function()? comment}) {return ListsItemCommentObject(
   comment: comment != null ? comment() : this.comment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsItemCommentObject &&
           comment == other.comment;
@@ -25,4 +25,4 @@ ListsItemCommentObject copyWith({ListsItemComment? Function()? comment}) { retur
 
 @override String toString() => 'ListsItemCommentObject(comment: $comment)';
 
- }
+}

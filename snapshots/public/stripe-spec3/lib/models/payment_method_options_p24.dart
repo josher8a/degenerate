@@ -4,9 +4,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentMethodOptionsP24 {const PaymentMethodOptionsP24({this.setupFutureUsage});
 
-factory PaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsP24(
+factory PaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsP24(
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -17,13 +17,13 @@ factory PaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) { return Pay
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsP24 copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage}) { return PaymentMethodOptionsP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsP24 copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage}) {return PaymentMethodOptionsP24(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsP24 &&
           setupFutureUsage == other.setupFutureUsage;
@@ -32,4 +32,4 @@ PaymentMethodOptionsP24 copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureU
 
 @override String toString() => 'PaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage)';
 
- }
+}

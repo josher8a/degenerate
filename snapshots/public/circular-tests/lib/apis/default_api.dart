@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `POST /burgers`
-Future<ApiResult<void, Never>> postBurgers({Nine? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> postBurgers({Nine? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -21,9 +21,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

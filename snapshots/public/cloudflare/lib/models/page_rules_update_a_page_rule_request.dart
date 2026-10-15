@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_actions2.dart';import 'package:pub_cloudflare/models/zones_priority.dart';import 'package:pub_cloudflare/models/zones_status.dart';import 'package:pub_cloudflare/models/zones_target.dart';@immutable final class PageRulesUpdateAPageRuleRequest {const PageRulesUpdateAPageRuleRequest({required this.actions, required this.targets, this.priority, this.status, });
 
-factory PageRulesUpdateAPageRuleRequest.fromJson(Map<String, dynamic> json) { return PageRulesUpdateAPageRuleRequest(
+factory PageRulesUpdateAPageRuleRequest.fromJson(Map<String, dynamic> json) {return PageRulesUpdateAPageRuleRequest(
   actions: (json['actions'] as List<dynamic>).map((e) => ZonesActions2.fromJson(e as Map<String, dynamic>)).toList(),
   priority: json['priority'] != null ? ZonesPriority.fromJson(json['priority'] as num) : null,
   status: json['status'] != null ? ZonesStatus.fromJson(json['status'] as String) : null,
   targets: (json['targets'] as List<dynamic>).map(ZonesTarget.fromJson).toList(),
-); }
+);}
 
 /// The set of actions to perform if the targets of this rule match the
 /// request. Actions can redirect to another URL or override settings, but
@@ -30,20 +30,20 @@ final ZonesStatus? status;
 /// The rule targets to evaluate on each request.
 final List<ZonesTarget> targets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actions': actions.map((e) => e.toJson()).toList(),
   if (priority != null) 'priority': priority?.toJson(),
   if (status != null) 'status': status?.toJson(),
   'targets': targets.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions') &&
-      json.containsKey('targets'); } 
-PageRulesUpdateAPageRuleRequest copyWith({List<ZonesActions2>? actions, ZonesPriority? Function()? priority, ZonesStatus? Function()? status, List<ZonesTarget>? targets, }) { return PageRulesUpdateAPageRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actions') &&
+      json.containsKey('targets');}
+PageRulesUpdateAPageRuleRequest copyWith({List<ZonesActions2>? actions, ZonesPriority? Function()? priority, ZonesStatus? Function()? status, List<ZonesTarget>? targets, }) {return PageRulesUpdateAPageRuleRequest(
   actions: actions ?? this.actions,
   priority: priority != null ? priority() : this.priority,
   status: status != null ? status() : this.status,
   targets: targets ?? this.targets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageRulesUpdateAPageRuleRequest &&
           listEquals(actions, other.actions) &&
@@ -55,4 +55,4 @@ PageRulesUpdateAPageRuleRequest copyWith({List<ZonesActions2>? actions, ZonesPri
 
 @override String toString() => 'PageRulesUpdateAPageRuleRequest(actions: $actions, priority: $priority, status: $status, targets: $targets)';
 
- }
+}

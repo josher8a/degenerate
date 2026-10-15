@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountIdLogpushJobsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_dataset.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';import 'package:pub_cloudflare/models/logpush_enabled.dart';import 'package:pub_cloudflare/models/logpush_filter.dart';import 'package:pub_cloudflare/models/logpush_frequency.dart';import 'package:pub_cloudflare/models/logpush_kind.dart';import 'package:pub_cloudflare/models/logpush_logpull_options.dart';import 'package:pub_cloudflare/models/logpush_max_upload_bytes.dart';import 'package:pub_cloudflare/models/logpush_max_upload_bytes/logpush_max_upload_bytes_variant1.dart';import 'package:pub_cloudflare/models/logpush_max_upload_interval_seconds.dart';import 'package:pub_cloudflare/models/logpush_max_upload_records.dart';import 'package:pub_cloudflare/models/logpush_name.dart';import 'package:pub_cloudflare/models/logpush_output_options.dart';import 'package:pub_cloudflare/models/logpush_ownership_challenge.dart';@immutable final class PostAccountsAccountIdLogpushJobsRequest {const PostAccountsAccountIdLogpushJobsRequest({required this.destinationConf, this.dataset, this.enabled, this.filter, this.frequency, this.kind, this.logpullOptions, this.maxUploadBytes, this.maxUploadIntervalSeconds, this.maxUploadRecords, this.name, this.outputOptions, this.ownershipChallenge, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_dataset.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';import 'package:pub_cloudflare/models/logpush_enabled.dart';import 'package:pub_cloudflare/models/logpush_filter.dart';import 'package:pub_cloudflare/models/logpush_frequency.dart';import 'package:pub_cloudflare/models/logpush_kind.dart';import 'package:pub_cloudflare/models/logpush_logpull_options.dart';import 'package:pub_cloudflare/models/logpush_max_upload_bytes.dart';import 'package:pub_cloudflare/models/logpush_max_upload_bytes/logpush_max_upload_bytes_variant1.dart';import 'package:pub_cloudflare/models/logpush_max_upload_interval_seconds.dart';import 'package:pub_cloudflare/models/logpush_max_upload_records.dart';import 'package:pub_cloudflare/models/logpush_name.dart';import 'package:pub_cloudflare/models/logpush_output_options.dart';import 'package:pub_cloudflare/models/logpush_ownership_challenge.dart';@immutable final class PostAccountsAccountIdLogpushJobsRequest {const PostAccountsAccountIdLogpushJobsRequest({required this.destinationConf, this.dataset = const Omittable.absent(), this.enabled, this.filter = const Omittable.absent(), this.frequency = const Omittable.absent(), this.kind, this.logpullOptions = const Omittable.absent(), this.maxUploadBytes = const Omittable.absent(), this.maxUploadIntervalSeconds = const Omittable.absent(), this.maxUploadRecords = const Omittable.absent(), this.name = const Omittable.absent(), this.outputOptions = const Omittable.absent(), this.ownershipChallenge, });
 
-factory PostAccountsAccountIdLogpushJobsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountIdLogpushJobsRequest(
-  dataset: json['dataset'] != null ? LogpushDataset.fromJson(json['dataset'] as String) : null,
+factory PostAccountsAccountIdLogpushJobsRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountIdLogpushJobsRequest(
+  dataset: json.containsKey('dataset') ? Omittable(json['dataset'] != null ? LogpushDataset.fromJson(json['dataset'] as String) : null) : const Omittable.absent(),
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
   enabled: json['enabled'] != null ? LogpushEnabled.fromJson(json['enabled'] as bool) : null,
-  filter: json['filter'] != null ? LogpushFilter.fromJson(json['filter'] as String) : null,
-  frequency: json['frequency'] != null ? LogpushFrequency.fromJson(json['frequency'] as String) : null,
+  filter: json.containsKey('filter') ? Omittable(json['filter'] != null ? LogpushFilter.fromJson(json['filter'] as String) : null) : const Omittable.absent(),
+  frequency: json.containsKey('frequency') ? Omittable(json['frequency'] != null ? LogpushFrequency.fromJson(json['frequency'] as String) : null) : const Omittable.absent(),
   kind: json['kind'] != null ? LogpushKind.fromJson(json['kind'] as String) : null,
-  logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
-  maxUploadBytes: json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadRecords: json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
-  name: json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null,
-  outputOptions: json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null,
+  logpullOptions: json.containsKey('logpull_options') ? Omittable(json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null) : const Omittable.absent(),
+  maxUploadBytes: json.containsKey('max_upload_bytes') ? Omittable(json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
+  maxUploadIntervalSeconds: json.containsKey('max_upload_interval_seconds') ? Omittable(json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
+  maxUploadRecords: json.containsKey('max_upload_records') ? Omittable(json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null) : const Omittable.absent(),
+  outputOptions: json.containsKey('output_options') ? Omittable(json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   ownershipChallenge: json['ownership_challenge'] != null ? LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String) : null,
-); }
+);}
 
 /// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
-final LogpushDataset? dataset;
+final Omittable<LogpushDataset?> dataset;
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
@@ -29,62 +29,62 @@ final LogpushDestinationConf destinationConf;
 final LogpushEnabled? enabled;
 
 /// The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/).
-final LogpushFilter? filter;
+final Omittable<LogpushFilter?> filter;
 
 /// This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.
-final LogpushFrequency? frequency;
+final Omittable<LogpushFrequency?> frequency;
 
 /// The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).
 final LogpushKind? kind;
 
 /// This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.
-final LogpushLogpullOptions? logpullOptions;
+final Omittable<LogpushLogpullOptions?> logpullOptions;
 
-final LogpushMaxUploadBytes? maxUploadBytes;
+final Omittable<LogpushMaxUploadBytes?> maxUploadBytes;
 
-final LogpushMaxUploadIntervalSeconds? maxUploadIntervalSeconds;
+final Omittable<LogpushMaxUploadIntervalSeconds?> maxUploadIntervalSeconds;
 
-final LogpushMaxUploadRecords? maxUploadRecords;
+final Omittable<LogpushMaxUploadRecords?> maxUploadRecords;
 
 /// Optional human readable job name. Not unique. Cloudflare suggests. that you set this to a meaningful string, like the domain name, to make it easier to identify your job.
-final LogpushName? name;
+final Omittable<LogpushName?> name;
 
-final LogpushOutputOptions? outputOptions;
+final Omittable<LogpushOutputOptions?> outputOptions;
 
 /// Ownership challenge token to prove destination ownership.
 final LogpushOwnershipChallenge? ownershipChallenge;
 
-Map<String, dynamic> toJson() { return {
-  if (dataset != null) 'dataset': dataset?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (dataset.isPresent) 'dataset': dataset.value?.toJson(),
   'destination_conf': destinationConf.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
-  if (filter != null) 'filter': filter?.toJson(),
-  if (frequency != null) 'frequency': frequency?.toJson(),
+  if (filter.isPresent) 'filter': filter.value?.toJson(),
+  if (frequency.isPresent) 'frequency': frequency.value?.toJson(),
   if (kind != null) 'kind': kind?.toJson(),
-  if (logpullOptions != null) 'logpull_options': logpullOptions?.toJson(),
-  if (maxUploadBytes != null) 'max_upload_bytes': maxUploadBytes?.toJson(),
-  if (maxUploadIntervalSeconds != null) 'max_upload_interval_seconds': maxUploadIntervalSeconds?.toJson(),
-  if (maxUploadRecords != null) 'max_upload_records': maxUploadRecords?.toJson(),
-  if (name != null) 'name': name?.toJson(),
-  if (outputOptions != null) 'output_options': outputOptions?.toJson(),
+  if (logpullOptions.isPresent) 'logpull_options': logpullOptions.value?.toJson(),
+  if (maxUploadBytes.isPresent) 'max_upload_bytes': maxUploadBytes.value?.toJson(),
+  if (maxUploadIntervalSeconds.isPresent) 'max_upload_interval_seconds': maxUploadIntervalSeconds.value?.toJson(),
+  if (maxUploadRecords.isPresent) 'max_upload_records': maxUploadRecords.value?.toJson(),
+  if (name.isPresent) 'name': name.value?.toJson(),
+  if (outputOptions.isPresent) 'output_options': outputOptions.value?.toJson(),
   if (ownershipChallenge != null) 'ownership_challenge': ownershipChallenge?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
-PostAccountsAccountIdLogpushJobsRequest copyWith({LogpushDataset? Function()? dataset, LogpushDestinationConf? destinationConf, LogpushEnabled? Function()? enabled, LogpushFilter? Function()? filter, LogpushFrequency? Function()? frequency, LogpushKind? Function()? kind, LogpushLogpullOptions? Function()? logpullOptions, LogpushMaxUploadBytes? Function()? maxUploadBytes, LogpushMaxUploadIntervalSeconds? Function()? maxUploadIntervalSeconds, LogpushMaxUploadRecords? Function()? maxUploadRecords, LogpushName? Function()? name, LogpushOutputOptions? Function()? outputOptions, LogpushOwnershipChallenge? Function()? ownershipChallenge, }) { return PostAccountsAccountIdLogpushJobsRequest(
-  dataset: dataset != null ? dataset() : this.dataset,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_conf');}
+PostAccountsAccountIdLogpushJobsRequest copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinationConf? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushFilter?>? filter, Omittable<LogpushFrequency?>? frequency, LogpushKind? Function()? kind, Omittable<LogpushLogpullOptions?>? logpullOptions, Omittable<LogpushMaxUploadBytes?>? maxUploadBytes, Omittable<LogpushMaxUploadIntervalSeconds?>? maxUploadIntervalSeconds, Omittable<LogpushMaxUploadRecords?>? maxUploadRecords, Omittable<LogpushName?>? name, Omittable<LogpushOutputOptions?>? outputOptions, LogpushOwnershipChallenge? Function()? ownershipChallenge, }) {return PostAccountsAccountIdLogpushJobsRequest(
+  dataset: dataset ?? this.dataset,
   destinationConf: destinationConf ?? this.destinationConf,
   enabled: enabled != null ? enabled() : this.enabled,
-  filter: filter != null ? filter() : this.filter,
-  frequency: frequency != null ? frequency() : this.frequency,
+  filter: filter ?? this.filter,
+  frequency: frequency ?? this.frequency,
   kind: kind != null ? kind() : this.kind,
-  logpullOptions: logpullOptions != null ? logpullOptions() : this.logpullOptions,
-  maxUploadBytes: maxUploadBytes != null ? maxUploadBytes() : this.maxUploadBytes,
-  maxUploadIntervalSeconds: maxUploadIntervalSeconds != null ? maxUploadIntervalSeconds() : this.maxUploadIntervalSeconds,
-  maxUploadRecords: maxUploadRecords != null ? maxUploadRecords() : this.maxUploadRecords,
-  name: name != null ? name() : this.name,
-  outputOptions: outputOptions != null ? outputOptions() : this.outputOptions,
+  logpullOptions: logpullOptions ?? this.logpullOptions,
+  maxUploadBytes: maxUploadBytes ?? this.maxUploadBytes,
+  maxUploadIntervalSeconds: maxUploadIntervalSeconds ?? this.maxUploadIntervalSeconds,
+  maxUploadRecords: maxUploadRecords ?? this.maxUploadRecords,
+  name: name ?? this.name,
+  outputOptions: outputOptions ?? this.outputOptions,
   ownershipChallenge: ownershipChallenge != null ? ownershipChallenge() : this.ownershipChallenge,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountIdLogpushJobsRequest &&
           dataset == other.dataset &&
@@ -105,4 +105,4 @@ PostAccountsAccountIdLogpushJobsRequest copyWith({LogpushDataset? Function()? da
 
 @override String toString() => 'PostAccountsAccountIdLogpushJobsRequest(\n  dataset: $dataset,\n  destinationConf: $destinationConf,\n  enabled: $enabled,\n  filter: $filter,\n  frequency: $frequency,\n  kind: $kind,\n  logpullOptions: $logpullOptions,\n  maxUploadBytes: $maxUploadBytes,\n  maxUploadIntervalSeconds: $maxUploadIntervalSeconds,\n  maxUploadRecords: $maxUploadRecords,\n  name: $name,\n  outputOptions: $outputOptions,\n  ownershipChallenge: $ownershipChallenge,\n)';
 
- }
+}

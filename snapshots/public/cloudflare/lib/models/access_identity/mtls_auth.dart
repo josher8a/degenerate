@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MtlsAuth {const MtlsAuth({this.authStatus, this.certIssuerDn, this.certIssuerSki, this.certPresented, this.certSerial, });
 
-factory MtlsAuth.fromJson(Map<String, dynamic> json) { return MtlsAuth(
+factory MtlsAuth.fromJson(Map<String, dynamic> json) {return MtlsAuth(
   authStatus: json['auth_status'] as String?,
   certIssuerDn: json['cert_issuer_dn'] as String?,
   certIssuerSki: json['cert_issuer_ski'] as String?,
   certPresented: json['cert_presented'] as bool?,
   certSerial: json['cert_serial'] as String?,
-); }
+);}
 
 final String? authStatus;
 
@@ -21,21 +21,21 @@ final bool? certPresented;
 
 final String? certSerial;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'auth_status': ?authStatus,
   'cert_issuer_dn': ?certIssuerDn,
   'cert_issuer_ski': ?certIssuerSki,
   'cert_presented': ?certPresented,
   'cert_serial': ?certSerial,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_status', 'cert_issuer_dn', 'cert_issuer_ski', 'cert_presented', 'cert_serial'}.contains(key)); } 
-MtlsAuth copyWith({String? Function()? authStatus, String? Function()? certIssuerDn, String? Function()? certIssuerSki, bool? Function()? certPresented, String? Function()? certSerial, }) { return MtlsAuth(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auth_status', 'cert_issuer_dn', 'cert_issuer_ski', 'cert_presented', 'cert_serial'}.contains(key));}
+MtlsAuth copyWith({String? Function()? authStatus, String? Function()? certIssuerDn, String? Function()? certIssuerSki, bool? Function()? certPresented, String? Function()? certSerial, }) {return MtlsAuth(
   authStatus: authStatus != null ? authStatus() : this.authStatus,
   certIssuerDn: certIssuerDn != null ? certIssuerDn() : this.certIssuerDn,
   certIssuerSki: certIssuerSki != null ? certIssuerSki() : this.certIssuerSki,
   certPresented: certPresented != null ? certPresented() : this.certPresented,
   certSerial: certSerial != null ? certSerial() : this.certSerial,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MtlsAuth &&
           authStatus == other.authStatus &&
@@ -48,4 +48,4 @@ MtlsAuth copyWith({String? Function()? authStatus, String? Function()? certIssue
 
 @override String toString() => 'MtlsAuth(authStatus: $authStatus, certIssuerDn: $certIssuerDn, certIssuerSki: $certIssuerSki, certPresented: $certPresented, certSerial: $certSerial)';
 
- }
+}

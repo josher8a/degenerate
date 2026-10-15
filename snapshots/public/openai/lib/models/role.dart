@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role`.
 sealed class RoleObject {const RoleObject();
 
-factory RoleObject.fromJson(String json) { return switch (json) {
+factory RoleObject.fromJson(String json) {return switch (json) {
   'role' => role,
   _ => RoleObject$Unknown(json),
-}; }
+};}
 
 static const RoleObject role = RoleObject$role._();
 
 static const List<RoleObject> values = [role];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'role' => 'role',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RoleObject$Unknown; } 
+bool get isUnknown {return this is RoleObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() role, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() role, required W Function(String value) $unknown, }) {return switch (this) {
       RoleObject$role() => role(),
       RoleObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? role, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? role, W Function(String value)? $unknown, }) {return switch (this) {
       RoleObject$role() => role != null ? role() : orElse(value),
       RoleObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RoleObject($value)';
 
- }
+}
 @immutable final class RoleObject$role extends RoleObject {const RoleObject$role._();
 
 @override String get value => 'role';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? role, W 
 
 @override int get hashCode => 'role'.hashCode;
 
- }
+}
 @immutable final class RoleObject$Unknown extends RoleObject {const RoleObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? role, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details about a role that can be assigned through the public Roles API.
 @immutable final class Role {const Role({required this.object, required this.id, required this.name, required this.description, required this.permissions, required this.resourceType, required this.predefinedRole, });
 
-factory Role.fromJson(Map<String, dynamic> json) { return Role(
+factory Role.fromJson(Map<String, dynamic> json) {return Role(
   object: RoleObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
@@ -65,7 +65,7 @@ factory Role.fromJson(Map<String, dynamic> json) { return Role(
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   resourceType: json['resource_type'] as String,
   predefinedRole: json['predefined_role'] as bool,
-); }
+);}
 
 /// Always `role`.
 final RoleObject object;
@@ -88,7 +88,7 @@ final String resourceType;
 /// Whether the role is predefined and managed by OpenAI.
 final bool predefinedRole;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'name': name,
@@ -96,15 +96,15 @@ Map<String, dynamic> toJson() { return {
   'permissions': permissions,
   'resource_type': resourceType,
   'predefined_role': predefinedRole,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('permissions') &&
       json.containsKey('resource_type') && json['resource_type'] is String &&
-      json.containsKey('predefined_role') && json['predefined_role'] is bool; } 
-Role copyWith({RoleObject? object, String? id, String? name, String? Function()? description, List<String>? permissions, String? resourceType, bool? predefinedRole, }) { return Role(
+      json.containsKey('predefined_role') && json['predefined_role'] is bool;}
+Role copyWith({RoleObject? object, String? id, String? name, String? Function()? description, List<String>? permissions, String? resourceType, bool? predefinedRole, }) {return Role(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
@@ -112,7 +112,7 @@ Role copyWith({RoleObject? object, String? id, String? name, String? Function()?
   permissions: permissions ?? this.permissions,
   resourceType: resourceType ?? this.resourceType,
   predefinedRole: predefinedRole ?? this.predefinedRole,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Role &&
           object == other.object &&
@@ -127,4 +127,4 @@ Role copyWith({RoleObject? object, String? id, String? name, String? Function()?
 
 @override String toString() => 'Role(object: $object, id: $id, name: $name, description: $description, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole)';
 
- }
+}

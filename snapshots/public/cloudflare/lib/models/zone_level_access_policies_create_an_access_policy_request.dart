@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policies_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_purpose_justification_prompt.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_schemas_approval_group.dart';import 'package:pub_cloudflare/models/access_schemas_approval_required.dart';import 'package:pub_cloudflare/models/access_schemas_decision.dart';import 'package:pub_cloudflare/models/access_schemas_isolation_required.dart';import 'package:pub_cloudflare/models/access_schemas_precedence.dart';import 'package:pub_cloudflare/models/access_schemas_purpose_justification_required.dart';@immutable final class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest {const ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest({required this.decision, required this.include, required this.name, this.approvalGroups, this.approvalRequired, this.exclude, this.isolationRequired, this.precedence, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.require, });
 
-factory ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(
+factory ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest.fromJson(Map<String, dynamic> json) {return ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessSchemasApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
   approvalRequired: json['approval_required'] != null ? AccessSchemasApprovalRequired.fromJson(json['approval_required'] as bool) : null,
   decision: AccessSchemasDecision.fromJson(json['decision'] as String),
@@ -15,7 +15,7 @@ factory ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest.fromJson(Map<String, 
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessSchemasPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
   require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
-); }
+);}
 
 /// Administrators who can approve a temporary authentication request.
 final List<AccessSchemasApprovalGroup>? approvalGroups;
@@ -50,7 +50,7 @@ final AccessSchemasPurposeJustificationRequired? purposeJustificationRequired;
 /// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (approvalGroups != null) 'approval_groups': approvalGroups?.map((e) => e.toJson()).toList(),
   if (approvalRequired != null) 'approval_required': approvalRequired?.toJson(),
   'decision': decision.toJson(),
@@ -62,11 +62,11 @@ Map<String, dynamic> toJson() { return {
   if (purposeJustificationPrompt != null) 'purpose_justification_prompt': purposeJustificationPrompt?.toJson(),
   if (purposeJustificationRequired != null) 'purpose_justification_required': purposeJustificationRequired?.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('decision') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('decision') &&
       json.containsKey('include') &&
-      json.containsKey('name'); } 
-ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalGroups, AccessSchemasApprovalRequired? Function()? approvalRequired, AccessSchemasDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessSchemasIsolationRequired? Function()? isolationRequired, AccessPoliciesComponentsSchemasName? name, AccessSchemasPrecedence? Function()? precedence, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessSchemasPurposeJustificationRequired? Function()? purposeJustificationRequired, List<AccessRule>? Function()? require, }) { return ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(
+      json.containsKey('name');}
+ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalGroups, AccessSchemasApprovalRequired? Function()? approvalRequired, AccessSchemasDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessSchemasIsolationRequired? Function()? isolationRequired, AccessPoliciesComponentsSchemasName? name, AccessSchemasPrecedence? Function()? precedence, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessSchemasPurposeJustificationRequired? Function()? purposeJustificationRequired, List<AccessRule>? Function()? require, }) {return ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
   decision: decision ?? this.decision,
@@ -78,7 +78,7 @@ ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest copyWith({List<AccessSchemasA
   purposeJustificationPrompt: purposeJustificationPrompt != null ? purposeJustificationPrompt() : this.purposeJustificationPrompt,
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   require: require != null ? require() : this.require,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest &&
           listEquals(approvalGroups, other.approvalGroups) &&
@@ -97,4 +97,4 @@ ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest copyWith({List<AccessSchemasA
 
 @override String toString() => 'ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  decision: $decision,\n  exclude: $exclude,\n  include: $include,\n  isolationRequired: $isolationRequired,\n  name: $name,\n  precedence: $precedence,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  require: $require,\n)';
 
- }
+}

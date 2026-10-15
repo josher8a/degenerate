@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role to give
 ///  * `member` - The user will become a non-owner member of the organization.
 sealed class OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole();
 
-factory OrgsSetMembershipForUserRequestRole.fromJson(String json) { return switch (json) {
+factory OrgsSetMembershipForUserRequestRole.fromJson(String json) {return switch (json) {
   'admin' => admin,
   'member' => member,
   _ => OrgsSetMembershipForUserRequestRole$Unknown(json),
-}; }
+};}
 
 static const OrgsSetMembershipForUserRequestRole admin = OrgsSetMembershipForUserRequestRole$admin._();
 
@@ -19,30 +19,30 @@ static const OrgsSetMembershipForUserRequestRole member = OrgsSetMembershipForUs
 static const List<OrgsSetMembershipForUserRequestRole> values = [admin, member];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'admin' => 'admin',
   'member' => 'member',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrgsSetMembershipForUserRequestRole$Unknown; } 
+bool get isUnknown {return this is OrgsSetMembershipForUserRequestRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() admin, required W Function() member, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() admin, required W Function() member, required W Function(String value) $unknown, }) {return switch (this) {
       OrgsSetMembershipForUserRequestRole$admin() => admin(),
       OrgsSetMembershipForUserRequestRole$member() => member(),
       OrgsSetMembershipForUserRequestRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W Function()? member, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W Function()? member, W Function(String value)? $unknown, }) {return switch (this) {
       OrgsSetMembershipForUserRequestRole$admin() => admin != null ? admin() : orElse(value),
       OrgsSetMembershipForUserRequestRole$member() => member != null ? member() : orElse(value),
       OrgsSetMembershipForUserRequestRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrgsSetMembershipForUserRequestRole($value)';
 
- }
+}
 @immutable final class OrgsSetMembershipForUserRequestRole$admin extends OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole$admin._();
 
 @override String get value => 'admin';
@@ -51,7 +51,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W
 
 @override int get hashCode => 'admin'.hashCode;
 
- }
+}
 @immutable final class OrgsSetMembershipForUserRequestRole$member extends OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole$member._();
 
 @override String get value => 'member';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W
 
 @override int get hashCode => 'member'.hashCode;
 
- }
+}
 @immutable final class OrgsSetMembershipForUserRequestRole$Unknown extends OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole$Unknown(this.value);
 
 @override final String value;
@@ -70,25 +70,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role = OrgsSetMembershipForUserRequestRole.member});
+}
+@immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role});
 
-factory OrgsSetMembershipForUserRequest.fromJson(Map<String, dynamic> json) { return OrgsSetMembershipForUserRequest(
-  role: json.containsKey('role') ? OrgsSetMembershipForUserRequestRole.fromJson(json['role'] as String) : OrgsSetMembershipForUserRequestRole.member,
-); }
+factory OrgsSetMembershipForUserRequest.fromJson(Map<String, dynamic> json) {return OrgsSetMembershipForUserRequest(
+  role: json['role'] != null ? OrgsSetMembershipForUserRequestRole.fromJson(json['role'] as String) : null,
+);}
 
 /// The role to give the user in the organization. Can be one of:
 ///  * `admin` - The user will become an owner of the organization.
 ///  * `member` - The user will become a non-owner member of the organization.
-final OrgsSetMembershipForUserRequestRole role;
+final OrgsSetMembershipForUserRequestRole? role;
 
-Map<String, dynamic> toJson() { return {
-  'role': role.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole Function()? role}) { return OrgsSetMembershipForUserRequest(
+/// The value of `role`, or its schema default when absent.
+OrgsSetMembershipForUserRequestRole get roleOrDefault => role ?? OrgsSetMembershipForUserRequestRole.fromJson('member');
+
+Map<String, dynamic> toJson() {return {
+  if (role != null) 'role': role?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'role'}.contains(key));}
+OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole? Function()? role}) {return OrgsSetMembershipForUserRequest(
   role: role != null ? role() : this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsSetMembershipForUserRequest &&
           role == other.role;
@@ -97,4 +100,4 @@ OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole Fu
 
 @override String toString() => 'OrgsSetMembershipForUserRequest(role: $role)';
 
- }
+}

@@ -12,5 +12,5 @@ final ApiConfig _config;
 
 late final DefaultApi $default = DefaultApi(_config);
 
-Spec05ComponentsAndReferencesApi withBearerAuth(String token) { return Spec05ComponentsAndReferencesApi(Spec05ComponentsAndReferencesSecurity.applyBearerAuth(_config, token)); } 
- }
+Spec05ComponentsAndReferencesApi withBearerAuth(String token) {return Spec05ComponentsAndReferencesApi(Spec05ComponentsAndReferencesSecurity.applyBearerAuth(_config, token));}
+}

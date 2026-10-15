@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class IpAllowlistUpdated {const IpAllowlistUpdated({this.id, this.allowedIps, });
 
-factory IpAllowlistUpdated.fromJson(Map<String, dynamic> json) { return IpAllowlistUpdated(
+factory IpAllowlistUpdated.fromJson(Map<String, dynamic> json) {return IpAllowlistUpdated(
   id: json['id'] as String?,
   allowedIps: (json['allowed_ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The ID of the IP allowlist configuration.
 final String? id;
@@ -15,15 +15,15 @@ final String? id;
 /// The updated set of IP addresses or CIDR ranges in the configuration.
 final List<String>? allowedIps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'allowed_ips': ?allowedIps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'allowed_ips'}.contains(key)); } 
-IpAllowlistUpdated copyWith({String? Function()? id, List<String>? Function()? allowedIps, }) { return IpAllowlistUpdated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'allowed_ips'}.contains(key));}
+IpAllowlistUpdated copyWith({String? Function()? id, List<String>? Function()? allowedIps, }) {return IpAllowlistUpdated(
   id: id != null ? id() : this.id,
   allowedIps: allowedIps != null ? allowedIps() : this.allowedIps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAllowlistUpdated &&
           id == other.id &&
@@ -33,4 +33,4 @@ IpAllowlistUpdated copyWith({String? Function()? id, List<String>? Function()? a
 
 @override String toString() => 'IpAllowlistUpdated(id: $id, allowedIps: $allowedIps)';
 
- }
+}

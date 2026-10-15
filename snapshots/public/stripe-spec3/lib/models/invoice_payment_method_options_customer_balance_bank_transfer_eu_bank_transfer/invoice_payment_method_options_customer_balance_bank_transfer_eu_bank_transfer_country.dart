@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
 sealed class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry();
 
-factory InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry.fromJson(String json) {return switch (json) {
   'BE' => be,
   'DE' => de,
   'ES' => es,
@@ -12,7 +12,7 @@ factory InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCoun
   'IE' => ie,
   'NL' => nl,
   _ => InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry be = InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$be._();
 
@@ -29,9 +29,9 @@ static const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfe
 static const List<InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry> values = [be, de, es, fr, ie, nl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'BE' => 'be',
   'DE' => 'de',
   'ES' => 'es',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'IE' => 'ie',
   'NL' => 'nl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown; } 
+bool get isUnknown {return this is InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() be, required W Function() de, required W Function() es, required W Function() fr, required W Function() ie, required W Function() nl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() be, required W Function() de, required W Function() es, required W Function() fr, required W Function() ie, required W Function() nl, required W Function(String value) $unknown, }) {return switch (this) {
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$be() => be(),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$de() => de(),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$es() => es(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() be, required W Function() de, required W Functi
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$ie() => ie(),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$nl() => nl(),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Function()? de, W Function()? es, W Function()? fr, W Function()? ie, W Function()? nl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Function()? de, W Function()? es, W Function()? fr, W Function()? ie, W Function()? nl, W Function(String value)? $unknown, }) {return switch (this) {
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$be() => be != null ? be() : orElse(value),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$de() => de != null ? de() : orElse(value),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$es() => es != null ? es() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$ie() => ie != null ? ie() : orElse(value),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$nl() => nl != null ? nl() : orElse(value),
       InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry($value)';
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$be extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$be._();
 
 @override String get value => 'BE';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => 'BE'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$de extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$de._();
 
 @override String get value => 'DE';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => 'DE'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$es extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$es._();
 
 @override String get value => 'ES';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => 'ES'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$fr extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$fr._();
 
 @override String get value => 'FR';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => 'FR'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$ie extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$ie._();
 
 @override String get value => 'IE';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => 'IE'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$nl extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$nl._();
 
 @override String get value => 'NL';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => 'NL'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown extends InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? be, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCategoryUpdateRequest {const PostCategoryUpdateRequest({this.killChain, this.mitreAttack, this.name, this.shortname, });
 
-factory PostCategoryUpdateRequest.fromJson(Map<String, dynamic> json) { return PostCategoryUpdateRequest(
+factory PostCategoryUpdateRequest.fromJson(Map<String, dynamic> json) {return PostCategoryUpdateRequest(
   killChain: json['killChain'] != null ? (json['killChain'] as num).toDouble() : null,
   mitreAttack: (json['mitreAttack'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
   shortname: json['shortname'] as String?,
-); }
+);}
 
 final double? killChain;
 
@@ -20,19 +20,19 @@ final String? name;
 /// Example: `'shortname'`
 final String? shortname;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'killChain': ?killChain,
   'mitreAttack': ?mitreAttack,
   'name': ?name,
   'shortname': ?shortname,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'killChain', 'mitreAttack', 'name', 'shortname'}.contains(key)); } 
-PostCategoryUpdateRequest copyWith({double? Function()? killChain, List<String>? Function()? mitreAttack, String? Function()? name, String? Function()? shortname, }) { return PostCategoryUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'killChain', 'mitreAttack', 'name', 'shortname'}.contains(key));}
+PostCategoryUpdateRequest copyWith({double? Function()? killChain, List<String>? Function()? mitreAttack, String? Function()? name, String? Function()? shortname, }) {return PostCategoryUpdateRequest(
   killChain: killChain != null ? killChain() : this.killChain,
   mitreAttack: mitreAttack != null ? mitreAttack() : this.mitreAttack,
   name: name != null ? name() : this.name,
   shortname: shortname != null ? shortname() : this.shortname,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCategoryUpdateRequest &&
           killChain == other.killChain &&
@@ -44,4 +44,4 @@ PostCategoryUpdateRequest copyWith({double? Function()? killChain, List<String>?
 
 @override String toString() => 'PostCategoryUpdateRequest(killChain: $killChain, mitreAttack: $mitreAttack, name: $name, shortname: $shortname)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';@immutable final class AppsScopeTokenRequest {const AppsScopeTokenRequest({required this.accessToken, this.target, this.targetId, this.repositories, this.repositoryIds, this.permissions, });
 
-factory AppsScopeTokenRequest.fromJson(Map<String, dynamic> json) { return AppsScopeTokenRequest(
+factory AppsScopeTokenRequest.fromJson(Map<String, dynamic> json) {return AppsScopeTokenRequest(
   accessToken: json['access_token'] as String,
   target: json['target'] as String?,
   targetId: json['target_id'] != null ? (json['target_id'] as num).toInt() : null,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The access token used to authenticate to the GitHub API.
 final String accessToken;
@@ -29,23 +29,23 @@ final List<int>? repositoryIds;
 
 final AppPermissions? permissions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_token': accessToken,
   'target': ?target,
   'target_id': ?targetId,
   'repositories': ?repositories,
   'repository_ids': ?repositoryIds,
   if (permissions != null) 'permissions': permissions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_token') && json['access_token'] is String; } 
-AppsScopeTokenRequest copyWith({String? accessToken, String? Function()? target, int? Function()? targetId, List<String>? Function()? repositories, List<int>? Function()? repositoryIds, AppPermissions? Function()? permissions, }) { return AppsScopeTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('access_token') && json['access_token'] is String;}
+AppsScopeTokenRequest copyWith({String? accessToken, String? Function()? target, int? Function()? targetId, List<String>? Function()? repositories, List<int>? Function()? repositoryIds, AppPermissions? Function()? permissions, }) {return AppsScopeTokenRequest(
   accessToken: accessToken ?? this.accessToken,
   target: target != null ? target() : this.target,
   targetId: targetId != null ? targetId() : this.targetId,
   repositories: repositories != null ? repositories() : this.repositories,
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
   permissions: permissions != null ? permissions() : this.permissions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsScopeTokenRequest &&
           accessToken == other.accessToken &&
@@ -59,4 +59,4 @@ AppsScopeTokenRequest copyWith({String? accessToken, String? Function()? target,
 
 @override String toString() => 'AppsScopeTokenRequest(accessToken: $accessToken, target: $target, targetId: $targetId, repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)';
 
- }
+}

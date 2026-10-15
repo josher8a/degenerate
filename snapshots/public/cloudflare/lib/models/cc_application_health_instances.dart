@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Shows a count of application instance states.
 @immutable final class CcApplicationHealthInstances {const CcApplicationHealthInstances({required this.active, required this.assigned, });
 
-factory CcApplicationHealthInstances.fromJson(Map<String, dynamic> json) { return CcApplicationHealthInstances(
+factory CcApplicationHealthInstances.fromJson(Map<String, dynamic> json) {return CcApplicationHealthInstances(
   active: (json['active'] as num).toInt(),
   assigned: (json['assigned'] as num).toInt(),
-); }
+);}
 
 /// Number of instances with a running container.
 final int active;
@@ -15,16 +15,16 @@ final int active;
 /// Number of instances assigned to a container, but the container is not yet running.
 final int assigned;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'assigned': assigned,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is num &&
-      json.containsKey('assigned') && json['assigned'] is num; } 
-CcApplicationHealthInstances copyWith({int? active, int? assigned, }) { return CcApplicationHealthInstances(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is num &&
+      json.containsKey('assigned') && json['assigned'] is num;}
+CcApplicationHealthInstances copyWith({int? active, int? assigned, }) {return CcApplicationHealthInstances(
   active: active ?? this.active,
   assigned: assigned ?? this.assigned,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CcApplicationHealthInstances &&
           active == other.active &&
@@ -34,4 +34,4 @@ CcApplicationHealthInstances copyWith({int? active, int? assigned, }) { return C
 
 @override String toString() => 'CcApplicationHealthInstances(active: $active, assigned: $assigned)';
 
- }
+}

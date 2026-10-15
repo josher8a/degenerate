@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_file_response/delete_file_response_object.dart';@immutable final class DeleteFileResponse {const DeleteFileResponse({required this.id, required this.object, required this.deleted, });
 
-factory DeleteFileResponse.fromJson(Map<String, dynamic> json) { return DeleteFileResponse(
+factory DeleteFileResponse.fromJson(Map<String, dynamic> json) {return DeleteFileResponse(
   id: json['id'] as String,
   object: DeleteFileResponseObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
-); }
+);}
 
 final String id;
 
@@ -15,19 +15,19 @@ final DeleteFileResponseObject object;
 
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-DeleteFileResponse copyWith({String? id, DeleteFileResponseObject? object, bool? deleted, }) { return DeleteFileResponse(
+      json.containsKey('deleted') && json['deleted'] is bool;}
+DeleteFileResponse copyWith({String? id, DeleteFileResponseObject? object, bool? deleted, }) {return DeleteFileResponse(
   id: id ?? this.id,
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteFileResponse &&
           id == other.id &&
@@ -38,4 +38,4 @@ DeleteFileResponse copyWith({String? id, DeleteFileResponseObject? object, bool?
 
 @override String toString() => 'DeleteFileResponse(id: $id, object: $object, deleted: $deleted)';
 
- }
+}

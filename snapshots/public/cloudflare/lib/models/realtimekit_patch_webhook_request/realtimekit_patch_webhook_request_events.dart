@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents();
 
-factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return switch (json) {
+factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) {return switch (json) {
   'meeting.started' => meetingStarted,
   'meeting.ended' => meetingEnded,
   'meeting.participantJoined' => meetingParticipantJoined,
@@ -14,7 +14,7 @@ factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return swit
   'meeting.transcript' => meetingTranscript,
   'meeting.summary' => meetingSummary,
   _ => RealtimekitPatchWebhookRequestEvents$Unknown(json),
-}; }
+};}
 
 static const RealtimekitPatchWebhookRequestEvents meetingStarted = RealtimekitPatchWebhookRequestEvents$meetingStarted._();
 
@@ -37,9 +37,9 @@ static const RealtimekitPatchWebhookRequestEvents meetingSummary = RealtimekitPa
 static const List<RealtimekitPatchWebhookRequestEvents> values = [meetingStarted, meetingEnded, meetingParticipantJoined, meetingParticipantLeft, recordingStatusUpdate, livestreamingStatusUpdate, meetingChatSynced, meetingTranscript, meetingSummary];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'meeting.started' => 'meetingStarted',
   'meeting.ended' => 'meetingEnded',
   'meeting.participantJoined' => 'meetingParticipantJoined',
@@ -50,11 +50,11 @@ String get name { return switch (value) {
   'meeting.transcript' => 'meetingTranscript',
   'meeting.summary' => 'meetingSummary',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimekitPatchWebhookRequestEvents$Unknown; } 
+bool get isUnknown {return this is RealtimekitPatchWebhookRequestEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() meetingStarted, required W Function() meetingEnded, required W Function() meetingParticipantJoined, required W Function() meetingParticipantLeft, required W Function() recordingStatusUpdate, required W Function() livestreamingStatusUpdate, required W Function() meetingChatSynced, required W Function() meetingTranscript, required W Function() meetingSummary, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() meetingStarted, required W Function() meetingEnded, required W Function() meetingParticipantJoined, required W Function() meetingParticipantLeft, required W Function() recordingStatusUpdate, required W Function() livestreamingStatusUpdate, required W Function() meetingChatSynced, required W Function() meetingTranscript, required W Function() meetingSummary, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimekitPatchWebhookRequestEvents$meetingStarted() => meetingStarted(),
       RealtimekitPatchWebhookRequestEvents$meetingEnded() => meetingEnded(),
       RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined() => meetingParticipantJoined(),
@@ -65,9 +65,9 @@ W when<W>({required W Function() meetingStarted, required W Function() meetingEn
       RealtimekitPatchWebhookRequestEvents$meetingTranscript() => meetingTranscript(),
       RealtimekitPatchWebhookRequestEvents$meetingSummary() => meetingSummary(),
       RealtimekitPatchWebhookRequestEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingStarted, W Function()? meetingEnded, W Function()? meetingParticipantJoined, W Function()? meetingParticipantLeft, W Function()? recordingStatusUpdate, W Function()? livestreamingStatusUpdate, W Function()? meetingChatSynced, W Function()? meetingTranscript, W Function()? meetingSummary, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingStarted, W Function()? meetingEnded, W Function()? meetingParticipantJoined, W Function()? meetingParticipantLeft, W Function()? recordingStatusUpdate, W Function()? livestreamingStatusUpdate, W Function()? meetingChatSynced, W Function()? meetingTranscript, W Function()? meetingSummary, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimekitPatchWebhookRequestEvents$meetingStarted() => meetingStarted != null ? meetingStarted() : orElse(value),
       RealtimekitPatchWebhookRequestEvents$meetingEnded() => meetingEnded != null ? meetingEnded() : orElse(value),
       RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined() => meetingParticipantJoined != null ? meetingParticipantJoined() : orElse(value),
@@ -78,10 +78,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
       RealtimekitPatchWebhookRequestEvents$meetingTranscript() => meetingTranscript != null ? meetingTranscript() : orElse(value),
       RealtimekitPatchWebhookRequestEvents$meetingSummary() => meetingSummary != null ? meetingSummary() : orElse(value),
       RealtimekitPatchWebhookRequestEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimekitPatchWebhookRequestEvents($value)';
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingStarted extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingStarted._();
 
 @override String get value => 'meeting.started';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.started'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingEnded extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingEnded._();
 
 @override String get value => 'meeting.ended';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.ended'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined._();
 
 @override String get value => 'meeting.participantJoined';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.participantJoined'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingParticipantLeft extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingParticipantLeft._();
 
 @override String get value => 'meeting.participantLeft';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.participantLeft'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$recordingStatusUpdate extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$recordingStatusUpdate._();
 
 @override String get value => 'recording.statusUpdate';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'recording.statusUpdate'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$livestreamingStatusUpdate extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$livestreamingStatusUpdate._();
 
 @override String get value => 'livestreaming.statusUpdate';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'livestreaming.statusUpdate'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingChatSynced extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingChatSynced._();
 
 @override String get value => 'meeting.chatSynced';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.chatSynced'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingTranscript extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingTranscript._();
 
 @override String get value => 'meeting.transcript';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.transcript'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$meetingSummary extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingSummary._();
 
 @override String get value => 'meeting.summary';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => 'meeting.summary'.hashCode;
 
- }
+}
 @immutable final class RealtimekitPatchWebhookRequestEvents$Unknown extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$Unknown(this.value);
 
 @override final String value;
@@ -172,4 +172,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meetingS
 
 @override int get hashCode => value.hashCode;
 
- }
+}

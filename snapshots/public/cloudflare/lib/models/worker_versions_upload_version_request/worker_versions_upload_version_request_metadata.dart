@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request/metadata_annotations.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
 @immutable final class WorkerVersionsUploadVersionRequestMetadata {const WorkerVersionsUploadVersionRequestMetadata({required this.mainModule, this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.keepBindings, this.usageModel, });
 
-factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic> json) { return WorkerVersionsUploadVersionRequestMetadata(
+factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic> json) {return WorkerVersionsUploadVersionRequestMetadata(
   annotations: json['annotations'] != null ? MetadataAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
@@ -12,7 +12,7 @@ factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic>
   keepBindings: (json['keep_bindings'] as List<dynamic>?)?.map((e) => e as String).toList(),
   mainModule: json['main_module'] as String,
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 final MetadataAnnotations? annotations;
 
@@ -36,7 +36,7 @@ final String mainModule;
 /// Usage model for the Worker invocations.
 final WorkersUsageModel? usageModel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
   if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
@@ -44,9 +44,9 @@ Map<String, dynamic> toJson() { return {
   'keep_bindings': ?keepBindings,
   'main_module': mainModule,
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('main_module') && json['main_module'] is String; } 
-WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, List<String>? Function()? keepBindings, String? mainModule, WorkersUsageModel? Function()? usageModel, }) { return WorkerVersionsUploadVersionRequestMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('main_module') && json['main_module'] is String;}
+WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, List<String>? Function()? keepBindings, String? mainModule, WorkersUsageModel? Function()? usageModel, }) {return WorkerVersionsUploadVersionRequestMetadata(
   annotations: annotations != null ? annotations() : this.annotations,
   bindings: bindings != null ? bindings() : this.bindings,
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
@@ -54,7 +54,7 @@ WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Functi
   keepBindings: keepBindings != null ? keepBindings() : this.keepBindings,
   mainModule: mainModule ?? this.mainModule,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerVersionsUploadVersionRequestMetadata &&
           annotations == other.annotations &&
@@ -69,4 +69,4 @@ WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Functi
 
 @override String toString() => 'WorkerVersionsUploadVersionRequestMetadata(annotations: $annotations, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepBindings: $keepBindings, mainModule: $mainModule, usageModel: $usageModel)';
 
- }
+}

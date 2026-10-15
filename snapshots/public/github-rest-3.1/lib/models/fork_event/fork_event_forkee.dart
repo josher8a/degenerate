@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ForkEvent (inline: Forkee)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ForkEventForkee {const ForkEventForkee({this.contributorsUrl, this.nodeId, this.name, this.fullName, this.private, this.owner, this.htmlUrl, this.description, this.fork, this.url, this.forksUrl, this.keysUrl, this.collaboratorsUrl, this.teamsUrl, this.hooksUrl, this.issueEventsUrl, this.eventsUrl, this.assigneesUrl, this.branchesUrl, this.tagsUrl, this.blobsUrl, this.gitTagsUrl, this.gitRefsUrl, this.treesUrl, this.statusesUrl, this.languagesUrl, this.stargazersUrl, this.id, this.subscribersUrl, this.subscriptionUrl, this.commitsUrl, this.gitCommitsUrl, this.commentsUrl, this.issueCommentUrl, this.contentsUrl, this.compareUrl, this.mergesUrl, this.archiveUrl, this.downloadsUrl, this.issuesUrl, this.pullsUrl, this.milestonesUrl, this.notificationsUrl, this.labelsUrl, this.releasesUrl, this.deploymentsUrl, this.createdAt, this.updatedAt, this.pushedAt, this.gitUrl, this.sshUrl, this.cloneUrl, this.svnUrl, this.public, this.size, this.stargazersCount, this.watchersCount, this.language, this.hasIssues, this.hasProjects, this.hasDownloads, this.hasWiki, this.hasPages, this.hasDiscussions, this.hasPullRequests, this.pullRequestCreationPolicy, this.forksCount, this.mirrorUrl, this.archived, this.disabled, this.openIssuesCount, this.license, this.allowForking, this.isTemplate, this.webCommitSignoffRequired, this.topics, this.visibility, this.forks, this.openIssues, this.watchers, this.defaultBranch, this.homepage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ForkEventForkee {const ForkEventForkee({this.contributorsUrl, this.nodeId, this.name, this.fullName, this.private, this.owner, this.htmlUrl, this.description = const Omittable.absent(), this.fork, this.url, this.forksUrl, this.keysUrl, this.collaboratorsUrl, this.teamsUrl, this.hooksUrl, this.issueEventsUrl, this.eventsUrl, this.assigneesUrl, this.branchesUrl, this.tagsUrl, this.blobsUrl, this.gitTagsUrl, this.gitRefsUrl, this.treesUrl, this.statusesUrl, this.languagesUrl, this.stargazersUrl, this.id, this.subscribersUrl, this.subscriptionUrl, this.commitsUrl, this.gitCommitsUrl, this.commentsUrl, this.issueCommentUrl, this.contentsUrl, this.compareUrl, this.mergesUrl, this.archiveUrl, this.downloadsUrl, this.issuesUrl, this.pullsUrl, this.milestonesUrl, this.notificationsUrl, this.labelsUrl, this.releasesUrl, this.deploymentsUrl, this.createdAt = const Omittable.absent(), this.updatedAt = const Omittable.absent(), this.pushedAt = const Omittable.absent(), this.gitUrl, this.sshUrl, this.cloneUrl, this.svnUrl, this.public, this.size, this.stargazersCount, this.watchersCount, this.language = const Omittable.absent(), this.hasIssues, this.hasProjects, this.hasDownloads, this.hasWiki, this.hasPages, this.hasDiscussions, this.hasPullRequests, this.pullRequestCreationPolicy, this.forksCount, this.mirrorUrl = const Omittable.absent(), this.archived, this.disabled, this.openIssuesCount, this.license = const Omittable.absent(), this.allowForking, this.isTemplate, this.webCommitSignoffRequired, this.topics, this.visibility, this.forks, this.openIssues, this.watchers, this.defaultBranch, this.homepage = const Omittable.absent(), });
 
-factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventForkee(
+factory ForkEventForkee.fromJson(Map<String, dynamic> json) {return ForkEventForkee(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   name: json['name'] as String?,
@@ -11,7 +11,7 @@ factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventFo
   private: json['private'] as bool?,
   owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   fork: json['fork'] as bool?,
   url: json['url'] as String?,
   forksUrl: json['forks_url'] as String?,
@@ -50,18 +50,18 @@ factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventFo
   labelsUrl: json['labels_url'] as String?,
   releasesUrl: json['releases_url'] as String?,
   deploymentsUrl: json['deployments_url'] as String?,
-  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
+  createdAt: json.containsKey('created_at') ? Omittable(json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null) : const Omittable.absent(),
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
+  pushedAt: json.containsKey('pushed_at') ? Omittable(json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null) : const Omittable.absent(),
   gitUrl: json['git_url'] as String?,
   sshUrl: json['ssh_url'] as String?,
   cloneUrl: json['clone_url'] as String?,
   svnUrl: json['svn_url'] as String?,
-  homepage: json['homepage'] as String?,
+  homepage: json.containsKey('homepage') ? Omittable(json['homepage'] as String?) : const Omittable.absent(),
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
   stargazersCount: json['stargazers_count'] != null ? (json['stargazers_count'] as num).toInt() : null,
   watchersCount: json['watchers_count'] != null ? (json['watchers_count'] as num).toInt() : null,
-  language: json['language'] as String?,
+  language: json.containsKey('language') ? Omittable(json['language'] as String?) : const Omittable.absent(),
   hasIssues: json['has_issues'] as bool?,
   hasProjects: json['has_projects'] as bool?,
   hasDownloads: json['has_downloads'] as bool?,
@@ -71,11 +71,11 @@ factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventFo
   hasPullRequests: json['has_pull_requests'] as bool?,
   pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? PullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
   forksCount: json['forks_count'] != null ? (json['forks_count'] as num).toInt() : null,
-  mirrorUrl: json['mirror_url'] as String?,
+  mirrorUrl: json.containsKey('mirror_url') ? Omittable(json['mirror_url'] as String?) : const Omittable.absent(),
   archived: json['archived'] as bool?,
   disabled: json['disabled'] as bool?,
   openIssuesCount: json['open_issues_count'] != null ? (json['open_issues_count'] as num).toInt() : null,
-  license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
+  license: json.containsKey('license') ? Omittable(json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   allowForking: json['allow_forking'] as bool?,
   isTemplate: json['is_template'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
@@ -86,7 +86,7 @@ factory ForkEventForkee.fromJson(Map<String, dynamic> json) { return ForkEventFo
   watchers: json['watchers'] != null ? (json['watchers'] as num).toInt() : null,
   defaultBranch: json['default_branch'] as String?,
   public: json['public'] as bool?,
-); }
+);}
 
 final int? id;
 
@@ -102,7 +102,7 @@ final SimpleUser? owner;
 
 final String? htmlUrl;
 
-final String? description;
+final Omittable<String?> description;
 
 final bool? fork;
 
@@ -180,11 +180,11 @@ final String? releasesUrl;
 
 final String? deploymentsUrl;
 
-final DateTime? createdAt;
+final Omittable<DateTime?> createdAt;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
-final DateTime? pushedAt;
+final Omittable<DateTime?> pushedAt;
 
 final String? gitUrl;
 
@@ -194,7 +194,7 @@ final String? cloneUrl;
 
 final String? svnUrl;
 
-final String? homepage;
+final Omittable<String?> homepage;
 
 final int? size;
 
@@ -202,7 +202,7 @@ final int? stargazersCount;
 
 final int? watchersCount;
 
-final String? language;
+final Omittable<String?> language;
 
 final bool? hasIssues;
 
@@ -223,7 +223,7 @@ final PullRequestCreationPolicy? pullRequestCreationPolicy;
 
 final int? forksCount;
 
-final String? mirrorUrl;
+final Omittable<String?> mirrorUrl;
 
 final bool? archived;
 
@@ -231,7 +231,7 @@ final bool? disabled;
 
 final int? openIssuesCount;
 
-final LicenseSimple? license;
+final Omittable<LicenseSimple?> license;
 
 final bool? allowForking;
 
@@ -253,7 +253,7 @@ final String? defaultBranch;
 
 final bool? public;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'node_id': ?nodeId,
   'name': ?name,
@@ -261,7 +261,7 @@ Map<String, dynamic> toJson() { return {
   'private': ?private,
   if (owner != null) 'owner': owner?.toJson(),
   'html_url': ?htmlUrl,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'fork': ?fork,
   'url': ?url,
   'forks_url': ?forksUrl,
@@ -300,18 +300,18 @@ Map<String, dynamic> toJson() { return {
   'labels_url': ?labelsUrl,
   'releases_url': ?releasesUrl,
   'deployments_url': ?deploymentsUrl,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (pushedAt != null) 'pushed_at': pushedAt?.toIso8601String(),
+  if (createdAt.isPresent) 'created_at': createdAt.value?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
+  if (pushedAt.isPresent) 'pushed_at': pushedAt.value?.toIso8601String(),
   'git_url': ?gitUrl,
   'ssh_url': ?sshUrl,
   'clone_url': ?cloneUrl,
   'svn_url': ?svnUrl,
-  'homepage': ?homepage,
+  if (homepage.isPresent) 'homepage': homepage.value,
   'size': ?size,
   'stargazers_count': ?stargazersCount,
   'watchers_count': ?watchersCount,
-  'language': ?language,
+  if (language.isPresent) 'language': language.value,
   'has_issues': ?hasIssues,
   'has_projects': ?hasProjects,
   'has_downloads': ?hasDownloads,
@@ -321,11 +321,11 @@ Map<String, dynamic> toJson() { return {
   'has_pull_requests': ?hasPullRequests,
   if (pullRequestCreationPolicy != null) 'pull_request_creation_policy': pullRequestCreationPolicy?.toJson(),
   'forks_count': ?forksCount,
-  'mirror_url': ?mirrorUrl,
+  if (mirrorUrl.isPresent) 'mirror_url': mirrorUrl.value,
   'archived': ?archived,
   'disabled': ?disabled,
   'open_issues_count': ?openIssuesCount,
-  if (license != null) 'license': license?.toJson(),
+  if (license.isPresent) 'license': license.value?.toJson(),
   'allow_forking': ?allowForking,
   'is_template': ?isTemplate,
   'web_commit_signoff_required': ?webCommitSignoffRequired,
@@ -336,9 +336,9 @@ Map<String, dynamic> toJson() { return {
   'watchers': ?watchers,
   'default_branch': ?defaultBranch,
   'public': ?public,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'full_name', 'private', 'owner', 'html_url', 'description', 'fork', 'url', 'forks_url', 'keys_url', 'collaborators_url', 'teams_url', 'hooks_url', 'issue_events_url', 'events_url', 'assignees_url', 'branches_url', 'tags_url', 'blobs_url', 'git_tags_url', 'git_refs_url', 'trees_url', 'statuses_url', 'languages_url', 'stargazers_url', 'contributors_url', 'subscribers_url', 'subscription_url', 'commits_url', 'git_commits_url', 'comments_url', 'issue_comment_url', 'contents_url', 'compare_url', 'merges_url', 'archive_url', 'downloads_url', 'issues_url', 'pulls_url', 'milestones_url', 'notifications_url', 'labels_url', 'releases_url', 'deployments_url', 'created_at', 'updated_at', 'pushed_at', 'git_url', 'ssh_url', 'clone_url', 'svn_url', 'homepage', 'size', 'stargazers_count', 'watchers_count', 'language', 'has_issues', 'has_projects', 'has_downloads', 'has_wiki', 'has_pages', 'has_discussions', 'has_pull_requests', 'pull_request_creation_policy', 'forks_count', 'mirror_url', 'archived', 'disabled', 'open_issues_count', 'license', 'allow_forking', 'is_template', 'web_commit_signoff_required', 'topics', 'visibility', 'forks', 'open_issues', 'watchers', 'default_branch', 'public'}.contains(key)); } 
-ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, String? Function()? fullName, bool? Function()? private, SimpleUser? Function()? owner, String? Function()? htmlUrl, String? Function()? description, bool? Function()? fork, String? Function()? url, String? Function()? forksUrl, String? Function()? keysUrl, String? Function()? collaboratorsUrl, String? Function()? teamsUrl, String? Function()? hooksUrl, String? Function()? issueEventsUrl, String? Function()? eventsUrl, String? Function()? assigneesUrl, String? Function()? branchesUrl, String? Function()? tagsUrl, String? Function()? blobsUrl, String? Function()? gitTagsUrl, String? Function()? gitRefsUrl, String? Function()? treesUrl, String? Function()? statusesUrl, String? Function()? languagesUrl, String? Function()? stargazersUrl, String? Function()? contributorsUrl, String? Function()? subscribersUrl, String? Function()? subscriptionUrl, String? Function()? commitsUrl, String? Function()? gitCommitsUrl, String? Function()? commentsUrl, String? Function()? issueCommentUrl, String? Function()? contentsUrl, String? Function()? compareUrl, String? Function()? mergesUrl, String? Function()? archiveUrl, String? Function()? downloadsUrl, String? Function()? issuesUrl, String? Function()? pullsUrl, String? Function()? milestonesUrl, String? Function()? notificationsUrl, String? Function()? labelsUrl, String? Function()? releasesUrl, String? Function()? deploymentsUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? pushedAt, String? Function()? gitUrl, String? Function()? sshUrl, String? Function()? cloneUrl, String? Function()? svnUrl, String? Function()? homepage, int? Function()? size, int? Function()? stargazersCount, int? Function()? watchersCount, String? Function()? language, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasDownloads, bool? Function()? hasWiki, bool? Function()? hasPages, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, int? Function()? forksCount, String? Function()? mirrorUrl, bool? Function()? archived, bool? Function()? disabled, int? Function()? openIssuesCount, LicenseSimple? Function()? license, bool? Function()? allowForking, bool? Function()? isTemplate, bool? Function()? webCommitSignoffRequired, List<String>? Function()? topics, String? Function()? visibility, int? Function()? forks, int? Function()? openIssues, int? Function()? watchers, String? Function()? defaultBranch, bool? Function()? public, }) { return ForkEventForkee(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'node_id', 'name', 'full_name', 'private', 'owner', 'html_url', 'description', 'fork', 'url', 'forks_url', 'keys_url', 'collaborators_url', 'teams_url', 'hooks_url', 'issue_events_url', 'events_url', 'assignees_url', 'branches_url', 'tags_url', 'blobs_url', 'git_tags_url', 'git_refs_url', 'trees_url', 'statuses_url', 'languages_url', 'stargazers_url', 'contributors_url', 'subscribers_url', 'subscription_url', 'commits_url', 'git_commits_url', 'comments_url', 'issue_comment_url', 'contents_url', 'compare_url', 'merges_url', 'archive_url', 'downloads_url', 'issues_url', 'pulls_url', 'milestones_url', 'notifications_url', 'labels_url', 'releases_url', 'deployments_url', 'created_at', 'updated_at', 'pushed_at', 'git_url', 'ssh_url', 'clone_url', 'svn_url', 'homepage', 'size', 'stargazers_count', 'watchers_count', 'language', 'has_issues', 'has_projects', 'has_downloads', 'has_wiki', 'has_pages', 'has_discussions', 'has_pull_requests', 'pull_request_creation_policy', 'forks_count', 'mirror_url', 'archived', 'disabled', 'open_issues_count', 'license', 'allow_forking', 'is_template', 'web_commit_signoff_required', 'topics', 'visibility', 'forks', 'open_issues', 'watchers', 'default_branch', 'public'}.contains(key));}
+ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, String? Function()? fullName, bool? Function()? private, SimpleUser? Function()? owner, String? Function()? htmlUrl, Omittable<String?>? description, bool? Function()? fork, String? Function()? url, String? Function()? forksUrl, String? Function()? keysUrl, String? Function()? collaboratorsUrl, String? Function()? teamsUrl, String? Function()? hooksUrl, String? Function()? issueEventsUrl, String? Function()? eventsUrl, String? Function()? assigneesUrl, String? Function()? branchesUrl, String? Function()? tagsUrl, String? Function()? blobsUrl, String? Function()? gitTagsUrl, String? Function()? gitRefsUrl, String? Function()? treesUrl, String? Function()? statusesUrl, String? Function()? languagesUrl, String? Function()? stargazersUrl, String? Function()? contributorsUrl, String? Function()? subscribersUrl, String? Function()? subscriptionUrl, String? Function()? commitsUrl, String? Function()? gitCommitsUrl, String? Function()? commentsUrl, String? Function()? issueCommentUrl, String? Function()? contentsUrl, String? Function()? compareUrl, String? Function()? mergesUrl, String? Function()? archiveUrl, String? Function()? downloadsUrl, String? Function()? issuesUrl, String? Function()? pullsUrl, String? Function()? milestonesUrl, String? Function()? notificationsUrl, String? Function()? labelsUrl, String? Function()? releasesUrl, String? Function()? deploymentsUrl, Omittable<DateTime?>? createdAt, Omittable<DateTime?>? updatedAt, Omittable<DateTime?>? pushedAt, String? Function()? gitUrl, String? Function()? sshUrl, String? Function()? cloneUrl, String? Function()? svnUrl, Omittable<String?>? homepage, int? Function()? size, int? Function()? stargazersCount, int? Function()? watchersCount, Omittable<String?>? language, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasDownloads, bool? Function()? hasWiki, bool? Function()? hasPages, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, int? Function()? forksCount, Omittable<String?>? mirrorUrl, bool? Function()? archived, bool? Function()? disabled, int? Function()? openIssuesCount, Omittable<LicenseSimple?>? license, bool? Function()? allowForking, bool? Function()? isTemplate, bool? Function()? webCommitSignoffRequired, List<String>? Function()? topics, String? Function()? visibility, int? Function()? forks, int? Function()? openIssues, int? Function()? watchers, String? Function()? defaultBranch, bool? Function()? public, }) {return ForkEventForkee(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   name: name != null ? name() : this.name,
@@ -346,7 +346,7 @@ ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, Strin
   private: private != null ? private() : this.private,
   owner: owner != null ? owner() : this.owner,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   fork: fork != null ? fork() : this.fork,
   url: url != null ? url() : this.url,
   forksUrl: forksUrl != null ? forksUrl() : this.forksUrl,
@@ -385,18 +385,18 @@ ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, Strin
   labelsUrl: labelsUrl != null ? labelsUrl() : this.labelsUrl,
   releasesUrl: releasesUrl != null ? releasesUrl() : this.releasesUrl,
   deploymentsUrl: deploymentsUrl != null ? deploymentsUrl() : this.deploymentsUrl,
-  createdAt: createdAt != null ? createdAt() : this.createdAt,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  pushedAt: pushedAt != null ? pushedAt() : this.pushedAt,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  pushedAt: pushedAt ?? this.pushedAt,
   gitUrl: gitUrl != null ? gitUrl() : this.gitUrl,
   sshUrl: sshUrl != null ? sshUrl() : this.sshUrl,
   cloneUrl: cloneUrl != null ? cloneUrl() : this.cloneUrl,
   svnUrl: svnUrl != null ? svnUrl() : this.svnUrl,
-  homepage: homepage != null ? homepage() : this.homepage,
+  homepage: homepage ?? this.homepage,
   size: size != null ? size() : this.size,
   stargazersCount: stargazersCount != null ? stargazersCount() : this.stargazersCount,
   watchersCount: watchersCount != null ? watchersCount() : this.watchersCount,
-  language: language != null ? language() : this.language,
+  language: language ?? this.language,
   hasIssues: hasIssues != null ? hasIssues() : this.hasIssues,
   hasProjects: hasProjects != null ? hasProjects() : this.hasProjects,
   hasDownloads: hasDownloads != null ? hasDownloads() : this.hasDownloads,
@@ -406,11 +406,11 @@ ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, Strin
   hasPullRequests: hasPullRequests != null ? hasPullRequests() : this.hasPullRequests,
   pullRequestCreationPolicy: pullRequestCreationPolicy != null ? pullRequestCreationPolicy() : this.pullRequestCreationPolicy,
   forksCount: forksCount != null ? forksCount() : this.forksCount,
-  mirrorUrl: mirrorUrl != null ? mirrorUrl() : this.mirrorUrl,
+  mirrorUrl: mirrorUrl ?? this.mirrorUrl,
   archived: archived != null ? archived() : this.archived,
   disabled: disabled != null ? disabled() : this.disabled,
   openIssuesCount: openIssuesCount != null ? openIssuesCount() : this.openIssuesCount,
-  license: license != null ? license() : this.license,
+  license: license ?? this.license,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
@@ -421,7 +421,7 @@ ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, Strin
   watchers: watchers != null ? watchers() : this.watchers,
   defaultBranch: defaultBranch != null ? defaultBranch() : this.defaultBranch,
   public: public != null ? public() : this.public,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ForkEventForkee &&
           id == other.id &&
@@ -511,4 +511,4 @@ ForkEventForkee copyWith({int? Function()? id, String? Function()? nodeId, Strin
 
 @override String toString() => 'ForkEventForkee(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  fullName: $fullName,\n  private: $private,\n  owner: $owner,\n  htmlUrl: $htmlUrl,\n  description: $description,\n  fork: $fork,\n  url: $url,\n  forksUrl: $forksUrl,\n  keysUrl: $keysUrl,\n  collaboratorsUrl: $collaboratorsUrl,\n  teamsUrl: $teamsUrl,\n  hooksUrl: $hooksUrl,\n  issueEventsUrl: $issueEventsUrl,\n  eventsUrl: $eventsUrl,\n  assigneesUrl: $assigneesUrl,\n  branchesUrl: $branchesUrl,\n  tagsUrl: $tagsUrl,\n  blobsUrl: $blobsUrl,\n  gitTagsUrl: $gitTagsUrl,\n  gitRefsUrl: $gitRefsUrl,\n  treesUrl: $treesUrl,\n  statusesUrl: $statusesUrl,\n  languagesUrl: $languagesUrl,\n  stargazersUrl: $stargazersUrl,\n  contributorsUrl: $contributorsUrl,\n  subscribersUrl: $subscribersUrl,\n  subscriptionUrl: $subscriptionUrl,\n  commitsUrl: $commitsUrl,\n  gitCommitsUrl: $gitCommitsUrl,\n  commentsUrl: $commentsUrl,\n  issueCommentUrl: $issueCommentUrl,\n  contentsUrl: $contentsUrl,\n  compareUrl: $compareUrl,\n  mergesUrl: $mergesUrl,\n  archiveUrl: $archiveUrl,\n  downloadsUrl: $downloadsUrl,\n  issuesUrl: $issuesUrl,\n  pullsUrl: $pullsUrl,\n  milestonesUrl: $milestonesUrl,\n  notificationsUrl: $notificationsUrl,\n  labelsUrl: $labelsUrl,\n  releasesUrl: $releasesUrl,\n  deploymentsUrl: $deploymentsUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  pushedAt: $pushedAt,\n  gitUrl: $gitUrl,\n  sshUrl: $sshUrl,\n  cloneUrl: $cloneUrl,\n  svnUrl: $svnUrl,\n  homepage: $homepage,\n  size: $size,\n  stargazersCount: $stargazersCount,\n  watchersCount: $watchersCount,\n  language: $language,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasDownloads: $hasDownloads,\n  hasWiki: $hasWiki,\n  hasPages: $hasPages,\n  hasDiscussions: $hasDiscussions,\n  hasPullRequests: $hasPullRequests,\n  pullRequestCreationPolicy: $pullRequestCreationPolicy,\n  forksCount: $forksCount,\n  mirrorUrl: $mirrorUrl,\n  archived: $archived,\n  disabled: $disabled,\n  openIssuesCount: $openIssuesCount,\n  license: $license,\n  allowForking: $allowForking,\n  isTemplate: $isTemplate,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n  topics: $topics,\n  visibility: $visibility,\n  forks: $forks,\n  openIssues: $openIssues,\n  watchers: $watchers,\n  defaultBranch: $defaultBranch,\n  public: $public,\n)';
 
- }
+}

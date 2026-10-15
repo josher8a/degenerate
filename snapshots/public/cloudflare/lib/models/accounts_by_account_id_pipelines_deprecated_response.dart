@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_deprecated_response/accounts_by_account_id_pipelines_deprecated_response_result_info.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedResponse {const AccountsByAccountIdPipelinesDeprecatedResponse({required this.resultInfo, required this.results, required this.success, });
 
-factory AccountsByAccountIdPipelinesDeprecatedResponse.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedResponse(
+factory AccountsByAccountIdPipelinesDeprecatedResponse.fromJson(Map<String, dynamic> json) {return AccountsByAccountIdPipelinesDeprecatedResponse(
   resultInfo: AccountsByAccountIdPipelinesDeprecatedResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   results: (json['results'] as List<dynamic>).map((e) => CloudflarePipelinesWorkersPipelinesPipeline.fromJson(e as Map<String, dynamic>)).toList(),
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
-); }
+);}
 
 final AccountsByAccountIdPipelinesDeprecatedResponseResultInfo resultInfo;
 
@@ -16,19 +16,19 @@ final List<CloudflarePipelinesWorkersPipelinesPipeline> results;
 /// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result_info': resultInfo.toJson(),
   'results': results.map((e) => e.toJson()).toList(),
   'success': success.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result_info') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result_info') &&
       json.containsKey('results') &&
-      json.containsKey('success'); } 
-AccountsByAccountIdPipelinesDeprecatedResponse copyWith({AccountsByAccountIdPipelinesDeprecatedResponseResultInfo? resultInfo, List<CloudflarePipelinesWorkersPipelinesPipeline>? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return AccountsByAccountIdPipelinesDeprecatedResponse(
+      json.containsKey('success');}
+AccountsByAccountIdPipelinesDeprecatedResponse copyWith({AccountsByAccountIdPipelinesDeprecatedResponseResultInfo? resultInfo, List<CloudflarePipelinesWorkersPipelinesPipeline>? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) {return AccountsByAccountIdPipelinesDeprecatedResponse(
   resultInfo: resultInfo ?? this.resultInfo,
   results: results ?? this.results,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesDeprecatedResponse &&
           resultInfo == other.resultInfo &&
@@ -39,4 +39,4 @@ AccountsByAccountIdPipelinesDeprecatedResponse copyWith({AccountsByAccountIdPipe
 
 @override String toString() => 'AccountsByAccountIdPipelinesDeprecatedResponse(resultInfo: $resultInfo, results: $results, success: $success)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TaskType {const TaskType();
 
-factory TaskType.fromJson(String json) { return switch (json) {
+factory TaskType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'thought' => thought,
   _ => TaskType$Unknown(json),
-}; }
+};}
 
 static const TaskType custom = TaskType$custom._();
 
@@ -16,30 +16,30 @@ static const TaskType thought = TaskType$thought._();
 static const List<TaskType> values = [custom, thought];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom' => 'custom',
   'thought' => 'thought',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaskType$Unknown; } 
+bool get isUnknown {return this is TaskType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() custom, required W Function() thought, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() custom, required W Function() thought, required W Function(String value) $unknown, }) {return switch (this) {
       TaskType$custom() => custom(),
       TaskType$thought() => thought(),
       TaskType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? thought, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? thought, W Function(String value)? $unknown, }) {return switch (this) {
       TaskType$custom() => custom != null ? custom() : orElse(value),
       TaskType$thought() => thought != null ? thought() : orElse(value),
       TaskType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaskType($value)';
 
- }
+}
 @immutable final class TaskType$custom extends TaskType {const TaskType$custom._();
 
 @override String get value => 'custom';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class TaskType$thought extends TaskType {const TaskType$thought._();
 
 @override String get value => 'thought';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'thought'.hashCode;
 
- }
+}
 @immutable final class TaskType$Unknown extends TaskType {const TaskType$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

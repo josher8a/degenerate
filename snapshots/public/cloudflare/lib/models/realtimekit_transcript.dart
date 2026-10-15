@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitTranscript {const RealtimekitTranscript({required this.sessionId, required this.transcriptDownloadUrl, required this.transcriptDownloadUrlExpiry, });
 
-factory RealtimekitTranscript.fromJson(Map<String, dynamic> json) { return RealtimekitTranscript(
+factory RealtimekitTranscript.fromJson(Map<String, dynamic> json) {return RealtimekitTranscript(
   sessionId: json['sessionId'] as String,
   transcriptDownloadUrl: json['transcript_download_url'] as String,
   transcriptDownloadUrlExpiry: json['transcript_download_url_expiry'] as String,
-); }
+);}
 
 final String sessionId;
 
@@ -17,19 +17,19 @@ final String transcriptDownloadUrl;
 /// Time when the download URL will expire
 final String transcriptDownloadUrlExpiry;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sessionId': sessionId,
   'transcript_download_url': transcriptDownloadUrl,
   'transcript_download_url_expiry': transcriptDownloadUrlExpiry,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sessionId') && json['sessionId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sessionId') && json['sessionId'] is String &&
       json.containsKey('transcript_download_url') && json['transcript_download_url'] is String &&
-      json.containsKey('transcript_download_url_expiry') && json['transcript_download_url_expiry'] is String; } 
-RealtimekitTranscript copyWith({String? sessionId, String? transcriptDownloadUrl, String? transcriptDownloadUrlExpiry, }) { return RealtimekitTranscript(
+      json.containsKey('transcript_download_url_expiry') && json['transcript_download_url_expiry'] is String;}
+RealtimekitTranscript copyWith({String? sessionId, String? transcriptDownloadUrl, String? transcriptDownloadUrlExpiry, }) {return RealtimekitTranscript(
   sessionId: sessionId ?? this.sessionId,
   transcriptDownloadUrl: transcriptDownloadUrl ?? this.transcriptDownloadUrl,
   transcriptDownloadUrlExpiry: transcriptDownloadUrlExpiry ?? this.transcriptDownloadUrlExpiry,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitTranscript &&
           sessionId == other.sessionId &&
@@ -40,4 +40,4 @@ RealtimekitTranscript copyWith({String? sessionId, String? transcriptDownloadUrl
 
 @override String toString() => 'RealtimekitTranscript(sessionId: $sessionId, transcriptDownloadUrl: $transcriptDownloadUrl, transcriptDownloadUrlExpiry: $transcriptDownloadUrlExpiry)';
 
- }
+}

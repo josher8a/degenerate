@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch (inline: Alert > DismissedBy)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user/user10_type.dart';@immutable final class DismissedBy {const DismissedBy({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user/user10_type.dart';@immutable final class DismissedBy {const DismissedBy({required this.id, required this.login, this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
-factory DismissedBy.fromJson(Map<String, dynamic> json) { return DismissedBy(
+factory DismissedBy.fromJson(Map<String, dynamic> json) {return DismissedBy(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   eventsUrl: json['events_url'] as String?,
   followersUrl: json['followers_url'] != null ? Uri.parse(json['followers_url'] as String) : null,
   followingUrl: json['following_url'] as String?,
@@ -26,13 +26,13 @@ factory DismissedBy.fromJson(Map<String, dynamic> json) { return DismissedBy(
   type: json['type'] != null ? User10Type.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final Uri? avatarUrl;
 
 final bool? deleted;
 
-final String? email;
+final Omittable<String?> email;
 
 final String? eventsUrl;
 
@@ -72,10 +72,10 @@ final Uri? url;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   'events_url': ?eventsUrl,
   if (followersUrl != null) 'followers_url': followersUrl?.toString(),
   'following_url': ?followingUrl,
@@ -95,13 +95,13 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toString(),
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('login') && json['login'] is String; } 
-DismissedBy copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, String? Function()? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User10Type? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) { return DismissedBy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('login') && json['login'] is String;}
+DismissedBy copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User10Type? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) {return DismissedBy(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
-  email: email != null ? email() : this.email,
+  email: email ?? this.email,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
   followingUrl: followingUrl != null ? followingUrl() : this.followingUrl,
@@ -121,7 +121,7 @@ DismissedBy copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Str
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DismissedBy &&
           avatarUrl == other.avatarUrl &&
@@ -151,4 +151,4 @@ DismissedBy copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Str
 
 @override String toString() => 'DismissedBy(\n  avatarUrl: $avatarUrl,\n  deleted: $deleted,\n  email: $email,\n  eventsUrl: $eventsUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  login: $login,\n  name: $name,\n  nodeId: $nodeId,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  reposUrl: $reposUrl,\n  siteAdmin: $siteAdmin,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  type: $type,\n  url: $url,\n  userViewType: $userViewType,\n)';
 
- }
+}

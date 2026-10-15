@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/grammar_grammar.dart';sealed class GrammarType {const GrammarType();
 
-factory GrammarType.fromJson(String json) { return switch (json) {
+factory GrammarType.fromJson(String json) {return switch (json) {
   'grammar' => grammar,
   _ => GrammarType$Unknown(json),
-}; }
+};}
 
 static const GrammarType grammar = GrammarType$grammar._();
 
 static const List<GrammarType> values = [grammar];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'grammar' => 'grammar',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GrammarType$Unknown; } 
+bool get isUnknown {return this is GrammarType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() grammar, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() grammar, required W Function(String value) $unknown, }) {return switch (this) {
       GrammarType$grammar() => grammar(),
       GrammarType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? grammar, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? grammar, W Function(String value)? $unknown, }) {return switch (this) {
       GrammarType$grammar() => grammar != null ? grammar() : orElse(value),
       GrammarType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GrammarType($value)';
 
- }
+}
 @immutable final class GrammarType$grammar extends GrammarType {const GrammarType$grammar._();
 
 @override String get value => 'grammar';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? grammar,
 
 @override int get hashCode => 'grammar'.hashCode;
 
- }
+}
 @immutable final class GrammarType$Unknown extends GrammarType {const GrammarType$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? grammar,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class FormatGrammar {const FormatGrammar({required this.grammar, required this.type, });
 
-factory FormatGrammar.fromJson(Map<String, dynamic> json) { return FormatGrammar(
+factory FormatGrammar.fromJson(Map<String, dynamic> json) {return FormatGrammar(
   grammar: GrammarGrammar.fromJson(json['grammar'] as Map<String, dynamic>),
   type: GrammarType.fromJson(json['type'] as String),
-); }
+);}
 
 final GrammarGrammar grammar;
 
 final GrammarType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'grammar': grammar.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('grammar') &&
-      json.containsKey('type') && json['type'] == 'grammar'; } 
-FormatGrammar copyWith({GrammarGrammar? grammar, GrammarType? type, }) { return FormatGrammar(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('grammar') &&
+      json.containsKey('type') && json['type'] == 'grammar';}
+FormatGrammar copyWith({GrammarGrammar? grammar, GrammarType? type, }) {return FormatGrammar(
   grammar: grammar ?? this.grammar,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FormatGrammar &&
           grammar == other.grammar &&
@@ -83,4 +83,4 @@ FormatGrammar copyWith({GrammarGrammar? grammar, GrammarType? type, }) { return 
 
 @override String toString() => 'FormatGrammar(grammar: $grammar, type: $type)';
 
- }
+}

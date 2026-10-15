@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionCashappQrCode {const PaymentIntentNextActionCashappQrCode({required this.expiresAt, required this.imageUrlPng, required this.imageUrlSvg, });
 
-factory PaymentIntentNextActionCashappQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionCashappQrCode(
+factory PaymentIntentNextActionCashappQrCode.fromJson(Map<String, dynamic> json) {return PaymentIntentNextActionCashappQrCode(
   expiresAt: (json['expires_at'] as num).toInt(),
   imageUrlPng: json['image_url_png'] as String,
   imageUrlSvg: json['image_url_svg'] as String,
-); }
+);}
 
 /// The date (unix timestamp) when the QR code expires.
 final int expiresAt;
@@ -19,24 +19,24 @@ final String imageUrlPng;
 /// The image_url_svg string used to render QR code
 final String imageUrlSvg;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expires_at': expiresAt,
   'image_url_png': imageUrlPng,
   'image_url_svg': imageUrlSvg,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_at') && json['expires_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('image_url_png') && json['image_url_png'] is String &&
-      json.containsKey('image_url_svg') && json['image_url_svg'] is String; } 
+      json.containsKey('image_url_svg') && json['image_url_svg'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (imageUrlPng.runes.length > 5000) { errors.add('imageUrlPng: length must be <= 5000'); }
 if (imageUrlSvg.runes.length > 5000) { errors.add('imageUrlSvg: length must be <= 5000'); }
-return errors; } 
-PaymentIntentNextActionCashappQrCode copyWith({int? expiresAt, String? imageUrlPng, String? imageUrlSvg, }) { return PaymentIntentNextActionCashappQrCode(
+return errors;}
+PaymentIntentNextActionCashappQrCode copyWith({int? expiresAt, String? imageUrlPng, String? imageUrlSvg, }) {return PaymentIntentNextActionCashappQrCode(
   expiresAt: expiresAt ?? this.expiresAt,
   imageUrlPng: imageUrlPng ?? this.imageUrlPng,
   imageUrlSvg: imageUrlSvg ?? this.imageUrlSvg,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionCashappQrCode &&
           expiresAt == other.expiresAt &&
@@ -47,4 +47,4 @@ PaymentIntentNextActionCashappQrCode copyWith({int? expiresAt, String? imageUrlP
 
 @override String toString() => 'PaymentIntentNextActionCashappQrCode(expiresAt: $expiresAt, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
 
- }
+}

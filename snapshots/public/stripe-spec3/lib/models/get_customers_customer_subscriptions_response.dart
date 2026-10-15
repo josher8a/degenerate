@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// 
 @immutable final class GetCustomersCustomerSubscriptionsResponse {const GetCustomersCustomerSubscriptionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetCustomersCustomerSubscriptionsResponse.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerSubscriptionsResponse(
+factory GetCustomersCustomerSubscriptionsResponse.fromJson(Map<String, dynamic> json) {return GetCustomersCustomerSubscriptionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => Subscription.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<Subscription> data;
@@ -23,26 +23,26 @@ final GetAccountsAccountCapabilitiesResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-GetCustomersCustomerSubscriptionsResponse copyWith({List<Subscription>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetCustomersCustomerSubscriptionsResponse(
+return errors;}
+GetCustomersCustomerSubscriptionsResponse copyWith({List<Subscription>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) {return GetCustomersCustomerSubscriptionsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetCustomersCustomerSubscriptionsResponse &&
           listEquals(data, other.data) &&
@@ -54,4 +54,4 @@ GetCustomersCustomerSubscriptionsResponse copyWith({List<Subscription>? data, bo
 
 @override String toString() => 'GetCustomersCustomerSubscriptionsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
 
- }
+}

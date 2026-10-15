@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a CAA record.
 @immutable final class DnsRecordsCaaRecordData {const DnsRecordsCaaRecordData({this.flags, this.tag, this.value, });
 
-factory DnsRecordsCaaRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsCaaRecordData(
+factory DnsRecordsCaaRecordData.fromJson(Map<String, dynamic> json) {return DnsRecordsCaaRecordData(
   flags: json['flags'] != null ? (json['flags'] as num).toDouble() : null,
   tag: json['tag'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 /// Flags for the CAA record.
 /// 
@@ -23,25 +23,25 @@ final String? tag;
 /// Value of the record. This field's semantics depend on the chosen tag.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'flags': ?flags,
   'tag': ?tag,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flags', 'tag', 'value'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'flags', 'tag', 'value'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final flags$ = flags;
 if (flags$ != null) {
   if (flags$ < 0) { errors.add('flags: must be >= 0'); }
   if (flags$ > 255) { errors.add('flags: must be <= 255'); }
 }
-return errors; } 
-DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()? tag, String? Function()? value, }) { return DnsRecordsCaaRecordData(
+return errors;}
+DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()? tag, String? Function()? value, }) {return DnsRecordsCaaRecordData(
   flags: flags != null ? flags() : this.flags,
   tag: tag != null ? tag() : this.tag,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsCaaRecordData &&
           flags == other.flags &&
@@ -52,4 +52,4 @@ DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()?
 
 @override String toString() => 'DnsRecordsCaaRecordData(flags: $flags, tag: $tag, value: $value)';
 
- }
+}

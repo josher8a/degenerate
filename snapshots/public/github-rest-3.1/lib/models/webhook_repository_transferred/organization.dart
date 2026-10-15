@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Organization {const Organization({required this.avatarUrl, required this.description, required this.eventsUrl, required this.hooksUrl, required this.id, required this.issuesUrl, required this.login, required this.membersUrl, required this.nodeId, required this.publicMembersUrl, required this.reposUrl, required this.url, this.htmlUrl, });
 
-factory Organization.fromJson(Map<String, dynamic> json) { return Organization(
+factory Organization.fromJson(Map<String, dynamic> json) {return Organization(
   avatarUrl: Uri.parse(json['avatar_url'] as String),
   description: json['description'] as String?,
   eventsUrl: Uri.parse(json['events_url'] as String),
@@ -17,7 +17,7 @@ factory Organization.fromJson(Map<String, dynamic> json) { return Organization(
   publicMembersUrl: json['public_members_url'] as String,
   reposUrl: Uri.parse(json['repos_url'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri avatarUrl;
 
@@ -45,7 +45,7 @@ final Uri reposUrl;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': avatarUrl.toString(),
   'description': description,
   'events_url': eventsUrl.toString(),
@@ -59,9 +59,9 @@ Map<String, dynamic> toJson() { return {
   'public_members_url': publicMembersUrl,
   'repos_url': reposUrl.toString(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('avatar_url') && json['avatar_url'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -71,8 +71,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('repos_url') && json['repos_url'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eventsUrl, Uri? hooksUrl, Uri? Function()? htmlUrl, int? id, Uri? issuesUrl, String? login, String? membersUrl, String? nodeId, String? publicMembersUrl, Uri? reposUrl, Uri? url, }) { return Organization(
+      json.containsKey('url') && json['url'] is String;}
+Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eventsUrl, Uri? hooksUrl, Uri? Function()? htmlUrl, int? id, Uri? issuesUrl, String? login, String? membersUrl, String? nodeId, String? publicMembersUrl, Uri? reposUrl, Uri? url, }) {return Organization(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   description: description != null ? description() : this.description,
   eventsUrl: eventsUrl ?? this.eventsUrl,
@@ -86,7 +86,7 @@ Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eve
   publicMembersUrl: publicMembersUrl ?? this.publicMembersUrl,
   reposUrl: reposUrl ?? this.reposUrl,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Organization &&
           avatarUrl == other.avatarUrl &&
@@ -107,4 +107,4 @@ Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eve
 
 @override String toString() => 'Organization(\n  avatarUrl: $avatarUrl,\n  description: $description,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issuesUrl: $issuesUrl,\n  login: $login,\n  membersUrl: $membersUrl,\n  nodeId: $nodeId,\n  publicMembersUrl: $publicMembersUrl,\n  reposUrl: $reposUrl,\n  url: $url,\n)';
 
- }
+}

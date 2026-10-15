@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentCreatedIssueUser {const WebhookIssueCommentCreatedIssueUser({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
-factory WebhookIssueCommentCreatedIssueUser.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreatedIssueUser(
+factory WebhookIssueCommentCreatedIssueUser.fromJson(Map<String, dynamic> json) {return WebhookIssueCommentCreatedIssueUser(
   avatarUrl: json['avatar_url'] as String?,
   eventsUrl: json['events_url'] as String?,
   followersUrl: json['followers_url'] as String?,
@@ -22,7 +22,7 @@ factory WebhookIssueCommentCreatedIssueUser.fromJson(Map<String, dynamic> json) 
   subscriptionsUrl: json['subscriptions_url'] as String?,
   type: json['type'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final String? avatarUrl;
 
@@ -60,7 +60,7 @@ final String? type;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': ?avatarUrl,
   'events_url': ?eventsUrl,
   'followers_url': ?followersUrl,
@@ -79,9 +79,9 @@ Map<String, dynamic> toJson() { return {
   'subscriptions_url': ?subscriptionsUrl,
   'type': ?type,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key)); } 
-WebhookIssueCommentCreatedIssueUser copyWith({String? Function()? avatarUrl, String? Function()? eventsUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, String? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? nodeId, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? url, }) { return WebhookIssueCommentCreatedIssueUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key));}
+WebhookIssueCommentCreatedIssueUser copyWith({String? Function()? avatarUrl, String? Function()? eventsUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, String? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? nodeId, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? url, }) {return WebhookIssueCommentCreatedIssueUser(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
@@ -100,7 +100,7 @@ WebhookIssueCommentCreatedIssueUser copyWith({String? Function()? avatarUrl, Str
   subscriptionsUrl: subscriptionsUrl != null ? subscriptionsUrl() : this.subscriptionsUrl,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssueCommentCreatedIssueUser &&
           avatarUrl == other.avatarUrl &&
@@ -126,4 +126,4 @@ WebhookIssueCommentCreatedIssueUser copyWith({String? Function()? avatarUrl, Str
 
 @override String toString() => 'WebhookIssueCommentCreatedIssueUser(\n  avatarUrl: $avatarUrl,\n  eventsUrl: $eventsUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  login: $login,\n  nodeId: $nodeId,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  reposUrl: $reposUrl,\n  siteAdmin: $siteAdmin,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  type: $type,\n  url: $url,\n)';
 
- }
+}

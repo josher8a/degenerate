@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumCreateRuleRequest {const RumCreateRuleRequest({this.host, this.inclusive, this.isPaused, this.paths, });
 
-factory RumCreateRuleRequest.fromJson(Map<String, dynamic> json) { return RumCreateRuleRequest(
+factory RumCreateRuleRequest.fromJson(Map<String, dynamic> json) {return RumCreateRuleRequest(
   host: json['host'] as String?,
   inclusive: json['inclusive'] as bool?,
   isPaused: json['is_paused'] as bool?,
   paths: (json['paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Example: `'example.com'`
 final String? host;
@@ -26,19 +26,19 @@ final bool? isPaused;
 /// Example: `[*]`
 final List<String>? paths;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': ?host,
   'inclusive': ?inclusive,
   'is_paused': ?isPaused,
   'paths': ?paths,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'inclusive', 'is_paused', 'paths'}.contains(key)); } 
-RumCreateRuleRequest copyWith({String? Function()? host, bool? Function()? inclusive, bool? Function()? isPaused, List<String>? Function()? paths, }) { return RumCreateRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'host', 'inclusive', 'is_paused', 'paths'}.contains(key));}
+RumCreateRuleRequest copyWith({String? Function()? host, bool? Function()? inclusive, bool? Function()? isPaused, List<String>? Function()? paths, }) {return RumCreateRuleRequest(
   host: host != null ? host() : this.host,
   inclusive: inclusive != null ? inclusive() : this.inclusive,
   isPaused: isPaused != null ? isPaused() : this.isPaused,
   paths: paths != null ? paths() : this.paths,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RumCreateRuleRequest &&
           host == other.host &&
@@ -50,4 +50,4 @@ RumCreateRuleRequest copyWith({String? Function()? host, bool? Function()? inclu
 
 @override String toString() => 'RumCreateRuleRequest(host: $host, inclusive: $inclusive, isPaused: $isPaused, paths: $paths)';
 
- }
+}

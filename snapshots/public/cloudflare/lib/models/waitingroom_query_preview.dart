@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_custom_page_html.dart';@immutable final class WaitingroomQueryPreview {const WaitingroomQueryPreview({required this.customHtml});
 
-factory WaitingroomQueryPreview.fromJson(Map<String, dynamic> json) { return WaitingroomQueryPreview(
+factory WaitingroomQueryPreview.fromJson(Map<String, dynamic> json) {return WaitingroomQueryPreview(
   customHtml: WaitingroomCustomPageHtml.fromJson(json['custom_html'] as String),
-); }
+);}
 
 /// Only available for the Waiting Room Advanced subscription. This is a template html file that will be rendered at the edge. If no custom_page_html is provided, the default waiting room will be used. The template is based on mustache ( https://mustache.github.io/ ). There are several variables that are evaluated by the Cloudflare edge:
 /// 1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to take when wait time is not available, for instance when queue_all is **true**.
@@ -18,13 +18,13 @@ factory WaitingroomQueryPreview.fromJson(Map<String, dynamic> json) { return Wai
 /// To view the full list of variables, look at the `cfWaitingRoom` object described under the `json_response_enabled` property in other Waiting Room API calls.
 final WaitingroomCustomPageHtml customHtml;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom_html': customHtml.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom_html'); } 
-WaitingroomQueryPreview copyWith({WaitingroomCustomPageHtml? customHtml}) { return WaitingroomQueryPreview(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('custom_html');}
+WaitingroomQueryPreview copyWith({WaitingroomCustomPageHtml? customHtml}) {return WaitingroomQueryPreview(
   customHtml: customHtml ?? this.customHtml,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomQueryPreview &&
           customHtml == other.customHtml;
@@ -33,4 +33,4 @@ WaitingroomQueryPreview copyWith({WaitingroomCustomPageHtml? customHtml}) { retu
 
 @override String toString() => 'WaitingroomQueryPreview(customHtml: $customHtml)';
 
- }
+}

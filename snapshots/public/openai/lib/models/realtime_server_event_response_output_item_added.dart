@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// Returned when a new Item is created during Response generation.
 @immutable final class RealtimeServerEventResponseOutputItemAdded {const RealtimeServerEventResponseOutputItemAdded({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
 
-factory RealtimeServerEventResponseOutputItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseOutputItemAdded(
+factory RealtimeServerEventResponseOutputItemAdded.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseOutputItemAdded(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -26,25 +26,25 @@ final int outputIndex;
 
 final RealtimeConversationItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
   'output_index': outputIndex,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('item'); } 
-RealtimeServerEventResponseOutputItemAdded copyWith({String? eventId, String? type, String? responseId, int? outputIndex, RealtimeConversationItem? item, }) { return RealtimeServerEventResponseOutputItemAdded(
+      json.containsKey('item');}
+RealtimeServerEventResponseOutputItemAdded copyWith({String? eventId, String? type, String? responseId, int? outputIndex, RealtimeConversationItem? item, }) {return RealtimeServerEventResponseOutputItemAdded(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
   outputIndex: outputIndex ?? this.outputIndex,
   item: item ?? this.item,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseOutputItemAdded &&
           eventId == other.eventId &&
@@ -57,4 +57,4 @@ RealtimeServerEventResponseOutputItemAdded copyWith({String? eventId, String? ty
 
 @override String toString() => 'RealtimeServerEventResponseOutputItemAdded(eventId: $eventId, type: $type, responseId: $responseId, outputIndex: $outputIndex, item: $item)';
 
- }
+}

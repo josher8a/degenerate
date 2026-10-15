@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CardNetworksPreferred {const CardNetworksPreferred();
 
-factory CardNetworksPreferred.fromJson(String json) { return switch (json) {
+factory CardNetworksPreferred.fromJson(String json) {return switch (json) {
   '' => $empty,
   'cartes_bancaires' => cartesBancaires,
   'mastercard' => mastercard,
   'visa' => visa,
   _ => CardNetworksPreferred$Unknown(json),
-}; }
+};}
 
 static const CardNetworksPreferred $empty = CardNetworksPreferred$$empty._();
 
@@ -22,36 +22,36 @@ static const CardNetworksPreferred visa = CardNetworksPreferred$visa._();
 static const List<CardNetworksPreferred> values = [$empty, cartesBancaires, mastercard, visa];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'cartes_bancaires' => 'cartesBancaires',
   'mastercard' => 'mastercard',
   'visa' => 'visa',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CardNetworksPreferred$Unknown; } 
+bool get isUnknown {return this is CardNetworksPreferred$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() cartesBancaires, required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() cartesBancaires, required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) {return switch (this) {
       CardNetworksPreferred$$empty() => $empty(),
       CardNetworksPreferred$cartesBancaires() => cartesBancaires(),
       CardNetworksPreferred$mastercard() => mastercard(),
       CardNetworksPreferred$visa() => visa(),
       CardNetworksPreferred$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? cartesBancaires, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? cartesBancaires, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) {return switch (this) {
       CardNetworksPreferred$$empty() => $empty != null ? $empty() : orElse(value),
       CardNetworksPreferred$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
       CardNetworksPreferred$mastercard() => mastercard != null ? mastercard() : orElse(value),
       CardNetworksPreferred$visa() => visa != null ? visa() : orElse(value),
       CardNetworksPreferred$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CardNetworksPreferred($value)';
 
- }
+}
 @immutable final class CardNetworksPreferred$$empty extends CardNetworksPreferred {const CardNetworksPreferred$$empty._();
 
 @override String get value => '';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class CardNetworksPreferred$cartesBancaires extends CardNetworksPreferred {const CardNetworksPreferred$cartesBancaires._();
 
 @override String get value => 'cartes_bancaires';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'cartes_bancaires'.hashCode;
 
- }
+}
 @immutable final class CardNetworksPreferred$mastercard extends CardNetworksPreferred {const CardNetworksPreferred$mastercard._();
 
 @override String get value => 'mastercard';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'mastercard'.hashCode;
 
- }
+}
 @immutable final class CardNetworksPreferred$visa extends CardNetworksPreferred {const CardNetworksPreferred$visa._();
 
 @override String get value => 'visa';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'visa'.hashCode;
 
- }
+}
 @immutable final class CardNetworksPreferred$Unknown extends CardNetworksPreferred {const CardNetworksPreferred$Unknown(this.value);
 
 @override final String value;
@@ -97,22 +97,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CardNetworks {const CardNetworks({this.preferred});
 
-factory CardNetworks.fromJson(Map<String, dynamic> json) { return CardNetworks(
+factory CardNetworks.fromJson(Map<String, dynamic> json) {return CardNetworks(
   preferred: json['preferred'] != null ? CardNetworksPreferred.fromJson(json['preferred'] as String) : null,
-); }
+);}
 
 final CardNetworksPreferred? preferred;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferred != null) 'preferred': preferred?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
-CardNetworks copyWith({CardNetworksPreferred? Function()? preferred}) { return CardNetworks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred'}.contains(key));}
+CardNetworks copyWith({CardNetworksPreferred? Function()? preferred}) {return CardNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CardNetworks &&
           preferred == other.preferred;
@@ -121,4 +121,4 @@ CardNetworks copyWith({CardNetworksPreferred? Function()? preferred}) { return C
 
 @override String toString() => 'CardNetworks(preferred: $preferred)';
 
- }
+}

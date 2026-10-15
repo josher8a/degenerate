@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_options.dart';@immutable final class DiagnosticsTracerouteRequest {const DiagnosticsTracerouteRequest({required this.targets, this.colos, this.options, });
 
-factory DiagnosticsTracerouteRequest.fromJson(Map<String, dynamic> json) { return DiagnosticsTracerouteRequest(
+factory DiagnosticsTracerouteRequest.fromJson(Map<String, dynamic> json) {return DiagnosticsTracerouteRequest(
   colos: (json['colos'] as List<dynamic>?)?.map((e) => e as String).toList(),
   options: json['options'] != null ? MagicTransitOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
   targets: (json['targets'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// If no source colo names specified, all colos will be used. China colos are unavailable for traceroutes.
 final List<String>? colos;
@@ -16,17 +16,17 @@ final MagicTransitOptions? options;
 
 final List<String> targets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'colos': ?colos,
   if (options != null) 'options': options?.toJson(),
   'targets': targets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('targets'); } 
-DiagnosticsTracerouteRequest copyWith({List<String>? Function()? colos, MagicTransitOptions? Function()? options, List<String>? targets, }) { return DiagnosticsTracerouteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('targets');}
+DiagnosticsTracerouteRequest copyWith({List<String>? Function()? colos, MagicTransitOptions? Function()? options, List<String>? targets, }) {return DiagnosticsTracerouteRequest(
   colos: colos != null ? colos() : this.colos,
   options: options != null ? options() : this.options,
   targets: targets ?? this.targets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DiagnosticsTracerouteRequest &&
           listEquals(colos, other.colos) &&
@@ -37,4 +37,4 @@ DiagnosticsTracerouteRequest copyWith({List<String>? Function()? colos, MagicTra
 
 @override String toString() => 'DiagnosticsTracerouteRequest(colos: $colos, options: $options, targets: $targets)';
 
- }
+}

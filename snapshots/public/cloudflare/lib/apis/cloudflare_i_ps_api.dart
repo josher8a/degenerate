@@ -14,7 +14,7 @@ final class CloudflareIPsApi with ApiExecutor {const CloudflareIPsApi(this.apiCo
 /// Get IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs.
 ///
 /// `GET /ips`
-Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, CloudflareIpsCloudflareIpDetailsError>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, CloudflareIpsCloudflareIpDetailsError>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (networks != null) {
   queryParameters['networks'] = networks;
@@ -31,7 +31,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -39,5 +39,5 @@ return execute(
   },
   onError: CloudflareIpsCloudflareIpDetailsError.fromResponse,
 );
- } 
- }
+}
+}

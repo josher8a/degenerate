@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetAiBotsTimeseriesGroupFormat {const RadarGetAiBotsTimeseriesGroupFormat();
 
-factory RadarGetAiBotsTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAiBotsTimeseriesGroupFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiBotsTimeseriesGroupFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetAiBotsTimeseriesGroupFormat $json = RadarGetAiBotsTimeseriesGroupFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetAiBotsTimeseriesGroupFormat csv = RadarGetAiBotsTimeseriesG
 static const List<RadarGetAiBotsTimeseriesGroupFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAiBotsTimeseriesGroupFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetAiBotsTimeseriesGroupFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAiBotsTimeseriesGroupFormat$$json() => $json(),
       RadarGetAiBotsTimeseriesGroupFormat$csv() => csv(),
       RadarGetAiBotsTimeseriesGroupFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAiBotsTimeseriesGroupFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetAiBotsTimeseriesGroupFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetAiBotsTimeseriesGroupFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAiBotsTimeseriesGroupFormat($value)';
 
- }
+}
 @immutable final class RadarGetAiBotsTimeseriesGroupFormat$$json extends RadarGetAiBotsTimeseriesGroupFormat {const RadarGetAiBotsTimeseriesGroupFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsTimeseriesGroupFormat$csv extends RadarGetAiBotsTimeseriesGroupFormat {const RadarGetAiBotsTimeseriesGroupFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsTimeseriesGroupFormat$Unknown extends RadarGetAiBotsTimeseriesGroupFormat {const RadarGetAiBotsTimeseriesGroupFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

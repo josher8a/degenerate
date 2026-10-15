@@ -12,7 +12,7 @@ final class McpPortalServersApi with ApiExecutor {const McpPortalServersApi(this
 /// List MCP Servers
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<List<CreateServersResponseResult>, ListServersError>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CreateServersResponseResult>, ListServersError>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -35,7 +35,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -43,11 +43,11 @@ return execute(
   },
   onError: ListServersError.fromResponse,
 );
- } 
+}
 /// Create a new MCP Server
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<CreateServersResponseResult, CreateServersError>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, CreateServersError>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,7 +58,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -66,11 +66,11 @@ return execute(
   },
   onError: CreateServersError.fromResponse,
 );
- } 
+}
 /// Read the details of a MCP Server
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<CreateServersResponseResult, FetchServersError>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, FetchServersError>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,7 +79,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -87,11 +87,11 @@ return execute(
   },
   onError: FetchServersError.fromResponse,
 );
- } 
+}
 /// Update a MCP Server
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<CreateServersResponseResult, UpdateServersError>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, UpdateServersError>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,7 +102,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -110,11 +110,11 @@ return execute(
   },
   onError: UpdateServersError.fromResponse,
 );
- } 
+}
 /// Delete a MCP Server
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<CreateServersResponseResult, DeleteServersError>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, DeleteServersError>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,7 +123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -131,11 +131,11 @@ return execute(
   },
   onError: DeleteServersError.fromResponse,
 );
- } 
+}
 /// Sync MCP Server Capabilities
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync`
-Future<ApiResult<Map<String, dynamic>, SyncServerError>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, SyncServerError>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -152,5 +152,5 @@ return execute(
   },
   onError: SyncServerError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InfraTargetsListOrder {const InfraTargetsListOrder();
 
-factory InfraTargetsListOrder.fromJson(String json) { return switch (json) {
+factory InfraTargetsListOrder.fromJson(String json) {return switch (json) {
   'hostname' => hostname,
   'created_at' => createdAt,
   _ => InfraTargetsListOrder$Unknown(json),
-}; }
+};}
 
 static const InfraTargetsListOrder hostname = InfraTargetsListOrder$hostname._();
 
@@ -16,30 +16,30 @@ static const InfraTargetsListOrder createdAt = InfraTargetsListOrder$createdAt._
 static const List<InfraTargetsListOrder> values = [hostname, createdAt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'hostname' => 'hostname',
   'created_at' => 'createdAt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InfraTargetsListOrder$Unknown; } 
+bool get isUnknown {return this is InfraTargetsListOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() hostname, required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() hostname, required W Function() createdAt, required W Function(String value) $unknown, }) {return switch (this) {
       InfraTargetsListOrder$hostname() => hostname(),
       InfraTargetsListOrder$createdAt() => createdAt(),
       InfraTargetsListOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostname, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostname, W Function()? createdAt, W Function(String value)? $unknown, }) {return switch (this) {
       InfraTargetsListOrder$hostname() => hostname != null ? hostname() : orElse(value),
       InfraTargetsListOrder$createdAt() => createdAt != null ? createdAt() : orElse(value),
       InfraTargetsListOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InfraTargetsListOrder($value)';
 
- }
+}
 @immutable final class InfraTargetsListOrder$hostname extends InfraTargetsListOrder {const InfraTargetsListOrder$hostname._();
 
 @override String get value => 'hostname';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostname
 
 @override int get hashCode => 'hostname'.hashCode;
 
- }
+}
 @immutable final class InfraTargetsListOrder$createdAt extends InfraTargetsListOrder {const InfraTargetsListOrder$createdAt._();
 
 @override String get value => 'created_at';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostname
 
 @override int get hashCode => 'created_at'.hashCode;
 
- }
+}
 @immutable final class InfraTargetsListOrder$Unknown extends InfraTargetsListOrder {const InfraTargetsListOrder$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostname
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_cache_list/actions_caches.dart';/// Repository actions caches
 @immutable final class ActionsCacheList {const ActionsCacheList({required this.totalCount, required this.actionsCaches, });
 
-factory ActionsCacheList.fromJson(Map<String, dynamic> json) { return ActionsCacheList(
+factory ActionsCacheList.fromJson(Map<String, dynamic> json) {return ActionsCacheList(
   totalCount: (json['total_count'] as num).toInt(),
   actionsCaches: (json['actions_caches'] as List<dynamic>).map((e) => ActionsCaches.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Total number of caches
 final int totalCount;
@@ -15,16 +15,16 @@ final int totalCount;
 /// Array of caches
 final List<ActionsCaches> actionsCaches;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'actions_caches': actionsCaches.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('actions_caches'); } 
-ActionsCacheList copyWith({int? totalCount, List<ActionsCaches>? actionsCaches, }) { return ActionsCacheList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('actions_caches');}
+ActionsCacheList copyWith({int? totalCount, List<ActionsCaches>? actionsCaches, }) {return ActionsCacheList(
   totalCount: totalCount ?? this.totalCount,
   actionsCaches: actionsCaches ?? this.actionsCaches,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCacheList &&
           totalCount == other.totalCount &&
@@ -34,4 +34,4 @@ ActionsCacheList copyWith({int? totalCount, List<ActionsCaches>? actionsCaches, 
 
 @override String toString() => 'ActionsCacheList(totalCount: $totalCount, actionsCaches: $actionsCaches)';
 
- }
+}

@@ -12,7 +12,7 @@ final class FakeClassnameTags123$Api with ApiExecutor {const FakeClassnameTags12
 /// To test class name in snake case
 ///
 /// `PATCH /fake_classname_test`
-Future<ApiResult<Client, Never>> testClassname({required Client body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Client, Never>> testClassname({required Client body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -23,11 +23,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Client.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

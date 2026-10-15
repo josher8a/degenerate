@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maximum number of streams that are visible on a device
 @immutable final class RealtimekitPresetConfigMaxVideoStreams {const RealtimekitPresetConfigMaxVideoStreams({required this.desktop, required this.mobile, });
 
-factory RealtimekitPresetConfigMaxVideoStreams.fromJson(Map<String, dynamic> json) { return RealtimekitPresetConfigMaxVideoStreams(
+factory RealtimekitPresetConfigMaxVideoStreams.fromJson(Map<String, dynamic> json) {return RealtimekitPresetConfigMaxVideoStreams(
   desktop: (json['desktop'] as num).toInt(),
   mobile: (json['mobile'] as num).toInt(),
-); }
+);}
 
 /// Maximum number of video streams visible on desktop devices
 final int desktop;
@@ -15,16 +15,16 @@ final int desktop;
 /// Maximum number of streams visible on mobile devices
 final int mobile;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'desktop': desktop,
   'mobile': mobile,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('desktop') && json['desktop'] is num &&
-      json.containsKey('mobile') && json['mobile'] is num; } 
-RealtimekitPresetConfigMaxVideoStreams copyWith({int? desktop, int? mobile, }) { return RealtimekitPresetConfigMaxVideoStreams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('desktop') && json['desktop'] is num &&
+      json.containsKey('mobile') && json['mobile'] is num;}
+RealtimekitPresetConfigMaxVideoStreams copyWith({int? desktop, int? mobile, }) {return RealtimekitPresetConfigMaxVideoStreams(
   desktop: desktop ?? this.desktop,
   mobile: mobile ?? this.mobile,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetConfigMaxVideoStreams &&
           desktop == other.desktop &&
@@ -34,4 +34,4 @@ RealtimekitPresetConfigMaxVideoStreams copyWith({int? desktop, int? mobile, }) {
 
 @override String toString() => 'RealtimekitPresetConfigMaxVideoStreams(desktop: $desktop, mobile: $mobile)';
 
- }
+}

@@ -1,19 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetAccountsAccountExternalAccountsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response/get_accounts_account_external_accounts_response_data.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response/get_accounts_account_external_accounts_response_data.dart';/// 
 @immutable final class GetAccountsAccountExternalAccountsResponse {const GetAccountsAccountExternalAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetAccountsAccountExternalAccountsResponse.fromJson(Map<String, dynamic> json) { return GetAccountsAccountExternalAccountsResponse(
-  data: (json['data'] as List<dynamic>).map((e) => switch (e) {
-  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
-  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
-  _ => OneOf2.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
-}).toList(),
+factory GetAccountsAccountExternalAccountsResponse.fromJson(Map<String, dynamic> json) {return GetAccountsAccountExternalAccountsResponse(
+  data: (json['data'] as List<dynamic>).map(GetAccountsAccountExternalAccountsResponseData.fromJson).toList(),
   hasMore: json['has_more'] as bool,
   object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// The list contains all external accounts that have been attached to the Stripe account. These may be bank accounts or cards.
 final List<GetAccountsAccountExternalAccountsResponseData> data;
@@ -27,26 +23,26 @@ final GetAccountsAccountCapabilitiesResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-GetAccountsAccountExternalAccountsResponse copyWith({List<GetAccountsAccountExternalAccountsResponseData>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetAccountsAccountExternalAccountsResponse(
+return errors;}
+GetAccountsAccountExternalAccountsResponse copyWith({List<GetAccountsAccountExternalAccountsResponseData>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) {return GetAccountsAccountExternalAccountsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetAccountsAccountExternalAccountsResponse &&
           listEquals(data, other.data) &&
@@ -58,4 +54,4 @@ GetAccountsAccountExternalAccountsResponse copyWith({List<GetAccountsAccountExte
 
 @override String toString() => 'GetAccountsAccountExternalAccountsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
 
- }
+}

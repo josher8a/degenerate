@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ownership type of the team
 sealed class TeamFullType {const TeamFullType();
 
-factory TeamFullType.fromJson(String json) { return switch (json) {
+factory TeamFullType.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   _ => TeamFullType$Unknown(json),
-}; }
+};}
 
 static const TeamFullType enterprise = TeamFullType$enterprise._();
 
@@ -17,30 +17,30 @@ static const TeamFullType organization = TeamFullType$organization._();
 static const List<TeamFullType> values = [enterprise, organization];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enterprise' => 'enterprise',
   'organization' => 'organization',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamFullType$Unknown; } 
+bool get isUnknown {return this is TeamFullType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enterprise, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enterprise, required W Function() organization, required W Function(String value) $unknown, }) {return switch (this) {
       TeamFullType$enterprise() => enterprise(),
       TeamFullType$organization() => organization(),
       TeamFullType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterprise, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterprise, W Function()? organization, W Function(String value)? $unknown, }) {return switch (this) {
       TeamFullType$enterprise() => enterprise != null ? enterprise() : orElse(value),
       TeamFullType$organization() => organization != null ? organization() : orElse(value),
       TeamFullType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamFullType($value)';
 
- }
+}
 @immutable final class TeamFullType$enterprise extends TeamFullType {const TeamFullType$enterprise._();
 
 @override String get value => 'enterprise';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterpri
 
 @override int get hashCode => 'enterprise'.hashCode;
 
- }
+}
 @immutable final class TeamFullType$organization extends TeamFullType {const TeamFullType$organization._();
 
 @override String get value => 'organization';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterpri
 
 @override int get hashCode => 'organization'.hashCode;
 
- }
+}
 @immutable final class TeamFullType$Unknown extends TeamFullType {const TeamFullType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterpri
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_status.dart';import 'package:pub_stripe_spec3/models/issuing_settlement/issuing_settlement_network.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingSettlementObject {const IssuingSettlementObject();
 
-factory IssuingSettlementObject.fromJson(String json) { return switch (json) {
+factory IssuingSettlementObject.fromJson(String json) {return switch (json) {
   'issuing.settlement' => issuingSettlement,
   _ => IssuingSettlementObject$Unknown(json),
-}; }
+};}
 
 static const IssuingSettlementObject issuingSettlement = IssuingSettlementObject$issuingSettlement._();
 
 static const List<IssuingSettlementObject> values = [issuingSettlement];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.settlement' => 'issuingSettlement',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingSettlementObject$Unknown; } 
+bool get isUnknown {return this is IssuingSettlementObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingSettlement, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingSettlement, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingSettlementObject$issuingSettlement() => issuingSettlement(),
       IssuingSettlementObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingSettlement, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingSettlement, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingSettlementObject$issuingSettlement() => issuingSettlement != null ? issuingSettlement() : orElse(value),
       IssuingSettlementObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingSettlementObject($value)';
 
- }
+}
 @immutable final class IssuingSettlementObject$issuingSettlement extends IssuingSettlementObject {const IssuingSettlementObject$issuingSettlement._();
 
 @override String get value => 'issuing.settlement';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingS
 
 @override int get hashCode => 'issuing.settlement'.hashCode;
 
- }
+}
 @immutable final class IssuingSettlementObject$Unknown extends IssuingSettlementObject {const IssuingSettlementObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingS
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// When a non-stripe BIN is used, any use of an [issued card](https://docs.stripe.com/issuing) must be settled directly with the card network. The net amount owed is represented by an Issuing `Settlement` object.
 @immutable final class IssuingSettlement {const IssuingSettlement({required this.bin, required this.clearingDate, required this.created, required this.currency, required this.id, required this.interchangeFeesAmount, required this.livemode, required this.metadata, required this.netTotalAmount, required this.network, required this.networkFeesAmount, required this.networkSettlementIdentifier, required this.object, required this.settlementService, required this.status, required this.transactionAmount, required this.transactionCount, });
 
-factory IssuingSettlement.fromJson(Map<String, dynamic> json) { return IssuingSettlement(
+factory IssuingSettlement.fromJson(Map<String, dynamic> json) {return IssuingSettlement(
   bin: json['bin'] as String,
   clearingDate: (json['clearing_date'] as num).toInt(),
   created: (json['created'] as num).toInt(),
@@ -75,7 +75,7 @@ factory IssuingSettlement.fromJson(Map<String, dynamic> json) { return IssuingSe
   status: BillingMeterEventAdjustmentStatus.fromJson(json['status'] as String),
   transactionAmount: (json['transaction_amount'] as num).toInt(),
   transactionCount: (json['transaction_count'] as num).toInt(),
-); }
+);}
 
 /// The Bank Identification Number reflecting this settlement record.
 final String bin;
@@ -128,7 +128,7 @@ final int transactionAmount;
 /// The total number of transactions reflected in this settlement.
 final int transactionCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bin': bin,
   'clearing_date': clearingDate,
   'created': created,
@@ -146,8 +146,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'transaction_amount': transactionAmount,
   'transaction_count': transactionCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin') && json['bin'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bin') && json['bin'] is String &&
       json.containsKey('clearing_date') && json['clearing_date'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -163,15 +163,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('settlement_service') && json['settlement_service'] is String &&
       json.containsKey('status') &&
       json.containsKey('transaction_amount') && json['transaction_amount'] is num &&
-      json.containsKey('transaction_count') && json['transaction_count'] is num; } 
+      json.containsKey('transaction_count') && json['transaction_count'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (bin.runes.length > 5000) { errors.add('bin: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (networkSettlementIdentifier.runes.length > 5000) { errors.add('networkSettlementIdentifier: length must be <= 5000'); }
 if (settlementService.runes.length > 5000) { errors.add('settlementService: length must be <= 5000'); }
-return errors; } 
-IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, BillingMeterEventAdjustmentStatus? status, int? transactionAmount, int? transactionCount, }) { return IssuingSettlement(
+return errors;}
+IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, BillingMeterEventAdjustmentStatus? status, int? transactionAmount, int? transactionCount, }) {return IssuingSettlement(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,
   created: created ?? this.created,
@@ -189,7 +189,7 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
   status: status ?? this.status,
   transactionAmount: transactionAmount ?? this.transactionAmount,
   transactionCount: transactionCount ?? this.transactionCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingSettlement &&
           bin == other.bin &&
@@ -214,4 +214,4 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
 
 @override String toString() => 'IssuingSettlement(\n  bin: $bin,\n  clearingDate: $clearingDate,\n  created: $created,\n  currency: $currency,\n  id: $id,\n  interchangeFeesAmount: $interchangeFeesAmount,\n  livemode: $livemode,\n  metadata: $metadata,\n  netTotalAmount: $netTotalAmount,\n  network: $network,\n  networkFeesAmount: $networkFeesAmount,\n  networkSettlementIdentifier: $networkSettlementIdentifier,\n  object: $object,\n  settlementService: $settlementService,\n  status: $status,\n  transactionAmount: $transactionAmount,\n  transactionCount: $transactionCount,\n)';
 
- }
+}

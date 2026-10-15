@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_search_result_item/commit_search_result_item_commit.dart';import 'package:pub_github_rest_3_1/models/commit_search_result_item/commit_search_result_item_parents.dart';import 'package:pub_github_rest_3_1/models/git_user.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Commit Search Result Item
 @immutable final class CommitSearchResultItem {const CommitSearchResultItem({required this.url, required this.sha, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, required this.repository, required this.score, required this.nodeId, this.textMatches, });
 
-factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) { return CommitSearchResultItem(
+factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) {return CommitSearchResultItem(
   url: Uri.parse(json['url'] as String),
   sha: json['sha'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -17,7 +17,7 @@ factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) { return Comm
   score: (json['score'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -43,7 +43,7 @@ final String nodeId;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'sha': sha,
   'html_url': htmlUrl.toString(),
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'score': score,
   'node_id': nodeId,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('comments_url') && json['comments_url'] is String &&
@@ -67,8 +67,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('parents') &&
       json.containsKey('repository') &&
       json.containsKey('score') && json['score'] is num &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? commentsUrl, CommitSearchResultItemCommit? commit, SimpleUser? Function()? author, GitUser? Function()? committer, List<CommitSearchResultItemParents>? parents, MinimalRepository? repository, double? score, String? nodeId, List<SearchResultTextMatches2>? Function()? textMatches, }) { return CommitSearchResultItem(
+      json.containsKey('node_id') && json['node_id'] is String;}
+CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? commentsUrl, CommitSearchResultItemCommit? commit, SimpleUser? Function()? author, GitUser? Function()? committer, List<CommitSearchResultItemParents>? parents, MinimalRepository? repository, double? score, String? nodeId, List<SearchResultTextMatches2>? Function()? textMatches, }) {return CommitSearchResultItem(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -81,7 +81,7 @@ CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? comme
   score: score ?? this.score,
   nodeId: nodeId ?? this.nodeId,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitSearchResultItem &&
           url == other.url &&
@@ -101,4 +101,4 @@ CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? comme
 
 @override String toString() => 'CommitSearchResultItem(\n  url: $url,\n  sha: $sha,\n  htmlUrl: $htmlUrl,\n  commentsUrl: $commentsUrl,\n  commit: $commit,\n  author: $author,\n  committer: $committer,\n  parents: $parents,\n  repository: $repository,\n  score: $score,\n  nodeId: $nodeId,\n  textMatches: $textMatches,\n)';
 
- }
+}

@@ -14,7 +14,7 @@ final class AiGatewayGatewaysApi with ApiExecutor {const AiGatewayGatewaysApi(th
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways`
-Future<ApiResult<List<AigConfigCreateGatewayResponseResult>, AigConfigListGatewayError>> aigConfigListGateway({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigCreateGatewayResponseResult>, AigConfigListGatewayError>> aigConfigListGateway({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -45,13 +45,13 @@ return execute(
   },
   onError: AigConfigListGatewayError.fromResponse,
 );
- } 
+}
 /// Create a new Gateway
 ///
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways`
-Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigCreateGatewayError>> aigConfigCreateGateway({required String accountId, AigConfigCreateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigCreateGatewayError>> aigConfigCreateGateway({required String accountId, AigConfigCreateGatewayRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,7 +62,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -70,13 +70,13 @@ return execute(
   },
   onError: AigConfigCreateGatewayError.fromResponse,
 );
- } 
+}
 /// Get Gateway URL
 ///
 /// Retrieves the endpoint URL for an AI Gateway.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/url/{provider}`
-Future<ApiResult<String, AigConfigGetGatewayUrlError>> aigConfigGetGatewayUrl({required String gatewayId, required String accountId, required String provider, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, AigConfigGetGatewayUrlError>> aigConfigGetGatewayUrl({required String gatewayId, required String accountId, required String provider, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -85,7 +85,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -93,13 +93,13 @@ return execute(
   },
   onError: AigConfigGetGatewayUrlError.fromResponse,
 );
- } 
+}
 /// Fetch a Gateway
 ///
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigFetchGatewayError>> aigConfigFetchGateway({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigFetchGatewayError>> aigConfigFetchGateway({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,7 +108,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -116,13 +116,13 @@ return execute(
   },
   onError: AigConfigFetchGatewayError.fromResponse,
 );
- } 
+}
 /// Update a Gateway
 ///
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigUpdateGatewayError>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigUpdateGatewayError>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,7 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -141,13 +141,13 @@ return execute(
   },
   onError: AigConfigUpdateGatewayError.fromResponse,
 );
- } 
+}
 /// Delete a Gateway
 ///
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigDeleteGatewayError>> aigConfigDeleteGateway({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigDeleteGatewayError>> aigConfigDeleteGateway({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -156,7 +156,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -164,5 +164,5 @@ return execute(
   },
   onError: AigConfigDeleteGatewayError.fromResponse,
 );
- } 
- }
+}
+}

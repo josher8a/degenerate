@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsUpdateOrgVariableRequest {const ActionsUpdateOrgVariableRequest({this.name, this.value, this.visibility, this.selectedRepositoryIds, });
 
-factory ActionsUpdateOrgVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateOrgVariableRequest(
+factory ActionsUpdateOrgVariableRequest.fromJson(Map<String, dynamic> json) {return ActionsUpdateOrgVariableRequest(
   name: json['name'] as String?,
   value: json['value'] as String?,
   visibility: json['visibility'] != null ? ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String) : null,
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The name of the variable.
 final String? name;
@@ -22,19 +22,19 @@ final ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility;
 /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
 final List<int>? selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'value': ?value,
   if (visibility != null) 'visibility': visibility?.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value', 'visibility', 'selected_repository_ids'}.contains(key)); } 
-ActionsUpdateOrgVariableRequest copyWith({String? Function()? name, String? Function()? value, ActionsCreateOrUpdateOrgSecretRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, }) { return ActionsUpdateOrgVariableRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'value', 'visibility', 'selected_repository_ids'}.contains(key));}
+ActionsUpdateOrgVariableRequest copyWith({String? Function()? name, String? Function()? value, ActionsCreateOrUpdateOrgSecretRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, }) {return ActionsUpdateOrgVariableRequest(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
   visibility: visibility != null ? visibility() : this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsUpdateOrgVariableRequest &&
           name == other.name &&
@@ -46,4 +46,4 @@ ActionsUpdateOrgVariableRequest copyWith({String? Function()? name, String? Func
 
 @override String toString() => 'ActionsUpdateOrgVariableRequest(name: $name, value: $value, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';
 
- }
+}

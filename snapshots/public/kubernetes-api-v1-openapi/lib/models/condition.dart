@@ -2,16 +2,16 @@
 // Source: #/components/schemas/Condition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// Condition contains details for one aspect of the current state of this API Resource.
-@immutable final class Condition {const Condition({required this.lastTransitionTime, this.message = '', this.observedGeneration, this.reason = '', this.status = '', this.type = '', });
+@immutable final class Condition {const Condition({required this.lastTransitionTime, required this.message, required this.reason, required this.status, required this.type, this.observedGeneration, });
 
-factory Condition.fromJson(Map<String, dynamic> json) { return Condition(
+factory Condition.fromJson(Map<String, dynamic> json) {return Condition(
   lastTransitionTime: Time.fromJson(json['lastTransitionTime'] as String),
   message: json['message'] as String,
   observedGeneration: json['observedGeneration'] != null ? (json['observedGeneration'] as num).toInt() : null,
   reason: json['reason'] as String,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// lastTransitionTime is the last time the condition transitioned from one status to another. This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.
 final Time lastTransitionTime;
@@ -31,27 +31,27 @@ final String status;
 /// type of condition in CamelCase or in foo.example.com/CamelCase.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'lastTransitionTime': lastTransitionTime.toJson(),
   'message': message,
   'observedGeneration': ?observedGeneration,
   'reason': reason,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('lastTransitionTime') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('lastTransitionTime') &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-Condition copyWith({Time? lastTransitionTime, String? message, int? Function()? observedGeneration, String? reason, String? status, String? type, }) { return Condition(
+      json.containsKey('type') && json['type'] is String;}
+Condition copyWith({Time? lastTransitionTime, String? message, int? Function()? observedGeneration, String? reason, String? status, String? type, }) {return Condition(
   lastTransitionTime: lastTransitionTime ?? this.lastTransitionTime,
   message: message ?? this.message,
   observedGeneration: observedGeneration != null ? observedGeneration() : this.observedGeneration,
   reason: reason ?? this.reason,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Condition &&
           lastTransitionTime == other.lastTransitionTime &&
@@ -65,4 +65,4 @@ Condition copyWith({Time? lastTransitionTime, String? message, int? Function()? 
 
 @override String toString() => 'Condition(lastTransitionTime: $lastTransitionTime, message: $message, observedGeneration: $observedGeneration, reason: $reason, status: $status, type: $type)';
 
- }
+}

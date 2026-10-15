@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_sponsorship_edited/webhook_sponsorship_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipEdited {const WebhookSponsorshipEdited({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipEdited(
+factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) {return WebhookSponsorshipEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookSponsorshipEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) { return We
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -30,7 +30,7 @@ final SimpleUser sender;
 
 final WebhooksSponsorship sponsorship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -39,12 +39,12 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('sender') &&
-      json.containsKey('sponsorship'); } 
-WebhookSponsorshipEdited copyWith({ItemEditedAction? action, WebhookSponsorshipEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipEdited(
+      json.containsKey('sponsorship');}
+WebhookSponsorshipEdited copyWith({ItemEditedAction? action, WebhookSponsorshipEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) {return WebhookSponsorshipEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -53,7 +53,7 @@ WebhookSponsorshipEdited copyWith({ItemEditedAction? action, WebhookSponsorshipE
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipEdited &&
           action == other.action &&
@@ -69,4 +69,4 @@ WebhookSponsorshipEdited copyWith({ItemEditedAction? action, WebhookSponsorshipE
 
 @override String toString() => 'WebhookSponsorshipEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';
 
- }
+}

@@ -1,27 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MconnAdminDeviceCredentialCreateResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_device_credential.dart';@immutable final class MconnAdminDeviceCredentialCreateResponse {const MconnAdminDeviceCredentialCreateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_device_credential.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnAdminDeviceCredentialCreateResponse {const MconnAdminDeviceCredentialCreateResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnAdminDeviceCredentialCreateResponse.fromJson(Map<String, dynamic> json) { return MconnAdminDeviceCredentialCreateResponse(
-  result: json['result'] != null ? MconnAdminDeviceCredential.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory MconnAdminDeviceCredentialCreateResponse.fromJson(Map<String, dynamic> json) {return MconnAdminDeviceCredentialCreateResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  result: MconnAdminDeviceCredential.fromJson(json['result'] as Map<String, dynamic>),
+);}
 
-final MconnAdminDeviceCredential? result;
+final List<MconnCodedMessage> messages;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnAdminDeviceCredentialCreateResponse copyWith({MconnAdminDeviceCredential? Function()? result}) { return MconnAdminDeviceCredentialCreateResponse(
-  result: result != null ? result() : this.result,
-); } 
+final bool success;
+
+final List<MconnCodedMessage> errors;
+
+final MconnAdminDeviceCredential result;
+
+Map<String, dynamic> toJson() {return {
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result');}
+MconnAdminDeviceCredentialCreateResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, MconnAdminDeviceCredential? result, }) {return MconnAdminDeviceCredentialCreateResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminDeviceCredentialCreateResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           result == other.result;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result);
 
-@override String toString() => 'MconnAdminDeviceCredentialCreateResponse(result: $result)';
+@override String toString() => 'MconnAdminDeviceCredentialCreateResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

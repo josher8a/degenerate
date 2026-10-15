@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoiceHistory {const InvoiceHistory({required this.enabled});
 
-factory InvoiceHistory.fromJson(Map<String, dynamic> json) { return InvoiceHistory(
+factory InvoiceHistory.fromJson(Map<String, dynamic> json) {return InvoiceHistory(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-InvoiceHistory copyWith({bool? enabled}) { return InvoiceHistory(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+InvoiceHistory copyWith({bool? enabled}) {return InvoiceHistory(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceHistory &&
           enabled == other.enabled;
@@ -24,4 +24,4 @@ InvoiceHistory copyWith({bool? enabled}) { return InvoiceHistory(
 
 @override String toString() => 'InvoiceHistory(enabled: $enabled)';
 
- }
+}

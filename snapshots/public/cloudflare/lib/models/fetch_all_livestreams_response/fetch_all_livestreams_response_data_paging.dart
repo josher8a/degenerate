@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchAllLivestreamsResponseDataPaging {const FetchAllLivestreamsResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
 
-factory FetchAllLivestreamsResponseDataPaging.fromJson(Map<String, dynamic> json) { return FetchAllLivestreamsResponseDataPaging(
+factory FetchAllLivestreamsResponseDataPaging.fromJson(Map<String, dynamic> json) {return FetchAllLivestreamsResponseDataPaging(
   endOffset: json['end_offset'] != null ? (json['end_offset'] as num).toInt() : null,
   startOffset: json['start_offset'] != null ? (json['start_offset'] as num).toInt() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
-); }
+);}
 
 /// Example: `1`
 final int? endOffset;
@@ -18,17 +18,17 @@ final int? startOffset;
 /// Example: `1`
 final int? totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_offset': ?endOffset,
   'start_offset': ?startOffset,
   'total_count': ?totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end_offset', 'start_offset', 'total_count'}.contains(key)); } 
-FetchAllLivestreamsResponseDataPaging copyWith({int? Function()? endOffset, int? Function()? startOffset, int? Function()? totalCount, }) { return FetchAllLivestreamsResponseDataPaging(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'end_offset', 'start_offset', 'total_count'}.contains(key));}
+FetchAllLivestreamsResponseDataPaging copyWith({int? Function()? endOffset, int? Function()? startOffset, int? Function()? totalCount, }) {return FetchAllLivestreamsResponseDataPaging(
   endOffset: endOffset != null ? endOffset() : this.endOffset,
   startOffset: startOffset != null ? startOffset() : this.startOffset,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FetchAllLivestreamsResponseDataPaging &&
           endOffset == other.endOffset &&
@@ -39,4 +39,4 @@ FetchAllLivestreamsResponseDataPaging copyWith({int? Function()? endOffset, int?
 
 @override String toString() => 'FetchAllLivestreamsResponseDataPaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)';
 
- }
+}

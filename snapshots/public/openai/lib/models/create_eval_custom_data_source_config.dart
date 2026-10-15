@@ -6,13 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// - Used to define your testing criteria and
 /// - What data is required when creating a run
 /// 
-@immutable final class CreateEvalCustomDataSourceConfig {const CreateEvalCustomDataSourceConfig({required this.itemSchema, this.type = CreateEvalCustomDataSourceConfigType.custom, this.includeSampleSchema = false, });
+@immutable final class CreateEvalCustomDataSourceConfig {const CreateEvalCustomDataSourceConfig({required this.type, required this.itemSchema, this.includeSampleSchema, });
 
-factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalCustomDataSourceConfig(
+factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) {return CreateEvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),
   itemSchema: json['item_schema'] as Map<String, dynamic>,
-  includeSampleSchema: json.containsKey('include_sample_schema') ? json['include_sample_schema'] as bool : false,
-); }
+  includeSampleSchema: json['include_sample_schema'] as bool?,
+);}
 
 /// The type of data source. Always `custom`.
 final CreateEvalCustomDataSourceConfigType type;
@@ -31,20 +31,23 @@ final CreateEvalCustomDataSourceConfigType type;
 final Map<String,dynamic> itemSchema;
 
 /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)
-final bool includeSampleSchema;
+final bool? includeSampleSchema;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `includeSampleSchema`, or its schema default when absent.
+bool get includeSampleSchemaOrDefault => includeSampleSchema ?? false;
+
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'item_schema': itemSchema,
-  'include_sample_schema': includeSampleSchema,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom' &&
-      json.containsKey('item_schema'); } 
-CreateEvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,dynamic>? itemSchema, bool Function()? includeSampleSchema, }) { return CreateEvalCustomDataSourceConfig(
+  'include_sample_schema': ?includeSampleSchema,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'custom' &&
+      json.containsKey('item_schema');}
+CreateEvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,dynamic>? itemSchema, bool? Function()? includeSampleSchema, }) {return CreateEvalCustomDataSourceConfig(
   type: type ?? this.type,
   itemSchema: itemSchema ?? this.itemSchema,
   includeSampleSchema: includeSampleSchema != null ? includeSampleSchema() : this.includeSampleSchema,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalCustomDataSourceConfig &&
           type == other.type &&
@@ -55,4 +58,4 @@ CreateEvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType?
 
 @override String toString() => 'CreateEvalCustomDataSourceConfig(type: $type, itemSchema: $itemSchema, includeSampleSchema: $includeSampleSchema)';
 
- }
+}

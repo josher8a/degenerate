@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
 sealed class CancellationDetailsFeedback {const CancellationDetailsFeedback();
 
-factory CancellationDetailsFeedback.fromJson(String json) { return switch (json) {
+factory CancellationDetailsFeedback.fromJson(String json) {return switch (json) {
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
@@ -14,7 +14,7 @@ factory CancellationDetailsFeedback.fromJson(String json) { return switch (json)
   'too_expensive' => tooExpensive,
   'unused' => unused,
   _ => CancellationDetailsFeedback$Unknown(json),
-}; }
+};}
 
 static const CancellationDetailsFeedback customerService = CancellationDetailsFeedback$customerService._();
 
@@ -35,9 +35,9 @@ static const CancellationDetailsFeedback unused = CancellationDetailsFeedback$un
 static const List<CancellationDetailsFeedback> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_service' => 'customerService',
   'low_quality' => 'lowQuality',
   'missing_features' => 'missingFeatures',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'too_expensive' => 'tooExpensive',
   'unused' => 'unused',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CancellationDetailsFeedback$Unknown; } 
+bool get isUnknown {return this is CancellationDetailsFeedback$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) {return switch (this) {
       CancellationDetailsFeedback$customerService() => customerService(),
       CancellationDetailsFeedback$lowQuality() => lowQuality(),
       CancellationDetailsFeedback$missingFeatures() => missingFeatures(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() customerService, required W Function() lowQuali
       CancellationDetailsFeedback$tooExpensive() => tooExpensive(),
       CancellationDetailsFeedback$unused() => unused(),
       CancellationDetailsFeedback$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) {return switch (this) {
       CancellationDetailsFeedback$customerService() => customerService != null ? customerService() : orElse(value),
       CancellationDetailsFeedback$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
       CancellationDetailsFeedback$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
       CancellationDetailsFeedback$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
       CancellationDetailsFeedback$unused() => unused != null ? unused() : orElse(value),
       CancellationDetailsFeedback$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CancellationDetailsFeedback($value)';
 
- }
+}
 @immutable final class CancellationDetailsFeedback$customerService extends CancellationDetailsFeedback {const CancellationDetailsFeedback$customerService._();
 
 @override String get value => 'customer_service';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_service'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$lowQuality extends CancellationDetailsFeedback {const CancellationDetailsFeedback$lowQuality._();
 
 @override String get value => 'low_quality';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'low_quality'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$missingFeatures extends CancellationDetailsFeedback {const CancellationDetailsFeedback$missingFeatures._();
 
 @override String get value => 'missing_features';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'missing_features'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$$other extends CancellationDetailsFeedback {const CancellationDetailsFeedback$$other._();
 
 @override String get value => 'other';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$switchedService extends CancellationDetailsFeedback {const CancellationDetailsFeedback$switchedService._();
 
 @override String get value => 'switched_service';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'switched_service'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$tooComplex extends CancellationDetailsFeedback {const CancellationDetailsFeedback$tooComplex._();
 
 @override String get value => 'too_complex';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'too_complex'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$tooExpensive extends CancellationDetailsFeedback {const CancellationDetailsFeedback$tooExpensive._();
 
 @override String get value => 'too_expensive';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'too_expensive'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$unused extends CancellationDetailsFeedback {const CancellationDetailsFeedback$unused._();
 
 @override String get value => 'unused';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'unused'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsFeedback$Unknown extends CancellationDetailsFeedback {const CancellationDetailsFeedback$Unknown(this.value);
 
 @override final String value;
@@ -158,16 +158,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Why this subscription was canceled.
 sealed class CancellationDetailsReason {const CancellationDetailsReason();
 
-factory CancellationDetailsReason.fromJson(String json) { return switch (json) {
+factory CancellationDetailsReason.fromJson(String json) {return switch (json) {
   'cancellation_requested' => cancellationRequested,
   'payment_disputed' => paymentDisputed,
   'payment_failed' => paymentFailed,
   _ => CancellationDetailsReason$Unknown(json),
-}; }
+};}
 
 static const CancellationDetailsReason cancellationRequested = CancellationDetailsReason$cancellationRequested._();
 
@@ -178,33 +178,33 @@ static const CancellationDetailsReason paymentFailed = CancellationDetailsReason
 static const List<CancellationDetailsReason> values = [cancellationRequested, paymentDisputed, paymentFailed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cancellation_requested' => 'cancellationRequested',
   'payment_disputed' => 'paymentDisputed',
   'payment_failed' => 'paymentFailed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CancellationDetailsReason$Unknown; } 
+bool get isUnknown {return this is CancellationDetailsReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cancellationRequested, required W Function() paymentDisputed, required W Function() paymentFailed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cancellationRequested, required W Function() paymentDisputed, required W Function() paymentFailed, required W Function(String value) $unknown, }) {return switch (this) {
       CancellationDetailsReason$cancellationRequested() => cancellationRequested(),
       CancellationDetailsReason$paymentDisputed() => paymentDisputed(),
       CancellationDetailsReason$paymentFailed() => paymentFailed(),
       CancellationDetailsReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancellationRequested, W Function()? paymentDisputed, W Function()? paymentFailed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancellationRequested, W Function()? paymentDisputed, W Function()? paymentFailed, W Function(String value)? $unknown, }) {return switch (this) {
       CancellationDetailsReason$cancellationRequested() => cancellationRequested != null ? cancellationRequested() : orElse(value),
       CancellationDetailsReason$paymentDisputed() => paymentDisputed != null ? paymentDisputed() : orElse(value),
       CancellationDetailsReason$paymentFailed() => paymentFailed != null ? paymentFailed() : orElse(value),
       CancellationDetailsReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CancellationDetailsReason($value)';
 
- }
+}
 @immutable final class CancellationDetailsReason$cancellationRequested extends CancellationDetailsReason {const CancellationDetailsReason$cancellationRequested._();
 
 @override String get value => 'cancellation_requested';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancella
 
 @override int get hashCode => 'cancellation_requested'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsReason$paymentDisputed extends CancellationDetailsReason {const CancellationDetailsReason$paymentDisputed._();
 
 @override String get value => 'payment_disputed';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancella
 
 @override int get hashCode => 'payment_disputed'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsReason$paymentFailed extends CancellationDetailsReason {const CancellationDetailsReason$paymentFailed._();
 
 @override String get value => 'payment_failed';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancella
 
 @override int get hashCode => 'payment_failed'.hashCode;
 
- }
+}
 @immutable final class CancellationDetailsReason$Unknown extends CancellationDetailsReason {const CancellationDetailsReason$Unknown(this.value);
 
 @override final String value;
@@ -241,43 +241,43 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancella
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class CancellationDetails {const CancellationDetails({this.comment, this.feedback, this.reason, });
+@immutable final class CancellationDetails {const CancellationDetails({this.comment = const Omittable.absent(), this.feedback = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory CancellationDetails.fromJson(Map<String, dynamic> json) { return CancellationDetails(
-  comment: json['comment'] as String?,
-  feedback: json['feedback'] != null ? CancellationDetailsFeedback.fromJson(json['feedback'] as String) : null,
-  reason: json['reason'] != null ? CancellationDetailsReason.fromJson(json['reason'] as String) : null,
-); }
+factory CancellationDetails.fromJson(Map<String, dynamic> json) {return CancellationDetails(
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
+  feedback: json.containsKey('feedback') ? Omittable(json['feedback'] != null ? CancellationDetailsFeedback.fromJson(json['feedback'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] != null ? CancellationDetailsReason.fromJson(json['reason'] as String) : null) : const Omittable.absent(),
+);}
 
 /// Additional comments about why the user canceled the subscription, if the subscription was canceled explicitly by the user.
-final String? comment;
+final Omittable<String?> comment;
 
 /// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
-final CancellationDetailsFeedback? feedback;
+final Omittable<CancellationDetailsFeedback?> feedback;
 
 /// Why this subscription was canceled.
-final CancellationDetailsReason? reason;
+final Omittable<CancellationDetailsReason?> reason;
 
-Map<String, dynamic> toJson() { return {
-  'comment': ?comment,
-  if (feedback != null) 'feedback': feedback?.toJson(),
-  if (reason != null) 'reason': reason?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'feedback', 'reason'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (comment.isPresent) 'comment': comment.value,
+  if (feedback.isPresent) 'feedback': feedback.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'feedback', 'reason'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final comment$ = comment;
+List<String> validate() {final errors = <String>[];
+final comment$ = comment.value;
 if (comment$ != null) {
   if (comment$.runes.length > 5000) { errors.add('comment: length must be <= 5000'); }
 }
-return errors; } 
-CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFeedback? Function()? feedback, CancellationDetailsReason? Function()? reason, }) { return CancellationDetails(
-  comment: comment != null ? comment() : this.comment,
-  feedback: feedback != null ? feedback() : this.feedback,
-  reason: reason != null ? reason() : this.reason,
-); } 
+return errors;}
+CancellationDetails copyWith({Omittable<String?>? comment, Omittable<CancellationDetailsFeedback?>? feedback, Omittable<CancellationDetailsReason?>? reason, }) {return CancellationDetails(
+  comment: comment ?? this.comment,
+  feedback: feedback ?? this.feedback,
+  reason: reason ?? this.reason,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CancellationDetails &&
           comment == other.comment &&
@@ -288,4 +288,4 @@ CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFe
 
 @override String toString() => 'CancellationDetails(comment: $comment, feedback: $feedback, reason: $reason)';
 
- }
+}

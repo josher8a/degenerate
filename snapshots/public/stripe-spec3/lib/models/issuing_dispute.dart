@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssuingDispute
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_treasury.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_treasury.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
 sealed class LossReason {const LossReason();
 
-factory LossReason.fromJson(String json) { return switch (json) {
+factory LossReason.fromJson(String json) {return switch (json) {
   'cardholder_authentication_issuer_liability' => cardholderAuthenticationIssuerLiability,
   'eci5_token_transaction_with_tavv' => eci5TokenTransactionWithTavv,
   'excess_disputes_in_timeframe' => excessDisputesInTimeframe,
@@ -26,7 +26,7 @@ factory LossReason.fromJson(String json) { return switch (json) {
   'transaction_qualifies_for_visa_easy_payment_service' => transactionQualifiesForVisaEasyPaymentService,
   'transaction_unattended' => transactionUnattended,
   _ => LossReason$Unknown(json),
-}; }
+};}
 
 static const LossReason cardholderAuthenticationIssuerLiability = LossReason$cardholderAuthenticationIssuerLiability._();
 
@@ -71,9 +71,9 @@ static const LossReason transactionUnattended = LossReason$transactionUnattended
 static const List<LossReason> values = [cardholderAuthenticationIssuerLiability, eci5TokenTransactionWithTavv, excessDisputesInTimeframe, hasNotMetTheMinimumDisputeAmountRequirements, invalidDuplicateDispute, invalidIncorrectAmountDispute, invalidNoAuthorization, invalidUseOfDisputes, merchandiseDeliveredOrShipped, merchandiseOrServiceAsDescribed, notCancelled, $other, refundIssued, submittedBeyondAllowableTimeLimit, transaction3dsRequired, transactionApprovedAfterPriorFraudDispute, transactionAuthorized, transactionElectronicallyRead, transactionQualifiesForVisaEasyPaymentService, transactionUnattended];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cardholder_authentication_issuer_liability' => 'cardholderAuthenticationIssuerLiability',
   'eci5_token_transaction_with_tavv' => 'eci5TokenTransactionWithTavv',
   'excess_disputes_in_timeframe' => 'excessDisputesInTimeframe',
@@ -95,11 +95,11 @@ String get name { return switch (value) {
   'transaction_qualifies_for_visa_easy_payment_service' => 'transactionQualifiesForVisaEasyPaymentService',
   'transaction_unattended' => 'transactionUnattended',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LossReason$Unknown; } 
+bool get isUnknown {return this is LossReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cardholderAuthenticationIssuerLiability, required W Function() eci5TokenTransactionWithTavv, required W Function() excessDisputesInTimeframe, required W Function() hasNotMetTheMinimumDisputeAmountRequirements, required W Function() invalidDuplicateDispute, required W Function() invalidIncorrectAmountDispute, required W Function() invalidNoAuthorization, required W Function() invalidUseOfDisputes, required W Function() merchandiseDeliveredOrShipped, required W Function() merchandiseOrServiceAsDescribed, required W Function() notCancelled, required W Function() $other, required W Function() refundIssued, required W Function() submittedBeyondAllowableTimeLimit, required W Function() transaction3dsRequired, required W Function() transactionApprovedAfterPriorFraudDispute, required W Function() transactionAuthorized, required W Function() transactionElectronicallyRead, required W Function() transactionQualifiesForVisaEasyPaymentService, required W Function() transactionUnattended, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cardholderAuthenticationIssuerLiability, required W Function() eci5TokenTransactionWithTavv, required W Function() excessDisputesInTimeframe, required W Function() hasNotMetTheMinimumDisputeAmountRequirements, required W Function() invalidDuplicateDispute, required W Function() invalidIncorrectAmountDispute, required W Function() invalidNoAuthorization, required W Function() invalidUseOfDisputes, required W Function() merchandiseDeliveredOrShipped, required W Function() merchandiseOrServiceAsDescribed, required W Function() notCancelled, required W Function() $other, required W Function() refundIssued, required W Function() submittedBeyondAllowableTimeLimit, required W Function() transaction3dsRequired, required W Function() transactionApprovedAfterPriorFraudDispute, required W Function() transactionAuthorized, required W Function() transactionElectronicallyRead, required W Function() transactionQualifiesForVisaEasyPaymentService, required W Function() transactionUnattended, required W Function(String value) $unknown, }) {return switch (this) {
       LossReason$cardholderAuthenticationIssuerLiability() => cardholderAuthenticationIssuerLiability(),
       LossReason$eci5TokenTransactionWithTavv() => eci5TokenTransactionWithTavv(),
       LossReason$excessDisputesInTimeframe() => excessDisputesInTimeframe(),
@@ -121,9 +121,9 @@ W when<W>({required W Function() cardholderAuthenticationIssuerLiability, requir
       LossReason$transactionQualifiesForVisaEasyPaymentService() => transactionQualifiesForVisaEasyPaymentService(),
       LossReason$transactionUnattended() => transactionUnattended(),
       LossReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardholderAuthenticationIssuerLiability, W Function()? eci5TokenTransactionWithTavv, W Function()? excessDisputesInTimeframe, W Function()? hasNotMetTheMinimumDisputeAmountRequirements, W Function()? invalidDuplicateDispute, W Function()? invalidIncorrectAmountDispute, W Function()? invalidNoAuthorization, W Function()? invalidUseOfDisputes, W Function()? merchandiseDeliveredOrShipped, W Function()? merchandiseOrServiceAsDescribed, W Function()? notCancelled, W Function()? $other, W Function()? refundIssued, W Function()? submittedBeyondAllowableTimeLimit, W Function()? transaction3dsRequired, W Function()? transactionApprovedAfterPriorFraudDispute, W Function()? transactionAuthorized, W Function()? transactionElectronicallyRead, W Function()? transactionQualifiesForVisaEasyPaymentService, W Function()? transactionUnattended, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardholderAuthenticationIssuerLiability, W Function()? eci5TokenTransactionWithTavv, W Function()? excessDisputesInTimeframe, W Function()? hasNotMetTheMinimumDisputeAmountRequirements, W Function()? invalidDuplicateDispute, W Function()? invalidIncorrectAmountDispute, W Function()? invalidNoAuthorization, W Function()? invalidUseOfDisputes, W Function()? merchandiseDeliveredOrShipped, W Function()? merchandiseOrServiceAsDescribed, W Function()? notCancelled, W Function()? $other, W Function()? refundIssued, W Function()? submittedBeyondAllowableTimeLimit, W Function()? transaction3dsRequired, W Function()? transactionApprovedAfterPriorFraudDispute, W Function()? transactionAuthorized, W Function()? transactionElectronicallyRead, W Function()? transactionQualifiesForVisaEasyPaymentService, W Function()? transactionUnattended, W Function(String value)? $unknown, }) {return switch (this) {
       LossReason$cardholderAuthenticationIssuerLiability() => cardholderAuthenticationIssuerLiability != null ? cardholderAuthenticationIssuerLiability() : orElse(value),
       LossReason$eci5TokenTransactionWithTavv() => eci5TokenTransactionWithTavv != null ? eci5TokenTransactionWithTavv() : orElse(value),
       LossReason$excessDisputesInTimeframe() => excessDisputesInTimeframe != null ? excessDisputesInTimeframe() : orElse(value),
@@ -145,10 +145,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
       LossReason$transactionQualifiesForVisaEasyPaymentService() => transactionQualifiesForVisaEasyPaymentService != null ? transactionQualifiesForVisaEasyPaymentService() : orElse(value),
       LossReason$transactionUnattended() => transactionUnattended != null ? transactionUnattended() : orElse(value),
       LossReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LossReason($value)';
 
- }
+}
 @immutable final class LossReason$cardholderAuthenticationIssuerLiability extends LossReason {const LossReason$cardholderAuthenticationIssuerLiability._();
 
 @override String get value => 'cardholder_authentication_issuer_liability';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'cardholder_authentication_issuer_liability'.hashCode;
 
- }
+}
 @immutable final class LossReason$eci5TokenTransactionWithTavv extends LossReason {const LossReason$eci5TokenTransactionWithTavv._();
 
 @override String get value => 'eci5_token_transaction_with_tavv';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'eci5_token_transaction_with_tavv'.hashCode;
 
- }
+}
 @immutable final class LossReason$excessDisputesInTimeframe extends LossReason {const LossReason$excessDisputesInTimeframe._();
 
 @override String get value => 'excess_disputes_in_timeframe';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'excess_disputes_in_timeframe'.hashCode;
 
- }
+}
 @immutable final class LossReason$hasNotMetTheMinimumDisputeAmountRequirements extends LossReason {const LossReason$hasNotMetTheMinimumDisputeAmountRequirements._();
 
 @override String get value => 'has_not_met_the_minimum_dispute_amount_requirements';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'has_not_met_the_minimum_dispute_amount_requirements'.hashCode;
 
- }
+}
 @immutable final class LossReason$invalidDuplicateDispute extends LossReason {const LossReason$invalidDuplicateDispute._();
 
 @override String get value => 'invalid_duplicate_dispute';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'invalid_duplicate_dispute'.hashCode;
 
- }
+}
 @immutable final class LossReason$invalidIncorrectAmountDispute extends LossReason {const LossReason$invalidIncorrectAmountDispute._();
 
 @override String get value => 'invalid_incorrect_amount_dispute';
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'invalid_incorrect_amount_dispute'.hashCode;
 
- }
+}
 @immutable final class LossReason$invalidNoAuthorization extends LossReason {const LossReason$invalidNoAuthorization._();
 
 @override String get value => 'invalid_no_authorization';
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'invalid_no_authorization'.hashCode;
 
- }
+}
 @immutable final class LossReason$invalidUseOfDisputes extends LossReason {const LossReason$invalidUseOfDisputes._();
 
 @override String get value => 'invalid_use_of_disputes';
@@ -220,7 +220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'invalid_use_of_disputes'.hashCode;
 
- }
+}
 @immutable final class LossReason$merchandiseDeliveredOrShipped extends LossReason {const LossReason$merchandiseDeliveredOrShipped._();
 
 @override String get value => 'merchandise_delivered_or_shipped';
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'merchandise_delivered_or_shipped'.hashCode;
 
- }
+}
 @immutable final class LossReason$merchandiseOrServiceAsDescribed extends LossReason {const LossReason$merchandiseOrServiceAsDescribed._();
 
 @override String get value => 'merchandise_or_service_as_described';
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'merchandise_or_service_as_described'.hashCode;
 
- }
+}
 @immutable final class LossReason$notCancelled extends LossReason {const LossReason$notCancelled._();
 
 @override String get value => 'not_cancelled';
@@ -247,7 +247,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'not_cancelled'.hashCode;
 
- }
+}
 @immutable final class LossReason$$other extends LossReason {const LossReason$$other._();
 
 @override String get value => 'other';
@@ -256,7 +256,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class LossReason$refundIssued extends LossReason {const LossReason$refundIssued._();
 
 @override String get value => 'refund_issued';
@@ -265,7 +265,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'refund_issued'.hashCode;
 
- }
+}
 @immutable final class LossReason$submittedBeyondAllowableTimeLimit extends LossReason {const LossReason$submittedBeyondAllowableTimeLimit._();
 
 @override String get value => 'submitted_beyond_allowable_time_limit';
@@ -274,7 +274,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'submitted_beyond_allowable_time_limit'.hashCode;
 
- }
+}
 @immutable final class LossReason$transaction3dsRequired extends LossReason {const LossReason$transaction3dsRequired._();
 
 @override String get value => 'transaction_3ds_required';
@@ -283,7 +283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'transaction_3ds_required'.hashCode;
 
- }
+}
 @immutable final class LossReason$transactionApprovedAfterPriorFraudDispute extends LossReason {const LossReason$transactionApprovedAfterPriorFraudDispute._();
 
 @override String get value => 'transaction_approved_after_prior_fraud_dispute';
@@ -292,7 +292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'transaction_approved_after_prior_fraud_dispute'.hashCode;
 
- }
+}
 @immutable final class LossReason$transactionAuthorized extends LossReason {const LossReason$transactionAuthorized._();
 
 @override String get value => 'transaction_authorized';
@@ -301,7 +301,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'transaction_authorized'.hashCode;
 
- }
+}
 @immutable final class LossReason$transactionElectronicallyRead extends LossReason {const LossReason$transactionElectronicallyRead._();
 
 @override String get value => 'transaction_electronically_read';
@@ -310,7 +310,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'transaction_electronically_read'.hashCode;
 
- }
+}
 @immutable final class LossReason$transactionQualifiesForVisaEasyPaymentService extends LossReason {const LossReason$transactionQualifiesForVisaEasyPaymentService._();
 
 @override String get value => 'transaction_qualifies_for_visa_easy_payment_service';
@@ -319,7 +319,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'transaction_qualifies_for_visa_easy_payment_service'.hashCode;
 
- }
+}
 @immutable final class LossReason$transactionUnattended extends LossReason {const LossReason$transactionUnattended._();
 
 @override String get value => 'transaction_unattended';
@@ -328,7 +328,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => 'transaction_unattended'.hashCode;
 
- }
+}
 @immutable final class LossReason$Unknown extends LossReason {const LossReason$Unknown(this.value);
 
 @override final String value;
@@ -338,41 +338,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardhold
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingDisputeObject {const IssuingDisputeObject();
 
-factory IssuingDisputeObject.fromJson(String json) { return switch (json) {
+factory IssuingDisputeObject.fromJson(String json) {return switch (json) {
   'issuing.dispute' => issuingDispute,
   _ => IssuingDisputeObject$Unknown(json),
-}; }
+};}
 
 static const IssuingDisputeObject issuingDispute = IssuingDisputeObject$issuingDispute._();
 
 static const List<IssuingDisputeObject> values = [issuingDispute];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.dispute' => 'issuingDispute',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingDisputeObject$Unknown; } 
+bool get isUnknown {return this is IssuingDisputeObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingDispute, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingDispute, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingDisputeObject$issuingDispute() => issuingDispute(),
       IssuingDisputeObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingDispute, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingDispute, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingDisputeObject$issuingDispute() => issuingDispute != null ? issuingDispute() : orElse(value),
       IssuingDisputeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingDisputeObject($value)';
 
- }
+}
 @immutable final class IssuingDisputeObject$issuingDispute extends IssuingDisputeObject {const IssuingDisputeObject$issuingDispute._();
 
 @override String get value => 'issuing.dispute';
@@ -381,7 +381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingD
 
 @override int get hashCode => 'issuing.dispute'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeObject$Unknown extends IssuingDisputeObject {const IssuingDisputeObject$Unknown(this.value);
 
 @override final String value;
@@ -391,18 +391,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingD
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Current status of the dispute.
 sealed class IssuingDisputeStatus {const IssuingDisputeStatus();
 
-factory IssuingDisputeStatus.fromJson(String json) { return switch (json) {
+factory IssuingDisputeStatus.fromJson(String json) {return switch (json) {
   'expired' => expired,
   'lost' => lost,
   'submitted' => submitted,
   'unsubmitted' => unsubmitted,
   'won' => won,
   _ => IssuingDisputeStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingDisputeStatus expired = IssuingDisputeStatus$expired._();
 
@@ -417,39 +417,39 @@ static const IssuingDisputeStatus won = IssuingDisputeStatus$won._();
 static const List<IssuingDisputeStatus> values = [expired, lost, submitted, unsubmitted, won];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'expired' => 'expired',
   'lost' => 'lost',
   'submitted' => 'submitted',
   'unsubmitted' => 'unsubmitted',
   'won' => 'won',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingDisputeStatus$Unknown; } 
+bool get isUnknown {return this is IssuingDisputeStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() expired, required W Function() lost, required W Function() submitted, required W Function() unsubmitted, required W Function() won, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() expired, required W Function() lost, required W Function() submitted, required W Function() unsubmitted, required W Function() won, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingDisputeStatus$expired() => expired(),
       IssuingDisputeStatus$lost() => lost(),
       IssuingDisputeStatus$submitted() => submitted(),
       IssuingDisputeStatus$unsubmitted() => unsubmitted(),
       IssuingDisputeStatus$won() => won(),
       IssuingDisputeStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? lost, W Function()? submitted, W Function()? unsubmitted, W Function()? won, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? lost, W Function()? submitted, W Function()? unsubmitted, W Function()? won, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingDisputeStatus$expired() => expired != null ? expired() : orElse(value),
       IssuingDisputeStatus$lost() => lost != null ? lost() : orElse(value),
       IssuingDisputeStatus$submitted() => submitted != null ? submitted() : orElse(value),
       IssuingDisputeStatus$unsubmitted() => unsubmitted != null ? unsubmitted() : orElse(value),
       IssuingDisputeStatus$won() => won != null ? won() : orElse(value),
       IssuingDisputeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingDisputeStatus($value)';
 
- }
+}
 @immutable final class IssuingDisputeStatus$expired extends IssuingDisputeStatus {const IssuingDisputeStatus$expired._();
 
 @override String get value => 'expired';
@@ -458,7 +458,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeStatus$lost extends IssuingDisputeStatus {const IssuingDisputeStatus$lost._();
 
 @override String get value => 'lost';
@@ -467,7 +467,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'lost'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeStatus$submitted extends IssuingDisputeStatus {const IssuingDisputeStatus$submitted._();
 
 @override String get value => 'submitted';
@@ -476,7 +476,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'submitted'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeStatus$unsubmitted extends IssuingDisputeStatus {const IssuingDisputeStatus$unsubmitted._();
 
 @override String get value => 'unsubmitted';
@@ -485,7 +485,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'unsubmitted'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeStatus$won extends IssuingDisputeStatus {const IssuingDisputeStatus$won._();
 
 @override String get value => 'won';
@@ -494,7 +494,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'won'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeStatus$Unknown extends IssuingDisputeStatus {const IssuingDisputeStatus$Unknown(this.value);
 
 @override final String value;
@@ -504,15 +504,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// As a [card issuer](https://docs.stripe.com/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.
 /// 
 /// Related guide: [Issuing disputes](https://docs.stripe.com/issuing/purchases/disputes)
-@immutable final class IssuingDispute {const IssuingDispute({required this.amount, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.transaction, this.balanceTransactions, this.lossReason, this.treasury, });
+@immutable final class IssuingDispute {const IssuingDispute({required this.amount, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.transaction, this.balanceTransactions = const Omittable.absent(), this.lossReason, this.treasury = const Omittable.absent(), });
 
-factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispute(
+factory IssuingDispute.fromJson(Map<String, dynamic> json) {return IssuingDispute(
   amount: (json['amount'] as num).toInt(),
-  balanceTransactions: (json['balance_transactions'] as List<dynamic>?)?.map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
+  balanceTransactions: json.containsKey('balance_transactions') ? Omittable((json['balance_transactions'] as List<dynamic>?)?.map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   evidence: IssuingDisputeEvidence.fromJson(json['evidence'] as Map<String, dynamic>),
@@ -522,15 +522,15 @@ factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispu
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: IssuingDisputeObject.fromJson(json['object'] as String),
   status: IssuingDisputeStatus.fromJson(json['status'] as String),
-  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => IssuingTransaction.fromJson(v as Map<String, dynamic>),),
-  treasury: json['treasury'] != null ? IssuingDisputeTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
-); }
+  transaction: IssuingDisputeTransaction.fromJson(json['transaction']),
+  treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingDisputeTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 /// Disputed amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Usually the amount of the `transaction`, but can differ (usually because of currency fluctuation).
 final int amount;
 
 /// List of balance transactions associated with the dispute.
-final List<BalanceTransaction>? balanceTransactions;
+final Omittable<List<BalanceTransaction>?> balanceTransactions;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -562,11 +562,11 @@ final IssuingDisputeStatus status;
 final IssuingDisputeTransaction transaction;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this dispute if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
-final IssuingDisputeTreasury? treasury;
+final Omittable<IssuingDisputeTreasury?> treasury;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
-  if (balanceTransactions != null) 'balance_transactions': balanceTransactions?.map((e) => e.toJson()).toList(),
+  if (balanceTransactions.isPresent) 'balance_transactions': balanceTransactions.value?.map((e) => e.toJson()).toList(),
   'created': created,
   'currency': currency,
   'evidence': evidence.toJson(),
@@ -577,9 +577,9 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   'transaction': transaction.toJson(),
-  if (treasury != null) 'treasury': treasury?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+  if (treasury.isPresent) 'treasury': treasury.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('evidence') &&
@@ -588,14 +588,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') && json['object'] == 'issuing.dispute' &&
       json.containsKey('status') &&
-      json.containsKey('transaction'); } 
+      json.containsKey('transaction');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, LossReason? Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, IssuingDisputeTreasury? Function()? treasury, }) { return IssuingDispute(
+return errors;}
+IssuingDispute copyWith({int? amount, Omittable<List<BalanceTransaction>?>? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, LossReason? Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, Omittable<IssuingDisputeTreasury?>? treasury, }) {return IssuingDispute(
   amount: amount ?? this.amount,
-  balanceTransactions: balanceTransactions != null ? balanceTransactions() : this.balanceTransactions,
+  balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   evidence: evidence ?? this.evidence,
@@ -606,12 +606,13 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
   object: object ?? this.object,
   status: status ?? this.status,
   transaction: transaction ?? this.transaction,
-  treasury: treasury != null ? treasury() : this.treasury,
-); } 
+  treasury: treasury ?? this.treasury,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDispute &&
           amount == other.amount &&
-          listEquals(balanceTransactions, other.balanceTransactions) &&
+          balanceTransactions.isPresent == other.balanceTransactions.isPresent &&
+          listEquals(balanceTransactions.value, other.balanceTransactions.value) &&
           created == other.created &&
           currency == other.currency &&
           evidence == other.evidence &&
@@ -624,8 +625,8 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
           transaction == other.transaction &&
           treasury == other.treasury;
 
-@override int get hashCode => Object.hash(amount, Object.hashAll(balanceTransactions ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury);
+@override int get hashCode => Object.hash(amount, Object.hashAll(balanceTransactions.value ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury);
 
 @override String toString() => 'IssuingDispute(\n  amount: $amount,\n  balanceTransactions: $balanceTransactions,\n  created: $created,\n  currency: $currency,\n  evidence: $evidence,\n  id: $id,\n  livemode: $livemode,\n  lossReason: $lossReason,\n  metadata: $metadata,\n  object: $object,\n  status: $status,\n  transaction: $transaction,\n  treasury: $treasury,\n)';
 
- }
+}

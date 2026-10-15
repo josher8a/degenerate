@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
 
-factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(
+factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(
   iPv4: json['IPv4'] as String,
   iPv6: json['IPv6'] as String,
-); }
+);}
 
 /// A numeric string.
 /// 
@@ -18,21 +18,21 @@ final String iPv4;
 /// Example: `'10'`
 final String iPv6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'IPv4': iPv4,
   'IPv6': iPv6,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('IPv4') && json['IPv4'] is String &&
-      json.containsKey('IPv6') && json['IPv6'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('IPv4') && json['IPv4'] is String &&
+      json.containsKey('IPv6') && json['IPv6'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(iPv4)) { errors.add(r'iPv4: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(iPv6)) { errors.add(r'iPv6: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 copyWith({String? iPv4, String? iPv6, }) { return RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(
+return errors;}
+RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 copyWith({String? iPv4, String? iPv6, }) {return RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(
   iPv4: iPv4 ?? this.iPv4,
   iPv6: iPv6 ?? this.iPv6,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 &&
           iPv4 == other.iPv4 &&
@@ -42,4 +42,4 @@ RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 copyWith({String? 
 
 @override String toString() => 'RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(iPv4: $iPv4, iPv6: $iPv6)';
 
- }
+}

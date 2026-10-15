@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_run_output_item/sample.dart';import 'package:pub_openai/models/eval_run_output_item_result.dart';/// The type of the object. Always "eval.run.output_item".
 sealed class EvalRunOutputItemObject {const EvalRunOutputItemObject();
 
-factory EvalRunOutputItemObject.fromJson(String json) { return switch (json) {
+factory EvalRunOutputItemObject.fromJson(String json) {return switch (json) {
   'eval.run.output_item' => evalRunOutputItem,
   _ => EvalRunOutputItemObject$Unknown(json),
-}; }
+};}
 
 static const EvalRunOutputItemObject evalRunOutputItem = EvalRunOutputItemObject$evalRunOutputItem._();
 
 static const List<EvalRunOutputItemObject> values = [evalRunOutputItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'eval.run.output_item' => 'evalRunOutputItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EvalRunOutputItemObject$Unknown; } 
+bool get isUnknown {return this is EvalRunOutputItemObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() evalRunOutputItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() evalRunOutputItem, required W Function(String value) $unknown, }) {return switch (this) {
       EvalRunOutputItemObject$evalRunOutputItem() => evalRunOutputItem(),
       EvalRunOutputItemObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? evalRunOutputItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? evalRunOutputItem, W Function(String value)? $unknown, }) {return switch (this) {
       EvalRunOutputItemObject$evalRunOutputItem() => evalRunOutputItem != null ? evalRunOutputItem() : orElse(value),
       EvalRunOutputItemObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EvalRunOutputItemObject($value)';
 
- }
+}
 @immutable final class EvalRunOutputItemObject$evalRunOutputItem extends EvalRunOutputItemObject {const EvalRunOutputItemObject$evalRunOutputItem._();
 
 @override String get value => 'eval.run.output_item';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? evalRunO
 
 @override int get hashCode => 'eval.run.output_item'.hashCode;
 
- }
+}
 @immutable final class EvalRunOutputItemObject$Unknown extends EvalRunOutputItemObject {const EvalRunOutputItemObject$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? evalRunO
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A schema representing an evaluation run output item.
 /// 
-@immutable final class EvalRunOutputItem {const EvalRunOutputItem({required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, this.object = EvalRunOutputItemObject.evalRunOutputItem, });
+@immutable final class EvalRunOutputItem {const EvalRunOutputItem({required this.object, required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, });
 
-factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOutputItem(
+factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) {return EvalRunOutputItem(
   object: EvalRunOutputItemObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   runId: json['run_id'] as String,
@@ -69,7 +69,7 @@ factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOu
   datasourceItem: json['datasource_item'] as Map<String, dynamic>,
   results: (json['results'] as List<dynamic>).map((e) => EvalRunOutputItemResult.fromJson(e as Map<String, dynamic>)).toList(),
   sample: Sample.fromJson(json['sample'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the object. Always "eval.run.output_item".
 final EvalRunOutputItemObject object;
@@ -101,7 +101,7 @@ final List<EvalRunOutputItemResult> results;
 /// A sample containing the input and output of the evaluation run.
 final Sample sample;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'run_id': runId,
@@ -112,8 +112,8 @@ Map<String, dynamic> toJson() { return {
   'datasource_item': datasourceItem,
   'results': results.map((e) => e.toJson()).toList(),
   'sample': sample.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('run_id') && json['run_id'] is String &&
       json.containsKey('eval_id') && json['eval_id'] is String &&
@@ -122,8 +122,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('datasource_item_id') && json['datasource_item_id'] is num &&
       json.containsKey('datasource_item') &&
       json.containsKey('results') &&
-      json.containsKey('sample'); } 
-EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, Sample? sample, }) { return EvalRunOutputItem(
+      json.containsKey('sample');}
+EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, Sample? sample, }) {return EvalRunOutputItem(
   object: object ?? this.object,
   id: id ?? this.id,
   runId: runId ?? this.runId,
@@ -134,7 +134,7 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
   datasourceItem: datasourceItem ?? this.datasourceItem,
   results: results ?? this.results,
   sample: sample ?? this.sample,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EvalRunOutputItem &&
           object == other.object &&
@@ -152,4 +152,4 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
 
 @override String toString() => 'EvalRunOutputItem(\n  object: $object,\n  id: $id,\n  runId: $runId,\n  evalId: $evalId,\n  createdAt: $createdAt,\n  status: $status,\n  datasourceItemId: $datasourceItemId,\n  datasourceItem: $datasourceItem,\n  results: $results,\n  sample: $sample,\n)';
 
- }
+}

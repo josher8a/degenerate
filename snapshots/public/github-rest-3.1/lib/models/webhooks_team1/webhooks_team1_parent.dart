@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';@immutable final class WebhooksTeam1Parent {const WebhooksTeam1Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.notificationSetting, required this.repositoriesUrl, required this.slug, required this.url, required this.type, this.organizationId, this.enterpriseId, });
 
-factory WebhooksTeam1Parent.fromJson(Map<String, dynamic> json) { return WebhooksTeam1Parent(
+factory WebhooksTeam1Parent.fromJson(Map<String, dynamic> json) {return WebhooksTeam1Parent(
   description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -19,7 +19,7 @@ factory WebhooksTeam1Parent.fromJson(Map<String, dynamic> json) { return Webhook
   type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Description of the team
 final String? description;
@@ -60,7 +60,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
@@ -76,8 +76,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -89,8 +89,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('type'); } 
-WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, TeamPrivacy? privacy, TeamFullNotificationSetting? notificationSetting, Uri? repositoriesUrl, String? slug, Uri? url, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return WebhooksTeam1Parent(
+      json.containsKey('type');}
+WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, TeamPrivacy? privacy, TeamFullNotificationSetting? notificationSetting, Uri? repositoriesUrl, String? slug, Uri? url, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return WebhooksTeam1Parent(
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   id: id ?? this.id,
@@ -106,7 +106,7 @@ WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksTeam1Parent &&
           description == other.description &&
@@ -129,4 +129,4 @@ WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int
 
 @override String toString() => 'WebhooksTeam1Parent(\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  permission: $permission,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
- }
+}

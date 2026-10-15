@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_id.dart';@immutable final class DeleteAccountsAccountIdLogpushJobsJobIdResponseResult {const DeleteAccountsAccountIdLogpushJobsJobIdResponseResult({this.id});
 
-factory DeleteAccountsAccountIdLogpushJobsJobIdResponseResult.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountIdLogpushJobsJobIdResponseResult(
+factory DeleteAccountsAccountIdLogpushJobsJobIdResponseResult.fromJson(Map<String, dynamic> json) {return DeleteAccountsAccountIdLogpushJobsJobIdResponseResult(
   id: json['id'] != null ? LogpushId.fromJson(json['id'] as num) : null,
-); }
+);}
 
 /// Unique id of the job.
 final LogpushId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-DeleteAccountsAccountIdLogpushJobsJobIdResponseResult copyWith({LogpushId? Function()? id}) { return DeleteAccountsAccountIdLogpushJobsJobIdResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+DeleteAccountsAccountIdLogpushJobsJobIdResponseResult copyWith({LogpushId? Function()? id}) {return DeleteAccountsAccountIdLogpushJobsJobIdResponseResult(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteAccountsAccountIdLogpushJobsJobIdResponseResult &&
           id == other.id;
@@ -25,4 +25,4 @@ DeleteAccountsAccountIdLogpushJobsJobIdResponseResult copyWith({LogpushId? Funct
 
 @override String toString() => 'DeleteAccountsAccountIdLogpushJobsJobIdResponseResult(id: $id)';
 
- }
+}

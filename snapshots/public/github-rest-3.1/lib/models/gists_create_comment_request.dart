@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistsCreateCommentRequest {const GistsCreateCommentRequest({required this.body});
 
-factory GistsCreateCommentRequest.fromJson(Map<String, dynamic> json) { return GistsCreateCommentRequest(
+factory GistsCreateCommentRequest.fromJson(Map<String, dynamic> json) {return GistsCreateCommentRequest(
   body: json['body'] as String,
-); }
+);}
 
 /// The comment text.
 final String body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (body.runes.length > 65535) { errors.add('body: length must be <= 65535'); }
-return errors; } 
-GistsCreateCommentRequest copyWith({String? body}) { return GistsCreateCommentRequest(
+return errors;}
+GistsCreateCommentRequest copyWith({String? body}) {return GistsCreateCommentRequest(
   body: body ?? this.body,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GistsCreateCommentRequest &&
           body == other.body;
@@ -29,4 +29,4 @@ GistsCreateCommentRequest copyWith({String? body}) { return GistsCreateCommentRe
 
 @override String toString() => 'GistsCreateCommentRequest(body: $body)';
 
- }
+}

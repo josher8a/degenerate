@@ -14,7 +14,7 @@ final class RadarDatasetsApi with ApiExecutor {const RadarDatasetsApi(this.apiCo
 /// Retrieves a list of datasets.
 ///
 /// `GET /radar/datasets`
-Future<ApiResult<RadarGetReportsDatasetsResponseResult, RadarGetReportsDatasetsError>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetReportsDatasetsResponseResult, RadarGetReportsDatasetsError>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -43,7 +43,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -51,13 +51,13 @@ return execute(
   },
   onError: RadarGetReportsDatasetsError.fromResponse,
 );
- } 
+}
 /// Get dataset CSV stream
 ///
 /// Retrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.
 ///
 /// `GET /radar/datasets/{alias}`
-Future<ApiResult<String, RadarGetReportsDatasetDownloadError>> radarGetReportsDatasetDownload({required String alias, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, RadarGetReportsDatasetDownloadError>> radarGetReportsDatasetDownload({required String alias, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,20 +66,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
   },
   onError: RadarGetReportsDatasetDownloadError.fromResponse,
 );
- } 
+}
 /// Get dataset download URL
 ///
 /// Retrieves an URL to download a single dataset.
 ///
 /// `POST /radar/datasets/download`
-Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponseResult, RadarPostReportsDatasetDownloadUrlError>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponseResult, RadarPostReportsDatasetDownloadUrlError>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -98,7 +98,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -106,5 +106,5 @@ return execute(
   },
   onError: RadarPostReportsDatasetDownloadUrlError.fromResponse,
 );
- } 
- }
+}
+}

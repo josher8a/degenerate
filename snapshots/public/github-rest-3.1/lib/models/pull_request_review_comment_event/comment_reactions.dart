@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommentReactions {const CommentReactions({this.plus1, this.minus1, this.confused, this.eyes, this.heart, this.hooray, this.laugh, this.rocket, this.totalCount, this.url, });
 
-factory CommentReactions.fromJson(Map<String, dynamic> json) { return CommentReactions(
+factory CommentReactions.fromJson(Map<String, dynamic> json) {return CommentReactions(
   plus1: json['+1'] != null ? (json['+1'] as num).toInt() : null,
   minus1: json['-1'] != null ? (json['-1'] as num).toInt() : null,
   confused: json['confused'] != null ? (json['confused'] as num).toInt() : null,
@@ -14,7 +14,7 @@ factory CommentReactions.fromJson(Map<String, dynamic> json) { return CommentRea
   rocket: json['rocket'] != null ? (json['rocket'] as num).toInt() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final int? plus1;
 
@@ -36,7 +36,7 @@ final int? totalCount;
 
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '+1': ?plus1,
   '-1': ?minus1,
   'confused': ?confused,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'rocket': ?rocket,
   'total_count': ?totalCount,
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'+1', '-1', 'confused', 'eyes', 'heart', 'hooray', 'laugh', 'rocket', 'total_count', 'url'}.contains(key)); } 
-CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int? Function()? confused, int? Function()? eyes, int? Function()? heart, int? Function()? hooray, int? Function()? laugh, int? Function()? rocket, int? Function()? totalCount, Uri? Function()? url, }) { return CommentReactions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'+1', '-1', 'confused', 'eyes', 'heart', 'hooray', 'laugh', 'rocket', 'total_count', 'url'}.contains(key));}
+CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int? Function()? confused, int? Function()? eyes, int? Function()? heart, int? Function()? hooray, int? Function()? laugh, int? Function()? rocket, int? Function()? totalCount, Uri? Function()? url, }) {return CommentReactions(
   plus1: plus1 != null ? plus1() : this.plus1,
   minus1: minus1 != null ? minus1() : this.minus1,
   confused: confused != null ? confused() : this.confused,
@@ -60,7 +60,7 @@ CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int?
   rocket: rocket != null ? rocket() : this.rocket,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommentReactions &&
           plus1 == other.plus1 &&
@@ -78,4 +78,4 @@ CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int?
 
 @override String toString() => 'CommentReactions(\n  plus1: $plus1,\n  minus1: $minus1,\n  confused: $confused,\n  eyes: $eyes,\n  heart: $heart,\n  hooray: $hooray,\n  laugh: $laugh,\n  rocket: $rocket,\n  totalCount: $totalCount,\n  url: $url,\n)';
 
- }
+}

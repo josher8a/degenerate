@@ -2,41 +2,41 @@
 // Source: #/components/schemas/PaymentLinksResourceCustomFieldsText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentLinksResourceCustomFieldsText {const PaymentLinksResourceCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, });
+@immutable final class PaymentLinksResourceCustomFieldsText {const PaymentLinksResourceCustomFieldsText({this.defaultValue = const Omittable.absent(), this.maximumLength = const Omittable.absent(), this.minimumLength = const Omittable.absent(), });
 
-factory PaymentLinksResourceCustomFieldsText.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsText(
-  defaultValue: json['default_value'] as String?,
-  maximumLength: json['maximum_length'] != null ? (json['maximum_length'] as num).toInt() : null,
-  minimumLength: json['minimum_length'] != null ? (json['minimum_length'] as num).toInt() : null,
-); }
+factory PaymentLinksResourceCustomFieldsText.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCustomFieldsText(
+  defaultValue: json.containsKey('default_value') ? Omittable(json['default_value'] as String?) : const Omittable.absent(),
+  maximumLength: json.containsKey('maximum_length') ? Omittable(json['maximum_length'] != null ? (json['maximum_length'] as num).toInt() : null) : const Omittable.absent(),
+  minimumLength: json.containsKey('minimum_length') ? Omittable(json['minimum_length'] != null ? (json['minimum_length'] as num).toInt() : null) : const Omittable.absent(),
+);}
 
 /// The value that pre-fills the field on the payment page.
-final String? defaultValue;
+final Omittable<String?> defaultValue;
 
 /// The maximum character length constraint for the customer's input.
-final int? maximumLength;
+final Omittable<int?> maximumLength;
 
 /// The minimum character length requirement for the customer's input.
-final int? minimumLength;
+final Omittable<int?> minimumLength;
 
-Map<String, dynamic> toJson() { return {
-  'default_value': ?defaultValue,
-  'maximum_length': ?maximumLength,
-  'minimum_length': ?minimumLength,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'maximum_length', 'minimum_length'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (defaultValue.isPresent) 'default_value': defaultValue.value,
+  if (maximumLength.isPresent) 'maximum_length': maximumLength.value,
+  if (minimumLength.isPresent) 'minimum_length': minimumLength.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_value', 'maximum_length', 'minimum_length'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final defaultValue$ = defaultValue;
+List<String> validate() {final errors = <String>[];
+final defaultValue$ = defaultValue.value;
 if (defaultValue$ != null) {
   if (defaultValue$.runes.length > 5000) { errors.add('defaultValue: length must be <= 5000'); }
 }
-return errors; } 
-PaymentLinksResourceCustomFieldsText copyWith({String? Function()? defaultValue, int? Function()? maximumLength, int? Function()? minimumLength, }) { return PaymentLinksResourceCustomFieldsText(
-  defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
-  maximumLength: maximumLength != null ? maximumLength() : this.maximumLength,
-  minimumLength: minimumLength != null ? minimumLength() : this.minimumLength,
-); } 
+return errors;}
+PaymentLinksResourceCustomFieldsText copyWith({Omittable<String?>? defaultValue, Omittable<int?>? maximumLength, Omittable<int?>? minimumLength, }) {return PaymentLinksResourceCustomFieldsText(
+  defaultValue: defaultValue ?? this.defaultValue,
+  maximumLength: maximumLength ?? this.maximumLength,
+  minimumLength: minimumLength ?? this.minimumLength,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomFieldsText &&
           defaultValue == other.defaultValue &&
@@ -47,4 +47,4 @@ PaymentLinksResourceCustomFieldsText copyWith({String? Function()? defaultValue,
 
 @override String toString() => 'PaymentLinksResourceCustomFieldsText(defaultValue: $defaultValue, maximumLength: $maximumLength, minimumLength: $minimumLength)';
 
- }
+}

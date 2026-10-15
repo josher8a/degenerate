@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/group_bys.dart';import 'package:pub_cloudflare/models/telemetry_query_request/havings.dart';import 'package:pub_cloudflare/models/telemetry_query_request/order_by.dart';import 'package:pub_cloudflare/models/telemetry_query_request/parameters_calculations.dart';/// Set a Flag to describe how to combine the filters on the query.
 sealed class FilterCombination {const FilterCombination();
 
-factory FilterCombination.fromJson(String json) { return switch (json) {
+factory FilterCombination.fromJson(String json) {return switch (json) {
   'and' => and,
   'or' => or,
   'AND' => and2,
   'OR' => or2,
   _ => FilterCombination$Unknown(json),
-}; }
+};}
 
 static const FilterCombination and = FilterCombination$and._();
 
@@ -23,36 +23,36 @@ static const FilterCombination or2 = FilterCombination$or2._();
 static const List<FilterCombination> values = [and, or, and2, or2];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'and' => 'and',
   'or' => 'or',
   'AND' => 'and2',
   'OR' => 'or2',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FilterCombination$Unknown; } 
+bool get isUnknown {return this is FilterCombination$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() and, required W Function() or, required W Function() and2, required W Function() or2, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() and, required W Function() or, required W Function() and2, required W Function() or2, required W Function(String value) $unknown, }) {return switch (this) {
       FilterCombination$and() => and(),
       FilterCombination$or() => or(),
       FilterCombination$and2() => and2(),
       FilterCombination$or2() => or2(),
       FilterCombination$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W Function()? or, W Function()? and2, W Function()? or2, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W Function()? or, W Function()? and2, W Function()? or2, W Function(String value)? $unknown, }) {return switch (this) {
       FilterCombination$and() => and != null ? and() : orElse(value),
       FilterCombination$or() => or != null ? or() : orElse(value),
       FilterCombination$and2() => and2 != null ? and2() : orElse(value),
       FilterCombination$or2() => or2 != null ? or2() : orElse(value),
       FilterCombination$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FilterCombination($value)';
 
- }
+}
 @immutable final class FilterCombination$and extends FilterCombination {const FilterCombination$and._();
 
 @override String get value => 'and';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W F
 
 @override int get hashCode => 'and'.hashCode;
 
- }
+}
 @immutable final class FilterCombination$or extends FilterCombination {const FilterCombination$or._();
 
 @override String get value => 'or';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W F
 
 @override int get hashCode => 'or'.hashCode;
 
- }
+}
 @immutable final class FilterCombination$and2 extends FilterCombination {const FilterCombination$and2._();
 
 @override String get value => 'AND';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W F
 
 @override int get hashCode => 'AND'.hashCode;
 
- }
+}
 @immutable final class FilterCombination$or2 extends FilterCombination {const FilterCombination$or2._();
 
 @override String get value => 'OR';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W F
 
 @override int get hashCode => 'OR'.hashCode;
 
- }
+}
 @immutable final class FilterCombination$Unknown extends FilterCombination {const FilterCombination$Unknown(this.value);
 
 @override final String value;
@@ -98,10 +98,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TelemetryQueryRequestParameters {const TelemetryQueryRequestParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
 
-factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParameters(
+factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) {return TelemetryQueryRequestParameters(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => ParametersCalculations.fromJson(e as Map<String, dynamic>)).toList(),
   datasets: (json['datasets'] as List<dynamic>?)?.map((e) => e as String).toList(),
   filterCombination: json['filterCombination'] != null ? FilterCombination.fromJson(json['filterCombination'] as String) : null,
@@ -111,7 +111,7 @@ factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { re
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
   needle: json['needle'] != null ? Needle.fromJson(json['needle'] as Map<String, dynamic>) : null,
   orderBy: json['orderBy'] != null ? OrderBy.fromJson(json['orderBy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Create Calculations to compute as part of the query.
 final List<ParametersCalculations>? calculations;
@@ -142,7 +142,7 @@ final Needle? needle;
 /// Configure the order of the results returned by the query.
 final OrderBy? orderBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (calculations != null) 'calculations': calculations?.map((e) => e.toJson()).toList(),
   'datasets': ?datasets,
   if (filterCombination != null) 'filterCombination': filterCombination?.toJson(),
@@ -152,17 +152,17 @@ Map<String, dynamic> toJson() { return {
   'limit': ?limit,
   if (needle != null) 'needle': needle?.toJson(),
   if (orderBy != null) 'orderBy': orderBy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final limit$ = limit;
 if (limit$ != null) {
   if (limit$ < 0) { errors.add('limit: must be >= 0'); }
   if (limit$ > 2000) { errors.add('limit: must be <= 2000'); }
 }
-return errors; } 
-TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, FilterCombination? Function()? filterCombination, List<TelemetryKeysListRequestFilters>? Function()? filters, List<GroupBys>? Function()? groupBys, List<Havings>? Function()? havings, int? Function()? limit, Needle? Function()? needle, OrderBy? Function()? orderBy, }) { return TelemetryQueryRequestParameters(
+return errors;}
+TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, FilterCombination? Function()? filterCombination, List<TelemetryKeysListRequestFilters>? Function()? filters, List<GroupBys>? Function()? groupBys, List<Havings>? Function()? havings, int? Function()? limit, Needle? Function()? needle, OrderBy? Function()? orderBy, }) {return TelemetryQueryRequestParameters(
   calculations: calculations != null ? calculations() : this.calculations,
   datasets: datasets != null ? datasets() : this.datasets,
   filterCombination: filterCombination != null ? filterCombination() : this.filterCombination,
@@ -172,7 +172,7 @@ TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function
   limit: limit != null ? limit() : this.limit,
   needle: needle != null ? needle() : this.needle,
   orderBy: orderBy != null ? orderBy() : this.orderBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryQueryRequestParameters &&
           listEquals(calculations, other.calculations) &&
@@ -189,4 +189,4 @@ TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function
 
 @override String toString() => 'TelemetryQueryRequestParameters(\n  calculations: $calculations,\n  datasets: $datasets,\n  filterCombination: $filterCombination,\n  filters: $filters,\n  groupBys: $groupBys,\n  havings: $havings,\n  limit: $limit,\n  needle: $needle,\n  orderBy: $orderBy,\n)';
 
- }
+}

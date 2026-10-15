@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BudgetBudgetAlerting {const BudgetBudgetAlerting({required this.willAlert, required this.alertRecipients, });
 
-factory BudgetBudgetAlerting.fromJson(Map<String, dynamic> json) { return BudgetBudgetAlerting(
+factory BudgetBudgetAlerting.fromJson(Map<String, dynamic> json) {return BudgetBudgetAlerting(
   willAlert: json['will_alert'] as bool,
   alertRecipients: (json['alert_recipients'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Whether alerts are enabled for this budget
 final bool willAlert;
@@ -14,16 +14,16 @@ final bool willAlert;
 /// Array of user login names who will receive alerts
 final List<String> alertRecipients;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'will_alert': willAlert,
   'alert_recipients': alertRecipients,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('will_alert') && json['will_alert'] is bool &&
-      json.containsKey('alert_recipients'); } 
-BudgetBudgetAlerting copyWith({bool? willAlert, List<String>? alertRecipients, }) { return BudgetBudgetAlerting(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('will_alert') && json['will_alert'] is bool &&
+      json.containsKey('alert_recipients');}
+BudgetBudgetAlerting copyWith({bool? willAlert, List<String>? alertRecipients, }) {return BudgetBudgetAlerting(
   willAlert: willAlert ?? this.willAlert,
   alertRecipients: alertRecipients ?? this.alertRecipients,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BudgetBudgetAlerting &&
           willAlert == other.willAlert &&
@@ -33,4 +33,4 @@ BudgetBudgetAlerting copyWith({bool? willAlert, List<String>? alertRecipients, }
 
 @override String toString() => 'BudgetBudgetAlerting(willAlert: $willAlert, alertRecipients: $alertRecipients)';
 
- }
+}

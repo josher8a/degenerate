@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActiveLivestreamSessionDetailsResponseDataSession {const ActiveLivestreamSessionDetailsResponseDataSession({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
 
-factory ActiveLivestreamSessionDetailsResponseDataSession.fromJson(Map<String, dynamic> json) { return ActiveLivestreamSessionDetailsResponseDataSession(
+factory ActiveLivestreamSessionDetailsResponseDataSession.fromJson(Map<String, dynamic> json) {return ActiveLivestreamSessionDetailsResponseDataSession(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   errMessage: json['err_message'] as String?,
   id: json['id'] as String?,
@@ -14,7 +14,7 @@ factory ActiveLivestreamSessionDetailsResponseDataSession.fromJson(Map<String, d
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   viewerSeconds: json['viewer_seconds'] as String?,
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -43,7 +43,7 @@ final DateTime? updatedAt;
 /// The total view time for which the viewers watched the stream.
 final String? viewerSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'err_message': ?errMessage,
   'id': ?id,
@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'viewer_seconds': ?viewerSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'started_time', 'stopped_time', 'updated_at', 'viewer_seconds'}.contains(key)); } 
-ActiveLivestreamSessionDetailsResponseDataSession copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, String? Function()? ingestSeconds, DateTime? Function()? invokedTime, String? Function()? livestreamId, DateTime? Function()? startedTime, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, String? Function()? viewerSeconds, }) { return ActiveLivestreamSessionDetailsResponseDataSession(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'started_time', 'stopped_time', 'updated_at', 'viewer_seconds'}.contains(key));}
+ActiveLivestreamSessionDetailsResponseDataSession copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, String? Function()? ingestSeconds, DateTime? Function()? invokedTime, String? Function()? livestreamId, DateTime? Function()? startedTime, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, String? Function()? viewerSeconds, }) {return ActiveLivestreamSessionDetailsResponseDataSession(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errMessage: errMessage != null ? errMessage() : this.errMessage,
   id: id != null ? id() : this.id,
@@ -67,7 +67,7 @@ ActiveLivestreamSessionDetailsResponseDataSession copyWith({DateTime? Function()
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   viewerSeconds: viewerSeconds != null ? viewerSeconds() : this.viewerSeconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActiveLivestreamSessionDetailsResponseDataSession &&
           createdAt == other.createdAt &&
@@ -85,4 +85,4 @@ ActiveLivestreamSessionDetailsResponseDataSession copyWith({DateTime? Function()
 
 @override String toString() => 'ActiveLivestreamSessionDetailsResponseDataSession(\n  createdAt: $createdAt,\n  errMessage: $errMessage,\n  id: $id,\n  ingestSeconds: $ingestSeconds,\n  invokedTime: $invokedTime,\n  livestreamId: $livestreamId,\n  startedTime: $startedTime,\n  stoppedTime: $stoppedTime,\n  updatedAt: $updatedAt,\n  viewerSeconds: $viewerSeconds,\n)';
 
- }
+}

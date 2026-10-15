@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessCountryRuleGeo {const AccessCountryRuleGeo({required this.countryCode});
 
-factory AccessCountryRuleGeo.fromJson(Map<String, dynamic> json) { return AccessCountryRuleGeo(
+factory AccessCountryRuleGeo.fromJson(Map<String, dynamic> json) {return AccessCountryRuleGeo(
   countryCode: json['country_code'] as String,
-); }
+);}
 
 /// The country code that should be matched.
 /// 
 /// Example: `'US'`
 final String countryCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country_code': countryCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country_code') && json['country_code'] is String; } 
-AccessCountryRuleGeo copyWith({String? countryCode}) { return AccessCountryRuleGeo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country_code') && json['country_code'] is String;}
+AccessCountryRuleGeo copyWith({String? countryCode}) {return AccessCountryRuleGeo(
   countryCode: countryCode ?? this.countryCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCountryRuleGeo &&
           countryCode == other.countryCode;
@@ -27,4 +27,4 @@ AccessCountryRuleGeo copyWith({String? countryCode}) { return AccessCountryRuleG
 
 @override String toString() => 'AccessCountryRuleGeo(countryCode: $countryCode)';
 
- }
+}

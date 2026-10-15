@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_resource/container_resource_expires_after.dart';import 'package:pub_openai/models/container_resource/container_resource_network_policy.dart';import 'package:pub_openai/models/container_resource/memory_limit.dart';@immutable final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
 
-factory ContainerResource.fromJson(Map<String, dynamic> json) { return ContainerResource(
+factory ContainerResource.fromJson(Map<String, dynamic> json) {return ContainerResource(
   id: json['id'] as String,
   object: json['object'] as String,
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory ContainerResource.fromJson(Map<String, dynamic> json) { return Container
   expiresAfter: json['expires_after'] != null ? ContainerResourceExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   memoryLimit: json['memory_limit'] != null ? MemoryLimit.fromJson(json['memory_limit'] as String) : null,
   networkPolicy: json['network_policy'] != null ? ContainerResourceNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Unique identifier for the container.
 final String id;
@@ -45,7 +45,7 @@ final MemoryLimit? memoryLimit;
 /// Network access policy for the container.
 final ContainerResourceNetworkPolicy? networkPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object,
   'name': name,
@@ -55,13 +55,13 @@ Map<String, dynamic> toJson() { return {
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   if (memoryLimit != null) 'memory_limit': memoryLimit?.toJson(),
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') && json['object'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('status') && json['status'] is String; } 
-ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int? Function()? lastActiveAt, ContainerResourceExpiresAfter? Function()? expiresAfter, MemoryLimit? Function()? memoryLimit, ContainerResourceNetworkPolicy? Function()? networkPolicy, }) { return ContainerResource(
+      json.containsKey('status') && json['status'] is String;}
+ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int? Function()? lastActiveAt, ContainerResourceExpiresAfter? Function()? expiresAfter, MemoryLimit? Function()? memoryLimit, ContainerResourceNetworkPolicy? Function()? networkPolicy, }) {return ContainerResource(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,
@@ -71,7 +71,7 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerResource &&
           id == other.id &&
@@ -88,4 +88,4 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
 
 @override String toString() => 'ContainerResource(\n  id: $id,\n  object: $object,\n  name: $name,\n  createdAt: $createdAt,\n  status: $status,\n  lastActiveAt: $lastActiveAt,\n  expiresAfter: $expiresAfter,\n  memoryLimit: $memoryLimit,\n  networkPolicy: $networkPolicy,\n)';
 
- }
+}

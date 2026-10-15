@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image genera
 /// 
 sealed class ImageGenToolModelVariant2 {const ImageGenToolModelVariant2();
 
-factory ImageGenToolModelVariant2.fromJson(String json) { return switch (json) {
+factory ImageGenToolModelVariant2.fromJson(String json) {return switch (json) {
   'gpt-image-1' => gptImage1,
   'gpt-image-1-mini' => gptImage1Mini,
   'gpt-image-1.5' => gptImage15,
   _ => ImageGenToolModelVariant2$Unknown(json),
-}; }
+};}
 
 static const ImageGenToolModelVariant2 gptImage1 = ImageGenToolModelVariant2$gptImage1._();
 
@@ -21,33 +21,33 @@ static const ImageGenToolModelVariant2 gptImage15 = ImageGenToolModelVariant2$gp
 static const List<ImageGenToolModelVariant2> values = [gptImage1, gptImage1Mini, gptImage15];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'gpt-image-1' => 'gptImage1',
   'gpt-image-1-mini' => 'gptImage1Mini',
   'gpt-image-1.5' => 'gptImage15',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ImageGenToolModelVariant2$Unknown; } 
+bool get isUnknown {return this is ImageGenToolModelVariant2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() gptImage1, required W Function() gptImage1Mini, required W Function() gptImage15, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() gptImage1, required W Function() gptImage1Mini, required W Function() gptImage15, required W Function(String value) $unknown, }) {return switch (this) {
       ImageGenToolModelVariant2$gptImage1() => gptImage1(),
       ImageGenToolModelVariant2$gptImage1Mini() => gptImage1Mini(),
       ImageGenToolModelVariant2$gptImage15() => gptImage15(),
       ImageGenToolModelVariant2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage1, W Function()? gptImage1Mini, W Function()? gptImage15, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage1, W Function()? gptImage1Mini, W Function()? gptImage15, W Function(String value)? $unknown, }) {return switch (this) {
       ImageGenToolModelVariant2$gptImage1() => gptImage1 != null ? gptImage1() : orElse(value),
       ImageGenToolModelVariant2$gptImage1Mini() => gptImage1Mini != null ? gptImage1Mini() : orElse(value),
       ImageGenToolModelVariant2$gptImage15() => gptImage15 != null ? gptImage15() : orElse(value),
       ImageGenToolModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ImageGenToolModelVariant2($value)';
 
- }
+}
 @immutable final class ImageGenToolModelVariant2$gptImage1 extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$gptImage1._();
 
 @override String get value => 'gpt-image-1';
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage
 
 @override int get hashCode => 'gpt-image-1'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolModelVariant2$gptImage1Mini extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$gptImage1Mini._();
 
 @override String get value => 'gpt-image-1-mini';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage
 
 @override int get hashCode => 'gpt-image-1-mini'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolModelVariant2$gptImage15 extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$gptImage15._();
 
 @override String get value => 'gpt-image-1.5';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage
 
 @override int get hashCode => 'gpt-image-1.5'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolModelVariant2$Unknown extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$Unknown(this.value);
 
 @override final String value;
@@ -84,8 +84,45 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage
 
 @override int get hashCode => value.hashCode;
 
- }
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [ImageGenToolModelVariant2]
-typedef ImageGenToolModel = OneOf2<String,ImageGenToolModelVariant2>;
+}
+@immutable final class ImageGenToolModel {/// A value built from one or more typed views (at least one must be present).
+const ImageGenToolModel({this.string = const Omittable.absent(), this.imageGenToolModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const ImageGenToolModel._({required this.rawValue, required this.string, required this.imageGenToolModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory ImageGenToolModel.fromJson(Object? json) {return ImageGenToolModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  imageGenToolModelVariant2: parseAnyOfVariant<ImageGenToolModelVariant2>(json, (value) => ImageGenToolModelVariant2.fromJson(value! as String)),
+);}
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `ImageGenToolModelVariant2`, when it matches.
+final Omittable<ImageGenToolModelVariant2> imageGenToolModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || imageGenToolModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (imageGenToolModelVariant2.isPresent) imageGenToolModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is ImageGenToolModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'ImageGenToolModel(${toJson()})';
+
+}

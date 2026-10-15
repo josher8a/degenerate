@@ -5,23 +5,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
 final class PinRequestSchema {
-  const PinRequestSchema({required this.email, this.newsletterConsent = false});
+  const PinRequestSchema({required this.email, this.newsletterConsent});
 
   factory PinRequestSchema.fromJson(Map<String, dynamic> json) {
     return PinRequestSchema(
       email: json['email'] as String,
-      newsletterConsent: json.containsKey('newsletter_consent')
-          ? json['newsletter_consent'] as bool
-          : false,
+      newsletterConsent: json['newsletter_consent'] as bool?,
     );
   }
 
   final String email;
 
-  final bool newsletterConsent;
+  final bool? newsletterConsent;
+
+  /// The value of `newsletterConsent`, or its schema default when absent.
+  bool get newsletterConsentOrDefault => newsletterConsent ?? false;
 
   Map<String, dynamic> toJson() {
-    return {'email': email, 'newsletter_consent': newsletterConsent};
+    return {'email': email, 'newsletter_consent': ?newsletterConsent};
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -30,7 +31,7 @@ final class PinRequestSchema {
 
   PinRequestSchema copyWith({
     String? email,
-    bool Function()? newsletterConsent,
+    bool? Function()? newsletterConsent,
   }) {
     return PinRequestSchema(
       email: email ?? this.email,

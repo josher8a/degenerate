@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityResultInfo {const EmailSecurityResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
-factory EmailSecurityResultInfo.fromJson(Map<String, dynamic> json) { return EmailSecurityResultInfo(
+factory EmailSecurityResultInfo.fromJson(Map<String, dynamic> json) {return EmailSecurityResultInfo(
   count: (json['count'] as num).toInt(),
   page: (json['page'] as num).toInt(),
   perPage: (json['per_page'] as num).toInt(),
   totalCount: (json['total_count'] as num).toInt(),
-); }
+);}
 
 /// Total number of results for the requested service
 /// 
@@ -30,22 +30,22 @@ final int perPage;
 /// Example: `2000`
 final int totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'page': page,
   'per_page': perPage,
   'total_count': totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
-      json.containsKey('total_count') && json['total_count'] is num; } 
-EmailSecurityResultInfo copyWith({int? count, int? page, int? perPage, int? totalCount, }) { return EmailSecurityResultInfo(
+      json.containsKey('total_count') && json['total_count'] is num;}
+EmailSecurityResultInfo copyWith({int? count, int? page, int? perPage, int? totalCount, }) {return EmailSecurityResultInfo(
   count: count ?? this.count,
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
   totalCount: totalCount ?? this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityResultInfo &&
           count == other.count &&
@@ -57,4 +57,4 @@ EmailSecurityResultInfo copyWith({int? count, int? page, int? perPage, int? tota
 
 @override String toString() => 'EmailSecurityResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
 
- }
+}

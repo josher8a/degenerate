@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_device_type_response/radar_get_http_summary_by_device_type_response_result_summary0.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponseResult {const RadarGetHttpSummaryByDeviceTypeResponseResult({required this.meta, required this.summary0, });
 
-factory RadarGetHttpSummaryByDeviceTypeResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponseResult(
+factory RadarGetHttpSummaryByDeviceTypeResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByDeviceTypeResponseResult(
   meta: RadarGetAiBotsSummaryByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   summary0: RadarGetHttpSummaryByDeviceTypeResponseResultSummary0.fromJson(json['summary_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
 
 final RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 summary0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'summary_0': summary0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('summary_0'); } 
-RadarGetHttpSummaryByDeviceTypeResponseResult copyWith({RadarGetAiBotsSummaryByUserAgentResponseResultMeta? meta, RadarGetHttpSummaryByDeviceTypeResponseResultSummary0? summary0, }) { return RadarGetHttpSummaryByDeviceTypeResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('summary_0');}
+RadarGetHttpSummaryByDeviceTypeResponseResult copyWith({RadarGetAiBotsSummaryByUserAgentResponseResultMeta? meta, RadarGetHttpSummaryByDeviceTypeResponseResultSummary0? summary0, }) {return RadarGetHttpSummaryByDeviceTypeResponseResult(
   meta: meta ?? this.meta,
   summary0: summary0 ?? this.summary0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByDeviceTypeResponseResult &&
           meta == other.meta &&
@@ -32,4 +32,4 @@ RadarGetHttpSummaryByDeviceTypeResponseResult copyWith({RadarGetAiBotsSummaryByU
 
 @override String toString() => 'RadarGetHttpSummaryByDeviceTypeResponseResult(meta: $meta, summary0: $summary0)';
 
- }
+}

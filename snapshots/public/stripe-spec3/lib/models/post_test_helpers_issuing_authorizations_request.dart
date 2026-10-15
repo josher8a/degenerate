@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/authorization_method.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request/fleet.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fuel.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_data.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/network_data.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/post_test_helpers_issuing_authorizations_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/risk_assessment.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/verification_data.dart';/// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
 sealed class FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood();
 
-factory FraudDisputabilityLikelihood.fromJson(String json) { return switch (json) {
+factory FraudDisputabilityLikelihood.fromJson(String json) {return switch (json) {
   'neutral' => neutral,
   'unknown' => unknown,
   'very_likely' => veryLikely,
   'very_unlikely' => veryUnlikely,
   _ => FraudDisputabilityLikelihood$Unknown(json),
-}; }
+};}
 
 static const FraudDisputabilityLikelihood neutral = FraudDisputabilityLikelihood$neutral._();
 
@@ -23,36 +23,36 @@ static const FraudDisputabilityLikelihood veryUnlikely = FraudDisputabilityLikel
 static const List<FraudDisputabilityLikelihood> values = [neutral, unknown, veryLikely, veryUnlikely];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'neutral' => 'neutral',
   'unknown' => 'unknown',
   'very_likely' => 'veryLikely',
   'very_unlikely' => 'veryUnlikely',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FraudDisputabilityLikelihood$Unknown; } 
+bool get isUnknown {return this is FraudDisputabilityLikelihood$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() neutral, required W Function() unknown, required W Function() veryLikely, required W Function() veryUnlikely, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() neutral, required W Function() unknown, required W Function() veryLikely, required W Function() veryUnlikely, required W Function(String value) $unknown, }) {return switch (this) {
       FraudDisputabilityLikelihood$neutral() => neutral(),
       FraudDisputabilityLikelihood$unknown() => unknown(),
       FraudDisputabilityLikelihood$veryLikely() => veryLikely(),
       FraudDisputabilityLikelihood$veryUnlikely() => veryUnlikely(),
       FraudDisputabilityLikelihood$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral, W Function()? unknown, W Function()? veryLikely, W Function()? veryUnlikely, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral, W Function()? unknown, W Function()? veryLikely, W Function()? veryUnlikely, W Function(String value)? $unknown, }) {return switch (this) {
       FraudDisputabilityLikelihood$neutral() => neutral != null ? neutral() : orElse(value),
       FraudDisputabilityLikelihood$unknown() => unknown != null ? unknown() : orElse(value),
       FraudDisputabilityLikelihood$veryLikely() => veryLikely != null ? veryLikely() : orElse(value),
       FraudDisputabilityLikelihood$veryUnlikely() => veryUnlikely != null ? veryUnlikely() : orElse(value),
       FraudDisputabilityLikelihood$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FraudDisputabilityLikelihood($value)';
 
- }
+}
 @immutable final class FraudDisputabilityLikelihood$neutral extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$neutral._();
 
 @override String get value => 'neutral';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral,
 
 @override int get hashCode => 'neutral'.hashCode;
 
- }
+}
 @immutable final class FraudDisputabilityLikelihood$unknown extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$unknown._();
 
 @override String get value => 'unknown';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral,
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class FraudDisputabilityLikelihood$veryLikely extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$veryLikely._();
 
 @override String get value => 'very_likely';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral,
 
 @override int get hashCode => 'very_likely'.hashCode;
 
- }
+}
 @immutable final class FraudDisputabilityLikelihood$veryUnlikely extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$veryUnlikely._();
 
 @override String get value => 'very_unlikely';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral,
 
 @override int get hashCode => 'very_unlikely'.hashCode;
 
- }
+}
 @immutable final class FraudDisputabilityLikelihood$Unknown extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$Unknown(this.value);
 
 @override final String value;
@@ -98,16 +98,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 sealed class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet();
 
-factory PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(String json) {return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   _ => PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestWallet applePay = PostTestHelpersIssuingAuthorizationsRequestWallet$applePay._();
 
@@ -118,33 +118,33 @@ static const PostTestHelpersIssuingAuthorizationsRequestWallet samsungPay = Post
 static const List<PostTestHelpersIssuingAuthorizationsRequestWallet> values = [applePay, googlePay, samsungPay];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'apple_pay' => 'applePay',
   'google_pay' => 'googlePay',
   'samsung_pay' => 'samsungPay',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown; } 
+bool get isUnknown {return this is PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) {return switch (this) {
       PostTestHelpersIssuingAuthorizationsRequestWallet$applePay() => applePay(),
       PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay() => googlePay(),
       PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay() => samsungPay(),
       PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) {return switch (this) {
       PostTestHelpersIssuingAuthorizationsRequestWallet$applePay() => applePay != null ? applePay() : orElse(value),
       PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay() => googlePay != null ? googlePay() : orElse(value),
       PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
       PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)';
 
- }
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$applePay extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$applePay._();
 
 @override String get value => 'apple_pay';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => 'apple_pay'.hashCode;
 
- }
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay._();
 
 @override String get value => 'google_pay';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => 'google_pay'.hashCode;
 
- }
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(this.value);
 
 @override final String value;
@@ -181,10 +181,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIssuingAuthorizationsRequest({required this.card, this.amount, this.amountDetails, this.authorizationMethod, this.currency, this.expand, this.fleet, this.fraudDisputabilityLikelihood, this.fuel, this.isAmountControllable, this.merchantAmount, this.merchantCurrency, this.merchantData, this.networkData, this.riskAssessment, this.verificationData, this.wallet, });
 
-factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequest(
+factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountDetails: json['amount_details'] != null ? PostTestHelpersIssuingAuthorizationsRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   authorizationMethod: json['authorization_method'] != null ? AuthorizationMethod.fromJson(json['authorization_method'] as String) : null,
@@ -202,7 +202,7 @@ factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic
   riskAssessment: json['risk_assessment'] != null ? RiskAssessment.fromJson(json['risk_assessment'] as Map<String, dynamic>) : null,
   verificationData: json['verification_data'] != null ? VerificationData.fromJson(json['verification_data'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(json['wallet'] as String) : null,
-); }
+);}
 
 /// The total amount to attempt to authorize. This amount is in the provided currency, or defaults to the card's currency, and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int? amount;
@@ -255,7 +255,7 @@ final VerificationData? verificationData;
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 final PostTestHelpersIssuingAuthorizationsRequestWallet? wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   if (authorizationMethod != null) 'authorization_method': authorizationMethod?.toJson(),
@@ -273,13 +273,13 @@ Map<String, dynamic> toJson() { return {
   if (riskAssessment != null) 'risk_assessment': riskAssessment?.toJson(),
   if (verificationData != null) 'verification_data': verificationData?.toJson(),
   if (wallet != null) 'wallet': wallet?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('card') && json['card'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('card') && json['card'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (card.runes.length > 5000) { errors.add('card: length must be <= 5000'); }
-return errors; } 
-PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails? Function()? amountDetails, AuthorizationMethod? Function()? authorizationMethod, String? card, String? Function()? currency, List<String>? Function()? expand, Fleet? Function()? fleet, FraudDisputabilityLikelihood? Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel? Function()? fuel, bool? Function()? isAmountControllable, int? Function()? merchantAmount, String? Function()? merchantCurrency, MerchantData? Function()? merchantData, NetworkData? Function()? networkData, RiskAssessment? Function()? riskAssessment, VerificationData? Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet? Function()? wallet, }) { return PostTestHelpersIssuingAuthorizationsRequest(
+return errors;}
+PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails? Function()? amountDetails, AuthorizationMethod? Function()? authorizationMethod, String? card, String? Function()? currency, List<String>? Function()? expand, Fleet? Function()? fleet, FraudDisputabilityLikelihood? Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel? Function()? fuel, bool? Function()? isAmountControllable, int? Function()? merchantAmount, String? Function()? merchantCurrency, MerchantData? Function()? merchantData, NetworkData? Function()? networkData, RiskAssessment? Function()? riskAssessment, VerificationData? Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet? Function()? wallet, }) {return PostTestHelpersIssuingAuthorizationsRequest(
   amount: amount != null ? amount() : this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   authorizationMethod: authorizationMethod != null ? authorizationMethod() : this.authorizationMethod,
@@ -297,7 +297,7 @@ PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, P
   riskAssessment: riskAssessment != null ? riskAssessment() : this.riskAssessment,
   verificationData: verificationData != null ? verificationData() : this.verificationData,
   wallet: wallet != null ? wallet() : this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequest &&
           amount == other.amount &&
@@ -322,4 +322,4 @@ PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, P
 
 @override String toString() => 'PostTestHelpersIssuingAuthorizationsRequest(\n  amount: $amount,\n  amountDetails: $amountDetails,\n  authorizationMethod: $authorizationMethod,\n  card: $card,\n  currency: $currency,\n  expand: $expand,\n  fleet: $fleet,\n  fraudDisputabilityLikelihood: $fraudDisputabilityLikelihood,\n  fuel: $fuel,\n  isAmountControllable: $isAmountControllable,\n  merchantAmount: $merchantAmount,\n  merchantCurrency: $merchantCurrency,\n  merchantData: $merchantData,\n  networkData: $networkData,\n  riskAssessment: $riskAssessment,\n  verificationData: $verificationData,\n  wallet: $wallet,\n)';
 
- }
+}

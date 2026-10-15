@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Gsuite {const Gsuite({required this.email, required this.identityProviderId, });
 
-factory Gsuite.fromJson(Map<String, dynamic> json) { return Gsuite(
+factory Gsuite.fromJson(Map<String, dynamic> json) {return Gsuite(
   email: json['email'] as String,
   identityProviderId: json['identity_provider_id'] as String,
-); }
+);}
 
 /// The email of the Google Workspace group.
 /// 
@@ -18,16 +18,16 @@ final String email;
 /// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email,
   'identity_provider_id': identityProviderId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
-      json.containsKey('identity_provider_id') && json['identity_provider_id'] is String; } 
-Gsuite copyWith({String? email, String? identityProviderId, }) { return Gsuite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') && json['email'] is String &&
+      json.containsKey('identity_provider_id') && json['identity_provider_id'] is String;}
+Gsuite copyWith({String? email, String? identityProviderId, }) {return Gsuite(
   email: email ?? this.email,
   identityProviderId: identityProviderId ?? this.identityProviderId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Gsuite &&
           email == other.email &&
@@ -37,4 +37,4 @@ Gsuite copyWith({String? email, String? identityProviderId, }) { return Gsuite(
 
 @override String toString() => 'Gsuite(email: $email, identityProviderId: $identityProviderId)';
 
- }
+}

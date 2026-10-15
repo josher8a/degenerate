@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PendingDeployment (inline: Reviewers)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_reviewer_type.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers_reviewer.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_reviewer_type.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers_reviewer.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
 
-factory PendingDeploymentReviewers.fromJson(Map<String, dynamic> json) { return PendingDeploymentReviewers(
+factory PendingDeploymentReviewers.fromJson(Map<String, dynamic> json) {return PendingDeploymentReviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,
-  reviewer: json['reviewer'] != null ? OneOf2.parse(json['reviewer'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Team.fromJson(v as Map<String, dynamic>),) : null,
-); }
+  reviewer: json['reviewer'] != null ? PendingDeploymentReviewersReviewer.fromJson(json['reviewer']) : null,
+);}
 
 /// The type of reviewer.
 final DeploymentReviewerType? type;
 
 final PendingDeploymentReviewersReviewer? reviewer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (reviewer != null) 'reviewer': reviewer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reviewer'}.contains(key)); } 
-PendingDeploymentReviewers copyWith({DeploymentReviewerType? Function()? type, PendingDeploymentReviewersReviewer? Function()? reviewer, }) { return PendingDeploymentReviewers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'reviewer'}.contains(key));}
+PendingDeploymentReviewers copyWith({DeploymentReviewerType? Function()? type, PendingDeploymentReviewersReviewer? Function()? reviewer, }) {return PendingDeploymentReviewers(
   type: type != null ? type() : this.type,
   reviewer: reviewer != null ? reviewer() : this.reviewer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PendingDeploymentReviewers &&
           type == other.type &&
@@ -31,4 +31,4 @@ PendingDeploymentReviewers copyWith({DeploymentReviewerType? Function()? type, P
 
 @override String toString() => 'PendingDeploymentReviewers(type: $type, reviewer: $reviewer)';
 
- }
+}

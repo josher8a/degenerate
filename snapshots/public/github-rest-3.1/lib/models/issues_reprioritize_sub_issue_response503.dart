@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesReprioritizeSubIssueResponse503 {const IssuesReprioritizeSubIssueResponse503({this.code, this.message, this.documentationUrl, });
 
-factory IssuesReprioritizeSubIssueResponse503.fromJson(Map<String, dynamic> json) { return IssuesReprioritizeSubIssueResponse503(
+factory IssuesReprioritizeSubIssueResponse503.fromJson(Map<String, dynamic> json) {return IssuesReprioritizeSubIssueResponse503(
   code: json['code'] as String?,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
-); }
+);}
 
 final String? code;
 
@@ -15,17 +15,17 @@ final String? message;
 
 final String? documentationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   'documentation_url': ?documentationUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key)); } 
-IssuesReprioritizeSubIssueResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) { return IssuesReprioritizeSubIssueResponse503(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key));}
+IssuesReprioritizeSubIssueResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) {return IssuesReprioritizeSubIssueResponse503(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesReprioritizeSubIssueResponse503 &&
           code == other.code &&
@@ -36,4 +36,4 @@ IssuesReprioritizeSubIssueResponse503 copyWith({String? Function()? code, String
 
 @override String toString() => 'IssuesReprioritizeSubIssueResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)';
 
- }
+}

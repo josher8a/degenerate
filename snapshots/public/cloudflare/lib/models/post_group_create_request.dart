@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostGroupCreateRequest {const PostGroupCreateRequest({required this.description, required this.name, });
 
-factory PostGroupCreateRequest.fromJson(Map<String, dynamic> json) { return PostGroupCreateRequest(
+factory PostGroupCreateRequest.fromJson(Map<String, dynamic> json) {return PostGroupCreateRequest(
   description: json['description'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// Example: `'Cloudforce subscribers'`
 final String description;
@@ -14,16 +14,16 @@ final String description;
 /// Example: `'cloudforce-subscribers'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-PostGroupCreateRequest copyWith({String? description, String? name, }) { return PostGroupCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+PostGroupCreateRequest copyWith({String? description, String? name, }) {return PostGroupCreateRequest(
   description: description ?? this.description,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostGroupCreateRequest &&
           description == other.description &&
@@ -33,4 +33,4 @@ PostGroupCreateRequest copyWith({String? description, String? name, }) { return 
 
 @override String toString() => 'PostGroupCreateRequest(description: $description, name: $name)';
 
- }
+}

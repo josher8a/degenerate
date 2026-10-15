@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Variant1Type {const Variant1Type();
 
-factory Variant1Type.fromJson(String json) { return switch (json) {
+factory Variant1Type.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'ne' => ne,
   'gt' => gt,
@@ -11,7 +11,7 @@ factory Variant1Type.fromJson(String json) { return switch (json) {
   'lt' => lt,
   'lte' => lte,
   _ => Variant1Type$Unknown(json),
-}; }
+};}
 
 static const Variant1Type eq = Variant1Type$eq._();
 
@@ -28,9 +28,9 @@ static const Variant1Type lte = Variant1Type$lte._();
 static const List<Variant1Type> values = [eq, ne, gt, gte, lt, lte];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'eq' => 'eq',
   'ne' => 'ne',
   'gt' => 'gt',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'lt' => 'lt',
   'lte' => 'lte',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Variant1Type$Unknown; } 
+bool get isUnknown {return this is Variant1Type$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() eq, required W Function() ne, required W Function() gt, required W Function() gte, required W Function() lt, required W Function() lte, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() eq, required W Function() ne, required W Function() gt, required W Function() gte, required W Function() lt, required W Function() lte, required W Function(String value) $unknown, }) {return switch (this) {
       Variant1Type$eq() => eq(),
       Variant1Type$ne() => ne(),
       Variant1Type$gt() => gt(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() eq, required W Function() ne, required W Functi
       Variant1Type$lt() => lt(),
       Variant1Type$lte() => lte(),
       Variant1Type$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? gt, W Function()? gte, W Function()? lt, W Function()? lte, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? gt, W Function()? gte, W Function()? lt, W Function()? lte, W Function(String value)? $unknown, }) {return switch (this) {
       Variant1Type$eq() => eq != null ? eq() : orElse(value),
       Variant1Type$ne() => ne != null ? ne() : orElse(value),
       Variant1Type$gt() => gt != null ? gt() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
       Variant1Type$lt() => lt != null ? lt() : orElse(value),
       Variant1Type$lte() => lte != null ? lte() : orElse(value),
       Variant1Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Variant1Type($value)';
 
- }
+}
 @immutable final class Variant1Type$eq extends Variant1Type {const Variant1Type$eq._();
 
 @override String get value => 'eq';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'eq'.hashCode;
 
- }
+}
 @immutable final class Variant1Type$ne extends Variant1Type {const Variant1Type$ne._();
 
 @override String get value => 'ne';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'ne'.hashCode;
 
- }
+}
 @immutable final class Variant1Type$gt extends Variant1Type {const Variant1Type$gt._();
 
 @override String get value => 'gt';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'gt'.hashCode;
 
- }
+}
 @immutable final class Variant1Type$gte extends Variant1Type {const Variant1Type$gte._();
 
 @override String get value => 'gte';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'gte'.hashCode;
 
- }
+}
 @immutable final class Variant1Type$lt extends Variant1Type {const Variant1Type$lt._();
 
 @override String get value => 'lt';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'lt'.hashCode;
 
- }
+}
 @immutable final class Variant1Type$lte extends Variant1Type {const Variant1Type$lte._();
 
 @override String get value => 'lte';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'lte'.hashCode;
 
- }
+}
 @immutable final class Variant1Type$Unknown extends Variant1Type {const Variant1Type$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

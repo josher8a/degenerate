@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_certificates_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_fingerprint.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessCertificates {const AccessCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
 
-factory AccessCertificates.fromJson(Map<String, dynamic> json) { return AccessCertificates(
+factory AccessCertificates.fromJson(Map<String, dynamic> json) {return AccessCertificates(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   expiresOn: json['expires_on'] != null ? AccessTimestamp.fromJson(json['expires_on'] as String) : null,
@@ -11,7 +11,7 @@ factory AccessCertificates.fromJson(Map<String, dynamic> json) { return AccessCe
   id: json['id'] as String?,
   name: json['name'] != null ? AccessCertificatesComponentsSchemasName.fromJson(json['name'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The hostnames of the applications that will use this certificate.
 final List<String>? associatedHostnames;
@@ -29,7 +29,7 @@ final AccessCertificatesComponentsSchemasName? name;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'associated_hostnames': ?associatedHostnames,
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
@@ -37,9 +37,9 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'associated_hostnames', 'created_at', 'expires_on', 'fingerprint', 'id', 'name', 'updated_at'}.contains(key)); } 
-AccessCertificates copyWith({List<String>? Function()? associatedHostnames, AccessTimestamp? Function()? createdAt, AccessTimestamp? Function()? expiresOn, AccessFingerprint? Function()? fingerprint, String? Function()? id, AccessCertificatesComponentsSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) { return AccessCertificates(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'associated_hostnames', 'created_at', 'expires_on', 'fingerprint', 'id', 'name', 'updated_at'}.contains(key));}
+AccessCertificates copyWith({List<String>? Function()? associatedHostnames, AccessTimestamp? Function()? createdAt, AccessTimestamp? Function()? expiresOn, AccessFingerprint? Function()? fingerprint, String? Function()? id, AccessCertificatesComponentsSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) {return AccessCertificates(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
@@ -47,7 +47,7 @@ AccessCertificates copyWith({List<String>? Function()? associatedHostnames, Acce
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCertificates &&
           listEquals(associatedHostnames, other.associatedHostnames) &&
@@ -62,4 +62,4 @@ AccessCertificates copyWith({List<String>? Function()? associatedHostnames, Acce
 
 @override String toString() => 'AccessCertificates(associatedHostnames: $associatedHostnames, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, name: $name, updatedAt: $updatedAt)';
 
- }
+}

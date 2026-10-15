@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookDependabotAlertReopened {const WebhookDependabotAlertReopened({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
-factory WebhookDependabotAlertReopened.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertReopened(
+factory WebhookDependabotAlertReopened.fromJson(Map<String, dynamic> json) {return WebhookDependabotAlertReopened(
   action: ProjectReopenedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookDependabotAlertReopened.fromJson(Map<String, dynamic> json) { ret
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ProjectReopenedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDependabotAlertReopened copyWith({ProjectReopenedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertReopened(
+      json.containsKey('sender');}
+WebhookDependabotAlertReopened copyWith({ProjectReopenedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDependabotAlertReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -48,7 +48,7 @@ WebhookDependabotAlertReopened copyWith({ProjectReopenedAction? action, Dependab
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertReopened &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookDependabotAlertReopened copyWith({ProjectReopenedAction? action, Dependab
 
 @override String toString() => 'WebhookDependabotAlertReopened(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
 
- }
+}

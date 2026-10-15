@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestReviewThreadResolved
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt = const Omittable.absent(), });
 
-factory WebhookPullRequestReviewThreadResolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolved(
+factory WebhookPullRequestReviewThreadResolved.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadResolved(
   action: WebhookPullRequestReviewThreadResolvedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -12,8 +12,8 @@ factory WebhookPullRequestReviewThreadResolved.fromJson(Map<String, dynamic> jso
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   thread: WebhookPullRequestReviewThreadResolvedThread.fromJson(json['thread'] as Map<String, dynamic>),
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
+);}
 
 final WebhookPullRequestReviewThreadResolvedAction action;
 
@@ -31,9 +31,9 @@ final SimpleUser? sender;
 
 final WebhookPullRequestReviewThreadResolvedThread thread;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -42,13 +42,13 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
   'thread': thread.toJson(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('thread'); } 
-WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadResolvedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewThreadResolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, WebhookPullRequestReviewThreadResolvedThread? thread, DateTime? Function()? updatedAt, }) { return WebhookPullRequestReviewThreadResolved(
+      json.containsKey('thread');}
+WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadResolvedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewThreadResolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, WebhookPullRequestReviewThreadResolvedThread? thread, Omittable<DateTime?>? updatedAt, }) {return WebhookPullRequestReviewThreadResolved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -57,8 +57,8 @@ WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadR
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
   thread: thread ?? this.thread,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+  updatedAt: updatedAt ?? this.updatedAt,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewThreadResolved &&
           action == other.action &&
@@ -75,4 +75,4 @@ WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadR
 
 @override String toString() => 'WebhookPullRequestReviewThreadResolved(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n  thread: $thread,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

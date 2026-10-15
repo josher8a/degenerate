@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model22.dart';import 'package:pub_cloudflare/models/queues_purge_get_response/queues_purge_get_response_result.dart';@immutable final class QueuesPurgeGetResponse {const QueuesPurgeGetResponse({this.errors, this.messages, this.success, this.result, });
 
-factory QueuesPurgeGetResponse.fromJson(Map<String, dynamic> json) { return QueuesPurgeGetResponse(
+factory QueuesPurgeGetResponse.fromJson(Map<String, dynamic> json) {return QueuesPurgeGetResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel22.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as String).toList(),
   success: json['success'] as bool?,
   result: json['result'] != null ? QueuesPurgeGetResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ErrorModel22>? errors;
 
@@ -19,25 +19,25 @@ final bool? success;
 
 final QueuesPurgeGetResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'messages': ?messages,
   'success': ?success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 final errors$$ = errors;
 if (errors$$ != null) {
 }
-return errors$; } 
-QueuesPurgeGetResponse copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, QueuesPurgeGetResponseResult? Function()? result, }) { return QueuesPurgeGetResponse(
+return errors$;}
+QueuesPurgeGetResponse copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, QueuesPurgeGetResponseResult? Function()? result, }) {return QueuesPurgeGetResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesPurgeGetResponse &&
           listEquals(errors, other.errors) &&
@@ -49,4 +49,4 @@ QueuesPurgeGetResponse copyWith({List<ErrorModel22>? Function()? errors, List<St
 
 @override String toString() => 'QueuesPurgeGetResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

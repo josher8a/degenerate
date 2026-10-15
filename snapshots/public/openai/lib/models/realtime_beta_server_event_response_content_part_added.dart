@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_response_content_part_added/realtime_beta_server_event_response_content_part_added_part.dart';/// The event type, must be `response.content_part.added`.
 sealed class RealtimeBetaServerEventResponseContentPartAddedType {const RealtimeBetaServerEventResponseContentPartAddedType();
 
-factory RealtimeBetaServerEventResponseContentPartAddedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseContentPartAddedType.fromJson(String json) {return switch (json) {
   'response.content_part.added' => responseContentPartAdded,
   _ => RealtimeBetaServerEventResponseContentPartAddedType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseContentPartAddedType responseContentPartAdded = RealtimeBetaServerEventResponseContentPartAddedType$responseContentPartAdded._();
 
 static const List<RealtimeBetaServerEventResponseContentPartAddedType> values = [responseContentPartAdded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.content_part.added' => 'responseContentPartAdded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventResponseContentPartAddedType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventResponseContentPartAddedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseContentPartAdded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseContentPartAdded, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseContentPartAddedType$responseContentPartAdded() => responseContentPartAdded(),
       RealtimeBetaServerEventResponseContentPartAddedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseContentPartAdded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseContentPartAdded, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseContentPartAddedType$responseContentPartAdded() => responseContentPartAdded != null ? responseContentPartAdded() : orElse(value),
       RealtimeBetaServerEventResponseContentPartAddedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventResponseContentPartAddedType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseContentPartAddedType$responseContentPartAdded extends RealtimeBetaServerEventResponseContentPartAddedType {const RealtimeBetaServerEventResponseContentPartAddedType$responseContentPartAdded._();
 
 @override String get value => 'response.content_part.added';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.content_part.added'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseContentPartAddedType$Unknown extends RealtimeBetaServerEventResponseContentPartAddedType {const RealtimeBetaServerEventResponseContentPartAddedType$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when a new content part is added to an assistant message item during
 /// response generation.
 /// 
 @immutable final class RealtimeBetaServerEventResponseContentPartAdded {const RealtimeBetaServerEventResponseContentPartAdded({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, });
 
-factory RealtimeBetaServerEventResponseContentPartAdded.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseContentPartAdded(
+factory RealtimeBetaServerEventResponseContentPartAdded.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseContentPartAdded(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseContentPartAddedType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
@@ -67,7 +67,7 @@ factory RealtimeBetaServerEventResponseContentPartAdded.fromJson(Map<String, dyn
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   $part: RealtimeBetaServerEventResponseContentPartAddedPart.fromJson(json['part'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -90,7 +90,7 @@ final int contentIndex;
 /// The content part that was added.
 final RealtimeBetaServerEventResponseContentPartAddedPart $part;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
@@ -98,15 +98,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'part': $part.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('part'); } 
-RealtimeBetaServerEventResponseContentPartAdded copyWith({String? eventId, RealtimeBetaServerEventResponseContentPartAddedType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, RealtimeBetaServerEventResponseContentPartAddedPart? $part, }) { return RealtimeBetaServerEventResponseContentPartAdded(
+      json.containsKey('part');}
+RealtimeBetaServerEventResponseContentPartAdded copyWith({String? eventId, RealtimeBetaServerEventResponseContentPartAddedType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, RealtimeBetaServerEventResponseContentPartAddedPart? $part, }) {return RealtimeBetaServerEventResponseContentPartAdded(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -114,7 +114,7 @@ RealtimeBetaServerEventResponseContentPartAdded copyWith({String? eventId, Realt
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   $part: $part ?? this.$part,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseContentPartAdded &&
           eventId == other.eventId &&
@@ -129,4 +129,4 @@ RealtimeBetaServerEventResponseContentPartAdded copyWith({String? eventId, Realt
 
 @override String toString() => 'RealtimeBetaServerEventResponseContentPartAdded(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part})';
 
- }
+}

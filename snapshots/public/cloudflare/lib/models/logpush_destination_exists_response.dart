@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LogpushDestinationExistsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_exists_response/logpush_destination_exists_response_result.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class LogpushDestinationExistsResponse {const LogpushDestinationExistsResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_exists_response/logpush_destination_exists_response_result.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class LogpushDestinationExistsResponse {const LogpushDestinationExistsResponse({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory LogpushDestinationExistsResponse.fromJson(Map<String, dynamic> json) { return LogpushDestinationExistsResponse(
+factory LogpushDestinationExistsResponse.fromJson(Map<String, dynamic> json) {return LogpushDestinationExistsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? LogpushDestinationExistsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+  result: json.containsKey('result') ? Omittable(json['result'] != null ? LogpushDestinationExistsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 final List<LogpushMessages2> errors;
 
@@ -19,23 +19,23 @@ final List<LogpushMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final LogpushDestinationExistsResponseResult? result;
+final Omittable<LogpushDestinationExistsResponseResult?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+  if (result.isPresent) 'result': result.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-LogpushDestinationExistsResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, LogpushDestinationExistsResponseResult? Function()? result, }) { return LogpushDestinationExistsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+LogpushDestinationExistsResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, Omittable<LogpushDestinationExistsResponseResult?>? result, }) {return LogpushDestinationExistsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result != null ? result() : this.result,
-); } 
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushDestinationExistsResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ LogpushDestinationExistsResponse copyWith({List<LogpushMessages2>? errors, List<
 
 @override String toString() => 'LogpushDestinationExistsResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

@@ -11,12 +11,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeClientEventConversationItemCreate {const RealtimeClientEventConversationItemCreate({required this.type, required this.item, this.eventId, this.previousItemId, });
 
-factory RealtimeClientEventConversationItemCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemCreate(
+factory RealtimeClientEventConversationItemCreate.fromJson(Map<String, dynamic> json) {return RealtimeClientEventConversationItemCreate(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   previousItemId: json['previous_item_id'] as String?,
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -34,27 +34,27 @@ final String? previousItemId;
 
 final RealtimeConversationItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'previous_item_id': ?previousItemId,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('item'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('item');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventConversationItemCreate copyWith({String? Function()? eventId, String? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeClientEventConversationItemCreate(
+return errors;}
+RealtimeClientEventConversationItemCreate copyWith({String? Function()? eventId, String? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) {return RealtimeClientEventConversationItemCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
   item: item ?? this.item,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventConversationItemCreate &&
           eventId == other.eventId &&
@@ -66,4 +66,4 @@ RealtimeClientEventConversationItemCreate copyWith({String? Function()? eventId,
 
 @override String toString() => 'RealtimeClientEventConversationItemCreate(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';
 
- }
+}

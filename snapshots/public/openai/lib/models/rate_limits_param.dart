@@ -4,27 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls request rate limits for the session.
 @immutable final class RateLimitsParam {const RateLimitsParam({this.maxRequestsPer1Minute});
 
-factory RateLimitsParam.fromJson(Map<String, dynamic> json) { return RateLimitsParam(
+factory RateLimitsParam.fromJson(Map<String, dynamic> json) {return RateLimitsParam(
   maxRequestsPer1Minute: json['max_requests_per_1_minute'] != null ? (json['max_requests_per_1_minute'] as num).toInt() : null,
-); }
+);}
 
 /// Maximum number of requests allowed per minute for the session. Defaults to 10.
 final int? maxRequestsPer1Minute;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_requests_per_1_minute': ?maxRequestsPer1Minute,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_requests_per_1_minute'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'max_requests_per_1_minute'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final maxRequestsPer1Minute$ = maxRequestsPer1Minute;
 if (maxRequestsPer1Minute$ != null) {
   if (maxRequestsPer1Minute$ < 1) { errors.add('maxRequestsPer1Minute: must be >= 1'); }
 }
-return errors; } 
-RateLimitsParam copyWith({int? Function()? maxRequestsPer1Minute}) { return RateLimitsParam(
+return errors;}
+RateLimitsParam copyWith({int? Function()? maxRequestsPer1Minute}) {return RateLimitsParam(
   maxRequestsPer1Minute: maxRequestsPer1Minute != null ? maxRequestsPer1Minute() : this.maxRequestsPer1Minute,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimitsParam &&
           maxRequestsPer1Minute == other.maxRequestsPer1Minute;
@@ -33,4 +33,4 @@ RateLimitsParam copyWith({int? Function()? maxRequestsPer1Minute}) { return Rate
 
 @override String toString() => 'RateLimitsParam(maxRequestsPer1Minute: $maxRequestsPer1Minute)';
 
- }
+}

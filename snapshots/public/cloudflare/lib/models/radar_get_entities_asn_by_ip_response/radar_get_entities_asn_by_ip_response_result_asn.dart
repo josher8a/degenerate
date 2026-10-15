@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/asn_related.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/estimated_users.dart';@immutable final class RadarGetEntitiesAsnByIpResponseResultAsn {const RadarGetEntitiesAsnByIpResponseResultAsn({required this.asn, required this.country, required this.countryName, required this.estimatedUsers, required this.name, required this.orgName, required this.related, required this.source, required this.website, this.aka, });
 
-factory RadarGetEntitiesAsnByIpResponseResultAsn.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIpResponseResultAsn(
+factory RadarGetEntitiesAsnByIpResponseResultAsn.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesAsnByIpResponseResultAsn(
   aka: json['aka'] as String?,
   asn: (json['asn'] as num).toInt(),
   country: json['country'] as String,
@@ -14,7 +14,7 @@ factory RadarGetEntitiesAsnByIpResponseResultAsn.fromJson(Map<String, dynamic> j
   related: (json['related'] as List<dynamic>).map((e) => AsnRelated.fromJson(e as Map<String, dynamic>)).toList(),
   source: json['source'] as String,
   website: json['website'] as String,
-); }
+);}
 
 final String? aka;
 
@@ -44,7 +44,7 @@ final String source;
 /// Example: `'https://www.apple.com/support/systemstatus/'`
 final String website;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aka': ?aka,
   'asn': asn,
   'country': country,
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'related': related.map((e) => e.toJson()).toList(),
   'source': source,
   'website': website,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('countryName') && json['countryName'] is String &&
       json.containsKey('estimatedUsers') &&
@@ -64,8 +64,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('orgName') && json['orgName'] is String &&
       json.containsKey('related') &&
       json.containsKey('source') && json['source'] is String &&
-      json.containsKey('website') && json['website'] is String; } 
-RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int? asn, String? country, String? countryName, EstimatedUsers? estimatedUsers, String? name, String? orgName, List<AsnRelated>? related, String? source, String? website, }) { return RadarGetEntitiesAsnByIpResponseResultAsn(
+      json.containsKey('website') && json['website'] is String;}
+RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int? asn, String? country, String? countryName, EstimatedUsers? estimatedUsers, String? name, String? orgName, List<AsnRelated>? related, String? source, String? website, }) {return RadarGetEntitiesAsnByIpResponseResultAsn(
   aka: aka != null ? aka() : this.aka,
   asn: asn ?? this.asn,
   country: country ?? this.country,
@@ -76,7 +76,7 @@ RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int?
   related: related ?? this.related,
   source: source ?? this.source,
   website: website ?? this.website,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesAsnByIpResponseResultAsn &&
           aka == other.aka &&
@@ -94,4 +94,4 @@ RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int?
 
 @override String toString() => 'RadarGetEntitiesAsnByIpResponseResultAsn(\n  aka: $aka,\n  asn: $asn,\n  country: $country,\n  countryName: $countryName,\n  estimatedUsers: $estimatedUsers,\n  name: $name,\n  orgName: $orgName,\n  related: $related,\n  source: $source,\n  website: $website,\n)';
 
- }
+}

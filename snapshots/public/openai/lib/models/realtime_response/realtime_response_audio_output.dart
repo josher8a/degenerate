@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeResponse (inline: Audio > Output)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/pcm_audio_format.dart';import 'package:pub_openai/models/pcma_audio_format.dart';import 'package:pub_openai/models/pcmu_audio_format.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_shared.dart';@immutable final class RealtimeResponseAudioOutput {const RealtimeResponseAudioOutput({this.format, this.voice, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_shared.dart';@immutable final class RealtimeResponseAudioOutput {const RealtimeResponseAudioOutput({this.format, this.voice, });
 
-factory RealtimeResponseAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeResponseAudioOutput(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => PcmAudioFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => PcmuAudioFormat.fromJson(v as Map<String, dynamic>), fromC: (v) => PcmaAudioFormat.fromJson(v as Map<String, dynamic>),) : null,
-  voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
-); }
+factory RealtimeResponseAudioOutput.fromJson(Map<String, dynamic> json) {return RealtimeResponseAudioOutput(
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
+);}
 
 /// The format of the output audio.
 final RealtimeAudioFormats? format;
@@ -19,15 +19,15 @@ final RealtimeAudioFormats? format;
 /// 
 final VoiceIdsShared? voice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice'}.contains(key)); } 
-RealtimeResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, }) { return RealtimeResponseAudioOutput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'voice'}.contains(key));}
+RealtimeResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, }) {return RealtimeResponseAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeResponseAudioOutput &&
           format == other.format &&
@@ -37,4 +37,4 @@ RealtimeResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, 
 
 @override String toString() => 'RealtimeResponseAudioOutput(format: $format, voice: $voice)';
 
- }
+}

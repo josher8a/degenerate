@@ -6,37 +6,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId();
 
-factory ZonesExplicitCacheControlId.fromJson(String json) { return switch (json) {
+factory ZonesExplicitCacheControlId.fromJson(String json) {return switch (json) {
   'explicit_cache_control' => explicitCacheControl,
   _ => ZonesExplicitCacheControlId$Unknown(json),
-}; }
+};}
 
 static const ZonesExplicitCacheControlId explicitCacheControl = ZonesExplicitCacheControlId$explicitCacheControl._();
 
 static const List<ZonesExplicitCacheControlId> values = [explicitCacheControl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'explicit_cache_control' => 'explicitCacheControl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesExplicitCacheControlId$Unknown; } 
+bool get isUnknown {return this is ZonesExplicitCacheControlId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() explicitCacheControl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() explicitCacheControl, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesExplicitCacheControlId$explicitCacheControl() => explicitCacheControl(),
       ZonesExplicitCacheControlId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? explicitCacheControl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? explicitCacheControl, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesExplicitCacheControlId$explicitCacheControl() => explicitCacheControl != null ? explicitCacheControl() : orElse(value),
       ZonesExplicitCacheControlId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesExplicitCacheControlId($value)';
 
- }
+}
 @immutable final class ZonesExplicitCacheControlId$explicitCacheControl extends ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId$explicitCacheControl._();
 
 @override String get value => 'explicit_cache_control';
@@ -45,7 +45,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? explicit
 
 @override int get hashCode => 'explicit_cache_control'.hashCode;
 
- }
+}
 @immutable final class ZonesExplicitCacheControlId$Unknown extends ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId$Unknown(this.value);
 
 @override final String value;
@@ -55,13 +55,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? explicit
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesExplicitCacheControl {const ZonesExplicitCacheControl({this.id, this.value, });
 
-factory ZonesExplicitCacheControl.fromJson(Map<String, dynamic> json) { return ZonesExplicitCacheControl(
+factory ZonesExplicitCacheControl.fromJson(Map<String, dynamic> json) {return ZonesExplicitCacheControl(
   id: json['id'] != null ? ZonesExplicitCacheControlId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Origin Cache Control is enabled by default for Free, Pro, and
 /// Business domains and disabled by default for Enterprise domains.
@@ -74,15 +74,15 @@ final ZonesExplicitCacheControlId? id;
 /// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesExplicitCacheControl copyWith({ZonesExplicitCacheControlId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesExplicitCacheControl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesExplicitCacheControl copyWith({ZonesExplicitCacheControlId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) {return ZonesExplicitCacheControl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesExplicitCacheControl &&
           id == other.id &&
@@ -92,4 +92,4 @@ ZonesExplicitCacheControl copyWith({ZonesExplicitCacheControlId? Function()? id,
 
 @override String toString() => 'ZonesExplicitCacheControl(id: $id, value: $value)';
 
- }
+}

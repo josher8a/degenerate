@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_delete_file_request/repos_delete_file_request_author.dart';import 'package:pub_github_rest_3_1/models/repos_delete_file_request/repos_delete_file_request_committer.dart';@immutable final class ReposDeleteFileRequest {const ReposDeleteFileRequest({required this.message, required this.sha, this.branch, this.committer, this.author, });
 
-factory ReposDeleteFileRequest.fromJson(Map<String, dynamic> json) { return ReposDeleteFileRequest(
+factory ReposDeleteFileRequest.fromJson(Map<String, dynamic> json) {return ReposDeleteFileRequest(
   message: json['message'] as String,
   sha: json['sha'] as String,
   branch: json['branch'] as String?,
   committer: json['committer'] != null ? ReposDeleteFileRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
   author: json['author'] != null ? ReposDeleteFileRequestAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The commit message.
 final String message;
@@ -26,22 +26,22 @@ final ReposDeleteFileRequestCommitter? committer;
 /// object containing information about the author.
 final ReposDeleteFileRequestAuthor? author;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
   'sha': sha,
   'branch': ?branch,
   if (committer != null) 'committer': committer?.toJson(),
   if (author != null) 'author': author?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
-      json.containsKey('sha') && json['sha'] is String; } 
-ReposDeleteFileRequest copyWith({String? message, String? sha, String? Function()? branch, ReposDeleteFileRequestCommitter? Function()? committer, ReposDeleteFileRequestAuthor? Function()? author, }) { return ReposDeleteFileRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('sha') && json['sha'] is String;}
+ReposDeleteFileRequest copyWith({String? message, String? sha, String? Function()? branch, ReposDeleteFileRequestCommitter? Function()? committer, ReposDeleteFileRequestAuthor? Function()? author, }) {return ReposDeleteFileRequest(
   message: message ?? this.message,
   sha: sha ?? this.sha,
   branch: branch != null ? branch() : this.branch,
   committer: committer != null ? committer() : this.committer,
   author: author != null ? author() : this.author,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposDeleteFileRequest &&
           message == other.message &&
@@ -54,4 +54,4 @@ ReposDeleteFileRequest copyWith({String? message, String? sha, String? Function(
 
 @override String toString() => 'ReposDeleteFileRequest(message: $message, sha: $sha, branch: $branch, committer: $committer, author: $author)';
 
- }
+}

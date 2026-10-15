@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2SlurperCreateJobRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_gcs_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_target_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_source_job_schema.dart';@immutable final class R2SlurperCreateJobRequest {const R2SlurperCreateJobRequest({this.overwrite = true, this.source, this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_gcs_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_target_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_source_job_schema.dart';@immutable final class R2SlurperCreateJobRequest {const R2SlurperCreateJobRequest({this.overwrite, this.source, this.target, });
 
-factory R2SlurperCreateJobRequest.fromJson(Map<String, dynamic> json) { return R2SlurperCreateJobRequest(
-  overwrite: json.containsKey('overwrite') ? json['overwrite'] as bool : true,
+factory R2SlurperCreateJobRequest.fromJson(Map<String, dynamic> json) {return R2SlurperCreateJobRequest(
+  overwrite: json['overwrite'] as bool?,
   source: json['source'] != null ? switch (json['source']) {
   final Map<String, dynamic> m when m['vendor'] == 's3' => OneOf3<R2SlurperS3SourceSchema, R2SlurperGcsSourceSchema, R2SlurperR2SourceSchema>.a(R2SlurperS3SourceSchema.fromJson(m)),
   final Map<String, dynamic> m when m['vendor'] == 'gcs' => OneOf3<R2SlurperS3SourceSchema, R2SlurperGcsSourceSchema, R2SlurperR2SourceSchema>.b(R2SlurperGcsSourceSchema.fromJson(m)),
@@ -12,25 +12,28 @@ factory R2SlurperCreateJobRequest.fromJson(Map<String, dynamic> json) { return R
   _ => OneOf3.parse(json['source'], fromA: (v) => R2SlurperS3SourceSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => R2SlurperGcsSourceSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SlurperR2SourceSchema.fromJson(v as Map<String, dynamic>),),
 } : null,
   target: json['target'] != null ? R2SlurperR2TargetSchema.fromJson(json['target'] as Map<String, dynamic>) : null,
-); }
+);}
 
-final bool overwrite;
+final bool? overwrite;
 
 final R2SlurperSourceJobSchema? source;
 
 final R2SlurperR2TargetSchema? target;
 
-Map<String, dynamic> toJson() { return {
-  'overwrite': overwrite,
+/// The value of `overwrite`, or its schema default when absent.
+bool get overwriteOrDefault => overwrite ?? true;
+
+Map<String, dynamic> toJson() {return {
+  'overwrite': ?overwrite,
   if (source != null) 'source': source?.toJson(),
   if (target != null) 'target': target?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'overwrite', 'source', 'target'}.contains(key)); } 
-R2SlurperCreateJobRequest copyWith({bool Function()? overwrite, R2SlurperSourceJobSchema? Function()? source, R2SlurperR2TargetSchema? Function()? target, }) { return R2SlurperCreateJobRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'overwrite', 'source', 'target'}.contains(key));}
+R2SlurperCreateJobRequest copyWith({bool? Function()? overwrite, R2SlurperSourceJobSchema? Function()? source, R2SlurperR2TargetSchema? Function()? target, }) {return R2SlurperCreateJobRequest(
   overwrite: overwrite != null ? overwrite() : this.overwrite,
   source: source != null ? source() : this.source,
   target: target != null ? target() : this.target,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperCreateJobRequest &&
           overwrite == other.overwrite &&
@@ -41,4 +44,4 @@ R2SlurperCreateJobRequest copyWith({bool Function()? overwrite, R2SlurperSourceJ
 
 @override String toString() => 'R2SlurperCreateJobRequest(overwrite: $overwrite, source: $source, target: $target)';
 
- }
+}

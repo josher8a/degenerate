@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
 sealed class ItemType {const ItemType();
 
-factory ItemType.fromJson(String json) { return switch (json) {
+factory ItemType.fromJson(String json) {return switch (json) {
   'card_bin' => cardBin,
   'card_fingerprint' => cardFingerprint,
   'case_sensitive_string' => caseSensitiveString,
@@ -16,7 +16,7 @@ factory ItemType.fromJson(String json) { return switch (json) {
   'string' => string,
   'us_bank_account_fingerprint' => usBankAccountFingerprint,
   _ => ItemType$Unknown(json),
-}; }
+};}
 
 static const ItemType cardBin = ItemType$cardBin._();
 
@@ -41,9 +41,9 @@ static const ItemType usBankAccountFingerprint = ItemType$usBankAccountFingerpri
 static const List<ItemType> values = [cardBin, cardFingerprint, caseSensitiveString, country, customerId, email, ipAddress, sepaDebitFingerprint, string, usBankAccountFingerprint];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'card_bin' => 'cardBin',
   'card_fingerprint' => 'cardFingerprint',
   'case_sensitive_string' => 'caseSensitiveString',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'string' => 'string',
   'us_bank_account_fingerprint' => 'usBankAccountFingerprint',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ItemType$Unknown; } 
+bool get isUnknown {return this is ItemType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cardBin, required W Function() cardFingerprint, required W Function() caseSensitiveString, required W Function() country, required W Function() customerId, required W Function() email, required W Function() ipAddress, required W Function() sepaDebitFingerprint, required W Function() string, required W Function() usBankAccountFingerprint, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cardBin, required W Function() cardFingerprint, required W Function() caseSensitiveString, required W Function() country, required W Function() customerId, required W Function() email, required W Function() ipAddress, required W Function() sepaDebitFingerprint, required W Function() string, required W Function() usBankAccountFingerprint, required W Function(String value) $unknown, }) {return switch (this) {
       ItemType$cardBin() => cardBin(),
       ItemType$cardFingerprint() => cardFingerprint(),
       ItemType$caseSensitiveString() => caseSensitiveString(),
@@ -71,9 +71,9 @@ W when<W>({required W Function() cardBin, required W Function() cardFingerprint,
       ItemType$string() => string(),
       ItemType$usBankAccountFingerprint() => usBankAccountFingerprint(),
       ItemType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin, W Function()? cardFingerprint, W Function()? caseSensitiveString, W Function()? country, W Function()? customerId, W Function()? email, W Function()? ipAddress, W Function()? sepaDebitFingerprint, W Function()? string, W Function()? usBankAccountFingerprint, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin, W Function()? cardFingerprint, W Function()? caseSensitiveString, W Function()? country, W Function()? customerId, W Function()? email, W Function()? ipAddress, W Function()? sepaDebitFingerprint, W Function()? string, W Function()? usBankAccountFingerprint, W Function(String value)? $unknown, }) {return switch (this) {
       ItemType$cardBin() => cardBin != null ? cardBin() : orElse(value),
       ItemType$cardFingerprint() => cardFingerprint != null ? cardFingerprint() : orElse(value),
       ItemType$caseSensitiveString() => caseSensitiveString != null ? caseSensitiveString() : orElse(value),
@@ -85,10 +85,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
       ItemType$string() => string != null ? string() : orElse(value),
       ItemType$usBankAccountFingerprint() => usBankAccountFingerprint != null ? usBankAccountFingerprint() : orElse(value),
       ItemType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ItemType($value)';
 
- }
+}
 @immutable final class ItemType$cardBin extends ItemType {const ItemType$cardBin._();
 
 @override String get value => 'card_bin';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'card_bin'.hashCode;
 
- }
+}
 @immutable final class ItemType$cardFingerprint extends ItemType {const ItemType$cardFingerprint._();
 
 @override String get value => 'card_fingerprint';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'card_fingerprint'.hashCode;
 
- }
+}
 @immutable final class ItemType$caseSensitiveString extends ItemType {const ItemType$caseSensitiveString._();
 
 @override String get value => 'case_sensitive_string';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'case_sensitive_string'.hashCode;
 
- }
+}
 @immutable final class ItemType$country extends ItemType {const ItemType$country._();
 
 @override String get value => 'country';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'country'.hashCode;
 
- }
+}
 @immutable final class ItemType$customerId extends ItemType {const ItemType$customerId._();
 
 @override String get value => 'customer_id';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'customer_id'.hashCode;
 
- }
+}
 @immutable final class ItemType$email extends ItemType {const ItemType$email._();
 
 @override String get value => 'email';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'email'.hashCode;
 
- }
+}
 @immutable final class ItemType$ipAddress extends ItemType {const ItemType$ipAddress._();
 
 @override String get value => 'ip_address';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'ip_address'.hashCode;
 
- }
+}
 @immutable final class ItemType$sepaDebitFingerprint extends ItemType {const ItemType$sepaDebitFingerprint._();
 
 @override String get value => 'sepa_debit_fingerprint';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'sepa_debit_fingerprint'.hashCode;
 
- }
+}
 @immutable final class ItemType$string extends ItemType {const ItemType$string._();
 
 @override String get value => 'string';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'string'.hashCode;
 
- }
+}
 @immutable final class ItemType$usBankAccountFingerprint extends ItemType {const ItemType$usBankAccountFingerprint._();
 
 @override String get value => 'us_bank_account_fingerprint';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => 'us_bank_account_fingerprint'.hashCode;
 
- }
+}
 @immutable final class ItemType$Unknown extends ItemType {const ItemType$Unknown(this.value);
 
 @override final String value;
@@ -188,4 +188,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

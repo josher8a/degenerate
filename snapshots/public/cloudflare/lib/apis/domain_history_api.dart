@@ -14,7 +14,7 @@ final class DomainHistoryApi with ApiExecutor {const DomainHistoryApi(this.apiCo
 /// Gets historical security threat and content categories currently and previously assigned to a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain-history`
-Future<ApiResult<List<IntelDomainHistory>?, DomainHistoryGetDomainHistoryError>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelDomainHistory>, DomainHistoryGetDomainHistoryError>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -31,13 +31,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => IntelDomainHistory.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => IntelDomainHistory.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DomainHistoryGetDomainHistoryError.fromResponse,
 );
- } 
- }
+}
+}

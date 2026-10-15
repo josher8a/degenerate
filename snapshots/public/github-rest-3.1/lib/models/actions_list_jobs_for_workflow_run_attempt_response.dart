@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/job.dart';@immutable final class ActionsListJobsForWorkflowRunAttemptResponse {const ActionsListJobsForWorkflowRunAttemptResponse({required this.totalCount, required this.jobs, });
 
-factory ActionsListJobsForWorkflowRunAttemptResponse.fromJson(Map<String, dynamic> json) { return ActionsListJobsForWorkflowRunAttemptResponse(
+factory ActionsListJobsForWorkflowRunAttemptResponse.fromJson(Map<String, dynamic> json) {return ActionsListJobsForWorkflowRunAttemptResponse(
   totalCount: (json['total_count'] as num).toInt(),
   jobs: (json['jobs'] as List<dynamic>).map((e) => Job.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<Job> jobs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'jobs': jobs.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('jobs'); } 
-ActionsListJobsForWorkflowRunAttemptResponse copyWith({int? totalCount, List<Job>? jobs, }) { return ActionsListJobsForWorkflowRunAttemptResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('jobs');}
+ActionsListJobsForWorkflowRunAttemptResponse copyWith({int? totalCount, List<Job>? jobs, }) {return ActionsListJobsForWorkflowRunAttemptResponse(
   totalCount: totalCount ?? this.totalCount,
   jobs: jobs ?? this.jobs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListJobsForWorkflowRunAttemptResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListJobsForWorkflowRunAttemptResponse copyWith({int? totalCount, List<Job
 
 @override String toString() => 'ActionsListJobsForWorkflowRunAttemptResponse(totalCount: $totalCount, jobs: $jobs)';
 
- }
+}

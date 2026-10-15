@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
 sealed class GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode();
 
-factory GelatoDocumentReportErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoDocumentReportErrorCode.fromJson(String json) {return switch (json) {
   'document_expired' => documentExpired,
   'document_type_not_supported' => documentTypeNotSupported,
   'document_unverified_other' => documentUnverifiedOther,
   _ => GelatoDocumentReportErrorCode$Unknown(json),
-}; }
+};}
 
 static const GelatoDocumentReportErrorCode documentExpired = GelatoDocumentReportErrorCode$documentExpired._();
 
@@ -20,33 +20,33 @@ static const GelatoDocumentReportErrorCode documentUnverifiedOther = GelatoDocum
 static const List<GelatoDocumentReportErrorCode> values = [documentExpired, documentTypeNotSupported, documentUnverifiedOther];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'document_expired' => 'documentExpired',
   'document_type_not_supported' => 'documentTypeNotSupported',
   'document_unverified_other' => 'documentUnverifiedOther',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GelatoDocumentReportErrorCode$Unknown; } 
+bool get isUnknown {return this is GelatoDocumentReportErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() documentExpired, required W Function() documentTypeNotSupported, required W Function() documentUnverifiedOther, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() documentExpired, required W Function() documentTypeNotSupported, required W Function() documentUnverifiedOther, required W Function(String value) $unknown, }) {return switch (this) {
       GelatoDocumentReportErrorCode$documentExpired() => documentExpired(),
       GelatoDocumentReportErrorCode$documentTypeNotSupported() => documentTypeNotSupported(),
       GelatoDocumentReportErrorCode$documentUnverifiedOther() => documentUnverifiedOther(),
       GelatoDocumentReportErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? documentExpired, W Function()? documentTypeNotSupported, W Function()? documentUnverifiedOther, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? documentExpired, W Function()? documentTypeNotSupported, W Function()? documentUnverifiedOther, W Function(String value)? $unknown, }) {return switch (this) {
       GelatoDocumentReportErrorCode$documentExpired() => documentExpired != null ? documentExpired() : orElse(value),
       GelatoDocumentReportErrorCode$documentTypeNotSupported() => documentTypeNotSupported != null ? documentTypeNotSupported() : orElse(value),
       GelatoDocumentReportErrorCode$documentUnverifiedOther() => documentUnverifiedOther != null ? documentUnverifiedOther() : orElse(value),
       GelatoDocumentReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GelatoDocumentReportErrorCode($value)';
 
- }
+}
 @immutable final class GelatoDocumentReportErrorCode$documentExpired extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$documentExpired._();
 
 @override String get value => 'document_expired';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'document_expired'.hashCode;
 
- }
+}
 @immutable final class GelatoDocumentReportErrorCode$documentTypeNotSupported extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$documentTypeNotSupported._();
 
 @override String get value => 'document_type_not_supported';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'document_type_not_supported'.hashCode;
 
- }
+}
 @immutable final class GelatoDocumentReportErrorCode$documentUnverifiedOther extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$documentUnverifiedOther._();
 
 @override String get value => 'document_unverified_other';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'document_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoDocumentReportErrorCode$Unknown extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -83,37 +83,37 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class GelatoDocumentReportError {const GelatoDocumentReportError({this.code, this.reason, });
+@immutable final class GelatoDocumentReportError {const GelatoDocumentReportError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoDocumentReportError.fromJson(Map<String, dynamic> json) { return GelatoDocumentReportError(
-  code: json['code'] != null ? GelatoDocumentReportErrorCode.fromJson(json['code'] as String) : null,
-  reason: json['reason'] as String?,
-); }
+factory GelatoDocumentReportError.fromJson(Map<String, dynamic> json) {return GelatoDocumentReportError(
+  code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoDocumentReportErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
+);}
 
 /// A short machine-readable string giving the reason for the verification failure.
-final GelatoDocumentReportErrorCode? code;
+final Omittable<GelatoDocumentReportErrorCode?> code;
 
 /// A human-readable message giving the reason for the failure. These messages can be shown to your users.
-final String? reason;
+final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
-  if (code != null) 'code': code?.toJson(),
-  'reason': ?reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (code.isPresent) 'code': code.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final reason$ = reason;
+List<String> validate() {final errors = <String>[];
+final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 }
-return errors; } 
-GelatoDocumentReportError copyWith({GelatoDocumentReportErrorCode? Function()? code, String? Function()? reason, }) { return GelatoDocumentReportError(
-  code: code != null ? code() : this.code,
-  reason: reason != null ? reason() : this.reason,
-); } 
+return errors;}
+GelatoDocumentReportError copyWith({Omittable<GelatoDocumentReportErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoDocumentReportError(
+  code: code ?? this.code,
+  reason: reason ?? this.reason,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoDocumentReportError &&
           code == other.code &&
@@ -123,4 +123,4 @@ GelatoDocumentReportError copyWith({GelatoDocumentReportErrorCode? Function()? c
 
 @override String toString() => 'GelatoDocumentReportError(code: $code, reason: $reason)';
 
- }
+}

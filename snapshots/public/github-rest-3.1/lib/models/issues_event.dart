@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/label.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class IssuesEvent {const IssuesEvent({required this.action, required this.issue, this.assignee, this.assignees, this.label, this.labels, });
 
-factory IssuesEvent.fromJson(Map<String, dynamic> json) { return IssuesEvent(
+factory IssuesEvent.fromJson(Map<String, dynamic> json) {return IssuesEvent(
   action: json['action'] as String,
   issue: Issue.fromJson(json['issue'] as Map<String, dynamic>),
   assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   label: json['label'] != null ? Label.fromJson(json['label'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String action;
 
@@ -24,24 +24,24 @@ final Label? label;
 
 final List<Label>? labels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'issue': issue.toJson(),
   if (assignee != null) 'assignee': assignee?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   if (label != null) 'label': label?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
-      json.containsKey('issue'); } 
-IssuesEvent copyWith({String? action, Issue? issue, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Label? Function()? label, List<Label>? Function()? labels, }) { return IssuesEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('issue');}
+IssuesEvent copyWith({String? action, Issue? issue, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Label? Function()? label, List<Label>? Function()? labels, }) {return IssuesEvent(
   action: action ?? this.action,
   issue: issue ?? this.issue,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees != null ? assignees() : this.assignees,
   label: label != null ? label() : this.label,
   labels: labels != null ? labels() : this.labels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesEvent &&
           action == other.action &&
@@ -55,4 +55,4 @@ IssuesEvent copyWith({String? action, Issue? issue, SimpleUser? Function()? assi
 
 @override String toString() => 'IssuesEvent(action: $action, issue: $issue, assignee: $assignee, assignees: $assignees, label: $label, labels: $labels)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_outcome.dart';import 'package:pub_cloudflare/models/builds_build_response/builds_build_response_trigger.dart';import 'package:pub_cloudflare/models/builds_build_response/pull_request.dart';import 'package:pub_cloudflare/models/builds_build_trigger_metadata_response.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_stopped_on.dart';sealed class BuildsBuildStatus {const BuildsBuildStatus();
 
-factory BuildsBuildStatus.fromJson(String json) { return switch (json) {
+factory BuildsBuildStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'initializing' => initializing,
   'running' => running,
   'stopped' => stopped,
   _ => BuildsBuildStatus$Unknown(json),
-}; }
+};}
 
 static const BuildsBuildStatus queued = BuildsBuildStatus$queued._();
 
@@ -22,36 +22,36 @@ static const BuildsBuildStatus stopped = BuildsBuildStatus$stopped._();
 static const List<BuildsBuildStatus> values = [queued, initializing, running, stopped];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'initializing' => 'initializing',
   'running' => 'running',
   'stopped' => 'stopped',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BuildsBuildStatus$Unknown; } 
+bool get isUnknown {return this is BuildsBuildStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() initializing, required W Function() running, required W Function() stopped, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() initializing, required W Function() running, required W Function() stopped, required W Function(String value) $unknown, }) {return switch (this) {
       BuildsBuildStatus$queued() => queued(),
       BuildsBuildStatus$initializing() => initializing(),
       BuildsBuildStatus$running() => running(),
       BuildsBuildStatus$stopped() => stopped(),
       BuildsBuildStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? initializing, W Function()? running, W Function()? stopped, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? initializing, W Function()? running, W Function()? stopped, W Function(String value)? $unknown, }) {return switch (this) {
       BuildsBuildStatus$queued() => queued != null ? queued() : orElse(value),
       BuildsBuildStatus$initializing() => initializing != null ? initializing() : orElse(value),
       BuildsBuildStatus$running() => running != null ? running() : orElse(value),
       BuildsBuildStatus$stopped() => stopped != null ? stopped() : orElse(value),
       BuildsBuildStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BuildsBuildStatus($value)';
 
- }
+}
 @immutable final class BuildsBuildStatus$queued extends BuildsBuildStatus {const BuildsBuildStatus$queued._();
 
 @override String get value => 'queued';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildStatus$initializing extends BuildsBuildStatus {const BuildsBuildStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildStatus$running extends BuildsBuildStatus {const BuildsBuildStatus$running._();
 
 @override String get value => 'running';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'running'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildStatus$stopped extends BuildsBuildStatus {const BuildsBuildStatus$stopped._();
 
 @override String get value => 'stopped';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'stopped'.hashCode;
 
- }
+}
 @immutable final class BuildsBuildStatus$Unknown extends BuildsBuildStatus {const BuildsBuildStatus$Unknown(this.value);
 
 @override final String value;
@@ -97,22 +97,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn, this.modifiedOn, this.pullRequest, this.runningOn, this.status, this.stoppedOn, this.trigger, });
+}
+@immutable final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn = const Omittable.absent(), this.modifiedOn, this.pullRequest = const Omittable.absent(), this.runningOn = const Omittable.absent(), this.status, this.stoppedOn = const Omittable.absent(), this.trigger, });
 
-factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildResponse(
+factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) {return BuildsBuildResponse(
   buildOutcome: json['build_outcome'] != null ? BuildsBuildOutcome.fromJson(json['build_outcome'] as String) : null,
   buildTriggerMetadata: json['build_trigger_metadata'] != null ? BuildsBuildTriggerMetadataResponse.fromJson(json['build_trigger_metadata'] as Map<String, dynamic>) : null,
   buildUuid: json['build_uuid'] != null ? BuildsBuildUuid.fromJson(json['build_uuid'] as String) : null,
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,
-  initializingOn: json['initializing_on'] != null ? DateTime.parse(json['initializing_on'] as String) : null,
+  initializingOn: json.containsKey('initializing_on') ? Omittable(json['initializing_on'] != null ? DateTime.parse(json['initializing_on'] as String) : null) : const Omittable.absent(),
   modifiedOn: json['modified_on'] != null ? BuildsModifiedOn.fromJson(json['modified_on'] as String) : null,
-  pullRequest: json['pull_request'] != null ? PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
-  runningOn: json['running_on'] != null ? DateTime.parse(json['running_on'] as String) : null,
+  pullRequest: json.containsKey('pull_request') ? Omittable(json['pull_request'] != null ? PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  runningOn: json.containsKey('running_on') ? Omittable(json['running_on'] != null ? DateTime.parse(json['running_on'] as String) : null) : const Omittable.absent(),
   status: json['status'] != null ? BuildsBuildStatus.fromJson(json['status'] as String) : null,
-  stoppedOn: json['stopped_on'] != null ? BuildsStoppedOn.fromJson(json['stopped_on'] as String) : null,
+  stoppedOn: json.containsKey('stopped_on') ? Omittable(json['stopped_on'] != null ? BuildsStoppedOn.fromJson(json['stopped_on'] as String) : null) : const Omittable.absent(),
   trigger: json['trigger'] != null ? BuildsBuildResponseTrigger.fromJson(json['trigger'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final BuildsBuildOutcome? buildOutcome;
 
@@ -122,48 +122,48 @@ final BuildsBuildUuid? buildUuid;
 
 final BuildsCreatedOn? createdOn;
 
-final DateTime? initializingOn;
+final Omittable<DateTime?> initializingOn;
 
 final BuildsModifiedOn? modifiedOn;
 
-final PullRequest? pullRequest;
+final Omittable<PullRequest?> pullRequest;
 
-final DateTime? runningOn;
+final Omittable<DateTime?> runningOn;
 
 final BuildsBuildStatus? status;
 
-final BuildsStoppedOn? stoppedOn;
+final Omittable<BuildsStoppedOn?> stoppedOn;
 
 /// Trigger information without build_token_uuid
 final BuildsBuildResponseTrigger? trigger;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buildOutcome != null) 'build_outcome': buildOutcome?.toJson(),
   if (buildTriggerMetadata != null) 'build_trigger_metadata': buildTriggerMetadata?.toJson(),
   if (buildUuid != null) 'build_uuid': buildUuid?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
-  if (initializingOn != null) 'initializing_on': initializingOn?.toIso8601String(),
+  if (initializingOn.isPresent) 'initializing_on': initializingOn.value?.toIso8601String(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
-  if (pullRequest != null) 'pull_request': pullRequest?.toJson(),
-  if (runningOn != null) 'running_on': runningOn?.toIso8601String(),
+  if (pullRequest.isPresent) 'pull_request': pullRequest.value?.toJson(),
+  if (runningOn.isPresent) 'running_on': runningOn.value?.toIso8601String(),
   if (status != null) 'status': status?.toJson(),
-  if (stoppedOn != null) 'stopped_on': stoppedOn?.toJson(),
+  if (stoppedOn.isPresent) 'stopped_on': stoppedOn.value?.toJson(),
   if (trigger != null) 'trigger': trigger?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_outcome', 'build_trigger_metadata', 'build_uuid', 'created_on', 'initializing_on', 'modified_on', 'pull_request', 'running_on', 'status', 'stopped_on', 'trigger'}.contains(key)); } 
-BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildTriggerMetadataResponse? Function()? buildTriggerMetadata, BuildsBuildUuid? Function()? buildUuid, BuildsCreatedOn? Function()? createdOn, DateTime? Function()? initializingOn, BuildsModifiedOn? Function()? modifiedOn, PullRequest? Function()? pullRequest, DateTime? Function()? runningOn, BuildsBuildStatus? Function()? status, BuildsStoppedOn? Function()? stoppedOn, BuildsBuildResponseTrigger? Function()? trigger, }) { return BuildsBuildResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'build_outcome', 'build_trigger_metadata', 'build_uuid', 'created_on', 'initializing_on', 'modified_on', 'pull_request', 'running_on', 'status', 'stopped_on', 'trigger'}.contains(key));}
+BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildTriggerMetadataResponse? Function()? buildTriggerMetadata, BuildsBuildUuid? Function()? buildUuid, BuildsCreatedOn? Function()? createdOn, Omittable<DateTime?>? initializingOn, BuildsModifiedOn? Function()? modifiedOn, Omittable<PullRequest?>? pullRequest, Omittable<DateTime?>? runningOn, BuildsBuildStatus? Function()? status, Omittable<BuildsStoppedOn?>? stoppedOn, BuildsBuildResponseTrigger? Function()? trigger, }) {return BuildsBuildResponse(
   buildOutcome: buildOutcome != null ? buildOutcome() : this.buildOutcome,
   buildTriggerMetadata: buildTriggerMetadata != null ? buildTriggerMetadata() : this.buildTriggerMetadata,
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
-  initializingOn: initializingOn != null ? initializingOn() : this.initializingOn,
+  initializingOn: initializingOn ?? this.initializingOn,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
-  pullRequest: pullRequest != null ? pullRequest() : this.pullRequest,
-  runningOn: runningOn != null ? runningOn() : this.runningOn,
+  pullRequest: pullRequest ?? this.pullRequest,
+  runningOn: runningOn ?? this.runningOn,
   status: status != null ? status() : this.status,
-  stoppedOn: stoppedOn != null ? stoppedOn() : this.stoppedOn,
+  stoppedOn: stoppedOn ?? this.stoppedOn,
   trigger: trigger != null ? trigger() : this.trigger,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildResponse &&
           buildOutcome == other.buildOutcome &&
@@ -182,4 +182,4 @@ BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, Buil
 
 @override String toString() => 'BuildsBuildResponse(\n  buildOutcome: $buildOutcome,\n  buildTriggerMetadata: $buildTriggerMetadata,\n  buildUuid: $buildUuid,\n  createdOn: $createdOn,\n  initializingOn: $initializingOn,\n  modifiedOn: $modifiedOn,\n  pullRequest: $pullRequest,\n  runningOn: $runningOn,\n  status: $status,\n  stoppedOn: $stoppedOn,\n  trigger: $trigger,\n)';
 
- }
+}

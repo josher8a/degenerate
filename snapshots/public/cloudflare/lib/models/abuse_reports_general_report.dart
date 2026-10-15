@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_csam_report/abuse_reports_csam_report_host_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_general_report/abuse_reports_general_report_owner_notification.dart';@immutable final class AbuseReportsGeneralReport {const AbuseReportsGeneralReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.hostNotification, required this.justification, required this.ownerNotification, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, this.destinationIps, this.portsProtocols, this.sourceIps, });
 
-factory AbuseReportsGeneralReport.fromJson(Map<String, dynamic> json) { return AbuseReportsGeneralReport(
+factory AbuseReportsGeneralReport.fromJson(Map<String, dynamic> json) {return AbuseReportsGeneralReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -21,7 +21,7 @@ factory AbuseReportsGeneralReport.fromJson(Map<String, dynamic> json) { return A
   ownerNotification: AbuseReportsGeneralReportOwnerNotification.fromJson(json['owner_notification'] as String),
   portsProtocols: json['ports_protocols'] as String?,
   sourceIps: json['source_ips'] as String?,
-); }
+);}
 
 final dynamic act;
 
@@ -76,7 +76,7 @@ final String? portsProtocols;
 /// A list of IP addresses separated by ‘\n’ (new line character). The list of source IPs should not exceed 30 IP addresses. Each one of the IP addresses ought to be unique.
 final String? sourceIps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -94,17 +94,17 @@ Map<String, dynamic> toJson() { return {
   'owner_notification': ownerNotification.toJson(),
   'ports_protocols': ?portsProtocols,
   'source_ips': ?sourceIps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('urls') && json['urls'] is String &&
       json.containsKey('host_notification') &&
       json.containsKey('justification') && json['justification'] is String &&
-      json.containsKey('owner_notification'); } 
+      json.containsKey('owner_notification');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -139,8 +139,8 @@ if (title$ != null) {
 }
 if (justification.isEmpty) { errors.add('justification: length must be >= 1'); }
 if (justification.runes.length > 5000) { errors.add('justification: length must be <= 5000'); }
-return errors; } 
-AbuseReportsGeneralReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? destinationIps, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsGeneralReportOwnerNotification? ownerNotification, String? Function()? portsProtocols, String? Function()? sourceIps, }) { return AbuseReportsGeneralReport(
+return errors;}
+AbuseReportsGeneralReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? destinationIps, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsGeneralReportOwnerNotification? ownerNotification, String? Function()? portsProtocols, String? Function()? sourceIps, }) {return AbuseReportsGeneralReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -158,7 +158,7 @@ AbuseReportsGeneralReport copyWith({dynamic Function()? act, String? Function()?
   ownerNotification: ownerNotification ?? this.ownerNotification,
   portsProtocols: portsProtocols != null ? portsProtocols() : this.portsProtocols,
   sourceIps: sourceIps != null ? sourceIps() : this.sourceIps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsGeneralReport &&
           act == other.act &&
@@ -183,4 +183,4 @@ AbuseReportsGeneralReport copyWith({dynamic Function()? act, String? Function()?
 
 @override String toString() => 'AbuseReportsGeneralReport(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n  destinationIps: $destinationIps,\n  hostNotification: $hostNotification,\n  justification: $justification,\n  ownerNotification: $ownerNotification,\n  portsProtocols: $portsProtocols,\n  sourceIps: $sourceIps,\n)';
 
- }
+}

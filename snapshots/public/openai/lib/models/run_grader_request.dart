@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_reinforcement_method/grader.dart';import 'package:pub_openai/models/grader_multi.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';@immutable final class RunGraderRequest {const RunGraderRequest({required this.grader, required this.modelSample, this.item, });
 
-factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderRequest(
+factory RunGraderRequest.fromJson(Map<String, dynamic> json) {return RunGraderRequest(
   grader: switch (json['grader']) {
   final Map<String, dynamic> m when m['type'] == 'string_check' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderMulti>.a(GraderStringCheck.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'text_similarity' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderMulti>.b(GraderTextSimilarity.fromJson(m)),
@@ -14,7 +14,7 @@ factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderR
 },
   item: json['item'] as Map<String, dynamic>?,
   modelSample: json['model_sample'] as String,
-); }
+);}
 
 /// The grader used for the fine-tuning job.
 final Grader grader;
@@ -32,18 +32,18 @@ final Map<String,dynamic>? item;
 /// 
 final String modelSample;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'grader': grader.toJson(),
   'item': ?item,
   'model_sample': modelSample,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader') &&
-      json.containsKey('model_sample') && json['model_sample'] is String; } 
-RunGraderRequest copyWith({Grader? grader, Map<String, dynamic>? Function()? item, String? modelSample, }) { return RunGraderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('grader') &&
+      json.containsKey('model_sample') && json['model_sample'] is String;}
+RunGraderRequest copyWith({Grader? grader, Map<String, dynamic>? Function()? item, String? modelSample, }) {return RunGraderRequest(
   grader: grader ?? this.grader,
   item: item != null ? item() : this.item,
   modelSample: modelSample ?? this.modelSample,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunGraderRequest &&
           grader == other.grader &&
@@ -54,4 +54,4 @@ RunGraderRequest copyWith({Grader? grader, Map<String, dynamic>? Function()? ite
 
 @override String toString() => 'RunGraderRequest(grader: $grader, item: $item, modelSample: $modelSample)';
 
- }
+}

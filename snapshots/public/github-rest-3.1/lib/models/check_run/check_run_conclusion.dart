@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the job.
 sealed class CheckRunConclusion {const CheckRunConclusion();
 
-factory CheckRunConclusion.fromJson(String json) { return switch (json) {
+factory CheckRunConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -14,7 +14,7 @@ factory CheckRunConclusion.fromJson(String json) { return switch (json) {
   'action_required' => actionRequired,
   'null' => $null,
   _ => CheckRunConclusion$Unknown(json),
-}; }
+};}
 
 static const CheckRunConclusion success = CheckRunConclusion$success._();
 
@@ -35,9 +35,9 @@ static const CheckRunConclusion $null = CheckRunConclusion$$null._();
 static const List<CheckRunConclusion> values = [success, failure, neutral, cancelled, skipped, timedOut, actionRequired, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'success' => 'success',
   'failure' => 'failure',
   'neutral' => 'neutral',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'action_required' => 'actionRequired',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckRunConclusion$Unknown; } 
+bool get isUnknown {return this is CheckRunConclusion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() skipped, required W Function() timedOut, required W Function() actionRequired, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() skipped, required W Function() timedOut, required W Function() actionRequired, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       CheckRunConclusion$success() => success(),
       CheckRunConclusion$failure() => failure(),
       CheckRunConclusion$neutral() => neutral(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() success, required W Function() failure, require
       CheckRunConclusion$actionRequired() => actionRequired(),
       CheckRunConclusion$$null() => $null(),
       CheckRunConclusion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? skipped, W Function()? timedOut, W Function()? actionRequired, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? skipped, W Function()? timedOut, W Function()? actionRequired, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       CheckRunConclusion$success() => success != null ? success() : orElse(value),
       CheckRunConclusion$failure() => failure != null ? failure() : orElse(value),
       CheckRunConclusion$neutral() => neutral != null ? neutral() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
       CheckRunConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
       CheckRunConclusion$$null() => $null != null ? $null() : orElse(value),
       CheckRunConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckRunConclusion($value)';
 
- }
+}
 @immutable final class CheckRunConclusion$success extends CheckRunConclusion {const CheckRunConclusion$success._();
 
 @override String get value => 'success';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$failure extends CheckRunConclusion {const CheckRunConclusion$failure._();
 
 @override String get value => 'failure';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$neutral extends CheckRunConclusion {const CheckRunConclusion$neutral._();
 
 @override String get value => 'neutral';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'neutral'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$cancelled extends CheckRunConclusion {const CheckRunConclusion$cancelled._();
 
 @override String get value => 'cancelled';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$skipped extends CheckRunConclusion {const CheckRunConclusion$skipped._();
 
 @override String get value => 'skipped';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'skipped'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$timedOut extends CheckRunConclusion {const CheckRunConclusion$timedOut._();
 
 @override String get value => 'timed_out';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'timed_out'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$actionRequired extends CheckRunConclusion {const CheckRunConclusion$actionRequired._();
 
 @override String get value => 'action_required';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'action_required'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$$null extends CheckRunConclusion {const CheckRunConclusion$$null._();
 
 @override String get value => 'null';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class CheckRunConclusion$Unknown extends CheckRunConclusion {const CheckRunConclusion$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

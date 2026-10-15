@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/transform_quantity/round.dart';/// 
 @immutable final class TransformUsage {const TransformUsage({required this.divideBy, required this.round, });
 
-factory TransformUsage.fromJson(Map<String, dynamic> json) { return TransformUsage(
+factory TransformUsage.fromJson(Map<String, dynamic> json) {return TransformUsage(
   divideBy: (json['divide_by'] as num).toInt(),
   round: Round.fromJson(json['round'] as String),
-); }
+);}
 
 /// Divide usage by this number.
 final int divideBy;
@@ -15,16 +15,16 @@ final int divideBy;
 /// After division, either round the result `up` or `down`.
 final Round round;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'divide_by': divideBy,
   'round': round.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('divide_by') && json['divide_by'] is num &&
-      json.containsKey('round'); } 
-TransformUsage copyWith({int? divideBy, Round? round, }) { return TransformUsage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('divide_by') && json['divide_by'] is num &&
+      json.containsKey('round');}
+TransformUsage copyWith({int? divideBy, Round? round, }) {return TransformUsage(
   divideBy: divideBy ?? this.divideBy,
   round: round ?? this.round,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TransformUsage &&
           divideBy == other.divideBy &&
@@ -34,4 +34,4 @@ TransformUsage copyWith({int? divideBy, Round? round, }) { return TransformUsage
 
 @override String toString() => 'TransformUsage(divideBy: $divideBy, round: $round)';
 
- }
+}

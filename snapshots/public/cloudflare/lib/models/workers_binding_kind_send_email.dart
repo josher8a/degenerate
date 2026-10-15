@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindSendEmail {const WorkersBindingKindSendEmail({required this.name, required this.type, this.allowedDestinationAddresses, this.allowedSenderAddresses, this.destinationAddress, });
 
-factory WorkersBindingKindSendEmail.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSendEmail(
+factory WorkersBindingKindSendEmail.fromJson(Map<String, dynamic> json) {return WorkersBindingKindSendEmail(
   allowedDestinationAddresses: (json['allowed_destination_addresses'] as List<dynamic>?)?.map((e) => e as String).toList(),
   allowedSenderAddresses: (json['allowed_sender_addresses'] as List<dynamic>?)?.map((e) => e as String).toList(),
   destinationAddress: json['destination_address'] as String?,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
-); }
+);}
 
 /// List of allowed destination addresses.
 /// 
@@ -31,22 +31,22 @@ final WorkersBindingName name;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_destination_addresses': ?allowedDestinationAddresses,
   'allowed_sender_addresses': ?allowedSenderAddresses,
   'destination_address': ?destinationAddress,
   'name': name.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindSendEmail copyWith({List<String>? Function()? allowedDestinationAddresses, List<String>? Function()? allowedSenderAddresses, String? Function()? destinationAddress, WorkersBindingName? name, String? type, }) { return WorkersBindingKindSendEmail(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindSendEmail copyWith({List<String>? Function()? allowedDestinationAddresses, List<String>? Function()? allowedSenderAddresses, String? Function()? destinationAddress, WorkersBindingName? name, String? type, }) {return WorkersBindingKindSendEmail(
   allowedDestinationAddresses: allowedDestinationAddresses != null ? allowedDestinationAddresses() : this.allowedDestinationAddresses,
   allowedSenderAddresses: allowedSenderAddresses != null ? allowedSenderAddresses() : this.allowedSenderAddresses,
   destinationAddress: destinationAddress != null ? destinationAddress() : this.destinationAddress,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindSendEmail &&
           listEquals(allowedDestinationAddresses, other.allowedDestinationAddresses) &&
@@ -59,4 +59,4 @@ WorkersBindingKindSendEmail copyWith({List<String>? Function()? allowedDestinati
 
 @override String toString() => 'WorkersBindingKindSendEmail(allowedDestinationAddresses: $allowedDestinationAddresses, allowedSenderAddresses: $allowedSenderAddresses, destinationAddress: $destinationAddress, name: $name, type: $type)';
 
- }
+}

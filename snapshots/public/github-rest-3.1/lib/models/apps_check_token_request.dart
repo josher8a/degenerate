@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsCheckTokenRequest {const AppsCheckTokenRequest({required this.accessToken});
 
-factory AppsCheckTokenRequest.fromJson(Map<String, dynamic> json) { return AppsCheckTokenRequest(
+factory AppsCheckTokenRequest.fromJson(Map<String, dynamic> json) {return AppsCheckTokenRequest(
   accessToken: json['access_token'] as String,
-); }
+);}
 
 /// The access_token of the OAuth or GitHub application.
 final String accessToken;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_token': accessToken,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_token') && json['access_token'] is String; } 
-AppsCheckTokenRequest copyWith({String? accessToken}) { return AppsCheckTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('access_token') && json['access_token'] is String;}
+AppsCheckTokenRequest copyWith({String? accessToken}) {return AppsCheckTokenRequest(
   accessToken: accessToken ?? this.accessToken,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCheckTokenRequest &&
           accessToken == other.accessToken;
@@ -25,4 +25,4 @@ AppsCheckTokenRequest copyWith({String? accessToken}) { return AppsCheckTokenReq
 
 @override String toString() => 'AppsCheckTokenRequest(accessToken: $accessToken)';
 
- }
+}

@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersAiPostRunCfLeonardoLucidOriginRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance = 4.5, this.height = 1120, this.numSteps, this.seed, this.steps, this.width = 1120, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance, this.height, this.numSteps, this.seed, this.steps, this.width, });
 
-factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
-  guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 4.5,
-  height: json.containsKey('height') ? (json['height'] as num).toInt() : 1120,
+factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfLeonardoLucidOriginRequest(
+  guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
+  height: json['height'] != null ? (json['height'] as num).toInt() : null,
   numSteps: json['num_steps'] != null ? (json['num_steps'] as num).toInt() : null,
   prompt: json['prompt'] as String,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   steps: json['steps'] != null ? (json['steps'] as num).toInt() : null,
-  width: json.containsKey('width') ? (json['width'] as num).toInt() : 1120,
-); }
+  width: json['width'] != null ? (json['width'] as num).toInt() : null,
+);}
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
-final double guidance;
+final double? guidance;
 
 /// The height of the generated image in pixels
-final int height;
+final int? height;
 
 /// The number of diffusion steps; higher values can improve quality but take longer
 final int? numSteps;
@@ -32,24 +32,39 @@ final int? seed;
 final int? steps;
 
 /// The width of the generated image in pixels
-final int width;
+final int? width;
 
-Map<String, dynamic> toJson() { return {
-  'guidance': guidance,
-  'height': height,
+/// The value of `guidance`, or its schema default when absent.
+double get guidanceOrDefault => guidance ?? 4.5;
+
+/// The value of `height`, or its schema default when absent.
+int get heightOrDefault => height ?? 1120;
+
+/// The value of `width`, or its schema default when absent.
+int get widthOrDefault => width ?? 1120;
+
+Map<String, dynamic> toJson() {return {
+  'guidance': ?guidance,
+  'height': ?height,
   'num_steps': ?numSteps,
   'prompt': prompt,
   'seed': ?seed,
   'steps': ?steps,
-  'width': width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+  'width': ?width,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-if (guidance < 0) { errors.add('guidance: must be >= 0'); }
-if (guidance > 10) { errors.add('guidance: must be <= 10'); }
-if (height < 0) { errors.add('height: must be >= 0'); }
-if (height > 2500) { errors.add('height: must be <= 2500'); }
+List<String> validate() {final errors = <String>[];
+final guidance$ = guidance;
+if (guidance$ != null) {
+  if (guidance$ < 0) { errors.add('guidance: must be >= 0'); }
+  if (guidance$ > 10) { errors.add('guidance: must be <= 10'); }
+}
+final height$ = height;
+if (height$ != null) {
+  if (height$ < 0) { errors.add('height: must be >= 0'); }
+  if (height$ > 2500) { errors.add('height: must be <= 2500'); }
+}
 final numSteps$ = numSteps;
 if (numSteps$ != null) {
   if (numSteps$ < 1) { errors.add('numSteps: must be >= 1'); }
@@ -65,10 +80,13 @@ if (steps$ != null) {
   if (steps$ < 1) { errors.add('steps: must be >= 1'); }
   if (steps$ > 40) { errors.add('steps: must be <= 40'); }
 }
-if (width < 0) { errors.add('width: must be >= 0'); }
-if (width > 2500) { errors.add('width: must be <= 2500'); }
-return errors; } 
-WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidance, int Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int Function()? width, }) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
+final width$ = width;
+if (width$ != null) {
+  if (width$ < 0) { errors.add('width: must be >= 0'); }
+  if (width$ > 2500) { errors.add('width: must be <= 2500'); }
+}
+return errors;}
+WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double? Function()? guidance, int? Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int? Function()? width, }) {return WorkersAiPostRunCfLeonardoLucidOriginRequest(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   numSteps: numSteps != null ? numSteps() : this.numSteps,
@@ -76,7 +94,7 @@ WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidan
   seed: seed != null ? seed() : this.seed,
   steps: steps != null ? steps() : this.steps,
   width: width != null ? width() : this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfLeonardoLucidOriginRequest &&
           guidance == other.guidance &&
@@ -91,4 +109,4 @@ WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidan
 
 @override String toString() => 'WorkersAiPostRunCfLeonardoLucidOriginRequest(guidance: $guidance, height: $height, numSteps: $numSteps, prompt: $prompt, seed: $seed, steps: $steps, width: $width)';
 
- }
+}

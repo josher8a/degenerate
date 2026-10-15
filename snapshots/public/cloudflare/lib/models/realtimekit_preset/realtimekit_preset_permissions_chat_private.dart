@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetPermissionsChatPrivate {const RealtimekitPresetPermissionsChatPrivate({required this.canReceive, required this.canSend, required this.files, required this.text, });
 
-factory RealtimekitPresetPermissionsChatPrivate.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsChatPrivate(
+factory RealtimekitPresetPermissionsChatPrivate.fromJson(Map<String, dynamic> json) {return RealtimekitPresetPermissionsChatPrivate(
   canReceive: json['can_receive'] as bool,
   canSend: json['can_send'] as bool,
   files: json['files'] as bool,
   text: json['text'] as bool,
-); }
+);}
 
 final bool canReceive;
 
@@ -18,22 +18,22 @@ final bool files;
 
 final bool text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_receive': canReceive,
   'can_send': canSend,
   'files': files,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_receive') && json['can_receive'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('can_receive') && json['can_receive'] is bool &&
       json.containsKey('can_send') && json['can_send'] is bool &&
       json.containsKey('files') && json['files'] is bool &&
-      json.containsKey('text') && json['text'] is bool; } 
-RealtimekitPresetPermissionsChatPrivate copyWith({bool? canReceive, bool? canSend, bool? files, bool? text, }) { return RealtimekitPresetPermissionsChatPrivate(
+      json.containsKey('text') && json['text'] is bool;}
+RealtimekitPresetPermissionsChatPrivate copyWith({bool? canReceive, bool? canSend, bool? files, bool? text, }) {return RealtimekitPresetPermissionsChatPrivate(
   canReceive: canReceive ?? this.canReceive,
   canSend: canSend ?? this.canSend,
   files: files ?? this.files,
   text: text ?? this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsChatPrivate &&
           canReceive == other.canReceive &&
@@ -45,4 +45,4 @@ RealtimekitPresetPermissionsChatPrivate copyWith({bool? canReceive, bool? canSen
 
 @override String toString() => 'RealtimekitPresetPermissionsChatPrivate(canReceive: $canReceive, canSend: $canSend, files: $files, text: $text)';
 
- }
+}

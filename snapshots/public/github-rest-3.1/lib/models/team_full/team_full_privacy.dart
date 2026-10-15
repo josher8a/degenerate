@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of privacy this team should have
 sealed class TeamFullPrivacy {const TeamFullPrivacy();
 
-factory TeamFullPrivacy.fromJson(String json) { return switch (json) {
+factory TeamFullPrivacy.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'secret' => secret,
   _ => TeamFullPrivacy$Unknown(json),
-}; }
+};}
 
 static const TeamFullPrivacy closed = TeamFullPrivacy$closed._();
 
@@ -17,30 +17,30 @@ static const TeamFullPrivacy secret = TeamFullPrivacy$secret._();
 static const List<TeamFullPrivacy> values = [closed, secret];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'closed' => 'closed',
   'secret' => 'secret',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamFullPrivacy$Unknown; } 
+bool get isUnknown {return this is TeamFullPrivacy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() closed, required W Function() secret, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() closed, required W Function() secret, required W Function(String value) $unknown, }) {return switch (this) {
       TeamFullPrivacy$closed() => closed(),
       TeamFullPrivacy$secret() => secret(),
       TeamFullPrivacy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? secret, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? secret, W Function(String value)? $unknown, }) {return switch (this) {
       TeamFullPrivacy$closed() => closed != null ? closed() : orElse(value),
       TeamFullPrivacy$secret() => secret != null ? secret() : orElse(value),
       TeamFullPrivacy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamFullPrivacy($value)';
 
- }
+}
 @immutable final class TeamFullPrivacy$closed extends TeamFullPrivacy {const TeamFullPrivacy$closed._();
 
 @override String get value => 'closed';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class TeamFullPrivacy$secret extends TeamFullPrivacy {const TeamFullPrivacy$secret._();
 
 @override String get value => 'secret';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'secret'.hashCode;
 
- }
+}
 @immutable final class TeamFullPrivacy$Unknown extends TeamFullPrivacy {const TeamFullPrivacy$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

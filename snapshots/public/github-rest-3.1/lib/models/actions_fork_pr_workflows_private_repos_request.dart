@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsForkPrWorkflowsPrivateReposRequest {const ActionsForkPrWorkflowsPrivateReposRequest({required this.runWorkflowsFromForkPullRequests, this.sendWriteTokensToWorkflows, this.sendSecretsAndVariables, this.requireApprovalForForkPrWorkflows, });
 
-factory ActionsForkPrWorkflowsPrivateReposRequest.fromJson(Map<String, dynamic> json) { return ActionsForkPrWorkflowsPrivateReposRequest(
+factory ActionsForkPrWorkflowsPrivateReposRequest.fromJson(Map<String, dynamic> json) {return ActionsForkPrWorkflowsPrivateReposRequest(
   runWorkflowsFromForkPullRequests: json['run_workflows_from_fork_pull_requests'] as bool,
   sendWriteTokensToWorkflows: json['send_write_tokens_to_workflows'] as bool?,
   sendSecretsAndVariables: json['send_secrets_and_variables'] as bool?,
   requireApprovalForForkPrWorkflows: json['require_approval_for_fork_pr_workflows'] as bool?,
-); }
+);}
 
 /// Whether workflows triggered by pull requests from forks are allowed to run on private repositories.
 final bool runWorkflowsFromForkPullRequests;
@@ -22,19 +22,19 @@ final bool? sendSecretsAndVariables;
 /// Whether workflows triggered by pull requests from forks require approval from a repository administrator to run.
 final bool? requireApprovalForForkPrWorkflows;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'run_workflows_from_fork_pull_requests': runWorkflowsFromForkPullRequests,
   'send_write_tokens_to_workflows': ?sendWriteTokensToWorkflows,
   'send_secrets_and_variables': ?sendSecretsAndVariables,
   'require_approval_for_fork_pr_workflows': ?requireApprovalForForkPrWorkflows,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('run_workflows_from_fork_pull_requests') && json['run_workflows_from_fork_pull_requests'] is bool; } 
-ActionsForkPrWorkflowsPrivateReposRequest copyWith({bool? runWorkflowsFromForkPullRequests, bool? Function()? sendWriteTokensToWorkflows, bool? Function()? sendSecretsAndVariables, bool? Function()? requireApprovalForForkPrWorkflows, }) { return ActionsForkPrWorkflowsPrivateReposRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('run_workflows_from_fork_pull_requests') && json['run_workflows_from_fork_pull_requests'] is bool;}
+ActionsForkPrWorkflowsPrivateReposRequest copyWith({bool? runWorkflowsFromForkPullRequests, bool? Function()? sendWriteTokensToWorkflows, bool? Function()? sendSecretsAndVariables, bool? Function()? requireApprovalForForkPrWorkflows, }) {return ActionsForkPrWorkflowsPrivateReposRequest(
   runWorkflowsFromForkPullRequests: runWorkflowsFromForkPullRequests ?? this.runWorkflowsFromForkPullRequests,
   sendWriteTokensToWorkflows: sendWriteTokensToWorkflows != null ? sendWriteTokensToWorkflows() : this.sendWriteTokensToWorkflows,
   sendSecretsAndVariables: sendSecretsAndVariables != null ? sendSecretsAndVariables() : this.sendSecretsAndVariables,
   requireApprovalForForkPrWorkflows: requireApprovalForForkPrWorkflows != null ? requireApprovalForForkPrWorkflows() : this.requireApprovalForForkPrWorkflows,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsForkPrWorkflowsPrivateReposRequest &&
           runWorkflowsFromForkPullRequests == other.runWorkflowsFromForkPullRequests &&
@@ -46,4 +46,4 @@ ActionsForkPrWorkflowsPrivateReposRequest copyWith({bool? runWorkflowsFromForkPu
 
 @override String toString() => 'ActionsForkPrWorkflowsPrivateReposRequest(runWorkflowsFromForkPullRequests: $runWorkflowsFromForkPullRequests, sendWriteTokensToWorkflows: $sendWriteTokensToWorkflows, sendSecretsAndVariables: $sendSecretsAndVariables, requireApprovalForForkPrWorkflows: $requireApprovalForForkPrWorkflows)';
 
- }
+}

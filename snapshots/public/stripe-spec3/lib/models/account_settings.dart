@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_bacs_debit_payments_settings.dart';import 'package:pub_stripe_spec3/models/account_branding_settings.dart';import 'package:pub_stripe_spec3/models/account_card_issuing_settings.dart';import 'package:pub_stripe_spec3/models/account_card_payments_settings.dart';import 'package:pub_stripe_spec3/models/account_dashboard_settings.dart';import 'package:pub_stripe_spec3/models/account_invoices_settings.dart';import 'package:pub_stripe_spec3/models/account_payments_settings.dart';import 'package:pub_stripe_spec3/models/account_payout_settings.dart';import 'package:pub_stripe_spec3/models/account_sepa_debit_payments_settings.dart';import 'package:pub_stripe_spec3/models/account_treasury_settings.dart';/// 
 @immutable final class AccountSettings {const AccountSettings({required this.branding, required this.cardPayments, required this.dashboard, required this.payments, this.bacsDebitPayments, this.cardIssuing, this.invoices, this.payouts, this.sepaDebitPayments, this.treasury, });
 
-factory AccountSettings.fromJson(Map<String, dynamic> json) { return AccountSettings(
+factory AccountSettings.fromJson(Map<String, dynamic> json) {return AccountSettings(
   bacsDebitPayments: json['bacs_debit_payments'] != null ? AccountBacsDebitPaymentsSettings.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
   branding: AccountBrandingSettings.fromJson(json['branding'] as Map<String, dynamic>),
   cardIssuing: json['card_issuing'] != null ? AccountCardIssuingSettings.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory AccountSettings.fromJson(Map<String, dynamic> json) { return AccountSett
   payouts: json['payouts'] != null ? AccountPayoutSettings.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   sepaDebitPayments: json['sepa_debit_payments'] != null ? AccountSepaDebitPaymentsSettings.fromJson(json['sepa_debit_payments'] as Map<String, dynamic>) : null,
   treasury: json['treasury'] != null ? AccountTreasurySettings.fromJson(json['treasury'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final AccountBacsDebitPaymentsSettings? bacsDebitPayments;
 
@@ -37,7 +37,7 @@ final AccountSepaDebitPaymentsSettings? sepaDebitPayments;
 
 final AccountTreasurySettings? treasury;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bacsDebitPayments != null) 'bacs_debit_payments': bacsDebitPayments?.toJson(),
   'branding': branding.toJson(),
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
@@ -48,12 +48,12 @@ Map<String, dynamic> toJson() { return {
   if (payouts != null) 'payouts': payouts?.toJson(),
   if (sepaDebitPayments != null) 'sepa_debit_payments': sepaDebitPayments?.toJson(),
   if (treasury != null) 'treasury': treasury?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('branding') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('branding') &&
       json.containsKey('card_payments') &&
       json.containsKey('dashboard') &&
-      json.containsKey('payments'); } 
-AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebitPayments, AccountBrandingSettings? branding, AccountCardIssuingSettings? Function()? cardIssuing, AccountCardPaymentsSettings? cardPayments, AccountDashboardSettings? dashboard, AccountInvoicesSettings? Function()? invoices, AccountPaymentsSettings? payments, AccountPayoutSettings? Function()? payouts, AccountSepaDebitPaymentsSettings? Function()? sepaDebitPayments, AccountTreasurySettings? Function()? treasury, }) { return AccountSettings(
+      json.containsKey('payments');}
+AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebitPayments, AccountBrandingSettings? branding, AccountCardIssuingSettings? Function()? cardIssuing, AccountCardPaymentsSettings? cardPayments, AccountDashboardSettings? dashboard, AccountInvoicesSettings? Function()? invoices, AccountPaymentsSettings? payments, AccountPayoutSettings? Function()? payouts, AccountSepaDebitPaymentsSettings? Function()? sepaDebitPayments, AccountTreasurySettings? Function()? treasury, }) {return AccountSettings(
   bacsDebitPayments: bacsDebitPayments != null ? bacsDebitPayments() : this.bacsDebitPayments,
   branding: branding ?? this.branding,
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
@@ -64,7 +64,7 @@ AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebi
   payouts: payouts != null ? payouts() : this.payouts,
   sepaDebitPayments: sepaDebitPayments != null ? sepaDebitPayments() : this.sepaDebitPayments,
   treasury: treasury != null ? treasury() : this.treasury,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSettings &&
           bacsDebitPayments == other.bacsDebitPayments &&
@@ -82,4 +82,4 @@ AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebi
 
 @override String toString() => 'AccountSettings(\n  bacsDebitPayments: $bacsDebitPayments,\n  branding: $branding,\n  cardIssuing: $cardIssuing,\n  cardPayments: $cardPayments,\n  dashboard: $dashboard,\n  invoices: $invoices,\n  payments: $payments,\n  payouts: $payouts,\n  sepaDebitPayments: $sepaDebitPayments,\n  treasury: $treasury,\n)';
 
- }
+}

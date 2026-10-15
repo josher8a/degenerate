@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_config_details.dart';@immutable final class DigitalExperienceMonitoringWarpConfigChangeEvent {const DigitalExperienceMonitoringWarpConfigChangeEvent({this.deviceId, this.deviceRegistration, this.from, this.hostname, this.serialNumber, this.timestamp, this.to, this.userEmail, });
 
-factory DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpConfigChangeEvent(
+factory DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringWarpConfigChangeEvent(
   deviceId: json['device_id'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_id'] as String) : null,
   deviceRegistration: json['device_registration'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_registration'] as String) : null,
   from: json['from'] != null ? DigitalExperienceMonitoringWarpConfigDetails.fromJson(json['from'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(Map<String, dy
   timestamp: json['timestamp'] != null ? DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String) : null,
   to: json['to'] != null ? DigitalExperienceMonitoringWarpConfigDetails.fromJson(json['to'] as Map<String, dynamic>) : null,
   userEmail: json['user_email'] as String?,
-); }
+);}
 
 /// API Resource UUID tag.
 final DigitalExperienceMonitoringUuid? deviceId;
@@ -36,7 +36,7 @@ final DigitalExperienceMonitoringWarpConfigDetails? to;
 /// Email tied to the device
 final String? userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (deviceId != null) 'device_id': deviceId?.toJson(),
   if (deviceRegistration != null) 'device_registration': deviceRegistration?.toJson(),
   if (from != null) 'from': from?.toJson(),
@@ -45,9 +45,9 @@ Map<String, dynamic> toJson() { return {
   if (timestamp != null) 'timestamp': timestamp?.toJson(),
   if (to != null) 'to': to?.toJson(),
   'user_email': ?userEmail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_id', 'device_registration', 'from', 'hostname', 'serial_number', 'timestamp', 'to', 'user_email'}.contains(key)); } 
-DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMonitoringUuid? Function()? deviceId, DigitalExperienceMonitoringUuid? Function()? deviceRegistration, DigitalExperienceMonitoringWarpConfigDetails? Function()? from, String? Function()? hostname, String? Function()? serialNumber, DigitalExperienceMonitoringTimestamp? Function()? timestamp, DigitalExperienceMonitoringWarpConfigDetails? Function()? to, String? Function()? userEmail, }) { return DigitalExperienceMonitoringWarpConfigChangeEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'device_id', 'device_registration', 'from', 'hostname', 'serial_number', 'timestamp', 'to', 'user_email'}.contains(key));}
+DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMonitoringUuid? Function()? deviceId, DigitalExperienceMonitoringUuid? Function()? deviceRegistration, DigitalExperienceMonitoringWarpConfigDetails? Function()? from, String? Function()? hostname, String? Function()? serialNumber, DigitalExperienceMonitoringTimestamp? Function()? timestamp, DigitalExperienceMonitoringWarpConfigDetails? Function()? to, String? Function()? userEmail, }) {return DigitalExperienceMonitoringWarpConfigChangeEvent(
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   deviceRegistration: deviceRegistration != null ? deviceRegistration() : this.deviceRegistration,
   from: from != null ? from() : this.from,
@@ -56,7 +56,7 @@ DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMoni
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   to: to != null ? to() : this.to,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringWarpConfigChangeEvent &&
           deviceId == other.deviceId &&
@@ -72,4 +72,4 @@ DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMoni
 
 @override String toString() => 'DigitalExperienceMonitoringWarpConfigChangeEvent(deviceId: $deviceId, deviceRegistration: $deviceRegistration, from: $from, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, to: $to, userEmail: $userEmail)';
 
- }
+}

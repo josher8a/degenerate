@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the results by.
 sealed class RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy();
 
-factory RadarGetQualitySpeedTopAsesOrderBy.fromJson(String json) { return switch (json) {
+factory RadarGetQualitySpeedTopAsesOrderBy.fromJson(String json) {return switch (json) {
   'BANDWIDTH_DOWNLOAD' => bandwidthDownload,
   'BANDWIDTH_UPLOAD' => bandwidthUpload,
   'LATENCY_IDLE' => latencyIdle,
@@ -12,7 +12,7 @@ factory RadarGetQualitySpeedTopAsesOrderBy.fromJson(String json) { return switch
   'JITTER_IDLE' => jitterIdle,
   'JITTER_LOADED' => jitterLoaded,
   _ => RadarGetQualitySpeedTopAsesOrderBy$Unknown(json),
-}; }
+};}
 
 static const RadarGetQualitySpeedTopAsesOrderBy bandwidthDownload = RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload._();
 
@@ -29,9 +29,9 @@ static const RadarGetQualitySpeedTopAsesOrderBy jitterLoaded = RadarGetQualitySp
 static const List<RadarGetQualitySpeedTopAsesOrderBy> values = [bandwidthDownload, bandwidthUpload, latencyIdle, latencyLoaded, jitterIdle, jitterLoaded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'BANDWIDTH_DOWNLOAD' => 'bandwidthDownload',
   'BANDWIDTH_UPLOAD' => 'bandwidthUpload',
   'LATENCY_IDLE' => 'latencyIdle',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'JITTER_IDLE' => 'jitterIdle',
   'JITTER_LOADED' => 'jitterLoaded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetQualitySpeedTopAsesOrderBy$Unknown; } 
+bool get isUnknown {return this is RadarGetQualitySpeedTopAsesOrderBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bandwidthDownload, required W Function() bandwidthUpload, required W Function() latencyIdle, required W Function() latencyLoaded, required W Function() jitterIdle, required W Function() jitterLoaded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bandwidthDownload, required W Function() bandwidthUpload, required W Function() latencyIdle, required W Function() latencyLoaded, required W Function() jitterIdle, required W Function() jitterLoaded, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload() => bandwidthDownload(),
       RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload() => bandwidthUpload(),
       RadarGetQualitySpeedTopAsesOrderBy$latencyIdle() => latencyIdle(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() bandwidthDownload, required W Function() bandwi
       RadarGetQualitySpeedTopAsesOrderBy$jitterIdle() => jitterIdle(),
       RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded() => jitterLoaded(),
       RadarGetQualitySpeedTopAsesOrderBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidthDownload, W Function()? bandwidthUpload, W Function()? latencyIdle, W Function()? latencyLoaded, W Function()? jitterIdle, W Function()? jitterLoaded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidthDownload, W Function()? bandwidthUpload, W Function()? latencyIdle, W Function()? latencyLoaded, W Function()? jitterIdle, W Function()? jitterLoaded, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload() => bandwidthDownload != null ? bandwidthDownload() : orElse(value),
       RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload() => bandwidthUpload != null ? bandwidthUpload() : orElse(value),
       RadarGetQualitySpeedTopAsesOrderBy$latencyIdle() => latencyIdle != null ? latencyIdle() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
       RadarGetQualitySpeedTopAsesOrderBy$jitterIdle() => jitterIdle != null ? jitterIdle() : orElse(value),
       RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded() => jitterLoaded != null ? jitterLoaded() : orElse(value),
       RadarGetQualitySpeedTopAsesOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetQualitySpeedTopAsesOrderBy($value)';
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload._();
 
 @override String get value => 'BANDWIDTH_DOWNLOAD';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => 'BANDWIDTH_DOWNLOAD'.hashCode;
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload._();
 
 @override String get value => 'BANDWIDTH_UPLOAD';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => 'BANDWIDTH_UPLOAD'.hashCode;
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$latencyIdle extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$latencyIdle._();
 
 @override String get value => 'LATENCY_IDLE';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => 'LATENCY_IDLE'.hashCode;
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$latencyLoaded extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$latencyLoaded._();
 
 @override String get value => 'LATENCY_LOADED';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => 'LATENCY_LOADED'.hashCode;
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$jitterIdle extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$jitterIdle._();
 
 @override String get value => 'JITTER_IDLE';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => 'JITTER_IDLE'.hashCode;
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded._();
 
 @override String get value => 'JITTER_LOADED';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => 'JITTER_LOADED'.hashCode;
 
- }
+}
 @immutable final class RadarGetQualitySpeedTopAsesOrderBy$Unknown extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidt
 
 @override int get hashCode => value.hashCode;
 
- }
+}

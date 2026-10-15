@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `unsupported_file`, or `invalid_file`.
 sealed class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode();
 
-factory VectorStoreFileObjectLastErrorCode.fromJson(String json) { return switch (json) {
+factory VectorStoreFileObjectLastErrorCode.fromJson(String json) {return switch (json) {
   'server_error' => serverError,
   'unsupported_file' => unsupportedFile,
   'invalid_file' => invalidFile,
   _ => VectorStoreFileObjectLastErrorCode$Unknown(json),
-}; }
+};}
 
 static const VectorStoreFileObjectLastErrorCode serverError = VectorStoreFileObjectLastErrorCode$serverError._();
 
@@ -20,33 +20,33 @@ static const VectorStoreFileObjectLastErrorCode invalidFile = VectorStoreFileObj
 static const List<VectorStoreFileObjectLastErrorCode> values = [serverError, unsupportedFile, invalidFile];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'server_error' => 'serverError',
   'unsupported_file' => 'unsupportedFile',
   'invalid_file' => 'invalidFile',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VectorStoreFileObjectLastErrorCode$Unknown; } 
+bool get isUnknown {return this is VectorStoreFileObjectLastErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() serverError, required W Function() unsupportedFile, required W Function() invalidFile, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() serverError, required W Function() unsupportedFile, required W Function() invalidFile, required W Function(String value) $unknown, }) {return switch (this) {
       VectorStoreFileObjectLastErrorCode$serverError() => serverError(),
       VectorStoreFileObjectLastErrorCode$unsupportedFile() => unsupportedFile(),
       VectorStoreFileObjectLastErrorCode$invalidFile() => invalidFile(),
       VectorStoreFileObjectLastErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? unsupportedFile, W Function()? invalidFile, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? unsupportedFile, W Function()? invalidFile, W Function(String value)? $unknown, }) {return switch (this) {
       VectorStoreFileObjectLastErrorCode$serverError() => serverError != null ? serverError() : orElse(value),
       VectorStoreFileObjectLastErrorCode$unsupportedFile() => unsupportedFile != null ? unsupportedFile() : orElse(value),
       VectorStoreFileObjectLastErrorCode$invalidFile() => invalidFile != null ? invalidFile() : orElse(value),
       VectorStoreFileObjectLastErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VectorStoreFileObjectLastErrorCode($value)';
 
- }
+}
 @immutable final class VectorStoreFileObjectLastErrorCode$serverError extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$serverError._();
 
 @override String get value => 'server_error';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'server_error'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileObjectLastErrorCode$unsupportedFile extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$unsupportedFile._();
 
 @override String get value => 'unsupported_file';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'unsupported_file'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileObjectLastErrorCode$invalidFile extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$invalidFile._();
 
 @override String get value => 'invalid_file';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_file'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileObjectLastErrorCode$Unknown extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -83,14 +83,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The last error associated with this vector store file. Will be `null` if there are no errors.
 @immutable final class VectorStoreFileObjectLastError {const VectorStoreFileObjectLastError({required this.code, required this.message, });
 
-factory VectorStoreFileObjectLastError.fromJson(Map<String, dynamic> json) { return VectorStoreFileObjectLastError(
+factory VectorStoreFileObjectLastError.fromJson(Map<String, dynamic> json) {return VectorStoreFileObjectLastError(
   code: VectorStoreFileObjectLastErrorCode.fromJson(json['code'] as String),
   message: json['message'] as String,
-); }
+);}
 
 /// One of `server_error`, `unsupported_file`, or `invalid_file`.
 final VectorStoreFileObjectLastErrorCode code;
@@ -98,16 +98,16 @@ final VectorStoreFileObjectLastErrorCode code;
 /// A human-readable description of the error.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('message') && json['message'] is String; } 
-VectorStoreFileObjectLastError copyWith({VectorStoreFileObjectLastErrorCode? code, String? message, }) { return VectorStoreFileObjectLastError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String;}
+VectorStoreFileObjectLastError copyWith({VectorStoreFileObjectLastErrorCode? code, String? message, }) {return VectorStoreFileObjectLastError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreFileObjectLastError &&
           code == other.code &&
@@ -117,4 +117,4 @@ VectorStoreFileObjectLastError copyWith({VectorStoreFileObjectLastErrorCode? cod
 
 @override String toString() => 'VectorStoreFileObjectLastError(code: $code, message: $message)';
 
- }
+}

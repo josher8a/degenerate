@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentPagesCheckoutSessionDiscount
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
-@immutable final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon, this.promotionCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon = const Omittable.absent(), this.promotionCode = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionDiscount(
-  coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,
-  promotionCode: json['promotion_code'] != null ? OneOf2.parse(json['promotion_code'], fromA: (v) => v as String, fromB: (v) => PromotionCode.fromJson(v as Map<String, dynamic>),) : null,
-); }
+factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionDiscount(
+  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? DiscountSourceCoupon.fromJson(json['coupon']) : null) : const Omittable.absent(),
+  promotionCode: json.containsKey('promotion_code') ? Omittable(json['promotion_code'] != null ? DeletedDiscountPromotionCode.fromJson(json['promotion_code']) : null) : const Omittable.absent(),
+);}
 
 /// Coupon attached to the Checkout Session.
-final DiscountSourceCoupon? coupon;
+final Omittable<DiscountSourceCoupon?> coupon;
 
 /// Promotion code attached to the Checkout Session.
-final DeletedDiscountPromotionCode? promotionCode;
+final Omittable<DeletedDiscountPromotionCode?> promotionCode;
 
-Map<String, dynamic> toJson() { return {
-  if (coupon != null) 'coupon': coupon?.toJson(),
-  if (promotionCode != null) 'promotion_code': promotionCode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key)); } 
-PaymentPagesCheckoutSessionDiscount copyWith({DiscountSourceCoupon? Function()? coupon, DeletedDiscountPromotionCode? Function()? promotionCode, }) { return PaymentPagesCheckoutSessionDiscount(
-  coupon: coupon != null ? coupon() : this.coupon,
-  promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (coupon.isPresent) 'coupon': coupon.value?.toJson(),
+  if (promotionCode.isPresent) 'promotion_code': promotionCode.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key));}
+PaymentPagesCheckoutSessionDiscount copyWith({Omittable<DiscountSourceCoupon?>? coupon, Omittable<DeletedDiscountPromotionCode?>? promotionCode, }) {return PaymentPagesCheckoutSessionDiscount(
+  coupon: coupon ?? this.coupon,
+  promotionCode: promotionCode ?? this.promotionCode,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionDiscount &&
           coupon == other.coupon &&
@@ -33,4 +33,4 @@ PaymentPagesCheckoutSessionDiscount copyWith({DiscountSourceCoupon? Function()? 
 
 @override String toString() => 'PaymentPagesCheckoutSessionDiscount(coupon: $coupon, promotionCode: $promotionCode)';
 
- }
+}

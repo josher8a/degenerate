@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_poll/realtimekit_poll_options.dart';@immutable final class RealtimekitPoll {const RealtimekitPoll({required this.id, required this.options, required this.question, this.anonymous, this.createdBy, this.hideVotes, this.voted, });
 
-factory RealtimekitPoll.fromJson(Map<String, dynamic> json) { return RealtimekitPoll(
+factory RealtimekitPoll.fromJson(Map<String, dynamic> json) {return RealtimekitPoll(
   anonymous: json['anonymous'] as bool?,
   createdBy: json['created_by'] as String?,
   hideVotes: json['hide_votes'] as bool?,
@@ -11,7 +11,7 @@ factory RealtimekitPoll.fromJson(Map<String, dynamic> json) { return Realtimekit
   options: (json['options'] as List<dynamic>).map((e) => RealtimekitPollOptions.fromJson(e as Map<String, dynamic>)).toList(),
   question: json['question'] as String,
   voted: (json['voted'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final bool? anonymous;
 
@@ -30,7 +30,7 @@ final String question;
 
 final List<String>? voted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'anonymous': ?anonymous,
   'created_by': ?createdBy,
   'hide_votes': ?hideVotes,
@@ -38,11 +38,11 @@ Map<String, dynamic> toJson() { return {
   'options': options.map((e) => e.toJson()).toList(),
   'question': question,
   'voted': ?voted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('options') &&
-      json.containsKey('question') && json['question'] is String; } 
-RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? createdBy, bool? Function()? hideVotes, String? id, List<RealtimekitPollOptions>? options, String? question, List<String>? Function()? voted, }) { return RealtimekitPoll(
+      json.containsKey('question') && json['question'] is String;}
+RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? createdBy, bool? Function()? hideVotes, String? id, List<RealtimekitPollOptions>? options, String? question, List<String>? Function()? voted, }) {return RealtimekitPoll(
   anonymous: anonymous != null ? anonymous() : this.anonymous,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   hideVotes: hideVotes != null ? hideVotes() : this.hideVotes,
@@ -50,7 +50,7 @@ RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? creat
   options: options ?? this.options,
   question: question ?? this.question,
   voted: voted != null ? voted() : this.voted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPoll &&
           anonymous == other.anonymous &&
@@ -65,4 +65,4 @@ RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? creat
 
 @override String toString() => 'RealtimekitPoll(anonymous: $anonymous, createdBy: $createdBy, hideVotes: $hideVotes, id: $id, options: $options, question: $question, voted: $voted)';
 
- }
+}

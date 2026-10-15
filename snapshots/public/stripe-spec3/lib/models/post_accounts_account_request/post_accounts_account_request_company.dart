@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: Company)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_ownership_exemption_reason.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_structure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/directorship_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/ownership_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/registration_date.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/representative_declaration.dart';import 'package:pub_stripe_spec3/models/registration_date_specs.dart';/// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_ownership_exemption_reason.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_structure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/directorship_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/ownership_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/registration_date.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/representative_declaration.dart';/// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsAccountRequestCompany {const PostAccountsAccountRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
-factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCompany(
+factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestCompany(
   address: json['address'] != null ? PostAccountsAccountPeoplePersonRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -20,7 +20,7 @@ factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { 
   ownershipDeclaration: json['ownership_declaration'] != null ? OwnershipDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null,
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? CompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
   phone: json['phone'] as String?,
-  registrationDate: json['registration_date'] != null ? OneOf2.parse(json['registration_date'], fromA: (v) => RegistrationDateSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  registrationDate: json['registration_date'] != null ? RegistrationDate.fromJson(json['registration_date']) : null,
   registrationNumber: json['registration_number'] as String?,
   representativeDeclaration: json['representative_declaration'] != null ? RepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
   structure: json['structure'] != null ? CompanyStructure.fromJson(json['structure'] as String) : null,
@@ -28,7 +28,7 @@ factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { 
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatId: json['vat_id'] as String?,
   verification: json['verification'] != null ? CompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountPeoplePersonRequestAddress? address;
 
@@ -76,7 +76,7 @@ final String? vatId;
 
 final CompanyVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -100,10 +100,10 @@ Map<String, dynamic> toJson() { return {
   'tax_id_registrar': ?taxIdRegistrar,
   'vat_id': ?vatId,
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final exportLicenseId$ = exportLicenseId;
 if (exportLicenseId$ != null) {
   if (exportLicenseId$.runes.length > 5000) { errors.add('exportLicenseId: length must be <= 5000'); }
@@ -144,8 +144,8 @@ final vatId$ = vatId;
 if (vatId$ != null) {
   if (vatId$.runes.length > 5000) { errors.add('vatId: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) { return PostAccountsAccountRequestCompany(
+return errors;}
+PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) {return PostAccountsAccountRequestCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -169,7 +169,7 @@ PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonReque
   taxIdRegistrar: taxIdRegistrar != null ? taxIdRegistrar() : this.taxIdRegistrar,
   vatId: vatId != null ? vatId() : this.vatId,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestCompany &&
           address == other.address &&
@@ -200,4 +200,4 @@ PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonReque
 
 @override String toString() => 'PostAccountsAccountRequestCompany(\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  directorsProvided: $directorsProvided,\n  directorshipDeclaration: $directorshipDeclaration,\n  executivesProvided: $executivesProvided,\n  exportLicenseId: $exportLicenseId,\n  exportPurposeCode: $exportPurposeCode,\n  name: $name,\n  nameKana: $nameKana,\n  nameKanji: $nameKanji,\n  ownersProvided: $ownersProvided,\n  ownershipDeclaration: $ownershipDeclaration,\n  ownershipExemptionReason: $ownershipExemptionReason,\n  phone: $phone,\n  registrationDate: $registrationDate,\n  registrationNumber: $registrationNumber,\n  representativeDeclaration: $representativeDeclaration,\n  structure: $structure,\n  taxId: $taxId,\n  taxIdRegistrar: $taxIdRegistrar,\n  vatId: $vatId,\n  verification: $verification,\n)';
 
- }
+}

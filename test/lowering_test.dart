@@ -63,7 +63,7 @@ void main() {
       });
 
       test('id field is int and required', () {
-        final id = pet.fields.firstWhere((f) => f.originalName == 'id');
+        final id = pet.fields.firstWhere((f) => f.originalName.test((s) => s == 'id'));
         expect(id.name, equals('id'));
         expect(id.isRequired, isTrue);
         expect(id.type, isA<IrPrimitive>());
@@ -71,7 +71,7 @@ void main() {
       });
 
       test('name field is String and required', () {
-        final name = pet.fields.firstWhere((f) => f.originalName == 'name');
+        final name = pet.fields.firstWhere((f) => f.originalName.test((s) => s == 'name'));
         expect(name.name, equals('name'));
         expect(name.isRequired, isTrue);
         expect(name.type, isA<IrPrimitive>());
@@ -79,7 +79,7 @@ void main() {
       });
 
       test('tag field is String and optional', () {
-        final tag = pet.fields.firstWhere((f) => f.originalName == 'tag');
+        final tag = pet.fields.firstWhere((f) => f.originalName.test((s) => s == 'tag'));
         expect(tag.name, equals('tag'));
         expect(tag.isRequired, isFalse);
         expect(tag.type, isA<IrPrimitive>());
@@ -104,7 +104,7 @@ void main() {
       });
 
       test('code field is int and required', () {
-        final code = error.fields.firstWhere((f) => f.originalName == 'code');
+        final code = error.fields.firstWhere((f) => f.originalName.test((s) => s == 'code'));
         expect(code.isRequired, isTrue);
         expect(code.type, isA<IrPrimitive>());
         expect((code.type as IrPrimitive).kind, equals(PrimitiveKind.int));
@@ -112,7 +112,7 @@ void main() {
 
       test('message field is String and required', () {
         final message = error.fields.firstWhere(
-          (f) => f.originalName == 'message',
+          (f) => f.originalName.test((s) => s == 'message'),
         );
         expect(message.isRequired, isTrue);
         expect(message.type, isA<IrPrimitive>());
@@ -350,7 +350,7 @@ void main() {
 
       test('method and path', () {
         expect(op.method, equals(HttpMethod.get));
-        expect(op.path, equals('/pets'));
+        expect(op.path.forDiagnostics, equals('/pets'));
       });
 
       test('dartMethodName is listPets', () {
@@ -360,7 +360,7 @@ void main() {
       test('has limit query parameter', () {
         expect(op.parameters, hasLength(1));
         final limit = op.parameters.first;
-        expect(limit.name, equals('limit'));
+        expect(limit.name.forDiagnostics, equals('limit'));
         expect(limit.location, equals(ParameterLocation.query));
         expect(limit.isRequired, isFalse);
         expect(limit.type, isA<IrPrimitive>());
@@ -369,7 +369,7 @@ void main() {
 
       test('200 response has Pets schema resolved to IrList', () {
         final resp200 = op.responses[200]!;
-        final jsonContent = resp200.content['application/json']!;
+        final jsonContent = resp200.content[const SpecString('application/json')]!;
         // Pets is an array schema, so lowerInlineSchema resolves the
         // IrTypeRef to the actual IrList type (non-emittable types are
         // resolved inline).
@@ -381,7 +381,7 @@ void main() {
 
       test('default response has Error schema', () {
         expect(op.defaultResponse, isNotNull);
-        final jsonContent = op.defaultResponse!.content['application/json']!;
+        final jsonContent = op.defaultResponse!.content[const SpecString('application/json')]!;
         expect(jsonContent.schema, isA<IrTypeRef>());
         expect((jsonContent.schema as IrTypeRef).name, equals('ErrorModel'));
       });
@@ -389,7 +389,7 @@ void main() {
       test('200 response has x-next header', () {
         final resp200 = op.responses[200]!;
         expect(resp200.headers, hasLength(1));
-        expect(resp200.headers.first.originalName, equals('x-next'));
+        expect(resp200.headers.first.originalName.forDiagnostics, equals('x-next'));
         expect(resp200.headers.first.type, isA<IrPrimitive>());
       });
 
@@ -525,7 +525,7 @@ void main() {
       test('has required request body with Pet schema', () {
         expect(op.requestBody, isNotNull);
         expect(op.requestBody!.isRequired, isTrue);
-        final jsonContent = op.requestBody!.content['application/json']!;
+        final jsonContent = op.requestBody!.content[const SpecString('application/json')]!;
         expect(jsonContent.schema, isA<IrTypeRef>());
         expect((jsonContent.schema as IrTypeRef).name, equals('Pet'));
       });
@@ -546,13 +546,13 @@ void main() {
 
       test('method and path', () {
         expect(op.method, equals(HttpMethod.get));
-        expect(op.path, equals('/pets/{petId}'));
+        expect(op.path.forDiagnostics, equals('/pets/{petId}'));
       });
 
       test('has required petId path parameter', () {
         expect(op.parameters, hasLength(1));
         final petId = op.parameters.first;
-        expect(petId.name, equals('petId'));
+        expect(petId.name.forDiagnostics, equals('petId'));
         expect(petId.location, equals(ParameterLocation.path));
         expect(petId.isRequired, isTrue);
         expect(petId.type, isA<IrPrimitive>());
@@ -561,7 +561,7 @@ void main() {
 
       test('200 response has Pet schema', () {
         final resp200 = op.responses[200]!;
-        final jsonContent = resp200.content['application/json']!;
+        final jsonContent = resp200.content[const SpecString('application/json')]!;
         expect(jsonContent.schema, isA<IrTypeRef>());
         expect((jsonContent.schema as IrTypeRef).name, equals('Pet'));
       });
@@ -610,7 +610,7 @@ void main() {
 
       final op = apis.first.operations.first;
       final param = op.parameters.first;
-      expect(param.name, 'filter');
+      expect(param.name.forDiagnostics, 'filter');
       expect(param.isRequired, isTrue);
       // Should be an object type, not dynamic
       expect(
@@ -767,8 +767,8 @@ void main() {
         ],
       });
       expect(t, isA<IrPrimitive>());
-      expect(t.description, contains('String'));
-      expect(t.description, contains('double'));
+      expect(t.description!.forDiagnostics, contains('String'));
+      expect(t.description!.forDiagnostics, contains('double'));
     });
 
     test(
@@ -789,9 +789,9 @@ void main() {
           'description': 'A flexible value.',
         });
         expect(t, isA<IrPrimitive>());
-        expect(t.description, contains('A flexible value.'));
-        expect(t.description, contains('String'));
-        expect(t.description, contains('int'));
+        expect(t.description!.forDiagnostics, contains('A flexible value.'));
+        expect(t.description!.forDiagnostics, contains('String'));
+        expect(t.description!.forDiagnostics, contains('int'));
       },
     );
 
@@ -1189,9 +1189,9 @@ void main() {
         final union = lowerer.typeRegistry['Animal']! as IrDiscriminatedUnion;
         // Mapping keys should be the original schema names (what appears in JSON),
         // not the Dart type names.
-        expect(union.mapping.keys, contains('Cat'));
-        expect(union.mapping.keys, contains('__dog__'));
-        expect(union.mapping.keys, isNot(contains('Dog')));
+        expect(union.mapping.keys, contains(const SpecString('Cat')));
+        expect(union.mapping.keys, contains(const SpecString('__dog__')));
+        expect(union.mapping.keys, isNot(contains(const SpecString('Dog'))));
       },
     );
   });
@@ -1441,11 +1441,123 @@ void main() {
     );
 
     test(
+      'single-ref allOf chains keep inherited properties through every level',
+      () {
+        // Cat extends Pet with its own props (single $ref + inline), and Pet
+        // itself extends Grand. The surfaced-ref merge must see Pet's
+        // EXPANDED properties, or the chain's middle and top levels vanish.
+        final schemas = <String, dynamic>{
+          'Grand': {
+            'type': 'object',
+            'properties': {
+              'g': {'type': 'string'},
+            },
+            'required': ['g'],
+          },
+          'Pet': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Grand'},
+              {
+                'type': 'object',
+                'properties': {
+                  'name': {'type': 'string'},
+                },
+                'required': ['name'],
+              },
+            ],
+          },
+          'Cat': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Pet'},
+              {
+                'type': 'object',
+                'properties': {
+                  'meow': {'type': 'boolean'},
+                },
+                'required': ['meow'],
+              },
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final cat = mapper.typeRegistry['Cat'];
+        expect(cat, isA<IrObject>());
+        final names = (cat! as IrObject).fields.map((f) => f.name).toSet();
+        expect(names, containsAll(['g', 'name', 'meow']));
+      },
+    );
+
+    test(
+      'allOf overriding a base property with a narrower type still merges',
+      () {
+        // The Cloudflare envelope pattern: the base declares a generic
+        // `result`, and each response narrows it via allOf override WITHOUT
+        // adding new keys. The override must trigger the merge — collapsing
+        // to a bare ref of the base loses the typed result.
+        final schemas = <String, dynamic>{
+          'Envelope': {
+            'type': 'object',
+            'properties': {
+              'success': {'type': 'boolean'},
+              'result': <String, dynamic>{},
+            },
+            'required': ['success'],
+          },
+          'Subscription': {
+            'type': 'object',
+            'properties': {
+              'id': {'type': 'string'},
+            },
+          },
+          'SubscriptionResponse': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Envelope'},
+              {
+                'type': 'object',
+                'properties': {
+                  'result': {r'$ref': '#/components/schemas/Subscription'},
+                },
+              },
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final response = mapper.typeRegistry['SubscriptionResponse'];
+        expect(
+          response,
+          isA<IrObject>(),
+          reason: 'an overriding variant must not collapse to a bare ref',
+        );
+        final fields = (response! as IrObject).fields;
+        expect(
+          fields.map((f) => f.name).toSet(),
+          containsAll(['success', 'result']),
+        );
+        final result = fields.firstWhere((f) => f.name == 'result');
+        expect(
+          result.type,
+          isA<IrTypeRef>().having(
+            (t) => t.name,
+            'name',
+            'Subscription',
+          ),
+          reason: 'the override must keep the narrowed result type',
+        );
+      },
+    );
+
+    test(
       'multi-level allOf inheritance keeps all inherited properties',
       () {
         // Combined: allOf [Base1, Base2] where Base1 itself extends Grand.
-        // The pre-resolved Base1 contains a nested allOf that must be
-        // flattened, not skipped.
+        // The resolved Base1 contains a nested allOf that must be flattened,
+        // not skipped.
         final schemas = <String, dynamic>{
           'Grand': {
             'type': 'object',
@@ -1533,7 +1645,7 @@ void main() {
 
         final union = mapper.typeRegistry['Item']! as IrDiscriminatedUnion;
         expect(
-          (union.mapping['message']! as IrTypeRef).name,
+          (union.mapping[SpecString('message')]! as IrTypeRef).name,
           equals('OutputMessage'),
           reason: 'last declared variant wins, matching pre-existing behavior',
         );
@@ -1586,7 +1698,15 @@ void main() {
         final union = mapper.typeRegistry['Item']! as IrDiscriminatedUnion;
         // B's implicit enum value collides with the explicit entry — the
         // explicit mapping must not be overwritten.
-        expect((union.mapping['message']! as IrTypeRef).name, equals('A'));
+        expect((union.mapping[SpecString('message')]! as IrTypeRef).name, equals('A'));
+        // B is unreachable (its only discriminator value dispatches to A) —
+        // that's spec-conformant, but dropping a oneOf variant deserves a
+        // warning, not silence.
+        expect(
+          mapper.warnings.join('\n'),
+          allOf(contains('B'), contains('message')),
+          reason: 'dropping an unreachable variant should warn',
+        );
       },
     );
 
@@ -1643,15 +1763,15 @@ void main() {
         expect(event, isA<IrDiscriminatedUnion>());
         final union = event! as IrDiscriminatedUnion;
 
-        expect(union.mapping, contains('dep'));
+        expect(union.mapping, contains(const SpecString('dep')));
         // Unmapped variants are inferred: enum value when declared,
         // schema name otherwise.
-        expect(union.mapping, contains('withdrawal'));
-        expect(union.mapping, contains('Transfer'));
+        expect(union.mapping, contains(const SpecString('withdrawal')));
+        expect(union.mapping, contains(const SpecString('Transfer')));
         expect(union.mapping, hasLength(3));
         // An explicitly mapped schema must not also appear under its
         // implicit key.
-        expect(union.mapping, isNot(contains('Deposit')));
+        expect(union.mapping, isNot(contains(const SpecString('Deposit'))));
       },
     );
 
@@ -1793,7 +1913,7 @@ void main() {
       final op = api.operations.first;
       expect(op.operationId, equals('listPets'));
       expect(op.parameters, hasLength(1));
-      expect(op.parameters.first.name, equals('limit'));
+      expect(op.parameters.first.name.forDiagnostics, equals('limit'));
     });
 
     test('x- fields at top level and info are ignored', () {

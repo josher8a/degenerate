@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTerminalConfigurationsConfigurationRequest {const DeleteTerminalConfigurationsConfigurationRequest();
 
-factory DeleteTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> _) { return const DeleteTerminalConfigurationsConfigurationRequest(); }
+factory DeleteTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> _) {return const DeleteTerminalConfigurationsConfigurationRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteTerminalConfigurationsConfigurationRequest copyWith() { return const DeleteTerminalConfigurationsConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+DeleteTerminalConfigurationsConfigurationRequest copyWith() {return const DeleteTerminalConfigurationsConfigurationRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is DeleteTerminalConfigurationsConfigurationRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'DeleteTerminalConfigurationsConfigurationRequest()';
 
- }
+}

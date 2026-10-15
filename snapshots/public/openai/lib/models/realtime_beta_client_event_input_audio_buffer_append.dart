@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.append`.
 sealed class RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType();
 
-factory RealtimeBetaClientEventInputAudioBufferAppendType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventInputAudioBufferAppendType.fromJson(String json) {return switch (json) {
   'input_audio_buffer.append' => inputAudioBufferAppend,
   _ => RealtimeBetaClientEventInputAudioBufferAppendType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventInputAudioBufferAppendType inputAudioBufferAppend = RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend._();
 
 static const List<RealtimeBetaClientEventInputAudioBufferAppendType> values = [inputAudioBufferAppend];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'input_audio_buffer.append' => 'inputAudioBufferAppend',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaClientEventInputAudioBufferAppendType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaClientEventInputAudioBufferAppendType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inputAudioBufferAppend, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inputAudioBufferAppend, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend() => inputAudioBufferAppend(),
       RealtimeBetaClientEventInputAudioBufferAppendType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAudioBufferAppend, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAudioBufferAppend, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend() => inputAudioBufferAppend != null ? inputAudioBufferAppend() : orElse(value),
       RealtimeBetaClientEventInputAudioBufferAppendType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaClientEventInputAudioBufferAppendType($value)';
 
- }
+}
 @immutable final class RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend extends RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend._();
 
 @override String get value => 'input_audio_buffer.append';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 
 @override int get hashCode => 'input_audio_buffer.append'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaClientEventInputAudioBufferAppendType$Unknown extends RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Send this event to append audio bytes to the input audio buffer. The audio
 /// buffer is temporary storage you can write to and later commit. In Server VAD
 /// mode, the audio buffer is used to detect speech and the server will decide
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 /// 
 @immutable final class RealtimeBetaClientEventInputAudioBufferAppend {const RealtimeBetaClientEventInputAudioBufferAppend({required this.type, required this.audio, this.eventId, });
 
-factory RealtimeBetaClientEventInputAudioBufferAppend.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventInputAudioBufferAppend(
+factory RealtimeBetaClientEventInputAudioBufferAppend.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventInputAudioBufferAppend(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventInputAudioBufferAppendType.fromJson(json['type'] as String),
   audio: json['audio'] as String,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -84,18 +84,18 @@ final RealtimeBetaClientEventInputAudioBufferAppendType type;
 /// 
 final String audio;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
   'audio': audio,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('audio') && json['audio'] is String; } 
-RealtimeBetaClientEventInputAudioBufferAppend copyWith({String? Function()? eventId, RealtimeBetaClientEventInputAudioBufferAppendType? type, String? audio, }) { return RealtimeBetaClientEventInputAudioBufferAppend(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('audio') && json['audio'] is String;}
+RealtimeBetaClientEventInputAudioBufferAppend copyWith({String? Function()? eventId, RealtimeBetaClientEventInputAudioBufferAppendType? type, String? audio, }) {return RealtimeBetaClientEventInputAudioBufferAppend(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   audio: audio ?? this.audio,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventInputAudioBufferAppend &&
           eventId == other.eventId &&
@@ -106,4 +106,4 @@ RealtimeBetaClientEventInputAudioBufferAppend copyWith({String? Function()? even
 
 @override String toString() => 'RealtimeBetaClientEventInputAudioBufferAppend(eventId: $eventId, type: $type, audio: $audio)';
 
- }
+}

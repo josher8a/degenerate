@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_user.dart';@immutable final class ProjectUserListResponse {const ProjectUserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
-factory ProjectUserListResponse.fromJson(Map<String, dynamic> json) { return ProjectUserListResponse(
+factory ProjectUserListResponse.fromJson(Map<String, dynamic> json) {return ProjectUserListResponse(
   object: json['object'] as String,
   data: (json['data'] as List<dynamic>).map((e) => ProjectUser.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
-); }
+);}
 
 final String object;
 
@@ -21,25 +21,25 @@ final String lastId;
 
 final bool hasMore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object,
   'data': data.map((e) => e.toJson()).toList(),
   'first_id': firstId,
   'last_id': lastId,
   'has_more': hasMore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] is String &&
       json.containsKey('data') &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
-      json.containsKey('has_more') && json['has_more'] is bool; } 
-ProjectUserListResponse copyWith({String? object, List<ProjectUser>? data, String? firstId, String? lastId, bool? hasMore, }) { return ProjectUserListResponse(
+      json.containsKey('has_more') && json['has_more'] is bool;}
+ProjectUserListResponse copyWith({String? object, List<ProjectUser>? data, String? firstId, String? lastId, bool? hasMore, }) {return ProjectUserListResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,
   lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectUserListResponse &&
           object == other.object &&
@@ -52,4 +52,4 @@ ProjectUserListResponse copyWith({String? object, List<ProjectUser>? data, Strin
 
 @override String toString() => 'ProjectUserListResponse(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
 
- }
+}

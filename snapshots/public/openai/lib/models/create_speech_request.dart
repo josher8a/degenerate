@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateSpeechRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_speech_request/create_speech_request_model.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_speech_request/create_speech_request_model.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
 sealed class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat();
 
-factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch (json) {
+factory CreateSpeechRequestResponseFormat.fromJson(String json) {return switch (json) {
   'mp3' => mp3,
   'opus' => opus,
   'aac' => aac,
@@ -12,7 +12,7 @@ factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch 
   'wav' => wav,
   'pcm' => pcm,
   _ => CreateSpeechRequestResponseFormat$Unknown(json),
-}; }
+};}
 
 static const CreateSpeechRequestResponseFormat mp3 = CreateSpeechRequestResponseFormat$mp3._();
 
@@ -29,9 +29,9 @@ static const CreateSpeechRequestResponseFormat pcm = CreateSpeechRequestResponse
 static const List<CreateSpeechRequestResponseFormat> values = [mp3, opus, aac, flac, wav, pcm];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mp3' => 'mp3',
   'opus' => 'opus',
   'aac' => 'aac',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'wav' => 'wav',
   'pcm' => 'pcm',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateSpeechRequestResponseFormat$Unknown; } 
+bool get isUnknown {return this is CreateSpeechRequestResponseFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mp3, required W Function() opus, required W Function() aac, required W Function() flac, required W Function() wav, required W Function() pcm, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mp3, required W Function() opus, required W Function() aac, required W Function() flac, required W Function() wav, required W Function() pcm, required W Function(String value) $unknown, }) {return switch (this) {
       CreateSpeechRequestResponseFormat$mp3() => mp3(),
       CreateSpeechRequestResponseFormat$opus() => opus(),
       CreateSpeechRequestResponseFormat$aac() => aac(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() mp3, required W Function() opus, required W Fun
       CreateSpeechRequestResponseFormat$wav() => wav(),
       CreateSpeechRequestResponseFormat$pcm() => pcm(),
       CreateSpeechRequestResponseFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W Function()? opus, W Function()? aac, W Function()? flac, W Function()? wav, W Function()? pcm, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W Function()? opus, W Function()? aac, W Function()? flac, W Function()? wav, W Function()? pcm, W Function(String value)? $unknown, }) {return switch (this) {
       CreateSpeechRequestResponseFormat$mp3() => mp3 != null ? mp3() : orElse(value),
       CreateSpeechRequestResponseFormat$opus() => opus != null ? opus() : orElse(value),
       CreateSpeechRequestResponseFormat$aac() => aac != null ? aac() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
       CreateSpeechRequestResponseFormat$wav() => wav != null ? wav() : orElse(value),
       CreateSpeechRequestResponseFormat$pcm() => pcm != null ? pcm() : orElse(value),
       CreateSpeechRequestResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateSpeechRequestResponseFormat($value)';
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$mp3 extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$mp3._();
 
 @override String get value => 'mp3';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'mp3'.hashCode;
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$opus extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$opus._();
 
 @override String get value => 'opus';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'opus'.hashCode;
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$aac extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$aac._();
 
 @override String get value => 'aac';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'aac'.hashCode;
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$flac extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$flac._();
 
 @override String get value => 'flac';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'flac'.hashCode;
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$wav extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$wav._();
 
 @override String get value => 'wav';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'wav'.hashCode;
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$pcm extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$pcm._();
 
 @override String get value => 'pcm';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'pcm'.hashCode;
 
- }
+}
 @immutable final class CreateSpeechRequestResponseFormat$Unknown extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$Unknown(this.value);
 
 @override final String value;
@@ -128,15 +128,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
 sealed class StreamFormat {const StreamFormat();
 
-factory StreamFormat.fromJson(String json) { return switch (json) {
+factory StreamFormat.fromJson(String json) {return switch (json) {
   'sse' => sse,
   'audio' => audio,
   _ => StreamFormat$Unknown(json),
-}; }
+};}
 
 static const StreamFormat sse = StreamFormat$sse._();
 
@@ -145,30 +145,30 @@ static const StreamFormat audio = StreamFormat$audio._();
 static const List<StreamFormat> values = [sse, audio];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'sse' => 'sse',
   'audio' => 'audio',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StreamFormat$Unknown; } 
+bool get isUnknown {return this is StreamFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() sse, required W Function() audio, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() sse, required W Function() audio, required W Function(String value) $unknown, }) {return switch (this) {
       StreamFormat$sse() => sse(),
       StreamFormat$audio() => audio(),
       StreamFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W Function()? audio, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W Function()? audio, W Function(String value)? $unknown, }) {return switch (this) {
       StreamFormat$sse() => sse != null ? sse() : orElse(value),
       StreamFormat$audio() => audio != null ? audio() : orElse(value),
       StreamFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StreamFormat($value)';
 
- }
+}
 @immutable final class StreamFormat$sse extends StreamFormat {const StreamFormat$sse._();
 
 @override String get value => 'sse';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W F
 
 @override int get hashCode => 'sse'.hashCode;
 
- }
+}
 @immutable final class StreamFormat$audio extends StreamFormat {const StreamFormat$audio._();
 
 @override String get value => 'audio';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W F
 
 @override int get hashCode => 'audio'.hashCode;
 
- }
+}
 @immutable final class StreamFormat$Unknown extends StreamFormat {const StreamFormat$Unknown(this.value);
 
 @override final String value;
@@ -196,18 +196,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W F
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = StreamFormat.audio, });
+}
+@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat, this.speed, this.streamFormat, });
 
-factory CreateSpeechRequest.fromJson(Map<String, dynamic> json) { return CreateSpeechRequest(
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateSpeechRequestModelVariant2.fromJson(v as String),),
+factory CreateSpeechRequest.fromJson(Map<String, dynamic> json) {return CreateSpeechRequest(
+  model: CreateSpeechRequestModel.fromJson(json['model']),
   input: json['input'] as String,
   instructions: json['instructions'] as String?,
-  voice: OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),),
-  responseFormat: json.containsKey('response_format') ? CreateSpeechRequestResponseFormat.fromJson(json['response_format'] as String) : CreateSpeechRequestResponseFormat.mp3,
-  speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  streamFormat: json.containsKey('stream_format') ? StreamFormat.fromJson(json['stream_format'] as String) : StreamFormat.audio,
-); }
+  voice: VoiceIdsOrCustomVoice.fromJson(json['voice']),
+  responseFormat: json['response_format'] != null ? CreateSpeechRequestResponseFormat.fromJson(json['response_format'] as String) : null,
+  speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
+  streamFormat: json['stream_format'] != null ? StreamFormat.fromJson(json['stream_format'] as String) : null,
+);}
 
 /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
 /// 
@@ -223,37 +223,49 @@ final String? instructions;
 final VoiceIdsOrCustomVoice voice;
 
 /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-final CreateSpeechRequestResponseFormat responseFormat;
+final CreateSpeechRequestResponseFormat? responseFormat;
 
 /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.
-final double speed;
+final double? speed;
 
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
-final StreamFormat streamFormat;
+final StreamFormat? streamFormat;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `responseFormat`, or its schema default when absent.
+CreateSpeechRequestResponseFormat get responseFormatOrDefault => responseFormat ?? CreateSpeechRequestResponseFormat.fromJson('mp3');
+
+/// The value of `speed`, or its schema default when absent.
+double get speedOrDefault => speed ?? 1.0;
+
+/// The value of `streamFormat`, or its schema default when absent.
+StreamFormat get streamFormatOrDefault => streamFormat ?? StreamFormat.fromJson('audio');
+
+Map<String, dynamic> toJson() {return {
   'model': model.toJson(),
   'input': input,
   'instructions': ?instructions,
   'voice': voice.toJson(),
-  'response_format': responseFormat.toJson(),
-  'speed': speed,
-  'stream_format': streamFormat.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
+  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  'speed': ?speed,
+  if (streamFormat != null) 'stream_format': streamFormat?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model') &&
       json.containsKey('input') && json['input'] is String &&
-      json.containsKey('voice'); } 
+      json.containsKey('voice');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (input.runes.length > 4096) { errors.add('input: length must be <= 4096'); }
 final instructions$ = instructions;
 if (instructions$ != null) {
   if (instructions$.runes.length > 4096) { errors.add('instructions: length must be <= 4096'); }
 }
-if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
-if (speed > 4) { errors.add('speed: must be <= 4'); }
-return errors; } 
-CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String? Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, StreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
+final speed$ = speed;
+if (speed$ != null) {
+  if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
+  if (speed$ > 4) { errors.add('speed: must be <= 4'); }
+}
+return errors;}
+CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String? Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat? Function()? responseFormat, double? Function()? speed, StreamFormat? Function()? streamFormat, }) {return CreateSpeechRequest(
   model: model ?? this.model,
   input: input ?? this.input,
   instructions: instructions != null ? instructions() : this.instructions,
@@ -261,7 +273,7 @@ CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, St
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   speed: speed != null ? speed() : this.speed,
   streamFormat: streamFormat != null ? streamFormat() : this.streamFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSpeechRequest &&
           model == other.model &&
@@ -276,4 +288,4 @@ CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, St
 
 @override String toString() => 'CreateSpeechRequest(model: $model, input: $input, instructions: $instructions, voice: $voice, responseFormat: $responseFormat, speed: $speed, streamFormat: $streamFormat)';
 
- }
+}

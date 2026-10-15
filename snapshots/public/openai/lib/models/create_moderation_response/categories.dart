@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of the categories, and whether they are flagged or not.
 @immutable final class Categories {const Categories({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
-factory Categories.fromJson(Map<String, dynamic> json) { return Categories(
+factory Categories.fromJson(Map<String, dynamic> json) {return Categories(
   hate: json['hate'] as bool,
   hateThreatening: json['hate/threatening'] as bool,
   harassment: json['harassment'] as bool,
@@ -18,7 +18,7 @@ factory Categories.fromJson(Map<String, dynamic> json) { return Categories(
   sexualMinors: json['sexual/minors'] as bool,
   violence: json['violence'] as bool,
   violenceGraphic: json['violence/graphic'] as bool,
-); }
+);}
 
 /// Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups (e.g., chess players) is harassment.
 final bool hate;
@@ -59,7 +59,7 @@ final bool violence;
 /// Content that depicts death, violence, or physical injury in graphic detail.
 final bool violenceGraphic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hate': hate,
   'hate/threatening': hateThreatening,
   'harassment': harassment,
@@ -73,21 +73,21 @@ Map<String, dynamic> toJson() { return {
   'sexual/minors': sexualMinors,
   'violence': violence,
   'violence/graphic': violenceGraphic,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') && json['hate'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hate') && json['hate'] is bool &&
       json.containsKey('hate/threatening') && json['hate/threatening'] is bool &&
       json.containsKey('harassment') && json['harassment'] is bool &&
       json.containsKey('harassment/threatening') && json['harassment/threatening'] is bool &&
-      json.containsKey('illicit') && json['illicit'] is bool &&
-      json.containsKey('illicit/violent') && json['illicit/violent'] is bool &&
+      json.containsKey('illicit') && (json['illicit'] == null || json['illicit'] is bool) &&
+      json.containsKey('illicit/violent') && (json['illicit/violent'] == null || json['illicit/violent'] is bool) &&
       json.containsKey('self-harm') && json['self-harm'] is bool &&
       json.containsKey('self-harm/intent') && json['self-harm/intent'] is bool &&
       json.containsKey('self-harm/instructions') && json['self-harm/instructions'] is bool &&
       json.containsKey('sexual') && json['sexual'] is bool &&
       json.containsKey('sexual/minors') && json['sexual/minors'] is bool &&
       json.containsKey('violence') && json['violence'] is bool &&
-      json.containsKey('violence/graphic') && json['violence/graphic'] is bool; } 
-Categories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? harassmentThreatening, bool? Function()? illicit, bool? Function()? illicitViolent, bool? selfHarm, bool? selfHarmIntent, bool? selfHarmInstructions, bool? sexual, bool? sexualMinors, bool? violence, bool? violenceGraphic, }) { return Categories(
+      json.containsKey('violence/graphic') && json['violence/graphic'] is bool;}
+Categories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? harassmentThreatening, bool? Function()? illicit, bool? Function()? illicitViolent, bool? selfHarm, bool? selfHarmIntent, bool? selfHarmInstructions, bool? sexual, bool? sexualMinors, bool? violence, bool? violenceGraphic, }) {return Categories(
   hate: hate ?? this.hate,
   hateThreatening: hateThreatening ?? this.hateThreatening,
   harassment: harassment ?? this.harassment,
@@ -101,7 +101,7 @@ Categories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? 
   sexualMinors: sexualMinors ?? this.sexualMinors,
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Categories &&
           hate == other.hate &&
@@ -122,4 +122,4 @@ Categories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? 
 
 @override String toString() => 'Categories(\n  hate: $hate,\n  hateThreatening: $hateThreatening,\n  harassment: $harassment,\n  harassmentThreatening: $harassmentThreatening,\n  illicit: $illicit,\n  illicitViolent: $illicitViolent,\n  selfHarm: $selfHarm,\n  selfHarmIntent: $selfHarmIntent,\n  selfHarmInstructions: $selfHarmInstructions,\n  sexual: $sexual,\n  sexualMinors: $sexualMinors,\n  violence: $violence,\n  violenceGraphic: $violenceGraphic,\n)';
 
- }
+}

@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_sensitivity_level.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';/// A rule-level override.
 @immutable final class RulesetsExecuteRuleOverrides2 {const RulesetsExecuteRuleOverrides2({required this.id, this.action, this.enabled, this.scoreThreshold, this.sensitivityLevel, });
 
-factory RulesetsExecuteRuleOverrides2.fromJson(Map<String, dynamic> json) { return RulesetsExecuteRuleOverrides2(
+factory RulesetsExecuteRuleOverrides2.fromJson(Map<String, dynamic> json) {return RulesetsExecuteRuleOverrides2(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
   id: RulesetsRuleId.fromJson(json['id'] as String),
   scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toInt() : null,
   sensitivityLevel: json['sensitivity_level'] != null ? RulesetsExecuteSensitivityLevel.fromJson(json['sensitivity_level'] as String) : null,
-); }
+);}
 
 /// The action to override the rule with.
 final RulesetsRuleAction? action;
@@ -27,21 +27,21 @@ final int? scoreThreshold;
 /// The sensitivity level to use for the rule. This option is only applicable for DDoS phases.
 final RulesetsExecuteSensitivityLevel? sensitivityLevel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   'id': id.toJson(),
   'score_threshold': ?scoreThreshold,
   if (sensitivityLevel != null) 'sensitivity_level': sensitivityLevel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-RulesetsExecuteRuleOverrides2 copyWith({RulesetsRuleAction? Function()? action, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleId? id, int? Function()? scoreThreshold, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) { return RulesetsExecuteRuleOverrides2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+RulesetsExecuteRuleOverrides2 copyWith({RulesetsRuleAction? Function()? action, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleId? id, int? Function()? scoreThreshold, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) {return RulesetsExecuteRuleOverrides2(
   action: action != null ? action() : this.action,
   enabled: enabled != null ? enabled() : this.enabled,
   id: id ?? this.id,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
   sensitivityLevel: sensitivityLevel != null ? sensitivityLevel() : this.sensitivityLevel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsExecuteRuleOverrides2 &&
           action == other.action &&
@@ -54,4 +54,4 @@ RulesetsExecuteRuleOverrides2 copyWith({RulesetsRuleAction? Function()? action, 
 
 @override String toString() => 'RulesetsExecuteRuleOverrides2(action: $action, enabled: $enabled, id: $id, scoreThreshold: $scoreThreshold, sensitivityLevel: $sensitivityLevel)';
 
- }
+}

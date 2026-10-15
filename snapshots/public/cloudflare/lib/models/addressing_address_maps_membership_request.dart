@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_identifier.dart';import 'package:pub_cloudflare/models/addressing_kind.dart';@immutable final class AddressingAddressMapsMembershipRequest {const AddressingAddressMapsMembershipRequest({this.identifier, this.kind, });
 
-factory AddressingAddressMapsMembershipRequest.fromJson(Map<String, dynamic> json) { return AddressingAddressMapsMembershipRequest(
+factory AddressingAddressMapsMembershipRequest.fromJson(Map<String, dynamic> json) {return AddressingAddressMapsMembershipRequest(
   identifier: json['identifier'] != null ? AddressingIdentifier.fromJson(json['identifier'] as String) : null,
   kind: json['kind'] != null ? AddressingKind.fromJson(json['kind'] as String) : null,
-); }
+);}
 
 final AddressingIdentifier? identifier;
 
 final AddressingKind? kind;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (identifier != null) 'identifier': identifier?.toJson(),
   if (kind != null) 'kind': kind?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'identifier', 'kind'}.contains(key)); } 
-AddressingAddressMapsMembershipRequest copyWith({AddressingIdentifier? Function()? identifier, AddressingKind? Function()? kind, }) { return AddressingAddressMapsMembershipRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'identifier', 'kind'}.contains(key));}
+AddressingAddressMapsMembershipRequest copyWith({AddressingIdentifier? Function()? identifier, AddressingKind? Function()? kind, }) {return AddressingAddressMapsMembershipRequest(
   identifier: identifier != null ? identifier() : this.identifier,
   kind: kind != null ? kind() : this.kind,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingAddressMapsMembershipRequest &&
           identifier == other.identifier &&
@@ -30,4 +30,4 @@ AddressingAddressMapsMembershipRequest copyWith({AddressingIdentifier? Function(
 
 @override String toString() => 'AddressingAddressMapsMembershipRequest(identifier: $identifier, kind: $kind)';
 
- }
+}

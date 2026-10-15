@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/key_updated_changes_requested.dart';/// The details for events with this `type`.
 @immutable final class KeyUpdated {const KeyUpdated({this.id, this.changesRequested, });
 
-factory KeyUpdated.fromJson(Map<String, dynamic> json) { return KeyUpdated(
+factory KeyUpdated.fromJson(Map<String, dynamic> json) {return KeyUpdated(
   id: json['id'] as String?,
   changesRequested: json['changes_requested'] != null ? KeyUpdatedChangesRequested.fromJson(json['changes_requested'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The tracking ID of the API key.
 final String? id;
@@ -15,15 +15,15 @@ final String? id;
 /// The payload used to update the API key.
 final KeyUpdatedChangesRequested? changesRequested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (changesRequested != null) 'changes_requested': changesRequested?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'changes_requested'}.contains(key)); } 
-KeyUpdated copyWith({String? Function()? id, KeyUpdatedChangesRequested? Function()? changesRequested, }) { return KeyUpdated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'changes_requested'}.contains(key));}
+KeyUpdated copyWith({String? Function()? id, KeyUpdatedChangesRequested? Function()? changesRequested, }) {return KeyUpdated(
   id: id != null ? id() : this.id,
   changesRequested: changesRequested != null ? changesRequested() : this.changesRequested,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is KeyUpdated &&
           id == other.id &&
@@ -33,4 +33,4 @@ KeyUpdated copyWith({String? Function()? id, KeyUpdatedChangesRequested? Functio
 
 @override String toString() => 'KeyUpdated(id: $id, changesRequested: $changesRequested)';
 
- }
+}

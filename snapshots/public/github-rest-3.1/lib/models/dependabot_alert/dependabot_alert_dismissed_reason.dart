@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason that the alert was dismissed.
 sealed class DependabotAlertDismissedReason {const DependabotAlertDismissedReason();
 
-factory DependabotAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory DependabotAlertDismissedReason.fromJson(String json) {return switch (json) {
   'fix_started' => fixStarted,
   'inaccurate' => inaccurate,
   'no_bandwidth' => noBandwidth,
@@ -12,7 +12,7 @@ factory DependabotAlertDismissedReason.fromJson(String json) { return switch (js
   'tolerable_risk' => tolerableRisk,
   'null' => $null,
   _ => DependabotAlertDismissedReason$Unknown(json),
-}; }
+};}
 
 static const DependabotAlertDismissedReason fixStarted = DependabotAlertDismissedReason$fixStarted._();
 
@@ -29,9 +29,9 @@ static const DependabotAlertDismissedReason $null = DependabotAlertDismissedReas
 static const List<DependabotAlertDismissedReason> values = [fixStarted, inaccurate, noBandwidth, notUsed, tolerableRisk, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fix_started' => 'fixStarted',
   'inaccurate' => 'inaccurate',
   'no_bandwidth' => 'noBandwidth',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'tolerable_risk' => 'tolerableRisk',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DependabotAlertDismissedReason$Unknown; } 
+bool get isUnknown {return this is DependabotAlertDismissedReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fixStarted, required W Function() inaccurate, required W Function() noBandwidth, required W Function() notUsed, required W Function() tolerableRisk, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fixStarted, required W Function() inaccurate, required W Function() noBandwidth, required W Function() notUsed, required W Function() tolerableRisk, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       DependabotAlertDismissedReason$fixStarted() => fixStarted(),
       DependabotAlertDismissedReason$inaccurate() => inaccurate(),
       DependabotAlertDismissedReason$noBandwidth() => noBandwidth(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() fixStarted, required W Function() inaccurate, r
       DependabotAlertDismissedReason$tolerableRisk() => tolerableRisk(),
       DependabotAlertDismissedReason$$null() => $null(),
       DependabotAlertDismissedReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStarted, W Function()? inaccurate, W Function()? noBandwidth, W Function()? notUsed, W Function()? tolerableRisk, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStarted, W Function()? inaccurate, W Function()? noBandwidth, W Function()? notUsed, W Function()? tolerableRisk, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       DependabotAlertDismissedReason$fixStarted() => fixStarted != null ? fixStarted() : orElse(value),
       DependabotAlertDismissedReason$inaccurate() => inaccurate != null ? inaccurate() : orElse(value),
       DependabotAlertDismissedReason$noBandwidth() => noBandwidth != null ? noBandwidth() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
       DependabotAlertDismissedReason$tolerableRisk() => tolerableRisk != null ? tolerableRisk() : orElse(value),
       DependabotAlertDismissedReason$$null() => $null != null ? $null() : orElse(value),
       DependabotAlertDismissedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DependabotAlertDismissedReason($value)';
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$fixStarted extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$fixStarted._();
 
 @override String get value => 'fix_started';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => 'fix_started'.hashCode;
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$inaccurate extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$inaccurate._();
 
 @override String get value => 'inaccurate';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => 'inaccurate'.hashCode;
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$noBandwidth extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$noBandwidth._();
 
 @override String get value => 'no_bandwidth';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => 'no_bandwidth'.hashCode;
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$notUsed extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$notUsed._();
 
 @override String get value => 'not_used';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => 'not_used'.hashCode;
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$tolerableRisk extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$tolerableRisk._();
 
 @override String get value => 'tolerable_risk';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => 'tolerable_risk'.hashCode;
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$$null extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$$null._();
 
 @override String get value => 'null';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class DependabotAlertDismissedReason$Unknown extends DependabotAlertDismissedReason {const DependabotAlertDismissedReason$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStart
 
 @override int get hashCode => value.hashCode;
 
- }
+}

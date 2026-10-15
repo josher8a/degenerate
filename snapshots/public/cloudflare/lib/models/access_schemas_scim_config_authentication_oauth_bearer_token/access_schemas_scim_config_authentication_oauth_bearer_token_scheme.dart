@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
 sealed class AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme {const AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme();
 
-factory AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme.fromJson(String json) { return switch (json) {
+factory AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme.fromJson(String json) {return switch (json) {
   'oauthbearertoken' => oauthbearertoken,
   _ => AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown(json),
-}; }
+};}
 
 static const AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme oauthbearertoken = AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$oauthbearertoken._();
 
 static const List<AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme> values = [oauthbearertoken];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'oauthbearertoken' => 'oauthbearertoken',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown; } 
+bool get isUnknown {return this is AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() oauthbearertoken, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() oauthbearertoken, required W Function(String value) $unknown, }) {return switch (this) {
       AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$oauthbearertoken() => oauthbearertoken(),
       AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauthbearertoken, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauthbearertoken, W Function(String value)? $unknown, }) {return switch (this) {
       AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$oauthbearertoken() => oauthbearertoken != null ? oauthbearertoken() : orElse(value),
       AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme($value)';
 
- }
+}
 @immutable final class AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$oauthbearertoken extends AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme {const AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$oauthbearertoken._();
 
 @override String get value => 'oauthbearertoken';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauthbea
 
 @override int get hashCode => 'oauthbearertoken'.hashCode;
 
- }
+}
 @immutable final class AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown extends AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme {const AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauthbea
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -1,35 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecondaryDnsTsig
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_identifier.dart';/// TSIG algorithm.
-extension type const SecondaryDnsAlgo(String value) {
-factory SecondaryDnsAlgo.fromJson(String json) => SecondaryDnsAlgo(json);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_algo.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_name.dart';import 'package:pub_cloudflare/models/secondary_dns_secret.dart';@immutable final class SecondaryDnsTsig {const SecondaryDnsTsig({required this.algo, required this.id, required this.name, required this.secret, });
 
-String toJson() => value;
-
-}
-/// TSIG key name.
-extension type const SecondaryDnsSchemasName(String value) {
-factory SecondaryDnsSchemasName.fromJson(String json) => SecondaryDnsSchemasName(json);
-
-String toJson() => value;
-
-}
-/// TSIG secret.
-extension type const SecondaryDnsSecret(String value) {
-factory SecondaryDnsSecret.fromJson(String json) => SecondaryDnsSecret(json);
-
-String toJson() => value;
-
-}
-@immutable final class SecondaryDnsTsig {const SecondaryDnsTsig({required this.algo, required this.id, required this.name, required this.secret, });
-
-factory SecondaryDnsTsig.fromJson(Map<String, dynamic> json) { return SecondaryDnsTsig(
+factory SecondaryDnsTsig.fromJson(Map<String, dynamic> json) {return SecondaryDnsTsig(
   algo: SecondaryDnsAlgo.fromJson(json['algo'] as String),
   id: SecondaryDnsSchemasIdentifier.fromJson(json['id'] as String),
   name: SecondaryDnsSchemasName.fromJson(json['name'] as String),
   secret: SecondaryDnsSecret.fromJson(json['secret'] as String),
-); }
+);}
 
 /// TSIG algorithm.
 final SecondaryDnsAlgo algo;
@@ -42,22 +21,22 @@ final SecondaryDnsSchemasName name;
 /// TSIG secret.
 final SecondaryDnsSecret secret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'algo': algo.toJson(),
   'id': id.toJson(),
   'name': name.toJson(),
   'secret': secret.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('algo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('algo') &&
       json.containsKey('id') &&
       json.containsKey('name') &&
-      json.containsKey('secret'); } 
-SecondaryDnsTsig copyWith({SecondaryDnsAlgo? algo, SecondaryDnsSchemasIdentifier? id, SecondaryDnsSchemasName? name, SecondaryDnsSecret? secret, }) { return SecondaryDnsTsig(
+      json.containsKey('secret');}
+SecondaryDnsTsig copyWith({SecondaryDnsAlgo? algo, SecondaryDnsSchemasIdentifier? id, SecondaryDnsSchemasName? name, SecondaryDnsSecret? secret, }) {return SecondaryDnsTsig(
   algo: algo ?? this.algo,
   id: id ?? this.id,
   name: name ?? this.name,
   secret: secret ?? this.secret,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsTsig &&
           algo == other.algo &&
@@ -69,4 +48,4 @@ SecondaryDnsTsig copyWith({SecondaryDnsAlgo? algo, SecondaryDnsSchemasIdentifier
 
 @override String toString() => 'SecondaryDnsTsig(algo: $algo, id: $id, name: $name, secret: $secret)';
 
- }
+}

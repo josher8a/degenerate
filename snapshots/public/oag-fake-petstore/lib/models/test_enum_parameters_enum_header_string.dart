@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TestEnumParametersEnumHeaderString {const TestEnumParametersEnumHeaderString();
 
-factory TestEnumParametersEnumHeaderString.fromJson(String json) { return switch (json) {
+factory TestEnumParametersEnumHeaderString.fromJson(String json) {return switch (json) {
   '_abc' => abc,
   '-efg' => efg,
   '(xyz)' => xyz,
   _ => TestEnumParametersEnumHeaderString$Unknown(json),
-}; }
+};}
 
 static const TestEnumParametersEnumHeaderString abc = TestEnumParametersEnumHeaderString$abc._();
 
@@ -19,33 +19,33 @@ static const TestEnumParametersEnumHeaderString xyz = TestEnumParametersEnumHead
 static const List<TestEnumParametersEnumHeaderString> values = [abc, efg, xyz];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '_abc' => 'abc',
   '-efg' => 'efg',
   '(xyz)' => 'xyz',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TestEnumParametersEnumHeaderString$Unknown; } 
+bool get isUnknown {return this is TestEnumParametersEnumHeaderString$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() abc, required W Function() efg, required W Function() xyz, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() abc, required W Function() efg, required W Function() xyz, required W Function(String value) $unknown, }) {return switch (this) {
       TestEnumParametersEnumHeaderString$abc() => abc(),
       TestEnumParametersEnumHeaderString$efg() => efg(),
       TestEnumParametersEnumHeaderString$xyz() => xyz(),
       TestEnumParametersEnumHeaderString$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W Function()? efg, W Function()? xyz, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W Function()? efg, W Function()? xyz, W Function(String value)? $unknown, }) {return switch (this) {
       TestEnumParametersEnumHeaderString$abc() => abc != null ? abc() : orElse(value),
       TestEnumParametersEnumHeaderString$efg() => efg != null ? efg() : orElse(value),
       TestEnumParametersEnumHeaderString$xyz() => xyz != null ? xyz() : orElse(value),
       TestEnumParametersEnumHeaderString$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TestEnumParametersEnumHeaderString($value)';
 
- }
+}
 @immutable final class TestEnumParametersEnumHeaderString$abc extends TestEnumParametersEnumHeaderString {const TestEnumParametersEnumHeaderString$abc._();
 
 @override String get value => '_abc';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W F
 
 @override int get hashCode => '_abc'.hashCode;
 
- }
+}
 @immutable final class TestEnumParametersEnumHeaderString$efg extends TestEnumParametersEnumHeaderString {const TestEnumParametersEnumHeaderString$efg._();
 
 @override String get value => '-efg';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W F
 
 @override int get hashCode => '-efg'.hashCode;
 
- }
+}
 @immutable final class TestEnumParametersEnumHeaderString$xyz extends TestEnumParametersEnumHeaderString {const TestEnumParametersEnumHeaderString$xyz._();
 
 @override String get value => '(xyz)';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W F
 
 @override int get hashCode => '(xyz)'.hashCode;
 
- }
+}
 @immutable final class TestEnumParametersEnumHeaderString$Unknown extends TestEnumParametersEnumHeaderString {const TestEnumParametersEnumHeaderString$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

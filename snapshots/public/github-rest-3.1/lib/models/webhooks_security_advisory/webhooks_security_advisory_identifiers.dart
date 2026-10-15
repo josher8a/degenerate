@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryIdentifiers {const WebhooksSecurityAdvisoryIdentifiers({required this.type, required this.value, });
 
-factory WebhooksSecurityAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryIdentifiers(
+factory WebhooksSecurityAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) {return WebhooksSecurityAdvisoryIdentifiers(
   type: json['type'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String type;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-WebhooksSecurityAdvisoryIdentifiers copyWith({String? type, String? value, }) { return WebhooksSecurityAdvisoryIdentifiers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+WebhooksSecurityAdvisoryIdentifiers copyWith({String? type, String? value, }) {return WebhooksSecurityAdvisoryIdentifiers(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSecurityAdvisoryIdentifiers &&
           type == other.type &&
@@ -31,4 +31,4 @@ WebhooksSecurityAdvisoryIdentifiers copyWith({String? type, String? value, }) { 
 
 @override String toString() => 'WebhooksSecurityAdvisoryIdentifiers(type: $type, value: $value)';
 
- }
+}

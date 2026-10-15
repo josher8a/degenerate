@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.
 @immutable final class FixedResponse {const FixedResponse({this.contentType, this.location, this.messageBody, this.statusCode, });
 
-factory FixedResponse.fromJson(Map<String, dynamic> json) { return FixedResponse(
+factory FixedResponse.fromJson(Map<String, dynamic> json) {return FixedResponse(
   contentType: json['content_type'] as String?,
   location: json['location'] as String?,
   messageBody: json['message_body'] as String?,
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,
-); }
+);}
 
 /// The http 'Content-Type' header to include in the response.
 /// 
@@ -29,15 +29,15 @@ final String? messageBody;
 /// The http status code to respond with.
 final int? statusCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content_type': ?contentType,
   'location': ?location,
   'message_body': ?messageBody,
   'status_code': ?statusCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type', 'location', 'message_body', 'status_code'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content_type', 'location', 'message_body', 'status_code'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final contentType$ = contentType;
 if (contentType$ != null) {
   if (contentType$.runes.length > 32) { errors.add('contentType: length must be <= 32'); }
@@ -50,13 +50,13 @@ final messageBody$ = messageBody;
 if (messageBody$ != null) {
   if (messageBody$.runes.length > 1024) { errors.add('messageBody: length must be <= 1024'); }
 }
-return errors; } 
-FixedResponse copyWith({String? Function()? contentType, String? Function()? location, String? Function()? messageBody, int? Function()? statusCode, }) { return FixedResponse(
+return errors;}
+FixedResponse copyWith({String? Function()? contentType, String? Function()? location, String? Function()? messageBody, int? Function()? statusCode, }) {return FixedResponse(
   contentType: contentType != null ? contentType() : this.contentType,
   location: location != null ? location() : this.location,
   messageBody: messageBody != null ? messageBody() : this.messageBody,
   statusCode: statusCode != null ? statusCode() : this.statusCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FixedResponse &&
           contentType == other.contentType &&
@@ -68,4 +68,4 @@ FixedResponse copyWith({String? Function()? contentType, String? Function()? loc
 
 @override String toString() => 'FixedResponse(contentType: $contentType, location: $location, messageBody: $messageBody, statusCode: $statusCode)';
 
- }
+}

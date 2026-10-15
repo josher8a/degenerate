@@ -16,7 +16,7 @@ final class IpAddressManagementServiceBindingsApi with ApiExecutor {const IpAddr
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<List<AddressingServiceBinding>?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingServiceBinding>?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -33,7 +33,7 @@ return execute(
   },
   onError: IpAddressManagementPrefixesDeleteBgpPrefixError.fromResponse,
 );
- } 
+}
 /// Create Service Binding
 ///
 /// Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare's network.
@@ -41,7 +41,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<AddressingServiceBinding?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingServiceBinding?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -60,13 +60,13 @@ return execute(
   },
   onError: IpAddressManagementPrefixesDeleteBgpPrefixError.fromResponse,
 );
- } 
+}
 /// Get Service Binding
 ///
 /// Fetch a single Service Binding
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<AddressingServiceBinding?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingServiceBinding?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +75,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -83,13 +83,13 @@ return execute(
   },
   onError: IpAddressManagementPrefixesDeleteBgpPrefixError.fromResponse,
 );
- } 
+}
 /// Delete Service Binding
 ///
 /// Delete a Service Binding
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon4, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -98,21 +98,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: IpAddressManagementPrefixesDeleteBgpPrefixError.fromResponse,
 );
- } 
+}
 /// List Services
 ///
 /// Bring-Your-Own IP (BYOIP) prefixes onboarded to Cloudflare must be bound to a service running on the Cloudflare network to enable a Cloudflare product on the IP addresses. This endpoint can be used as a reference of available services on the Cloudflare network, and their service IDs.
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/services`
-Future<ApiResult<List<IpAddressManagementServiceBindingsListServicesResponseResult>?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IpAddressManagementServiceBindingsListServicesResponseResult>?, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,7 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -129,5 +129,5 @@ return execute(
   },
   onError: IpAddressManagementPrefixesDeleteBgpPrefixError.fromResponse,
 );
- } 
- }
+}
+}

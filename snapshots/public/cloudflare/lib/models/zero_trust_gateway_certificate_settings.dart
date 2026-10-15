@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.
 @immutable final class ZeroTrustGatewayCertificateSettings {const ZeroTrustGatewayCertificateSettings({required this.id});
 
-factory ZeroTrustGatewayCertificateSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCertificateSettings(
+factory ZeroTrustGatewayCertificateSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayCertificateSettings(
   id: json['id'] as String,
-); }
+);}
 
 /// Specify the UUID of the certificate used for interception. Ensure the certificate is available at the edge(previously called 'active'). A nil UUID directs Cloudflare to use the Root CA.
 /// 
 /// Example: `'d1b364c5-1311-466e-a194-f0e943e0799f'`
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-ZeroTrustGatewayCertificateSettings copyWith({String? id}) { return ZeroTrustGatewayCertificateSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+ZeroTrustGatewayCertificateSettings copyWith({String? id}) {return ZeroTrustGatewayCertificateSettings(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayCertificateSettings &&
           id == other.id;
@@ -28,4 +28,4 @@ ZeroTrustGatewayCertificateSettings copyWith({String? id}) { return ZeroTrustGat
 
 @override String toString() => 'ZeroTrustGatewayCertificateSettings(id: $id)';
 
- }
+}

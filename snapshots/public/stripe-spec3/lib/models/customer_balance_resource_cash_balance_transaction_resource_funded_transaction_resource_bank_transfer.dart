@@ -2,16 +2,16 @@
 // Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_type.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_eu_bank_transfer.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_gb_bank_transfer.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_jp_bank_transfer.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_us_bank_transfer.dart';/// 
-@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer({required this.type, this.euBankTransfer, this.gbBankTransfer, this.jpBankTransfer, this.reference, this.usBankTransfer, });
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer({required this.type, this.euBankTransfer, this.gbBankTransfer, this.jpBankTransfer, this.reference = const Omittable.absent(), this.usBankTransfer, });
 
-factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
+factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer.fromJson(Map<String, dynamic> json) {return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
   gbBankTransfer: json['gb_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer.fromJson(json['gb_bank_transfer'] as Map<String, dynamic>) : null,
   jpBankTransfer: json['jp_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer.fromJson(json['jp_bank_transfer'] as Map<String, dynamic>) : null,
-  reference: json['reference'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   type: CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType.fromJson(json['type'] as String),
   usBankTransfer: json['us_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer? euBankTransfer;
 
@@ -20,37 +20,37 @@ final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionReso
 final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer? jpBankTransfer;
 
 /// The user-supplied reference field on the bank transfer.
-final String? reference;
+final Omittable<String?> reference;
 
 /// The funding method type used to fund the customer balance. Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
 final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType type;
 
 final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer? usBankTransfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
   if (gbBankTransfer != null) 'gb_bank_transfer': gbBankTransfer?.toJson(),
   if (jpBankTransfer != null) 'jp_bank_transfer': jpBankTransfer?.toJson(),
-  'reference': ?reference,
+  if (reference.isPresent) 'reference': reference.value,
   'type': type.toJson(),
   if (usBankTransfer != null) 'us_bank_transfer': usBankTransfer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final reference$ = reference;
+List<String> validate() {final errors = <String>[];
+final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
-return errors; } 
-CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer? Function()? euBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer? Function()? gbBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer? Function()? jpBankTransfer, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer? Function()? usBankTransfer, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
+return errors;}
+CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer? Function()? euBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer? Function()? gbBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer? Function()? jpBankTransfer, Omittable<String?>? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer? Function()? usBankTransfer, }) {return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   gbBankTransfer: gbBankTransfer != null ? gbBankTransfer() : this.gbBankTransfer,
   jpBankTransfer: jpBankTransfer != null ? jpBankTransfer() : this.jpBankTransfer,
-  reference: reference != null ? reference() : this.reference,
+  reference: reference ?? this.reference,
   type: type ?? this.type,
   usBankTransfer: usBankTransfer != null ? usBankTransfer() : this.usBankTransfer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer &&
           euBankTransfer == other.euBankTransfer &&
@@ -64,4 +64,4 @@ CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBa
 
 @override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(euBankTransfer: $euBankTransfer, gbBankTransfer: $gbBankTransfer, jpBankTransfer: $jpBankTransfer, reference: $reference, type: $type, usBankTransfer: $usBankTransfer)';
 
- }
+}

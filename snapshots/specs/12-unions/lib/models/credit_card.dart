@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreditCard {const CreditCard({required this.cardNumber, required this.expiryMonth, required this.expiryYear, this.cardholderName, });
 
-factory CreditCard.fromJson(Map<String, dynamic> json) { return CreditCard(
+factory CreditCard.fromJson(Map<String, dynamic> json) {return CreditCard(
   cardNumber: json['cardNumber'] as String,
   expiryMonth: (json['expiryMonth'] as num).toInt(),
   expiryYear: (json['expiryYear'] as num).toInt(),
   cardholderName: json['cardholderName'] as String?,
-); }
+);}
 
 final String cardNumber;
 
@@ -18,21 +18,21 @@ final int expiryYear;
 
 final String? cardholderName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cardNumber': cardNumber,
   'expiryMonth': expiryMonth,
   'expiryYear': expiryYear,
   'cardholderName': ?cardholderName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cardNumber') && json['cardNumber'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cardNumber') && json['cardNumber'] is String &&
       json.containsKey('expiryMonth') && json['expiryMonth'] is num &&
-      json.containsKey('expiryYear') && json['expiryYear'] is num; } 
-CreditCard copyWith({String? cardNumber, int? expiryMonth, int? expiryYear, String? Function()? cardholderName, }) { return CreditCard(
+      json.containsKey('expiryYear') && json['expiryYear'] is num;}
+CreditCard copyWith({String? cardNumber, int? expiryMonth, int? expiryYear, String? Function()? cardholderName, }) {return CreditCard(
   cardNumber: cardNumber ?? this.cardNumber,
   expiryMonth: expiryMonth ?? this.expiryMonth,
   expiryYear: expiryYear ?? this.expiryYear,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreditCard &&
           cardNumber == other.cardNumber &&
@@ -44,4 +44,4 @@ CreditCard copyWith({String? cardNumber, int? expiryMonth, int? expiryYear, Stri
 
 @override String toString() => 'CreditCard(cardNumber: $cardNumber, expiryMonth: $expiryMonth, expiryYear: $expiryYear, cardholderName: $cardholderName)';
 
- }
+}

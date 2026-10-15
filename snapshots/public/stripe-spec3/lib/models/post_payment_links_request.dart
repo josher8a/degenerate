@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/consent_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/phone_number_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_name_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_optional_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/tax_id_collection.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/post_invoices_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/post_payment_links_payment_link_request_after_completion.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/post_payment_links_payment_link_request_invoice_creation.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request/post_payment_links_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request/post_payment_links_request_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request/post_payment_links_request_restrictions.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request/post_payment_links_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request/post_payment_links_request_subscription_data.dart';@immutable final class PostPaymentLinksRequest {const PostPaymentLinksRequest({required this.lineItems, this.afterCompletion, this.allowPromotionCodes, this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.billingAddressCollection, this.consentCollection, this.currency, this.customFields, this.customText, this.customerCreation, this.expand, this.inactiveMessage, this.invoiceCreation, this.metadata, this.nameCollection, this.onBehalfOf, this.optionalItems, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodTypes, this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.taxIdCollection, this.transferData, });
 
-factory PostPaymentLinksRequest.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequest(
+factory PostPaymentLinksRequest.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequest(
   afterCompletion: json['after_completion'] != null ? PostPaymentLinksPaymentLinkRequestAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
@@ -34,7 +34,7 @@ factory PostPaymentLinksRequest.fromJson(Map<String, dynamic> json) { return Pos
   subscriptionData: json['subscription_data'] != null ? PostPaymentLinksRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   taxIdCollection: json['tax_id_collection'] != null ? TaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
   transferData: json['transfer_data'] != null ? PostInvoicesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Behavior after the purchase is complete.
 final PostPaymentLinksPaymentLinkRequestAfterCompletion? afterCompletion;
@@ -134,7 +134,7 @@ final TaxIdCollection? taxIdCollection;
 /// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to.
 final PostInvoicesRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (afterCompletion != null) 'after_completion': afterCompletion?.toJson(),
   'allow_promotion_codes': ?allowPromotionCodes,
   'application_fee_amount': ?applicationFeeAmount,
@@ -165,16 +165,16 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionData != null) 'subscription_data': subscriptionData?.toJson(),
   if (taxIdCollection != null) 'tax_id_collection': taxIdCollection?.toJson(),
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('line_items'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('line_items');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final inactiveMessage$ = inactiveMessage;
 if (inactiveMessage$ != null) {
   if (inactiveMessage$.runes.length > 500) { errors.add('inactiveMessage: length must be <= 500'); }
 }
-return errors; } 
-PostPaymentLinksRequest copyWith({PostPaymentLinksPaymentLinkRequestAfterCompletion? Function()? afterCompletion, bool? Function()? allowPromotionCodes, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PaymentLinkBillingAddressCollection? Function()? billingAddressCollection, ConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, PaymentLinkCustomerCreation? Function()? customerCreation, List<String>? Function()? expand, String? Function()? inactiveMessage, PostPaymentLinksPaymentLinkRequestInvoiceCreation? Function()? invoiceCreation, List<PostPaymentLinksRequestLineItems>? lineItems, Map<String, String>? Function()? metadata, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, String? Function()? onBehalfOf, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostPaymentLinksRequestPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? Function()? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PhoneNumberCollection? Function()? phoneNumberCollection, PostPaymentLinksRequestRestrictions? Function()? restrictions, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostPaymentLinksRequestShippingOptions>? Function()? shippingOptions, PaymentLinkSubmitType? Function()? submitType, PostPaymentLinksRequestSubscriptionData? Function()? subscriptionData, TaxIdCollection? Function()? taxIdCollection, PostInvoicesRequestTransferData? Function()? transferData, }) { return PostPaymentLinksRequest(
+return errors;}
+PostPaymentLinksRequest copyWith({PostPaymentLinksPaymentLinkRequestAfterCompletion? Function()? afterCompletion, bool? Function()? allowPromotionCodes, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PaymentLinkBillingAddressCollection? Function()? billingAddressCollection, ConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, PaymentLinkCustomerCreation? Function()? customerCreation, List<String>? Function()? expand, String? Function()? inactiveMessage, PostPaymentLinksPaymentLinkRequestInvoiceCreation? Function()? invoiceCreation, List<PostPaymentLinksRequestLineItems>? lineItems, Map<String, String>? Function()? metadata, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, String? Function()? onBehalfOf, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostPaymentLinksRequestPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? Function()? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PhoneNumberCollection? Function()? phoneNumberCollection, PostPaymentLinksRequestRestrictions? Function()? restrictions, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostPaymentLinksRequestShippingOptions>? Function()? shippingOptions, PaymentLinkSubmitType? Function()? submitType, PostPaymentLinksRequestSubscriptionData? Function()? subscriptionData, TaxIdCollection? Function()? taxIdCollection, PostInvoicesRequestTransferData? Function()? transferData, }) {return PostPaymentLinksRequest(
   afterCompletion: afterCompletion != null ? afterCompletion() : this.afterCompletion,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -205,7 +205,7 @@ PostPaymentLinksRequest copyWith({PostPaymentLinksPaymentLinkRequestAfterComplet
   subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
   taxIdCollection: taxIdCollection != null ? taxIdCollection() : this.taxIdCollection,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksRequest &&
           afterCompletion == other.afterCompletion &&
@@ -243,4 +243,4 @@ PostPaymentLinksRequest copyWith({PostPaymentLinksPaymentLinkRequestAfterComplet
 
 @override String toString() => 'PostPaymentLinksRequest(\n  afterCompletion: $afterCompletion,\n  allowPromotionCodes: $allowPromotionCodes,\n  applicationFeeAmount: $applicationFeeAmount,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  billingAddressCollection: $billingAddressCollection,\n  consentCollection: $consentCollection,\n  currency: $currency,\n  customFields: $customFields,\n  customText: $customText,\n  customerCreation: $customerCreation,\n  expand: $expand,\n  inactiveMessage: $inactiveMessage,\n  invoiceCreation: $invoiceCreation,\n  lineItems: $lineItems,\n  metadata: $metadata,\n  nameCollection: $nameCollection,\n  onBehalfOf: $onBehalfOf,\n  optionalItems: $optionalItems,\n  paymentIntentData: $paymentIntentData,\n  paymentMethodCollection: $paymentMethodCollection,\n  paymentMethodTypes: $paymentMethodTypes,\n  phoneNumberCollection: $phoneNumberCollection,\n  restrictions: $restrictions,\n  shippingAddressCollection: $shippingAddressCollection,\n  shippingOptions: $shippingOptions,\n  submitType: $submitType,\n  subscriptionData: $subscriptionData,\n  taxIdCollection: $taxIdCollection,\n  transferData: $transferData,\n)';
 
- }
+}

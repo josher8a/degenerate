@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of this account. Usually `active`, but can be `suspended` or `closed`.
 sealed class AccountEnumStatus {const AccountEnumStatus();
 
-factory AccountEnumStatus.fromJson(String json) { return switch (json) {
+factory AccountEnumStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'suspended' => suspended,
   'closed' => closed,
   _ => AccountEnumStatus$Unknown(json),
-}; }
+};}
 
 static const AccountEnumStatus active = AccountEnumStatus$active._();
 
@@ -20,33 +20,33 @@ static const AccountEnumStatus closed = AccountEnumStatus$closed._();
 static const List<AccountEnumStatus> values = [active, suspended, closed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'suspended' => 'suspended',
   'closed' => 'closed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountEnumStatus$Unknown; } 
+bool get isUnknown {return this is AccountEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() suspended, required W Function() closed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() suspended, required W Function() closed, required W Function(String value) $unknown, }) {return switch (this) {
       AccountEnumStatus$active() => active(),
       AccountEnumStatus$suspended() => suspended(),
       AccountEnumStatus$closed() => closed(),
       AccountEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? suspended, W Function()? closed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? suspended, W Function()? closed, W Function(String value)? $unknown, }) {return switch (this) {
       AccountEnumStatus$active() => active != null ? active() : orElse(value),
       AccountEnumStatus$suspended() => suspended != null ? suspended() : orElse(value),
       AccountEnumStatus$closed() => closed != null ? closed() : orElse(value),
       AccountEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountEnumStatus($value)';
 
- }
+}
 @immutable final class AccountEnumStatus$active extends AccountEnumStatus {const AccountEnumStatus$active._();
 
 @override String get value => 'active';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class AccountEnumStatus$suspended extends AccountEnumStatus {const AccountEnumStatus$suspended._();
 
 @override String get value => 'suspended';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'suspended'.hashCode;
 
- }
+}
 @immutable final class AccountEnumStatus$closed extends AccountEnumStatus {const AccountEnumStatus$closed._();
 
 @override String get value => 'closed';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class AccountEnumStatus$Unknown extends AccountEnumStatus {const AccountEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -14,7 +14,7 @@ final class ZeroTrustGatewayApplicationAndApplicationTypeMappingsApi with ApiExe
 /// List all application and application type mappings.
 ///
 /// `GET /accounts/{account_id}/gateway/app_types`
-Future<ApiResult<List<ZeroTrustGatewayAppTypes>?, ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsError>> zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayAppTypes>?, ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsError>> zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,5 +31,5 @@ return execute(
   },
   onError: ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsError.fromResponse,
 );
- } 
- }
+}
+}

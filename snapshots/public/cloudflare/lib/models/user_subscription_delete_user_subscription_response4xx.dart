@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSubscriptionDeleteUserSubscriptionResponse4xx
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages5.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';@immutable final class UserSubscriptionDeleteUserSubscriptionResponse4xx {const UserSubscriptionDeleteUserSubscriptionResponse4xx({required this.errors, required this.messages, required this.result, required this.success, this.subscriptionId, });
+
+factory UserSubscriptionDeleteUserSubscriptionResponse4xx.fromJson(Map<String, dynamic> json) {return UserSubscriptionDeleteUserSubscriptionResponse4xx(
+  errors: (json['errors'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
+  result: json['result'] as Map<String, dynamic>?,
+  success: json['success'] as bool,
+  subscriptionId: json['subscription_id'] != null ? SchemasIdentifier.fromJson(json['subscription_id'] as String) : null,
+);}
+
+/// Example: `[{code: 7003, message: No route for the URI}]`
+final List<Messages5> errors;
+
+/// Example: `[]`
+final List<Messages5> messages;
+
+final Map<String,dynamic>? result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `false`
+final bool success;
+
+/// Subscription identifier tag.
+final SchemasIdentifier? subscriptionId;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result,
+  'success': success,
+  if (subscriptionId != null) 'subscription_id': subscriptionId?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+UserSubscriptionDeleteUserSubscriptionResponse4xx copyWith({List<Messages5>? errors, List<Messages5>? messages, Map<String, dynamic>? Function()? result, bool? success, SchemasIdentifier? Function()? subscriptionId, }) {return UserSubscriptionDeleteUserSubscriptionResponse4xx(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result != null ? result() : this.result,
+  success: success ?? this.success,
+  subscriptionId: subscriptionId != null ? subscriptionId() : this.subscriptionId,
+);}
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is UserSubscriptionDeleteUserSubscriptionResponse4xx &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success &&
+          subscriptionId == other.subscriptionId;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, subscriptionId);
+
+@override String toString() => 'UserSubscriptionDeleteUserSubscriptionResponse4xx(errors: $errors, messages: $messages, result: $result, success: $success, subscriptionId: $subscriptionId)';
+
+}

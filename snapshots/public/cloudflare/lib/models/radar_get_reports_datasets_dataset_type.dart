@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by dataset type.
 sealed class RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType();
 
-factory RadarGetReportsDatasetsDatasetType.fromJson(String json) { return switch (json) {
+factory RadarGetReportsDatasetsDatasetType.fromJson(String json) {return switch (json) {
   'RANKING_BUCKET' => rankingBucket,
   'REPORT' => report,
   _ => RadarGetReportsDatasetsDatasetType$Unknown(json),
-}; }
+};}
 
 static const RadarGetReportsDatasetsDatasetType rankingBucket = RadarGetReportsDatasetsDatasetType$rankingBucket._();
 
@@ -17,30 +17,30 @@ static const RadarGetReportsDatasetsDatasetType report = RadarGetReportsDatasets
 static const List<RadarGetReportsDatasetsDatasetType> values = [rankingBucket, report];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'RANKING_BUCKET' => 'rankingBucket',
   'REPORT' => 'report',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetReportsDatasetsDatasetType$Unknown; } 
+bool get isUnknown {return this is RadarGetReportsDatasetsDatasetType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rankingBucket, required W Function() report, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rankingBucket, required W Function() report, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetReportsDatasetsDatasetType$rankingBucket() => rankingBucket(),
       RadarGetReportsDatasetsDatasetType$report() => report(),
       RadarGetReportsDatasetsDatasetType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rankingBucket, W Function()? report, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rankingBucket, W Function()? report, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetReportsDatasetsDatasetType$rankingBucket() => rankingBucket != null ? rankingBucket() : orElse(value),
       RadarGetReportsDatasetsDatasetType$report() => report != null ? report() : orElse(value),
       RadarGetReportsDatasetsDatasetType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetReportsDatasetsDatasetType($value)';
 
- }
+}
 @immutable final class RadarGetReportsDatasetsDatasetType$rankingBucket extends RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType$rankingBucket._();
 
 @override String get value => 'RANKING_BUCKET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rankingB
 
 @override int get hashCode => 'RANKING_BUCKET'.hashCode;
 
- }
+}
 @immutable final class RadarGetReportsDatasetsDatasetType$report extends RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType$report._();
 
 @override String get value => 'REPORT';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rankingB
 
 @override int get hashCode => 'REPORT'.hashCode;
 
- }
+}
 @immutable final class RadarGetReportsDatasetsDatasetType$Unknown extends RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rankingB
 
 @override int get hashCode => value.hashCode;
 
- }
+}

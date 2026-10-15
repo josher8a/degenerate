@@ -9,9 +9,9 @@ String toJson() => value;
 
 }
 /// Groups of organization members that gives permissions on specified repositories.
-@immutable final class TeamFull {const TeamFull({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.name, required this.slug, required this.description, required this.permission, required this.membersUrl, required this.repositoriesUrl, required this.membersCount, required this.reposCount, required this.createdAt, required this.updatedAt, required this.organization, required this.type, this.privacy, this.notificationSetting, this.parent, this.ldapDn, this.organizationId, this.enterpriseId, });
+@immutable final class TeamFull {const TeamFull({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.name, required this.slug, required this.description, required this.permission, required this.membersUrl, required this.repositoriesUrl, required this.membersCount, required this.reposCount, required this.createdAt, required this.updatedAt, required this.organization, required this.type, this.privacy, this.notificationSetting, this.parent = const Omittable.absent(), this.ldapDn, this.organizationId, this.enterpriseId, });
 
-factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
+factory TeamFull.fromJson(Map<String, dynamic> json) {return TeamFull(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -24,7 +24,7 @@ factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
   permission: json['permission'] as String,
   membersUrl: json['members_url'] as String,
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
-  parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   membersCount: (json['members_count'] as num).toInt(),
   reposCount: (json['repos_count'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -34,7 +34,7 @@ factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
   type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Unique identifier of the team
 final int id;
@@ -66,7 +66,7 @@ final String membersUrl;
 
 final Uri repositoriesUrl;
 
-final TeamSimple? parent;
+final Omittable<TeamSimple?> parent;
 
 final int membersCount;
 
@@ -90,7 +90,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'permission': permission,
   'members_url': membersUrl,
   'repositories_url': repositoriesUrl.toString(),
-  if (parent != null) 'parent': parent?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'members_count': membersCount,
   'repos_count': reposCount,
   'created_at': createdAt.toIso8601String(),
@@ -113,14 +113,14 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('permission') && json['permission'] is String &&
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
@@ -129,8 +129,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('organization') &&
-      json.containsKey('type'); } 
-TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name, String? slug, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, String? permission, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, int? membersCount, int? reposCount, DateTime? createdAt, DateTime? updatedAt, TeamOrganization? organization, LdapDn? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamFull(
+      json.containsKey('type');}
+TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name, String? slug, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, String? permission, String? membersUrl, Uri? repositoriesUrl, Omittable<TeamSimple?>? parent, int? membersCount, int? reposCount, DateTime? createdAt, DateTime? updatedAt, TeamOrganization? organization, LdapDn? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return TeamFull(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -143,7 +143,7 @@ TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name
   permission: permission ?? this.permission,
   membersUrl: membersUrl ?? this.membersUrl,
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
-  parent: parent != null ? parent() : this.parent,
+  parent: parent ?? this.parent,
   membersCount: membersCount ?? this.membersCount,
   reposCount: reposCount ?? this.reposCount,
   createdAt: createdAt ?? this.createdAt,
@@ -153,7 +153,7 @@ TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamFull &&
           id == other.id &&
@@ -183,4 +183,4 @@ TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name
 
 @override String toString() => 'TeamFull(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  name: $name,\n  slug: $slug,\n  description: $description,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  permission: $permission,\n  membersUrl: $membersUrl,\n  repositoriesUrl: $repositoriesUrl,\n  parent: $parent,\n  membersCount: $membersCount,\n  reposCount: $reposCount,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  organization: $organization,\n  ldapDn: $ldapDn,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
- }
+}

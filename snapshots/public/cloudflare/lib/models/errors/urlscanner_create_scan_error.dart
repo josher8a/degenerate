@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response4002.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response4092.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response4292.dart';sealed class UrlscannerCreateScanError {const UrlscannerCreateScanError();
 
-factory UrlscannerCreateScanError.fromResponse(ApiResponse response) {     try {
+factory UrlscannerCreateScanError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         400 => UrlscannerCreateScanError$400(UrlscannerCreateScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         409 => UrlscannerCreateScanError$409(UrlscannerCreateScanResponse4092.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -11,12 +11,12 @@ factory UrlscannerCreateScanError.fromResponse(ApiResponse response) {     try {
       };
     } on Object {
       return UrlscannerCreateScanError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class UrlscannerCreateScanError$400 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$400(this.error);
 
 final UrlscannerCreateScanResponse4002 error;
@@ -25,7 +25,7 @@ final UrlscannerCreateScanResponse4002 error;
 
 @override int get statusCode => 400;
 
- }
+}
 final class UrlscannerCreateScanError$409 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$409(this.error);
 
 final UrlscannerCreateScanResponse4092 error;
@@ -34,7 +34,7 @@ final UrlscannerCreateScanResponse4092 error;
 
 @override int get statusCode => 409;
 
- }
+}
 final class UrlscannerCreateScanError$429 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$429(this.error);
 
 final UrlscannerCreateScanResponse4292 error;
@@ -43,11 +43,11 @@ final UrlscannerCreateScanResponse4292 error;
 
 @override int get statusCode => 429;
 
- }
+}
 final class UrlscannerCreateScanError$Unknown extends UrlscannerCreateScanError {const UrlscannerCreateScanError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

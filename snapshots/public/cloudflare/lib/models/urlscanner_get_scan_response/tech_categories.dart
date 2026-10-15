@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TechCategories {const TechCategories({required this.groups, required this.id, required this.name, required this.priority, required this.slug, });
 
-factory TechCategories.fromJson(Map<String, dynamic> json) { return TechCategories(
+factory TechCategories.fromJson(Map<String, dynamic> json) {return TechCategories(
   groups: (json['groups'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   priority: (json['priority'] as num).toInt(),
   slug: json['slug'] as String,
-); }
+);}
 
 final List<int> groups;
 
@@ -25,25 +25,25 @@ final int priority;
 /// Example: `'iaas'`
 final String slug;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'groups': groups,
   'id': id,
   'name': name,
   'priority': priority,
   'slug': slug,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('groups') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('groups') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('priority') && json['priority'] is num &&
-      json.containsKey('slug') && json['slug'] is String; } 
-TechCategories copyWith({List<int>? groups, int? id, String? name, int? priority, String? slug, }) { return TechCategories(
+      json.containsKey('slug') && json['slug'] is String;}
+TechCategories copyWith({List<int>? groups, int? id, String? name, int? priority, String? slug, }) {return TechCategories(
   groups: groups ?? this.groups,
   id: id ?? this.id,
   name: name ?? this.name,
   priority: priority ?? this.priority,
   slug: slug ?? this.slug,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TechCategories &&
           listEquals(groups, other.groups) &&
@@ -56,4 +56,4 @@ TechCategories copyWith({List<int>? groups, int? id, String? name, int? priority
 
 @override String toString() => 'TechCategories(groups: $groups, id: $id, name: $name, priority: $priority, slug: $slug)';
 
- }
+}

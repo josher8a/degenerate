@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningListAlertsForRepoResponse503 {const SecretScanningListAlertsForRepoResponse503({this.code, this.message, this.documentationUrl, });
 
-factory SecretScanningListAlertsForRepoResponse503.fromJson(Map<String, dynamic> json) { return SecretScanningListAlertsForRepoResponse503(
+factory SecretScanningListAlertsForRepoResponse503.fromJson(Map<String, dynamic> json) {return SecretScanningListAlertsForRepoResponse503(
   code: json['code'] as String?,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
-); }
+);}
 
 final String? code;
 
@@ -15,17 +15,17 @@ final String? message;
 
 final String? documentationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   'documentation_url': ?documentationUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key)); } 
-SecretScanningListAlertsForRepoResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) { return SecretScanningListAlertsForRepoResponse503(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key));}
+SecretScanningListAlertsForRepoResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) {return SecretScanningListAlertsForRepoResponse503(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningListAlertsForRepoResponse503 &&
           code == other.code &&
@@ -36,4 +36,4 @@ SecretScanningListAlertsForRepoResponse503 copyWith({String? Function()? code, S
 
 @override String toString() => 'SecretScanningListAlertsForRepoResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)';
 
- }
+}

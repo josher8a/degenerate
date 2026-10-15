@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_input_rtmps.dart';import 'package:pub_cloudflare/models/stream_input_srt.dart';import 'package:pub_cloudflare/models/stream_input_webrtc.dart';import 'package:pub_cloudflare/models/stream_live_input_created.dart';import 'package:pub_cloudflare/models/stream_live_input_enabled.dart';import 'package:pub_cloudflare/models/stream_live_input_identifier.dart';import 'package:pub_cloudflare/models/stream_live_input_modified.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_deletion.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_settings.dart';import 'package:pub_cloudflare/models/stream_playback_rtmps.dart';import 'package:pub_cloudflare/models/stream_playback_srt.dart';import 'package:pub_cloudflare/models/stream_playback_webrtc.dart';/// The connection status of a live input.
 sealed class StreamLiveInputStatus {const StreamLiveInputStatus();
 
-factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
+factory StreamLiveInputStatus.fromJson(String json) {return switch (json) {
   'null' => $null,
   'connected' => connected,
   'reconnected' => reconnected,
@@ -15,7 +15,7 @@ factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
   'failed_to_reconnect' => failedToReconnect,
   'new_configuration_accepted' => newConfigurationAccepted,
   _ => StreamLiveInputStatus$Unknown(json),
-}; }
+};}
 
 static const StreamLiveInputStatus $null = StreamLiveInputStatus$$null._();
 
@@ -38,9 +38,9 @@ static const StreamLiveInputStatus newConfigurationAccepted = StreamLiveInputSta
 static const List<StreamLiveInputStatus> values = [$null, connected, reconnected, reconnecting, clientDisconnect, ttlExceeded, failedToConnect, failedToReconnect, newConfigurationAccepted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'null' => r'$null',
   'connected' => 'connected',
   'reconnected' => 'reconnected',
@@ -51,11 +51,11 @@ String get name { return switch (value) {
   'failed_to_reconnect' => 'failedToReconnect',
   'new_configuration_accepted' => 'newConfigurationAccepted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StreamLiveInputStatus$Unknown; } 
+bool get isUnknown {return this is StreamLiveInputStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $null, required W Function() connected, required W Function() reconnected, required W Function() reconnecting, required W Function() clientDisconnect, required W Function() ttlExceeded, required W Function() failedToConnect, required W Function() failedToReconnect, required W Function() newConfigurationAccepted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $null, required W Function() connected, required W Function() reconnected, required W Function() reconnecting, required W Function() clientDisconnect, required W Function() ttlExceeded, required W Function() failedToConnect, required W Function() failedToReconnect, required W Function() newConfigurationAccepted, required W Function(String value) $unknown, }) {return switch (this) {
       StreamLiveInputStatus$$null() => $null(),
       StreamLiveInputStatus$connected() => connected(),
       StreamLiveInputStatus$reconnected() => reconnected(),
@@ -66,9 +66,9 @@ W when<W>({required W Function() $null, required W Function() connected, require
       StreamLiveInputStatus$failedToReconnect() => failedToReconnect(),
       StreamLiveInputStatus$newConfigurationAccepted() => newConfigurationAccepted(),
       StreamLiveInputStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W Function()? connected, W Function()? reconnected, W Function()? reconnecting, W Function()? clientDisconnect, W Function()? ttlExceeded, W Function()? failedToConnect, W Function()? failedToReconnect, W Function()? newConfigurationAccepted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W Function()? connected, W Function()? reconnected, W Function()? reconnecting, W Function()? clientDisconnect, W Function()? ttlExceeded, W Function()? failedToConnect, W Function()? failedToReconnect, W Function()? newConfigurationAccepted, W Function(String value)? $unknown, }) {return switch (this) {
       StreamLiveInputStatus$$null() => $null != null ? $null() : orElse(value),
       StreamLiveInputStatus$connected() => connected != null ? connected() : orElse(value),
       StreamLiveInputStatus$reconnected() => reconnected != null ? reconnected() : orElse(value),
@@ -79,10 +79,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
       StreamLiveInputStatus$failedToReconnect() => failedToReconnect != null ? failedToReconnect() : orElse(value),
       StreamLiveInputStatus$newConfigurationAccepted() => newConfigurationAccepted != null ? newConfigurationAccepted() : orElse(value),
       StreamLiveInputStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StreamLiveInputStatus($value)';
 
- }
+}
 @immutable final class StreamLiveInputStatus$$null extends StreamLiveInputStatus {const StreamLiveInputStatus$$null._();
 
 @override String get value => 'null';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$connected extends StreamLiveInputStatus {const StreamLiveInputStatus$connected._();
 
 @override String get value => 'connected';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'connected'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$reconnected extends StreamLiveInputStatus {const StreamLiveInputStatus$reconnected._();
 
 @override String get value => 'reconnected';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'reconnected'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$reconnecting extends StreamLiveInputStatus {const StreamLiveInputStatus$reconnecting._();
 
 @override String get value => 'reconnecting';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'reconnecting'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$clientDisconnect extends StreamLiveInputStatus {const StreamLiveInputStatus$clientDisconnect._();
 
 @override String get value => 'client_disconnect';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'client_disconnect'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$ttlExceeded extends StreamLiveInputStatus {const StreamLiveInputStatus$ttlExceeded._();
 
 @override String get value => 'ttl_exceeded';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'ttl_exceeded'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$failedToConnect extends StreamLiveInputStatus {const StreamLiveInputStatus$failedToConnect._();
 
 @override String get value => 'failed_to_connect';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'failed_to_connect'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$failedToReconnect extends StreamLiveInputStatus {const StreamLiveInputStatus$failedToReconnect._();
 
 @override String get value => 'failed_to_reconnect';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'failed_to_reconnect'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$newConfigurationAccepted extends StreamLiveInputStatus {const StreamLiveInputStatus$newConfigurationAccepted._();
 
 @override String get value => 'new_configuration_accepted';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => 'new_configuration_accepted'.hashCode;
 
- }
+}
 @immutable final class StreamLiveInputStatus$Unknown extends StreamLiveInputStatus {const StreamLiveInputStatus$Unknown(this.value);
 
 @override final String value;
@@ -173,11 +173,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details about a live input.
-@immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status, this.uid, this.webRtc, this.webRtcPlayback, });
+@immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status = const Omittable.absent(), this.uid, this.webRtc, this.webRtcPlayback, });
 
-factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveInput(
+factory StreamLiveInput.fromJson(Map<String, dynamic> json) {return StreamLiveInput(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
@@ -188,11 +188,11 @@ factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveI
   rtmpsPlayback: json['rtmpsPlayback'] != null ? StreamPlaybackRtmps.fromJson(json['rtmpsPlayback'] as Map<String, dynamic>) : null,
   srt: json['srt'] != null ? StreamInputSrt.fromJson(json['srt'] as Map<String, dynamic>) : null,
   srtPlayback: json['srtPlayback'] != null ? StreamPlaybackSrt.fromJson(json['srtPlayback'] as Map<String, dynamic>) : null,
-  status: json['status'] != null ? StreamLiveInputStatus.fromJson(json['status'] as String) : null,
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? StreamLiveInputStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
   webRtc: json['webRTC'] != null ? StreamInputWebrtc.fromJson(json['webRTC'] as Map<String, dynamic>) : null,
   webRtcPlayback: json['webRTCPlayback'] != null ? StreamPlaybackWebrtc.fromJson(json['webRTCPlayback'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final StreamLiveInputCreated? created;
 
@@ -214,7 +214,7 @@ final StreamInputSrt? srt;
 
 final StreamPlaybackSrt? srtPlayback;
 
-final StreamLiveInputStatus? status;
+final Omittable<StreamLiveInputStatus?> status;
 
 final StreamLiveInputIdentifier? uid;
 
@@ -222,7 +222,7 @@ final StreamInputWebrtc? webRtc;
 
 final StreamPlaybackWebrtc? webRtcPlayback;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (deleteRecordingAfterDays != null) 'deleteRecordingAfterDays': deleteRecordingAfterDays?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -233,13 +233,13 @@ Map<String, dynamic> toJson() { return {
   if (rtmpsPlayback != null) 'rtmpsPlayback': rtmpsPlayback?.toJson(),
   if (srt != null) 'srt': srt?.toJson(),
   if (srtPlayback != null) 'srtPlayback': srtPlayback?.toJson(),
-  if (status != null) 'status': status?.toJson(),
+  if (status.isPresent) 'status': status.value?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
   if (webRtc != null) 'webRTC': webRtc?.toJson(),
   if (webRtcPlayback != null) 'webRTCPlayback': webRtcPlayback?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'recording', 'rtmps', 'rtmpsPlayback', 'srt', 'srtPlayback', 'status', 'uid', 'webRTC', 'webRTCPlayback'}.contains(key)); } 
-StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputRecordingSettings? Function()? recording, StreamInputRtmps? Function()? rtmps, StreamPlaybackRtmps? Function()? rtmpsPlayback, StreamInputSrt? Function()? srt, StreamPlaybackSrt? Function()? srtPlayback, StreamLiveInputStatus? Function()? status, StreamLiveInputIdentifier? Function()? uid, StreamInputWebrtc? Function()? webRtc, StreamPlaybackWebrtc? Function()? webRtcPlayback, }) { return StreamLiveInput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'recording', 'rtmps', 'rtmpsPlayback', 'srt', 'srtPlayback', 'status', 'uid', 'webRTC', 'webRTCPlayback'}.contains(key));}
+StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputRecordingSettings? Function()? recording, StreamInputRtmps? Function()? rtmps, StreamPlaybackRtmps? Function()? rtmpsPlayback, StreamInputSrt? Function()? srt, StreamPlaybackSrt? Function()? srtPlayback, Omittable<StreamLiveInputStatus?>? status, StreamLiveInputIdentifier? Function()? uid, StreamInputWebrtc? Function()? webRtc, StreamPlaybackWebrtc? Function()? webRtcPlayback, }) {return StreamLiveInput(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -250,11 +250,11 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
   rtmpsPlayback: rtmpsPlayback != null ? rtmpsPlayback() : this.rtmpsPlayback,
   srt: srt != null ? srt() : this.srt,
   srtPlayback: srtPlayback != null ? srtPlayback() : this.srtPlayback,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
   uid: uid != null ? uid() : this.uid,
   webRtc: webRtc != null ? webRtc() : this.webRtc,
   webRtcPlayback: webRtcPlayback != null ? webRtcPlayback() : this.webRtcPlayback,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamLiveInput &&
           created == other.created &&
@@ -276,4 +276,4 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
 
 @override String toString() => 'StreamLiveInput(\n  created: $created,\n  deleteRecordingAfterDays: $deleteRecordingAfterDays,\n  enabled: $enabled,\n  meta: $meta,\n  modified: $modified,\n  recording: $recording,\n  rtmps: $rtmps,\n  rtmpsPlayback: $rtmpsPlayback,\n  srt: $srt,\n  srtPlayback: $srtPlayback,\n  status: $status,\n  uid: $uid,\n  webRtc: $webRtc,\n  webRtcPlayback: $webRtcPlayback,\n)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_messages2.dart';import 'package:pub_cloudflare/models/response_common41/response_common41_result.dart';@immutable final class ResponseCommon41 {const ResponseCommon41({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory ResponseCommon41.fromJson(Map<String, dynamic> json) { return ResponseCommon41(
+factory ResponseCommon41.fromJson(Map<String, dynamic> json) {return ResponseCommon41(
   errors: (json['errors'] as List<dynamic>).map((e) => ListsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ListsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},),
+  result: ResponseCommon41Result.fromJson(json['result']),
   success: json['success'] as bool,
-); }
+);}
 
 final List<ListsMessages2> errors;
 
@@ -21,22 +21,22 @@ final ResponseCommon41Result result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon41 copyWith({List<ListsMessages2>? errors, List<ListsMessages2>? messages, ResponseCommon41Result? result, bool? success, }) { return ResponseCommon41(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon41 copyWith({List<ListsMessages2>? errors, List<ListsMessages2>? messages, ResponseCommon41Result? result, bool? success, }) {return ResponseCommon41(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon41 &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ ResponseCommon41 copyWith({List<ListsMessages2>? errors, List<ListsMessages2>? m
 
 @override String toString() => 'ResponseCommon41(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class KeyType {const KeyType();
 
-factory KeyType.fromJson(String json) { return switch (json) {
+factory KeyType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => KeyType$Unknown(json),
-}; }
+};}
 
 static const KeyType string = KeyType$string._();
 
@@ -19,33 +19,33 @@ static const KeyType boolean = KeyType$boolean._();
 static const List<KeyType> values = [string, number, boolean];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'string' => 'string',
   'number' => 'number',
   'boolean' => 'boolean',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is KeyType$Unknown; } 
+bool get isUnknown {return this is KeyType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() string, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() string, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) {return switch (this) {
       KeyType$string() => string(),
       KeyType$number() => number(),
       KeyType$boolean() => boolean(),
       KeyType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) {return switch (this) {
       KeyType$string() => string != null ? string() : orElse(value),
       KeyType$number() => number != null ? number() : orElse(value),
       KeyType$boolean() => boolean != null ? boolean() : orElse(value),
       KeyType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'KeyType($value)';
 
- }
+}
 @immutable final class KeyType$string extends KeyType {const KeyType$string._();
 
 @override String get value => 'string';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => 'string'.hashCode;
 
- }
+}
 @immutable final class KeyType$number extends KeyType {const KeyType$number._();
 
 @override String get value => 'number';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => 'number'.hashCode;
 
- }
+}
 @immutable final class KeyType$boolean extends KeyType {const KeyType$boolean._();
 
 @override String get value => 'boolean';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => 'boolean'.hashCode;
 
- }
+}
 @immutable final class KeyType$Unknown extends KeyType {const KeyType$Unknown(this.value);
 
 @override final String value;
@@ -82,10 +82,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class CalculationsOperator {const CalculationsOperator();
 
-factory CalculationsOperator.fromJson(String json) { return switch (json) {
+factory CalculationsOperator.fromJson(String json) {return switch (json) {
   'uniq' => uniq,
   'count' => count,
   'max' => max,
@@ -125,7 +125,7 @@ factory CalculationsOperator.fromJson(String json) { return switch (json) {
   'STDDEV' => stddev2,
   'VARIANCE' => variance2,
   _ => CalculationsOperator$Unknown(json),
-}; }
+};}
 
 static const CalculationsOperator uniq = CalculationsOperator$uniq._();
 
@@ -206,9 +206,9 @@ static const CalculationsOperator variance2 = CalculationsOperator$variance2._()
 static const List<CalculationsOperator> values = [uniq, count, max, min, sum, avg, median, p001, p01, p05, p10, p25, p75, p90, p95, p99, p999, stddev, variance, countDistinct, count2, max2, min2, sum2, avg2, median2, p0012, p012, p052, p102, p252, p752, p902, p952, p992, p9992, stddev2, variance2];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'uniq' => 'uniq',
   'count' => 'count',
   'max' => 'max',
@@ -248,11 +248,11 @@ String get name { return switch (value) {
   'STDDEV' => 'stddev2',
   'VARIANCE' => 'variance2',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CalculationsOperator$Unknown; } 
+bool get isUnknown {return this is CalculationsOperator$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() uniq, required W Function() count, required W Function() max, required W Function() min, required W Function() sum, required W Function() avg, required W Function() median, required W Function() p001, required W Function() p01, required W Function() p05, required W Function() p10, required W Function() p25, required W Function() p75, required W Function() p90, required W Function() p95, required W Function() p99, required W Function() p999, required W Function() stddev, required W Function() variance, required W Function() countDistinct, required W Function() count2, required W Function() max2, required W Function() min2, required W Function() sum2, required W Function() avg2, required W Function() median2, required W Function() p0012, required W Function() p012, required W Function() p052, required W Function() p102, required W Function() p252, required W Function() p752, required W Function() p902, required W Function() p952, required W Function() p992, required W Function() p9992, required W Function() stddev2, required W Function() variance2, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() uniq, required W Function() count, required W Function() max, required W Function() min, required W Function() sum, required W Function() avg, required W Function() median, required W Function() p001, required W Function() p01, required W Function() p05, required W Function() p10, required W Function() p25, required W Function() p75, required W Function() p90, required W Function() p95, required W Function() p99, required W Function() p999, required W Function() stddev, required W Function() variance, required W Function() countDistinct, required W Function() count2, required W Function() max2, required W Function() min2, required W Function() sum2, required W Function() avg2, required W Function() median2, required W Function() p0012, required W Function() p012, required W Function() p052, required W Function() p102, required W Function() p252, required W Function() p752, required W Function() p902, required W Function() p952, required W Function() p992, required W Function() p9992, required W Function() stddev2, required W Function() variance2, required W Function(String value) $unknown, }) {return switch (this) {
       CalculationsOperator$uniq() => uniq(),
       CalculationsOperator$count() => count(),
       CalculationsOperator$max() => max(),
@@ -292,9 +292,9 @@ W when<W>({required W Function() uniq, required W Function() count, required W F
       CalculationsOperator$stddev2() => stddev2(),
       CalculationsOperator$variance2() => variance2(),
       CalculationsOperator$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W Function()? count, W Function()? max, W Function()? min, W Function()? sum, W Function()? avg, W Function()? median, W Function()? p001, W Function()? p01, W Function()? p05, W Function()? p10, W Function()? p25, W Function()? p75, W Function()? p90, W Function()? p95, W Function()? p99, W Function()? p999, W Function()? stddev, W Function()? variance, W Function()? countDistinct, W Function()? count2, W Function()? max2, W Function()? min2, W Function()? sum2, W Function()? avg2, W Function()? median2, W Function()? p0012, W Function()? p012, W Function()? p052, W Function()? p102, W Function()? p252, W Function()? p752, W Function()? p902, W Function()? p952, W Function()? p992, W Function()? p9992, W Function()? stddev2, W Function()? variance2, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W Function()? count, W Function()? max, W Function()? min, W Function()? sum, W Function()? avg, W Function()? median, W Function()? p001, W Function()? p01, W Function()? p05, W Function()? p10, W Function()? p25, W Function()? p75, W Function()? p90, W Function()? p95, W Function()? p99, W Function()? p999, W Function()? stddev, W Function()? variance, W Function()? countDistinct, W Function()? count2, W Function()? max2, W Function()? min2, W Function()? sum2, W Function()? avg2, W Function()? median2, W Function()? p0012, W Function()? p012, W Function()? p052, W Function()? p102, W Function()? p252, W Function()? p752, W Function()? p902, W Function()? p952, W Function()? p992, W Function()? p9992, W Function()? stddev2, W Function()? variance2, W Function(String value)? $unknown, }) {return switch (this) {
       CalculationsOperator$uniq() => uniq != null ? uniq() : orElse(value),
       CalculationsOperator$count() => count != null ? count() : orElse(value),
       CalculationsOperator$max() => max != null ? max() : orElse(value),
@@ -334,10 +334,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
       CalculationsOperator$stddev2() => stddev2 != null ? stddev2() : orElse(value),
       CalculationsOperator$variance2() => variance2 != null ? variance2() : orElse(value),
       CalculationsOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CalculationsOperator($value)';
 
- }
+}
 @immutable final class CalculationsOperator$uniq extends CalculationsOperator {const CalculationsOperator$uniq._();
 
 @override String get value => 'uniq';
@@ -346,7 +346,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'uniq'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$count extends CalculationsOperator {const CalculationsOperator$count._();
 
 @override String get value => 'count';
@@ -355,7 +355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'count'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$max extends CalculationsOperator {const CalculationsOperator$max._();
 
 @override String get value => 'max';
@@ -364,7 +364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'max'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$min extends CalculationsOperator {const CalculationsOperator$min._();
 
 @override String get value => 'min';
@@ -373,7 +373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'min'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$sum extends CalculationsOperator {const CalculationsOperator$sum._();
 
 @override String get value => 'sum';
@@ -382,7 +382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'sum'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$avg extends CalculationsOperator {const CalculationsOperator$avg._();
 
 @override String get value => 'avg';
@@ -391,7 +391,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'avg'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$median extends CalculationsOperator {const CalculationsOperator$median._();
 
 @override String get value => 'median';
@@ -400,7 +400,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'median'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p001 extends CalculationsOperator {const CalculationsOperator$p001._();
 
 @override String get value => 'p001';
@@ -409,7 +409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p001'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p01 extends CalculationsOperator {const CalculationsOperator$p01._();
 
 @override String get value => 'p01';
@@ -418,7 +418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p01'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p05 extends CalculationsOperator {const CalculationsOperator$p05._();
 
 @override String get value => 'p05';
@@ -427,7 +427,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p05'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p10 extends CalculationsOperator {const CalculationsOperator$p10._();
 
 @override String get value => 'p10';
@@ -436,7 +436,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p10'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p25 extends CalculationsOperator {const CalculationsOperator$p25._();
 
 @override String get value => 'p25';
@@ -445,7 +445,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p25'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p75 extends CalculationsOperator {const CalculationsOperator$p75._();
 
 @override String get value => 'p75';
@@ -454,7 +454,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p75'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p90 extends CalculationsOperator {const CalculationsOperator$p90._();
 
 @override String get value => 'p90';
@@ -463,7 +463,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p90'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p95 extends CalculationsOperator {const CalculationsOperator$p95._();
 
 @override String get value => 'p95';
@@ -472,7 +472,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p95'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p99 extends CalculationsOperator {const CalculationsOperator$p99._();
 
 @override String get value => 'p99';
@@ -481,7 +481,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p99'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p999 extends CalculationsOperator {const CalculationsOperator$p999._();
 
 @override String get value => 'p999';
@@ -490,7 +490,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'p999'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$stddev extends CalculationsOperator {const CalculationsOperator$stddev._();
 
 @override String get value => 'stddev';
@@ -499,7 +499,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'stddev'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$variance extends CalculationsOperator {const CalculationsOperator$variance._();
 
 @override String get value => 'variance';
@@ -508,7 +508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'variance'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$countDistinct extends CalculationsOperator {const CalculationsOperator$countDistinct._();
 
 @override String get value => 'COUNT_DISTINCT';
@@ -517,7 +517,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'COUNT_DISTINCT'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$count2 extends CalculationsOperator {const CalculationsOperator$count2._();
 
 @override String get value => 'COUNT';
@@ -526,7 +526,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'COUNT'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$max2 extends CalculationsOperator {const CalculationsOperator$max2._();
 
 @override String get value => 'MAX';
@@ -535,7 +535,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'MAX'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$min2 extends CalculationsOperator {const CalculationsOperator$min2._();
 
 @override String get value => 'MIN';
@@ -544,7 +544,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'MIN'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$sum2 extends CalculationsOperator {const CalculationsOperator$sum2._();
 
 @override String get value => 'SUM';
@@ -553,7 +553,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'SUM'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$avg2 extends CalculationsOperator {const CalculationsOperator$avg2._();
 
 @override String get value => 'AVG';
@@ -562,7 +562,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'AVG'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$median2 extends CalculationsOperator {const CalculationsOperator$median2._();
 
 @override String get value => 'MEDIAN';
@@ -571,7 +571,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'MEDIAN'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p0012 extends CalculationsOperator {const CalculationsOperator$p0012._();
 
 @override String get value => 'P001';
@@ -580,7 +580,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P001'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p012 extends CalculationsOperator {const CalculationsOperator$p012._();
 
 @override String get value => 'P01';
@@ -589,7 +589,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P01'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p052 extends CalculationsOperator {const CalculationsOperator$p052._();
 
 @override String get value => 'P05';
@@ -598,7 +598,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P05'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p102 extends CalculationsOperator {const CalculationsOperator$p102._();
 
 @override String get value => 'P10';
@@ -607,7 +607,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P10'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p252 extends CalculationsOperator {const CalculationsOperator$p252._();
 
 @override String get value => 'P25';
@@ -616,7 +616,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P25'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p752 extends CalculationsOperator {const CalculationsOperator$p752._();
 
 @override String get value => 'P75';
@@ -625,7 +625,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P75'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p902 extends CalculationsOperator {const CalculationsOperator$p902._();
 
 @override String get value => 'P90';
@@ -634,7 +634,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P90'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p952 extends CalculationsOperator {const CalculationsOperator$p952._();
 
 @override String get value => 'P95';
@@ -643,7 +643,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P95'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p992 extends CalculationsOperator {const CalculationsOperator$p992._();
 
 @override String get value => 'P99';
@@ -652,7 +652,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P99'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$p9992 extends CalculationsOperator {const CalculationsOperator$p9992._();
 
 @override String get value => 'P999';
@@ -661,7 +661,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'P999'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$stddev2 extends CalculationsOperator {const CalculationsOperator$stddev2._();
 
 @override String get value => 'STDDEV';
@@ -670,7 +670,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'STDDEV'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$variance2 extends CalculationsOperator {const CalculationsOperator$variance2._();
 
 @override String get value => 'VARIANCE';
@@ -679,7 +679,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => 'VARIANCE'.hashCode;
 
- }
+}
 @immutable final class CalculationsOperator$Unknown extends CalculationsOperator {const CalculationsOperator$Unknown(this.value);
 
 @override final String value;
@@ -689,15 +689,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ParametersCalculations {const ParametersCalculations({required this.$operator, this.alias, this.key, this.keyType, });
 
-factory ParametersCalculations.fromJson(Map<String, dynamic> json) { return ParametersCalculations(
+factory ParametersCalculations.fromJson(Map<String, dynamic> json) {return ParametersCalculations(
   alias: json['alias'] as String?,
   key: json['key'] as String?,
   keyType: json['keyType'] != null ? KeyType.fromJson(json['keyType'] as String) : null,
   $operator: CalculationsOperator.fromJson(json['operator'] as String),
-); }
+);}
 
 final String? alias;
 
@@ -707,19 +707,19 @@ final KeyType? keyType;
 
 final CalculationsOperator $operator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alias': ?alias,
   'key': ?key,
   if (keyType != null) 'keyType': keyType?.toJson(),
   'operator': $operator.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator'); } 
-ParametersCalculations copyWith({String? Function()? alias, String? Function()? key, KeyType? Function()? keyType, CalculationsOperator? $operator, }) { return ParametersCalculations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operator');}
+ParametersCalculations copyWith({String? Function()? alias, String? Function()? key, KeyType? Function()? keyType, CalculationsOperator? $operator, }) {return ParametersCalculations(
   alias: alias != null ? alias() : this.alias,
   key: key != null ? key() : this.key,
   keyType: keyType != null ? keyType() : this.keyType,
   $operator: $operator ?? this.$operator,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ParametersCalculations &&
           alias == other.alias &&
@@ -731,4 +731,4 @@ ParametersCalculations copyWith({String? Function()? alias, String? Function()? 
 
 @override String toString() => 'ParametersCalculations(alias: $alias, key: $key, keyType: $keyType, \$operator: ${$operator})';
 
- }
+}

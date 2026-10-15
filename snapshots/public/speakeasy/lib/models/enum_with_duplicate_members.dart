@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EnumField {const EnumField();
 
-factory EnumField.fromJson(String json) { return switch (json) {
+factory EnumField.fromJson(String json) {return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
   _ => EnumField$Unknown(json),
-}; }
+};}
 
 static const EnumField one = EnumField$one._();
 
@@ -21,35 +21,35 @@ static const EnumField three = EnumField$three._();
 static const List<EnumField> values = [one, one2, two, three];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one' => 'one',
   'two' => 'two',
   'three' => 'three',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnumField$Unknown; } 
+bool get isUnknown {return this is EnumField$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() one, required W Function() one2, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() one, required W Function() one2, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) {return switch (this) {
       EnumField$one() => one(),
       EnumField$one2() => one2(),
       EnumField$two() => two(),
       EnumField$three() => three(),
       EnumField$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? one2, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? one2, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) {return switch (this) {
       EnumField$one() => one != null ? one() : orElse(value),
       EnumField$one2() => one2 != null ? one2() : orElse(value),
       EnumField$two() => two != null ? two() : orElse(value),
       EnumField$three() => three != null ? three() : orElse(value),
       EnumField$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnumField($value)';
 
- }
+}
 @immutable final class EnumField$one extends EnumField {const EnumField$one._();
 
 @override String get value => 'one';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'one'.hashCode;
 
- }
+}
 @immutable final class EnumField$one2 extends EnumField {const EnumField$one2._();
 
 @override String get value => 'one';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'one'.hashCode;
 
- }
+}
 @immutable final class EnumField$two extends EnumField {const EnumField$two._();
 
 @override String get value => 'two';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'two'.hashCode;
 
- }
+}
 @immutable final class EnumField$three extends EnumField {const EnumField$three._();
 
 @override String get value => 'three';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'three'.hashCode;
 
- }
+}
 @immutable final class EnumField$Unknown extends EnumField {const EnumField$Unknown(this.value);
 
 @override final String value;
@@ -95,22 +95,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class EnumWithDuplicateMembers {const EnumWithDuplicateMembers({this.enumField});
 
-factory EnumWithDuplicateMembers.fromJson(Map<String, dynamic> json) { return EnumWithDuplicateMembers(
+factory EnumWithDuplicateMembers.fromJson(Map<String, dynamic> json) {return EnumWithDuplicateMembers(
   enumField: json['enumField'] != null ? EnumField.fromJson(json['enumField'] as String) : null,
-); }
+);}
 
 final EnumField? enumField;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enumField != null) 'enumField': enumField?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enumField'}.contains(key)); } 
-EnumWithDuplicateMembers copyWith({EnumField? Function()? enumField}) { return EnumWithDuplicateMembers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enumField'}.contains(key));}
+EnumWithDuplicateMembers copyWith({EnumField? Function()? enumField}) {return EnumWithDuplicateMembers(
   enumField: enumField != null ? enumField() : this.enumField,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnumWithDuplicateMembers &&
           enumField == other.enumField;
@@ -119,4 +119,4 @@ EnumWithDuplicateMembers copyWith({EnumField? Function()? enumField}) { return E
 
 @override String toString() => 'EnumWithDuplicateMembers(enumField: $enumField)';
 
- }
+}

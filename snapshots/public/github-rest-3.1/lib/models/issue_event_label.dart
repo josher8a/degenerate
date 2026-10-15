@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Label
 @immutable final class IssueEventLabel {const IssueEventLabel({required this.name, required this.color, });
 
-factory IssueEventLabel.fromJson(Map<String, dynamic> json) { return IssueEventLabel(
+factory IssueEventLabel.fromJson(Map<String, dynamic> json) {return IssueEventLabel(
   name: json['name'] as String?,
   color: json['color'] as String?,
-); }
+);}
 
 final String? name;
 
 final String? color;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'color': color,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('color') && json['color'] is String; } 
-IssueEventLabel copyWith({String? Function()? name, String? Function()? color, }) { return IssueEventLabel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
+      json.containsKey('color') && (json['color'] == null || json['color'] is String);}
+IssueEventLabel copyWith({String? Function()? name, String? Function()? color, }) {return IssueEventLabel(
   name: name != null ? name() : this.name,
   color: color != null ? color() : this.color,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueEventLabel &&
           name == other.name &&
@@ -32,4 +32,4 @@ IssueEventLabel copyWith({String? Function()? name, String? Function()? color, }
 
 @override String toString() => 'IssueEventLabel(name: $name, color: $color)';
 
- }
+}

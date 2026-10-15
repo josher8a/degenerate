@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The system used to collect packet captures.
 sealed class MagicVisibilityPcapsPcapsSystem {const MagicVisibilityPcapsPcapsSystem();
 
-factory MagicVisibilityPcapsPcapsSystem.fromJson(String json) { return switch (json) {
+factory MagicVisibilityPcapsPcapsSystem.fromJson(String json) {return switch (json) {
   'magic-transit' => magicTransit,
   _ => MagicVisibilityPcapsPcapsSystem$Unknown(json),
-}; }
+};}
 
 static const MagicVisibilityPcapsPcapsSystem magicTransit = MagicVisibilityPcapsPcapsSystem$magicTransit._();
 
 static const List<MagicVisibilityPcapsPcapsSystem> values = [magicTransit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'magic-transit' => 'magicTransit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicVisibilityPcapsPcapsSystem$Unknown; } 
+bool get isUnknown {return this is MagicVisibilityPcapsPcapsSystem$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() magicTransit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() magicTransit, required W Function(String value) $unknown, }) {return switch (this) {
       MagicVisibilityPcapsPcapsSystem$magicTransit() => magicTransit(),
       MagicVisibilityPcapsPcapsSystem$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? magicTransit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? magicTransit, W Function(String value)? $unknown, }) {return switch (this) {
       MagicVisibilityPcapsPcapsSystem$magicTransit() => magicTransit != null ? magicTransit() : orElse(value),
       MagicVisibilityPcapsPcapsSystem$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicVisibilityPcapsPcapsSystem($value)';
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsSystem$magicTransit extends MagicVisibilityPcapsPcapsSystem {const MagicVisibilityPcapsPcapsSystem$magicTransit._();
 
 @override String get value => 'magic-transit';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? magicTra
 
 @override int get hashCode => 'magic-transit'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsSystem$Unknown extends MagicVisibilityPcapsPcapsSystem {const MagicVisibilityPcapsPcapsSystem$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? magicTra
 
 @override int get hashCode => value.hashCode;
 
- }
+}

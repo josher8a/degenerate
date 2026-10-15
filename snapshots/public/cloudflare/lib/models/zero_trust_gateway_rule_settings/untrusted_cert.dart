@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
 sealed class UntrustedCertAction {const UntrustedCertAction();
 
-factory UntrustedCertAction.fromJson(String json) { return switch (json) {
+factory UntrustedCertAction.fromJson(String json) {return switch (json) {
   'pass_through' => passThrough,
   'block' => block,
   'error' => error,
   _ => UntrustedCertAction$Unknown(json),
-}; }
+};}
 
 static const UntrustedCertAction passThrough = UntrustedCertAction$passThrough._();
 
@@ -20,33 +20,33 @@ static const UntrustedCertAction error = UntrustedCertAction$error._();
 static const List<UntrustedCertAction> values = [passThrough, block, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pass_through' => 'passThrough',
   'block' => 'block',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UntrustedCertAction$Unknown; } 
+bool get isUnknown {return this is UntrustedCertAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() passThrough, required W Function() block, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() passThrough, required W Function() block, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       UntrustedCertAction$passThrough() => passThrough(),
       UntrustedCertAction$block() => block(),
       UntrustedCertAction$error() => error(),
       UntrustedCertAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThrough, W Function()? block, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThrough, W Function()? block, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       UntrustedCertAction$passThrough() => passThrough != null ? passThrough() : orElse(value),
       UntrustedCertAction$block() => block != null ? block() : orElse(value),
       UntrustedCertAction$error() => error != null ? error() : orElse(value),
       UntrustedCertAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UntrustedCertAction($value)';
 
- }
+}
 @immutable final class UntrustedCertAction$passThrough extends UntrustedCertAction {const UntrustedCertAction$passThrough._();
 
 @override String get value => 'pass_through';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThro
 
 @override int get hashCode => 'pass_through'.hashCode;
 
- }
+}
 @immutable final class UntrustedCertAction$block extends UntrustedCertAction {const UntrustedCertAction$block._();
 
 @override String get value => 'block';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThro
 
 @override int get hashCode => 'block'.hashCode;
 
- }
+}
 @immutable final class UntrustedCertAction$error extends UntrustedCertAction {const UntrustedCertAction$error._();
 
 @override String get value => 'error';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThro
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class UntrustedCertAction$Unknown extends UntrustedCertAction {const UntrustedCertAction$Unknown(this.value);
 
 @override final String value;
@@ -83,26 +83,26 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThro
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.
 @immutable final class UntrustedCert {const UntrustedCert({this.action});
 
-factory UntrustedCert.fromJson(Map<String, dynamic> json) { return UntrustedCert(
+factory UntrustedCert.fromJson(Map<String, dynamic> json) {return UntrustedCert(
   action: json['action'] != null ? UntrustedCertAction.fromJson(json['action'] as String) : null,
-); }
+);}
 
 /// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
 /// 
 /// Example: `'error'`
 final UntrustedCertAction? action;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action'}.contains(key)); } 
-UntrustedCert copyWith({UntrustedCertAction? Function()? action}) { return UntrustedCert(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action'}.contains(key));}
+UntrustedCert copyWith({UntrustedCertAction? Function()? action}) {return UntrustedCert(
   action: action != null ? action() : this.action,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UntrustedCert &&
           action == other.action;
@@ -111,4 +111,4 @@ UntrustedCert copyWith({UntrustedCertAction? Function()? action}) { return Untru
 
 @override String toString() => 'UntrustedCert(action: $action)';
 
- }
+}

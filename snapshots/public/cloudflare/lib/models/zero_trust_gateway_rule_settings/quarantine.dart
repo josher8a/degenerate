@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FileTypes {const FileTypes();
 
-factory FileTypes.fromJson(String json) { return switch (json) {
+factory FileTypes.fromJson(String json) {return switch (json) {
   'exe' => exe,
   'pdf' => pdf,
   'doc' => doc,
@@ -18,7 +18,7 @@ factory FileTypes.fromJson(String json) { return switch (json) {
   'zip' => zip,
   'rar' => rar,
   _ => FileTypes$Unknown(json),
-}; }
+};}
 
 static const FileTypes exe = FileTypes$exe._();
 
@@ -49,9 +49,9 @@ static const FileTypes rar = FileTypes$rar._();
 static const List<FileTypes> values = [exe, pdf, doc, docm, docx, rtf, ppt, pptx, xls, xlsm, xlsx, zip, rar];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exe' => 'exe',
   'pdf' => 'pdf',
   'doc' => 'doc',
@@ -66,11 +66,11 @@ String get name { return switch (value) {
   'zip' => 'zip',
   'rar' => 'rar',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FileTypes$Unknown; } 
+bool get isUnknown {return this is FileTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exe, required W Function() pdf, required W Function() doc, required W Function() docm, required W Function() docx, required W Function() rtf, required W Function() ppt, required W Function() pptx, required W Function() xls, required W Function() xlsm, required W Function() xlsx, required W Function() zip, required W Function() rar, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exe, required W Function() pdf, required W Function() doc, required W Function() docm, required W Function() docx, required W Function() rtf, required W Function() ppt, required W Function() pptx, required W Function() xls, required W Function() xlsm, required W Function() xlsx, required W Function() zip, required W Function() rar, required W Function(String value) $unknown, }) {return switch (this) {
       FileTypes$exe() => exe(),
       FileTypes$pdf() => pdf(),
       FileTypes$doc() => doc(),
@@ -85,9 +85,9 @@ W when<W>({required W Function() exe, required W Function() pdf, required W Func
       FileTypes$zip() => zip(),
       FileTypes$rar() => rar(),
       FileTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W Function()? pdf, W Function()? doc, W Function()? docm, W Function()? docx, W Function()? rtf, W Function()? ppt, W Function()? pptx, W Function()? xls, W Function()? xlsm, W Function()? xlsx, W Function()? zip, W Function()? rar, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W Function()? pdf, W Function()? doc, W Function()? docm, W Function()? docx, W Function()? rtf, W Function()? ppt, W Function()? pptx, W Function()? xls, W Function()? xlsm, W Function()? xlsx, W Function()? zip, W Function()? rar, W Function(String value)? $unknown, }) {return switch (this) {
       FileTypes$exe() => exe != null ? exe() : orElse(value),
       FileTypes$pdf() => pdf != null ? pdf() : orElse(value),
       FileTypes$doc() => doc != null ? doc() : orElse(value),
@@ -102,10 +102,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
       FileTypes$zip() => zip != null ? zip() : orElse(value),
       FileTypes$rar() => rar != null ? rar() : orElse(value),
       FileTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FileTypes($value)';
 
- }
+}
 @immutable final class FileTypes$exe extends FileTypes {const FileTypes$exe._();
 
 @override String get value => 'exe';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'exe'.hashCode;
 
- }
+}
 @immutable final class FileTypes$pdf extends FileTypes {const FileTypes$pdf._();
 
 @override String get value => 'pdf';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'pdf'.hashCode;
 
- }
+}
 @immutable final class FileTypes$doc extends FileTypes {const FileTypes$doc._();
 
 @override String get value => 'doc';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'doc'.hashCode;
 
- }
+}
 @immutable final class FileTypes$docm extends FileTypes {const FileTypes$docm._();
 
 @override String get value => 'docm';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'docm'.hashCode;
 
- }
+}
 @immutable final class FileTypes$docx extends FileTypes {const FileTypes$docx._();
 
 @override String get value => 'docx';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'docx'.hashCode;
 
- }
+}
 @immutable final class FileTypes$rtf extends FileTypes {const FileTypes$rtf._();
 
 @override String get value => 'rtf';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'rtf'.hashCode;
 
- }
+}
 @immutable final class FileTypes$ppt extends FileTypes {const FileTypes$ppt._();
 
 @override String get value => 'ppt';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'ppt'.hashCode;
 
- }
+}
 @immutable final class FileTypes$pptx extends FileTypes {const FileTypes$pptx._();
 
 @override String get value => 'pptx';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'pptx'.hashCode;
 
- }
+}
 @immutable final class FileTypes$xls extends FileTypes {const FileTypes$xls._();
 
 @override String get value => 'xls';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'xls'.hashCode;
 
- }
+}
 @immutable final class FileTypes$xlsm extends FileTypes {const FileTypes$xlsm._();
 
 @override String get value => 'xlsm';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'xlsm'.hashCode;
 
- }
+}
 @immutable final class FileTypes$xlsx extends FileTypes {const FileTypes$xlsx._();
 
 @override String get value => 'xlsx';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'xlsx'.hashCode;
 
- }
+}
 @immutable final class FileTypes$zip extends FileTypes {const FileTypes$zip._();
 
 @override String get value => 'zip';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class FileTypes$rar extends FileTypes {const FileTypes$rar._();
 
 @override String get value => 'rar';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => 'rar'.hashCode;
 
- }
+}
 @immutable final class FileTypes$Unknown extends FileTypes {const FileTypes$Unknown(this.value);
 
 @override final String value;
@@ -232,24 +232,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure settings that apply to quarantine rules. Settable only for `http` rules.
 @immutable final class Quarantine {const Quarantine({this.fileTypes});
 
-factory Quarantine.fromJson(Map<String, dynamic> json) { return Quarantine(
+factory Quarantine.fromJson(Map<String, dynamic> json) {return Quarantine(
   fileTypes: (json['file_types'] as List<dynamic>?)?.map((e) => FileTypes.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Specify the types of files to sandbox.
 final List<FileTypes>? fileTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fileTypes != null) 'file_types': fileTypes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_types'}.contains(key)); } 
-Quarantine copyWith({List<FileTypes>? Function()? fileTypes}) { return Quarantine(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_types'}.contains(key));}
+Quarantine copyWith({List<FileTypes>? Function()? fileTypes}) {return Quarantine(
   fileTypes: fileTypes != null ? fileTypes() : this.fileTypes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Quarantine &&
           listEquals(fileTypes, other.fileTypes);
@@ -258,4 +258,4 @@ Quarantine copyWith({List<FileTypes>? Function()? fileTypes}) { return Quarantin
 
 @override String toString() => 'Quarantine(fileTypes: $fileTypes)';
 
- }
+}

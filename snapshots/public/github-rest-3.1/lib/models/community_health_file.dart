@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommunityHealthFile {const CommunityHealthFile({required this.url, required this.htmlUrl, });
 
-factory CommunityHealthFile.fromJson(Map<String, dynamic> json) { return CommunityHealthFile(
+factory CommunityHealthFile.fromJson(Map<String, dynamic> json) {return CommunityHealthFile(
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
-); }
+);}
 
 final Uri url;
 
 final Uri htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String; } 
-CommunityHealthFile copyWith({Uri? url, Uri? htmlUrl, }) { return CommunityHealthFile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String;}
+CommunityHealthFile copyWith({Uri? url, Uri? htmlUrl, }) {return CommunityHealthFile(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommunityHealthFile &&
           url == other.url &&
@@ -31,4 +31,4 @@ CommunityHealthFile copyWith({Uri? url, Uri? htmlUrl, }) { return CommunityHealt
 
 @override String toString() => 'CommunityHealthFile(url: $url, htmlUrl: $htmlUrl)';
 
- }
+}

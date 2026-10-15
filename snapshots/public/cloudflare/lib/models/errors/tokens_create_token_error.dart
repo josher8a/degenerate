@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure38.dart';sealed class TokensCreateTokenError {const TokensCreateTokenError();
 
-factory TokensCreateTokenError.fromResponse(ApiResponse response) {     try {
+factory TokensCreateTokenError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => TokensCreateTokenError$4XX(ResponseCommonFailure38.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => TokensCreateTokenError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return TokensCreateTokenError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class TokensCreateTokenError$4XX extends TokensCreateTokenError {const TokensCreateTokenError$4XX(this.error, this.statusCode, );
 
 final ResponseCommonFailure38 error;
@@ -23,14 +23,14 @@ final ResponseCommonFailure38 error;
 
 @override Object get typedError => error;
 
- }
+}
 final class TokensCreateTokenError$Unknown extends TokensCreateTokenError {const TokensCreateTokenError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef TokensDeleteTokenError = TokensCreateTokenError;
 typedef TokensListPermissionGroupsError = TokensCreateTokenError;
 typedef TokensListTokensError = TokensCreateTokenError;

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_secret.dart';@immutable final class CodespacesListSecretsForAuthenticatedUserResponse {const CodespacesListSecretsForAuthenticatedUserResponse({required this.totalCount, required this.secrets, });
 
-factory CodespacesListSecretsForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesListSecretsForAuthenticatedUserResponse(
+factory CodespacesListSecretsForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) {return CodespacesListSecretsForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),
   secrets: (json['secrets'] as List<dynamic>).map((e) => CodespacesSecret.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<CodespacesSecret> secrets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'secrets': secrets.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('secrets'); } 
-CodespacesListSecretsForAuthenticatedUserResponse copyWith({int? totalCount, List<CodespacesSecret>? secrets, }) { return CodespacesListSecretsForAuthenticatedUserResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('secrets');}
+CodespacesListSecretsForAuthenticatedUserResponse copyWith({int? totalCount, List<CodespacesSecret>? secrets, }) {return CodespacesListSecretsForAuthenticatedUserResponse(
   totalCount: totalCount ?? this.totalCount,
   secrets: secrets ?? this.secrets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesListSecretsForAuthenticatedUserResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ CodespacesListSecretsForAuthenticatedUserResponse copyWith({int? totalCount, Lis
 
 @override String toString() => 'CodespacesListSecretsForAuthenticatedUserResponse(totalCount: $totalCount, secrets: $secrets)';
 
- }
+}

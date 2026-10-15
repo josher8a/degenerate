@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user_search_result_item.dart';@immutable final class SearchUsersResponse {const SearchUsersResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 
-factory SearchUsersResponse.fromJson(Map<String, dynamic> json) { return SearchUsersResponse(
+factory SearchUsersResponse.fromJson(Map<String, dynamic> json) {return SearchUsersResponse(
   totalCount: (json['total_count'] as num).toInt(),
   incompleteResults: json['incomplete_results'] as bool,
   items: (json['items'] as List<dynamic>).map((e) => UserSearchResultItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
@@ -15,19 +15,19 @@ final bool incompleteResults;
 
 final List<UserSearchResultItem> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'incomplete_results': incompleteResults,
   'items': items.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
       json.containsKey('incomplete_results') && json['incomplete_results'] is bool &&
-      json.containsKey('items'); } 
-SearchUsersResponse copyWith({int? totalCount, bool? incompleteResults, List<UserSearchResultItem>? items, }) { return SearchUsersResponse(
+      json.containsKey('items');}
+SearchUsersResponse copyWith({int? totalCount, bool? incompleteResults, List<UserSearchResultItem>? items, }) {return SearchUsersResponse(
   totalCount: totalCount ?? this.totalCount,
   incompleteResults: incompleteResults ?? this.incompleteResults,
   items: items ?? this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SearchUsersResponse &&
           totalCount == other.totalCount &&
@@ -38,4 +38,4 @@ SearchUsersResponse copyWith({int? totalCount, bool? incompleteResults, List<Use
 
 @override String toString() => 'SearchUsersResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)';
 
- }
+}

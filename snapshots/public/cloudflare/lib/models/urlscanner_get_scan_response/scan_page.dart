@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_request_headers.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/js.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/page_console.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/page_cookies.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/security_violations.dart';@immutable final class ScanPage {const ScanPage({required this.asn, required this.asnLocationAlpha2, required this.asnname, required this.console, required this.cookies, required this.country, required this.countryLocationAlpha2, required this.domain, required this.headers, required this.ip, required this.js, required this.securityViolations, required this.status, required this.subdivision1Name, required this.subdivision2name, required this.url, });
 
-factory ScanPage.fromJson(Map<String, dynamic> json) { return ScanPage(
+factory ScanPage.fromJson(Map<String, dynamic> json) {return ScanPage(
   asn: json['asn'] as String,
   asnLocationAlpha2: json['asnLocationAlpha2'] as String,
   asnname: json['asnname'] as String,
@@ -20,7 +20,7 @@ factory ScanPage.fromJson(Map<String, dynamic> json) { return ScanPage(
   subdivision1Name: json['subdivision1Name'] as String,
   subdivision2name: json['subdivision2name'] as String,
   url: json['url'] as String,
-); }
+);}
 
 /// Example: `'15133'`
 final String asn;
@@ -63,7 +63,7 @@ final String subdivision2name;
 /// Example: `'http://example.com/'`
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'asnLocationAlpha2': asnLocationAlpha2,
   'asnname': asnname,
@@ -80,8 +80,8 @@ Map<String, dynamic> toJson() { return {
   'subdivision1Name': subdivision1Name,
   'subdivision2name': subdivision2name,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('asnLocationAlpha2') && json['asnLocationAlpha2'] is String &&
       json.containsKey('asnname') && json['asnname'] is String &&
       json.containsKey('console') &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('subdivision1Name') && json['subdivision1Name'] is String &&
       json.containsKey('subdivision2name') && json['subdivision2name'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-ScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List<PageConsole>? console, List<PageCookies>? cookies, String? country, String? countryLocationAlpha2, String? domain, List<EntriesRequestHeaders>? headers, String? ip, Js? js, List<SecurityViolations>? securityViolations, double? status, String? subdivision1Name, String? subdivision2name, String? url, }) { return ScanPage(
+      json.containsKey('url') && json['url'] is String;}
+ScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List<PageConsole>? console, List<PageCookies>? cookies, String? country, String? countryLocationAlpha2, String? domain, List<EntriesRequestHeaders>? headers, String? ip, Js? js, List<SecurityViolations>? securityViolations, double? status, String? subdivision1Name, String? subdivision2name, String? url, }) {return ScanPage(
   asn: asn ?? this.asn,
   asnLocationAlpha2: asnLocationAlpha2 ?? this.asnLocationAlpha2,
   asnname: asnname ?? this.asnname,
@@ -114,7 +114,7 @@ ScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List
   subdivision1Name: subdivision1Name ?? this.subdivision1Name,
   subdivision2name: subdivision2name ?? this.subdivision2name,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScanPage &&
           asn == other.asn &&
@@ -138,4 +138,4 @@ ScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List
 
 @override String toString() => 'ScanPage(\n  asn: $asn,\n  asnLocationAlpha2: $asnLocationAlpha2,\n  asnname: $asnname,\n  console: $console,\n  cookies: $cookies,\n  country: $country,\n  countryLocationAlpha2: $countryLocationAlpha2,\n  domain: $domain,\n  headers: $headers,\n  ip: $ip,\n  js: $js,\n  securityViolations: $securityViolations,\n  status: $status,\n  subdivision1Name: $subdivision1Name,\n  subdivision2name: $subdivision2name,\n  url: $url,\n)';
 
- }
+}

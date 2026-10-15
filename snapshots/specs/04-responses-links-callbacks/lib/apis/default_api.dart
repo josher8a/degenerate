@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `POST /jobs`
-Future<ApiResult<Job, CreateJobError>> createJob({NewJob? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Job, CreateJobError>> createJob({NewJob? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -21,16 +21,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: CreateJobError.fromResponse,
 );
- } 
+}
 /// `GET /jobs/{jobId}`
-Future<ApiResult<Job, Never>> getJob({required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Job, Never>> getJob({required String jobId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,11 +39,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

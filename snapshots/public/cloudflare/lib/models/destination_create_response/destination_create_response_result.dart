@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result_configuration.dart';@immutable final class DestinationCreateResponseResult {const DestinationCreateResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
 
-factory DestinationCreateResponseResult.fromJson(Map<String, dynamic> json) { return DestinationCreateResponseResult(
+factory DestinationCreateResponseResult.fromJson(Map<String, dynamic> json) {return DestinationCreateResponseResult(
   configuration: DestinationCreateResponseResultConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   scripts: (json['scripts'] as List<dynamic>).map((e) => e as String).toList(),
   slug: json['slug'] as String,
-); }
+);}
 
 final DestinationCreateResponseResultConfiguration configuration;
 
@@ -21,29 +21,29 @@ final List<String> scripts;
 
 final String slug;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configuration': configuration.toJson(),
   'enabled': enabled,
   'name': name,
   'scripts': scripts,
   'slug': slug,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('configuration') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('scripts') &&
-      json.containsKey('slug') && json['slug'] is String; } 
+      json.containsKey('slug') && json['slug'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^[a-z0-9][a-z0-9-]*[a-z0-9]$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z0-9][a-z0-9-]*[a-z0-9]$'); }
-return errors; } 
-DestinationCreateResponseResult copyWith({DestinationCreateResponseResultConfiguration? configuration, bool? enabled, String? name, List<String>? scripts, String? slug, }) { return DestinationCreateResponseResult(
+return errors;}
+DestinationCreateResponseResult copyWith({DestinationCreateResponseResultConfiguration? configuration, bool? enabled, String? name, List<String>? scripts, String? slug, }) {return DestinationCreateResponseResult(
   configuration: configuration ?? this.configuration,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   scripts: scripts ?? this.scripts,
   slug: slug ?? this.slug,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateResponseResult &&
           configuration == other.configuration &&
@@ -56,4 +56,4 @@ DestinationCreateResponseResult copyWith({DestinationCreateResponseResultConfigu
 
 @override String toString() => 'DestinationCreateResponseResult(configuration: $configuration, enabled: $enabled, name: $name, scripts: $scripts, slug: $slug)';
 
- }
+}

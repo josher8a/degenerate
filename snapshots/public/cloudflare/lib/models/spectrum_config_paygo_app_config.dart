@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';@immutable final class SpectrumConfigPaygoAppConfig {const SpectrumConfigPaygoAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, this.originDirect, });
 
-factory SpectrumConfigPaygoAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigPaygoAppConfig(
+factory SpectrumConfigPaygoAppConfig.fromJson(Map<String, dynamic> json) {return SpectrumConfigPaygoAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),
   id: SpectrumConfigIdentifier.fromJson(json['id'] as String),
   modifiedOn: SpectrumConfigTimestamp.fromJson(json['modified_on'] as String),
   dns: SpectrumConfigDns.fromJson(json['dns'] as Map<String, dynamic>),
   originDirect: (json['origin_direct'] as List<dynamic>?)?.map((e) => e as String).toList(),
   protocol: SpectrumConfigProtocol.fromJson(json['protocol'] as String),
-); }
+);}
 
 /// When the Application was created.
 final SpectrumConfigTimestamp createdOn;
@@ -28,27 +28,27 @@ final List<String>? originDirect;
 
 final SpectrumConfigProtocol protocol;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toJson(),
   'id': id.toJson(),
   'modified_on': modifiedOn.toJson(),
   'dns': dns.toJson(),
   'origin_direct': ?originDirect,
   'protocol': protocol.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on') &&
       json.containsKey('dns') &&
-      json.containsKey('protocol'); } 
-SpectrumConfigPaygoAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigDns? dns, List<String>? Function()? originDirect, SpectrumConfigProtocol? protocol, }) { return SpectrumConfigPaygoAppConfig(
+      json.containsKey('protocol');}
+SpectrumConfigPaygoAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigDns? dns, List<String>? Function()? originDirect, SpectrumConfigProtocol? protocol, }) {return SpectrumConfigPaygoAppConfig(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   dns: dns ?? this.dns,
   originDirect: originDirect != null ? originDirect() : this.originDirect,
   protocol: protocol ?? this.protocol,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigPaygoAppConfig &&
           createdOn == other.createdOn &&
@@ -62,4 +62,4 @@ SpectrumConfigPaygoAppConfig copyWith({SpectrumConfigTimestamp? createdOn, Spect
 
 @override String toString() => 'SpectrumConfigPaygoAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, dns: $dns, originDirect: $originDirect, protocol: $protocol)';
 
- }
+}

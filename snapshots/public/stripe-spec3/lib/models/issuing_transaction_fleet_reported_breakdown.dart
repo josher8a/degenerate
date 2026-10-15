@@ -2,34 +2,34 @@
 // Source: #/components/schemas/IssuingTransactionFleetReportedBreakdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fleet_fuel_price_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fleet_non_fuel_price_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fleet_tax_data.dart';/// 
-@immutable final class IssuingTransactionFleetReportedBreakdown {const IssuingTransactionFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
+@immutable final class IssuingTransactionFleetReportedBreakdown {const IssuingTransactionFleetReportedBreakdown({this.fuel = const Omittable.absent(), this.nonFuel = const Omittable.absent(), this.tax = const Omittable.absent(), });
 
-factory IssuingTransactionFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetReportedBreakdown(
-  fuel: json['fuel'] != null ? IssuingTransactionFleetFuelPriceData.fromJson(json['fuel'] as Map<String, dynamic>) : null,
-  nonFuel: json['non_fuel'] != null ? IssuingTransactionFleetNonFuelPriceData.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
-  tax: json['tax'] != null ? IssuingTransactionFleetTaxData.fromJson(json['tax'] as Map<String, dynamic>) : null,
-); }
+factory IssuingTransactionFleetReportedBreakdown.fromJson(Map<String, dynamic> json) {return IssuingTransactionFleetReportedBreakdown(
+  fuel: json.containsKey('fuel') ? Omittable(json['fuel'] != null ? IssuingTransactionFleetFuelPriceData.fromJson(json['fuel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  nonFuel: json.containsKey('non_fuel') ? Omittable(json['non_fuel'] != null ? IssuingTransactionFleetNonFuelPriceData.fromJson(json['non_fuel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  tax: json.containsKey('tax') ? Omittable(json['tax'] != null ? IssuingTransactionFleetTaxData.fromJson(json['tax'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 /// Breakdown of fuel portion of the purchase.
-final IssuingTransactionFleetFuelPriceData? fuel;
+final Omittable<IssuingTransactionFleetFuelPriceData?> fuel;
 
 /// Breakdown of non-fuel portion of the purchase.
-final IssuingTransactionFleetNonFuelPriceData? nonFuel;
+final Omittable<IssuingTransactionFleetNonFuelPriceData?> nonFuel;
 
 /// Information about tax included in this transaction.
-final IssuingTransactionFleetTaxData? tax;
+final Omittable<IssuingTransactionFleetTaxData?> tax;
 
-Map<String, dynamic> toJson() { return {
-  if (fuel != null) 'fuel': fuel?.toJson(),
-  if (nonFuel != null) 'non_fuel': nonFuel?.toJson(),
-  if (tax != null) 'tax': tax?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key)); } 
-IssuingTransactionFleetReportedBreakdown copyWith({IssuingTransactionFleetFuelPriceData? Function()? fuel, IssuingTransactionFleetNonFuelPriceData? Function()? nonFuel, IssuingTransactionFleetTaxData? Function()? tax, }) { return IssuingTransactionFleetReportedBreakdown(
-  fuel: fuel != null ? fuel() : this.fuel,
-  nonFuel: nonFuel != null ? nonFuel() : this.nonFuel,
-  tax: tax != null ? tax() : this.tax,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (fuel.isPresent) 'fuel': fuel.value?.toJson(),
+  if (nonFuel.isPresent) 'non_fuel': nonFuel.value?.toJson(),
+  if (tax.isPresent) 'tax': tax.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key));}
+IssuingTransactionFleetReportedBreakdown copyWith({Omittable<IssuingTransactionFleetFuelPriceData?>? fuel, Omittable<IssuingTransactionFleetNonFuelPriceData?>? nonFuel, Omittable<IssuingTransactionFleetTaxData?>? tax, }) {return IssuingTransactionFleetReportedBreakdown(
+  fuel: fuel ?? this.fuel,
+  nonFuel: nonFuel ?? this.nonFuel,
+  tax: tax ?? this.tax,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionFleetReportedBreakdown &&
           fuel == other.fuel &&
@@ -40,4 +40,4 @@ IssuingTransactionFleetReportedBreakdown copyWith({IssuingTransactionFleetFuelPr
 
 @override String toString() => 'IssuingTransactionFleetReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)';
 
- }
+}

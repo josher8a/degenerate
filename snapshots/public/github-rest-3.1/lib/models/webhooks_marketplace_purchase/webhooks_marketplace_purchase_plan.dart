@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan/price_model.dart';@immutable final class WebhooksMarketplacePurchasePlan {const WebhooksMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
 
-factory WebhooksMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) { return WebhooksMarketplacePurchasePlan(
+factory WebhooksMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) {return WebhooksMarketplacePurchasePlan(
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String?).toList(),
   description: json['description'] as String,
   hasFreeTrial: json['has_free_trial'] as bool,
@@ -13,7 +13,7 @@ factory WebhooksMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) { re
   priceModel: PriceModel.fromJson(json['price_model'] as String),
   unitName: json['unit_name'] as String?,
   yearlyPriceInCents: (json['yearly_price_in_cents'] as num).toInt(),
-); }
+);}
 
 final List<String?> bullets;
 
@@ -33,7 +33,7 @@ final String? unitName;
 
 final int yearlyPriceInCents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bullets': bullets,
   'description': description,
   'has_free_trial': hasFreeTrial,
@@ -43,17 +43,17 @@ Map<String, dynamic> toJson() { return {
   'price_model': priceModel.toJson(),
   'unit_name': unitName,
   'yearly_price_in_cents': yearlyPriceInCents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bullets') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bullets') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('has_free_trial') && json['has_free_trial'] is bool &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('monthly_price_in_cents') && json['monthly_price_in_cents'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('price_model') &&
-      json.containsKey('unit_name') && json['unit_name'] is String &&
-      json.containsKey('yearly_price_in_cents') && json['yearly_price_in_cents'] is num; } 
-WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? description, bool? hasFreeTrial, int? id, int? monthlyPriceInCents, String? name, PriceModel? priceModel, String? Function()? unitName, int? yearlyPriceInCents, }) { return WebhooksMarketplacePurchasePlan(
+      json.containsKey('unit_name') && (json['unit_name'] == null || json['unit_name'] is String) &&
+      json.containsKey('yearly_price_in_cents') && json['yearly_price_in_cents'] is num;}
+WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? description, bool? hasFreeTrial, int? id, int? monthlyPriceInCents, String? name, PriceModel? priceModel, String? Function()? unitName, int? yearlyPriceInCents, }) {return WebhooksMarketplacePurchasePlan(
   bullets: bullets ?? this.bullets,
   description: description ?? this.description,
   hasFreeTrial: hasFreeTrial ?? this.hasFreeTrial,
@@ -63,7 +63,7 @@ WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? descri
   priceModel: priceModel ?? this.priceModel,
   unitName: unitName != null ? unitName() : this.unitName,
   yearlyPriceInCents: yearlyPriceInCents ?? this.yearlyPriceInCents,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMarketplacePurchasePlan &&
           listEquals(bullets, other.bullets) &&
@@ -80,4 +80,4 @@ WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? descri
 
 @override String toString() => 'WebhooksMarketplacePurchasePlan(\n  bullets: $bullets,\n  description: $description,\n  hasFreeTrial: $hasFreeTrial,\n  id: $id,\n  monthlyPriceInCents: $monthlyPriceInCents,\n  name: $name,\n  priceModel: $priceModel,\n  unitName: $unitName,\n  yearlyPriceInCents: $yearlyPriceInCents,\n)';
 
- }
+}

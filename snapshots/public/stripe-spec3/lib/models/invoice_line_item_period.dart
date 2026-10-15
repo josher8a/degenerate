@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class InvoiceLineItemPeriod {const InvoiceLineItemPeriod({required this.end, required this.start, });
 
-factory InvoiceLineItemPeriod.fromJson(Map<String, dynamic> json) { return InvoiceLineItemPeriod(
+factory InvoiceLineItemPeriod.fromJson(Map<String, dynamic> json) {return InvoiceLineItemPeriod(
   end: (json['end'] as num).toInt(),
   start: (json['start'] as num).toInt(),
-); }
+);}
 
 /// The end of the period, which must be greater than or equal to the start. This value is inclusive.
 final int end;
@@ -15,16 +15,16 @@ final int end;
 /// The start of the period. This value is inclusive.
 final int start;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': end,
   'start': start,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is num &&
-      json.containsKey('start') && json['start'] is num; } 
-InvoiceLineItemPeriod copyWith({int? end, int? start, }) { return InvoiceLineItemPeriod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end') && json['end'] is num &&
+      json.containsKey('start') && json['start'] is num;}
+InvoiceLineItemPeriod copyWith({int? end, int? start, }) {return InvoiceLineItemPeriod(
   end: end ?? this.end,
   start: start ?? this.start,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceLineItemPeriod &&
           end == other.end &&
@@ -34,4 +34,4 @@ InvoiceLineItemPeriod copyWith({int? end, int? start, }) { return InvoiceLineIte
 
 @override String toString() => 'InvoiceLineItemPeriod(end: $end, start: $start)';
 
- }
+}

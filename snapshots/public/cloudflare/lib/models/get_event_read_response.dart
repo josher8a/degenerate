@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventReadResponse {const GetEventReadResponse({required this.attacker, required this.attackerCountry, required this.category, required this.datasetId, required this.date, required this.event, required this.hasChildren, required this.indicator, required this.indicatorType, required this.indicatorTypeId, required this.killChain, required this.mitreAttack, required this.numReferenced, required this.numReferences, required this.rawId, required this.referenced, required this.referencedIds, required this.references, required this.referencesIds, required this.tags, required this.targetCountry, required this.targetIndustry, required this.tlp, required this.uuid, this.insight, this.releasabilityId, });
 
-factory GetEventReadResponse.fromJson(Map<String, dynamic> json) { return GetEventReadResponse(
+factory GetEventReadResponse.fromJson(Map<String, dynamic> json) {return GetEventReadResponse(
   attacker: json['attacker'] as String,
   attackerCountry: json['attackerCountry'] as String,
   category: json['category'] as String,
@@ -30,7 +30,7 @@ factory GetEventReadResponse.fromJson(Map<String, dynamic> json) { return GetEve
   targetIndustry: json['targetIndustry'] as String,
   tlp: json['tlp'] as String,
   uuid: json['uuid'] as String,
-); }
+);}
 
 /// Example: `'Flying Yeti'`
 final String attacker;
@@ -98,7 +98,7 @@ final String tlp;
 /// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attacker': attacker,
   'attackerCountry': attackerCountry,
   'category': category,
@@ -125,8 +125,8 @@ Map<String, dynamic> toJson() { return {
   'targetIndustry': targetIndustry,
   'tlp': tlp,
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('attacker') && json['attacker'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('attacker') && json['attacker'] is String &&
       json.containsKey('attackerCountry') && json['attackerCountry'] is String &&
       json.containsKey('category') && json['category'] is String &&
       json.containsKey('datasetId') && json['datasetId'] is String &&
@@ -149,8 +149,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attac
       json.containsKey('targetCountry') && json['targetCountry'] is String &&
       json.containsKey('targetIndustry') && json['targetIndustry'] is String &&
       json.containsKey('tlp') && json['tlp'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-GetEventReadResponse copyWith({String? attacker, String? attackerCountry, String? category, String? datasetId, String? date, String? event, bool? hasChildren, String? indicator, String? indicatorType, double? indicatorTypeId, String? Function()? insight, double? killChain, List<String>? mitreAttack, double? numReferenced, double? numReferences, String? rawId, List<String>? referenced, List<double>? referencedIds, List<String>? references, List<double>? referencesIds, String? Function()? releasabilityId, List<String>? tags, String? targetCountry, String? targetIndustry, String? tlp, String? uuid, }) { return GetEventReadResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+GetEventReadResponse copyWith({String? attacker, String? attackerCountry, String? category, String? datasetId, String? date, String? event, bool? hasChildren, String? indicator, String? indicatorType, double? indicatorTypeId, String? Function()? insight, double? killChain, List<String>? mitreAttack, double? numReferenced, double? numReferences, String? rawId, List<String>? referenced, List<double>? referencedIds, List<String>? references, List<double>? referencesIds, String? Function()? releasabilityId, List<String>? tags, String? targetCountry, String? targetIndustry, String? tlp, String? uuid, }) {return GetEventReadResponse(
   attacker: attacker ?? this.attacker,
   attackerCountry: attackerCountry ?? this.attackerCountry,
   category: category ?? this.category,
@@ -177,7 +177,7 @@ GetEventReadResponse copyWith({String? attacker, String? attackerCountry, String
   targetIndustry: targetIndustry ?? this.targetIndustry,
   tlp: tlp ?? this.tlp,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventReadResponse &&
           attacker == other.attacker &&
@@ -211,4 +211,4 @@ GetEventReadResponse copyWith({String? attacker, String? attackerCountry, String
 
 @override String toString() => 'GetEventReadResponse(\n  attacker: $attacker,\n  attackerCountry: $attackerCountry,\n  category: $category,\n  datasetId: $datasetId,\n  date: $date,\n  event: $event,\n  hasChildren: $hasChildren,\n  indicator: $indicator,\n  indicatorType: $indicatorType,\n  indicatorTypeId: $indicatorTypeId,\n  insight: $insight,\n  killChain: $killChain,\n  mitreAttack: $mitreAttack,\n  numReferenced: $numReferenced,\n  numReferences: $numReferences,\n  rawId: $rawId,\n  referenced: $referenced,\n  referencedIds: $referencedIds,\n  references: $references,\n  referencesIds: $referencesIds,\n  releasabilityId: $releasabilityId,\n  tags: $tags,\n  targetCountry: $targetCountry,\n  targetIndustry: $targetIndustry,\n  tlp: $tlp,\n  uuid: $uuid,\n)';
 
- }
+}

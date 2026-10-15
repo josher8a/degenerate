@@ -1,55 +1,55 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountNewKey
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountNewKey {const AccountNewKey({this.sid, this.friendlyName, this.dateCreated, this.dateUpdated, this.secret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountNewKey {const AccountNewKey({this.sid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.secret = const Omittable.absent(), });
 
-factory AccountNewKey.fromJson(Map<String, dynamic> json) { return AccountNewKey(
-  sid: json['sid'] as String?,
-  friendlyName: json['friendly_name'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  secret: json['secret'] as String?,
-); }
+factory AccountNewKey.fromJson(Map<String, dynamic> json) {return AccountNewKey(
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  secret: json.containsKey('secret') ? Omittable(json['secret'] as String?) : const Omittable.absent(),
+);}
 
 /// The unique string that that we created to identify the NewKey resource. You will use this as the basic-auth `user` when authenticating to the API.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The string that you assigned to describe the resource.
-final String? friendlyName;
+final Omittable<String?> friendlyName;
 
 /// The date and time in GMT that the API Key was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the new API Key was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The secret your application uses to sign Access Tokens and to authenticate to the REST API (you will use this as the basic-auth `password`).  **Note that for security reasons, this field is ONLY returned when the API Key is first created.**
-final String? secret;
+final Omittable<String?> secret;
 
-Map<String, dynamic> toJson() { return {
-  'sid': ?sid,
-  'friendly_name': ?friendlyName,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'secret': ?secret,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated', 'secret'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (sid.isPresent) 'sid': sid.value,
+  if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (secret.isPresent) 'secret': secret.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated', 'secret'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final sid$ = sid;
+List<String> validate() {final errors = <String>[];
+final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^SK[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^SK[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountNewKey copyWith({String? Function()? sid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? secret, }) { return AccountNewKey(
-  sid: sid != null ? sid() : this.sid,
-  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  secret: secret != null ? secret() : this.secret,
-); } 
+return errors;}
+AccountNewKey copyWith({Omittable<String?>? sid, Omittable<String?>? friendlyName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? secret, }) {return AccountNewKey(
+  sid: sid ?? this.sid,
+  friendlyName: friendlyName ?? this.friendlyName,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  secret: secret ?? this.secret,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountNewKey &&
           sid == other.sid &&
@@ -62,4 +62,4 @@ AccountNewKey copyWith({String? Function()? sid, String? Function()? friendlyNam
 
 @override String toString() => 'AccountNewKey(sid: $sid, friendlyName: $friendlyName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, secret: $secret)';
 
- }
+}

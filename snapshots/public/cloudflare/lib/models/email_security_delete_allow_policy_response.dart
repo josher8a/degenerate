@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delete_allow_policy_response/email_security_delete_allow_policy_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityDeleteAllowPolicyResponse {const EmailSecurityDeleteAllowPolicyResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory EmailSecurityDeleteAllowPolicyResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteAllowPolicyResponse(
+factory EmailSecurityDeleteAllowPolicyResponse.fromJson(Map<String, dynamic> json) {return EmailSecurityDeleteAllowPolicyResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 /// Example: `[]`
 final List<EmailSecurityMessage> errors;
@@ -21,22 +21,22 @@ final bool success;
 
 final EmailSecurityDeleteAllowPolicyResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-EmailSecurityDeleteAllowPolicyResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityDeleteAllowPolicyResponseResult? result, }) { return EmailSecurityDeleteAllowPolicyResponse(
+      json.containsKey('result');}
+EmailSecurityDeleteAllowPolicyResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityDeleteAllowPolicyResponseResult? result, }) {return EmailSecurityDeleteAllowPolicyResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityDeleteAllowPolicyResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ EmailSecurityDeleteAllowPolicyResponse copyWith({List<EmailSecurityMessage>? err
 
 @override String toString() => 'EmailSecurityDeleteAllowPolicyResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

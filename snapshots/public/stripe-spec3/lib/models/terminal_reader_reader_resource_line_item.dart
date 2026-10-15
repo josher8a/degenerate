@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a line item to be displayed on the reader
 @immutable final class TerminalReaderReaderResourceLineItem {const TerminalReaderReaderResourceLineItem({required this.amount, required this.description, required this.quantity, });
 
-factory TerminalReaderReaderResourceLineItem.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceLineItem(
+factory TerminalReaderReaderResourceLineItem.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceLineItem(
   amount: (json['amount'] as num).toInt(),
   description: json['description'] as String,
   quantity: (json['quantity'] as num).toInt(),
-); }
+);}
 
 /// The amount of the line item. A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amount;
@@ -19,23 +19,23 @@ final String description;
 /// The quantity of the line item.
 final int quantity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'description': description,
   'quantity': quantity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('description') && json['description'] is String &&
-      json.containsKey('quantity') && json['quantity'] is num; } 
+      json.containsKey('quantity') && json['quantity'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (description.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
-return errors; } 
-TerminalReaderReaderResourceLineItem copyWith({int? amount, String? description, int? quantity, }) { return TerminalReaderReaderResourceLineItem(
+return errors;}
+TerminalReaderReaderResourceLineItem copyWith({int? amount, String? description, int? quantity, }) {return TerminalReaderReaderResourceLineItem(
   amount: amount ?? this.amount,
   description: description ?? this.description,
   quantity: quantity ?? this.quantity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceLineItem &&
           amount == other.amount &&
@@ -46,4 +46,4 @@ TerminalReaderReaderResourceLineItem copyWith({int? amount, String? description,
 
 @override String toString() => 'TerminalReaderReaderResourceLineItem(amount: $amount, description: $description, quantity: $quantity)';
 
- }
+}

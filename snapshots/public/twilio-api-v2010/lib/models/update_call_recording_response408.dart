@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateCallRecordingResponse408 {const UpdateCallRecordingResponse408({this.code, this.message, this.moreInfo, this.status, });
 
-factory UpdateCallRecordingResponse408.fromJson(Map<String, dynamic> json) { return UpdateCallRecordingResponse408(
+factory UpdateCallRecordingResponse408.fromJson(Map<String, dynamic> json) {return UpdateCallRecordingResponse408(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   message: json['message'] as String?,
   moreInfo: json['more_info'] as String?,
   status: json['status'] != null ? (json['status'] as num).toInt() : null,
-); }
+);}
 
 /// Twilio-specific error code
 final int? code;
@@ -22,19 +22,19 @@ final String? moreInfo;
 /// HTTP response status code
 final int? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   'more_info': ?moreInfo,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'more_info', 'status'}.contains(key)); } 
-UpdateCallRecordingResponse408 copyWith({int? Function()? code, String? Function()? message, String? Function()? moreInfo, int? Function()? status, }) { return UpdateCallRecordingResponse408(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'more_info', 'status'}.contains(key));}
+UpdateCallRecordingResponse408 copyWith({int? Function()? code, String? Function()? message, String? Function()? moreInfo, int? Function()? status, }) {return UpdateCallRecordingResponse408(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   moreInfo: moreInfo != null ? moreInfo() : this.moreInfo,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateCallRecordingResponse408 &&
           code == other.code &&
@@ -46,4 +46,4 @@ UpdateCallRecordingResponse408 copyWith({int? Function()? code, String? Function
 
 @override String toString() => 'UpdateCallRecordingResponse408(code: $code, message: $message, moreInfo: $moreInfo, status: $status)';
 
- }
+}

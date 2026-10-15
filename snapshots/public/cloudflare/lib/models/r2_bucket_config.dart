@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_queues_config.dart';@immutable final class R2BucketConfig {const R2BucketConfig({this.bucketName, this.queues, });
 
-factory R2BucketConfig.fromJson(Map<String, dynamic> json) { return R2BucketConfig(
+factory R2BucketConfig.fromJson(Map<String, dynamic> json) {return R2BucketConfig(
   bucketName: json['bucketName'] as String?,
   queues: (json['queues'] as List<dynamic>?)?.map((e) => R2QueuesConfig.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Name of the bucket.
 final String? bucketName;
@@ -14,15 +14,15 @@ final String? bucketName;
 /// List of queues associated with the bucket.
 final List<R2QueuesConfig>? queues;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucketName': ?bucketName,
   if (queues != null) 'queues': queues?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucketName', 'queues'}.contains(key)); } 
-R2BucketConfig copyWith({String? Function()? bucketName, List<R2QueuesConfig>? Function()? queues, }) { return R2BucketConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bucketName', 'queues'}.contains(key));}
+R2BucketConfig copyWith({String? Function()? bucketName, List<R2QueuesConfig>? Function()? queues, }) {return R2BucketConfig(
   bucketName: bucketName != null ? bucketName() : this.bucketName,
   queues: queues != null ? queues() : this.queues,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2BucketConfig &&
           bucketName == other.bucketName &&
@@ -32,4 +32,4 @@ R2BucketConfig copyWith({String? Function()? bucketName, List<R2QueuesConfig>? F
 
 @override String toString() => 'R2BucketConfig(bucketName: $bucketName, queues: $queues)';
 
- }
+}

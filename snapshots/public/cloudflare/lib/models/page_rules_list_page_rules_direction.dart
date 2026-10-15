@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned Page Rules.
 sealed class PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection();
 
-factory PageRulesListPageRulesDirection.fromJson(String json) { return switch (json) {
+factory PageRulesListPageRulesDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => PageRulesListPageRulesDirection$Unknown(json),
-}; }
+};}
 
 static const PageRulesListPageRulesDirection asc = PageRulesListPageRulesDirection$asc._();
 
@@ -17,30 +17,30 @@ static const PageRulesListPageRulesDirection desc = PageRulesListPageRulesDirect
 static const List<PageRulesListPageRulesDirection> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PageRulesListPageRulesDirection$Unknown; } 
+bool get isUnknown {return this is PageRulesListPageRulesDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       PageRulesListPageRulesDirection$asc() => asc(),
       PageRulesListPageRulesDirection$desc() => desc(),
       PageRulesListPageRulesDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       PageRulesListPageRulesDirection$asc() => asc != null ? asc() : orElse(value),
       PageRulesListPageRulesDirection$desc() => desc != null ? desc() : orElse(value),
       PageRulesListPageRulesDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PageRulesListPageRulesDirection($value)';
 
- }
+}
 @immutable final class PageRulesListPageRulesDirection$asc extends PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection$asc._();
 
 @override String get value => 'asc';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class PageRulesListPageRulesDirection$desc extends PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection$desc._();
 
 @override String get value => 'desc';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class PageRulesListPageRulesDirection$Unknown extends PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

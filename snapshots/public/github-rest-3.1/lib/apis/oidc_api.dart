@@ -16,7 +16,7 @@ final class OidcApi with ApiExecutor {const OidcApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/actions/oidc/customization/sub`
-Future<ApiResult<OidcCustomSub, Never>> oidcGetOidcCustomSubTemplateForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OidcCustomSub, Never>> oidcGetOidcCustomSubTemplateForOrg({required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,13 +25,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OidcCustomSub.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Set the customization template for an OIDC subject claim for an organization
 ///
 /// Creates or updates the customization template for an OpenID Connect (OIDC) subject claim.
@@ -39,7 +39,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/oidc/customization/sub`
-Future<ApiResult<EmptyObject, ActionsApproveWorkflowRunError>> oidcUpdateOidcCustomSubTemplateForOrg({required String org, required OidcCustomSub body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, ActionsApproveWorkflowRunError>> oidcUpdateOidcCustomSubTemplateForOrg({required String org, required OidcCustomSub body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,12 +50,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsApproveWorkflowRunError.fromResponse,
 );
- } 
- }
+}
+}

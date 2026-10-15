@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/address.dart';import 'package:spec_12_unions/models/nullability_combos.dart';import 'package:spec_12_unions/models/order_item.dart';sealed class Status {const Status();
 
-factory Status.fromJson(String json) { return switch (json) {
+factory Status.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'confirmed' => confirmed,
   'shipped' => shipped,
   'delivered' => delivered,
   _ => Status$Unknown(json),
-}; }
+};}
 
 static const Status pending = Status$pending._();
 
@@ -22,36 +22,36 @@ static const Status delivered = Status$delivered._();
 static const List<Status> values = [pending, confirmed, shipped, delivered];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'confirmed' => 'confirmed',
   'shipped' => 'shipped',
   'delivered' => 'delivered',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Status$Unknown; } 
+bool get isUnknown {return this is Status$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() confirmed, required W Function() shipped, required W Function() delivered, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() confirmed, required W Function() shipped, required W Function() delivered, required W Function(String value) $unknown, }) {return switch (this) {
       Status$pending() => pending(),
       Status$confirmed() => confirmed(),
       Status$shipped() => shipped(),
       Status$delivered() => delivered(),
       Status$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? confirmed, W Function()? shipped, W Function()? delivered, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? confirmed, W Function()? shipped, W Function()? delivered, W Function(String value)? $unknown, }) {return switch (this) {
       Status$pending() => pending != null ? pending() : orElse(value),
       Status$confirmed() => confirmed != null ? confirmed() : orElse(value),
       Status$shipped() => shipped != null ? shipped() : orElse(value),
       Status$delivered() => delivered != null ? delivered() : orElse(value),
       Status$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Status($value)';
 
- }
+}
 @immutable final class Status$pending extends Status {const Status$pending._();
 
 @override String get value => 'pending';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class Status$confirmed extends Status {const Status$confirmed._();
 
 @override String get value => 'confirmed';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'confirmed'.hashCode;
 
- }
+}
 @immutable final class Status$shipped extends Status {const Status$shipped._();
 
 @override String get value => 'shipped';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'shipped'.hashCode;
 
- }
+}
 @immutable final class Status$delivered extends Status {const Status$delivered._();
 
 @override String get value => 'delivered';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'delivered'.hashCode;
 
- }
+}
 @immutable final class Status$Unknown extends Status {const Status$Unknown(this.value);
 
 @override final String value;
@@ -97,17 +97,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Order {const Order({required this.id, required this.items, this.status, this.shippingAddress, this.metadata, this.nullabilitySample, });
 
-factory Order.fromJson(Map<String, dynamic> json) { return Order(
+factory Order.fromJson(Map<String, dynamic> json) {return Order(
   id: json['id'] as String,
   status: json['status'] != null ? Status.fromJson(json['status'] as String) : null,
   items: (json['items'] as List<dynamic>).map((e) => OrderItem.fromJson(e as Map<String, dynamic>)).toList(),
   shippingAddress: json['shippingAddress'] != null ? Address.fromJson(json['shippingAddress'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nullabilitySample: json['nullabilitySample'] != null ? NullabilityCombos.fromJson(json['nullabilitySample'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String id;
 
@@ -121,24 +121,24 @@ final Map<String,String>? metadata;
 
 final NullabilityCombos? nullabilitySample;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (status != null) 'status': status?.toJson(),
   'items': items.map((e) => e.toJson()).toList(),
   if (shippingAddress != null) 'shippingAddress': shippingAddress?.toJson(),
   'metadata': ?metadata,
   if (nullabilitySample != null) 'nullabilitySample': nullabilitySample?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('items'); } 
-Order copyWith({String? id, Status? Function()? status, List<OrderItem>? items, Address? Function()? shippingAddress, Map<String, String>? Function()? metadata, NullabilityCombos? Function()? nullabilitySample, }) { return Order(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('items');}
+Order copyWith({String? id, Status? Function()? status, List<OrderItem>? items, Address? Function()? shippingAddress, Map<String, String>? Function()? metadata, NullabilityCombos? Function()? nullabilitySample, }) {return Order(
   id: id ?? this.id,
   status: status != null ? status() : this.status,
   items: items ?? this.items,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
   metadata: metadata != null ? metadata() : this.metadata,
   nullabilitySample: nullabilitySample != null ? nullabilitySample() : this.nullabilitySample,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Order &&
           id == other.id &&
@@ -152,4 +152,4 @@ Order copyWith({String? id, Status? Function()? status, List<OrderItem>? items, 
 
 @override String toString() => 'Order(id: $id, status: $status, items: $items, shippingAddress: $shippingAddress, metadata: $metadata, nullabilitySample: $nullabilitySample)';
 
- }
+}

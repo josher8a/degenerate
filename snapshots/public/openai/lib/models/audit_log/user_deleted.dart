@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class UserDeleted {const UserDeleted({this.id});
 
-factory UserDeleted.fromJson(Map<String, dynamic> json) { return UserDeleted(
+factory UserDeleted.fromJson(Map<String, dynamic> json) {return UserDeleted(
   id: json['id'] as String?,
-); }
+);}
 
 /// The user ID.
 final String? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-UserDeleted copyWith({String? Function()? id}) { return UserDeleted(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+UserDeleted copyWith({String? Function()? id}) {return UserDeleted(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UserDeleted &&
           id == other.id;
@@ -26,4 +26,4 @@ UserDeleted copyWith({String? Function()? id}) { return UserDeleted(
 
 @override String toString() => 'UserDeleted(id: $id)';
 
- }
+}

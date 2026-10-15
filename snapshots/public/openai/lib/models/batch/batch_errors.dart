@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch/errors_data.dart';@immutable final class BatchErrors {const BatchErrors({this.object, this.data, });
 
-factory BatchErrors.fromJson(Map<String, dynamic> json) { return BatchErrors(
+factory BatchErrors.fromJson(Map<String, dynamic> json) {return BatchErrors(
   object: json['object'] as String?,
   data: (json['data'] as List<dynamic>?)?.map((e) => ErrorsData.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The object type, which is always `list`.
 final String? object;
 
 final List<ErrorsData>? data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': ?object,
   if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object', 'data'}.contains(key)); } 
-BatchErrors copyWith({String? Function()? object, List<ErrorsData>? Function()? data, }) { return BatchErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'object', 'data'}.contains(key));}
+BatchErrors copyWith({String? Function()? object, List<ErrorsData>? Function()? data, }) {return BatchErrors(
   object: object != null ? object() : this.object,
   data: data != null ? data() : this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BatchErrors &&
           object == other.object &&
@@ -31,4 +31,4 @@ BatchErrors copyWith({String? Function()? object, List<ErrorsData>? Function()? 
 
 @override String toString() => 'BatchErrors(object: $object, data: $data)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The environment to deploy the certificate to, defaults to production
 sealed class TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy();
 
-factory TlsCertificatesAndHostnamesDeploy.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesDeploy.fromJson(String json) {return switch (json) {
   'staging' => staging,
   'production' => production,
   _ => TlsCertificatesAndHostnamesDeploy$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesDeploy staging = TlsCertificatesAndHostnamesDeploy$staging._();
 
@@ -17,30 +17,30 @@ static const TlsCertificatesAndHostnamesDeploy production = TlsCertificatesAndHo
 static const List<TlsCertificatesAndHostnamesDeploy> values = [staging, production];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'staging' => 'staging',
   'production' => 'production',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesDeploy$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesDeploy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() staging, required W Function() production, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() staging, required W Function() production, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesDeploy$staging() => staging(),
       TlsCertificatesAndHostnamesDeploy$production() => production(),
       TlsCertificatesAndHostnamesDeploy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? staging, W Function()? production, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? staging, W Function()? production, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesDeploy$staging() => staging != null ? staging() : orElse(value),
       TlsCertificatesAndHostnamesDeploy$production() => production != null ? production() : orElse(value),
       TlsCertificatesAndHostnamesDeploy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesDeploy($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesDeploy$staging extends TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy$staging._();
 
 @override String get value => 'staging';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? staging,
 
 @override int get hashCode => 'staging'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesDeploy$production extends TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy$production._();
 
 @override String get value => 'production';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? staging,
 
 @override int get hashCode => 'production'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesDeploy$Unknown extends TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? staging,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

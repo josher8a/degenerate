@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CategoryFrom {const CategoryFrom({required this.createdAt, required this.description, required this.emoji, required this.id, required this.isAnswerable, required this.name, required this.repositoryId, required this.slug, required this.updatedAt, this.nodeId, });
 
-factory CategoryFrom.fromJson(Map<String, dynamic> json) { return CategoryFrom(
+factory CategoryFrom.fromJson(Map<String, dynamic> json) {return CategoryFrom(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String,
   emoji: json['emoji'] as String,
@@ -14,7 +14,7 @@ factory CategoryFrom.fromJson(Map<String, dynamic> json) { return CategoryFrom(
   repositoryId: (json['repository_id'] as num).toInt(),
   slug: json['slug'] as String,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -36,7 +36,7 @@ final String slug;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': description,
   'emoji': emoji,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'repository_id': repositoryId,
   'slug': slug,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('emoji') && json['emoji'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('repository_id') && json['repository_id'] is num &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-CategoryFrom copyWith({DateTime? createdAt, String? description, String? emoji, int? id, bool? isAnswerable, String? name, String? Function()? nodeId, int? repositoryId, String? slug, String? updatedAt, }) { return CategoryFrom(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+CategoryFrom copyWith({DateTime? createdAt, String? description, String? emoji, int? id, bool? isAnswerable, String? name, String? Function()? nodeId, int? repositoryId, String? slug, String? updatedAt, }) {return CategoryFrom(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   emoji: emoji ?? this.emoji,
@@ -68,7 +68,7 @@ CategoryFrom copyWith({DateTime? createdAt, String? description, String? emoji, 
   repositoryId: repositoryId ?? this.repositoryId,
   slug: slug ?? this.slug,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CategoryFrom &&
           createdAt == other.createdAt &&
@@ -86,4 +86,4 @@ CategoryFrom copyWith({DateTime? createdAt, String? description, String? emoji, 
 
 @override String toString() => 'CategoryFrom(\n  createdAt: $createdAt,\n  description: $description,\n  emoji: $emoji,\n  id: $id,\n  isAnswerable: $isAnswerable,\n  name: $name,\n  nodeId: $nodeId,\n  repositoryId: $repositoryId,\n  slug: $slug,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

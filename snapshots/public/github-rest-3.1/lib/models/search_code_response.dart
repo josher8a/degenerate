@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_search_result_item.dart';@immutable final class SearchCodeResponse {const SearchCodeResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 
-factory SearchCodeResponse.fromJson(Map<String, dynamic> json) { return SearchCodeResponse(
+factory SearchCodeResponse.fromJson(Map<String, dynamic> json) {return SearchCodeResponse(
   totalCount: (json['total_count'] as num).toInt(),
   incompleteResults: json['incomplete_results'] as bool,
   items: (json['items'] as List<dynamic>).map((e) => CodeSearchResultItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
@@ -15,19 +15,19 @@ final bool incompleteResults;
 
 final List<CodeSearchResultItem> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'incomplete_results': incompleteResults,
   'items': items.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
       json.containsKey('incomplete_results') && json['incomplete_results'] is bool &&
-      json.containsKey('items'); } 
-SearchCodeResponse copyWith({int? totalCount, bool? incompleteResults, List<CodeSearchResultItem>? items, }) { return SearchCodeResponse(
+      json.containsKey('items');}
+SearchCodeResponse copyWith({int? totalCount, bool? incompleteResults, List<CodeSearchResultItem>? items, }) {return SearchCodeResponse(
   totalCount: totalCount ?? this.totalCount,
   incompleteResults: incompleteResults ?? this.incompleteResults,
   items: items ?? this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SearchCodeResponse &&
           totalCount == other.totalCount &&
@@ -38,4 +38,4 @@ SearchCodeResponse copyWith({int? totalCount, bool? incompleteResults, List<Code
 
 @override String toString() => 'SearchCodeResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)';
 
- }
+}

@@ -12,7 +12,7 @@ final class Api20100401IncomingPhoneNumberLocalApi with ApiExecutor {const Api20
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Local.json`
-Future<ApiResult<ListIncomingPhoneNumberLocalResponse, Never>> listIncomingPhoneNumberLocal({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberLocalResponse, Never>> listIncomingPhoneNumberLocal({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (beta != null) {
   queryParameters['Beta'] = beta.toString();
@@ -47,17 +47,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListIncomingPhoneNumberLocalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Local.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberLocal, Never>> createIncomingPhoneNumberLocal({required String accountSid, CreateIncomingPhoneNumberLocalRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberLocal, Never>> createIncomingPhoneNumberLocal({required String accountSid, CreateIncomingPhoneNumberLocalRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -114,11 +114,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountIncomingPhoneNumberIncomingPhoneNumberLocal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

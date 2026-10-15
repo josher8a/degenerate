@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Queues {const Queues({required this.queueConsumerId, required this.queueId, required this.queueName, });
 
-factory Queues.fromJson(Map<String, dynamic> json) { return Queues(
+factory Queues.fromJson(Map<String, dynamic> json) {return Queues(
   queueConsumerId: json['queue_consumer_id'] as String,
   queueId: json['queue_id'] as String,
   queueName: json['queue_name'] as String,
-); }
+);}
 
 /// ID of the queue consumer configuration.
 /// 
@@ -24,19 +24,19 @@ final String queueId;
 /// Example: `'my-queue'`
 final String queueName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'queue_consumer_id': queueConsumerId,
   'queue_id': queueId,
   'queue_name': queueName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('queue_consumer_id') && json['queue_consumer_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('queue_consumer_id') && json['queue_consumer_id'] is String &&
       json.containsKey('queue_id') && json['queue_id'] is String &&
-      json.containsKey('queue_name') && json['queue_name'] is String; } 
-Queues copyWith({String? queueConsumerId, String? queueId, String? queueName, }) { return Queues(
+      json.containsKey('queue_name') && json['queue_name'] is String;}
+Queues copyWith({String? queueConsumerId, String? queueId, String? queueName, }) {return Queues(
   queueConsumerId: queueConsumerId ?? this.queueConsumerId,
   queueId: queueId ?? this.queueId,
   queueName: queueName ?? this.queueName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Queues &&
           queueConsumerId == other.queueConsumerId &&
@@ -47,4 +47,4 @@ Queues copyWith({String? queueConsumerId, String? queueId, String? queueName, })
 
 @override String toString() => 'Queues(queueConsumerId: $queueConsumerId, queueId: $queueId, queueName: $queueName)';
 
- }
+}

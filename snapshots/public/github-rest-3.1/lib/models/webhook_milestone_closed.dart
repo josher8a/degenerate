@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_closed/project_closed_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone.dart';@immutable final class WebhookMilestoneClosed {const WebhookMilestoneClosed({required this.action, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookMilestoneClosed.fromJson(Map<String, dynamic> json) { return WebhookMilestoneClosed(
+factory WebhookMilestoneClosed.fromJson(Map<String, dynamic> json) {return WebhookMilestoneClosed(
   action: ProjectClosedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookMilestoneClosed.fromJson(Map<String, dynamic> json) { return Webh
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ProjectClosedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('milestone') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookMilestoneClosed copyWith({ProjectClosedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMilestone? milestone, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMilestoneClosed(
+      json.containsKey('sender');}
+WebhookMilestoneClosed copyWith({ProjectClosedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMilestone? milestone, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookMilestoneClosed(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -48,7 +48,7 @@ WebhookMilestoneClosed copyWith({ProjectClosedAction? action, EnterpriseWebhooks
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMilestoneClosed &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookMilestoneClosed copyWith({ProjectClosedAction? action, EnterpriseWebhooks
 
 @override String toString() => 'WebhookMilestoneClosed(action: $action, enterprise: $enterprise, installation: $installation, milestone: $milestone, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_run.dart';@immutable final class ActionsListWorkflowRunsResponse {const ActionsListWorkflowRunsResponse({required this.totalCount, required this.workflowRuns, });
 
-factory ActionsListWorkflowRunsResponse.fromJson(Map<String, dynamic> json) { return ActionsListWorkflowRunsResponse(
+factory ActionsListWorkflowRunsResponse.fromJson(Map<String, dynamic> json) {return ActionsListWorkflowRunsResponse(
   totalCount: (json['total_count'] as num).toInt(),
   workflowRuns: (json['workflow_runs'] as List<dynamic>).map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<WorkflowRun> workflowRuns;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'workflow_runs': workflowRuns.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('workflow_runs'); } 
-ActionsListWorkflowRunsResponse copyWith({int? totalCount, List<WorkflowRun>? workflowRuns, }) { return ActionsListWorkflowRunsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('workflow_runs');}
+ActionsListWorkflowRunsResponse copyWith({int? totalCount, List<WorkflowRun>? workflowRuns, }) {return ActionsListWorkflowRunsResponse(
   totalCount: totalCount ?? this.totalCount,
   workflowRuns: workflowRuns ?? this.workflowRuns,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListWorkflowRunsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListWorkflowRunsResponse copyWith({int? totalCount, List<WorkflowRun>? wo
 
 @override String toString() => 'ActionsListWorkflowRunsResponse(totalCount: $totalCount, workflowRuns: $workflowRuns)';
 
- }
+}

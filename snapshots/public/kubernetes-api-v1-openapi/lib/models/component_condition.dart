@@ -2,14 +2,14 @@
 // Source: #/components/schemas/ComponentCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the condition of a component.
-@immutable final class ComponentCondition {const ComponentCondition({this.error, this.message, this.status = '', this.type = '', });
+@immutable final class ComponentCondition {const ComponentCondition({required this.status, required this.type, this.error, this.message, });
 
-factory ComponentCondition.fromJson(Map<String, dynamic> json) { return ComponentCondition(
+factory ComponentCondition.fromJson(Map<String, dynamic> json) {return ComponentCondition(
   error: json['error'] as String?,
   message: json['message'] as String?,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// Condition error code for a component. For example, a health check error code.
 final String? error;
@@ -23,20 +23,20 @@ final String status;
 /// Type of condition for a component. Valid value: "Healthy"
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': ?error,
   'message': ?message,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-ComponentCondition copyWith({String? Function()? error, String? Function()? message, String? status, String? type, }) { return ComponentCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+ComponentCondition copyWith({String? Function()? error, String? Function()? message, String? status, String? type, }) {return ComponentCondition(
   error: error != null ? error() : this.error,
   message: message != null ? message() : this.message,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentCondition &&
           error == other.error &&
@@ -48,4 +48,4 @@ ComponentCondition copyWith({String? Function()? error, String? Function()? mess
 
 @override String toString() => 'ComponentCondition(error: $error, message: $message, status: $status, type: $type)';
 
- }
+}

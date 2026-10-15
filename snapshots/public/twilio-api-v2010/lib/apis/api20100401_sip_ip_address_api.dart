@@ -12,7 +12,7 @@ final class Api20100401SipIpAddressApi with ApiExecutor {const Api20100401SipIpA
 /// Read multiple IpAddress resources.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses.json`
-Future<ApiResult<ListSipIpAddressResponse, Never>> listSipIpAddress({required String accountSid, required String ipAccessControlListSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListSipIpAddressResponse, Never>> listSipIpAddress({required String accountSid, required String ipAccessControlListSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -35,17 +35,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListSipIpAddressResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new IpAddress resource.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses.json`
-Future<ApiResult<AccountSipSipIpAccessControlListSipIpAddress, Never>> createSipIpAddress({required String accountSid, required String ipAccessControlListSid, CreateSipIpAddressRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipIpAccessControlListSipIpAddress, Never>> createSipIpAddress({required String accountSid, required String ipAccessControlListSid, CreateSipIpAddressRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -61,17 +61,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSipSipIpAccessControlListSipIpAddress.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Read one IpAddress resource.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json`
-Future<ApiResult<AccountSipSipIpAccessControlListSipIpAddress, Never>> fetchSipIpAddress({required String accountSid, required String ipAccessControlListSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipIpAccessControlListSipIpAddress, Never>> fetchSipIpAddress({required String accountSid, required String ipAccessControlListSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,17 +80,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSipSipIpAccessControlListSipIpAddress.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update an IpAddress resource.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json`
-Future<ApiResult<AccountSipSipIpAccessControlListSipIpAddress, Never>> updateSipIpAddress({required String accountSid, required String ipAccessControlListSid, required String sid, UpdateSipIpAddressRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipIpAccessControlListSipIpAddress, Never>> updateSipIpAddress({required String accountSid, required String ipAccessControlListSid, required String sid, UpdateSipIpAddressRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -108,17 +108,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSipSipIpAccessControlListSipIpAddress.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an IpAddress resource.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipIpAddress({required String accountSid, required String ipAccessControlListSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipIpAddress({required String accountSid, required String ipAccessControlListSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,9 +127,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

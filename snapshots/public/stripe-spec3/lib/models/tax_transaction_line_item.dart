@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_line_item_resource_reversal.dart';import 'package:pub_stripe_spec3/models/tax_transaction_line_item/tax_transaction_line_item_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxTransactionLineItemObject {const TaxTransactionLineItemObject();
 
-factory TaxTransactionLineItemObject.fromJson(String json) { return switch (json) {
+factory TaxTransactionLineItemObject.fromJson(String json) {return switch (json) {
   'tax.transaction_line_item' => taxTransactionLineItem,
   _ => TaxTransactionLineItemObject$Unknown(json),
-}; }
+};}
 
 static const TaxTransactionLineItemObject taxTransactionLineItem = TaxTransactionLineItemObject$taxTransactionLineItem._();
 
 static const List<TaxTransactionLineItemObject> values = [taxTransactionLineItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax.transaction_line_item' => 'taxTransactionLineItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxTransactionLineItemObject$Unknown; } 
+bool get isUnknown {return this is TaxTransactionLineItemObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxTransactionLineItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxTransactionLineItem, required W Function(String value) $unknown, }) {return switch (this) {
       TaxTransactionLineItemObject$taxTransactionLineItem() => taxTransactionLineItem(),
       TaxTransactionLineItemObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTransactionLineItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTransactionLineItem, W Function(String value)? $unknown, }) {return switch (this) {
       TaxTransactionLineItemObject$taxTransactionLineItem() => taxTransactionLineItem != null ? taxTransactionLineItem() : orElse(value),
       TaxTransactionLineItemObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxTransactionLineItemObject($value)';
 
- }
+}
 @immutable final class TaxTransactionLineItemObject$taxTransactionLineItem extends TaxTransactionLineItemObject {const TaxTransactionLineItemObject$taxTransactionLineItem._();
 
 @override String get value => 'tax.transaction_line_item';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTrans
 
 @override int get hashCode => 'tax.transaction_line_item'.hashCode;
 
- }
+}
 @immutable final class TaxTransactionLineItemObject$Unknown extends TaxTransactionLineItemObject {const TaxTransactionLineItemObject$Unknown(this.value);
 
 @override final String value;
@@ -53,25 +53,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTrans
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata, this.product, this.reversal, });
+@immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata = const Omittable.absent(), this.product = const Omittable.absent(), this.reversal = const Omittable.absent(), });
 
-factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxTransactionLineItem(
+factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) {return TaxTransactionLineItem(
   amount: (json['amount'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: TaxTransactionLineItemObject.fromJson(json['object'] as String),
-  product: json['product'] as String?,
+  product: json.containsKey('product') ? Omittable(json['product'] as String?) : const Omittable.absent(),
   quantity: (json['quantity'] as num).toInt(),
   reference: json['reference'] as String,
-  reversal: json['reversal'] != null ? TaxProductResourceTaxTransactionLineItemResourceReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
+  reversal: json.containsKey('reversal') ? Omittable(json['reversal'] != null ? TaxProductResourceTaxTransactionLineItemResourceReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The line item amount in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). If `tax_behavior=inclusive`, then this amount includes taxes. Otherwise, taxes were calculated on top of this amount.
 final int amount;
@@ -86,13 +86,13 @@ final String id;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TaxTransactionLineItemObject object;
 
 /// The ID of an existing [Product](https://docs.stripe.com/api/products/object).
-final String? product;
+final Omittable<String?> product;
 
 /// The number of units of the item being purchased. For reversals, this is the quantity reversed.
 final int quantity;
@@ -101,7 +101,7 @@ final int quantity;
 final String reference;
 
 /// If `type=reversal`, contains information about what was reversed.
-final TaxProductResourceTaxTransactionLineItemResourceReversal? reversal;
+final Omittable<TaxProductResourceTaxTransactionLineItemResourceReversal?> reversal;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
 final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
@@ -112,22 +112,22 @@ final String taxCode;
 /// If `reversal`, this line item reverses an earlier transaction.
 final TaxTransactionLineItemType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_tax': amountTax,
   'id': id,
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-  'product': ?product,
+  if (product.isPresent) 'product': product.value,
   'quantity': quantity,
   'reference': reference,
-  if (reversal != null) 'reversal': reversal?.toJson(),
+  if (reversal.isPresent) 'reversal': reversal.value?.toJson(),
   'tax_behavior': taxBehavior.toJson(),
   'tax_code': taxCode,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -136,32 +136,32 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final product$ = product;
+final product$ = product.value;
 if (product$ != null) {
   if (product$.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
 if (reference.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 if (taxCode.runes.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
-return errors; } 
-TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxProductResourceTaxTransactionLineItemResourceReversal? Function()? reversal, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
+return errors;}
+TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxTransactionLineItemObject? object, Omittable<String?>? product, int? quantity, String? reference, Omittable<TaxProductResourceTaxTransactionLineItemResourceReversal?>? reversal, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) {return TaxTransactionLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  product: product != null ? product() : this.product,
+  product: product ?? this.product,
   quantity: quantity ?? this.quantity,
   reference: reference ?? this.reference,
-  reversal: reversal != null ? reversal() : this.reversal,
+  reversal: reversal ?? this.reversal,
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxTransactionLineItem &&
           amount == other.amount &&
@@ -182,4 +182,4 @@ TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
 
 @override String toString() => 'TaxTransactionLineItem(\n  amount: $amount,\n  amountTax: $amountTax,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  product: $product,\n  quantity: $quantity,\n  reference: $reference,\n  reversal: $reversal,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  type: $type,\n)';
 
- }
+}

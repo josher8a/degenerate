@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostChargesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_card.dart';import 'package:pub_stripe_spec3/models/destination_specs.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_destination.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_destination.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
-factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChargesRequest(
+factory PostChargesRequest.fromJson(Map<String, dynamic> json) {return PostChargesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   capture: json['capture'] as bool?,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? PostChargesRequestCard.fromJson(json['card']) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   description: json['description'] as String?,
-  destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => DestinationSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  destination: json['destination'] != null ? PostChargesRequestDestination.fromJson(json['destination']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   radarOptions: json['radar_options'] != null ? RadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
@@ -24,7 +24,7 @@ factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChar
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostChargesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// Amount intended to be collected by this payment. A positive integer representing how much to charge in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The minimum amount is $0.50 US or [equivalent in charge currency](https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
 final int? amount;
@@ -86,7 +86,7 @@ final PostChargesRequestTransferData? transferData;
 /// A string that identifies this transaction as part of a group. For details, see [Grouping transactions](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options).
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'application_fee': ?applicationFee,
   'application_fee_amount': ?applicationFeeAmount,
@@ -107,10 +107,10 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'capture', 'card', 'currency', 'customer', 'description', 'destination', 'expand', 'metadata', 'on_behalf_of', 'radar_options', 'receipt_email', 'shipping', 'source', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'capture', 'card', 'currency', 'customer', 'description', 'destination', 'expand', 'metadata', 'on_behalf_of', 'radar_options', 'receipt_email', 'shipping', 'source', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 500) { errors.add('customer: length must be <= 500'); }
@@ -135,8 +135,8 @@ final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
   if (statementDescriptorSuffix$.runes.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
-return errors; } 
-PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, bool? Function()? capture, PostChargesRequestCard? Function()? card, String? Function()? currency, String? Function()? customer, String? Function()? description, PostChargesRequestDestination? Function()? destination, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? onBehalfOf, RadarOptions? Function()? radarOptions, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? source, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostChargesRequest(
+return errors;}
+PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, bool? Function()? capture, PostChargesRequestCard? Function()? card, String? Function()? currency, String? Function()? customer, String? Function()? description, PostChargesRequestDestination? Function()? destination, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? onBehalfOf, RadarOptions? Function()? radarOptions, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? source, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) {return PostChargesRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -157,7 +157,7 @@ PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicati
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesRequest &&
           amount == other.amount &&
@@ -185,4 +185,4 @@ PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicati
 
 @override String toString() => 'PostChargesRequest(\n  amount: $amount,\n  applicationFee: $applicationFee,\n  applicationFeeAmount: $applicationFeeAmount,\n  capture: $capture,\n  card: $card,\n  currency: $currency,\n  customer: $customer,\n  description: $description,\n  destination: $destination,\n  expand: $expand,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  radarOptions: $radarOptions,\n  receiptEmail: $receiptEmail,\n  shipping: $shipping,\n  source: $source,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  transferData: $transferData,\n  transferGroup: $transferGroup,\n)';
 
- }
+}

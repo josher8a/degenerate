@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosProtectionStatus {const DosProtectionStatus({required this.enabled});
 
-factory DosProtectionStatus.fromJson(Map<String, dynamic> json) { return DosProtectionStatus(
+factory DosProtectionStatus.fromJson(Map<String, dynamic> json) {return DosProtectionStatus(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-DosProtectionStatus copyWith({bool? enabled}) { return DosProtectionStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+DosProtectionStatus copyWith({bool? enabled}) {return DosProtectionStatus(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DosProtectionStatus &&
           enabled == other.enabled;
@@ -24,4 +24,4 @@ DosProtectionStatus copyWith({bool? enabled}) { return DosProtectionStatus(
 
 @override String toString() => 'DosProtectionStatus(enabled: $enabled)';
 
- }
+}

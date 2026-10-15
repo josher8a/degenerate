@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_search_result_content_object.dart';@immutable final class VectorStoreSearchResultItem {const VectorStoreSearchResultItem({required this.fileId, required this.filename, required this.score, required this.attributes, required this.content, });
 
-factory VectorStoreSearchResultItem.fromJson(Map<String, dynamic> json) { return VectorStoreSearchResultItem(
+factory VectorStoreSearchResultItem.fromJson(Map<String, dynamic> json) {return VectorStoreSearchResultItem(
   fileId: json['file_id'] as String,
   filename: json['filename'] as String,
   score: (json['score'] as num).toDouble(),
   attributes: json['attributes'] as Map<String, dynamic>?,
   content: (json['content'] as List<dynamic>).map((e) => VectorStoreSearchResultContentObject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The ID of the vector store file.
 final String fileId;
@@ -31,30 +31,30 @@ final Map<String,dynamic>? attributes;
 /// Content chunks from the file.
 final List<VectorStoreSearchResultContentObject> content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': fileId,
   'filename': filename,
   'score': score,
   'attributes': attributes,
   'content': content.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file_id') && json['file_id'] is String &&
       json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('attributes') &&
-      json.containsKey('content'); } 
+      json.containsKey('content');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (score < 0) { errors.add('score: must be >= 0'); }
 if (score > 1) { errors.add('score: must be <= 1'); }
-return errors; } 
-VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? score, Map<String, dynamic>? Function()? attributes, List<VectorStoreSearchResultContentObject>? content, }) { return VectorStoreSearchResultItem(
+return errors;}
+VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? score, Map<String, dynamic>? Function()? attributes, List<VectorStoreSearchResultContentObject>? content, }) {return VectorStoreSearchResultItem(
   fileId: fileId ?? this.fileId,
   filename: filename ?? this.filename,
   score: score ?? this.score,
   attributes: attributes != null ? attributes() : this.attributes,
   content: content ?? this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreSearchResultItem &&
           fileId == other.fileId &&
@@ -67,4 +67,4 @@ VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? 
 
 @override String toString() => 'VectorStoreSearchResultItem(fileId: $fileId, filename: $filename, score: $score, attributes: $attributes, content: $content)';
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_logpull_options.dart';@immutable final class PostZonesZoneIdLogpushValidateOriginRequest {const PostZonesZoneIdLogpushValidateOriginRequest({required this.logpullOptions});
 
-factory PostZonesZoneIdLogpushValidateOriginRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushValidateOriginRequest(
+factory PostZonesZoneIdLogpushValidateOriginRequest.fromJson(Map<String, dynamic> json) {return PostZonesZoneIdLogpushValidateOriginRequest(
   logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
-); }
+);}
 
 /// This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.
 final LogpushLogpullOptions? logpullOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'logpull_options': logpullOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('logpull_options'); } 
-PostZonesZoneIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Function()? logpullOptions}) { return PostZonesZoneIdLogpushValidateOriginRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('logpull_options');}
+PostZonesZoneIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Function()? logpullOptions}) {return PostZonesZoneIdLogpushValidateOriginRequest(
   logpullOptions: logpullOptions != null ? logpullOptions() : this.logpullOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostZonesZoneIdLogpushValidateOriginRequest &&
           logpullOptions == other.logpullOptions;
@@ -25,4 +25,4 @@ PostZonesZoneIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Fun
 
 @override String toString() => 'PostZonesZoneIdLogpushValidateOriginRequest(logpullOptions: $logpullOptions)';
 
- }
+}

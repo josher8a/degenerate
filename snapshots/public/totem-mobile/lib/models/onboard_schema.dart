@@ -294,42 +294,55 @@ final class ReferralChoices$Unknown extends ReferralChoices {
 @immutable
 final class OnboardSchema {
   const OnboardSchema({
-    this.referralSource = ReferralChoices.$default,
-    this.yearBorn,
-    this.hopes,
-    this.referralOther = '',
+    this.referralSource,
+    this.yearBorn = const Omittable.absent(),
+    this.hopes = const Omittable.absent(),
+    this.referralOther = const Omittable.absent(),
   });
 
   factory OnboardSchema.fromJson(Map<String, dynamic> json) {
     return OnboardSchema(
-      referralSource: json.containsKey('referral_source')
+      referralSource: json['referral_source'] != null
           ? ReferralChoices.fromJson(json['referral_source'] as String)
-          : ReferralChoices.$default,
-      yearBorn: json['year_born'] != null
-          ? (json['year_born'] as num).toInt()
           : null,
-      hopes: json['hopes'] as String?,
+      yearBorn: json.containsKey('year_born')
+          ? Omittable(
+              json['year_born'] != null
+                  ? (json['year_born'] as num).toInt()
+                  : null,
+            )
+          : const Omittable.absent(),
+      hopes: json.containsKey('hopes')
+          ? Omittable(json['hopes'] as String?)
+          : const Omittable.absent(),
       referralOther: json.containsKey('referral_other')
-          ? json['referral_other'] as String?
-          : '',
+          ? Omittable(json['referral_other'] as String?)
+          : const Omittable.absent(),
     );
   }
 
-  final ReferralChoices referralSource;
+  final ReferralChoices? referralSource;
 
-  final int? yearBorn;
+  final Omittable<int?> yearBorn;
 
-  final String? hopes;
+  final Omittable<String?> hopes;
 
   /// Please tell us more about how you found us
-  final String? referralOther;
+  final Omittable<String?> referralOther;
+
+  /// The value of `referralSource`, or its schema default when absent.
+  ReferralChoices get referralSourceOrDefault =>
+      referralSource ?? ReferralChoices.fromJson('default');
+
+  /// The value of `referralOther`, or its schema default when absent.
+  String? get referralOtherOrDefault => referralOther.valueOr('');
 
   Map<String, dynamic> toJson() {
     return {
-      'referral_source': referralSource.toJson(),
-      'year_born': ?yearBorn,
-      'hopes': ?hopes,
-      'referral_other': ?referralOther,
+      if (referralSource != null) 'referral_source': referralSource?.toJson(),
+      if (yearBorn.isPresent) 'year_born': yearBorn.value,
+      if (hopes.isPresent) 'hopes': hopes.value,
+      if (referralOther.isPresent) 'referral_other': referralOther.value,
     };
   }
 
@@ -347,7 +360,7 @@ final class OnboardSchema {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    final referralOther$ = referralOther;
+    final referralOther$ = referralOther.value;
     if (referralOther$ != null) {
       if (referralOther$.runes.length > 100) {
         errors.add('referralOther: length must be <= 100');
@@ -357,20 +370,18 @@ final class OnboardSchema {
   }
 
   OnboardSchema copyWith({
-    ReferralChoices Function()? referralSource,
-    int? Function()? yearBorn,
-    String? Function()? hopes,
-    String? Function()? referralOther,
+    ReferralChoices? Function()? referralSource,
+    Omittable<int?>? yearBorn,
+    Omittable<String?>? hopes,
+    Omittable<String?>? referralOther,
   }) {
     return OnboardSchema(
       referralSource: referralSource != null
           ? referralSource()
           : this.referralSource,
-      yearBorn: yearBorn != null ? yearBorn() : this.yearBorn,
-      hopes: hopes != null ? hopes() : this.hopes,
-      referralOther: referralOther != null
-          ? referralOther()
-          : this.referralOther,
+      yearBorn: yearBorn ?? this.yearBorn,
+      hopes: hopes ?? this.hopes,
+      referralOther: referralOther ?? this.referralOther,
     );
   }
 

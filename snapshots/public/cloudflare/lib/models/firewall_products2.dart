@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of products to bypass for a request when using the `bypass` action.
 sealed class FirewallProducts2 {const FirewallProducts2();
 
-factory FirewallProducts2.fromJson(String json) { return switch (json) {
+factory FirewallProducts2.fromJson(String json) {return switch (json) {
   'zoneLockdown' => zoneLockdown,
   'uaBlock' => uaBlock,
   'bic' => bic,
@@ -13,7 +13,7 @@ factory FirewallProducts2.fromJson(String json) { return switch (json) {
   'rateLimit' => rateLimit,
   'waf' => waf,
   _ => FirewallProducts2$Unknown(json),
-}; }
+};}
 
 static const FirewallProducts2 zoneLockdown = FirewallProducts2$zoneLockdown._();
 
@@ -32,9 +32,9 @@ static const FirewallProducts2 waf = FirewallProducts2$waf._();
 static const List<FirewallProducts2> values = [zoneLockdown, uaBlock, bic, hot, securityLevel, rateLimit, waf];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'zoneLockdown' => 'zoneLockdown',
   'uaBlock' => 'uaBlock',
   'bic' => 'bic',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'rateLimit' => 'rateLimit',
   'waf' => 'waf',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FirewallProducts2$Unknown; } 
+bool get isUnknown {return this is FirewallProducts2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() zoneLockdown, required W Function() uaBlock, required W Function() bic, required W Function() hot, required W Function() securityLevel, required W Function() rateLimit, required W Function() waf, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() zoneLockdown, required W Function() uaBlock, required W Function() bic, required W Function() hot, required W Function() securityLevel, required W Function() rateLimit, required W Function() waf, required W Function(String value) $unknown, }) {return switch (this) {
       FirewallProducts2$zoneLockdown() => zoneLockdown(),
       FirewallProducts2$uaBlock() => uaBlock(),
       FirewallProducts2$bic() => bic(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() zoneLockdown, required W Function() uaBlock, re
       FirewallProducts2$rateLimit() => rateLimit(),
       FirewallProducts2$waf() => waf(),
       FirewallProducts2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLockdown, W Function()? uaBlock, W Function()? bic, W Function()? hot, W Function()? securityLevel, W Function()? rateLimit, W Function()? waf, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLockdown, W Function()? uaBlock, W Function()? bic, W Function()? hot, W Function()? securityLevel, W Function()? rateLimit, W Function()? waf, W Function(String value)? $unknown, }) {return switch (this) {
       FirewallProducts2$zoneLockdown() => zoneLockdown != null ? zoneLockdown() : orElse(value),
       FirewallProducts2$uaBlock() => uaBlock != null ? uaBlock() : orElse(value),
       FirewallProducts2$bic() => bic != null ? bic() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
       FirewallProducts2$rateLimit() => rateLimit != null ? rateLimit() : orElse(value),
       FirewallProducts2$waf() => waf != null ? waf() : orElse(value),
       FirewallProducts2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FirewallProducts2($value)';
 
- }
+}
 @immutable final class FirewallProducts2$zoneLockdown extends FirewallProducts2 {const FirewallProducts2$zoneLockdown._();
 
 @override String get value => 'zoneLockdown';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'zoneLockdown'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$uaBlock extends FirewallProducts2 {const FirewallProducts2$uaBlock._();
 
 @override String get value => 'uaBlock';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'uaBlock'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$bic extends FirewallProducts2 {const FirewallProducts2$bic._();
 
 @override String get value => 'bic';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'bic'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$hot extends FirewallProducts2 {const FirewallProducts2$hot._();
 
 @override String get value => 'hot';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'hot'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$securityLevel extends FirewallProducts2 {const FirewallProducts2$securityLevel._();
 
 @override String get value => 'securityLevel';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'securityLevel'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$rateLimit extends FirewallProducts2 {const FirewallProducts2$rateLimit._();
 
 @override String get value => 'rateLimit';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'rateLimit'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$waf extends FirewallProducts2 {const FirewallProducts2$waf._();
 
 @override String get value => 'waf';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => 'waf'.hashCode;
 
- }
+}
 @immutable final class FirewallProducts2$Unknown extends FirewallProducts2 {const FirewallProducts2$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLock
 
 @override int get hashCode => value.hashCode;
 
- }
+}

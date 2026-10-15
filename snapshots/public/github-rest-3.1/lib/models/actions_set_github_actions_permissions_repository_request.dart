@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_enabled.dart';import 'package:pub_github_rest_3_1/models/allowed_actions.dart';import 'package:pub_github_rest_3_1/models/sha_pinning_required.dart';@immutable final class ActionsSetGithubActionsPermissionsRepositoryRequest {const ActionsSetGithubActionsPermissionsRepositoryRequest({required this.enabled, this.allowedActions, this.shaPinningRequired, });
 
-factory ActionsSetGithubActionsPermissionsRepositoryRequest.fromJson(Map<String, dynamic> json) { return ActionsSetGithubActionsPermissionsRepositoryRequest(
+factory ActionsSetGithubActionsPermissionsRepositoryRequest.fromJson(Map<String, dynamic> json) {return ActionsSetGithubActionsPermissionsRepositoryRequest(
   enabled: ActionsEnabled.fromJson(json['enabled'] as bool),
   allowedActions: json['allowed_actions'] != null ? AllowedActions.fromJson(json['allowed_actions'] as String) : null,
   shaPinningRequired: json['sha_pinning_required'] != null ? ShaPinningRequired.fromJson(json['sha_pinning_required'] as bool) : null,
-); }
+);}
 
 /// Whether GitHub Actions is enabled on the repository.
 final ActionsEnabled enabled;
@@ -18,17 +18,17 @@ final AllowedActions? allowedActions;
 /// Whether actions must be pinned to a full-length commit SHA.
 final ShaPinningRequired? shaPinningRequired;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled.toJson(),
   if (allowedActions != null) 'allowed_actions': allowedActions?.toJson(),
   if (shaPinningRequired != null) 'sha_pinning_required': shaPinningRequired?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled'); } 
-ActionsSetGithubActionsPermissionsRepositoryRequest copyWith({ActionsEnabled? enabled, AllowedActions? Function()? allowedActions, ShaPinningRequired? Function()? shaPinningRequired, }) { return ActionsSetGithubActionsPermissionsRepositoryRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled');}
+ActionsSetGithubActionsPermissionsRepositoryRequest copyWith({ActionsEnabled? enabled, AllowedActions? Function()? allowedActions, ShaPinningRequired? Function()? shaPinningRequired, }) {return ActionsSetGithubActionsPermissionsRepositoryRequest(
   enabled: enabled ?? this.enabled,
   allowedActions: allowedActions != null ? allowedActions() : this.allowedActions,
   shaPinningRequired: shaPinningRequired != null ? shaPinningRequired() : this.shaPinningRequired,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetGithubActionsPermissionsRepositoryRequest &&
           enabled == other.enabled &&
@@ -39,4 +39,4 @@ ActionsSetGithubActionsPermissionsRepositoryRequest copyWith({ActionsEnabled? en
 
 @override String toString() => 'ActionsSetGithubActionsPermissionsRepositoryRequest(enabled: $enabled, allowedActions: $allowedActions, shaPinningRequired: $shaPinningRequired)';
 
- }
+}

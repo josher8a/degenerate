@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant/organization_programmatic_access_grant_repository_selection.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/permissions_added.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/permissions_result.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/permissions_upgraded.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/personal_access_token_request_repositories.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Details of a Personal Access Token Request.
 @immutable final class PersonalAccessTokenRequest {const PersonalAccessTokenRequest({required this.id, required this.owner, required this.permissionsAdded, required this.permissionsUpgraded, required this.permissionsResult, required this.repositorySelection, required this.repositoryCount, required this.repositories, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
-factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequest(
+factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) {return PersonalAccessTokenRequest(
   id: (json['id'] as num).toInt(),
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   permissionsAdded: PermissionsAdded.fromJson(json['permissions_added'] as Map<String, dynamic>),
@@ -19,7 +19,7 @@ factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return 
   tokenExpired: json['token_expired'] as bool,
   tokenExpiresAt: json['token_expires_at'] as String?,
   tokenLastUsedAt: json['token_last_used_at'] as String?,
-); }
+);}
 
 /// Unique identifier of the request for access via fine-grained personal access token. Used as the `pat_request_id` parameter in the list and review API calls.
 final int id;
@@ -62,7 +62,7 @@ final String? tokenExpiresAt;
 /// Date and time when the associated fine-grained personal access token was last used for authentication.
 final String? tokenLastUsedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'owner': owner.toJson(),
   'permissions_added': permissionsAdded.toJson(),
@@ -77,22 +77,22 @@ Map<String, dynamic> toJson() { return {
   'token_expired': tokenExpired,
   'token_expires_at': tokenExpiresAt,
   'token_last_used_at': tokenLastUsedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&
       json.containsKey('permissions_added') &&
       json.containsKey('permissions_upgraded') &&
       json.containsKey('permissions_result') &&
       json.containsKey('repository_selection') &&
-      json.containsKey('repository_count') && json['repository_count'] is num &&
+      json.containsKey('repository_count') && (json['repository_count'] == null || json['repository_count'] is num) &&
       json.containsKey('repositories') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('token_id') && json['token_id'] is num &&
       json.containsKey('token_name') && json['token_name'] is String &&
       json.containsKey('token_expired') && json['token_expired'] is bool &&
-      json.containsKey('token_expires_at') && json['token_expires_at'] is String &&
-      json.containsKey('token_last_used_at') && json['token_last_used_at'] is String; } 
-PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdded? permissionsAdded, PermissionsUpgraded? permissionsUpgraded, PermissionsResult? permissionsResult, OrganizationProgrammaticAccessGrantRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return PersonalAccessTokenRequest(
+      json.containsKey('token_expires_at') && (json['token_expires_at'] == null || json['token_expires_at'] is String) &&
+      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String);}
+PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdded? permissionsAdded, PermissionsUpgraded? permissionsUpgraded, PermissionsResult? permissionsResult, OrganizationProgrammaticAccessGrantRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) {return PersonalAccessTokenRequest(
   id: id ?? this.id,
   owner: owner ?? this.owner,
   permissionsAdded: permissionsAdded ?? this.permissionsAdded,
@@ -107,7 +107,7 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdde
   tokenExpired: tokenExpired ?? this.tokenExpired,
   tokenExpiresAt: tokenExpiresAt != null ? tokenExpiresAt() : this.tokenExpiresAt,
   tokenLastUsedAt: tokenLastUsedAt != null ? tokenLastUsedAt() : this.tokenLastUsedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersonalAccessTokenRequest &&
           id == other.id &&
@@ -129,4 +129,4 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdde
 
 @override String toString() => 'PersonalAccessTokenRequest(\n  id: $id,\n  owner: $owner,\n  permissionsAdded: $permissionsAdded,\n  permissionsUpgraded: $permissionsUpgraded,\n  permissionsResult: $permissionsResult,\n  repositorySelection: $repositorySelection,\n  repositoryCount: $repositoryCount,\n  repositories: $repositories,\n  createdAt: $createdAt,\n  tokenId: $tokenId,\n  tokenName: $tokenName,\n  tokenExpired: $tokenExpired,\n  tokenExpiresAt: $tokenExpiresAt,\n  tokenLastUsedAt: $tokenLastUsedAt,\n)';
 
- }
+}

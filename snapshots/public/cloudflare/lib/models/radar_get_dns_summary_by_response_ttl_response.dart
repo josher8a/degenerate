@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_summary_by_response_ttl_response/radar_get_dns_summary_by_response_ttl_response_result.dart';@immutable final class RadarGetDnsSummaryByResponseTtlResponse {const RadarGetDnsSummaryByResponseTtlResponse({required this.result, required this.success, });
 
-factory RadarGetDnsSummaryByResponseTtlResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByResponseTtlResponse(
+factory RadarGetDnsSummaryByResponseTtlResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsSummaryByResponseTtlResponse(
   result: RadarGetDnsSummaryByResponseTtlResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsSummaryByResponseTtlResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsSummaryByResponseTtlResponse copyWith({RadarGetDnsSummaryByResponseTtlResponseResult? result, bool? success, }) { return RadarGetDnsSummaryByResponseTtlResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsSummaryByResponseTtlResponse copyWith({RadarGetDnsSummaryByResponseTtlResponseResult? result, bool? success, }) {return RadarGetDnsSummaryByResponseTtlResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsSummaryByResponseTtlResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetDnsSummaryByResponseTtlResponse copyWith({RadarGetDnsSummaryByResponseTt
 
 @override String toString() => 'RadarGetDnsSummaryByResponseTtlResponse(result: $result, success: $success)';
 
- }
+}

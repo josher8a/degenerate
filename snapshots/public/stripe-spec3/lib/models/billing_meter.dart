@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_aggregation_settings.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_status_transitions.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_value.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 sealed class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow();
 
-factory BillingMeterEventTimeWindow.fromJson(String json) { return switch (json) {
+factory BillingMeterEventTimeWindow.fromJson(String json) {return switch (json) {
   'day' => day,
   'hour' => hour,
   _ => BillingMeterEventTimeWindow$Unknown(json),
-}; }
+};}
 
 static const BillingMeterEventTimeWindow day = BillingMeterEventTimeWindow$day._();
 
@@ -17,30 +17,30 @@ static const BillingMeterEventTimeWindow hour = BillingMeterEventTimeWindow$hour
 static const List<BillingMeterEventTimeWindow> values = [day, hour];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'day' => 'day',
   'hour' => 'hour',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingMeterEventTimeWindow$Unknown; } 
+bool get isUnknown {return this is BillingMeterEventTimeWindow$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() day, required W Function() hour, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() day, required W Function() hour, required W Function(String value) $unknown, }) {return switch (this) {
       BillingMeterEventTimeWindow$day() => day(),
       BillingMeterEventTimeWindow$hour() => hour(),
       BillingMeterEventTimeWindow$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? hour, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? hour, W Function(String value)? $unknown, }) {return switch (this) {
       BillingMeterEventTimeWindow$day() => day != null ? day() : orElse(value),
       BillingMeterEventTimeWindow$hour() => hour != null ? hour() : orElse(value),
       BillingMeterEventTimeWindow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingMeterEventTimeWindow($value)';
 
- }
+}
 @immutable final class BillingMeterEventTimeWindow$day extends BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow$day._();
 
 @override String get value => 'day';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W F
 
 @override int get hashCode => 'day'.hashCode;
 
- }
+}
 @immutable final class BillingMeterEventTimeWindow$hour extends BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow$hour._();
 
 @override String get value => 'hour';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W F
 
 @override int get hashCode => 'hour'.hashCode;
 
- }
+}
 @immutable final class BillingMeterEventTimeWindow$Unknown extends BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow$Unknown(this.value);
 
 @override final String value;
@@ -68,41 +68,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class BillingMeterObject {const BillingMeterObject();
 
-factory BillingMeterObject.fromJson(String json) { return switch (json) {
+factory BillingMeterObject.fromJson(String json) {return switch (json) {
   'billing.meter' => billingMeter,
   _ => BillingMeterObject$Unknown(json),
-}; }
+};}
 
 static const BillingMeterObject billingMeter = BillingMeterObject$billingMeter._();
 
 static const List<BillingMeterObject> values = [billingMeter];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing.meter' => 'billingMeter',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingMeterObject$Unknown; } 
+bool get isUnknown {return this is BillingMeterObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billingMeter, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billingMeter, required W Function(String value) $unknown, }) {return switch (this) {
       BillingMeterObject$billingMeter() => billingMeter(),
       BillingMeterObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeter, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeter, W Function(String value)? $unknown, }) {return switch (this) {
       BillingMeterObject$billingMeter() => billingMeter != null ? billingMeter() : orElse(value),
       BillingMeterObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingMeterObject($value)';
 
- }
+}
 @immutable final class BillingMeterObject$billingMeter extends BillingMeterObject {const BillingMeterObject$billingMeter._();
 
 @override String get value => 'billing.meter';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingM
 
 @override int get hashCode => 'billing.meter'.hashCode;
 
- }
+}
 @immutable final class BillingMeterObject$Unknown extends BillingMeterObject {const BillingMeterObject$Unknown(this.value);
 
 @override final String value;
@@ -121,19 +121,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingM
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
 /// 
 /// Related guide: [Usage based billing](https://docs.stripe.com/billing/subscriptions/usage-based)
-@immutable final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, this.eventTimeWindow, });
+@immutable final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, this.eventTimeWindow = const Omittable.absent(), });
 
-factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
+factory BillingMeter.fromJson(Map<String, dynamic> json) {return BillingMeter(
   created: (json['created'] as num).toInt(),
   customerMapping: BillingMeterResourceCustomerMappingSettings.fromJson(json['customer_mapping'] as Map<String, dynamic>),
   defaultAggregation: BillingMeterResourceAggregationSettings.fromJson(json['default_aggregation'] as Map<String, dynamic>),
   displayName: json['display_name'] as String,
   eventName: json['event_name'] as String,
-  eventTimeWindow: json['event_time_window'] != null ? BillingMeterEventTimeWindow.fromJson(json['event_time_window'] as String) : null,
+  eventTimeWindow: json.containsKey('event_time_window') ? Omittable(json['event_time_window'] != null ? BillingMeterEventTimeWindow.fromJson(json['event_time_window'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: BillingMeterObject.fromJson(json['object'] as String),
@@ -141,7 +141,7 @@ factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
   statusTransitions: BillingMeterResourceBillingMeterStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   updated: (json['updated'] as num).toInt(),
   valueSettings: BillingMeterResourceBillingMeterValue.fromJson(json['value_settings'] as Map<String, dynamic>),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -157,7 +157,7 @@ final String displayName;
 final String eventName;
 
 /// The time window which meter events have been pre-aggregated for, if any.
-final BillingMeterEventTimeWindow? eventTimeWindow;
+final Omittable<BillingMeterEventTimeWindow?> eventTimeWindow;
 
 /// Unique identifier for the object.
 final String id;
@@ -178,13 +178,13 @@ final int updated;
 
 final BillingMeterResourceBillingMeterValue valueSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'customer_mapping': customerMapping.toJson(),
   'default_aggregation': defaultAggregation.toJson(),
   'display_name': displayName,
   'event_name': eventName,
-  if (eventTimeWindow != null) 'event_time_window': eventTimeWindow?.toJson(),
+  if (eventTimeWindow.isPresent) 'event_time_window': eventTimeWindow.value?.toJson(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
@@ -192,8 +192,8 @@ Map<String, dynamic> toJson() { return {
   'status_transitions': statusTransitions.toJson(),
   'updated': updated,
   'value_settings': valueSettings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer_mapping') &&
       json.containsKey('default_aggregation') &&
       json.containsKey('display_name') && json['display_name'] is String &&
@@ -204,20 +204,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('updated') && json['updated'] is num &&
-      json.containsKey('value_settings'); } 
+      json.containsKey('value_settings');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (displayName.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 if (eventName.runes.length > 5000) { errors.add('eventName: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, BillingMeterEventTimeWindow? Function()? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) { return BillingMeter(
+return errors;}
+BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, Omittable<BillingMeterEventTimeWindow?>? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) {return BillingMeter(
   created: created ?? this.created,
   customerMapping: customerMapping ?? this.customerMapping,
   defaultAggregation: defaultAggregation ?? this.defaultAggregation,
   displayName: displayName ?? this.displayName,
   eventName: eventName ?? this.eventName,
-  eventTimeWindow: eventTimeWindow != null ? eventTimeWindow() : this.eventTimeWindow,
+  eventTimeWindow: eventTimeWindow ?? this.eventTimeWindow,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
@@ -225,7 +225,7 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
   statusTransitions: statusTransitions ?? this.statusTransitions,
   updated: updated ?? this.updated,
   valueSettings: valueSettings ?? this.valueSettings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeter &&
           created == other.created &&
@@ -246,4 +246,4 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
 
 @override String toString() => 'BillingMeter(\n  created: $created,\n  customerMapping: $customerMapping,\n  defaultAggregation: $defaultAggregation,\n  displayName: $displayName,\n  eventName: $eventName,\n  eventTimeWindow: $eventTimeWindow,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  updated: $updated,\n  valueSettings: $valueSettings,\n)';
 
- }
+}

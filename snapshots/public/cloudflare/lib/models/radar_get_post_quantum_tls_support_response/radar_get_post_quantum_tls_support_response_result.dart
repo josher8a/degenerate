@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetPostQuantumTlsSupportResponseResult {const RadarGetPostQuantumTlsSupportResponseResult({required this.host, required this.kex, required this.kexName, required this.pq, });
 
-factory RadarGetPostQuantumTlsSupportResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetPostQuantumTlsSupportResponseResult(
+factory RadarGetPostQuantumTlsSupportResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetPostQuantumTlsSupportResponseResult(
   host: json['host'] as String,
   kex: (json['kex'] as num).toDouble(),
   kexName: json['kexName'] as String,
   pq: json['pq'] as bool,
-); }
+);}
 
 /// The host that was tested
 final String host;
@@ -22,22 +22,22 @@ final String kexName;
 /// Whether the negotiated key exchange uses Post-Quantum cryptography
 final bool pq;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
   'kex': kex,
   'kexName': kexName,
   'pq': pq,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String &&
       json.containsKey('kex') && json['kex'] is num &&
       json.containsKey('kexName') && json['kexName'] is String &&
-      json.containsKey('pq') && json['pq'] is bool; } 
-RadarGetPostQuantumTlsSupportResponseResult copyWith({String? host, double? kex, String? kexName, bool? pq, }) { return RadarGetPostQuantumTlsSupportResponseResult(
+      json.containsKey('pq') && json['pq'] is bool;}
+RadarGetPostQuantumTlsSupportResponseResult copyWith({String? host, double? kex, String? kexName, bool? pq, }) {return RadarGetPostQuantumTlsSupportResponseResult(
   host: host ?? this.host,
   kex: kex ?? this.kex,
   kexName: kexName ?? this.kexName,
   pq: pq ?? this.pq,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetPostQuantumTlsSupportResponseResult &&
           host == other.host &&
@@ -49,4 +49,4 @@ RadarGetPostQuantumTlsSupportResponseResult copyWith({String? host, double? kex,
 
 @override String toString() => 'RadarGetPostQuantumTlsSupportResponseResult(host: $host, kex: $kex, kexName: $kexName, pq: $pq)';
 
- }
+}

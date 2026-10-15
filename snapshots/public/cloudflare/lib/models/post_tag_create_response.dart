@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCreateResponse {const PostTagCreateResponse({required this.uuid, required this.value, this.activeDuration, this.actorCategory, this.aliasGroupNames, this.aliasGroupNamesInternal, this.analyticPriority, this.attributionConfidence, this.attributionOrganization, this.categoryName, this.categoryUuid, this.externalReferenceLinks, this.internalDescription, this.motive, this.opsecLevel, this.originCountryIso, this.priority, this.sophisticationLevel, });
 
-factory PostTagCreateResponse.fromJson(Map<String, dynamic> json) { return PostTagCreateResponse(
+factory PostTagCreateResponse.fromJson(Map<String, dynamic> json) {return PostTagCreateResponse(
   activeDuration: json['activeDuration'] as String?,
   actorCategory: json['actorCategory'] as String?,
   aliasGroupNames: (json['aliasGroupNames'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -22,7 +22,7 @@ factory PostTagCreateResponse.fromJson(Map<String, dynamic> json) { return PostT
   sophisticationLevel: json['sophisticationLevel'] as String?,
   uuid: json['uuid'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String? activeDuration;
 
@@ -64,7 +64,7 @@ final String uuid;
 /// Example: `'APT28'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activeDuration': ?activeDuration,
   'actorCategory': ?actorCategory,
   'aliasGroupNames': ?aliasGroupNames,
@@ -83,10 +83,10 @@ Map<String, dynamic> toJson() { return {
   'sophisticationLevel': ?sophisticationLevel,
   'uuid': uuid,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostTagCreateResponse copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryName, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? uuid, String? value, }) { return PostTagCreateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('uuid') && json['uuid'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostTagCreateResponse copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryName, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? uuid, String? value, }) {return PostTagCreateResponse(
   activeDuration: activeDuration != null ? activeDuration() : this.activeDuration,
   actorCategory: actorCategory != null ? actorCategory() : this.actorCategory,
   aliasGroupNames: aliasGroupNames != null ? aliasGroupNames() : this.aliasGroupNames,
@@ -105,7 +105,7 @@ PostTagCreateResponse copyWith({String? Function()? activeDuration, String? Func
   sophisticationLevel: sophisticationLevel != null ? sophisticationLevel() : this.sophisticationLevel,
   uuid: uuid ?? this.uuid,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTagCreateResponse &&
           activeDuration == other.activeDuration &&
@@ -131,4 +131,4 @@ PostTagCreateResponse copyWith({String? Function()? activeDuration, String? Func
 
 @override String toString() => 'PostTagCreateResponse(\n  activeDuration: $activeDuration,\n  actorCategory: $actorCategory,\n  aliasGroupNames: $aliasGroupNames,\n  aliasGroupNamesInternal: $aliasGroupNamesInternal,\n  analyticPriority: $analyticPriority,\n  attributionConfidence: $attributionConfidence,\n  attributionOrganization: $attributionOrganization,\n  categoryName: $categoryName,\n  categoryUuid: $categoryUuid,\n  externalReferenceLinks: $externalReferenceLinks,\n  internalDescription: $internalDescription,\n  motive: $motive,\n  opsecLevel: $opsecLevel,\n  originCountryIso: $originCountryIso,\n  priority: $priority,\n  sophisticationLevel: $sophisticationLevel,\n  uuid: $uuid,\n  value: $value,\n)';
 
- }
+}

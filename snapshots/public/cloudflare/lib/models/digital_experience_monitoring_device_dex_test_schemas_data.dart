@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data/digital_experience_monitoring_device_dex_test_schemas_data_kind.dart';/// The HTTP request method type.
 sealed class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod();
 
-factory DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   _ => DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod $get = DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get._();
 
 static const List<DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod> values = [$get];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown; } 
+bool get isUnknown {return this is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function(String value) $unknown, }) {return switch (this) {
       DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get() => $get(),
       DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function(String value)? $unknown, }) {return switch (this) {
       DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get() => $get != null ? $get() : orElse(value),
       DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod($value)';
 
- }
+}
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get extends DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get._();
 
 @override String get value => 'GET';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown extends DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The configuration object which contains the details for the WARP client to conduct the test.
 /// 
 /// Example:
@@ -66,11 +66,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 /// ```
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasData {const DigitalExperienceMonitoringDeviceDexTestSchemasData({required this.host, required this.kind, this.method, });
 
-factory DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(
+factory DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringDeviceDexTestSchemasData(
   host: json['host'] as String,
   kind: DigitalExperienceMonitoringDeviceDexTestSchemasDataKind.fromJson(json['kind'] as String),
   method: json['method'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod.fromJson(json['method'] as String) : null,
-); }
+);}
 
 /// The desired endpoint to test.
 /// 
@@ -87,18 +87,18 @@ final DigitalExperienceMonitoringDeviceDexTestSchemasDataKind kind;
 /// Example: `'GET'`
 final DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod? method;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
   'kind': kind.toJson(),
   if (method != null) 'method': method?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
-      json.containsKey('kind'); } 
-DigitalExperienceMonitoringDeviceDexTestSchemasData copyWith({String? host, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod? Function()? method, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String &&
+      json.containsKey('kind');}
+DigitalExperienceMonitoringDeviceDexTestSchemasData copyWith({String? host, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod? Function()? method, }) {return DigitalExperienceMonitoringDeviceDexTestSchemasData(
   host: host ?? this.host,
   kind: kind ?? this.kind,
   method: method != null ? method() : this.method,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDeviceDexTestSchemasData &&
           host == other.host &&
@@ -109,4 +109,4 @@ DigitalExperienceMonitoringDeviceDexTestSchemasData copyWith({String? host, Digi
 
 @override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasData(host: $host, kind: $kind, method: $method)';
 
- }
+}

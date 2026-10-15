@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetSearchGlobalFormat {const RadarGetSearchGlobalFormat();
 
-factory RadarGetSearchGlobalFormat.fromJson(String json) { return switch (json) {
+factory RadarGetSearchGlobalFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetSearchGlobalFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetSearchGlobalFormat $json = RadarGetSearchGlobalFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetSearchGlobalFormat csv = RadarGetSearchGlobalFormat$csv._()
 static const List<RadarGetSearchGlobalFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetSearchGlobalFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetSearchGlobalFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetSearchGlobalFormat$$json() => $json(),
       RadarGetSearchGlobalFormat$csv() => csv(),
       RadarGetSearchGlobalFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetSearchGlobalFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetSearchGlobalFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetSearchGlobalFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetSearchGlobalFormat($value)';
 
- }
+}
 @immutable final class RadarGetSearchGlobalFormat$$json extends RadarGetSearchGlobalFormat {const RadarGetSearchGlobalFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalFormat$csv extends RadarGetSearchGlobalFormat {const RadarGetSearchGlobalFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetSearchGlobalFormat$Unknown extends RadarGetSearchGlobalFormat {const RadarGetSearchGlobalFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

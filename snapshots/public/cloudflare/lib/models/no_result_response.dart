@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_msg.dart';import 'package:pub_cloudflare/models/pay_per_crawl_result_info.dart';@immutable final class NoResultResponse {const NoResultResponse({this.errors, this.messages, this.resultInfo, this.success, });
 
-factory NoResultResponse.fromJson(Map<String, dynamic> json) { return NoResultResponse(
+factory NoResultResponse.fromJson(Map<String, dynamic> json) {return NoResultResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? PayPerCrawlResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final List<PayPerCrawlMsg>? errors;
 
@@ -18,19 +18,19 @@ final PayPerCrawlResultInfo? resultInfo;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'result_info', 'success'}.contains(key)); } 
-NoResultResponse copyWith({List<PayPerCrawlMsg>? Function()? errors, List<PayPerCrawlMsg>? Function()? messages, PayPerCrawlResultInfo? Function()? resultInfo, bool? Function()? success, }) { return NoResultResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'result_info', 'success'}.contains(key));}
+NoResultResponse copyWith({List<PayPerCrawlMsg>? Function()? errors, List<PayPerCrawlMsg>? Function()? messages, PayPerCrawlResultInfo? Function()? resultInfo, bool? Function()? success, }) {return NoResultResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NoResultResponse &&
           listEquals(errors, other.errors) &&
@@ -42,4 +42,4 @@ NoResultResponse copyWith({List<PayPerCrawlMsg>? Function()? errors, List<PayPer
 
 @override String toString() => 'NoResultResponse(errors: $errors, messages: $messages, resultInfo: $resultInfo, success: $success)';
 
- }
+}

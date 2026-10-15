@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Functions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51Functions {const Messages51Functions({required this.name, this.description, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51Functions {const Messages51Functions({required this.name, this.description, this.parameters, this.strict = const Omittable.absent(), });
 
-factory Messages51Functions.fromJson(Map<String, dynamic> json) { return Messages51Functions(
+factory Messages51Functions.fromJson(Map<String, dynamic> json) {return Messages51Functions(
   description: json['description'] as String?,
   name: json['name'] as String,
   parameters: json['parameters'] as Map<String, dynamic>?,
-  strict: json['strict'] as bool?,
-); }
+  strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
+);}
 
 /// A description of what the function does.
 final String? description;
@@ -19,21 +19,21 @@ final String name;
 /// The parameters the function accepts, described as a JSON Schema object.
 final Map<String,dynamic>? parameters;
 
-final bool? strict;
+final Omittable<bool?> strict;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': name,
   'parameters': ?parameters,
-  'strict': ?strict,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Messages51Functions copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, }) { return Messages51Functions(
+  if (strict.isPresent) 'strict': strict.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+Messages51Functions copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, Omittable<bool?>? strict, }) {return Messages51Functions(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,
-  strict: strict != null ? strict() : this.strict,
-); } 
+  strict: strict ?? this.strict,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Messages51Functions &&
           description == other.description &&
@@ -45,4 +45,4 @@ Messages51Functions copyWith({String? Function()? description, String? name, Map
 
 @override String toString() => 'Messages51Functions(description: $description, name: $name, parameters: $parameters, strict: $strict)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_day_of_week.dart';import 'package:pub_cloudflare/models/mconn_embargo_date.dart';@immutable final class MconnCustomerConnectorUpdateRequest {const MconnCustomerConnectorUpdateRequest({this.activated, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.notes, this.timezone, this.provisionLicense, });
 
-factory MconnCustomerConnectorUpdateRequest.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorUpdateRequest(
+factory MconnCustomerConnectorUpdateRequest.fromJson(Map<String, dynamic> json) {return MconnCustomerConnectorUpdateRequest(
   activated: json['activated'] as bool?,
   interruptWindowDaysOfWeek: (json['interrupt_window_days_of_week'] as List<dynamic>?)?.map((e) => MconnDayOfWeek.fromJson(e as String)).toList(),
   interruptWindowDurationHours: json['interrupt_window_duration_hours'] != null ? (json['interrupt_window_duration_hours'] as num).toDouble() : null,
@@ -12,7 +12,7 @@ factory MconnCustomerConnectorUpdateRequest.fromJson(Map<String, dynamic> json) 
   notes: json['notes'] as String?,
   timezone: json['timezone'] as String?,
   provisionLicense: json['provision_license'] as bool?,
-); }
+);}
 
 final bool? activated;
 
@@ -33,7 +33,7 @@ final String? timezone;
 /// When true, regenerate license key for the connector.
 final bool? provisionLicense;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activated': ?activated,
   if (interruptWindowDaysOfWeek != null) 'interrupt_window_days_of_week': interruptWindowDaysOfWeek?.map((e) => e.toJson()).toList(),
   'interrupt_window_duration_hours': ?interruptWindowDurationHours,
@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   'notes': ?notes,
   'timezone': ?timezone,
   'provision_license': ?provisionLicense,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activated', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'notes', 'timezone', 'provision_license'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'activated', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'notes', 'timezone', 'provision_license'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final interruptWindowDurationHours$ = interruptWindowDurationHours;
 if (interruptWindowDurationHours$ != null) {
   if (interruptWindowDurationHours$ < 1) { errors.add('interruptWindowDurationHours: must be >= 1'); }
@@ -55,8 +55,8 @@ final interruptWindowEmbargoDates$ = interruptWindowEmbargoDates;
 if (interruptWindowEmbargoDates$ != null) {
   if (interruptWindowEmbargoDates$.length > 100) { errors.add('interruptWindowEmbargoDates: must have <= 100 items'); }
 }
-return errors; } 
-MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, bool? Function()? provisionLicense, }) { return MconnCustomerConnectorUpdateRequest(
+return errors;}
+MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, bool? Function()? provisionLicense, }) {return MconnCustomerConnectorUpdateRequest(
   activated: activated != null ? activated() : this.activated,
   interruptWindowDaysOfWeek: interruptWindowDaysOfWeek != null ? interruptWindowDaysOfWeek() : this.interruptWindowDaysOfWeek,
   interruptWindowDurationHours: interruptWindowDurationHours != null ? interruptWindowDurationHours() : this.interruptWindowDurationHours,
@@ -65,7 +65,7 @@ MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<
   notes: notes != null ? notes() : this.notes,
   timezone: timezone != null ? timezone() : this.timezone,
   provisionLicense: provisionLicense != null ? provisionLicense() : this.provisionLicense,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnectorUpdateRequest &&
           activated == other.activated &&
@@ -81,4 +81,4 @@ MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<
 
 @override String toString() => 'MconnCustomerConnectorUpdateRequest(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone, provisionLicense: $provisionLicense)';
 
- }
+}

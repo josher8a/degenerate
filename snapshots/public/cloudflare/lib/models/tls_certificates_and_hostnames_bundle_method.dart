@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 sealed class TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod();
 
-factory TlsCertificatesAndHostnamesBundleMethod.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesBundleMethod.fromJson(String json) {return switch (json) {
   'ubiquitous' => ubiquitous,
   'optimal' => optimal,
   'force' => force,
   _ => TlsCertificatesAndHostnamesBundleMethod$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesBundleMethod ubiquitous = TlsCertificatesAndHostnamesBundleMethod$ubiquitous._();
 
@@ -20,33 +20,33 @@ static const TlsCertificatesAndHostnamesBundleMethod force = TlsCertificatesAndH
 static const List<TlsCertificatesAndHostnamesBundleMethod> values = [ubiquitous, optimal, force];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ubiquitous' => 'ubiquitous',
   'optimal' => 'optimal',
   'force' => 'force',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesBundleMethod$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesBundleMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ubiquitous, required W Function() optimal, required W Function() force, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ubiquitous, required W Function() optimal, required W Function() force, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesBundleMethod$ubiquitous() => ubiquitous(),
       TlsCertificatesAndHostnamesBundleMethod$optimal() => optimal(),
       TlsCertificatesAndHostnamesBundleMethod$force() => force(),
       TlsCertificatesAndHostnamesBundleMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ubiquitous, W Function()? optimal, W Function()? force, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ubiquitous, W Function()? optimal, W Function()? force, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesBundleMethod$ubiquitous() => ubiquitous != null ? ubiquitous() : orElse(value),
       TlsCertificatesAndHostnamesBundleMethod$optimal() => optimal != null ? optimal() : orElse(value),
       TlsCertificatesAndHostnamesBundleMethod$force() => force != null ? force() : orElse(value),
       TlsCertificatesAndHostnamesBundleMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesBundleMethod($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesBundleMethod$ubiquitous extends TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod$ubiquitous._();
 
 @override String get value => 'ubiquitous';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ubiquito
 
 @override int get hashCode => 'ubiquitous'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesBundleMethod$optimal extends TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod$optimal._();
 
 @override String get value => 'optimal';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ubiquito
 
 @override int get hashCode => 'optimal'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesBundleMethod$force extends TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod$force._();
 
 @override String get value => 'force';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ubiquito
 
 @override int get hashCode => 'force'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesBundleMethod$Unknown extends TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ubiquito
 
 @override int get hashCode => value.hashCode;
 
- }
+}

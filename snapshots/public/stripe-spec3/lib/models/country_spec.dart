@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/country_spec_verification_fields.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CountrySpecObject {const CountrySpecObject();
 
-factory CountrySpecObject.fromJson(String json) { return switch (json) {
+factory CountrySpecObject.fromJson(String json) {return switch (json) {
   'country_spec' => countrySpec,
   _ => CountrySpecObject$Unknown(json),
-}; }
+};}
 
 static const CountrySpecObject countrySpec = CountrySpecObject$countrySpec._();
 
 static const List<CountrySpecObject> values = [countrySpec];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'country_spec' => 'countrySpec',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CountrySpecObject$Unknown; } 
+bool get isUnknown {return this is CountrySpecObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() countrySpec, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() countrySpec, required W Function(String value) $unknown, }) {return switch (this) {
       CountrySpecObject$countrySpec() => countrySpec(),
       CountrySpecObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? countrySpec, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? countrySpec, W Function(String value)? $unknown, }) {return switch (this) {
       CountrySpecObject$countrySpec() => countrySpec != null ? countrySpec() : orElse(value),
       CountrySpecObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CountrySpecObject($value)';
 
- }
+}
 @immutable final class CountrySpecObject$countrySpec extends CountrySpecObject {const CountrySpecObject$countrySpec._();
 
 @override String get value => 'country_spec';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? countryS
 
 @override int get hashCode => 'country_spec'.hashCode;
 
- }
+}
 @immutable final class CountrySpecObject$Unknown extends CountrySpecObject {const CountrySpecObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? countryS
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Stripe needs to collect certain pieces of information about each account
 /// created. These requirements can differ depending on the account's country. The
 /// Country Specs API makes these rules available to your integration.
@@ -62,7 +62,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? countryS
 /// guide](/docs/connect/required-verification-information).
 @immutable final class CountrySpec {const CountrySpec({required this.defaultCurrency, required this.id, required this.object, required this.supportedBankAccountCurrencies, required this.supportedPaymentCurrencies, required this.supportedPaymentMethods, required this.supportedTransferCountries, required this.verificationFields, });
 
-factory CountrySpec.fromJson(Map<String, dynamic> json) { return CountrySpec(
+factory CountrySpec.fromJson(Map<String, dynamic> json) {return CountrySpec(
   defaultCurrency: json['default_currency'] as String,
   id: json['id'] as String,
   object: CountrySpecObject.fromJson(json['object'] as String),
@@ -71,7 +71,7 @@ factory CountrySpec.fromJson(Map<String, dynamic> json) { return CountrySpec(
   supportedPaymentMethods: (json['supported_payment_methods'] as List<dynamic>).map((e) => e as String).toList(),
   supportedTransferCountries: (json['supported_transfer_countries'] as List<dynamic>).map((e) => e as String).toList(),
   verificationFields: CountrySpecVerificationFields.fromJson(json['verification_fields'] as Map<String, dynamic>),
-); }
+);}
 
 /// The default currency for this country. This applies to both payment methods and bank accounts.
 final String defaultCurrency;
@@ -96,7 +96,7 @@ final List<String> supportedTransferCountries;
 
 final CountrySpecVerificationFields verificationFields;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default_currency': defaultCurrency,
   'id': id,
   'object': object.toJson(),
@@ -105,21 +105,21 @@ Map<String, dynamic> toJson() { return {
   'supported_payment_methods': supportedPaymentMethods,
   'supported_transfer_countries': supportedTransferCountries,
   'verification_fields': verificationFields.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_currency') && json['default_currency'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_currency') && json['default_currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('supported_bank_account_currencies') &&
       json.containsKey('supported_payment_currencies') &&
       json.containsKey('supported_payment_methods') &&
       json.containsKey('supported_transfer_countries') &&
-      json.containsKey('verification_fields'); } 
+      json.containsKey('verification_fields');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (defaultCurrency.runes.length > 5000) { errors.add('defaultCurrency: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? object, Map<String,List<String>>? supportedBankAccountCurrencies, List<String>? supportedPaymentCurrencies, List<String>? supportedPaymentMethods, List<String>? supportedTransferCountries, CountrySpecVerificationFields? verificationFields, }) { return CountrySpec(
+return errors;}
+CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? object, Map<String,List<String>>? supportedBankAccountCurrencies, List<String>? supportedPaymentCurrencies, List<String>? supportedPaymentMethods, List<String>? supportedTransferCountries, CountrySpecVerificationFields? verificationFields, }) {return CountrySpec(
   defaultCurrency: defaultCurrency ?? this.defaultCurrency,
   id: id ?? this.id,
   object: object ?? this.object,
@@ -128,7 +128,7 @@ CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? ob
   supportedPaymentMethods: supportedPaymentMethods ?? this.supportedPaymentMethods,
   supportedTransferCountries: supportedTransferCountries ?? this.supportedTransferCountries,
   verificationFields: verificationFields ?? this.verificationFields,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CountrySpec &&
           defaultCurrency == other.defaultCurrency &&
@@ -144,4 +144,4 @@ CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? ob
 
 @override String toString() => 'CountrySpec(defaultCurrency: $defaultCurrency, id: $id, object: $object, supportedBankAccountCurrencies: $supportedBankAccountCurrencies, supportedPaymentCurrencies: $supportedPaymentCurrencies, supportedPaymentMethods: $supportedPaymentMethods, supportedTransferCountries: $supportedTransferCountries, verificationFields: $verificationFields)';
 
- }
+}

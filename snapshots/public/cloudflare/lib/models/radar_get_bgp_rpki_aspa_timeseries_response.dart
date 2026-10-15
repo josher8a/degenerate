@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_response/radar_get_bgp_rpki_aspa_timeseries_response_result.dart';@immutable final class RadarGetBgpRpkiAspaTimeseriesResponse {const RadarGetBgpRpkiAspaTimeseriesResponse({required this.result, required this.success, });
 
-factory RadarGetBgpRpkiAspaTimeseriesResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaTimeseriesResponse(
+factory RadarGetBgpRpkiAspaTimeseriesResponse.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaTimeseriesResponse(
   result: RadarGetBgpRpkiAspaTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBgpRpkiAspaTimeseriesResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpRpkiAspaTimeseriesResponse copyWith({RadarGetBgpRpkiAspaTimeseriesResponseResult? result, bool? success, }) { return RadarGetBgpRpkiAspaTimeseriesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBgpRpkiAspaTimeseriesResponse copyWith({RadarGetBgpRpkiAspaTimeseriesResponseResult? result, bool? success, }) {return RadarGetBgpRpkiAspaTimeseriesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRpkiAspaTimeseriesResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetBgpRpkiAspaTimeseriesResponse copyWith({RadarGetBgpRpkiAspaTimeseriesRes
 
 @override String toString() => 'RadarGetBgpRpkiAspaTimeseriesResponse(result: $result, success: $success)';
 
- }
+}

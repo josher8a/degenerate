@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_file_response/delete_file_response_object.dart';/// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
 sealed class OpenAiFilePurpose {const OpenAiFilePurpose();
 
-factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
+factory OpenAiFilePurpose.fromJson(String json) {return switch (json) {
   'assistants' => assistants,
   'assistants_output' => assistantsOutput,
   'batch' => batch,
@@ -14,7 +14,7 @@ factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
   'vision' => vision,
   'user_data' => userData,
   _ => OpenAiFilePurpose$Unknown(json),
-}; }
+};}
 
 static const OpenAiFilePurpose assistants = OpenAiFilePurpose$assistants._();
 
@@ -35,9 +35,9 @@ static const OpenAiFilePurpose userData = OpenAiFilePurpose$userData._();
 static const List<OpenAiFilePurpose> values = [assistants, assistantsOutput, batch, batchOutput, fineTune, fineTuneResults, vision, userData];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'assistants' => 'assistants',
   'assistants_output' => 'assistantsOutput',
   'batch' => 'batch',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'vision' => 'vision',
   'user_data' => 'userData',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OpenAiFilePurpose$Unknown; } 
+bool get isUnknown {return this is OpenAiFilePurpose$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() assistants, required W Function() assistantsOutput, required W Function() batch, required W Function() batchOutput, required W Function() fineTune, required W Function() fineTuneResults, required W Function() vision, required W Function() userData, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() assistants, required W Function() assistantsOutput, required W Function() batch, required W Function() batchOutput, required W Function() fineTune, required W Function() fineTuneResults, required W Function() vision, required W Function() userData, required W Function(String value) $unknown, }) {return switch (this) {
       OpenAiFilePurpose$assistants() => assistants(),
       OpenAiFilePurpose$assistantsOutput() => assistantsOutput(),
       OpenAiFilePurpose$batch() => batch(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() assistants, required W Function() assistantsOut
       OpenAiFilePurpose$vision() => vision(),
       OpenAiFilePurpose$userData() => userData(),
       OpenAiFilePurpose$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistants, W Function()? assistantsOutput, W Function()? batch, W Function()? batchOutput, W Function()? fineTune, W Function()? fineTuneResults, W Function()? vision, W Function()? userData, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistants, W Function()? assistantsOutput, W Function()? batch, W Function()? batchOutput, W Function()? fineTune, W Function()? fineTuneResults, W Function()? vision, W Function()? userData, W Function(String value)? $unknown, }) {return switch (this) {
       OpenAiFilePurpose$assistants() => assistants != null ? assistants() : orElse(value),
       OpenAiFilePurpose$assistantsOutput() => assistantsOutput != null ? assistantsOutput() : orElse(value),
       OpenAiFilePurpose$batch() => batch != null ? batch() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
       OpenAiFilePurpose$vision() => vision != null ? vision() : orElse(value),
       OpenAiFilePurpose$userData() => userData != null ? userData() : orElse(value),
       OpenAiFilePurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OpenAiFilePurpose($value)';
 
- }
+}
 @immutable final class OpenAiFilePurpose$assistants extends OpenAiFilePurpose {const OpenAiFilePurpose$assistants._();
 
 @override String get value => 'assistants';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'assistants'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$assistantsOutput extends OpenAiFilePurpose {const OpenAiFilePurpose$assistantsOutput._();
 
 @override String get value => 'assistants_output';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'assistants_output'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$batch extends OpenAiFilePurpose {const OpenAiFilePurpose$batch._();
 
 @override String get value => 'batch';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'batch'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$batchOutput extends OpenAiFilePurpose {const OpenAiFilePurpose$batchOutput._();
 
 @override String get value => 'batch_output';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'batch_output'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$fineTune extends OpenAiFilePurpose {const OpenAiFilePurpose$fineTune._();
 
 @override String get value => 'fine-tune';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'fine-tune'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$fineTuneResults extends OpenAiFilePurpose {const OpenAiFilePurpose$fineTuneResults._();
 
 @override String get value => 'fine-tune-results';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'fine-tune-results'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$vision extends OpenAiFilePurpose {const OpenAiFilePurpose$vision._();
 
 @override String get value => 'vision';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'vision'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$userData extends OpenAiFilePurpose {const OpenAiFilePurpose$userData._();
 
 @override String get value => 'user_data';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'user_data'.hashCode;
 
- }
+}
 @immutable final class OpenAiFilePurpose$Unknown extends OpenAiFilePurpose {const OpenAiFilePurpose$Unknown(this.value);
 
 @override final String value;
@@ -158,16 +158,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
 sealed class OpenAiFileStatus {const OpenAiFileStatus();
 
-factory OpenAiFileStatus.fromJson(String json) { return switch (json) {
+factory OpenAiFileStatus.fromJson(String json) {return switch (json) {
   'uploaded' => uploaded,
   'processed' => processed,
   'error' => error,
   _ => OpenAiFileStatus$Unknown(json),
-}; }
+};}
 
 static const OpenAiFileStatus uploaded = OpenAiFileStatus$uploaded._();
 
@@ -178,33 +178,33 @@ static const OpenAiFileStatus error = OpenAiFileStatus$error._();
 static const List<OpenAiFileStatus> values = [uploaded, processed, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'uploaded' => 'uploaded',
   'processed' => 'processed',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OpenAiFileStatus$Unknown; } 
+bool get isUnknown {return this is OpenAiFileStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() uploaded, required W Function() processed, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() uploaded, required W Function() processed, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       OpenAiFileStatus$uploaded() => uploaded(),
       OpenAiFileStatus$processed() => processed(),
       OpenAiFileStatus$error() => error(),
       OpenAiFileStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded, W Function()? processed, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded, W Function()? processed, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       OpenAiFileStatus$uploaded() => uploaded != null ? uploaded() : orElse(value),
       OpenAiFileStatus$processed() => processed != null ? processed() : orElse(value),
       OpenAiFileStatus$error() => error != null ? error() : orElse(value),
       OpenAiFileStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OpenAiFileStatus($value)';
 
- }
+}
 @immutable final class OpenAiFileStatus$uploaded extends OpenAiFileStatus {const OpenAiFileStatus$uploaded._();
 
 @override String get value => 'uploaded';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded
 
 @override int get hashCode => 'uploaded'.hashCode;
 
- }
+}
 @immutable final class OpenAiFileStatus$processed extends OpenAiFileStatus {const OpenAiFileStatus$processed._();
 
 @override String get value => 'processed';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded
 
 @override int get hashCode => 'processed'.hashCode;
 
- }
+}
 @immutable final class OpenAiFileStatus$error extends OpenAiFileStatus {const OpenAiFileStatus$error._();
 
 @override String get value => 'error';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class OpenAiFileStatus$Unknown extends OpenAiFileStatus {const OpenAiFileStatus$Unknown(this.value);
 
 @override final String value;
@@ -241,11 +241,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The `File` object represents a document that has been uploaded to OpenAI.
 @immutable final class OpenAiFile {const OpenAiFile({required this.id, required this.bytes, required this.createdAt, required this.filename, required this.object, required this.purpose, required this.status, this.expiresAt, this.statusDetails, });
 
-factory OpenAiFile.fromJson(Map<String, dynamic> json) { return OpenAiFile(
+factory OpenAiFile.fromJson(Map<String, dynamic> json) {return OpenAiFile(
   id: json['id'] as String,
   bytes: (json['bytes'] as num).toInt(),
   createdAt: (json['created_at'] as num).toInt(),
@@ -255,7 +255,7 @@ factory OpenAiFile.fromJson(Map<String, dynamic> json) { return OpenAiFile(
   purpose: OpenAiFilePurpose.fromJson(json['purpose'] as String),
   status: OpenAiFileStatus.fromJson(json['status'] as String),
   statusDetails: json['status_details'] as String?,
-); }
+);}
 
 /// The file identifier, which can be referenced in the API endpoints.
 final String id;
@@ -284,7 +284,7 @@ final OpenAiFileStatus status;
 /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`.
 final String? statusDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'bytes': bytes,
   'created_at': createdAt,
@@ -294,15 +294,15 @@ Map<String, dynamic> toJson() { return {
   'purpose': purpose.toJson(),
   'status': status.toJson(),
   'status_details': ?statusDetails,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('bytes') && json['bytes'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('object') &&
       json.containsKey('purpose') &&
-      json.containsKey('status'); } 
-OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? expiresAt, String? filename, DeleteFileResponseObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String? Function()? statusDetails, }) { return OpenAiFile(
+      json.containsKey('status');}
+OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? expiresAt, String? filename, DeleteFileResponseObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String? Function()? statusDetails, }) {return OpenAiFile(
   id: id ?? this.id,
   bytes: bytes ?? this.bytes,
   createdAt: createdAt ?? this.createdAt,
@@ -312,7 +312,7 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
   purpose: purpose ?? this.purpose,
   status: status ?? this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OpenAiFile &&
           id == other.id &&
@@ -329,4 +329,4 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
 
 @override String toString() => 'OpenAiFile(\n  id: $id,\n  bytes: $bytes,\n  createdAt: $createdAt,\n  expiresAt: $expiresAt,\n  filename: $filename,\n  object: $object,\n  purpose: $purpose,\n  status: $status,\n  statusDetails: $statusDetails,\n)';
 
- }
+}

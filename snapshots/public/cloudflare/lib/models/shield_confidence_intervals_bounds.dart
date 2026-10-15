@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Upper and lower bound for percentile estimate
 @immutable final class ShieldConfidenceIntervalsBounds {const ShieldConfidenceIntervalsBounds({this.lower, this.upper, });
 
-factory ShieldConfidenceIntervalsBounds.fromJson(Map<String, dynamic> json) { return ShieldConfidenceIntervalsBounds(
+factory ShieldConfidenceIntervalsBounds.fromJson(Map<String, dynamic> json) {return ShieldConfidenceIntervalsBounds(
   lower: json['lower'] != null ? (json['lower'] as num).toDouble() : null,
   upper: json['upper'] != null ? (json['upper'] as num).toDouble() : null,
-); }
+);}
 
 /// Lower bound for percentile estimate
 /// 
@@ -19,15 +19,15 @@ final double? lower;
 /// Example: `30.4`
 final double? upper;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'lower': ?lower,
   'upper': ?upper,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lower', 'upper'}.contains(key)); } 
-ShieldConfidenceIntervalsBounds copyWith({double? Function()? lower, double? Function()? upper, }) { return ShieldConfidenceIntervalsBounds(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'lower', 'upper'}.contains(key));}
+ShieldConfidenceIntervalsBounds copyWith({double? Function()? lower, double? Function()? upper, }) {return ShieldConfidenceIntervalsBounds(
   lower: lower != null ? lower() : this.lower,
   upper: upper != null ? upper() : this.upper,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldConfidenceIntervalsBounds &&
           lower == other.lower &&
@@ -37,4 +37,4 @@ ShieldConfidenceIntervalsBounds copyWith({double? Function()? lower, double? Fun
 
 @override String toString() => 'ShieldConfidenceIntervalsBounds(lower: $lower, upper: $upper)';
 
- }
+}

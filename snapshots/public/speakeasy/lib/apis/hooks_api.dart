@@ -10,7 +10,7 @@ final class HooksApi with ApiExecutor {const HooksApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /anything/hooks`
-Future<ApiResult<TestHooksResponse, Never>> testHooks({required String someParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TestHooksResponse, Never>> testHooks({required String someParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['someParam'] = someParam;
 
@@ -25,15 +25,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestHooksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/hooks/beforeCreateRequestPaths/{namespace}`
-Future<ApiResult<TestHooksBeforeCreateRequestPathsResponse, Never>> testHooksBeforeCreateRequestPaths({required String namespace, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TestHooksBeforeCreateRequestPathsResponse, Never>> testHooksBeforeCreateRequestPaths({required String namespace, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -42,15 +42,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestHooksBeforeCreateRequestPathsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/hooks/afterResponseValidation`
-Future<ApiResult<void, Never>> testHooksAfterResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testHooksAfterResponse({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -59,13 +59,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /status/400#testHooksError`
-Future<ApiResult<void, Never>> testHooksError({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testHooksError({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,13 +74,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /bearer#authorizationHeaderModification`
-Future<ApiResult<AuthorizationHeaderModificationResponse, Never>> authorizationHeaderModification({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AuthorizationHeaderModificationResponse, Never>> authorizationHeaderModification({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -89,15 +89,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AuthorizationHeaderModificationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/async-hooks`
-Future<ApiResult<TestAsyncHooksResponse, Never>> testAsyncHooks({required String someParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TestAsyncHooksResponse, Never>> testAsyncHooks({required String someParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['someParam'] = someParam;
 
@@ -112,15 +112,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestAsyncHooksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/async-hooks/afterResponse`
-Future<ApiResult<void, Never>> testAsyncHooksAfterResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testAsyncHooksAfterResponse({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -129,13 +129,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /status/400#testAsyncHooksError`
-Future<ApiResult<void, Never>> testAsyncHooksError({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testAsyncHooksError({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -144,13 +144,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/async-hooks/beforeCreateRequestPaths/{namespace}`
-Future<ApiResult<TestAsyncHooksBeforeCreateRequestPathsResponse, Never>> testAsyncHooksBeforeCreateRequestPaths({required String namespace, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TestAsyncHooksBeforeCreateRequestPathsResponse, Never>> testAsyncHooksBeforeCreateRequestPaths({required String namespace, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -159,13 +159,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return TestAsyncHooksBeforeCreateRequestPathsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// This operation is expected to use global security. The operation-level security gets
 /// hoisted to the global level since the `clientCredentials` scheme is already included
 /// in the global security block. However, the scopes defined in this operation will be
@@ -173,7 +173,7 @@ return execute(
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#hoisted`
-Future<ApiResult<void, Never>> authenticatedRequest({AuthenticatedRequestRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequest({AuthenticatedRequestRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -184,18 +184,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This operation tests OAuth2 ClientCredentials as a security option.
 /// Note the operation security is guaranteed *not* to be hoisted as long
 /// as the basicAuth scheme is not part of the global security block.
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#operationSecurity`
-Future<ApiResult<void, Never>> authenticatedRequestUnflattened({AuthenticatedRequestUnflattenedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequestUnflattened({AuthenticatedRequestUnflattenedRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -206,16 +206,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This operation uses both the global server and global security configurations.
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#globalServer`
-Future<ApiResult<void, Never>> authenticatedRequestGlobalServer({AuthenticatedRequestGlobalServerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequestGlobalServer({AuthenticatedRequestGlobalServerRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -226,17 +226,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This operation uses global security, it is therefore expected to have both
 /// `read` and `write` OAuth2 scopes passed to its hook context.
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#globalSecurity`
-Future<ApiResult<void, Never>> authenticatedRequestGlobalSecurity({AuthenticatedRequestGlobalSecurityRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequestGlobalSecurity({AuthenticatedRequestGlobalSecurityRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -247,11 +247,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This operation will have its security hoisted to the global level since the
 /// `clientCredentials` scheme is already included in the global security block.
 /// OAuth2 scopes however are expected to be cleared, leading the token request
@@ -260,7 +260,7 @@ return execute(
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#noScopes`
-Future<ApiResult<void, Never>> authenticatedRequestNoScopes({AuthenticatedRequestNoScopesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequestNoScopes({AuthenticatedRequestNoScopesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -271,11 +271,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Tests that per-operation client credentials with duplicate name overrides
 /// across different groups generate unique credential function names. This
 /// operation and authenticatedRequestDuplicateNameB share the same name override
@@ -284,7 +284,7 @@ return execute(
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#duplicateNameA`
-Future<ApiResult<void, Never>> authenticatedRequestDuplicateNameA({AuthenticatedRequestDuplicateNameARequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequestDuplicateNameA({AuthenticatedRequestDuplicateNameARequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -295,11 +295,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Tests that per-operation client credentials with duplicate name overrides
 /// across different groups generate unique credential function names. This
 /// operation shares the same name override as authenticatedRequestDuplicateNameA
@@ -308,7 +308,7 @@ return execute(
 /// 
 ///
 /// `POST /clientcredentials/authenticatedrequest#duplicateNameB`
-Future<ApiResult<void, Never>> authenticatedRequestDuplicateNameB({AuthenticatedRequestDuplicateNameBRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> authenticatedRequestDuplicateNameB({AuthenticatedRequestDuplicateNameBRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -319,9 +319,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

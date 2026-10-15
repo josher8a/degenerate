@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/customer_mapping.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/default_aggregation.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/value_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 sealed class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow();
 
-factory PostBillingMetersRequestEventTimeWindow.fromJson(String json) { return switch (json) {
+factory PostBillingMetersRequestEventTimeWindow.fromJson(String json) {return switch (json) {
   'day' => day,
   'hour' => hour,
   _ => PostBillingMetersRequestEventTimeWindow$Unknown(json),
-}; }
+};}
 
 static const PostBillingMetersRequestEventTimeWindow day = PostBillingMetersRequestEventTimeWindow$day._();
 
@@ -17,30 +17,30 @@ static const PostBillingMetersRequestEventTimeWindow hour = PostBillingMetersReq
 static const List<PostBillingMetersRequestEventTimeWindow> values = [day, hour];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'day' => 'day',
   'hour' => 'hour',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostBillingMetersRequestEventTimeWindow$Unknown; } 
+bool get isUnknown {return this is PostBillingMetersRequestEventTimeWindow$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() day, required W Function() hour, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() day, required W Function() hour, required W Function(String value) $unknown, }) {return switch (this) {
       PostBillingMetersRequestEventTimeWindow$day() => day(),
       PostBillingMetersRequestEventTimeWindow$hour() => hour(),
       PostBillingMetersRequestEventTimeWindow$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? hour, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? hour, W Function(String value)? $unknown, }) {return switch (this) {
       PostBillingMetersRequestEventTimeWindow$day() => day != null ? day() : orElse(value),
       PostBillingMetersRequestEventTimeWindow$hour() => hour != null ? hour() : orElse(value),
       PostBillingMetersRequestEventTimeWindow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostBillingMetersRequestEventTimeWindow($value)';
 
- }
+}
 @immutable final class PostBillingMetersRequestEventTimeWindow$day extends PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow$day._();
 
 @override String get value => 'day';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W F
 
 @override int get hashCode => 'day'.hashCode;
 
- }
+}
 @immutable final class PostBillingMetersRequestEventTimeWindow$hour extends PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow$hour._();
 
 @override String get value => 'hour';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W F
 
 @override int get hashCode => 'hour'.hashCode;
 
- }
+}
 @immutable final class PostBillingMetersRequestEventTimeWindow$Unknown extends PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostBillingMetersRequest {const PostBillingMetersRequest({required this.defaultAggregation, required this.displayName, required this.eventName, this.customerMapping, this.eventTimeWindow, this.expand, this.valueSettings, });
 
-factory PostBillingMetersRequest.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequest(
+factory PostBillingMetersRequest.fromJson(Map<String, dynamic> json) {return PostBillingMetersRequest(
   customerMapping: json['customer_mapping'] != null ? CustomerMapping.fromJson(json['customer_mapping'] as Map<String, dynamic>) : null,
   defaultAggregation: DefaultAggregation.fromJson(json['default_aggregation'] as Map<String, dynamic>),
   displayName: json['display_name'] as String,
@@ -79,7 +79,7 @@ factory PostBillingMetersRequest.fromJson(Map<String, dynamic> json) { return Po
   eventTimeWindow: json['event_time_window'] != null ? PostBillingMetersRequestEventTimeWindow.fromJson(json['event_time_window'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   valueSettings: json['value_settings'] != null ? ValueSettings.fromJson(json['value_settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Fields that specify how to map a meter event to a customer.
 final CustomerMapping? customerMapping;
@@ -102,7 +102,7 @@ final List<String>? expand;
 /// Fields that specify how to calculate a meter event's value.
 final ValueSettings? valueSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customerMapping != null) 'customer_mapping': customerMapping?.toJson(),
   'default_aggregation': defaultAggregation.toJson(),
   'display_name': displayName,
@@ -110,16 +110,16 @@ Map<String, dynamic> toJson() { return {
   if (eventTimeWindow != null) 'event_time_window': eventTimeWindow?.toJson(),
   'expand': ?expand,
   if (valueSettings != null) 'value_settings': valueSettings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_aggregation') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_aggregation') &&
       json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('event_name') && json['event_name'] is String; } 
+      json.containsKey('event_name') && json['event_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (displayName.runes.length > 250) { errors.add('displayName: length must be <= 250'); }
 if (eventName.runes.length > 100) { errors.add('eventName: length must be <= 100'); }
-return errors; } 
-PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping, DefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow? Function()? eventTimeWindow, List<String>? Function()? expand, ValueSettings? Function()? valueSettings, }) { return PostBillingMetersRequest(
+return errors;}
+PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping, DefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow? Function()? eventTimeWindow, List<String>? Function()? expand, ValueSettings? Function()? valueSettings, }) {return PostBillingMetersRequest(
   customerMapping: customerMapping != null ? customerMapping() : this.customerMapping,
   defaultAggregation: defaultAggregation ?? this.defaultAggregation,
   displayName: displayName ?? this.displayName,
@@ -127,7 +127,7 @@ PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping,
   eventTimeWindow: eventTimeWindow != null ? eventTimeWindow() : this.eventTimeWindow,
   expand: expand != null ? expand() : this.expand,
   valueSettings: valueSettings != null ? valueSettings() : this.valueSettings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingMetersRequest &&
           customerMapping == other.customerMapping &&
@@ -142,4 +142,4 @@ PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping,
 
 @override String toString() => 'PostBillingMetersRequest(customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, expand: $expand, valueSettings: $valueSettings)';
 
- }
+}

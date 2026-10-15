@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class DeleteServersResponse404 {const DeleteServersResponse404({required this.errors, required this.success, });
 
-factory DeleteServersResponse404.fromJson(Map<String, dynamic> json) { return DeleteServersResponse404(
+factory DeleteServersResponse404.fromJson(Map<String, dynamic> json) {return DeleteServersResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DeleteServersResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, bool? success, }) { return DeleteServersResponse404(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+DeleteServersResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, bool? success, }) {return DeleteServersResponse404(
   errors: errors ?? this.errors,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteServersResponse404 &&
           listEquals(errors, other.errors) &&
@@ -31,4 +31,4 @@ DeleteServersResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNa
 
 @override String toString() => 'DeleteServersResponse404(errors: $errors, success: $success)';
 
- }
+}

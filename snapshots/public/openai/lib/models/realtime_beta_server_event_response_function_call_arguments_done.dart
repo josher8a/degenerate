@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, 
 /// 
 sealed class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType();
 
-factory RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType.fromJson(String json) {return switch (json) {
   'response.function_call_arguments.done' => responseFunctionCallArgumentsDone,
   _ => RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType responseFunctionCallArgumentsDone = RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone._();
 
 static const List<RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType> values = [responseFunctionCallArgumentsDone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.function_call_arguments.done' => 'responseFunctionCallArgumentsDone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseFunctionCallArgumentsDone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseFunctionCallArgumentsDone, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone() => responseFunctionCallArgumentsDone(),
       RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseFunctionCallArgumentsDone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseFunctionCallArgumentsDone, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone() => responseFunctionCallArgumentsDone != null ? responseFunctionCallArgumentsDone() : orElse(value),
       RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone extends RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone._();
 
 @override String get value => 'response.function_call_arguments.done';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.function_call_arguments.done'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown extends RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown(this.value);
 
 @override final String value;
@@ -54,13 +54,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when the model-generated function call arguments are done streaming.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 /// 
 @immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDone {const RealtimeBetaServerEventResponseFunctionCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.name, required this.arguments, });
 
-factory RealtimeBetaServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseFunctionCallArgumentsDone(
+factory RealtimeBetaServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseFunctionCallArgumentsDone(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
@@ -69,7 +69,7 @@ factory RealtimeBetaServerEventResponseFunctionCallArgumentsDone.fromJson(Map<St
   callId: json['call_id'] as String,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -96,7 +96,7 @@ final String name;
 /// The final arguments as a JSON string.
 final String arguments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
@@ -105,16 +105,16 @@ Map<String, dynamic> toJson() { return {
   'call_id': callId,
   'name': name,
   'arguments': arguments,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeBetaServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) { return RealtimeBetaServerEventResponseFunctionCallArgumentsDone(
+      json.containsKey('arguments') && json['arguments'] is String;}
+RealtimeBetaServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) {return RealtimeBetaServerEventResponseFunctionCallArgumentsDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -123,7 +123,7 @@ RealtimeBetaServerEventResponseFunctionCallArgumentsDone copyWith({String? event
   callId: callId ?? this.callId,
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseFunctionCallArgumentsDone &&
           eventId == other.eventId &&
@@ -139,4 +139,4 @@ RealtimeBetaServerEventResponseFunctionCallArgumentsDone copyWith({String? event
 
 @override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KickPartcipantsRequest {const KickPartcipantsRequest({required this.customParticipantIds, required this.participantIds, });
 
-factory KickPartcipantsRequest.fromJson(Map<String, dynamic> json) { return KickPartcipantsRequest(
+factory KickPartcipantsRequest.fromJson(Map<String, dynamic> json) {return KickPartcipantsRequest(
   customParticipantIds: (json['custom_participant_ids'] as List<dynamic>).map((e) => e as String).toList(),
   participantIds: (json['participant_ids'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> customParticipantIds;
 
 final List<String> participantIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom_participant_ids': customParticipantIds,
   'participant_ids': participantIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom_participant_ids') &&
-      json.containsKey('participant_ids'); } 
-KickPartcipantsRequest copyWith({List<String>? customParticipantIds, List<String>? participantIds, }) { return KickPartcipantsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('custom_participant_ids') &&
+      json.containsKey('participant_ids');}
+KickPartcipantsRequest copyWith({List<String>? customParticipantIds, List<String>? participantIds, }) {return KickPartcipantsRequest(
   customParticipantIds: customParticipantIds ?? this.customParticipantIds,
   participantIds: participantIds ?? this.participantIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is KickPartcipantsRequest &&
           listEquals(customParticipantIds, other.customParticipantIds) &&
@@ -31,4 +31,4 @@ KickPartcipantsRequest copyWith({List<String>? customParticipantIds, List<String
 
 @override String toString() => 'KickPartcipantsRequest(customParticipantIds: $customParticipantIds, participantIds: $participantIds)';
 
- }
+}

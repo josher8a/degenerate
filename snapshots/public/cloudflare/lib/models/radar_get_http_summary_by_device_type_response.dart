@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_device_type_response/radar_get_http_summary_by_device_type_response_result.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponse {const RadarGetHttpSummaryByDeviceTypeResponse({required this.result, required this.success, });
 
-factory RadarGetHttpSummaryByDeviceTypeResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponse(
+factory RadarGetHttpSummaryByDeviceTypeResponse.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByDeviceTypeResponse(
   result: RadarGetHttpSummaryByDeviceTypeResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpSummaryByDeviceTypeResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpSummaryByDeviceTypeResponse copyWith({RadarGetHttpSummaryByDeviceTypeResponseResult? result, bool? success, }) { return RadarGetHttpSummaryByDeviceTypeResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetHttpSummaryByDeviceTypeResponse copyWith({RadarGetHttpSummaryByDeviceTypeResponseResult? result, bool? success, }) {return RadarGetHttpSummaryByDeviceTypeResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByDeviceTypeResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetHttpSummaryByDeviceTypeResponse copyWith({RadarGetHttpSummaryByDeviceTyp
 
 @override String toString() => 'RadarGetHttpSummaryByDeviceTypeResponse(result: $result, success: $success)';
 
- }
+}

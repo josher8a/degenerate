@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigGetGatewayDynamicRouteVersionResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/aig_config_post_gateway_dynamic_route_request_elements.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/elements_model.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/elements_rate.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/end.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/percentage.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/start.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/aig_config_post_gateway_dynamic_route_request_elements.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/elements_model.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/elements_rate.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/end.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/percentage.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/start.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, this.comment = const Omittable.absent(), });
 
-factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
+factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: Active.fromJson(json['active'] as String),
-  comment: json['comment'] as String?,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   data: json['data'] as String,
   elements: (json['elements'] as List<dynamic>).map((e) => switch (e) {
@@ -22,11 +22,11 @@ factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
   versionId: json['version_id'] as String,
-); }
+);}
 
 final Active active;
 
-final String? comment;
+final Omittable<String?> comment;
 
 final String createdAt;
 
@@ -44,9 +44,9 @@ final String name;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active.toJson(),
-  'comment': ?comment,
+  if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'data': data,
   'elements': elements.map((e) => e.toJson()).toList(),
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
   'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('data') && json['data'] is String &&
       json.containsKey('elements') &&
@@ -64,10 +64,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version_id') && json['version_id'] is String; } 
-AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({Active? active, String? Function()? comment, String? createdAt, String? data, List<AigConfigPostGatewayDynamicRouteRequestElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, String? versionId, }) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
+      json.containsKey('version_id') && json['version_id'] is String;}
+AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({Active? active, Omittable<String?>? comment, String? createdAt, String? data, List<AigConfigPostGatewayDynamicRouteRequestElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, String? versionId, }) {return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: active ?? this.active,
-  comment: comment != null ? comment() : this.comment,
+  comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   data: data ?? this.data,
   elements: elements ?? this.elements,
@@ -76,7 +76,7 @@ AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({Active? active, S
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
   versionId: versionId ?? this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigGetGatewayDynamicRouteVersionResponseResult &&
           active == other.active &&
@@ -94,4 +94,4 @@ AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({Active? active, S
 
 @override String toString() => 'AigConfigGetGatewayDynamicRouteVersionResponseResult(\n  active: $active,\n  comment: $comment,\n  createdAt: $createdAt,\n  data: $data,\n  elements: $elements,\n  gatewayId: $gatewayId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  versionId: $versionId,\n)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When listed as a reference, the type (direction) of the reference.
 sealed class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType();
 
-factory LoadBalancingResourceReferenceReferenceType.fromJson(String json) { return switch (json) {
+factory LoadBalancingResourceReferenceReferenceType.fromJson(String json) {return switch (json) {
   'referral' => referral,
   'referrer' => referrer,
   _ => LoadBalancingResourceReferenceReferenceType$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingResourceReferenceReferenceType referral = LoadBalancingResourceReferenceReferenceType$referral._();
 
@@ -17,30 +17,30 @@ static const LoadBalancingResourceReferenceReferenceType referrer = LoadBalancin
 static const List<LoadBalancingResourceReferenceReferenceType> values = [referral, referrer];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'referral' => 'referral',
   'referrer' => 'referrer',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingResourceReferenceReferenceType$Unknown; } 
+bool get isUnknown {return this is LoadBalancingResourceReferenceReferenceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() referral, required W Function() referrer, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() referral, required W Function() referrer, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingResourceReferenceReferenceType$referral() => referral(),
       LoadBalancingResourceReferenceReferenceType$referrer() => referrer(),
       LoadBalancingResourceReferenceReferenceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? referral, W Function()? referrer, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? referral, W Function()? referrer, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingResourceReferenceReferenceType$referral() => referral != null ? referral() : orElse(value),
       LoadBalancingResourceReferenceReferenceType$referrer() => referrer != null ? referrer() : orElse(value),
       LoadBalancingResourceReferenceReferenceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingResourceReferenceReferenceType($value)';
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceReferenceType$referral extends LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType$referral._();
 
 @override String get value => 'referral';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? referral
 
 @override int get hashCode => 'referral'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceReferenceType$referrer extends LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType$referrer._();
 
 @override String get value => 'referrer';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? referral
 
 @override int get hashCode => 'referrer'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceReferenceType$Unknown extends LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType$Unknown(this.value);
 
 @override final String value;
@@ -68,16 +68,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? referral
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The type of the resource.
 sealed class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType();
 
-factory LoadBalancingResourceReferenceResourceType.fromJson(String json) { return switch (json) {
+factory LoadBalancingResourceReferenceResourceType.fromJson(String json) {return switch (json) {
   'load_balancer' => loadBalancer,
   'monitor' => monitor,
   'pool' => pool,
   _ => LoadBalancingResourceReferenceResourceType$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingResourceReferenceResourceType loadBalancer = LoadBalancingResourceReferenceResourceType$loadBalancer._();
 
@@ -88,33 +88,33 @@ static const LoadBalancingResourceReferenceResourceType pool = LoadBalancingReso
 static const List<LoadBalancingResourceReferenceResourceType> values = [loadBalancer, monitor, pool];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'load_balancer' => 'loadBalancer',
   'monitor' => 'monitor',
   'pool' => 'pool',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingResourceReferenceResourceType$Unknown; } 
+bool get isUnknown {return this is LoadBalancingResourceReferenceResourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() loadBalancer, required W Function() monitor, required W Function() pool, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() loadBalancer, required W Function() monitor, required W Function() pool, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingResourceReferenceResourceType$loadBalancer() => loadBalancer(),
       LoadBalancingResourceReferenceResourceType$monitor() => monitor(),
       LoadBalancingResourceReferenceResourceType$pool() => pool(),
       LoadBalancingResourceReferenceResourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBalancer, W Function()? monitor, W Function()? pool, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBalancer, W Function()? monitor, W Function()? pool, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingResourceReferenceResourceType$loadBalancer() => loadBalancer != null ? loadBalancer() : orElse(value),
       LoadBalancingResourceReferenceResourceType$monitor() => monitor != null ? monitor() : orElse(value),
       LoadBalancingResourceReferenceResourceType$pool() => pool != null ? pool() : orElse(value),
       LoadBalancingResourceReferenceResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingResourceReferenceResourceType($value)';
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceResourceType$loadBalancer extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$loadBalancer._();
 
 @override String get value => 'load_balancer';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBala
 
 @override int get hashCode => 'load_balancer'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceResourceType$monitor extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$monitor._();
 
 @override String get value => 'monitor';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBala
 
 @override int get hashCode => 'monitor'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceResourceType$pool extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$pool._();
 
 @override String get value => 'pool';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBala
 
 @override int get hashCode => 'pool'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingResourceReferenceResourceType$Unknown extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$Unknown(this.value);
 
 @override final String value;
@@ -151,17 +151,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBala
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A reference to a load balancer resource.
 @immutable final class LoadBalancingResourceReference {const LoadBalancingResourceReference({this.referenceType, this.references, this.resourceId, this.resourceName, this.resourceType, });
 
-factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { return LoadBalancingResourceReference(
+factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) {return LoadBalancingResourceReference(
   referenceType: json['reference_type'] != null ? LoadBalancingResourceReferenceReferenceType.fromJson(json['reference_type'] as String) : null,
   references: (json['references'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   resourceId: json['resource_id'] as String?,
   resourceName: json['resource_name'] as String?,
   resourceType: json['resource_type'] != null ? LoadBalancingResourceReferenceResourceType.fromJson(json['resource_type'] as String) : null,
-); }
+);}
 
 /// When listed as a reference, the type (direction) of the reference.
 final LoadBalancingResourceReferenceReferenceType? referenceType;
@@ -184,21 +184,21 @@ final String? resourceName;
 /// Example: `'pool'`
 final LoadBalancingResourceReferenceResourceType? resourceType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (referenceType != null) 'reference_type': referenceType?.toJson(),
   if (references != null) 'references': references?.map((e) => e).toList(),
   'resource_id': ?resourceId,
   'resource_name': ?resourceName,
   if (resourceType != null) 'resource_type': resourceType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_type', 'references', 'resource_id', 'resource_name', 'resource_type'}.contains(key)); } 
-LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType? Function()? referenceType, List<Map<String, dynamic>>? Function()? references, String? Function()? resourceId, String? Function()? resourceName, LoadBalancingResourceReferenceResourceType? Function()? resourceType, }) { return LoadBalancingResourceReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_type', 'references', 'resource_id', 'resource_name', 'resource_type'}.contains(key));}
+LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType? Function()? referenceType, List<Map<String, dynamic>>? Function()? references, String? Function()? resourceId, String? Function()? resourceName, LoadBalancingResourceReferenceResourceType? Function()? resourceType, }) {return LoadBalancingResourceReference(
   referenceType: referenceType != null ? referenceType() : this.referenceType,
   references: references != null ? references() : this.references,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceName: resourceName != null ? resourceName() : this.resourceName,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingResourceReference &&
           referenceType == other.referenceType &&
@@ -211,4 +211,4 @@ LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReference
 
 @override String toString() => 'LoadBalancingResourceReference(referenceType: $referenceType, references: $references, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)';
 
- }
+}

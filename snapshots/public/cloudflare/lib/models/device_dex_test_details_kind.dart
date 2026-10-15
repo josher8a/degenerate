@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeviceDexTestDetailsKind {const DeviceDexTestDetailsKind();
 
-factory DeviceDexTestDetailsKind.fromJson(String json) { return switch (json) {
+factory DeviceDexTestDetailsKind.fromJson(String json) {return switch (json) {
   'http' => http,
   'traceroute' => traceroute,
   _ => DeviceDexTestDetailsKind$Unknown(json),
-}; }
+};}
 
 static const DeviceDexTestDetailsKind http = DeviceDexTestDetailsKind$http._();
 
@@ -16,30 +16,30 @@ static const DeviceDexTestDetailsKind traceroute = DeviceDexTestDetailsKind$trac
 static const List<DeviceDexTestDetailsKind> values = [http, traceroute];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'http' => 'http',
   'traceroute' => 'traceroute',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DeviceDexTestDetailsKind$Unknown; } 
+bool get isUnknown {return this is DeviceDexTestDetailsKind$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() http, required W Function() traceroute, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() http, required W Function() traceroute, required W Function(String value) $unknown, }) {return switch (this) {
       DeviceDexTestDetailsKind$http() => http(),
       DeviceDexTestDetailsKind$traceroute() => traceroute(),
       DeviceDexTestDetailsKind$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? traceroute, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? traceroute, W Function(String value)? $unknown, }) {return switch (this) {
       DeviceDexTestDetailsKind$http() => http != null ? http() : orElse(value),
       DeviceDexTestDetailsKind$traceroute() => traceroute != null ? traceroute() : orElse(value),
       DeviceDexTestDetailsKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DeviceDexTestDetailsKind($value)';
 
- }
+}
 @immutable final class DeviceDexTestDetailsKind$http extends DeviceDexTestDetailsKind {const DeviceDexTestDetailsKind$http._();
 
 @override String get value => 'http';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'http'.hashCode;
 
- }
+}
 @immutable final class DeviceDexTestDetailsKind$traceroute extends DeviceDexTestDetailsKind {const DeviceDexTestDetailsKind$traceroute._();
 
 @override String get value => 'traceroute';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'traceroute'.hashCode;
 
- }
+}
 @immutable final class DeviceDexTestDetailsKind$Unknown extends DeviceDexTestDetailsKind {const DeviceDexTestDetailsKind$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

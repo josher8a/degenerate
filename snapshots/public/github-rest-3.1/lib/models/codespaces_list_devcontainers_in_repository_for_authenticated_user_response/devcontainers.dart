@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Devcontainers {const Devcontainers({required this.path, this.name, this.displayName, });
 
-factory Devcontainers.fromJson(Map<String, dynamic> json) { return Devcontainers(
+factory Devcontainers.fromJson(Map<String, dynamic> json) {return Devcontainers(
   path: json['path'] as String,
   name: json['name'] as String?,
   displayName: json['display_name'] as String?,
-); }
+);}
 
 final String path;
 
@@ -15,17 +15,17 @@ final String? name;
 
 final String? displayName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'name': ?name,
   'display_name': ?displayName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-Devcontainers copyWith({String? path, String? Function()? name, String? Function()? displayName, }) { return Devcontainers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String;}
+Devcontainers copyWith({String? path, String? Function()? name, String? Function()? displayName, }) {return Devcontainers(
   path: path ?? this.path,
   name: name != null ? name() : this.name,
   displayName: displayName != null ? displayName() : this.displayName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Devcontainers &&
           path == other.path &&
@@ -36,4 +36,4 @@ Devcontainers copyWith({String? path, String? Function()? name, String? Function
 
 @override String toString() => 'Devcontainers(path: $path, name: $name, displayName: $displayName)';
 
- }
+}

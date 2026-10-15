@@ -7,12 +7,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of in
 /// 
 sealed class InputAudioFormat {const InputAudioFormat();
 
-factory InputAudioFormat.fromJson(String json) { return switch (json) {
+factory InputAudioFormat.fromJson(String json) {return switch (json) {
   'pcm16' => pcm16,
   'g711_ulaw' => g711Ulaw,
   'g711_alaw' => g711Alaw,
   _ => InputAudioFormat$Unknown(json),
-}; }
+};}
 
 static const InputAudioFormat pcm16 = InputAudioFormat$pcm16._();
 
@@ -23,33 +23,33 @@ static const InputAudioFormat g711Alaw = InputAudioFormat$g711Alaw._();
 static const List<InputAudioFormat> values = [pcm16, g711Ulaw, g711Alaw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pcm16' => 'pcm16',
   'g711_ulaw' => 'g711Ulaw',
   'g711_alaw' => 'g711Alaw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InputAudioFormat$Unknown; } 
+bool get isUnknown {return this is InputAudioFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pcm16, required W Function() g711Ulaw, required W Function() g711Alaw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pcm16, required W Function() g711Ulaw, required W Function() g711Alaw, required W Function(String value) $unknown, }) {return switch (this) {
       InputAudioFormat$pcm16() => pcm16(),
       InputAudioFormat$g711Ulaw() => g711Ulaw(),
       InputAudioFormat$g711Alaw() => g711Alaw(),
       InputAudioFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W Function()? g711Ulaw, W Function()? g711Alaw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W Function()? g711Ulaw, W Function()? g711Alaw, W Function(String value)? $unknown, }) {return switch (this) {
       InputAudioFormat$pcm16() => pcm16 != null ? pcm16() : orElse(value),
       InputAudioFormat$g711Ulaw() => g711Ulaw != null ? g711Ulaw() : orElse(value),
       InputAudioFormat$g711Alaw() => g711Alaw != null ? g711Alaw() : orElse(value),
       InputAudioFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InputAudioFormat($value)';
 
- }
+}
 @immutable final class InputAudioFormat$pcm16 extends InputAudioFormat {const InputAudioFormat$pcm16._();
 
 @override String get value => 'pcm16';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => 'pcm16'.hashCode;
 
- }
+}
 @immutable final class InputAudioFormat$g711Ulaw extends InputAudioFormat {const InputAudioFormat$g711Ulaw._();
 
 @override String get value => 'g711_ulaw';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => 'g711_ulaw'.hashCode;
 
- }
+}
 @immutable final class InputAudioFormat$g711Alaw extends InputAudioFormat {const InputAudioFormat$g711Alaw._();
 
 @override String get value => 'g711_alaw';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => 'g711_alaw'.hashCode;
 
- }
+}
 @immutable final class InputAudioFormat$Unknown extends InputAudioFormat {const InputAudioFormat$Unknown(this.value);
 
 @override final String value;
@@ -86,4 +86,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

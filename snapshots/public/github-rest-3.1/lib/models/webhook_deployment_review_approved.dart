@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_job_runs.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_approver.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers2.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow_job_run.dart';@immutable final class WebhookDeploymentReviewApproved {const WebhookDeploymentReviewApproved({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
 
-factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApproved(
+factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewApproved(
   action: WebhookDeploymentReviewApprovedAction.fromJson(json['action'] as String),
   approver: json['approver'] != null ? WebhooksApprover.fromJson(json['approver'] as Map<String, dynamic>) : null,
   comment: json['comment'] as String?,
@@ -17,7 +17,7 @@ factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) { re
   workflowJobRun: json['workflow_job_run'] != null ? WebhooksWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>) : null,
   workflowJobRuns: (json['workflow_job_runs'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(e as Map<String, dynamic>)).toList(),
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentReviewApprovedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookDeploymentReviewApprovedAction action;
 
@@ -45,7 +45,7 @@ final List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? workflowJobRuns;
 
 final WebhookDeploymentReviewApprovedWorkflowRun? workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (approver != null) 'approver': approver?.toJson(),
   'comment': ?comment,
@@ -59,14 +59,14 @@ Map<String, dynamic> toJson() { return {
   if (workflowJobRun != null) 'workflow_job_run': workflowJobRun?.toJson(),
   if (workflowJobRuns != null) 'workflow_job_runs': workflowJobRuns?.map((e) => e.toJson()).toList(),
   'workflow_run': workflowRun?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('since') && json['since'] is String &&
-      json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewApproved(
+      json.containsKey('workflow_run');}
+WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) {return WebhookDeploymentReviewApproved(
   action: action ?? this.action,
   approver: approver != null ? approver() : this.approver,
   comment: comment != null ? comment() : this.comment,
@@ -80,7 +80,7 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
   workflowJobRun: workflowJobRun != null ? workflowJobRun() : this.workflowJobRun,
   workflowJobRuns: workflowJobRuns != null ? workflowJobRuns() : this.workflowJobRuns,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewApproved &&
           action == other.action &&
@@ -101,4 +101,4 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
 
 @override String toString() => 'WebhookDeploymentReviewApproved(\n  action: $action,\n  approver: $approver,\n  comment: $comment,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  reviewers: $reviewers,\n  sender: $sender,\n  since: $since,\n  workflowJobRun: $workflowJobRun,\n  workflowJobRuns: $workflowJobRuns,\n  workflowRun: $workflowRun,\n)';
 
- }
+}

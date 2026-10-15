@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/user.dart';/// Paginated list of user objects returned when inspecting group membership.
 @immutable final class UserListResource {const UserListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
-factory UserListResource.fromJson(Map<String, dynamic> json) { return UserListResource(
+factory UserListResource.fromJson(Map<String, dynamic> json) {return UserListResource(
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
-); }
+);}
 
 /// Always `list`.
 final ContainerFileListResourceObject object;
@@ -23,22 +23,22 @@ final bool hasMore;
 /// Cursor to fetch the next page of results, or `null` when no further users are available.
 final String? next;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'next': next,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next') && json['next'] is String; } 
-UserListResource copyWith({ContainerFileListResourceObject? object, List<User>? data, bool? hasMore, String? Function()? next, }) { return UserListResource(
+      json.containsKey('next') && (json['next'] == null || json['next'] is String);}
+UserListResource copyWith({ContainerFileListResourceObject? object, List<User>? data, bool? hasMore, String? Function()? next, }) {return UserListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UserListResource &&
           object == other.object &&
@@ -50,4 +50,4 @@ UserListResource copyWith({ContainerFileListResourceObject? object, List<User>? 
 
 @override String toString() => 'UserListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';
 
- }
+}

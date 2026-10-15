@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_payment_disputes_features.dart';/// 
 @immutable final class ConnectEmbeddedPaymentDisputesConfig {const ConnectEmbeddedPaymentDisputesConfig({required this.enabled, required this.features, });
 
-factory ConnectEmbeddedPaymentDisputesConfig.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedPaymentDisputesConfig(
+factory ConnectEmbeddedPaymentDisputesConfig.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedPaymentDisputesConfig(
   enabled: json['enabled'] as bool,
   features: ConnectEmbeddedPaymentDisputesFeatures.fromJson(json['features'] as Map<String, dynamic>),
-); }
+);}
 
 /// Whether the embedded component is enabled.
 final bool enabled;
 
 final ConnectEmbeddedPaymentDisputesFeatures features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'features': features.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('features'); } 
-ConnectEmbeddedPaymentDisputesConfig copyWith({bool? enabled, ConnectEmbeddedPaymentDisputesFeatures? features, }) { return ConnectEmbeddedPaymentDisputesConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('features');}
+ConnectEmbeddedPaymentDisputesConfig copyWith({bool? enabled, ConnectEmbeddedPaymentDisputesFeatures? features, }) {return ConnectEmbeddedPaymentDisputesConfig(
   enabled: enabled ?? this.enabled,
   features: features ?? this.features,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedPaymentDisputesConfig &&
           enabled == other.enabled &&
@@ -33,4 +33,4 @@ ConnectEmbeddedPaymentDisputesConfig copyWith({bool? enabled, ConnectEmbeddedPay
 
 @override String toString() => 'ConnectEmbeddedPaymentDisputesConfig(enabled: $enabled, features: $features)';
 
- }
+}

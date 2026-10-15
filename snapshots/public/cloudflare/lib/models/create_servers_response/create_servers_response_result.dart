@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateServersResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status, });
 
-factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return CreateServersResponseResult(
+factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) {return CreateServersResponseResult(
   authType: CreateServersRequestAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   error: json['error'] as String?,
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
@@ -17,9 +17,9 @@ factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   prompts: (json['prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-  status: json.containsKey('status') ? json['status'] as String : 'waiting',
+  status: json['status'] as String?,
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 /// Example: `'unauthenticated'`
 final CreateServersRequestAuthType authType;
@@ -29,7 +29,7 @@ final DateTime? createdAt;
 final String? createdBy;
 
 /// Example: `'This is one remote mcp server'`
-final String? description;
+final Omittable<String?> description;
 
 final String? error;
 
@@ -54,15 +54,18 @@ final String name;
 
 final List<Map<String,dynamic>> prompts;
 
-final String status;
+final String? status;
 
 final List<Map<String,dynamic>> tools;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `status`, or its schema default when absent.
+String get statusOrDefault => status ?? 'waiting';
+
+Map<String, dynamic> toJson() {return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'error': ?error,
   'hostname': hostname.toString(),
   'id': id,
@@ -72,18 +75,18 @@ Map<String, dynamic> toJson() { return {
   'modified_by': ?modifiedBy,
   'name': name,
   'prompts': prompts.map((e) => e).toList(),
-  'status': status,
+  'status': ?status,
   'tools': tools.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_type') &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
-      json.containsKey('tools'); } 
+      json.containsKey('tools');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final description$ = description;
+List<String> validate() {final errors = <String>[];
+final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
 }
@@ -91,12 +94,12 @@ if (id.isEmpty) { errors.add('id: length must be >= 1'); }
 if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (name.runes.length > 350) { errors.add('name: length must be <= 350'); }
-return errors; } 
-CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
+return errors;}
+CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, }) {return CreateServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   error: error != null ? error() : this.error,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,
@@ -108,7 +111,7 @@ CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, Da
   prompts: prompts ?? this.prompts,
   status: status != null ? status() : this.status,
   tools: tools ?? this.tools,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateServersResponseResult &&
           authType == other.authType &&
@@ -131,4 +134,4 @@ CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, Da
 
 @override String toString() => 'CreateServersResponseResult(\n  authType: $authType,\n  createdAt: $createdAt,\n  createdBy: $createdBy,\n  description: $description,\n  error: $error,\n  hostname: $hostname,\n  id: $id,\n  lastSuccessfulSync: $lastSuccessfulSync,\n  lastSynced: $lastSynced,\n  modifiedAt: $modifiedAt,\n  modifiedBy: $modifiedBy,\n  name: $name,\n  prompts: $prompts,\n  status: $status,\n  tools: $tools,\n)';
 
- }
+}

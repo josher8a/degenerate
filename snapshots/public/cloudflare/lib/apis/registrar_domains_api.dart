@@ -14,7 +14,7 @@ final class RegistrarDomainsApi with ApiExecutor {const RegistrarDomainsApi(this
 /// List domains handled by Registrar.
 ///
 /// `GET /accounts/{account_id}/registrar/domains`
-Future<ApiResult<List<DomainProperties>?, RegistrarDomainsListDomainsError>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DomainProperties>, RegistrarDomainsListDomainsError>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => DomainProperties.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => DomainProperties.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: RegistrarDomainsListDomainsError.fromResponse,
 );
- } 
+}
 /// Get domain
 ///
 /// Show individual domain.
 ///
 /// `GET /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>?, RegistrarDomainsGetDomainError>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, RegistrarDomainsGetDomainError>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,21 +46,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return json['result'] as Map<String, dynamic>;
   },
   onError: RegistrarDomainsGetDomainError.fromResponse,
 );
- } 
+}
 /// Update domain
 ///
 /// Update individual domain.
 ///
 /// `PUT /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>?, RegistrarDomainsUpdateDomainError>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, RegistrarDomainsUpdateDomainError>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,13 +71,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return json['result'] as Map<String, dynamic>;
   },
   onError: RegistrarDomainsUpdateDomainError.fromResponse,
 );
- } 
- }
+}
+}

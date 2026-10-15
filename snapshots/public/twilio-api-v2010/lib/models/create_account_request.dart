@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAccountRequest {const CreateAccountRequest({this.friendlyName});
 
-factory CreateAccountRequest.fromJson(Map<String, dynamic> json) { return CreateAccountRequest(
+factory CreateAccountRequest.fromJson(Map<String, dynamic> json) {return CreateAccountRequest(
   friendlyName: json['FriendlyName'] as String?,
-); }
+);}
 
 /// A human readable description of the account to create, defaults to `SubAccount Created at {YYYY-MM-DD HH:MM meridian}`
 final String? friendlyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName'}.contains(key)); } 
-CreateAccountRequest copyWith({String? Function()? friendlyName}) { return CreateAccountRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName'}.contains(key));}
+CreateAccountRequest copyWith({String? Function()? friendlyName}) {return CreateAccountRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAccountRequest &&
           friendlyName == other.friendlyName;
@@ -25,4 +25,4 @@ CreateAccountRequest copyWith({String? Function()? friendlyName}) { return Creat
 
 @override String toString() => 'CreateAccountRequest(friendlyName: $friendlyName)';
 
- }
+}

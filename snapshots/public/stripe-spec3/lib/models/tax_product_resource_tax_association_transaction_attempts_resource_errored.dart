@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details on why we couldn't commit the tax transaction.
 sealed class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason();
 
-factory TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason.fromJson(String json) { return switch (json) {
+factory TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason.fromJson(String json) {return switch (json) {
   'another_payment_associated_with_calculation' => anotherPaymentAssociatedWithCalculation,
   'calculation_expired' => calculationExpired,
   'currency_mismatch' => currencyMismatch,
   'original_transaction_voided' => originalTransactionVoided,
   'unique_reference_violation' => uniqueReferenceViolation,
   _ => TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown(json),
-}; }
+};}
 
 static const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason anotherPaymentAssociatedWithCalculation = TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation._();
 
@@ -26,39 +26,39 @@ static const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredR
 static const List<TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason> values = [anotherPaymentAssociatedWithCalculation, calculationExpired, currencyMismatch, originalTransactionVoided, uniqueReferenceViolation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'another_payment_associated_with_calculation' => 'anotherPaymentAssociatedWithCalculation',
   'calculation_expired' => 'calculationExpired',
   'currency_mismatch' => 'currencyMismatch',
   'original_transaction_voided' => 'originalTransactionVoided',
   'unique_reference_violation' => 'uniqueReferenceViolation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown; } 
+bool get isUnknown {return this is TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() anotherPaymentAssociatedWithCalculation, required W Function() calculationExpired, required W Function() currencyMismatch, required W Function() originalTransactionVoided, required W Function() uniqueReferenceViolation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() anotherPaymentAssociatedWithCalculation, required W Function() calculationExpired, required W Function() currencyMismatch, required W Function() originalTransactionVoided, required W Function() uniqueReferenceViolation, required W Function(String value) $unknown, }) {return switch (this) {
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation() => anotherPaymentAssociatedWithCalculation(),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$calculationExpired() => calculationExpired(),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$currencyMismatch() => currencyMismatch(),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$originalTransactionVoided() => originalTransactionVoided(),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$uniqueReferenceViolation() => uniqueReferenceViolation(),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherPaymentAssociatedWithCalculation, W Function()? calculationExpired, W Function()? currencyMismatch, W Function()? originalTransactionVoided, W Function()? uniqueReferenceViolation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherPaymentAssociatedWithCalculation, W Function()? calculationExpired, W Function()? currencyMismatch, W Function()? originalTransactionVoided, W Function()? uniqueReferenceViolation, W Function(String value)? $unknown, }) {return switch (this) {
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation() => anotherPaymentAssociatedWithCalculation != null ? anotherPaymentAssociatedWithCalculation() : orElse(value),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$calculationExpired() => calculationExpired != null ? calculationExpired() : orElse(value),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$currencyMismatch() => currencyMismatch != null ? currencyMismatch() : orElse(value),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$originalTransactionVoided() => originalTransactionVoided != null ? originalTransactionVoided() : orElse(value),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$uniqueReferenceViolation() => uniqueReferenceViolation != null ? uniqueReferenceViolation() : orElse(value),
       TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason($value)';
 
- }
+}
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation extends TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation._();
 
 @override String get value => 'another_payment_associated_with_calculation';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherP
 
 @override int get hashCode => 'another_payment_associated_with_calculation'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$calculationExpired extends TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$calculationExpired._();
 
 @override String get value => 'calculation_expired';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherP
 
 @override int get hashCode => 'calculation_expired'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$currencyMismatch extends TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$currencyMismatch._();
 
 @override String get value => 'currency_mismatch';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherP
 
 @override int get hashCode => 'currency_mismatch'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$originalTransactionVoided extends TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$originalTransactionVoided._();
 
 @override String get value => 'original_transaction_voided';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherP
 
 @override int get hashCode => 'original_transaction_voided'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$uniqueReferenceViolation extends TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$uniqueReferenceViolation._();
 
 @override String get value => 'unique_reference_violation';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherP
 
 @override int get hashCode => 'unique_reference_violation'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown extends TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown(this.value);
 
 @override final String value;
@@ -113,24 +113,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherP
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored({required this.reason});
 
-factory TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored(
+factory TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored.fromJson(Map<String, dynamic> json) {return TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored(
   reason: TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// Details on why we couldn't commit the tax transaction.
 final TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason'); } 
-TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored copyWith({TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason? reason}) { return TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reason');}
+TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored copyWith({TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason? reason}) {return TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored(
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored &&
           reason == other.reason;
@@ -139,4 +139,4 @@ TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored copyWith({Tax
 
 @override String toString() => 'TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored(reason: $reason)';
 
- }
+}

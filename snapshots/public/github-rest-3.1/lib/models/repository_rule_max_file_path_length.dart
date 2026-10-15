@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_path_length/repository_rule_max_file_path_length_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_path_length/repository_rule_max_file_path_length_type.dart';/// Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.
 @immutable final class RepositoryRuleMaxFilePathLength {const RepositoryRuleMaxFilePathLength({required this.type, this.parameters, });
 
-factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFilePathLength(
+factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) {return RepositoryRuleMaxFilePathLength(
   type: RepositoryRuleMaxFilePathLengthType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleMaxFilePathLengthParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleMaxFilePathLengthType type;
 
 final RepositoryRuleMaxFilePathLengthParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'max_file_path_length'; } 
-RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? type, RepositoryRuleMaxFilePathLengthParameters? Function()? parameters, }) { return RepositoryRuleMaxFilePathLength(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'max_file_path_length';}
+RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? type, RepositoryRuleMaxFilePathLengthParameters? Function()? parameters, }) {return RepositoryRuleMaxFilePathLength(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMaxFilePathLength &&
           type == other.type &&
@@ -31,4 +31,4 @@ RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? t
 
 @override String toString() => 'RepositoryRuleMaxFilePathLength(type: $type, parameters: $parameters)';
 
- }
+}

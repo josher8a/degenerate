@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the list type.
 sealed class ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType();
 
-factory ZeroTrustGatewaySchemasType.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewaySchemasType.fromJson(String json) {return switch (json) {
   'SERIAL' => serial,
   'URL' => url,
   'DOMAIN' => domain,
@@ -14,7 +14,7 @@ factory ZeroTrustGatewaySchemasType.fromJson(String json) { return switch (json)
   'LOCATION' => location,
   'DEVICE' => device,
   _ => ZeroTrustGatewaySchemasType$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustGatewaySchemasType serial = ZeroTrustGatewaySchemasType$serial._();
 
@@ -35,9 +35,9 @@ static const ZeroTrustGatewaySchemasType device = ZeroTrustGatewaySchemasType$de
 static const List<ZeroTrustGatewaySchemasType> values = [serial, url, domain, email, ip, category, location, device];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'SERIAL' => 'serial',
   'URL' => 'url',
   'DOMAIN' => 'domain',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'LOCATION' => 'location',
   'DEVICE' => 'device',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewaySchemasType$Unknown; } 
+bool get isUnknown {return this is ZeroTrustGatewaySchemasType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() serial, required W Function() url, required W Function() domain, required W Function() email, required W Function() ip, required W Function() category, required W Function() location, required W Function() device, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() serial, required W Function() url, required W Function() domain, required W Function() email, required W Function() ip, required W Function() category, required W Function() location, required W Function() device, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustGatewaySchemasType$serial() => serial(),
       ZeroTrustGatewaySchemasType$url() => url(),
       ZeroTrustGatewaySchemasType$domain() => domain(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() serial, required W Function() url, required W F
       ZeroTrustGatewaySchemasType$location() => location(),
       ZeroTrustGatewaySchemasType$device() => device(),
       ZeroTrustGatewaySchemasType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, W Function()? url, W Function()? domain, W Function()? email, W Function()? ip, W Function()? category, W Function()? location, W Function()? device, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, W Function()? url, W Function()? domain, W Function()? email, W Function()? ip, W Function()? category, W Function()? location, W Function()? device, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustGatewaySchemasType$serial() => serial != null ? serial() : orElse(value),
       ZeroTrustGatewaySchemasType$url() => url != null ? url() : orElse(value),
       ZeroTrustGatewaySchemasType$domain() => domain != null ? domain() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
       ZeroTrustGatewaySchemasType$location() => location != null ? location() : orElse(value),
       ZeroTrustGatewaySchemasType$device() => device != null ? device() : orElse(value),
       ZeroTrustGatewaySchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustGatewaySchemasType($value)';
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$serial extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$serial._();
 
 @override String get value => 'SERIAL';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'SERIAL'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$url extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$url._();
 
 @override String get value => 'URL';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'URL'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$domain extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$domain._();
 
 @override String get value => 'DOMAIN';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'DOMAIN'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$email extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$email._();
 
 @override String get value => 'EMAIL';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'EMAIL'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$ip extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$ip._();
 
 @override String get value => 'IP';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'IP'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$category extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$category._();
 
 @override String get value => 'CATEGORY';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'CATEGORY'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$location extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$location._();
 
 @override String get value => 'LOCATION';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'LOCATION'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$device extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$device._();
 
 @override String get value => 'DEVICE';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => 'DEVICE'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewaySchemasType$Unknown extends ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

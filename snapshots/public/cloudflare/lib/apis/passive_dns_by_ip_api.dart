@@ -14,7 +14,7 @@ final class PassiveDnsByIpApi with ApiExecutor {const PassiveDnsByIpApi(this.api
 /// Gets a list of all the domains that have resolved to a specific IP address.
 ///
 /// `GET /accounts/{account_id}/intel/dns`
-Future<ApiResult<IntelPassiveDnsByIp?, PassiveDnsByIpGetPassiveDnsByIpError>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IntelPassiveDnsByIp?, PassiveDnsByIpGetPassiveDnsByIpError>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startEndParams != null) {
 if (startEndParams.end case final end$?) { queryParametersList.add(ApiQueryParameter(name: 'end', value: end$)); }
@@ -41,7 +41,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -49,5 +49,5 @@ return execute(
   },
   onError: PassiveDnsByIpGetPassiveDnsByIpError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_messages2.dart';@immutable final class ResponseCommon5 {const ResponseCommon5({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon5.fromJson(Map<String, dynamic> json) { return ResponseCommon5(
+factory ResponseCommon5.fromJson(Map<String, dynamic> json) {return ResponseCommon5(
   errors: (json['errors'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AlexandriaMessages2> errors;
 
@@ -18,19 +18,19 @@ final List<AlexandriaMessages2> messages;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon5 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, bool? success, }) { return ResponseCommon5(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon5 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, bool? success, }) {return ResponseCommon5(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon5 &&
           listEquals(errors, other.errors) &&
@@ -41,4 +41,4 @@ ResponseCommon5 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMess
 
 @override String toString() => 'ResponseCommon5(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

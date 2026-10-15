@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Steering Policy 
 /// - `""`: Will map to `"geo"` if you use `region_pools`/`country_pools`/`pop_pools` otherwise `"off"`.
 sealed class LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy();
 
-factory LoadBalancingSteeringPolicy.fromJson(String json) { return switch (json) {
+factory LoadBalancingSteeringPolicy.fromJson(String json) {return switch (json) {
   'off' => off,
   'geo' => geo,
   'random' => random,
@@ -22,7 +22,7 @@ factory LoadBalancingSteeringPolicy.fromJson(String json) { return switch (json)
   'least_connections' => leastConnections,
   '' => $empty,
   _ => LoadBalancingSteeringPolicy$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingSteeringPolicy off = LoadBalancingSteeringPolicy$off._();
 
@@ -43,9 +43,9 @@ static const LoadBalancingSteeringPolicy $empty = LoadBalancingSteeringPolicy$$e
 static const List<LoadBalancingSteeringPolicy> values = [off, geo, random, dynamicLatency, proximity, leastOutstandingRequests, leastConnections, $empty];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'geo' => 'geo',
   'random' => 'random',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'least_connections' => 'leastConnections',
   '' => r'$empty',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingSteeringPolicy$Unknown; } 
+bool get isUnknown {return this is LoadBalancingSteeringPolicy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() geo, required W Function() random, required W Function() dynamicLatency, required W Function() proximity, required W Function() leastOutstandingRequests, required W Function() leastConnections, required W Function() $empty, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() geo, required W Function() random, required W Function() dynamicLatency, required W Function() proximity, required W Function() leastOutstandingRequests, required W Function() leastConnections, required W Function() $empty, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingSteeringPolicy$off() => off(),
       LoadBalancingSteeringPolicy$geo() => geo(),
       LoadBalancingSteeringPolicy$random() => random(),
@@ -69,9 +69,9 @@ W when<W>({required W Function() off, required W Function() geo, required W Func
       LoadBalancingSteeringPolicy$leastConnections() => leastConnections(),
       LoadBalancingSteeringPolicy$$empty() => $empty(),
       LoadBalancingSteeringPolicy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? geo, W Function()? random, W Function()? dynamicLatency, W Function()? proximity, W Function()? leastOutstandingRequests, W Function()? leastConnections, W Function()? $empty, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? geo, W Function()? random, W Function()? dynamicLatency, W Function()? proximity, W Function()? leastOutstandingRequests, W Function()? leastConnections, W Function()? $empty, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingSteeringPolicy$off() => off != null ? off() : orElse(value),
       LoadBalancingSteeringPolicy$geo() => geo != null ? geo() : orElse(value),
       LoadBalancingSteeringPolicy$random() => random != null ? random() : orElse(value),
@@ -81,10 +81,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
       LoadBalancingSteeringPolicy$leastConnections() => leastConnections != null ? leastConnections() : orElse(value),
       LoadBalancingSteeringPolicy$$empty() => $empty != null ? $empty() : orElse(value),
       LoadBalancingSteeringPolicy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingSteeringPolicy($value)';
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$off extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$off._();
 
 @override String get value => 'off';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$geo extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$geo._();
 
 @override String get value => 'geo';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'geo'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$random extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$random._();
 
 @override String get value => 'random';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'random'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$dynamicLatency extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$dynamicLatency._();
 
 @override String get value => 'dynamic_latency';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'dynamic_latency'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$proximity extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$proximity._();
 
 @override String get value => 'proximity';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'proximity'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$leastOutstandingRequests extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$leastOutstandingRequests._();
 
 @override String get value => 'least_outstanding_requests';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'least_outstanding_requests'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$leastConnections extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$leastConnections._();
 
 @override String get value => 'least_connections';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'least_connections'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$$empty extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$$empty._();
 
 @override String get value => '';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSteeringPolicy$Unknown extends LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy$Unknown(this.value);
 
 @override final String value;
@@ -166,4 +166,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

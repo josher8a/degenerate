@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy();
 
-factory AigConfigDeleteGatewayLogsOrderBy.fromJson(String json) { return switch (json) {
+factory AigConfigDeleteGatewayLogsOrderBy.fromJson(String json) {return switch (json) {
   'created_at' => createdAt,
   'provider' => provider,
   'model' => model,
@@ -16,7 +16,7 @@ factory AigConfigDeleteGatewayLogsOrderBy.fromJson(String json) { return switch 
   'duration' => duration,
   'feedback' => feedback,
   _ => AigConfigDeleteGatewayLogsOrderBy$Unknown(json),
-}; }
+};}
 
 static const AigConfigDeleteGatewayLogsOrderBy createdAt = AigConfigDeleteGatewayLogsOrderBy$createdAt._();
 
@@ -43,9 +43,9 @@ static const AigConfigDeleteGatewayLogsOrderBy feedback = AigConfigDeleteGateway
 static const List<AigConfigDeleteGatewayLogsOrderBy> values = [createdAt, provider, model, modelType, success, cached, cost, tokensIn, tokensOut, duration, feedback];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created_at' => 'createdAt',
   'provider' => 'provider',
   'model' => 'model',
@@ -58,11 +58,11 @@ String get name { return switch (value) {
   'duration' => 'duration',
   'feedback' => 'feedback',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AigConfigDeleteGatewayLogsOrderBy$Unknown; } 
+bool get isUnknown {return this is AigConfigDeleteGatewayLogsOrderBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() createdAt, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() success, required W Function() cached, required W Function() cost, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() createdAt, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() success, required W Function() cached, required W Function() cost, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function(String value) $unknown, }) {return switch (this) {
       AigConfigDeleteGatewayLogsOrderBy$createdAt() => createdAt(),
       AigConfigDeleteGatewayLogsOrderBy$provider() => provider(),
       AigConfigDeleteGatewayLogsOrderBy$model() => model(),
@@ -75,9 +75,9 @@ W when<W>({required W Function() createdAt, required W Function() provider, requ
       AigConfigDeleteGatewayLogsOrderBy$duration() => duration(),
       AigConfigDeleteGatewayLogsOrderBy$feedback() => feedback(),
       AigConfigDeleteGatewayLogsOrderBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? success, W Function()? cached, W Function()? cost, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? success, W Function()? cached, W Function()? cost, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function(String value)? $unknown, }) {return switch (this) {
       AigConfigDeleteGatewayLogsOrderBy$createdAt() => createdAt != null ? createdAt() : orElse(value),
       AigConfigDeleteGatewayLogsOrderBy$provider() => provider != null ? provider() : orElse(value),
       AigConfigDeleteGatewayLogsOrderBy$model() => model != null ? model() : orElse(value),
@@ -90,10 +90,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
       AigConfigDeleteGatewayLogsOrderBy$duration() => duration != null ? duration() : orElse(value),
       AigConfigDeleteGatewayLogsOrderBy$feedback() => feedback != null ? feedback() : orElse(value),
       AigConfigDeleteGatewayLogsOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AigConfigDeleteGatewayLogsOrderBy($value)';
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$createdAt extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$createdAt._();
 
 @override String get value => 'created_at';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'created_at'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$provider extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$provider._();
 
 @override String get value => 'provider';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'provider'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$model extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$model._();
 
 @override String get value => 'model';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'model'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$modelType extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$modelType._();
 
 @override String get value => 'model_type';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'model_type'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$success extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$success._();
 
 @override String get value => 'success';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$cached extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$cached._();
 
 @override String get value => 'cached';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'cached'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$cost extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$cost._();
 
 @override String get value => 'cost';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'cost'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$tokensIn extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$tokensIn._();
 
 @override String get value => 'tokens_in';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'tokens_in'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$tokensOut extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$tokensOut._();
 
 @override String get value => 'tokens_out';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'tokens_out'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$duration extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$duration._();
 
 @override String get value => 'duration';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'duration'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$feedback extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$feedback._();
 
 @override String get value => 'feedback';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'feedback'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsOrderBy$Unknown extends AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy$Unknown(this.value);
 
 @override final String value;
@@ -202,4 +202,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => value.hashCode;
 
- }
+}

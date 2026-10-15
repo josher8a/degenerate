@@ -9,7 +9,7 @@ String toJson() => value;
 }
 @immutable final class WebhookPush {const WebhookPush({required this.after, required this.baseRef, required this.before, required this.commits, required this.compare, required this.created, required this.deleted, required this.forced, required this.headCommit, required this.pusher, required this.ref, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookPush.fromJson(Map<String, dynamic> json) { return WebhookPush(
+factory WebhookPush.fromJson(Map<String, dynamic> json) {return WebhookPush(
   after: json['after'] as String,
   baseRef: json['base_ref'] != null ? WebhooksNullableString.fromJson(json['base_ref'] as String) : null,
   before: json['before'] as String,
@@ -26,7 +26,7 @@ factory WebhookPush.fromJson(Map<String, dynamic> json) { return WebhookPush(
   ref: json['ref'] as String,
   repository: WebhookPushRepository.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The SHA of the most recent commit on `ref` after the push.
 final String after;
@@ -70,7 +70,7 @@ final WebhookPushRepository repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': after,
   'base_ref': baseRef?.toJson(),
   'before': before,
@@ -87,8 +87,8 @@ Map<String, dynamic> toJson() { return {
   'ref': ref,
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && json['after'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after') && json['after'] is String &&
       json.containsKey('base_ref') &&
       json.containsKey('before') && json['before'] is String &&
       json.containsKey('commits') &&
@@ -99,8 +99,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('head_commit') &&
       json.containsKey('pusher') &&
       json.containsKey('ref') && json['ref'] is String &&
-      json.containsKey('repository'); } 
-WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef, String? before, List<WebhookPushCommits>? commits, String? compare, bool? created, bool? deleted, EnterpriseWebhooks? Function()? enterprise, bool? forced, WebhookPushHeadCommit? Function()? headCommit, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPushPusher? pusher, String? ref, WebhookPushRepository? repository, SimpleUser? Function()? sender, }) { return WebhookPush(
+      json.containsKey('repository');}
+WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef, String? before, List<WebhookPushCommits>? commits, String? compare, bool? created, bool? deleted, EnterpriseWebhooks? Function()? enterprise, bool? forced, WebhookPushHeadCommit? Function()? headCommit, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPushPusher? pusher, String? ref, WebhookPushRepository? repository, SimpleUser? Function()? sender, }) {return WebhookPush(
   after: after ?? this.after,
   baseRef: baseRef != null ? baseRef() : this.baseRef,
   before: before ?? this.before,
@@ -117,7 +117,7 @@ WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef
   ref: ref ?? this.ref,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPush &&
           after == other.after &&
@@ -141,4 +141,4 @@ WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef
 
 @override String toString() => 'WebhookPush(\n  after: $after,\n  baseRef: $baseRef,\n  before: $before,\n  commits: $commits,\n  compare: $compare,\n  created: $created,\n  deleted: $deleted,\n  enterprise: $enterprise,\n  forced: $forced,\n  headCommit: $headCommit,\n  installation: $installation,\n  organization: $organization,\n  pusher: $pusher,\n  ref: $ref,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

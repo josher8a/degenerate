@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpDatasetsUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetsUpdateRequest {const DlpDatasetsUpdateRequest({this.caseSensitive, this.description, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetsUpdateRequest {const DlpDatasetsUpdateRequest({this.caseSensitive, this.description = const Omittable.absent(), this.name = const Omittable.absent(), });
 
-factory DlpDatasetsUpdateRequest.fromJson(Map<String, dynamic> json) { return DlpDatasetsUpdateRequest(
+factory DlpDatasetsUpdateRequest.fromJson(Map<String, dynamic> json) {return DlpDatasetsUpdateRequest(
   caseSensitive: json['case_sensitive'] as bool?,
-  description: json['description'] as String?,
-  name: json['name'] as String?,
-); }
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+);}
 
 /// Determines if the words should be matched in a case-sensitive manner.
 /// 
@@ -15,22 +15,22 @@ factory DlpDatasetsUpdateRequest.fromJson(Map<String, dynamic> json) { return Dl
 final bool? caseSensitive;
 
 /// The description of the dataset.
-final String? description;
+final Omittable<String?> description;
 
 /// The name of the dataset, must be unique.
-final String? name;
+final Omittable<String?> name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': ?caseSensitive,
-  'description': ?description,
-  'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'case_sensitive', 'description', 'name'}.contains(key)); } 
-DlpDatasetsUpdateRequest copyWith({bool? Function()? caseSensitive, String? Function()? description, String? Function()? name, }) { return DlpDatasetsUpdateRequest(
+  if (description.isPresent) 'description': description.value,
+  if (name.isPresent) 'name': name.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'case_sensitive', 'description', 'name'}.contains(key));}
+DlpDatasetsUpdateRequest copyWith({bool? Function()? caseSensitive, Omittable<String?>? description, Omittable<String?>? name, }) {return DlpDatasetsUpdateRequest(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
-  description: description != null ? description() : this.description,
-  name: name != null ? name() : this.name,
-); } 
+  description: description ?? this.description,
+  name: name ?? this.name,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetsUpdateRequest &&
           caseSensitive == other.caseSensitive &&
@@ -41,4 +41,4 @@ DlpDatasetsUpdateRequest copyWith({bool? Function()? caseSensitive, String? Func
 
 @override String toString() => 'DlpDatasetsUpdateRequest(caseSensitive: $caseSensitive, description: $description, name: $name)';
 
- }
+}

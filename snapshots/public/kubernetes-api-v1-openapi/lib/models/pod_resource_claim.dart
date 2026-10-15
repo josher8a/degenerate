@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodResourceClaim references exactly one ResourceClaim, either directly or by naming a ResourceClaimTemplate which is then turned into a ResourceClaim for the pod.
 /// 
 /// It adds a name to it that uniquely identifies the ResourceClaim inside the Pod. Containers that need access to the ResourceClaim reference it with this name.
-@immutable final class PodResourceClaim {const PodResourceClaim({this.name = '', this.resourceClaimName, this.resourceClaimTemplateName, });
+@immutable final class PodResourceClaim {const PodResourceClaim({required this.name, this.resourceClaimName, this.resourceClaimTemplateName, });
 
-factory PodResourceClaim.fromJson(Map<String, dynamic> json) { return PodResourceClaim(
+factory PodResourceClaim.fromJson(Map<String, dynamic> json) {return PodResourceClaim(
   name: json['name'] as String,
   resourceClaimName: json['resourceClaimName'] as String?,
   resourceClaimTemplateName: json['resourceClaimTemplateName'] as String?,
-); }
+);}
 
 /// Name uniquely identifies this resource claim inside the pod. This must be a DNS_LABEL.
 final String name;
@@ -29,17 +29,17 @@ final String? resourceClaimName;
 /// Exactly one of ResourceClaimName and ResourceClaimTemplateName must be set.
 final String? resourceClaimTemplateName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'resourceClaimName': ?resourceClaimName,
   'resourceClaimTemplateName': ?resourceClaimTemplateName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PodResourceClaim copyWith({String? name, String? Function()? resourceClaimName, String? Function()? resourceClaimTemplateName, }) { return PodResourceClaim(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PodResourceClaim copyWith({String? name, String? Function()? resourceClaimName, String? Function()? resourceClaimTemplateName, }) {return PodResourceClaim(
   name: name ?? this.name,
   resourceClaimName: resourceClaimName != null ? resourceClaimName() : this.resourceClaimName,
   resourceClaimTemplateName: resourceClaimTemplateName != null ? resourceClaimTemplateName() : this.resourceClaimTemplateName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodResourceClaim &&
           name == other.name &&
@@ -50,4 +50,4 @@ PodResourceClaim copyWith({String? name, String? Function()? resourceClaimName, 
 
 @override String toString() => 'PodResourceClaim(name: $name, resourceClaimName: $resourceClaimName, resourceClaimTemplateName: $resourceClaimTemplateName)';
 
- }
+}

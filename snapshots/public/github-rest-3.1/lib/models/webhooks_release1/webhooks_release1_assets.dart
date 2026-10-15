@@ -2,9 +2,9 @@
 // Source: #/components/schemas/WebhooksRelease1 (inline: Assets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/assets_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/uploader.dart';/// Data related to a release.
-@immutable final class WebhooksRelease1Assets {const WebhooksRelease1Assets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader, });
+@immutable final class WebhooksRelease1Assets {const WebhooksRelease1Assets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader = const Omittable.absent(), });
 
-factory WebhooksRelease1Assets.fromJson(Map<String, dynamic> json) { return WebhooksRelease1Assets(
+factory WebhooksRelease1Assets.fromJson(Map<String, dynamic> json) {return WebhooksRelease1Assets(
   browserDownloadUrl: Uri.parse(json['browser_download_url'] as String),
   contentType: json['content_type'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -17,9 +17,9 @@ factory WebhooksRelease1Assets.fromJson(Map<String, dynamic> json) { return Webh
   digest: json['digest'] as String?,
   state: AssetsState.fromJson(json['state'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  uploader: json['uploader'] != null ? Uploader.fromJson(json['uploader'] as Map<String, dynamic>) : null,
+  uploader: json.containsKey('uploader') ? Omittable(json['uploader'] != null ? Uploader.fromJson(json['uploader'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri browserDownloadUrl;
 
@@ -47,11 +47,11 @@ final AssetsState state;
 
 final DateTime updatedAt;
 
-final Uploader? uploader;
+final Omittable<Uploader?> uploader;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'browser_download_url': browserDownloadUrl.toString(),
   'content_type': contentType,
   'created_at': createdAt.toIso8601String(),
@@ -64,23 +64,23 @@ Map<String, dynamic> toJson() { return {
   'digest': digest,
   'state': state.toJson(),
   'updated_at': updatedAt.toIso8601String(),
-  if (uploader != null) 'uploader': uploader?.toJson(),
+  if (uploader.isPresent) 'uploader': uploader.value?.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
       json.containsKey('content_type') && json['content_type'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_count') && json['download_count'] is num &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('label') && json['label'] is String &&
+      json.containsKey('label') && (json['label'] == null || json['label'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('size') && json['size'] is num &&
-      json.containsKey('digest') && json['digest'] is String &&
+      json.containsKey('digest') && (json['digest'] == null || json['digest'] is String) &&
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, AssetsState? state, DateTime? updatedAt, Uploader? Function()? uploader, Uri? url, }) { return WebhooksRelease1Assets(
+      json.containsKey('url') && json['url'] is String;}
+WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, AssetsState? state, DateTime? updatedAt, Omittable<Uploader?>? uploader, Uri? url, }) {return WebhooksRelease1Assets(
   browserDownloadUrl: browserDownloadUrl ?? this.browserDownloadUrl,
   contentType: contentType ?? this.contentType,
   createdAt: createdAt ?? this.createdAt,
@@ -93,9 +93,9 @@ WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, D
   digest: digest != null ? digest() : this.digest,
   state: state ?? this.state,
   updatedAt: updatedAt ?? this.updatedAt,
-  uploader: uploader != null ? uploader() : this.uploader,
+  uploader: uploader ?? this.uploader,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksRelease1Assets &&
           browserDownloadUrl == other.browserDownloadUrl &&
@@ -117,4 +117,4 @@ WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, D
 
 @override String toString() => 'WebhooksRelease1Assets(\n  browserDownloadUrl: $browserDownloadUrl,\n  contentType: $contentType,\n  createdAt: $createdAt,\n  downloadCount: $downloadCount,\n  id: $id,\n  label: $label,\n  name: $name,\n  nodeId: $nodeId,\n  size: $size,\n  digest: $digest,\n  state: $state,\n  updatedAt: $updatedAt,\n  uploader: $uploader,\n  url: $url,\n)';
 
- }
+}

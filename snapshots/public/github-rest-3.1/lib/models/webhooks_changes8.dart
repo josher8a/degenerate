@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8/webhooks_changes8_tier.dart';@immutable final class WebhooksChanges8 {const WebhooksChanges8({required this.tier});
 
-factory WebhooksChanges8.fromJson(Map<String, dynamic> json) { return WebhooksChanges8(
+factory WebhooksChanges8.fromJson(Map<String, dynamic> json) {return WebhooksChanges8(
   tier: WebhooksChanges8Tier.fromJson(json['tier'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhooksChanges8Tier tier;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tier': tier.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tier'); } 
-WebhooksChanges8 copyWith({WebhooksChanges8Tier? tier}) { return WebhooksChanges8(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tier');}
+WebhooksChanges8 copyWith({WebhooksChanges8Tier? tier}) {return WebhooksChanges8(
   tier: tier ?? this.tier,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksChanges8 &&
           tier == other.tier;
@@ -24,4 +24,4 @@ WebhooksChanges8 copyWith({WebhooksChanges8Tier? tier}) { return WebhooksChanges
 
 @override String toString() => 'WebhooksChanges8(tier: $tier)';
 
- }
+}

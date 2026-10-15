@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTerminalReadersReaderRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_request/post_terminal_readers_reader_request_label.dart';@immutable final class PostTerminalReadersReaderRequest {const PostTerminalReadersReaderRequest({this.expand, this.label, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_request/post_terminal_readers_reader_request_label.dart';@immutable final class PostTerminalReadersReaderRequest {const PostTerminalReadersReaderRequest({this.expand, this.label, this.metadata, });
 
-factory PostTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRequest(
+factory PostTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  label: json['label'] != null ? OneOf2.parse(json['label'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
-); }
+  label: json['label'] != null ? PostTerminalReadersReaderRequestLabel.fromJson(json['label']) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final PostTerminalReadersReaderRequestLabel? label;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Metadata? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (label != null) 'label': label?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'label', 'metadata'}.contains(key)); } 
-PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, PostTerminalReadersReaderRequestLabel? Function()? label, Metadata? Function()? metadata, }) { return PostTerminalReadersReaderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'label', 'metadata'}.contains(key));}
+PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, PostTerminalReadersReaderRequestLabel? Function()? label, Metadata? Function()? metadata, }) {return PostTerminalReadersReaderRequest(
   expand: expand != null ? expand() : this.expand,
   label: label != null ? label() : this.label,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, Pos
 
 @override String toString() => 'PostTerminalReadersReaderRequest(expand: $expand, label: $label, metadata: $metadata)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the OutboundPayment: `processing`, `failed`, `posted`, `returned`, `canceled`. An OutboundPayment is `processing` if it has been created and is pending. The status changes to `posted` once the OutboundPayment has been "confirmed" and funds have left the account, or to `failed` or `canceled`. If an OutboundPayment fails to arrive at its destination, its status will change to `returned`.
 sealed class TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus();
 
-factory TreasuryOutboundPaymentStatus.fromJson(String json) { return switch (json) {
+factory TreasuryOutboundPaymentStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'posted' => posted,
   'processing' => processing,
   'returned' => returned,
   _ => TreasuryOutboundPaymentStatus$Unknown(json),
-}; }
+};}
 
 static const TreasuryOutboundPaymentStatus canceled = TreasuryOutboundPaymentStatus$canceled._();
 
@@ -26,39 +26,39 @@ static const TreasuryOutboundPaymentStatus returned = TreasuryOutboundPaymentSta
 static const List<TreasuryOutboundPaymentStatus> values = [canceled, failed, posted, processing, returned];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'failed' => 'failed',
   'posted' => 'posted',
   'processing' => 'processing',
   'returned' => 'returned',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryOutboundPaymentStatus$Unknown; } 
+bool get isUnknown {return this is TreasuryOutboundPaymentStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() failed, required W Function() posted, required W Function() processing, required W Function() returned, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() failed, required W Function() posted, required W Function() processing, required W Function() returned, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryOutboundPaymentStatus$canceled() => canceled(),
       TreasuryOutboundPaymentStatus$failed() => failed(),
       TreasuryOutboundPaymentStatus$posted() => posted(),
       TreasuryOutboundPaymentStatus$processing() => processing(),
       TreasuryOutboundPaymentStatus$returned() => returned(),
       TreasuryOutboundPaymentStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? posted, W Function()? processing, W Function()? returned, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? posted, W Function()? processing, W Function()? returned, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryOutboundPaymentStatus$canceled() => canceled != null ? canceled() : orElse(value),
       TreasuryOutboundPaymentStatus$failed() => failed != null ? failed() : orElse(value),
       TreasuryOutboundPaymentStatus$posted() => posted != null ? posted() : orElse(value),
       TreasuryOutboundPaymentStatus$processing() => processing != null ? processing() : orElse(value),
       TreasuryOutboundPaymentStatus$returned() => returned != null ? returned() : orElse(value),
       TreasuryOutboundPaymentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryOutboundPaymentStatus($value)';
 
- }
+}
 @immutable final class TreasuryOutboundPaymentStatus$canceled extends TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentStatus$failed extends TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus$failed._();
 
 @override String get value => 'failed';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentStatus$posted extends TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus$posted._();
 
 @override String get value => 'posted';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'posted'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentStatus$processing extends TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus$processing._();
 
 @override String get value => 'processing';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentStatus$returned extends TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus$returned._();
 
 @override String get value => 'returned';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'returned'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentStatus$Unknown extends TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}

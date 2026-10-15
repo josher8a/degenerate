@@ -2,11 +2,11 @@
 // Source: #/components/schemas/WorkflowRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/referenced_workflow.dart';import 'package:pub_github_rest_3_1/models/simple_commit.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// An invocation of a workflow
-@immutable final class WorkflowRun {const WorkflowRun({required this.event, required this.headRepository, required this.nodeId, required this.repository, required this.headCommit, required this.headBranch, required this.headSha, required this.path, required this.runNumber, required this.workflowUrl, required this.rerunUrl, required this.id, required this.status, required this.conclusion, required this.workflowId, required this.url, required this.htmlUrl, required this.pullRequests, required this.createdAt, required this.updatedAt, required this.cancelUrl, required this.artifactsUrl, required this.checkSuiteUrl, required this.displayTitle, required this.logsUrl, required this.jobsUrl, this.triggeringActor, this.actor, this.referencedWorkflows, this.previousAttemptUrl, this.runAttempt, this.checkSuiteNodeId, this.checkSuiteId, this.name, this.headRepositoryId, this.runStartedAt, });
+@immutable final class WorkflowRun {const WorkflowRun({required this.event, required this.headRepository, required this.nodeId, required this.repository, required this.headCommit, required this.headBranch, required this.headSha, required this.path, required this.runNumber, required this.workflowUrl, required this.rerunUrl, required this.id, required this.status, required this.conclusion, required this.workflowId, required this.url, required this.htmlUrl, required this.pullRequests, required this.createdAt, required this.updatedAt, required this.cancelUrl, required this.artifactsUrl, required this.checkSuiteUrl, required this.displayTitle, required this.logsUrl, required this.jobsUrl, this.triggeringActor, this.actor, this.referencedWorkflows = const Omittable.absent(), this.previousAttemptUrl = const Omittable.absent(), this.runAttempt, this.checkSuiteNodeId, this.checkSuiteId, this.name = const Omittable.absent(), this.headRepositoryId, this.runStartedAt, });
 
-factory WorkflowRun.fromJson(Map<String, dynamic> json) { return WorkflowRun(
+factory WorkflowRun.fromJson(Map<String, dynamic> json) {return WorkflowRun(
   id: (json['id'] as num).toInt(),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   nodeId: json['node_id'] as String,
   checkSuiteId: json['check_suite_id'] != null ? (json['check_suite_id'] as num).toInt() : null,
   checkSuiteNodeId: json['check_suite_node_id'] as String?,
@@ -15,7 +15,7 @@ factory WorkflowRun.fromJson(Map<String, dynamic> json) { return WorkflowRun(
   path: json['path'] as String,
   runNumber: (json['run_number'] as num).toInt(),
   runAttempt: json['run_attempt'] != null ? (json['run_attempt'] as num).toInt() : null,
-  referencedWorkflows: (json['referenced_workflows'] as List<dynamic>?)?.map((e) => ReferencedWorkflow.fromJson(e as Map<String, dynamic>)).toList(),
+  referencedWorkflows: json.containsKey('referenced_workflows') ? Omittable((json['referenced_workflows'] as List<dynamic>?)?.map((e) => ReferencedWorkflow.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   event: json['event'] as String,
   status: json['status'] as String?,
   conclusion: json['conclusion'] as String?,
@@ -34,20 +34,20 @@ factory WorkflowRun.fromJson(Map<String, dynamic> json) { return WorkflowRun(
   artifactsUrl: json['artifacts_url'] as String,
   cancelUrl: json['cancel_url'] as String,
   rerunUrl: json['rerun_url'] as String,
-  previousAttemptUrl: json['previous_attempt_url'] as String?,
+  previousAttemptUrl: json.containsKey('previous_attempt_url') ? Omittable(json['previous_attempt_url'] as String?) : const Omittable.absent(),
   workflowUrl: json['workflow_url'] as String,
   headCommit: json['head_commit'] != null ? SimpleCommit.fromJson(json['head_commit'] as Map<String, dynamic>) : null,
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   headRepository: MinimalRepository.fromJson(json['head_repository'] as Map<String, dynamic>),
   headRepositoryId: json['head_repository_id'] != null ? (json['head_repository_id'] as num).toInt() : null,
   displayTitle: json['display_title'] as String,
-); }
+);}
 
 /// The ID of the workflow run.
 final int id;
 
 /// The name of the workflow run.
-final String? name;
+final Omittable<String?> name;
 
 final String nodeId;
 
@@ -71,7 +71,7 @@ final int runNumber;
 /// Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
 final int? runAttempt;
 
-final List<ReferencedWorkflow>? referencedWorkflows;
+final Omittable<List<ReferencedWorkflow>?> referencedWorkflows;
 
 final String event;
 
@@ -120,7 +120,7 @@ final String cancelUrl;
 final String rerunUrl;
 
 /// The URL to the previous attempted run of this workflow, if one exists.
-final String? previousAttemptUrl;
+final Omittable<String?> previousAttemptUrl;
 
 /// The URL to the workflow.
 final String workflowUrl;
@@ -136,9 +136,9 @@ final int? headRepositoryId;
 /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
 final String displayTitle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'node_id': nodeId,
   'check_suite_id': ?checkSuiteId,
   'check_suite_node_id': ?checkSuiteNodeId,
@@ -147,7 +147,7 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'run_number': runNumber,
   'run_attempt': ?runAttempt,
-  if (referencedWorkflows != null) 'referenced_workflows': referencedWorkflows?.map((e) => e.toJson()).toList(),
+  if (referencedWorkflows.isPresent) 'referenced_workflows': referencedWorkflows.value?.map((e) => e.toJson()).toList(),
   'event': event,
   'status': status,
   'conclusion': conclusion,
@@ -166,23 +166,23 @@ Map<String, dynamic> toJson() { return {
   'artifacts_url': artifactsUrl,
   'cancel_url': cancelUrl,
   'rerun_url': rerunUrl,
-  'previous_attempt_url': ?previousAttemptUrl,
+  if (previousAttemptUrl.isPresent) 'previous_attempt_url': previousAttemptUrl.value,
   'workflow_url': workflowUrl,
   'head_commit': headCommit?.toJson(),
   'repository': repository.toJson(),
   'head_repository': headRepository.toJson(),
   'head_repository_id': ?headRepositoryId,
   'display_title': displayTitle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('run_number') && json['run_number'] is num &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('status') && json['status'] is String &&
-      json.containsKey('conclusion') && json['conclusion'] is String &&
+      json.containsKey('status') && (json['status'] == null || json['status'] is String) &&
+      json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -199,10 +199,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('head_commit') &&
       json.containsKey('repository') &&
       json.containsKey('head_repository') &&
-      json.containsKey('display_title') && json['display_title'] is String; } 
-WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Function()? checkSuiteId, String? Function()? checkSuiteNodeId, String? Function()? headBranch, String? headSha, String? path, int? runNumber, int? Function()? runAttempt, List<ReferencedWorkflow>? Function()? referencedWorkflows, String? event, String? Function()? status, String? Function()? conclusion, int? workflowId, String? url, String? htmlUrl, List<PullRequestMinimal>? Function()? pullRequests, DateTime? createdAt, DateTime? updatedAt, SimpleUser? Function()? actor, SimpleUser? Function()? triggeringActor, DateTime? Function()? runStartedAt, String? jobsUrl, String? logsUrl, String? checkSuiteUrl, String? artifactsUrl, String? cancelUrl, String? rerunUrl, String? Function()? previousAttemptUrl, String? workflowUrl, SimpleCommit? Function()? headCommit, MinimalRepository? repository, MinimalRepository? headRepository, int? Function()? headRepositoryId, String? displayTitle, }) { return WorkflowRun(
+      json.containsKey('display_title') && json['display_title'] is String;}
+WorkflowRun copyWith({int? id, Omittable<String?>? name, String? nodeId, int? Function()? checkSuiteId, String? Function()? checkSuiteNodeId, String? Function()? headBranch, String? headSha, String? path, int? runNumber, int? Function()? runAttempt, Omittable<List<ReferencedWorkflow>?>? referencedWorkflows, String? event, String? Function()? status, String? Function()? conclusion, int? workflowId, String? url, String? htmlUrl, List<PullRequestMinimal>? Function()? pullRequests, DateTime? createdAt, DateTime? updatedAt, SimpleUser? Function()? actor, SimpleUser? Function()? triggeringActor, DateTime? Function()? runStartedAt, String? jobsUrl, String? logsUrl, String? checkSuiteUrl, String? artifactsUrl, String? cancelUrl, String? rerunUrl, Omittable<String?>? previousAttemptUrl, String? workflowUrl, SimpleCommit? Function()? headCommit, MinimalRepository? repository, MinimalRepository? headRepository, int? Function()? headRepositoryId, String? displayTitle, }) {return WorkflowRun(
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   checkSuiteId: checkSuiteId != null ? checkSuiteId() : this.checkSuiteId,
   checkSuiteNodeId: checkSuiteNodeId != null ? checkSuiteNodeId() : this.checkSuiteNodeId,
@@ -211,7 +211,7 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
   path: path ?? this.path,
   runNumber: runNumber ?? this.runNumber,
   runAttempt: runAttempt != null ? runAttempt() : this.runAttempt,
-  referencedWorkflows: referencedWorkflows != null ? referencedWorkflows() : this.referencedWorkflows,
+  referencedWorkflows: referencedWorkflows ?? this.referencedWorkflows,
   event: event ?? this.event,
   status: status != null ? status() : this.status,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
@@ -230,14 +230,14 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
   artifactsUrl: artifactsUrl ?? this.artifactsUrl,
   cancelUrl: cancelUrl ?? this.cancelUrl,
   rerunUrl: rerunUrl ?? this.rerunUrl,
-  previousAttemptUrl: previousAttemptUrl != null ? previousAttemptUrl() : this.previousAttemptUrl,
+  previousAttemptUrl: previousAttemptUrl ?? this.previousAttemptUrl,
   workflowUrl: workflowUrl ?? this.workflowUrl,
   headCommit: headCommit != null ? headCommit() : this.headCommit,
   repository: repository ?? this.repository,
   headRepository: headRepository ?? this.headRepository,
   headRepositoryId: headRepositoryId != null ? headRepositoryId() : this.headRepositoryId,
   displayTitle: displayTitle ?? this.displayTitle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowRun &&
           id == other.id &&
@@ -250,7 +250,8 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
           path == other.path &&
           runNumber == other.runNumber &&
           runAttempt == other.runAttempt &&
-          listEquals(referencedWorkflows, other.referencedWorkflows) &&
+          referencedWorkflows.isPresent == other.referencedWorkflows.isPresent &&
+          listEquals(referencedWorkflows.value, other.referencedWorkflows.value) &&
           event == other.event &&
           status == other.status &&
           conclusion == other.conclusion &&
@@ -277,8 +278,8 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
           headRepositoryId == other.headRepositoryId &&
           displayTitle == other.displayTitle;
 
-@override int get hashCode => Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]);
+@override int get hashCode => Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows.value ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]);
 
 @override String toString() => 'WorkflowRun(\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  checkSuiteId: $checkSuiteId,\n  checkSuiteNodeId: $checkSuiteNodeId,\n  headBranch: $headBranch,\n  headSha: $headSha,\n  path: $path,\n  runNumber: $runNumber,\n  runAttempt: $runAttempt,\n  referencedWorkflows: $referencedWorkflows,\n  event: $event,\n  status: $status,\n  conclusion: $conclusion,\n  workflowId: $workflowId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  pullRequests: $pullRequests,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  actor: $actor,\n  triggeringActor: $triggeringActor,\n  runStartedAt: $runStartedAt,\n  jobsUrl: $jobsUrl,\n  logsUrl: $logsUrl,\n  checkSuiteUrl: $checkSuiteUrl,\n  artifactsUrl: $artifactsUrl,\n  cancelUrl: $cancelUrl,\n  rerunUrl: $rerunUrl,\n  previousAttemptUrl: $previousAttemptUrl,\n  workflowUrl: $workflowUrl,\n  headCommit: $headCommit,\n  repository: $repository,\n  headRepository: $headRepository,\n  headRepositoryId: $headRepositoryId,\n  displayTitle: $displayTitle,\n)';
 
- }
+}

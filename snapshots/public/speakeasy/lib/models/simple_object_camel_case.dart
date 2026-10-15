@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum.dart';/// An integer enum property.
 sealed class IntEnumVal {const IntEnumVal();
 
-factory IntEnumVal.fromJson(int json) { return switch (json) {
+factory IntEnumVal.fromJson(int json) {return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
   _ => IntEnumVal$Unknown(json),
-}; }
+};}
 
 static const IntEnumVal $1 = IntEnumVal$$1._();
 
@@ -20,33 +20,33 @@ static const IntEnumVal $3 = IntEnumVal$$3._();
 static const List<IntEnumVal> values = [$1, $2, $3];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   2 => r'$2',
   3 => r'$3',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IntEnumVal$Unknown; } 
+bool get isUnknown {return this is IntEnumVal$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) {return switch (this) {
       IntEnumVal$$1() => $1(),
       IntEnumVal$$2() => $2(),
       IntEnumVal$$3() => $3(),
       IntEnumVal$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) {return switch (this) {
       IntEnumVal$$1() => $1 != null ? $1() : orElse(value),
       IntEnumVal$$2() => $2 != null ? $2() : orElse(value),
       IntEnumVal$$3() => $3 != null ? $3() : orElse(value),
       IntEnumVal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IntEnumVal($value)';
 
- }
+}
 @immutable final class IntEnumVal$$1 extends IntEnumVal {const IntEnumVal$$1._();
 
 @override int get value => 1;
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class IntEnumVal$$2 extends IntEnumVal {const IntEnumVal$$2._();
 
 @override int get value => 2;
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 2.hashCode;
 
- }
+}
 @immutable final class IntEnumVal$$3 extends IntEnumVal {const IntEnumVal$$3._();
 
 @override int get value => 3;
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 3.hashCode;
 
- }
+}
 @immutable final class IntEnumVal$Unknown extends IntEnumVal {const IntEnumVal$Unknown(this.value);
 
 @override final int value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An int32 enum property.
 sealed class Int32EnumVal {const Int32EnumVal();
 
-factory Int32EnumVal.fromJson(int json) { return switch (json) {
+factory Int32EnumVal.fromJson(int json) {return switch (json) {
   55 => $55,
   69 => $69,
   181 => $181,
   _ => Int32EnumVal$Unknown(json),
-}; }
+};}
 
 static const Int32EnumVal $55 = Int32EnumVal$$55._();
 
@@ -103,33 +103,33 @@ static const Int32EnumVal $181 = Int32EnumVal$$181._();
 static const List<Int32EnumVal> values = [$55, $69, $181];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   55 => r'$55',
   69 => r'$69',
   181 => r'$181',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Int32EnumVal$Unknown; } 
+bool get isUnknown {return this is Int32EnumVal$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $55, required W Function() $69, required W Function() $181, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $55, required W Function() $69, required W Function() $181, required W Function(int value) $unknown, }) {return switch (this) {
       Int32EnumVal$$55() => $55(),
       Int32EnumVal$$69() => $69(),
       Int32EnumVal$$181() => $181(),
       Int32EnumVal$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Function()? $69, W Function()? $181, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Function()? $69, W Function()? $181, W Function(int value)? $unknown, }) {return switch (this) {
       Int32EnumVal$$55() => $55 != null ? $55() : orElse(value),
       Int32EnumVal$$69() => $69 != null ? $69() : orElse(value),
       Int32EnumVal$$181() => $181 != null ? $181() : orElse(value),
       Int32EnumVal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Int32EnumVal($value)';
 
- }
+}
 @immutable final class Int32EnumVal$$55 extends Int32EnumVal {const Int32EnumVal$$55._();
 
 @override int get value => 55;
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => 55.hashCode;
 
- }
+}
 @immutable final class Int32EnumVal$$69 extends Int32EnumVal {const Int32EnumVal$$69._();
 
 @override int get value => 69;
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => 69.hashCode;
 
- }
+}
 @immutable final class Int32EnumVal$$181 extends Int32EnumVal {const Int32EnumVal$$181._();
 
 @override int get value => 181;
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => 181.hashCode;
 
- }
+}
 @immutable final class Int32EnumVal$Unknown extends Int32EnumVal {const Int32EnumVal$Unknown(this.value);
 
 @override final int value;
@@ -166,11 +166,11 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A simple object that uses all our supported primitive types and enums and has optional properties.
 @immutable final class SimpleObjectCamelCase {const SimpleObjectCamelCase({required this.strVal, required this.boolVal, required this.intVal, required this.int32Val, required this.numVal, required this.float32Val, required this.enumVal, required this.dateVal, required this.dateTimeVal, required this.anyVal, required this.intEnumVal, required this.int32EnumVal, this.strOptVal, this.boolOptVal, this.intOptNullVal, this.numOptNullVal, this.bigintVal, this.bigintStrVal, this.decimalVal, });
 
-factory SimpleObjectCamelCase.fromJson(Map<String, dynamic> json) { return SimpleObjectCamelCase(
+factory SimpleObjectCamelCase.fromJson(Map<String, dynamic> json) {return SimpleObjectCamelCase(
   strVal: json['str_val'] as String,
   boolVal: json['bool_val'] as bool,
   intVal: (json['int_val'] as num).toInt(),
@@ -190,7 +190,7 @@ factory SimpleObjectCamelCase.fromJson(Map<String, dynamic> json) { return Simpl
   bigintVal: json['bigint_val'] != null ? (json['bigint_val'] as num).toInt() : null,
   bigintStrVal: json['bigint_str_val'] as String?,
   decimalVal: json['decimal_val'] != null ? (json['decimal_val'] as num).toDouble() : null,
-); }
+);}
 
 /// A string property.
 /// 
@@ -276,7 +276,7 @@ final String? bigintStrVal;
 
 final double? decimalVal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'str_val': strVal,
   'bool_val': boolVal,
   'int_val': intVal,
@@ -296,8 +296,8 @@ Map<String, dynamic> toJson() { return {
   'bigint_val': ?bigintVal,
   'bigint_str_val': ?bigintStrVal,
   'decimal_val': ?decimalVal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('str_val') && json['str_val'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('str_val') && json['str_val'] is String &&
       json.containsKey('bool_val') && json['bool_val'] is bool &&
       json.containsKey('int_val') && json['int_val'] is num &&
       json.containsKey('int32_val') && json['int32_val'] is num &&
@@ -308,8 +308,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('str_v
       json.containsKey('date_time_val') && json['date_time_val'] is String &&
       json.containsKey('any_val') &&
       json.containsKey('int_enum_val') &&
-      json.containsKey('int32_enum_val'); } 
-SimpleObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, int? int32Val, double? numVal, double? float32Val, Enum? enumVal, String? dateVal, DateTime? dateTimeVal, dynamic Function()? anyVal, String? Function()? strOptVal, bool? Function()? boolOptVal, int? Function()? intOptNullVal, double? Function()? numOptNullVal, IntEnumVal? intEnumVal, Int32EnumVal? int32EnumVal, int? Function()? bigintVal, String? Function()? bigintStrVal, double? Function()? decimalVal, }) { return SimpleObjectCamelCase(
+      json.containsKey('int32_enum_val');}
+SimpleObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, int? int32Val, double? numVal, double? float32Val, Enum? enumVal, String? dateVal, DateTime? dateTimeVal, dynamic Function()? anyVal, String? Function()? strOptVal, bool? Function()? boolOptVal, int? Function()? intOptNullVal, double? Function()? numOptNullVal, IntEnumVal? intEnumVal, Int32EnumVal? int32EnumVal, int? Function()? bigintVal, String? Function()? bigintStrVal, double? Function()? decimalVal, }) {return SimpleObjectCamelCase(
   strVal: strVal ?? this.strVal,
   boolVal: boolVal ?? this.boolVal,
   intVal: intVal ?? this.intVal,
@@ -329,7 +329,7 @@ SimpleObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, int?
   bigintVal: bigintVal != null ? bigintVal() : this.bigintVal,
   bigintStrVal: bigintStrVal != null ? bigintStrVal() : this.bigintStrVal,
   decimalVal: decimalVal != null ? decimalVal() : this.decimalVal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleObjectCamelCase &&
           strVal == other.strVal &&
@@ -356,4 +356,4 @@ SimpleObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, int?
 
 @override String toString() => 'SimpleObjectCamelCase(\n  strVal: $strVal,\n  boolVal: $boolVal,\n  intVal: $intVal,\n  int32Val: $int32Val,\n  numVal: $numVal,\n  float32Val: $float32Val,\n  enumVal: $enumVal,\n  dateVal: $dateVal,\n  dateTimeVal: $dateTimeVal,\n  anyVal: $anyVal,\n  strOptVal: $strOptVal,\n  boolOptVal: $boolOptVal,\n  intOptNullVal: $intOptNullVal,\n  numOptNullVal: $numOptNullVal,\n  intEnumVal: $intEnumVal,\n  int32EnumVal: $int32EnumVal,\n  bigintVal: $bigintVal,\n  bigintStrVal: $bigintStrVal,\n  decimalVal: $decimalVal,\n)';
 
- }
+}

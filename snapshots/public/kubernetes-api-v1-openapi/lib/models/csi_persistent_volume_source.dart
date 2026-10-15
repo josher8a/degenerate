@@ -2,9 +2,9 @@
 // Source: #/components/schemas/CsiPersistentVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// Represents storage that is managed by an external CSI volume driver
-@immutable final class CsiPersistentVolumeSource {const CsiPersistentVolumeSource({this.controllerExpandSecretRef, this.controllerPublishSecretRef, this.driver = '', this.fsType, this.nodeExpandSecretRef, this.nodePublishSecretRef, this.nodeStageSecretRef, this.readOnly, this.volumeAttributes, this.volumeHandle = '', });
+@immutable final class CsiPersistentVolumeSource {const CsiPersistentVolumeSource({required this.driver, required this.volumeHandle, this.controllerExpandSecretRef, this.controllerPublishSecretRef, this.fsType, this.nodeExpandSecretRef, this.nodePublishSecretRef, this.nodeStageSecretRef, this.readOnly, this.volumeAttributes, });
 
-factory CsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return CsiPersistentVolumeSource(
+factory CsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return CsiPersistentVolumeSource(
   controllerExpandSecretRef: json['controllerExpandSecretRef'] != null ? SecretReference.fromJson(json['controllerExpandSecretRef'] as Map<String, dynamic>) : null,
   controllerPublishSecretRef: json['controllerPublishSecretRef'] != null ? SecretReference.fromJson(json['controllerPublishSecretRef'] as Map<String, dynamic>) : null,
   driver: json['driver'] as String,
@@ -15,7 +15,7 @@ factory CsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return C
   readOnly: json['readOnly'] as bool?,
   volumeAttributes: (json['volumeAttributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   volumeHandle: json['volumeHandle'] as String,
-); }
+);}
 
 /// controllerExpandSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI ControllerExpandVolume call. This field is optional, and may be empty if no secret is required. If the secret object contains more than one secret, all secrets are passed.
 final SecretReference? controllerExpandSecretRef;
@@ -47,7 +47,7 @@ final Map<String,String>? volumeAttributes;
 /// volumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.
 final String volumeHandle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (controllerExpandSecretRef != null) 'controllerExpandSecretRef': controllerExpandSecretRef?.toJson(),
   if (controllerPublishSecretRef != null) 'controllerPublishSecretRef': controllerPublishSecretRef?.toJson(),
   'driver': driver,
@@ -58,10 +58,10 @@ Map<String, dynamic> toJson() { return {
   'readOnly': ?readOnly,
   'volumeAttributes': ?volumeAttributes,
   'volumeHandle': volumeHandle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('driver') && json['driver'] is String &&
-      json.containsKey('volumeHandle') && json['volumeHandle'] is String; } 
-CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpandSecretRef, SecretReference? Function()? controllerPublishSecretRef, String? driver, String? Function()? fsType, SecretReference? Function()? nodeExpandSecretRef, SecretReference? Function()? nodePublishSecretRef, SecretReference? Function()? nodeStageSecretRef, bool? Function()? readOnly, Map<String, String>? Function()? volumeAttributes, String? volumeHandle, }) { return CsiPersistentVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('driver') && json['driver'] is String &&
+      json.containsKey('volumeHandle') && json['volumeHandle'] is String;}
+CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpandSecretRef, SecretReference? Function()? controllerPublishSecretRef, String? driver, String? Function()? fsType, SecretReference? Function()? nodeExpandSecretRef, SecretReference? Function()? nodePublishSecretRef, SecretReference? Function()? nodeStageSecretRef, bool? Function()? readOnly, Map<String, String>? Function()? volumeAttributes, String? volumeHandle, }) {return CsiPersistentVolumeSource(
   controllerExpandSecretRef: controllerExpandSecretRef != null ? controllerExpandSecretRef() : this.controllerExpandSecretRef,
   controllerPublishSecretRef: controllerPublishSecretRef != null ? controllerPublishSecretRef() : this.controllerPublishSecretRef,
   driver: driver ?? this.driver,
@@ -72,7 +72,7 @@ CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpan
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeAttributes: volumeAttributes != null ? volumeAttributes() : this.volumeAttributes,
   volumeHandle: volumeHandle ?? this.volumeHandle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CsiPersistentVolumeSource &&
           controllerExpandSecretRef == other.controllerExpandSecretRef &&
@@ -90,4 +90,4 @@ CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpan
 
 @override String toString() => 'CsiPersistentVolumeSource(\n  controllerExpandSecretRef: $controllerExpandSecretRef,\n  controllerPublishSecretRef: $controllerPublishSecretRef,\n  driver: $driver,\n  fsType: $fsType,\n  nodeExpandSecretRef: $nodeExpandSecretRef,\n  nodePublishSecretRef: $nodePublishSecretRef,\n  nodeStageSecretRef: $nodeStageSecretRef,\n  readOnly: $readOnly,\n  volumeAttributes: $volumeAttributes,\n  volumeHandle: $volumeHandle,\n)';
 
- }
+}

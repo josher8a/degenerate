@@ -30,7 +30,7 @@ final class RateLimitApi with ApiExecutor {const RateLimitApi(this.apiConfig);
 /// > The `rate` object is closing down. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.
 ///
 /// `GET /rate_limit`
-Future<ApiResult<RateLimitOverview, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> rateLimitGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RateLimitOverview, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> rateLimitGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,12 +39,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RateLimitOverview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
- }
+}
+}

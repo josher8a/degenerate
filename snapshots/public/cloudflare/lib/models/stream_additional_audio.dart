@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_audio_default.dart';import 'package:pub_cloudflare/models/stream_audio_label.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';/// Specifies the processing status of the video.
 sealed class StreamAudioState {const StreamAudioState();
 
-factory StreamAudioState.fromJson(String json) { return switch (json) {
+factory StreamAudioState.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'ready' => ready,
   'error' => error,
   _ => StreamAudioState$Unknown(json),
-}; }
+};}
 
 static const StreamAudioState queued = StreamAudioState$queued._();
 
@@ -20,33 +20,33 @@ static const StreamAudioState error = StreamAudioState$error._();
 static const List<StreamAudioState> values = [queued, ready, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'ready' => 'ready',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StreamAudioState$Unknown; } 
+bool get isUnknown {return this is StreamAudioState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() ready, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() ready, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       StreamAudioState$queued() => queued(),
       StreamAudioState$ready() => ready(),
       StreamAudioState$error() => error(),
       StreamAudioState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? ready, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? ready, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       StreamAudioState$queued() => queued != null ? queued() : orElse(value),
       StreamAudioState$ready() => ready != null ? ready() : orElse(value),
       StreamAudioState$error() => error != null ? error() : orElse(value),
       StreamAudioState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StreamAudioState($value)';
 
- }
+}
 @immutable final class StreamAudioState$queued extends StreamAudioState {const StreamAudioState$queued._();
 
 @override String get value => 'queued';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class StreamAudioState$ready extends StreamAudioState {const StreamAudioState$ready._();
 
 @override String get value => 'ready';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'ready'.hashCode;
 
- }
+}
 @immutable final class StreamAudioState$error extends StreamAudioState {const StreamAudioState$error._();
 
 @override String get value => 'error';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class StreamAudioState$Unknown extends StreamAudioState {const StreamAudioState$Unknown(this.value);
 
 @override final String value;
@@ -83,15 +83,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class StreamAdditionalAudio {const StreamAdditionalAudio({this.$default, this.label, this.status, this.uid, });
 
-factory StreamAdditionalAudio.fromJson(Map<String, dynamic> json) { return StreamAdditionalAudio(
+factory StreamAdditionalAudio.fromJson(Map<String, dynamic> json) {return StreamAdditionalAudio(
   $default: json['default'] != null ? StreamAudioDefault.fromJson(json['default'] as bool) : null,
   label: json['label'] != null ? StreamAudioLabel.fromJson(json['label'] as String) : null,
   status: json['status'] != null ? StreamAudioState.fromJson(json['status'] as String) : null,
   uid: json['uid'] != null ? StreamIdentifier.fromJson(json['uid'] as String) : null,
-); }
+);}
 
 final StreamAudioDefault? $default;
 
@@ -101,19 +101,19 @@ final StreamAudioState? status;
 
 final StreamIdentifier? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if ($default != null) 'default': $default?.toJson(),
   if (label != null) 'label': label?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'label', 'status', 'uid'}.contains(key)); } 
-StreamAdditionalAudio copyWith({StreamAudioDefault? Function()? $default, StreamAudioLabel? Function()? label, StreamAudioState? Function()? status, StreamIdentifier? Function()? uid, }) { return StreamAdditionalAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default', 'label', 'status', 'uid'}.contains(key));}
+StreamAdditionalAudio copyWith({StreamAudioDefault? Function()? $default, StreamAudioLabel? Function()? label, StreamAudioState? Function()? status, StreamIdentifier? Function()? uid, }) {return StreamAdditionalAudio(
   $default: $default != null ? $default() : this.$default,
   label: label != null ? label() : this.label,
   status: status != null ? status() : this.status,
   uid: uid != null ? uid() : this.uid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamAdditionalAudio &&
           $default == other.$default &&
@@ -125,4 +125,4 @@ StreamAdditionalAudio copyWith({StreamAudioDefault? Function()? $default, Stream
 
 @override String toString() => 'StreamAdditionalAudio(\$default: ${$default}, label: $label, status: $status, uid: $uid)';
 
- }
+}

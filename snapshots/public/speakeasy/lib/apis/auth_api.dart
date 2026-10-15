@@ -10,7 +10,7 @@ final class AuthApi with ApiExecutor {const AuthApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /anything/no-auth`
-Future<ApiResult<void, Never>> noAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> noAuth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -19,13 +19,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /basic-auth/{user}/{passwd}`
-Future<ApiResult<BasicAuthResponse, Never>> basicAuth({required String user, required String passwd, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BasicAuthResponse, Never>> basicAuth({required String user, required String passwd, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -34,15 +34,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BasicAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer`
-Future<ApiResult<KeyAuthGlobalResponse, Never>> apiKeyAuthGlobal({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KeyAuthGlobalResponse, Never>> apiKeyAuthGlobal({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,15 +51,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyAuthGlobalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer#operation`
-Future<ApiResult<KeyAuthResponse, Never>> apiKeyAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KeyAuthResponse, Never>> apiKeyAuth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -68,15 +68,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer#oauth2`
-Future<ApiResult<Oauth2AuthResponse, Never>> oauth2Auth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Oauth2AuthResponse, Never>> oauth2Auth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -85,15 +85,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Oauth2AuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /transfers#duplicateScopeOAuth2`
-Future<ApiResult<DuplicateScopeAuthResponse, Never>> duplicateScopeAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DuplicateScopeAuthResponse, Never>> duplicateScopeAuth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -102,15 +102,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicateScopeAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer#global`
-Future<ApiResult<GlobalBearerAuthResponse, Never>> globalBearerAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GlobalBearerAuthResponse, Never>> globalBearerAuth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,15 +119,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GlobalBearerAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer#openIdConnect`
-Future<ApiResult<OpenIdConnectAuthResponse, Never>> openIdConnectAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OpenIdConnectAuthResponse, Never>> openIdConnectAuth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,15 +136,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OpenIdConnectAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer#bearer`
-Future<ApiResult<BearerAuthResponse, Never>> bearerAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BearerAuthResponse, Never>> bearerAuth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -153,15 +153,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BearerAuthResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /bearer#oauth2AuthOverride`
-Future<ApiResult<Oauth2OverrideResponse, Never>> oauth2Override({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Oauth2OverrideResponse, Never>> oauth2Override({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -170,15 +170,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Oauth2OverrideResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /auth/token#apiKeyFirst`
-Future<ApiResult<KeyFirstResponse, Never>> hoistedSecurityApiKeyFirst({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KeyFirstResponse, Never>> hoistedSecurityApiKeyFirst({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -187,15 +187,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return KeyFirstResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /auth/token#hoistedAccessTokenFirst`
-Future<ApiResult<HoistedSecurityAccessTokenFirstResponse, Never>> hoistedSecurityAccessTokenFirst({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HoistedSecurityAccessTokenFirstResponse, Never>> hoistedSecurityAccessTokenFirst({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -204,15 +204,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HoistedSecurityAccessTokenFirstResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /auth/token#hoistedAccessTokenOnly`
-Future<ApiResult<HoistedSecurityAccessTokenOnlyResponse, Never>> hoistedSecurityAccessTokenOnly({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HoistedSecurityAccessTokenOnlyResponse, Never>> hoistedSecurityAccessTokenOnly({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -221,15 +221,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HoistedSecurityAccessTokenOnlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /basic-auth/testUser/testPass#basicHttpOnly`
-Future<ApiResult<HoistedSecurityBasicHttpOnlyResponse, Never>> hoistedSecurityBasicHttpOnly({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HoistedSecurityBasicHttpOnlyResponse, Never>> hoistedSecurityBasicHttpOnly({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -238,13 +238,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HoistedSecurityBasicHttpOnlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// In primary, maintainOpenAPIOrder:false is set (legacy) so security fields are still
 /// sorted alphabetically. This means that if multiple security alternatives are provided
 /// when instantiating the SDK, say apiKeyAuth and basicHttp, then apiKeyAuth will take
@@ -252,7 +252,7 @@ return execute(
 /// 
 ///
 /// `GET /basic-auth/testUser/testPass#basicHttpGlobal`
-Future<ApiResult<GlobalSecurityBasicHttpResponse, Never>> globalSecurityBasicHttp({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GlobalSecurityBasicHttpResponse, Never>> globalSecurityBasicHttp({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -261,11 +261,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GlobalSecurityBasicHttpResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

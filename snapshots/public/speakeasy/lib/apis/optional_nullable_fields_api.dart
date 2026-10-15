@@ -10,7 +10,7 @@ final class OptionalNullableFieldsApi with ApiExecutor {const OptionalNullableFi
 @override final ApiConfig apiConfig;
 
 /// `GET /responseObjectWithOptionalTrueNullableTrueFieldDeserializes`
-Future<ApiResult<ObjectWithOptionalTrueNullableTrueField, Never>> objectWithOptionalTrueNullableTrueField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObjectWithOptionalTrueNullableTrueField, Never>> objectWithOptionalTrueNullableTrueField({String? scenario, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scenario != null) {
   queryParameters['scenario'] = scenario;
@@ -27,15 +27,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalTrueNullableTrueField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /responseObjectWithOptionalFalseNullableTrueFieldDeserializes`
-Future<ApiResult<ObjectWithOptionalFalseNullableTrueField, Never>> objectWithOptionalFalseNullableTrueField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObjectWithOptionalFalseNullableTrueField, Never>> objectWithOptionalFalseNullableTrueField({String? scenario, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scenario != null) {
   queryParameters['scenario'] = scenario;
@@ -52,15 +52,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalFalseNullableTrueField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /responseObjectWithOptionalTrueNullableFalseFieldDeserializes`
-Future<ApiResult<ObjectWithOptionalTrueNullableFalseField, Never>> objectWithOptionalTrueNullableFalseField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObjectWithOptionalTrueNullableFalseField, Never>> objectWithOptionalTrueNullableFalseField({String? scenario, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scenario != null) {
   queryParameters['scenario'] = scenario;
@@ -77,15 +77,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalTrueNullableFalseField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /responseObjectWithOptionalFalseNullableFalseFieldDeserializes`
-Future<ApiResult<ObjectWithOptionalFalseNullableFalseField, Never>> objectWithOptionalFalseNullableFalseField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObjectWithOptionalFalseNullableFalseField, Never>> objectWithOptionalFalseNullableFalseField({String? scenario, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scenario != null) {
   queryParameters['scenario'] = scenario;
@@ -102,15 +102,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ObjectWithOptionalFalseNullableFalseField.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/optionalNullableDiscriminatedUnion`
-Future<ApiResult<OptionalNullableDiscriminatedUnionPostResponse, Never>> optionalNullableDiscriminatedUnionPost({required ObjectWithOptionalNullableDiscriminatedUnion body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OptionalNullableDiscriminatedUnionPostResponse, Never>> optionalNullableDiscriminatedUnionPost({required ObjectWithOptionalNullableDiscriminatedUnion body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,11 +121,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OptionalNullableDiscriminatedUnionPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

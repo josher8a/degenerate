@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Adds and removes POSIX capabilities from running containers.
 @immutable final class Capabilities {const Capabilities({this.add, this.drop, });
 
-factory Capabilities.fromJson(Map<String, dynamic> json) { return Capabilities(
+factory Capabilities.fromJson(Map<String, dynamic> json) {return Capabilities(
   add: (json['add'] as List<dynamic>?)?.map((e) => e as String).toList(),
   drop: (json['drop'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Added capabilities
 final List<String>? add;
@@ -15,15 +15,15 @@ final List<String>? add;
 /// Removed capabilities
 final List<String>? drop;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'add': ?add,
   'drop': ?drop,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add', 'drop'}.contains(key)); } 
-Capabilities copyWith({List<String>? Function()? add, List<String>? Function()? drop, }) { return Capabilities(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'add', 'drop'}.contains(key));}
+Capabilities copyWith({List<String>? Function()? add, List<String>? Function()? drop, }) {return Capabilities(
   add: add != null ? add() : this.add,
   drop: drop != null ? drop() : this.drop,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Capabilities &&
           listEquals(add, other.add) &&
@@ -33,4 +33,4 @@ Capabilities copyWith({List<String>? Function()? add, List<String>? Function()? 
 
 @override String toString() => 'Capabilities(add: $add, drop: $drop)';
 
- }
+}

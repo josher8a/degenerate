@@ -6,26 +6,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 /// Keeper lifts a ban, allowing the participant to rejoin.
 @immutable
 final class UnbanParticipantEvent {
-  const UnbanParticipantEvent({
-    required this.participantSlug,
-    this.type = 'unban_participant',
-  });
+  const UnbanParticipantEvent({required this.participantSlug, this.type});
 
   factory UnbanParticipantEvent.fromJson(Map<String, dynamic> json) {
     return UnbanParticipantEvent(
-      type: json.containsKey('type')
-          ? json['type'] as String
-          : 'unban_participant',
+      type: json['type'] as String?,
       participantSlug: json['participantSlug'] as String,
     );
   }
 
-  final String type;
+  final String? type;
 
   final String participantSlug;
 
+  /// The value of `type`, or its schema default when absent.
+  String get typeOrDefault => type ?? 'unban_participant';
+
   Map<String, dynamic> toJson() {
-    return {'type': type, 'participantSlug': participantSlug};
+    return {'type': ?type, 'participantSlug': participantSlug};
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -34,7 +32,7 @@ final class UnbanParticipantEvent {
   }
 
   UnbanParticipantEvent copyWith({
-    String Function()? type,
+    String? Function()? type,
     String? participantSlug,
   }) {
     return UnbanParticipantEvent(

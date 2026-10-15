@@ -18,7 +18,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ConnectorId {const ConnectorId();
 
-factory ConnectorId.fromJson(String json) { return switch (json) {
+factory ConnectorId.fromJson(String json) {return switch (json) {
   'connector_dropbox' => connectorDropbox,
   'connector_gmail' => connectorGmail,
   'connector_googlecalendar' => connectorGooglecalendar,
@@ -28,7 +28,7 @@ factory ConnectorId.fromJson(String json) { return switch (json) {
   'connector_outlookemail' => connectorOutlookemail,
   'connector_sharepoint' => connectorSharepoint,
   _ => ConnectorId$Unknown(json),
-}; }
+};}
 
 static const ConnectorId connectorDropbox = ConnectorId$connectorDropbox._();
 
@@ -49,9 +49,9 @@ static const ConnectorId connectorSharepoint = ConnectorId$connectorSharepoint._
 static const List<ConnectorId> values = [connectorDropbox, connectorGmail, connectorGooglecalendar, connectorGoogledrive, connectorMicrosoftteams, connectorOutlookcalendar, connectorOutlookemail, connectorSharepoint];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'connector_dropbox' => 'connectorDropbox',
   'connector_gmail' => 'connectorGmail',
   'connector_googlecalendar' => 'connectorGooglecalendar',
@@ -61,11 +61,11 @@ String get name { return switch (value) {
   'connector_outlookemail' => 'connectorOutlookemail',
   'connector_sharepoint' => 'connectorSharepoint',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConnectorId$Unknown; } 
+bool get isUnknown {return this is ConnectorId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() connectorDropbox, required W Function() connectorGmail, required W Function() connectorGooglecalendar, required W Function() connectorGoogledrive, required W Function() connectorMicrosoftteams, required W Function() connectorOutlookcalendar, required W Function() connectorOutlookemail, required W Function() connectorSharepoint, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() connectorDropbox, required W Function() connectorGmail, required W Function() connectorGooglecalendar, required W Function() connectorGoogledrive, required W Function() connectorMicrosoftteams, required W Function() connectorOutlookcalendar, required W Function() connectorOutlookemail, required W Function() connectorSharepoint, required W Function(String value) $unknown, }) {return switch (this) {
       ConnectorId$connectorDropbox() => connectorDropbox(),
       ConnectorId$connectorGmail() => connectorGmail(),
       ConnectorId$connectorGooglecalendar() => connectorGooglecalendar(),
@@ -75,9 +75,9 @@ W when<W>({required W Function() connectorDropbox, required W Function() connect
       ConnectorId$connectorOutlookemail() => connectorOutlookemail(),
       ConnectorId$connectorSharepoint() => connectorSharepoint(),
       ConnectorId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectorDropbox, W Function()? connectorGmail, W Function()? connectorGooglecalendar, W Function()? connectorGoogledrive, W Function()? connectorMicrosoftteams, W Function()? connectorOutlookcalendar, W Function()? connectorOutlookemail, W Function()? connectorSharepoint, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectorDropbox, W Function()? connectorGmail, W Function()? connectorGooglecalendar, W Function()? connectorGoogledrive, W Function()? connectorMicrosoftteams, W Function()? connectorOutlookcalendar, W Function()? connectorOutlookemail, W Function()? connectorSharepoint, W Function(String value)? $unknown, }) {return switch (this) {
       ConnectorId$connectorDropbox() => connectorDropbox != null ? connectorDropbox() : orElse(value),
       ConnectorId$connectorGmail() => connectorGmail != null ? connectorGmail() : orElse(value),
       ConnectorId$connectorGooglecalendar() => connectorGooglecalendar != null ? connectorGooglecalendar() : orElse(value),
@@ -87,10 +87,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
       ConnectorId$connectorOutlookemail() => connectorOutlookemail != null ? connectorOutlookemail() : orElse(value),
       ConnectorId$connectorSharepoint() => connectorSharepoint != null ? connectorSharepoint() : orElse(value),
       ConnectorId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConnectorId($value)';
 
- }
+}
 @immutable final class ConnectorId$connectorDropbox extends ConnectorId {const ConnectorId$connectorDropbox._();
 
 @override String get value => 'connector_dropbox';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_dropbox'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorGmail extends ConnectorId {const ConnectorId$connectorGmail._();
 
 @override String get value => 'connector_gmail';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_gmail'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorGooglecalendar extends ConnectorId {const ConnectorId$connectorGooglecalendar._();
 
 @override String get value => 'connector_googlecalendar';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_googlecalendar'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorGoogledrive extends ConnectorId {const ConnectorId$connectorGoogledrive._();
 
 @override String get value => 'connector_googledrive';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_googledrive'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorMicrosoftteams extends ConnectorId {const ConnectorId$connectorMicrosoftteams._();
 
 @override String get value => 'connector_microsoftteams';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_microsoftteams'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorOutlookcalendar extends ConnectorId {const ConnectorId$connectorOutlookcalendar._();
 
 @override String get value => 'connector_outlookcalendar';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_outlookcalendar'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorOutlookemail extends ConnectorId {const ConnectorId$connectorOutlookemail._();
 
 @override String get value => 'connector_outlookemail';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_outlookemail'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$connectorSharepoint extends ConnectorId {const ConnectorId$connectorSharepoint._();
 
 @override String get value => 'connector_sharepoint';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => 'connector_sharepoint'.hashCode;
 
- }
+}
 @immutable final class ConnectorId$Unknown extends ConnectorId {const ConnectorId$Unknown(this.value);
 
 @override final String value;
@@ -172,24 +172,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Give the model access to additional tools via remote Model Context Protocol
 /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
 /// 
-@immutable final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers, this.allowedTools, this.requireApproval, this.deferLoading, });
+@immutable final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers = const Omittable.absent(), this.allowedTools = const Omittable.absent(), this.requireApproval = const Omittable.absent(), this.deferLoading, });
 
-factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
+factory McpTool.fromJson(Map<String, dynamic> json) {return McpTool(
   type: json['type'] as String,
   serverLabel: json['server_label'] as String,
   serverUrl: json['server_url'] as String?,
   connectorId: json['connector_id'] != null ? ConnectorId.fromJson(json['connector_id'] as String) : null,
   authorization: json['authorization'] as String?,
   serverDescription: json['server_description'] as String?,
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  allowedTools: json['allowed_tools'] != null ? OneOf2.parse(json['allowed_tools'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => McpToolFilter.fromJson(v as Map<String, dynamic>),) : null,
-  requireApproval: json['require_approval'] != null ? OneOf2.parse(json['require_approval'], fromA: (v) => McpToolApprovalFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => McpToolApprovalSetting.fromJson(v as String),) : null,
+  headers: json.containsKey('headers') ? Omittable((json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  allowedTools: json.containsKey('allowed_tools') ? Omittable(json['allowed_tools'] != null ? OneOf2.parse(json['allowed_tools'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => McpToolFilter.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  requireApproval: json.containsKey('require_approval') ? Omittable(json['require_approval'] != null ? OneOf2.parse(json['require_approval'], fromA: (v) => McpToolApprovalFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => McpToolApprovalSetting.fromJson(v as String),) : null) : const Omittable.absent(),
   deferLoading: json['defer_loading'] as bool?,
-); }
+);}
 
 /// The type of the MCP tool. Always `mcp`.
 final String type;
@@ -233,45 +233,45 @@ final String? serverDescription;
 /// Optional HTTP headers to send to the MCP server. Use for authentication
 /// or other purposes.
 /// 
-final Map<String,String>? headers;
+final Omittable<Map<String,String>?> headers;
 
 /// List of allowed tool names or a filter object.
 /// 
-final AllowedTools? allowedTools;
+final Omittable<AllowedTools?> allowedTools;
 
 /// Specify which of the MCP server's tools require approval.
-final RequireApproval? requireApproval;
+final Omittable<RequireApproval?> requireApproval;
 
 /// Whether this MCP tool is deferred and discovered via tool search.
 /// 
 final bool? deferLoading;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'server_label': serverLabel,
   'server_url': ?serverUrl,
   if (connectorId != null) 'connector_id': connectorId?.toJson(),
   'authorization': ?authorization,
   'server_description': ?serverDescription,
-  'headers': ?headers,
-  if (allowedTools != null) 'allowed_tools': allowedTools?.toJson(),
-  if (requireApproval != null) 'require_approval': requireApproval?.toJson(),
+  if (headers.isPresent) 'headers': headers.value,
+  if (allowedTools.isPresent) 'allowed_tools': allowedTools.value?.toJson(),
+  if (requireApproval.isPresent) 'require_approval': requireApproval.value?.toJson(),
   'defer_loading': ?deferLoading,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('server_label') && json['server_label'] is String; } 
-McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return McpTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('server_label') && json['server_label'] is String;}
+McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Omittable<Map<String,String>?>? headers, Omittable<AllowedTools?>? allowedTools, Omittable<RequireApproval?>? requireApproval, bool? Function()? deferLoading, }) {return McpTool(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
   serverUrl: serverUrl != null ? serverUrl() : this.serverUrl,
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   authorization: authorization != null ? authorization() : this.authorization,
   serverDescription: serverDescription != null ? serverDescription() : this.serverDescription,
-  headers: headers != null ? headers() : this.headers,
-  allowedTools: allowedTools != null ? allowedTools() : this.allowedTools,
-  requireApproval: requireApproval != null ? requireApproval() : this.requireApproval,
+  headers: headers ?? this.headers,
+  allowedTools: allowedTools ?? this.allowedTools,
+  requireApproval: requireApproval ?? this.requireApproval,
   deferLoading: deferLoading != null ? deferLoading() : this.deferLoading,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McpTool &&
           type == other.type &&
@@ -289,4 +289,4 @@ McpTool copyWith({String? type, String? serverLabel, String? Function()? serverU
 
 @override String toString() => 'McpTool(\n  type: $type,\n  serverLabel: $serverLabel,\n  serverUrl: $serverUrl,\n  connectorId: $connectorId,\n  authorization: $authorization,\n  serverDescription: $serverDescription,\n  headers: $headers,\n  allowedTools: $allowedTools,\n  requireApproval: $requireApproval,\n  deferLoading: $deferLoading,\n)';
 
- }
+}

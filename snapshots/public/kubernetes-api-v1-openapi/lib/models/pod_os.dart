@@ -2,22 +2,22 @@
 // Source: #/components/schemas/PodOs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodOS defines the OS parameters of a pod.
-@immutable final class PodOs {const PodOs({this.name = ''});
+@immutable final class PodOs {const PodOs({required this.name});
 
-factory PodOs.fromJson(Map<String, dynamic> json) { return PodOs(
+factory PodOs.fromJson(Map<String, dynamic> json) {return PodOs(
   name: json['name'] as String,
-); }
+);}
 
 /// Name is the name of the operating system. The currently supported values are linux and windows. Additional value may be defined in future and can be one of: https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration Clients should expect to handle additional values and treat unrecognized values in this field as os: null
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PodOs copyWith({String? name}) { return PodOs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PodOs copyWith({String? name}) {return PodOs(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodOs &&
           name == other.name;
@@ -26,4 +26,4 @@ PodOs copyWith({String? name}) { return PodOs(
 
 @override String toString() => 'PodOs(name: $name)';
 
- }
+}

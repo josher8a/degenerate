@@ -2,9 +2,9 @@
 // Source: #/components/schemas/OrganizationFull
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_full/organization_full_plan.dart';/// Organization Full
-@immutable final class OrganizationFull {const OrganizationFull({required this.publicGists, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.login, required this.htmlUrl, required this.following, required this.followers, required this.archivedAt, required this.updatedAt, required this.createdAt, required this.type, this.isVerified, this.twitterUsername, this.email, this.location, this.totalPrivateRepos, this.ownedPrivateRepos, this.privateGists, this.diskUsage, this.collaborators, this.billingEmail, this.plan, this.defaultRepositoryPermission, this.defaultRepositoryBranch, this.membersCanCreateRepositories, this.twoFactorRequirementEnabled, this.membersAllowedRepositoryCreationType, this.membersCanCreatePublicRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.deployKeysEnabledForRepositories, this.membersCanDeleteRepositories, this.membersCanChangeRepoVisibility, this.membersCanInviteOutsideCollaborators, this.membersCanDeleteIssues, this.displayCommenterFullNameSettingEnabled, this.readersCanCreateDiscussions, this.membersCanCreateTeams, this.membersCanViewDependencyInsights, this.membersCanForkPrivateRepositories, this.webCommitSignoffRequired, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.blog, this.company, this.name, this.membersCanCreatePrivatePages, });
+@immutable final class OrganizationFull {const OrganizationFull({required this.publicGists, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.login, required this.htmlUrl, required this.following, required this.followers, required this.archivedAt, required this.updatedAt, required this.createdAt, required this.type, this.isVerified, this.twitterUsername = const Omittable.absent(), this.email, this.location, this.totalPrivateRepos, this.ownedPrivateRepos, this.privateGists = const Omittable.absent(), this.diskUsage = const Omittable.absent(), this.collaborators = const Omittable.absent(), this.billingEmail = const Omittable.absent(), this.plan, this.defaultRepositoryPermission = const Omittable.absent(), this.defaultRepositoryBranch = const Omittable.absent(), this.membersCanCreateRepositories = const Omittable.absent(), this.twoFactorRequirementEnabled = const Omittable.absent(), this.membersAllowedRepositoryCreationType, this.membersCanCreatePublicRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.deployKeysEnabledForRepositories, this.membersCanDeleteRepositories, this.membersCanChangeRepoVisibility, this.membersCanInviteOutsideCollaborators, this.membersCanDeleteIssues, this.displayCommenterFullNameSettingEnabled, this.readersCanCreateDiscussions, this.membersCanCreateTeams, this.membersCanViewDependencyInsights, this.membersCanForkPrivateRepositories = const Omittable.absent(), this.webCommitSignoffRequired, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink = const Omittable.absent(), this.blog, this.company, this.name, this.membersCanCreatePrivatePages, });
 
-factory OrganizationFull.fromJson(Map<String, dynamic> json) { return OrganizationFull(
+factory OrganizationFull.fromJson(Map<String, dynamic> json) {return OrganizationFull(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -22,7 +22,7 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   blog: json['blog'] != null ? Uri.parse(json['blog'] as String) : null,
   location: json['location'] as String?,
   email: json['email'] as String?,
-  twitterUsername: json['twitter_username'] as String?,
+  twitterUsername: json.containsKey('twitter_username') ? Omittable(json['twitter_username'] as String?) : const Omittable.absent(),
   isVerified: json['is_verified'] as bool?,
   hasOrganizationProjects: json['has_organization_projects'] as bool,
   hasRepositoryProjects: json['has_repository_projects'] as bool,
@@ -34,15 +34,15 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   type: json['type'] as String,
   totalPrivateRepos: json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null,
   ownedPrivateRepos: json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null,
-  privateGists: json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null,
-  diskUsage: json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null,
-  collaborators: json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null,
-  billingEmail: json['billing_email'] as String?,
+  privateGists: json.containsKey('private_gists') ? Omittable(json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null) : const Omittable.absent(),
+  diskUsage: json.containsKey('disk_usage') ? Omittable(json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null) : const Omittable.absent(),
+  collaborators: json.containsKey('collaborators') ? Omittable(json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null) : const Omittable.absent(),
+  billingEmail: json.containsKey('billing_email') ? Omittable(json['billing_email'] as String?) : const Omittable.absent(),
   plan: json['plan'] != null ? OrganizationFullPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
-  defaultRepositoryPermission: json['default_repository_permission'] as String?,
-  defaultRepositoryBranch: json['default_repository_branch'] as String?,
-  membersCanCreateRepositories: json['members_can_create_repositories'] as bool?,
-  twoFactorRequirementEnabled: json['two_factor_requirement_enabled'] as bool?,
+  defaultRepositoryPermission: json.containsKey('default_repository_permission') ? Omittable(json['default_repository_permission'] as String?) : const Omittable.absent(),
+  defaultRepositoryBranch: json.containsKey('default_repository_branch') ? Omittable(json['default_repository_branch'] as String?) : const Omittable.absent(),
+  membersCanCreateRepositories: json.containsKey('members_can_create_repositories') ? Omittable(json['members_can_create_repositories'] as bool?) : const Omittable.absent(),
+  twoFactorRequirementEnabled: json.containsKey('two_factor_requirement_enabled') ? Omittable(json['two_factor_requirement_enabled'] as bool?) : const Omittable.absent(),
   membersAllowedRepositoryCreationType: json['members_allowed_repository_creation_type'] as String?,
   membersCanCreatePublicRepositories: json['members_can_create_public_repositories'] as bool?,
   membersCanCreatePrivateRepositories: json['members_can_create_private_repositories'] as bool?,
@@ -58,7 +58,7 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   readersCanCreateDiscussions: json['readers_can_create_discussions'] as bool?,
   membersCanCreateTeams: json['members_can_create_teams'] as bool?,
   membersCanViewDependencyInsights: json['members_can_view_dependency_insights'] as bool?,
-  membersCanForkPrivateRepositories: json['members_can_fork_private_repositories'] as bool?,
+  membersCanForkPrivateRepositories: json.containsKey('members_can_fork_private_repositories') ? Omittable(json['members_can_fork_private_repositories'] as bool?) : const Omittable.absent(),
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   advancedSecurityEnabledForNewRepositories: json['advanced_security_enabled_for_new_repositories'] as bool?,
   dependabotAlertsEnabledForNewRepositories: json['dependabot_alerts_enabled_for_new_repositories'] as bool?,
@@ -67,12 +67,12 @@ factory OrganizationFull.fromJson(Map<String, dynamic> json) { return Organizati
   secretScanningEnabledForNewRepositories: json['secret_scanning_enabled_for_new_repositories'] as bool?,
   secretScanningPushProtectionEnabledForNewRepositories: json['secret_scanning_push_protection_enabled_for_new_repositories'] as bool?,
   secretScanningPushProtectionCustomLinkEnabled: json['secret_scanning_push_protection_custom_link_enabled'] as bool?,
-  secretScanningPushProtectionCustomLink: json['secret_scanning_push_protection_custom_link'] as String?,
+  secretScanningPushProtectionCustomLink: json.containsKey('secret_scanning_push_protection_custom_link') ? Omittable(json['secret_scanning_push_protection_custom_link'] as String?) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   deployKeysEnabledForRepositories: json['deploy_keys_enabled_for_repositories'] as bool?,
-); }
+);}
 
 final String login;
 
@@ -108,7 +108,7 @@ final String? location;
 
 final String? email;
 
-final String? twitterUsername;
+final Omittable<String?> twitterUsername;
 
 final bool? isVerified;
 
@@ -132,27 +132,27 @@ final int? totalPrivateRepos;
 
 final int? ownedPrivateRepos;
 
-final int? privateGists;
+final Omittable<int?> privateGists;
 
-final int? diskUsage;
+final Omittable<int?> diskUsage;
 
 /// The number of collaborators on private repositories.
 /// 
 /// This field may be null if the number of private repositories is over 50,000.
-final int? collaborators;
+final Omittable<int?> collaborators;
 
-final String? billingEmail;
+final Omittable<String?> billingEmail;
 
 final OrganizationFullPlan? plan;
 
-final String? defaultRepositoryPermission;
+final Omittable<String?> defaultRepositoryPermission;
 
 /// The default branch for repositories created in this organization.
-final String? defaultRepositoryBranch;
+final Omittable<String?> defaultRepositoryBranch;
 
-final bool? membersCanCreateRepositories;
+final Omittable<bool?> membersCanCreateRepositories;
 
-final bool? twoFactorRequirementEnabled;
+final Omittable<bool?> twoFactorRequirementEnabled;
 
 final String? membersAllowedRepositoryCreationType;
 
@@ -184,7 +184,7 @@ final bool? membersCanCreateTeams;
 
 final bool? membersCanViewDependencyInsights;
 
-final bool? membersCanForkPrivateRepositories;
+final Omittable<bool?> membersCanForkPrivateRepositories;
 
 final bool? webCommitSignoffRequired;
 
@@ -234,7 +234,7 @@ final bool? secretScanningPushProtectionEnabledForNewRepositories;
 final bool? secretScanningPushProtectionCustomLinkEnabled;
 
 /// An optional URL string to display to contributors who are blocked from pushing a secret.
-final String? secretScanningPushProtectionCustomLink;
+final Omittable<String?> secretScanningPushProtectionCustomLink;
 
 final DateTime createdAt;
 
@@ -245,7 +245,7 @@ final DateTime? archivedAt;
 /// Controls whether or not deploy keys may be added and used for repositories in the organization.
 final bool? deployKeysEnabledForRepositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'node_id': nodeId,
@@ -263,7 +263,7 @@ Map<String, dynamic> toJson() { return {
   if (blog != null) 'blog': blog?.toString(),
   'location': ?location,
   'email': ?email,
-  'twitter_username': ?twitterUsername,
+  if (twitterUsername.isPresent) 'twitter_username': twitterUsername.value,
   'is_verified': ?isVerified,
   'has_organization_projects': hasOrganizationProjects,
   'has_repository_projects': hasRepositoryProjects,
@@ -275,15 +275,15 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'total_private_repos': ?totalPrivateRepos,
   'owned_private_repos': ?ownedPrivateRepos,
-  'private_gists': ?privateGists,
-  'disk_usage': ?diskUsage,
-  'collaborators': ?collaborators,
-  'billing_email': ?billingEmail,
+  if (privateGists.isPresent) 'private_gists': privateGists.value,
+  if (diskUsage.isPresent) 'disk_usage': diskUsage.value,
+  if (collaborators.isPresent) 'collaborators': collaborators.value,
+  if (billingEmail.isPresent) 'billing_email': billingEmail.value,
   if (plan != null) 'plan': plan?.toJson(),
-  'default_repository_permission': ?defaultRepositoryPermission,
-  'default_repository_branch': ?defaultRepositoryBranch,
-  'members_can_create_repositories': ?membersCanCreateRepositories,
-  'two_factor_requirement_enabled': ?twoFactorRequirementEnabled,
+  if (defaultRepositoryPermission.isPresent) 'default_repository_permission': defaultRepositoryPermission.value,
+  if (defaultRepositoryBranch.isPresent) 'default_repository_branch': defaultRepositoryBranch.value,
+  if (membersCanCreateRepositories.isPresent) 'members_can_create_repositories': membersCanCreateRepositories.value,
+  if (twoFactorRequirementEnabled.isPresent) 'two_factor_requirement_enabled': twoFactorRequirementEnabled.value,
   'members_allowed_repository_creation_type': ?membersAllowedRepositoryCreationType,
   'members_can_create_public_repositories': ?membersCanCreatePublicRepositories,
   'members_can_create_private_repositories': ?membersCanCreatePrivateRepositories,
@@ -299,7 +299,7 @@ Map<String, dynamic> toJson() { return {
   'readers_can_create_discussions': ?readersCanCreateDiscussions,
   'members_can_create_teams': ?membersCanCreateTeams,
   'members_can_view_dependency_insights': ?membersCanViewDependencyInsights,
-  'members_can_fork_private_repositories': ?membersCanForkPrivateRepositories,
+  if (membersCanForkPrivateRepositories.isPresent) 'members_can_fork_private_repositories': membersCanForkPrivateRepositories.value,
   'web_commit_signoff_required': ?webCommitSignoffRequired,
   'advanced_security_enabled_for_new_repositories': ?advancedSecurityEnabledForNewRepositories,
   'dependabot_alerts_enabled_for_new_repositories': ?dependabotAlertsEnabledForNewRepositories,
@@ -308,13 +308,13 @@ Map<String, dynamic> toJson() { return {
   'secret_scanning_enabled_for_new_repositories': ?secretScanningEnabledForNewRepositories,
   'secret_scanning_push_protection_enabled_for_new_repositories': ?secretScanningPushProtectionEnabledForNewRepositories,
   'secret_scanning_push_protection_custom_link_enabled': ?secretScanningPushProtectionCustomLinkEnabled,
-  'secret_scanning_push_protection_custom_link': ?secretScanningPushProtectionCustomLink,
+  if (secretScanningPushProtectionCustomLink.isPresent) 'secret_scanning_push_protection_custom_link': secretScanningPushProtectionCustomLink.value,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'archived_at': archivedAt?.toIso8601String(),
   'deploy_keys_enabled_for_repositories': ?deployKeysEnabledForRepositories,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
@@ -325,7 +325,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('has_organization_projects') && json['has_organization_projects'] is bool &&
       json.containsKey('has_repository_projects') && json['has_repository_projects'] is bool &&
       json.containsKey('public_repos') && json['public_repos'] is num &&
@@ -336,8 +336,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('archived_at') && json['archived_at'] is String; } 
-OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String? Function()? name, String? Function()? company, Uri? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? twitterUsername, bool? Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, String? type, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? privateGists, int? Function()? diskUsage, int? Function()? collaborators, String? Function()? billingEmail, OrganizationFullPlan? Function()? plan, String? Function()? defaultRepositoryPermission, String? Function()? defaultRepositoryBranch, bool? Function()? membersCanCreateRepositories, bool? Function()? twoFactorRequirementEnabled, String? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePublicRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, bool? Function()? membersCanDeleteRepositories, bool? Function()? membersCanChangeRepoVisibility, bool? Function()? membersCanInviteOutsideCollaborators, bool? Function()? membersCanDeleteIssues, bool? Function()? displayCommenterFullNameSettingEnabled, bool? Function()? readersCanCreateDiscussions, bool? Function()? membersCanCreateTeams, bool? Function()? membersCanViewDependencyInsights, bool? Function()? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, bool? Function()? advancedSecurityEnabledForNewRepositories, bool? Function()? dependabotAlertsEnabledForNewRepositories, bool? Function()? dependabotSecurityUpdatesEnabledForNewRepositories, bool? Function()? dependencyGraphEnabledForNewRepositories, bool? Function()? secretScanningEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionCustomLinkEnabled, String? Function()? secretScanningPushProtectionCustomLink, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, bool? Function()? deployKeysEnabledForRepositories, }) { return OrganizationFull(
+      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String);}
+OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String? Function()? name, String? Function()? company, Uri? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? twitterUsername, bool? Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, String? type, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, Omittable<int?>? privateGists, Omittable<int?>? diskUsage, Omittable<int?>? collaborators, Omittable<String?>? billingEmail, OrganizationFullPlan? Function()? plan, Omittable<String?>? defaultRepositoryPermission, Omittable<String?>? defaultRepositoryBranch, Omittable<bool?>? membersCanCreateRepositories, Omittable<bool?>? twoFactorRequirementEnabled, String? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePublicRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, bool? Function()? membersCanDeleteRepositories, bool? Function()? membersCanChangeRepoVisibility, bool? Function()? membersCanInviteOutsideCollaborators, bool? Function()? membersCanDeleteIssues, bool? Function()? displayCommenterFullNameSettingEnabled, bool? Function()? readersCanCreateDiscussions, bool? Function()? membersCanCreateTeams, bool? Function()? membersCanViewDependencyInsights, Omittable<bool?>? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, bool? Function()? advancedSecurityEnabledForNewRepositories, bool? Function()? dependabotAlertsEnabledForNewRepositories, bool? Function()? dependabotSecurityUpdatesEnabledForNewRepositories, bool? Function()? dependencyGraphEnabledForNewRepositories, bool? Function()? secretScanningEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionCustomLinkEnabled, Omittable<String?>? secretScanningPushProtectionCustomLink, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, bool? Function()? deployKeysEnabledForRepositories, }) {return OrganizationFull(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -355,7 +355,7 @@ OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   blog: blog != null ? blog() : this.blog,
   location: location != null ? location() : this.location,
   email: email != null ? email() : this.email,
-  twitterUsername: twitterUsername != null ? twitterUsername() : this.twitterUsername,
+  twitterUsername: twitterUsername ?? this.twitterUsername,
   isVerified: isVerified != null ? isVerified() : this.isVerified,
   hasOrganizationProjects: hasOrganizationProjects ?? this.hasOrganizationProjects,
   hasRepositoryProjects: hasRepositoryProjects ?? this.hasRepositoryProjects,
@@ -367,15 +367,15 @@ OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   type: type ?? this.type,
   totalPrivateRepos: totalPrivateRepos != null ? totalPrivateRepos() : this.totalPrivateRepos,
   ownedPrivateRepos: ownedPrivateRepos != null ? ownedPrivateRepos() : this.ownedPrivateRepos,
-  privateGists: privateGists != null ? privateGists() : this.privateGists,
-  diskUsage: diskUsage != null ? diskUsage() : this.diskUsage,
-  collaborators: collaborators != null ? collaborators() : this.collaborators,
-  billingEmail: billingEmail != null ? billingEmail() : this.billingEmail,
+  privateGists: privateGists ?? this.privateGists,
+  diskUsage: diskUsage ?? this.diskUsage,
+  collaborators: collaborators ?? this.collaborators,
+  billingEmail: billingEmail ?? this.billingEmail,
   plan: plan != null ? plan() : this.plan,
-  defaultRepositoryPermission: defaultRepositoryPermission != null ? defaultRepositoryPermission() : this.defaultRepositoryPermission,
-  defaultRepositoryBranch: defaultRepositoryBranch != null ? defaultRepositoryBranch() : this.defaultRepositoryBranch,
-  membersCanCreateRepositories: membersCanCreateRepositories != null ? membersCanCreateRepositories() : this.membersCanCreateRepositories,
-  twoFactorRequirementEnabled: twoFactorRequirementEnabled != null ? twoFactorRequirementEnabled() : this.twoFactorRequirementEnabled,
+  defaultRepositoryPermission: defaultRepositoryPermission ?? this.defaultRepositoryPermission,
+  defaultRepositoryBranch: defaultRepositoryBranch ?? this.defaultRepositoryBranch,
+  membersCanCreateRepositories: membersCanCreateRepositories ?? this.membersCanCreateRepositories,
+  twoFactorRequirementEnabled: twoFactorRequirementEnabled ?? this.twoFactorRequirementEnabled,
   membersAllowedRepositoryCreationType: membersAllowedRepositoryCreationType != null ? membersAllowedRepositoryCreationType() : this.membersAllowedRepositoryCreationType,
   membersCanCreatePublicRepositories: membersCanCreatePublicRepositories != null ? membersCanCreatePublicRepositories() : this.membersCanCreatePublicRepositories,
   membersCanCreatePrivateRepositories: membersCanCreatePrivateRepositories != null ? membersCanCreatePrivateRepositories() : this.membersCanCreatePrivateRepositories,
@@ -391,7 +391,7 @@ OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   readersCanCreateDiscussions: readersCanCreateDiscussions != null ? readersCanCreateDiscussions() : this.readersCanCreateDiscussions,
   membersCanCreateTeams: membersCanCreateTeams != null ? membersCanCreateTeams() : this.membersCanCreateTeams,
   membersCanViewDependencyInsights: membersCanViewDependencyInsights != null ? membersCanViewDependencyInsights() : this.membersCanViewDependencyInsights,
-  membersCanForkPrivateRepositories: membersCanForkPrivateRepositories != null ? membersCanForkPrivateRepositories() : this.membersCanForkPrivateRepositories,
+  membersCanForkPrivateRepositories: membersCanForkPrivateRepositories ?? this.membersCanForkPrivateRepositories,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
   advancedSecurityEnabledForNewRepositories: advancedSecurityEnabledForNewRepositories != null ? advancedSecurityEnabledForNewRepositories() : this.advancedSecurityEnabledForNewRepositories,
   dependabotAlertsEnabledForNewRepositories: dependabotAlertsEnabledForNewRepositories != null ? dependabotAlertsEnabledForNewRepositories() : this.dependabotAlertsEnabledForNewRepositories,
@@ -400,12 +400,12 @@ OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   secretScanningEnabledForNewRepositories: secretScanningEnabledForNewRepositories != null ? secretScanningEnabledForNewRepositories() : this.secretScanningEnabledForNewRepositories,
   secretScanningPushProtectionEnabledForNewRepositories: secretScanningPushProtectionEnabledForNewRepositories != null ? secretScanningPushProtectionEnabledForNewRepositories() : this.secretScanningPushProtectionEnabledForNewRepositories,
   secretScanningPushProtectionCustomLinkEnabled: secretScanningPushProtectionCustomLinkEnabled != null ? secretScanningPushProtectionCustomLinkEnabled() : this.secretScanningPushProtectionCustomLinkEnabled,
-  secretScanningPushProtectionCustomLink: secretScanningPushProtectionCustomLink != null ? secretScanningPushProtectionCustomLink() : this.secretScanningPushProtectionCustomLink,
+  secretScanningPushProtectionCustomLink: secretScanningPushProtectionCustomLink ?? this.secretScanningPushProtectionCustomLink,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
   deployKeysEnabledForRepositories: deployKeysEnabledForRepositories != null ? deployKeysEnabledForRepositories() : this.deployKeysEnabledForRepositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationFull &&
           login == other.login &&
@@ -480,4 +480,4 @@ OrganizationFull copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
 
 @override String toString() => 'OrganizationFull(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  issuesUrl: $issuesUrl,\n  membersUrl: $membersUrl,\n  publicMembersUrl: $publicMembersUrl,\n  avatarUrl: $avatarUrl,\n  description: $description,\n  name: $name,\n  company: $company,\n  blog: $blog,\n  location: $location,\n  email: $email,\n  twitterUsername: $twitterUsername,\n  isVerified: $isVerified,\n  hasOrganizationProjects: $hasOrganizationProjects,\n  hasRepositoryProjects: $hasRepositoryProjects,\n  publicRepos: $publicRepos,\n  publicGists: $publicGists,\n  followers: $followers,\n  following: $following,\n  htmlUrl: $htmlUrl,\n  type: $type,\n  totalPrivateRepos: $totalPrivateRepos,\n  ownedPrivateRepos: $ownedPrivateRepos,\n  privateGists: $privateGists,\n  diskUsage: $diskUsage,\n  collaborators: $collaborators,\n  billingEmail: $billingEmail,\n  plan: $plan,\n  defaultRepositoryPermission: $defaultRepositoryPermission,\n  defaultRepositoryBranch: $defaultRepositoryBranch,\n  membersCanCreateRepositories: $membersCanCreateRepositories,\n  twoFactorRequirementEnabled: $twoFactorRequirementEnabled,\n  membersAllowedRepositoryCreationType: $membersAllowedRepositoryCreationType,\n  membersCanCreatePublicRepositories: $membersCanCreatePublicRepositories,\n  membersCanCreatePrivateRepositories: $membersCanCreatePrivateRepositories,\n  membersCanCreateInternalRepositories: $membersCanCreateInternalRepositories,\n  membersCanCreatePages: $membersCanCreatePages,\n  membersCanCreatePublicPages: $membersCanCreatePublicPages,\n  membersCanCreatePrivatePages: $membersCanCreatePrivatePages,\n  membersCanDeleteRepositories: $membersCanDeleteRepositories,\n  membersCanChangeRepoVisibility: $membersCanChangeRepoVisibility,\n  membersCanInviteOutsideCollaborators: $membersCanInviteOutsideCollaborators,\n  membersCanDeleteIssues: $membersCanDeleteIssues,\n  displayCommenterFullNameSettingEnabled: $displayCommenterFullNameSettingEnabled,\n  readersCanCreateDiscussions: $readersCanCreateDiscussions,\n  membersCanCreateTeams: $membersCanCreateTeams,\n  membersCanViewDependencyInsights: $membersCanViewDependencyInsights,\n  membersCanForkPrivateRepositories: $membersCanForkPrivateRepositories,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n  advancedSecurityEnabledForNewRepositories: $advancedSecurityEnabledForNewRepositories,\n  dependabotAlertsEnabledForNewRepositories: $dependabotAlertsEnabledForNewRepositories,\n  dependabotSecurityUpdatesEnabledForNewRepositories: $dependabotSecurityUpdatesEnabledForNewRepositories,\n  dependencyGraphEnabledForNewRepositories: $dependencyGraphEnabledForNewRepositories,\n  secretScanningEnabledForNewRepositories: $secretScanningEnabledForNewRepositories,\n  secretScanningPushProtectionEnabledForNewRepositories: $secretScanningPushProtectionEnabledForNewRepositories,\n  secretScanningPushProtectionCustomLinkEnabled: $secretScanningPushProtectionCustomLinkEnabled,\n  secretScanningPushProtectionCustomLink: $secretScanningPushProtectionCustomLink,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n  deployKeysEnabledForRepositories: $deployKeysEnabledForRepositories,\n)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazScrollDepthRuleSettings {const ZarazScrollDepthRuleSettings({required this.positions});
 
-factory ZarazScrollDepthRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazScrollDepthRuleSettings(
+factory ZarazScrollDepthRuleSettings.fromJson(Map<String, dynamic> json) {return ZarazScrollDepthRuleSettings(
   positions: json['positions'] as String,
-); }
+);}
 
 final String positions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'positions': positions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('positions') && json['positions'] is String; } 
-ZarazScrollDepthRuleSettings copyWith({String? positions}) { return ZarazScrollDepthRuleSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('positions') && json['positions'] is String;}
+ZarazScrollDepthRuleSettings copyWith({String? positions}) {return ZarazScrollDepthRuleSettings(
   positions: positions ?? this.positions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazScrollDepthRuleSettings &&
           positions == other.positions;
@@ -24,4 +24,4 @@ ZarazScrollDepthRuleSettings copyWith({String? positions}) { return ZarazScrollD
 
 @override String toString() => 'ZarazScrollDepthRuleSettings(positions: $positions)';
 
- }
+}

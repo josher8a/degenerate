@@ -9,21 +9,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration fo
 /// 
 @immutable final class InputAudioTranscription {const InputAudioTranscription({this.model});
 
-factory InputAudioTranscription.fromJson(Map<String, dynamic> json) { return InputAudioTranscription(
+factory InputAudioTranscription.fromJson(Map<String, dynamic> json) {return InputAudioTranscription(
   model: json['model'] as String?,
-); }
+);}
 
 /// The model to use for transcription.
 /// 
 final String? model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': ?model,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model'}.contains(key)); } 
-InputAudioTranscription copyWith({String? Function()? model}) { return InputAudioTranscription(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'model'}.contains(key));}
+InputAudioTranscription copyWith({String? Function()? model}) {return InputAudioTranscription(
   model: model != null ? model() : this.model,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputAudioTranscription &&
           model == other.model;
@@ -32,4 +32,4 @@ InputAudioTranscription copyWith({String? Function()? model}) { return InputAudi
 
 @override String toString() => 'InputAudioTranscription(model: $model)';
 
- }
+}

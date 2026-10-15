@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_id.dart';@immutable final class McnDeletedCatalogSync {const McnDeletedCatalogSync({required this.id});
 
-factory McnDeletedCatalogSync.fromJson(Map<String, dynamic> json) { return McnDeletedCatalogSync(
+factory McnDeletedCatalogSync.fromJson(Map<String, dynamic> json) {return McnDeletedCatalogSync(
   id: McnCatalogSyncId.fromJson(json['id'] as String),
-); }
+);}
 
 final McnCatalogSyncId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-McnDeletedCatalogSync copyWith({McnCatalogSyncId? id}) { return McnDeletedCatalogSync(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+McnDeletedCatalogSync copyWith({McnCatalogSyncId? id}) {return McnDeletedCatalogSync(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnDeletedCatalogSync &&
           id == other.id;
@@ -24,4 +24,4 @@ McnDeletedCatalogSync copyWith({McnCatalogSyncId? id}) { return McnDeletedCatalo
 
 @override String toString() => 'McnDeletedCatalogSync(id: $id)';
 
- }
+}

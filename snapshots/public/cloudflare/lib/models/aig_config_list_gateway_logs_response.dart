@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_logs_response/aig_config_list_gateway_logs_response_result.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_logs_response/aig_config_list_gateway_logs_response_result_info.dart';@immutable final class AigConfigListGatewayLogsResponse {const AigConfigListGatewayLogsResponse({required this.result, required this.resultInfo, required this.success, });
 
-factory AigConfigListGatewayLogsResponse.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayLogsResponse(
+factory AigConfigListGatewayLogsResponse.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayLogsResponse(
   result: (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: AigConfigListGatewayLogsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AigConfigListGatewayLogsResponseResult> result;
 
@@ -15,19 +15,19 @@ final AigConfigListGatewayLogsResponseResultInfo resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'result_info': resultInfo.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
       json.containsKey('result_info') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigListGatewayLogsResponse copyWith({List<AigConfigListGatewayLogsResponseResult>? result, AigConfigListGatewayLogsResponseResultInfo? resultInfo, bool? success, }) { return AigConfigListGatewayLogsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigListGatewayLogsResponse copyWith({List<AigConfigListGatewayLogsResponseResult>? result, AigConfigListGatewayLogsResponseResultInfo? resultInfo, bool? success, }) {return AigConfigListGatewayLogsResponse(
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayLogsResponse &&
           listEquals(result, other.result) &&
@@ -38,4 +38,4 @@ AigConfigListGatewayLogsResponse copyWith({List<AigConfigListGatewayLogsResponse
 
 @override String toString() => 'AigConfigListGatewayLogsResponse(result: $result, resultInfo: $resultInfo, success: $success)';
 
- }
+}

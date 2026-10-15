@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PackageType {const PackageType();
 
-factory PackageType.fromJson(String json) { return switch (json) {
+factory PackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -11,7 +11,7 @@ factory PackageType.fromJson(String json) { return switch (json) {
   'nuget' => nuget,
   'container' => container,
   _ => PackageType$Unknown(json),
-}; }
+};}
 
 static const PackageType npm = PackageType$npm._();
 
@@ -28,9 +28,9 @@ static const PackageType container = PackageType$container._();
 static const List<PackageType> values = [npm, maven, rubygems, docker, nuget, container];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'npm' => 'npm',
   'maven' => 'maven',
   'rubygems' => 'rubygems',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'nuget' => 'nuget',
   'container' => 'container',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PackageType$Unknown; } 
+bool get isUnknown {return this is PackageType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) {return switch (this) {
       PackageType$npm() => npm(),
       PackageType$maven() => maven(),
       PackageType$rubygems() => rubygems(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() npm, required W Function() maven, required W Fu
       PackageType$nuget() => nuget(),
       PackageType$container() => container(),
       PackageType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) {return switch (this) {
       PackageType$npm() => npm != null ? npm() : orElse(value),
       PackageType$maven() => maven != null ? maven() : orElse(value),
       PackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
       PackageType$nuget() => nuget != null ? nuget() : orElse(value),
       PackageType$container() => container != null ? container() : orElse(value),
       PackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PackageType($value)';
 
- }
+}
 @immutable final class PackageType$npm extends PackageType {const PackageType$npm._();
 
 @override String get value => 'npm';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'npm'.hashCode;
 
- }
+}
 @immutable final class PackageType$maven extends PackageType {const PackageType$maven._();
 
 @override String get value => 'maven';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'maven'.hashCode;
 
- }
+}
 @immutable final class PackageType$rubygems extends PackageType {const PackageType$rubygems._();
 
 @override String get value => 'rubygems';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'rubygems'.hashCode;
 
- }
+}
 @immutable final class PackageType$docker extends PackageType {const PackageType$docker._();
 
 @override String get value => 'docker';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'docker'.hashCode;
 
- }
+}
 @immutable final class PackageType$nuget extends PackageType {const PackageType$nuget._();
 
 @override String get value => 'nuget';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'nuget'.hashCode;
 
- }
+}
 @immutable final class PackageType$container extends PackageType {const PackageType$container._();
 
 @override String get value => 'container';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => 'container'.hashCode;
 
- }
+}
 @immutable final class PackageType$Unknown extends PackageType {const PackageType$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

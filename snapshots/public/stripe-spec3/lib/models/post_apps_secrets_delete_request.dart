@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request/post_apps_secrets_delete_request_scope.dart';@immutable final class PostAppsSecretsDeleteRequest {const PostAppsSecretsDeleteRequest({required this.name, required this.scope, this.expand, });
 
-factory PostAppsSecretsDeleteRequest.fromJson(Map<String, dynamic> json) { return PostAppsSecretsDeleteRequest(
+factory PostAppsSecretsDeleteRequest.fromJson(Map<String, dynamic> json) {return PostAppsSecretsDeleteRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String,
   scope: PostAppsSecretsDeleteRequestScope.fromJson(json['scope'] as Map<String, dynamic>),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,22 +18,22 @@ final String name;
 /// Specifies the scoping of the secret. Requests originating from UI extensions can only access account-scoped secrets or secrets scoped to their own user.
 final PostAppsSecretsDeleteRequestScope scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'name': name,
   'scope': scope.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('scope'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('scope');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-PostAppsSecretsDeleteRequest copyWith({List<String>? Function()? expand, String? name, PostAppsSecretsDeleteRequestScope? scope, }) { return PostAppsSecretsDeleteRequest(
+return errors;}
+PostAppsSecretsDeleteRequest copyWith({List<String>? Function()? expand, String? name, PostAppsSecretsDeleteRequestScope? scope, }) {return PostAppsSecretsDeleteRequest(
   expand: expand != null ? expand() : this.expand,
   name: name ?? this.name,
   scope: scope ?? this.scope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAppsSecretsDeleteRequest &&
           listEquals(expand, other.expand) &&
@@ -44,4 +44,4 @@ PostAppsSecretsDeleteRequest copyWith({List<String>? Function()? expand, String?
 
 @override String toString() => 'PostAppsSecretsDeleteRequest(expand: $expand, name: $name, scope: $scope)';
 
- }
+}

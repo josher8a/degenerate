@@ -9,11 +9,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventResponseCancel {const RealtimeClientEventResponseCancel({required this.type, this.eventId, this.responseId, });
 
-factory RealtimeClientEventResponseCancel.fromJson(Map<String, dynamic> json) { return RealtimeClientEventResponseCancel(
+factory RealtimeClientEventResponseCancel.fromJson(Map<String, dynamic> json) {return RealtimeClientEventResponseCancel(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   responseId: json['response_id'] as String?,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -26,24 +26,24 @@ final String type;
 /// 
 final String? responseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'response_id': ?responseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventResponseCancel copyWith({String? Function()? eventId, String? type, String? Function()? responseId, }) { return RealtimeClientEventResponseCancel(
+return errors;}
+RealtimeClientEventResponseCancel copyWith({String? Function()? eventId, String? type, String? Function()? responseId, }) {return RealtimeClientEventResponseCancel(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   responseId: responseId != null ? responseId() : this.responseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventResponseCancel &&
           eventId == other.eventId &&
@@ -54,4 +54,4 @@ RealtimeClientEventResponseCancel copyWith({String? Function()? eventId, String?
 
 @override String toString() => 'RealtimeClientEventResponseCancel(eventId: $eventId, type: $type, responseId: $responseId)';
 
- }
+}

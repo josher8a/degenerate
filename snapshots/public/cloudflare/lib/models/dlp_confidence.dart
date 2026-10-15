@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpConfidence {const DlpConfidence();
 
-factory DlpConfidence.fromJson(String json) { return switch (json) {
+factory DlpConfidence.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'very_high' => veryHigh,
   _ => DlpConfidence$Unknown(json),
-}; }
+};}
 
 static const DlpConfidence low = DlpConfidence$low._();
 
@@ -22,36 +22,36 @@ static const DlpConfidence veryHigh = DlpConfidence$veryHigh._();
 static const List<DlpConfidence> values = [low, medium, high, veryHigh];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low' => 'low',
   'medium' => 'medium',
   'high' => 'high',
   'very_high' => 'veryHigh',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DlpConfidence$Unknown; } 
+bool get isUnknown {return this is DlpConfidence$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() veryHigh, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() veryHigh, required W Function(String value) $unknown, }) {return switch (this) {
       DlpConfidence$low() => low(),
       DlpConfidence$medium() => medium(),
       DlpConfidence$high() => high(),
       DlpConfidence$veryHigh() => veryHigh(),
       DlpConfidence$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? veryHigh, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? veryHigh, W Function(String value)? $unknown, }) {return switch (this) {
       DlpConfidence$low() => low != null ? low() : orElse(value),
       DlpConfidence$medium() => medium != null ? medium() : orElse(value),
       DlpConfidence$high() => high != null ? high() : orElse(value),
       DlpConfidence$veryHigh() => veryHigh != null ? veryHigh() : orElse(value),
       DlpConfidence$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DlpConfidence($value)';
 
- }
+}
 @immutable final class DlpConfidence$low extends DlpConfidence {const DlpConfidence$low._();
 
 @override String get value => 'low';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class DlpConfidence$medium extends DlpConfidence {const DlpConfidence$medium._();
 
 @override String get value => 'medium';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class DlpConfidence$high extends DlpConfidence {const DlpConfidence$high._();
 
 @override String get value => 'high';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class DlpConfidence$veryHigh extends DlpConfidence {const DlpConfidence$veryHigh._();
 
 @override String get value => 'very_high';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'very_high'.hashCode;
 
- }
+}
 @immutable final class DlpConfidence$Unknown extends DlpConfidence {const DlpConfidence$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

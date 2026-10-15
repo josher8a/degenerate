@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_onramp_id.dart';@immutable final class McnDeletedOnramp {const McnDeletedOnramp({required this.id});
 
-factory McnDeletedOnramp.fromJson(Map<String, dynamic> json) { return McnDeletedOnramp(
+factory McnDeletedOnramp.fromJson(Map<String, dynamic> json) {return McnDeletedOnramp(
   id: McnOnrampId.fromJson(json['id'] as String),
-); }
+);}
 
 final McnOnrampId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-McnDeletedOnramp copyWith({McnOnrampId? id}) { return McnDeletedOnramp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+McnDeletedOnramp copyWith({McnOnrampId? id}) {return McnDeletedOnramp(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnDeletedOnramp &&
           id == other.id;
@@ -24,4 +24,4 @@ McnDeletedOnramp copyWith({McnOnrampId? id}) { return McnDeletedOnramp(
 
 @override String toString() => 'McnDeletedOnramp(id: $id)';
 
- }
+}

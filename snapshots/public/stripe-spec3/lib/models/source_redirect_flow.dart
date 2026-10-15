@@ -2,17 +2,17 @@
 // Source: #/components/schemas/SourceRedirectFlow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class SourceRedirectFlow {const SourceRedirectFlow({required this.returnUrl, required this.status, required this.url, this.failureReason, });
+@immutable final class SourceRedirectFlow {const SourceRedirectFlow({required this.returnUrl, required this.status, required this.url, this.failureReason = const Omittable.absent(), });
 
-factory SourceRedirectFlow.fromJson(Map<String, dynamic> json) { return SourceRedirectFlow(
-  failureReason: json['failure_reason'] as String?,
+factory SourceRedirectFlow.fromJson(Map<String, dynamic> json) {return SourceRedirectFlow(
+  failureReason: json.containsKey('failure_reason') ? Omittable(json['failure_reason'] as String?) : const Omittable.absent(),
   returnUrl: json['return_url'] as String,
   status: json['status'] as String,
   url: json['url'] as String,
-); }
+);}
 
 /// The failure reason for the redirect, either `user_abort` (the customer aborted or dropped out of the redirect flow), `declined` (the authentication failed or the transaction was declined), or `processing_error` (the redirect failed due to a technical error). Present only if the redirect status is `failed`.
-final String? failureReason;
+final Omittable<String?> failureReason;
 
 /// The URL you provide to redirect the customer to after they authenticated their payment.
 final String returnUrl;
@@ -23,31 +23,31 @@ final String status;
 /// The URL provided to you to redirect a customer to as part of a `redirect` authentication flow.
 final String url;
 
-Map<String, dynamic> toJson() { return {
-  'failure_reason': ?failureReason,
+Map<String, dynamic> toJson() {return {
+  if (failureReason.isPresent) 'failure_reason': failureReason.value,
   'return_url': returnUrl,
   'status': status,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('return_url') && json['return_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('return_url') && json['return_url'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final failureReason$ = failureReason;
+List<String> validate() {final errors = <String>[];
+final failureReason$ = failureReason.value;
 if (failureReason$ != null) {
   if (failureReason$.runes.length > 5000) { errors.add('failureReason: length must be <= 5000'); }
 }
 if (returnUrl.runes.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 if (url.runes.length > 2048) { errors.add('url: length must be <= 2048'); }
-return errors; } 
-SourceRedirectFlow copyWith({String? Function()? failureReason, String? returnUrl, String? status, String? url, }) { return SourceRedirectFlow(
-  failureReason: failureReason != null ? failureReason() : this.failureReason,
+return errors;}
+SourceRedirectFlow copyWith({Omittable<String?>? failureReason, String? returnUrl, String? status, String? url, }) {return SourceRedirectFlow(
+  failureReason: failureReason ?? this.failureReason,
   returnUrl: returnUrl ?? this.returnUrl,
   status: status ?? this.status,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceRedirectFlow &&
           failureReason == other.failureReason &&
@@ -59,4 +59,4 @@ SourceRedirectFlow copyWith({String? Function()? failureReason, String? returnUr
 
 @override String toString() => 'SourceRedirectFlow(failureReason: $failureReason, returnUrl: $returnUrl, status: $status, url: $url)';
 
- }
+}

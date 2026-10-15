@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 sealed class AccountAddressDependentPhoneNumberSmsMethod {const AccountAddressDependentPhoneNumberSmsMethod();
 
-factory AccountAddressDependentPhoneNumberSmsMethod.fromJson(String json) { return switch (json) {
+factory AccountAddressDependentPhoneNumberSmsMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountAddressDependentPhoneNumberSmsMethod$Unknown(json),
-}; }
+};}
 
 static const AccountAddressDependentPhoneNumberSmsMethod $get = AccountAddressDependentPhoneNumberSmsMethod$$get._();
 
@@ -17,30 +17,30 @@ static const AccountAddressDependentPhoneNumberSmsMethod post = AccountAddressDe
 static const List<AccountAddressDependentPhoneNumberSmsMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountAddressDependentPhoneNumberSmsMethod$Unknown; } 
+bool get isUnknown {return this is AccountAddressDependentPhoneNumberSmsMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       AccountAddressDependentPhoneNumberSmsMethod$$get() => $get(),
       AccountAddressDependentPhoneNumberSmsMethod$post() => post(),
       AccountAddressDependentPhoneNumberSmsMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       AccountAddressDependentPhoneNumberSmsMethod$$get() => $get != null ? $get() : orElse(value),
       AccountAddressDependentPhoneNumberSmsMethod$post() => post != null ? post() : orElse(value),
       AccountAddressDependentPhoneNumberSmsMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountAddressDependentPhoneNumberSmsMethod($value)';
 
- }
+}
 @immutable final class AccountAddressDependentPhoneNumberSmsMethod$$get extends AccountAddressDependentPhoneNumberSmsMethod {const AccountAddressDependentPhoneNumberSmsMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class AccountAddressDependentPhoneNumberSmsMethod$post extends AccountAddressDependentPhoneNumberSmsMethod {const AccountAddressDependentPhoneNumberSmsMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class AccountAddressDependentPhoneNumberSmsMethod$Unknown extends AccountAddressDependentPhoneNumberSmsMethod {const AccountAddressDependentPhoneNumberSmsMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

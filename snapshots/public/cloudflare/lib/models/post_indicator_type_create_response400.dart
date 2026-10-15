@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_indicator_type_create_response400/post_indicator_type_create_response400_content.dart';@immutable final class PostIndicatorTypeCreateResponse400 {const PostIndicatorTypeCreateResponse400({required this.content, required this.description, });
 
-factory PostIndicatorTypeCreateResponse400.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse400(
+factory PostIndicatorTypeCreateResponse400.fromJson(Map<String, dynamic> json) {return PostIndicatorTypeCreateResponse400(
   content: PostIndicatorTypeCreateResponse400Content.fromJson(json['content'] as Map<String, dynamic>),
   description: json['description'] as String,
-); }
+);}
 
 final PostIndicatorTypeCreateResponse400Content content;
 
 /// Example: `'Bad Request.'`
 final String description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'description': description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('description') && json['description'] is String; } 
-PostIndicatorTypeCreateResponse400 copyWith({PostIndicatorTypeCreateResponse400Content? content, String? description, }) { return PostIndicatorTypeCreateResponse400(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('description') && json['description'] is String;}
+PostIndicatorTypeCreateResponse400 copyWith({PostIndicatorTypeCreateResponse400Content? content, String? description, }) {return PostIndicatorTypeCreateResponse400(
   content: content ?? this.content,
   description: description ?? this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorTypeCreateResponse400 &&
           content == other.content &&
@@ -32,4 +32,4 @@ PostIndicatorTypeCreateResponse400 copyWith({PostIndicatorTypeCreateResponse400C
 
 @override String toString() => 'PostIndicatorTypeCreateResponse400(content: $content, description: $description)';
 
- }
+}

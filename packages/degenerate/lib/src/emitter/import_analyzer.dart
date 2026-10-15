@@ -2,6 +2,7 @@ import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/success_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Result of analyzing a model or API's import requirements.
@@ -38,6 +39,7 @@ analyzeApiImports(
   EmitContext? ctx,
   List<String> unwrapFields = const [],
   Map<String, ErrorUnionInfo> errorUnionMap = const {},
+  Map<String, SuccessUnionInfo> successUnionMap = const {},
 ]) {
   final names = <String>{};
   var needsConvert = false;
@@ -55,7 +57,7 @@ analyzeApiImports(
     if (obj == null) return type;
     for (final fieldName in unwrapFields) {
       for (final f in obj.fields) {
-        if (f.originalName == fieldName) return f.type;
+        if (f.originalName.test((n) => n == fieldName)) return f.type;
       }
     }
     return type;
@@ -83,34 +85,25 @@ analyzeApiImports(
     }
     if (op.requestBody case final body? when body.content.isNotEmpty) {
       final bodyContent = preferredContent(body.content)!;
-      if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
+      if (bodyContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
       final schema = bodyContent.$2.schema;
       _collectTopLevelTypeName(schema, names);
       if (isBytesType(schema)) needsTypedData = true;
     }
-    // Mirror ApiEmitter._successResponseContent: priority codes, then any
-    // other concrete 2xx (206, 207, ...), then the 2XX range sentinel.
-    const priorityCodes = [200, 201, 202, 203, 204];
-    final successCodes = [
-      ...priorityCodes,
-      ...op.responses.keys.where(
-        (k) => k >= 200 && k < 300 && !priorityCodes.contains(k),
-      ),
-      kStatusRange2xx,
-    ];
-    for (final code in successCodes) {
-      if (op.responses[code] case final resp?) {
-        if (preferredContent(resp.content) case final content?) {
-          if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-          final schema = maybeUnwrap(content.$2.schema);
-          _collectTopLevelTypeName(schema, names, ctx);
-          if (isBytesType(schema)) needsTypedData = true;
-          break;
+    // The same classification the API emitter decodes by.
+    switch (successShapeOf(op)) {
+      case SuccessSingle(:final content):
+        if (content.$1.test(isJsonLikeMediaType)) needsConvert = true;
+        final schema = maybeUnwrap(content.$2.schema);
+        _collectTopLevelTypeName(schema, names, ctx);
+        if (isBytesType(schema)) needsTypedData = true;
+      case SuccessUnion():
+        // The API file names only the union; it imports its own variants.
+        if (successUnionMap[op.operationId] case final union?) {
+          names.add(union.className);
         }
-        // An existing success response with no content means void — the
-        // emitter stops here and never deserializes a later body.
-        if (resp.content.isEmpty) break;
-      }
+      case SuccessVoid():
+        break;
     }
     if (streamingContent(op) case final streaming?) {
       needsConvert = true;
@@ -121,7 +114,7 @@ analyzeApiImports(
       final errorClassName = errorUnion.resolvedClassName;
       names.add(errorClassName);
     } else {
-      (String, IrMediaType)? errorContent;
+      (SpecString, IrMediaType)? errorContent;
       if (op.defaultResponse case final defaultResp?) {
         errorContent = preferredContent(defaultResp.content);
       }
@@ -136,7 +129,7 @@ analyzeApiImports(
         }
       }
       if (errorContent != null) {
-        if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
+        if (errorContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
         _collectTopLevelTypeName(errorContent.$2.schema, names, ctx);
       }
     }
@@ -172,7 +165,7 @@ void _collectTopLevelTypeName(
       names.add(name);
     case IrTypeRef(:final name):
       final target = ctx?.typeRegistry[name];
-      final targetVs = target?.unionVariants;
+      final targetVs = target?.oneOfVariants;
       final isInlinedOneOf =
           skipInlinedOneOfRefs &&
           targetVs != null &&
@@ -190,8 +183,10 @@ void _collectTopLevelTypeName(
       }
     case IrDiscriminatedUnion(:final name):
       names.add(name);
-    case IrUntaggedUnion(:final name, :final variants) ||
-         IrAnyOf(:final name, :final variants):
+    case IrAnyOf(:final name):
+      // A lossless anyOf class imports its own variant types.
+      names.add(name);
+    case IrUntaggedUnion(:final name, :final variants):
       final skip =
           skipInlinedOneOfRefs &&
           isOneOfEligible(variants) &&
@@ -244,16 +239,10 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
     IrMap(:final values) => hasBytesAnywhere(values),
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       variants.any(hasBytesAnywhere),
-    IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
-      hasBytesAnywhere,
-    ),
     IrTypeRef(:final name) when ctx != null && bytesVisited.add(name) =>
       switch (ctx.typeRegistry[name]) {
         IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
           variants.any(hasBytesAnywhere),
-        IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
-          hasBytesAnywhere,
-        ),
         _ => false,
       },
     _ => false,
@@ -309,7 +298,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
         if (variant is IrTypeRef) {
           final info = meta?.variants[key];
           final resolved = info?.resolvedType ?? variant;
-          final vs = resolved.unionVariants;
+          final vs = resolved.oneOfVariants;
           final oneOfVariants = vs != null && isOneOfEligible(vs) ? vs : null;
           if (oneOfVariants != null) {
             needsOneOf = true;
@@ -320,12 +309,12 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
         }
       }
       if (meta != null) {
-        for (final MapEntry(:key, value: info) in meta.variants.entries) {
+        for (final info in meta.variants.values) {
           if (info.resolvedType is IrObject) {
             final resolved = info.resolvedType as IrObject;
             for (final f in resolved.fields) {
               if (f.originalName == discriminatorProperty) {
-                if (info.discDefault == key || info.payloadFields.isEmpty) {
+                if (info.payloadFields.isEmpty) {
                   continue;
                 }
               }
@@ -347,21 +336,12 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
       }
     case IrAnyOf(:final name, :final variants):
       names.add(name);
-      if (isOneOfTypedef(name, variants)) {
-        needsOneOf = true;
-        for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names);
-          if (isBytesType(variant)) needsTypedData = true;
-        }
-      } else {
-        for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names, ctx);
-          if (isOneOfTypeDeep(variant)) needsOneOf = true;
-          if (isListType(variant)) needsCollection = true;
-          if (isBytesType(variant)) {
-            needsTypedData = true;
-            needsConvert = true;
-          }
+      for (final variant in variants) {
+        _collectTopLevelTypeName(variant, names, ctx);
+        if (isOneOfTypeDeep(variant)) needsOneOf = true;
+        if (hasBytesAnywhere(variant)) {
+          needsTypedData = true;
+          needsConvert = true;
         }
       }
     case IrExtensionType(:final name, :final inner):

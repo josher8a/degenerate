@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel.dart';@immutable final class MagicSchemasTunnelModifiedResponseResult {const MagicSchemasTunnelModifiedResponseResult({this.modified, this.modifiedIpsecTunnel, });
 
-factory MagicSchemasTunnelModifiedResponseResult.fromJson(Map<String, dynamic> json) { return MagicSchemasTunnelModifiedResponseResult(
+factory MagicSchemasTunnelModifiedResponseResult.fromJson(Map<String, dynamic> json) {return MagicSchemasTunnelModifiedResponseResult(
   modified: json['modified'] as bool?,
   modifiedIpsecTunnel: json['modified_ipsec_tunnel'] != null ? MagicIpsecTunnel.fromJson(json['modified_ipsec_tunnel'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Example: `true`
 final bool? modified;
 
 final MagicIpsecTunnel? modifiedIpsecTunnel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'modified': ?modified,
   if (modifiedIpsecTunnel != null) 'modified_ipsec_tunnel': modifiedIpsecTunnel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_ipsec_tunnel'}.contains(key)); } 
-MagicSchemasTunnelModifiedResponseResult copyWith({bool? Function()? modified, MagicIpsecTunnel? Function()? modifiedIpsecTunnel, }) { return MagicSchemasTunnelModifiedResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'modified', 'modified_ipsec_tunnel'}.contains(key));}
+MagicSchemasTunnelModifiedResponseResult copyWith({bool? Function()? modified, MagicIpsecTunnel? Function()? modifiedIpsecTunnel, }) {return MagicSchemasTunnelModifiedResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedIpsecTunnel: modifiedIpsecTunnel != null ? modifiedIpsecTunnel() : this.modifiedIpsecTunnel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSchemasTunnelModifiedResponseResult &&
           modified == other.modified &&
@@ -31,4 +31,4 @@ MagicSchemasTunnelModifiedResponseResult copyWith({bool? Function()? modified, M
 
 @override String toString() => 'MagicSchemasTunnelModifiedResponseResult(modified: $modified, modifiedIpsecTunnel: $modifiedIpsecTunnel)';
 
- }
+}

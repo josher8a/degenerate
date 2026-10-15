@@ -28,19 +28,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class ShieldOperationFeatureConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervals({this.confidenceIntervals});
 
-factory ShieldOperationFeatureConfidenceIntervals.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureConfidenceIntervals(
+factory ShieldOperationFeatureConfidenceIntervals.fromJson(Map<String, dynamic> json) {return ShieldOperationFeatureConfidenceIntervals(
   confidenceIntervals: json['confidence_intervals'] != null ? ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals.fromJson(json['confidence_intervals'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals? confidenceIntervals;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (confidenceIntervals != null) 'confidence_intervals': confidenceIntervals?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confidence_intervals'}.contains(key)); } 
-ShieldOperationFeatureConfidenceIntervals copyWith({ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals? Function()? confidenceIntervals}) { return ShieldOperationFeatureConfidenceIntervals(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'confidence_intervals'}.contains(key));}
+ShieldOperationFeatureConfidenceIntervals copyWith({ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals? Function()? confidenceIntervals}) {return ShieldOperationFeatureConfidenceIntervals(
   confidenceIntervals: confidenceIntervals != null ? confidenceIntervals() : this.confidenceIntervals,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOperationFeatureConfidenceIntervals &&
           confidenceIntervals == other.confidenceIntervals;
@@ -49,4 +49,4 @@ ShieldOperationFeatureConfidenceIntervals copyWith({ShieldOperationFeatureConfid
 
 @override String toString() => 'ShieldOperationFeatureConfidenceIntervals(confidenceIntervals: $confidenceIntervals)';
 
- }
+}

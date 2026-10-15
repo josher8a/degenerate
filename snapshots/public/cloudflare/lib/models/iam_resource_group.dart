@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group/iam_permission_group_meta.dart';import 'package:pub_cloudflare/models/iam_scope.dart';/// A group of scoped resources.
 @immutable final class IamResourceGroup {const IamResourceGroup({required this.id, required this.scope, this.meta, this.name, });
 
-factory IamResourceGroup.fromJson(Map<String, dynamic> json) { return IamResourceGroup(
+factory IamResourceGroup.fromJson(Map<String, dynamic> json) {return IamResourceGroup(
   id: json['id'] as String,
   meta: json['meta'] != null ? IamPermissionGroupMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   scope: (json['scope'] as List<dynamic>).map((e) => IamScope.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Identifier of the resource group.
 /// 
@@ -38,20 +38,20 @@ final String? name;
 /// The scope associated to the resource group
 final List<IamScope> scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (meta != null) 'meta': meta?.toJson(),
   'name': ?name,
   'scope': scope.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('scope'); } 
-IamResourceGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta, String? Function()? name, List<IamScope>? scope, }) { return IamResourceGroup(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('scope');}
+IamResourceGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta, String? Function()? name, List<IamScope>? scope, }) {return IamResourceGroup(
   id: id ?? this.id,
   meta: meta != null ? meta() : this.meta,
   name: name != null ? name() : this.name,
   scope: scope ?? this.scope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamResourceGroup &&
           id == other.id &&
@@ -63,4 +63,4 @@ IamResourceGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta,
 
 @override String toString() => 'IamResourceGroup(id: $id, meta: $meta, name: $name, scope: $scope)';
 
- }
+}

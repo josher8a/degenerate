@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response/radar_get_bgp_hijacks_events_response_result_asn_info.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_response/radar_get_bgp_route_leak_events_response_result_events.dart';@immutable final class RadarGetBgpRouteLeakEventsResponseResult {const RadarGetBgpRouteLeakEventsResponseResult({required this.asnInfo, required this.events, });
 
-factory RadarGetBgpRouteLeakEventsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRouteLeakEventsResponseResult(
+factory RadarGetBgpRouteLeakEventsResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetBgpRouteLeakEventsResponseResult(
   asnInfo: (json['asn_info'] as List<dynamic>).map((e) => RadarGetBgpHijacksEventsResponseResultAsnInfo.fromJson(e as Map<String, dynamic>)).toList(),
   events: (json['events'] as List<dynamic>).map((e) => RadarGetBgpRouteLeakEventsResponseResultEvents.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<RadarGetBgpHijacksEventsResponseResultAsnInfo> asnInfo;
 
 final List<RadarGetBgpRouteLeakEventsResponseResultEvents> events;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn_info': asnInfo.map((e) => e.toJson()).toList(),
   'events': events.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn_info') &&
-      json.containsKey('events'); } 
-RadarGetBgpRouteLeakEventsResponseResult copyWith({List<RadarGetBgpHijacksEventsResponseResultAsnInfo>? asnInfo, List<RadarGetBgpRouteLeakEventsResponseResultEvents>? events, }) { return RadarGetBgpRouteLeakEventsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn_info') &&
+      json.containsKey('events');}
+RadarGetBgpRouteLeakEventsResponseResult copyWith({List<RadarGetBgpHijacksEventsResponseResultAsnInfo>? asnInfo, List<RadarGetBgpRouteLeakEventsResponseResultEvents>? events, }) {return RadarGetBgpRouteLeakEventsResponseResult(
   asnInfo: asnInfo ?? this.asnInfo,
   events: events ?? this.events,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRouteLeakEventsResponseResult &&
           listEquals(asnInfo, other.asnInfo) &&
@@ -31,4 +31,4 @@ RadarGetBgpRouteLeakEventsResponseResult copyWith({List<RadarGetBgpHijacksEvents
 
 @override String toString() => 'RadarGetBgpRouteLeakEventsResponseResult(asnInfo: $asnInfo, events: $events)';
 
- }
+}

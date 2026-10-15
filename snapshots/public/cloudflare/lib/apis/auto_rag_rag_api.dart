@@ -12,7 +12,7 @@ final class AutoRagRagApi with ApiExecutor {const AutoRagRagApi(this.apiConfig);
 /// Files
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/files`
-Future<ApiResult<List<AutoragConfigFilesResponseResult>, AutoragConfigFilesError>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AutoragConfigFilesResponseResult>, AutoragConfigFilesError>> autoragConfigFiles({required String id, required String accountId, int? page, int? perPage, String? search, AutoragConfigFilesStatus? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -38,7 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -46,11 +46,11 @@ return execute(
   },
   onError: AutoragConfigFilesError.fromResponse,
 );
- } 
+}
 /// Sync
 ///
 /// `PATCH /accounts/{account_id}/autorag/rags/{id}/sync`
-Future<ApiResult<AutoragConfigSyncResponseResult, AutoragConfigSyncError>> autoragConfigSync({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigSyncResponseResult, AutoragConfigSyncError>> autoragConfigSync({required String id, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -59,7 +59,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -67,5 +67,5 @@ return execute(
   },
   onError: AutoragConfigSyncError.fromResponse,
 );
- } 
- }
+}
+}

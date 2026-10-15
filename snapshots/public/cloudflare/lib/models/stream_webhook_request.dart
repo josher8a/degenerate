@@ -10,20 +10,20 @@ String toJson() => value.toString();
 }
 @immutable final class StreamWebhookRequest {const StreamWebhookRequest({required this.notificationUrl});
 
-factory StreamWebhookRequest.fromJson(Map<String, dynamic> json) { return StreamWebhookRequest(
+factory StreamWebhookRequest.fromJson(Map<String, dynamic> json) {return StreamWebhookRequest(
   notificationUrl: StreamNotificationUrl.fromJson(json['notificationUrl'] as String),
-); }
+);}
 
 /// The URL where webhooks will be sent.
 final StreamNotificationUrl notificationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'notificationUrl': notificationUrl.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('notificationUrl'); } 
-StreamWebhookRequest copyWith({StreamNotificationUrl? notificationUrl}) { return StreamWebhookRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('notificationUrl');}
+StreamWebhookRequest copyWith({StreamNotificationUrl? notificationUrl}) {return StreamWebhookRequest(
   notificationUrl: notificationUrl ?? this.notificationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWebhookRequest &&
           notificationUrl == other.notificationUrl;
@@ -32,4 +32,4 @@ StreamWebhookRequest copyWith({StreamNotificationUrl? notificationUrl}) { return
 
 @override String toString() => 'StreamWebhookRequest(notificationUrl: $notificationUrl)';
 
- }
+}

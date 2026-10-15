@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_sources_request/source_order_items.dart';import 'package:pub_stripe_spec3/models/post_sources_request/source_order_shipping.dart';/// Information about the items and shipping associated with the source. Required for transactional credit (for example Klarna) sources before you can charge it.
 @immutable final class PostSourcesRequestSourceOrder {const PostSourcesRequestSourceOrder({this.items, this.shipping, });
 
-factory PostSourcesRequestSourceOrder.fromJson(Map<String, dynamic> json) { return PostSourcesRequestSourceOrder(
+factory PostSourcesRequestSourceOrder.fromJson(Map<String, dynamic> json) {return PostSourcesRequestSourceOrder(
   items: (json['items'] as List<dynamic>?)?.map((e) => SourceOrderItems.fromJson(e as Map<String, dynamic>)).toList(),
   shipping: json['shipping'] != null ? SourceOrderShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<SourceOrderItems>? items;
 
 final SourceOrderShipping? shipping;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
   if (shipping != null) 'shipping': shipping?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items', 'shipping'}.contains(key)); } 
-PostSourcesRequestSourceOrder copyWith({List<SourceOrderItems>? Function()? items, SourceOrderShipping? Function()? shipping, }) { return PostSourcesRequestSourceOrder(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'items', 'shipping'}.contains(key));}
+PostSourcesRequestSourceOrder copyWith({List<SourceOrderItems>? Function()? items, SourceOrderShipping? Function()? shipping, }) {return PostSourcesRequestSourceOrder(
   items: items != null ? items() : this.items,
   shipping: shipping != null ? shipping() : this.shipping,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesRequestSourceOrder &&
           listEquals(items, other.items) &&
@@ -31,4 +31,4 @@ PostSourcesRequestSourceOrder copyWith({List<SourceOrderItems>? Function()? item
 
 @override String toString() => 'PostSourcesRequestSourceOrder(items: $items, shipping: $shipping)';
 
- }
+}

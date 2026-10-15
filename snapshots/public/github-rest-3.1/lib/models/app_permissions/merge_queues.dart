@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage the merge queues for a repository.
 sealed class MergeQueues {const MergeQueues();
 
-factory MergeQueues.fromJson(String json) { return switch (json) {
+factory MergeQueues.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => MergeQueues$Unknown(json),
-}; }
+};}
 
 static const MergeQueues read = MergeQueues$read._();
 
@@ -17,30 +17,30 @@ static const MergeQueues write = MergeQueues$write._();
 static const List<MergeQueues> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MergeQueues$Unknown; } 
+bool get isUnknown {return this is MergeQueues$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       MergeQueues$read() => read(),
       MergeQueues$write() => write(),
       MergeQueues$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       MergeQueues$read() => read != null ? read() : orElse(value),
       MergeQueues$write() => write != null ? write() : orElse(value),
       MergeQueues$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MergeQueues($value)';
 
- }
+}
 @immutable final class MergeQueues$read extends MergeQueues {const MergeQueues$read._();
 
 @override String get value => 'read';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class MergeQueues$write extends MergeQueues {const MergeQueues$write._();
 
 @override String get value => 'write';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class MergeQueues$Unknown extends MergeQueues {const MergeQueues$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

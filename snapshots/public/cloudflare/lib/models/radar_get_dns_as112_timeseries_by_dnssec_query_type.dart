@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType();
 
-factory RadarGetDnsAs112TimeseriesByDnssecQueryType.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesByDnssecQueryType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'A6' => a6,
@@ -93,7 +93,7 @@ factory RadarGetDnsAs112TimeseriesByDnssecQueryType.fromJson(String json) { retu
   'X25' => x25,
   'ZONEMD' => zonemd,
   _ => RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesByDnssecQueryType a = RadarGetDnsAs112TimeseriesByDnssecQueryType$a._();
 
@@ -274,9 +274,9 @@ static const RadarGetDnsAs112TimeseriesByDnssecQueryType zonemd = RadarGetDnsAs1
 static const List<RadarGetDnsAs112TimeseriesByDnssecQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'A' => 'a',
   'AAAA' => 'aaaa',
   'A6' => 'a6',
@@ -366,11 +366,11 @@ String get name { return switch (value) {
   'X25' => 'x25',
   'ZONEMD' => 'zonemd',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() a, required W Function() aaaa, required W Function() a6, required W Function() afsdb, required W Function() any, required W Function() apl, required W Function() atma, required W Function() axfr, required W Function() caa, required W Function() cdnskey, required W Function() cds, required W Function() cert, required W Function() cname, required W Function() csync, required W Function() dhcid, required W Function() dlv, required W Function() dname, required W Function() dnskey, required W Function() doa, required W Function() ds, required W Function() eid, required W Function() eui48, required W Function() eui64, required W Function() gpos, required W Function() gid, required W Function() hinfo, required W Function() hip, required W Function() https, required W Function() ipseckey, required W Function() isdn, required W Function() ixfr, required W Function() key, required W Function() kx, required W Function() l32, required W Function() l64, required W Function() loc, required W Function() lp, required W Function() maila, required W Function() mailb, required W Function() mb, required W Function() md, required W Function() mf, required W Function() mg, required W Function() minfo, required W Function() mr, required W Function() mx, required W Function() naptr, required W Function() nb, required W Function() nbstat, required W Function() nid, required W Function() nimloc, required W Function() ninfo, required W Function() ns, required W Function() nsap, required W Function() nsec, required W Function() nsec3, required W Function() nsec3Param, required W Function() $null, required W Function() nxt, required W Function() openpgpkey, required W Function() opt, required W Function() ptr, required W Function() px, required W Function() rkey, required W Function() rp, required W Function() rrsig, required W Function() rt, required W Function() sig, required W Function() sink, required W Function() smimea, required W Function() soa, required W Function() spf, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() ta, required W Function() talink, required W Function() tkey, required W Function() tlsa, required W Function() tsig, required W Function() txt, required W Function() uinfo, required W Function() uid, required W Function() unspec, required W Function() uri, required W Function() wks, required W Function() x25, required W Function() zonemd, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() a, required W Function() aaaa, required W Function() a6, required W Function() afsdb, required W Function() any, required W Function() apl, required W Function() atma, required W Function() axfr, required W Function() caa, required W Function() cdnskey, required W Function() cds, required W Function() cert, required W Function() cname, required W Function() csync, required W Function() dhcid, required W Function() dlv, required W Function() dname, required W Function() dnskey, required W Function() doa, required W Function() ds, required W Function() eid, required W Function() eui48, required W Function() eui64, required W Function() gpos, required W Function() gid, required W Function() hinfo, required W Function() hip, required W Function() https, required W Function() ipseckey, required W Function() isdn, required W Function() ixfr, required W Function() key, required W Function() kx, required W Function() l32, required W Function() l64, required W Function() loc, required W Function() lp, required W Function() maila, required W Function() mailb, required W Function() mb, required W Function() md, required W Function() mf, required W Function() mg, required W Function() minfo, required W Function() mr, required W Function() mx, required W Function() naptr, required W Function() nb, required W Function() nbstat, required W Function() nid, required W Function() nimloc, required W Function() ninfo, required W Function() ns, required W Function() nsap, required W Function() nsec, required W Function() nsec3, required W Function() nsec3Param, required W Function() $null, required W Function() nxt, required W Function() openpgpkey, required W Function() opt, required W Function() ptr, required W Function() px, required W Function() rkey, required W Function() rp, required W Function() rrsig, required W Function() rt, required W Function() sig, required W Function() sink, required W Function() smimea, required W Function() soa, required W Function() spf, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() ta, required W Function() talink, required W Function() tkey, required W Function() tlsa, required W Function() tsig, required W Function() txt, required W Function() uinfo, required W Function() uid, required W Function() unspec, required W Function() uri, required W Function() wks, required W Function() x25, required W Function() zonemd, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesByDnssecQueryType$a() => a(),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$aaaa() => aaaa(),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$a6() => a6(),
@@ -460,9 +460,9 @@ W when<W>({required W Function() a, required W Function() aaaa, required W Funct
       RadarGetDnsAs112TimeseriesByDnssecQueryType$x25() => x25(),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$zonemd() => zonemd(),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? a6, W Function()? afsdb, W Function()? any, W Function()? apl, W Function()? atma, W Function()? axfr, W Function()? caa, W Function()? cdnskey, W Function()? cds, W Function()? cert, W Function()? cname, W Function()? csync, W Function()? dhcid, W Function()? dlv, W Function()? dname, W Function()? dnskey, W Function()? doa, W Function()? ds, W Function()? eid, W Function()? eui48, W Function()? eui64, W Function()? gpos, W Function()? gid, W Function()? hinfo, W Function()? hip, W Function()? https, W Function()? ipseckey, W Function()? isdn, W Function()? ixfr, W Function()? key, W Function()? kx, W Function()? l32, W Function()? l64, W Function()? loc, W Function()? lp, W Function()? maila, W Function()? mailb, W Function()? mb, W Function()? md, W Function()? mf, W Function()? mg, W Function()? minfo, W Function()? mr, W Function()? mx, W Function()? naptr, W Function()? nb, W Function()? nbstat, W Function()? nid, W Function()? nimloc, W Function()? ninfo, W Function()? ns, W Function()? nsap, W Function()? nsec, W Function()? nsec3, W Function()? nsec3Param, W Function()? $null, W Function()? nxt, W Function()? openpgpkey, W Function()? opt, W Function()? ptr, W Function()? px, W Function()? rkey, W Function()? rp, W Function()? rrsig, W Function()? rt, W Function()? sig, W Function()? sink, W Function()? smimea, W Function()? soa, W Function()? spf, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? ta, W Function()? talink, W Function()? tkey, W Function()? tlsa, W Function()? tsig, W Function()? txt, W Function()? uinfo, W Function()? uid, W Function()? unspec, W Function()? uri, W Function()? wks, W Function()? x25, W Function()? zonemd, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? a6, W Function()? afsdb, W Function()? any, W Function()? apl, W Function()? atma, W Function()? axfr, W Function()? caa, W Function()? cdnskey, W Function()? cds, W Function()? cert, W Function()? cname, W Function()? csync, W Function()? dhcid, W Function()? dlv, W Function()? dname, W Function()? dnskey, W Function()? doa, W Function()? ds, W Function()? eid, W Function()? eui48, W Function()? eui64, W Function()? gpos, W Function()? gid, W Function()? hinfo, W Function()? hip, W Function()? https, W Function()? ipseckey, W Function()? isdn, W Function()? ixfr, W Function()? key, W Function()? kx, W Function()? l32, W Function()? l64, W Function()? loc, W Function()? lp, W Function()? maila, W Function()? mailb, W Function()? mb, W Function()? md, W Function()? mf, W Function()? mg, W Function()? minfo, W Function()? mr, W Function()? mx, W Function()? naptr, W Function()? nb, W Function()? nbstat, W Function()? nid, W Function()? nimloc, W Function()? ninfo, W Function()? ns, W Function()? nsap, W Function()? nsec, W Function()? nsec3, W Function()? nsec3Param, W Function()? $null, W Function()? nxt, W Function()? openpgpkey, W Function()? opt, W Function()? ptr, W Function()? px, W Function()? rkey, W Function()? rp, W Function()? rrsig, W Function()? rt, W Function()? sig, W Function()? sink, W Function()? smimea, W Function()? soa, W Function()? spf, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? ta, W Function()? talink, W Function()? tkey, W Function()? tlsa, W Function()? tsig, W Function()? txt, W Function()? uinfo, W Function()? uid, W Function()? unspec, W Function()? uri, W Function()? wks, W Function()? x25, W Function()? zonemd, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesByDnssecQueryType$a() => a != null ? a() : orElse(value),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$aaaa() => aaaa != null ? aaaa() : orElse(value),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$a6() => a6 != null ? a6() : orElse(value),
@@ -552,10 +552,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
       RadarGetDnsAs112TimeseriesByDnssecQueryType$x25() => x25 != null ? x25() : orElse(value),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$zonemd() => zonemd != null ? zonemd() : orElse(value),
       RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsAs112TimeseriesByDnssecQueryType($value)';
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$a extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$a._();
 
 @override String get value => 'A';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'A'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$aaaa extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$aaaa._();
 
 @override String get value => 'AAAA';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AAAA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$a6 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$a6._();
 
 @override String get value => 'A6';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'A6'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$afsdb extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$afsdb._();
 
 @override String get value => 'AFSDB';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AFSDB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$any extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$any._();
 
 @override String get value => 'ANY';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ANY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$apl extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$apl._();
 
 @override String get value => 'APL';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'APL'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$atma extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$atma._();
 
 @override String get value => 'ATMA';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ATMA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$axfr extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$axfr._();
 
 @override String get value => 'AXFR';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AXFR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$caa extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$caa._();
 
 @override String get value => 'CAA';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CAA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$cdnskey extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$cdnskey._();
 
 @override String get value => 'CDNSKEY';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CDNSKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$cds extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$cds._();
 
 @override String get value => 'CDS';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CDS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$cert extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$cert._();
 
 @override String get value => 'CERT';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CERT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$cname extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$cname._();
 
 @override String get value => 'CNAME';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CNAME'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$csync extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$csync._();
 
 @override String get value => 'CSYNC';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CSYNC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$dhcid extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$dhcid._();
 
 @override String get value => 'DHCID';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DHCID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$dlv extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$dlv._();
 
 @override String get value => 'DLV';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DLV'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$dname extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$dname._();
 
 @override String get value => 'DNAME';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DNAME'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$dnskey extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$dnskey._();
 
 @override String get value => 'DNSKEY';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DNSKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$doa extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$doa._();
 
 @override String get value => 'DOA';
@@ -726,7 +726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DOA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ds extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ds._();
 
 @override String get value => 'DS';
@@ -735,7 +735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$eid extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$eid._();
 
 @override String get value => 'EID';
@@ -744,7 +744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'EID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$eui48 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$eui48._();
 
 @override String get value => 'EUI48';
@@ -753,7 +753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'EUI48'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$eui64 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$eui64._();
 
 @override String get value => 'EUI64';
@@ -762,7 +762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'EUI64'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$gpos extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$gpos._();
 
 @override String get value => 'GPOS';
@@ -771,7 +771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'GPOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$gid extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$gid._();
 
 @override String get value => 'GID';
@@ -780,7 +780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'GID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$hinfo extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$hinfo._();
 
 @override String get value => 'HINFO';
@@ -789,7 +789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$hip extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$hip._();
 
 @override String get value => 'HIP';
@@ -798,7 +798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HIP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$https extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$https._();
 
 @override String get value => 'HTTPS';
@@ -807,7 +807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ipseckey extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ipseckey._();
 
 @override String get value => 'IPSECKEY';
@@ -816,7 +816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'IPSECKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$isdn extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$isdn._();
 
 @override String get value => 'ISDN';
@@ -825,7 +825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ISDN'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ixfr extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ixfr._();
 
 @override String get value => 'IXFR';
@@ -834,7 +834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'IXFR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$key extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$key._();
 
 @override String get value => 'KEY';
@@ -843,7 +843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'KEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$kx extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$kx._();
 
 @override String get value => 'KX';
@@ -852,7 +852,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'KX'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$l32 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$l32._();
 
 @override String get value => 'L32';
@@ -861,7 +861,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'L32'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$l64 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$l64._();
 
 @override String get value => 'L64';
@@ -870,7 +870,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'L64'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$loc extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$loc._();
 
 @override String get value => 'LOC';
@@ -879,7 +879,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'LOC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$lp extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$lp._();
 
 @override String get value => 'LP';
@@ -888,7 +888,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'LP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$maila extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$maila._();
 
 @override String get value => 'MAILA';
@@ -897,7 +897,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MAILA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$mailb extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$mailb._();
 
 @override String get value => 'MAILB';
@@ -906,7 +906,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MAILB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$mb extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$mb._();
 
 @override String get value => 'MB';
@@ -915,7 +915,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$md extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$md._();
 
 @override String get value => 'MD';
@@ -924,7 +924,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MD'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$mf extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$mf._();
 
 @override String get value => 'MF';
@@ -933,7 +933,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MF'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$mg extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$mg._();
 
 @override String get value => 'MG';
@@ -942,7 +942,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$minfo extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$minfo._();
 
 @override String get value => 'MINFO';
@@ -951,7 +951,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$mr extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$mr._();
 
 @override String get value => 'MR';
@@ -960,7 +960,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$mx extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$mx._();
 
 @override String get value => 'MX';
@@ -969,7 +969,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MX'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$naptr extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$naptr._();
 
 @override String get value => 'NAPTR';
@@ -978,7 +978,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NAPTR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nb extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nb._();
 
 @override String get value => 'NB';
@@ -987,7 +987,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nbstat extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nbstat._();
 
 @override String get value => 'NBSTAT';
@@ -996,7 +996,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NBSTAT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nid extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nid._();
 
 @override String get value => 'NID';
@@ -1005,7 +1005,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nimloc extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nimloc._();
 
 @override String get value => 'NIMLOC';
@@ -1014,7 +1014,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NIMLOC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ninfo extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ninfo._();
 
 @override String get value => 'NINFO';
@@ -1023,7 +1023,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ns extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ns._();
 
 @override String get value => 'NS';
@@ -1032,7 +1032,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nsap extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nsap._();
 
 @override String get value => 'NSAP';
@@ -1041,7 +1041,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSAP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nsec extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nsec._();
 
 @override String get value => 'NSEC';
@@ -1050,7 +1050,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSEC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nsec3 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nsec3._();
 
 @override String get value => 'NSEC3';
@@ -1059,7 +1059,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSEC3'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nsec3Param extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nsec3Param._();
 
 @override String get value => 'NSEC3PARAM';
@@ -1068,7 +1068,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSEC3PARAM'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$$null extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$$null._();
 
 @override String get value => 'NULL';
@@ -1077,7 +1077,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NULL'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$nxt extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$nxt._();
 
 @override String get value => 'NXT';
@@ -1086,7 +1086,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NXT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$openpgpkey extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$openpgpkey._();
 
 @override String get value => 'OPENPGPKEY';
@@ -1095,7 +1095,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'OPENPGPKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$opt extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$opt._();
 
 @override String get value => 'OPT';
@@ -1104,7 +1104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'OPT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ptr extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ptr._();
 
 @override String get value => 'PTR';
@@ -1113,7 +1113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'PTR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$px extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$px._();
 
 @override String get value => 'PX';
@@ -1122,7 +1122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'PX'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$rkey extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$rkey._();
 
 @override String get value => 'RKEY';
@@ -1131,7 +1131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$rp extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$rp._();
 
 @override String get value => 'RP';
@@ -1140,7 +1140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$rrsig extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$rrsig._();
 
 @override String get value => 'RRSIG';
@@ -1149,7 +1149,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RRSIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$rt extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$rt._();
 
 @override String get value => 'RT';
@@ -1158,7 +1158,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$sig extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$sig._();
 
 @override String get value => 'SIG';
@@ -1167,7 +1167,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$sink extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$sink._();
 
 @override String get value => 'SINK';
@@ -1176,7 +1176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SINK'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$smimea extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$smimea._();
 
 @override String get value => 'SMIMEA';
@@ -1185,7 +1185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SMIMEA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$soa extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$soa._();
 
 @override String get value => 'SOA';
@@ -1194,7 +1194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SOA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$spf extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$spf._();
 
 @override String get value => 'SPF';
@@ -1203,7 +1203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SPF'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$srv extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$srv._();
 
 @override String get value => 'SRV';
@@ -1212,7 +1212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SRV'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$sshfp extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$sshfp._();
 
 @override String get value => 'SSHFP';
@@ -1221,7 +1221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SSHFP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$svcb extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$svcb._();
 
 @override String get value => 'SVCB';
@@ -1230,7 +1230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SVCB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$ta extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$ta._();
 
 @override String get value => 'TA';
@@ -1239,7 +1239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$talink extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$talink._();
 
 @override String get value => 'TALINK';
@@ -1248,7 +1248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TALINK'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$tkey extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$tkey._();
 
 @override String get value => 'TKEY';
@@ -1257,7 +1257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$tlsa extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$tlsa._();
 
 @override String get value => 'TLSA';
@@ -1266,7 +1266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TLSA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$tsig extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$tsig._();
 
 @override String get value => 'TSIG';
@@ -1275,7 +1275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TSIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$txt extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$txt._();
 
 @override String get value => 'TXT';
@@ -1284,7 +1284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TXT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$uinfo extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$uinfo._();
 
 @override String get value => 'UINFO';
@@ -1293,7 +1293,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'UINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$uid extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$uid._();
 
 @override String get value => 'UID';
@@ -1302,7 +1302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'UID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$unspec extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$unspec._();
 
 @override String get value => 'UNSPEC';
@@ -1311,7 +1311,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'UNSPEC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$uri extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$uri._();
 
 @override String get value => 'URI';
@@ -1320,7 +1320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'URI'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$wks extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$wks._();
 
 @override String get value => 'WKS';
@@ -1329,7 +1329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'WKS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$x25 extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$x25._();
 
 @override String get value => 'X25';
@@ -1338,7 +1338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'X25'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$zonemd extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$zonemd._();
 
 @override String get value => 'ZONEMD';
@@ -1347,7 +1347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ZONEMD'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown extends RadarGetDnsAs112TimeseriesByDnssecQueryType {const RadarGetDnsAs112TimeseriesByDnssecQueryType$Unknown(this.value);
 
 @override final String value;
@@ -1357,4 +1357,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}

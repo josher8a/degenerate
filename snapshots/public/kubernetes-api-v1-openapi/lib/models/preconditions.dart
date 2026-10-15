@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
 @immutable final class Preconditions {const Preconditions({this.resourceVersion, this.uid, });
 
-factory Preconditions.fromJson(Map<String, dynamic> json) { return Preconditions(
+factory Preconditions.fromJson(Map<String, dynamic> json) {return Preconditions(
   resourceVersion: json['resourceVersion'] as String?,
   uid: json['uid'] as String?,
-); }
+);}
 
 /// Specifies the target ResourceVersion
 final String? resourceVersion;
@@ -15,15 +15,15 @@ final String? resourceVersion;
 /// Specifies the target UID.
 final String? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resourceVersion': ?resourceVersion,
   'uid': ?uid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resourceVersion', 'uid'}.contains(key)); } 
-Preconditions copyWith({String? Function()? resourceVersion, String? Function()? uid, }) { return Preconditions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'resourceVersion', 'uid'}.contains(key));}
+Preconditions copyWith({String? Function()? resourceVersion, String? Function()? uid, }) {return Preconditions(
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Preconditions &&
           resourceVersion == other.resourceVersion &&
@@ -33,4 +33,4 @@ Preconditions copyWith({String? Function()? resourceVersion, String? Function()?
 
 @override String toString() => 'Preconditions(resourceVersion: $resourceVersion, uid: $uid)';
 
- }
+}

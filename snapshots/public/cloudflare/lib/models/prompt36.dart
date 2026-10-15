@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Prompt
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class Prompt36 {const Prompt36({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class Prompt36 {const Prompt36({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.topK, this.topP, });
 
-factory Prompt36.fromJson(Map<String, dynamic> json) { return Prompt36(
+factory Prompt36.fromJson(Map<String, dynamic> json) {return Prompt36(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   lora: json['lora'] as String?,
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String,
-  raw: json.containsKey('raw') ? json['raw'] as bool : false,
+  raw: json['raw'] as bool?,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
   responseFormat: json['response_format'] != null ? MessagesResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  stream: json.containsKey('stream') ? json['stream'] as bool : false,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
+  stream: json['stream'] as bool?,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -26,7 +26,7 @@ final double? frequencyPenalty;
 final String? lora;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// Increases the likelihood of the model introducing new topics.
 final double? presencePenalty;
@@ -35,7 +35,7 @@ final double? presencePenalty;
 final String prompt;
 
 /// If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
-final bool raw;
+final bool? raw;
 
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
@@ -46,10 +46,10 @@ final MessagesResponseFormat? responseFormat;
 final int? seed;
 
 /// If true, the response will be streamed back incrementally using SSE, Server Sent Events.
-final bool stream;
+final bool? stream;
 
 /// Controls the randomness of the output; higher values produce more random results.
-final double temperature;
+final double? temperature;
 
 /// Limits the AI to choose from the top 'k' most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.
 final int? topK;
@@ -57,24 +57,36 @@ final int? topK;
 /// Adjusts the creativity of the AI's responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `maxTokens`, or its schema default when absent.
+int get maxTokensOrDefault => maxTokens ?? 256;
+
+/// The value of `raw`, or its schema default when absent.
+bool get rawOrDefault => raw ?? false;
+
+/// The value of `stream`, or its schema default when absent.
+bool get streamOrDefault => stream ?? false;
+
+/// The value of `temperature`, or its schema default when absent.
+double get temperatureOrDefault => temperature ?? 0.6;
+
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'lora': ?lora,
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'presence_penalty': ?presencePenalty,
   'prompt': prompt,
-  'raw': raw,
+  'raw': ?raw,
   'repetition_penalty': ?repetitionPenalty,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'seed': ?seed,
-  'stream': stream,
-  'temperature': temperature,
+  'stream': ?stream,
+  'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
@@ -96,8 +108,11 @@ if (seed$ != null) {
   if (seed$ < 1) { errors.add('seed: must be >= 1'); }
   if (seed$ > 9999999999.0) { errors.add('seed: must be <= 9999999999.0'); }
 }
-if (temperature < 0) { errors.add('temperature: must be >= 0'); }
-if (temperature > 5) { errors.add('temperature: must be <= 5'); }
+final temperature$ = temperature;
+if (temperature$ != null) {
+  if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
+  if (temperature$ > 5) { errors.add('temperature: must be <= 5'); }
+}
 final topK$ = topK;
 if (topK$ != null) {
   if (topK$ < 1) { errors.add('topK: must be >= 1'); }
@@ -108,8 +123,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
-return errors; } 
-Prompt36 copyWith({double? Function()? frequencyPenalty, String? Function()? lora, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool Function()? raw, double? Function()? repetitionPenalty, MessagesResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt36(
+return errors;}
+Prompt36 copyWith({double? Function()? frequencyPenalty, String? Function()? lora, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, MessagesResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) {return Prompt36(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   lora: lora != null ? lora() : this.lora,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -123,7 +138,7 @@ Prompt36 copyWith({double? Function()? frequencyPenalty, String? Function()? lor
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Prompt36 &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -144,4 +159,4 @@ Prompt36 copyWith({double? Function()? frequencyPenalty, String? Function()? lor
 
 @override String toString() => 'Prompt36(\n  frequencyPenalty: $frequencyPenalty,\n  lora: $lora,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
- }
+}

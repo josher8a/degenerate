@@ -12,12 +12,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default miti
 /// 
 sealed class ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction();
 
-factory ShieldOldValidationDefaultMitigationAction.fromJson(String json) { return switch (json) {
+factory ShieldOldValidationDefaultMitigationAction.fromJson(String json) {return switch (json) {
   'none' => none,
   'log' => log,
   'block' => block,
   _ => ShieldOldValidationDefaultMitigationAction$Unknown(json),
-}; }
+};}
 
 static const ShieldOldValidationDefaultMitigationAction none = ShieldOldValidationDefaultMitigationAction$none._();
 
@@ -28,33 +28,33 @@ static const ShieldOldValidationDefaultMitigationAction block = ShieldOldValidat
 static const List<ShieldOldValidationDefaultMitigationAction> values = [none, log, block];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'log' => 'log',
   'block' => 'block',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShieldOldValidationDefaultMitigationAction$Unknown; } 
+bool get isUnknown {return this is ShieldOldValidationDefaultMitigationAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() log, required W Function() block, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() log, required W Function() block, required W Function(String value) $unknown, }) {return switch (this) {
       ShieldOldValidationDefaultMitigationAction$none() => none(),
       ShieldOldValidationDefaultMitigationAction$log() => log(),
       ShieldOldValidationDefaultMitigationAction$block() => block(),
       ShieldOldValidationDefaultMitigationAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? log, W Function()? block, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? log, W Function()? block, W Function(String value)? $unknown, }) {return switch (this) {
       ShieldOldValidationDefaultMitigationAction$none() => none != null ? none() : orElse(value),
       ShieldOldValidationDefaultMitigationAction$log() => log != null ? log() : orElse(value),
       ShieldOldValidationDefaultMitigationAction$block() => block != null ? block() : orElse(value),
       ShieldOldValidationDefaultMitigationAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShieldOldValidationDefaultMitigationAction($value)';
 
- }
+}
 @immutable final class ShieldOldValidationDefaultMitigationAction$none extends ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction$none._();
 
 @override String get value => 'none';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ShieldOldValidationDefaultMitigationAction$log extends ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction$log._();
 
 @override String get value => 'log';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'log'.hashCode;
 
- }
+}
 @immutable final class ShieldOldValidationDefaultMitigationAction$block extends ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction$block._();
 
 @override String get value => 'block';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'block'.hashCode;
 
- }
+}
 @immutable final class ShieldOldValidationDefaultMitigationAction$Unknown extends ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction$Unknown(this.value);
 
 @override final String value;
@@ -91,4 +91,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

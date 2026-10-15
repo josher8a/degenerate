@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';/// A Zones subscription information.
 @immutable final class ZonesZonePlan {const ZonesZonePlan({this.canSubscribe, this.currency, this.externallyManaged, this.frequency, this.id, this.isSubscribed, this.legacyDiscount, this.legacyId, this.name, this.price, });
 
-factory ZonesZonePlan.fromJson(Map<String, dynamic> json) { return ZonesZonePlan(
+factory ZonesZonePlan.fromJson(Map<String, dynamic> json) {return ZonesZonePlan(
   canSubscribe: json['can_subscribe'] as bool?,
   currency: json['currency'] as String?,
   externallyManaged: json['externally_managed'] as bool?,
@@ -15,7 +15,7 @@ factory ZonesZonePlan.fromJson(Map<String, dynamic> json) { return ZonesZonePlan
   legacyId: json['legacy_id'] as String?,
   name: json['name'] as String?,
   price: json['price'] != null ? (json['price'] as num).toDouble() : null,
-); }
+);}
 
 /// States if the subscription can be activated.
 /// 
@@ -65,7 +65,7 @@ final String? name;
 /// Example: `10.99`
 final double? price;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_subscribe': ?canSubscribe,
   'currency': ?currency,
   'externally_managed': ?externallyManaged,
@@ -76,9 +76,9 @@ Map<String, dynamic> toJson() { return {
   'legacy_id': ?legacyId,
   'name': ?name,
   'price': ?price,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_subscribe', 'currency', 'externally_managed', 'frequency', 'id', 'is_subscribed', 'legacy_discount', 'legacy_id', 'name', 'price'}.contains(key)); } 
-ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? currency, bool? Function()? externallyManaged, String? Function()? frequency, ZonesIdentifier? Function()? id, bool? Function()? isSubscribed, bool? Function()? legacyDiscount, String? Function()? legacyId, String? Function()? name, double? Function()? price, }) { return ZonesZonePlan(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_subscribe', 'currency', 'externally_managed', 'frequency', 'id', 'is_subscribed', 'legacy_discount', 'legacy_id', 'name', 'price'}.contains(key));}
+ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? currency, bool? Function()? externallyManaged, String? Function()? frequency, ZonesIdentifier? Function()? id, bool? Function()? isSubscribed, bool? Function()? legacyDiscount, String? Function()? legacyId, String? Function()? name, double? Function()? price, }) {return ZonesZonePlan(
   canSubscribe: canSubscribe != null ? canSubscribe() : this.canSubscribe,
   currency: currency != null ? currency() : this.currency,
   externallyManaged: externallyManaged != null ? externallyManaged() : this.externallyManaged,
@@ -89,7 +89,7 @@ ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? curr
   legacyId: legacyId != null ? legacyId() : this.legacyId,
   name: name != null ? name() : this.name,
   price: price != null ? price() : this.price,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZonePlan &&
           canSubscribe == other.canSubscribe &&
@@ -107,4 +107,4 @@ ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? curr
 
 @override String toString() => 'ZonesZonePlan(\n  canSubscribe: $canSubscribe,\n  currency: $currency,\n  externallyManaged: $externallyManaged,\n  frequency: $frequency,\n  id: $id,\n  isSubscribed: $isSubscribed,\n  legacyDiscount: $legacyDiscount,\n  legacyId: $legacyId,\n  name: $name,\n  price: $price,\n)';
 
- }
+}

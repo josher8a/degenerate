@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_post_commands_response/digital_experience_monitoring_post_commands_response_commands.dart';@immutable final class DigitalExperienceMonitoringPostCommandsResponse {const DigitalExperienceMonitoringPostCommandsResponse({this.commands});
 
-factory DigitalExperienceMonitoringPostCommandsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringPostCommandsResponse(
+factory DigitalExperienceMonitoringPostCommandsResponse.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringPostCommandsResponse(
   commands: (json['commands'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringPostCommandsResponseCommands.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// List of created commands
 final List<DigitalExperienceMonitoringPostCommandsResponseCommands>? commands;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (commands != null) 'commands': commands?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commands'}.contains(key)); } 
-DigitalExperienceMonitoringPostCommandsResponse copyWith({List<DigitalExperienceMonitoringPostCommandsResponseCommands>? Function()? commands}) { return DigitalExperienceMonitoringPostCommandsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'commands'}.contains(key));}
+DigitalExperienceMonitoringPostCommandsResponse copyWith({List<DigitalExperienceMonitoringPostCommandsResponseCommands>? Function()? commands}) {return DigitalExperienceMonitoringPostCommandsResponse(
   commands: commands != null ? commands() : this.commands,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringPostCommandsResponse &&
           listEquals(commands, other.commands);
@@ -25,4 +25,4 @@ DigitalExperienceMonitoringPostCommandsResponse copyWith({List<DigitalExperience
 
 @override String toString() => 'DigitalExperienceMonitoringPostCommandsResponse(commands: $commands)';
 
- }
+}

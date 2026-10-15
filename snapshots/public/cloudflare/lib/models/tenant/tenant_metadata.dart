@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tenant/tenant_metadata_dns.dart';@immutable final class TenantMetadata {const TenantMetadata({this.dns});
 
-factory TenantMetadata.fromJson(Map<String, dynamic> json) { return TenantMetadata(
+factory TenantMetadata.fromJson(Map<String, dynamic> json) {return TenantMetadata(
   dns: json['dns'] != null ? TenantMetadataDns.fromJson(json['dns'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TenantMetadataDns? dns;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dns != null) 'dns': dns?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dns'}.contains(key)); } 
-TenantMetadata copyWith({TenantMetadataDns? Function()? dns}) { return TenantMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dns'}.contains(key));}
+TenantMetadata copyWith({TenantMetadataDns? Function()? dns}) {return TenantMetadata(
   dns: dns != null ? dns() : this.dns,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TenantMetadata &&
           dns == other.dns;
@@ -24,4 +24,4 @@ TenantMetadata copyWith({TenantMetadataDns? Function()? dns}) { return TenantMet
 
 @override String toString() => 'TenantMetadata(dns: $dns)';
 
- }
+}

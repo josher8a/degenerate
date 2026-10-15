@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestWechatPay {const PostPaymentMethodsRequestWechatPay();
 
-factory PostPaymentMethodsRequestWechatPay.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestWechatPay(); }
+factory PostPaymentMethodsRequestWechatPay.fromJson(Map<String, dynamic> _) {return const PostPaymentMethodsRequestWechatPay();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestWechatPay copyWith() { return const PostPaymentMethodsRequestWechatPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentMethodsRequestWechatPay copyWith() {return const PostPaymentMethodsRequestWechatPay(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestWechatPay;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'PostPaymentMethodsRequestWechatPay()';
 
- }
+}

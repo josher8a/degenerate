@@ -24,7 +24,7 @@ String toJson() => value.toString();
 }
 @immutable final class CodeScanningAnalysis {const CodeScanningAnalysis({required this.ref, required this.commitSha, required this.analysisKey, required this.environment, required this.error, required this.createdAt, required this.resultsCount, required this.rulesCount, required this.id, required this.url, required this.sarifId, required this.tool, required this.deletable, required this.warning, this.category, });
 
-factory CodeScanningAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysis(
+factory CodeScanningAnalysis.fromJson(Map<String, dynamic> json) {return CodeScanningAnalysis(
   ref: CodeScanningRef.fromJson(json['ref'] as String),
   commitSha: CodeScanningAnalysisCommitSha.fromJson(json['commit_sha'] as String),
   analysisKey: CodeScanningAnalysisAnalysisKey.fromJson(json['analysis_key'] as String),
@@ -40,7 +40,7 @@ factory CodeScanningAnalysis.fromJson(Map<String, dynamic> json) { return CodeSc
   tool: CodeScanningAnalysisTool.fromJson(json['tool'] as Map<String, dynamic>),
   deletable: json['deletable'] as bool,
   warning: json['warning'] as String,
-); }
+);}
 
 /// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
 /// `refs/heads/<branch name>` or simply `<branch name>`.
@@ -85,7 +85,7 @@ final bool deletable;
 /// Warning generated when processing the analysis
 final String warning;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ref.toJson(),
   'commit_sha': commitSha.toJson(),
   'analysis_key': analysisKey.toJson(),
@@ -101,8 +101,8 @@ Map<String, dynamic> toJson() { return {
   'tool': tool.toJson(),
   'deletable': deletable,
   'warning': warning,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') &&
       json.containsKey('commit_sha') &&
       json.containsKey('analysis_key') &&
       json.containsKey('environment') &&
@@ -115,8 +115,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref')
       json.containsKey('sarif_id') &&
       json.containsKey('tool') &&
       json.containsKey('deletable') && json['deletable'] is bool &&
-      json.containsKey('warning') && json['warning'] is String; } 
-CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitSha? commitSha, CodeScanningAnalysisAnalysisKey? analysisKey, CodeScanningAnalysisEnvironment? environment, CodeScanningAnalysisCategory? Function()? category, String? error, CodeScanningAnalysisCreatedAt? createdAt, int? resultsCount, int? rulesCount, int? id, CodeScanningAnalysisUrl? url, CodeScanningAnalysisSarifId? sarifId, CodeScanningAnalysisTool? tool, bool? deletable, String? warning, }) { return CodeScanningAnalysis(
+      json.containsKey('warning') && json['warning'] is String;}
+CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitSha? commitSha, CodeScanningAnalysisAnalysisKey? analysisKey, CodeScanningAnalysisEnvironment? environment, CodeScanningAnalysisCategory? Function()? category, String? error, CodeScanningAnalysisCreatedAt? createdAt, int? resultsCount, int? rulesCount, int? id, CodeScanningAnalysisUrl? url, CodeScanningAnalysisSarifId? sarifId, CodeScanningAnalysisTool? tool, bool? deletable, String? warning, }) {return CodeScanningAnalysis(
   ref: ref ?? this.ref,
   commitSha: commitSha ?? this.commitSha,
   analysisKey: analysisKey ?? this.analysisKey,
@@ -132,7 +132,7 @@ CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitS
   tool: tool ?? this.tool,
   deletable: deletable ?? this.deletable,
   warning: warning ?? this.warning,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAnalysis &&
           ref == other.ref &&
@@ -155,4 +155,4 @@ CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitS
 
 @override String toString() => 'CodeScanningAnalysis(\n  ref: $ref,\n  commitSha: $commitSha,\n  analysisKey: $analysisKey,\n  environment: $environment,\n  category: $category,\n  error: $error,\n  createdAt: $createdAt,\n  resultsCount: $resultsCount,\n  rulesCount: $rulesCount,\n  id: $id,\n  url: $url,\n  sarifId: $sarifId,\n  tool: $tool,\n  deletable: $deletable,\n  warning: $warning,\n)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsnsDetailsLocations {const AsnsDetailsLocations({required this.code, required this.name, });
 
-factory AsnsDetailsLocations.fromJson(Map<String, dynamic> json) { return AsnsDetailsLocations(
+factory AsnsDetailsLocations.fromJson(Map<String, dynamic> json) {return AsnsDetailsLocations(
   code: json['code'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// Example: `'US'`
 final String code;
@@ -14,16 +14,16 @@ final String code;
 /// Example: `'United States'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-AsnsDetailsLocations copyWith({String? code, String? name, }) { return AsnsDetailsLocations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+AsnsDetailsLocations copyWith({String? code, String? name, }) {return AsnsDetailsLocations(
   code: code ?? this.code,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AsnsDetailsLocations &&
           code == other.code &&
@@ -33,4 +33,4 @@ AsnsDetailsLocations copyWith({String? code, String? name, }) { return AsnsDetai
 
 @override String toString() => 'AsnsDetailsLocations(code: $code, name: $name)';
 
- }
+}

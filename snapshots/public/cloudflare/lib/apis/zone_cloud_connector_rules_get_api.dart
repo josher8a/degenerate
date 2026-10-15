@@ -12,7 +12,7 @@ final class ZoneCloudConnectorRulesGetApi with ApiExecutor {const ZoneCloudConne
 /// Rules
 ///
 /// `GET /zones/{zone_id}/cloud_connector/rules`
-Future<ApiResult<List<CloudConnectorRule>?, ZoneCloudConenctorRulesPutError>> zoneCloudConnectorRules({required CloudConnectorIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudConnectorRule>?, ZoneCloudConenctorRulesPutError>> zoneCloudConnectorRules({required CloudConnectorIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -29,5 +29,5 @@ return execute(
   },
   onError: ZoneCloudConenctorRulesPutError.fromResponse,
 );
- } 
- }
+}
+}

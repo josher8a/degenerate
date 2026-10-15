@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_title.dart';@immutable final class WorkersKvCreateRenameNamespaceBody {const WorkersKvCreateRenameNamespaceBody({required this.title});
 
-factory WorkersKvCreateRenameNamespaceBody.fromJson(Map<String, dynamic> json) { return WorkersKvCreateRenameNamespaceBody(
+factory WorkersKvCreateRenameNamespaceBody.fromJson(Map<String, dynamic> json) {return WorkersKvCreateRenameNamespaceBody(
   title: WorkersKvNamespaceTitle.fromJson(json['title'] as String),
-); }
+);}
 
 final WorkersKvNamespaceTitle title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': title.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('title'); } 
-WorkersKvCreateRenameNamespaceBody copyWith({WorkersKvNamespaceTitle? title}) { return WorkersKvCreateRenameNamespaceBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('title');}
+WorkersKvCreateRenameNamespaceBody copyWith({WorkersKvNamespaceTitle? title}) {return WorkersKvCreateRenameNamespaceBody(
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvCreateRenameNamespaceBody &&
           title == other.title;
@@ -24,4 +24,4 @@ WorkersKvCreateRenameNamespaceBody copyWith({WorkersKvNamespaceTitle? title}) { 
 
 @override String toString() => 'WorkersKvCreateRenameNamespaceBody(title: $title)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service_port.dart';import 'package:pub_kubernetes_api_v1_openapi/models/session_affinity_config.dart';/// ServiceSpec describes the attributes that a user creates on a service.
 @immutable final class ServiceSpec {const ServiceSpec({this.allocateLoadBalancerNodePorts, this.clusterIp, this.clusterIPs, this.externalIPs, this.externalName, this.externalTrafficPolicy, this.healthCheckNodePort, this.internalTrafficPolicy, this.ipFamilies, this.ipFamilyPolicy, this.loadBalancerClass, this.loadBalancerIp, this.loadBalancerSourceRanges, this.ports, this.publishNotReadyAddresses, this.selector, this.sessionAffinity, this.sessionAffinityConfig, this.trafficDistribution, this.type, });
 
-factory ServiceSpec.fromJson(Map<String, dynamic> json) { return ServiceSpec(
+factory ServiceSpec.fromJson(Map<String, dynamic> json) {return ServiceSpec(
   allocateLoadBalancerNodePorts: json['allocateLoadBalancerNodePorts'] as bool?,
   clusterIp: json['clusterIP'] as String?,
   clusterIPs: (json['clusterIPs'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -25,7 +25,7 @@ factory ServiceSpec.fromJson(Map<String, dynamic> json) { return ServiceSpec(
   sessionAffinityConfig: json['sessionAffinityConfig'] != null ? SessionAffinityConfig.fromJson(json['sessionAffinityConfig'] as Map<String, dynamic>) : null,
   trafficDistribution: json['trafficDistribution'] as String?,
   type: json['type'] as String?,
-); }
+);}
 
 /// allocateLoadBalancerNodePorts defines if NodePorts will be automatically allocated for services with type LoadBalancer.  Default is "true". It may be set to "false" if the cluster load-balancer does not rely on NodePorts.  If the caller requests specific NodePorts (by specifying a value), those requests will be respected, regardless of this field. This field may only be set for services with type LoadBalancer and will be cleared if the type is changed to any other type.
 final bool? allocateLoadBalancerNodePorts;
@@ -91,7 +91,7 @@ final String? trafficDistribution;
 /// type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object or EndpointSlice objects. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a virtual IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the same endpoints as the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP. "ExternalName" aliases this service to the specified externalName. Several other fields do not apply to ExternalName services. More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allocateLoadBalancerNodePorts': ?allocateLoadBalancerNodePorts,
   'clusterIP': ?clusterIp,
   'clusterIPs': ?clusterIPs,
@@ -112,9 +112,9 @@ Map<String, dynamic> toJson() { return {
   if (sessionAffinityConfig != null) 'sessionAffinityConfig': sessionAffinityConfig?.toJson(),
   'trafficDistribution': ?trafficDistribution,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allocateLoadBalancerNodePorts', 'clusterIP', 'clusterIPs', 'externalIPs', 'externalName', 'externalTrafficPolicy', 'healthCheckNodePort', 'internalTrafficPolicy', 'ipFamilies', 'ipFamilyPolicy', 'loadBalancerClass', 'loadBalancerIP', 'loadBalancerSourceRanges', 'ports', 'publishNotReadyAddresses', 'selector', 'sessionAffinity', 'sessionAffinityConfig', 'trafficDistribution', 'type'}.contains(key)); } 
-ServiceSpec copyWith({bool? Function()? allocateLoadBalancerNodePorts, String? Function()? clusterIp, List<String>? Function()? clusterIPs, List<String>? Function()? externalIPs, String? Function()? externalName, String? Function()? externalTrafficPolicy, int? Function()? healthCheckNodePort, String? Function()? internalTrafficPolicy, List<String>? Function()? ipFamilies, String? Function()? ipFamilyPolicy, String? Function()? loadBalancerClass, String? Function()? loadBalancerIp, List<String>? Function()? loadBalancerSourceRanges, List<ServicePort>? Function()? ports, bool? Function()? publishNotReadyAddresses, Map<String, String>? Function()? selector, String? Function()? sessionAffinity, SessionAffinityConfig? Function()? sessionAffinityConfig, String? Function()? trafficDistribution, String? Function()? type, }) { return ServiceSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allocateLoadBalancerNodePorts', 'clusterIP', 'clusterIPs', 'externalIPs', 'externalName', 'externalTrafficPolicy', 'healthCheckNodePort', 'internalTrafficPolicy', 'ipFamilies', 'ipFamilyPolicy', 'loadBalancerClass', 'loadBalancerIP', 'loadBalancerSourceRanges', 'ports', 'publishNotReadyAddresses', 'selector', 'sessionAffinity', 'sessionAffinityConfig', 'trafficDistribution', 'type'}.contains(key));}
+ServiceSpec copyWith({bool? Function()? allocateLoadBalancerNodePorts, String? Function()? clusterIp, List<String>? Function()? clusterIPs, List<String>? Function()? externalIPs, String? Function()? externalName, String? Function()? externalTrafficPolicy, int? Function()? healthCheckNodePort, String? Function()? internalTrafficPolicy, List<String>? Function()? ipFamilies, String? Function()? ipFamilyPolicy, String? Function()? loadBalancerClass, String? Function()? loadBalancerIp, List<String>? Function()? loadBalancerSourceRanges, List<ServicePort>? Function()? ports, bool? Function()? publishNotReadyAddresses, Map<String, String>? Function()? selector, String? Function()? sessionAffinity, SessionAffinityConfig? Function()? sessionAffinityConfig, String? Function()? trafficDistribution, String? Function()? type, }) {return ServiceSpec(
   allocateLoadBalancerNodePorts: allocateLoadBalancerNodePorts != null ? allocateLoadBalancerNodePorts() : this.allocateLoadBalancerNodePorts,
   clusterIp: clusterIp != null ? clusterIp() : this.clusterIp,
   clusterIPs: clusterIPs != null ? clusterIPs() : this.clusterIPs,
@@ -135,7 +135,7 @@ ServiceSpec copyWith({bool? Function()? allocateLoadBalancerNodePorts, String? F
   sessionAffinityConfig: sessionAffinityConfig != null ? sessionAffinityConfig() : this.sessionAffinityConfig,
   trafficDistribution: trafficDistribution != null ? trafficDistribution() : this.trafficDistribution,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ServiceSpec &&
           allocateLoadBalancerNodePorts == other.allocateLoadBalancerNodePorts &&
@@ -163,4 +163,4 @@ ServiceSpec copyWith({bool? Function()? allocateLoadBalancerNodePorts, String? F
 
 @override String toString() => 'ServiceSpec(\n  allocateLoadBalancerNodePorts: $allocateLoadBalancerNodePorts,\n  clusterIp: $clusterIp,\n  clusterIPs: $clusterIPs,\n  externalIPs: $externalIPs,\n  externalName: $externalName,\n  externalTrafficPolicy: $externalTrafficPolicy,\n  healthCheckNodePort: $healthCheckNodePort,\n  internalTrafficPolicy: $internalTrafficPolicy,\n  ipFamilies: $ipFamilies,\n  ipFamilyPolicy: $ipFamilyPolicy,\n  loadBalancerClass: $loadBalancerClass,\n  loadBalancerIp: $loadBalancerIp,\n  loadBalancerSourceRanges: $loadBalancerSourceRanges,\n  ports: $ports,\n  publishNotReadyAddresses: $publishNotReadyAddresses,\n  selector: $selector,\n  sessionAffinity: $sessionAffinity,\n  sessionAffinityConfig: $sessionAffinityConfig,\n  trafficDistribution: $trafficDistribution,\n  type: $type,\n)';
 
- }
+}

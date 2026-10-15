@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostRadarValueListsValueListRequest {const PostRadarValueListsValueListRequest({this.alias, this.expand, this.metadata, this.name, });
 
-factory PostRadarValueListsValueListRequest.fromJson(Map<String, dynamic> json) { return PostRadarValueListsValueListRequest(
+factory PostRadarValueListsValueListRequest.fromJson(Map<String, dynamic> json) {return PostRadarValueListsValueListRequest(
   alias: json['alias'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String?,
-); }
+);}
 
 /// The name of the value list for use in rules.
 final String? alias;
@@ -22,15 +22,15 @@ final Map<String,String>? metadata;
 /// The human-readable name of the value list.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alias': ?alias,
   'expand': ?expand,
   'metadata': ?metadata,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alias', 'expand', 'metadata', 'name'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'alias', 'expand', 'metadata', 'name'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final alias$ = alias;
 if (alias$ != null) {
   if (alias$.runes.length > 100) { errors.add('alias: length must be <= 100'); }
@@ -39,13 +39,13 @@ final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 100) { errors.add('name: length must be <= 100'); }
 }
-return errors; } 
-PostRadarValueListsValueListRequest copyWith({String? Function()? alias, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? name, }) { return PostRadarValueListsValueListRequest(
+return errors;}
+PostRadarValueListsValueListRequest copyWith({String? Function()? alias, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? name, }) {return PostRadarValueListsValueListRequest(
   alias: alias != null ? alias() : this.alias,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarValueListsValueListRequest &&
           alias == other.alias &&
@@ -57,4 +57,4 @@ PostRadarValueListsValueListRequest copyWith({String? Function()? alias, List<St
 
 @override String toString() => 'PostRadarValueListsValueListRequest(alias: $alias, expand: $expand, metadata: $metadata, name: $name)';
 
- }
+}

@@ -12,7 +12,7 @@ final class WorkersAiFinetuneApi with ApiExecutor {const WorkersAiFinetuneApi(th
 /// List Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesError>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesError>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -29,11 +29,11 @@ return execute(
   },
   onError: WorkersAiListFinetunesError.fromResponse,
 );
- } 
+}
 /// Create a new Finetune
 ///
 /// `POST /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneError>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneError>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -52,11 +52,11 @@ return execute(
   },
   onError: WorkersAiCreateFinetuneError.fromResponse,
 );
- } 
+}
 /// Upload a Finetune Asset
 ///
 /// `POST /accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets`
-Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetError>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetError>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -72,18 +72,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return WorkersAiUploadFinetuneAssetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: WorkersAiUploadFinetuneAssetError.fromResponse,
 );
- } 
+}
 /// List Public Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes/public`
-Future<ApiResult<List<WorkersAiCreateFinetuneResponseResult>, WorkersAiListPublicFinetunesError>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersAiCreateFinetuneResponseResult>, WorkersAiListPublicFinetunesError>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -114,5 +114,5 @@ return execute(
   },
   onError: WorkersAiListPublicFinetunesError.fromResponse,
 );
- } 
- }
+}
+}

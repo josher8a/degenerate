@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
 sealed class PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions();
 
-factory PaymentLinksResourceConsentCollectionPromotions.fromJson(String json) { return switch (json) {
+factory PaymentLinksResourceConsentCollectionPromotions.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'none' => none,
   _ => PaymentLinksResourceConsentCollectionPromotions$Unknown(json),
-}; }
+};}
 
 static const PaymentLinksResourceConsentCollectionPromotions auto = PaymentLinksResourceConsentCollectionPromotions$auto._();
 
@@ -17,30 +17,30 @@ static const PaymentLinksResourceConsentCollectionPromotions none = PaymentLinks
 static const List<PaymentLinksResourceConsentCollectionPromotions> values = [auto, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentLinksResourceConsentCollectionPromotions$Unknown; } 
+bool get isUnknown {return this is PaymentLinksResourceConsentCollectionPromotions$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentLinksResourceConsentCollectionPromotions$auto() => auto(),
       PaymentLinksResourceConsentCollectionPromotions$none() => none(),
       PaymentLinksResourceConsentCollectionPromotions$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentLinksResourceConsentCollectionPromotions$auto() => auto != null ? auto() : orElse(value),
       PaymentLinksResourceConsentCollectionPromotions$none() => none != null ? none() : orElse(value),
       PaymentLinksResourceConsentCollectionPromotions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentLinksResourceConsentCollectionPromotions($value)';
 
- }
+}
 @immutable final class PaymentLinksResourceConsentCollectionPromotions$auto extends PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions$auto._();
 
 @override String get value => 'auto';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class PaymentLinksResourceConsentCollectionPromotions$none extends PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions$none._();
 
 @override String get value => 'none';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class PaymentLinksResourceConsentCollectionPromotions$Unknown extends PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains additional details about the status of a payment method for a specific payment method domain.
 @immutable final class PaymentMethodDomainResourcePaymentMethodStatusDetails {const PaymentMethodDomainResourcePaymentMethodStatusDetails({required this.errorMessage});
 
-factory PaymentMethodDomainResourcePaymentMethodStatusDetails.fromJson(Map<String, dynamic> json) { return PaymentMethodDomainResourcePaymentMethodStatusDetails(
+factory PaymentMethodDomainResourcePaymentMethodStatusDetails.fromJson(Map<String, dynamic> json) {return PaymentMethodDomainResourcePaymentMethodStatusDetails(
   errorMessage: json['error_message'] as String,
-); }
+);}
 
 /// The error message associated with the status of the payment method on the domain.
 final String errorMessage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error_message': errorMessage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error_message') && json['error_message'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error_message') && json['error_message'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (errorMessage.runes.length > 5000) { errors.add('errorMessage: length must be <= 5000'); }
-return errors; } 
-PaymentMethodDomainResourcePaymentMethodStatusDetails copyWith({String? errorMessage}) { return PaymentMethodDomainResourcePaymentMethodStatusDetails(
+return errors;}
+PaymentMethodDomainResourcePaymentMethodStatusDetails copyWith({String? errorMessage}) {return PaymentMethodDomainResourcePaymentMethodStatusDetails(
   errorMessage: errorMessage ?? this.errorMessage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDomainResourcePaymentMethodStatusDetails &&
           errorMessage == other.errorMessage;
@@ -30,4 +30,4 @@ PaymentMethodDomainResourcePaymentMethodStatusDetails copyWith({String? errorMes
 
 @override String toString() => 'PaymentMethodDomainResourcePaymentMethodStatusDetails(errorMessage: $errorMessage)';
 
- }
+}

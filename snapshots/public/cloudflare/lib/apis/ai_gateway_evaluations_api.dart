@@ -12,7 +12,7 @@ final class AiGatewayEvaluationsApi with ApiExecutor {const AiGatewayEvaluations
 /// List Evaluators
 ///
 /// `GET /accounts/{account_id}/ai-gateway/evaluation-types`
-Future<ApiResult<List<AigConfigListEvaluatorsResponseResult>, AigConfigListEvaluatorsError>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigListEvaluatorsResponseResult>, AigConfigListEvaluatorsError>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -38,7 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -46,13 +46,13 @@ return execute(
   },
   onError: AigConfigListEvaluatorsError.fromResponse,
 );
- } 
+}
 /// List Evaluations
 ///
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<List<AigConfigCreateEvaluationsResponseResult>, AigConfigListEvaluationsError>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigCreateEvaluationsResponseResult>, AigConfigListEvaluationsError>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -81,7 +81,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -89,13 +89,13 @@ return execute(
   },
   onError: AigConfigListEvaluationsError.fromResponse,
 );
- } 
+}
 /// Create a new Evaluation
 ///
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigCreateEvaluationsError>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigCreateEvaluationsError>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -114,13 +114,13 @@ return execute(
   },
   onError: AigConfigCreateEvaluationsError.fromResponse,
 );
- } 
+}
 /// Fetch a Evaluation
 ///
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigFetchEvaluationsError>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigFetchEvaluationsError>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -129,7 +129,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -137,13 +137,13 @@ return execute(
   },
   onError: AigConfigFetchEvaluationsError.fromResponse,
 );
- } 
+}
 /// Delete a Evaluation
 ///
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigDeleteEvaluationsError>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigDeleteEvaluationsError>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -160,5 +160,5 @@ return execute(
   },
   onError: AigConfigDeleteEvaluationsError.fromResponse,
 );
- } 
- }
+}
+}

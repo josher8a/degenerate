@@ -14,7 +14,7 @@ final class TsengAbuseComplaintProcessorOtherApi with ApiExecutor {const TsengAb
 /// List the abuse reports for a given account
 ///
 /// `GET /accounts/{account_id}/abuse-reports`
-Future<ApiResult<ListAbuseReportsResponseResult?, ListAbuseReportsError>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAbuseReportsResponseResult?, ListAbuseReportsError>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -55,7 +55,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -63,13 +63,13 @@ return execute(
   },
   onError: ListAbuseReportsError.fromResponse,
 );
- } 
+}
 /// List abuse report emails
 ///
 /// List emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/emails`
-Future<ApiResult<ListEmailsResponseResult?, ListEmailsError>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListEmailsResponseResult?, ListEmailsError>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -89,7 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -97,13 +97,13 @@ return execute(
   },
   onError: ListEmailsError.fromResponse,
 );
- } 
+}
 /// List abuse report mitigations
 ///
 /// List mitigations done to remediate the abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/mitigations`
-Future<ApiResult<ListMitigationsResponseResult?, ListMitigationsError>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListMitigationsResponseResult?, ListMitigationsError>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -141,7 +141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -149,13 +149,13 @@ return execute(
   },
   onError: ListMitigationsError.fromResponse,
 );
- } 
+}
 /// Request review on mitigations
 ///
 /// Request a review for mitigations on an account.
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_id}/mitigations/appeal`
-Future<ApiResult<List<AbuseReportsMitigationListItem>?, RequestReviewError>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AbuseReportsMitigationListItem>?, RequestReviewError>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,7 +166,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -174,13 +174,13 @@ return execute(
   },
   onError: RequestReviewError.fromResponse,
 );
- } 
+}
 /// Abuse Report Details
 ///
 /// Retrieve the details of an abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<AbuseReportsAbuseReport, GetAbuseReportError>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AbuseReportsAbuseReport, GetAbuseReportError>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -189,7 +189,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -197,13 +197,13 @@ return execute(
   },
   onError: GetAbuseReportError.fromResponse,
 );
- } 
+}
 /// Submit an abuse report
 ///
 /// Submit the Abuse Report of a particular type
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<String, SubmitAbuseReportError>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, SubmitAbuseReportError>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -214,7 +214,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -222,5 +222,5 @@ return execute(
   },
   onError: SubmitAbuseReportError.fromResponse,
 );
- } 
- }
+}
+}

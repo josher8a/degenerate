@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeServerEventConversationCreated {const RealtimeServerEventConversationCreated({required this.eventId, required this.type, required this.conversation, });
 
-factory RealtimeServerEventConversationCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationCreated(
+factory RealtimeServerEventConversationCreated.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationCreated(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   conversation: RealtimeServerEventConversationCreatedConversation.fromJson(json['conversation'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -20,19 +20,19 @@ final String type;
 /// The conversation resource.
 final RealtimeServerEventConversationCreatedConversation conversation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'conversation': conversation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('conversation'); } 
-RealtimeServerEventConversationCreated copyWith({String? eventId, String? type, RealtimeServerEventConversationCreatedConversation? conversation, }) { return RealtimeServerEventConversationCreated(
+      json.containsKey('conversation');}
+RealtimeServerEventConversationCreated copyWith({String? eventId, String? type, RealtimeServerEventConversationCreatedConversation? conversation, }) {return RealtimeServerEventConversationCreated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   conversation: conversation ?? this.conversation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationCreated &&
           eventId == other.eventId &&
@@ -43,4 +43,4 @@ RealtimeServerEventConversationCreated copyWith({String? eventId, String? type, 
 
 @override String toString() => 'RealtimeServerEventConversationCreated(eventId: $eventId, type: $type, conversation: $conversation)';
 
- }
+}

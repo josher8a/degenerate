@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Confirmation payload returned after unassigning a role.
 @immutable final class DeletedRoleAssignmentResource {const DeletedRoleAssignmentResource({required this.object, required this.deleted, });
 
-factory DeletedRoleAssignmentResource.fromJson(Map<String, dynamic> json) { return DeletedRoleAssignmentResource(
+factory DeletedRoleAssignmentResource.fromJson(Map<String, dynamic> json) {return DeletedRoleAssignmentResource(
   object: json['object'] as String,
   deleted: json['deleted'] as bool,
-); }
+);}
 
 /// Identifier for the deleted assignment, such as `group.role.deleted` or `user.role.deleted`.
 final String object;
@@ -15,16 +15,16 @@ final String object;
 /// Whether the assignment was removed.
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object,
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] is String &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-DeletedRoleAssignmentResource copyWith({String? object, bool? deleted, }) { return DeletedRoleAssignmentResource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] is String &&
+      json.containsKey('deleted') && json['deleted'] is bool;}
+DeletedRoleAssignmentResource copyWith({String? object, bool? deleted, }) {return DeletedRoleAssignmentResource(
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedRoleAssignmentResource &&
           object == other.object &&
@@ -34,4 +34,4 @@ DeletedRoleAssignmentResource copyWith({String? object, bool? deleted, }) { retu
 
 @override String toString() => 'DeletedRoleAssignmentResource(object: $object, deleted: $deleted)';
 
- }
+}

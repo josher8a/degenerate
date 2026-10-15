@@ -14,26 +14,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   }
 /// }
 /// ```
-@immutable final class LoadBalancingNotificationFilter {const LoadBalancingNotificationFilter({this.origin, this.pool, });
+@immutable final class LoadBalancingNotificationFilter {const LoadBalancingNotificationFilter({this.origin = const Omittable.absent(), this.pool = const Omittable.absent(), });
 
-factory LoadBalancingNotificationFilter.fromJson(Map<String, dynamic> json) { return LoadBalancingNotificationFilter(
-  origin: json['origin'] != null ? LoadBalancingFilterOptions.fromJson(json['origin'] as Map<String, dynamic>) : null,
-  pool: json['pool'] != null ? LoadBalancingFilterOptions.fromJson(json['pool'] as Map<String, dynamic>) : null,
-); }
+factory LoadBalancingNotificationFilter.fromJson(Map<String, dynamic> json) {return LoadBalancingNotificationFilter(
+  origin: json.containsKey('origin') ? Omittable(json['origin'] != null ? LoadBalancingFilterOptions.fromJson(json['origin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  pool: json.containsKey('pool') ? Omittable(json['pool'] != null ? LoadBalancingFilterOptions.fromJson(json['pool'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
-final LoadBalancingFilterOptions? origin;
+final Omittable<LoadBalancingFilterOptions?> origin;
 
-final LoadBalancingFilterOptions? pool;
+final Omittable<LoadBalancingFilterOptions?> pool;
 
-Map<String, dynamic> toJson() { return {
-  if (origin != null) 'origin': origin?.toJson(),
-  if (pool != null) 'pool': pool?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origin', 'pool'}.contains(key)); } 
-LoadBalancingNotificationFilter copyWith({LoadBalancingFilterOptions? Function()? origin, LoadBalancingFilterOptions? Function()? pool, }) { return LoadBalancingNotificationFilter(
-  origin: origin != null ? origin() : this.origin,
-  pool: pool != null ? pool() : this.pool,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (origin.isPresent) 'origin': origin.value?.toJson(),
+  if (pool.isPresent) 'pool': pool.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'origin', 'pool'}.contains(key));}
+LoadBalancingNotificationFilter copyWith({Omittable<LoadBalancingFilterOptions?>? origin, Omittable<LoadBalancingFilterOptions?>? pool, }) {return LoadBalancingNotificationFilter(
+  origin: origin ?? this.origin,
+  pool: pool ?? this.pool,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingNotificationFilter &&
           origin == other.origin &&
@@ -43,4 +43,4 @@ LoadBalancingNotificationFilter copyWith({LoadBalancingFilterOptions? Function()
 
 @override String toString() => 'LoadBalancingNotificationFilter(origin: $origin, pool: $pool)';
 
- }
+}

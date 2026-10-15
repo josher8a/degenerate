@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_locations.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';sealed class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum();
 
-factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) { return switch (json) {
+factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) {return switch (json) {
   'clientAuth' => clientAuth,
   'emailProtection' => emailProtection,
   _ => TeamsDevicesExtendedKeyUsageEnum$Unknown(json),
-}; }
+};}
 
 static const TeamsDevicesExtendedKeyUsageEnum clientAuth = TeamsDevicesExtendedKeyUsageEnum$clientAuth._();
 
@@ -16,30 +16,30 @@ static const TeamsDevicesExtendedKeyUsageEnum emailProtection = TeamsDevicesExte
 static const List<TeamsDevicesExtendedKeyUsageEnum> values = [clientAuth, emailProtection];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'clientAuth' => 'clientAuth',
   'emailProtection' => 'emailProtection',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamsDevicesExtendedKeyUsageEnum$Unknown; } 
+bool get isUnknown {return this is TeamsDevicesExtendedKeyUsageEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() clientAuth, required W Function() emailProtection, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() clientAuth, required W Function() emailProtection, required W Function(String value) $unknown, }) {return switch (this) {
       TeamsDevicesExtendedKeyUsageEnum$clientAuth() => clientAuth(),
       TeamsDevicesExtendedKeyUsageEnum$emailProtection() => emailProtection(),
       TeamsDevicesExtendedKeyUsageEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientAuth, W Function()? emailProtection, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientAuth, W Function()? emailProtection, W Function(String value)? $unknown, }) {return switch (this) {
       TeamsDevicesExtendedKeyUsageEnum$clientAuth() => clientAuth != null ? clientAuth() : orElse(value),
       TeamsDevicesExtendedKeyUsageEnum$emailProtection() => emailProtection != null ? emailProtection() : orElse(value),
       TeamsDevicesExtendedKeyUsageEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamsDevicesExtendedKeyUsageEnum($value)';
 
- }
+}
 @immutable final class TeamsDevicesExtendedKeyUsageEnum$clientAuth extends TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum$clientAuth._();
 
 @override String get value => 'clientAuth';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientAu
 
 @override int get hashCode => 'clientAuth'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesExtendedKeyUsageEnum$emailProtection extends TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum$emailProtection._();
 
 @override String get value => 'emailProtection';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientAu
 
 @override int get hashCode => 'emailProtection'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesExtendedKeyUsageEnum$Unknown extends TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum$Unknown(this.value);
 
 @override final String value;
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientAu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, required this.operatingSystem, this.cn, this.extendedKeyUsage, this.locations, this.subjectAlternativeNames, });
 
-factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
+factory InputRequest.fromJson(Map<String, dynamic> json) {return InputRequest(
   certificateId: json['certificate_id'] as String,
   checkPrivateKey: json['check_private_key'] as bool,
   cn: json['cn'] as String?,
@@ -78,7 +78,7 @@ factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
   locations: json['locations'] != null ? InputRequestLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   operatingSystem: InputRequestOperatingSystem.fromJson(json['operating_system'] as String),
   subjectAlternativeNames: (json['subject_alternative_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// UUID of Cloudflare managed certificate.
 /// 
@@ -112,7 +112,7 @@ final InputRequestOperatingSystem operatingSystem;
 /// Example: `[example.com, sample.com]`
 final List<String>? subjectAlternativeNames;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate_id': certificateId,
   'check_private_key': checkPrivateKey,
   'cn': ?cn,
@@ -120,15 +120,15 @@ Map<String, dynamic> toJson() { return {
   if (locations != null) 'locations': locations?.toJson(),
   'operating_system': operatingSystem.toJson(),
   'subject_alternative_names': ?subjectAlternativeNames,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_id') && json['certificate_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_id') && json['certificate_id'] is String &&
       json.containsKey('check_private_key') && json['check_private_key'] is bool &&
-      json.containsKey('operating_system'); } 
+      json.containsKey('operating_system');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (certificateId.runes.length > 36) { errors.add('certificateId: length must be <= 36'); }
-return errors; } 
-InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum>? Function()? extendedKeyUsage, InputRequestLocations? Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String>? Function()? subjectAlternativeNames, }) { return InputRequest(
+return errors;}
+InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum>? Function()? extendedKeyUsage, InputRequestLocations? Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String>? Function()? subjectAlternativeNames, }) {return InputRequest(
   certificateId: certificateId ?? this.certificateId,
   checkPrivateKey: checkPrivateKey ?? this.checkPrivateKey,
   cn: cn != null ? cn() : this.cn,
@@ -136,7 +136,7 @@ InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Fun
   locations: locations != null ? locations() : this.locations,
   operatingSystem: operatingSystem ?? this.operatingSystem,
   subjectAlternativeNames: subjectAlternativeNames != null ? subjectAlternativeNames() : this.subjectAlternativeNames,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputRequest &&
           certificateId == other.certificateId &&
@@ -151,4 +151,4 @@ InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Fun
 
 @override String toString() => 'InputRequest(certificateId: $certificateId, checkPrivateKey: $checkPrivateKey, cn: $cn, extendedKeyUsage: $extendedKeyUsage, locations: $locations, operatingSystem: $operatingSystem, subjectAlternativeNames: $subjectAlternativeNames)';
 
- }
+}

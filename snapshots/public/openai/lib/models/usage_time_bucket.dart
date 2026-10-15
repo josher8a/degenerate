@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result.dart';import 'package:pub_openai/models/usage_audio_speeches_result.dart';import 'package:pub_openai/models/usage_audio_transcriptions_result.dart';import 'package:pub_openai/models/usage_code_interpreter_sessions_result.dart';import 'package:pub_openai/models/usage_completions_result.dart';import 'package:pub_openai/models/usage_embeddings_result.dart';import 'package:pub_openai/models/usage_images_result.dart';import 'package:pub_openai/models/usage_moderations_result.dart';import 'package:pub_openai/models/usage_time_bucket/result.dart';import 'package:pub_openai/models/usage_vector_stores_result.dart';sealed class UsageTimeBucketObject {const UsageTimeBucketObject();
 
-factory UsageTimeBucketObject.fromJson(String json) { return switch (json) {
+factory UsageTimeBucketObject.fromJson(String json) {return switch (json) {
   'bucket' => bucket,
   _ => UsageTimeBucketObject$Unknown(json),
-}; }
+};}
 
 static const UsageTimeBucketObject bucket = UsageTimeBucketObject$bucket._();
 
 static const List<UsageTimeBucketObject> values = [bucket];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bucket' => 'bucket',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageTimeBucketObject$Unknown; } 
+bool get isUnknown {return this is UsageTimeBucketObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bucket, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bucket, required W Function(String value) $unknown, }) {return switch (this) {
       UsageTimeBucketObject$bucket() => bucket(),
       UsageTimeBucketObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bucket, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bucket, W Function(String value)? $unknown, }) {return switch (this) {
       UsageTimeBucketObject$bucket() => bucket != null ? bucket() : orElse(value),
       UsageTimeBucketObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageTimeBucketObject($value)';
 
- }
+}
 @immutable final class UsageTimeBucketObject$bucket extends UsageTimeBucketObject {const UsageTimeBucketObject$bucket._();
 
 @override String get value => 'bucket';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bucket, 
 
 @override int get hashCode => 'bucket'.hashCode;
 
- }
+}
 @immutable final class UsageTimeBucketObject$Unknown extends UsageTimeBucketObject {const UsageTimeBucketObject$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bucket, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class UsageTimeBucket {const UsageTimeBucket({required this.object, required this.startTime, required this.endTime, required this.result, });
 
-factory UsageTimeBucket.fromJson(Map<String, dynamic> json) { return UsageTimeBucket(
+factory UsageTimeBucket.fromJson(Map<String, dynamic> json) {return UsageTimeBucket(
   object: UsageTimeBucketObject.fromJson(json['object'] as String),
   startTime: (json['start_time'] as num).toInt(),
   endTime: (json['end_time'] as num).toInt(),
@@ -71,7 +71,7 @@ factory UsageTimeBucket.fromJson(Map<String, dynamic> json) { return UsageTimeBu
   final Map<String, dynamic> m when m['object'] == 'organization.costs.result' => OneOf9<UsageCompletionsResult, UsageEmbeddingsResult, UsageModerationsResult, UsageImagesResult, UsageAudioSpeechesResult, UsageAudioTranscriptionsResult, UsageVectorStoresResult, UsageCodeInterpreterSessionsResult, CostsResult>.i(CostsResult.fromJson(m)),
   _ => OneOf9.parse(e, fromA: (v) => UsageCompletionsResult.fromJson(v as Map<String, dynamic>), fromB: (v) => UsageEmbeddingsResult.fromJson(v as Map<String, dynamic>), fromC: (v) => UsageModerationsResult.fromJson(v as Map<String, dynamic>), fromD: (v) => UsageImagesResult.fromJson(v as Map<String, dynamic>), fromE: (v) => UsageAudioSpeechesResult.fromJson(v as Map<String, dynamic>), fromF: (v) => UsageAudioTranscriptionsResult.fromJson(v as Map<String, dynamic>), fromG: (v) => UsageVectorStoresResult.fromJson(v as Map<String, dynamic>), fromH: (v) => UsageCodeInterpreterSessionsResult.fromJson(v as Map<String, dynamic>), fromI: (v) => CostsResult.fromJson(v as Map<String, dynamic>),),
 }).toList(),
-); }
+);}
 
 final UsageTimeBucketObject object;
 
@@ -81,22 +81,22 @@ final int endTime;
 
 final List<Result> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'start_time': startTime,
   'end_time': endTime,
   'result': result.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('start_time') && json['start_time'] is num &&
       json.containsKey('end_time') && json['end_time'] is num &&
-      json.containsKey('result'); } 
-UsageTimeBucket copyWith({UsageTimeBucketObject? object, int? startTime, int? endTime, List<Result>? result, }) { return UsageTimeBucket(
+      json.containsKey('result');}
+UsageTimeBucket copyWith({UsageTimeBucketObject? object, int? startTime, int? endTime, List<Result>? result, }) {return UsageTimeBucket(
   object: object ?? this.object,
   startTime: startTime ?? this.startTime,
   endTime: endTime ?? this.endTime,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageTimeBucket &&
           object == other.object &&
@@ -108,4 +108,4 @@ UsageTimeBucket copyWith({UsageTimeBucketObject? object, int? startTime, int? en
 
 @override String toString() => 'UsageTimeBucket(object: $object, startTime: $startTime, endTime: $endTime, result: $result)';
 
- }
+}

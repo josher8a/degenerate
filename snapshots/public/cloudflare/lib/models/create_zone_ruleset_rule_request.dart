@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateZoneRulesetRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_block_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_challenge_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_compress_response_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_d_do_s_dynamic_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_execute_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_force_connection_close_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_js_challenge_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_custom_field_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_managed_challenge_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_redirect_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_rewrite_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_route_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_score_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_serve_error_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_control_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_settings_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_tags_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_config_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_skip_rule.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_position.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_compress_response_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_log_custom_field_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_redirect_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_rewrite_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_route_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_score_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_serve_error_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_cache_control_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_cache_settings_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_set_config_rule_action_parameters.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_skip_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';sealed class CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_block_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_challenge_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_compress_response_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_d_do_s_dynamic_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_execute_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_force_connection_close_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_js_challenge_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_custom_field_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_log_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_managed_challenge_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_redirect_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_rewrite_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_route_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_score_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_serve_error_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_control_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_settings_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_cache_tags_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_set_config_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/create_account_ruleset_rule_request_rulesets_skip_rule_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_request_position.dart';import 'package:pub_cloudflare/models/rulesets_block_rule/rulesets_block_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_compress_response_rule/rulesets_compress_response_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_log_custom_field_rule/rulesets_log_custom_field_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_redirect_rule/rulesets_redirect_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_rule_request/rulesets_rewrite_rule_request_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_route_rule/rulesets_route_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';import 'package:pub_cloudflare/models/rulesets_score_rule/rulesets_score_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_serve_error_rule/rulesets_serve_error_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_rule/rulesets_set_cache_control_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_rule/rulesets_set_cache_settings_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_tags_rule/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_config_rule/rulesets_set_config_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_skip_rule/rulesets_skip_rule_action_parameters.dart';sealed class CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction();
 
-factory CreateZoneRulesetRuleRequestAction.fromJson(String json) { return switch (json) {
+factory CreateZoneRulesetRuleRequestAction.fromJson(String json) {return switch (json) {
   'block' => block,
   'challenge' => challenge,
   'compress_response' => compressResponse,
@@ -25,7 +25,7 @@ factory CreateZoneRulesetRuleRequestAction.fromJson(String json) { return switch
   'set_config' => setConfig,
   'skip' => skip,
   _ => CreateZoneRulesetRuleRequestAction$Unknown(json),
-}; }
+};}
 
 static const CreateZoneRulesetRuleRequestAction block = CreateZoneRulesetRuleRequestAction$block._();
 
@@ -74,7 +74,7 @@ String toJson() => value;
 
 bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$block extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$block._();
 
 @override String get value => 'block';
@@ -85,7 +85,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(block)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$challenge extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$challenge._();
 
 @override String get value => 'challenge';
@@ -96,7 +96,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(challenge)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$compressResponse extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$compressResponse._();
 
 @override String get value => 'compress_response';
@@ -107,7 +107,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(compress_response)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$ddosDynamic extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$ddosDynamic._();
 
 @override String get value => 'ddos_dynamic';
@@ -118,7 +118,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(ddos_dynamic)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$execute extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$execute._();
 
 @override String get value => 'execute';
@@ -129,7 +129,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(execute)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$forceConnectionClose extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$forceConnectionClose._();
 
 @override String get value => 'force_connection_close';
@@ -140,7 +140,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(force_connection_close)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$jsChallenge extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$jsChallenge._();
 
 @override String get value => 'js_challenge';
@@ -151,7 +151,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(js_challenge)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$log extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$log._();
 
 @override String get value => 'log';
@@ -162,7 +162,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(log)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$logCustomField extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$logCustomField._();
 
 @override String get value => 'log_custom_field';
@@ -173,7 +173,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(log_custom_field)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$managedChallenge extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$managedChallenge._();
 
 @override String get value => 'managed_challenge';
@@ -184,7 +184,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(managed_challenge)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$redirect extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$redirect._();
 
 @override String get value => 'redirect';
@@ -195,7 +195,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(redirect)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$rewrite extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$rewrite._();
 
 @override String get value => 'rewrite';
@@ -206,7 +206,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(rewrite)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$route extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$route._();
 
 @override String get value => 'route';
@@ -217,7 +217,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(route)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$score extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$score._();
 
 @override String get value => 'score';
@@ -228,7 +228,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(score)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$serveError extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$serveError._();
 
 @override String get value => 'serve_error';
@@ -239,7 +239,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(serve_error)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$setCacheControl extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$setCacheControl._();
 
 @override String get value => 'set_cache_control';
@@ -250,7 +250,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(set_cache_control)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$setCacheSettings extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$setCacheSettings._();
 
 @override String get value => 'set_cache_settings';
@@ -261,7 +261,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(set_cache_settings)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$setCacheTags extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$setCacheTags._();
 
 @override String get value => 'set_cache_tags';
@@ -272,7 +272,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(set_cache_tags)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$setConfig extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$setConfig._();
 
 @override String get value => 'set_config';
@@ -283,7 +283,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(set_config)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$skip extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$skip._();
 
 @override String get value => 'skip';
@@ -294,7 +294,7 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction(skip)';
 
- }
+}
 @immutable final class CreateZoneRulesetRuleRequestAction$Unknown extends CreateZoneRulesetRuleRequestAction {const CreateZoneRulesetRuleRequestAction$Unknown(this.value);
 
 @override final String value;
@@ -305,11 +305,11 @@ bool get isUnknown => this is CreateZoneRulesetRuleRequestAction$Unknown;
 
 @override String toString() => 'CreateZoneRulesetRuleRequestAction($value)';
 
- }
+}
 sealed class CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequest();
 
 /// Deserialize from JSON, dispatching on the `action` discriminator.
-factory CreateZoneRulesetRuleRequest.fromJson(Map<String, dynamic> json) { return switch (json['action']) {
+factory CreateZoneRulesetRuleRequest.fromJson(Map<String, dynamic> json) {return switch (json['action']) {
   'block' => CreateZoneRulesetRuleRequestBlock.fromJson(json),
   'challenge' => CreateZoneRulesetRuleRequestChallenge.fromJson(json),
   'compress_response' => CreateZoneRulesetRuleRequestCompressResponse.fromJson(json),
@@ -331,67 +331,67 @@ factory CreateZoneRulesetRuleRequest.fromJson(Map<String, dynamic> json) { retur
   'set_config' => CreateZoneRulesetRuleRequestSetConfig.fromJson(json),
   'skip' => CreateZoneRulesetRuleRequestSkip.fromJson(json),
   _ => CreateZoneRulesetRuleRequest$Unknown(json),
-}; }
+};}
 
 /// Build the `block` variant.
-factory CreateZoneRulesetRuleRequest.block({required DateTime lastUpdated, required String version, RulesetsBlockRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRule(action: 'block', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.block({RulesetsBlockRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRuleRequest(action: Omittable('block'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `challenge` variant.
-factory CreateZoneRulesetRuleRequest.challenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRule(action: 'challenge', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.challenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRuleRequest(action: Omittable('challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `compress_response` variant.
-factory CreateZoneRulesetRuleRequest.compressResponse({required DateTime lastUpdated, required String version, RulesetsCompressResponseRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRule(action: 'compress_response', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.compressResponse({RulesetsCompressResponseRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest(action: Omittable('compress_response'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `ddos_dynamic` variant.
-factory CreateZoneRulesetRuleRequest.ddosDynamic({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRule(action: 'ddos_dynamic', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.ddosDynamic({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest(action: Omittable('ddos_dynamic'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `execute` variant.
-factory CreateZoneRulesetRuleRequest.execute({required DateTime lastUpdated, required String version, RulesetsExecuteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRule(action: 'execute', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.execute({RulesetsExecuteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRuleRequest(action: Omittable('execute'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `force_connection_close` variant.
-factory CreateZoneRulesetRuleRequest.forceConnectionClose({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRule(action: 'force_connection_close', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.forceConnectionClose({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest(action: Omittable('force_connection_close'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `js_challenge` variant.
-factory CreateZoneRulesetRuleRequest.jsChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRule(action: 'js_challenge', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.jsChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest(action: Omittable('js_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `log` variant.
-factory CreateZoneRulesetRuleRequest.log({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRule(action: 'log', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.log({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRuleRequest(action: Omittable('log'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `log_custom_field` variant.
-factory CreateZoneRulesetRuleRequest.logCustomField({required DateTime lastUpdated, required String version, RulesetsLogCustomFieldRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRule(action: 'log_custom_field', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.logCustomField({RulesetsLogCustomFieldRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest(action: Omittable('log_custom_field'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `managed_challenge` variant.
-factory CreateZoneRulesetRuleRequest.managedChallenge({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRule(action: 'managed_challenge', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.managedChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest(action: Omittable('managed_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `redirect` variant.
-factory CreateZoneRulesetRuleRequest.redirect({required DateTime lastUpdated, required String version, RulesetsRedirectRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRule(action: 'redirect', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.redirect({RulesetsRedirectRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRuleRequest(action: Omittable('redirect'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `rewrite` variant.
-factory CreateZoneRulesetRuleRequest.rewrite({required DateTime lastUpdated, required String version, RulesetsRewriteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRule(action: 'rewrite', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.rewrite({RulesetsRewriteRuleRequestActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRuleRequest(action: Omittable('rewrite'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `route` variant.
-factory CreateZoneRulesetRuleRequest.route({required DateTime lastUpdated, required String version, RulesetsRouteRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRule(action: 'route', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.route({RulesetsRouteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRuleRequest(action: Omittable('route'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `score` variant.
-factory CreateZoneRulesetRuleRequest.score({required DateTime lastUpdated, required String version, RulesetsScoreRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRule(action: 'score', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.score({RulesetsScoreRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRuleRequest(action: Omittable('score'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `serve_error` variant.
-factory CreateZoneRulesetRuleRequest.serveError({required DateTime lastUpdated, required String version, RulesetsServeErrorRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRule(action: 'serve_error', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.serveError({RulesetsServeErrorRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRuleRequest(action: Omittable('serve_error'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_cache_control` variant.
-factory CreateZoneRulesetRuleRequest.setCacheControl({required DateTime lastUpdated, required String version, RulesetsSetCacheControlRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRule(action: 'set_cache_control', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.setCacheControl({RulesetsSetCacheControlRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest(action: Omittable('set_cache_control'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_cache_settings` variant.
-factory CreateZoneRulesetRuleRequest.setCacheSettings({required DateTime lastUpdated, required String version, RulesetsSetCacheSettingsRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRule(action: 'set_cache_settings', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.setCacheSettings({RulesetsSetCacheSettingsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest(action: Omittable('set_cache_settings'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_cache_tags` variant.
-factory CreateZoneRulesetRuleRequest.setCacheTags({required DateTime lastUpdated, required String version, RulesetsSetCacheTagsRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule(action: 'set_cache_tags', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.setCacheTags({RulesetsSetCacheTagsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest(action: Omittable('set_cache_tags'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `set_config` variant.
-factory CreateZoneRulesetRuleRequest.setConfig({required DateTime lastUpdated, required String version, RulesetsSetConfigRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRule(action: 'set_config', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.setConfig({RulesetsSetConfigRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRuleRequest(action: Omittable('set_config'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// Build the `skip` variant.
-factory CreateZoneRulesetRuleRequest.skip({required DateTime lastUpdated, required String version, RulesetsSkipRuleActionParameters? actionParameters, List<RulesetsRuleCategory>? categories, dynamic description, RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRulePosition? position, }) { return CreateZoneRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRule(action: 'skip', actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version, position: position)); }
+factory CreateZoneRulesetRuleRequest.skip({RulesetsSkipRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, RulesetsBlockRuleRequestPosition? position, }) {return CreateZoneRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRuleRequest(action: Omittable('skip'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref, position: position));}
 
 /// The discriminator value identifying this variant.
 CreateZoneRulesetRuleRequestAction get action;
@@ -399,10 +399,6 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateZoneRulesetRuleRequest$Unknown;
 
-/// Shared by all variants of this union.
-List<RulesetsRuleCategory>? get categories;
-/// Shared by all variants of this union.
-dynamic get description;
 /// Shared by all variants of this union.
 RulesetsRuleEnabled? get enabled;
 /// Shared by all variants of this union.
@@ -412,16 +408,12 @@ String? get expression;
 /// Shared by all variants of this union.
 RulesetsRuleId? get id;
 /// Shared by all variants of this union.
-DateTime get lastUpdated;
-/// Shared by all variants of this union.
 RulesetsRuleLogging? get logging;
 /// Shared by all variants of this union.
 RulesetsRuleRatelimit? get ratelimit;
 /// Shared by all variants of this union.
 String? get ref;
-/// Shared by all variants of this union.
-String get version;
-R when<R>({required R Function(CreateZoneRulesetRuleRequestBlock) block, required R Function(CreateZoneRulesetRuleRequestChallenge) challenge, required R Function(CreateZoneRulesetRuleRequestCompressResponse) compressResponse, required R Function(CreateZoneRulesetRuleRequestDdosDynamic) ddosDynamic, required R Function(CreateZoneRulesetRuleRequestExecute) execute, required R Function(CreateZoneRulesetRuleRequestForceConnectionClose) forceConnectionClose, required R Function(CreateZoneRulesetRuleRequestJsChallenge) jsChallenge, required R Function(CreateZoneRulesetRuleRequestLog) log, required R Function(CreateZoneRulesetRuleRequestLogCustomField) logCustomField, required R Function(CreateZoneRulesetRuleRequestManagedChallenge) managedChallenge, required R Function(CreateZoneRulesetRuleRequestRedirect) redirect, required R Function(CreateZoneRulesetRuleRequestRewrite) rewrite, required R Function(CreateZoneRulesetRuleRequestRoute) route, required R Function(CreateZoneRulesetRuleRequestScore) score, required R Function(CreateZoneRulesetRuleRequestServeError) serveError, required R Function(CreateZoneRulesetRuleRequestSetCacheControl) setCacheControl, required R Function(CreateZoneRulesetRuleRequestSetCacheSettings) setCacheSettings, required R Function(CreateZoneRulesetRuleRequestSetCacheTags) setCacheTags, required R Function(CreateZoneRulesetRuleRequestSetConfig) setConfig, required R Function(CreateZoneRulesetRuleRequestSkip) skip, required R Function(CreateZoneRulesetRuleRequest$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(CreateZoneRulesetRuleRequestBlock) block, required R Function(CreateZoneRulesetRuleRequestChallenge) challenge, required R Function(CreateZoneRulesetRuleRequestCompressResponse) compressResponse, required R Function(CreateZoneRulesetRuleRequestDdosDynamic) ddosDynamic, required R Function(CreateZoneRulesetRuleRequestExecute) execute, required R Function(CreateZoneRulesetRuleRequestForceConnectionClose) forceConnectionClose, required R Function(CreateZoneRulesetRuleRequestJsChallenge) jsChallenge, required R Function(CreateZoneRulesetRuleRequestLog) log, required R Function(CreateZoneRulesetRuleRequestLogCustomField) logCustomField, required R Function(CreateZoneRulesetRuleRequestManagedChallenge) managedChallenge, required R Function(CreateZoneRulesetRuleRequestRedirect) redirect, required R Function(CreateZoneRulesetRuleRequestRewrite) rewrite, required R Function(CreateZoneRulesetRuleRequestRoute) route, required R Function(CreateZoneRulesetRuleRequestScore) score, required R Function(CreateZoneRulesetRuleRequestServeError) serveError, required R Function(CreateZoneRulesetRuleRequestSetCacheControl) setCacheControl, required R Function(CreateZoneRulesetRuleRequestSetCacheSettings) setCacheSettings, required R Function(CreateZoneRulesetRuleRequestSetCacheTags) setCacheTags, required R Function(CreateZoneRulesetRuleRequestSetConfig) setConfig, required R Function(CreateZoneRulesetRuleRequestSkip) skip, required R Function(CreateZoneRulesetRuleRequest$Unknown) unknown, }) {return switch (this) {
   final CreateZoneRulesetRuleRequestBlock v => block(v),
   final CreateZoneRulesetRuleRequestChallenge v => challenge(v),
   final CreateZoneRulesetRuleRequestCompressResponse v => compressResponse(v),
@@ -443,1117 +435,893 @@ R when<R>({required R Function(CreateZoneRulesetRuleRequestBlock) block, require
   final CreateZoneRulesetRuleRequestSetConfig v => setConfig(v),
   final CreateZoneRulesetRuleRequestSkip v => skip(v),
   final CreateZoneRulesetRuleRequest$Unknown v => unknown(v),
-}; } 
- }
-@immutable final class CreateZoneRulesetRuleRequestBlock extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestBlock(this.createAccountRulesetRuleRequestRulesetsBlockRule);
+};}
+}
+@immutable final class CreateZoneRulesetRuleRequestBlock extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestBlock(this.createAccountRulesetRuleRequestRulesetsBlockRuleRequest);
 
-factory CreateZoneRulesetRuleRequestBlock.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRule.fromJson(json)); }
+factory CreateZoneRulesetRuleRequestBlock.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestBlock(CreateAccountRulesetRuleRequestRulesetsBlockRuleRequest.fromJson(json));}
 
-final CreateAccountRulesetRuleRequestRulesetsBlockRule createAccountRulesetRuleRequestRulesetsBlockRule;
+final CreateAccountRulesetRuleRequestRulesetsBlockRuleRequest createAccountRulesetRuleRequestRulesetsBlockRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('block');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsBlockRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsBlockRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestBlock(createAccountRulesetRuleRequestRulesetsBlockRule.copyWith(
+CreateZoneRulesetRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestBlock(createAccountRulesetRuleRequestRulesetsBlockRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestBlock && createAccountRulesetRuleRequestRulesetsBlockRule == other.createAccountRulesetRuleRequestRulesetsBlockRule;
+    other is CreateZoneRulesetRuleRequestBlock && createAccountRulesetRuleRequestRulesetsBlockRuleRequest == other.createAccountRulesetRuleRequestRulesetsBlockRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsBlockRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.block($createAccountRulesetRuleRequestRulesetsBlockRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.block($createAccountRulesetRuleRequestRulesetsBlockRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsBlockRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsBlockRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsBlockRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsBlockRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsBlockRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsBlockRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsBlockRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsBlockRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsBlockRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestChallenge extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestChallenge(this.createAccountRulesetRuleRequestRulesetsChallengeRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsBlockRule.ratelimit;
+factory CreateZoneRulesetRuleRequestChallenge.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsBlockRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsBlockRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestChallenge extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestChallenge(this.createAccountRulesetRuleRequestRulesetsChallengeRule);
-
-factory CreateZoneRulesetRuleRequestChallenge.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestChallenge(CreateAccountRulesetRuleRequestRulesetsChallengeRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsChallengeRule createAccountRulesetRuleRequestRulesetsChallengeRule;
+final CreateAccountRulesetRuleRequestRulesetsChallengeRuleRequest createAccountRulesetRuleRequestRulesetsChallengeRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('challenge');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsChallengeRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestChallenge(createAccountRulesetRuleRequestRulesetsChallengeRule.copyWith(
+CreateZoneRulesetRuleRequestChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestChallenge(createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestChallenge && createAccountRulesetRuleRequestRulesetsChallengeRule == other.createAccountRulesetRuleRequestRulesetsChallengeRule;
+    other is CreateZoneRulesetRuleRequestChallenge && createAccountRulesetRuleRequestRulesetsChallengeRuleRequest == other.createAccountRulesetRuleRequestRulesetsChallengeRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsChallengeRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.challenge($createAccountRulesetRuleRequestRulesetsChallengeRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.challenge($createAccountRulesetRuleRequestRulesetsChallengeRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsChallengeRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsChallengeRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsChallengeRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsChallengeRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsChallengeRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsChallengeRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsChallengeRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsChallengeRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsChallengeRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestCompressResponse extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestCompressResponse(this.createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsChallengeRule.ratelimit;
+factory CreateZoneRulesetRuleRequestCompressResponse.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsChallengeRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsChallengeRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestCompressResponse extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestCompressResponse(this.createAccountRulesetRuleRequestRulesetsCompressResponseRule);
-
-factory CreateZoneRulesetRuleRequestCompressResponse.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestCompressResponse(CreateAccountRulesetRuleRequestRulesetsCompressResponseRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsCompressResponseRule createAccountRulesetRuleRequestRulesetsCompressResponseRule;
+final CreateAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('compress_response');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsCompressResponseRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestCompressResponse copyWith({RulesetsCompressResponseRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestCompressResponse(createAccountRulesetRuleRequestRulesetsCompressResponseRule.copyWith(
+CreateZoneRulesetRuleRequestCompressResponse copyWith({RulesetsCompressResponseRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestCompressResponse(createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestCompressResponse && createAccountRulesetRuleRequestRulesetsCompressResponseRule == other.createAccountRulesetRuleRequestRulesetsCompressResponseRule;
+    other is CreateZoneRulesetRuleRequestCompressResponse && createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest == other.createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsCompressResponseRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.compressResponse($createAccountRulesetRuleRequestRulesetsCompressResponseRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.compressResponse($createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsCompressResponseRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsCompressResponseRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsCompressResponseRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsCompressResponseRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsCompressResponseRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsCompressResponseRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsCompressResponseRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsCompressResponseRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsCompressResponseRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestDdosDynamic extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestDdosDynamic(this.createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsCompressResponseRule.ratelimit;
+factory CreateZoneRulesetRuleRequestDdosDynamic.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsCompressResponseRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsCompressResponseRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestDdosDynamic extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestDdosDynamic(this.createAccountRulesetRuleRequestRulesetsDDoSDynamicRule);
-
-factory CreateZoneRulesetRuleRequestDdosDynamic.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestDdosDynamic(CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRule createAccountRulesetRuleRequestRulesetsDDoSDynamicRule;
+final CreateAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('ddos_dynamic');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestDdosDynamic copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestDdosDynamic(createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.copyWith(
+CreateZoneRulesetRuleRequestDdosDynamic copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestDdosDynamic(createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestDdosDynamic && createAccountRulesetRuleRequestRulesetsDDoSDynamicRule == other.createAccountRulesetRuleRequestRulesetsDDoSDynamicRule;
+    other is CreateZoneRulesetRuleRequestDdosDynamic && createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest == other.createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.ddosDynamic($createAccountRulesetRuleRequestRulesetsDDoSDynamicRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.ddosDynamic($createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsDDoSDynamicRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestExecute extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestExecute(this.createAccountRulesetRuleRequestRulesetsExecuteRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.ratelimit;
+factory CreateZoneRulesetRuleRequestExecute.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsDDoSDynamicRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestExecute extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestExecute(this.createAccountRulesetRuleRequestRulesetsExecuteRule);
-
-factory CreateZoneRulesetRuleRequestExecute.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestExecute(CreateAccountRulesetRuleRequestRulesetsExecuteRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsExecuteRule createAccountRulesetRuleRequestRulesetsExecuteRule;
+final CreateAccountRulesetRuleRequestRulesetsExecuteRuleRequest createAccountRulesetRuleRequestRulesetsExecuteRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('execute');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsExecuteRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestExecute(createAccountRulesetRuleRequestRulesetsExecuteRule.copyWith(
+CreateZoneRulesetRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestExecute(createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestExecute && createAccountRulesetRuleRequestRulesetsExecuteRule == other.createAccountRulesetRuleRequestRulesetsExecuteRule;
+    other is CreateZoneRulesetRuleRequestExecute && createAccountRulesetRuleRequestRulesetsExecuteRuleRequest == other.createAccountRulesetRuleRequestRulesetsExecuteRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsExecuteRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.execute($createAccountRulesetRuleRequestRulesetsExecuteRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.execute($createAccountRulesetRuleRequestRulesetsExecuteRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsExecuteRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsExecuteRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsExecuteRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsExecuteRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsExecuteRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsExecuteRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsExecuteRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsExecuteRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsExecuteRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestForceConnectionClose extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestForceConnectionClose(this.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsExecuteRule.ratelimit;
+factory CreateZoneRulesetRuleRequestForceConnectionClose.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsExecuteRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsExecuteRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestForceConnectionClose extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestForceConnectionClose(this.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule);
-
-factory CreateZoneRulesetRuleRequestForceConnectionClose.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestForceConnectionClose(CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRule createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule;
+final CreateAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('force_connection_close');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestForceConnectionClose copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestForceConnectionClose(createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.copyWith(
+CreateZoneRulesetRuleRequestForceConnectionClose copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestForceConnectionClose(createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestForceConnectionClose && createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule == other.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule;
+    other is CreateZoneRulesetRuleRequestForceConnectionClose && createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest == other.createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.forceConnectionClose($createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.forceConnectionClose($createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestJsChallenge extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestJsChallenge(this.createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.ratelimit;
+factory CreateZoneRulesetRuleRequestJsChallenge.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsForceConnectionCloseRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestJsChallenge extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestJsChallenge(this.createAccountRulesetRuleRequestRulesetsJsChallengeRule);
-
-factory CreateZoneRulesetRuleRequestJsChallenge.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestJsChallenge(CreateAccountRulesetRuleRequestRulesetsJsChallengeRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsJsChallengeRule createAccountRulesetRuleRequestRulesetsJsChallengeRule;
+final CreateAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('js_challenge');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsJsChallengeRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestJsChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestJsChallenge(createAccountRulesetRuleRequestRulesetsJsChallengeRule.copyWith(
+CreateZoneRulesetRuleRequestJsChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestJsChallenge(createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestJsChallenge && createAccountRulesetRuleRequestRulesetsJsChallengeRule == other.createAccountRulesetRuleRequestRulesetsJsChallengeRule;
+    other is CreateZoneRulesetRuleRequestJsChallenge && createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest == other.createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsJsChallengeRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.jsChallenge($createAccountRulesetRuleRequestRulesetsJsChallengeRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.jsChallenge($createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsJsChallengeRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsJsChallengeRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsJsChallengeRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsJsChallengeRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsJsChallengeRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsJsChallengeRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsJsChallengeRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsJsChallengeRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsJsChallengeRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestLog extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestLog(this.createAccountRulesetRuleRequestRulesetsLogRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsJsChallengeRule.ratelimit;
+factory CreateZoneRulesetRuleRequestLog.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsJsChallengeRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsJsChallengeRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestLog extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestLog(this.createAccountRulesetRuleRequestRulesetsLogRule);
-
-factory CreateZoneRulesetRuleRequestLog.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestLog(CreateAccountRulesetRuleRequestRulesetsLogRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsLogRule createAccountRulesetRuleRequestRulesetsLogRule;
+final CreateAccountRulesetRuleRequestRulesetsLogRuleRequest createAccountRulesetRuleRequestRulesetsLogRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('log');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestLog copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestLog(createAccountRulesetRuleRequestRulesetsLogRule.copyWith(
+CreateZoneRulesetRuleRequestLog copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestLog(createAccountRulesetRuleRequestRulesetsLogRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestLog && createAccountRulesetRuleRequestRulesetsLogRule == other.createAccountRulesetRuleRequestRulesetsLogRule;
+    other is CreateZoneRulesetRuleRequestLog && createAccountRulesetRuleRequestRulesetsLogRuleRequest == other.createAccountRulesetRuleRequestRulesetsLogRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.log($createAccountRulesetRuleRequestRulesetsLogRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.log($createAccountRulesetRuleRequestRulesetsLogRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsLogRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsLogRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsLogRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsLogRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsLogRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsLogRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestLogCustomField extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestLogCustomField(this.createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogRule.ratelimit;
+factory CreateZoneRulesetRuleRequestLogCustomField.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsLogRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsLogRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestLogCustomField extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestLogCustomField(this.createAccountRulesetRuleRequestRulesetsLogCustomFieldRule);
-
-factory CreateZoneRulesetRuleRequestLogCustomField.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestLogCustomField(CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRule createAccountRulesetRuleRequestRulesetsLogCustomFieldRule;
+final CreateAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('log_custom_field');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestLogCustomField(createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.copyWith(
+CreateZoneRulesetRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestLogCustomField(createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestLogCustomField && createAccountRulesetRuleRequestRulesetsLogCustomFieldRule == other.createAccountRulesetRuleRequestRulesetsLogCustomFieldRule;
+    other is CreateZoneRulesetRuleRequestLogCustomField && createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest == other.createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.logCustomField($createAccountRulesetRuleRequestRulesetsLogCustomFieldRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.logCustomField($createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsLogCustomFieldRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestManagedChallenge extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestManagedChallenge(this.createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.ratelimit;
+factory CreateZoneRulesetRuleRequestManagedChallenge.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsLogCustomFieldRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestManagedChallenge extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestManagedChallenge(this.createAccountRulesetRuleRequestRulesetsManagedChallengeRule);
-
-factory CreateZoneRulesetRuleRequestManagedChallenge.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestManagedChallenge(CreateAccountRulesetRuleRequestRulesetsManagedChallengeRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsManagedChallengeRule createAccountRulesetRuleRequestRulesetsManagedChallengeRule;
+final CreateAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('managed_challenge');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsManagedChallengeRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestManagedChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestManagedChallenge(createAccountRulesetRuleRequestRulesetsManagedChallengeRule.copyWith(
+CreateZoneRulesetRuleRequestManagedChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestManagedChallenge(createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestManagedChallenge && createAccountRulesetRuleRequestRulesetsManagedChallengeRule == other.createAccountRulesetRuleRequestRulesetsManagedChallengeRule;
+    other is CreateZoneRulesetRuleRequestManagedChallenge && createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest == other.createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.managedChallenge($createAccountRulesetRuleRequestRulesetsManagedChallengeRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.managedChallenge($createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsManagedChallengeRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestRedirect extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestRedirect(this.createAccountRulesetRuleRequestRulesetsRedirectRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.ratelimit;
+factory CreateZoneRulesetRuleRequestRedirect.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsManagedChallengeRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestRedirect extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestRedirect(this.createAccountRulesetRuleRequestRulesetsRedirectRule);
-
-factory CreateZoneRulesetRuleRequestRedirect.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestRedirect(CreateAccountRulesetRuleRequestRulesetsRedirectRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsRedirectRule createAccountRulesetRuleRequestRulesetsRedirectRule;
+final CreateAccountRulesetRuleRequestRulesetsRedirectRuleRequest createAccountRulesetRuleRequestRulesetsRedirectRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('redirect');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRedirectRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestRedirect(createAccountRulesetRuleRequestRulesetsRedirectRule.copyWith(
+CreateZoneRulesetRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestRedirect(createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestRedirect && createAccountRulesetRuleRequestRulesetsRedirectRule == other.createAccountRulesetRuleRequestRulesetsRedirectRule;
+    other is CreateZoneRulesetRuleRequestRedirect && createAccountRulesetRuleRequestRulesetsRedirectRuleRequest == other.createAccountRulesetRuleRequestRulesetsRedirectRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsRedirectRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.redirect($createAccountRulesetRuleRequestRulesetsRedirectRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.redirect($createAccountRulesetRuleRequestRulesetsRedirectRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsRedirectRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsRedirectRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRedirectRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRedirectRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsRedirectRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRedirectRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsRedirectRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsRedirectRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRedirectRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestRewrite extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestRewrite(this.createAccountRulesetRuleRequestRulesetsRewriteRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRedirectRule.ratelimit;
+factory CreateZoneRulesetRuleRequestRewrite.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsRedirectRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsRedirectRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestRewrite extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestRewrite(this.createAccountRulesetRuleRequestRulesetsRewriteRule);
-
-factory CreateZoneRulesetRuleRequestRewrite.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestRewrite(CreateAccountRulesetRuleRequestRulesetsRewriteRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsRewriteRule createAccountRulesetRuleRequestRulesetsRewriteRule;
+final CreateAccountRulesetRuleRequestRulesetsRewriteRuleRequest createAccountRulesetRuleRequestRulesetsRewriteRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('rewrite');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRewriteRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestRewrite copyWith({RulesetsRewriteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestRewrite(createAccountRulesetRuleRequestRulesetsRewriteRule.copyWith(
+CreateZoneRulesetRuleRequestRewrite copyWith({RulesetsRewriteRuleRequestActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestRewrite(createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestRewrite && createAccountRulesetRuleRequestRulesetsRewriteRule == other.createAccountRulesetRuleRequestRulesetsRewriteRule;
+    other is CreateZoneRulesetRuleRequestRewrite && createAccountRulesetRuleRequestRulesetsRewriteRuleRequest == other.createAccountRulesetRuleRequestRulesetsRewriteRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsRewriteRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.rewrite($createAccountRulesetRuleRequestRulesetsRewriteRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.rewrite($createAccountRulesetRuleRequestRulesetsRewriteRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsRewriteRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsRewriteRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRewriteRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRewriteRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsRewriteRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRewriteRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsRewriteRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsRewriteRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRewriteRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestRoute extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestRoute(this.createAccountRulesetRuleRequestRulesetsRouteRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRewriteRule.ratelimit;
+factory CreateZoneRulesetRuleRequestRoute.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsRewriteRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsRewriteRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestRoute extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestRoute(this.createAccountRulesetRuleRequestRulesetsRouteRule);
-
-factory CreateZoneRulesetRuleRequestRoute.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestRoute(CreateAccountRulesetRuleRequestRulesetsRouteRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsRouteRule createAccountRulesetRuleRequestRulesetsRouteRule;
+final CreateAccountRulesetRuleRequestRulesetsRouteRuleRequest createAccountRulesetRuleRequestRulesetsRouteRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('route');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRouteRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsRouteRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestRoute(createAccountRulesetRuleRequestRulesetsRouteRule.copyWith(
+CreateZoneRulesetRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestRoute(createAccountRulesetRuleRequestRulesetsRouteRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestRoute && createAccountRulesetRuleRequestRulesetsRouteRule == other.createAccountRulesetRuleRequestRulesetsRouteRule;
+    other is CreateZoneRulesetRuleRequestRoute && createAccountRulesetRuleRequestRulesetsRouteRuleRequest == other.createAccountRulesetRuleRequestRulesetsRouteRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsRouteRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.route($createAccountRulesetRuleRequestRulesetsRouteRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.route($createAccountRulesetRuleRequestRulesetsRouteRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsRouteRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsRouteRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsRouteRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsRouteRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsRouteRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsRouteRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsRouteRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsRouteRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsRouteRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestScore extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestScore(this.createAccountRulesetRuleRequestRulesetsScoreRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsRouteRule.ratelimit;
+factory CreateZoneRulesetRuleRequestScore.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsRouteRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsRouteRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestScore extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestScore(this.createAccountRulesetRuleRequestRulesetsScoreRule);
-
-factory CreateZoneRulesetRuleRequestScore.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestScore(CreateAccountRulesetRuleRequestRulesetsScoreRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsScoreRule createAccountRulesetRuleRequestRulesetsScoreRule;
+final CreateAccountRulesetRuleRequestRulesetsScoreRuleRequest createAccountRulesetRuleRequestRulesetsScoreRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('score');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsScoreRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsScoreRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestScore(createAccountRulesetRuleRequestRulesetsScoreRule.copyWith(
+CreateZoneRulesetRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestScore(createAccountRulesetRuleRequestRulesetsScoreRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestScore && createAccountRulesetRuleRequestRulesetsScoreRule == other.createAccountRulesetRuleRequestRulesetsScoreRule;
+    other is CreateZoneRulesetRuleRequestScore && createAccountRulesetRuleRequestRulesetsScoreRuleRequest == other.createAccountRulesetRuleRequestRulesetsScoreRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsScoreRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.score($createAccountRulesetRuleRequestRulesetsScoreRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.score($createAccountRulesetRuleRequestRulesetsScoreRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsScoreRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsScoreRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsScoreRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsScoreRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsScoreRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsScoreRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsScoreRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsScoreRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsScoreRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestServeError extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestServeError(this.createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsScoreRule.ratelimit;
+factory CreateZoneRulesetRuleRequestServeError.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsScoreRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsScoreRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestServeError extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestServeError(this.createAccountRulesetRuleRequestRulesetsServeErrorRule);
-
-factory CreateZoneRulesetRuleRequestServeError.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestServeError(CreateAccountRulesetRuleRequestRulesetsServeErrorRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsServeErrorRule createAccountRulesetRuleRequestRulesetsServeErrorRule;
+final CreateAccountRulesetRuleRequestRulesetsServeErrorRuleRequest createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('serve_error');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsServeErrorRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestServeError(createAccountRulesetRuleRequestRulesetsServeErrorRule.copyWith(
+CreateZoneRulesetRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestServeError(createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestServeError && createAccountRulesetRuleRequestRulesetsServeErrorRule == other.createAccountRulesetRuleRequestRulesetsServeErrorRule;
+    other is CreateZoneRulesetRuleRequestServeError && createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest == other.createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsServeErrorRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.serveError($createAccountRulesetRuleRequestRulesetsServeErrorRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.serveError($createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsServeErrorRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsServeErrorRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsServeErrorRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsServeErrorRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsServeErrorRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsServeErrorRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsServeErrorRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsServeErrorRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsServeErrorRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestSetCacheControl extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetCacheControl(this.createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsServeErrorRule.ratelimit;
+factory CreateZoneRulesetRuleRequestSetCacheControl.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsServeErrorRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsServeErrorRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestSetCacheControl extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetCacheControl(this.createAccountRulesetRuleRequestRulesetsSetCacheControlRule);
-
-factory CreateZoneRulesetRuleRequestSetCacheControl.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestSetCacheControl(CreateAccountRulesetRuleRequestRulesetsSetCacheControlRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetCacheControlRule createAccountRulesetRuleRequestRulesetsSetCacheControlRule;
+final CreateAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('set_cache_control');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheControlRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestSetCacheControl(createAccountRulesetRuleRequestRulesetsSetCacheControlRule.copyWith(
+CreateZoneRulesetRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestSetCacheControl(createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestSetCacheControl && createAccountRulesetRuleRequestRulesetsSetCacheControlRule == other.createAccountRulesetRuleRequestRulesetsSetCacheControlRule;
+    other is CreateZoneRulesetRuleRequestSetCacheControl && createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.setCacheControl($createAccountRulesetRuleRequestRulesetsSetCacheControlRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.setCacheControl($createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheControlRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestSetCacheSettings extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetCacheSettings(this.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.ratelimit;
+factory CreateZoneRulesetRuleRequestSetCacheSettings.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetCacheControlRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestSetCacheSettings extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetCacheSettings(this.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule);
-
-factory CreateZoneRulesetRuleRequestSetCacheSettings.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestSetCacheSettings(CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRule createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule;
+final CreateAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('set_cache_settings');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestSetCacheSettings(createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.copyWith(
+CreateZoneRulesetRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestSetCacheSettings(createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestSetCacheSettings && createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule == other.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule;
+    other is CreateZoneRulesetRuleRequestSetCacheSettings && createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.setCacheSettings($createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.setCacheSettings($createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestSetCacheTags extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetCacheTags(this.createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.ratelimit;
+factory CreateZoneRulesetRuleRequestSetCacheTags.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetCacheSettingsRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestSetCacheTags extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetCacheTags(this.createAccountRulesetRuleRequestRulesetsSetCacheTagsRule);
-
-factory CreateZoneRulesetRuleRequestSetCacheTags.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestSetCacheTags(CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule createAccountRulesetRuleRequestRulesetsSetCacheTagsRule;
+final CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('set_cache_tags');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestSetCacheTags(createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.copyWith(
+CreateZoneRulesetRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestSetCacheTags(createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestSetCacheTags && createAccountRulesetRuleRequestRulesetsSetCacheTagsRule == other.createAccountRulesetRuleRequestRulesetsSetCacheTagsRule;
+    other is CreateZoneRulesetRuleRequestSetCacheTags && createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.setCacheTags($createAccountRulesetRuleRequestRulesetsSetCacheTagsRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.setCacheTags($createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheTagsRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestSetConfig extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetConfig(this.createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.ratelimit;
+factory CreateZoneRulesetRuleRequestSetConfig.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetCacheTagsRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestSetConfig extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSetConfig(this.createAccountRulesetRuleRequestRulesetsSetConfigRule);
-
-factory CreateZoneRulesetRuleRequestSetConfig.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestSetConfig(CreateAccountRulesetRuleRequestRulesetsSetConfigRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSetConfigRule createAccountRulesetRuleRequestRulesetsSetConfigRule;
+final CreateAccountRulesetRuleRequestRulesetsSetConfigRuleRequest createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('set_config');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetConfigRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestSetConfig(createAccountRulesetRuleRequestRulesetsSetConfigRule.copyWith(
+CreateZoneRulesetRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestSetConfig(createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestSetConfig && createAccountRulesetRuleRequestRulesetsSetConfigRule == other.createAccountRulesetRuleRequestRulesetsSetConfigRule;
+    other is CreateZoneRulesetRuleRequestSetConfig && createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest == other.createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetConfigRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.setConfig($createAccountRulesetRuleRequestRulesetsSetConfigRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.setConfig($createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSetConfigRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSetConfigRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSetConfigRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSetConfigRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSetConfigRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSetConfigRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSetConfigRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSetConfigRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSetConfigRule.logging;
+}
+@immutable final class CreateZoneRulesetRuleRequestSkip extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSkip(this.createAccountRulesetRuleRequestRulesetsSkipRuleRequest);
 
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSetConfigRule.ratelimit;
+factory CreateZoneRulesetRuleRequestSkip.fromJson(Map<String, dynamic> json) {return CreateZoneRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRuleRequest.fromJson(json));}
 
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSetConfigRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSetConfigRule.version;
-
- }
-@immutable final class CreateZoneRulesetRuleRequestSkip extends CreateZoneRulesetRuleRequest {const CreateZoneRulesetRuleRequestSkip(this.createAccountRulesetRuleRequestRulesetsSkipRule);
-
-factory CreateZoneRulesetRuleRequestSkip.fromJson(Map<String, dynamic> json) { return CreateZoneRulesetRuleRequestSkip(CreateAccountRulesetRuleRequestRulesetsSkipRule.fromJson(json)); }
-
-final CreateAccountRulesetRuleRequestRulesetsSkipRule createAccountRulesetRuleRequestRulesetsSkipRule;
+final CreateAccountRulesetRuleRequestRulesetsSkipRuleRequest createAccountRulesetRuleRequestRulesetsSkipRuleRequest;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson('skip');
 
-@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSkipRule.toJson(), 'action': action.toJson()};
+@override Map<String, dynamic> toJson() => {...createAccountRulesetRuleRequestRulesetsSkipRuleRequest.toJson(), 'action': action.toJson()};
 
-CreateZoneRulesetRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateZoneRulesetRuleRequestSkip(createAccountRulesetRuleRequestRulesetsSkipRule.copyWith(
+CreateZoneRulesetRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, RulesetsBlockRuleRequestPosition? Function()? position, }) {return CreateZoneRulesetRuleRequestSkip(createAccountRulesetRuleRequestRulesetsSkipRuleRequest.copyWith(
   actionParameters: actionParameters,
-  categories: categories,
   description: description,
   enabled: enabled,
   exposedCredentialCheck: exposedCredentialCheck,
   expression: expression,
   id: id,
-  lastUpdated: lastUpdated,
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-  version: version,
   position: position,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateZoneRulesetRuleRequestSkip && createAccountRulesetRuleRequestRulesetsSkipRule == other.createAccountRulesetRuleRequestRulesetsSkipRule;
+    other is CreateZoneRulesetRuleRequestSkip && createAccountRulesetRuleRequestRulesetsSkipRuleRequest == other.createAccountRulesetRuleRequestRulesetsSkipRuleRequest;
 
-@override int get hashCode => createAccountRulesetRuleRequestRulesetsSkipRule.hashCode;
+@override int get hashCode => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.hashCode;
 
-@override String toString() => 'CreateZoneRulesetRuleRequest.skip($createAccountRulesetRuleRequestRulesetsSkipRule)';
+@override String toString() => 'CreateZoneRulesetRuleRequest.skip($createAccountRulesetRuleRequestRulesetsSkipRuleRequest)';
 
-@override List<RulesetsRuleCategory>? get categories => createAccountRulesetRuleRequestRulesetsSkipRule.categories;
+@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.enabled;
 
-@override dynamic get description => createAccountRulesetRuleRequestRulesetsSkipRule.description;
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.exposedCredentialCheck;
 
-@override RulesetsRuleEnabled? get enabled => createAccountRulesetRuleRequestRulesetsSkipRule.enabled;
+@override String? get expression => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.expression;
 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => createAccountRulesetRuleRequestRulesetsSkipRule.exposedCredentialCheck;
+@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.id;
 
-@override String? get expression => createAccountRulesetRuleRequestRulesetsSkipRule.expression;
+@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.logging;
 
-@override RulesetsRuleId? get id => createAccountRulesetRuleRequestRulesetsSkipRule.id;
+@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.ratelimit;
 
-@override DateTime get lastUpdated => createAccountRulesetRuleRequestRulesetsSkipRule.lastUpdated;
+@override String? get ref => createAccountRulesetRuleRequestRulesetsSkipRuleRequest.ref;
 
-@override RulesetsRuleLogging? get logging => createAccountRulesetRuleRequestRulesetsSkipRule.logging;
-
-@override RulesetsRuleRatelimit? get ratelimit => createAccountRulesetRuleRequestRulesetsSkipRule.ratelimit;
-
-@override String? get ref => createAccountRulesetRuleRequestRulesetsSkipRule.ref;
-
-@override String get version => createAccountRulesetRuleRequestRulesetsSkipRule.version;
-
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class CreateZoneRulesetRuleRequest$Unknown extends CreateZoneRulesetRuleRequest {CreateZoneRulesetRuleRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
-
-late final List<RulesetsRuleCategory>? _categories = (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList();
-
-late final dynamic _description = json['description'];
 
 late final RulesetsRuleEnabled? _enabled = json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null;
 
@@ -1563,15 +1331,11 @@ late final String? _expression = json['expression'] as String?;
 
 late final RulesetsRuleId? _id = json['id'] != null ? RulesetsRuleId.fromJson(json['id'] as String) : null;
 
-late final DateTime _lastUpdated = DateTime.parse(json['last_updated'] as String);
-
 late final RulesetsRuleLogging? _logging = json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null;
 
 late final RulesetsRuleRatelimit? _ratelimit = json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null;
 
 late final String? _ref = json['ref'] as String?;
-
-late final String _version = json['version'] as String;
 
 @override CreateZoneRulesetRuleRequestAction get action => CreateZoneRulesetRuleRequestAction.fromJson(json['action'] as String? ?? '');
 
@@ -1584,10 +1348,6 @@ late final String _version = json['version'] as String;
 
 @override String toString() => 'CreateZoneRulesetRuleRequest.unknown($json)';
 
-@override List<RulesetsRuleCategory>? get categories => _categories;
-
-@override dynamic get description => _description;
-
 @override RulesetsRuleEnabled? get enabled => _enabled;
 
 @override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => _exposedCredentialCheck;
@@ -1596,14 +1356,10 @@ late final String _version = json['version'] as String;
 
 @override RulesetsRuleId? get id => _id;
 
-@override DateTime get lastUpdated => _lastUpdated;
-
 @override RulesetsRuleLogging? get logging => _logging;
 
 @override RulesetsRuleRatelimit? get ratelimit => _ratelimit;
 
 @override String? get ref => _ref;
 
-@override String get version => _version;
-
- }
+}

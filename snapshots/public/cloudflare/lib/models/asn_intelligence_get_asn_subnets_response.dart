@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_asn.dart';import 'package:pub_cloudflare/models/intel_count.dart';import 'package:pub_cloudflare/models/intel_page.dart';import 'package:pub_cloudflare/models/intel_per_page.dart';@immutable final class AsnIntelligenceGetAsnSubnetsResponse {const AsnIntelligenceGetAsnSubnetsResponse({this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
 
-factory AsnIntelligenceGetAsnSubnetsResponse.fromJson(Map<String, dynamic> json) { return AsnIntelligenceGetAsnSubnetsResponse(
+factory AsnIntelligenceGetAsnSubnetsResponse.fromJson(Map<String, dynamic> json) {return AsnIntelligenceGetAsnSubnetsResponse(
   asn: json['asn'] != null ? IntelAsn.fromJson(json['asn'] as num) : null,
   count: json['count'] != null ? IntelCount.fromJson(json['count'] as num) : null,
   ipCountTotal: json['ip_count_total'] != null ? (json['ip_count_total'] as num).toInt() : null,
   page: json['page'] != null ? IntelPage.fromJson(json['page'] as num) : null,
   perPage: json['per_page'] != null ? IntelPerPage.fromJson(json['per_page'] as num) : null,
   subnets: (json['subnets'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final IntelAsn? asn;
 
@@ -28,23 +28,23 @@ final IntelPerPage? perPage;
 /// Example: `[192.0.2.0/24, 2001:DB8::/32]`
 final List<String>? subnets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asn != null) 'asn': asn?.toJson(),
   if (count != null) 'count': count?.toJson(),
   'ip_count_total': ?ipCountTotal,
   if (page != null) 'page': page?.toJson(),
   if (perPage != null) 'per_page': perPage?.toJson(),
   'subnets': ?subnets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'count', 'ip_count_total', 'page', 'per_page', 'subnets'}.contains(key)); } 
-AsnIntelligenceGetAsnSubnetsResponse copyWith({IntelAsn? Function()? asn, IntelCount? Function()? count, int? Function()? ipCountTotal, IntelPage? Function()? page, IntelPerPage? Function()? perPage, List<String>? Function()? subnets, }) { return AsnIntelligenceGetAsnSubnetsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'asn', 'count', 'ip_count_total', 'page', 'per_page', 'subnets'}.contains(key));}
+AsnIntelligenceGetAsnSubnetsResponse copyWith({IntelAsn? Function()? asn, IntelCount? Function()? count, int? Function()? ipCountTotal, IntelPage? Function()? page, IntelPerPage? Function()? perPage, List<String>? Function()? subnets, }) {return AsnIntelligenceGetAsnSubnetsResponse(
   asn: asn != null ? asn() : this.asn,
   count: count != null ? count() : this.count,
   ipCountTotal: ipCountTotal != null ? ipCountTotal() : this.ipCountTotal,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   subnets: subnets != null ? subnets() : this.subnets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AsnIntelligenceGetAsnSubnetsResponse &&
           asn == other.asn &&
@@ -58,4 +58,4 @@ AsnIntelligenceGetAsnSubnetsResponse copyWith({IntelAsn? Function()? asn, IntelC
 
 @override String toString() => 'AsnIntelligenceGetAsnSubnetsResponse(asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)';
 
- }
+}

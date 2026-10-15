@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission();
 
-factory ReposListCollaboratorsPermission.fromJson(String json) { return switch (json) {
+factory ReposListCollaboratorsPermission.fromJson(String json) {return switch (json) {
   'pull' => pull,
   'triage' => triage,
   'push' => push,
   'maintain' => maintain,
   'admin' => admin,
   _ => ReposListCollaboratorsPermission$Unknown(json),
-}; }
+};}
 
 static const ReposListCollaboratorsPermission pull = ReposListCollaboratorsPermission$pull._();
 
@@ -25,39 +25,39 @@ static const ReposListCollaboratorsPermission admin = ReposListCollaboratorsPerm
 static const List<ReposListCollaboratorsPermission> values = [pull, triage, push, maintain, admin];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pull' => 'pull',
   'triage' => 'triage',
   'push' => 'push',
   'maintain' => 'maintain',
   'admin' => 'admin',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReposListCollaboratorsPermission$Unknown; } 
+bool get isUnknown {return this is ReposListCollaboratorsPermission$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pull, required W Function() triage, required W Function() push, required W Function() maintain, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pull, required W Function() triage, required W Function() push, required W Function() maintain, required W Function() admin, required W Function(String value) $unknown, }) {return switch (this) {
       ReposListCollaboratorsPermission$pull() => pull(),
       ReposListCollaboratorsPermission$triage() => triage(),
       ReposListCollaboratorsPermission$push() => push(),
       ReposListCollaboratorsPermission$maintain() => maintain(),
       ReposListCollaboratorsPermission$admin() => admin(),
       ReposListCollaboratorsPermission$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W Function()? triage, W Function()? push, W Function()? maintain, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W Function()? triage, W Function()? push, W Function()? maintain, W Function()? admin, W Function(String value)? $unknown, }) {return switch (this) {
       ReposListCollaboratorsPermission$pull() => pull != null ? pull() : orElse(value),
       ReposListCollaboratorsPermission$triage() => triage != null ? triage() : orElse(value),
       ReposListCollaboratorsPermission$push() => push != null ? push() : orElse(value),
       ReposListCollaboratorsPermission$maintain() => maintain != null ? maintain() : orElse(value),
       ReposListCollaboratorsPermission$admin() => admin != null ? admin() : orElse(value),
       ReposListCollaboratorsPermission$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReposListCollaboratorsPermission($value)';
 
- }
+}
 @immutable final class ReposListCollaboratorsPermission$pull extends ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission$pull._();
 
 @override String get value => 'pull';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'pull'.hashCode;
 
- }
+}
 @immutable final class ReposListCollaboratorsPermission$triage extends ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission$triage._();
 
 @override String get value => 'triage';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'triage'.hashCode;
 
- }
+}
 @immutable final class ReposListCollaboratorsPermission$push extends ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission$push._();
 
 @override String get value => 'push';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'push'.hashCode;
 
- }
+}
 @immutable final class ReposListCollaboratorsPermission$maintain extends ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission$maintain._();
 
 @override String get value => 'maintain';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'maintain'.hashCode;
 
- }
+}
 @immutable final class ReposListCollaboratorsPermission$admin extends ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission$admin._();
 
 @override String get value => 'admin';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'admin'.hashCode;
 
- }
+}
 @immutable final class ReposListCollaboratorsPermission$Unknown extends ReposListCollaboratorsPermission {const ReposListCollaboratorsPermission$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RegistryPackageOwner {const RegistryPackageOwner({required this.avatarUrl, required this.eventsUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.gravatarId, required this.htmlUrl, required this.id, required this.login, required this.nodeId, required this.organizationsUrl, required this.receivedEventsUrl, required this.reposUrl, required this.siteAdmin, required this.starredUrl, required this.subscriptionsUrl, required this.type, required this.url, this.userViewType, });
 
-factory RegistryPackageOwner.fromJson(Map<String, dynamic> json) { return RegistryPackageOwner(
+factory RegistryPackageOwner.fromJson(Map<String, dynamic> json) {return RegistryPackageOwner(
   avatarUrl: json['avatar_url'] as String,
   eventsUrl: json['events_url'] as String,
   followersUrl: json['followers_url'] as String,
@@ -23,7 +23,7 @@ factory RegistryPackageOwner.fromJson(Map<String, dynamic> json) { return Regist
   type: json['type'] as String,
   url: json['url'] as String,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String avatarUrl;
 
@@ -63,7 +63,7 @@ final String url;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': avatarUrl,
   'events_url': eventsUrl,
   'followers_url': followersUrl,
@@ -83,8 +83,8 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'url': url,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_url') && json['avatar_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('avatar_url') && json['avatar_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('followers_url') && json['followers_url'] is String &&
       json.containsKey('following_url') && json['following_url'] is String &&
@@ -101,8 +101,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('starred_url') && json['starred_url'] is String &&
       json.containsKey('subscriptions_url') && json['subscriptions_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RegistryPackageOwner copyWith({String? avatarUrl, String? eventsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? gravatarId, String? htmlUrl, int? id, String? login, String? nodeId, String? organizationsUrl, String? receivedEventsUrl, String? reposUrl, bool? siteAdmin, String? starredUrl, String? subscriptionsUrl, String? type, String? url, String? Function()? userViewType, }) { return RegistryPackageOwner(
+      json.containsKey('url') && json['url'] is String;}
+RegistryPackageOwner copyWith({String? avatarUrl, String? eventsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? gravatarId, String? htmlUrl, int? id, String? login, String? nodeId, String? organizationsUrl, String? receivedEventsUrl, String? reposUrl, bool? siteAdmin, String? starredUrl, String? subscriptionsUrl, String? type, String? url, String? Function()? userViewType, }) {return RegistryPackageOwner(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   eventsUrl: eventsUrl ?? this.eventsUrl,
   followersUrl: followersUrl ?? this.followersUrl,
@@ -122,7 +122,7 @@ RegistryPackageOwner copyWith({String? avatarUrl, String? eventsUrl, String? fol
   type: type ?? this.type,
   url: url ?? this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackageOwner &&
           avatarUrl == other.avatarUrl &&
@@ -149,4 +149,4 @@ RegistryPackageOwner copyWith({String? avatarUrl, String? eventsUrl, String? fol
 
 @override String toString() => 'RegistryPackageOwner(\n  avatarUrl: $avatarUrl,\n  eventsUrl: $eventsUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  login: $login,\n  nodeId: $nodeId,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  reposUrl: $reposUrl,\n  siteAdmin: $siteAdmin,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  type: $type,\n  url: $url,\n  userViewType: $userViewType,\n)';
 
- }
+}

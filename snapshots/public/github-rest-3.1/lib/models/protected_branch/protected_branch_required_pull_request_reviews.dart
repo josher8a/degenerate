@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ProtectedBranch (inline: RequiredPullRequestReviews)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch/required_pull_request_reviews_bypass_pull_request_allowances.dart';import 'package:pub_github_rest_3_1/models/protected_branch/required_pull_request_reviews_dismissal_restrictions.dart';@immutable final class ProtectedBranchRequiredPullRequestReviews {const ProtectedBranchRequiredPullRequestReviews({required this.url, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.dismissalRestrictions, this.bypassPullRequestAllowances, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch/required_pull_request_reviews_bypass_pull_request_allowances.dart';import 'package:pub_github_rest_3_1/models/protected_branch/required_pull_request_reviews_dismissal_restrictions.dart';@immutable final class ProtectedBranchRequiredPullRequestReviews {const ProtectedBranchRequiredPullRequestReviews({required this.url, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval, this.dismissalRestrictions, this.bypassPullRequestAllowances, });
 
-factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredPullRequestReviews(
+factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) {return ProtectedBranchRequiredPullRequestReviews(
   url: Uri.parse(json['url'] as String),
   dismissStaleReviews: json['dismiss_stale_reviews'] as bool?,
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool?,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
-  requireLastPushApproval: json.containsKey('require_last_push_approval') ? json['require_last_push_approval'] as bool : false,
+  requireLastPushApproval: json['require_last_push_approval'] as bool?,
   dismissalRestrictions: json['dismissal_restrictions'] != null ? RequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
   bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? RequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri url;
 
@@ -22,23 +22,26 @@ final bool? requireCodeOwnerReviews;
 final int? requiredApprovingReviewCount;
 
 /// Whether the most recent push must be approved by someone other than the person who pushed it.
-final bool requireLastPushApproval;
+final bool? requireLastPushApproval;
 
 final RequiredPullRequestReviewsDismissalRestrictions? dismissalRestrictions;
 
 final RequiredPullRequestReviewsBypassPullRequestAllowances? bypassPullRequestAllowances;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `requireLastPushApproval`, or its schema default when absent.
+bool get requireLastPushApprovalOrDefault => requireLastPushApproval ?? false;
+
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'dismiss_stale_reviews': ?dismissStaleReviews,
   'require_code_owner_reviews': ?requireCodeOwnerReviews,
   'required_approving_review_count': ?requiredApprovingReviewCount,
-  'require_last_push_approval': requireLastPushApproval,
+  'require_last_push_approval': ?requireLastPushApproval,
   if (dismissalRestrictions != null) 'dismissal_restrictions': dismissalRestrictions?.toJson(),
   if (bypassPullRequestAllowances != null) 'bypass_pull_request_allowances': bypassPullRequestAllowances?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, RequiredPullRequestReviewsDismissalRestrictions? Function()? dismissalRestrictions, RequiredPullRequestReviewsBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) { return ProtectedBranchRequiredPullRequestReviews(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, RequiredPullRequestReviewsDismissalRestrictions? Function()? dismissalRestrictions, RequiredPullRequestReviewsBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) {return ProtectedBranchRequiredPullRequestReviews(
   url: url ?? this.url,
   dismissStaleReviews: dismissStaleReviews != null ? dismissStaleReviews() : this.dismissStaleReviews,
   requireCodeOwnerReviews: requireCodeOwnerReviews != null ? requireCodeOwnerReviews() : this.requireCodeOwnerReviews,
@@ -46,7 +49,7 @@ ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? 
   requireLastPushApproval: requireLastPushApproval != null ? requireLastPushApproval() : this.requireLastPushApproval,
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   bypassPullRequestAllowances: bypassPullRequestAllowances != null ? bypassPullRequestAllowances() : this.bypassPullRequestAllowances,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchRequiredPullRequestReviews &&
           url == other.url &&
@@ -61,4 +64,4 @@ ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? 
 
 @override String toString() => 'ProtectedBranchRequiredPullRequestReviews(url: $url, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances)';
 
- }
+}

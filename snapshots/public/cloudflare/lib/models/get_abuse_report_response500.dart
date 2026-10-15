@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_abuse_report.dart';import 'package:pub_cloudflare/models/abuse_reports_error_message.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';@immutable final class GetAbuseReportResponse500 {const GetAbuseReportResponse500({required this.errors, required this.success, this.messages, this.result, });
 
-factory GetAbuseReportResponse500.fromJson(Map<String, dynamic> json) { return GetAbuseReportResponse500(
+factory GetAbuseReportResponse500.fromJson(Map<String, dynamic> json) {return GetAbuseReportResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => AbuseReportsErrorMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<AbuseReportsErrorMessage> errors;
 
@@ -18,20 +18,20 @@ final AbuseReportsAbuseReport? result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   if (result != null) 'result': result?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-GetAbuseReportResponse500 copyWith({List<AbuseReportsErrorMessage>? errors, List<AbuseReportsMessage>? Function()? messages, AbuseReportsAbuseReport? Function()? result, bool? success, }) { return GetAbuseReportResponse500(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+GetAbuseReportResponse500 copyWith({List<AbuseReportsErrorMessage>? errors, List<AbuseReportsMessage>? Function()? messages, AbuseReportsAbuseReport? Function()? result, bool? success, }) {return GetAbuseReportResponse500(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetAbuseReportResponse500 &&
           listEquals(errors, other.errors) &&
@@ -43,4 +43,4 @@ GetAbuseReportResponse500 copyWith({List<AbuseReportsErrorMessage>? errors, List
 
 @override String toString() => 'GetAbuseReportResponse500(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

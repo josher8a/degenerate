@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_connection_rules_rdp.dart';/// The rules that define how users may connect to targets secured by your application.
 @immutable final class AccessConnectionRules {const AccessConnectionRules({this.rdp});
 
-factory AccessConnectionRules.fromJson(Map<String, dynamic> json) { return AccessConnectionRules(
+factory AccessConnectionRules.fromJson(Map<String, dynamic> json) {return AccessConnectionRules(
   rdp: json['rdp'] != null ? AccessConnectionRulesRdp.fromJson(json['rdp'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final AccessConnectionRulesRdp? rdp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rdp != null) 'rdp': rdp?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rdp'}.contains(key)); } 
-AccessConnectionRules copyWith({AccessConnectionRulesRdp? Function()? rdp}) { return AccessConnectionRules(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rdp'}.contains(key));}
+AccessConnectionRules copyWith({AccessConnectionRulesRdp? Function()? rdp}) {return AccessConnectionRules(
   rdp: rdp != null ? rdp() : this.rdp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessConnectionRules &&
           rdp == other.rdp;
@@ -25,4 +25,4 @@ AccessConnectionRules copyWith({AccessConnectionRulesRdp? Function()? rdp}) { re
 
 @override String toString() => 'AccessConnectionRules(rdp: $rdp)';
 
- }
+}

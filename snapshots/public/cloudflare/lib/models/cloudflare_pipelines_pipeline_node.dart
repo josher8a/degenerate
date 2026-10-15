@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesPipelineNode {const CloudflarePipelinesPipelineNode({required this.description, required this.nodeId, required this.$operator, required this.parallelism, });
 
-factory CloudflarePipelinesPipelineNode.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineNode(
+factory CloudflarePipelinesPipelineNode.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesPipelineNode(
   description: json['description'] as String,
   nodeId: (json['node_id'] as num).toInt(),
   $operator: json['operator'] as String,
   parallelism: (json['parallelism'] as num).toInt(),
-); }
+);}
 
 final String description;
 
@@ -18,27 +18,27 @@ final String $operator;
 
 final int parallelism;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'node_id': nodeId,
   'operator': $operator,
   'parallelism': parallelism,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('node_id') && json['node_id'] is num &&
       json.containsKey('operator') && json['operator'] is String &&
-      json.containsKey('parallelism') && json['parallelism'] is num; } 
+      json.containsKey('parallelism') && json['parallelism'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (nodeId < 0) { errors.add('nodeId: must be >= 0'); }
 if (parallelism < 0) { errors.add('parallelism: must be >= 0'); }
-return errors; } 
-CloudflarePipelinesPipelineNode copyWith({String? description, int? nodeId, String? $operator, int? parallelism, }) { return CloudflarePipelinesPipelineNode(
+return errors;}
+CloudflarePipelinesPipelineNode copyWith({String? description, int? nodeId, String? $operator, int? parallelism, }) {return CloudflarePipelinesPipelineNode(
   description: description ?? this.description,
   nodeId: nodeId ?? this.nodeId,
   $operator: $operator ?? this.$operator,
   parallelism: parallelism ?? this.parallelism,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesPipelineNode &&
           description == other.description &&
@@ -50,4 +50,4 @@ CloudflarePipelinesPipelineNode copyWith({String? description, int? nodeId, Stri
 
 @override String toString() => 'CloudflarePipelinesPipelineNode(description: $description, nodeId: $nodeId, \$operator: ${$operator}, parallelism: $parallelism)';
 
- }
+}

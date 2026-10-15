@@ -2,69 +2,69 @@
 // Source: #/components/schemas/PaymentMethodAcssDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodAcssDebit {const PaymentMethodAcssDebit({this.bankName, this.fingerprint, this.institutionNumber, this.last4, this.transitNumber, });
+@immutable final class PaymentMethodAcssDebit {const PaymentMethodAcssDebit({this.bankName = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.institutionNumber = const Omittable.absent(), this.last4 = const Omittable.absent(), this.transitNumber = const Omittable.absent(), });
 
-factory PaymentMethodAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodAcssDebit(
-  bankName: json['bank_name'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  institutionNumber: json['institution_number'] as String?,
-  last4: json['last4'] as String?,
-  transitNumber: json['transit_number'] as String?,
-); }
+factory PaymentMethodAcssDebit.fromJson(Map<String, dynamic> json) {return PaymentMethodAcssDebit(
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  institutionNumber: json.containsKey('institution_number') ? Omittable(json['institution_number'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  transitNumber: json.containsKey('transit_number') ? Omittable(json['transit_number'] as String?) : const Omittable.absent(),
+);}
 
 /// Name of the bank associated with the bank account.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Institution number of the bank account.
-final String? institutionNumber;
+final Omittable<String?> institutionNumber;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// Transit number of the bank account.
-final String? transitNumber;
+final Omittable<String?> transitNumber;
 
-Map<String, dynamic> toJson() { return {
-  'bank_name': ?bankName,
-  'fingerprint': ?fingerprint,
-  'institution_number': ?institutionNumber,
-  'last4': ?last4,
-  'transit_number': ?transitNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'fingerprint', 'institution_number', 'last4', 'transit_number'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (institutionNumber.isPresent) 'institution_number': institutionNumber.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (transitNumber.isPresent) 'transit_number': transitNumber.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_name', 'fingerprint', 'institution_number', 'last4', 'transit_number'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final bankName$ = bankName;
+List<String> validate() {final errors = <String>[];
+final bankName$ = bankName.value;
 if (bankName$ != null) {
   if (bankName$.runes.length > 5000) { errors.add('bankName: length must be <= 5000'); }
 }
-final fingerprint$ = fingerprint;
+final fingerprint$ = fingerprint.value;
 if (fingerprint$ != null) {
   if (fingerprint$.runes.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
-final institutionNumber$ = institutionNumber;
+final institutionNumber$ = institutionNumber.value;
 if (institutionNumber$ != null) {
   if (institutionNumber$.runes.length > 5000) { errors.add('institutionNumber: length must be <= 5000'); }
 }
-final last4$ = last4;
+final last4$ = last4.value;
 if (last4$ != null) {
   if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
-final transitNumber$ = transitNumber;
+final transitNumber$ = transitNumber.value;
 if (transitNumber$ != null) {
   if (transitNumber$.runes.length > 5000) { errors.add('transitNumber: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodAcssDebit copyWith({String? Function()? bankName, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String? Function()? transitNumber, }) { return PaymentMethodAcssDebit(
-  bankName: bankName != null ? bankName() : this.bankName,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  institutionNumber: institutionNumber != null ? institutionNumber() : this.institutionNumber,
-  last4: last4 != null ? last4() : this.last4,
-  transitNumber: transitNumber != null ? transitNumber() : this.transitNumber,
-); } 
+return errors;}
+PaymentMethodAcssDebit copyWith({Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? institutionNumber, Omittable<String?>? last4, Omittable<String?>? transitNumber, }) {return PaymentMethodAcssDebit(
+  bankName: bankName ?? this.bankName,
+  fingerprint: fingerprint ?? this.fingerprint,
+  institutionNumber: institutionNumber ?? this.institutionNumber,
+  last4: last4 ?? this.last4,
+  transitNumber: transitNumber ?? this.transitNumber,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodAcssDebit &&
           bankName == other.bankName &&
@@ -77,4 +77,4 @@ PaymentMethodAcssDebit copyWith({String? Function()? bankName, String? Function(
 
 @override String toString() => 'PaymentMethodAcssDebit(bankName: $bankName, fingerprint: $fingerprint, institutionNumber: $institutionNumber, last4: $last4, transitNumber: $transitNumber)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualitySpeedSummaryResponseResultSummary0 {const RadarGetQualitySpeedSummaryResponseResultSummary0({required this.bandwidthDownload, required this.bandwidthUpload, required this.jitterIdle, required this.jitterLoaded, required this.latencyIdle, required this.latencyLoaded, required this.packetLoss, });
 
-factory RadarGetQualitySpeedSummaryResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedSummaryResponseResultSummary0(
+factory RadarGetQualitySpeedSummaryResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedSummaryResponseResultSummary0(
   bandwidthDownload: json['bandwidthDownload'] as String,
   bandwidthUpload: json['bandwidthUpload'] as String,
   jitterIdle: json['jitterIdle'] as String,
@@ -11,7 +11,7 @@ factory RadarGetQualitySpeedSummaryResponseResultSummary0.fromJson(Map<String, d
   latencyIdle: json['latencyIdle'] as String,
   latencyLoaded: json['latencyLoaded'] as String,
   packetLoss: json['packetLoss'] as String,
-); }
+);}
 
 /// Example: `'83.765201'`
 final String bandwidthDownload;
@@ -34,7 +34,7 @@ final String latencyLoaded;
 /// Example: `'1.23705'`
 final String packetLoss;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bandwidthDownload': bandwidthDownload,
   'bandwidthUpload': bandwidthUpload,
   'jitterIdle': jitterIdle,
@@ -42,15 +42,15 @@ Map<String, dynamic> toJson() { return {
   'latencyIdle': latencyIdle,
   'latencyLoaded': latencyLoaded,
   'packetLoss': packetLoss,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bandwidthDownload') && json['bandwidthDownload'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bandwidthDownload') && json['bandwidthDownload'] is String &&
       json.containsKey('bandwidthUpload') && json['bandwidthUpload'] is String &&
       json.containsKey('jitterIdle') && json['jitterIdle'] is String &&
       json.containsKey('jitterLoaded') && json['jitterLoaded'] is String &&
       json.containsKey('latencyIdle') && json['latencyIdle'] is String &&
       json.containsKey('latencyLoaded') && json['latencyLoaded'] is String &&
-      json.containsKey('packetLoss') && json['packetLoss'] is String; } 
-RadarGetQualitySpeedSummaryResponseResultSummary0 copyWith({String? bandwidthDownload, String? bandwidthUpload, String? jitterIdle, String? jitterLoaded, String? latencyIdle, String? latencyLoaded, String? packetLoss, }) { return RadarGetQualitySpeedSummaryResponseResultSummary0(
+      json.containsKey('packetLoss') && json['packetLoss'] is String;}
+RadarGetQualitySpeedSummaryResponseResultSummary0 copyWith({String? bandwidthDownload, String? bandwidthUpload, String? jitterIdle, String? jitterLoaded, String? latencyIdle, String? latencyLoaded, String? packetLoss, }) {return RadarGetQualitySpeedSummaryResponseResultSummary0(
   bandwidthDownload: bandwidthDownload ?? this.bandwidthDownload,
   bandwidthUpload: bandwidthUpload ?? this.bandwidthUpload,
   jitterIdle: jitterIdle ?? this.jitterIdle,
@@ -58,7 +58,7 @@ RadarGetQualitySpeedSummaryResponseResultSummary0 copyWith({String? bandwidthDow
   latencyIdle: latencyIdle ?? this.latencyIdle,
   latencyLoaded: latencyLoaded ?? this.latencyLoaded,
   packetLoss: packetLoss ?? this.packetLoss,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedSummaryResponseResultSummary0 &&
           bandwidthDownload == other.bandwidthDownload &&
@@ -73,4 +73,4 @@ RadarGetQualitySpeedSummaryResponseResultSummary0 copyWith({String? bandwidthDow
 
 @override String toString() => 'RadarGetQualitySpeedSummaryResponseResultSummary0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, packetLoss: $packetLoss)';
 
- }
+}

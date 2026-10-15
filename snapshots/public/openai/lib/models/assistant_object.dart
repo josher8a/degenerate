@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';/// The object type, which is always `assistant`.
 sealed class AssistantObjectObject {const AssistantObjectObject();
 
-factory AssistantObjectObject.fromJson(String json) { return switch (json) {
+factory AssistantObjectObject.fromJson(String json) {return switch (json) {
   'assistant' => assistant,
   _ => AssistantObjectObject$Unknown(json),
-}; }
+};}
 
 static const AssistantObjectObject assistant = AssistantObjectObject$assistant._();
 
 static const List<AssistantObjectObject> values = [assistant];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'assistant' => 'assistant',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AssistantObjectObject$Unknown; } 
+bool get isUnknown {return this is AssistantObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() assistant, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() assistant, required W Function(String value) $unknown, }) {return switch (this) {
       AssistantObjectObject$assistant() => assistant(),
       AssistantObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistant, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistant, W Function(String value)? $unknown, }) {return switch (this) {
       AssistantObjectObject$assistant() => assistant != null ? assistant() : orElse(value),
       AssistantObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AssistantObjectObject($value)';
 
- }
+}
 @immutable final class AssistantObjectObject$assistant extends AssistantObjectObject {const AssistantObjectObject$assistant._();
 
 @override String get value => 'assistant';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'assistant'.hashCode;
 
- }
+}
 @immutable final class AssistantObjectObject$Unknown extends AssistantObjectObject {const AssistantObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an `assistant` that can call the model and use tools.
-@immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.metadata, this.tools = const [], this.toolResources, this.temperature, this.topP, this.responseFormat, });
+@immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.tools, required this.metadata, this.toolResources = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
-factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantObject(
+factory AssistantObject.fromJson(Map<String, dynamic> json) {return AssistantObject(
   id: json['id'] as String,
   object: AssistantObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -71,17 +71,17 @@ factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantOb
   final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.c(AssistantToolsFunction.fromJson(m)),
   _ => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),),
 }).toList(),
-  toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
+  toolResources: json.containsKey('tool_resources') ? Omittable(json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null ? switch (json['response_format']) {
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
+  responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? switch (json['response_format']) {
   final Map<String, dynamic> m when m['type'] == 'text' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.b(ResponseFormatText.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'json_object' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.c(ResponseFormatJsonObject.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'json_schema' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.d(ResponseFormatJsonSchema.fromJson(m)),
   _ => OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),),
-} : null,
-); }
+} : null) : const Omittable.absent(),
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -114,23 +114,23 @@ final List<AssistantObjectTools> tools;
 
 /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
-final AssistantObjectToolResources? toolResources;
+final Omittable<AssistantObjectToolResources?> toolResources;
 
 final Map<String,String>? metadata;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// 
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 /// 
 /// We generally recommend altering this or temperature but not both.
 /// 
-final double? topP;
+final Omittable<double?> topP;
 
-final ResponseFormatOption? responseFormat;
+final Omittable<ResponseFormatOption?> responseFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -139,23 +139,23 @@ Map<String, dynamic> toJson() { return {
   'model': model,
   'instructions': instructions,
   'tools': tools.map((e) => e.toJson()).toList(),
-  if (toolResources != null) 'tool_resources': toolResources?.toJson(),
+  if (toolResources.isPresent) 'tool_resources': toolResources.value?.toJson(),
   'metadata': metadata,
-  'temperature': ?temperature,
-  'top_p': ?topP,
-  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (topP.isPresent) 'top_p': topP.value,
+  if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('instructions') && json['instructions'] is String &&
+      json.containsKey('instructions') && (json['instructions'] == null || json['instructions'] is String) &&
       json.containsKey('tools') &&
-      json.containsKey('metadata'); } 
+      json.containsKey('metadata');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 256) { errors.add('name: length must be <= 256'); }
@@ -169,18 +169,18 @@ if (instructions$ != null) {
   if (instructions$.runes.length > 256000) { errors.add('instructions: length must be <= 256000'); }
 }
 if (tools.length > 128) { errors.add('tools: must have <= 128 items'); }
-final temperature$ = temperature;
+final temperature$ = temperature.value;
 if (temperature$ != null) {
   if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
   if (temperature$ > 2) { errors.add('temperature: must be <= 2'); }
 }
-final topP$ = topP;
+final topP$ = topP.value;
 if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
-return errors; } 
-AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return AssistantObject(
+return errors;}
+AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, Omittable<AssistantObjectToolResources?>? toolResources, Map<String, String>? Function()? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) {return AssistantObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -189,12 +189,12 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
   model: model ?? this.model,
   instructions: instructions != null ? instructions() : this.instructions,
   tools: tools ?? this.tools,
-  toolResources: toolResources != null ? toolResources() : this.toolResources,
+  toolResources: toolResources ?? this.toolResources,
   metadata: metadata != null ? metadata() : this.metadata,
-  temperature: temperature != null ? temperature() : this.temperature,
-  topP: topP != null ? topP() : this.topP,
-  responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
-); } 
+  temperature: temperature ?? this.temperature,
+  topP: topP ?? this.topP,
+  responseFormat: responseFormat ?? this.responseFormat,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantObject &&
           id == other.id &&
@@ -215,4 +215,4 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
 
 @override String toString() => 'AssistantObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  name: $name,\n  description: $description,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 
- }
+}

@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SmartshieldSingleHcIdResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';@immutable final class SmartshieldSingleHcIdResponse {const SmartshieldSingleHcIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/smartshield_messages2.dart';@immutable final class SmartshieldSingleHcIdResponse {const SmartshieldSingleHcIdResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory SmartshieldSingleHcIdResponse.fromJson(Map<String, dynamic> json) { return SmartshieldSingleHcIdResponse(
-  result: json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory SmartshieldSingleHcIdResponse.fromJson(Map<String, dynamic> json) {return SmartshieldSingleHcIdResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => SmartshieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => SmartshieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final AaaIdResponseResult? result;
+final List<SmartshieldMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-SmartshieldSingleHcIdResponse copyWith({AaaIdResponseResult? Function()? result}) { return SmartshieldSingleHcIdResponse(
-  result: result != null ? result() : this.result,
-); } 
+final List<SmartshieldMessages2> messages;
+
+final AaaIdResponseResult result;
+
+/// Whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+SmartshieldSingleHcIdResponse copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, AaaIdResponseResult? result, bool? success, }) {return SmartshieldSingleHcIdResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldSingleHcIdResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'SmartshieldSingleHcIdResponse(result: $result)';
+@override String toString() => 'SmartshieldSingleHcIdResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

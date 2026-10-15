@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleMaxFilePathLengthParameters {const RepositoryRuleMaxFilePathLengthParameters({required this.maxFilePathLength});
 
-factory RepositoryRuleMaxFilePathLengthParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFilePathLengthParameters(
+factory RepositoryRuleMaxFilePathLengthParameters.fromJson(Map<String, dynamic> json) {return RepositoryRuleMaxFilePathLengthParameters(
   maxFilePathLength: (json['max_file_path_length'] as num).toInt(),
-); }
+);}
 
 /// The maximum amount of characters allowed in file paths.
 final int maxFilePathLength;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_file_path_length': maxFilePathLength,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_file_path_length') && json['max_file_path_length'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('max_file_path_length') && json['max_file_path_length'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (maxFilePathLength < 1) { errors.add('maxFilePathLength: must be >= 1'); }
 if (maxFilePathLength > 32767) { errors.add('maxFilePathLength: must be <= 32767'); }
-return errors; } 
-RepositoryRuleMaxFilePathLengthParameters copyWith({int? maxFilePathLength}) { return RepositoryRuleMaxFilePathLengthParameters(
+return errors;}
+RepositoryRuleMaxFilePathLengthParameters copyWith({int? maxFilePathLength}) {return RepositoryRuleMaxFilePathLengthParameters(
   maxFilePathLength: maxFilePathLength ?? this.maxFilePathLength,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMaxFilePathLengthParameters &&
           maxFilePathLength == other.maxFilePathLength;
@@ -30,4 +30,4 @@ RepositoryRuleMaxFilePathLengthParameters copyWith({int? maxFilePathLength}) { r
 
 @override String toString() => 'RepositoryRuleMaxFilePathLengthParameters(maxFilePathLength: $maxFilePathLength)';
 
- }
+}

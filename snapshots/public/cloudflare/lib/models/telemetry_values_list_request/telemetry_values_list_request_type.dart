@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TelemetryValuesListRequestType {const TelemetryValuesListRequestType();
 
-factory TelemetryValuesListRequestType.fromJson(String json) { return switch (json) {
+factory TelemetryValuesListRequestType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => TelemetryValuesListRequestType$Unknown(json),
-}; }
+};}
 
 static const TelemetryValuesListRequestType string = TelemetryValuesListRequestType$string._();
 
@@ -19,33 +19,33 @@ static const TelemetryValuesListRequestType boolean = TelemetryValuesListRequest
 static const List<TelemetryValuesListRequestType> values = [string, number, boolean];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'string' => 'string',
   'number' => 'number',
   'boolean' => 'boolean',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TelemetryValuesListRequestType$Unknown; } 
+bool get isUnknown {return this is TelemetryValuesListRequestType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() string, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() string, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) {return switch (this) {
       TelemetryValuesListRequestType$string() => string(),
       TelemetryValuesListRequestType$number() => number(),
       TelemetryValuesListRequestType$boolean() => boolean(),
       TelemetryValuesListRequestType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) {return switch (this) {
       TelemetryValuesListRequestType$string() => string != null ? string() : orElse(value),
       TelemetryValuesListRequestType$number() => number != null ? number() : orElse(value),
       TelemetryValuesListRequestType$boolean() => boolean != null ? boolean() : orElse(value),
       TelemetryValuesListRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TelemetryValuesListRequestType($value)';
 
- }
+}
 @immutable final class TelemetryValuesListRequestType$string extends TelemetryValuesListRequestType {const TelemetryValuesListRequestType$string._();
 
 @override String get value => 'string';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => 'string'.hashCode;
 
- }
+}
 @immutable final class TelemetryValuesListRequestType$number extends TelemetryValuesListRequestType {const TelemetryValuesListRequestType$number._();
 
 @override String get value => 'number';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => 'number'.hashCode;
 
- }
+}
 @immutable final class TelemetryValuesListRequestType$boolean extends TelemetryValuesListRequestType {const TelemetryValuesListRequestType$boolean._();
 
 @override String get value => 'boolean';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => 'boolean'.hashCode;
 
- }
+}
 @immutable final class TelemetryValuesListRequestType$Unknown extends TelemetryValuesListRequestType {const TelemetryValuesListRequestType$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

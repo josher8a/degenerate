@@ -12,7 +12,7 @@ final class Api20100401DomainApi with ApiExecutor {const Api20100401DomainApi(th
 /// Retrieve a list of domains belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
-Future<ApiResult<ListSipDomainResponse, Never>> listSipDomain({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListSipDomainResponse, Never>> listSipDomain({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -35,17 +35,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListSipDomainResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new Domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
-Future<ApiResult<AccountSipSipDomain, Never>> createSipDomain({required String accountSid, CreateSipDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomain, Never>> createSipDomain({required String accountSid, CreateSipDomainRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -82,17 +82,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSipSipDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fetch an instance of a Domain
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<AccountSipSipDomain, Never>> fetchSipDomain({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomain, Never>> fetchSipDomain({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,17 +101,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSipSipDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update the attributes of a domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<AccountSipSipDomain, Never>> updateSipDomain({required String accountSid, required String sid, UpdateSipDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomain, Never>> updateSipDomain({required String accountSid, required String sid, UpdateSipDomainRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -149,17 +149,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountSipSipDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an instance of a Domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipDomain({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipDomain({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -168,9 +168,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

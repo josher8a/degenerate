@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_turn_key_name.dart';@immutable final class CallsTurnKeyEditableFields {const CallsTurnKeyEditableFields({this.name});
 
-factory CallsTurnKeyEditableFields.fromJson(Map<String, dynamic> json) { return CallsTurnKeyEditableFields(
+factory CallsTurnKeyEditableFields.fromJson(Map<String, dynamic> json) {return CallsTurnKeyEditableFields(
   name: json['name'] != null ? CallsTurnKeyName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 final CallsTurnKeyName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-CallsTurnKeyEditableFields copyWith({CallsTurnKeyName? Function()? name}) { return CallsTurnKeyEditableFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name'}.contains(key));}
+CallsTurnKeyEditableFields copyWith({CallsTurnKeyName? Function()? name}) {return CallsTurnKeyEditableFields(
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CallsTurnKeyEditableFields &&
           name == other.name;
@@ -24,4 +24,4 @@ CallsTurnKeyEditableFields copyWith({CallsTurnKeyName? Function()? name}) { retu
 
 @override String toString() => 'CallsTurnKeyEditableFields(name: $name)';
 
- }
+}

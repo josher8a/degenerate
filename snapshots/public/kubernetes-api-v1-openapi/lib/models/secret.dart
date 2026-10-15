@@ -4,7 +4,7 @@
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
 @immutable final class Secret {const Secret({this.apiVersion, this.data, this.immutable, this.kind, this.metadata, this.stringData, this.type, });
 
-factory Secret.fromJson(Map<String, dynamic> json) { return Secret(
+factory Secret.fromJson(Map<String, dynamic> json) {return Secret(
   apiVersion: json['apiVersion'] as String?,
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, base64Decode(v as String))),
   immutable: json['immutable'] as bool?,
@@ -12,7 +12,7 @@ factory Secret.fromJson(Map<String, dynamic> json) { return Secret(
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   stringData: (json['stringData'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   type: json['type'] as String?,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -35,7 +35,7 @@ final Map<String,String>? stringData;
 /// Used to facilitate programmatic handling of secret data. More info: https://kubernetes.io/docs/concepts/configuration/secret/#secret-types
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   if (data != null) 'data': data?.map((k, v) => MapEntry(k, base64Encode(v))),
   'immutable': ?immutable,
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'stringData': ?stringData,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'data', 'immutable', 'kind', 'metadata', 'stringData', 'type'}.contains(key)); } 
-Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Function()? data, bool? Function()? immutable, String? Function()? kind, ObjectMeta? Function()? metadata, Map<String, String>? Function()? stringData, String? Function()? type, }) { return Secret(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'data', 'immutable', 'kind', 'metadata', 'stringData', 'type'}.contains(key));}
+Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Function()? data, bool? Function()? immutable, String? Function()? kind, ObjectMeta? Function()? metadata, Map<String, String>? Function()? stringData, String? Function()? type, }) {return Secret(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   data: data != null ? data() : this.data,
   immutable: immutable != null ? immutable() : this.immutable,
@@ -53,7 +53,7 @@ Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Functio
   metadata: metadata != null ? metadata() : this.metadata,
   stringData: stringData != null ? stringData() : this.stringData,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Secret &&
           apiVersion == other.apiVersion &&
@@ -68,4 +68,4 @@ Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Functio
 
 @override String toString() => 'Secret(apiVersion: $apiVersion, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata, stringData: $stringData, type: $type)';
 
- }
+}

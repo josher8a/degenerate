@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service to use for the network configuration.
 sealed class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService();
 
-factory HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(String json) { return switch (json) {
+factory HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(String json) {return switch (json) {
   'none' => none,
   'actions' => actions,
   _ => HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown(json),
-}; }
+};}
 
 static const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService none = HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$none._();
 
@@ -17,30 +17,30 @@ static const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService 
 static const List<HostedComputeCreateNetworkConfigurationForOrgRequestComputeService> values = [none, actions];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'actions' => 'actions',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown; } 
+bool get isUnknown {return this is HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() actions, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() actions, required W Function(String value) $unknown, }) {return switch (this) {
       HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$none() => none(),
       HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$actions() => actions(),
       HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? actions, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? actions, W Function(String value)? $unknown, }) {return switch (this) {
       HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$none() => none != null ? none() : orElse(value),
       HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$actions() => actions != null ? actions() : orElse(value),
       HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HostedComputeCreateNetworkConfigurationForOrgRequestComputeService($value)';
 
- }
+}
 @immutable final class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$none extends HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$none._();
 
 @override String get value => 'none';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$actions extends HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$actions._();
 
 @override String get value => 'actions';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'actions'.hashCode;
 
- }
+}
 @immutable final class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown extends HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

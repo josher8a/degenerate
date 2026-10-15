@@ -2,29 +2,29 @@
 // Source: #/components/schemas/ZonesSslRecommender
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ssl_recommender_enabled.dart';/// Enrollment in the SSL/TLS Recommender service which tries to detect and recommend (by sending periodic emails) the most secure SSL/TLS setting your origin servers support.
-@immutable final class ZonesSslRecommender {const ZonesSslRecommender({this.enabled, this.id, });
+@immutable final class ZonesSslRecommender {const ZonesSslRecommender({this.enabled, this.id = const Omittable.absent(), });
 
-factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) { return ZonesSslRecommender(
+factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) {return ZonesSslRecommender(
   enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,
-  id: json['id'],
-); }
+  id: json.containsKey('id') ? Omittable(json['id']) : const Omittable.absent(),
+);}
 
 final ZonesSslRecommenderEnabled? enabled;
 
 /// Enrollment value for SSL/TLS Recommender.
 /// 
 /// Example: `'ssl_recommender'`
-final dynamic id;
+final Omittable<dynamic> id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enabled != null) 'enabled': enabled?.toJson(),
-  'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'id'}.contains(key)); } 
-ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled? Function()? enabled, dynamic Function()? id, }) { return ZonesSslRecommender(
+  if (id.isPresent) 'id': id.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'id'}.contains(key));}
+ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled? Function()? enabled, Omittable<dynamic>? id, }) {return ZonesSslRecommender(
   enabled: enabled != null ? enabled() : this.enabled,
-  id: id != null ? id() : this.id,
-); } 
+  id: id ?? this.id,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSslRecommender &&
           enabled == other.enabled &&
@@ -34,4 +34,4 @@ ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled? Function()? enabled, d
 
 @override String toString() => 'ZonesSslRecommender(enabled: $enabled, id: $id)';
 
- }
+}

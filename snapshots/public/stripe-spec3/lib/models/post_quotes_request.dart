@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostQuotesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/application_fee_percent.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request/application_fee_amount.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/footer.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/header.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_description.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_quotes_request/from_quote.dart';import 'package:pub_stripe_spec3/models/post_quotes_request/post_quotes_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_quotes_request/post_quotes_request_subscription_data.dart';import 'package:pub_stripe_spec3/models/transfer_data_specs3.dart';@immutable final class PostQuotesRequest {const PostQuotesRequest({this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.collectionMethod, this.customer, this.customerAccount, this.defaultTaxRates, this.description, this.discounts, this.expand, this.expiresAt, this.footer, this.fromQuote, this.header, this.invoiceSettings, this.lineItems, this.metadata, this.onBehalfOf, this.subscriptionData, this.testClock, this.transferData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/application_fee_percent.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request/application_fee_amount.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/footer.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/header.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_description.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_quotes_request/from_quote.dart';import 'package:pub_stripe_spec3/models/post_quotes_request/post_quotes_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_quotes_request/post_quotes_request_subscription_data.dart';@immutable final class PostQuotesRequest {const PostQuotesRequest({this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.collectionMethod, this.customer, this.customerAccount, this.defaultTaxRates, this.description, this.discounts, this.expand, this.expiresAt, this.footer, this.fromQuote, this.header, this.invoiceSettings, this.lineItems, this.metadata, this.onBehalfOf, this.subscriptionData, this.testClock, this.transferData, });
 
-factory PostQuotesRequest.fromJson(Map<String, dynamic> json) { return PostQuotesRequest(
-  applicationFeeAmount: json['application_fee_amount'] != null ? OneOf2.parse(json['application_fee_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  applicationFeePercent: json['application_fee_percent'] != null ? OneOf2.parse(json['application_fee_percent'], fromA: (v) => (v as num).toDouble(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+factory PostQuotesRequest.fromJson(Map<String, dynamic> json) {return PostQuotesRequest(
+  applicationFeeAmount: json['application_fee_amount'] != null ? ApplicationFeeAmount.fromJson(json['application_fee_amount']) : null,
+  applicationFeePercent: json['application_fee_percent'] != null ? ApplicationFeePercent.fromJson(json['application_fee_percent']) : null,
   automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? InvoiceCollectionMethod.fromJson(json['collection_method'] as String) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostCustomersCustomerSubscriptionsRequestDefaultTaxRates.fromJson(json['default_tax_rates']) : null,
+  description: json['description'] != null ? PostQuotesQuoteRequestDescription.fromJson(json['description']) : null,
+  discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  footer: json['footer'] != null ? OneOf2.parse(json['footer'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  footer: json['footer'] != null ? Footer.fromJson(json['footer']) : null,
   fromQuote: json['from_quote'] != null ? FromQuote.fromJson(json['from_quote'] as Map<String, dynamic>) : null,
-  header: json['header'] != null ? OneOf2.parse(json['header'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  header: json['header'] != null ? Header.fromJson(json['header']) : null,
   invoiceSettings: json['invoice_settings'] != null ? PostQuotesQuoteRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostQuotesRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostInvoicesCreatePreviewRequestOnBehalfOf.fromJson(json['on_behalf_of']) : null,
   subscriptionData: json['subscription_data'] != null ? PostQuotesRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   testClock: json['test_clock'] as String?,
-  transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs3.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+  transferData: json['transfer_data'] != null ? PostQuotesQuoteRequestTransferData.fromJson(json['transfer_data']) : null,
+);}
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. There cannot be any line items with recurring prices when using this field.
 final ApplicationFeeAmount? applicationFeeAmount;
@@ -90,7 +90,7 @@ final String? testClock;
 /// The data with which to automatically create a Transfer for each of the invoices.
 final PostQuotesQuoteRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (applicationFeeAmount != null) 'application_fee_amount': applicationFeeAmount?.toJson(),
   if (applicationFeePercent != null) 'application_fee_percent': applicationFeePercent?.toJson(),
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -112,10 +112,10 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionData != null) 'subscription_data': subscriptionData?.toJson(),
   'test_clock': ?testClock,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_amount', 'application_fee_percent', 'automatic_tax', 'collection_method', 'customer', 'customer_account', 'default_tax_rates', 'description', 'discounts', 'expand', 'expires_at', 'footer', 'from_quote', 'header', 'invoice_settings', 'line_items', 'metadata', 'on_behalf_of', 'subscription_data', 'test_clock', 'transfer_data'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'application_fee_amount', 'application_fee_percent', 'automatic_tax', 'collection_method', 'customer', 'customer_account', 'default_tax_rates', 'description', 'discounts', 'expand', 'expires_at', 'footer', 'from_quote', 'header', 'invoice_settings', 'line_items', 'metadata', 'on_behalf_of', 'subscription_data', 'test_clock', 'transfer_data'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -128,8 +128,8 @@ final testClock$ = testClock;
 if (testClock$ != null) {
   if (testClock$.runes.length > 5000) { errors.add('testClock: length must be <= 5000'); }
 }
-return errors; } 
-PostQuotesRequest copyWith({ApplicationFeeAmount? Function()? applicationFeeAmount, ApplicationFeePercent? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? customer, String? Function()? customerAccount, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, int? Function()? expiresAt, Footer? Function()? footer, FromQuote? Function()? fromQuote, Header? Function()? header, PostQuotesQuoteRequestInvoiceSettings? Function()? invoiceSettings, List<PostQuotesRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostQuotesRequestSubscriptionData? Function()? subscriptionData, String? Function()? testClock, PostQuotesQuoteRequestTransferData? Function()? transferData, }) { return PostQuotesRequest(
+return errors;}
+PostQuotesRequest copyWith({ApplicationFeeAmount? Function()? applicationFeeAmount, ApplicationFeePercent? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? customer, String? Function()? customerAccount, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, int? Function()? expiresAt, Footer? Function()? footer, FromQuote? Function()? fromQuote, Header? Function()? header, PostQuotesQuoteRequestInvoiceSettings? Function()? invoiceSettings, List<PostQuotesRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostQuotesRequestSubscriptionData? Function()? subscriptionData, String? Function()? testClock, PostQuotesQuoteRequestTransferData? Function()? transferData, }) {return PostQuotesRequest(
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -151,7 +151,7 @@ PostQuotesRequest copyWith({ApplicationFeeAmount? Function()? applicationFeeAmou
   subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
   testClock: testClock != null ? testClock() : this.testClock,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostQuotesRequest &&
           applicationFeeAmount == other.applicationFeeAmount &&
@@ -180,4 +180,4 @@ PostQuotesRequest copyWith({ApplicationFeeAmount? Function()? applicationFeeAmou
 
 @override String toString() => 'PostQuotesRequest(\n  applicationFeeAmount: $applicationFeeAmount,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  collectionMethod: $collectionMethod,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  expand: $expand,\n  expiresAt: $expiresAt,\n  footer: $footer,\n  fromQuote: $fromQuote,\n  header: $header,\n  invoiceSettings: $invoiceSettings,\n  lineItems: $lineItems,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  subscriptionData: $subscriptionData,\n  testClock: $testClock,\n  transferData: $transferData,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of zone-level resource.
 sealed class ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType();
 
-factory ResourceTaggingZoneResourceType.fromJson(String json) { return switch (json) {
+factory ResourceTaggingZoneResourceType.fromJson(String json) {return switch (json) {
   'access_application_policy' => accessApplicationPolicy,
   'api_gateway_operation' => apiGatewayOperation,
   'custom_certificate' => customCertificate,
@@ -13,7 +13,7 @@ factory ResourceTaggingZoneResourceType.fromJson(String json) { return switch (j
   'managed_client_certificate' => managedClientCertificate,
   'zone' => zone,
   _ => ResourceTaggingZoneResourceType$Unknown(json),
-}; }
+};}
 
 static const ResourceTaggingZoneResourceType accessApplicationPolicy = ResourceTaggingZoneResourceType$accessApplicationPolicy._();
 
@@ -32,9 +32,9 @@ static const ResourceTaggingZoneResourceType zone = ResourceTaggingZoneResourceT
 static const List<ResourceTaggingZoneResourceType> values = [accessApplicationPolicy, apiGatewayOperation, customCertificate, customHostname, dnsRecord, managedClientCertificate, zone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'access_application_policy' => 'accessApplicationPolicy',
   'api_gateway_operation' => 'apiGatewayOperation',
   'custom_certificate' => 'customCertificate',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'managed_client_certificate' => 'managedClientCertificate',
   'zone' => 'zone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResourceTaggingZoneResourceType$Unknown; } 
+bool get isUnknown {return this is ResourceTaggingZoneResourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accessApplicationPolicy, required W Function() apiGatewayOperation, required W Function() customCertificate, required W Function() customHostname, required W Function() dnsRecord, required W Function() managedClientCertificate, required W Function() zone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accessApplicationPolicy, required W Function() apiGatewayOperation, required W Function() customCertificate, required W Function() customHostname, required W Function() dnsRecord, required W Function() managedClientCertificate, required W Function() zone, required W Function(String value) $unknown, }) {return switch (this) {
       ResourceTaggingZoneResourceType$accessApplicationPolicy() => accessApplicationPolicy(),
       ResourceTaggingZoneResourceType$apiGatewayOperation() => apiGatewayOperation(),
       ResourceTaggingZoneResourceType$customCertificate() => customCertificate(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() accessApplicationPolicy, required W Function() 
       ResourceTaggingZoneResourceType$managedClientCertificate() => managedClientCertificate(),
       ResourceTaggingZoneResourceType$zone() => zone(),
       ResourceTaggingZoneResourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessApplicationPolicy, W Function()? apiGatewayOperation, W Function()? customCertificate, W Function()? customHostname, W Function()? dnsRecord, W Function()? managedClientCertificate, W Function()? zone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessApplicationPolicy, W Function()? apiGatewayOperation, W Function()? customCertificate, W Function()? customHostname, W Function()? dnsRecord, W Function()? managedClientCertificate, W Function()? zone, W Function(String value)? $unknown, }) {return switch (this) {
       ResourceTaggingZoneResourceType$accessApplicationPolicy() => accessApplicationPolicy != null ? accessApplicationPolicy() : orElse(value),
       ResourceTaggingZoneResourceType$apiGatewayOperation() => apiGatewayOperation != null ? apiGatewayOperation() : orElse(value),
       ResourceTaggingZoneResourceType$customCertificate() => customCertificate != null ? customCertificate() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
       ResourceTaggingZoneResourceType$managedClientCertificate() => managedClientCertificate != null ? managedClientCertificate() : orElse(value),
       ResourceTaggingZoneResourceType$zone() => zone != null ? zone() : orElse(value),
       ResourceTaggingZoneResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResourceTaggingZoneResourceType($value)';
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$accessApplicationPolicy extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$accessApplicationPolicy._();
 
 @override String get value => 'access_application_policy';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'access_application_policy'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$apiGatewayOperation extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$apiGatewayOperation._();
 
 @override String get value => 'api_gateway_operation';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'api_gateway_operation'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$customCertificate extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$customCertificate._();
 
 @override String get value => 'custom_certificate';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'custom_certificate'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$customHostname extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$customHostname._();
 
 @override String get value => 'custom_hostname';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'custom_hostname'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$dnsRecord extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$dnsRecord._();
 
 @override String get value => 'dns_record';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'dns_record'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$managedClientCertificate extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$managedClientCertificate._();
 
 @override String get value => 'managed_client_certificate';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'managed_client_certificate'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$zone extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$zone._();
 
 @override String get value => 'zone';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'zone'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingZoneResourceType$Unknown extends ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => value.hashCode;
 
- }
+}

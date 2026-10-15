@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_object.dart';sealed class ThreadCreatedEvent {const ThreadCreatedEvent();
 
-factory ThreadCreatedEvent.fromJson(String json) { return switch (json) {
+factory ThreadCreatedEvent.fromJson(String json) {return switch (json) {
   'thread.created' => threadCreated,
   _ => ThreadCreatedEvent$Unknown(json),
-}; }
+};}
 
 static const ThreadCreatedEvent threadCreated = ThreadCreatedEvent$threadCreated._();
 
 static const List<ThreadCreatedEvent> values = [threadCreated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'thread.created' => 'threadCreated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreadCreatedEvent$Unknown; } 
+bool get isUnknown {return this is ThreadCreatedEvent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() threadCreated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() threadCreated, required W Function(String value) $unknown, }) {return switch (this) {
       ThreadCreatedEvent$threadCreated() => threadCreated(),
       ThreadCreatedEvent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadCreated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadCreated, W Function(String value)? $unknown, }) {return switch (this) {
       ThreadCreatedEvent$threadCreated() => threadCreated != null ? threadCreated() : orElse(value),
       ThreadCreatedEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ThreadCreatedEvent($value)';
 
- }
+}
 @immutable final class ThreadCreatedEvent$threadCreated extends ThreadCreatedEvent {const ThreadCreatedEvent$threadCreated._();
 
 @override String get value => 'thread.created';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadCr
 
 @override int get hashCode => 'thread.created'.hashCode;
 
- }
+}
 @immutable final class ThreadCreatedEvent$Unknown extends ThreadCreatedEvent {const ThreadCreatedEvent$Unknown(this.value);
 
 @override final String value;
@@ -52,15 +52,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadCr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
 @immutable final class ThreadCreated {const ThreadCreated({required this.event, required this.data, this.enabled, });
 
-factory ThreadCreated.fromJson(Map<String, dynamic> json) { return ThreadCreated(
+factory ThreadCreated.fromJson(Map<String, dynamic> json) {return ThreadCreated(
   enabled: json['enabled'] as bool?,
   event: ThreadCreatedEvent.fromJson(json['event'] as String),
   data: ThreadObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 /// Whether to enable input audio transcription.
 final bool? enabled;
@@ -69,18 +69,18 @@ final ThreadCreatedEvent event;
 
 final ThreadObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
-ThreadCreated copyWith({bool? Function()? enabled, ThreadCreatedEvent? event, ThreadObject? data, }) { return ThreadCreated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') &&
+      json.containsKey('data');}
+ThreadCreated copyWith({bool? Function()? enabled, ThreadCreatedEvent? event, ThreadObject? data, }) {return ThreadCreated(
   enabled: enabled != null ? enabled() : this.enabled,
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadCreated &&
           enabled == other.enabled &&
@@ -91,4 +91,4 @@ ThreadCreated copyWith({bool? Function()? enabled, ThreadCreatedEvent? event, Th
 
 @override String toString() => 'ThreadCreated(enabled: $enabled, event: $event, data: $data)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished PKI rotation
 sealed class FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK();
 
-factory FinishRotatePkiSuccessK.fromJson(String json) { return switch (json) {
+factory FinishRotatePkiSuccessK.fromJson(String json) {return switch (json) {
   'FinishRotatePkiSuccess' => finishRotatePkiSuccess,
   _ => FinishRotatePkiSuccessK$Unknown(json),
-}; }
+};}
 
 static const FinishRotatePkiSuccessK finishRotatePkiSuccess = FinishRotatePkiSuccessK$finishRotatePkiSuccess._();
 
 static const List<FinishRotatePkiSuccessK> values = [finishRotatePkiSuccess];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'FinishRotatePkiSuccess' => 'finishRotatePkiSuccess',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinishRotatePkiSuccessK$Unknown; } 
+bool get isUnknown {return this is FinishRotatePkiSuccessK$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() finishRotatePkiSuccess, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() finishRotatePkiSuccess, required W Function(String value) $unknown, }) {return switch (this) {
       FinishRotatePkiSuccessK$finishRotatePkiSuccess() => finishRotatePkiSuccess(),
       FinishRotatePkiSuccessK$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishRotatePkiSuccess, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishRotatePkiSuccess, W Function(String value)? $unknown, }) {return switch (this) {
       FinishRotatePkiSuccessK$finishRotatePkiSuccess() => finishRotatePkiSuccess != null ? finishRotatePkiSuccess() : orElse(value),
       FinishRotatePkiSuccessK$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinishRotatePkiSuccessK($value)';
 
- }
+}
 @immutable final class FinishRotatePkiSuccessK$finishRotatePkiSuccess extends FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK$finishRotatePkiSuccess._();
 
 @override String get value => 'FinishRotatePkiSuccess';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishRo
 
 @override int get hashCode => 'FinishRotatePkiSuccess'.hashCode;
 
- }
+}
 @immutable final class FinishRotatePkiSuccessK$Unknown extends FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK$Unknown(this.value);
 
 @override final String value;
@@ -53,23 +53,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishRo
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class FinishRotatePkiSuccess {const FinishRotatePkiSuccess({required this.k});
 
-factory FinishRotatePkiSuccess.fromJson(Map<String, dynamic> json) { return FinishRotatePkiSuccess(
+factory FinishRotatePkiSuccess.fromJson(Map<String, dynamic> json) {return FinishRotatePkiSuccess(
   k: FinishRotatePkiSuccessK.fromJson(json['k'] as String),
-); }
+);}
 
 /// Finished PKI rotation
 final FinishRotatePkiSuccessK k;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'FinishRotatePkiSuccess'; } 
-FinishRotatePkiSuccess copyWith({FinishRotatePkiSuccessK? k}) { return FinishRotatePkiSuccess(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k') && json['k'] == 'FinishRotatePkiSuccess';}
+FinishRotatePkiSuccess copyWith({FinishRotatePkiSuccessK? k}) {return FinishRotatePkiSuccess(
   k: k ?? this.k,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FinishRotatePkiSuccess &&
           k == other.k;
@@ -78,4 +78,4 @@ FinishRotatePkiSuccess copyWith({FinishRotatePkiSuccessK? k}) { return FinishRot
 
 @override String toString() => 'FinishRotatePkiSuccess(k: $k)';
 
- }
+}

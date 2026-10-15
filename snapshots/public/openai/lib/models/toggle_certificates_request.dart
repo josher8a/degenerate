@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToggleCertificatesRequest {const ToggleCertificatesRequest({required this.certificateIds});
 
-factory ToggleCertificatesRequest.fromJson(Map<String, dynamic> json) { return ToggleCertificatesRequest(
+factory ToggleCertificatesRequest.fromJson(Map<String, dynamic> json) {return ToggleCertificatesRequest(
   certificateIds: (json['certificate_ids'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> certificateIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate_ids': certificateIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_ids'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_ids');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (certificateIds.isEmpty) { errors.add('certificateIds: must have >= 1 items'); }
 if (certificateIds.length > 10) { errors.add('certificateIds: must have <= 10 items'); }
-return errors; } 
-ToggleCertificatesRequest copyWith({List<String>? certificateIds}) { return ToggleCertificatesRequest(
+return errors;}
+ToggleCertificatesRequest copyWith({List<String>? certificateIds}) {return ToggleCertificatesRequest(
   certificateIds: certificateIds ?? this.certificateIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToggleCertificatesRequest &&
           listEquals(certificateIds, other.certificateIds);
@@ -29,4 +29,4 @@ ToggleCertificatesRequest copyWith({List<String>? certificateIds}) { return Togg
 
 @override String toString() => 'ToggleCertificatesRequest(certificateIds: $certificateIds)';
 
- }
+}

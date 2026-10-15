@@ -10,24 +10,24 @@ String toJson() => value;
 }
 @immutable final class TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult {const TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult({this.status, this.validationMethod, });
 
-factory TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
+factory TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
   status: json['status'] != null ? TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus.fromJson(json['status'] as String) : null,
   validationMethod: json['validation_method'] != null ? TlsCertificatesAndHostnamesValidationMethodDefinition.fromJson(json['validation_method'] as String) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus? status;
 
 final TlsCertificatesAndHostnamesValidationMethodDefinition? validationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
   if (validationMethod != null) 'validation_method': validationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status', 'validation_method'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult copyWith({TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesValidationMethodDefinition? Function()? validationMethod, }) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status', 'validation_method'}.contains(key));}
+TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult copyWith({TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesValidationMethodDefinition? Function()? validationMethod, }) {return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
   status: status != null ? status() : this.status,
   validationMethod: validationMethod != null ? validationMethod() : this.validationMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult &&
           status == other.status &&
@@ -37,4 +37,4 @@ TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult copyWith(
 
 @override String toString() => 'TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(status: $status, validationMethod: $validationMethod)';
 
- }
+}

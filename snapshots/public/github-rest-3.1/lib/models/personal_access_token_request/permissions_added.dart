@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// New requested permissions, categorized by type of permission.
 @immutable final class PermissionsAdded {const PermissionsAdded({this.organization, this.repository, this.other, });
 
-factory PermissionsAdded.fromJson(Map<String, dynamic> json) { return PermissionsAdded(
+factory PermissionsAdded.fromJson(Map<String, dynamic> json) {return PermissionsAdded(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   other: (json['other'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 final Map<String,String>? organization;
 
@@ -16,17 +16,17 @@ final Map<String,String>? repository;
 
 final Map<String,String>? other;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'organization': ?organization,
   'repository': ?repository,
   'other': ?other,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key)); } 
-PermissionsAdded copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) { return PermissionsAdded(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key));}
+PermissionsAdded copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) {return PermissionsAdded(
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   other: other != null ? other() : this.other,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PermissionsAdded &&
           organization == other.organization &&
@@ -37,4 +37,4 @@ PermissionsAdded copyWith({Map<String, String>? Function()? organization, Map<St
 
 @override String toString() => 'PermissionsAdded(organization: $organization, repository: $repository, other: $other)';
 
- }
+}

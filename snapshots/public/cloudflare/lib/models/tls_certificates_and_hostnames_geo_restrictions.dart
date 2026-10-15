@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_geo_restrictions/label.dart';/// Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.
 @immutable final class TlsCertificatesAndHostnamesGeoRestrictions {const TlsCertificatesAndHostnamesGeoRestrictions({this.label});
 
-factory TlsCertificatesAndHostnamesGeoRestrictions.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesGeoRestrictions(
+factory TlsCertificatesAndHostnamesGeoRestrictions.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesGeoRestrictions(
   label: json['label'] != null ? Label.fromJson(json['label'] as String) : null,
-); }
+);}
 
 /// Example: `'us'`
 final Label? label;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (label != null) 'label': label?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'label'}.contains(key)); } 
-TlsCertificatesAndHostnamesGeoRestrictions copyWith({Label? Function()? label}) { return TlsCertificatesAndHostnamesGeoRestrictions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'label'}.contains(key));}
+TlsCertificatesAndHostnamesGeoRestrictions copyWith({Label? Function()? label}) {return TlsCertificatesAndHostnamesGeoRestrictions(
   label: label != null ? label() : this.label,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesGeoRestrictions &&
           label == other.label;
@@ -26,4 +26,4 @@ TlsCertificatesAndHostnamesGeoRestrictions copyWith({Label? Function()? label}) 
 
 @override String toString() => 'TlsCertificatesAndHostnamesGeoRestrictions(label: $label)';
 
- }
+}

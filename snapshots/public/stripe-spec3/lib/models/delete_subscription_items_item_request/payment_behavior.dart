@@ -14,13 +14,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Only applies to 
 /// Subscriptions with `collection_method=send_invoice` are automatically activated regardless of the first Invoice status.
 sealed class PaymentBehavior {const PaymentBehavior();
 
-factory PaymentBehavior.fromJson(String json) { return switch (json) {
+factory PaymentBehavior.fromJson(String json) {return switch (json) {
   'allow_incomplete' => allowIncomplete,
   'default_incomplete' => defaultIncomplete,
   'error_if_incomplete' => errorIfIncomplete,
   'pending_if_incomplete' => pendingIfIncomplete,
   _ => PaymentBehavior$Unknown(json),
-}; }
+};}
 
 static const PaymentBehavior allowIncomplete = PaymentBehavior$allowIncomplete._();
 
@@ -33,36 +33,36 @@ static const PaymentBehavior pendingIfIncomplete = PaymentBehavior$pendingIfInco
 static const List<PaymentBehavior> values = [allowIncomplete, defaultIncomplete, errorIfIncomplete, pendingIfIncomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'allow_incomplete' => 'allowIncomplete',
   'default_incomplete' => 'defaultIncomplete',
   'error_if_incomplete' => 'errorIfIncomplete',
   'pending_if_incomplete' => 'pendingIfIncomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentBehavior$Unknown; } 
+bool get isUnknown {return this is PaymentBehavior$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() allowIncomplete, required W Function() defaultIncomplete, required W Function() errorIfIncomplete, required W Function() pendingIfIncomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() allowIncomplete, required W Function() defaultIncomplete, required W Function() errorIfIncomplete, required W Function() pendingIfIncomplete, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentBehavior$allowIncomplete() => allowIncomplete(),
       PaymentBehavior$defaultIncomplete() => defaultIncomplete(),
       PaymentBehavior$errorIfIncomplete() => errorIfIncomplete(),
       PaymentBehavior$pendingIfIncomplete() => pendingIfIncomplete(),
       PaymentBehavior$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowIncomplete, W Function()? defaultIncomplete, W Function()? errorIfIncomplete, W Function()? pendingIfIncomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowIncomplete, W Function()? defaultIncomplete, W Function()? errorIfIncomplete, W Function()? pendingIfIncomplete, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentBehavior$allowIncomplete() => allowIncomplete != null ? allowIncomplete() : orElse(value),
       PaymentBehavior$defaultIncomplete() => defaultIncomplete != null ? defaultIncomplete() : orElse(value),
       PaymentBehavior$errorIfIncomplete() => errorIfIncomplete != null ? errorIfIncomplete() : orElse(value),
       PaymentBehavior$pendingIfIncomplete() => pendingIfIncomplete != null ? pendingIfIncomplete() : orElse(value),
       PaymentBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentBehavior($value)';
 
- }
+}
 @immutable final class PaymentBehavior$allowIncomplete extends PaymentBehavior {const PaymentBehavior$allowIncomplete._();
 
 @override String get value => 'allow_incomplete';
@@ -71,7 +71,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowInc
 
 @override int get hashCode => 'allow_incomplete'.hashCode;
 
- }
+}
 @immutable final class PaymentBehavior$defaultIncomplete extends PaymentBehavior {const PaymentBehavior$defaultIncomplete._();
 
 @override String get value => 'default_incomplete';
@@ -80,7 +80,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowInc
 
 @override int get hashCode => 'default_incomplete'.hashCode;
 
- }
+}
 @immutable final class PaymentBehavior$errorIfIncomplete extends PaymentBehavior {const PaymentBehavior$errorIfIncomplete._();
 
 @override String get value => 'error_if_incomplete';
@@ -89,7 +89,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowInc
 
 @override int get hashCode => 'error_if_incomplete'.hashCode;
 
- }
+}
 @immutable final class PaymentBehavior$pendingIfIncomplete extends PaymentBehavior {const PaymentBehavior$pendingIfIncomplete._();
 
 @override String get value => 'pending_if_incomplete';
@@ -98,7 +98,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowInc
 
 @override int get hashCode => 'pending_if_incomplete'.hashCode;
 
- }
+}
 @immutable final class PaymentBehavior$Unknown extends PaymentBehavior {const PaymentBehavior$Unknown(this.value);
 
 @override final String value;
@@ -108,4 +108,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowInc
 
 @override int get hashCode => value.hashCode;
 
- }
+}

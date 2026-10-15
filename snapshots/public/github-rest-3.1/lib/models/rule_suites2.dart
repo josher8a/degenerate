@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite/rule_suite_result.dart';/// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
 sealed class RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult();
 
-factory RuleSuitesEvaluationResult.fromJson(String json) { return switch (json) {
+factory RuleSuitesEvaluationResult.fromJson(String json) {return switch (json) {
   'pass' => pass,
   'fail' => fail,
   'bypass' => bypass,
   _ => RuleSuitesEvaluationResult$Unknown(json),
-}; }
+};}
 
 static const RuleSuitesEvaluationResult pass = RuleSuitesEvaluationResult$pass._();
 
@@ -20,33 +20,33 @@ static const RuleSuitesEvaluationResult bypass = RuleSuitesEvaluationResult$bypa
 static const List<RuleSuitesEvaluationResult> values = [pass, fail, bypass];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pass' => 'pass',
   'fail' => 'fail',
   'bypass' => 'bypass',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RuleSuitesEvaluationResult$Unknown; } 
+bool get isUnknown {return this is RuleSuitesEvaluationResult$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pass, required W Function() fail, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pass, required W Function() fail, required W Function() bypass, required W Function(String value) $unknown, }) {return switch (this) {
       RuleSuitesEvaluationResult$pass() => pass(),
       RuleSuitesEvaluationResult$fail() => fail(),
       RuleSuitesEvaluationResult$bypass() => bypass(),
       RuleSuitesEvaluationResult$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? fail, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? fail, W Function()? bypass, W Function(String value)? $unknown, }) {return switch (this) {
       RuleSuitesEvaluationResult$pass() => pass != null ? pass() : orElse(value),
       RuleSuitesEvaluationResult$fail() => fail != null ? fail() : orElse(value),
       RuleSuitesEvaluationResult$bypass() => bypass != null ? bypass() : orElse(value),
       RuleSuitesEvaluationResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RuleSuitesEvaluationResult($value)';
 
- }
+}
 @immutable final class RuleSuitesEvaluationResult$pass extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$pass._();
 
 @override String get value => 'pass';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'pass'.hashCode;
 
- }
+}
 @immutable final class RuleSuitesEvaluationResult$fail extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$fail._();
 
 @override String get value => 'fail';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'fail'.hashCode;
 
- }
+}
 @immutable final class RuleSuitesEvaluationResult$bypass extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$bypass._();
 
 @override String get value => 'bypass';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'bypass'.hashCode;
 
- }
+}
 @immutable final class RuleSuitesEvaluationResult$Unknown extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RuleSuites2 {const RuleSuites2({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, });
 
-factory RuleSuites2.fromJson(Map<String, dynamic> json) { return RuleSuites2(
+factory RuleSuites2.fromJson(Map<String, dynamic> json) {return RuleSuites2(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   actorId: json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null,
   actorName: json['actor_name'] as String?,
@@ -98,7 +98,7 @@ factory RuleSuites2.fromJson(Map<String, dynamic> json) { return RuleSuites2(
   pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
   result: json['result'] != null ? RuleSuiteResult.fromJson(json['result'] as String) : null,
   evaluationResult: json['evaluation_result'] != null ? RuleSuitesEvaluationResult.fromJson(json['evaluation_result'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the rule insight.
 final int? id;
@@ -132,7 +132,7 @@ final RuleSuiteResult? result;
 /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
 final RuleSuitesEvaluationResult? evaluationResult;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'actor_id': ?actorId,
   'actor_name': ?actorName,
@@ -144,9 +144,9 @@ Map<String, dynamic> toJson() { return {
   if (pushedAt != null) 'pushed_at': pushedAt?.toIso8601String(),
   if (result != null) 'result': result?.toJson(),
   if (evaluationResult != null) 'evaluation_result': evaluationResult?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'actor_id', 'actor_name', 'before_sha', 'after_sha', 'ref', 'repository_id', 'repository_name', 'pushed_at', 'result', 'evaluation_result'}.contains(key)); } 
-RuleSuites2 copyWith({int? Function()? id, int? Function()? actorId, String? Function()? actorName, String? Function()? beforeSha, String? Function()? afterSha, String? Function()? ref, int? Function()? repositoryId, String? Function()? repositoryName, DateTime? Function()? pushedAt, RuleSuiteResult? Function()? result, RuleSuitesEvaluationResult? Function()? evaluationResult, }) { return RuleSuites2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'actor_id', 'actor_name', 'before_sha', 'after_sha', 'ref', 'repository_id', 'repository_name', 'pushed_at', 'result', 'evaluation_result'}.contains(key));}
+RuleSuites2 copyWith({int? Function()? id, int? Function()? actorId, String? Function()? actorName, String? Function()? beforeSha, String? Function()? afterSha, String? Function()? ref, int? Function()? repositoryId, String? Function()? repositoryName, DateTime? Function()? pushedAt, RuleSuiteResult? Function()? result, RuleSuitesEvaluationResult? Function()? evaluationResult, }) {return RuleSuites2(
   id: id != null ? id() : this.id,
   actorId: actorId != null ? actorId() : this.actorId,
   actorName: actorName != null ? actorName() : this.actorName,
@@ -158,7 +158,7 @@ RuleSuites2 copyWith({int? Function()? id, int? Function()? actorId, String? Fun
   pushedAt: pushedAt != null ? pushedAt() : this.pushedAt,
   result: result != null ? result() : this.result,
   evaluationResult: evaluationResult != null ? evaluationResult() : this.evaluationResult,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuites2 &&
           id == other.id &&
@@ -177,4 +177,4 @@ RuleSuites2 copyWith({int? Function()? id, int? Function()? actorId, String? Fun
 
 @override String toString() => 'RuleSuites2(\n  id: $id,\n  actorId: $actorId,\n  actorName: $actorName,\n  beforeSha: $beforeSha,\n  afterSha: $afterSha,\n  ref: $ref,\n  repositoryId: $repositoryId,\n  repositoryName: $repositoryName,\n  pushedAt: $pushedAt,\n  result: $result,\n  evaluationResult: $evaluationResult,\n)';
 
- }
+}

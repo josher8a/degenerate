@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchBlockCreations {const ProtectedBranchBlockCreations({required this.enabled});
 
-factory ProtectedBranchBlockCreations.fromJson(Map<String, dynamic> json) { return ProtectedBranchBlockCreations(
+factory ProtectedBranchBlockCreations.fromJson(Map<String, dynamic> json) {return ProtectedBranchBlockCreations(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-ProtectedBranchBlockCreations copyWith({bool? enabled}) { return ProtectedBranchBlockCreations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+ProtectedBranchBlockCreations copyWith({bool? enabled}) {return ProtectedBranchBlockCreations(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchBlockCreations &&
           enabled == other.enabled;
@@ -24,4 +24,4 @@ ProtectedBranchBlockCreations copyWith({bool? enabled}) { return ProtectedBranch
 
 @override String toString() => 'ProtectedBranchBlockCreations(enabled: $enabled)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/scanned_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/skipped_repositories.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The language targeted by the CodeQL query
 sealed class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage();
 
-factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisLanguage.fromJson(String json) {return switch (json) {
   'actions' => actions,
   'cpp' => cpp,
   'csharp' => csharp,
@@ -16,7 +16,7 @@ factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switc
   'rust' => rust,
   'swift' => swift,
   _ => CodeScanningVariantAnalysisLanguage$Unknown(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisLanguage actions = CodeScanningVariantAnalysisLanguage$actions._();
 
@@ -41,9 +41,9 @@ static const CodeScanningVariantAnalysisLanguage swift = CodeScanningVariantAnal
 static const List<CodeScanningVariantAnalysisLanguage> values = [actions, cpp, csharp, go, java, javascript, python, ruby, rust, swift];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'actions' => 'actions',
   'cpp' => 'cpp',
   'csharp' => 'csharp',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'rust' => 'rust',
   'swift' => 'swift',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningVariantAnalysisLanguage$Unknown; } 
+bool get isUnknown {return this is CodeScanningVariantAnalysisLanguage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() actions, required W Function() cpp, required W Function() csharp, required W Function() go, required W Function() java, required W Function() javascript, required W Function() python, required W Function() ruby, required W Function() rust, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() actions, required W Function() cpp, required W Function() csharp, required W Function() go, required W Function() java, required W Function() javascript, required W Function() python, required W Function() ruby, required W Function() rust, required W Function() swift, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningVariantAnalysisLanguage$actions() => actions(),
       CodeScanningVariantAnalysisLanguage$cpp() => cpp(),
       CodeScanningVariantAnalysisLanguage$csharp() => csharp(),
@@ -71,9 +71,9 @@ W when<W>({required W Function() actions, required W Function() cpp, required W 
       CodeScanningVariantAnalysisLanguage$rust() => rust(),
       CodeScanningVariantAnalysisLanguage$swift() => swift(),
       CodeScanningVariantAnalysisLanguage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cpp, W Function()? csharp, W Function()? go, W Function()? java, W Function()? javascript, W Function()? python, W Function()? ruby, W Function()? rust, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cpp, W Function()? csharp, W Function()? go, W Function()? java, W Function()? javascript, W Function()? python, W Function()? ruby, W Function()? rust, W Function()? swift, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningVariantAnalysisLanguage$actions() => actions != null ? actions() : orElse(value),
       CodeScanningVariantAnalysisLanguage$cpp() => cpp != null ? cpp() : orElse(value),
       CodeScanningVariantAnalysisLanguage$csharp() => csharp != null ? csharp() : orElse(value),
@@ -85,10 +85,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
       CodeScanningVariantAnalysisLanguage$rust() => rust != null ? rust() : orElse(value),
       CodeScanningVariantAnalysisLanguage$swift() => swift != null ? swift() : orElse(value),
       CodeScanningVariantAnalysisLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningVariantAnalysisLanguage($value)';
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$actions extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$actions._();
 
 @override String get value => 'actions';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'actions'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$cpp extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$cpp._();
 
 @override String get value => 'cpp';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'cpp'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$csharp extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$csharp._();
 
 @override String get value => 'csharp';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'csharp'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$go extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$go._();
 
 @override String get value => 'go';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'go'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$java extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$java._();
 
 @override String get value => 'java';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'java'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$javascript extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$javascript._();
 
 @override String get value => 'javascript';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'javascript'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$python extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$python._();
 
 @override String get value => 'python';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'python'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$ruby extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$ruby._();
 
 @override String get value => 'ruby';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'ruby'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$rust extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$rust._();
 
 @override String get value => 'rust';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'rust'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$swift extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$swift._();
 
 @override String get value => 'swift';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'swift'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisLanguage$Unknown extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$Unknown(this.value);
 
 @override final String value;
@@ -188,16 +188,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2();
 
-factory CodeScanningVariantAnalysisStatus2.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisStatus2.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'succeeded' => succeeded,
   'failed' => failed,
   'cancelled' => cancelled,
   _ => CodeScanningVariantAnalysisStatus2$Unknown(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisStatus2 inProgress = CodeScanningVariantAnalysisStatus2$inProgress._();
 
@@ -210,36 +210,36 @@ static const CodeScanningVariantAnalysisStatus2 cancelled = CodeScanningVariantA
 static const List<CodeScanningVariantAnalysisStatus2> values = [inProgress, succeeded, failed, cancelled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'succeeded' => 'succeeded',
   'failed' => 'failed',
   'cancelled' => 'cancelled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningVariantAnalysisStatus2$Unknown; } 
+bool get isUnknown {return this is CodeScanningVariantAnalysisStatus2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() succeeded, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() succeeded, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningVariantAnalysisStatus2$inProgress() => inProgress(),
       CodeScanningVariantAnalysisStatus2$succeeded() => succeeded(),
       CodeScanningVariantAnalysisStatus2$failed() => failed(),
       CodeScanningVariantAnalysisStatus2$cancelled() => cancelled(),
       CodeScanningVariantAnalysisStatus2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? succeeded, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? succeeded, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningVariantAnalysisStatus2$inProgress() => inProgress != null ? inProgress() : orElse(value),
       CodeScanningVariantAnalysisStatus2$succeeded() => succeeded != null ? succeeded() : orElse(value),
       CodeScanningVariantAnalysisStatus2$failed() => failed != null ? failed() : orElse(value),
       CodeScanningVariantAnalysisStatus2$cancelled() => cancelled != null ? cancelled() : orElse(value),
       CodeScanningVariantAnalysisStatus2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningVariantAnalysisStatus2($value)';
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus2$inProgress extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$inProgress._();
 
 @override String get value => 'in_progress';
@@ -248,7 +248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus2$succeeded extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$succeeded._();
 
 @override String get value => 'succeeded';
@@ -257,7 +257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus2$failed extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$failed._();
 
 @override String get value => 'failed';
@@ -266,7 +266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus2$cancelled extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$cancelled._();
 
 @override String get value => 'cancelled';
@@ -275,7 +275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus2$Unknown extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$Unknown(this.value);
 
 @override final String value;
@@ -285,16 +285,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
 sealed class FailureReason {const FailureReason();
 
-factory FailureReason.fromJson(String json) { return switch (json) {
+factory FailureReason.fromJson(String json) {return switch (json) {
   'no_repos_queried' => noReposQueried,
   'actions_workflow_run_failed' => actionsWorkflowRunFailed,
   'internal_error' => internalError,
   _ => FailureReason$Unknown(json),
-}; }
+};}
 
 static const FailureReason noReposQueried = FailureReason$noReposQueried._();
 
@@ -305,33 +305,33 @@ static const FailureReason internalError = FailureReason$internalError._();
 static const List<FailureReason> values = [noReposQueried, actionsWorkflowRunFailed, internalError];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'no_repos_queried' => 'noReposQueried',
   'actions_workflow_run_failed' => 'actionsWorkflowRunFailed',
   'internal_error' => 'internalError',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FailureReason$Unknown; } 
+bool get isUnknown {return this is FailureReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() noReposQueried, required W Function() actionsWorkflowRunFailed, required W Function() internalError, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() noReposQueried, required W Function() actionsWorkflowRunFailed, required W Function() internalError, required W Function(String value) $unknown, }) {return switch (this) {
       FailureReason$noReposQueried() => noReposQueried(),
       FailureReason$actionsWorkflowRunFailed() => actionsWorkflowRunFailed(),
       FailureReason$internalError() => internalError(),
       FailureReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQueried, W Function()? actionsWorkflowRunFailed, W Function()? internalError, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQueried, W Function()? actionsWorkflowRunFailed, W Function()? internalError, W Function(String value)? $unknown, }) {return switch (this) {
       FailureReason$noReposQueried() => noReposQueried != null ? noReposQueried() : orElse(value),
       FailureReason$actionsWorkflowRunFailed() => actionsWorkflowRunFailed != null ? actionsWorkflowRunFailed() : orElse(value),
       FailureReason$internalError() => internalError != null ? internalError() : orElse(value),
       FailureReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FailureReason($value)';
 
- }
+}
 @immutable final class FailureReason$noReposQueried extends FailureReason {const FailureReason$noReposQueried._();
 
 @override String get value => 'no_repos_queried';
@@ -340,7 +340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQ
 
 @override int get hashCode => 'no_repos_queried'.hashCode;
 
- }
+}
 @immutable final class FailureReason$actionsWorkflowRunFailed extends FailureReason {const FailureReason$actionsWorkflowRunFailed._();
 
 @override String get value => 'actions_workflow_run_failed';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQ
 
 @override int get hashCode => 'actions_workflow_run_failed'.hashCode;
 
- }
+}
 @immutable final class FailureReason$internalError extends FailureReason {const FailureReason$internalError._();
 
 @override String get value => 'internal_error';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQ
 
 @override int get hashCode => 'internal_error'.hashCode;
 
- }
+}
 @immutable final class FailureReason$Unknown extends FailureReason {const FailureReason$Unknown(this.value);
 
 @override final String value;
@@ -368,11 +368,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQ
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A run of a CodeQL query against one or more repositories.
-@immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
+@immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt = const Omittable.absent(), this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
 
-factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysis(
+factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) {return CodeScanningVariantAnalysis(
   id: (json['id'] as num).toInt(),
   controllerRepo: SimpleRepository.fromJson(json['controller_repo'] as Map<String, dynamic>),
   actor: SimpleUser.fromJson(json['actor'] as Map<String, dynamic>),
@@ -380,13 +380,13 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   queryPackUrl: json['query_pack_url'] as String,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null) : const Omittable.absent(),
   status: CodeScanningVariantAnalysisStatus2.fromJson(json['status'] as String),
   actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
   failureReason: json['failure_reason'] != null ? FailureReason.fromJson(json['failure_reason'] as String) : null,
   scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => ScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
   skippedRepositories: json['skipped_repositories'] != null ? SkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The ID of the variant analysis.
 final int id;
@@ -408,7 +408,7 @@ final DateTime? createdAt;
 final DateTime? updatedAt;
 
 /// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
-final DateTime? completedAt;
+final Omittable<DateTime?> completedAt;
 
 final CodeScanningVariantAnalysisStatus2 status;
 
@@ -423,7 +423,7 @@ final List<ScannedRepositories>? scannedRepositories;
 /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
 final SkippedRepositories? skippedRepositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'controller_repo': controllerRepo.toJson(),
   'actor': actor.toJson(),
@@ -431,20 +431,20 @@ Map<String, dynamic> toJson() { return {
   'query_pack_url': queryPackUrl,
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
+  if (completedAt.isPresent) 'completed_at': completedAt.value?.toIso8601String(),
   'status': status.toJson(),
   'actions_workflow_run_id': ?actionsWorkflowRunId,
   if (failureReason != null) 'failure_reason': failureReason?.toJson(),
   if (scannedRepositories != null) 'scanned_repositories': scannedRepositories?.map((e) => e.toJson()).toList(),
   if (skippedRepositories != null) 'skipped_repositories': skippedRepositories?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('controller_repo') &&
       json.containsKey('actor') &&
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
-      json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus2? status, int? Function()? actionsWorkflowRunId, FailureReason? Function()? failureReason, List<ScannedRepositories>? Function()? scannedRepositories, SkippedRepositories? Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+      json.containsKey('status');}
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<DateTime?>? completedAt, CodeScanningVariantAnalysisStatus2? status, int? Function()? actionsWorkflowRunId, FailureReason? Function()? failureReason, List<ScannedRepositories>? Function()? scannedRepositories, SkippedRepositories? Function()? skippedRepositories, }) {return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,
@@ -452,13 +452,13 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
   queryPackUrl: queryPackUrl ?? this.queryPackUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  completedAt: completedAt ?? this.completedAt,
   status: status ?? this.status,
   actionsWorkflowRunId: actionsWorkflowRunId != null ? actionsWorkflowRunId() : this.actionsWorkflowRunId,
   failureReason: failureReason != null ? failureReason() : this.failureReason,
   scannedRepositories: scannedRepositories != null ? scannedRepositories() : this.scannedRepositories,
   skippedRepositories: skippedRepositories != null ? skippedRepositories() : this.skippedRepositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningVariantAnalysis &&
           id == other.id &&
@@ -479,4 +479,4 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
 
 @override String toString() => 'CodeScanningVariantAnalysis(\n  id: $id,\n  controllerRepo: $controllerRepo,\n  actor: $actor,\n  queryLanguage: $queryLanguage,\n  queryPackUrl: $queryPackUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  completedAt: $completedAt,\n  status: $status,\n  actionsWorkflowRunId: $actionsWorkflowRunId,\n  failureReason: $failureReason,\n  scannedRepositories: $scannedRepositories,\n  skippedRepositories: $skippedRepositories,\n)';
 
- }
+}

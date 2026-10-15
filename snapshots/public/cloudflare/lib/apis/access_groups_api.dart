@@ -14,7 +14,7 @@ final class AccessGroupsApi with ApiExecutor {const AccessGroupsApi(this.apiConf
 /// Lists all Access groups.
 ///
 /// `GET /accounts/{account_id}/access/groups`
-Future<ApiResult<List<AccessSchemasGroups>?, AccessApplicationsAddAnApplicationError>> accessGroupsListAccessGroups({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessSchemasGroups>?, AccessApplicationsAddAnApplicationError>> accessGroupsListAccessGroups({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,13 +48,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create an Access group
 ///
 /// Creates a new Access group.
 ///
 /// `POST /accounts/{account_id}/access/groups`
-Future<ApiResult<AccessSchemasGroups?, AccessApplicationsAddAnApplicationError>> accessGroupsCreateAnAccessGroup({required AccessIdentifier accountId, required AccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasGroups?, AccessApplicationsAddAnApplicationError>> accessGroupsCreateAnAccessGroup({required AccessIdentifier accountId, required AccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -73,13 +73,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access group
 ///
 /// Fetches a single Access group.
 ///
 /// `GET /accounts/{account_id}/access/groups/{group_id}`
-Future<ApiResult<AccessSchemasGroups?, AccessApplicationsAddAnApplicationError>> accessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasGroups?, AccessApplicationsAddAnApplicationError>> accessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,13 +96,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access group
 ///
 /// Updates a configured Access group.
 ///
 /// `PUT /accounts/{account_id}/access/groups/{group_id}`
-Future<ApiResult<AccessSchemasGroups?, AccessApplicationsAddAnApplicationError>> accessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, required AccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasGroups?, AccessApplicationsAddAnApplicationError>> accessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, required AccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,7 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,13 +121,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access group
 ///
 /// Deletes an Access group.
 ///
 /// `DELETE /accounts/{account_id}/access/groups/{group_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,7 +136,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -144,5 +144,5 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

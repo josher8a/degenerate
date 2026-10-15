@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PaymentMethodDomainObject {const PaymentMethodDomainObject();
 
-factory PaymentMethodDomainObject.fromJson(String json) { return switch (json) {
+factory PaymentMethodDomainObject.fromJson(String json) {return switch (json) {
   'payment_method_domain' => paymentMethodDomain,
   _ => PaymentMethodDomainObject$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDomainObject paymentMethodDomain = PaymentMethodDomainObject$paymentMethodDomain._();
 
 static const List<PaymentMethodDomainObject> values = [paymentMethodDomain];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment_method_domain' => 'paymentMethodDomain',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDomainObject$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDomainObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentMethodDomain, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentMethodDomain, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDomainObject$paymentMethodDomain() => paymentMethodDomain(),
       PaymentMethodDomainObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethodDomain, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethodDomain, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDomainObject$paymentMethodDomain() => paymentMethodDomain != null ? paymentMethodDomain() : orElse(value),
       PaymentMethodDomainObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDomainObject($value)';
 
- }
+}
 @immutable final class PaymentMethodDomainObject$paymentMethodDomain extends PaymentMethodDomainObject {const PaymentMethodDomainObject$paymentMethodDomain._();
 
 @override String get value => 'payment_method_domain';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 
 @override int get hashCode => 'payment_method_domain'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDomainObject$Unknown extends PaymentMethodDomainObject {const PaymentMethodDomainObject$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A payment method domain represents a web domain that you have registered with Stripe.
 /// Stripe Elements use registered payment method domains to control where certain payment methods are shown.
 /// 
 /// Related guide: [Payment method domains](https://docs.stripe.com/payments/payment-methods/pmd-registration).
 @immutable final class PaymentMethodDomain {const PaymentMethodDomain({required this.amazonPay, required this.applePay, required this.created, required this.domainName, required this.enabled, required this.googlePay, required this.id, required this.klarna, required this.link, required this.livemode, required this.object, required this.paypal, });
 
-factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) { return PaymentMethodDomain(
+factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) {return PaymentMethodDomain(
   amazonPay: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['amazon_pay'] as Map<String, dynamic>),
   applePay: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['apple_pay'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
@@ -73,7 +73,7 @@ factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) { return Payment
   livemode: json['livemode'] as bool,
   object: PaymentMethodDomainObject.fromJson(json['object'] as String),
   paypal: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['paypal'] as Map<String, dynamic>),
-); }
+);}
 
 final PaymentMethodDomainResourcePaymentMethodStatus amazonPay;
 
@@ -105,7 +105,7 @@ final PaymentMethodDomainObject object;
 
 final PaymentMethodDomainResourcePaymentMethodStatus paypal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amazon_pay': amazonPay.toJson(),
   'apple_pay': applePay.toJson(),
   'created': created,
@@ -118,8 +118,8 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   'paypal': paypal.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amazon_pay') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amazon_pay') &&
       json.containsKey('apple_pay') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('domain_name') && json['domain_name'] is String &&
@@ -130,13 +130,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amazo
       json.containsKey('link') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('paypal'); } 
+      json.containsKey('paypal');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (domainName.runes.length > 5000) { errors.add('domainName: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? amazonPay, PaymentMethodDomainResourcePaymentMethodStatus? applePay, int? created, String? domainName, bool? enabled, PaymentMethodDomainResourcePaymentMethodStatus? googlePay, String? id, PaymentMethodDomainResourcePaymentMethodStatus? klarna, PaymentMethodDomainResourcePaymentMethodStatus? link, bool? livemode, PaymentMethodDomainObject? object, PaymentMethodDomainResourcePaymentMethodStatus? paypal, }) { return PaymentMethodDomain(
+return errors;}
+PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? amazonPay, PaymentMethodDomainResourcePaymentMethodStatus? applePay, int? created, String? domainName, bool? enabled, PaymentMethodDomainResourcePaymentMethodStatus? googlePay, String? id, PaymentMethodDomainResourcePaymentMethodStatus? klarna, PaymentMethodDomainResourcePaymentMethodStatus? link, bool? livemode, PaymentMethodDomainObject? object, PaymentMethodDomainResourcePaymentMethodStatus? paypal, }) {return PaymentMethodDomain(
   amazonPay: amazonPay ?? this.amazonPay,
   applePay: applePay ?? this.applePay,
   created: created ?? this.created,
@@ -149,7 +149,7 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   paypal: paypal ?? this.paypal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDomain &&
           amazonPay == other.amazonPay &&
@@ -169,4 +169,4 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
 
 @override String toString() => 'PaymentMethodDomain(\n  amazonPay: $amazonPay,\n  applePay: $applePay,\n  created: $created,\n  domainName: $domainName,\n  enabled: $enabled,\n  googlePay: $googlePay,\n  id: $id,\n  klarna: $klarna,\n  link: $link,\n  livemode: $livemode,\n  object: $object,\n  paypal: $paypal,\n)';
 
- }
+}

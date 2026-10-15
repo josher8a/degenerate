@@ -5,26 +5,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionRequestMessageContentPartAudio {const ChatCompletionRequestMessageContentPartAudio({required this.type, required this.inputAudio, });
 
-factory ChatCompletionRequestMessageContentPartAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartAudio(
+factory ChatCompletionRequestMessageContentPartAudio.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestMessageContentPartAudio(
   type: ChatCompletionRequestMessageContentPartAudioType.fromJson(json['type'] as String),
   inputAudio: ChatCompletionRequestMessageContentPartAudioInputAudio.fromJson(json['input_audio'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the content part. Always `input_audio`.
 final ChatCompletionRequestMessageContentPartAudioType type;
 
 final ChatCompletionRequestMessageContentPartAudioInputAudio inputAudio;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'input_audio': inputAudio.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'input_audio' &&
-      json.containsKey('input_audio'); } 
-ChatCompletionRequestMessageContentPartAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, ChatCompletionRequestMessageContentPartAudioInputAudio? inputAudio, }) { return ChatCompletionRequestMessageContentPartAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'input_audio' &&
+      json.containsKey('input_audio');}
+ChatCompletionRequestMessageContentPartAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, ChatCompletionRequestMessageContentPartAudioInputAudio? inputAudio, }) {return ChatCompletionRequestMessageContentPartAudio(
   type: type ?? this.type,
   inputAudio: inputAudio ?? this.inputAudio,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartAudio &&
           type == other.type &&
@@ -34,4 +34,4 @@ ChatCompletionRequestMessageContentPartAudio copyWith({ChatCompletionRequestMess
 
 @override String toString() => 'ChatCompletionRequestMessageContentPartAudio(type: $type, inputAudio: $inputAudio)';
 
- }
+}

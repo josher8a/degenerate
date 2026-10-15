@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maximum number of streams that are visible on a device
 @immutable final class RealtimekitUpdatePresetConfigMaxVideoStreams {const RealtimekitUpdatePresetConfigMaxVideoStreams({this.desktop, this.mobile, });
 
-factory RealtimekitUpdatePresetConfigMaxVideoStreams.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMaxVideoStreams(
+factory RealtimekitUpdatePresetConfigMaxVideoStreams.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetConfigMaxVideoStreams(
   desktop: json['desktop'] != null ? (json['desktop'] as num).toInt() : null,
   mobile: json['mobile'] != null ? (json['mobile'] as num).toInt() : null,
-); }
+);}
 
 /// Maximum number of video streams visible on desktop devices
 final int? desktop;
@@ -15,15 +15,15 @@ final int? desktop;
 /// Maximum number of streams visible on mobile devices
 final int? mobile;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'desktop': ?desktop,
   'mobile': ?mobile,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'desktop', 'mobile'}.contains(key)); } 
-RealtimekitUpdatePresetConfigMaxVideoStreams copyWith({int? Function()? desktop, int? Function()? mobile, }) { return RealtimekitUpdatePresetConfigMaxVideoStreams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'desktop', 'mobile'}.contains(key));}
+RealtimekitUpdatePresetConfigMaxVideoStreams copyWith({int? Function()? desktop, int? Function()? mobile, }) {return RealtimekitUpdatePresetConfigMaxVideoStreams(
   desktop: desktop != null ? desktop() : this.desktop,
   mobile: mobile != null ? mobile() : this.mobile,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetConfigMaxVideoStreams &&
           desktop == other.desktop &&
@@ -33,4 +33,4 @@ RealtimekitUpdatePresetConfigMaxVideoStreams copyWith({int? Function()? desktop,
 
 @override String toString() => 'RealtimekitUpdatePresetConfigMaxVideoStreams(desktop: $desktop, mobile: $mobile)';
 
- }
+}

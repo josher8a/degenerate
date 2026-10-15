@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityPhishGuardReport
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report/email_security_phish_guard_report_fields.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report_tag.dart';@immutable final class EmailSecurityPhishGuardReport {const EmailSecurityPhishGuardReport({required this.content, required this.createdAt, required this.disposition, required this.fields, required this.id, required this.priority, required this.title, required this.ts, required this.updatedAt, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report/email_security_phish_guard_report_fields.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report_tag.dart';@immutable final class EmailSecurityPhishGuardReport {const EmailSecurityPhishGuardReport({required this.content, required this.createdAt, required this.disposition, required this.fields, required this.id, required this.priority, required this.title, required this.ts, required this.updatedAt, this.tags = const Omittable.absent(), });
 
-factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) { return EmailSecurityPhishGuardReport(
+factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) {return EmailSecurityPhishGuardReport(
   content: json['content'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   disposition: json['disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['disposition'] as String) : null,
   fields: EmailSecurityPhishGuardReportFields.fromJson(json['fields'] as Map<String, dynamic>),
   id: (json['id'] as num).toInt(),
   priority: json['priority'] as String,
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => EmailSecurityPhishGuardReportTag.fromJson(e as Map<String, dynamic>)).toList(),
+  tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => EmailSecurityPhishGuardReportTag.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   title: json['title'] as String,
   ts: DateTime.parse(json['ts'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final String content;
 
@@ -28,7 +28,7 @@ final int id;
 
 final String priority;
 
-final List<EmailSecurityPhishGuardReportTag>? tags;
+final Omittable<List<EmailSecurityPhishGuardReportTag>?> tags;
 
 final String title;
 
@@ -36,19 +36,19 @@ final DateTime ts;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'created_at': createdAt.toIso8601String(),
   'disposition': disposition?.toJson(),
   'fields': fields.toJson(),
   'id': id,
   'priority': priority,
-  if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
+  if (tags.isPresent) 'tags': tags.value?.map((e) => e.toJson()).toList(),
   'title': title,
   'ts': ts.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && json['content'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('disposition') &&
       json.containsKey('fields') &&
@@ -56,19 +56,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('priority') && json['priority'] is String &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('ts') && json['ts'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, EmailSecurityDispositionLabel? Function()? disposition, EmailSecurityPhishGuardReportFields? fields, int? id, String? priority, List<EmailSecurityPhishGuardReportTag>? Function()? tags, String? title, DateTime? ts, DateTime? updatedAt, }) { return EmailSecurityPhishGuardReport(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, EmailSecurityDispositionLabel? Function()? disposition, EmailSecurityPhishGuardReportFields? fields, int? id, String? priority, Omittable<List<EmailSecurityPhishGuardReportTag>?>? tags, String? title, DateTime? ts, DateTime? updatedAt, }) {return EmailSecurityPhishGuardReport(
   content: content ?? this.content,
   createdAt: createdAt ?? this.createdAt,
   disposition: disposition != null ? disposition() : this.disposition,
   fields: fields ?? this.fields,
   id: id ?? this.id,
   priority: priority ?? this.priority,
-  tags: tags != null ? tags() : this.tags,
+  tags: tags ?? this.tags,
   title: title ?? this.title,
   ts: ts ?? this.ts,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPhishGuardReport &&
           content == other.content &&
@@ -77,13 +77,14 @@ EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, Em
           fields == other.fields &&
           id == other.id &&
           priority == other.priority &&
-          listEquals(tags, other.tags) &&
+          tags.isPresent == other.tags.isPresent &&
+          listEquals(tags.value, other.tags.value) &&
           title == other.title &&
           ts == other.ts &&
           updatedAt == other.updatedAt;
 
-@override int get hashCode => Object.hash(content, createdAt, disposition, fields, id, priority, Object.hashAll(tags ?? const []), title, ts, updatedAt);
+@override int get hashCode => Object.hash(content, createdAt, disposition, fields, id, priority, Object.hashAll(tags.value ?? const []), title, ts, updatedAt);
 
 @override String toString() => 'EmailSecurityPhishGuardReport(\n  content: $content,\n  createdAt: $createdAt,\n  disposition: $disposition,\n  fields: $fields,\n  id: $id,\n  priority: $priority,\n  tags: $tags,\n  title: $title,\n  ts: $ts,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

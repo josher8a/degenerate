@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdateIndicatorFeedDataRequest {const CustomIndicatorFeedsUpdateIndicatorFeedDataRequest({this.source});
 
-factory CustomIndicatorFeedsUpdateIndicatorFeedDataRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
+factory CustomIndicatorFeedsUpdateIndicatorFeedDataRequest.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
   source: json['source'] as String?,
-); }
+);}
 
 /// The file to upload
 /// 
 /// Example: `'@/Users/me/test.stix2'`
 final String? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'source': ?source,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'source'}.contains(key)); } 
-CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String? Function()? source}) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'source'}.contains(key));}
+CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String? Function()? source}) {return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
   source: source != null ? source() : this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsUpdateIndicatorFeedDataRequest &&
           source == other.source;
@@ -27,4 +27,4 @@ CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String? Function()?
 
 @override String toString() => 'CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(source: $source)';
 
- }
+}

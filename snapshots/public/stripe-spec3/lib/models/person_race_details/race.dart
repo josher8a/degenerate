@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Race {const Race();
 
-factory Race.fromJson(String json) { return switch (json) {
+factory Race.fromJson(String json) {return switch (json) {
   'african_american' => africanAmerican,
   'american_indian_or_alaska_native' => americanIndianOrAlaskaNative,
   'asian' => asian,
@@ -29,7 +29,7 @@ factory Race.fromJson(String json) { return switch (json) {
   'vietnamese' => vietnamese,
   'white' => white,
   _ => Race$Unknown(json),
-}; }
+};}
 
 static const Race africanAmerican = Race$africanAmerican._();
 
@@ -82,9 +82,9 @@ static const Race white = Race$white._();
 static const List<Race> values = [africanAmerican, americanIndianOrAlaskaNative, asian, asianIndian, blackOrAfricanAmerican, chinese, ethiopian, filipino, guamanianOrChamorro, haitian, jamaican, japanese, korean, nativeHawaiian, nativeHawaiianOrOtherPacificIslander, nigerian, otherAsian, otherBlackOrAfricanAmerican, otherPacificIslander, preferNotToAnswer, samoan, somali, vietnamese, white];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'african_american' => 'africanAmerican',
   'american_indian_or_alaska_native' => 'americanIndianOrAlaskaNative',
   'asian' => 'asian',
@@ -110,11 +110,11 @@ String get name { return switch (value) {
   'vietnamese' => 'vietnamese',
   'white' => 'white',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Race$Unknown; } 
+bool get isUnknown {return this is Race$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() africanAmerican, required W Function() americanIndianOrAlaskaNative, required W Function() asian, required W Function() asianIndian, required W Function() blackOrAfricanAmerican, required W Function() chinese, required W Function() ethiopian, required W Function() filipino, required W Function() guamanianOrChamorro, required W Function() haitian, required W Function() jamaican, required W Function() japanese, required W Function() korean, required W Function() nativeHawaiian, required W Function() nativeHawaiianOrOtherPacificIslander, required W Function() nigerian, required W Function() otherAsian, required W Function() otherBlackOrAfricanAmerican, required W Function() otherPacificIslander, required W Function() preferNotToAnswer, required W Function() samoan, required W Function() somali, required W Function() vietnamese, required W Function() white, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() africanAmerican, required W Function() americanIndianOrAlaskaNative, required W Function() asian, required W Function() asianIndian, required W Function() blackOrAfricanAmerican, required W Function() chinese, required W Function() ethiopian, required W Function() filipino, required W Function() guamanianOrChamorro, required W Function() haitian, required W Function() jamaican, required W Function() japanese, required W Function() korean, required W Function() nativeHawaiian, required W Function() nativeHawaiianOrOtherPacificIslander, required W Function() nigerian, required W Function() otherAsian, required W Function() otherBlackOrAfricanAmerican, required W Function() otherPacificIslander, required W Function() preferNotToAnswer, required W Function() samoan, required W Function() somali, required W Function() vietnamese, required W Function() white, required W Function(String value) $unknown, }) {return switch (this) {
       Race$africanAmerican() => africanAmerican(),
       Race$americanIndianOrAlaskaNative() => americanIndianOrAlaskaNative(),
       Race$asian() => asian(),
@@ -140,9 +140,9 @@ W when<W>({required W Function() africanAmerican, required W Function() american
       Race$vietnamese() => vietnamese(),
       Race$white() => white(),
       Race$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanAmerican, W Function()? americanIndianOrAlaskaNative, W Function()? asian, W Function()? asianIndian, W Function()? blackOrAfricanAmerican, W Function()? chinese, W Function()? ethiopian, W Function()? filipino, W Function()? guamanianOrChamorro, W Function()? haitian, W Function()? jamaican, W Function()? japanese, W Function()? korean, W Function()? nativeHawaiian, W Function()? nativeHawaiianOrOtherPacificIslander, W Function()? nigerian, W Function()? otherAsian, W Function()? otherBlackOrAfricanAmerican, W Function()? otherPacificIslander, W Function()? preferNotToAnswer, W Function()? samoan, W Function()? somali, W Function()? vietnamese, W Function()? white, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanAmerican, W Function()? americanIndianOrAlaskaNative, W Function()? asian, W Function()? asianIndian, W Function()? blackOrAfricanAmerican, W Function()? chinese, W Function()? ethiopian, W Function()? filipino, W Function()? guamanianOrChamorro, W Function()? haitian, W Function()? jamaican, W Function()? japanese, W Function()? korean, W Function()? nativeHawaiian, W Function()? nativeHawaiianOrOtherPacificIslander, W Function()? nigerian, W Function()? otherAsian, W Function()? otherBlackOrAfricanAmerican, W Function()? otherPacificIslander, W Function()? preferNotToAnswer, W Function()? samoan, W Function()? somali, W Function()? vietnamese, W Function()? white, W Function(String value)? $unknown, }) {return switch (this) {
       Race$africanAmerican() => africanAmerican != null ? africanAmerican() : orElse(value),
       Race$americanIndianOrAlaskaNative() => americanIndianOrAlaskaNative != null ? americanIndianOrAlaskaNative() : orElse(value),
       Race$asian() => asian != null ? asian() : orElse(value),
@@ -168,10 +168,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
       Race$vietnamese() => vietnamese != null ? vietnamese() : orElse(value),
       Race$white() => white != null ? white() : orElse(value),
       Race$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Race($value)';
 
- }
+}
 @immutable final class Race$africanAmerican extends Race {const Race$africanAmerican._();
 
 @override String get value => 'african_american';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'african_american'.hashCode;
 
- }
+}
 @immutable final class Race$americanIndianOrAlaskaNative extends Race {const Race$americanIndianOrAlaskaNative._();
 
 @override String get value => 'american_indian_or_alaska_native';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'american_indian_or_alaska_native'.hashCode;
 
- }
+}
 @immutable final class Race$asian extends Race {const Race$asian._();
 
 @override String get value => 'asian';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'asian'.hashCode;
 
- }
+}
 @immutable final class Race$asianIndian extends Race {const Race$asianIndian._();
 
 @override String get value => 'asian_indian';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'asian_indian'.hashCode;
 
- }
+}
 @immutable final class Race$blackOrAfricanAmerican extends Race {const Race$blackOrAfricanAmerican._();
 
 @override String get value => 'black_or_african_american';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'black_or_african_american'.hashCode;
 
- }
+}
 @immutable final class Race$chinese extends Race {const Race$chinese._();
 
 @override String get value => 'chinese';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'chinese'.hashCode;
 
- }
+}
 @immutable final class Race$ethiopian extends Race {const Race$ethiopian._();
 
 @override String get value => 'ethiopian';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'ethiopian'.hashCode;
 
- }
+}
 @immutable final class Race$filipino extends Race {const Race$filipino._();
 
 @override String get value => 'filipino';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'filipino'.hashCode;
 
- }
+}
 @immutable final class Race$guamanianOrChamorro extends Race {const Race$guamanianOrChamorro._();
 
 @override String get value => 'guamanian_or_chamorro';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'guamanian_or_chamorro'.hashCode;
 
- }
+}
 @immutable final class Race$haitian extends Race {const Race$haitian._();
 
 @override String get value => 'haitian';
@@ -261,7 +261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'haitian'.hashCode;
 
- }
+}
 @immutable final class Race$jamaican extends Race {const Race$jamaican._();
 
 @override String get value => 'jamaican';
@@ -270,7 +270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'jamaican'.hashCode;
 
- }
+}
 @immutable final class Race$japanese extends Race {const Race$japanese._();
 
 @override String get value => 'japanese';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'japanese'.hashCode;
 
- }
+}
 @immutable final class Race$korean extends Race {const Race$korean._();
 
 @override String get value => 'korean';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'korean'.hashCode;
 
- }
+}
 @immutable final class Race$nativeHawaiian extends Race {const Race$nativeHawaiian._();
 
 @override String get value => 'native_hawaiian';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'native_hawaiian'.hashCode;
 
- }
+}
 @immutable final class Race$nativeHawaiianOrOtherPacificIslander extends Race {const Race$nativeHawaiianOrOtherPacificIslander._();
 
 @override String get value => 'native_hawaiian_or_other_pacific_islander';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'native_hawaiian_or_other_pacific_islander'.hashCode;
 
- }
+}
 @immutable final class Race$nigerian extends Race {const Race$nigerian._();
 
 @override String get value => 'nigerian';
@@ -315,7 +315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'nigerian'.hashCode;
 
- }
+}
 @immutable final class Race$otherAsian extends Race {const Race$otherAsian._();
 
 @override String get value => 'other_asian';
@@ -324,7 +324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'other_asian'.hashCode;
 
- }
+}
 @immutable final class Race$otherBlackOrAfricanAmerican extends Race {const Race$otherBlackOrAfricanAmerican._();
 
 @override String get value => 'other_black_or_african_american';
@@ -333,7 +333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'other_black_or_african_american'.hashCode;
 
- }
+}
 @immutable final class Race$otherPacificIslander extends Race {const Race$otherPacificIslander._();
 
 @override String get value => 'other_pacific_islander';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'other_pacific_islander'.hashCode;
 
- }
+}
 @immutable final class Race$preferNotToAnswer extends Race {const Race$preferNotToAnswer._();
 
 @override String get value => 'prefer_not_to_answer';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'prefer_not_to_answer'.hashCode;
 
- }
+}
 @immutable final class Race$samoan extends Race {const Race$samoan._();
 
 @override String get value => 'samoan';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'samoan'.hashCode;
 
- }
+}
 @immutable final class Race$somali extends Race {const Race$somali._();
 
 @override String get value => 'somali';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'somali'.hashCode;
 
- }
+}
 @immutable final class Race$vietnamese extends Race {const Race$vietnamese._();
 
 @override String get value => 'vietnamese';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'vietnamese'.hashCode;
 
- }
+}
 @immutable final class Race$white extends Race {const Race$white._();
 
 @override String get value => 'white';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => 'white'.hashCode;
 
- }
+}
 @immutable final class Race$Unknown extends Race {const Race$Unknown(this.value);
 
 @override final String value;
@@ -397,4 +397,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanA
 
 @override int get hashCode => value.hashCode;
 
- }
+}

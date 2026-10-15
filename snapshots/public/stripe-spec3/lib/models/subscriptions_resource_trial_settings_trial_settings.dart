@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_trial_settings_end_behavior.dart';/// Configures how this subscription behaves during the trial period.
 @immutable final class SubscriptionsResourceTrialSettingsTrialSettings {const SubscriptionsResourceTrialSettingsTrialSettings({required this.endBehavior});
 
-factory SubscriptionsResourceTrialSettingsTrialSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceTrialSettingsTrialSettings(
+factory SubscriptionsResourceTrialSettingsTrialSettings.fromJson(Map<String, dynamic> json) {return SubscriptionsResourceTrialSettingsTrialSettings(
   endBehavior: SubscriptionsResourceTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),
-); }
+);}
 
 final SubscriptionsResourceTrialSettingsEndBehavior endBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_behavior': endBehavior.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_behavior'); } 
-SubscriptionsResourceTrialSettingsTrialSettings copyWith({SubscriptionsResourceTrialSettingsEndBehavior? endBehavior}) { return SubscriptionsResourceTrialSettingsTrialSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_behavior');}
+SubscriptionsResourceTrialSettingsTrialSettings copyWith({SubscriptionsResourceTrialSettingsEndBehavior? endBehavior}) {return SubscriptionsResourceTrialSettingsTrialSettings(
   endBehavior: endBehavior ?? this.endBehavior,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsResourceTrialSettingsTrialSettings &&
           endBehavior == other.endBehavior;
@@ -25,4 +25,4 @@ SubscriptionsResourceTrialSettingsTrialSettings copyWith({SubscriptionsResourceT
 
 @override String toString() => 'SubscriptionsResourceTrialSettingsTrialSettings(endBehavior: $endBehavior)';
 
- }
+}

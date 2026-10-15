@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_condition.dart';import 'package:pub_cloudflare/models/iam_expires_on.dart';import 'package:pub_cloudflare/models/iam_issued_on.dart';import 'package:pub_cloudflare/models/iam_last_used_on.dart';import 'package:pub_cloudflare/models/iam_modified_on.dart';import 'package:pub_cloudflare/models/iam_name.dart';import 'package:pub_cloudflare/models/iam_not_before.dart';import 'package:pub_cloudflare/models/iam_policy_with_permission_groups_and_resources.dart';import 'package:pub_cloudflare/models/iam_token_identifier.dart';import 'package:pub_cloudflare/models/iam_token_status.dart';@immutable final class IamTokenBase {const IamTokenBase({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, });
 
-factory IamTokenBase.fromJson(Map<String, dynamic> json) { return IamTokenBase(
+factory IamTokenBase.fromJson(Map<String, dynamic> json) {return IamTokenBase(
   condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,
   expiresOn: json['expires_on'] != null ? IamExpiresOn.fromJson(json['expires_on'] as String) : null,
   id: json['id'] != null ? IamTokenIdentifier.fromJson(json['id'] as String) : null,
@@ -14,7 +14,7 @@ factory IamTokenBase.fromJson(Map<String, dynamic> json) { return IamTokenBase(
   notBefore: json['not_before'] != null ? IamNotBefore.fromJson(json['not_before'] as String) : null,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => IamPolicyWithPermissionGroupsAndResources.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'] != null ? IamTokenStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final IamCondition? condition;
 
@@ -42,7 +42,7 @@ final List<IamPolicyWithPermissionGroupsAndResources>? policies;
 
 final IamTokenStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (condition != null) 'condition': condition?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -53,9 +53,9 @@ Map<String, dynamic> toJson() { return {
   if (notBefore != null) 'not_before': notBefore?.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'expires_on', 'id', 'issued_on', 'last_used_on', 'modified_on', 'name', 'not_before', 'policies', 'status'}.contains(key)); } 
-IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Function()? expiresOn, IamTokenIdentifier? Function()? id, IamIssuedOn? Function()? issuedOn, IamLastUsedOn? Function()? lastUsedOn, IamModifiedOn? Function()? modifiedOn, IamName? Function()? name, IamNotBefore? Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? Function()? policies, IamTokenStatus? Function()? status, }) { return IamTokenBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'condition', 'expires_on', 'id', 'issued_on', 'last_used_on', 'modified_on', 'name', 'not_before', 'policies', 'status'}.contains(key));}
+IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Function()? expiresOn, IamTokenIdentifier? Function()? id, IamIssuedOn? Function()? issuedOn, IamLastUsedOn? Function()? lastUsedOn, IamModifiedOn? Function()? modifiedOn, IamName? Function()? name, IamNotBefore? Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? Function()? policies, IamTokenStatus? Function()? status, }) {return IamTokenBase(
   condition: condition != null ? condition() : this.condition,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,
@@ -66,7 +66,7 @@ IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Functi
   notBefore: notBefore != null ? notBefore() : this.notBefore,
   policies: policies != null ? policies() : this.policies,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamTokenBase &&
           condition == other.condition &&
@@ -84,4 +84,4 @@ IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Functi
 
 @override String toString() => 'IamTokenBase(\n  condition: $condition,\n  expiresOn: $expiresOn,\n  id: $id,\n  issuedOn: $issuedOn,\n  lastUsedOn: $lastUsedOn,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  notBefore: $notBefore,\n  policies: $policies,\n  status: $status,\n)';
 
- }
+}

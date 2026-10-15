@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BankAccountOwnershipVerification {const BankAccountOwnershipVerification({this.files});
 
-factory BankAccountOwnershipVerification.fromJson(Map<String, dynamic> json) { return BankAccountOwnershipVerification(
+factory BankAccountOwnershipVerification.fromJson(Map<String, dynamic> json) {return BankAccountOwnershipVerification(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'files': ?files,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-BankAccountOwnershipVerification copyWith({List<String>? Function()? files}) { return BankAccountOwnershipVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'files'}.contains(key));}
+BankAccountOwnershipVerification copyWith({List<String>? Function()? files}) {return BankAccountOwnershipVerification(
   files: files != null ? files() : this.files,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BankAccountOwnershipVerification &&
           listEquals(files, other.files);
@@ -24,4 +24,4 @@ BankAccountOwnershipVerification copyWith({List<String>? Function()? files}) { r
 
 @override String toString() => 'BankAccountOwnershipVerification(files: $files)';
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_choice.dart';/// Model and tool overrides applied when generating the assistant response.
 @immutable final class InferenceOptions {const InferenceOptions({required this.toolChoice, required this.model, });
 
-factory InferenceOptions.fromJson(Map<String, dynamic> json) { return InferenceOptions(
+factory InferenceOptions.fromJson(Map<String, dynamic> json) {return InferenceOptions(
   toolChoice: json['tool_choice'] != null ? ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
   model: json['model'] as String?,
-); }
+);}
 
 /// Preferred tool to invoke. Defaults to null when ChatKit should auto-select.
 final ToolChoice? toolChoice;
@@ -15,16 +15,16 @@ final ToolChoice? toolChoice;
 /// Model name that generated the response. Defaults to null when using the session default.
 final String? model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tool_choice': toolChoice?.toJson(),
   'model': model,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tool_choice') &&
-      json.containsKey('model') && json['model'] is String; } 
-InferenceOptions copyWith({ToolChoice? Function()? toolChoice, String? Function()? model, }) { return InferenceOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tool_choice') &&
+      json.containsKey('model') && (json['model'] == null || json['model'] is String);}
+InferenceOptions copyWith({ToolChoice? Function()? toolChoice, String? Function()? model, }) {return InferenceOptions(
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   model: model != null ? model() : this.model,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InferenceOptions &&
           toolChoice == other.toolChoice &&
@@ -34,4 +34,4 @@ InferenceOptions copyWith({ToolChoice? Function()? toolChoice, String? Function(
 
 @override String toString() => 'InferenceOptions(toolChoice: $toolChoice, model: $model)';
 
- }
+}

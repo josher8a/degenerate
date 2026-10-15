@@ -12,7 +12,7 @@ final class TargetIndustryApi with ApiExecutor {const TargetIndustryApi(this.api
 /// Lists all target industries for a specific dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries`
-Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetError>> getTargetIndustryListByDataset({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetError>> getTargetIndustryListByDataset({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,18 +21,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTargetIndustryListByDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: GetTargetIndustryListByDatasetError.fromResponse,
 );
- } 
+}
 /// Lists target industries across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries`
-Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListError>> getTargetIndustryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListError>> getTargetIndustryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -51,18 +51,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTargetIndustryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: GetTargetIndustryListError.fromResponse,
 );
- } 
+}
 /// Lists all target industries from industry map catalog
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog`
-Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteError>> getTargetIndustryListComplete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteError>> getTargetIndustryListComplete({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,12 +71,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetTargetIndustryListCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: GetTargetIndustryListCompleteError.fromResponse,
 );
- } 
- }
+}
+}

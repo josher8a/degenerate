@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCaches {const ActionsCaches({this.id, this.ref, this.key, this.version, this.lastAccessedAt, this.createdAt, this.sizeInBytes, });
 
-factory ActionsCaches.fromJson(Map<String, dynamic> json) { return ActionsCaches(
+factory ActionsCaches.fromJson(Map<String, dynamic> json) {return ActionsCaches(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   ref: json['ref'] as String?,
   key: json['key'] as String?,
@@ -11,7 +11,7 @@ factory ActionsCaches.fromJson(Map<String, dynamic> json) { return ActionsCaches
   lastAccessedAt: json['last_accessed_at'] != null ? DateTime.parse(json['last_accessed_at'] as String) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   sizeInBytes: json['size_in_bytes'] != null ? (json['size_in_bytes'] as num).toInt() : null,
-); }
+);}
 
 final int? id;
 
@@ -27,7 +27,7 @@ final DateTime? createdAt;
 
 final int? sizeInBytes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'ref': ?ref,
   'key': ?key,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   if (lastAccessedAt != null) 'last_accessed_at': lastAccessedAt?.toIso8601String(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'size_in_bytes': ?sizeInBytes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'ref', 'key', 'version', 'last_accessed_at', 'created_at', 'size_in_bytes'}.contains(key)); } 
-ActionsCaches copyWith({int? Function()? id, String? Function()? ref, String? Function()? key, String? Function()? version, DateTime? Function()? lastAccessedAt, DateTime? Function()? createdAt, int? Function()? sizeInBytes, }) { return ActionsCaches(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'ref', 'key', 'version', 'last_accessed_at', 'created_at', 'size_in_bytes'}.contains(key));}
+ActionsCaches copyWith({int? Function()? id, String? Function()? ref, String? Function()? key, String? Function()? version, DateTime? Function()? lastAccessedAt, DateTime? Function()? createdAt, int? Function()? sizeInBytes, }) {return ActionsCaches(
   id: id != null ? id() : this.id,
   ref: ref != null ? ref() : this.ref,
   key: key != null ? key() : this.key,
@@ -45,7 +45,7 @@ ActionsCaches copyWith({int? Function()? id, String? Function()? ref, String? Fu
   lastAccessedAt: lastAccessedAt != null ? lastAccessedAt() : this.lastAccessedAt,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   sizeInBytes: sizeInBytes != null ? sizeInBytes() : this.sizeInBytes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCaches &&
           id == other.id &&
@@ -60,4 +60,4 @@ ActionsCaches copyWith({int? Function()? id, String? Function()? ref, String? Fu
 
 @override String toString() => 'ActionsCaches(id: $id, ref: $ref, key: $key, version: $version, lastAccessedAt: $lastAccessedAt, createdAt: $createdAt, sizeInBytes: $sizeInBytes)';
 
- }
+}

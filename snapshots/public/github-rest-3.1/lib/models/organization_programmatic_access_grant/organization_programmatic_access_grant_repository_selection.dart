@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of repository selection requested.
 sealed class OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection();
 
-factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(String json) { return switch (json) {
+factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(String json) {return switch (json) {
   'none' => none,
   'all' => all,
   'subset' => subset,
   _ => OrganizationProgrammaticAccessGrantRepositorySelection$Unknown(json),
-}; }
+};}
 
 static const OrganizationProgrammaticAccessGrantRepositorySelection none = OrganizationProgrammaticAccessGrantRepositorySelection$none._();
 
@@ -20,33 +20,33 @@ static const OrganizationProgrammaticAccessGrantRepositorySelection subset = Org
 static const List<OrganizationProgrammaticAccessGrantRepositorySelection> values = [none, all, subset];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'all' => 'all',
   'subset' => 'subset',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrganizationProgrammaticAccessGrantRepositorySelection$Unknown; } 
+bool get isUnknown {return this is OrganizationProgrammaticAccessGrantRepositorySelection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() all, required W Function() subset, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() all, required W Function() subset, required W Function(String value) $unknown, }) {return switch (this) {
       OrganizationProgrammaticAccessGrantRepositorySelection$none() => none(),
       OrganizationProgrammaticAccessGrantRepositorySelection$all() => all(),
       OrganizationProgrammaticAccessGrantRepositorySelection$subset() => subset(),
       OrganizationProgrammaticAccessGrantRepositorySelection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? all, W Function()? subset, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? all, W Function()? subset, W Function(String value)? $unknown, }) {return switch (this) {
       OrganizationProgrammaticAccessGrantRepositorySelection$none() => none != null ? none() : orElse(value),
       OrganizationProgrammaticAccessGrantRepositorySelection$all() => all != null ? all() : orElse(value),
       OrganizationProgrammaticAccessGrantRepositorySelection$subset() => subset != null ? subset() : orElse(value),
       OrganizationProgrammaticAccessGrantRepositorySelection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrganizationProgrammaticAccessGrantRepositorySelection($value)';
 
- }
+}
 @immutable final class OrganizationProgrammaticAccessGrantRepositorySelection$none extends OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection$none._();
 
 @override String get value => 'none';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class OrganizationProgrammaticAccessGrantRepositorySelection$all extends OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection$all._();
 
 @override String get value => 'all';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class OrganizationProgrammaticAccessGrantRepositorySelection$subset extends OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection$subset._();
 
 @override String get value => 'subset';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'subset'.hashCode;
 
- }
+}
 @immutable final class OrganizationProgrammaticAccessGrantRepositorySelection$Unknown extends OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

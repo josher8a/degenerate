@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
 sealed class FirewallSchemasAction {const FirewallSchemasAction();
 
-factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
+factory FirewallSchemasAction.fromJson(String json) {return switch (json) {
   'block' => block,
   'challenge' => challenge,
   'js_challenge' => jsChallenge,
@@ -13,7 +13,7 @@ factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
   'log' => log,
   'bypass' => bypass,
   _ => FirewallSchemasAction$Unknown(json),
-}; }
+};}
 
 static const FirewallSchemasAction block = FirewallSchemasAction$block._();
 
@@ -32,9 +32,9 @@ static const FirewallSchemasAction bypass = FirewallSchemasAction$bypass._();
 static const List<FirewallSchemasAction> values = [block, challenge, jsChallenge, managedChallenge, allow, log, bypass];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'block' => 'block',
   'challenge' => 'challenge',
   'js_challenge' => 'jsChallenge',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'log' => 'log',
   'bypass' => 'bypass',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FirewallSchemasAction$Unknown; } 
+bool get isUnknown {return this is FirewallSchemasAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() block, required W Function() challenge, required W Function() jsChallenge, required W Function() managedChallenge, required W Function() allow, required W Function() log, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() block, required W Function() challenge, required W Function() jsChallenge, required W Function() managedChallenge, required W Function() allow, required W Function() log, required W Function() bypass, required W Function(String value) $unknown, }) {return switch (this) {
       FirewallSchemasAction$block() => block(),
       FirewallSchemasAction$challenge() => challenge(),
       FirewallSchemasAction$jsChallenge() => jsChallenge(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() block, required W Function() challenge, require
       FirewallSchemasAction$log() => log(),
       FirewallSchemasAction$bypass() => bypass(),
       FirewallSchemasAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W Function()? challenge, W Function()? jsChallenge, W Function()? managedChallenge, W Function()? allow, W Function()? log, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W Function()? challenge, W Function()? jsChallenge, W Function()? managedChallenge, W Function()? allow, W Function()? log, W Function()? bypass, W Function(String value)? $unknown, }) {return switch (this) {
       FirewallSchemasAction$block() => block != null ? block() : orElse(value),
       FirewallSchemasAction$challenge() => challenge != null ? challenge() : orElse(value),
       FirewallSchemasAction$jsChallenge() => jsChallenge != null ? jsChallenge() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
       FirewallSchemasAction$log() => log != null ? log() : orElse(value),
       FirewallSchemasAction$bypass() => bypass != null ? bypass() : orElse(value),
       FirewallSchemasAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FirewallSchemasAction($value)';
 
- }
+}
 @immutable final class FirewallSchemasAction$block extends FirewallSchemasAction {const FirewallSchemasAction$block._();
 
 @override String get value => 'block';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'block'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$challenge extends FirewallSchemasAction {const FirewallSchemasAction$challenge._();
 
 @override String get value => 'challenge';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'challenge'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$jsChallenge extends FirewallSchemasAction {const FirewallSchemasAction$jsChallenge._();
 
 @override String get value => 'js_challenge';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'js_challenge'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$managedChallenge extends FirewallSchemasAction {const FirewallSchemasAction$managedChallenge._();
 
 @override String get value => 'managed_challenge';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'managed_challenge'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$allow extends FirewallSchemasAction {const FirewallSchemasAction$allow._();
 
 @override String get value => 'allow';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'allow'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$log extends FirewallSchemasAction {const FirewallSchemasAction$log._();
 
 @override String get value => 'log';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'log'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$bypass extends FirewallSchemasAction {const FirewallSchemasAction$bypass._();
 
 @override String get value => 'bypass';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => 'bypass'.hashCode;
 
- }
+}
 @immutable final class FirewallSchemasAction$Unknown extends FirewallSchemasAction {const FirewallSchemasAction$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

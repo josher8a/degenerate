@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Price
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_product.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_product.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
 sealed class PriceType$1 {const PriceType$1();
 
-factory PriceType$1.fromJson(String json) { return switch (json) {
+factory PriceType$1.fromJson(String json) {return switch (json) {
   'one_time' => oneTime,
   'recurring' => recurring,
   _ => PriceType$1$Unknown(json),
-}; }
+};}
 
 static const PriceType$1 oneTime = PriceType$1$oneTime._();
 
@@ -17,30 +17,30 @@ static const PriceType$1 recurring = PriceType$1$recurring._();
 static const List<PriceType$1> values = [oneTime, recurring];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one_time' => 'oneTime',
   'recurring' => 'recurring',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PriceType$1$Unknown; } 
+bool get isUnknown {return this is PriceType$1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() oneTime, required W Function() recurring, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() oneTime, required W Function() recurring, required W Function(String value) $unknown, }) {return switch (this) {
       PriceType$1$oneTime() => oneTime(),
       PriceType$1$recurring() => recurring(),
       PriceType$1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? recurring, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? recurring, W Function(String value)? $unknown, }) {return switch (this) {
       PriceType$1$oneTime() => oneTime != null ? oneTime() : orElse(value),
       PriceType$1$recurring() => recurring != null ? recurring() : orElse(value),
       PriceType$1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PriceType\$1($value)';
 
- }
+}
 @immutable final class PriceType$1$oneTime extends PriceType$1 {const PriceType$1$oneTime._();
 
 @override String get value => 'one_time';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'one_time'.hashCode;
 
- }
+}
 @immutable final class PriceType$1$recurring extends PriceType$1 {const PriceType$1$recurring._();
 
 @override String get value => 'recurring';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'recurring'.hashCode;
 
- }
+}
 @immutable final class PriceType$1$Unknown extends PriceType$1 {const PriceType$1$Unknown(this.value);
 
 @override final String value;
@@ -68,38 +68,38 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products.
 /// [Products](https://api.stripe.com#products) help you track inventory or provisioning, and prices help you track payment terms. Different physical goods or levels of service should be represented by products, and pricing options should be represented by prices. This approach lets you change prices without having to change your provisioning scheme.
 /// 
 /// For example, you might have a single "gold" product that has prices for $10/month, $100/year, and €9 once.
 /// 
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription), [create an invoice](https://docs.stripe.com/billing/invoices/create), and more about [products and prices](https://docs.stripe.com/products-prices/overview).
-@immutable final class Price {const Price({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.product, required this.type, this.currencyOptions, this.customUnitAmount, this.lookupKey, this.nickname, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class Price {const Price({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.product, required this.type, this.currencyOptions, this.customUnitAmount = const Omittable.absent(), this.lookupKey = const Omittable.absent(), this.nickname = const Omittable.absent(), this.recurring = const Omittable.absent(), this.taxBehavior = const Omittable.absent(), this.tiers, this.tiersMode = const Omittable.absent(), this.transformQuantity = const Omittable.absent(), this.unitAmount = const Omittable.absent(), this.unitAmountDecimal = const Omittable.absent(), });
 
-factory Price.fromJson(Map<String, dynamic> json) { return Price(
+factory Price.fromJson(Map<String, dynamic> json) {return Price(
   active: json['active'] as bool,
   billingScheme: BillingScheme.fromJson(json['billing_scheme'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, CurrencyOption.fromJson(v as Map<String, dynamic>))),
-  customUnitAmount: json['custom_unit_amount'] != null ? CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
+  customUnitAmount: json.containsKey('custom_unit_amount') ? Omittable(json['custom_unit_amount'] != null ? CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  lookupKey: json['lookup_key'] as String?,
+  lookupKey: json.containsKey('lookup_key') ? Omittable(json['lookup_key'] as String?) : const Omittable.absent(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] as String?,
+  nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: DeletedPriceObject.fromJson(json['object'] as String),
-  product: OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),),
-  recurring: json['recurring'] != null ? Recurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
-  taxBehavior: json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  product: PlanProduct.fromJson(json['product']),
+  recurring: json.containsKey('recurring') ? Omittable(json['recurring'] != null ? Recurring.fromJson(json['recurring'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
-  tiersMode: json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformQuantity: json['transform_quantity'] != null ? TransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
+  tiersMode: json.containsKey('tiers_mode') ? Omittable(json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null) : const Omittable.absent(),
+  transformQuantity: json.containsKey('transform_quantity') ? Omittable(json['transform_quantity'] != null ? TransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: PriceType$1.fromJson(json['type'] as String),
-  unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
-  unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+  unitAmount: json.containsKey('unit_amount') ? Omittable(json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null) : const Omittable.absent(),
+  unitAmountDecimal: json.containsKey('unit_amount_decimal') ? Omittable(json['unit_amount_decimal'] as String?) : const Omittable.absent(),
+);}
 
 /// Whether the price can be used for new purchases.
 final bool active;
@@ -117,7 +117,7 @@ final String currency;
 final Map<String,CurrencyOption>? currencyOptions;
 
 /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
-final CustomUnitAmount? customUnitAmount;
+final Omittable<CustomUnitAmount?> customUnitAmount;
 
 /// Unique identifier for the object.
 final String id;
@@ -126,13 +126,13 @@ final String id;
 final bool livemode;
 
 /// A lookup key used to retrieve prices dynamically from a static string. This may be up to 200 characters.
-final String? lookupKey;
+final Omittable<String?> lookupKey;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 final Map<String,String> metadata;
 
 /// A brief description of the price, hidden from customers.
-final String? nickname;
+final Omittable<String?> nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedPriceObject object;
@@ -141,53 +141,53 @@ final DeletedPriceObject object;
 final PlanProduct product;
 
 /// The recurring components of a price such as `interval` and `usage_type`.
-final Recurring? recurring;
+final Omittable<Recurring?> recurring;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final CurrencyOptionTaxBehavior? taxBehavior;
+final Omittable<CurrencyOptionTaxBehavior?> taxBehavior;
 
 /// Each element represents a pricing tier. This parameter requires `billing_scheme` to be set to `tiered`. See also the documentation for `billing_scheme`.
 final List<PriceTier>? tiers;
 
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-final PlanTiersMode? tiersMode;
+final Omittable<PlanTiersMode?> tiersMode;
 
 /// Apply a transformation to the reported usage or set quantity before computing the amount billed. Cannot be combined with `tiers`.
-final TransformQuantity? transformQuantity;
+final Omittable<TransformQuantity?> transformQuantity;
 
 /// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
 final PriceType$1 type;
 
 /// The unit amount in cents (or local equivalent) to be charged, represented as a whole integer if possible. Only set if `billing_scheme=per_unit`.
-final int? unitAmount;
+final Omittable<int?> unitAmount;
 
 /// The unit amount in cents (or local equivalent) to be charged, represented as a decimal string with at most 12 decimal places. Only set if `billing_scheme=per_unit`.
-final String? unitAmountDecimal;
+final Omittable<String?> unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'billing_scheme': billingScheme.toJson(),
   'created': created,
   'currency': currency,
   if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
-  if (customUnitAmount != null) 'custom_unit_amount': customUnitAmount?.toJson(),
+  if (customUnitAmount.isPresent) 'custom_unit_amount': customUnitAmount.value?.toJson(),
   'id': id,
   'livemode': livemode,
-  'lookup_key': ?lookupKey,
+  if (lookupKey.isPresent) 'lookup_key': lookupKey.value,
   'metadata': metadata,
-  'nickname': ?nickname,
+  if (nickname.isPresent) 'nickname': nickname.value,
   'object': object.toJson(),
   'product': product.toJson(),
-  if (recurring != null) 'recurring': recurring?.toJson(),
-  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
+  if (recurring.isPresent) 'recurring': recurring.value?.toJson(),
+  if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
   if (tiers != null) 'tiers': tiers?.map((e) => e.toJson()).toList(),
-  if (tiersMode != null) 'tiers_mode': tiersMode?.toJson(),
-  if (transformQuantity != null) 'transform_quantity': transformQuantity?.toJson(),
+  if (tiersMode.isPresent) 'tiers_mode': tiersMode.value?.toJson(),
+  if (transformQuantity.isPresent) 'transform_quantity': transformQuantity.value?.toJson(),
   'type': type.toJson(),
-  'unit_amount': ?unitAmount,
-  'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+  if (unitAmount.isPresent) 'unit_amount': unitAmount.value,
+  if (unitAmountDecimal.isPresent) 'unit_amount_decimal': unitAmountDecimal.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('billing_scheme') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -196,42 +196,42 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('metadata') &&
       json.containsKey('object') && json['object'] == 'price' &&
       json.containsKey('product') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final lookupKey$ = lookupKey;
+final lookupKey$ = lookupKey.value;
 if (lookupKey$ != null) {
   if (lookupKey$.runes.length > 5000) { errors.add('lookupKey: length must be <= 5000'); }
 }
-final nickname$ = nickname;
+final nickname$ = nickname.value;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption>? Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PlanProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier>? Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
+return errors;}
+Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption>? Function()? currencyOptions, Omittable<CustomUnitAmount?>? customUnitAmount, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? nickname, DeletedPriceObject? object, PlanProduct? product, Omittable<Recurring?>? recurring, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, List<PriceTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformQuantity?>? transformQuantity, PriceType$1? type, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) {return Price(
   active: active ?? this.active,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
-  customUnitAmount: customUnitAmount != null ? customUnitAmount() : this.customUnitAmount,
+  customUnitAmount: customUnitAmount ?? this.customUnitAmount,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  lookupKey: lookupKey != null ? lookupKey() : this.lookupKey,
+  lookupKey: lookupKey ?? this.lookupKey,
   metadata: metadata ?? this.metadata,
-  nickname: nickname != null ? nickname() : this.nickname,
+  nickname: nickname ?? this.nickname,
   object: object ?? this.object,
   product: product ?? this.product,
-  recurring: recurring != null ? recurring() : this.recurring,
-  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
+  recurring: recurring ?? this.recurring,
+  taxBehavior: taxBehavior ?? this.taxBehavior,
   tiers: tiers != null ? tiers() : this.tiers,
-  tiersMode: tiersMode != null ? tiersMode() : this.tiersMode,
-  transformQuantity: transformQuantity != null ? transformQuantity() : this.transformQuantity,
+  tiersMode: tiersMode ?? this.tiersMode,
+  transformQuantity: transformQuantity ?? this.transformQuantity,
   type: type ?? this.type,
-  unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
-  unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
+  unitAmount: unitAmount ?? this.unitAmount,
+  unitAmountDecimal: unitAmountDecimal ?? this.unitAmountDecimal,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Price &&
           active == other.active &&
@@ -260,4 +260,4 @@ Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String
 
 @override String toString() => 'Price(\n  active: $active,\n  billingScheme: $billingScheme,\n  created: $created,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  customUnitAmount: $customUnitAmount,\n  id: $id,\n  livemode: $livemode,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  nickname: $nickname,\n  object: $object,\n  product: $product,\n  recurring: $recurring,\n  taxBehavior: $taxBehavior,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformQuantity: $transformQuantity,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
- }
+}

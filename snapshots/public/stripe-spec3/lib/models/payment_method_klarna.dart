@@ -2,22 +2,22 @@
 // Source: #/components/schemas/PaymentMethodKlarna
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_klarna_dob.dart';/// 
-@immutable final class PaymentMethodKlarna {const PaymentMethodKlarna({this.dob});
+@immutable final class PaymentMethodKlarna {const PaymentMethodKlarna({this.dob = const Omittable.absent()});
 
-factory PaymentMethodKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodKlarna(
-  dob: json['dob'] != null ? PaymentFlowsPrivatePaymentMethodsKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
-); }
+factory PaymentMethodKlarna.fromJson(Map<String, dynamic> json) {return PaymentMethodKlarna(
+  dob: json.containsKey('dob') ? Omittable(json['dob'] != null ? PaymentFlowsPrivatePaymentMethodsKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 /// The customer's date of birth, if provided.
-final PaymentFlowsPrivatePaymentMethodsKlarnaDob? dob;
+final Omittable<PaymentFlowsPrivatePaymentMethodsKlarnaDob?> dob;
 
-Map<String, dynamic> toJson() { return {
-  if (dob != null) 'dob': dob?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dob'}.contains(key)); } 
-PaymentMethodKlarna copyWith({PaymentFlowsPrivatePaymentMethodsKlarnaDob? Function()? dob}) { return PaymentMethodKlarna(
-  dob: dob != null ? dob() : this.dob,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (dob.isPresent) 'dob': dob.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dob'}.contains(key));}
+PaymentMethodKlarna copyWith({Omittable<PaymentFlowsPrivatePaymentMethodsKlarnaDob?>? dob}) {return PaymentMethodKlarna(
+  dob: dob ?? this.dob,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodKlarna &&
           dob == other.dob;
@@ -26,4 +26,4 @@ PaymentMethodKlarna copyWith({PaymentFlowsPrivatePaymentMethodsKlarnaDob? Functi
 
 @override String toString() => 'PaymentMethodKlarna(dob: $dob)';
 
- }
+}

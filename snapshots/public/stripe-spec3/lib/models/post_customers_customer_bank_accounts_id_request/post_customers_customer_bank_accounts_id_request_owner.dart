@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';@immutable final class PostCustomersCustomerBankAccountsIdRequestOwner {const PostCustomersCustomerBankAccountsIdRequestOwner({this.address, this.email, this.name, this.phone, });
 
-factory PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsIdRequestOwner(
+factory PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerBankAccountsIdRequestOwner(
   address: json['address'] != null ? CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
-); }
+);}
 
 final CustomerShippingAddress? address;
 
@@ -18,15 +18,15 @@ final String? name;
 
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   'email': ?email,
   'name': ?name,
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
@@ -35,13 +35,13 @@ final phone$ = phone;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-PostCustomersCustomerBankAccountsIdRequestOwner copyWith({CustomerShippingAddress? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, }) { return PostCustomersCustomerBankAccountsIdRequestOwner(
+return errors;}
+PostCustomersCustomerBankAccountsIdRequestOwner copyWith({CustomerShippingAddress? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, }) {return PostCustomersCustomerBankAccountsIdRequestOwner(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerBankAccountsIdRequestOwner &&
           address == other.address &&
@@ -53,4 +53,4 @@ PostCustomersCustomerBankAccountsIdRequestOwner copyWith({CustomerShippingAddres
 
 @override String toString() => 'PostCustomersCustomerBankAccountsIdRequestOwner(address: $address, email: $email, name: $name, phone: $phone)';
 
- }
+}

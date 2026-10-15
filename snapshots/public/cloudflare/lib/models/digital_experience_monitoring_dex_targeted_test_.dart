@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data.dart';@immutable final class DigitalExperienceMonitoringDexTargetedTest {const DigitalExperienceMonitoringDexTargetedTest({required this.data, required this.enabled, required this.name, required this.testId, });
 
-factory DigitalExperienceMonitoringDexTargetedTest.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexTargetedTest(
+factory DigitalExperienceMonitoringDexTargetedTest.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringDexTargetedTest(
   data: DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   testId: json['test_id'] as String,
-); }
+);}
 
 final DigitalExperienceMonitoringDeviceDexTestSchemasData data;
 
@@ -18,22 +18,22 @@ final String name;
 
 final String testId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.toJson(),
   'enabled': enabled,
   'name': name,
   'test_id': testId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('test_id') && json['test_id'] is String; } 
-DigitalExperienceMonitoringDexTargetedTest copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, bool? enabled, String? name, String? testId, }) { return DigitalExperienceMonitoringDexTargetedTest(
+      json.containsKey('test_id') && json['test_id'] is String;}
+DigitalExperienceMonitoringDexTargetedTest copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, bool? enabled, String? name, String? testId, }) {return DigitalExperienceMonitoringDexTargetedTest(
   data: data ?? this.data,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   testId: testId ?? this.testId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDexTargetedTest &&
           data == other.data &&
@@ -45,4 +45,4 @@ DigitalExperienceMonitoringDexTargetedTest copyWith({DigitalExperienceMonitoring
 
 @override String toString() => 'DigitalExperienceMonitoringDexTargetedTest(data: $data, enabled: $enabled, name: $name, testId: $testId)';
 
- }
+}

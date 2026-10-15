@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateTrustedDomain {const EmailSecurityUpdateTrustedDomain({this.comments, this.isRecent, this.isRegex, this.isSimilarity, this.pattern, });
 
-factory EmailSecurityUpdateTrustedDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateTrustedDomain(
+factory EmailSecurityUpdateTrustedDomain.fromJson(Map<String, dynamic> json) {return EmailSecurityUpdateTrustedDomain(
   comments: json['comments'] as String?,
   isRecent: json['is_recent'] as bool?,
   isRegex: json['is_regex'] as bool?,
   isSimilarity: json['is_similarity'] as bool?,
   pattern: json['pattern'] as String?,
-); }
+);}
 
 final String? comments;
 
@@ -26,16 +26,16 @@ final bool? isSimilarity;
 
 final String? pattern;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': ?comments,
   'is_recent': ?isRecent,
   'is_regex': ?isRegex,
   'is_similarity': ?isSimilarity,
   'pattern': ?pattern,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_recent', 'is_regex', 'is_similarity', 'pattern'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comments', 'is_recent', 'is_regex', 'is_similarity', 'pattern'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
@@ -45,14 +45,14 @@ if (pattern$ != null) {
   if (pattern$.isEmpty) { errors.add('pattern: length must be >= 1'); }
   if (pattern$.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 }
-return errors; } 
-EmailSecurityUpdateTrustedDomain copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, }) { return EmailSecurityUpdateTrustedDomain(
+return errors;}
+EmailSecurityUpdateTrustedDomain copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, }) {return EmailSecurityUpdateTrustedDomain(
   comments: comments != null ? comments() : this.comments,
   isRecent: isRecent != null ? isRecent() : this.isRecent,
   isRegex: isRegex != null ? isRegex() : this.isRegex,
   isSimilarity: isSimilarity != null ? isSimilarity() : this.isSimilarity,
   pattern: pattern != null ? pattern() : this.pattern,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityUpdateTrustedDomain &&
           comments == other.comments &&
@@ -65,4 +65,4 @@ EmailSecurityUpdateTrustedDomain copyWith({String? Function()? comments, bool? F
 
 @override String toString() => 'EmailSecurityUpdateTrustedDomain(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern)';
 
- }
+}

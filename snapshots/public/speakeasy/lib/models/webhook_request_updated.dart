@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object.dart';sealed class WebhookRequestUpdatedType {const WebhookRequestUpdatedType();
 
-factory WebhookRequestUpdatedType.fromJson(String json) { return switch (json) {
+factory WebhookRequestUpdatedType.fromJson(String json) {return switch (json) {
   'webhook.updated' => webhookUpdated,
   _ => WebhookRequestUpdatedType$Unknown(json),
-}; }
+};}
 
 static const WebhookRequestUpdatedType webhookUpdated = WebhookRequestUpdatedType$webhookUpdated._();
 
 static const List<WebhookRequestUpdatedType> values = [webhookUpdated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'webhook.updated' => 'webhookUpdated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookRequestUpdatedType$Unknown; } 
+bool get isUnknown {return this is WebhookRequestUpdatedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() webhookUpdated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() webhookUpdated, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookRequestUpdatedType$webhookUpdated() => webhookUpdated(),
       WebhookRequestUpdatedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? webhookUpdated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? webhookUpdated, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookRequestUpdatedType$webhookUpdated() => webhookUpdated != null ? webhookUpdated() : orElse(value),
       WebhookRequestUpdatedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookRequestUpdatedType($value)';
 
- }
+}
 @immutable final class WebhookRequestUpdatedType$webhookUpdated extends WebhookRequestUpdatedType {const WebhookRequestUpdatedType$webhookUpdated._();
 
 @override String get value => 'webhook.updated';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? webhookU
 
 @override int get hashCode => 'webhook.updated'.hashCode;
 
- }
+}
 @immutable final class WebhookRequestUpdatedType$Unknown extends WebhookRequestUpdatedType {const WebhookRequestUpdatedType$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? webhookU
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookRequestUpdated {const WebhookRequestUpdated({required this.type, required this.data, });
 
-factory WebhookRequestUpdated.fromJson(Map<String, dynamic> json) { return WebhookRequestUpdated(
+factory WebhookRequestUpdated.fromJson(Map<String, dynamic> json) {return WebhookRequestUpdated(
   type: WebhookRequestUpdatedType.fromJson(json['type'] as String),
   data: SimpleObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookRequestUpdatedType type;
 
 final SimpleObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('data'); } 
-WebhookRequestUpdated copyWith({WebhookRequestUpdatedType? type, SimpleObject? data, }) { return WebhookRequestUpdated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('data');}
+WebhookRequestUpdated copyWith({WebhookRequestUpdatedType? type, SimpleObject? data, }) {return WebhookRequestUpdated(
   type: type ?? this.type,
   data: data ?? this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRequestUpdated &&
           type == other.type &&
@@ -83,4 +83,4 @@ WebhookRequestUpdated copyWith({WebhookRequestUpdatedType? type, SimpleObject? d
 
 @override String toString() => 'WebhookRequestUpdated(type: $type, data: $data)';
 
- }
+}

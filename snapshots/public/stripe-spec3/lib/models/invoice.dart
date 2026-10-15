@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Invoice
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/automatic_tax.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer/customer_default_source.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/deleted_invoice/deleted_invoice_object.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_discounts.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_lines.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_payments.dart';import 'package:pub_stripe_spec3/models/invoice/latest_revision.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/invoice_threshold_reason.dart';import 'package:pub_stripe_spec3/models/invoices_payment_settings.dart';import 'package:pub_stripe_spec3/models/invoices_resource_confirmation_secret.dart';import 'package:pub_stripe_spec3/models/invoices_resource_from_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_rendering.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id.dart';import 'package:pub_stripe_spec3/models/invoices_resource_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';import 'package:pub_stripe_spec3/models/invoices_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// Indicates the reason why the invoice was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/automatic_tax.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/customer/customer_default_source.dart';import 'package:pub_stripe_spec3/models/deleted_invoice/deleted_invoice_object.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_discounts.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_lines.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_payments.dart';import 'package:pub_stripe_spec3/models/invoice/latest_revision.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/invoice_threshold_reason.dart';import 'package:pub_stripe_spec3/models/invoices_payment_settings.dart';import 'package:pub_stripe_spec3/models/invoices_resource_confirmation_secret.dart';import 'package:pub_stripe_spec3/models/invoices_resource_from_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_rendering.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id.dart';import 'package:pub_stripe_spec3/models/invoices_resource_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';import 'package:pub_stripe_spec3/models/invoices_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Indicates the reason why the invoice was created.
 /// 
 /// * `manual`: Unrelated to a subscription, for example, created via the invoice editor.
 /// * `subscription`: No longer in use. Applies to subscriptions from before May 2018 where no distinction was made between updates, cycles, and thresholds.
@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
 sealed class BillingReason {const BillingReason();
 
-factory BillingReason.fromJson(String json) { return switch (json) {
+factory BillingReason.fromJson(String json) {return switch (json) {
   'automatic_pending_invoice_item_invoice' => automaticPendingInvoiceItemInvoice,
   'manual' => manual,
   'quote_accept' => quoteAccept,
@@ -23,7 +23,7 @@ factory BillingReason.fromJson(String json) { return switch (json) {
   'subscription_update' => subscriptionUpdate,
   'upcoming' => upcoming,
   _ => BillingReason$Unknown(json),
-}; }
+};}
 
 static const BillingReason automaticPendingInvoiceItemInvoice = BillingReason$automaticPendingInvoiceItemInvoice._();
 
@@ -46,9 +46,9 @@ static const BillingReason upcoming = BillingReason$upcoming._();
 static const List<BillingReason> values = [automaticPendingInvoiceItemInvoice, manual, quoteAccept, subscription, subscriptionCreate, subscriptionCycle, subscriptionThreshold, subscriptionUpdate, upcoming];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'automatic_pending_invoice_item_invoice' => 'automaticPendingInvoiceItemInvoice',
   'manual' => 'manual',
   'quote_accept' => 'quoteAccept',
@@ -59,11 +59,11 @@ String get name { return switch (value) {
   'subscription_update' => 'subscriptionUpdate',
   'upcoming' => 'upcoming',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingReason$Unknown; } 
+bool get isUnknown {return this is BillingReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W Function() manual, required W Function() quoteAccept, required W Function() subscription, required W Function() subscriptionCreate, required W Function() subscriptionCycle, required W Function() subscriptionThreshold, required W Function() subscriptionUpdate, required W Function() upcoming, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W Function() manual, required W Function() quoteAccept, required W Function() subscription, required W Function() subscriptionCreate, required W Function() subscriptionCycle, required W Function() subscriptionThreshold, required W Function() subscriptionUpdate, required W Function() upcoming, required W Function(String value) $unknown, }) {return switch (this) {
       BillingReason$automaticPendingInvoiceItemInvoice() => automaticPendingInvoiceItemInvoice(),
       BillingReason$manual() => manual(),
       BillingReason$quoteAccept() => quoteAccept(),
@@ -74,9 +74,9 @@ W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W 
       BillingReason$subscriptionUpdate() => subscriptionUpdate(),
       BillingReason$upcoming() => upcoming(),
       BillingReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? automaticPendingInvoiceItemInvoice, W Function()? manual, W Function()? quoteAccept, W Function()? subscription, W Function()? subscriptionCreate, W Function()? subscriptionCycle, W Function()? subscriptionThreshold, W Function()? subscriptionUpdate, W Function()? upcoming, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automaticPendingInvoiceItemInvoice, W Function()? manual, W Function()? quoteAccept, W Function()? subscription, W Function()? subscriptionCreate, W Function()? subscriptionCycle, W Function()? subscriptionThreshold, W Function()? subscriptionUpdate, W Function()? upcoming, W Function(String value)? $unknown, }) {return switch (this) {
       BillingReason$automaticPendingInvoiceItemInvoice() => automaticPendingInvoiceItemInvoice != null ? automaticPendingInvoiceItemInvoice() : orElse(value),
       BillingReason$manual() => manual != null ? manual() : orElse(value),
       BillingReason$quoteAccept() => quoteAccept != null ? quoteAccept() : orElse(value),
@@ -87,10 +87,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
       BillingReason$subscriptionUpdate() => subscriptionUpdate != null ? subscriptionUpdate() : orElse(value),
       BillingReason$upcoming() => upcoming != null ? upcoming() : orElse(value),
       BillingReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingReason($value)';
 
- }
+}
 @immutable final class BillingReason$automaticPendingInvoiceItemInvoice extends BillingReason {const BillingReason$automaticPendingInvoiceItemInvoice._();
 
 @override String get value => 'automatic_pending_invoice_item_invoice';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'automatic_pending_invoice_item_invoice'.hashCode;
 
- }
+}
 @immutable final class BillingReason$manual extends BillingReason {const BillingReason$manual._();
 
 @override String get value => 'manual';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class BillingReason$quoteAccept extends BillingReason {const BillingReason$quoteAccept._();
 
 @override String get value => 'quote_accept';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'quote_accept'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscription extends BillingReason {const BillingReason$subscription._();
 
 @override String get value => 'subscription';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionCreate extends BillingReason {const BillingReason$subscriptionCreate._();
 
 @override String get value => 'subscription_create';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_create'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionCycle extends BillingReason {const BillingReason$subscriptionCycle._();
 
 @override String get value => 'subscription_cycle';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_cycle'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionThreshold extends BillingReason {const BillingReason$subscriptionThreshold._();
 
 @override String get value => 'subscription_threshold';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_threshold'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionUpdate extends BillingReason {const BillingReason$subscriptionUpdate._();
 
 @override String get value => 'subscription_update';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_update'.hashCode;
 
- }
+}
 @immutable final class BillingReason$upcoming extends BillingReason {const BillingReason$upcoming._();
 
 @override String get value => 'upcoming';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'upcoming'.hashCode;
 
- }
+}
 @immutable final class BillingReason$Unknown extends BillingReason {const BillingReason$Unknown(this.value);
 
 @override final String value;
@@ -181,16 +181,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
 sealed class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt();
 
-factory InvoiceCustomerTaxExempt.fromJson(String json) { return switch (json) {
+factory InvoiceCustomerTaxExempt.fromJson(String json) {return switch (json) {
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
   _ => InvoiceCustomerTaxExempt$Unknown(json),
-}; }
+};}
 
 static const InvoiceCustomerTaxExempt exempt = InvoiceCustomerTaxExempt$exempt._();
 
@@ -201,33 +201,33 @@ static const InvoiceCustomerTaxExempt reverse = InvoiceCustomerTaxExempt$reverse
 static const List<InvoiceCustomerTaxExempt> values = [exempt, none, reverse];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exempt' => 'exempt',
   'none' => 'none',
   'reverse' => 'reverse',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoiceCustomerTaxExempt$Unknown; } 
+bool get isUnknown {return this is InvoiceCustomerTaxExempt$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exempt, required W Function() none, required W Function() reverse, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exempt, required W Function() none, required W Function() reverse, required W Function(String value) $unknown, }) {return switch (this) {
       InvoiceCustomerTaxExempt$exempt() => exempt(),
       InvoiceCustomerTaxExempt$none() => none(),
       InvoiceCustomerTaxExempt$reverse() => reverse(),
       InvoiceCustomerTaxExempt$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, W Function()? none, W Function()? reverse, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, W Function()? none, W Function()? reverse, W Function(String value)? $unknown, }) {return switch (this) {
       InvoiceCustomerTaxExempt$exempt() => exempt != null ? exempt() : orElse(value),
       InvoiceCustomerTaxExempt$none() => none != null ? none() : orElse(value),
       InvoiceCustomerTaxExempt$reverse() => reverse != null ? reverse() : orElse(value),
       InvoiceCustomerTaxExempt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoiceCustomerTaxExempt($value)';
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$exempt extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$exempt._();
 
 @override String get value => 'exempt';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => 'exempt'.hashCode;
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$none extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$none._();
 
 @override String get value => 'none';
@@ -245,7 +245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$reverse extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$reverse._();
 
 @override String get value => 'reverse';
@@ -254,7 +254,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => 'reverse'.hashCode;
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$Unknown extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$Unknown(this.value);
 
 @override final String value;
@@ -264,18 +264,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
 sealed class InvoiceStatus {const InvoiceStatus();
 
-factory InvoiceStatus.fromJson(String json) { return switch (json) {
+factory InvoiceStatus.fromJson(String json) {return switch (json) {
   'draft' => draft,
   'open' => open,
   'paid' => paid,
   'uncollectible' => uncollectible,
   'void' => $void,
   _ => InvoiceStatus$Unknown(json),
-}; }
+};}
 
 static const InvoiceStatus draft = InvoiceStatus$draft._();
 
@@ -290,39 +290,39 @@ static const InvoiceStatus $void = InvoiceStatus$$void._();
 static const List<InvoiceStatus> values = [draft, open, paid, uncollectible, $void];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'draft' => 'draft',
   'open' => 'open',
   'paid' => 'paid',
   'uncollectible' => 'uncollectible',
   'void' => r'$void',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoiceStatus$Unknown; } 
+bool get isUnknown {return this is InvoiceStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() draft, required W Function() open, required W Function() paid, required W Function() uncollectible, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() draft, required W Function() open, required W Function() paid, required W Function() uncollectible, required W Function() $void, required W Function(String value) $unknown, }) {return switch (this) {
       InvoiceStatus$draft() => draft(),
       InvoiceStatus$open() => open(),
       InvoiceStatus$paid() => paid(),
       InvoiceStatus$uncollectible() => uncollectible(),
       InvoiceStatus$$void() => $void(),
       InvoiceStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W Function()? open, W Function()? paid, W Function()? uncollectible, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W Function()? open, W Function()? paid, W Function()? uncollectible, W Function()? $void, W Function(String value)? $unknown, }) {return switch (this) {
       InvoiceStatus$draft() => draft != null ? draft() : orElse(value),
       InvoiceStatus$open() => open != null ? open() : orElse(value),
       InvoiceStatus$paid() => paid != null ? paid() : orElse(value),
       InvoiceStatus$uncollectible() => uncollectible != null ? uncollectible() : orElse(value),
       InvoiceStatus$$void() => $void != null ? $void() : orElse(value),
       InvoiceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoiceStatus($value)';
 
- }
+}
 @immutable final class InvoiceStatus$draft extends InvoiceStatus {const InvoiceStatus$draft._();
 
 @override String get value => 'draft';
@@ -331,7 +331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'draft'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$open extends InvoiceStatus {const InvoiceStatus$open._();
 
 @override String get value => 'open';
@@ -340,7 +340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$paid extends InvoiceStatus {const InvoiceStatus$paid._();
 
 @override String get value => 'paid';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'paid'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$uncollectible extends InvoiceStatus {const InvoiceStatus$uncollectible._();
 
 @override String get value => 'uncollectible';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'uncollectible'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$$void extends InvoiceStatus {const InvoiceStatus$$void._();
 
 @override String get value => 'void';
@@ -367,7 +367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'void'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$Unknown extends InvoiceStatus {const InvoiceStatus$Unknown(this.value);
 
 @override final String value;
@@ -377,7 +377,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Invoices are statements of amounts owed by a customer, and are either
 /// generated one-off, or generated periodically from a subscription.
 /// 
@@ -410,101 +410,96 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 /// [here](https://docs.stripe.com/billing/customer/balance).
 /// 
 /// Related guide: [Send invoices to customers](https://docs.stripe.com/billing/invoices/sending)
-@immutable final class Invoice {const Invoice({required this.object, required this.amountDue, required this.amountOverpaid, required this.amountPaid, required this.amountRemaining, required this.amountShipping, required this.attemptCount, required this.attempted, required this.autoAdvance, required this.automaticTax, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.prePaymentCreditNotesAmount, required this.total, required this.postPaymentCreditNotesAmount, required this.statusTransitions, required this.subtotal, required this.periodStart, required this.startingBalance, required this.periodEnd, required this.paymentSettings, required this.livemode, required this.lines, required this.issuer, required this.id, required this.discounts, required this.defaultTaxRates, this.defaultPaymentMethod, this.defaultSource, this.customerTaxIds, this.description, this.customerTaxExempt, this.dueDate, this.effectiveAt, this.endingBalance, this.footer, this.customerShipping, this.hostedInvoiceUrl, this.accountCountry, this.invoicePdf, this.customerPhone, this.lastFinalizationError, this.latestRevision, this.customerName, this.customerEmail, this.metadata, this.nextPaymentAttempt, this.number, this.webhooksDeliveredAt, this.onBehalfOf, this.parent, this.customerAddress, this.payments, this.customerAccount, this.customFields, this.confirmationSecret, this.billingReason, this.receiptNumber, this.rendering, this.shippingCost, this.shippingDetails, this.automaticallyFinalizesAt, this.statementDescriptor, this.status, this.application, this.accountTaxIds, this.subtotalExcludingTax, this.testClock, this.thresholdReason, this.accountName, this.totalDiscountAmounts, this.totalExcludingTax, this.totalPretaxCreditAmounts, this.totalTaxes, this.fromInvoice, });
+@immutable final class Invoice {const Invoice({required this.object, required this.amountDue, required this.amountOverpaid, required this.amountPaid, required this.amountRemaining, required this.amountShipping, required this.attemptCount, required this.attempted, required this.autoAdvance, required this.automaticTax, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.prePaymentCreditNotesAmount, required this.total, required this.postPaymentCreditNotesAmount, required this.statusTransitions, required this.subtotal, required this.periodStart, required this.startingBalance, required this.periodEnd, required this.paymentSettings, required this.livemode, required this.lines, required this.issuer, required this.id, required this.discounts, required this.defaultTaxRates, this.defaultPaymentMethod = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.customerTaxIds = const Omittable.absent(), this.description = const Omittable.absent(), this.customerTaxExempt = const Omittable.absent(), this.dueDate = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.endingBalance = const Omittable.absent(), this.footer = const Omittable.absent(), this.customerShipping = const Omittable.absent(), this.hostedInvoiceUrl = const Omittable.absent(), this.accountCountry = const Omittable.absent(), this.invoicePdf = const Omittable.absent(), this.customerPhone = const Omittable.absent(), this.lastFinalizationError = const Omittable.absent(), this.latestRevision = const Omittable.absent(), this.customerName = const Omittable.absent(), this.customerEmail = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextPaymentAttempt = const Omittable.absent(), this.number = const Omittable.absent(), this.webhooksDeliveredAt = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.parent = const Omittable.absent(), this.customerAddress = const Omittable.absent(), this.payments, this.customerAccount = const Omittable.absent(), this.customFields = const Omittable.absent(), this.confirmationSecret = const Omittable.absent(), this.billingReason = const Omittable.absent(), this.receiptNumber = const Omittable.absent(), this.rendering = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.shippingDetails = const Omittable.absent(), this.automaticallyFinalizesAt = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.status = const Omittable.absent(), this.application = const Omittable.absent(), this.accountTaxIds = const Omittable.absent(), this.subtotalExcludingTax = const Omittable.absent(), this.testClock = const Omittable.absent(), this.thresholdReason, this.accountName = const Omittable.absent(), this.totalDiscountAmounts = const Omittable.absent(), this.totalExcludingTax = const Omittable.absent(), this.totalPretaxCreditAmounts = const Omittable.absent(), this.totalTaxes = const Omittable.absent(), this.fromInvoice = const Omittable.absent(), });
 
-factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
-  accountCountry: json['account_country'] as String?,
-  accountName: json['account_name'] as String?,
-  accountTaxIds: (json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList(),
+factory Invoice.fromJson(Map<String, dynamic> json) {return Invoice(
+  accountCountry: json.containsKey('account_country') ? Omittable(json['account_country'] as String?) : const Omittable.absent(),
+  accountName: json.containsKey('account_name') ? Omittable(json['account_name'] as String?) : const Omittable.absent(),
+  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(InvoiceAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   amountDue: (json['amount_due'] as num).toInt(),
   amountOverpaid: (json['amount_overpaid'] as num).toInt(),
   amountPaid: (json['amount_paid'] as num).toInt(),
   amountRemaining: (json['amount_remaining'] as num).toInt(),
   amountShipping: (json['amount_shipping'] as num).toInt(),
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   attemptCount: (json['attempt_count'] as num).toInt(),
   attempted: json['attempted'] as bool,
   autoAdvance: json['auto_advance'] as bool,
   automaticTax: AutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
-  automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
-  billingReason: json['billing_reason'] != null ? BillingReason.fromJson(json['billing_reason'] as String) : null,
+  automaticallyFinalizesAt: json.containsKey('automatically_finalizes_at') ? Omittable(json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null) : const Omittable.absent(),
+  billingReason: json.containsKey('billing_reason') ? Omittable(json['billing_reason'] != null ? BillingReason.fromJson(json['billing_reason'] as String) : null) : const Omittable.absent(),
   collectionMethod: InvoiceCollectionMethod.fromJson(json['collection_method'] as String),
-  confirmationSecret: json['confirmation_secret'] != null ? InvoicesResourceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>) : null,
+  confirmationSecret: json.containsKey('confirmation_secret') ? Omittable(json['confirmation_secret'] != null ? InvoicesResourceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
-  customerAddress: json['customer_address'] != null ? Address.fromJson(json['customer_address'] as Map<String, dynamic>) : null,
-  customerEmail: json['customer_email'] as String?,
-  customerName: json['customer_name'] as String?,
-  customerPhone: json['customer_phone'] as String?,
-  customerShipping: json['customer_shipping'] != null ? Shipping.fromJson(json['customer_shipping'] as Map<String, dynamic>) : null,
-  customerTaxExempt: json['customer_tax_exempt'] != null ? InvoiceCustomerTaxExempt.fromJson(json['customer_tax_exempt'] as String) : null,
-  customerTaxIds: (json['customer_tax_ids'] as List<dynamic>?)?.map((e) => InvoicesResourceInvoiceTaxId.fromJson(e as Map<String, dynamic>)).toList(),
-  defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  defaultSource: json['default_source'] != null ? switch (json['default_source']) {
-  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<String, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
-  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<String, BankAccount, Card, Source>.c(Card.fromJson(m)),
-  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<String, BankAccount, Card, Source>.d(Source.fromJson(m)),
-  _ => OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
-} : null,
+  customFields: json.containsKey('custom_fields') ? Omittable((json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  customer: BankAccountCustomer.fromJson(json['customer']),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  customerAddress: json.containsKey('customer_address') ? Omittable(json['customer_address'] != null ? Address.fromJson(json['customer_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  customerEmail: json.containsKey('customer_email') ? Omittable(json['customer_email'] as String?) : const Omittable.absent(),
+  customerName: json.containsKey('customer_name') ? Omittable(json['customer_name'] as String?) : const Omittable.absent(),
+  customerPhone: json.containsKey('customer_phone') ? Omittable(json['customer_phone'] as String?) : const Omittable.absent(),
+  customerShipping: json.containsKey('customer_shipping') ? Omittable(json['customer_shipping'] != null ? Shipping.fromJson(json['customer_shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  customerTaxExempt: json.containsKey('customer_tax_exempt') ? Omittable(json['customer_tax_exempt'] != null ? InvoiceCustomerTaxExempt.fromJson(json['customer_tax_exempt'] as String) : null) : const Omittable.absent(),
+  customerTaxIds: json.containsKey('customer_tax_ids') ? Omittable((json['customer_tax_ids'] as List<dynamic>?)?.map((e) => InvoicesResourceInvoiceTaxId.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  defaultPaymentMethod: json.containsKey('default_payment_method') ? Omittable(json['default_payment_method'] != null ? DefaultPaymentMethod.fromJson(json['default_payment_method']) : null) : const Omittable.absent(),
+  defaultSource: json.containsKey('default_source') ? Omittable(json['default_source'] != null ? CustomerDefaultSource.fromJson(json['default_source']) : null) : const Omittable.absent(),
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>).map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
-  description: json['description'] as String?,
-  discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),)).toList(),
-  dueDate: json['due_date'] != null ? (json['due_date'] as num).toInt() : null,
-  effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
-  endingBalance: json['ending_balance'] != null ? (json['ending_balance'] as num).toInt() : null,
-  footer: json['footer'] as String?,
-  fromInvoice: json['from_invoice'] != null ? InvoicesResourceFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null,
-  hostedInvoiceUrl: json['hosted_invoice_url'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  discounts: (json['discounts'] as List<dynamic>).map(InvoiceDiscounts.fromJson).toList(),
+  dueDate: json.containsKey('due_date') ? Omittable(json['due_date'] != null ? (json['due_date'] as num).toInt() : null) : const Omittable.absent(),
+  effectiveAt: json.containsKey('effective_at') ? Omittable(json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null) : const Omittable.absent(),
+  endingBalance: json.containsKey('ending_balance') ? Omittable(json['ending_balance'] != null ? (json['ending_balance'] as num).toInt() : null) : const Omittable.absent(),
+  footer: json.containsKey('footer') ? Omittable(json['footer'] as String?) : const Omittable.absent(),
+  fromInvoice: json.containsKey('from_invoice') ? Omittable(json['from_invoice'] != null ? InvoicesResourceFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  hostedInvoiceUrl: json.containsKey('hosted_invoice_url') ? Omittable(json['hosted_invoice_url'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  invoicePdf: json['invoice_pdf'] as String?,
+  invoicePdf: json.containsKey('invoice_pdf') ? Omittable(json['invoice_pdf'] as String?) : const Omittable.absent(),
   issuer: ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>),
-  lastFinalizationError: json['last_finalization_error'] != null ? Errors.fromJson(json['last_finalization_error'] as Map<String, dynamic>) : null,
-  latestRevision: json['latest_revision'] != null ? OneOf2.parse(json['latest_revision'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null,
+  lastFinalizationError: json.containsKey('last_finalization_error') ? Omittable(json['last_finalization_error'] != null ? Errors.fromJson(json['last_finalization_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  latestRevision: json.containsKey('latest_revision') ? Omittable(json['latest_revision'] != null ? LatestRevision.fromJson(json['latest_revision']) : null) : const Omittable.absent(),
   lines: InvoiceLines.fromJson(json['lines'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextPaymentAttempt: json['next_payment_attempt'] != null ? (json['next_payment_attempt'] as num).toInt() : null,
-  number: json['number'] as String?,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  nextPaymentAttempt: json.containsKey('next_payment_attempt') ? Omittable(json['next_payment_attempt'] != null ? (json['next_payment_attempt'] as num).toInt() : null) : const Omittable.absent(),
+  number: json.containsKey('number') ? Omittable(json['number'] as String?) : const Omittable.absent(),
   object: DeletedInvoiceObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  parent: json['parent'] != null ? BillingBillResourceInvoicingParentsInvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? ChargeOnBehalfOf.fromJson(json['on_behalf_of']) : null) : const Omittable.absent(),
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? BillingBillResourceInvoicingParentsInvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentSettings: InvoicesPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>),
   payments: json['payments'] != null ? InvoicePayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
   periodEnd: (json['period_end'] as num).toInt(),
   periodStart: (json['period_start'] as num).toInt(),
   postPaymentCreditNotesAmount: (json['post_payment_credit_notes_amount'] as num).toInt(),
   prePaymentCreditNotesAmount: (json['pre_payment_credit_notes_amount'] as num).toInt(),
-  receiptNumber: json['receipt_number'] as String?,
-  rendering: json['rendering'] != null ? InvoicesResourceInvoiceRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? InvoicesResourceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
-  shippingDetails: json['shipping_details'] != null ? Shipping.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+  receiptNumber: json.containsKey('receipt_number') ? Omittable(json['receipt_number'] as String?) : const Omittable.absent(),
+  rendering: json.containsKey('rendering') ? Omittable(json['rendering'] != null ? InvoicesResourceInvoiceRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  shippingCost: json.containsKey('shipping_cost') ? Omittable(json['shipping_cost'] != null ? InvoicesResourceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  shippingDetails: json.containsKey('shipping_details') ? Omittable(json['shipping_details'] != null ? Shipping.fromJson(json['shipping_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   startingBalance: (json['starting_balance'] as num).toInt(),
-  statementDescriptor: json['statement_descriptor'] as String?,
-  status: json['status'] != null ? InvoiceStatus.fromJson(json['status'] as String) : null,
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? InvoiceStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   statusTransitions: InvoicesResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   subtotal: (json['subtotal'] as num).toInt(),
-  subtotalExcludingTax: json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null,
-  testClock: json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null,
+  subtotalExcludingTax: json.containsKey('subtotal_excluding_tax') ? Omittable(json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? TestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   thresholdReason: json['threshold_reason'] != null ? InvoiceThresholdReason.fromJson(json['threshold_reason'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toInt(),
-  totalDiscountAmounts: (json['total_discount_amounts'] as List<dynamic>?)?.map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  totalExcludingTax: json['total_excluding_tax'] != null ? (json['total_excluding_tax'] as num).toInt() : null,
-  totalPretaxCreditAmounts: (json['total_pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  totalTaxes: (json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList(),
-  webhooksDeliveredAt: json['webhooks_delivered_at'] != null ? (json['webhooks_delivered_at'] as num).toInt() : null,
-); }
+  totalDiscountAmounts: json.containsKey('total_discount_amounts') ? Omittable((json['total_discount_amounts'] as List<dynamic>?)?.map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  totalExcludingTax: json.containsKey('total_excluding_tax') ? Omittable(json['total_excluding_tax'] != null ? (json['total_excluding_tax'] as num).toInt() : null) : const Omittable.absent(),
+  totalPretaxCreditAmounts: json.containsKey('total_pretax_credit_amounts') ? Omittable((json['total_pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  totalTaxes: json.containsKey('total_taxes') ? Omittable((json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  webhooksDeliveredAt: json.containsKey('webhooks_delivered_at') ? Omittable(json['webhooks_delivered_at'] != null ? (json['webhooks_delivered_at'] as num).toInt() : null) : const Omittable.absent(),
+);}
 
 /// The country of the business associated with this invoice, most often the business creating the invoice.
-final String? accountCountry;
+final Omittable<String?> accountCountry;
 
 /// The public name of the business associated with this invoice, most often the business creating the invoice.
-final String? accountName;
+final Omittable<String?> accountName;
 
 /// The account tax IDs associated with the invoice. Only editable when the invoice is a draft.
-final List<InvoiceAccountTaxIds>? accountTaxIds;
+final Omittable<List<InvoiceAccountTaxIds>?> accountTaxIds;
 
 /// Final amount due at this time for this invoice. If the invoice's total is smaller than the minimum charge amount, for example, or if there is account credit that can be applied to the invoice, the `amount_due` may be 0. If there is a positive `starting_balance` for the invoice (the customer owes money), the `amount_due` will also take that into account. The charge that gets generated for the invoice will be for the amount specified in `amount_due`.
 final int amountDue;
@@ -522,7 +517,7 @@ final int amountRemaining;
 final int amountShipping;
 
 /// ID of the Connect Application that created the invoice.
-final BillingPortalConfigurationApplication? application;
+final Omittable<BillingPortalConfigurationApplication?> application;
 
 /// Number of payment attempts made for this invoice, from the perspective of the payment retry schedule. Any payment attempt counts as the first attempt, and subsequently only automatic retries increment the attempt count. In other words, manual payment attempts after the first attempt do not affect the retry schedule. If a failure is returned with a non-retryable return code, the invoice can no longer be retried unless a new payment method is obtained. Retries will continue to be scheduled, and attempt_count will continue to increment, but retries will only be executed if a new payment method is obtained.
 final int attemptCount;
@@ -536,7 +531,7 @@ final bool autoAdvance;
 final AutomaticTax automaticTax;
 
 /// The time when this invoice is currently scheduled to be automatically finalized. The field will be `null` if the invoice is not scheduled to finalize in the future. If the invoice is not in the draft state, this field will always be `null` - see `finalized_at` for the time when an already-finalized invoice was finalized.
-final int? automaticallyFinalizesAt;
+final Omittable<int?> automaticallyFinalizesAt;
 
 /// Indicates the reason why the invoice was created.
 /// 
@@ -547,13 +542,13 @@ final int? automaticallyFinalizesAt;
 /// * `subscription_threshold`: A subscription reached a billing threshold.
 /// * `subscription_update`: A subscription was updated.
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
-final BillingReason? billingReason;
+final Omittable<BillingReason?> billingReason;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Stripe will email this invoice to the customer with payment instructions.
 final InvoiceCollectionMethod collectionMethod;
 
 /// The confirmation secret associated with this invoice. Currently, this contains the client_secret of the PaymentIntent that Stripe creates during invoice finalization.
-final InvoicesResourceConfirmationSecret? confirmationSecret;
+final Omittable<InvoicesResourceConfirmationSecret?> confirmationSecret;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -562,81 +557,81 @@ final int created;
 final String currency;
 
 /// Custom fields displayed on the invoice.
-final List<InvoiceSettingCustomField>? customFields;
+final Omittable<List<InvoiceSettingCustomField>?> customFields;
 
 /// The ID of the customer to bill.
 final BankAccountCustomer customer;
 
 /// The ID of the account representing the customer to bill.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The customer's address. Until the invoice is finalized, this field will equal `customer.address`. Once the invoice is finalized, this field will no longer be updated.
-final Address? customerAddress;
+final Omittable<Address?> customerAddress;
 
 /// The customer's email. Until the invoice is finalized, this field will equal `customer.email`. Once the invoice is finalized, this field will no longer be updated.
-final String? customerEmail;
+final Omittable<String?> customerEmail;
 
 /// The customer's name. Until the invoice is finalized, this field will equal `customer.name`. Once the invoice is finalized, this field will no longer be updated.
-final String? customerName;
+final Omittable<String?> customerName;
 
 /// The customer's phone number. Until the invoice is finalized, this field will equal `customer.phone`. Once the invoice is finalized, this field will no longer be updated.
-final String? customerPhone;
+final Omittable<String?> customerPhone;
 
 /// The customer's shipping information. Until the invoice is finalized, this field will equal `customer.shipping`. Once the invoice is finalized, this field will no longer be updated.
-final Shipping? customerShipping;
+final Omittable<Shipping?> customerShipping;
 
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
-final InvoiceCustomerTaxExempt? customerTaxExempt;
+final Omittable<InvoiceCustomerTaxExempt?> customerTaxExempt;
 
 /// The customer's tax IDs. Until the invoice is finalized, this field will contain the same tax IDs as `customer.tax_ids`. Once the invoice is finalized, this field will no longer be updated.
-final List<InvoicesResourceInvoiceTaxId>? customerTaxIds;
+final Omittable<List<InvoicesResourceInvoiceTaxId>?> customerTaxIds;
 
 /// ID of the default payment method for the invoice. It must belong to the customer associated with the invoice. If not set, defaults to the subscription's default payment method, if any, or to the default payment method in the customer's invoice settings.
-final DefaultPaymentMethod? defaultPaymentMethod;
+final Omittable<DefaultPaymentMethod?> defaultPaymentMethod;
 
 /// ID of the default payment source for the invoice. It must belong to the customer associated with the invoice and be in a chargeable state. If not set, defaults to the subscription's default source, if any, or to the customer's default source.
-final CustomerDefaultSource? defaultSource;
+final Omittable<CustomerDefaultSource?> defaultSource;
 
 /// The tax rates applied to this invoice, if any.
 final List<TaxRate> defaultTaxRates;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users. Referenced as 'memo' in the Dashboard.
-final String? description;
+final Omittable<String?> description;
 
 /// The discounts applied to the invoice. Line item discounts are applied before invoice discounts. Use `expand[]=discounts` to expand each discount.
 final List<InvoiceDiscounts> discounts;
 
 /// The date on which payment for this invoice is due. This value will be `null` for invoices where `collection_method=charge_automatically`.
-final int? dueDate;
+final Omittable<int?> dueDate;
 
 /// The date when this invoice is in effect. Same as `finalized_at` unless overwritten. When defined, this value replaces the system-generated 'Date of issue' printed on the invoice PDF and receipt.
-final int? effectiveAt;
+final Omittable<int?> effectiveAt;
 
 /// Ending customer balance after the invoice is finalized. Invoices are finalized approximately an hour after successful webhook delivery or when payment collection is attempted for the invoice. If the invoice has not been finalized yet, this will be null.
-final int? endingBalance;
+final Omittable<int?> endingBalance;
 
 /// Footer displayed on the invoice.
-final String? footer;
+final Omittable<String?> footer;
 
 /// Details of the invoice that was cloned. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.
-final InvoicesResourceFromInvoice? fromInvoice;
+final Omittable<InvoicesResourceFromInvoice?> fromInvoice;
 
 /// The URL for the hosted invoice page, which allows customers to view and pay an invoice. If the invoice has not been finalized yet, this will be null.
-final String? hostedInvoiceUrl;
+final Omittable<String?> hostedInvoiceUrl;
 
 /// Unique identifier for the object. For preview invoices created using the [create preview](https://stripe.com/docs/api/invoices/create_preview) endpoint, this id will be prefixed with `upcoming_in`.
 final String id;
 
 /// The link to download the PDF for the invoice. If the invoice has not been finalized yet, this will be null.
-final String? invoicePdf;
+final Omittable<String?> invoicePdf;
 
 final ConnectAccountReference issuer;
 
 /// The error encountered during the previous attempt to finalize the invoice. This field is cleared when the invoice is successfully finalized.
-final Errors? lastFinalizationError;
+final Omittable<Errors?> lastFinalizationError;
 
 /// The ID of the most recent non-draft revision of this invoice
-final LatestRevision? latestRevision;
+final Omittable<LatestRevision?> latestRevision;
 
 /// The individual line items that make up the invoice. `lines` is sorted as follows: (1) pending invoice items (including prorations) in reverse chronological order, (2) subscription items in reverse chronological order, and (3) invoice items added after invoice creation in chronological order.
 final InvoiceLines lines;
@@ -645,22 +640,22 @@ final InvoiceLines lines;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// The time at which payment will next be attempted. This value will be `null` for invoices where `collection_method=send_invoice`.
-final int? nextPaymentAttempt;
+final Omittable<int?> nextPaymentAttempt;
 
 /// A unique, identifying string that appears on emails sent to the customer for this invoice. This starts with the customer's unique invoice_prefix if it is specified.
-final String? number;
+final Omittable<String?> number;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedInvoiceObject object;
 
 /// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
-final ChargeOnBehalfOf? onBehalfOf;
+final Omittable<ChargeOnBehalfOf?> onBehalfOf;
 
 /// The parent that generated this invoice
-final BillingBillResourceInvoicingParentsInvoiceParent? parent;
+final Omittable<BillingBillResourceInvoicingParentsInvoiceParent?> parent;
 
 final InvoicesPaymentSettings paymentSettings;
 
@@ -680,25 +675,25 @@ final int postPaymentCreditNotesAmount;
 final int prePaymentCreditNotesAmount;
 
 /// This is the transaction number that appears on email receipts sent for this invoice.
-final String? receiptNumber;
+final Omittable<String?> receiptNumber;
 
 /// The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
-final InvoicesResourceInvoiceRendering? rendering;
+final Omittable<InvoicesResourceInvoiceRendering?> rendering;
 
 /// The details of the cost of shipping, including the ShippingRate applied on the invoice.
-final InvoicesResourceShippingCost? shippingCost;
+final Omittable<InvoicesResourceShippingCost?> shippingCost;
 
 /// Shipping details for the invoice. The Invoice PDF will use the `shipping_details` value if it is set, otherwise the PDF will render the shipping address from the customer.
-final Shipping? shippingDetails;
+final Omittable<Shipping?> shippingDetails;
 
 /// Starting customer balance before the invoice is finalized. If the invoice has not been finalized yet, this will be the current customer balance. For revision invoices, this also includes any customer balance that was applied to the original invoice.
 final int startingBalance;
 
 /// Extra information about an invoice for the customer's credit card statement.
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
-final InvoiceStatus? status;
+final Omittable<InvoiceStatus?> status;
 
 final InvoicesResourceStatusTransitions statusTransitions;
 
@@ -706,10 +701,10 @@ final InvoicesResourceStatusTransitions statusTransitions;
 final int subtotal;
 
 /// The integer amount in cents (or local equivalent) representing the subtotal of the invoice before any invoice level discount or tax is applied. Item discounts are already incorporated
-final int? subtotalExcludingTax;
+final Omittable<int?> subtotalExcludingTax;
 
 /// ID of the test clock this invoice belongs to.
-final TestClock? testClock;
+final Omittable<TestClock?> testClock;
 
 final InvoiceThresholdReason? thresholdReason;
 
@@ -717,100 +712,100 @@ final InvoiceThresholdReason? thresholdReason;
 final int total;
 
 /// The aggregate amounts calculated per discount across all line items.
-final List<DiscountsResourceDiscountAmount>? totalDiscountAmounts;
+final Omittable<List<DiscountsResourceDiscountAmount>?> totalDiscountAmounts;
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the invoice including all discounts but excluding all tax.
-final int? totalExcludingTax;
+final Omittable<int?> totalExcludingTax;
 
 /// Contains pretax credit amounts (ex: discount, credit grants, etc) that apply to this invoice. This is a combined list of total_pretax_credit_amounts across all invoice line items.
-final List<InvoicesResourcePretaxCreditAmount>? totalPretaxCreditAmounts;
+final Omittable<List<InvoicesResourcePretaxCreditAmount>?> totalPretaxCreditAmounts;
 
 /// The aggregate tax information of all line items.
-final List<BillingBillResourceInvoicingTaxesTax>? totalTaxes;
+final Omittable<List<BillingBillResourceInvoicingTaxesTax>?> totalTaxes;
 
 /// Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have [been exhausted](https://docs.stripe.com/billing/webhooks#understand). This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
-final int? webhooksDeliveredAt;
+final Omittable<int?> webhooksDeliveredAt;
 
-Map<String, dynamic> toJson() { return {
-  'account_country': ?accountCountry,
-  'account_name': ?accountName,
-  if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.map((e) => e.toJson()).toList(),
+Map<String, dynamic> toJson() {return {
+  if (accountCountry.isPresent) 'account_country': accountCountry.value,
+  if (accountName.isPresent) 'account_name': accountName.value,
+  if (accountTaxIds.isPresent) 'account_tax_ids': accountTaxIds.value?.map((e) => e.toJson()).toList(),
   'amount_due': amountDue,
   'amount_overpaid': amountOverpaid,
   'amount_paid': amountPaid,
   'amount_remaining': amountRemaining,
   'amount_shipping': amountShipping,
-  if (application != null) 'application': application?.toJson(),
+  if (application.isPresent) 'application': application.value?.toJson(),
   'attempt_count': attemptCount,
   'attempted': attempted,
   'auto_advance': autoAdvance,
   'automatic_tax': automaticTax.toJson(),
-  'automatically_finalizes_at': ?automaticallyFinalizesAt,
-  if (billingReason != null) 'billing_reason': billingReason?.toJson(),
+  if (automaticallyFinalizesAt.isPresent) 'automatically_finalizes_at': automaticallyFinalizesAt.value,
+  if (billingReason.isPresent) 'billing_reason': billingReason.value?.toJson(),
   'collection_method': collectionMethod.toJson(),
-  if (confirmationSecret != null) 'confirmation_secret': confirmationSecret?.toJson(),
+  if (confirmationSecret.isPresent) 'confirmation_secret': confirmationSecret.value?.toJson(),
   'created': created,
   'currency': currency,
-  if (customFields != null) 'custom_fields': customFields?.map((e) => e.toJson()).toList(),
+  if (customFields.isPresent) 'custom_fields': customFields.value?.map((e) => e.toJson()).toList(),
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
-  if (customerAddress != null) 'customer_address': customerAddress?.toJson(),
-  'customer_email': ?customerEmail,
-  'customer_name': ?customerName,
-  'customer_phone': ?customerPhone,
-  if (customerShipping != null) 'customer_shipping': customerShipping?.toJson(),
-  if (customerTaxExempt != null) 'customer_tax_exempt': customerTaxExempt?.toJson(),
-  if (customerTaxIds != null) 'customer_tax_ids': customerTaxIds?.map((e) => e.toJson()).toList(),
-  if (defaultPaymentMethod != null) 'default_payment_method': defaultPaymentMethod?.toJson(),
-  if (defaultSource != null) 'default_source': defaultSource?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (customerAddress.isPresent) 'customer_address': customerAddress.value?.toJson(),
+  if (customerEmail.isPresent) 'customer_email': customerEmail.value,
+  if (customerName.isPresent) 'customer_name': customerName.value,
+  if (customerPhone.isPresent) 'customer_phone': customerPhone.value,
+  if (customerShipping.isPresent) 'customer_shipping': customerShipping.value?.toJson(),
+  if (customerTaxExempt.isPresent) 'customer_tax_exempt': customerTaxExempt.value?.toJson(),
+  if (customerTaxIds.isPresent) 'customer_tax_ids': customerTaxIds.value?.map((e) => e.toJson()).toList(),
+  if (defaultPaymentMethod.isPresent) 'default_payment_method': defaultPaymentMethod.value?.toJson(),
+  if (defaultSource.isPresent) 'default_source': defaultSource.value?.toJson(),
   'default_tax_rates': defaultTaxRates.map((e) => e.toJson()).toList(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'discounts': discounts.map((e) => e.toJson()).toList(),
-  'due_date': ?dueDate,
-  'effective_at': ?effectiveAt,
-  'ending_balance': ?endingBalance,
-  'footer': ?footer,
-  if (fromInvoice != null) 'from_invoice': fromInvoice?.toJson(),
-  'hosted_invoice_url': ?hostedInvoiceUrl,
+  if (dueDate.isPresent) 'due_date': dueDate.value,
+  if (effectiveAt.isPresent) 'effective_at': effectiveAt.value,
+  if (endingBalance.isPresent) 'ending_balance': endingBalance.value,
+  if (footer.isPresent) 'footer': footer.value,
+  if (fromInvoice.isPresent) 'from_invoice': fromInvoice.value?.toJson(),
+  if (hostedInvoiceUrl.isPresent) 'hosted_invoice_url': hostedInvoiceUrl.value,
   'id': id,
-  'invoice_pdf': ?invoicePdf,
+  if (invoicePdf.isPresent) 'invoice_pdf': invoicePdf.value,
   'issuer': issuer.toJson(),
-  if (lastFinalizationError != null) 'last_finalization_error': lastFinalizationError?.toJson(),
-  if (latestRevision != null) 'latest_revision': latestRevision?.toJson(),
+  if (lastFinalizationError.isPresent) 'last_finalization_error': lastFinalizationError.value?.toJson(),
+  if (latestRevision.isPresent) 'latest_revision': latestRevision.value?.toJson(),
   'lines': lines.toJson(),
   'livemode': livemode,
-  'metadata': ?metadata,
-  'next_payment_attempt': ?nextPaymentAttempt,
-  'number': ?number,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (nextPaymentAttempt.isPresent) 'next_payment_attempt': nextPaymentAttempt.value,
+  if (number.isPresent) 'number': number.value,
   'object': object.toJson(),
-  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
-  if (parent != null) 'parent': parent?.toJson(),
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'payment_settings': paymentSettings.toJson(),
   if (payments != null) 'payments': payments?.toJson(),
   'period_end': periodEnd,
   'period_start': periodStart,
   'post_payment_credit_notes_amount': postPaymentCreditNotesAmount,
   'pre_payment_credit_notes_amount': prePaymentCreditNotesAmount,
-  'receipt_number': ?receiptNumber,
-  if (rendering != null) 'rendering': rendering?.toJson(),
-  if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
-  if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
+  if (receiptNumber.isPresent) 'receipt_number': receiptNumber.value,
+  if (rendering.isPresent) 'rendering': rendering.value?.toJson(),
+  if (shippingCost.isPresent) 'shipping_cost': shippingCost.value?.toJson(),
+  if (shippingDetails.isPresent) 'shipping_details': shippingDetails.value?.toJson(),
   'starting_balance': startingBalance,
-  'statement_descriptor': ?statementDescriptor,
-  if (status != null) 'status': status?.toJson(),
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
+  if (status.isPresent) 'status': status.value?.toJson(),
   'status_transitions': statusTransitions.toJson(),
   'subtotal': subtotal,
-  'subtotal_excluding_tax': ?subtotalExcludingTax,
-  if (testClock != null) 'test_clock': testClock?.toJson(),
+  if (subtotalExcludingTax.isPresent) 'subtotal_excluding_tax': subtotalExcludingTax.value,
+  if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
   if (thresholdReason != null) 'threshold_reason': thresholdReason?.toJson(),
   'total': total,
-  if (totalDiscountAmounts != null) 'total_discount_amounts': totalDiscountAmounts?.map((e) => e.toJson()).toList(),
-  'total_excluding_tax': ?totalExcludingTax,
-  if (totalPretaxCreditAmounts != null) 'total_pretax_credit_amounts': totalPretaxCreditAmounts?.map((e) => e.toJson()).toList(),
-  if (totalTaxes != null) 'total_taxes': totalTaxes?.map((e) => e.toJson()).toList(),
-  'webhooks_delivered_at': ?webhooksDeliveredAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_due') && json['amount_due'] is num &&
+  if (totalDiscountAmounts.isPresent) 'total_discount_amounts': totalDiscountAmounts.value?.map((e) => e.toJson()).toList(),
+  if (totalExcludingTax.isPresent) 'total_excluding_tax': totalExcludingTax.value,
+  if (totalPretaxCreditAmounts.isPresent) 'total_pretax_credit_amounts': totalPretaxCreditAmounts.value?.map((e) => e.toJson()).toList(),
+  if (totalTaxes.isPresent) 'total_taxes': totalTaxes.value?.map((e) => e.toJson()).toList(),
+  if (webhooksDeliveredAt.isPresent) 'webhooks_delivered_at': webhooksDeliveredAt.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_due') && json['amount_due'] is num &&
       json.containsKey('amount_overpaid') && json['amount_overpaid'] is num &&
       json.containsKey('amount_paid') && json['amount_paid'] is num &&
       json.containsKey('amount_remaining') && json['amount_remaining'] is num &&
@@ -838,147 +833,148 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('starting_balance') && json['starting_balance'] is num &&
       json.containsKey('status_transitions') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
-      json.containsKey('total') && json['total'] is num; } 
+      json.containsKey('total') && json['total'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final accountCountry$ = accountCountry;
+List<String> validate() {final errors = <String>[];
+final accountCountry$ = accountCountry.value;
 if (accountCountry$ != null) {
   if (accountCountry$.runes.length > 5000) { errors.add('accountCountry: length must be <= 5000'); }
 }
-final accountName$ = accountName;
+final accountName$ = accountName.value;
 if (accountName$ != null) {
   if (accountName$.runes.length > 5000) { errors.add('accountName: length must be <= 5000'); }
 }
-final customerAccount$ = customerAccount;
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-final customerEmail$ = customerEmail;
+final customerEmail$ = customerEmail.value;
 if (customerEmail$ != null) {
   if (customerEmail$.runes.length > 5000) { errors.add('customerEmail: length must be <= 5000'); }
 }
-final customerName$ = customerName;
+final customerName$ = customerName.value;
 if (customerName$ != null) {
   if (customerName$.runes.length > 5000) { errors.add('customerName: length must be <= 5000'); }
 }
-final customerPhone$ = customerPhone;
+final customerPhone$ = customerPhone.value;
 if (customerPhone$ != null) {
   if (customerPhone$.runes.length > 5000) { errors.add('customerPhone: length must be <= 5000'); }
 }
-final description$ = description;
+final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-final footer$ = footer;
+final footer$ = footer.value;
 if (footer$ != null) {
   if (footer$.runes.length > 5000) { errors.add('footer: length must be <= 5000'); }
 }
-final hostedInvoiceUrl$ = hostedInvoiceUrl;
+final hostedInvoiceUrl$ = hostedInvoiceUrl.value;
 if (hostedInvoiceUrl$ != null) {
   if (hostedInvoiceUrl$.runes.length > 5000) { errors.add('hostedInvoiceUrl: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final invoicePdf$ = invoicePdf;
+final invoicePdf$ = invoicePdf.value;
 if (invoicePdf$ != null) {
   if (invoicePdf$.runes.length > 5000) { errors.add('invoicePdf: length must be <= 5000'); }
 }
-final number$ = number;
+final number$ = number.value;
 if (number$ != null) {
   if (number$.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
 }
-final receiptNumber$ = receiptNumber;
+final receiptNumber$ = receiptNumber.value;
 if (receiptNumber$ != null) {
   if (receiptNumber$.runes.length > 5000) { errors.add('receiptNumber: length must be <= 5000'); }
 }
-final statementDescriptor$ = statementDescriptor;
+final statementDescriptor$ = statementDescriptor.value;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
-return errors; } 
-Invoice copyWith({String? Function()? accountCountry, String? Function()? accountName, List<InvoiceAccountTaxIds>? Function()? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, BillingPortalConfigurationApplication? Function()? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, int? Function()? automaticallyFinalizesAt, BillingReason? Function()? billingReason, InvoiceCollectionMethod? collectionMethod, InvoicesResourceConfirmationSecret? Function()? confirmationSecret, int? created, String? currency, List<InvoiceSettingCustomField>? Function()? customFields, BankAccountCustomer? customer, String? Function()? customerAccount, Address? Function()? customerAddress, String? Function()? customerEmail, String? Function()? customerName, String? Function()? customerPhone, Shipping? Function()? customerShipping, InvoiceCustomerTaxExempt? Function()? customerTaxExempt, List<InvoicesResourceInvoiceTaxId>? Function()? customerTaxIds, DefaultPaymentMethod? Function()? defaultPaymentMethod, CustomerDefaultSource? Function()? defaultSource, List<TaxRate>? defaultTaxRates, String? Function()? description, List<InvoiceDiscounts>? discounts, int? Function()? dueDate, int? Function()? effectiveAt, int? Function()? endingBalance, String? Function()? footer, InvoicesResourceFromInvoice? Function()? fromInvoice, String? Function()? hostedInvoiceUrl, String? id, String? Function()? invoicePdf, ConnectAccountReference? issuer, Errors? Function()? lastFinalizationError, LatestRevision? Function()? latestRevision, InvoiceLines? lines, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? nextPaymentAttempt, String? Function()? number, DeletedInvoiceObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, BillingBillResourceInvoicingParentsInvoiceParent? Function()? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, String? Function()? receiptNumber, InvoicesResourceInvoiceRendering? Function()? rendering, InvoicesResourceShippingCost? Function()? shippingCost, Shipping? Function()? shippingDetails, int? startingBalance, String? Function()? statementDescriptor, InvoiceStatus? Function()? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, int? Function()? subtotalExcludingTax, TestClock? Function()? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, List<DiscountsResourceDiscountAmount>? Function()? totalDiscountAmounts, int? Function()? totalExcludingTax, List<InvoicesResourcePretaxCreditAmount>? Function()? totalPretaxCreditAmounts, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, int? Function()? webhooksDeliveredAt, }) { return Invoice(
-  accountCountry: accountCountry != null ? accountCountry() : this.accountCountry,
-  accountName: accountName != null ? accountName() : this.accountName,
-  accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
+return errors;}
+Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accountName, Omittable<List<InvoiceAccountTaxIds>?>? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, Omittable<BillingPortalConfigurationApplication?>? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, Omittable<int?>? automaticallyFinalizesAt, Omittable<BillingReason?>? billingReason, InvoiceCollectionMethod? collectionMethod, Omittable<InvoicesResourceConfirmationSecret?>? confirmationSecret, int? created, String? currency, Omittable<List<InvoiceSettingCustomField>?>? customFields, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<Address?>? customerAddress, Omittable<String?>? customerEmail, Omittable<String?>? customerName, Omittable<String?>? customerPhone, Omittable<Shipping?>? customerShipping, Omittable<InvoiceCustomerTaxExempt?>? customerTaxExempt, Omittable<List<InvoicesResourceInvoiceTaxId>?>? customerTaxIds, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<CustomerDefaultSource?>? defaultSource, List<TaxRate>? defaultTaxRates, Omittable<String?>? description, List<InvoiceDiscounts>? discounts, Omittable<int?>? dueDate, Omittable<int?>? effectiveAt, Omittable<int?>? endingBalance, Omittable<String?>? footer, Omittable<InvoicesResourceFromInvoice?>? fromInvoice, Omittable<String?>? hostedInvoiceUrl, String? id, Omittable<String?>? invoicePdf, ConnectAccountReference? issuer, Omittable<Errors?>? lastFinalizationError, Omittable<LatestRevision?>? latestRevision, InvoiceLines? lines, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<int?>? nextPaymentAttempt, Omittable<String?>? number, DeletedInvoiceObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<BillingBillResourceInvoicingParentsInvoiceParent?>? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, Omittable<String?>? receiptNumber, Omittable<InvoicesResourceInvoiceRendering?>? rendering, Omittable<InvoicesResourceShippingCost?>? shippingCost, Omittable<Shipping?>? shippingDetails, int? startingBalance, Omittable<String?>? statementDescriptor, Omittable<InvoiceStatus?>? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, Omittable<int?>? subtotalExcludingTax, Omittable<TestClock?>? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, Omittable<List<DiscountsResourceDiscountAmount>?>? totalDiscountAmounts, Omittable<int?>? totalExcludingTax, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? totalPretaxCreditAmounts, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, Omittable<int?>? webhooksDeliveredAt, }) {return Invoice(
+  accountCountry: accountCountry ?? this.accountCountry,
+  accountName: accountName ?? this.accountName,
+  accountTaxIds: accountTaxIds ?? this.accountTaxIds,
   amountDue: amountDue ?? this.amountDue,
   amountOverpaid: amountOverpaid ?? this.amountOverpaid,
   amountPaid: amountPaid ?? this.amountPaid,
   amountRemaining: amountRemaining ?? this.amountRemaining,
   amountShipping: amountShipping ?? this.amountShipping,
-  application: application != null ? application() : this.application,
+  application: application ?? this.application,
   attemptCount: attemptCount ?? this.attemptCount,
   attempted: attempted ?? this.attempted,
   autoAdvance: autoAdvance ?? this.autoAdvance,
   automaticTax: automaticTax ?? this.automaticTax,
-  automaticallyFinalizesAt: automaticallyFinalizesAt != null ? automaticallyFinalizesAt() : this.automaticallyFinalizesAt,
-  billingReason: billingReason != null ? billingReason() : this.billingReason,
+  automaticallyFinalizesAt: automaticallyFinalizesAt ?? this.automaticallyFinalizesAt,
+  billingReason: billingReason ?? this.billingReason,
   collectionMethod: collectionMethod ?? this.collectionMethod,
-  confirmationSecret: confirmationSecret != null ? confirmationSecret() : this.confirmationSecret,
+  confirmationSecret: confirmationSecret ?? this.confirmationSecret,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  customFields: customFields != null ? customFields() : this.customFields,
+  customFields: customFields ?? this.customFields,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  customerAddress: customerAddress != null ? customerAddress() : this.customerAddress,
-  customerEmail: customerEmail != null ? customerEmail() : this.customerEmail,
-  customerName: customerName != null ? customerName() : this.customerName,
-  customerPhone: customerPhone != null ? customerPhone() : this.customerPhone,
-  customerShipping: customerShipping != null ? customerShipping() : this.customerShipping,
-  customerTaxExempt: customerTaxExempt != null ? customerTaxExempt() : this.customerTaxExempt,
-  customerTaxIds: customerTaxIds != null ? customerTaxIds() : this.customerTaxIds,
-  defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,
-  defaultSource: defaultSource != null ? defaultSource() : this.defaultSource,
+  customerAccount: customerAccount ?? this.customerAccount,
+  customerAddress: customerAddress ?? this.customerAddress,
+  customerEmail: customerEmail ?? this.customerEmail,
+  customerName: customerName ?? this.customerName,
+  customerPhone: customerPhone ?? this.customerPhone,
+  customerShipping: customerShipping ?? this.customerShipping,
+  customerTaxExempt: customerTaxExempt ?? this.customerTaxExempt,
+  customerTaxIds: customerTaxIds ?? this.customerTaxIds,
+  defaultPaymentMethod: defaultPaymentMethod ?? this.defaultPaymentMethod,
+  defaultSource: defaultSource ?? this.defaultSource,
   defaultTaxRates: defaultTaxRates ?? this.defaultTaxRates,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   discounts: discounts ?? this.discounts,
-  dueDate: dueDate != null ? dueDate() : this.dueDate,
-  effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,
-  endingBalance: endingBalance != null ? endingBalance() : this.endingBalance,
-  footer: footer != null ? footer() : this.footer,
-  fromInvoice: fromInvoice != null ? fromInvoice() : this.fromInvoice,
-  hostedInvoiceUrl: hostedInvoiceUrl != null ? hostedInvoiceUrl() : this.hostedInvoiceUrl,
+  dueDate: dueDate ?? this.dueDate,
+  effectiveAt: effectiveAt ?? this.effectiveAt,
+  endingBalance: endingBalance ?? this.endingBalance,
+  footer: footer ?? this.footer,
+  fromInvoice: fromInvoice ?? this.fromInvoice,
+  hostedInvoiceUrl: hostedInvoiceUrl ?? this.hostedInvoiceUrl,
   id: id ?? this.id,
-  invoicePdf: invoicePdf != null ? invoicePdf() : this.invoicePdf,
+  invoicePdf: invoicePdf ?? this.invoicePdf,
   issuer: issuer ?? this.issuer,
-  lastFinalizationError: lastFinalizationError != null ? lastFinalizationError() : this.lastFinalizationError,
-  latestRevision: latestRevision != null ? latestRevision() : this.latestRevision,
+  lastFinalizationError: lastFinalizationError ?? this.lastFinalizationError,
+  latestRevision: latestRevision ?? this.latestRevision,
   lines: lines ?? this.lines,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
-  nextPaymentAttempt: nextPaymentAttempt != null ? nextPaymentAttempt() : this.nextPaymentAttempt,
-  number: number != null ? number() : this.number,
+  metadata: metadata ?? this.metadata,
+  nextPaymentAttempt: nextPaymentAttempt ?? this.nextPaymentAttempt,
+  number: number ?? this.number,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
-  parent: parent != null ? parent() : this.parent,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
+  parent: parent ?? this.parent,
   paymentSettings: paymentSettings ?? this.paymentSettings,
   payments: payments != null ? payments() : this.payments,
   periodEnd: periodEnd ?? this.periodEnd,
   periodStart: periodStart ?? this.periodStart,
   postPaymentCreditNotesAmount: postPaymentCreditNotesAmount ?? this.postPaymentCreditNotesAmount,
   prePaymentCreditNotesAmount: prePaymentCreditNotesAmount ?? this.prePaymentCreditNotesAmount,
-  receiptNumber: receiptNumber != null ? receiptNumber() : this.receiptNumber,
-  rendering: rendering != null ? rendering() : this.rendering,
-  shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
-  shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
+  receiptNumber: receiptNumber ?? this.receiptNumber,
+  rendering: rendering ?? this.rendering,
+  shippingCost: shippingCost ?? this.shippingCost,
+  shippingDetails: shippingDetails ?? this.shippingDetails,
   startingBalance: startingBalance ?? this.startingBalance,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-  status: status != null ? status() : this.status,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
+  status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
   subtotal: subtotal ?? this.subtotal,
-  subtotalExcludingTax: subtotalExcludingTax != null ? subtotalExcludingTax() : this.subtotalExcludingTax,
-  testClock: testClock != null ? testClock() : this.testClock,
+  subtotalExcludingTax: subtotalExcludingTax ?? this.subtotalExcludingTax,
+  testClock: testClock ?? this.testClock,
   thresholdReason: thresholdReason != null ? thresholdReason() : this.thresholdReason,
   total: total ?? this.total,
-  totalDiscountAmounts: totalDiscountAmounts != null ? totalDiscountAmounts() : this.totalDiscountAmounts,
-  totalExcludingTax: totalExcludingTax != null ? totalExcludingTax() : this.totalExcludingTax,
-  totalPretaxCreditAmounts: totalPretaxCreditAmounts != null ? totalPretaxCreditAmounts() : this.totalPretaxCreditAmounts,
-  totalTaxes: totalTaxes != null ? totalTaxes() : this.totalTaxes,
-  webhooksDeliveredAt: webhooksDeliveredAt != null ? webhooksDeliveredAt() : this.webhooksDeliveredAt,
-); } 
+  totalDiscountAmounts: totalDiscountAmounts ?? this.totalDiscountAmounts,
+  totalExcludingTax: totalExcludingTax ?? this.totalExcludingTax,
+  totalPretaxCreditAmounts: totalPretaxCreditAmounts ?? this.totalPretaxCreditAmounts,
+  totalTaxes: totalTaxes ?? this.totalTaxes,
+  webhooksDeliveredAt: webhooksDeliveredAt ?? this.webhooksDeliveredAt,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Invoice &&
           accountCountry == other.accountCountry &&
           accountName == other.accountName &&
-          listEquals(accountTaxIds, other.accountTaxIds) &&
+          accountTaxIds.isPresent == other.accountTaxIds.isPresent &&
+          listEquals(accountTaxIds.value, other.accountTaxIds.value) &&
           amountDue == other.amountDue &&
           amountOverpaid == other.amountOverpaid &&
           amountPaid == other.amountPaid &&
@@ -995,7 +991,8 @@ Invoice copyWith({String? Function()? accountCountry, String? Function()? accoun
           confirmationSecret == other.confirmationSecret &&
           created == other.created &&
           currency == other.currency &&
-          listEquals(customFields, other.customFields) &&
+          customFields.isPresent == other.customFields.isPresent &&
+          listEquals(customFields.value, other.customFields.value) &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           customerAddress == other.customerAddress &&
@@ -1004,7 +1001,8 @@ Invoice copyWith({String? Function()? accountCountry, String? Function()? accoun
           customerPhone == other.customerPhone &&
           customerShipping == other.customerShipping &&
           customerTaxExempt == other.customerTaxExempt &&
-          listEquals(customerTaxIds, other.customerTaxIds) &&
+          customerTaxIds.isPresent == other.customerTaxIds.isPresent &&
+          listEquals(customerTaxIds.value, other.customerTaxIds.value) &&
           defaultPaymentMethod == other.defaultPaymentMethod &&
           defaultSource == other.defaultSource &&
           listEquals(defaultTaxRates, other.defaultTaxRates) &&
@@ -1048,14 +1046,17 @@ Invoice copyWith({String? Function()? accountCountry, String? Function()? accoun
           testClock == other.testClock &&
           thresholdReason == other.thresholdReason &&
           total == other.total &&
-          listEquals(totalDiscountAmounts, other.totalDiscountAmounts) &&
+          totalDiscountAmounts.isPresent == other.totalDiscountAmounts.isPresent &&
+          listEquals(totalDiscountAmounts.value, other.totalDiscountAmounts.value) &&
           totalExcludingTax == other.totalExcludingTax &&
-          listEquals(totalPretaxCreditAmounts, other.totalPretaxCreditAmounts) &&
-          listEquals(totalTaxes, other.totalTaxes) &&
+          totalPretaxCreditAmounts.isPresent == other.totalPretaxCreditAmounts.isPresent &&
+          listEquals(totalPretaxCreditAmounts.value, other.totalPretaxCreditAmounts.value) &&
+          totalTaxes.isPresent == other.totalTaxes.isPresent &&
+          listEquals(totalTaxes.value, other.totalTaxes.value) &&
           webhooksDeliveredAt == other.webhooksDeliveredAt;
 
-@override int get hashCode => Object.hashAll([accountCountry, accountName, Object.hashAll(accountTaxIds ?? const []), amountDue, amountOverpaid, amountPaid, amountRemaining, amountShipping, application, attemptCount, attempted, autoAdvance, automaticTax, automaticallyFinalizesAt, billingReason, collectionMethod, confirmationSecret, created, currency, Object.hashAll(customFields ?? const []), customer, customerAccount, customerAddress, customerEmail, customerName, customerPhone, customerShipping, customerTaxExempt, Object.hashAll(customerTaxIds ?? const []), defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates), description, Object.hashAll(discounts), dueDate, effectiveAt, endingBalance, footer, fromInvoice, hostedInvoiceUrl, id, invoicePdf, issuer, lastFinalizationError, latestRevision, lines, livemode, metadata, nextPaymentAttempt, number, object, onBehalfOf, parent, paymentSettings, payments, periodEnd, periodStart, postPaymentCreditNotesAmount, prePaymentCreditNotesAmount, receiptNumber, rendering, shippingCost, shippingDetails, startingBalance, statementDescriptor, status, statusTransitions, subtotal, subtotalExcludingTax, testClock, thresholdReason, total, Object.hashAll(totalDiscountAmounts ?? const []), totalExcludingTax, Object.hashAll(totalPretaxCreditAmounts ?? const []), Object.hashAll(totalTaxes ?? const []), webhooksDeliveredAt]);
+@override int get hashCode => Object.hashAll([accountCountry, accountName, Object.hashAll(accountTaxIds.value ?? const []), amountDue, amountOverpaid, amountPaid, amountRemaining, amountShipping, application, attemptCount, attempted, autoAdvance, automaticTax, automaticallyFinalizesAt, billingReason, collectionMethod, confirmationSecret, created, currency, Object.hashAll(customFields.value ?? const []), customer, customerAccount, customerAddress, customerEmail, customerName, customerPhone, customerShipping, customerTaxExempt, Object.hashAll(customerTaxIds.value ?? const []), defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates), description, Object.hashAll(discounts), dueDate, effectiveAt, endingBalance, footer, fromInvoice, hostedInvoiceUrl, id, invoicePdf, issuer, lastFinalizationError, latestRevision, lines, livemode, metadata, nextPaymentAttempt, number, object, onBehalfOf, parent, paymentSettings, payments, periodEnd, periodStart, postPaymentCreditNotesAmount, prePaymentCreditNotesAmount, receiptNumber, rendering, shippingCost, shippingDetails, startingBalance, statementDescriptor, status, statusTransitions, subtotal, subtotalExcludingTax, testClock, thresholdReason, total, Object.hashAll(totalDiscountAmounts.value ?? const []), totalExcludingTax, Object.hashAll(totalPretaxCreditAmounts.value ?? const []), Object.hashAll(totalTaxes.value ?? const []), webhooksDeliveredAt]);
 
 @override String toString() => 'Invoice(\n  accountCountry: $accountCountry,\n  accountName: $accountName,\n  accountTaxIds: $accountTaxIds,\n  amountDue: $amountDue,\n  amountOverpaid: $amountOverpaid,\n  amountPaid: $amountPaid,\n  amountRemaining: $amountRemaining,\n  amountShipping: $amountShipping,\n  application: $application,\n  attemptCount: $attemptCount,\n  attempted: $attempted,\n  autoAdvance: $autoAdvance,\n  automaticTax: $automaticTax,\n  automaticallyFinalizesAt: $automaticallyFinalizesAt,\n  billingReason: $billingReason,\n  collectionMethod: $collectionMethod,\n  confirmationSecret: $confirmationSecret,\n  created: $created,\n  currency: $currency,\n  customFields: $customFields,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerAddress: $customerAddress,\n  customerEmail: $customerEmail,\n  customerName: $customerName,\n  customerPhone: $customerPhone,\n  customerShipping: $customerShipping,\n  customerTaxExempt: $customerTaxExempt,\n  customerTaxIds: $customerTaxIds,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  defaultSource: $defaultSource,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  dueDate: $dueDate,\n  effectiveAt: $effectiveAt,\n  endingBalance: $endingBalance,\n  footer: $footer,\n  fromInvoice: $fromInvoice,\n  hostedInvoiceUrl: $hostedInvoiceUrl,\n  id: $id,\n  invoicePdf: $invoicePdf,\n  issuer: $issuer,\n  lastFinalizationError: $lastFinalizationError,\n  latestRevision: $latestRevision,\n  lines: $lines,\n  livemode: $livemode,\n  metadata: $metadata,\n  nextPaymentAttempt: $nextPaymentAttempt,\n  number: $number,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  parent: $parent,\n  paymentSettings: $paymentSettings,\n  payments: $payments,\n  periodEnd: $periodEnd,\n  periodStart: $periodStart,\n  postPaymentCreditNotesAmount: $postPaymentCreditNotesAmount,\n  prePaymentCreditNotesAmount: $prePaymentCreditNotesAmount,\n  receiptNumber: $receiptNumber,\n  rendering: $rendering,\n  shippingCost: $shippingCost,\n  shippingDetails: $shippingDetails,\n  startingBalance: $startingBalance,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  subtotal: $subtotal,\n  subtotalExcludingTax: $subtotalExcludingTax,\n  testClock: $testClock,\n  thresholdReason: $thresholdReason,\n  total: $total,\n  totalDiscountAmounts: $totalDiscountAmounts,\n  totalExcludingTax: $totalExcludingTax,\n  totalPretaxCreditAmounts: $totalPretaxCreditAmounts,\n  totalTaxes: $totalTaxes,\n  webhooksDeliveredAt: $webhooksDeliveredAt,\n)';
 
- }
+}

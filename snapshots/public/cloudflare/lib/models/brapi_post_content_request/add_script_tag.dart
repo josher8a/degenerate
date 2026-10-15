@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddScriptTag {const AddScriptTag({this.content, this.id, this.type, this.url, });
 
-factory AddScriptTag.fromJson(Map<String, dynamic> json) { return AddScriptTag(
+factory AddScriptTag.fromJson(Map<String, dynamic> json) {return AddScriptTag(
   content: json['content'] as String?,
   id: json['id'] as String?,
   type: json['type'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final String? content;
 
@@ -18,19 +18,19 @@ final String? type;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': ?content,
   'id': ?id,
   'type': ?type,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'id', 'type', 'url'}.contains(key)); } 
-AddScriptTag copyWith({String? Function()? content, String? Function()? id, String? Function()? type, String? Function()? url, }) { return AddScriptTag(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content', 'id', 'type', 'url'}.contains(key));}
+AddScriptTag copyWith({String? Function()? content, String? Function()? id, String? Function()? type, String? Function()? url, }) {return AddScriptTag(
   content: content != null ? content() : this.content,
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddScriptTag &&
           content == other.content &&
@@ -42,4 +42,4 @@ AddScriptTag copyWith({String? Function()? content, String? Function()? id, Stri
 
 @override String toString() => 'AddScriptTag(content: $content, id: $id, type: $type, url: $url)';
 
- }
+}

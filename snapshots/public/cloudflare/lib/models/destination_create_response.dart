@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_messages.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result.dart';@immutable final class DestinationCreateResponse {const DestinationCreateResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory DestinationCreateResponse.fromJson(Map<String, dynamic> json) { return DestinationCreateResponse(
+factory DestinationCreateResponse.fromJson(Map<String, dynamic> json) {return DestinationCreateResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DestinationCreateResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
@@ -18,22 +18,22 @@ final DestinationCreateResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DestinationCreateResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponseMessages>? messages, DestinationCreateResponseResult? result, bool? success, }) { return DestinationCreateResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DestinationCreateResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponseMessages>? messages, DestinationCreateResponseResult? result, bool? success, }) {return DestinationCreateResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateResponse &&
           listEquals(errors, other.errors) &&
@@ -45,4 +45,4 @@ DestinationCreateResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse
 
 @override String toString() => 'DestinationCreateResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

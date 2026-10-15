@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_paused.dart';import 'package:pub_cloudflare/models/zones_type.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_account.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_meta.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_owner.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_plan.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_tenant.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_tenant_unit.dart';/// The zone status on Cloudflare.
 sealed class ZonesZoneStatus {const ZonesZoneStatus();
 
-factory ZonesZoneStatus.fromJson(String json) { return switch (json) {
+factory ZonesZoneStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
   'moved' => moved,
   _ => ZonesZoneStatus$Unknown(json),
-}; }
+};}
 
 static const ZonesZoneStatus initializing = ZonesZoneStatus$initializing._();
 
@@ -23,36 +23,36 @@ static const ZonesZoneStatus moved = ZonesZoneStatus$moved._();
 static const List<ZonesZoneStatus> values = [initializing, pending, active, moved];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'pending' => 'pending',
   'active' => 'active',
   'moved' => 'moved',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesZoneStatus$Unknown; } 
+bool get isUnknown {return this is ZonesZoneStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() moved, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() moved, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesZoneStatus$initializing() => initializing(),
       ZonesZoneStatus$pending() => pending(),
       ZonesZoneStatus$active() => active(),
       ZonesZoneStatus$moved() => moved(),
       ZonesZoneStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? moved, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? moved, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesZoneStatus$initializing() => initializing != null ? initializing() : orElse(value),
       ZonesZoneStatus$pending() => pending != null ? pending() : orElse(value),
       ZonesZoneStatus$active() => active != null ? active() : orElse(value),
       ZonesZoneStatus$moved() => moved != null ? moved() : orElse(value),
       ZonesZoneStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesZoneStatus($value)';
 
- }
+}
 @immutable final class ZonesZoneStatus$initializing extends ZonesZoneStatus {const ZonesZoneStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class ZonesZoneStatus$pending extends ZonesZoneStatus {const ZonesZoneStatus$pending._();
 
 @override String get value => 'pending';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class ZonesZoneStatus$active extends ZonesZoneStatus {const ZonesZoneStatus$active._();
 
 @override String get value => 'active';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class ZonesZoneStatus$moved extends ZonesZoneStatus {const ZonesZoneStatus$moved._();
 
 @override String get value => 'moved';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'moved'.hashCode;
 
- }
+}
 @immutable final class ZonesZoneStatus$Unknown extends ZonesZoneStatus {const ZonesZoneStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,10 +98,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, required this.plan, this.cnameSuffix, this.paused, this.permissions, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers = const [], this.verificationKey, });
+}
+@immutable final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, required this.plan, this.cnameSuffix, this.paused, this.permissions, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers, this.verificationKey, });
 
-factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
+factory ZonesZone.fromJson(Map<String, dynamic> json) {return ZonesZone(
   account: ZonesZoneAccount.fromJson(json['account'] as Map<String, dynamic>),
   activatedOn: json['activated_on'] != null ? DateTime.parse(json['activated_on'] as String) : null,
   cnameSuffix: json['cname_suffix'] as String?,
@@ -123,9 +123,9 @@ factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
   tenant: json['tenant'] != null ? ZonesZoneTenant.fromJson(json['tenant'] as Map<String, dynamic>) : null,
   tenantUnit: json['tenant_unit'] != null ? ZonesZoneTenantUnit.fromJson(json['tenant_unit'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? ZonesType.fromJson(json['type'] as String) : null,
-  vanityNameServers: json.containsKey('vanity_name_servers') ? (json['vanity_name_servers'] as List<dynamic>).map((e) => e as String).toList() : const [],
+  vanityNameServers: (json['vanity_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   verificationKey: json['verification_key'] as String?,
-); }
+);}
 
 /// The account the zone belongs to.
 final ZonesZoneAccount account;
@@ -224,14 +224,17 @@ final ZonesType? type;
 /// An array of domains used for custom name servers. This is only available for Business and Enterprise plans.
 /// 
 /// Example: `[ns1.example.com, ns2.example.com]`
-final List<String> vanityNameServers;
+final List<String>? vanityNameServers;
 
 /// Verification key for partial zone setup.
 /// 
 /// Example: `'284344499-1084221259'`
 final String? verificationKey;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `vanityNameServers`, or its schema default when absent.
+List<String> get vanityNameServersOrDefault => vanityNameServers ?? const [];
+
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'activated_on': activatedOn?.toIso8601String(),
   'cname_suffix': ?cnameSuffix,
@@ -253,11 +256,11 @@ Map<String, dynamic> toJson() { return {
   if (tenant != null) 'tenant': tenant?.toJson(),
   if (tenantUnit != null) 'tenant_unit': tenantUnit?.toJson(),
   if (type != null) 'type': type?.toJson(),
-  'vanity_name_servers': vanityNameServers,
+  'vanity_name_servers': ?vanityNameServers,
   'verification_key': ?verificationKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
-      json.containsKey('activated_on') && json['activated_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
+      json.containsKey('activated_on') && (json['activated_on'] == null || json['activated_on'] is String) &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('development_mode') && json['development_mode'] is num &&
       json.containsKey('id') &&
@@ -265,21 +268,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('name_servers') &&
-      json.containsKey('original_dnshost') && json['original_dnshost'] is String &&
+      json.containsKey('original_dnshost') && (json['original_dnshost'] == null || json['original_dnshost'] is String) &&
       json.containsKey('original_name_servers') &&
-      json.containsKey('original_registrar') && json['original_registrar'] is String &&
+      json.containsKey('original_registrar') && (json['original_registrar'] == null || json['original_registrar'] is String) &&
       json.containsKey('owner') &&
-      json.containsKey('plan'); } 
+      json.containsKey('plan');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 253) { errors.add('name: length must be <= 253'); }
 if (!RegExp(r'^([a-zA-Z0-9][\-a-zA-Z0-9]*\.)+[\-a-zA-Z0-9]{2,20}$').hasMatch(name)) { errors.add(r'name: must match pattern ^([a-zA-Z0-9][\-a-zA-Z0-9]*\.)+[\-a-zA-Z0-9]{2,20}$'); }
 final originalDnshost$ = originalDnshost;
 if (originalDnshost$ != null) {
   if (originalDnshost$.runes.length > 50) { errors.add('originalDnshost: length must be <= 50'); }
 }
-return errors; } 
-ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String> Function()? vanityNameServers, String? Function()? verificationKey, }) { return ZonesZone(
+return errors;}
+ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String>? Function()? vanityNameServers, String? Function()? verificationKey, }) {return ZonesZone(
   account: account ?? this.account,
   activatedOn: activatedOn != null ? activatedOn() : this.activatedOn,
   cnameSuffix: cnameSuffix != null ? cnameSuffix() : this.cnameSuffix,
@@ -303,7 +306,7 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
   type: type != null ? type() : this.type,
   vanityNameServers: vanityNameServers != null ? vanityNameServers() : this.vanityNameServers,
   verificationKey: verificationKey != null ? verificationKey() : this.verificationKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZone &&
           account == other.account &&
@@ -330,8 +333,8 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
           listEquals(vanityNameServers, other.vanityNameServers) &&
           verificationKey == other.verificationKey;
 
-@override int get hashCode => Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers), verificationKey]);
+@override int get hashCode => Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers ?? const []), verificationKey]);
 
 @override String toString() => 'ZonesZone(\n  account: $account,\n  activatedOn: $activatedOn,\n  cnameSuffix: $cnameSuffix,\n  createdOn: $createdOn,\n  developmentMode: $developmentMode,\n  id: $id,\n  meta: $meta,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  nameServers: $nameServers,\n  originalDnshost: $originalDnshost,\n  originalNameServers: $originalNameServers,\n  originalRegistrar: $originalRegistrar,\n  owner: $owner,\n  paused: $paused,\n  permissions: $permissions,\n  plan: $plan,\n  status: $status,\n  tenant: $tenant,\n  tenantUnit: $tenantUnit,\n  type: $type,\n  vanityNameServers: $vanityNameServers,\n  verificationKey: $verificationKey,\n)';
 
- }
+}

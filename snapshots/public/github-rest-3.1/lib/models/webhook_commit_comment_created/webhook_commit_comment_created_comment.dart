@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';/// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
 @immutable final class WebhookCommitCommentCreatedComment {const WebhookCommitCommentCreatedComment({required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.path, required this.position, required this.updatedAt, required this.url, required this.user, this.reactions, });
 
-factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) { return WebhookCommitCommentCreatedComment(
+factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {return WebhookCommitCommentCreatedComment(
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   commitId: json['commit_id'] as String,
@@ -19,7 +19,7 @@ factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
@@ -57,7 +57,7 @@ final Uri url;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author_association': authorAssociation.toJson(),
   'body': body,
   'commit_id': commitId,
@@ -72,21 +72,21 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('line') && json['line'] is num &&
+      json.containsKey('line') && (json['line'] == null || json['line'] is num) &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('path') && json['path'] is String &&
-      json.containsKey('position') && json['position'] is num &&
+      json.containsKey('path') && (json['path'] == null || json['path'] is String) &&
+      json.containsKey('position') && (json['position'] == null || json['position'] is num) &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, DiscussionReactions? Function()? reactions, String? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
+      json.containsKey('user');}
+WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, DiscussionReactions? Function()? reactions, String? updatedAt, Uri? url, DiscussionUser? Function()? user, }) {return WebhookCommitCommentCreatedComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,
@@ -101,7 +101,7 @@ WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociatio
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCommitCommentCreatedComment &&
           authorAssociation == other.authorAssociation &&
@@ -123,4 +123,4 @@ WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociatio
 
 @override String toString() => 'WebhookCommitCommentCreatedComment(\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  line: $line,\n  nodeId: $nodeId,\n  path: $path,\n  position: $position,\n  reactions: $reactions,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
- }
+}

@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicSchemasTunnelDeletedResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_deleted_response/magic_schemas_tunnel_deleted_response_result.dart';@immutable final class MagicSchemasTunnelDeletedResponse {const MagicSchemasTunnelDeletedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_messages2.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_deleted_response/magic_schemas_tunnel_deleted_response_result.dart';@immutable final class MagicSchemasTunnelDeletedResponse {const MagicSchemasTunnelDeletedResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicSchemasTunnelDeletedResponse.fromJson(Map<String, dynamic> json) { return MagicSchemasTunnelDeletedResponse(
-  result: json['result'] != null ? MagicSchemasTunnelDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory MagicSchemasTunnelDeletedResponse.fromJson(Map<String, dynamic> json) {return MagicSchemasTunnelDeletedResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: MagicSchemasTunnelDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final MagicSchemasTunnelDeletedResponseResult? result;
+final List<MagicMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MagicSchemasTunnelDeletedResponse copyWith({MagicSchemasTunnelDeletedResponseResult? Function()? result}) { return MagicSchemasTunnelDeletedResponse(
-  result: result != null ? result() : this.result,
-); } 
+final List<MagicMessages2> messages;
+
+final MagicSchemasTunnelDeletedResponseResult result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+MagicSchemasTunnelDeletedResponse copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, MagicSchemasTunnelDeletedResponseResult? result, bool? success, }) {return MagicSchemasTunnelDeletedResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSchemasTunnelDeletedResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'MagicSchemasTunnelDeletedResponse(result: $result)';
+@override String toString() => 'MagicSchemasTunnelDeletedResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_enabled.dart';import 'package:pub_github_rest_3_1/models/allowed_actions.dart';import 'package:pub_github_rest_3_1/models/selected_actions_url.dart';import 'package:pub_github_rest_3_1/models/sha_pinning_required.dart';@immutable final class ActionsRepositoryPermissions {const ActionsRepositoryPermissions({required this.enabled, this.allowedActions, this.selectedActionsUrl, this.shaPinningRequired, });
 
-factory ActionsRepositoryPermissions.fromJson(Map<String, dynamic> json) { return ActionsRepositoryPermissions(
+factory ActionsRepositoryPermissions.fromJson(Map<String, dynamic> json) {return ActionsRepositoryPermissions(
   enabled: ActionsEnabled.fromJson(json['enabled'] as bool),
   allowedActions: json['allowed_actions'] != null ? AllowedActions.fromJson(json['allowed_actions'] as String) : null,
   selectedActionsUrl: json['selected_actions_url'] != null ? SelectedActionsUrl.fromJson(json['selected_actions_url'] as String) : null,
   shaPinningRequired: json['sha_pinning_required'] != null ? ShaPinningRequired.fromJson(json['sha_pinning_required'] as bool) : null,
-); }
+);}
 
 /// Whether GitHub Actions is enabled on the repository.
 final ActionsEnabled enabled;
@@ -22,19 +22,19 @@ final SelectedActionsUrl? selectedActionsUrl;
 /// Whether actions must be pinned to a full-length commit SHA.
 final ShaPinningRequired? shaPinningRequired;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled.toJson(),
   if (allowedActions != null) 'allowed_actions': allowedActions?.toJson(),
   if (selectedActionsUrl != null) 'selected_actions_url': selectedActionsUrl?.toJson(),
   if (shaPinningRequired != null) 'sha_pinning_required': shaPinningRequired?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled'); } 
-ActionsRepositoryPermissions copyWith({ActionsEnabled? enabled, AllowedActions? Function()? allowedActions, SelectedActionsUrl? Function()? selectedActionsUrl, ShaPinningRequired? Function()? shaPinningRequired, }) { return ActionsRepositoryPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled');}
+ActionsRepositoryPermissions copyWith({ActionsEnabled? enabled, AllowedActions? Function()? allowedActions, SelectedActionsUrl? Function()? selectedActionsUrl, ShaPinningRequired? Function()? shaPinningRequired, }) {return ActionsRepositoryPermissions(
   enabled: enabled ?? this.enabled,
   allowedActions: allowedActions != null ? allowedActions() : this.allowedActions,
   selectedActionsUrl: selectedActionsUrl != null ? selectedActionsUrl() : this.selectedActionsUrl,
   shaPinningRequired: shaPinningRequired != null ? shaPinningRequired() : this.shaPinningRequired,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsRepositoryPermissions &&
           enabled == other.enabled &&
@@ -46,4 +46,4 @@ ActionsRepositoryPermissions copyWith({ActionsEnabled? enabled, AllowedActions? 
 
 @override String toString() => 'ActionsRepositoryPermissions(enabled: $enabled, allowedActions: $allowedActions, selectedActionsUrl: $selectedActionsUrl, shaPinningRequired: $shaPinningRequired)';
 
- }
+}

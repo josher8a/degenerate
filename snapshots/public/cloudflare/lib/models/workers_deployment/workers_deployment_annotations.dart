@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersDeploymentAnnotations {const WorkersDeploymentAnnotations({this.workersMessage, this.workersTriggeredBy, });
 
-factory WorkersDeploymentAnnotations.fromJson(Map<String, dynamic> json) { return WorkersDeploymentAnnotations(
+factory WorkersDeploymentAnnotations.fromJson(Map<String, dynamic> json) {return WorkersDeploymentAnnotations(
   workersMessage: json['workers/message'] as String?,
   workersTriggeredBy: json['workers/triggered_by'] as String?,
-); }
+);}
 
 /// Human-readable message about the deployment. Truncated to 100 bytes.
 /// 
@@ -18,22 +18,22 @@ final String? workersMessage;
 /// Example: `'deployment'`
 final String? workersTriggeredBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'workers/message': ?workersMessage,
   'workers/triggered_by': ?workersTriggeredBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/message', 'workers/triggered_by'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'workers/message', 'workers/triggered_by'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final workersMessage$ = workersMessage;
 if (workersMessage$ != null) {
   if (workersMessage$.runes.length > 100) { errors.add('workersMessage: length must be <= 100'); }
 }
-return errors; } 
-WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTriggeredBy, }) { return WorkersDeploymentAnnotations(
+return errors;}
+WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTriggeredBy, }) {return WorkersDeploymentAnnotations(
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTriggeredBy: workersTriggeredBy != null ? workersTriggeredBy() : this.workersTriggeredBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDeploymentAnnotations &&
           workersMessage == other.workersMessage &&
@@ -43,4 +43,4 @@ WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, Strin
 
 @override String toString() => 'WorkersDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)';
 
- }
+}

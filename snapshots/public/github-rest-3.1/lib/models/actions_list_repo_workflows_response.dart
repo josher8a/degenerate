@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow.dart';@immutable final class ActionsListRepoWorkflowsResponse {const ActionsListRepoWorkflowsResponse({required this.totalCount, required this.workflows, });
 
-factory ActionsListRepoWorkflowsResponse.fromJson(Map<String, dynamic> json) { return ActionsListRepoWorkflowsResponse(
+factory ActionsListRepoWorkflowsResponse.fromJson(Map<String, dynamic> json) {return ActionsListRepoWorkflowsResponse(
   totalCount: (json['total_count'] as num).toInt(),
   workflows: (json['workflows'] as List<dynamic>).map((e) => Workflow.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<Workflow> workflows;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'workflows': workflows.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('workflows'); } 
-ActionsListRepoWorkflowsResponse copyWith({int? totalCount, List<Workflow>? workflows, }) { return ActionsListRepoWorkflowsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('workflows');}
+ActionsListRepoWorkflowsResponse copyWith({int? totalCount, List<Workflow>? workflows, }) {return ActionsListRepoWorkflowsResponse(
   totalCount: totalCount ?? this.totalCount,
   workflows: workflows ?? this.workflows,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListRepoWorkflowsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListRepoWorkflowsResponse copyWith({int? totalCount, List<Workflow>? work
 
 @override String toString() => 'ActionsListRepoWorkflowsResponse(totalCount: $totalCount, workflows: $workflows)';
 
- }
+}

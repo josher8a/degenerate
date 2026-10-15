@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseCollection15
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx_result_info.dart';import 'package:pub_cloudflare/models/dns_settings_messages2.dart';@immutable final class ResponseCollection15 {const ResponseCollection15({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/dns_settings_messages2.dart';@immutable final class ResponseCollection15 {const ResponseCollection15({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
-factory ResponseCollection15.fromJson(Map<String, dynamic> json) { return ResponseCollection15(
+factory ResponseCollection15.fromJson(Map<String, dynamic> json) {return ResponseCollection15(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsSettingsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnsSettingsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+  resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+);}
 
 final List<DnsSettingsMessages2> errors;
 
@@ -19,23 +19,23 @@ final List<DnsSettingsMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? resultInfo;
+final AccessActiveSessionsResponseResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection15 copyWith({List<DnsSettingsMessages2>? errors, List<DnsSettingsMessages2>? messages, bool? success, AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? Function()? resultInfo, }) { return ResponseCollection15(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCollection15 copyWith({List<DnsSettingsMessages2>? errors, List<DnsSettingsMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, }) {return ResponseCollection15(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCollection15 &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ResponseCollection15 copyWith({List<DnsSettingsMessages2>? errors, List<DnsSetti
 
 @override String toString() => 'ResponseCollection15(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo)';
 
- }
+}

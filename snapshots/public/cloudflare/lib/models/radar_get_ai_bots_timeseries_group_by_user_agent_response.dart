@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';@immutable final class RadarGetAiBotsTimeseriesGroupByUserAgentResponse {const RadarGetAiBotsTimeseriesGroupByUserAgentResponse({required this.result, required this.success, });
 
-factory RadarGetAiBotsTimeseriesGroupByUserAgentResponse.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponse(
+factory RadarGetAiBotsTimeseriesGroupByUserAgentResponse.fromJson(Map<String, dynamic> json) {return RadarGetAiBotsTimeseriesGroupByUserAgentResponse(
   result: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAiBotsTimeseriesGroupByUserAgentResponse copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult? result, bool? success, }) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAiBotsTimeseriesGroupByUserAgentResponse copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult? result, bool? success, }) {return RadarGetAiBotsTimeseriesGroupByUserAgentResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAiBotsTimeseriesGroupByUserAgentResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAiBotsTimeseriesGroupByUserAgentResponse copyWith({RadarGetAiBotsTimeser
 
 @override String toString() => 'RadarGetAiBotsTimeseriesGroupByUserAgentResponse(result: $result, success: $success)';
 
- }
+}

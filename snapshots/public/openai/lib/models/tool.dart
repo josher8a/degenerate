@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_tool_param.dart';import 'package:pub_openai/models/approximate_location.dart';import 'package:pub_openai/models/code_interpreter_tool.dart';import 'package:pub_openai/models/code_interpreter_tool/code_interpreter_tool_container.dart';import 'package:pub_openai/models/computer_tool.dart';import 'package:pub_openai/models/computer_use_preview_tool.dart';import 'package:pub_openai/models/custom_tool_param.dart';import 'package:pub_openai/models/custom_tool_param/custom_tool_param_format.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool.dart';import 'package:pub_openai/models/filters.dart';import 'package:pub_openai/models/function_shell_tool_param.dart';import 'package:pub_openai/models/function_shell_tool_param/function_shell_tool_param_environment.dart';import 'package:pub_openai/models/function_tool.dart';import 'package:pub_openai/models/image_gen_tool.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/local_shell_tool_param.dart';import 'package:pub_openai/models/mcp_tool.dart';import 'package:pub_openai/models/mcp_tool/allowed_tools.dart';import 'package:pub_openai/models/mcp_tool/require_approval.dart';import 'package:pub_openai/models/namespace_tool_param.dart';import 'package:pub_openai/models/namespace_tool_param/namespace_tool_param_tools.dart';import 'package:pub_openai/models/ranking_options.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_tool_param.dart';import 'package:pub_openai/models/web_search_approximate_location.dart';import 'package:pub_openai/models/web_search_preview_tool.dart';import 'package:pub_openai/models/web_search_tool.dart';import 'package:pub_openai/models/web_search_tool/web_search_tool_filters.dart';sealed class ToolType {const ToolType();
 
-factory ToolType.fromJson(String json) { return switch (json) {
+factory ToolType.fromJson(String json) {return switch (json) {
   'function' => function,
   'file_search' => fileSearch,
   'computer' => computer,
@@ -20,7 +20,7 @@ factory ToolType.fromJson(String json) { return switch (json) {
   'web_search_preview' => webSearchPreview,
   'apply_patch' => applyPatch,
   _ => ToolType$Unknown(json),
-}; }
+};}
 
 static const ToolType function = ToolType$function._();
 
@@ -59,7 +59,7 @@ String toJson() => value;
 
 bool get isUnknown => this is ToolType$Unknown;
 
- }
+}
 @immutable final class ToolType$function extends ToolType {const ToolType$function._();
 
 @override String get value => 'function';
@@ -70,7 +70,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(function)';
 
- }
+}
 @immutable final class ToolType$fileSearch extends ToolType {const ToolType$fileSearch._();
 
 @override String get value => 'file_search';
@@ -81,7 +81,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(file_search)';
 
- }
+}
 @immutable final class ToolType$computer extends ToolType {const ToolType$computer._();
 
 @override String get value => 'computer';
@@ -92,7 +92,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(computer)';
 
- }
+}
 @immutable final class ToolType$computerUsePreview extends ToolType {const ToolType$computerUsePreview._();
 
 @override String get value => 'computer_use_preview';
@@ -103,7 +103,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(computer_use_preview)';
 
- }
+}
 @immutable final class ToolType$webSearch extends ToolType {const ToolType$webSearch._();
 
 @override String get value => 'web_search';
@@ -114,7 +114,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(web_search)';
 
- }
+}
 @immutable final class ToolType$mcp extends ToolType {const ToolType$mcp._();
 
 @override String get value => 'mcp';
@@ -125,7 +125,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(mcp)';
 
- }
+}
 @immutable final class ToolType$codeInterpreter extends ToolType {const ToolType$codeInterpreter._();
 
 @override String get value => 'code_interpreter';
@@ -136,7 +136,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(code_interpreter)';
 
- }
+}
 @immutable final class ToolType$imageGeneration extends ToolType {const ToolType$imageGeneration._();
 
 @override String get value => 'image_generation';
@@ -147,7 +147,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(image_generation)';
 
- }
+}
 @immutable final class ToolType$localShell extends ToolType {const ToolType$localShell._();
 
 @override String get value => 'local_shell';
@@ -158,7 +158,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(local_shell)';
 
- }
+}
 @immutable final class ToolType$shell extends ToolType {const ToolType$shell._();
 
 @override String get value => 'shell';
@@ -169,7 +169,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(shell)';
 
- }
+}
 @immutable final class ToolType$custom extends ToolType {const ToolType$custom._();
 
 @override String get value => 'custom';
@@ -180,7 +180,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(custom)';
 
- }
+}
 @immutable final class ToolType$namespace extends ToolType {const ToolType$namespace._();
 
 @override String get value => 'namespace';
@@ -191,7 +191,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(namespace)';
 
- }
+}
 @immutable final class ToolType$toolSearch extends ToolType {const ToolType$toolSearch._();
 
 @override String get value => 'tool_search';
@@ -202,7 +202,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(tool_search)';
 
- }
+}
 @immutable final class ToolType$webSearchPreview extends ToolType {const ToolType$webSearchPreview._();
 
 @override String get value => 'web_search_preview';
@@ -213,7 +213,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(web_search_preview)';
 
- }
+}
 @immutable final class ToolType$applyPatch extends ToolType {const ToolType$applyPatch._();
 
 @override String get value => 'apply_patch';
@@ -224,7 +224,7 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType(apply_patch)';
 
- }
+}
 @immutable final class ToolType$Unknown extends ToolType {const ToolType$Unknown(this.value);
 
 @override final String value;
@@ -235,13 +235,13 @@ bool get isUnknown => this is ToolType$Unknown;
 
 @override String toString() => 'ToolType($value)';
 
- }
+}
 /// A tool that can be used to generate a response.
 /// 
 sealed class Tool {const Tool();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory Tool.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'function' => ToolFunction.fromJson(json),
   'file_search' => ToolFileSearch.fromJson(json),
   'computer' => ToolComputer.fromJson(json),
@@ -258,43 +258,43 @@ factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
   'web_search_preview' => ToolWebSearchPreview.fromJson(json),
   'apply_patch' => ToolApplyPatch.fromJson(json),
   _ => Tool$Unknown(json),
-}; }
+};}
 
 /// Build the `function` variant.
-factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, String? description, bool? deferLoading, }) { return ToolFunction(FunctionTool(name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
+factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, Omittable<String?> description = const Omittable.absent(), bool? deferLoading, }) {return ToolFunction(FunctionTool(type: 'function', name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading));}
 
 /// Build the `file_search` variant.
-factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Filters? filters, }) { return ToolFileSearch(FileSearchTool(vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters)); }
+factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Omittable<Filters?> filters = const Omittable.absent(), }) {return ToolFileSearch(FileSearchTool(type: 'file_search', vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters));}
 
 /// Build the `computer_use_preview` variant.
-factory Tool.computerUsePreview({required ComputerEnvironment environment, required int displayWidth, required int displayHeight, }) { return ToolComputerUsePreview(ComputerUsePreviewTool(environment: environment, displayWidth: displayWidth, displayHeight: displayHeight)); }
+factory Tool.computerUsePreview({required ComputerEnvironment environment, required int displayWidth, required int displayHeight, }) {return ToolComputerUsePreview(ComputerUsePreviewTool(type: 'computer_use_preview', environment: environment, displayWidth: displayWidth, displayHeight: displayHeight));}
 
 /// Build the `web_search` variant.
-factory Tool.webSearch({WebSearchToolFilters? filters, WebSearchApproximateLocation? userLocation, WebSearchToolSearchContextSize searchContextSize = WebSearchToolSearchContextSize.medium, }) { return ToolWebSearch(WebSearchTool(filters: filters, userLocation: userLocation, searchContextSize: searchContextSize)); }
+factory Tool.webSearch({Omittable<WebSearchToolFilters?> filters = const Omittable.absent(), Omittable<WebSearchApproximateLocation?> userLocation = const Omittable.absent(), WebSearchToolSearchContextSize? searchContextSize, }) {return ToolWebSearch(WebSearchTool(type: 'web_search', filters: filters, userLocation: userLocation, searchContextSize: searchContextSize));}
 
 /// Build the `mcp` variant.
-factory Tool.mcp({required String serverLabel, String? serverUrl, ConnectorId? connectorId, String? authorization, String? serverDescription, Map<String,String>? headers, AllowedTools? allowedTools, RequireApproval? requireApproval, bool? deferLoading, }) { return ToolMcp(McpTool(type: 'mcp', serverLabel: serverLabel, serverUrl: serverUrl, connectorId: connectorId, authorization: authorization, serverDescription: serverDescription, headers: headers, allowedTools: allowedTools, requireApproval: requireApproval, deferLoading: deferLoading)); }
+factory Tool.mcp({required String serverLabel, String? serverUrl, ConnectorId? connectorId, String? authorization, String? serverDescription, Omittable<Map<String,String>?> headers = const Omittable.absent(), Omittable<AllowedTools?> allowedTools = const Omittable.absent(), Omittable<RequireApproval?> requireApproval = const Omittable.absent(), bool? deferLoading, }) {return ToolMcp(McpTool(type: 'mcp', serverLabel: serverLabel, serverUrl: serverUrl, connectorId: connectorId, authorization: authorization, serverDescription: serverDescription, headers: headers, allowedTools: allowedTools, requireApproval: requireApproval, deferLoading: deferLoading));}
 
 /// Build the `code_interpreter` variant.
-factory Tool.codeInterpreter({required CodeInterpreterToolContainer container}) { return ToolCodeInterpreter(CodeInterpreterTool(type: 'code_interpreter', container: container)); }
+factory Tool.codeInterpreter({required CodeInterpreterToolContainer container}) {return ToolCodeInterpreter(CodeInterpreterTool(type: 'code_interpreter', container: container));}
 
 /// Build the `image_generation` variant.
-factory Tool.imageGeneration({ImageGenToolModel? model, ImageGenToolQuality quality = ImageGenToolQuality.auto, ImageGenToolSize size = ImageGenToolSize.auto, ImageGenToolOutputFormat outputFormat = ImageGenToolOutputFormat.png, int outputCompression = 100, ImageGenToolModeration moderation = ImageGenToolModeration.auto, ImageGenToolBackground background = ImageGenToolBackground.auto, InputFidelity? inputFidelity, InputImageMask? inputImageMask, int partialImages = 0, ImageGenActionEnum? action, }) { return ToolImageGeneration(ImageGenTool(type: 'image_generation', model: model, quality: quality, size: size, outputFormat: outputFormat, outputCompression: outputCompression, moderation: moderation, background: background, inputFidelity: inputFidelity, inputImageMask: inputImageMask, partialImages: partialImages, action: action)); }
+factory Tool.imageGeneration({ImageGenToolModel? model, ImageGenToolQuality? quality, ImageGenToolSize? size, ImageGenToolOutputFormat? outputFormat, int? outputCompression, ImageGenToolModeration? moderation, ImageGenToolBackground? background, Omittable<InputFidelity?> inputFidelity = const Omittable.absent(), InputImageMask? inputImageMask, int? partialImages, ImageGenActionEnum? action, }) {return ToolImageGeneration(ImageGenTool(type: 'image_generation', model: model, quality: quality, size: size, outputFormat: outputFormat, outputCompression: outputCompression, moderation: moderation, background: background, inputFidelity: inputFidelity, inputImageMask: inputImageMask, partialImages: partialImages, action: action));}
 
 /// Build the `shell` variant.
-factory Tool.shell({FunctionShellToolParamEnvironment? environment}) { return ToolShell(FunctionShellToolParam(environment: environment)); }
+factory Tool.shell({Omittable<FunctionShellToolParamEnvironment?> environment = const Omittable.absent()}) {return ToolShell(FunctionShellToolParam(type: 'shell', environment: environment));}
 
 /// Build the `custom` variant.
-factory Tool.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return ToolCustom(CustomToolParam(name: name, description: description, format: format, deferLoading: deferLoading)); }
+factory Tool.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) {return ToolCustom(CustomToolParam(type: 'custom', name: name, description: description, format: format, deferLoading: deferLoading));}
 
 /// Build the `namespace` variant.
-factory Tool.namespace({required String name, required String description, required List<NamespaceToolParamTools> tools, }) { return ToolNamespace(NamespaceToolParam(name: name, description: description, tools: tools)); }
+factory Tool.namespace({required String name, required String description, required List<NamespaceToolParamTools> tools, }) {return ToolNamespace(NamespaceToolParam(type: 'namespace', name: name, description: description, tools: tools));}
 
 /// Build the `tool_search` variant.
-factory Tool.toolSearch({ToolSearchExecutionType? execution, String? description, EmptyModelParam? parameters, }) { return ToolToolSearch(ToolSearchToolParam(execution: execution, description: description, parameters: parameters)); }
+factory Tool.toolSearch({ToolSearchExecutionType? execution, Omittable<String?> description = const Omittable.absent(), Omittable<EmptyModelParam?> parameters = const Omittable.absent(), }) {return ToolToolSearch(ToolSearchToolParam(type: 'tool_search', execution: execution, description: description, parameters: parameters));}
 
 /// Build the `web_search_preview` variant.
-factory Tool.webSearchPreview({ApproximateLocation? userLocation, SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) { return ToolWebSearchPreview(WebSearchPreviewTool(userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes)); }
+factory Tool.webSearchPreview({Omittable<ApproximateLocation?> userLocation = const Omittable.absent(), SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) {return ToolWebSearchPreview(WebSearchPreviewTool(type: 'web_search_preview', userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes));}
 
 /// The discriminator value identifying this variant.
 ToolType get type;
@@ -302,7 +302,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Tool$Unknown;
 
-R when<R>({required R Function(ToolFunction) function, required R Function(ToolFileSearch) fileSearch, required R Function(ToolComputer) computer, required R Function(ToolComputerUsePreview) computerUsePreview, required R Function(ToolWebSearch) webSearch, required R Function(ToolMcp) mcp, required R Function(ToolCodeInterpreter) codeInterpreter, required R Function(ToolImageGeneration) imageGeneration, required R Function(ToolLocalShell) localShell, required R Function(ToolShell) shell, required R Function(ToolCustom) custom, required R Function(ToolNamespace) namespace, required R Function(ToolToolSearch) toolSearch, required R Function(ToolWebSearchPreview) webSearchPreview, required R Function(ToolApplyPatch) applyPatch, required R Function(Tool$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ToolFunction) function, required R Function(ToolFileSearch) fileSearch, required R Function(ToolComputer) computer, required R Function(ToolComputerUsePreview) computerUsePreview, required R Function(ToolWebSearch) webSearch, required R Function(ToolMcp) mcp, required R Function(ToolCodeInterpreter) codeInterpreter, required R Function(ToolImageGeneration) imageGeneration, required R Function(ToolLocalShell) localShell, required R Function(ToolShell) shell, required R Function(ToolCustom) custom, required R Function(ToolNamespace) namespace, required R Function(ToolToolSearch) toolSearch, required R Function(ToolWebSearchPreview) webSearchPreview, required R Function(ToolApplyPatch) applyPatch, required R Function(Tool$Unknown) unknown, }) {return switch (this) {
   final ToolFunction v => function(v),
   final ToolFileSearch v => fileSearch(v),
   final ToolComputer v => computer(v),
@@ -319,11 +319,11 @@ R when<R>({required R Function(ToolFunction) function, required R Function(ToolF
   final ToolWebSearchPreview v => webSearchPreview(v),
   final ToolApplyPatch v => applyPatch(v),
   final Tool$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class ToolFunction extends Tool {const ToolFunction(this.functionTool);
 
-factory ToolFunction.fromJson(Map<String, dynamic> json) { return ToolFunction(FunctionTool.fromJson(json)); }
+factory ToolFunction.fromJson(Map<String, dynamic> json) {return ToolFunction(FunctionTool.fromJson(json));}
 
 final FunctionTool functionTool;
 
@@ -331,13 +331,13 @@ final FunctionTool functionTool;
 
 @override Map<String, dynamic> toJson() => {...functionTool.toJson(), 'type': type.toJson()};
 
-ToolFunction copyWith({String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool? Function()? deferLoading, }) { return ToolFunction(functionTool.copyWith(
+ToolFunction copyWith({String? name, Omittable<String?>? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool? Function()? deferLoading, }) {return ToolFunction(functionTool.copyWith(
   name: name,
   description: description,
   parameters: parameters,
   strict: strict,
   deferLoading: deferLoading,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolFunction && functionTool == other.functionTool;
 
@@ -345,10 +345,10 @@ ToolFunction copyWith({String? name, String? Function()? description, Map<String
 
 @override String toString() => 'Tool.function($functionTool)';
 
- }
+}
 @immutable final class ToolFileSearch extends Tool {const ToolFileSearch(this.fileSearchTool);
 
-factory ToolFileSearch.fromJson(Map<String, dynamic> json) { return ToolFileSearch(FileSearchTool.fromJson(json)); }
+factory ToolFileSearch.fromJson(Map<String, dynamic> json) {return ToolFileSearch(FileSearchTool.fromJson(json));}
 
 final FileSearchTool fileSearchTool;
 
@@ -356,12 +356,12 @@ final FileSearchTool fileSearchTool;
 
 @override Map<String, dynamic> toJson() => {...fileSearchTool.toJson(), 'type': type.toJson()};
 
-ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Filters? Function()? filters, }) { return ToolFileSearch(fileSearchTool.copyWith(
+ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Omittable<Filters?>? filters, }) {return ToolFileSearch(fileSearchTool.copyWith(
   vectorStoreIds: vectorStoreIds,
   maxNumResults: maxNumResults,
   rankingOptions: rankingOptions,
   filters: filters,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolFileSearch && fileSearchTool == other.fileSearchTool;
 
@@ -369,10 +369,10 @@ ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumRe
 
 @override String toString() => 'Tool.fileSearch($fileSearchTool)';
 
- }
+}
 @immutable final class ToolComputer extends Tool {const ToolComputer(this.computerTool);
 
-factory ToolComputer.fromJson(Map<String, dynamic> json) { return ToolComputer(ComputerTool.fromJson(json)); }
+factory ToolComputer.fromJson(Map<String, dynamic> json) {return ToolComputer(ComputerTool.fromJson(json));}
 
 final ComputerTool computerTool;
 
@@ -380,7 +380,7 @@ final ComputerTool computerTool;
 
 @override Map<String, dynamic> toJson() => {...computerTool.toJson(), 'type': type.toJson()};
 
-ToolComputer copyWith({ComputerTool? computerTool}) { return ToolComputer(computerTool ?? this.computerTool); } 
+ToolComputer copyWith({ComputerTool? computerTool}) {return ToolComputer(computerTool ?? this.computerTool);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolComputer && computerTool == other.computerTool;
 
@@ -388,10 +388,10 @@ ToolComputer copyWith({ComputerTool? computerTool}) { return ToolComputer(comput
 
 @override String toString() => 'Tool.computer($computerTool)';
 
- }
+}
 @immutable final class ToolComputerUsePreview extends Tool {const ToolComputerUsePreview(this.computerUsePreviewTool);
 
-factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) { return ToolComputerUsePreview(ComputerUsePreviewTool.fromJson(json)); }
+factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) {return ToolComputerUsePreview(ComputerUsePreviewTool.fromJson(json));}
 
 final ComputerUsePreviewTool computerUsePreviewTool;
 
@@ -399,11 +399,11 @@ final ComputerUsePreviewTool computerUsePreviewTool;
 
 @override Map<String, dynamic> toJson() => {...computerUsePreviewTool.toJson(), 'type': type.toJson()};
 
-ToolComputerUsePreview copyWith({ComputerEnvironment? environment, int? displayWidth, int? displayHeight, }) { return ToolComputerUsePreview(computerUsePreviewTool.copyWith(
+ToolComputerUsePreview copyWith({ComputerEnvironment? environment, int? displayWidth, int? displayHeight, }) {return ToolComputerUsePreview(computerUsePreviewTool.copyWith(
   environment: environment,
   displayWidth: displayWidth,
   displayHeight: displayHeight,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolComputerUsePreview && computerUsePreviewTool == other.computerUsePreviewTool;
 
@@ -411,10 +411,10 @@ ToolComputerUsePreview copyWith({ComputerEnvironment? environment, int? displayW
 
 @override String toString() => 'Tool.computerUsePreview($computerUsePreviewTool)';
 
- }
+}
 @immutable final class ToolWebSearch extends Tool {const ToolWebSearch(this.webSearchTool);
 
-factory ToolWebSearch.fromJson(Map<String, dynamic> json) { return ToolWebSearch(WebSearchTool.fromJson(json)); }
+factory ToolWebSearch.fromJson(Map<String, dynamic> json) {return ToolWebSearch(WebSearchTool.fromJson(json));}
 
 final WebSearchTool webSearchTool;
 
@@ -422,11 +422,11 @@ final WebSearchTool webSearchTool;
 
 @override Map<String, dynamic> toJson() => {...webSearchTool.toJson(), 'type': type.toJson()};
 
-ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
+ToolWebSearch copyWith({Omittable<WebSearchToolFilters?>? filters, Omittable<WebSearchApproximateLocation?>? userLocation, WebSearchToolSearchContextSize? Function()? searchContextSize, }) {return ToolWebSearch(webSearchTool.copyWith(
   filters: filters,
   userLocation: userLocation,
   searchContextSize: searchContextSize,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolWebSearch && webSearchTool == other.webSearchTool;
 
@@ -434,10 +434,10 @@ ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchAppr
 
 @override String toString() => 'Tool.webSearch($webSearchTool)';
 
- }
+}
 @immutable final class ToolMcp extends Tool {const ToolMcp(this.mcpTool);
 
-factory ToolMcp.fromJson(Map<String, dynamic> json) { return ToolMcp(McpTool.fromJson(json)); }
+factory ToolMcp.fromJson(Map<String, dynamic> json) {return ToolMcp(McpTool.fromJson(json));}
 
 final McpTool mcpTool;
 
@@ -445,7 +445,7 @@ final McpTool mcpTool;
 
 @override Map<String, dynamic> toJson() => {...mcpTool.toJson(), 'type': type.toJson()};
 
-ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return ToolMcp(mcpTool.copyWith(
+ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Omittable<Map<String,String>?>? headers, Omittable<AllowedTools?>? allowedTools, Omittable<RequireApproval?>? requireApproval, bool? Function()? deferLoading, }) {return ToolMcp(mcpTool.copyWith(
   serverLabel: serverLabel,
   serverUrl: serverUrl,
   connectorId: connectorId,
@@ -455,7 +455,7 @@ ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorI
   allowedTools: allowedTools,
   requireApproval: requireApproval,
   deferLoading: deferLoading,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolMcp && mcpTool == other.mcpTool;
 
@@ -463,10 +463,10 @@ ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorI
 
 @override String toString() => 'Tool.mcp($mcpTool)';
 
- }
+}
 @immutable final class ToolCodeInterpreter extends Tool {const ToolCodeInterpreter(this.codeInterpreterTool);
 
-factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) { return ToolCodeInterpreter(CodeInterpreterTool.fromJson(json)); }
+factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) {return ToolCodeInterpreter(CodeInterpreterTool.fromJson(json));}
 
 final CodeInterpreterTool codeInterpreterTool;
 
@@ -474,9 +474,9 @@ final CodeInterpreterTool codeInterpreterTool;
 
 @override Map<String, dynamic> toJson() => {...codeInterpreterTool.toJson(), 'type': type.toJson()};
 
-ToolCodeInterpreter copyWith({CodeInterpreterToolContainer? container}) { return ToolCodeInterpreter(codeInterpreterTool.copyWith(
+ToolCodeInterpreter copyWith({CodeInterpreterToolContainer? container}) {return ToolCodeInterpreter(codeInterpreterTool.copyWith(
   container: container,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolCodeInterpreter && codeInterpreterTool == other.codeInterpreterTool;
 
@@ -484,10 +484,10 @@ ToolCodeInterpreter copyWith({CodeInterpreterToolContainer? container}) { return
 
 @override String toString() => 'Tool.codeInterpreter($codeInterpreterTool)';
 
- }
+}
 @immutable final class ToolImageGeneration extends Tool {const ToolImageGeneration(this.imageGenTool);
 
-factory ToolImageGeneration.fromJson(Map<String, dynamic> json) { return ToolImageGeneration(ImageGenTool.fromJson(json)); }
+factory ToolImageGeneration.fromJson(Map<String, dynamic> json) {return ToolImageGeneration(ImageGenTool.fromJson(json));}
 
 final ImageGenTool imageGenTool;
 
@@ -495,7 +495,7 @@ final ImageGenTool imageGenTool;
 
 @override Map<String, dynamic> toJson() => {...imageGenTool.toJson(), 'type': type.toJson()};
 
-ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageGenToolQuality Function()? quality, ImageGenToolSize Function()? size, ImageGenToolOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageGenToolBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
+ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageGenToolQuality? Function()? quality, ImageGenToolSize? Function()? size, ImageGenToolOutputFormat? Function()? outputFormat, int? Function()? outputCompression, ImageGenToolModeration? Function()? moderation, ImageGenToolBackground? Function()? background, Omittable<InputFidelity?>? inputFidelity, InputImageMask? Function()? inputImageMask, int? Function()? partialImages, ImageGenActionEnum? Function()? action, }) {return ToolImageGeneration(imageGenTool.copyWith(
   model: model,
   quality: quality,
   size: size,
@@ -507,7 +507,7 @@ ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageGenTool
   inputImageMask: inputImageMask,
   partialImages: partialImages,
   action: action,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolImageGeneration && imageGenTool == other.imageGenTool;
 
@@ -515,10 +515,10 @@ ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageGenTool
 
 @override String toString() => 'Tool.imageGeneration($imageGenTool)';
 
- }
+}
 @immutable final class ToolLocalShell extends Tool {const ToolLocalShell(this.localShellToolParam);
 
-factory ToolLocalShell.fromJson(Map<String, dynamic> json) { return ToolLocalShell(LocalShellToolParam.fromJson(json)); }
+factory ToolLocalShell.fromJson(Map<String, dynamic> json) {return ToolLocalShell(LocalShellToolParam.fromJson(json));}
 
 final LocalShellToolParam localShellToolParam;
 
@@ -526,7 +526,7 @@ final LocalShellToolParam localShellToolParam;
 
 @override Map<String, dynamic> toJson() => {...localShellToolParam.toJson(), 'type': type.toJson()};
 
-ToolLocalShell copyWith({LocalShellToolParam? localShellToolParam}) { return ToolLocalShell(localShellToolParam ?? this.localShellToolParam); } 
+ToolLocalShell copyWith({LocalShellToolParam? localShellToolParam}) {return ToolLocalShell(localShellToolParam ?? this.localShellToolParam);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolLocalShell && localShellToolParam == other.localShellToolParam;
 
@@ -534,10 +534,10 @@ ToolLocalShell copyWith({LocalShellToolParam? localShellToolParam}) { return Too
 
 @override String toString() => 'Tool.localShell($localShellToolParam)';
 
- }
+}
 @immutable final class ToolShell extends Tool {const ToolShell(this.functionShellToolParam);
 
-factory ToolShell.fromJson(Map<String, dynamic> json) { return ToolShell(FunctionShellToolParam.fromJson(json)); }
+factory ToolShell.fromJson(Map<String, dynamic> json) {return ToolShell(FunctionShellToolParam.fromJson(json));}
 
 final FunctionShellToolParam functionShellToolParam;
 
@@ -545,9 +545,9 @@ final FunctionShellToolParam functionShellToolParam;
 
 @override Map<String, dynamic> toJson() => {...functionShellToolParam.toJson(), 'type': type.toJson()};
 
-ToolShell copyWith({FunctionShellToolParamEnvironment? Function()? environment}) { return ToolShell(functionShellToolParam.copyWith(
+ToolShell copyWith({Omittable<FunctionShellToolParamEnvironment?>? environment}) {return ToolShell(functionShellToolParam.copyWith(
   environment: environment,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolShell && functionShellToolParam == other.functionShellToolParam;
 
@@ -555,10 +555,10 @@ ToolShell copyWith({FunctionShellToolParamEnvironment? Function()? environment})
 
 @override String toString() => 'Tool.shell($functionShellToolParam)';
 
- }
+}
 @immutable final class ToolCustom extends Tool {const ToolCustom(this.customToolParam);
 
-factory ToolCustom.fromJson(Map<String, dynamic> json) { return ToolCustom(CustomToolParam.fromJson(json)); }
+factory ToolCustom.fromJson(Map<String, dynamic> json) {return ToolCustom(CustomToolParam.fromJson(json));}
 
 final CustomToolParam customToolParam;
 
@@ -566,12 +566,12 @@ final CustomToolParam customToolParam;
 
 @override Map<String, dynamic> toJson() => {...customToolParam.toJson(), 'type': type.toJson()};
 
-ToolCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return ToolCustom(customToolParam.copyWith(
+ToolCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) {return ToolCustom(customToolParam.copyWith(
   name: name,
   description: description,
   format: format,
   deferLoading: deferLoading,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolCustom && customToolParam == other.customToolParam;
 
@@ -579,10 +579,10 @@ ToolCustom copyWith({String? name, String? Function()? description, CustomToolPa
 
 @override String toString() => 'Tool.custom($customToolParam)';
 
- }
+}
 @immutable final class ToolNamespace extends Tool {const ToolNamespace(this.namespaceToolParam);
 
-factory ToolNamespace.fromJson(Map<String, dynamic> json) { return ToolNamespace(NamespaceToolParam.fromJson(json)); }
+factory ToolNamespace.fromJson(Map<String, dynamic> json) {return ToolNamespace(NamespaceToolParam.fromJson(json));}
 
 final NamespaceToolParam namespaceToolParam;
 
@@ -590,11 +590,11 @@ final NamespaceToolParam namespaceToolParam;
 
 @override Map<String, dynamic> toJson() => {...namespaceToolParam.toJson(), 'type': type.toJson()};
 
-ToolNamespace copyWith({String? name, String? description, List<NamespaceToolParamTools>? tools, }) { return ToolNamespace(namespaceToolParam.copyWith(
+ToolNamespace copyWith({String? name, String? description, List<NamespaceToolParamTools>? tools, }) {return ToolNamespace(namespaceToolParam.copyWith(
   name: name,
   description: description,
   tools: tools,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolNamespace && namespaceToolParam == other.namespaceToolParam;
 
@@ -602,10 +602,10 @@ ToolNamespace copyWith({String? name, String? description, List<NamespaceToolPar
 
 @override String toString() => 'Tool.namespace($namespaceToolParam)';
 
- }
+}
 @immutable final class ToolToolSearch extends Tool {const ToolToolSearch(this.toolSearchToolParam);
 
-factory ToolToolSearch.fromJson(Map<String, dynamic> json) { return ToolToolSearch(ToolSearchToolParam.fromJson(json)); }
+factory ToolToolSearch.fromJson(Map<String, dynamic> json) {return ToolToolSearch(ToolSearchToolParam.fromJson(json));}
 
 final ToolSearchToolParam toolSearchToolParam;
 
@@ -613,11 +613,11 @@ final ToolSearchToolParam toolSearchToolParam;
 
 @override Map<String, dynamic> toJson() => {...toolSearchToolParam.toJson(), 'type': type.toJson()};
 
-ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolToolSearch(toolSearchToolParam.copyWith(
+ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, Omittable<String?>? description, Omittable<EmptyModelParam?>? parameters, }) {return ToolToolSearch(toolSearchToolParam.copyWith(
   execution: execution,
   description: description,
   parameters: parameters,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolToolSearch && toolSearchToolParam == other.toolSearchToolParam;
 
@@ -625,10 +625,10 @@ ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, String?
 
 @override String toString() => 'Tool.toolSearch($toolSearchToolParam)';
 
- }
+}
 @immutable final class ToolWebSearchPreview extends Tool {const ToolWebSearchPreview(this.webSearchPreviewTool);
 
-factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) { return ToolWebSearchPreview(WebSearchPreviewTool.fromJson(json)); }
+factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) {return ToolWebSearchPreview(WebSearchPreviewTool.fromJson(json));}
 
 final WebSearchPreviewTool webSearchPreviewTool;
 
@@ -636,11 +636,11 @@ final WebSearchPreviewTool webSearchPreviewTool;
 
 @override Map<String, dynamic> toJson() => {...webSearchPreviewTool.toJson(), 'type': type.toJson()};
 
-ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return ToolWebSearchPreview(webSearchPreviewTool.copyWith(
+ToolWebSearchPreview copyWith({Omittable<ApproximateLocation?>? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) {return ToolWebSearchPreview(webSearchPreviewTool.copyWith(
   userLocation: userLocation,
   searchContextSize: searchContextSize,
   searchContentTypes: searchContentTypes,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolWebSearchPreview && webSearchPreviewTool == other.webSearchPreviewTool;
 
@@ -648,10 +648,10 @@ ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, Se
 
 @override String toString() => 'Tool.webSearchPreview($webSearchPreviewTool)';
 
- }
+}
 @immutable final class ToolApplyPatch extends Tool {const ToolApplyPatch(this.applyPatchToolParam);
 
-factory ToolApplyPatch.fromJson(Map<String, dynamic> json) { return ToolApplyPatch(ApplyPatchToolParam.fromJson(json)); }
+factory ToolApplyPatch.fromJson(Map<String, dynamic> json) {return ToolApplyPatch(ApplyPatchToolParam.fromJson(json));}
 
 final ApplyPatchToolParam applyPatchToolParam;
 
@@ -659,7 +659,7 @@ final ApplyPatchToolParam applyPatchToolParam;
 
 @override Map<String, dynamic> toJson() => {...applyPatchToolParam.toJson(), 'type': type.toJson()};
 
-ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return ToolApplyPatch(applyPatchToolParam ?? this.applyPatchToolParam); } 
+ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) {return ToolApplyPatch(applyPatchToolParam ?? this.applyPatchToolParam);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ToolApplyPatch && applyPatchToolParam == other.applyPatchToolParam;
 
@@ -667,7 +667,7 @@ ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return Too
 
 @override String toString() => 'Tool.applyPatch($applyPatchToolParam)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class Tool$Unknown extends Tool {const Tool$Unknown(this.json);
@@ -685,4 +685,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'Tool.unknown($json)';
 
- }
+}

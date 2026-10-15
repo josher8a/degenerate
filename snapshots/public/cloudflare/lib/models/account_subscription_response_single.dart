@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountSubscriptionResponseSingle
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/subscription2.dart';@immutable final class AccountSubscriptionResponseSingle {const AccountSubscriptionResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages5.dart';import 'package:pub_cloudflare/models/subscription2.dart';@immutable final class AccountSubscriptionResponseSingle {const AccountSubscriptionResponseSingle({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory AccountSubscriptionResponseSingle.fromJson(Map<String, dynamic> json) { return AccountSubscriptionResponseSingle(
-  result: json['result'] != null ? Subscription2.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory AccountSubscriptionResponseSingle.fromJson(Map<String, dynamic> json) {return AccountSubscriptionResponseSingle(
+  errors: (json['errors'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
+  result: Subscription2.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final Subscription2? result;
+final List<Messages5> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-AccountSubscriptionResponseSingle copyWith({Subscription2? Function()? result}) { return AccountSubscriptionResponseSingle(
-  result: result != null ? result() : this.result,
-); } 
+final List<Messages5> messages;
+
+final Subscription2 result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AccountSubscriptionResponseSingle copyWith({List<Messages5>? errors, List<Messages5>? messages, Subscription2? result, bool? success, }) {return AccountSubscriptionResponseSingle(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSubscriptionResponseSingle &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'AccountSubscriptionResponseSingle(result: $result)';
+@override String toString() => 'AccountSubscriptionResponseSingle(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

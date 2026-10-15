@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_method.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_enum_emergency_status.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_enum_voice_receive_mode.dart';@immutable final class CreateIncomingPhoneNumberRequest {const CreateIncomingPhoneNumberRequest({this.apiVersion, this.friendlyName, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.trunkSid, this.identitySid, this.addressSid, this.voiceReceiveMode, this.bundleSid, this.phoneNumber, this.areaCode, });
 
-factory CreateIncomingPhoneNumberRequest.fromJson(Map<String, dynamic> json) { return CreateIncomingPhoneNumberRequest(
+factory CreateIncomingPhoneNumberRequest.fromJson(Map<String, dynamic> json) {return CreateIncomingPhoneNumberRequest(
   apiVersion: json['ApiVersion'] as String?,
   friendlyName: json['FriendlyName'] as String?,
   smsApplicationSid: json['SmsApplicationSid'] as String?,
@@ -28,7 +28,7 @@ factory CreateIncomingPhoneNumberRequest.fromJson(Map<String, dynamic> json) { r
   bundleSid: json['BundleSid'] as String?,
   phoneNumber: json['PhoneNumber'] as String?,
   areaCode: json['AreaCode'] as String?,
-); }
+);}
 
 /// The API version to use for incoming calls made to the new phone number. The default is `2010-04-01`.
 final String? apiVersion;
@@ -101,7 +101,7 @@ final String? phoneNumber;
 /// The desired area code for your new incoming phone number. Can be any three-digit, US or Canada area code. We will provision an available phone number within this area code for you. **You must provide an `area_code` or a `phone_number`.** (US and Canada only).
 final String? areaCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ApiVersion': ?apiVersion,
   'FriendlyName': ?friendlyName,
   'SmsApplicationSid': ?smsApplicationSid,
@@ -126,10 +126,10 @@ Map<String, dynamic> toJson() { return {
   'BundleSid': ?bundleSid,
   'PhoneNumber': ?phoneNumber,
   'AreaCode': ?areaCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ApiVersion', 'FriendlyName', 'SmsApplicationSid', 'SmsFallbackMethod', 'SmsFallbackUrl', 'SmsMethod', 'SmsUrl', 'StatusCallback', 'StatusCallbackMethod', 'VoiceApplicationSid', 'VoiceCallerIdLookup', 'VoiceFallbackMethod', 'VoiceFallbackUrl', 'VoiceMethod', 'VoiceUrl', 'EmergencyStatus', 'EmergencyAddressSid', 'TrunkSid', 'IdentitySid', 'AddressSid', 'VoiceReceiveMode', 'BundleSid', 'PhoneNumber', 'AreaCode'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ApiVersion', 'FriendlyName', 'SmsApplicationSid', 'SmsFallbackMethod', 'SmsFallbackUrl', 'SmsMethod', 'SmsUrl', 'StatusCallback', 'StatusCallbackMethod', 'VoiceApplicationSid', 'VoiceCallerIdLookup', 'VoiceFallbackMethod', 'VoiceFallbackUrl', 'VoiceMethod', 'VoiceUrl', 'EmergencyStatus', 'EmergencyAddressSid', 'TrunkSid', 'IdentitySid', 'AddressSid', 'VoiceReceiveMode', 'BundleSid', 'PhoneNumber', 'AreaCode'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final smsApplicationSid$ = smsApplicationSid;
 if (smsApplicationSid$ != null) {
   if (smsApplicationSid$.runes.length < 34) { errors.add('smsApplicationSid: length must be >= 34'); }
@@ -172,8 +172,8 @@ if (bundleSid$ != null) {
   if (bundleSid$.runes.length > 34) { errors.add('bundleSid: length must be <= 34'); }
   if (!RegExp(r'^BU[0-9a-fA-F]{32}$').hasMatch(bundleSid$)) { errors.add(r'bundleSid: must match pattern ^BU[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-CreateIncomingPhoneNumberRequest copyWith({String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? smsApplicationSid, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, IncomingPhoneNumberEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? trunkSid, String? Function()? identitySid, String? Function()? addressSid, IncomingPhoneNumberEnumVoiceReceiveMode? Function()? voiceReceiveMode, String? Function()? bundleSid, String? Function()? phoneNumber, String? Function()? areaCode, }) { return CreateIncomingPhoneNumberRequest(
+return errors;}
+CreateIncomingPhoneNumberRequest copyWith({String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? smsApplicationSid, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, IncomingPhoneNumberEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? trunkSid, String? Function()? identitySid, String? Function()? addressSid, IncomingPhoneNumberEnumVoiceReceiveMode? Function()? voiceReceiveMode, String? Function()? bundleSid, String? Function()? phoneNumber, String? Function()? areaCode, }) {return CreateIncomingPhoneNumberRequest(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   smsApplicationSid: smsApplicationSid != null ? smsApplicationSid() : this.smsApplicationSid,
@@ -198,7 +198,7 @@ CreateIncomingPhoneNumberRequest copyWith({String? Function()? apiVersion, Strin
   bundleSid: bundleSid != null ? bundleSid() : this.bundleSid,
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   areaCode: areaCode != null ? areaCode() : this.areaCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateIncomingPhoneNumberRequest &&
           apiVersion == other.apiVersion &&
@@ -230,4 +230,4 @@ CreateIncomingPhoneNumberRequest copyWith({String? Function()? apiVersion, Strin
 
 @override String toString() => 'CreateIncomingPhoneNumberRequest(\n  apiVersion: $apiVersion,\n  friendlyName: $friendlyName,\n  smsApplicationSid: $smsApplicationSid,\n  smsFallbackMethod: $smsFallbackMethod,\n  smsFallbackUrl: $smsFallbackUrl,\n  smsMethod: $smsMethod,\n  smsUrl: $smsUrl,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  voiceApplicationSid: $voiceApplicationSid,\n  voiceCallerIdLookup: $voiceCallerIdLookup,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceMethod: $voiceMethod,\n  voiceUrl: $voiceUrl,\n  emergencyStatus: $emergencyStatus,\n  emergencyAddressSid: $emergencyAddressSid,\n  trunkSid: $trunkSid,\n  identitySid: $identitySid,\n  addressSid: $addressSid,\n  voiceReceiveMode: $voiceReceiveMode,\n  bundleSid: $bundleSid,\n  phoneNumber: $phoneNumber,\n  areaCode: $areaCode,\n)';
 
- }
+}

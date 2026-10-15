@@ -9,19 +9,19 @@ String toJson() => base64Encode(value);
 }
 @immutable final class RequestBodyPutMultipartFileRefRequest {const RequestBodyPutMultipartFileRefRequest({this.file});
 
-factory RequestBodyPutMultipartFileRefRequest.fromJson(Map<String, dynamic> json) { return RequestBodyPutMultipartFileRefRequest(
+factory RequestBodyPutMultipartFileRefRequest.fromJson(Map<String, dynamic> json) {return RequestBodyPutMultipartFileRefRequest(
   file: json['file'] != null ? BinaryString.fromJson(json['file'] as String) : null,
-); }
+);}
 
 final BinaryString? file;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (file != null) 'file': file?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file'}.contains(key)); } 
-RequestBodyPutMultipartFileRefRequest copyWith({BinaryString? Function()? file}) { return RequestBodyPutMultipartFileRefRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file'}.contains(key));}
+RequestBodyPutMultipartFileRefRequest copyWith({BinaryString? Function()? file}) {return RequestBodyPutMultipartFileRefRequest(
   file: file != null ? file() : this.file,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPutMultipartFileRefRequest &&
           file == other.file;
@@ -30,4 +30,4 @@ RequestBodyPutMultipartFileRefRequest copyWith({BinaryString? Function()? file})
 
 @override String toString() => 'RequestBodyPutMultipartFileRefRequest(file: $file)';
 
- }
+}

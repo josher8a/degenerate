@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl/magic_acl_protocols.dart';import 'package:pub_cloudflare/models/magic_forward_locally.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_lan_acl_configuration.dart';import 'package:pub_cloudflare/models/magic_unidirectional.dart';/// Bidirectional ACL policy for network traffic within a site.
 @immutable final class MagicAcl {const MagicAcl({this.description, this.forwardLocally, this.id, this.lan1, this.lan2, this.name, this.protocols, this.unidirectional, });
 
-factory MagicAcl.fromJson(Map<String, dynamic> json) { return MagicAcl(
+factory MagicAcl.fromJson(Map<String, dynamic> json) {return MagicAcl(
   description: json['description'] as String?,
   forwardLocally: json['forward_locally'] != null ? MagicForwardLocally.fromJson(json['forward_locally'] as bool) : null,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
@@ -13,7 +13,7 @@ factory MagicAcl.fromJson(Map<String, dynamic> json) { return MagicAcl(
   name: json['name'] as String?,
   protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclProtocols.fromJson(e as String)).toList(),
   unidirectional: json['unidirectional'] != null ? MagicUnidirectional.fromJson(json['unidirectional'] as bool) : null,
-); }
+);}
 
 /// Description for the ACL.
 /// 
@@ -37,7 +37,7 @@ final List<MagicAclProtocols>? protocols;
 
 final MagicUnidirectional? unidirectional;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   if (forwardLocally != null) 'forward_locally': forwardLocally?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (protocols != null) 'protocols': protocols?.map((e) => e.toJson()).toList(),
   if (unidirectional != null) 'unidirectional': unidirectional?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'forward_locally', 'id', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key)); } 
-MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Function()? forwardLocally, MagicIdentifier? Function()? id, MagicLanAclConfiguration? Function()? lan1, MagicLanAclConfiguration? Function()? lan2, String? Function()? name, List<MagicAclProtocols>? Function()? protocols, MagicUnidirectional? Function()? unidirectional, }) { return MagicAcl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'forward_locally', 'id', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key));}
+MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Function()? forwardLocally, MagicIdentifier? Function()? id, MagicLanAclConfiguration? Function()? lan1, MagicLanAclConfiguration? Function()? lan2, String? Function()? name, List<MagicAclProtocols>? Function()? protocols, MagicUnidirectional? Function()? unidirectional, }) {return MagicAcl(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,
   id: id != null ? id() : this.id,
@@ -57,7 +57,7 @@ MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Functio
   name: name != null ? name() : this.name,
   protocols: protocols != null ? protocols() : this.protocols,
   unidirectional: unidirectional != null ? unidirectional() : this.unidirectional,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicAcl &&
           description == other.description &&
@@ -73,4 +73,4 @@ MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Functio
 
 @override String toString() => 'MagicAcl(description: $description, forwardLocally: $forwardLocally, id: $id, lan1: $lan1, lan2: $lan2, name: $name, protocols: $protocols, unidirectional: $unidirectional)';
 
- }
+}

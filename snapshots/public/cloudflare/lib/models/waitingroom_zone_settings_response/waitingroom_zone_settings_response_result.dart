@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_search_engine_crawler_bypass.dart';@immutable final class WaitingroomZoneSettingsResponseResult {const WaitingroomZoneSettingsResponseResult({required this.searchEngineCrawlerBypass});
 
-factory WaitingroomZoneSettingsResponseResult.fromJson(Map<String, dynamic> json) { return WaitingroomZoneSettingsResponseResult(
+factory WaitingroomZoneSettingsResponseResult.fromJson(Map<String, dynamic> json) {return WaitingroomZoneSettingsResponseResult(
   searchEngineCrawlerBypass: WaitingroomSearchEngineCrawlerBypass.fromJson(json['search_engine_crawler_bypass'] as bool),
-); }
+);}
 
 /// Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone.
 /// Verified search engine crawlers will not be tracked or counted by the waiting room system,
@@ -13,13 +13,13 @@ factory WaitingroomZoneSettingsResponseResult.fromJson(Map<String, dynamic> json
 /// 
 final WaitingroomSearchEngineCrawlerBypass searchEngineCrawlerBypass;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'search_engine_crawler_bypass': searchEngineCrawlerBypass.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('search_engine_crawler_bypass'); } 
-WaitingroomZoneSettingsResponseResult copyWith({WaitingroomSearchEngineCrawlerBypass? searchEngineCrawlerBypass}) { return WaitingroomZoneSettingsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('search_engine_crawler_bypass');}
+WaitingroomZoneSettingsResponseResult copyWith({WaitingroomSearchEngineCrawlerBypass? searchEngineCrawlerBypass}) {return WaitingroomZoneSettingsResponseResult(
   searchEngineCrawlerBypass: searchEngineCrawlerBypass ?? this.searchEngineCrawlerBypass,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomZoneSettingsResponseResult &&
           searchEngineCrawlerBypass == other.searchEngineCrawlerBypass;
@@ -28,4 +28,4 @@ WaitingroomZoneSettingsResponseResult copyWith({WaitingroomSearchEngineCrawlerBy
 
 @override String toString() => 'WaitingroomZoneSettingsResponseResult(searchEngineCrawlerBypass: $searchEngineCrawlerBypass)';
 
- }
+}

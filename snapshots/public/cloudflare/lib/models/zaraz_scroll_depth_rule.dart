@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule/zaraz_scroll_depth_rule_settings.dart';sealed class ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction();
 
-factory ZarazScrollDepthRuleAction.fromJson(String json) { return switch (json) {
+factory ZarazScrollDepthRuleAction.fromJson(String json) {return switch (json) {
   'scrollDepth' => scrollDepth,
   _ => ZarazScrollDepthRuleAction$Unknown(json),
-}; }
+};}
 
 static const ZarazScrollDepthRuleAction scrollDepth = ZarazScrollDepthRuleAction$scrollDepth._();
 
 static const List<ZarazScrollDepthRuleAction> values = [scrollDepth];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'scrollDepth' => 'scrollDepth',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZarazScrollDepthRuleAction$Unknown; } 
+bool get isUnknown {return this is ZarazScrollDepthRuleAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() scrollDepth, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() scrollDepth, required W Function(String value) $unknown, }) {return switch (this) {
       ZarazScrollDepthRuleAction$scrollDepth() => scrollDepth(),
       ZarazScrollDepthRuleAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? scrollDepth, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? scrollDepth, W Function(String value)? $unknown, }) {return switch (this) {
       ZarazScrollDepthRuleAction$scrollDepth() => scrollDepth != null ? scrollDepth() : orElse(value),
       ZarazScrollDepthRuleAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZarazScrollDepthRuleAction($value)';
 
- }
+}
 @immutable final class ZarazScrollDepthRuleAction$scrollDepth extends ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction$scrollDepth._();
 
 @override String get value => 'scrollDepth';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? scrollDe
 
 @override int get hashCode => 'scrollDepth'.hashCode;
 
- }
+}
 @immutable final class ZarazScrollDepthRuleAction$Unknown extends ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? scrollDe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZarazScrollDepthRule {const ZarazScrollDepthRule({required this.action, required this.id, required this.settings, });
 
-factory ZarazScrollDepthRule.fromJson(Map<String, dynamic> json) { return ZarazScrollDepthRule(
+factory ZarazScrollDepthRule.fromJson(Map<String, dynamic> json) {return ZarazScrollDepthRule(
   action: ZarazScrollDepthRuleAction.fromJson(json['action'] as String),
   id: json['id'] as String,
   settings: ZarazScrollDepthRuleSettings.fromJson(json['settings'] as Map<String, dynamic>),
-); }
+);}
 
 final ZarazScrollDepthRuleAction action;
 
@@ -67,19 +67,19 @@ final String id;
 
 final ZarazScrollDepthRuleSettings settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'id': id,
   'settings': settings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'scrollDepth' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] == 'scrollDepth' &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('settings'); } 
-ZarazScrollDepthRule copyWith({ZarazScrollDepthRuleAction? action, String? id, ZarazScrollDepthRuleSettings? settings, }) { return ZarazScrollDepthRule(
+      json.containsKey('settings');}
+ZarazScrollDepthRule copyWith({ZarazScrollDepthRuleAction? action, String? id, ZarazScrollDepthRuleSettings? settings, }) {return ZarazScrollDepthRule(
   action: action ?? this.action,
   id: id ?? this.id,
   settings: settings ?? this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazScrollDepthRule &&
           action == other.action &&
@@ -90,4 +90,4 @@ ZarazScrollDepthRule copyWith({ZarazScrollDepthRuleAction? action, String? id, Z
 
 @override String toString() => 'ZarazScrollDepthRule(action: $action, id: $id, settings: $settings)';
 
- }
+}

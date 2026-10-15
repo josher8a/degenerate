@@ -828,8 +828,8 @@ late final WorkerRoutesApi workerRoutes = WorkerRoutesApi(_config);
 
 late final CustomPagesForAZoneApi customPagesForAZone = CustomPagesForAZoneApi(_config);
 
-PubCloudflareApi withApiEmail(String value) { return PubCloudflareApi(PubCloudflareSecurity.applyApiEmail(_config, value)); } 
-PubCloudflareApi withApiKey(String value) { return PubCloudflareApi(PubCloudflareSecurity.applyApiKey(_config, value)); } 
-PubCloudflareApi withApiToken(String token) { return PubCloudflareApi(PubCloudflareSecurity.applyApiToken(_config, token)); } 
-PubCloudflareApi withUserServiceKey(String value) { return PubCloudflareApi(PubCloudflareSecurity.applyUserServiceKey(_config, value)); } 
- }
+PubCloudflareApi withApiEmail(String value) {return PubCloudflareApi(PubCloudflareSecurity.applyApiEmail(_config, value));}
+PubCloudflareApi withApiKey(String value) {return PubCloudflareApi(PubCloudflareSecurity.applyApiKey(_config, value));}
+PubCloudflareApi withApiToken(String token) {return PubCloudflareApi(PubCloudflareSecurity.applyApiToken(_config, token));}
+PubCloudflareApi withUserServiceKey(String value) {return PubCloudflareApi(PubCloudflareSecurity.applyUserServiceKey(_config, value));}
+}

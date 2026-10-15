@@ -14,7 +14,7 @@ final class RadarInternetServicesRankingApi with ApiExecutor {const RadarInterne
 /// Retrieves the list of Internet services categories.
 ///
 /// `GET /radar/ranking/internet_services/categories`
-Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponseResult, RadarGetRankingInternetServicesCategoriesError>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingInternetServicesCategoriesResponseResult, RadarGetRankingInternetServicesCategoriesError>> radarGetRankingInternetServicesCategories({int? limit, List<String>? name, List<String>? date, RadarGetRankingInternetServicesCategoriesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -44,7 +44,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -52,13 +52,13 @@ return execute(
   },
   onError: RadarGetRankingInternetServicesCategoriesError.fromResponse,
 );
- } 
+}
 /// Get Internet services rank time series
 ///
 /// Retrieves Internet Services rank update changes over time.
 ///
 /// `GET /radar/ranking/internet_services/timeseries_groups`
-Future<ApiResult<RadarGetRankingDomainTimeseriesResponseResult, RadarGetRankingInternetServicesTimeseriesError>> radarGetRankingInternetServicesTimeseries({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingInternetServicesTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainTimeseriesResponseResult, RadarGetRankingInternetServicesTimeseriesError>> radarGetRankingInternetServicesTimeseries({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingInternetServicesTimeseriesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (serviceCategory != null) {
 for (final item in serviceCategory) {
@@ -103,7 +103,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -111,13 +111,13 @@ return execute(
   },
   onError: RadarGetRankingInternetServicesTimeseriesError.fromResponse,
 );
- } 
+}
 /// Get top Internet services
 ///
 /// Retrieves top Internet services based on their rank.
 ///
 /// `GET /radar/ranking/internet_services/top`
-Future<ApiResult<RadarGetRankingTopInternetServicesResponseResult, RadarGetRankingTopInternetServicesError>> radarGetRankingTopInternetServices({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? date, RadarGetRankingTopInternetServicesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingTopInternetServicesResponseResult, RadarGetRankingTopInternetServicesError>> radarGetRankingTopInternetServices({List<String>? serviceCategory, int? limit, List<String>? name, List<String>? date, RadarGetRankingTopInternetServicesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (serviceCategory != null) {
 for (final item in serviceCategory) {
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -160,5 +160,5 @@ return execute(
   },
   onError: RadarGetRankingTopInternetServicesError.fromResponse,
 );
- } 
- }
+}
+}

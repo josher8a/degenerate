@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSetupIntentsIntentConfirmRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/client_key_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_mandate_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/post_setup_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/secret_key_param.dart';@immutable final class PostSetupIntentsIntentConfirmRequest {const PostSetupIntentsIntentConfirmRequest({this.clientSecret, this.confirmationToken, this.expand, this.mandateData, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.useStripeSdk, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_mandate_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/post_setup_intents_intent_confirm_request_payment_method_options.dart';@immutable final class PostSetupIntentsIntentConfirmRequest {const PostSetupIntentsIntentConfirmRequest({this.clientSecret, this.confirmationToken, this.expand, this.mandateData, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.useStripeSdk, });
 
-factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequest(
+factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequest(
   clientSecret: json['client_secret'] as String?,
   confirmationToken: json['confirmation_token'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  mandateData: json['mandate_data'] != null ? OneOf3.parse(json['mandate_data'], fromA: (v) => SecretKeyParam.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromC: (v) => ClientKeyParam.fromJson(v as Map<String, dynamic>),) : null,
+  mandateData: json['mandate_data'] != null ? PostPaymentIntentsIntentConfirmRequestMandateData.fromJson(json['mandate_data']) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
-); }
+);}
 
 /// The client secret of the SetupIntent.
 final String? clientSecret;
@@ -46,7 +46,7 @@ final String? returnUrl;
 /// Set to `true` when confirming server-side and using Stripe.js, iOS, or Android client-side SDKs to handle the next actions.
 final bool? useStripeSdk;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': ?clientSecret,
   'confirmation_token': ?confirmationToken,
   'expand': ?expand,
@@ -56,10 +56,10 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   'return_url': ?returnUrl,
   'use_stripe_sdk': ?useStripeSdk,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_secret', 'confirmation_token', 'expand', 'mandate_data', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'use_stripe_sdk'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_secret', 'confirmation_token', 'expand', 'mandate_data', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'use_stripe_sdk'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final clientSecret$ = clientSecret;
 if (clientSecret$ != null) {
   if (clientSecret$.runes.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
@@ -72,8 +72,8 @@ final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
   if (paymentMethod$.runes.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
-return errors; } 
-PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret, String? Function()? confirmationToken, List<String>? Function()? expand, PostPaymentIntentsIntentConfirmRequestMandateData? Function()? mandateData, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, bool? Function()? useStripeSdk, }) { return PostSetupIntentsIntentConfirmRequest(
+return errors;}
+PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret, String? Function()? confirmationToken, List<String>? Function()? expand, PostPaymentIntentsIntentConfirmRequestMandateData? Function()? mandateData, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, bool? Function()? useStripeSdk, }) {return PostSetupIntentsIntentConfirmRequest(
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   confirmationToken: confirmationToken != null ? confirmationToken() : this.confirmationToken,
   expand: expand != null ? expand() : this.expand,
@@ -83,7 +83,7 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequest &&
           clientSecret == other.clientSecret &&
@@ -100,4 +100,4 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
 
 @override String toString() => 'PostSetupIntentsIntentConfirmRequest(\n  clientSecret: $clientSecret,\n  confirmationToken: $confirmationToken,\n  expand: $expand,\n  mandateData: $mandateData,\n  paymentMethod: $paymentMethod,\n  paymentMethodData: $paymentMethodData,\n  paymentMethodOptions: $paymentMethodOptions,\n  returnUrl: $returnUrl,\n  useStripeSdk: $useStripeSdk,\n)';
 
- }
+}

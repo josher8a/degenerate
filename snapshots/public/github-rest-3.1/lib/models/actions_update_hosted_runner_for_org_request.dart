@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsUpdateHostedRunnerForOrgRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateHostedRunnerForOrgRequest {const ActionsUpdateHostedRunnerForOrgRequest({this.name, this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.size, this.imageId, this.imageVersion, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateHostedRunnerForOrgRequest {const ActionsUpdateHostedRunnerForOrgRequest({this.name, this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.size, this.imageId, this.imageVersion = const Omittable.absent(), });
 
-factory ActionsUpdateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateHostedRunnerForOrgRequest(
+factory ActionsUpdateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) {return ActionsUpdateHostedRunnerForOrgRequest(
   name: json['name'] as String?,
   runnerGroupId: json['runner_group_id'] != null ? (json['runner_group_id'] as num).toInt() : null,
   maximumRunners: json['maximum_runners'] != null ? (json['maximum_runners'] as num).toInt() : null,
   enableStaticIp: json['enable_static_ip'] as bool?,
   size: json['size'] as String?,
   imageId: json['image_id'] as String?,
-  imageVersion: json['image_version'] as String?,
-); }
+  imageVersion: json.containsKey('image_version') ? Omittable(json['image_version'] as String?) : const Omittable.absent(),
+);}
 
 /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
 final String? name;
@@ -32,27 +32,27 @@ final String? size;
 final String? imageId;
 
 /// The version of the runner image to deploy. This is relevant only for runners using custom images.
-final String? imageVersion;
+final Omittable<String?> imageVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'runner_group_id': ?runnerGroupId,
   'maximum_runners': ?maximumRunners,
   'enable_static_ip': ?enableStaticIp,
   'size': ?size,
   'image_id': ?imageId,
-  'image_version': ?imageVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'runner_group_id', 'maximum_runners', 'enable_static_ip', 'size', 'image_id', 'image_version'}.contains(key)); } 
-ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? Function()? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, String? Function()? size, String? Function()? imageId, String? Function()? imageVersion, }) { return ActionsUpdateHostedRunnerForOrgRequest(
+  if (imageVersion.isPresent) 'image_version': imageVersion.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'runner_group_id', 'maximum_runners', 'enable_static_ip', 'size', 'image_id', 'image_version'}.contains(key));}
+ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? Function()? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, String? Function()? size, String? Function()? imageId, Omittable<String?>? imageVersion, }) {return ActionsUpdateHostedRunnerForOrgRequest(
   name: name != null ? name() : this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,
   maximumRunners: maximumRunners != null ? maximumRunners() : this.maximumRunners,
   enableStaticIp: enableStaticIp != null ? enableStaticIp() : this.enableStaticIp,
   size: size != null ? size() : this.size,
   imageId: imageId != null ? imageId() : this.imageId,
-  imageVersion: imageVersion != null ? imageVersion() : this.imageVersion,
-); } 
+  imageVersion: imageVersion ?? this.imageVersion,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsUpdateHostedRunnerForOrgRequest &&
           name == other.name &&
@@ -67,4 +67,4 @@ ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? 
 
 @override String toString() => 'ActionsUpdateHostedRunnerForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, size: $size, imageId: $imageId, imageVersion: $imageVersion)';
 
- }
+}

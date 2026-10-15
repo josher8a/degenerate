@@ -2,15 +2,15 @@
 // Source: #/components/schemas/PaymentMethodOptionsSofort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_amazon_pay_payment_method_options/checkout_amazon_pay_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_method_details_sofort/payment_method_details_sofort_preferred_language.dart';/// 
-@immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsSofort(
-  preferredLanguage: json['preferred_language'] != null ? PaymentMethodDetailsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null,
+factory PaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsSofort(
+  preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] != null ? PaymentMethodDetailsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Preferred language of the SOFORT authorization page that the customer is redirected to.
-final PaymentMethodDetailsSofortPreferredLanguage? preferredLanguage;
+final Omittable<PaymentMethodDetailsSofortPreferredLanguage?> preferredLanguage;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -21,15 +21,15 @@ final PaymentMethodDetailsSofortPreferredLanguage? preferredLanguage;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
-  if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsSofort copyWith({PaymentMethodDetailsSofortPreferredLanguage? Function()? preferredLanguage, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsSofort(
-  preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsSofort copyWith({Omittable<PaymentMethodDetailsSofortPreferredLanguage?>? preferredLanguage, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsSofort(
+  preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsSofort &&
           preferredLanguage == other.preferredLanguage &&
@@ -39,4 +39,4 @@ PaymentMethodOptionsSofort copyWith({PaymentMethodDetailsSofortPreferredLanguage
 
 @override String toString() => 'PaymentMethodOptionsSofort(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

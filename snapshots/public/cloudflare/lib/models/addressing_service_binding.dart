@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_provisioning.dart';import 'package:pub_cloudflare/models/addressing_service_binding_identifier.dart';import 'package:pub_cloudflare/models/addressing_service_identifier.dart';import 'package:pub_cloudflare/models/addressing_service_name.dart';@immutable final class AddressingServiceBinding {const AddressingServiceBinding({this.cidr, this.id, this.provisioning, this.serviceId, this.serviceName, });
 
-factory AddressingServiceBinding.fromJson(Map<String, dynamic> json) { return AddressingServiceBinding(
+factory AddressingServiceBinding.fromJson(Map<String, dynamic> json) {return AddressingServiceBinding(
   cidr: json['cidr'] != null ? AddressingCidr.fromJson(json['cidr'] as String) : null,
   id: json['id'] != null ? AddressingServiceBindingIdentifier.fromJson(json['id'] as String) : null,
   provisioning: json['provisioning'] != null ? AddressingProvisioning.fromJson(json['provisioning'] as Map<String, dynamic>) : null,
   serviceId: json['service_id'] != null ? AddressingServiceIdentifier.fromJson(json['service_id'] as String) : null,
   serviceName: json['service_name'] != null ? AddressingServiceName.fromJson(json['service_name'] as String) : null,
-); }
+);}
 
 /// IP Prefix in Classless Inter-Domain Routing format.
 final AddressingCidr? cidr;
@@ -22,21 +22,21 @@ final AddressingServiceIdentifier? serviceId;
 
 final AddressingServiceName? serviceName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cidr != null) 'cidr': cidr?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (provisioning != null) 'provisioning': provisioning?.toJson(),
   if (serviceId != null) 'service_id': serviceId?.toJson(),
   if (serviceName != null) 'service_name': serviceName?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cidr', 'id', 'provisioning', 'service_id', 'service_name'}.contains(key)); } 
-AddressingServiceBinding copyWith({AddressingCidr? Function()? cidr, AddressingServiceBindingIdentifier? Function()? id, AddressingProvisioning? Function()? provisioning, AddressingServiceIdentifier? Function()? serviceId, AddressingServiceName? Function()? serviceName, }) { return AddressingServiceBinding(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cidr', 'id', 'provisioning', 'service_id', 'service_name'}.contains(key));}
+AddressingServiceBinding copyWith({AddressingCidr? Function()? cidr, AddressingServiceBindingIdentifier? Function()? id, AddressingProvisioning? Function()? provisioning, AddressingServiceIdentifier? Function()? serviceId, AddressingServiceName? Function()? serviceName, }) {return AddressingServiceBinding(
   cidr: cidr != null ? cidr() : this.cidr,
   id: id != null ? id() : this.id,
   provisioning: provisioning != null ? provisioning() : this.provisioning,
   serviceId: serviceId != null ? serviceId() : this.serviceId,
   serviceName: serviceName != null ? serviceName() : this.serviceName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingServiceBinding &&
           cidr == other.cidr &&
@@ -49,4 +49,4 @@ AddressingServiceBinding copyWith({AddressingCidr? Function()? cidr, AddressingS
 
 @override String toString() => 'AddressingServiceBinding(cidr: $cidr, id: $id, provisioning: $provisioning, serviceId: $serviceId, serviceName: $serviceName)';
 
- }
+}

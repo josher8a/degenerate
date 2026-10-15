@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 sealed class TeamsCreateRequestPermission {const TeamsCreateRequestPermission();
 
-factory TeamsCreateRequestPermission.fromJson(String json) { return switch (json) {
+factory TeamsCreateRequestPermission.fromJson(String json) {return switch (json) {
   'pull' => pull,
   'push' => push,
   _ => TeamsCreateRequestPermission$Unknown(json),
-}; }
+};}
 
 static const TeamsCreateRequestPermission pull = TeamsCreateRequestPermission$pull._();
 
@@ -17,30 +17,30 @@ static const TeamsCreateRequestPermission push = TeamsCreateRequestPermission$pu
 static const List<TeamsCreateRequestPermission> values = [pull, push];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pull' => 'pull',
   'push' => 'push',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamsCreateRequestPermission$Unknown; } 
+bool get isUnknown {return this is TeamsCreateRequestPermission$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pull, required W Function() push, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pull, required W Function() push, required W Function(String value) $unknown, }) {return switch (this) {
       TeamsCreateRequestPermission$pull() => pull(),
       TeamsCreateRequestPermission$push() => push(),
       TeamsCreateRequestPermission$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W Function()? push, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W Function()? push, W Function(String value)? $unknown, }) {return switch (this) {
       TeamsCreateRequestPermission$pull() => pull != null ? pull() : orElse(value),
       TeamsCreateRequestPermission$push() => push != null ? push() : orElse(value),
       TeamsCreateRequestPermission$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamsCreateRequestPermission($value)';
 
- }
+}
 @immutable final class TeamsCreateRequestPermission$pull extends TeamsCreateRequestPermission {const TeamsCreateRequestPermission$pull._();
 
 @override String get value => 'pull';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'pull'.hashCode;
 
- }
+}
 @immutable final class TeamsCreateRequestPermission$push extends TeamsCreateRequestPermission {const TeamsCreateRequestPermission$push._();
 
 @override String get value => 'push';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => 'push'.hashCode;
 
- }
+}
 @immutable final class TeamsCreateRequestPermission$Unknown extends TeamsCreateRequestPermission {const TeamsCreateRequestPermission$Unknown(this.value);
 
 @override final String value;
@@ -68,19 +68,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission = TeamsCreateRequestPermission.pull, this.parentTeamId, });
+}
+@immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission, this.parentTeamId, });
 
-factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) { return TeamsCreateRequest(
+factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) {return TeamsCreateRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   maintainers: (json['maintainers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repoNames: (json['repo_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   privacy: json['privacy'] != null ? TeamFullPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamFullNotificationSetting.fromJson(json['notification_setting'] as String) : null,
-  permission: json.containsKey('permission') ? TeamsCreateRequestPermission.fromJson(json['permission'] as String) : TeamsCreateRequestPermission.pull,
+  permission: json['permission'] != null ? TeamsCreateRequestPermission.fromJson(json['permission'] as String) : null,
   parentTeamId: json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null,
-); }
+);}
 
 /// The name of the team.
 final String name;
@@ -111,23 +111,26 @@ final TeamFullPrivacy? privacy;
 final TeamFullNotificationSetting? notificationSetting;
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-final TeamsCreateRequestPermission permission;
+final TeamsCreateRequestPermission? permission;
 
 /// The ID of a team to set as the parent team.
 final int? parentTeamId;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `permission`, or its schema default when absent.
+TeamsCreateRequestPermission get permissionOrDefault => permission ?? TeamsCreateRequestPermission.fromJson('pull');
+
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   'maintainers': ?maintainers,
   'repo_names': ?repoNames,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
-  'permission': permission.toJson(),
+  if (permission != null) 'permission': permission?.toJson(),
   'parent_team_id': ?parentTeamId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-TeamsCreateRequest copyWith({String? name, String? Function()? description, List<String>? Function()? maintainers, List<String>? Function()? repoNames, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsCreateRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+TeamsCreateRequest copyWith({String? name, String? Function()? description, List<String>? Function()? maintainers, List<String>? Function()? repoNames, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsCreateRequestPermission? Function()? permission, int? Function()? parentTeamId, }) {return TeamsCreateRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   maintainers: maintainers != null ? maintainers() : this.maintainers,
@@ -136,7 +139,7 @@ TeamsCreateRequest copyWith({String? name, String? Function()? description, List
   notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,
   permission: permission != null ? permission() : this.permission,
   parentTeamId: parentTeamId != null ? parentTeamId() : this.parentTeamId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsCreateRequest &&
           name == other.name &&
@@ -152,4 +155,4 @@ TeamsCreateRequest copyWith({String? name, String? Function()? description, List
 
 @override String toString() => 'TeamsCreateRequest(name: $name, description: $description, maintainers: $maintainers, repoNames: $repoNames, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)';
 
- }
+}

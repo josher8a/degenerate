@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule/zaraz_click_listener_rule_settings.dart';sealed class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction();
 
-factory ZarazClickListenerRuleAction.fromJson(String json) { return switch (json) {
+factory ZarazClickListenerRuleAction.fromJson(String json) {return switch (json) {
   'clickListener' => clickListener,
   _ => ZarazClickListenerRuleAction$Unknown(json),
-}; }
+};}
 
 static const ZarazClickListenerRuleAction clickListener = ZarazClickListenerRuleAction$clickListener._();
 
 static const List<ZarazClickListenerRuleAction> values = [clickListener];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'clickListener' => 'clickListener',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZarazClickListenerRuleAction$Unknown; } 
+bool get isUnknown {return this is ZarazClickListenerRuleAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() clickListener, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() clickListener, required W Function(String value) $unknown, }) {return switch (this) {
       ZarazClickListenerRuleAction$clickListener() => clickListener(),
       ZarazClickListenerRuleAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? clickListener, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clickListener, W Function(String value)? $unknown, }) {return switch (this) {
       ZarazClickListenerRuleAction$clickListener() => clickListener != null ? clickListener() : orElse(value),
       ZarazClickListenerRuleAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZarazClickListenerRuleAction($value)';
 
- }
+}
 @immutable final class ZarazClickListenerRuleAction$clickListener extends ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction$clickListener._();
 
 @override String get value => 'clickListener';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clickLis
 
 @override int get hashCode => 'clickListener'.hashCode;
 
- }
+}
 @immutable final class ZarazClickListenerRuleAction$Unknown extends ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clickLis
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZarazClickListenerRule {const ZarazClickListenerRule({required this.action, required this.id, required this.settings, });
 
-factory ZarazClickListenerRule.fromJson(Map<String, dynamic> json) { return ZarazClickListenerRule(
+factory ZarazClickListenerRule.fromJson(Map<String, dynamic> json) {return ZarazClickListenerRule(
   action: ZarazClickListenerRuleAction.fromJson(json['action'] as String),
   id: json['id'] as String,
   settings: ZarazClickListenerRuleSettings.fromJson(json['settings'] as Map<String, dynamic>),
-); }
+);}
 
 final ZarazClickListenerRuleAction action;
 
@@ -67,19 +67,19 @@ final String id;
 
 final ZarazClickListenerRuleSettings settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'id': id,
   'settings': settings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'clickListener' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] == 'clickListener' &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('settings'); } 
-ZarazClickListenerRule copyWith({ZarazClickListenerRuleAction? action, String? id, ZarazClickListenerRuleSettings? settings, }) { return ZarazClickListenerRule(
+      json.containsKey('settings');}
+ZarazClickListenerRule copyWith({ZarazClickListenerRuleAction? action, String? id, ZarazClickListenerRuleSettings? settings, }) {return ZarazClickListenerRule(
   action: action ?? this.action,
   id: id ?? this.id,
   settings: settings ?? this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazClickListenerRule &&
           action == other.action &&
@@ -90,4 +90,4 @@ ZarazClickListenerRule copyWith({ZarazClickListenerRuleAction? action, String? i
 
 @override String toString() => 'ZarazClickListenerRule(action: $action, id: $id, settings: $settings)';
 
- }
+}

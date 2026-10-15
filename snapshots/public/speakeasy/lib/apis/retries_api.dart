@@ -10,7 +10,7 @@ final class RetriesApi with ApiExecutor {const RetriesApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /retries/after`
-Future<ApiResult<RetriesAfterResponse, Never>> retriesAfter({required String requestId, int? numRetries, int? retryAfterVal, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RetriesAfterResponse, Never>> retriesAfter({required String requestId, int? numRetries, int? retryAfterVal, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['request-id'] = requestId;
 if (numRetries != null) {
@@ -31,15 +31,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RetriesAfterResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /retries`
-Future<ApiResult<RetriesGetResponse, Never>> retriesGet({required String requestId, int? numRetries, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RetriesGetResponse, Never>> retriesGet({required String requestId, int? numRetries, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['request-id'] = requestId;
 if (numRetries != null) {
@@ -57,15 +57,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RetriesGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /retries`
-Future<ApiResult<RetriesPostResponse, Never>> retriesPost({required String requestId, int? numRetries, RetriesPostRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RetriesPostResponse, Never>> retriesPost({required String requestId, int? numRetries, RetriesPostRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['request-id'] = requestId;
 if (numRetries != null) {
@@ -85,15 +85,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RetriesPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /retries#timeout`
-Future<ApiResult<RetriesGetTimeoutResponse, Never>> retriesGetTimeout({required String requestId, int? numRetries, String? requestId2, String? faultSettings, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RetriesGetTimeoutResponse, Never>> retriesGetTimeout({required String requestId, int? numRetries, String? requestId2, String? faultSettings, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['request-id'] = requestId;
 if (numRetries != null) {
@@ -117,17 +117,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RetriesGetTimeoutResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Request with initial connection error then passing retry
 ///
 /// `GET /retries#retryConnectionErrors`
-Future<ApiResult<RetriesGetRetryConnectionErrorsResponse, Never>> retriesGetRetryConnectionErrors({required int numRetries, required String requestId, required String faultSettings, required String requestId2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RetriesGetRetryConnectionErrorsResponse, Never>> retriesGetRetryConnectionErrors({required int numRetries, required String requestId, required String faultSettings, required String requestId2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['num-retries'] = numRetries.toString();
 queryParameters['request-id'] = requestId;
@@ -145,15 +145,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RetriesGetRetryConnectionErrorsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /retriesFlatEmptyResponse`
-Future<ApiResult<void, Never>> retriesFlatEmptyResponsePost({required String requestId, int? numRetries, RetriesFlatEmptyResponsePostRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> retriesFlatEmptyResponsePost({required String requestId, int? numRetries, RetriesFlatEmptyResponsePostRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['request-id'] = requestId;
 if (numRetries != null) {
@@ -173,15 +173,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// A request to a non-valid port to test connection errors
 ///
 /// `GET /retriesConnectError`
-Future<ApiResult<RetriesConnectErrorGetResponse, Never>> retriesConnectErrorGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RetriesConnectErrorGetResponse, Never>> retriesConnectErrorGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -190,11 +190,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return RetriesConnectErrorGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

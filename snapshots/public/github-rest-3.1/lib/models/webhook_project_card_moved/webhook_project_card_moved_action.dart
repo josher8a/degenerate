@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction();
 
-factory WebhookProjectCardMovedAction.fromJson(String json) { return switch (json) {
+factory WebhookProjectCardMovedAction.fromJson(String json) {return switch (json) {
   'moved' => moved,
   _ => WebhookProjectCardMovedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookProjectCardMovedAction moved = WebhookProjectCardMovedAction$moved._();
 
 static const List<WebhookProjectCardMovedAction> values = [moved];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'moved' => 'moved',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookProjectCardMovedAction$Unknown; } 
+bool get isUnknown {return this is WebhookProjectCardMovedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() moved, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() moved, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookProjectCardMovedAction$moved() => moved(),
       WebhookProjectCardMovedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? moved, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? moved, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookProjectCardMovedAction$moved() => moved != null ? moved() : orElse(value),
       WebhookProjectCardMovedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookProjectCardMovedAction($value)';
 
- }
+}
 @immutable final class WebhookProjectCardMovedAction$moved extends WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction$moved._();
 
 @override String get value => 'moved';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? moved, W
 
 @override int get hashCode => 'moved'.hashCode;
 
- }
+}
 @immutable final class WebhookProjectCardMovedAction$Unknown extends WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? moved, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

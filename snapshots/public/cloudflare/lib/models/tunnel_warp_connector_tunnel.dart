@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_conns_active_at.dart';import 'package:pub_cloudflare/models/tunnel_conns_inactive_at.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_schemas_connection.dart';import 'package:pub_cloudflare/models/tunnel_status.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';/// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
 @immutable final class TunnelWarpConnectorTunnel {const TunnelWarpConnectorTunnel({this.accountTag, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.status, this.tunType, });
 
-factory TunnelWarpConnectorTunnel.fromJson(Map<String, dynamic> json) { return TunnelWarpConnectorTunnel(
+factory TunnelWarpConnectorTunnel.fromJson(Map<String, dynamic> json) {return TunnelWarpConnectorTunnel(
   accountTag: json['account_tag'] != null ? TunnelAccountId.fromJson(json['account_tag'] as String) : null,
   connections: (json['connections'] as List<dynamic>?)?.map((e) => TunnelSchemasConnection.fromJson(e as Map<String, dynamic>)).toList(),
   connsActiveAt: json['conns_active_at'] != null ? TunnelConnsActiveAt.fromJson(json['conns_active_at'] as String) : null,
@@ -16,7 +16,7 @@ factory TunnelWarpConnectorTunnel.fromJson(Map<String, dynamic> json) { return T
   name: json['name'] != null ? TunnelTunnelName.fromJson(json['name'] as String) : null,
   status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,
   tunType: json['tun_type'] != null ? TunnelTunnelType.fromJson(json['tun_type'] as String) : null,
-); }
+);}
 
 /// Cloudflare account ID
 final TunnelAccountId? accountTag;
@@ -51,7 +51,7 @@ final TunnelStatus? status;
 /// The type of tunnel.
 final TunnelTunnelType? tunType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTag != null) 'account_tag': accountTag?.toJson(),
   if (connections != null) 'connections': connections?.map((e) => e.toJson()).toList(),
   if (connsActiveAt != null) 'conns_active_at': connsActiveAt?.toJson(),
@@ -63,9 +63,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (tunType != null) 'tun_type': tunType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'connections', 'conns_active_at', 'conns_inactive_at', 'created_at', 'deleted_at', 'id', 'metadata', 'name', 'status', 'tun_type'}.contains(key)); } 
-TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, List<TunnelSchemasConnection>? Function()? connections, TunnelConnsActiveAt? Function()? connsActiveAt, TunnelConnsInactiveAt? Function()? connsInactiveAt, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelTunnelId? Function()? id, Map<String, dynamic>? Function()? metadata, TunnelTunnelName? Function()? name, TunnelStatus? Function()? status, TunnelTunnelType? Function()? tunType, }) { return TunnelWarpConnectorTunnel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tag', 'connections', 'conns_active_at', 'conns_inactive_at', 'created_at', 'deleted_at', 'id', 'metadata', 'name', 'status', 'tun_type'}.contains(key));}
+TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, List<TunnelSchemasConnection>? Function()? connections, TunnelConnsActiveAt? Function()? connsActiveAt, TunnelConnsInactiveAt? Function()? connsInactiveAt, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelTunnelId? Function()? id, Map<String, dynamic>? Function()? metadata, TunnelTunnelName? Function()? name, TunnelStatus? Function()? status, TunnelTunnelType? Function()? tunType, }) {return TunnelWarpConnectorTunnel(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   connections: connections != null ? connections() : this.connections,
   connsActiveAt: connsActiveAt != null ? connsActiveAt() : this.connsActiveAt,
@@ -77,7 +77,7 @@ TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, Lis
   name: name != null ? name() : this.name,
   status: status != null ? status() : this.status,
   tunType: tunType != null ? tunType() : this.tunType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelWarpConnectorTunnel &&
           accountTag == other.accountTag &&
@@ -96,4 +96,4 @@ TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, Lis
 
 @override String toString() => 'TunnelWarpConnectorTunnel(\n  accountTag: $accountTag,\n  connections: $connections,\n  connsActiveAt: $connsActiveAt,\n  connsInactiveAt: $connsInactiveAt,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  id: $id,\n  metadata: $metadata,\n  name: $name,\n  status: $status,\n  tunType: $tunType,\n)';
 
- }
+}

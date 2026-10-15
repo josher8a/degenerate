@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: BusinessProfile)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/annual_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_url.dart';/// Business information about the account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/annual_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/support_url.dart';/// Business information about the account.
 @immutable final class PostAccountsAccountRequestBusinessProfile {const PostAccountsAccountRequestBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
-factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestBusinessProfile(
+factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestBusinessProfile(
   annualRevenue: json['annual_revenue'] != null ? AnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
   estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
   mcc: json['mcc'] as String?,
@@ -15,9 +15,9 @@ factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> 
   supportAddress: json['support_address'] != null ? SupportAddress.fromJson(json['support_address'] as Map<String, dynamic>) : null,
   supportEmail: json['support_email'] as String?,
   supportPhone: json['support_phone'] as String?,
-  supportUrl: json['support_url'] != null ? OneOf2.parse(json['support_url'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  supportUrl: json['support_url'] != null ? SupportUrl.fromJson(json['support_url']) : null,
   url: json['url'] as String?,
-); }
+);}
 
 final AnnualRevenue? annualRevenue;
 
@@ -43,7 +43,7 @@ final SupportUrl? supportUrl;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annualRevenue != null) 'annual_revenue': annualRevenue?.toJson(),
   'estimated_worker_count': ?estimatedWorkerCount,
   'mcc': ?mcc,
@@ -56,10 +56,10 @@ Map<String, dynamic> toJson() { return {
   'support_phone': ?supportPhone,
   if (supportUrl != null) 'support_url': supportUrl?.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final mcc$ = mcc;
 if (mcc$ != null) {
   if (mcc$.runes.length > 4) { errors.add('mcc: length must be <= 4'); }
@@ -76,8 +76,8 @@ final supportPhone$ = supportPhone;
 if (supportPhone$ != null) {
   if (supportPhone$.runes.length > 5000) { errors.add('supportPhone: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountRequestBusinessProfile copyWith({AnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, MonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, SupportAddress? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, SupportUrl? Function()? supportUrl, String? Function()? url, }) { return PostAccountsAccountRequestBusinessProfile(
+return errors;}
+PostAccountsAccountRequestBusinessProfile copyWith({AnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, MonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, SupportAddress? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, SupportUrl? Function()? supportUrl, String? Function()? url, }) {return PostAccountsAccountRequestBusinessProfile(
   annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
   mcc: mcc != null ? mcc() : this.mcc,
@@ -90,7 +90,7 @@ PostAccountsAccountRequestBusinessProfile copyWith({AnnualRevenue? Function()? a
   supportPhone: supportPhone != null ? supportPhone() : this.supportPhone,
   supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestBusinessProfile &&
           annualRevenue == other.annualRevenue &&
@@ -110,4 +110,4 @@ PostAccountsAccountRequestBusinessProfile copyWith({AnnualRevenue? Function()? a
 
 @override String toString() => 'PostAccountsAccountRequestBusinessProfile(\n  annualRevenue: $annualRevenue,\n  estimatedWorkerCount: $estimatedWorkerCount,\n  mcc: $mcc,\n  minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation,\n  monthlyEstimatedRevenue: $monthlyEstimatedRevenue,\n  name: $name,\n  productDescription: $productDescription,\n  supportAddress: $supportAddress,\n  supportEmail: $supportEmail,\n  supportPhone: $supportPhone,\n  supportUrl: $supportUrl,\n  url: $url,\n)';
 
- }
+}

@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// End user details.
 @immutable final class EndUserDetails {const EndUserDetails({required this.present, this.ipAddress, });
 
-factory EndUserDetails.fromJson(Map<String, dynamic> json) { return EndUserDetails(
+factory EndUserDetails.fromJson(Map<String, dynamic> json) {return EndUserDetails(
   ipAddress: json['ip_address'] as String?,
   present: json['present'] as bool,
-); }
+);}
 
 final String? ipAddress;
 
 final bool present;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip_address': ?ipAddress,
   'present': present,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('present') && json['present'] is bool; } 
-EndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) { return EndUserDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('present') && json['present'] is bool;}
+EndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) {return EndUserDetails(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   present: present ?? this.present,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EndUserDetails &&
           ipAddress == other.ipAddress &&
@@ -31,4 +31,4 @@ EndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) { retu
 
 @override String toString() => 'EndUserDetails(ipAddress: $ipAddress, present: $present)';
 
- }
+}

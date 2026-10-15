@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookIssuesUnassigned
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unassigned/webhook_issues_unassigned_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_user_mannequin.dart';@immutable final class WebhookIssuesUnassigned {const WebhookIssuesUnassigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unassigned/webhook_issues_unassigned_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_user_mannequin.dart';@immutable final class WebhookIssuesUnassigned {const WebhookIssuesUnassigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee = const Omittable.absent(), this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssuesUnassigned.fromJson(Map<String, dynamic> json) { return WebhookIssuesUnassigned(
+factory WebhookIssuesUnassigned.fromJson(Map<String, dynamic> json) {return WebhookIssuesUnassigned(
   action: WebhookIssuesUnassignedAction.fromJson(json['action'] as String),
-  assignee: json['assignee'] != null ? WebhooksUserMannequin.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhooksUserMannequin.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The action that was performed.
 final WebhookIssuesUnassignedAction action;
 
-final WebhooksUserMannequin? assignee;
+final Omittable<WebhooksUserMannequin?> assignee;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -31,30 +31,30 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'issue': issue.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssuesUnassigned copyWith({WebhookIssuesUnassignedAction? action, WebhooksUserMannequin? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesUnassigned(
+      json.containsKey('sender');}
+WebhookIssuesUnassigned copyWith({WebhookIssuesUnassignedAction? action, Omittable<WebhooksUserMannequin?>? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssuesUnassigned(
   action: action ?? this.action,
-  assignee: assignee != null ? assignee() : this.assignee,
+  assignee: assignee ?? this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   issue: issue ?? this.issue,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesUnassigned &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookIssuesUnassigned copyWith({WebhookIssuesUnassignedAction? action, Webhook
 
 @override String toString() => 'WebhookIssuesUnassigned(action: $action, assignee: $assignee, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

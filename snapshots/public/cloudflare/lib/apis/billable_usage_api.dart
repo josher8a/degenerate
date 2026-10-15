@@ -28,7 +28,7 @@ final class BillableUsageApi with ApiExecutor {const BillableUsageApi(this.apiCo
 /// 
 ///
 /// `GET /accounts/{account_id}/billing/usage/paygo`
-Future<ApiResult<List<UsageRecord>, BillableUsageGetPaygoAccountUsageError>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<UsageRecord>, BillableUsageGetPaygoAccountUsageError>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (from != null) {
   queryParameters['from'] = from;
@@ -54,7 +54,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -62,5 +62,5 @@ return execute(
   },
   onError: BillableUsageGetPaygoAccountUsageError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRejectRequest {const PostAccountsAccountRejectRequest({required this.reason, this.expand, });
 
-factory PostAccountsAccountRejectRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRejectRequest(
+factory PostAccountsAccountRejectRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRejectRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   reason: json['reason'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,19 +14,19 @@ final List<String>? expand;
 /// The reason for rejecting the account. Can be `fraud`, `terms_of_service`, or `other`.
 final String reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'reason': reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason') && json['reason'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reason') && json['reason'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (reason.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
-return errors; } 
-PostAccountsAccountRejectRequest copyWith({List<String>? Function()? expand, String? reason, }) { return PostAccountsAccountRejectRequest(
+return errors;}
+PostAccountsAccountRejectRequest copyWith({List<String>? Function()? expand, String? reason, }) {return PostAccountsAccountRejectRequest(
   expand: expand != null ? expand() : this.expand,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRejectRequest &&
           listEquals(expand, other.expand) &&
@@ -36,4 +36,4 @@ PostAccountsAccountRejectRequest copyWith({List<String>? Function()? expand, Str
 
 @override String toString() => 'PostAccountsAccountRejectRequest(expand: $expand, reason: $reason)';
 
- }
+}

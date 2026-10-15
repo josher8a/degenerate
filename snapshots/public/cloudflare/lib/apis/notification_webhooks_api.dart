@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "NotificationWebhooksApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_account_id.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/aaa_webhook_id.dart';import 'package:pub_cloudflare/models/aaa_webhooks.dart';import 'package:pub_cloudflare/models/errors/notification_alert_types_get_alert_types_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_create_a_webhook_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_get_a_webhook_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_list_webhooks_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_update_a_webhook_error.dart';import 'package:pub_cloudflare/models/notification_webhooks_create_a_webhook_request.dart';import 'package:pub_cloudflare/models/notification_webhooks_update_a_webhook_request.dart';import 'package:pub_cloudflare/models/response_common2.dart';/// NotificationWebhooksApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_account_id.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/aaa_webhook_id.dart';import 'package:pub_cloudflare/models/aaa_webhooks_response.dart';import 'package:pub_cloudflare/models/errors/notification_alert_types_get_alert_types_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_create_a_webhook_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_get_a_webhook_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_list_webhooks_error.dart';import 'package:pub_cloudflare/models/errors/notification_webhooks_update_a_webhook_error.dart';import 'package:pub_cloudflare/models/notification_webhooks_create_a_webhook_request.dart';import 'package:pub_cloudflare/models/notification_webhooks_update_a_webhook_request.dart';import 'package:pub_cloudflare/models/response_common2.dart';/// NotificationWebhooksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class NotificationWebhooksApi with ApiExecutor {const NotificationWebhooks
 /// Gets a list of all configured webhook destinations.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<List<AaaWebhooks>?, NotificationWebhooksListWebhooksError>> notificationWebhooksListWebhooks({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaWebhooksResponse>?, NotificationWebhooksListWebhooksError>> notificationWebhooksListWebhooks({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => AaaWebhooks.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => AaaWebhooksResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: NotificationWebhooksListWebhooksError.fromResponse,
 );
- } 
+}
 /// Create a webhook
 ///
 /// Creates a new webhook destination.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksCreateAWebhookError>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksCreateAWebhookError>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,13 +56,13 @@ return execute(
   },
   onError: NotificationWebhooksCreateAWebhookError.fromResponse,
 );
- } 
+}
 /// Get a webhook
 ///
 /// Get details for a single webhooks destination.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<AaaWebhooks?, NotificationWebhooksGetAWebhookError>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaWebhooksResponse?, NotificationWebhooksGetAWebhookError>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,21 +71,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AaaWebhooks.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaWebhooksResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: NotificationWebhooksGetAWebhookError.fromResponse,
 );
- } 
+}
 /// Update a webhook
 ///
 /// Update a webhook destination.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksUpdateAWebhookError>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksUpdateAWebhookError>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -104,13 +104,13 @@ return execute(
   },
   onError: NotificationWebhooksUpdateAWebhookError.fromResponse,
 );
- } 
+}
 /// Delete a webhook
 ///
 /// Delete a configured webhook destination.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<ResponseCommon2, NotificationAlertTypesGetAlertTypesError>> notificationWebhooksDeleteAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon2, NotificationAlertTypesGetAlertTypesError>> notificationWebhooksDeleteAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,12 +119,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: NotificationAlertTypesGetAlertTypesError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetSessionParticipantsSortBy {const GetSessionParticipantsSortBy();
 
-factory GetSessionParticipantsSortBy.fromJson(String json) { return switch (json) {
+factory GetSessionParticipantsSortBy.fromJson(String json) {return switch (json) {
   'joinedAt' => joinedAt,
   'duration' => duration,
   _ => GetSessionParticipantsSortBy$Unknown(json),
-}; }
+};}
 
 static const GetSessionParticipantsSortBy joinedAt = GetSessionParticipantsSortBy$joinedAt._();
 
@@ -16,30 +16,30 @@ static const GetSessionParticipantsSortBy duration = GetSessionParticipantsSortB
 static const List<GetSessionParticipantsSortBy> values = [joinedAt, duration];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'joinedAt' => 'joinedAt',
   'duration' => 'duration',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetSessionParticipantsSortBy$Unknown; } 
+bool get isUnknown {return this is GetSessionParticipantsSortBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() joinedAt, required W Function() duration, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() joinedAt, required W Function() duration, required W Function(String value) $unknown, }) {return switch (this) {
       GetSessionParticipantsSortBy$joinedAt() => joinedAt(),
       GetSessionParticipantsSortBy$duration() => duration(),
       GetSessionParticipantsSortBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? joinedAt, W Function()? duration, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? joinedAt, W Function()? duration, W Function(String value)? $unknown, }) {return switch (this) {
       GetSessionParticipantsSortBy$joinedAt() => joinedAt != null ? joinedAt() : orElse(value),
       GetSessionParticipantsSortBy$duration() => duration != null ? duration() : orElse(value),
       GetSessionParticipantsSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetSessionParticipantsSortBy($value)';
 
- }
+}
 @immutable final class GetSessionParticipantsSortBy$joinedAt extends GetSessionParticipantsSortBy {const GetSessionParticipantsSortBy$joinedAt._();
 
 @override String get value => 'joinedAt';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? joinedAt
 
 @override int get hashCode => 'joinedAt'.hashCode;
 
- }
+}
 @immutable final class GetSessionParticipantsSortBy$duration extends GetSessionParticipantsSortBy {const GetSessionParticipantsSortBy$duration._();
 
 @override String get value => 'duration';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? joinedAt
 
 @override int get hashCode => 'duration'.hashCode;
 
- }
+}
 @immutable final class GetSessionParticipantsSortBy$Unknown extends GetSessionParticipantsSortBy {const GetSessionParticipantsSortBy$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? joinedAt
 
 @override int get hashCode => value.hashCode;
 
- }
+}

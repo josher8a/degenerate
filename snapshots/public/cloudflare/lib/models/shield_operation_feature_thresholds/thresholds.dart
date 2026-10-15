@@ -59,7 +59,7 @@ num toJson() => value;
 }
 @immutable final class Thresholds {const Thresholds({this.authIdTokens, this.dataPoints, this.lastUpdated, this.p50, this.p90, this.p99, this.periodSeconds, this.requests, this.suggestedThreshold, });
 
-factory Thresholds.fromJson(Map<String, dynamic> json) { return Thresholds(
+factory Thresholds.fromJson(Map<String, dynamic> json) {return Thresholds(
   authIdTokens: json['auth_id_tokens'] != null ? ShieldAuthIdTokens.fromJson(json['auth_id_tokens'] as num) : null,
   dataPoints: json['data_points'] != null ? ShieldDataPoints.fromJson(json['data_points'] as num) : null,
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,
@@ -69,7 +69,7 @@ factory Thresholds.fromJson(Map<String, dynamic> json) { return Thresholds(
   periodSeconds: json['period_seconds'] != null ? ShieldPeriodSeconds.fromJson(json['period_seconds'] as num) : null,
   requests: json['requests'] != null ? ShieldRequests.fromJson(json['requests'] as num) : null,
   suggestedThreshold: json['suggested_threshold'] != null ? ShieldSuggestedThreshold.fromJson(json['suggested_threshold'] as num) : null,
-); }
+);}
 
 /// The total number of auth-ids seen across this calculation.
 final ShieldAuthIdTokens? authIdTokens;
@@ -91,7 +91,7 @@ final ShieldRequests? requests;
 
 final ShieldSuggestedThreshold? suggestedThreshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authIdTokens != null) 'auth_id_tokens': authIdTokens?.toJson(),
   if (dataPoints != null) 'data_points': dataPoints?.toJson(),
   if (lastUpdated != null) 'last_updated': lastUpdated?.toJson(),
@@ -101,9 +101,9 @@ Map<String, dynamic> toJson() { return {
   if (periodSeconds != null) 'period_seconds': periodSeconds?.toJson(),
   if (requests != null) 'requests': requests?.toJson(),
   if (suggestedThreshold != null) 'suggested_threshold': suggestedThreshold?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_id_tokens', 'data_points', 'last_updated', 'p50', 'p90', 'p99', 'period_seconds', 'requests', 'suggested_threshold'}.contains(key)); } 
-Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoints? Function()? dataPoints, ShieldTimestamp? Function()? lastUpdated, ShieldP50? Function()? p50, ShieldP90? Function()? p90, ShieldP99? Function()? p99, ShieldPeriodSeconds? Function()? periodSeconds, ShieldRequests? Function()? requests, ShieldSuggestedThreshold? Function()? suggestedThreshold, }) { return Thresholds(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auth_id_tokens', 'data_points', 'last_updated', 'p50', 'p90', 'p99', 'period_seconds', 'requests', 'suggested_threshold'}.contains(key));}
+Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoints? Function()? dataPoints, ShieldTimestamp? Function()? lastUpdated, ShieldP50? Function()? p50, ShieldP90? Function()? p90, ShieldP99? Function()? p99, ShieldPeriodSeconds? Function()? periodSeconds, ShieldRequests? Function()? requests, ShieldSuggestedThreshold? Function()? suggestedThreshold, }) {return Thresholds(
   authIdTokens: authIdTokens != null ? authIdTokens() : this.authIdTokens,
   dataPoints: dataPoints != null ? dataPoints() : this.dataPoints,
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
@@ -113,7 +113,7 @@ Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoi
   periodSeconds: periodSeconds != null ? periodSeconds() : this.periodSeconds,
   requests: requests != null ? requests() : this.requests,
   suggestedThreshold: suggestedThreshold != null ? suggestedThreshold() : this.suggestedThreshold,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Thresholds &&
           authIdTokens == other.authIdTokens &&
@@ -130,4 +130,4 @@ Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoi
 
 @override String toString() => 'Thresholds(\n  authIdTokens: $authIdTokens,\n  dataPoints: $dataPoints,\n  lastUpdated: $lastUpdated,\n  p50: $p50,\n  p90: $p90,\n  p99: $p99,\n  periodSeconds: $periodSeconds,\n  requests: $requests,\n  suggestedThreshold: $suggestedThreshold,\n)';
 
- }
+}

@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest {const ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest({required this.email});
 
-factory ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
+factory ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest.fromJson(Map<String, dynamic> json) {return ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
   email: json['email'] as String,
-); }
+);}
 
 /// The email of the user to revoke.
 /// 
 /// Example: `'test@example.com'`
 final String email;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String; } 
-ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest copyWith({String? email}) { return ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') && json['email'] is String;}
+ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest copyWith({String? email}) {return ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
   email: email ?? this.email,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest &&
           email == other.email;
@@ -27,4 +27,4 @@ ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest copyWith({Str
 
 @override String toString() => 'ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(email: $email)';
 
- }
+}

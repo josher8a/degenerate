@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Tlds {const Tlds({required this.manager, required this.tld, required this.type, });
 
-factory Tlds.fromJson(Map<String, dynamic> json) { return Tlds(
+factory Tlds.fromJson(Map<String, dynamic> json) {return Tlds(
   manager: json['manager'] as String,
   tld: json['tld'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// The organization that manages the TLD.
 /// 
@@ -24,19 +24,19 @@ final String tld;
 /// Example: `'GENERIC'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'manager': manager,
   'tld': tld,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('manager') && json['manager'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('manager') && json['manager'] is String &&
       json.containsKey('tld') && json['tld'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-Tlds copyWith({String? manager, String? tld, String? type, }) { return Tlds(
+      json.containsKey('type') && json['type'] is String;}
+Tlds copyWith({String? manager, String? tld, String? type, }) {return Tlds(
   manager: manager ?? this.manager,
   tld: tld ?? this.tld,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Tlds &&
           manager == other.manager &&
@@ -47,4 +47,4 @@ Tlds copyWith({String? manager, String? tld, String? type, }) { return Tlds(
 
 @override String toString() => 'Tlds(manager: $manager, tld: $tld, type: $type)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsCertificates {const ListsCertificates({required this.issuer, required this.subjectName, required this.validFrom, required this.validTo, });
 
-factory ListsCertificates.fromJson(Map<String, dynamic> json) { return ListsCertificates(
+factory ListsCertificates.fromJson(Map<String, dynamic> json) {return ListsCertificates(
   issuer: json['issuer'] as String,
   subjectName: json['subjectName'] as String,
   validFrom: (json['validFrom'] as num).toDouble(),
   validTo: (json['validTo'] as num).toDouble(),
-); }
+);}
 
 final String issuer;
 
@@ -21,22 +21,22 @@ final double validFrom;
 /// Example: `1696698000.0`
 final double validTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'issuer': issuer,
   'subjectName': subjectName,
   'validFrom': validFrom,
   'validTo': validTo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('issuer') && json['issuer'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('issuer') && json['issuer'] is String &&
       json.containsKey('subjectName') && json['subjectName'] is String &&
       json.containsKey('validFrom') && json['validFrom'] is num &&
-      json.containsKey('validTo') && json['validTo'] is num; } 
-ListsCertificates copyWith({String? issuer, String? subjectName, double? validFrom, double? validTo, }) { return ListsCertificates(
+      json.containsKey('validTo') && json['validTo'] is num;}
+ListsCertificates copyWith({String? issuer, String? subjectName, double? validFrom, double? validTo, }) {return ListsCertificates(
   issuer: issuer ?? this.issuer,
   subjectName: subjectName ?? this.subjectName,
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsCertificates &&
           issuer == other.issuer &&
@@ -48,4 +48,4 @@ ListsCertificates copyWith({String? issuer, String? subjectName, double? validFr
 
 @override String toString() => 'ListsCertificates(issuer: $issuer, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)';
 
- }
+}

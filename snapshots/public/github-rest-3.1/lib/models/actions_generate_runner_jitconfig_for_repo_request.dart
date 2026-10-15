@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsGenerateRunnerJitconfigForRepoRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder, });
 
-factory ActionsGenerateRunnerJitconfigForRepoRequest.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForRepoRequest(
+factory ActionsGenerateRunnerJitconfigForRepoRequest.fromJson(Map<String, dynamic> json) {return ActionsGenerateRunnerJitconfigForRepoRequest(
   name: json['name'] as String,
   runnerGroupId: (json['runner_group_id'] as num).toInt(),
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
-  workFolder: json.containsKey('work_folder') ? json['work_folder'] as String : '_work',
-); }
+  workFolder: json['work_folder'] as String?,
+);}
 
 /// The name of the new runner.
 final String name;
@@ -20,28 +20,31 @@ final int runnerGroupId;
 final List<String> labels;
 
 /// The working directory to be used for job execution, relative to the runner install directory.
-final String workFolder;
+final String? workFolder;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `workFolder`, or its schema default when absent.
+String get workFolderOrDefault => workFolder ?? '_work';
+
+Map<String, dynamic> toJson() {return {
   'name': name,
   'runner_group_id': runnerGroupId,
   'labels': labels,
-  'work_folder': workFolder,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+  'work_folder': ?workFolder,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
-      json.containsKey('labels'); } 
+      json.containsKey('labels');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (labels.isEmpty) { errors.add('labels: must have >= 1 items'); }
 if (labels.length > 100) { errors.add('labels: must have <= 100 items'); }
-return errors; } 
-ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String Function()? workFolder, }) { return ActionsGenerateRunnerJitconfigForRepoRequest(
+return errors;}
+ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String? Function()? workFolder, }) {return ActionsGenerateRunnerJitconfigForRepoRequest(
   name: name ?? this.name,
   runnerGroupId: runnerGroupId ?? this.runnerGroupId,
   labels: labels ?? this.labels,
   workFolder: workFolder != null ? workFolder() : this.workFolder,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGenerateRunnerJitconfigForRepoRequest &&
           name == other.name &&
@@ -53,4 +56,4 @@ ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runner
 
 @override String toString() => 'ActionsGenerateRunnerJitconfigForRepoRequest(name: $name, runnerGroupId: $runnerGroupId, labels: $labels, workFolder: $workFolder)';
 
- }
+}

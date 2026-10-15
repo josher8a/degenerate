@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicVisibilityMnmMnmRuleAdvertisementSingleResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_advertisable_response.dart';@immutable final class MagicVisibilityMnmMnmRuleAdvertisementSingleResponse {const MagicVisibilityMnmMnmRuleAdvertisementSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_messages2.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_advertisable_response.dart';@immutable final class MagicVisibilityMnmMnmRuleAdvertisementSingleResponse {const MagicVisibilityMnmMnmRuleAdvertisementSingleResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicVisibilityMnmMnmRuleAdvertisementSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(
+factory MagicVisibilityMnmMnmRuleAdvertisementSingleResponse.fromJson(Map<String, dynamic> json) {return MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? MagicVisibilityMnmMnmRuleAdvertisableResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+  success: json['success'] as bool,
+);}
+
+final List<MagicVisibilityMnmMessages2> errors;
+
+final List<MagicVisibilityMnmMessages2> messages;
 
 final MagicVisibilityMnmMnmRuleAdvertisableResponse? result;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MagicVisibilityMnmMnmRuleAdvertisementSingleResponse copyWith({MagicVisibilityMnmMnmRuleAdvertisableResponse? Function()? result}) { return MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result?.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+MagicVisibilityMnmMnmRuleAdvertisementSingleResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, MagicVisibilityMnmMnmRuleAdvertisableResponse? Function()? result, bool? success, }) {return MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
-); } 
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmRuleAdvertisementSingleResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(result: $result)';
+@override String toString() => 'MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

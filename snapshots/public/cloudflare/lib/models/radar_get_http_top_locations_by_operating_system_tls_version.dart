@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion();
 
-factory RadarGetHttpTopLocationsByOperatingSystemTlsVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByOperatingSystemTlsVersion.fromJson(String json) {return switch (json) {
   'TLSv1_0' => tlSv10,
   'TLSv1_1' => tlSv11,
   'TLSv1_2' => tlSv12,
   'TLSv1_3' => tlSv13,
   'TLSvQUIC' => tlSvQuic,
   _ => RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByOperatingSystemTlsVersion tlSv10 = RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv10._();
 
@@ -25,39 +25,39 @@ static const RadarGetHttpTopLocationsByOperatingSystemTlsVersion tlSvQuic = Rada
 static const List<RadarGetHttpTopLocationsByOperatingSystemTlsVersion> values = [tlSv10, tlSv11, tlSv12, tlSv13, tlSvQuic];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'TLSv1_0' => 'tlSv10',
   'TLSv1_1' => 'tlSv11',
   'TLSv1_2' => 'tlSv12',
   'TLSv1_3' => 'tlSv13',
   'TLSvQUIC' => 'tlSvQuic',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() tlSv10, required W Function() tlSv11, required W Function() tlSv12, required W Function() tlSv13, required W Function() tlSvQuic, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() tlSv10, required W Function() tlSv11, required W Function() tlSv12, required W Function() tlSv13, required W Function() tlSvQuic, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv10() => tlSv10(),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv11() => tlSv11(),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv12() => tlSv12(),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv13() => tlSv13(),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSvQuic() => tlSvQuic(),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, W Function()? tlSv11, W Function()? tlSv12, W Function()? tlSv13, W Function()? tlSvQuic, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, W Function()? tlSv11, W Function()? tlSv12, W Function()? tlSv13, W Function()? tlSvQuic, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv10() => tlSv10 != null ? tlSv10() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv11() => tlSv11 != null ? tlSv11() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv12() => tlSv12 != null ? tlSv12() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv13() => tlSv13 != null ? tlSv13() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSvQuic() => tlSvQuic != null ? tlSvQuic() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopLocationsByOperatingSystemTlsVersion($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv10 extends RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv10._();
 
 @override String get value => 'TLSv1_0';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, 
 
 @override int get hashCode => 'TLSv1_0'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv11 extends RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv11._();
 
 @override String get value => 'TLSv1_1';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, 
 
 @override int get hashCode => 'TLSv1_1'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv12 extends RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv12._();
 
 @override String get value => 'TLSv1_2';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, 
 
 @override int get hashCode => 'TLSv1_2'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv13 extends RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSv13._();
 
 @override String get value => 'TLSv1_3';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, 
 
 @override int get hashCode => 'TLSv1_3'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSvQuic extends RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion$tlSvQuic._();
 
 @override String get value => 'TLSvQUIC';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, 
 
 @override int get hashCode => 'TLSvQUIC'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown extends RadarGetHttpTopLocationsByOperatingSystemTlsVersion {const RadarGetHttpTopLocationsByOperatingSystemTlsVersion$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

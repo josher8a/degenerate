@@ -11,10 +11,10 @@ String toJson() => value;
 /// A simple zone object. May have null properties if not a zone subscription.
 @immutable final class Zone {const Zone({this.id, this.name, });
 
-factory Zone.fromJson(Map<String, dynamic> json) { return Zone(
+factory Zone.fromJson(Map<String, dynamic> json) {return Zone(
   id: json['id'] != null ? Identifier.fromJson(json['id'] as String) : null,
   name: json['name'] != null ? Name.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// Identifier
 final Identifier? id;
@@ -22,15 +22,15 @@ final Identifier? id;
 /// The domain name
 final Name? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
-Zone copyWith({Identifier? Function()? id, Name? Function()? name, }) { return Zone(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name'}.contains(key));}
+Zone copyWith({Identifier? Function()? id, Name? Function()? name, }) {return Zone(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Zone &&
           id == other.id &&
@@ -40,4 +40,4 @@ Zone copyWith({Identifier? Function()? id, Name? Function()? name, }) { return Z
 
 @override String toString() => 'Zone(id: $id, name: $name)';
 
- }
+}

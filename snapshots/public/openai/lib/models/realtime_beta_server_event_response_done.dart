@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response.dart';/// The event type, must be `response.done`.
 sealed class RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType();
 
-factory RealtimeBetaServerEventResponseDoneType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseDoneType.fromJson(String json) {return switch (json) {
   'response.done' => responseDone,
   _ => RealtimeBetaServerEventResponseDoneType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseDoneType responseDone = RealtimeBetaServerEventResponseDoneType$responseDone._();
 
 static const List<RealtimeBetaServerEventResponseDoneType> values = [responseDone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.done' => 'responseDone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventResponseDoneType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventResponseDoneType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseDone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseDone, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseDoneType$responseDone() => responseDone(),
       RealtimeBetaServerEventResponseDoneType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseDone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseDone, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseDoneType$responseDone() => responseDone != null ? responseDone() : orElse(value),
       RealtimeBetaServerEventResponseDoneType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventResponseDoneType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseDoneType$responseDone extends RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType$responseDone._();
 
 @override String get value => 'response.done';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.done'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseDoneType$Unknown extends RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when a Response is done streaming. Always emitted, no matter the
 /// final state. The Response object included in the `response.done` event will
 /// include all output Items in the Response but will omit the raw audio data.
 /// 
 @immutable final class RealtimeBetaServerEventResponseDone {const RealtimeBetaServerEventResponseDone({required this.eventId, required this.type, required this.response, });
 
-factory RealtimeBetaServerEventResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseDone(
+factory RealtimeBetaServerEventResponseDone.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseDone(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseDoneType.fromJson(json['type'] as String),
   response: RealtimeBetaResponse.fromJson(json['response'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -74,19 +74,19 @@ final RealtimeBetaServerEventResponseDoneType type;
 
 final RealtimeBetaResponse response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response': response.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('response'); } 
-RealtimeBetaServerEventResponseDone copyWith({String? eventId, RealtimeBetaServerEventResponseDoneType? type, RealtimeBetaResponse? response, }) { return RealtimeBetaServerEventResponseDone(
+      json.containsKey('response');}
+RealtimeBetaServerEventResponseDone copyWith({String? eventId, RealtimeBetaServerEventResponseDoneType? type, RealtimeBetaResponse? response, }) {return RealtimeBetaServerEventResponseDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   response: response ?? this.response,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseDone &&
           eventId == other.eventId &&
@@ -97,4 +97,4 @@ RealtimeBetaServerEventResponseDone copyWith({String? eventId, RealtimeBetaServe
 
 @override String toString() => 'RealtimeBetaServerEventResponseDone(eventId: $eventId, type: $type, response: $response)';
 
- }
+}

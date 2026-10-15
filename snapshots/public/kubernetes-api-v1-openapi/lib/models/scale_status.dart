@@ -2,12 +2,12 @@
 // Source: #/components/schemas/ScaleStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ScaleStatus represents the current status of a scale subresource.
-@immutable final class ScaleStatus {const ScaleStatus({this.replicas = 0, this.selector, });
+@immutable final class ScaleStatus {const ScaleStatus({required this.replicas, this.selector, });
 
-factory ScaleStatus.fromJson(Map<String, dynamic> json) { return ScaleStatus(
+factory ScaleStatus.fromJson(Map<String, dynamic> json) {return ScaleStatus(
   replicas: (json['replicas'] as num).toInt(),
   selector: json['selector'] as String?,
-); }
+);}
 
 /// replicas is the actual number of observed instances of the scaled object.
 final int replicas;
@@ -15,15 +15,15 @@ final int replicas;
 /// selector is the label query over pods that should match the replicas count. This is same as the label selector but in the string format to avoid introspection by clients. The string will be in the same format as the query-param syntax. More info about label selectors: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 final String? selector;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'replicas': replicas,
   'selector': ?selector,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('replicas') && json['replicas'] is num; } 
-ScaleStatus copyWith({int? replicas, String? Function()? selector, }) { return ScaleStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('replicas') && json['replicas'] is num;}
+ScaleStatus copyWith({int? replicas, String? Function()? selector, }) {return ScaleStatus(
   replicas: replicas ?? this.replicas,
   selector: selector != null ? selector() : this.selector,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScaleStatus &&
           replicas == other.replicas &&
@@ -33,4 +33,4 @@ ScaleStatus copyWith({int? replicas, String? Function()? selector, }) { return S
 
 @override String toString() => 'ScaleStatus(replicas: $replicas, selector: $selector)';
 
- }
+}

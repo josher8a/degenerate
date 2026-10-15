@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The certificate log endpoint names used in performance metrics.
 sealed class Endpoint {const Endpoint();
 
-factory Endpoint.fromJson(String json) { return switch (json) {
+factory Endpoint.fromJson(String json) {return switch (json) {
   'add-chain (new)' => addChainNew,
   'add-chain (old)' => addChainOld,
   'add-pre-chain (new)' => addPreChainNew,
@@ -13,7 +13,7 @@ factory Endpoint.fromJson(String json) { return switch (json) {
   'get-roots' => getRoots,
   'get-sth' => getSth,
   _ => Endpoint$Unknown(json),
-}; }
+};}
 
 static const Endpoint addChainNew = Endpoint$addChainNew._();
 
@@ -32,9 +32,9 @@ static const Endpoint getSth = Endpoint$getSth._();
 static const List<Endpoint> values = [addChainNew, addChainOld, addPreChainNew, addPreChainOld, getEntries, getRoots, getSth];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'add-chain (new)' => 'addChainNew',
   'add-chain (old)' => 'addChainOld',
   'add-pre-chain (new)' => 'addPreChainNew',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'get-roots' => 'getRoots',
   'get-sth' => 'getSth',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Endpoint$Unknown; } 
+bool get isUnknown {return this is Endpoint$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() addChainNew, required W Function() addChainOld, required W Function() addPreChainNew, required W Function() addPreChainOld, required W Function() getEntries, required W Function() getRoots, required W Function() getSth, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() addChainNew, required W Function() addChainOld, required W Function() addPreChainNew, required W Function() addPreChainOld, required W Function() getEntries, required W Function() getRoots, required W Function() getSth, required W Function(String value) $unknown, }) {return switch (this) {
       Endpoint$addChainNew() => addChainNew(),
       Endpoint$addChainOld() => addChainOld(),
       Endpoint$addPreChainNew() => addPreChainNew(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() addChainNew, required W Function() addChainOld,
       Endpoint$getRoots() => getRoots(),
       Endpoint$getSth() => getSth(),
       Endpoint$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChainNew, W Function()? addChainOld, W Function()? addPreChainNew, W Function()? addPreChainOld, W Function()? getEntries, W Function()? getRoots, W Function()? getSth, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChainNew, W Function()? addChainOld, W Function()? addPreChainNew, W Function()? addPreChainOld, W Function()? getEntries, W Function()? getRoots, W Function()? getSth, W Function(String value)? $unknown, }) {return switch (this) {
       Endpoint$addChainNew() => addChainNew != null ? addChainNew() : orElse(value),
       Endpoint$addChainOld() => addChainOld != null ? addChainOld() : orElse(value),
       Endpoint$addPreChainNew() => addPreChainNew != null ? addPreChainNew() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
       Endpoint$getRoots() => getRoots != null ? getRoots() : orElse(value),
       Endpoint$getSth() => getSth != null ? getSth() : orElse(value),
       Endpoint$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Endpoint($value)';
 
- }
+}
 @immutable final class Endpoint$addChainNew extends Endpoint {const Endpoint$addChainNew._();
 
 @override String get value => 'add-chain (new)';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'add-chain (new)'.hashCode;
 
- }
+}
 @immutable final class Endpoint$addChainOld extends Endpoint {const Endpoint$addChainOld._();
 
 @override String get value => 'add-chain (old)';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'add-chain (old)'.hashCode;
 
- }
+}
 @immutable final class Endpoint$addPreChainNew extends Endpoint {const Endpoint$addPreChainNew._();
 
 @override String get value => 'add-pre-chain (new)';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'add-pre-chain (new)'.hashCode;
 
- }
+}
 @immutable final class Endpoint$addPreChainOld extends Endpoint {const Endpoint$addPreChainOld._();
 
 @override String get value => 'add-pre-chain (old)';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'add-pre-chain (old)'.hashCode;
 
- }
+}
 @immutable final class Endpoint$getEntries extends Endpoint {const Endpoint$getEntries._();
 
 @override String get value => 'get-entries';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'get-entries'.hashCode;
 
- }
+}
 @immutable final class Endpoint$getRoots extends Endpoint {const Endpoint$getRoots._();
 
 @override String get value => 'get-roots';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'get-roots'.hashCode;
 
- }
+}
 @immutable final class Endpoint$getSth extends Endpoint {const Endpoint$getSth._();
 
 @override String get value => 'get-sth';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => 'get-sth'.hashCode;
 
- }
+}
 @immutable final class Endpoint$Unknown extends Endpoint {const Endpoint$Unknown(this.value);
 
 @override final String value;
@@ -143,14 +143,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChain
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Endpoints {const Endpoints({required this.endpoint, required this.responseTime, required this.uptime, });
 
-factory Endpoints.fromJson(Map<String, dynamic> json) { return Endpoints(
+factory Endpoints.fromJson(Map<String, dynamic> json) {return Endpoints(
   endpoint: Endpoint.fromJson(json['endpoint'] as String),
   responseTime: (json['responseTime'] as num).toDouble(),
   uptime: (json['uptime'] as num).toDouble(),
-); }
+);}
 
 /// The certificate log endpoint names used in performance metrics.
 final Endpoint endpoint;
@@ -159,19 +159,19 @@ final double responseTime;
 
 final double uptime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'endpoint': endpoint.toJson(),
   'responseTime': responseTime,
   'uptime': uptime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoint') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('endpoint') &&
       json.containsKey('responseTime') && json['responseTime'] is num &&
-      json.containsKey('uptime') && json['uptime'] is num; } 
-Endpoints copyWith({Endpoint? endpoint, double? responseTime, double? uptime, }) { return Endpoints(
+      json.containsKey('uptime') && json['uptime'] is num;}
+Endpoints copyWith({Endpoint? endpoint, double? responseTime, double? uptime, }) {return Endpoints(
   endpoint: endpoint ?? this.endpoint,
   responseTime: responseTime ?? this.responseTime,
   uptime: uptime ?? this.uptime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Endpoints &&
           endpoint == other.endpoint &&
@@ -182,4 +182,4 @@ Endpoints copyWith({Endpoint? endpoint, double? responseTime, double? uptime, })
 
 @override String toString() => 'Endpoints(endpoint: $endpoint, responseTime: $responseTime, uptime: $uptime)';
 
- }
+}

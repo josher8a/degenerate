@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of pricing for the budget
 sealed class BudgetType {const BudgetType();
 
-factory BudgetType.fromJson(String json) { return switch (json) {
+factory BudgetType.fromJson(String json) {return switch (json) {
   'SkuPricing' => skuPricing,
   'ProductPricing' => productPricing,
   _ => BudgetType$Unknown(json),
-}; }
+};}
 
 static const BudgetType skuPricing = BudgetType$skuPricing._();
 
@@ -17,30 +17,30 @@ static const BudgetType productPricing = BudgetType$productPricing._();
 static const List<BudgetType> values = [skuPricing, productPricing];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'SkuPricing' => 'skuPricing',
   'ProductPricing' => 'productPricing',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BudgetType$Unknown; } 
+bool get isUnknown {return this is BudgetType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() skuPricing, required W Function() productPricing, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() skuPricing, required W Function() productPricing, required W Function(String value) $unknown, }) {return switch (this) {
       BudgetType$skuPricing() => skuPricing(),
       BudgetType$productPricing() => productPricing(),
       BudgetType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? skuPricing, W Function()? productPricing, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? skuPricing, W Function()? productPricing, W Function(String value)? $unknown, }) {return switch (this) {
       BudgetType$skuPricing() => skuPricing != null ? skuPricing() : orElse(value),
       BudgetType$productPricing() => productPricing != null ? productPricing() : orElse(value),
       BudgetType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BudgetType($value)';
 
- }
+}
 @immutable final class BudgetType$skuPricing extends BudgetType {const BudgetType$skuPricing._();
 
 @override String get value => 'SkuPricing';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skuPrici
 
 @override int get hashCode => 'SkuPricing'.hashCode;
 
- }
+}
 @immutable final class BudgetType$productPricing extends BudgetType {const BudgetType$productPricing._();
 
 @override String get value => 'ProductPricing';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skuPrici
 
 @override int get hashCode => 'ProductPricing'.hashCode;
 
- }
+}
 @immutable final class BudgetType$Unknown extends BudgetType {const BudgetType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skuPrici
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowsersResponse404 {const RadarGetHttpTopBrowsersResponse404({required this.error});
 
-factory RadarGetHttpTopBrowsersResponse404.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopBrowsersResponse404(
+factory RadarGetHttpTopBrowsersResponse404.fromJson(Map<String, dynamic> json) {return RadarGetHttpTopBrowsersResponse404(
   error: json['error'] as String,
-); }
+);}
 
 /// Example: `'Not Found.'`
 final String error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String; } 
-RadarGetHttpTopBrowsersResponse404 copyWith({String? error}) { return RadarGetHttpTopBrowsersResponse404(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') && json['error'] is String;}
+RadarGetHttpTopBrowsersResponse404 copyWith({String? error}) {return RadarGetHttpTopBrowsersResponse404(
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTopBrowsersResponse404 &&
           error == other.error;
@@ -25,4 +25,4 @@ RadarGetHttpTopBrowsersResponse404 copyWith({String? error}) { return RadarGetHt
 
 @override String toString() => 'RadarGetHttpTopBrowsersResponse404(error: $error)';
 
- }
+}

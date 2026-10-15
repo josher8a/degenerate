@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponseResultAsns {const RadarGetBgpTopAsnsByPrefixesResponseResultAsns({required this.asn, required this.country, required this.name, required this.pfxsCount, });
 
-factory RadarGetBgpTopAsnsByPrefixesResponseResultAsns.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsnsByPrefixesResponseResultAsns(
+factory RadarGetBgpTopAsnsByPrefixesResponseResultAsns.fromJson(Map<String, dynamic> json) {return RadarGetBgpTopAsnsByPrefixesResponseResultAsns(
   asn: (json['asn'] as num).toInt(),
   country: json['country'] as String,
   name: json['name'] as String,
   pfxsCount: (json['pfxs_count'] as num).toInt(),
-); }
+);}
 
 final int asn;
 
@@ -18,22 +18,22 @@ final String name;
 
 final int pfxsCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'country': country,
   'name': name,
   'pfxs_count': pfxsCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('pfxs_count') && json['pfxs_count'] is num; } 
-RadarGetBgpTopAsnsByPrefixesResponseResultAsns copyWith({int? asn, String? country, String? name, int? pfxsCount, }) { return RadarGetBgpTopAsnsByPrefixesResponseResultAsns(
+      json.containsKey('pfxs_count') && json['pfxs_count'] is num;}
+RadarGetBgpTopAsnsByPrefixesResponseResultAsns copyWith({int? asn, String? country, String? name, int? pfxsCount, }) {return RadarGetBgpTopAsnsByPrefixesResponseResultAsns(
   asn: asn ?? this.asn,
   country: country ?? this.country,
   name: name ?? this.name,
   pfxsCount: pfxsCount ?? this.pfxsCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopAsnsByPrefixesResponseResultAsns &&
           asn == other.asn &&
@@ -45,4 +45,4 @@ RadarGetBgpTopAsnsByPrefixesResponseResultAsns copyWith({int? asn, String? count
 
 @override String toString() => 'RadarGetBgpTopAsnsByPrefixesResponseResultAsns(asn: $asn, country: $country, name: $name, pfxsCount: $pfxsCount)';
 
- }
+}

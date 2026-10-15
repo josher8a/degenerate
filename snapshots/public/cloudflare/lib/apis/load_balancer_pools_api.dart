@@ -14,7 +14,7 @@ final class LoadBalancerPoolsApi with ApiExecutor {const LoadBalancerPoolsApi(th
 /// List configured pools.
 ///
 /// `GET /user/load_balancers/pools`
-Future<ApiResult<List<LoadBalancingPool>?, LoadBalancerPoolsListPoolsError>> loadBalancerPoolsListPools({String? monitor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<LoadBalancingPool>, LoadBalancerPoolsListPoolsError>> loadBalancerPoolsListPools({String? monitor, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (monitor != null) {
   queryParameters['monitor'] = monitor;
@@ -31,21 +31,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => LoadBalancingPool.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => LoadBalancingPool.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: LoadBalancerPoolsListPoolsError.fromResponse,
 );
- } 
+}
 /// Create Pool
 ///
 /// Create a new pool.
 ///
 /// `POST /user/load_balancers/pools`
-Future<ApiResult<LoadBalancingPool?, LoadBalancerPoolsCreatePoolError>> loadBalancerPoolsCreatePool({required LoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, LoadBalancerPoolsCreatePoolError>> loadBalancerPoolsCreatePool({required LoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,21 +56,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsCreatePoolError.fromResponse,
 );
- } 
+}
 /// Patch Pools
 ///
 /// Apply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.
 ///
 /// `PATCH /user/load_balancers/pools`
-Future<ApiResult<List<LoadBalancingPool>?, LoadBalancerPoolsPatchPoolsError>> loadBalancerPoolsPatchPools({required LoadBalancerPoolsPatchPoolsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingPool>, LoadBalancerPoolsPatchPoolsError>> loadBalancerPoolsPatchPools({required LoadBalancerPoolsPatchPoolsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,21 +81,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => LoadBalancingPool.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => LoadBalancingPool.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: LoadBalancerPoolsPatchPoolsError.fromResponse,
 );
- } 
+}
 /// Pool Details
 ///
 /// Fetch a single configured pool.
 ///
 /// `GET /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingPool?, LoadBalancerPoolsPoolDetailsError>> loadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, LoadBalancerPoolsPoolDetailsError>> loadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -104,21 +104,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsPoolDetailsError.fromResponse,
 );
- } 
+}
 /// Update Pool
 ///
 /// Modify a configured pool.
 ///
 /// `PUT /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingPool?, LoadBalancerPoolsUpdatePoolError>> loadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, LoadBalancerPoolsUpdatePoolError>> loadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,21 +129,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsUpdatePoolError.fromResponse,
 );
- } 
+}
 /// Patch Pool
 ///
 /// Apply changes to an existing pool, overwriting the supplied properties.
 ///
 /// `PATCH /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingPool?, LoadBalancerPoolsPatchPoolError>> loadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, LoadBalancerPoolsPatchPoolError>> loadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,21 +154,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsPatchPoolError.fromResponse,
 );
- } 
+}
 /// Delete Pool
 ///
 /// Delete a configured pool.
 ///
 /// `DELETE /user/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, LoadBalancerPoolsDeletePoolError>> loadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult, LoadBalancerPoolsDeletePoolError>> loadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -177,21 +177,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsDeletePoolError.fromResponse,
 );
- } 
+}
 /// Pool Health Details
 ///
 /// Fetch the latest pool health status for a single pool.
 ///
 /// `GET /user/load_balancers/pools/{pool_id}/health`
-Future<ApiResult<LoadBalancingHealthDetailsResult?, LoadBalancerPoolsPoolHealthDetailsError>> loadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingHealthDetailsResult, LoadBalancerPoolsPoolHealthDetailsError>> loadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -200,21 +200,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingHealthDetailsResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingHealthDetailsResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsPoolHealthDetailsError.fromResponse,
 );
- } 
+}
 /// Preview Pool
 ///
 /// Preview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /user/load_balancers/pools/{pool_id}/preview`
-Future<ApiResult<LoadBalancingPreviewResponseResult?, LoadBalancerPoolsPreviewPoolError>> loadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPreviewResponseResult, LoadBalancerPoolsPreviewPoolError>> loadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -225,21 +225,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? LoadBalancingPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return LoadBalancingPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LoadBalancerPoolsPreviewPoolError.fromResponse,
 );
- } 
+}
 /// List Pool References
 ///
 /// Get the list of resources that reference the provided pool.
 ///
 /// `GET /user/load_balancers/pools/{pool_id}/references`
-Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, LoadBalancerPoolsListPoolReferencesError>> loadBalancerPoolsListPoolReferences({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, LoadBalancerPoolsListPoolReferencesError>> loadBalancerPoolsListPoolReferences({required LoadBalancingSchemasIdentifier poolId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -248,7 +248,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -256,5 +256,5 @@ return execute(
   },
   onError: LoadBalancerPoolsListPoolReferencesError.fromResponse,
 );
- } 
- }
+}
+}

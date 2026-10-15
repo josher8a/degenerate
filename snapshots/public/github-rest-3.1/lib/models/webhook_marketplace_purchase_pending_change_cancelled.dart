@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_pending_change_cancelled/webhook_marketplace_purchase_pending_change_cancelled_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase.dart';sealed class WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction();
 
-factory WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(String json) { return switch (json) {
+factory WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(String json) {return switch (json) {
   'pending_change_cancelled' => pendingChangeCancelled,
   _ => WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown(json),
-}; }
+};}
 
 static const WebhookMarketplacePurchasePendingChangeCancelledAction pendingChangeCancelled = WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled._();
 
 static const List<WebhookMarketplacePurchasePendingChangeCancelledAction> values = [pendingChangeCancelled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending_change_cancelled' => 'pendingChangeCancelled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown; } 
+bool get isUnknown {return this is WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pendingChangeCancelled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pendingChangeCancelled, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled() => pendingChangeCancelled(),
       WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingChangeCancelled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingChangeCancelled, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled() => pendingChangeCancelled != null ? pendingChangeCancelled() : orElse(value),
       WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookMarketplacePurchasePendingChangeCancelledAction($value)';
 
- }
+}
 @immutable final class WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled extends WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled._();
 
 @override String get value => 'pending_change_cancelled';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingC
 
 @override int get hashCode => 'pending_change_cancelled'.hashCode;
 
- }
+}
 @immutable final class WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown extends WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookMarketplacePurchasePendingChangeCancelled {const WebhookMarketplacePurchasePendingChangeCancelled({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
-factory WebhookMarketplacePurchasePendingChangeCancelled.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChangeCancelled(
+factory WebhookMarketplacePurchasePendingChangeCancelled.fromJson(Map<String, dynamic> json) {return WebhookMarketplacePurchasePendingChangeCancelled(
   action: WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(json['action'] as String),
   effectiveDate: json['effective_date'] as String,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -65,7 +65,7 @@ factory WebhookMarketplacePurchasePendingChangeCancelled.fromJson(Map<String, dy
   previousMarketplacePurchase: json['previous_marketplace_purchase'] != null ? WebhooksPreviousMarketplacePurchase.fromJson(json['previous_marketplace_purchase'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookMarketplacePurchasePendingChangeCancelledAction action;
 
@@ -85,7 +85,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'effective_date': effectiveDate,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -95,12 +95,12 @@ Map<String, dynamic> toJson() { return {
   if (previousMarketplacePurchase != null) 'previous_marketplace_purchase': previousMarketplacePurchase?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('effective_date') && json['effective_date'] is String &&
       json.containsKey('marketplace_purchase') &&
-      json.containsKey('sender'); } 
-WebhookMarketplacePurchasePendingChangeCancelled copyWith({WebhookMarketplacePurchasePendingChangeCancelledAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhooksPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookMarketplacePurchasePendingChangeCancelled(
+      json.containsKey('sender');}
+WebhookMarketplacePurchasePendingChangeCancelled copyWith({WebhookMarketplacePurchasePendingChangeCancelledAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhooksPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookMarketplacePurchasePendingChangeCancelled(
   action: action ?? this.action,
   effectiveDate: effectiveDate ?? this.effectiveDate,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -110,7 +110,7 @@ WebhookMarketplacePurchasePendingChangeCancelled copyWith({WebhookMarketplacePur
   previousMarketplacePurchase: previousMarketplacePurchase != null ? previousMarketplacePurchase() : this.previousMarketplacePurchase,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMarketplacePurchasePendingChangeCancelled &&
           action == other.action &&
@@ -127,4 +127,4 @@ WebhookMarketplacePurchasePendingChangeCancelled copyWith({WebhookMarketplacePur
 
 @override String toString() => 'WebhookMarketplacePurchasePendingChangeCancelled(\n  action: $action,\n  effectiveDate: $effectiveDate,\n  enterprise: $enterprise,\n  installation: $installation,\n  marketplacePurchase: $marketplacePurchase,\n  organization: $organization,\n  previousMarketplacePurchase: $previousMarketplacePurchase,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

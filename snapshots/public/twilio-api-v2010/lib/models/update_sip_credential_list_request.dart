@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipCredentialListRequest {const UpdateSipCredentialListRequest({required this.friendlyName});
 
-factory UpdateSipCredentialListRequest.fromJson(Map<String, dynamic> json) { return UpdateSipCredentialListRequest(
+factory UpdateSipCredentialListRequest.fromJson(Map<String, dynamic> json) {return UpdateSipCredentialListRequest(
   friendlyName: json['FriendlyName'] as String,
-); }
+);}
 
 /// A human readable descriptive text for a CredentialList, up to 64 characters long.
 final String friendlyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': friendlyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('FriendlyName') && json['FriendlyName'] is String; } 
-UpdateSipCredentialListRequest copyWith({String? friendlyName}) { return UpdateSipCredentialListRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('FriendlyName') && json['FriendlyName'] is String;}
+UpdateSipCredentialListRequest copyWith({String? friendlyName}) {return UpdateSipCredentialListRequest(
   friendlyName: friendlyName ?? this.friendlyName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateSipCredentialListRequest &&
           friendlyName == other.friendlyName;
@@ -25,4 +25,4 @@ UpdateSipCredentialListRequest copyWith({String? friendlyName}) { return UpdateS
 
 @override String toString() => 'UpdateSipCredentialListRequest(friendlyName: $friendlyName)';
 
- }
+}

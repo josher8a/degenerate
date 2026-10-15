@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/replication_controller_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/replication_controller_status.dart';/// ReplicationController represents the configuration of a replication controller.
 @immutable final class ReplicationController {const ReplicationController({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
-factory ReplicationController.fromJson(Map<String, dynamic> json) { return ReplicationController(
+factory ReplicationController.fromJson(Map<String, dynamic> json) {return ReplicationController(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   spec: json['spec'] != null ? ReplicationControllerSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? ReplicationControllerStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -27,21 +27,21 @@ final ReplicationControllerSpec? spec;
 /// Status is the most recently observed status of the replication controller. This data may be out of date by some window of time. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 final ReplicationControllerStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (spec != null) 'spec': spec?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
-ReplicationController copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ReplicationControllerSpec? Function()? spec, ReplicationControllerStatus? Function()? status, }) { return ReplicationController(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key));}
+ReplicationController copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ReplicationControllerSpec? Function()? spec, ReplicationControllerStatus? Function()? status, }) {return ReplicationController(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReplicationController &&
           apiVersion == other.apiVersion &&
@@ -54,4 +54,4 @@ ReplicationController copyWith({String? Function()? apiVersion, String? Function
 
 @override String toString() => 'ReplicationController(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)';
 
- }
+}

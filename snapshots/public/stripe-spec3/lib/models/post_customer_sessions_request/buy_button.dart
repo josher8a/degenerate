@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuyButton {const BuyButton({required this.enabled});
 
-factory BuyButton.fromJson(Map<String, dynamic> json) { return BuyButton(
+factory BuyButton.fromJson(Map<String, dynamic> json) {return BuyButton(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-BuyButton copyWith({bool? enabled}) { return BuyButton(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+BuyButton copyWith({bool? enabled}) {return BuyButton(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuyButton &&
           enabled == other.enabled;
@@ -24,4 +24,4 @@ BuyButton copyWith({bool? enabled}) { return BuyButton(
 
 @override String toString() => 'BuyButton(enabled: $enabled)';
 
- }
+}

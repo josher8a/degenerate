@@ -14,5 +14,5 @@ static const defaultBaseUrl = 'https://{env}.example.com:{port}/{basePath}';
 
 late final StatusApi status = StatusApi(_config);
 
-Spec02RootInfoServersTagsApi withApiKeyAuth(String value) { return Spec02RootInfoServersTagsApi(Spec02RootInfoServersTagsSecurity.applyApiKeyAuth(_config, value)); } 
- }
+Spec02RootInfoServersTagsApi withApiKeyAuth(String value) {return Spec02RootInfoServersTagsApi(Spec02RootInfoServersTagsSecurity.applyApiKeyAuth(_config, value));}
+}

@@ -6,19 +6,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// In Go, this prop
 /// 
 @immutable final class PrefixTag2 {const PrefixTag2({this.str});
 
-factory PrefixTag2.fromJson(Map<String, dynamic> json) { return PrefixTag2(
+factory PrefixTag2.fromJson(Map<String, dynamic> json) {return PrefixTag2(
   str: json['str'] as String?,
-); }
+);}
 
 final String? str;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'str': ?str,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'str'}.contains(key)); } 
-PrefixTag2 copyWith({String? Function()? str}) { return PrefixTag2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'str'}.contains(key));}
+PrefixTag2 copyWith({String? Function()? str}) {return PrefixTag2(
   str: str != null ? str() : this.str,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PrefixTag2 &&
           str == other.str;
@@ -27,4 +27,4 @@ PrefixTag2 copyWith({String? Function()? str}) { return PrefixTag2(
 
 @override String toString() => 'PrefixTag2(str: $str)';
 
- }
+}

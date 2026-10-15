@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config.dart';/// Contains table maintenance configuration.
 @immutable final class R2DataCatalogTableMaintenanceConfigResponse {const R2DataCatalogTableMaintenanceConfigResponse({required this.maintenanceConfig});
 
-factory R2DataCatalogTableMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableMaintenanceConfigResponse(
+factory R2DataCatalogTableMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) {return R2DataCatalogTableMaintenanceConfigResponse(
   maintenanceConfig: R2DataCatalogTableMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>),
-); }
+);}
 
 final R2DataCatalogTableMaintenanceConfig maintenanceConfig;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'maintenance_config': maintenanceConfig.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('maintenance_config'); } 
-R2DataCatalogTableMaintenanceConfigResponse copyWith({R2DataCatalogTableMaintenanceConfig? maintenanceConfig}) { return R2DataCatalogTableMaintenanceConfigResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('maintenance_config');}
+R2DataCatalogTableMaintenanceConfigResponse copyWith({R2DataCatalogTableMaintenanceConfig? maintenanceConfig}) {return R2DataCatalogTableMaintenanceConfigResponse(
   maintenanceConfig: maintenanceConfig ?? this.maintenanceConfig,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableMaintenanceConfigResponse &&
           maintenanceConfig == other.maintenanceConfig;
@@ -25,4 +25,4 @@ R2DataCatalogTableMaintenanceConfigResponse copyWith({R2DataCatalogTableMaintena
 
 @override String toString() => 'R2DataCatalogTableMaintenanceConfigResponse(maintenanceConfig: $maintenanceConfig)';
 
- }
+}

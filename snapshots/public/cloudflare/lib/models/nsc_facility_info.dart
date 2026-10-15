@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscFacilityInfo {const NscFacilityInfo({required this.address, required this.name, });
 
-factory NscFacilityInfo.fromJson(Map<String, dynamic> json) { return NscFacilityInfo(
+factory NscFacilityInfo.fromJson(Map<String, dynamic> json) {return NscFacilityInfo(
   address: (json['address'] as List<dynamic>).map((e) => e as String).toList(),
   name: json['name'] as String,
-); }
+);}
 
 final List<String> address;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
-NscFacilityInfo copyWith({List<String>? address, String? name, }) { return NscFacilityInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
+NscFacilityInfo copyWith({List<String>? address, String? name, }) {return NscFacilityInfo(
   address: address ?? this.address,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NscFacilityInfo &&
           listEquals(address, other.address) &&
@@ -31,4 +31,4 @@ NscFacilityInfo copyWith({List<String>? address, String? name, }) { return NscFa
 
 @override String toString() => 'NscFacilityInfo(address: $address, name: $name)';
 
- }
+}

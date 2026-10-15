@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';@immutable final class CloudflareTunnelCreateAWarpConnectorTunnelRequest {const CloudflareTunnelCreateAWarpConnectorTunnelRequest({required this.name});
 
-factory CloudflareTunnelCreateAWarpConnectorTunnelRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelCreateAWarpConnectorTunnelRequest(
+factory CloudflareTunnelCreateAWarpConnectorTunnelRequest.fromJson(Map<String, dynamic> json) {return CloudflareTunnelCreateAWarpConnectorTunnelRequest(
   name: TunnelTunnelName.fromJson(json['name'] as String),
-); }
+);}
 
 /// A user-friendly name for a tunnel.
 final TunnelTunnelName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-CloudflareTunnelCreateAWarpConnectorTunnelRequest copyWith({TunnelTunnelName? name}) { return CloudflareTunnelCreateAWarpConnectorTunnelRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+CloudflareTunnelCreateAWarpConnectorTunnelRequest copyWith({TunnelTunnelName? name}) {return CloudflareTunnelCreateAWarpConnectorTunnelRequest(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelCreateAWarpConnectorTunnelRequest &&
           name == other.name;
@@ -25,4 +25,4 @@ CloudflareTunnelCreateAWarpConnectorTunnelRequest copyWith({TunnelTunnelName? na
 
 @override String toString() => 'CloudflareTunnelCreateAWarpConnectorTunnelRequest(name: $name)';
 
- }
+}

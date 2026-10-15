@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryId {const RepositoryId({this.repositoryIds});
 
-factory RepositoryId.fromJson(Map<String, dynamic> json) { return RepositoryId(
+factory RepositoryId.fromJson(Map<String, dynamic> json) {return RepositoryId(
   repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass.
 final List<int>? repositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'repository_ids': ?repositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'repository_ids'}.contains(key)); } 
-RepositoryId copyWith({List<int>? Function()? repositoryIds}) { return RepositoryId(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'repository_ids'}.contains(key));}
+RepositoryId copyWith({List<int>? Function()? repositoryIds}) {return RepositoryId(
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryId &&
           listEquals(repositoryIds, other.repositoryIds);
@@ -25,4 +25,4 @@ RepositoryId copyWith({List<int>? Function()? repositoryIds}) { return Repositor
 
 @override String toString() => 'RepositoryId(repositoryIds: $repositoryIds)';
 
- }
+}

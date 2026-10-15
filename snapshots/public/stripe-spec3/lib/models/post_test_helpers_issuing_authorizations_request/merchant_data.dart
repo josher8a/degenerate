@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MerchantDataCategory {const MerchantDataCategory();
 
-factory MerchantDataCategory.fromJson(String json) { return switch (json) {
+factory MerchantDataCategory.fromJson(String json) {return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
   'accounting_bookkeeping_services' => accountingBookkeepingServices,
   'advertising_services' => advertisingServices,
@@ -299,7 +299,7 @@ factory MerchantDataCategory.fromJson(String json) { return switch (json) {
   'womens_ready_to_wear_stores' => womensReadyToWearStores,
   'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
   _ => MerchantDataCategory$Unknown(json),
-}; }
+};}
 
 static const MerchantDataCategory acRefrigerationRepair = MerchantDataCategory$acRefrigerationRepair._();
 
@@ -892,9 +892,9 @@ static const MerchantDataCategory wreckingAndSalvageYards = MerchantDataCategory
 static const List<MerchantDataCategory> values = [acRefrigerationRepair, accountingBookkeepingServices, advertisingServices, agriculturalCooperative, airlinesAirCarriers, airportsFlyingFields, ambulanceServices, amusementParksCarnivals, antiqueReproductions, antiqueShops, aquariums, architecturalSurveyingServices, artDealersAndGalleries, artistsSupplyAndCraftShops, autoAndHomeSupplyStores, autoBodyRepairShops, autoPaintShops, autoServiceShops, automatedCashDisburse, automatedFuelDispensers, automobileAssociations, automotivePartsAndAccessoriesStores, automotiveTireStores, bailAndBondPayments, bakeries, bandsOrchestras, barberAndBeautyShops, bettingCasinoGambling, bicycleShops, billiardPoolEstablishments, boatDealers, boatRentalsAndLeases, bookStores, booksPeriodicalsAndNewspapers, bowlingAlleys, busLines, businessSecretarialSchools, buyingShoppingServices, cableSatelliteAndOtherPayTelevisionAndRadio, cameraAndPhotographicSupplyStores, candyNutAndConfectioneryStores, carAndTruckDealersNewUsed, carAndTruckDealersUsedOnly, carRentalAgencies, carWashes, carpentryServices, carpetUpholsteryCleaning, caterers, charitableAndSocialServiceOrganizationsFundraising, chemicalsAndAlliedProducts, childCareServices, childrensAndInfantsWearStores, chiropodistsPodiatrists, chiropractors, cigarStoresAndStands, civicSocialFraternalAssociations, cleaningAndMaintenance, clothingRental, collegesUniversities, commercialEquipment, commercialFootwear, commercialPhotographyArtAndGraphics, commuterTransportAndFerries, computerNetworkServices, computerProgramming, computerRepair, computerSoftwareStores, computersPeripheralsAndSoftware, concreteWorkServices, constructionMaterials, consultingPublicRelations, correspondenceSchools, cosmeticStores, counselingServices, countryClubs, courierServices, courtCosts, creditReportingAgencies, cruiseLines, dairyProductsStores, danceHallStudiosSchools, datingEscortServices, dentistsOrthodontists, departmentStores, detectiveAgencies, digitalGoodsApplications, digitalGoodsGames, digitalGoodsLargeVolume, digitalGoodsMedia, directMarketingCatalogMerchant, directMarketingCombinationCatalogAndRetailMerchant, directMarketingInboundTelemarketing, directMarketingInsuranceServices, directMarketingOther, directMarketingOutboundTelemarketing, directMarketingSubscription, directMarketingTravel, discountStores, doctors, doorToDoorSales, draperyWindowCoveringAndUpholsteryStores, drinkingPlaces, drugStoresAndPharmacies, drugsDrugProprietariesAndDruggistSundries, dryCleaners, durableGoods, dutyFreeStores, eatingPlacesRestaurants, educationalServices, electricRazorStores, electricVehicleCharging, electricalPartsAndEquipment, electricalServices, electronicsRepairShops, electronicsStores, elementarySecondarySchools, emergencyServicesGcasVisaUseOnly, employmentTempAgencies, equipmentRental, exterminatingServices, familyClothingStores, fastFoodRestaurants, financialInstitutions, finesGovernmentAdministrativeEntities, fireplaceFireplaceScreensAndAccessoriesStores, floorCoveringStores, florists, floristsSuppliesNurseryStockAndFlowers, freezerAndLockerMeatProvisioners, fuelDealersNonAutomotive, funeralServicesCrematories, furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, furnitureRepairRefinishing, furriersAndFurShops, generalServices, giftCardNoveltyAndSouvenirShops, glassPaintAndWallpaperStores, glasswareCrystalStores, golfCoursesPublic, governmentLicensedHorseDogRacingUsRegionOnly, governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, governmentOwnedLotteriesNonUsRegion, governmentOwnedLotteriesUsRegionOnly, governmentServices, groceryStoresSupermarkets, hardwareEquipmentAndSupplies, hardwareStores, healthAndBeautySpas, hearingAidsSalesAndSupplies, heatingPlumbingAC, hobbyToyAndGameShops, homeSupplyWarehouseStores, hospitals, hotelsMotelsAndResorts, householdApplianceStores, industrialSupplies, informationRetrievalServices, insuranceDefault, insuranceUnderwritingPremiums, intraCompanyPurchases, jewelryStoresWatchesClocksAndSilverwareStores, landscapingServices, laundries, laundryCleaningServices, legalServicesAttorneys, luggageAndLeatherGoodsStores, lumberBuildingMaterialsStores, manualCashDisburse, marinasServiceAndSupplies, marketplaces, masonryStoneworkAndPlaster, massageParlors, medicalAndDentalLabs, medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, medicalServices, membershipOrganizations, mensAndBoysClothingAndAccessoriesStores, mensWomensClothingStores, metalServiceCenters, miscellaneousApparelAndAccessoryShops, miscellaneousAutoDealers, miscellaneousBusinessServices, miscellaneousFoodStores, miscellaneousGeneralMerchandise, miscellaneousGeneralServices, miscellaneousHomeFurnishingSpecialtyStores, miscellaneousPublishingAndPrinting, miscellaneousRecreationServices, miscellaneousRepairShops, miscellaneousSpecialtyRetail, mobileHomeDealers, motionPictureTheaters, motorFreightCarriersAndTrucking, motorHomesDealers, motorVehicleSuppliesAndNewParts, motorcycleShopsAndDealers, motorcycleShopsDealers, musicStoresMusicalInstrumentsPianosAndSheetMusic, newsDealersAndNewsstands, nonFiMoneyOrders, nonFiStoredValueCardPurchaseLoad, nondurableGoods, nurseriesLawnAndGardenSupplyStores, nursingPersonalCare, officeAndCommercialFurniture, opticiansEyeglasses, optometristsOphthalmologist, orthopedicGoodsProstheticDevices, osteopaths, packageStoresBeerWineAndLiquor, paintsVarnishesAndSupplies, parkingLotsGarages, passengerRailways, pawnShops, petShopsPetFoodAndSupplies, petroleumAndPetroleumProducts, photoDeveloping, photographicPhotocopyMicrofilmEquipmentAndSupplies, photographicStudios, pictureVideoProduction, pieceGoodsNotionsAndOtherDryGoods, plumbingHeatingEquipmentAndSupplies, politicalOrganizations, postalServicesGovernmentOnly, preciousStonesAndMetalsWatchesAndJewelry, professionalServices, publicWarehousingAndStorage, quickCopyReproAndBlueprint, railroads, realEstateAgentsAndManagersRentals, recordStores, recreationalVehicleRentals, religiousGoodsStores, religiousOrganizations, roofingSidingSheetMetal, secretarialSupportServices, securityBrokersDealers, serviceStations, sewingNeedleworkFabricAndPieceGoodsStores, shoeRepairHatCleaning, shoeStores, smallApplianceRepair, snowmobileDealers, specialTradeServices, specialtyCleaning, sportingGoodsStores, sportingRecreationCamps, sportsAndRidingApparelStores, sportsClubsFields, stampAndCoinStores, stationaryOfficeSuppliesPrintingAndWritingPaper, stationeryStoresOfficeAndSchoolSupplyStores, swimmingPoolsSales, tUiTravelGermany, tailorsAlterations, taxPaymentsGovernmentAgencies, taxPreparationServices, taxicabsLimousines, telecommunicationEquipmentAndTelephoneSales, telecommunicationServices, telegraphServices, tentAndAwningShops, testingLaboratories, theatricalTicketAgencies, timeshares, tireRetreadingAndRepair, tollsBridgeFees, touristAttractionsAndExhibits, towingServices, trailerParksCampgrounds, transportationServices, travelAgenciesTourOperators, truckStopIteration, truckUtilityTrailerRentals, typesettingPlateMakingAndRelatedServices, typewriterStores, uSFederalGovernmentAgenciesOrDepartments, uniformsCommercialClothing, usedMerchandiseAndSecondhandStores, utilities, varietyStores, veterinaryServices, videoAmusementGameSupplies, videoGameArcades, videoTapeRentalStores, vocationalTradeSchools, watchJewelryRepair, weldingRepair, wholesaleClubs, wigAndToupeeStores, wiresMoneyOrders, womensAccessoryAndSpecialtyShops, womensReadyToWearStores, wreckingAndSalvageYards];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ac_refrigeration_repair' => 'acRefrigerationRepair',
   'accounting_bookkeeping_services' => 'accountingBookkeepingServices',
   'advertising_services' => 'advertisingServices',
@@ -1190,11 +1190,11 @@ String get name { return switch (value) {
   'womens_ready_to_wear_stores' => 'womensReadyToWearStores',
   'wrecking_and_salvage_yards' => 'wreckingAndSalvageYards',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MerchantDataCategory$Unknown; } 
+bool get isUnknown {return this is MerchantDataCategory$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acRefrigerationRepair, required W Function() accountingBookkeepingServices, required W Function() advertisingServices, required W Function() agriculturalCooperative, required W Function() airlinesAirCarriers, required W Function() airportsFlyingFields, required W Function() ambulanceServices, required W Function() amusementParksCarnivals, required W Function() antiqueReproductions, required W Function() antiqueShops, required W Function() aquariums, required W Function() architecturalSurveyingServices, required W Function() artDealersAndGalleries, required W Function() artistsSupplyAndCraftShops, required W Function() autoAndHomeSupplyStores, required W Function() autoBodyRepairShops, required W Function() autoPaintShops, required W Function() autoServiceShops, required W Function() automatedCashDisburse, required W Function() automatedFuelDispensers, required W Function() automobileAssociations, required W Function() automotivePartsAndAccessoriesStores, required W Function() automotiveTireStores, required W Function() bailAndBondPayments, required W Function() bakeries, required W Function() bandsOrchestras, required W Function() barberAndBeautyShops, required W Function() bettingCasinoGambling, required W Function() bicycleShops, required W Function() billiardPoolEstablishments, required W Function() boatDealers, required W Function() boatRentalsAndLeases, required W Function() bookStores, required W Function() booksPeriodicalsAndNewspapers, required W Function() bowlingAlleys, required W Function() busLines, required W Function() businessSecretarialSchools, required W Function() buyingShoppingServices, required W Function() cableSatelliteAndOtherPayTelevisionAndRadio, required W Function() cameraAndPhotographicSupplyStores, required W Function() candyNutAndConfectioneryStores, required W Function() carAndTruckDealersNewUsed, required W Function() carAndTruckDealersUsedOnly, required W Function() carRentalAgencies, required W Function() carWashes, required W Function() carpentryServices, required W Function() carpetUpholsteryCleaning, required W Function() caterers, required W Function() charitableAndSocialServiceOrganizationsFundraising, required W Function() chemicalsAndAlliedProducts, required W Function() childCareServices, required W Function() childrensAndInfantsWearStores, required W Function() chiropodistsPodiatrists, required W Function() chiropractors, required W Function() cigarStoresAndStands, required W Function() civicSocialFraternalAssociations, required W Function() cleaningAndMaintenance, required W Function() clothingRental, required W Function() collegesUniversities, required W Function() commercialEquipment, required W Function() commercialFootwear, required W Function() commercialPhotographyArtAndGraphics, required W Function() commuterTransportAndFerries, required W Function() computerNetworkServices, required W Function() computerProgramming, required W Function() computerRepair, required W Function() computerSoftwareStores, required W Function() computersPeripheralsAndSoftware, required W Function() concreteWorkServices, required W Function() constructionMaterials, required W Function() consultingPublicRelations, required W Function() correspondenceSchools, required W Function() cosmeticStores, required W Function() counselingServices, required W Function() countryClubs, required W Function() courierServices, required W Function() courtCosts, required W Function() creditReportingAgencies, required W Function() cruiseLines, required W Function() dairyProductsStores, required W Function() danceHallStudiosSchools, required W Function() datingEscortServices, required W Function() dentistsOrthodontists, required W Function() departmentStores, required W Function() detectiveAgencies, required W Function() digitalGoodsApplications, required W Function() digitalGoodsGames, required W Function() digitalGoodsLargeVolume, required W Function() digitalGoodsMedia, required W Function() directMarketingCatalogMerchant, required W Function() directMarketingCombinationCatalogAndRetailMerchant, required W Function() directMarketingInboundTelemarketing, required W Function() directMarketingInsuranceServices, required W Function() directMarketingOther, required W Function() directMarketingOutboundTelemarketing, required W Function() directMarketingSubscription, required W Function() directMarketingTravel, required W Function() discountStores, required W Function() doctors, required W Function() doorToDoorSales, required W Function() draperyWindowCoveringAndUpholsteryStores, required W Function() drinkingPlaces, required W Function() drugStoresAndPharmacies, required W Function() drugsDrugProprietariesAndDruggistSundries, required W Function() dryCleaners, required W Function() durableGoods, required W Function() dutyFreeStores, required W Function() eatingPlacesRestaurants, required W Function() educationalServices, required W Function() electricRazorStores, required W Function() electricVehicleCharging, required W Function() electricalPartsAndEquipment, required W Function() electricalServices, required W Function() electronicsRepairShops, required W Function() electronicsStores, required W Function() elementarySecondarySchools, required W Function() emergencyServicesGcasVisaUseOnly, required W Function() employmentTempAgencies, required W Function() equipmentRental, required W Function() exterminatingServices, required W Function() familyClothingStores, required W Function() fastFoodRestaurants, required W Function() financialInstitutions, required W Function() finesGovernmentAdministrativeEntities, required W Function() fireplaceFireplaceScreensAndAccessoriesStores, required W Function() floorCoveringStores, required W Function() florists, required W Function() floristsSuppliesNurseryStockAndFlowers, required W Function() freezerAndLockerMeatProvisioners, required W Function() fuelDealersNonAutomotive, required W Function() funeralServicesCrematories, required W Function() furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, required W Function() furnitureRepairRefinishing, required W Function() furriersAndFurShops, required W Function() generalServices, required W Function() giftCardNoveltyAndSouvenirShops, required W Function() glassPaintAndWallpaperStores, required W Function() glasswareCrystalStores, required W Function() golfCoursesPublic, required W Function() governmentLicensedHorseDogRacingUsRegionOnly, required W Function() governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, required W Function() governmentOwnedLotteriesNonUsRegion, required W Function() governmentOwnedLotteriesUsRegionOnly, required W Function() governmentServices, required W Function() groceryStoresSupermarkets, required W Function() hardwareEquipmentAndSupplies, required W Function() hardwareStores, required W Function() healthAndBeautySpas, required W Function() hearingAidsSalesAndSupplies, required W Function() heatingPlumbingAC, required W Function() hobbyToyAndGameShops, required W Function() homeSupplyWarehouseStores, required W Function() hospitals, required W Function() hotelsMotelsAndResorts, required W Function() householdApplianceStores, required W Function() industrialSupplies, required W Function() informationRetrievalServices, required W Function() insuranceDefault, required W Function() insuranceUnderwritingPremiums, required W Function() intraCompanyPurchases, required W Function() jewelryStoresWatchesClocksAndSilverwareStores, required W Function() landscapingServices, required W Function() laundries, required W Function() laundryCleaningServices, required W Function() legalServicesAttorneys, required W Function() luggageAndLeatherGoodsStores, required W Function() lumberBuildingMaterialsStores, required W Function() manualCashDisburse, required W Function() marinasServiceAndSupplies, required W Function() marketplaces, required W Function() masonryStoneworkAndPlaster, required W Function() massageParlors, required W Function() medicalAndDentalLabs, required W Function() medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, required W Function() medicalServices, required W Function() membershipOrganizations, required W Function() mensAndBoysClothingAndAccessoriesStores, required W Function() mensWomensClothingStores, required W Function() metalServiceCenters, required W Function() miscellaneousApparelAndAccessoryShops, required W Function() miscellaneousAutoDealers, required W Function() miscellaneousBusinessServices, required W Function() miscellaneousFoodStores, required W Function() miscellaneousGeneralMerchandise, required W Function() miscellaneousGeneralServices, required W Function() miscellaneousHomeFurnishingSpecialtyStores, required W Function() miscellaneousPublishingAndPrinting, required W Function() miscellaneousRecreationServices, required W Function() miscellaneousRepairShops, required W Function() miscellaneousSpecialtyRetail, required W Function() mobileHomeDealers, required W Function() motionPictureTheaters, required W Function() motorFreightCarriersAndTrucking, required W Function() motorHomesDealers, required W Function() motorVehicleSuppliesAndNewParts, required W Function() motorcycleShopsAndDealers, required W Function() motorcycleShopsDealers, required W Function() musicStoresMusicalInstrumentsPianosAndSheetMusic, required W Function() newsDealersAndNewsstands, required W Function() nonFiMoneyOrders, required W Function() nonFiStoredValueCardPurchaseLoad, required W Function() nondurableGoods, required W Function() nurseriesLawnAndGardenSupplyStores, required W Function() nursingPersonalCare, required W Function() officeAndCommercialFurniture, required W Function() opticiansEyeglasses, required W Function() optometristsOphthalmologist, required W Function() orthopedicGoodsProstheticDevices, required W Function() osteopaths, required W Function() packageStoresBeerWineAndLiquor, required W Function() paintsVarnishesAndSupplies, required W Function() parkingLotsGarages, required W Function() passengerRailways, required W Function() pawnShops, required W Function() petShopsPetFoodAndSupplies, required W Function() petroleumAndPetroleumProducts, required W Function() photoDeveloping, required W Function() photographicPhotocopyMicrofilmEquipmentAndSupplies, required W Function() photographicStudios, required W Function() pictureVideoProduction, required W Function() pieceGoodsNotionsAndOtherDryGoods, required W Function() plumbingHeatingEquipmentAndSupplies, required W Function() politicalOrganizations, required W Function() postalServicesGovernmentOnly, required W Function() preciousStonesAndMetalsWatchesAndJewelry, required W Function() professionalServices, required W Function() publicWarehousingAndStorage, required W Function() quickCopyReproAndBlueprint, required W Function() railroads, required W Function() realEstateAgentsAndManagersRentals, required W Function() recordStores, required W Function() recreationalVehicleRentals, required W Function() religiousGoodsStores, required W Function() religiousOrganizations, required W Function() roofingSidingSheetMetal, required W Function() secretarialSupportServices, required W Function() securityBrokersDealers, required W Function() serviceStations, required W Function() sewingNeedleworkFabricAndPieceGoodsStores, required W Function() shoeRepairHatCleaning, required W Function() shoeStores, required W Function() smallApplianceRepair, required W Function() snowmobileDealers, required W Function() specialTradeServices, required W Function() specialtyCleaning, required W Function() sportingGoodsStores, required W Function() sportingRecreationCamps, required W Function() sportsAndRidingApparelStores, required W Function() sportsClubsFields, required W Function() stampAndCoinStores, required W Function() stationaryOfficeSuppliesPrintingAndWritingPaper, required W Function() stationeryStoresOfficeAndSchoolSupplyStores, required W Function() swimmingPoolsSales, required W Function() tUiTravelGermany, required W Function() tailorsAlterations, required W Function() taxPaymentsGovernmentAgencies, required W Function() taxPreparationServices, required W Function() taxicabsLimousines, required W Function() telecommunicationEquipmentAndTelephoneSales, required W Function() telecommunicationServices, required W Function() telegraphServices, required W Function() tentAndAwningShops, required W Function() testingLaboratories, required W Function() theatricalTicketAgencies, required W Function() timeshares, required W Function() tireRetreadingAndRepair, required W Function() tollsBridgeFees, required W Function() touristAttractionsAndExhibits, required W Function() towingServices, required W Function() trailerParksCampgrounds, required W Function() transportationServices, required W Function() travelAgenciesTourOperators, required W Function() truckStopIteration, required W Function() truckUtilityTrailerRentals, required W Function() typesettingPlateMakingAndRelatedServices, required W Function() typewriterStores, required W Function() uSFederalGovernmentAgenciesOrDepartments, required W Function() uniformsCommercialClothing, required W Function() usedMerchandiseAndSecondhandStores, required W Function() utilities, required W Function() varietyStores, required W Function() veterinaryServices, required W Function() videoAmusementGameSupplies, required W Function() videoGameArcades, required W Function() videoTapeRentalStores, required W Function() vocationalTradeSchools, required W Function() watchJewelryRepair, required W Function() weldingRepair, required W Function() wholesaleClubs, required W Function() wigAndToupeeStores, required W Function() wiresMoneyOrders, required W Function() womensAccessoryAndSpecialtyShops, required W Function() womensReadyToWearStores, required W Function() wreckingAndSalvageYards, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acRefrigerationRepair, required W Function() accountingBookkeepingServices, required W Function() advertisingServices, required W Function() agriculturalCooperative, required W Function() airlinesAirCarriers, required W Function() airportsFlyingFields, required W Function() ambulanceServices, required W Function() amusementParksCarnivals, required W Function() antiqueReproductions, required W Function() antiqueShops, required W Function() aquariums, required W Function() architecturalSurveyingServices, required W Function() artDealersAndGalleries, required W Function() artistsSupplyAndCraftShops, required W Function() autoAndHomeSupplyStores, required W Function() autoBodyRepairShops, required W Function() autoPaintShops, required W Function() autoServiceShops, required W Function() automatedCashDisburse, required W Function() automatedFuelDispensers, required W Function() automobileAssociations, required W Function() automotivePartsAndAccessoriesStores, required W Function() automotiveTireStores, required W Function() bailAndBondPayments, required W Function() bakeries, required W Function() bandsOrchestras, required W Function() barberAndBeautyShops, required W Function() bettingCasinoGambling, required W Function() bicycleShops, required W Function() billiardPoolEstablishments, required W Function() boatDealers, required W Function() boatRentalsAndLeases, required W Function() bookStores, required W Function() booksPeriodicalsAndNewspapers, required W Function() bowlingAlleys, required W Function() busLines, required W Function() businessSecretarialSchools, required W Function() buyingShoppingServices, required W Function() cableSatelliteAndOtherPayTelevisionAndRadio, required W Function() cameraAndPhotographicSupplyStores, required W Function() candyNutAndConfectioneryStores, required W Function() carAndTruckDealersNewUsed, required W Function() carAndTruckDealersUsedOnly, required W Function() carRentalAgencies, required W Function() carWashes, required W Function() carpentryServices, required W Function() carpetUpholsteryCleaning, required W Function() caterers, required W Function() charitableAndSocialServiceOrganizationsFundraising, required W Function() chemicalsAndAlliedProducts, required W Function() childCareServices, required W Function() childrensAndInfantsWearStores, required W Function() chiropodistsPodiatrists, required W Function() chiropractors, required W Function() cigarStoresAndStands, required W Function() civicSocialFraternalAssociations, required W Function() cleaningAndMaintenance, required W Function() clothingRental, required W Function() collegesUniversities, required W Function() commercialEquipment, required W Function() commercialFootwear, required W Function() commercialPhotographyArtAndGraphics, required W Function() commuterTransportAndFerries, required W Function() computerNetworkServices, required W Function() computerProgramming, required W Function() computerRepair, required W Function() computerSoftwareStores, required W Function() computersPeripheralsAndSoftware, required W Function() concreteWorkServices, required W Function() constructionMaterials, required W Function() consultingPublicRelations, required W Function() correspondenceSchools, required W Function() cosmeticStores, required W Function() counselingServices, required W Function() countryClubs, required W Function() courierServices, required W Function() courtCosts, required W Function() creditReportingAgencies, required W Function() cruiseLines, required W Function() dairyProductsStores, required W Function() danceHallStudiosSchools, required W Function() datingEscortServices, required W Function() dentistsOrthodontists, required W Function() departmentStores, required W Function() detectiveAgencies, required W Function() digitalGoodsApplications, required W Function() digitalGoodsGames, required W Function() digitalGoodsLargeVolume, required W Function() digitalGoodsMedia, required W Function() directMarketingCatalogMerchant, required W Function() directMarketingCombinationCatalogAndRetailMerchant, required W Function() directMarketingInboundTelemarketing, required W Function() directMarketingInsuranceServices, required W Function() directMarketingOther, required W Function() directMarketingOutboundTelemarketing, required W Function() directMarketingSubscription, required W Function() directMarketingTravel, required W Function() discountStores, required W Function() doctors, required W Function() doorToDoorSales, required W Function() draperyWindowCoveringAndUpholsteryStores, required W Function() drinkingPlaces, required W Function() drugStoresAndPharmacies, required W Function() drugsDrugProprietariesAndDruggistSundries, required W Function() dryCleaners, required W Function() durableGoods, required W Function() dutyFreeStores, required W Function() eatingPlacesRestaurants, required W Function() educationalServices, required W Function() electricRazorStores, required W Function() electricVehicleCharging, required W Function() electricalPartsAndEquipment, required W Function() electricalServices, required W Function() electronicsRepairShops, required W Function() electronicsStores, required W Function() elementarySecondarySchools, required W Function() emergencyServicesGcasVisaUseOnly, required W Function() employmentTempAgencies, required W Function() equipmentRental, required W Function() exterminatingServices, required W Function() familyClothingStores, required W Function() fastFoodRestaurants, required W Function() financialInstitutions, required W Function() finesGovernmentAdministrativeEntities, required W Function() fireplaceFireplaceScreensAndAccessoriesStores, required W Function() floorCoveringStores, required W Function() florists, required W Function() floristsSuppliesNurseryStockAndFlowers, required W Function() freezerAndLockerMeatProvisioners, required W Function() fuelDealersNonAutomotive, required W Function() funeralServicesCrematories, required W Function() furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, required W Function() furnitureRepairRefinishing, required W Function() furriersAndFurShops, required W Function() generalServices, required W Function() giftCardNoveltyAndSouvenirShops, required W Function() glassPaintAndWallpaperStores, required W Function() glasswareCrystalStores, required W Function() golfCoursesPublic, required W Function() governmentLicensedHorseDogRacingUsRegionOnly, required W Function() governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, required W Function() governmentOwnedLotteriesNonUsRegion, required W Function() governmentOwnedLotteriesUsRegionOnly, required W Function() governmentServices, required W Function() groceryStoresSupermarkets, required W Function() hardwareEquipmentAndSupplies, required W Function() hardwareStores, required W Function() healthAndBeautySpas, required W Function() hearingAidsSalesAndSupplies, required W Function() heatingPlumbingAC, required W Function() hobbyToyAndGameShops, required W Function() homeSupplyWarehouseStores, required W Function() hospitals, required W Function() hotelsMotelsAndResorts, required W Function() householdApplianceStores, required W Function() industrialSupplies, required W Function() informationRetrievalServices, required W Function() insuranceDefault, required W Function() insuranceUnderwritingPremiums, required W Function() intraCompanyPurchases, required W Function() jewelryStoresWatchesClocksAndSilverwareStores, required W Function() landscapingServices, required W Function() laundries, required W Function() laundryCleaningServices, required W Function() legalServicesAttorneys, required W Function() luggageAndLeatherGoodsStores, required W Function() lumberBuildingMaterialsStores, required W Function() manualCashDisburse, required W Function() marinasServiceAndSupplies, required W Function() marketplaces, required W Function() masonryStoneworkAndPlaster, required W Function() massageParlors, required W Function() medicalAndDentalLabs, required W Function() medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, required W Function() medicalServices, required W Function() membershipOrganizations, required W Function() mensAndBoysClothingAndAccessoriesStores, required W Function() mensWomensClothingStores, required W Function() metalServiceCenters, required W Function() miscellaneousApparelAndAccessoryShops, required W Function() miscellaneousAutoDealers, required W Function() miscellaneousBusinessServices, required W Function() miscellaneousFoodStores, required W Function() miscellaneousGeneralMerchandise, required W Function() miscellaneousGeneralServices, required W Function() miscellaneousHomeFurnishingSpecialtyStores, required W Function() miscellaneousPublishingAndPrinting, required W Function() miscellaneousRecreationServices, required W Function() miscellaneousRepairShops, required W Function() miscellaneousSpecialtyRetail, required W Function() mobileHomeDealers, required W Function() motionPictureTheaters, required W Function() motorFreightCarriersAndTrucking, required W Function() motorHomesDealers, required W Function() motorVehicleSuppliesAndNewParts, required W Function() motorcycleShopsAndDealers, required W Function() motorcycleShopsDealers, required W Function() musicStoresMusicalInstrumentsPianosAndSheetMusic, required W Function() newsDealersAndNewsstands, required W Function() nonFiMoneyOrders, required W Function() nonFiStoredValueCardPurchaseLoad, required W Function() nondurableGoods, required W Function() nurseriesLawnAndGardenSupplyStores, required W Function() nursingPersonalCare, required W Function() officeAndCommercialFurniture, required W Function() opticiansEyeglasses, required W Function() optometristsOphthalmologist, required W Function() orthopedicGoodsProstheticDevices, required W Function() osteopaths, required W Function() packageStoresBeerWineAndLiquor, required W Function() paintsVarnishesAndSupplies, required W Function() parkingLotsGarages, required W Function() passengerRailways, required W Function() pawnShops, required W Function() petShopsPetFoodAndSupplies, required W Function() petroleumAndPetroleumProducts, required W Function() photoDeveloping, required W Function() photographicPhotocopyMicrofilmEquipmentAndSupplies, required W Function() photographicStudios, required W Function() pictureVideoProduction, required W Function() pieceGoodsNotionsAndOtherDryGoods, required W Function() plumbingHeatingEquipmentAndSupplies, required W Function() politicalOrganizations, required W Function() postalServicesGovernmentOnly, required W Function() preciousStonesAndMetalsWatchesAndJewelry, required W Function() professionalServices, required W Function() publicWarehousingAndStorage, required W Function() quickCopyReproAndBlueprint, required W Function() railroads, required W Function() realEstateAgentsAndManagersRentals, required W Function() recordStores, required W Function() recreationalVehicleRentals, required W Function() religiousGoodsStores, required W Function() religiousOrganizations, required W Function() roofingSidingSheetMetal, required W Function() secretarialSupportServices, required W Function() securityBrokersDealers, required W Function() serviceStations, required W Function() sewingNeedleworkFabricAndPieceGoodsStores, required W Function() shoeRepairHatCleaning, required W Function() shoeStores, required W Function() smallApplianceRepair, required W Function() snowmobileDealers, required W Function() specialTradeServices, required W Function() specialtyCleaning, required W Function() sportingGoodsStores, required W Function() sportingRecreationCamps, required W Function() sportsAndRidingApparelStores, required W Function() sportsClubsFields, required W Function() stampAndCoinStores, required W Function() stationaryOfficeSuppliesPrintingAndWritingPaper, required W Function() stationeryStoresOfficeAndSchoolSupplyStores, required W Function() swimmingPoolsSales, required W Function() tUiTravelGermany, required W Function() tailorsAlterations, required W Function() taxPaymentsGovernmentAgencies, required W Function() taxPreparationServices, required W Function() taxicabsLimousines, required W Function() telecommunicationEquipmentAndTelephoneSales, required W Function() telecommunicationServices, required W Function() telegraphServices, required W Function() tentAndAwningShops, required W Function() testingLaboratories, required W Function() theatricalTicketAgencies, required W Function() timeshares, required W Function() tireRetreadingAndRepair, required W Function() tollsBridgeFees, required W Function() touristAttractionsAndExhibits, required W Function() towingServices, required W Function() trailerParksCampgrounds, required W Function() transportationServices, required W Function() travelAgenciesTourOperators, required W Function() truckStopIteration, required W Function() truckUtilityTrailerRentals, required W Function() typesettingPlateMakingAndRelatedServices, required W Function() typewriterStores, required W Function() uSFederalGovernmentAgenciesOrDepartments, required W Function() uniformsCommercialClothing, required W Function() usedMerchandiseAndSecondhandStores, required W Function() utilities, required W Function() varietyStores, required W Function() veterinaryServices, required W Function() videoAmusementGameSupplies, required W Function() videoGameArcades, required W Function() videoTapeRentalStores, required W Function() vocationalTradeSchools, required W Function() watchJewelryRepair, required W Function() weldingRepair, required W Function() wholesaleClubs, required W Function() wigAndToupeeStores, required W Function() wiresMoneyOrders, required W Function() womensAccessoryAndSpecialtyShops, required W Function() womensReadyToWearStores, required W Function() wreckingAndSalvageYards, required W Function(String value) $unknown, }) {return switch (this) {
       MerchantDataCategory$acRefrigerationRepair() => acRefrigerationRepair(),
       MerchantDataCategory$accountingBookkeepingServices() => accountingBookkeepingServices(),
       MerchantDataCategory$advertisingServices() => advertisingServices(),
@@ -1490,9 +1490,9 @@ W when<W>({required W Function() acRefrigerationRepair, required W Function() ac
       MerchantDataCategory$womensReadyToWearStores() => womensReadyToWearStores(),
       MerchantDataCategory$wreckingAndSalvageYards() => wreckingAndSalvageYards(),
       MerchantDataCategory$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrigerationRepair, W Function()? accountingBookkeepingServices, W Function()? advertisingServices, W Function()? agriculturalCooperative, W Function()? airlinesAirCarriers, W Function()? airportsFlyingFields, W Function()? ambulanceServices, W Function()? amusementParksCarnivals, W Function()? antiqueReproductions, W Function()? antiqueShops, W Function()? aquariums, W Function()? architecturalSurveyingServices, W Function()? artDealersAndGalleries, W Function()? artistsSupplyAndCraftShops, W Function()? autoAndHomeSupplyStores, W Function()? autoBodyRepairShops, W Function()? autoPaintShops, W Function()? autoServiceShops, W Function()? automatedCashDisburse, W Function()? automatedFuelDispensers, W Function()? automobileAssociations, W Function()? automotivePartsAndAccessoriesStores, W Function()? automotiveTireStores, W Function()? bailAndBondPayments, W Function()? bakeries, W Function()? bandsOrchestras, W Function()? barberAndBeautyShops, W Function()? bettingCasinoGambling, W Function()? bicycleShops, W Function()? billiardPoolEstablishments, W Function()? boatDealers, W Function()? boatRentalsAndLeases, W Function()? bookStores, W Function()? booksPeriodicalsAndNewspapers, W Function()? bowlingAlleys, W Function()? busLines, W Function()? businessSecretarialSchools, W Function()? buyingShoppingServices, W Function()? cableSatelliteAndOtherPayTelevisionAndRadio, W Function()? cameraAndPhotographicSupplyStores, W Function()? candyNutAndConfectioneryStores, W Function()? carAndTruckDealersNewUsed, W Function()? carAndTruckDealersUsedOnly, W Function()? carRentalAgencies, W Function()? carWashes, W Function()? carpentryServices, W Function()? carpetUpholsteryCleaning, W Function()? caterers, W Function()? charitableAndSocialServiceOrganizationsFundraising, W Function()? chemicalsAndAlliedProducts, W Function()? childCareServices, W Function()? childrensAndInfantsWearStores, W Function()? chiropodistsPodiatrists, W Function()? chiropractors, W Function()? cigarStoresAndStands, W Function()? civicSocialFraternalAssociations, W Function()? cleaningAndMaintenance, W Function()? clothingRental, W Function()? collegesUniversities, W Function()? commercialEquipment, W Function()? commercialFootwear, W Function()? commercialPhotographyArtAndGraphics, W Function()? commuterTransportAndFerries, W Function()? computerNetworkServices, W Function()? computerProgramming, W Function()? computerRepair, W Function()? computerSoftwareStores, W Function()? computersPeripheralsAndSoftware, W Function()? concreteWorkServices, W Function()? constructionMaterials, W Function()? consultingPublicRelations, W Function()? correspondenceSchools, W Function()? cosmeticStores, W Function()? counselingServices, W Function()? countryClubs, W Function()? courierServices, W Function()? courtCosts, W Function()? creditReportingAgencies, W Function()? cruiseLines, W Function()? dairyProductsStores, W Function()? danceHallStudiosSchools, W Function()? datingEscortServices, W Function()? dentistsOrthodontists, W Function()? departmentStores, W Function()? detectiveAgencies, W Function()? digitalGoodsApplications, W Function()? digitalGoodsGames, W Function()? digitalGoodsLargeVolume, W Function()? digitalGoodsMedia, W Function()? directMarketingCatalogMerchant, W Function()? directMarketingCombinationCatalogAndRetailMerchant, W Function()? directMarketingInboundTelemarketing, W Function()? directMarketingInsuranceServices, W Function()? directMarketingOther, W Function()? directMarketingOutboundTelemarketing, W Function()? directMarketingSubscription, W Function()? directMarketingTravel, W Function()? discountStores, W Function()? doctors, W Function()? doorToDoorSales, W Function()? draperyWindowCoveringAndUpholsteryStores, W Function()? drinkingPlaces, W Function()? drugStoresAndPharmacies, W Function()? drugsDrugProprietariesAndDruggistSundries, W Function()? dryCleaners, W Function()? durableGoods, W Function()? dutyFreeStores, W Function()? eatingPlacesRestaurants, W Function()? educationalServices, W Function()? electricRazorStores, W Function()? electricVehicleCharging, W Function()? electricalPartsAndEquipment, W Function()? electricalServices, W Function()? electronicsRepairShops, W Function()? electronicsStores, W Function()? elementarySecondarySchools, W Function()? emergencyServicesGcasVisaUseOnly, W Function()? employmentTempAgencies, W Function()? equipmentRental, W Function()? exterminatingServices, W Function()? familyClothingStores, W Function()? fastFoodRestaurants, W Function()? financialInstitutions, W Function()? finesGovernmentAdministrativeEntities, W Function()? fireplaceFireplaceScreensAndAccessoriesStores, W Function()? floorCoveringStores, W Function()? florists, W Function()? floristsSuppliesNurseryStockAndFlowers, W Function()? freezerAndLockerMeatProvisioners, W Function()? fuelDealersNonAutomotive, W Function()? funeralServicesCrematories, W Function()? furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, W Function()? furnitureRepairRefinishing, W Function()? furriersAndFurShops, W Function()? generalServices, W Function()? giftCardNoveltyAndSouvenirShops, W Function()? glassPaintAndWallpaperStores, W Function()? glasswareCrystalStores, W Function()? golfCoursesPublic, W Function()? governmentLicensedHorseDogRacingUsRegionOnly, W Function()? governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, W Function()? governmentOwnedLotteriesNonUsRegion, W Function()? governmentOwnedLotteriesUsRegionOnly, W Function()? governmentServices, W Function()? groceryStoresSupermarkets, W Function()? hardwareEquipmentAndSupplies, W Function()? hardwareStores, W Function()? healthAndBeautySpas, W Function()? hearingAidsSalesAndSupplies, W Function()? heatingPlumbingAC, W Function()? hobbyToyAndGameShops, W Function()? homeSupplyWarehouseStores, W Function()? hospitals, W Function()? hotelsMotelsAndResorts, W Function()? householdApplianceStores, W Function()? industrialSupplies, W Function()? informationRetrievalServices, W Function()? insuranceDefault, W Function()? insuranceUnderwritingPremiums, W Function()? intraCompanyPurchases, W Function()? jewelryStoresWatchesClocksAndSilverwareStores, W Function()? landscapingServices, W Function()? laundries, W Function()? laundryCleaningServices, W Function()? legalServicesAttorneys, W Function()? luggageAndLeatherGoodsStores, W Function()? lumberBuildingMaterialsStores, W Function()? manualCashDisburse, W Function()? marinasServiceAndSupplies, W Function()? marketplaces, W Function()? masonryStoneworkAndPlaster, W Function()? massageParlors, W Function()? medicalAndDentalLabs, W Function()? medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, W Function()? medicalServices, W Function()? membershipOrganizations, W Function()? mensAndBoysClothingAndAccessoriesStores, W Function()? mensWomensClothingStores, W Function()? metalServiceCenters, W Function()? miscellaneousApparelAndAccessoryShops, W Function()? miscellaneousAutoDealers, W Function()? miscellaneousBusinessServices, W Function()? miscellaneousFoodStores, W Function()? miscellaneousGeneralMerchandise, W Function()? miscellaneousGeneralServices, W Function()? miscellaneousHomeFurnishingSpecialtyStores, W Function()? miscellaneousPublishingAndPrinting, W Function()? miscellaneousRecreationServices, W Function()? miscellaneousRepairShops, W Function()? miscellaneousSpecialtyRetail, W Function()? mobileHomeDealers, W Function()? motionPictureTheaters, W Function()? motorFreightCarriersAndTrucking, W Function()? motorHomesDealers, W Function()? motorVehicleSuppliesAndNewParts, W Function()? motorcycleShopsAndDealers, W Function()? motorcycleShopsDealers, W Function()? musicStoresMusicalInstrumentsPianosAndSheetMusic, W Function()? newsDealersAndNewsstands, W Function()? nonFiMoneyOrders, W Function()? nonFiStoredValueCardPurchaseLoad, W Function()? nondurableGoods, W Function()? nurseriesLawnAndGardenSupplyStores, W Function()? nursingPersonalCare, W Function()? officeAndCommercialFurniture, W Function()? opticiansEyeglasses, W Function()? optometristsOphthalmologist, W Function()? orthopedicGoodsProstheticDevices, W Function()? osteopaths, W Function()? packageStoresBeerWineAndLiquor, W Function()? paintsVarnishesAndSupplies, W Function()? parkingLotsGarages, W Function()? passengerRailways, W Function()? pawnShops, W Function()? petShopsPetFoodAndSupplies, W Function()? petroleumAndPetroleumProducts, W Function()? photoDeveloping, W Function()? photographicPhotocopyMicrofilmEquipmentAndSupplies, W Function()? photographicStudios, W Function()? pictureVideoProduction, W Function()? pieceGoodsNotionsAndOtherDryGoods, W Function()? plumbingHeatingEquipmentAndSupplies, W Function()? politicalOrganizations, W Function()? postalServicesGovernmentOnly, W Function()? preciousStonesAndMetalsWatchesAndJewelry, W Function()? professionalServices, W Function()? publicWarehousingAndStorage, W Function()? quickCopyReproAndBlueprint, W Function()? railroads, W Function()? realEstateAgentsAndManagersRentals, W Function()? recordStores, W Function()? recreationalVehicleRentals, W Function()? religiousGoodsStores, W Function()? religiousOrganizations, W Function()? roofingSidingSheetMetal, W Function()? secretarialSupportServices, W Function()? securityBrokersDealers, W Function()? serviceStations, W Function()? sewingNeedleworkFabricAndPieceGoodsStores, W Function()? shoeRepairHatCleaning, W Function()? shoeStores, W Function()? smallApplianceRepair, W Function()? snowmobileDealers, W Function()? specialTradeServices, W Function()? specialtyCleaning, W Function()? sportingGoodsStores, W Function()? sportingRecreationCamps, W Function()? sportsAndRidingApparelStores, W Function()? sportsClubsFields, W Function()? stampAndCoinStores, W Function()? stationaryOfficeSuppliesPrintingAndWritingPaper, W Function()? stationeryStoresOfficeAndSchoolSupplyStores, W Function()? swimmingPoolsSales, W Function()? tUiTravelGermany, W Function()? tailorsAlterations, W Function()? taxPaymentsGovernmentAgencies, W Function()? taxPreparationServices, W Function()? taxicabsLimousines, W Function()? telecommunicationEquipmentAndTelephoneSales, W Function()? telecommunicationServices, W Function()? telegraphServices, W Function()? tentAndAwningShops, W Function()? testingLaboratories, W Function()? theatricalTicketAgencies, W Function()? timeshares, W Function()? tireRetreadingAndRepair, W Function()? tollsBridgeFees, W Function()? touristAttractionsAndExhibits, W Function()? towingServices, W Function()? trailerParksCampgrounds, W Function()? transportationServices, W Function()? travelAgenciesTourOperators, W Function()? truckStopIteration, W Function()? truckUtilityTrailerRentals, W Function()? typesettingPlateMakingAndRelatedServices, W Function()? typewriterStores, W Function()? uSFederalGovernmentAgenciesOrDepartments, W Function()? uniformsCommercialClothing, W Function()? usedMerchandiseAndSecondhandStores, W Function()? utilities, W Function()? varietyStores, W Function()? veterinaryServices, W Function()? videoAmusementGameSupplies, W Function()? videoGameArcades, W Function()? videoTapeRentalStores, W Function()? vocationalTradeSchools, W Function()? watchJewelryRepair, W Function()? weldingRepair, W Function()? wholesaleClubs, W Function()? wigAndToupeeStores, W Function()? wiresMoneyOrders, W Function()? womensAccessoryAndSpecialtyShops, W Function()? womensReadyToWearStores, W Function()? wreckingAndSalvageYards, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrigerationRepair, W Function()? accountingBookkeepingServices, W Function()? advertisingServices, W Function()? agriculturalCooperative, W Function()? airlinesAirCarriers, W Function()? airportsFlyingFields, W Function()? ambulanceServices, W Function()? amusementParksCarnivals, W Function()? antiqueReproductions, W Function()? antiqueShops, W Function()? aquariums, W Function()? architecturalSurveyingServices, W Function()? artDealersAndGalleries, W Function()? artistsSupplyAndCraftShops, W Function()? autoAndHomeSupplyStores, W Function()? autoBodyRepairShops, W Function()? autoPaintShops, W Function()? autoServiceShops, W Function()? automatedCashDisburse, W Function()? automatedFuelDispensers, W Function()? automobileAssociations, W Function()? automotivePartsAndAccessoriesStores, W Function()? automotiveTireStores, W Function()? bailAndBondPayments, W Function()? bakeries, W Function()? bandsOrchestras, W Function()? barberAndBeautyShops, W Function()? bettingCasinoGambling, W Function()? bicycleShops, W Function()? billiardPoolEstablishments, W Function()? boatDealers, W Function()? boatRentalsAndLeases, W Function()? bookStores, W Function()? booksPeriodicalsAndNewspapers, W Function()? bowlingAlleys, W Function()? busLines, W Function()? businessSecretarialSchools, W Function()? buyingShoppingServices, W Function()? cableSatelliteAndOtherPayTelevisionAndRadio, W Function()? cameraAndPhotographicSupplyStores, W Function()? candyNutAndConfectioneryStores, W Function()? carAndTruckDealersNewUsed, W Function()? carAndTruckDealersUsedOnly, W Function()? carRentalAgencies, W Function()? carWashes, W Function()? carpentryServices, W Function()? carpetUpholsteryCleaning, W Function()? caterers, W Function()? charitableAndSocialServiceOrganizationsFundraising, W Function()? chemicalsAndAlliedProducts, W Function()? childCareServices, W Function()? childrensAndInfantsWearStores, W Function()? chiropodistsPodiatrists, W Function()? chiropractors, W Function()? cigarStoresAndStands, W Function()? civicSocialFraternalAssociations, W Function()? cleaningAndMaintenance, W Function()? clothingRental, W Function()? collegesUniversities, W Function()? commercialEquipment, W Function()? commercialFootwear, W Function()? commercialPhotographyArtAndGraphics, W Function()? commuterTransportAndFerries, W Function()? computerNetworkServices, W Function()? computerProgramming, W Function()? computerRepair, W Function()? computerSoftwareStores, W Function()? computersPeripheralsAndSoftware, W Function()? concreteWorkServices, W Function()? constructionMaterials, W Function()? consultingPublicRelations, W Function()? correspondenceSchools, W Function()? cosmeticStores, W Function()? counselingServices, W Function()? countryClubs, W Function()? courierServices, W Function()? courtCosts, W Function()? creditReportingAgencies, W Function()? cruiseLines, W Function()? dairyProductsStores, W Function()? danceHallStudiosSchools, W Function()? datingEscortServices, W Function()? dentistsOrthodontists, W Function()? departmentStores, W Function()? detectiveAgencies, W Function()? digitalGoodsApplications, W Function()? digitalGoodsGames, W Function()? digitalGoodsLargeVolume, W Function()? digitalGoodsMedia, W Function()? directMarketingCatalogMerchant, W Function()? directMarketingCombinationCatalogAndRetailMerchant, W Function()? directMarketingInboundTelemarketing, W Function()? directMarketingInsuranceServices, W Function()? directMarketingOther, W Function()? directMarketingOutboundTelemarketing, W Function()? directMarketingSubscription, W Function()? directMarketingTravel, W Function()? discountStores, W Function()? doctors, W Function()? doorToDoorSales, W Function()? draperyWindowCoveringAndUpholsteryStores, W Function()? drinkingPlaces, W Function()? drugStoresAndPharmacies, W Function()? drugsDrugProprietariesAndDruggistSundries, W Function()? dryCleaners, W Function()? durableGoods, W Function()? dutyFreeStores, W Function()? eatingPlacesRestaurants, W Function()? educationalServices, W Function()? electricRazorStores, W Function()? electricVehicleCharging, W Function()? electricalPartsAndEquipment, W Function()? electricalServices, W Function()? electronicsRepairShops, W Function()? electronicsStores, W Function()? elementarySecondarySchools, W Function()? emergencyServicesGcasVisaUseOnly, W Function()? employmentTempAgencies, W Function()? equipmentRental, W Function()? exterminatingServices, W Function()? familyClothingStores, W Function()? fastFoodRestaurants, W Function()? financialInstitutions, W Function()? finesGovernmentAdministrativeEntities, W Function()? fireplaceFireplaceScreensAndAccessoriesStores, W Function()? floorCoveringStores, W Function()? florists, W Function()? floristsSuppliesNurseryStockAndFlowers, W Function()? freezerAndLockerMeatProvisioners, W Function()? fuelDealersNonAutomotive, W Function()? funeralServicesCrematories, W Function()? furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, W Function()? furnitureRepairRefinishing, W Function()? furriersAndFurShops, W Function()? generalServices, W Function()? giftCardNoveltyAndSouvenirShops, W Function()? glassPaintAndWallpaperStores, W Function()? glasswareCrystalStores, W Function()? golfCoursesPublic, W Function()? governmentLicensedHorseDogRacingUsRegionOnly, W Function()? governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, W Function()? governmentOwnedLotteriesNonUsRegion, W Function()? governmentOwnedLotteriesUsRegionOnly, W Function()? governmentServices, W Function()? groceryStoresSupermarkets, W Function()? hardwareEquipmentAndSupplies, W Function()? hardwareStores, W Function()? healthAndBeautySpas, W Function()? hearingAidsSalesAndSupplies, W Function()? heatingPlumbingAC, W Function()? hobbyToyAndGameShops, W Function()? homeSupplyWarehouseStores, W Function()? hospitals, W Function()? hotelsMotelsAndResorts, W Function()? householdApplianceStores, W Function()? industrialSupplies, W Function()? informationRetrievalServices, W Function()? insuranceDefault, W Function()? insuranceUnderwritingPremiums, W Function()? intraCompanyPurchases, W Function()? jewelryStoresWatchesClocksAndSilverwareStores, W Function()? landscapingServices, W Function()? laundries, W Function()? laundryCleaningServices, W Function()? legalServicesAttorneys, W Function()? luggageAndLeatherGoodsStores, W Function()? lumberBuildingMaterialsStores, W Function()? manualCashDisburse, W Function()? marinasServiceAndSupplies, W Function()? marketplaces, W Function()? masonryStoneworkAndPlaster, W Function()? massageParlors, W Function()? medicalAndDentalLabs, W Function()? medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, W Function()? medicalServices, W Function()? membershipOrganizations, W Function()? mensAndBoysClothingAndAccessoriesStores, W Function()? mensWomensClothingStores, W Function()? metalServiceCenters, W Function()? miscellaneousApparelAndAccessoryShops, W Function()? miscellaneousAutoDealers, W Function()? miscellaneousBusinessServices, W Function()? miscellaneousFoodStores, W Function()? miscellaneousGeneralMerchandise, W Function()? miscellaneousGeneralServices, W Function()? miscellaneousHomeFurnishingSpecialtyStores, W Function()? miscellaneousPublishingAndPrinting, W Function()? miscellaneousRecreationServices, W Function()? miscellaneousRepairShops, W Function()? miscellaneousSpecialtyRetail, W Function()? mobileHomeDealers, W Function()? motionPictureTheaters, W Function()? motorFreightCarriersAndTrucking, W Function()? motorHomesDealers, W Function()? motorVehicleSuppliesAndNewParts, W Function()? motorcycleShopsAndDealers, W Function()? motorcycleShopsDealers, W Function()? musicStoresMusicalInstrumentsPianosAndSheetMusic, W Function()? newsDealersAndNewsstands, W Function()? nonFiMoneyOrders, W Function()? nonFiStoredValueCardPurchaseLoad, W Function()? nondurableGoods, W Function()? nurseriesLawnAndGardenSupplyStores, W Function()? nursingPersonalCare, W Function()? officeAndCommercialFurniture, W Function()? opticiansEyeglasses, W Function()? optometristsOphthalmologist, W Function()? orthopedicGoodsProstheticDevices, W Function()? osteopaths, W Function()? packageStoresBeerWineAndLiquor, W Function()? paintsVarnishesAndSupplies, W Function()? parkingLotsGarages, W Function()? passengerRailways, W Function()? pawnShops, W Function()? petShopsPetFoodAndSupplies, W Function()? petroleumAndPetroleumProducts, W Function()? photoDeveloping, W Function()? photographicPhotocopyMicrofilmEquipmentAndSupplies, W Function()? photographicStudios, W Function()? pictureVideoProduction, W Function()? pieceGoodsNotionsAndOtherDryGoods, W Function()? plumbingHeatingEquipmentAndSupplies, W Function()? politicalOrganizations, W Function()? postalServicesGovernmentOnly, W Function()? preciousStonesAndMetalsWatchesAndJewelry, W Function()? professionalServices, W Function()? publicWarehousingAndStorage, W Function()? quickCopyReproAndBlueprint, W Function()? railroads, W Function()? realEstateAgentsAndManagersRentals, W Function()? recordStores, W Function()? recreationalVehicleRentals, W Function()? religiousGoodsStores, W Function()? religiousOrganizations, W Function()? roofingSidingSheetMetal, W Function()? secretarialSupportServices, W Function()? securityBrokersDealers, W Function()? serviceStations, W Function()? sewingNeedleworkFabricAndPieceGoodsStores, W Function()? shoeRepairHatCleaning, W Function()? shoeStores, W Function()? smallApplianceRepair, W Function()? snowmobileDealers, W Function()? specialTradeServices, W Function()? specialtyCleaning, W Function()? sportingGoodsStores, W Function()? sportingRecreationCamps, W Function()? sportsAndRidingApparelStores, W Function()? sportsClubsFields, W Function()? stampAndCoinStores, W Function()? stationaryOfficeSuppliesPrintingAndWritingPaper, W Function()? stationeryStoresOfficeAndSchoolSupplyStores, W Function()? swimmingPoolsSales, W Function()? tUiTravelGermany, W Function()? tailorsAlterations, W Function()? taxPaymentsGovernmentAgencies, W Function()? taxPreparationServices, W Function()? taxicabsLimousines, W Function()? telecommunicationEquipmentAndTelephoneSales, W Function()? telecommunicationServices, W Function()? telegraphServices, W Function()? tentAndAwningShops, W Function()? testingLaboratories, W Function()? theatricalTicketAgencies, W Function()? timeshares, W Function()? tireRetreadingAndRepair, W Function()? tollsBridgeFees, W Function()? touristAttractionsAndExhibits, W Function()? towingServices, W Function()? trailerParksCampgrounds, W Function()? transportationServices, W Function()? travelAgenciesTourOperators, W Function()? truckStopIteration, W Function()? truckUtilityTrailerRentals, W Function()? typesettingPlateMakingAndRelatedServices, W Function()? typewriterStores, W Function()? uSFederalGovernmentAgenciesOrDepartments, W Function()? uniformsCommercialClothing, W Function()? usedMerchandiseAndSecondhandStores, W Function()? utilities, W Function()? varietyStores, W Function()? veterinaryServices, W Function()? videoAmusementGameSupplies, W Function()? videoGameArcades, W Function()? videoTapeRentalStores, W Function()? vocationalTradeSchools, W Function()? watchJewelryRepair, W Function()? weldingRepair, W Function()? wholesaleClubs, W Function()? wigAndToupeeStores, W Function()? wiresMoneyOrders, W Function()? womensAccessoryAndSpecialtyShops, W Function()? womensReadyToWearStores, W Function()? wreckingAndSalvageYards, W Function(String value)? $unknown, }) {return switch (this) {
       MerchantDataCategory$acRefrigerationRepair() => acRefrigerationRepair != null ? acRefrigerationRepair() : orElse(value),
       MerchantDataCategory$accountingBookkeepingServices() => accountingBookkeepingServices != null ? accountingBookkeepingServices() : orElse(value),
       MerchantDataCategory$advertisingServices() => advertisingServices != null ? advertisingServices() : orElse(value),
@@ -1788,10 +1788,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
       MerchantDataCategory$womensReadyToWearStores() => womensReadyToWearStores != null ? womensReadyToWearStores() : orElse(value),
       MerchantDataCategory$wreckingAndSalvageYards() => wreckingAndSalvageYards != null ? wreckingAndSalvageYards() : orElse(value),
       MerchantDataCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MerchantDataCategory($value)';
 
- }
+}
 @immutable final class MerchantDataCategory$acRefrigerationRepair extends MerchantDataCategory {const MerchantDataCategory$acRefrigerationRepair._();
 
 @override String get value => 'ac_refrigeration_repair';
@@ -1800,7 +1800,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'ac_refrigeration_repair'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$accountingBookkeepingServices extends MerchantDataCategory {const MerchantDataCategory$accountingBookkeepingServices._();
 
 @override String get value => 'accounting_bookkeeping_services';
@@ -1809,7 +1809,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'accounting_bookkeeping_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$advertisingServices extends MerchantDataCategory {const MerchantDataCategory$advertisingServices._();
 
 @override String get value => 'advertising_services';
@@ -1818,7 +1818,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'advertising_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$agriculturalCooperative extends MerchantDataCategory {const MerchantDataCategory$agriculturalCooperative._();
 
 @override String get value => 'agricultural_cooperative';
@@ -1827,7 +1827,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'agricultural_cooperative'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$airlinesAirCarriers extends MerchantDataCategory {const MerchantDataCategory$airlinesAirCarriers._();
 
 @override String get value => 'airlines_air_carriers';
@@ -1836,7 +1836,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'airlines_air_carriers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$airportsFlyingFields extends MerchantDataCategory {const MerchantDataCategory$airportsFlyingFields._();
 
 @override String get value => 'airports_flying_fields';
@@ -1845,7 +1845,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'airports_flying_fields'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$ambulanceServices extends MerchantDataCategory {const MerchantDataCategory$ambulanceServices._();
 
 @override String get value => 'ambulance_services';
@@ -1854,7 +1854,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'ambulance_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$amusementParksCarnivals extends MerchantDataCategory {const MerchantDataCategory$amusementParksCarnivals._();
 
 @override String get value => 'amusement_parks_carnivals';
@@ -1863,7 +1863,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'amusement_parks_carnivals'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$antiqueReproductions extends MerchantDataCategory {const MerchantDataCategory$antiqueReproductions._();
 
 @override String get value => 'antique_reproductions';
@@ -1872,7 +1872,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'antique_reproductions'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$antiqueShops extends MerchantDataCategory {const MerchantDataCategory$antiqueShops._();
 
 @override String get value => 'antique_shops';
@@ -1881,7 +1881,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'antique_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$aquariums extends MerchantDataCategory {const MerchantDataCategory$aquariums._();
 
 @override String get value => 'aquariums';
@@ -1890,7 +1890,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'aquariums'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$architecturalSurveyingServices extends MerchantDataCategory {const MerchantDataCategory$architecturalSurveyingServices._();
 
 @override String get value => 'architectural_surveying_services';
@@ -1899,7 +1899,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'architectural_surveying_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$artDealersAndGalleries extends MerchantDataCategory {const MerchantDataCategory$artDealersAndGalleries._();
 
 @override String get value => 'art_dealers_and_galleries';
@@ -1908,7 +1908,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'art_dealers_and_galleries'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$artistsSupplyAndCraftShops extends MerchantDataCategory {const MerchantDataCategory$artistsSupplyAndCraftShops._();
 
 @override String get value => 'artists_supply_and_craft_shops';
@@ -1917,7 +1917,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'artists_supply_and_craft_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$autoAndHomeSupplyStores extends MerchantDataCategory {const MerchantDataCategory$autoAndHomeSupplyStores._();
 
 @override String get value => 'auto_and_home_supply_stores';
@@ -1926,7 +1926,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'auto_and_home_supply_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$autoBodyRepairShops extends MerchantDataCategory {const MerchantDataCategory$autoBodyRepairShops._();
 
 @override String get value => 'auto_body_repair_shops';
@@ -1935,7 +1935,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'auto_body_repair_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$autoPaintShops extends MerchantDataCategory {const MerchantDataCategory$autoPaintShops._();
 
 @override String get value => 'auto_paint_shops';
@@ -1944,7 +1944,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'auto_paint_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$autoServiceShops extends MerchantDataCategory {const MerchantDataCategory$autoServiceShops._();
 
 @override String get value => 'auto_service_shops';
@@ -1953,7 +1953,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'auto_service_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$automatedCashDisburse extends MerchantDataCategory {const MerchantDataCategory$automatedCashDisburse._();
 
 @override String get value => 'automated_cash_disburse';
@@ -1962,7 +1962,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'automated_cash_disburse'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$automatedFuelDispensers extends MerchantDataCategory {const MerchantDataCategory$automatedFuelDispensers._();
 
 @override String get value => 'automated_fuel_dispensers';
@@ -1971,7 +1971,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'automated_fuel_dispensers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$automobileAssociations extends MerchantDataCategory {const MerchantDataCategory$automobileAssociations._();
 
 @override String get value => 'automobile_associations';
@@ -1980,7 +1980,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'automobile_associations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$automotivePartsAndAccessoriesStores extends MerchantDataCategory {const MerchantDataCategory$automotivePartsAndAccessoriesStores._();
 
 @override String get value => 'automotive_parts_and_accessories_stores';
@@ -1989,7 +1989,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'automotive_parts_and_accessories_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$automotiveTireStores extends MerchantDataCategory {const MerchantDataCategory$automotiveTireStores._();
 
 @override String get value => 'automotive_tire_stores';
@@ -1998,7 +1998,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'automotive_tire_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bailAndBondPayments extends MerchantDataCategory {const MerchantDataCategory$bailAndBondPayments._();
 
 @override String get value => 'bail_and_bond_payments';
@@ -2007,7 +2007,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'bail_and_bond_payments'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bakeries extends MerchantDataCategory {const MerchantDataCategory$bakeries._();
 
 @override String get value => 'bakeries';
@@ -2016,7 +2016,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'bakeries'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bandsOrchestras extends MerchantDataCategory {const MerchantDataCategory$bandsOrchestras._();
 
 @override String get value => 'bands_orchestras';
@@ -2025,7 +2025,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'bands_orchestras'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$barberAndBeautyShops extends MerchantDataCategory {const MerchantDataCategory$barberAndBeautyShops._();
 
 @override String get value => 'barber_and_beauty_shops';
@@ -2034,7 +2034,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'barber_and_beauty_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bettingCasinoGambling extends MerchantDataCategory {const MerchantDataCategory$bettingCasinoGambling._();
 
 @override String get value => 'betting_casino_gambling';
@@ -2043,7 +2043,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'betting_casino_gambling'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bicycleShops extends MerchantDataCategory {const MerchantDataCategory$bicycleShops._();
 
 @override String get value => 'bicycle_shops';
@@ -2052,7 +2052,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'bicycle_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$billiardPoolEstablishments extends MerchantDataCategory {const MerchantDataCategory$billiardPoolEstablishments._();
 
 @override String get value => 'billiard_pool_establishments';
@@ -2061,7 +2061,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'billiard_pool_establishments'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$boatDealers extends MerchantDataCategory {const MerchantDataCategory$boatDealers._();
 
 @override String get value => 'boat_dealers';
@@ -2070,7 +2070,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'boat_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$boatRentalsAndLeases extends MerchantDataCategory {const MerchantDataCategory$boatRentalsAndLeases._();
 
 @override String get value => 'boat_rentals_and_leases';
@@ -2079,7 +2079,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'boat_rentals_and_leases'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bookStores extends MerchantDataCategory {const MerchantDataCategory$bookStores._();
 
 @override String get value => 'book_stores';
@@ -2088,7 +2088,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'book_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$booksPeriodicalsAndNewspapers extends MerchantDataCategory {const MerchantDataCategory$booksPeriodicalsAndNewspapers._();
 
 @override String get value => 'books_periodicals_and_newspapers';
@@ -2097,7 +2097,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'books_periodicals_and_newspapers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$bowlingAlleys extends MerchantDataCategory {const MerchantDataCategory$bowlingAlleys._();
 
 @override String get value => 'bowling_alleys';
@@ -2106,7 +2106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'bowling_alleys'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$busLines extends MerchantDataCategory {const MerchantDataCategory$busLines._();
 
 @override String get value => 'bus_lines';
@@ -2115,7 +2115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'bus_lines'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$businessSecretarialSchools extends MerchantDataCategory {const MerchantDataCategory$businessSecretarialSchools._();
 
 @override String get value => 'business_secretarial_schools';
@@ -2124,7 +2124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'business_secretarial_schools'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$buyingShoppingServices extends MerchantDataCategory {const MerchantDataCategory$buyingShoppingServices._();
 
 @override String get value => 'buying_shopping_services';
@@ -2133,7 +2133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'buying_shopping_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$cableSatelliteAndOtherPayTelevisionAndRadio extends MerchantDataCategory {const MerchantDataCategory$cableSatelliteAndOtherPayTelevisionAndRadio._();
 
 @override String get value => 'cable_satellite_and_other_pay_television_and_radio';
@@ -2142,7 +2142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'cable_satellite_and_other_pay_television_and_radio'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$cameraAndPhotographicSupplyStores extends MerchantDataCategory {const MerchantDataCategory$cameraAndPhotographicSupplyStores._();
 
 @override String get value => 'camera_and_photographic_supply_stores';
@@ -2151,7 +2151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'camera_and_photographic_supply_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$candyNutAndConfectioneryStores extends MerchantDataCategory {const MerchantDataCategory$candyNutAndConfectioneryStores._();
 
 @override String get value => 'candy_nut_and_confectionery_stores';
@@ -2160,7 +2160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'candy_nut_and_confectionery_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$carAndTruckDealersNewUsed extends MerchantDataCategory {const MerchantDataCategory$carAndTruckDealersNewUsed._();
 
 @override String get value => 'car_and_truck_dealers_new_used';
@@ -2169,7 +2169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'car_and_truck_dealers_new_used'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$carAndTruckDealersUsedOnly extends MerchantDataCategory {const MerchantDataCategory$carAndTruckDealersUsedOnly._();
 
 @override String get value => 'car_and_truck_dealers_used_only';
@@ -2178,7 +2178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'car_and_truck_dealers_used_only'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$carRentalAgencies extends MerchantDataCategory {const MerchantDataCategory$carRentalAgencies._();
 
 @override String get value => 'car_rental_agencies';
@@ -2187,7 +2187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'car_rental_agencies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$carWashes extends MerchantDataCategory {const MerchantDataCategory$carWashes._();
 
 @override String get value => 'car_washes';
@@ -2196,7 +2196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'car_washes'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$carpentryServices extends MerchantDataCategory {const MerchantDataCategory$carpentryServices._();
 
 @override String get value => 'carpentry_services';
@@ -2205,7 +2205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'carpentry_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$carpetUpholsteryCleaning extends MerchantDataCategory {const MerchantDataCategory$carpetUpholsteryCleaning._();
 
 @override String get value => 'carpet_upholstery_cleaning';
@@ -2214,7 +2214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'carpet_upholstery_cleaning'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$caterers extends MerchantDataCategory {const MerchantDataCategory$caterers._();
 
 @override String get value => 'caterers';
@@ -2223,7 +2223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'caterers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$charitableAndSocialServiceOrganizationsFundraising extends MerchantDataCategory {const MerchantDataCategory$charitableAndSocialServiceOrganizationsFundraising._();
 
 @override String get value => 'charitable_and_social_service_organizations_fundraising';
@@ -2232,7 +2232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'charitable_and_social_service_organizations_fundraising'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$chemicalsAndAlliedProducts extends MerchantDataCategory {const MerchantDataCategory$chemicalsAndAlliedProducts._();
 
 @override String get value => 'chemicals_and_allied_products';
@@ -2241,7 +2241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'chemicals_and_allied_products'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$childCareServices extends MerchantDataCategory {const MerchantDataCategory$childCareServices._();
 
 @override String get value => 'child_care_services';
@@ -2250,7 +2250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'child_care_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$childrensAndInfantsWearStores extends MerchantDataCategory {const MerchantDataCategory$childrensAndInfantsWearStores._();
 
 @override String get value => 'childrens_and_infants_wear_stores';
@@ -2259,7 +2259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'childrens_and_infants_wear_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$chiropodistsPodiatrists extends MerchantDataCategory {const MerchantDataCategory$chiropodistsPodiatrists._();
 
 @override String get value => 'chiropodists_podiatrists';
@@ -2268,7 +2268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'chiropodists_podiatrists'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$chiropractors extends MerchantDataCategory {const MerchantDataCategory$chiropractors._();
 
 @override String get value => 'chiropractors';
@@ -2277,7 +2277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'chiropractors'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$cigarStoresAndStands extends MerchantDataCategory {const MerchantDataCategory$cigarStoresAndStands._();
 
 @override String get value => 'cigar_stores_and_stands';
@@ -2286,7 +2286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'cigar_stores_and_stands'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$civicSocialFraternalAssociations extends MerchantDataCategory {const MerchantDataCategory$civicSocialFraternalAssociations._();
 
 @override String get value => 'civic_social_fraternal_associations';
@@ -2295,7 +2295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'civic_social_fraternal_associations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$cleaningAndMaintenance extends MerchantDataCategory {const MerchantDataCategory$cleaningAndMaintenance._();
 
 @override String get value => 'cleaning_and_maintenance';
@@ -2304,7 +2304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'cleaning_and_maintenance'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$clothingRental extends MerchantDataCategory {const MerchantDataCategory$clothingRental._();
 
 @override String get value => 'clothing_rental';
@@ -2313,7 +2313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'clothing_rental'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$collegesUniversities extends MerchantDataCategory {const MerchantDataCategory$collegesUniversities._();
 
 @override String get value => 'colleges_universities';
@@ -2322,7 +2322,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'colleges_universities'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$commercialEquipment extends MerchantDataCategory {const MerchantDataCategory$commercialEquipment._();
 
 @override String get value => 'commercial_equipment';
@@ -2331,7 +2331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'commercial_equipment'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$commercialFootwear extends MerchantDataCategory {const MerchantDataCategory$commercialFootwear._();
 
 @override String get value => 'commercial_footwear';
@@ -2340,7 +2340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'commercial_footwear'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$commercialPhotographyArtAndGraphics extends MerchantDataCategory {const MerchantDataCategory$commercialPhotographyArtAndGraphics._();
 
 @override String get value => 'commercial_photography_art_and_graphics';
@@ -2349,7 +2349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'commercial_photography_art_and_graphics'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$commuterTransportAndFerries extends MerchantDataCategory {const MerchantDataCategory$commuterTransportAndFerries._();
 
 @override String get value => 'commuter_transport_and_ferries';
@@ -2358,7 +2358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'commuter_transport_and_ferries'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$computerNetworkServices extends MerchantDataCategory {const MerchantDataCategory$computerNetworkServices._();
 
 @override String get value => 'computer_network_services';
@@ -2367,7 +2367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'computer_network_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$computerProgramming extends MerchantDataCategory {const MerchantDataCategory$computerProgramming._();
 
 @override String get value => 'computer_programming';
@@ -2376,7 +2376,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'computer_programming'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$computerRepair extends MerchantDataCategory {const MerchantDataCategory$computerRepair._();
 
 @override String get value => 'computer_repair';
@@ -2385,7 +2385,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'computer_repair'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$computerSoftwareStores extends MerchantDataCategory {const MerchantDataCategory$computerSoftwareStores._();
 
 @override String get value => 'computer_software_stores';
@@ -2394,7 +2394,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'computer_software_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$computersPeripheralsAndSoftware extends MerchantDataCategory {const MerchantDataCategory$computersPeripheralsAndSoftware._();
 
 @override String get value => 'computers_peripherals_and_software';
@@ -2403,7 +2403,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'computers_peripherals_and_software'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$concreteWorkServices extends MerchantDataCategory {const MerchantDataCategory$concreteWorkServices._();
 
 @override String get value => 'concrete_work_services';
@@ -2412,7 +2412,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'concrete_work_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$constructionMaterials extends MerchantDataCategory {const MerchantDataCategory$constructionMaterials._();
 
 @override String get value => 'construction_materials';
@@ -2421,7 +2421,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'construction_materials'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$consultingPublicRelations extends MerchantDataCategory {const MerchantDataCategory$consultingPublicRelations._();
 
 @override String get value => 'consulting_public_relations';
@@ -2430,7 +2430,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'consulting_public_relations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$correspondenceSchools extends MerchantDataCategory {const MerchantDataCategory$correspondenceSchools._();
 
 @override String get value => 'correspondence_schools';
@@ -2439,7 +2439,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'correspondence_schools'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$cosmeticStores extends MerchantDataCategory {const MerchantDataCategory$cosmeticStores._();
 
 @override String get value => 'cosmetic_stores';
@@ -2448,7 +2448,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'cosmetic_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$counselingServices extends MerchantDataCategory {const MerchantDataCategory$counselingServices._();
 
 @override String get value => 'counseling_services';
@@ -2457,7 +2457,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'counseling_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$countryClubs extends MerchantDataCategory {const MerchantDataCategory$countryClubs._();
 
 @override String get value => 'country_clubs';
@@ -2466,7 +2466,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'country_clubs'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$courierServices extends MerchantDataCategory {const MerchantDataCategory$courierServices._();
 
 @override String get value => 'courier_services';
@@ -2475,7 +2475,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'courier_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$courtCosts extends MerchantDataCategory {const MerchantDataCategory$courtCosts._();
 
 @override String get value => 'court_costs';
@@ -2484,7 +2484,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'court_costs'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$creditReportingAgencies extends MerchantDataCategory {const MerchantDataCategory$creditReportingAgencies._();
 
 @override String get value => 'credit_reporting_agencies';
@@ -2493,7 +2493,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'credit_reporting_agencies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$cruiseLines extends MerchantDataCategory {const MerchantDataCategory$cruiseLines._();
 
 @override String get value => 'cruise_lines';
@@ -2502,7 +2502,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'cruise_lines'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$dairyProductsStores extends MerchantDataCategory {const MerchantDataCategory$dairyProductsStores._();
 
 @override String get value => 'dairy_products_stores';
@@ -2511,7 +2511,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'dairy_products_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$danceHallStudiosSchools extends MerchantDataCategory {const MerchantDataCategory$danceHallStudiosSchools._();
 
 @override String get value => 'dance_hall_studios_schools';
@@ -2520,7 +2520,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'dance_hall_studios_schools'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$datingEscortServices extends MerchantDataCategory {const MerchantDataCategory$datingEscortServices._();
 
 @override String get value => 'dating_escort_services';
@@ -2529,7 +2529,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'dating_escort_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$dentistsOrthodontists extends MerchantDataCategory {const MerchantDataCategory$dentistsOrthodontists._();
 
 @override String get value => 'dentists_orthodontists';
@@ -2538,7 +2538,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'dentists_orthodontists'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$departmentStores extends MerchantDataCategory {const MerchantDataCategory$departmentStores._();
 
 @override String get value => 'department_stores';
@@ -2547,7 +2547,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'department_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$detectiveAgencies extends MerchantDataCategory {const MerchantDataCategory$detectiveAgencies._();
 
 @override String get value => 'detective_agencies';
@@ -2556,7 +2556,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'detective_agencies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$digitalGoodsApplications extends MerchantDataCategory {const MerchantDataCategory$digitalGoodsApplications._();
 
 @override String get value => 'digital_goods_applications';
@@ -2565,7 +2565,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'digital_goods_applications'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$digitalGoodsGames extends MerchantDataCategory {const MerchantDataCategory$digitalGoodsGames._();
 
 @override String get value => 'digital_goods_games';
@@ -2574,7 +2574,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'digital_goods_games'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$digitalGoodsLargeVolume extends MerchantDataCategory {const MerchantDataCategory$digitalGoodsLargeVolume._();
 
 @override String get value => 'digital_goods_large_volume';
@@ -2583,7 +2583,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'digital_goods_large_volume'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$digitalGoodsMedia extends MerchantDataCategory {const MerchantDataCategory$digitalGoodsMedia._();
 
 @override String get value => 'digital_goods_media';
@@ -2592,7 +2592,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'digital_goods_media'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingCatalogMerchant extends MerchantDataCategory {const MerchantDataCategory$directMarketingCatalogMerchant._();
 
 @override String get value => 'direct_marketing_catalog_merchant';
@@ -2601,7 +2601,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_catalog_merchant'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingCombinationCatalogAndRetailMerchant extends MerchantDataCategory {const MerchantDataCategory$directMarketingCombinationCatalogAndRetailMerchant._();
 
 @override String get value => 'direct_marketing_combination_catalog_and_retail_merchant';
@@ -2610,7 +2610,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_combination_catalog_and_retail_merchant'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingInboundTelemarketing extends MerchantDataCategory {const MerchantDataCategory$directMarketingInboundTelemarketing._();
 
 @override String get value => 'direct_marketing_inbound_telemarketing';
@@ -2619,7 +2619,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_inbound_telemarketing'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingInsuranceServices extends MerchantDataCategory {const MerchantDataCategory$directMarketingInsuranceServices._();
 
 @override String get value => 'direct_marketing_insurance_services';
@@ -2628,7 +2628,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_insurance_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingOther extends MerchantDataCategory {const MerchantDataCategory$directMarketingOther._();
 
 @override String get value => 'direct_marketing_other';
@@ -2637,7 +2637,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_other'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingOutboundTelemarketing extends MerchantDataCategory {const MerchantDataCategory$directMarketingOutboundTelemarketing._();
 
 @override String get value => 'direct_marketing_outbound_telemarketing';
@@ -2646,7 +2646,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_outbound_telemarketing'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingSubscription extends MerchantDataCategory {const MerchantDataCategory$directMarketingSubscription._();
 
 @override String get value => 'direct_marketing_subscription';
@@ -2655,7 +2655,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_subscription'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$directMarketingTravel extends MerchantDataCategory {const MerchantDataCategory$directMarketingTravel._();
 
 @override String get value => 'direct_marketing_travel';
@@ -2664,7 +2664,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'direct_marketing_travel'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$discountStores extends MerchantDataCategory {const MerchantDataCategory$discountStores._();
 
 @override String get value => 'discount_stores';
@@ -2673,7 +2673,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'discount_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$doctors extends MerchantDataCategory {const MerchantDataCategory$doctors._();
 
 @override String get value => 'doctors';
@@ -2682,7 +2682,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'doctors'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$doorToDoorSales extends MerchantDataCategory {const MerchantDataCategory$doorToDoorSales._();
 
 @override String get value => 'door_to_door_sales';
@@ -2691,7 +2691,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'door_to_door_sales'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$draperyWindowCoveringAndUpholsteryStores extends MerchantDataCategory {const MerchantDataCategory$draperyWindowCoveringAndUpholsteryStores._();
 
 @override String get value => 'drapery_window_covering_and_upholstery_stores';
@@ -2700,7 +2700,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'drapery_window_covering_and_upholstery_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$drinkingPlaces extends MerchantDataCategory {const MerchantDataCategory$drinkingPlaces._();
 
 @override String get value => 'drinking_places';
@@ -2709,7 +2709,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'drinking_places'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$drugStoresAndPharmacies extends MerchantDataCategory {const MerchantDataCategory$drugStoresAndPharmacies._();
 
 @override String get value => 'drug_stores_and_pharmacies';
@@ -2718,7 +2718,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'drug_stores_and_pharmacies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$drugsDrugProprietariesAndDruggistSundries extends MerchantDataCategory {const MerchantDataCategory$drugsDrugProprietariesAndDruggistSundries._();
 
 @override String get value => 'drugs_drug_proprietaries_and_druggist_sundries';
@@ -2727,7 +2727,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'drugs_drug_proprietaries_and_druggist_sundries'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$dryCleaners extends MerchantDataCategory {const MerchantDataCategory$dryCleaners._();
 
 @override String get value => 'dry_cleaners';
@@ -2736,7 +2736,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'dry_cleaners'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$durableGoods extends MerchantDataCategory {const MerchantDataCategory$durableGoods._();
 
 @override String get value => 'durable_goods';
@@ -2745,7 +2745,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'durable_goods'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$dutyFreeStores extends MerchantDataCategory {const MerchantDataCategory$dutyFreeStores._();
 
 @override String get value => 'duty_free_stores';
@@ -2754,7 +2754,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'duty_free_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$eatingPlacesRestaurants extends MerchantDataCategory {const MerchantDataCategory$eatingPlacesRestaurants._();
 
 @override String get value => 'eating_places_restaurants';
@@ -2763,7 +2763,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'eating_places_restaurants'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$educationalServices extends MerchantDataCategory {const MerchantDataCategory$educationalServices._();
 
 @override String get value => 'educational_services';
@@ -2772,7 +2772,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'educational_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$electricRazorStores extends MerchantDataCategory {const MerchantDataCategory$electricRazorStores._();
 
 @override String get value => 'electric_razor_stores';
@@ -2781,7 +2781,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'electric_razor_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$electricVehicleCharging extends MerchantDataCategory {const MerchantDataCategory$electricVehicleCharging._();
 
 @override String get value => 'electric_vehicle_charging';
@@ -2790,7 +2790,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'electric_vehicle_charging'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$electricalPartsAndEquipment extends MerchantDataCategory {const MerchantDataCategory$electricalPartsAndEquipment._();
 
 @override String get value => 'electrical_parts_and_equipment';
@@ -2799,7 +2799,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'electrical_parts_and_equipment'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$electricalServices extends MerchantDataCategory {const MerchantDataCategory$electricalServices._();
 
 @override String get value => 'electrical_services';
@@ -2808,7 +2808,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'electrical_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$electronicsRepairShops extends MerchantDataCategory {const MerchantDataCategory$electronicsRepairShops._();
 
 @override String get value => 'electronics_repair_shops';
@@ -2817,7 +2817,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'electronics_repair_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$electronicsStores extends MerchantDataCategory {const MerchantDataCategory$electronicsStores._();
 
 @override String get value => 'electronics_stores';
@@ -2826,7 +2826,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'electronics_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$elementarySecondarySchools extends MerchantDataCategory {const MerchantDataCategory$elementarySecondarySchools._();
 
 @override String get value => 'elementary_secondary_schools';
@@ -2835,7 +2835,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'elementary_secondary_schools'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$emergencyServicesGcasVisaUseOnly extends MerchantDataCategory {const MerchantDataCategory$emergencyServicesGcasVisaUseOnly._();
 
 @override String get value => 'emergency_services_gcas_visa_use_only';
@@ -2844,7 +2844,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'emergency_services_gcas_visa_use_only'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$employmentTempAgencies extends MerchantDataCategory {const MerchantDataCategory$employmentTempAgencies._();
 
 @override String get value => 'employment_temp_agencies';
@@ -2853,7 +2853,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'employment_temp_agencies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$equipmentRental extends MerchantDataCategory {const MerchantDataCategory$equipmentRental._();
 
 @override String get value => 'equipment_rental';
@@ -2862,7 +2862,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'equipment_rental'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$exterminatingServices extends MerchantDataCategory {const MerchantDataCategory$exterminatingServices._();
 
 @override String get value => 'exterminating_services';
@@ -2871,7 +2871,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'exterminating_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$familyClothingStores extends MerchantDataCategory {const MerchantDataCategory$familyClothingStores._();
 
 @override String get value => 'family_clothing_stores';
@@ -2880,7 +2880,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'family_clothing_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$fastFoodRestaurants extends MerchantDataCategory {const MerchantDataCategory$fastFoodRestaurants._();
 
 @override String get value => 'fast_food_restaurants';
@@ -2889,7 +2889,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'fast_food_restaurants'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$financialInstitutions extends MerchantDataCategory {const MerchantDataCategory$financialInstitutions._();
 
 @override String get value => 'financial_institutions';
@@ -2898,7 +2898,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'financial_institutions'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$finesGovernmentAdministrativeEntities extends MerchantDataCategory {const MerchantDataCategory$finesGovernmentAdministrativeEntities._();
 
 @override String get value => 'fines_government_administrative_entities';
@@ -2907,7 +2907,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'fines_government_administrative_entities'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$fireplaceFireplaceScreensAndAccessoriesStores extends MerchantDataCategory {const MerchantDataCategory$fireplaceFireplaceScreensAndAccessoriesStores._();
 
 @override String get value => 'fireplace_fireplace_screens_and_accessories_stores';
@@ -2916,7 +2916,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'fireplace_fireplace_screens_and_accessories_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$floorCoveringStores extends MerchantDataCategory {const MerchantDataCategory$floorCoveringStores._();
 
 @override String get value => 'floor_covering_stores';
@@ -2925,7 +2925,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'floor_covering_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$florists extends MerchantDataCategory {const MerchantDataCategory$florists._();
 
 @override String get value => 'florists';
@@ -2934,7 +2934,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'florists'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$floristsSuppliesNurseryStockAndFlowers extends MerchantDataCategory {const MerchantDataCategory$floristsSuppliesNurseryStockAndFlowers._();
 
 @override String get value => 'florists_supplies_nursery_stock_and_flowers';
@@ -2943,7 +2943,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'florists_supplies_nursery_stock_and_flowers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$freezerAndLockerMeatProvisioners extends MerchantDataCategory {const MerchantDataCategory$freezerAndLockerMeatProvisioners._();
 
 @override String get value => 'freezer_and_locker_meat_provisioners';
@@ -2952,7 +2952,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'freezer_and_locker_meat_provisioners'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$fuelDealersNonAutomotive extends MerchantDataCategory {const MerchantDataCategory$fuelDealersNonAutomotive._();
 
 @override String get value => 'fuel_dealers_non_automotive';
@@ -2961,7 +2961,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'fuel_dealers_non_automotive'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$funeralServicesCrematories extends MerchantDataCategory {const MerchantDataCategory$funeralServicesCrematories._();
 
 @override String get value => 'funeral_services_crematories';
@@ -2970,7 +2970,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'funeral_services_crematories'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances extends MerchantDataCategory {const MerchantDataCategory$furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances._();
 
 @override String get value => 'furniture_home_furnishings_and_equipment_stores_except_appliances';
@@ -2979,7 +2979,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'furniture_home_furnishings_and_equipment_stores_except_appliances'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$furnitureRepairRefinishing extends MerchantDataCategory {const MerchantDataCategory$furnitureRepairRefinishing._();
 
 @override String get value => 'furniture_repair_refinishing';
@@ -2988,7 +2988,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'furniture_repair_refinishing'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$furriersAndFurShops extends MerchantDataCategory {const MerchantDataCategory$furriersAndFurShops._();
 
 @override String get value => 'furriers_and_fur_shops';
@@ -2997,7 +2997,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'furriers_and_fur_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$generalServices extends MerchantDataCategory {const MerchantDataCategory$generalServices._();
 
 @override String get value => 'general_services';
@@ -3006,7 +3006,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'general_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$giftCardNoveltyAndSouvenirShops extends MerchantDataCategory {const MerchantDataCategory$giftCardNoveltyAndSouvenirShops._();
 
 @override String get value => 'gift_card_novelty_and_souvenir_shops';
@@ -3015,7 +3015,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'gift_card_novelty_and_souvenir_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$glassPaintAndWallpaperStores extends MerchantDataCategory {const MerchantDataCategory$glassPaintAndWallpaperStores._();
 
 @override String get value => 'glass_paint_and_wallpaper_stores';
@@ -3024,7 +3024,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'glass_paint_and_wallpaper_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$glasswareCrystalStores extends MerchantDataCategory {const MerchantDataCategory$glasswareCrystalStores._();
 
 @override String get value => 'glassware_crystal_stores';
@@ -3033,7 +3033,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'glassware_crystal_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$golfCoursesPublic extends MerchantDataCategory {const MerchantDataCategory$golfCoursesPublic._();
 
 @override String get value => 'golf_courses_public';
@@ -3042,7 +3042,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'golf_courses_public'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$governmentLicensedHorseDogRacingUsRegionOnly extends MerchantDataCategory {const MerchantDataCategory$governmentLicensedHorseDogRacingUsRegionOnly._();
 
 @override String get value => 'government_licensed_horse_dog_racing_us_region_only';
@@ -3051,7 +3051,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'government_licensed_horse_dog_racing_us_region_only'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly extends MerchantDataCategory {const MerchantDataCategory$governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly._();
 
 @override String get value => 'government_licensed_online_casions_online_gambling_us_region_only';
@@ -3060,7 +3060,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'government_licensed_online_casions_online_gambling_us_region_only'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$governmentOwnedLotteriesNonUsRegion extends MerchantDataCategory {const MerchantDataCategory$governmentOwnedLotteriesNonUsRegion._();
 
 @override String get value => 'government_owned_lotteries_non_us_region';
@@ -3069,7 +3069,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'government_owned_lotteries_non_us_region'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$governmentOwnedLotteriesUsRegionOnly extends MerchantDataCategory {const MerchantDataCategory$governmentOwnedLotteriesUsRegionOnly._();
 
 @override String get value => 'government_owned_lotteries_us_region_only';
@@ -3078,7 +3078,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'government_owned_lotteries_us_region_only'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$governmentServices extends MerchantDataCategory {const MerchantDataCategory$governmentServices._();
 
 @override String get value => 'government_services';
@@ -3087,7 +3087,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'government_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$groceryStoresSupermarkets extends MerchantDataCategory {const MerchantDataCategory$groceryStoresSupermarkets._();
 
 @override String get value => 'grocery_stores_supermarkets';
@@ -3096,7 +3096,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'grocery_stores_supermarkets'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$hardwareEquipmentAndSupplies extends MerchantDataCategory {const MerchantDataCategory$hardwareEquipmentAndSupplies._();
 
 @override String get value => 'hardware_equipment_and_supplies';
@@ -3105,7 +3105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'hardware_equipment_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$hardwareStores extends MerchantDataCategory {const MerchantDataCategory$hardwareStores._();
 
 @override String get value => 'hardware_stores';
@@ -3114,7 +3114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'hardware_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$healthAndBeautySpas extends MerchantDataCategory {const MerchantDataCategory$healthAndBeautySpas._();
 
 @override String get value => 'health_and_beauty_spas';
@@ -3123,7 +3123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'health_and_beauty_spas'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$hearingAidsSalesAndSupplies extends MerchantDataCategory {const MerchantDataCategory$hearingAidsSalesAndSupplies._();
 
 @override String get value => 'hearing_aids_sales_and_supplies';
@@ -3132,7 +3132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'hearing_aids_sales_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$heatingPlumbingAC extends MerchantDataCategory {const MerchantDataCategory$heatingPlumbingAC._();
 
 @override String get value => 'heating_plumbing_a_c';
@@ -3141,7 +3141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'heating_plumbing_a_c'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$hobbyToyAndGameShops extends MerchantDataCategory {const MerchantDataCategory$hobbyToyAndGameShops._();
 
 @override String get value => 'hobby_toy_and_game_shops';
@@ -3150,7 +3150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'hobby_toy_and_game_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$homeSupplyWarehouseStores extends MerchantDataCategory {const MerchantDataCategory$homeSupplyWarehouseStores._();
 
 @override String get value => 'home_supply_warehouse_stores';
@@ -3159,7 +3159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'home_supply_warehouse_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$hospitals extends MerchantDataCategory {const MerchantDataCategory$hospitals._();
 
 @override String get value => 'hospitals';
@@ -3168,7 +3168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'hospitals'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$hotelsMotelsAndResorts extends MerchantDataCategory {const MerchantDataCategory$hotelsMotelsAndResorts._();
 
 @override String get value => 'hotels_motels_and_resorts';
@@ -3177,7 +3177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'hotels_motels_and_resorts'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$householdApplianceStores extends MerchantDataCategory {const MerchantDataCategory$householdApplianceStores._();
 
 @override String get value => 'household_appliance_stores';
@@ -3186,7 +3186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'household_appliance_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$industrialSupplies extends MerchantDataCategory {const MerchantDataCategory$industrialSupplies._();
 
 @override String get value => 'industrial_supplies';
@@ -3195,7 +3195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'industrial_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$informationRetrievalServices extends MerchantDataCategory {const MerchantDataCategory$informationRetrievalServices._();
 
 @override String get value => 'information_retrieval_services';
@@ -3204,7 +3204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'information_retrieval_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$insuranceDefault extends MerchantDataCategory {const MerchantDataCategory$insuranceDefault._();
 
 @override String get value => 'insurance_default';
@@ -3213,7 +3213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'insurance_default'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$insuranceUnderwritingPremiums extends MerchantDataCategory {const MerchantDataCategory$insuranceUnderwritingPremiums._();
 
 @override String get value => 'insurance_underwriting_premiums';
@@ -3222,7 +3222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'insurance_underwriting_premiums'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$intraCompanyPurchases extends MerchantDataCategory {const MerchantDataCategory$intraCompanyPurchases._();
 
 @override String get value => 'intra_company_purchases';
@@ -3231,7 +3231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'intra_company_purchases'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$jewelryStoresWatchesClocksAndSilverwareStores extends MerchantDataCategory {const MerchantDataCategory$jewelryStoresWatchesClocksAndSilverwareStores._();
 
 @override String get value => 'jewelry_stores_watches_clocks_and_silverware_stores';
@@ -3240,7 +3240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'jewelry_stores_watches_clocks_and_silverware_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$landscapingServices extends MerchantDataCategory {const MerchantDataCategory$landscapingServices._();
 
 @override String get value => 'landscaping_services';
@@ -3249,7 +3249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'landscaping_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$laundries extends MerchantDataCategory {const MerchantDataCategory$laundries._();
 
 @override String get value => 'laundries';
@@ -3258,7 +3258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'laundries'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$laundryCleaningServices extends MerchantDataCategory {const MerchantDataCategory$laundryCleaningServices._();
 
 @override String get value => 'laundry_cleaning_services';
@@ -3267,7 +3267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'laundry_cleaning_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$legalServicesAttorneys extends MerchantDataCategory {const MerchantDataCategory$legalServicesAttorneys._();
 
 @override String get value => 'legal_services_attorneys';
@@ -3276,7 +3276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'legal_services_attorneys'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$luggageAndLeatherGoodsStores extends MerchantDataCategory {const MerchantDataCategory$luggageAndLeatherGoodsStores._();
 
 @override String get value => 'luggage_and_leather_goods_stores';
@@ -3285,7 +3285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'luggage_and_leather_goods_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$lumberBuildingMaterialsStores extends MerchantDataCategory {const MerchantDataCategory$lumberBuildingMaterialsStores._();
 
 @override String get value => 'lumber_building_materials_stores';
@@ -3294,7 +3294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'lumber_building_materials_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$manualCashDisburse extends MerchantDataCategory {const MerchantDataCategory$manualCashDisburse._();
 
 @override String get value => 'manual_cash_disburse';
@@ -3303,7 +3303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'manual_cash_disburse'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$marinasServiceAndSupplies extends MerchantDataCategory {const MerchantDataCategory$marinasServiceAndSupplies._();
 
 @override String get value => 'marinas_service_and_supplies';
@@ -3312,7 +3312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'marinas_service_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$marketplaces extends MerchantDataCategory {const MerchantDataCategory$marketplaces._();
 
 @override String get value => 'marketplaces';
@@ -3321,7 +3321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'marketplaces'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$masonryStoneworkAndPlaster extends MerchantDataCategory {const MerchantDataCategory$masonryStoneworkAndPlaster._();
 
 @override String get value => 'masonry_stonework_and_plaster';
@@ -3330,7 +3330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'masonry_stonework_and_plaster'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$massageParlors extends MerchantDataCategory {const MerchantDataCategory$massageParlors._();
 
 @override String get value => 'massage_parlors';
@@ -3339,7 +3339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'massage_parlors'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$medicalAndDentalLabs extends MerchantDataCategory {const MerchantDataCategory$medicalAndDentalLabs._();
 
 @override String get value => 'medical_and_dental_labs';
@@ -3348,7 +3348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'medical_and_dental_labs'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$medicalDentalOphthalmicAndHospitalEquipmentAndSupplies extends MerchantDataCategory {const MerchantDataCategory$medicalDentalOphthalmicAndHospitalEquipmentAndSupplies._();
 
 @override String get value => 'medical_dental_ophthalmic_and_hospital_equipment_and_supplies';
@@ -3357,7 +3357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'medical_dental_ophthalmic_and_hospital_equipment_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$medicalServices extends MerchantDataCategory {const MerchantDataCategory$medicalServices._();
 
 @override String get value => 'medical_services';
@@ -3366,7 +3366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'medical_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$membershipOrganizations extends MerchantDataCategory {const MerchantDataCategory$membershipOrganizations._();
 
 @override String get value => 'membership_organizations';
@@ -3375,7 +3375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'membership_organizations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$mensAndBoysClothingAndAccessoriesStores extends MerchantDataCategory {const MerchantDataCategory$mensAndBoysClothingAndAccessoriesStores._();
 
 @override String get value => 'mens_and_boys_clothing_and_accessories_stores';
@@ -3384,7 +3384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'mens_and_boys_clothing_and_accessories_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$mensWomensClothingStores extends MerchantDataCategory {const MerchantDataCategory$mensWomensClothingStores._();
 
 @override String get value => 'mens_womens_clothing_stores';
@@ -3393,7 +3393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'mens_womens_clothing_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$metalServiceCenters extends MerchantDataCategory {const MerchantDataCategory$metalServiceCenters._();
 
 @override String get value => 'metal_service_centers';
@@ -3402,7 +3402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'metal_service_centers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousApparelAndAccessoryShops extends MerchantDataCategory {const MerchantDataCategory$miscellaneousApparelAndAccessoryShops._();
 
 @override String get value => 'miscellaneous_apparel_and_accessory_shops';
@@ -3411,7 +3411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_apparel_and_accessory_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousAutoDealers extends MerchantDataCategory {const MerchantDataCategory$miscellaneousAutoDealers._();
 
 @override String get value => 'miscellaneous_auto_dealers';
@@ -3420,7 +3420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_auto_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousBusinessServices extends MerchantDataCategory {const MerchantDataCategory$miscellaneousBusinessServices._();
 
 @override String get value => 'miscellaneous_business_services';
@@ -3429,7 +3429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_business_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousFoodStores extends MerchantDataCategory {const MerchantDataCategory$miscellaneousFoodStores._();
 
 @override String get value => 'miscellaneous_food_stores';
@@ -3438,7 +3438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_food_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousGeneralMerchandise extends MerchantDataCategory {const MerchantDataCategory$miscellaneousGeneralMerchandise._();
 
 @override String get value => 'miscellaneous_general_merchandise';
@@ -3447,7 +3447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_general_merchandise'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousGeneralServices extends MerchantDataCategory {const MerchantDataCategory$miscellaneousGeneralServices._();
 
 @override String get value => 'miscellaneous_general_services';
@@ -3456,7 +3456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_general_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousHomeFurnishingSpecialtyStores extends MerchantDataCategory {const MerchantDataCategory$miscellaneousHomeFurnishingSpecialtyStores._();
 
 @override String get value => 'miscellaneous_home_furnishing_specialty_stores';
@@ -3465,7 +3465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_home_furnishing_specialty_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousPublishingAndPrinting extends MerchantDataCategory {const MerchantDataCategory$miscellaneousPublishingAndPrinting._();
 
 @override String get value => 'miscellaneous_publishing_and_printing';
@@ -3474,7 +3474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_publishing_and_printing'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousRecreationServices extends MerchantDataCategory {const MerchantDataCategory$miscellaneousRecreationServices._();
 
 @override String get value => 'miscellaneous_recreation_services';
@@ -3483,7 +3483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_recreation_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousRepairShops extends MerchantDataCategory {const MerchantDataCategory$miscellaneousRepairShops._();
 
 @override String get value => 'miscellaneous_repair_shops';
@@ -3492,7 +3492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_repair_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$miscellaneousSpecialtyRetail extends MerchantDataCategory {const MerchantDataCategory$miscellaneousSpecialtyRetail._();
 
 @override String get value => 'miscellaneous_specialty_retail';
@@ -3501,7 +3501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'miscellaneous_specialty_retail'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$mobileHomeDealers extends MerchantDataCategory {const MerchantDataCategory$mobileHomeDealers._();
 
 @override String get value => 'mobile_home_dealers';
@@ -3510,7 +3510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'mobile_home_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$motionPictureTheaters extends MerchantDataCategory {const MerchantDataCategory$motionPictureTheaters._();
 
 @override String get value => 'motion_picture_theaters';
@@ -3519,7 +3519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'motion_picture_theaters'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$motorFreightCarriersAndTrucking extends MerchantDataCategory {const MerchantDataCategory$motorFreightCarriersAndTrucking._();
 
 @override String get value => 'motor_freight_carriers_and_trucking';
@@ -3528,7 +3528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'motor_freight_carriers_and_trucking'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$motorHomesDealers extends MerchantDataCategory {const MerchantDataCategory$motorHomesDealers._();
 
 @override String get value => 'motor_homes_dealers';
@@ -3537,7 +3537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'motor_homes_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$motorVehicleSuppliesAndNewParts extends MerchantDataCategory {const MerchantDataCategory$motorVehicleSuppliesAndNewParts._();
 
 @override String get value => 'motor_vehicle_supplies_and_new_parts';
@@ -3546,7 +3546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'motor_vehicle_supplies_and_new_parts'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$motorcycleShopsAndDealers extends MerchantDataCategory {const MerchantDataCategory$motorcycleShopsAndDealers._();
 
 @override String get value => 'motorcycle_shops_and_dealers';
@@ -3555,7 +3555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'motorcycle_shops_and_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$motorcycleShopsDealers extends MerchantDataCategory {const MerchantDataCategory$motorcycleShopsDealers._();
 
 @override String get value => 'motorcycle_shops_dealers';
@@ -3564,7 +3564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'motorcycle_shops_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$musicStoresMusicalInstrumentsPianosAndSheetMusic extends MerchantDataCategory {const MerchantDataCategory$musicStoresMusicalInstrumentsPianosAndSheetMusic._();
 
 @override String get value => 'music_stores_musical_instruments_pianos_and_sheet_music';
@@ -3573,7 +3573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'music_stores_musical_instruments_pianos_and_sheet_music'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$newsDealersAndNewsstands extends MerchantDataCategory {const MerchantDataCategory$newsDealersAndNewsstands._();
 
 @override String get value => 'news_dealers_and_newsstands';
@@ -3582,7 +3582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'news_dealers_and_newsstands'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$nonFiMoneyOrders extends MerchantDataCategory {const MerchantDataCategory$nonFiMoneyOrders._();
 
 @override String get value => 'non_fi_money_orders';
@@ -3591,7 +3591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'non_fi_money_orders'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$nonFiStoredValueCardPurchaseLoad extends MerchantDataCategory {const MerchantDataCategory$nonFiStoredValueCardPurchaseLoad._();
 
 @override String get value => 'non_fi_stored_value_card_purchase_load';
@@ -3600,7 +3600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'non_fi_stored_value_card_purchase_load'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$nondurableGoods extends MerchantDataCategory {const MerchantDataCategory$nondurableGoods._();
 
 @override String get value => 'nondurable_goods';
@@ -3609,7 +3609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'nondurable_goods'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$nurseriesLawnAndGardenSupplyStores extends MerchantDataCategory {const MerchantDataCategory$nurseriesLawnAndGardenSupplyStores._();
 
 @override String get value => 'nurseries_lawn_and_garden_supply_stores';
@@ -3618,7 +3618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'nurseries_lawn_and_garden_supply_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$nursingPersonalCare extends MerchantDataCategory {const MerchantDataCategory$nursingPersonalCare._();
 
 @override String get value => 'nursing_personal_care';
@@ -3627,7 +3627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'nursing_personal_care'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$officeAndCommercialFurniture extends MerchantDataCategory {const MerchantDataCategory$officeAndCommercialFurniture._();
 
 @override String get value => 'office_and_commercial_furniture';
@@ -3636,7 +3636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'office_and_commercial_furniture'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$opticiansEyeglasses extends MerchantDataCategory {const MerchantDataCategory$opticiansEyeglasses._();
 
 @override String get value => 'opticians_eyeglasses';
@@ -3645,7 +3645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'opticians_eyeglasses'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$optometristsOphthalmologist extends MerchantDataCategory {const MerchantDataCategory$optometristsOphthalmologist._();
 
 @override String get value => 'optometrists_ophthalmologist';
@@ -3654,7 +3654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'optometrists_ophthalmologist'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$orthopedicGoodsProstheticDevices extends MerchantDataCategory {const MerchantDataCategory$orthopedicGoodsProstheticDevices._();
 
 @override String get value => 'orthopedic_goods_prosthetic_devices';
@@ -3663,7 +3663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'orthopedic_goods_prosthetic_devices'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$osteopaths extends MerchantDataCategory {const MerchantDataCategory$osteopaths._();
 
 @override String get value => 'osteopaths';
@@ -3672,7 +3672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'osteopaths'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$packageStoresBeerWineAndLiquor extends MerchantDataCategory {const MerchantDataCategory$packageStoresBeerWineAndLiquor._();
 
 @override String get value => 'package_stores_beer_wine_and_liquor';
@@ -3681,7 +3681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'package_stores_beer_wine_and_liquor'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$paintsVarnishesAndSupplies extends MerchantDataCategory {const MerchantDataCategory$paintsVarnishesAndSupplies._();
 
 @override String get value => 'paints_varnishes_and_supplies';
@@ -3690,7 +3690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'paints_varnishes_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$parkingLotsGarages extends MerchantDataCategory {const MerchantDataCategory$parkingLotsGarages._();
 
 @override String get value => 'parking_lots_garages';
@@ -3699,7 +3699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'parking_lots_garages'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$passengerRailways extends MerchantDataCategory {const MerchantDataCategory$passengerRailways._();
 
 @override String get value => 'passenger_railways';
@@ -3708,7 +3708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'passenger_railways'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$pawnShops extends MerchantDataCategory {const MerchantDataCategory$pawnShops._();
 
 @override String get value => 'pawn_shops';
@@ -3717,7 +3717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'pawn_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$petShopsPetFoodAndSupplies extends MerchantDataCategory {const MerchantDataCategory$petShopsPetFoodAndSupplies._();
 
 @override String get value => 'pet_shops_pet_food_and_supplies';
@@ -3726,7 +3726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'pet_shops_pet_food_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$petroleumAndPetroleumProducts extends MerchantDataCategory {const MerchantDataCategory$petroleumAndPetroleumProducts._();
 
 @override String get value => 'petroleum_and_petroleum_products';
@@ -3735,7 +3735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'petroleum_and_petroleum_products'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$photoDeveloping extends MerchantDataCategory {const MerchantDataCategory$photoDeveloping._();
 
 @override String get value => 'photo_developing';
@@ -3744,7 +3744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'photo_developing'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$photographicPhotocopyMicrofilmEquipmentAndSupplies extends MerchantDataCategory {const MerchantDataCategory$photographicPhotocopyMicrofilmEquipmentAndSupplies._();
 
 @override String get value => 'photographic_photocopy_microfilm_equipment_and_supplies';
@@ -3753,7 +3753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'photographic_photocopy_microfilm_equipment_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$photographicStudios extends MerchantDataCategory {const MerchantDataCategory$photographicStudios._();
 
 @override String get value => 'photographic_studios';
@@ -3762,7 +3762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'photographic_studios'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$pictureVideoProduction extends MerchantDataCategory {const MerchantDataCategory$pictureVideoProduction._();
 
 @override String get value => 'picture_video_production';
@@ -3771,7 +3771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'picture_video_production'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$pieceGoodsNotionsAndOtherDryGoods extends MerchantDataCategory {const MerchantDataCategory$pieceGoodsNotionsAndOtherDryGoods._();
 
 @override String get value => 'piece_goods_notions_and_other_dry_goods';
@@ -3780,7 +3780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'piece_goods_notions_and_other_dry_goods'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$plumbingHeatingEquipmentAndSupplies extends MerchantDataCategory {const MerchantDataCategory$plumbingHeatingEquipmentAndSupplies._();
 
 @override String get value => 'plumbing_heating_equipment_and_supplies';
@@ -3789,7 +3789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'plumbing_heating_equipment_and_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$politicalOrganizations extends MerchantDataCategory {const MerchantDataCategory$politicalOrganizations._();
 
 @override String get value => 'political_organizations';
@@ -3798,7 +3798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'political_organizations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$postalServicesGovernmentOnly extends MerchantDataCategory {const MerchantDataCategory$postalServicesGovernmentOnly._();
 
 @override String get value => 'postal_services_government_only';
@@ -3807,7 +3807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'postal_services_government_only'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$preciousStonesAndMetalsWatchesAndJewelry extends MerchantDataCategory {const MerchantDataCategory$preciousStonesAndMetalsWatchesAndJewelry._();
 
 @override String get value => 'precious_stones_and_metals_watches_and_jewelry';
@@ -3816,7 +3816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'precious_stones_and_metals_watches_and_jewelry'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$professionalServices extends MerchantDataCategory {const MerchantDataCategory$professionalServices._();
 
 @override String get value => 'professional_services';
@@ -3825,7 +3825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'professional_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$publicWarehousingAndStorage extends MerchantDataCategory {const MerchantDataCategory$publicWarehousingAndStorage._();
 
 @override String get value => 'public_warehousing_and_storage';
@@ -3834,7 +3834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'public_warehousing_and_storage'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$quickCopyReproAndBlueprint extends MerchantDataCategory {const MerchantDataCategory$quickCopyReproAndBlueprint._();
 
 @override String get value => 'quick_copy_repro_and_blueprint';
@@ -3843,7 +3843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'quick_copy_repro_and_blueprint'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$railroads extends MerchantDataCategory {const MerchantDataCategory$railroads._();
 
 @override String get value => 'railroads';
@@ -3852,7 +3852,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'railroads'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$realEstateAgentsAndManagersRentals extends MerchantDataCategory {const MerchantDataCategory$realEstateAgentsAndManagersRentals._();
 
 @override String get value => 'real_estate_agents_and_managers_rentals';
@@ -3861,7 +3861,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'real_estate_agents_and_managers_rentals'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$recordStores extends MerchantDataCategory {const MerchantDataCategory$recordStores._();
 
 @override String get value => 'record_stores';
@@ -3870,7 +3870,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'record_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$recreationalVehicleRentals extends MerchantDataCategory {const MerchantDataCategory$recreationalVehicleRentals._();
 
 @override String get value => 'recreational_vehicle_rentals';
@@ -3879,7 +3879,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'recreational_vehicle_rentals'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$religiousGoodsStores extends MerchantDataCategory {const MerchantDataCategory$religiousGoodsStores._();
 
 @override String get value => 'religious_goods_stores';
@@ -3888,7 +3888,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'religious_goods_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$religiousOrganizations extends MerchantDataCategory {const MerchantDataCategory$religiousOrganizations._();
 
 @override String get value => 'religious_organizations';
@@ -3897,7 +3897,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'religious_organizations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$roofingSidingSheetMetal extends MerchantDataCategory {const MerchantDataCategory$roofingSidingSheetMetal._();
 
 @override String get value => 'roofing_siding_sheet_metal';
@@ -3906,7 +3906,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'roofing_siding_sheet_metal'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$secretarialSupportServices extends MerchantDataCategory {const MerchantDataCategory$secretarialSupportServices._();
 
 @override String get value => 'secretarial_support_services';
@@ -3915,7 +3915,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'secretarial_support_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$securityBrokersDealers extends MerchantDataCategory {const MerchantDataCategory$securityBrokersDealers._();
 
 @override String get value => 'security_brokers_dealers';
@@ -3924,7 +3924,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'security_brokers_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$serviceStations extends MerchantDataCategory {const MerchantDataCategory$serviceStations._();
 
 @override String get value => 'service_stations';
@@ -3933,7 +3933,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'service_stations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$sewingNeedleworkFabricAndPieceGoodsStores extends MerchantDataCategory {const MerchantDataCategory$sewingNeedleworkFabricAndPieceGoodsStores._();
 
 @override String get value => 'sewing_needlework_fabric_and_piece_goods_stores';
@@ -3942,7 +3942,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'sewing_needlework_fabric_and_piece_goods_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$shoeRepairHatCleaning extends MerchantDataCategory {const MerchantDataCategory$shoeRepairHatCleaning._();
 
 @override String get value => 'shoe_repair_hat_cleaning';
@@ -3951,7 +3951,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'shoe_repair_hat_cleaning'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$shoeStores extends MerchantDataCategory {const MerchantDataCategory$shoeStores._();
 
 @override String get value => 'shoe_stores';
@@ -3960,7 +3960,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'shoe_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$smallApplianceRepair extends MerchantDataCategory {const MerchantDataCategory$smallApplianceRepair._();
 
 @override String get value => 'small_appliance_repair';
@@ -3969,7 +3969,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'small_appliance_repair'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$snowmobileDealers extends MerchantDataCategory {const MerchantDataCategory$snowmobileDealers._();
 
 @override String get value => 'snowmobile_dealers';
@@ -3978,7 +3978,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'snowmobile_dealers'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$specialTradeServices extends MerchantDataCategory {const MerchantDataCategory$specialTradeServices._();
 
 @override String get value => 'special_trade_services';
@@ -3987,7 +3987,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'special_trade_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$specialtyCleaning extends MerchantDataCategory {const MerchantDataCategory$specialtyCleaning._();
 
 @override String get value => 'specialty_cleaning';
@@ -3996,7 +3996,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'specialty_cleaning'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$sportingGoodsStores extends MerchantDataCategory {const MerchantDataCategory$sportingGoodsStores._();
 
 @override String get value => 'sporting_goods_stores';
@@ -4005,7 +4005,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'sporting_goods_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$sportingRecreationCamps extends MerchantDataCategory {const MerchantDataCategory$sportingRecreationCamps._();
 
 @override String get value => 'sporting_recreation_camps';
@@ -4014,7 +4014,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'sporting_recreation_camps'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$sportsAndRidingApparelStores extends MerchantDataCategory {const MerchantDataCategory$sportsAndRidingApparelStores._();
 
 @override String get value => 'sports_and_riding_apparel_stores';
@@ -4023,7 +4023,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'sports_and_riding_apparel_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$sportsClubsFields extends MerchantDataCategory {const MerchantDataCategory$sportsClubsFields._();
 
 @override String get value => 'sports_clubs_fields';
@@ -4032,7 +4032,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'sports_clubs_fields'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$stampAndCoinStores extends MerchantDataCategory {const MerchantDataCategory$stampAndCoinStores._();
 
 @override String get value => 'stamp_and_coin_stores';
@@ -4041,7 +4041,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'stamp_and_coin_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$stationaryOfficeSuppliesPrintingAndWritingPaper extends MerchantDataCategory {const MerchantDataCategory$stationaryOfficeSuppliesPrintingAndWritingPaper._();
 
 @override String get value => 'stationary_office_supplies_printing_and_writing_paper';
@@ -4050,7 +4050,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'stationary_office_supplies_printing_and_writing_paper'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$stationeryStoresOfficeAndSchoolSupplyStores extends MerchantDataCategory {const MerchantDataCategory$stationeryStoresOfficeAndSchoolSupplyStores._();
 
 @override String get value => 'stationery_stores_office_and_school_supply_stores';
@@ -4059,7 +4059,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'stationery_stores_office_and_school_supply_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$swimmingPoolsSales extends MerchantDataCategory {const MerchantDataCategory$swimmingPoolsSales._();
 
 @override String get value => 'swimming_pools_sales';
@@ -4068,7 +4068,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'swimming_pools_sales'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$tUiTravelGermany extends MerchantDataCategory {const MerchantDataCategory$tUiTravelGermany._();
 
 @override String get value => 't_ui_travel_germany';
@@ -4077,7 +4077,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 't_ui_travel_germany'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$tailorsAlterations extends MerchantDataCategory {const MerchantDataCategory$tailorsAlterations._();
 
 @override String get value => 'tailors_alterations';
@@ -4086,7 +4086,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tailors_alterations'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$taxPaymentsGovernmentAgencies extends MerchantDataCategory {const MerchantDataCategory$taxPaymentsGovernmentAgencies._();
 
 @override String get value => 'tax_payments_government_agencies';
@@ -4095,7 +4095,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tax_payments_government_agencies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$taxPreparationServices extends MerchantDataCategory {const MerchantDataCategory$taxPreparationServices._();
 
 @override String get value => 'tax_preparation_services';
@@ -4104,7 +4104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tax_preparation_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$taxicabsLimousines extends MerchantDataCategory {const MerchantDataCategory$taxicabsLimousines._();
 
 @override String get value => 'taxicabs_limousines';
@@ -4113,7 +4113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'taxicabs_limousines'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$telecommunicationEquipmentAndTelephoneSales extends MerchantDataCategory {const MerchantDataCategory$telecommunicationEquipmentAndTelephoneSales._();
 
 @override String get value => 'telecommunication_equipment_and_telephone_sales';
@@ -4122,7 +4122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'telecommunication_equipment_and_telephone_sales'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$telecommunicationServices extends MerchantDataCategory {const MerchantDataCategory$telecommunicationServices._();
 
 @override String get value => 'telecommunication_services';
@@ -4131,7 +4131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'telecommunication_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$telegraphServices extends MerchantDataCategory {const MerchantDataCategory$telegraphServices._();
 
 @override String get value => 'telegraph_services';
@@ -4140,7 +4140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'telegraph_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$tentAndAwningShops extends MerchantDataCategory {const MerchantDataCategory$tentAndAwningShops._();
 
 @override String get value => 'tent_and_awning_shops';
@@ -4149,7 +4149,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tent_and_awning_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$testingLaboratories extends MerchantDataCategory {const MerchantDataCategory$testingLaboratories._();
 
 @override String get value => 'testing_laboratories';
@@ -4158,7 +4158,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'testing_laboratories'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$theatricalTicketAgencies extends MerchantDataCategory {const MerchantDataCategory$theatricalTicketAgencies._();
 
 @override String get value => 'theatrical_ticket_agencies';
@@ -4167,7 +4167,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'theatrical_ticket_agencies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$timeshares extends MerchantDataCategory {const MerchantDataCategory$timeshares._();
 
 @override String get value => 'timeshares';
@@ -4176,7 +4176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'timeshares'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$tireRetreadingAndRepair extends MerchantDataCategory {const MerchantDataCategory$tireRetreadingAndRepair._();
 
 @override String get value => 'tire_retreading_and_repair';
@@ -4185,7 +4185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tire_retreading_and_repair'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$tollsBridgeFees extends MerchantDataCategory {const MerchantDataCategory$tollsBridgeFees._();
 
 @override String get value => 'tolls_bridge_fees';
@@ -4194,7 +4194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tolls_bridge_fees'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$touristAttractionsAndExhibits extends MerchantDataCategory {const MerchantDataCategory$touristAttractionsAndExhibits._();
 
 @override String get value => 'tourist_attractions_and_exhibits';
@@ -4203,7 +4203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'tourist_attractions_and_exhibits'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$towingServices extends MerchantDataCategory {const MerchantDataCategory$towingServices._();
 
 @override String get value => 'towing_services';
@@ -4212,7 +4212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'towing_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$trailerParksCampgrounds extends MerchantDataCategory {const MerchantDataCategory$trailerParksCampgrounds._();
 
 @override String get value => 'trailer_parks_campgrounds';
@@ -4221,7 +4221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'trailer_parks_campgrounds'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$transportationServices extends MerchantDataCategory {const MerchantDataCategory$transportationServices._();
 
 @override String get value => 'transportation_services';
@@ -4230,7 +4230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'transportation_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$travelAgenciesTourOperators extends MerchantDataCategory {const MerchantDataCategory$travelAgenciesTourOperators._();
 
 @override String get value => 'travel_agencies_tour_operators';
@@ -4239,7 +4239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'travel_agencies_tour_operators'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$truckStopIteration extends MerchantDataCategory {const MerchantDataCategory$truckStopIteration._();
 
 @override String get value => 'truck_stop_iteration';
@@ -4248,7 +4248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'truck_stop_iteration'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$truckUtilityTrailerRentals extends MerchantDataCategory {const MerchantDataCategory$truckUtilityTrailerRentals._();
 
 @override String get value => 'truck_utility_trailer_rentals';
@@ -4257,7 +4257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'truck_utility_trailer_rentals'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$typesettingPlateMakingAndRelatedServices extends MerchantDataCategory {const MerchantDataCategory$typesettingPlateMakingAndRelatedServices._();
 
 @override String get value => 'typesetting_plate_making_and_related_services';
@@ -4266,7 +4266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'typesetting_plate_making_and_related_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$typewriterStores extends MerchantDataCategory {const MerchantDataCategory$typewriterStores._();
 
 @override String get value => 'typewriter_stores';
@@ -4275,7 +4275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'typewriter_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$uSFederalGovernmentAgenciesOrDepartments extends MerchantDataCategory {const MerchantDataCategory$uSFederalGovernmentAgenciesOrDepartments._();
 
 @override String get value => 'u_s_federal_government_agencies_or_departments';
@@ -4284,7 +4284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'u_s_federal_government_agencies_or_departments'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$uniformsCommercialClothing extends MerchantDataCategory {const MerchantDataCategory$uniformsCommercialClothing._();
 
 @override String get value => 'uniforms_commercial_clothing';
@@ -4293,7 +4293,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'uniforms_commercial_clothing'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$usedMerchandiseAndSecondhandStores extends MerchantDataCategory {const MerchantDataCategory$usedMerchandiseAndSecondhandStores._();
 
 @override String get value => 'used_merchandise_and_secondhand_stores';
@@ -4302,7 +4302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'used_merchandise_and_secondhand_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$utilities extends MerchantDataCategory {const MerchantDataCategory$utilities._();
 
 @override String get value => 'utilities';
@@ -4311,7 +4311,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'utilities'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$varietyStores extends MerchantDataCategory {const MerchantDataCategory$varietyStores._();
 
 @override String get value => 'variety_stores';
@@ -4320,7 +4320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'variety_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$veterinaryServices extends MerchantDataCategory {const MerchantDataCategory$veterinaryServices._();
 
 @override String get value => 'veterinary_services';
@@ -4329,7 +4329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'veterinary_services'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$videoAmusementGameSupplies extends MerchantDataCategory {const MerchantDataCategory$videoAmusementGameSupplies._();
 
 @override String get value => 'video_amusement_game_supplies';
@@ -4338,7 +4338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'video_amusement_game_supplies'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$videoGameArcades extends MerchantDataCategory {const MerchantDataCategory$videoGameArcades._();
 
 @override String get value => 'video_game_arcades';
@@ -4347,7 +4347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'video_game_arcades'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$videoTapeRentalStores extends MerchantDataCategory {const MerchantDataCategory$videoTapeRentalStores._();
 
 @override String get value => 'video_tape_rental_stores';
@@ -4356,7 +4356,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'video_tape_rental_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$vocationalTradeSchools extends MerchantDataCategory {const MerchantDataCategory$vocationalTradeSchools._();
 
 @override String get value => 'vocational_trade_schools';
@@ -4365,7 +4365,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'vocational_trade_schools'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$watchJewelryRepair extends MerchantDataCategory {const MerchantDataCategory$watchJewelryRepair._();
 
 @override String get value => 'watch_jewelry_repair';
@@ -4374,7 +4374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'watch_jewelry_repair'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$weldingRepair extends MerchantDataCategory {const MerchantDataCategory$weldingRepair._();
 
 @override String get value => 'welding_repair';
@@ -4383,7 +4383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'welding_repair'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$wholesaleClubs extends MerchantDataCategory {const MerchantDataCategory$wholesaleClubs._();
 
 @override String get value => 'wholesale_clubs';
@@ -4392,7 +4392,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'wholesale_clubs'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$wigAndToupeeStores extends MerchantDataCategory {const MerchantDataCategory$wigAndToupeeStores._();
 
 @override String get value => 'wig_and_toupee_stores';
@@ -4401,7 +4401,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'wig_and_toupee_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$wiresMoneyOrders extends MerchantDataCategory {const MerchantDataCategory$wiresMoneyOrders._();
 
 @override String get value => 'wires_money_orders';
@@ -4410,7 +4410,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'wires_money_orders'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$womensAccessoryAndSpecialtyShops extends MerchantDataCategory {const MerchantDataCategory$womensAccessoryAndSpecialtyShops._();
 
 @override String get value => 'womens_accessory_and_specialty_shops';
@@ -4419,7 +4419,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'womens_accessory_and_specialty_shops'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$womensReadyToWearStores extends MerchantDataCategory {const MerchantDataCategory$womensReadyToWearStores._();
 
 @override String get value => 'womens_ready_to_wear_stores';
@@ -4428,7 +4428,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'womens_ready_to_wear_stores'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$wreckingAndSalvageYards extends MerchantDataCategory {const MerchantDataCategory$wreckingAndSalvageYards._();
 
 @override String get value => 'wrecking_and_salvage_yards';
@@ -4437,7 +4437,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => 'wrecking_and_salvage_yards'.hashCode;
 
- }
+}
 @immutable final class MerchantDataCategory$Unknown extends MerchantDataCategory {const MerchantDataCategory$Unknown(this.value);
 
 @override final String value;
@@ -4447,11 +4447,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acRefrig
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
 @immutable final class MerchantData {const MerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
 
-factory MerchantData.fromJson(Map<String, dynamic> json) { return MerchantData(
+factory MerchantData.fromJson(Map<String, dynamic> json) {return MerchantData(
   category: json['category'] != null ? MerchantDataCategory.fromJson(json['category'] as String) : null,
   city: json['city'] as String?,
   country: json['country'] as String?,
@@ -4461,7 +4461,7 @@ factory MerchantData.fromJson(Map<String, dynamic> json) { return MerchantData(
   state: json['state'] as String?,
   terminalId: json['terminal_id'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final MerchantDataCategory? category;
 
@@ -4481,7 +4481,7 @@ final String? terminalId;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (category != null) 'category': category?.toJson(),
   'city': ?city,
   'country': ?country,
@@ -4491,10 +4491,10 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
   'terminal_id': ?terminalId,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final city$ = city;
 if (city$ != null) {
   if (city$.runes.length > 5000) { errors.add('city: length must be <= 5000'); }
@@ -4527,8 +4527,8 @@ final url$ = url;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
-return errors; } 
-MerchantData copyWith({MerchantDataCategory? Function()? category, String? Function()? city, String? Function()? country, String? Function()? name, String? Function()? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? terminalId, String? Function()? url, }) { return MerchantData(
+return errors;}
+MerchantData copyWith({MerchantDataCategory? Function()? category, String? Function()? city, String? Function()? country, String? Function()? name, String? Function()? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? terminalId, String? Function()? url, }) {return MerchantData(
   category: category != null ? category() : this.category,
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
@@ -4538,7 +4538,7 @@ MerchantData copyWith({MerchantDataCategory? Function()? category, String? Funct
   state: state != null ? state() : this.state,
   terminalId: terminalId != null ? terminalId() : this.terminalId,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MerchantData &&
           category == other.category &&
@@ -4555,4 +4555,4 @@ MerchantData copyWith({MerchantDataCategory? Function()? category, String? Funct
 
 @override String toString() => 'MerchantData(\n  category: $category,\n  city: $city,\n  country: $country,\n  name: $name,\n  networkId: $networkId,\n  postalCode: $postalCode,\n  state: $state,\n  terminalId: $terminalId,\n  url: $url,\n)';
 
- }
+}

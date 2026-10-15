@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/post_dataset_populate_response_properties.dart';@immutable final class PostDatasetPopulateResponse {const PostDatasetPopulateResponse({required this.properties, required this.type, });
 
-factory PostDatasetPopulateResponse.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponse(
+factory PostDatasetPopulateResponse.fromJson(Map<String, dynamic> json) {return PostDatasetPopulateResponse(
   properties: PostDatasetPopulateResponseProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: json['type'] as String,
-); }
+);}
 
 final PostDatasetPopulateResponseProperties properties;
 
 /// Example: `'object'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'properties': properties.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('properties') &&
-      json.containsKey('type') && json['type'] is String; } 
-PostDatasetPopulateResponse copyWith({PostDatasetPopulateResponseProperties? properties, String? type, }) { return PostDatasetPopulateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('properties') &&
+      json.containsKey('type') && json['type'] is String;}
+PostDatasetPopulateResponse copyWith({PostDatasetPopulateResponseProperties? properties, String? type, }) {return PostDatasetPopulateResponse(
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostDatasetPopulateResponse &&
           properties == other.properties &&
@@ -32,4 +32,4 @@ PostDatasetPopulateResponse copyWith({PostDatasetPopulateResponseProperties? pro
 
 @override String toString() => 'PostDatasetPopulateResponse(properties: $properties, type: $type)';
 
- }
+}

@@ -14,7 +14,7 @@ final class ApplicationsApi with ApiExecutor {const ApplicationsApi(this.apiConf
 /// Get applications with different filters.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<List<AlexandriaApplication>?, GetApplicationsError>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AlexandriaApplication>?, GetApplicationsError>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter;
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,13 +48,13 @@ return execute(
   },
   onError: GetApplicationsError.fromResponse,
 );
- } 
+}
 /// Create application
 ///
 /// Create application.
 ///
 /// `POST /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<AlexandriaApplication?, CreateApplicationError>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaApplication?, CreateApplicationError>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -73,13 +73,13 @@ return execute(
   },
   onError: CreateApplicationError.fromResponse,
 );
- } 
+}
 /// Get application By Id
 ///
 /// Get application by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<AlexandriaApplication?, GetApplicationByIdError>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaApplication?, GetApplicationByIdError>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,13 +96,13 @@ return execute(
   },
   onError: GetApplicationByIdError.fromResponse,
 );
- } 
+}
 /// Update application version
 ///
 /// Update application version.
 ///
 /// `PATCH /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<AlexandriaApplication?, UpdateApplicationVersionError>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaApplication?, UpdateApplicationVersionError>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,7 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,5 +121,5 @@ return execute(
   },
   onError: UpdateApplicationVersionError.fromResponse,
 );
- } 
- }
+}
+}

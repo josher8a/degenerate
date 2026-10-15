@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShortBranchCommit {const ShortBranchCommit({required this.sha, required this.url, });
 
-factory ShortBranchCommit.fromJson(Map<String, dynamic> json) { return ShortBranchCommit(
+factory ShortBranchCommit.fromJson(Map<String, dynamic> json) {return ShortBranchCommit(
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String sha;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sha': sha,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-ShortBranchCommit copyWith({String? sha, Uri? url, }) { return ShortBranchCommit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String &&
+      json.containsKey('url') && json['url'] is String;}
+ShortBranchCommit copyWith({String? sha, Uri? url, }) {return ShortBranchCommit(
   sha: sha ?? this.sha,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShortBranchCommit &&
           sha == other.sha &&
@@ -31,4 +31,4 @@ ShortBranchCommit copyWith({String? sha, Uri? url, }) { return ShortBranchCommit
 
 @override String toString() => 'ShortBranchCommit(sha: $sha, url: $url)';
 
- }
+}

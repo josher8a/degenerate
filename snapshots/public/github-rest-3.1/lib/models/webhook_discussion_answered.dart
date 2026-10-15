@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_answer.dart';sealed class WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction();
 
-factory WebhookDiscussionAnsweredAction.fromJson(String json) { return switch (json) {
+factory WebhookDiscussionAnsweredAction.fromJson(String json) {return switch (json) {
   'answered' => answered,
   _ => WebhookDiscussionAnsweredAction$Unknown(json),
-}; }
+};}
 
 static const WebhookDiscussionAnsweredAction answered = WebhookDiscussionAnsweredAction$answered._();
 
 static const List<WebhookDiscussionAnsweredAction> values = [answered];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'answered' => 'answered',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookDiscussionAnsweredAction$Unknown; } 
+bool get isUnknown {return this is WebhookDiscussionAnsweredAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() answered, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() answered, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookDiscussionAnsweredAction$answered() => answered(),
       WebhookDiscussionAnsweredAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? answered, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? answered, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookDiscussionAnsweredAction$answered() => answered != null ? answered() : orElse(value),
       WebhookDiscussionAnsweredAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookDiscussionAnsweredAction($value)';
 
- }
+}
 @immutable final class WebhookDiscussionAnsweredAction$answered extends WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction$answered._();
 
 @override String get value => 'answered';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? answered
 
 @override int get hashCode => 'answered'.hashCode;
 
- }
+}
 @immutable final class WebhookDiscussionAnsweredAction$Unknown extends WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? answered
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookDiscussionAnswered {const WebhookDiscussionAnswered({required this.action, required this.answer, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDiscussionAnswered.fromJson(Map<String, dynamic> json) { return WebhookDiscussionAnswered(
+factory WebhookDiscussionAnswered.fromJson(Map<String, dynamic> json) {return WebhookDiscussionAnswered(
   action: WebhookDiscussionAnsweredAction.fromJson(json['action'] as String),
   answer: WebhooksAnswer.fromJson(json['answer'] as Map<String, dynamic>),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
@@ -64,7 +64,7 @@ factory WebhookDiscussionAnswered.fromJson(Map<String, dynamic> json) { return W
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionAnsweredAction action;
 
@@ -82,7 +82,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'answer': answer.toJson(),
   'discussion': discussion.toJson(),
@@ -91,13 +91,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('answer') &&
       json.containsKey('discussion') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, WebhooksAnswer? answer, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionAnswered(
+      json.containsKey('sender');}
+WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, WebhooksAnswer? answer, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDiscussionAnswered(
   action: action ?? this.action,
   answer: answer ?? this.answer,
   discussion: discussion ?? this.discussion,
@@ -106,7 +106,7 @@ WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, Web
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionAnswered &&
           action == other.action &&
@@ -122,4 +122,4 @@ WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, Web
 
 @override String toString() => 'WebhookDiscussionAnswered(action: $action, answer: $answer, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

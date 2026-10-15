@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
 sealed class IssuingCardFraudWarningType {const IssuingCardFraudWarningType();
 
-factory IssuingCardFraudWarningType.fromJson(String json) { return switch (json) {
+factory IssuingCardFraudWarningType.fromJson(String json) {return switch (json) {
   'card_testing_exposure' => cardTestingExposure,
   'fraud_dispute_filed' => fraudDisputeFiled,
   'third_party_reported' => thirdPartyReported,
   'user_indicated_fraud' => userIndicatedFraud,
   _ => IssuingCardFraudWarningType$Unknown(json),
-}; }
+};}
 
 static const IssuingCardFraudWarningType cardTestingExposure = IssuingCardFraudWarningType$cardTestingExposure._();
 
@@ -23,36 +23,36 @@ static const IssuingCardFraudWarningType userIndicatedFraud = IssuingCardFraudWa
 static const List<IssuingCardFraudWarningType> values = [cardTestingExposure, fraudDisputeFiled, thirdPartyReported, userIndicatedFraud];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'card_testing_exposure' => 'cardTestingExposure',
   'fraud_dispute_filed' => 'fraudDisputeFiled',
   'third_party_reported' => 'thirdPartyReported',
   'user_indicated_fraud' => 'userIndicatedFraud',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardFraudWarningType$Unknown; } 
+bool get isUnknown {return this is IssuingCardFraudWarningType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cardTestingExposure, required W Function() fraudDisputeFiled, required W Function() thirdPartyReported, required W Function() userIndicatedFraud, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cardTestingExposure, required W Function() fraudDisputeFiled, required W Function() thirdPartyReported, required W Function() userIndicatedFraud, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardFraudWarningType$cardTestingExposure() => cardTestingExposure(),
       IssuingCardFraudWarningType$fraudDisputeFiled() => fraudDisputeFiled(),
       IssuingCardFraudWarningType$thirdPartyReported() => thirdPartyReported(),
       IssuingCardFraudWarningType$userIndicatedFraud() => userIndicatedFraud(),
       IssuingCardFraudWarningType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTestingExposure, W Function()? fraudDisputeFiled, W Function()? thirdPartyReported, W Function()? userIndicatedFraud, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTestingExposure, W Function()? fraudDisputeFiled, W Function()? thirdPartyReported, W Function()? userIndicatedFraud, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardFraudWarningType$cardTestingExposure() => cardTestingExposure != null ? cardTestingExposure() : orElse(value),
       IssuingCardFraudWarningType$fraudDisputeFiled() => fraudDisputeFiled != null ? fraudDisputeFiled() : orElse(value),
       IssuingCardFraudWarningType$thirdPartyReported() => thirdPartyReported != null ? thirdPartyReported() : orElse(value),
       IssuingCardFraudWarningType$userIndicatedFraud() => userIndicatedFraud != null ? userIndicatedFraud() : orElse(value),
       IssuingCardFraudWarningType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardFraudWarningType($value)';
 
- }
+}
 @immutable final class IssuingCardFraudWarningType$cardTestingExposure extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$cardTestingExposure._();
 
 @override String get value => 'card_testing_exposure';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTest
 
 @override int get hashCode => 'card_testing_exposure'.hashCode;
 
- }
+}
 @immutable final class IssuingCardFraudWarningType$fraudDisputeFiled extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$fraudDisputeFiled._();
 
 @override String get value => 'fraud_dispute_filed';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTest
 
 @override int get hashCode => 'fraud_dispute_filed'.hashCode;
 
- }
+}
 @immutable final class IssuingCardFraudWarningType$thirdPartyReported extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$thirdPartyReported._();
 
 @override String get value => 'third_party_reported';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTest
 
 @override int get hashCode => 'third_party_reported'.hashCode;
 
- }
+}
 @immutable final class IssuingCardFraudWarningType$userIndicatedFraud extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$userIndicatedFraud._();
 
 @override String get value => 'user_indicated_fraud';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTest
 
 @override int get hashCode => 'user_indicated_fraud'.hashCode;
 
- }
+}
 @immutable final class IssuingCardFraudWarningType$Unknown extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$Unknown(this.value);
 
 @override final String value;
@@ -98,30 +98,30 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardTest
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt, this.type, });
+@immutable final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt = const Omittable.absent(), this.type = const Omittable.absent(), });
 
-factory IssuingCardFraudWarning.fromJson(Map<String, dynamic> json) { return IssuingCardFraudWarning(
-  startedAt: json['started_at'] != null ? (json['started_at'] as num).toInt() : null,
-  type: json['type'] != null ? IssuingCardFraudWarningType.fromJson(json['type'] as String) : null,
-); }
+factory IssuingCardFraudWarning.fromJson(Map<String, dynamic> json) {return IssuingCardFraudWarning(
+  startedAt: json.containsKey('started_at') ? Omittable(json['started_at'] != null ? (json['started_at'] as num).toInt() : null) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssuingCardFraudWarningType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
+);}
 
 /// Timestamp of the most recent fraud warning.
-final int? startedAt;
+final Omittable<int?> startedAt;
 
 /// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
-final IssuingCardFraudWarningType? type;
+final Omittable<IssuingCardFraudWarningType?> type;
 
-Map<String, dynamic> toJson() { return {
-  'started_at': ?startedAt,
-  if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'started_at', 'type'}.contains(key)); } 
-IssuingCardFraudWarning copyWith({int? Function()? startedAt, IssuingCardFraudWarningType? Function()? type, }) { return IssuingCardFraudWarning(
-  startedAt: startedAt != null ? startedAt() : this.startedAt,
-  type: type != null ? type() : this.type,
-); } 
+Map<String, dynamic> toJson() {return {
+  if (startedAt.isPresent) 'started_at': startedAt.value,
+  if (type.isPresent) 'type': type.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'started_at', 'type'}.contains(key));}
+IssuingCardFraudWarning copyWith({Omittable<int?>? startedAt, Omittable<IssuingCardFraudWarningType?>? type, }) {return IssuingCardFraudWarning(
+  startedAt: startedAt ?? this.startedAt,
+  type: type ?? this.type,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardFraudWarning &&
           startedAt == other.startedAt &&
@@ -131,4 +131,4 @@ IssuingCardFraudWarning copyWith({int? Function()? startedAt, IssuingCardFraudWa
 
 @override String toString() => 'IssuingCardFraudWarning(startedAt: $startedAt, type: $type)';
 
- }
+}

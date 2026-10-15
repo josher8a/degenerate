@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByOperatingSystemBrowserFamily {const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily();
 
-factory RadarGetHttpTopLocationsByOperatingSystemBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByOperatingSystemBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily chrome = RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$chrome._();
 
@@ -22,36 +22,36 @@ static const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily safari = Rad
 static const List<RadarGetHttpTopLocationsByOperatingSystemBrowserFamily> values = [chrome, edge, firefox, safari];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CHROME' => 'chrome',
   'EDGE' => 'edge',
   'FIREFOX' => 'firefox',
   'SAFARI' => 'safari',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$chrome() => chrome(),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$edge() => edge(),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$firefox() => firefox(),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$safari() => safari(),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$edge() => edge != null ? edge() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$safari() => safari != null ? safari() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopLocationsByOperatingSystemBrowserFamily($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$chrome extends RadarGetHttpTopLocationsByOperatingSystemBrowserFamily {const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$chrome._();
 
 @override String get value => 'CHROME';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'CHROME'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$edge extends RadarGetHttpTopLocationsByOperatingSystemBrowserFamily {const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$edge._();
 
 @override String get value => 'EDGE';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'EDGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$firefox extends RadarGetHttpTopLocationsByOperatingSystemBrowserFamily {const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$firefox._();
 
 @override String get value => 'FIREFOX';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'FIREFOX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$safari extends RadarGetHttpTopLocationsByOperatingSystemBrowserFamily {const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$safari._();
 
 @override String get value => 'SAFARI';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'SAFARI'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown extends RadarGetHttpTopLocationsByOperatingSystemBrowserFamily {const RadarGetHttpTopLocationsByOperatingSystemBrowserFamily$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

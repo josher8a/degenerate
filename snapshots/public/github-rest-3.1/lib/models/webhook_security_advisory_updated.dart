@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_custom_property_updated/webhook_custom_property_updated_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_security_advisory.dart';@immutable final class WebhookSecurityAdvisoryUpdated {const WebhookSecurityAdvisoryUpdated({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookSecurityAdvisoryUpdated.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryUpdated(
+factory WebhookSecurityAdvisoryUpdated.fromJson(Map<String, dynamic> json) {return WebhookSecurityAdvisoryUpdated(
   action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookSecurityAdvisoryUpdated.fromJson(Map<String, dynamic> json) { ret
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   securityAdvisory: WebhooksSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookCustomPropertyUpdatedAction action;
 
@@ -27,7 +27,7 @@ final WebhooksSecurityAdvisory securityAdvisory;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,10 +35,10 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'security_advisory': securityAdvisory.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('security_advisory'); } 
-WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, WebhooksSecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) { return WebhookSecurityAdvisoryUpdated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('security_advisory');}
+WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, WebhooksSecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) {return WebhookSecurityAdvisoryUpdated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -46,7 +46,7 @@ WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? act
   repository: repository != null ? repository() : this.repository,
   securityAdvisory: securityAdvisory ?? this.securityAdvisory,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecurityAdvisoryUpdated &&
           action == other.action &&
@@ -61,4 +61,4 @@ WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? act
 
 @override String toString() => 'WebhookSecurityAdvisoryUpdated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)';
 
- }
+}

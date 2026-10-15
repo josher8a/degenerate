@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingCreditGrantsIdVoidRequest {const PostBillingCreditGrantsIdVoidRequest({this.expand});
 
-factory PostBillingCreditGrantsIdVoidRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsIdVoidRequest(
+factory PostBillingCreditGrantsIdVoidRequest.fromJson(Map<String, dynamic> json) {return PostBillingCreditGrantsIdVoidRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostBillingCreditGrantsIdVoidRequest copyWith({List<String>? Function()? expand}) { return PostBillingCreditGrantsIdVoidRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostBillingCreditGrantsIdVoidRequest copyWith({List<String>? Function()? expand}) {return PostBillingCreditGrantsIdVoidRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingCreditGrantsIdVoidRequest &&
           listEquals(expand, other.expand);
@@ -25,4 +25,4 @@ PostBillingCreditGrantsIdVoidRequest copyWith({List<String>? Function()? expand}
 
 @override String toString() => 'PostBillingCreditGrantsIdVoidRequest(expand: $expand)';
 
- }
+}

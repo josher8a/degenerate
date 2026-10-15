@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CcInstanceTypeVariant1 {const CcInstanceTypeVariant1();
 
-factory CcInstanceTypeVariant1.fromJson(String json) { return switch (json) {
+factory CcInstanceTypeVariant1.fromJson(String json) {return switch (json) {
   'lite' => lite,
   'basic' => basic,
   'standard-1' => standard1,
@@ -11,7 +11,7 @@ factory CcInstanceTypeVariant1.fromJson(String json) { return switch (json) {
   'standard-3' => standard3,
   'standard-4' => standard4,
   _ => CcInstanceTypeVariant1$Unknown(json),
-}; }
+};}
 
 static const CcInstanceTypeVariant1 lite = CcInstanceTypeVariant1$lite._();
 
@@ -28,9 +28,9 @@ static const CcInstanceTypeVariant1 standard4 = CcInstanceTypeVariant1$standard4
 static const List<CcInstanceTypeVariant1> values = [lite, basic, standard1, standard2, standard3, standard4];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'lite' => 'lite',
   'basic' => 'basic',
   'standard-1' => 'standard1',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'standard-3' => 'standard3',
   'standard-4' => 'standard4',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CcInstanceTypeVariant1$Unknown; } 
+bool get isUnknown {return this is CcInstanceTypeVariant1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() lite, required W Function() basic, required W Function() standard1, required W Function() standard2, required W Function() standard3, required W Function() standard4, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() lite, required W Function() basic, required W Function() standard1, required W Function() standard2, required W Function() standard3, required W Function() standard4, required W Function(String value) $unknown, }) {return switch (this) {
       CcInstanceTypeVariant1$lite() => lite(),
       CcInstanceTypeVariant1$basic() => basic(),
       CcInstanceTypeVariant1$standard1() => standard1(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() lite, required W Function() basic, required W F
       CcInstanceTypeVariant1$standard3() => standard3(),
       CcInstanceTypeVariant1$standard4() => standard4(),
       CcInstanceTypeVariant1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W Function()? basic, W Function()? standard1, W Function()? standard2, W Function()? standard3, W Function()? standard4, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W Function()? basic, W Function()? standard1, W Function()? standard2, W Function()? standard3, W Function()? standard4, W Function(String value)? $unknown, }) {return switch (this) {
       CcInstanceTypeVariant1$lite() => lite != null ? lite() : orElse(value),
       CcInstanceTypeVariant1$basic() => basic != null ? basic() : orElse(value),
       CcInstanceTypeVariant1$standard1() => standard1 != null ? standard1() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
       CcInstanceTypeVariant1$standard3() => standard3 != null ? standard3() : orElse(value),
       CcInstanceTypeVariant1$standard4() => standard4 != null ? standard4() : orElse(value),
       CcInstanceTypeVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CcInstanceTypeVariant1($value)';
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$lite extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$lite._();
 
 @override String get value => 'lite';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => 'lite'.hashCode;
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$basic extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$basic._();
 
 @override String get value => 'basic';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => 'basic'.hashCode;
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$standard1 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard1._();
 
 @override String get value => 'standard-1';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => 'standard-1'.hashCode;
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$standard2 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard2._();
 
 @override String get value => 'standard-2';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => 'standard-2'.hashCode;
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$standard3 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard3._();
 
 @override String get value => 'standard-3';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => 'standard-3'.hashCode;
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$standard4 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard4._();
 
 @override String get value => 'standard-4';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => 'standard-4'.hashCode;
 
- }
+}
 @immutable final class CcInstanceTypeVariant1$Unknown extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$Unknown(this.value);
 
 @override final String value;
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The instance type will be used to configure vCPU, memory, and disk.
 /// 
 /// - "lite": 1/16 vCPU, 256 MiB memory, 2 GB disk
@@ -137,26 +137,39 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W 
 /// - "standard-3": 2 vCPU, 8 GiB memory, 16 GB disk
 /// - "standard-4": 4 vCPU, 12 GiB memory, 20 GB disk
 /// 
-@immutable final class CcInstanceType {const CcInstanceType({this.ccInstanceTypeVariant1});
+@immutable final class CcInstanceType {/// A value built from one or more typed views (at least one must be present).
+const CcInstanceType({this.ccInstanceTypeVariant1 = const Omittable.absent()}) : rawValue = const Omittable.absent();
 
-factory CcInstanceType.fromJson(dynamic json) { return CcInstanceType(
-  ccInstanceTypeVariant1: json is String ? CcInstanceTypeVariant1.fromJson(json) : null,
-); }
+const CcInstanceType._({required this.rawValue, required this.ccInstanceTypeVariant1, });
 
-final CcInstanceTypeVariant1? ccInstanceTypeVariant1;
+/// Decodes every variant the payload matches, keeping the raw value.
+factory CcInstanceType.fromJson(Object? json) {return CcInstanceType._(
+  rawValue: Omittable(json),
+  ccInstanceTypeVariant1: parseAnyOfVariant<CcInstanceTypeVariant1>(json, (value) => CcInstanceTypeVariant1.fromJson(value! as String)),
+);}
 
-/// At least one variant must be present.
-bool get isValid { return ccInstanceTypeVariant1 != null; } 
-dynamic toJson() {   if (ccInstanceTypeVariant1 != null) return ccInstanceTypeVariant1!.toJson();
-return <String, dynamic>{
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
 
-}; } 
+/// The payload decoded as `CcInstanceTypeVariant1`, when it matches.
+final Omittable<CcInstanceTypeVariant1> ccInstanceTypeVariant1;
+
+/// Whether at least one variant matched.
+bool get isValid => ccInstanceTypeVariant1.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (ccInstanceTypeVariant1.isPresent) ccInstanceTypeVariant1.value?.toJson(),
+  ]);
+
 @override bool operator ==(Object other) => identical(this, other) ||
-      other is CcInstanceType &&
-          ccInstanceTypeVariant1 == other.ccInstanceTypeVariant1;
+      other is CcInstanceType && jsonValueEquals(toJson(), other.toJson());
 
-@override int get hashCode => ccInstanceTypeVariant1.hashCode;
+@override int get hashCode => jsonValueHash(toJson());
 
-@override String toString() => 'CcInstanceType(ccInstanceTypeVariant1: $ccInstanceTypeVariant1)';
+@override String toString() => 'CcInstanceType(${toJson()})';
 
- }
+}

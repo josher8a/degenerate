@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model32.dart';@immutable final class Failure2 {const Failure2({this.errors, this.messages, this.success, });
 
-factory Failure2.fromJson(Map<String, dynamic> json) { return Failure2(
+factory Failure2.fromJson(Map<String, dynamic> json) {return Failure2(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel32.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as String).toList(),
   success: json['success'] as bool?,
-); }
+);}
 
 final List<ErrorModel32>? errors;
 
@@ -18,23 +18,23 @@ final List<String>? messages;
 /// Example: `false`
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'messages': ?messages,
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 final errors$$ = errors;
 if (errors$$ != null) {
 }
-return errors$; } 
-Failure2 copyWith({List<ErrorModel32>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, }) { return Failure2(
+return errors$;}
+Failure2 copyWith({List<ErrorModel32>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, }) {return Failure2(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Failure2 &&
           listEquals(errors, other.errors) &&
@@ -45,4 +45,4 @@ Failure2 copyWith({List<ErrorModel32>? Function()? errors, List<String>? Functio
 
 @override String toString() => 'Failure2(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

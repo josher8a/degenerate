@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostProductsIdRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/package_dimensions_specs.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/marketing_features_variant1.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
-factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostProductsIdRequest(
+factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) {return PostProductsIdRequest(
   active: json['active'] as bool?,
   defaultPrice: json['default_price'] as String?,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostProductsIdRequestDescription.fromJson(json['description']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  images: json['images'] != null ? OneOf2.parse(json['images'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  marketingFeatures: json['marketing_features'] != null ? OneOf2.parse(json['marketing_features'], fromA: (v) => (v as List<dynamic>).map((e) => MarketingFeaturesVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  images: json['images'] != null ? Images.fromJson(json['images']) : null,
+  marketingFeatures: json['marketing_features'] != null ? PostProductsIdRequestMarketingFeatures.fromJson(json['marketing_features']) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-  packageDimensions: json['package_dimensions'] != null ? OneOf2.parse(json['package_dimensions'], fromA: (v) => PackageDimensionsSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  packageDimensions: json['package_dimensions'] != null ? PostProductsIdRequestPackageDimensions.fromJson(json['package_dimensions']) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  unitLabel: json['unit_label'] != null ? OneOf2.parse(json['unit_label'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  url: json['url'] != null ? OneOf2.parse(json['url'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+  taxCode: json['tax_code'] != null ? PostInvoiceitemsInvoiceitemRequestTaxCode.fromJson(json['tax_code']) : null,
+  unitLabel: json['unit_label'] != null ? UnitLabel.fromJson(json['unit_label']) : null,
+  url: json['url'] != null ? Url.fromJson(json['url']) : null,
+);}
 
 /// Whether the product is available for purchase.
 final bool? active;
@@ -65,7 +65,7 @@ final UnitLabel? unitLabel;
 /// A URL of a publicly-accessible webpage for this product.
 final Url? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'default_price': ?defaultPrice,
   if (description != null) 'description': description?.toJson(),
@@ -80,10 +80,10 @@ Map<String, dynamic> toJson() { return {
   if (taxCode != null) 'tax_code': taxCode?.toJson(),
   if (unitLabel != null) 'unit_label': unitLabel?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultPrice$ = defaultPrice;
 if (defaultPrice$ != null) {
   if (defaultPrice$.runes.length > 5000) { errors.add('defaultPrice: length must be <= 5000'); }
@@ -96,8 +96,8 @@ final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
-return errors; } 
-PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) { return PostProductsIdRequest(
+return errors;}
+PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) {return PostProductsIdRequest(
   active: active != null ? active() : this.active,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,
   description: description != null ? description() : this.description,
@@ -112,7 +112,7 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsIdRequest &&
           active == other.active &&
@@ -134,4 +134,4 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
 
 @override String toString() => 'PostProductsIdRequest(\n  active: $active,\n  defaultPrice: $defaultPrice,\n  description: $description,\n  expand: $expand,\n  images: $images,\n  marketingFeatures: $marketingFeatures,\n  metadata: $metadata,\n  name: $name,\n  packageDimensions: $packageDimensions,\n  shippable: $shippable,\n  statementDescriptor: $statementDescriptor,\n  taxCode: $taxCode,\n  unitLabel: $unitLabel,\n  url: $url,\n)';
 
- }
+}

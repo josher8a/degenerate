@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_deployments/repository_rule_required_deployments_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_deployments/repository_rule_required_deployments_type.dart';/// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
 @immutable final class RepositoryRuleRequiredDeployments {const RepositoryRuleRequiredDeployments({required this.type, this.parameters, });
 
-factory RepositoryRuleRequiredDeployments.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredDeployments(
+factory RepositoryRuleRequiredDeployments.fromJson(Map<String, dynamic> json) {return RepositoryRuleRequiredDeployments(
   type: RepositoryRuleRequiredDeploymentsType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleRequiredDeploymentsParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleRequiredDeploymentsType type;
 
 final RepositoryRuleRequiredDeploymentsParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'required_deployments'; } 
-RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsType? type, RepositoryRuleRequiredDeploymentsParameters? Function()? parameters, }) { return RepositoryRuleRequiredDeployments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'required_deployments';}
+RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsType? type, RepositoryRuleRequiredDeploymentsParameters? Function()? parameters, }) {return RepositoryRuleRequiredDeployments(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredDeployments &&
           type == other.type &&
@@ -31,4 +31,4 @@ RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsTyp
 
 @override String toString() => 'RepositoryRuleRequiredDeployments(type: $type, parameters: $parameters)';
 
- }
+}

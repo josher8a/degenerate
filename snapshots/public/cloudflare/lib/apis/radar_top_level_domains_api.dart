@@ -14,7 +14,7 @@ final class RadarTopLevelDomainsApi with ApiExecutor {const RadarTopLevelDomains
 /// Retrieves a list of TLDs.
 ///
 /// `GET /radar/tlds`
-Future<ApiResult<RadarGetTldsResponseResult, RadarGetTldsError>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTldsResponseResult, RadarGetTldsError>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: RadarGetTldsError.fromResponse,
 );
- } 
+}
 /// Get TLD details
 ///
 /// Retrieves the requested TLD information.
 ///
 /// `GET /radar/tlds/{tld}`
-Future<ApiResult<RadarGetTldDetailsResponseResult, RadarGetTldDetailsError>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTldDetailsResponseResult, RadarGetTldDetailsError>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -77,7 +77,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -85,5 +85,5 @@ return execute(
   },
   onError: RadarGetTldDetailsError.fromResponse,
 );
- } 
- }
+}
+}

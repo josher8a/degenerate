@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesCardPayments {const CapabilitiesCardPayments({this.requested});
 
-factory CapabilitiesCardPayments.fromJson(Map<String, dynamic> json) { return CapabilitiesCardPayments(
+factory CapabilitiesCardPayments.fromJson(Map<String, dynamic> json) {return CapabilitiesCardPayments(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-CapabilitiesCardPayments copyWith({bool? Function()? requested}) { return CapabilitiesCardPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+CapabilitiesCardPayments copyWith({bool? Function()? requested}) {return CapabilitiesCardPayments(
   requested: requested != null ? requested() : this.requested,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CapabilitiesCardPayments &&
           requested == other.requested;
@@ -24,4 +24,4 @@ CapabilitiesCardPayments copyWith({bool? Function()? requested}) { return Capabi
 
 @override String toString() => 'CapabilitiesCardPayments(requested: $requested)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/us_bank_account_account_type.dart';@immutable final class PostPaymentMethodsRequestUsBankAccount {const PostPaymentMethodsRequestUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
 
-factory PostPaymentMethodsRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestUsBankAccount(
+factory PostPaymentMethodsRequestUsBankAccount.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsRequestUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? CustomerPaymentSourceBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String?,
   accountType: json['account_type'] != null ? UsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
   financialConnectionsAccount: json['financial_connections_account'] as String?,
   routingNumber: json['routing_number'] as String?,
-); }
+);}
 
 final CustomerPaymentSourceBankAccountAccountHolderType? accountHolderType;
 
@@ -21,16 +21,16 @@ final String? financialConnectionsAccount;
 
 final String? routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   'account_number': ?accountNumber,
   if (accountType != null) 'account_type': accountType?.toJson(),
   'financial_connections_account': ?financialConnectionsAccount,
   'routing_number': ?routingNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_number', 'account_type', 'financial_connections_account', 'routing_number'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_holder_type', 'account_number', 'account_type', 'financial_connections_account', 'routing_number'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountNumber$ = accountNumber;
 if (accountNumber$ != null) {
   if (accountNumber$.runes.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
@@ -43,14 +43,14 @@ final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
   if (routingNumber$.runes.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
-return errors; } 
-PostPaymentMethodsRequestUsBankAccount copyWith({CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? accountNumber, UsBankAccountAccountType? Function()? accountType, String? Function()? financialConnectionsAccount, String? Function()? routingNumber, }) { return PostPaymentMethodsRequestUsBankAccount(
+return errors;}
+PostPaymentMethodsRequestUsBankAccount copyWith({CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? accountNumber, UsBankAccountAccountType? Function()? accountType, String? Function()? financialConnectionsAccount, String? Function()? routingNumber, }) {return PostPaymentMethodsRequestUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   accountType: accountType != null ? accountType() : this.accountType,
   financialConnectionsAccount: financialConnectionsAccount != null ? financialConnectionsAccount() : this.financialConnectionsAccount,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestUsBankAccount &&
           accountHolderType == other.accountHolderType &&
@@ -63,4 +63,4 @@ PostPaymentMethodsRequestUsBankAccount copyWith({CustomerPaymentSourceBankAccoun
 
 @override String toString() => 'PostPaymentMethodsRequestUsBankAccount(accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, financialConnectionsAccount: $financialConnectionsAccount, routingNumber: $routingNumber)';
 
- }
+}

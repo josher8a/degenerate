@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
 @immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanning {const ReposUpdateRequestSecurityAndAnalysisSecretScanning({this.status});
 
-factory ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
+factory ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(Map<String, dynamic> json) {return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
   status: json['status'] as String?,
-); }
+);}
 
 /// Can be `enabled` or `disabled`.
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-ReposUpdateRequestSecurityAndAnalysisSecretScanning copyWith({String? Function()? status}) { return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+ReposUpdateRequestSecurityAndAnalysisSecretScanning copyWith({String? Function()? status}) {return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateRequestSecurityAndAnalysisSecretScanning &&
           status == other.status;
@@ -26,4 +26,4 @@ ReposUpdateRequestSecurityAndAnalysisSecretScanning copyWith({String? Function()
 
 @override String toString() => 'ReposUpdateRequestSecurityAndAnalysisSecretScanning(status: $status)';
 
- }
+}

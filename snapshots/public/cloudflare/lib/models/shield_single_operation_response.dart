@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_operation.dart';@immutable final class ShieldSingleOperationResponse {const ShieldSingleOperationResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory ShieldSingleOperationResponse.fromJson(Map<String, dynamic> json) { return ShieldSingleOperationResponse(
+factory ShieldSingleOperationResponse.fromJson(Map<String, dynamic> json) {return ShieldSingleOperationResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: ShieldOperation.fromJson(json['result'] as Map<String, dynamic>),
-); }
+  result: json['result'] != null ? ShieldOperation.fromJson(json['result'] as Map<String, dynamic>) : null,
+);}
 
 final List<ShieldMessages2> errors;
 
@@ -19,24 +19,24 @@ final List<ShieldMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final ShieldOperation result;
+final ShieldOperation? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+  'result': result?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-ShieldSingleOperationResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldOperation? result, }) { return ShieldSingleOperationResponse(
+      json.containsKey('result');}
+ShieldSingleOperationResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldOperation? Function()? result, }) {return ShieldSingleOperationResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result ?? this.result,
-); } 
+  result: result != null ? result() : this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSingleOperationResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ ShieldSingleOperationResponse copyWith({List<ShieldMessages2>? errors, List<Shie
 
 @override String toString() => 'ShieldSingleOperationResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

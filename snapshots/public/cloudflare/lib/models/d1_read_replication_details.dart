@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_read_replication_mode.dart';/// Configuration for D1 read replication.
 @immutable final class D1ReadReplicationDetails {const D1ReadReplicationDetails({required this.mode});
 
-factory D1ReadReplicationDetails.fromJson(Map<String, dynamic> json) { return D1ReadReplicationDetails(
+factory D1ReadReplicationDetails.fromJson(Map<String, dynamic> json) {return D1ReadReplicationDetails(
   mode: D1ReadReplicationMode.fromJson(json['mode'] as String),
-); }
+);}
 
 final D1ReadReplicationMode mode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mode': mode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-D1ReadReplicationDetails copyWith({D1ReadReplicationMode? mode}) { return D1ReadReplicationDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mode');}
+D1ReadReplicationDetails copyWith({D1ReadReplicationMode? mode}) {return D1ReadReplicationDetails(
   mode: mode ?? this.mode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is D1ReadReplicationDetails &&
           mode == other.mode;
@@ -25,4 +25,4 @@ D1ReadReplicationDetails copyWith({D1ReadReplicationMode? mode}) { return D1Read
 
 @override String toString() => 'D1ReadReplicationDetails(mode: $mode)';
 
- }
+}

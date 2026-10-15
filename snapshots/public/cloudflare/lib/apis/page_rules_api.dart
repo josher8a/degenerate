@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "PageRulesApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/page_rules_create_a_page_rule_error.dart';import 'package:pub_cloudflare/models/page_rules_create_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_edit_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_direction.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_match.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_order.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_status.dart';import 'package:pub_cloudflare/models/page_rules_update_a_page_rule_request.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// PageRulesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/page_rules_create_a_page_rule_error.dart';import 'package:pub_cloudflare/models/page_rules_create_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_edit_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_direction.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_match.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_order.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_status.dart';import 'package:pub_cloudflare/models/page_rules_update_a_page_rule_request.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// PageRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class PageRulesApi with ApiExecutor {const PageRulesApi(this.apiConfig);
 /// Fetches Page Rules in a zone.
 ///
 /// `GET /zones/{zone_id}/pagerules`
-Future<ApiResult<List<ZonesPageRule>?, PageRulesCreateAPageRuleError>> pageRulesListPageRules({required ZonesSchemasIdentifier zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ZonesPageRule>?, PageRulesCreateAPageRuleError>> pageRulesListPageRules({required ZonesSchemasIdentifier zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) {
   queryParameters['order'] = order.toJson();
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,13 +48,13 @@ return execute(
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
- } 
+}
 /// Create a Page Rule
 ///
 /// Creates a new Page Rule.
 ///
 /// `POST /zones/{zone_id}/pagerules`
-Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesCreateAPageRule({required ZonesSchemasIdentifier zoneId, required PageRulesCreateAPageRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesCreateAPageRule({required ZonesSchemasIdentifier zoneId, required PageRulesCreateAPageRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -73,13 +73,13 @@ return execute(
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
- } 
+}
 /// Get a Page Rule
 ///
 /// Fetches the details of a Page Rule.
 ///
 /// `GET /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesGetAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesGetAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,7 +88,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -96,13 +96,13 @@ return execute(
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
- } 
+}
 /// Update a Page Rule
 ///
 /// Replaces the configuration of an existing Page Rule. The configuration of the updated Page Rule will exactly match the data passed in the API request.
 ///
 /// `PUT /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesUpdateAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesUpdateAPageRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesUpdateAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesUpdateAPageRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,7 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -121,13 +121,13 @@ return execute(
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
- } 
+}
 /// Edit a Page Rule
 ///
 /// Updates one or more fields of an existing Page Rule.
 ///
 /// `PATCH /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesEditAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesEditAPageRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, PageRulesCreateAPageRuleError>> pageRulesEditAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesEditAPageRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -138,7 +138,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -146,13 +146,13 @@ return execute(
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
- } 
+}
 /// Delete a Page Rule
 ///
 /// Deletes an existing Page Rule.
 ///
 /// `DELETE /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseSingleId5Result?, PageRulesCreateAPageRuleError>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, PageRulesCreateAPageRuleError>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -161,13 +161,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );
- } 
- }
+}
+}

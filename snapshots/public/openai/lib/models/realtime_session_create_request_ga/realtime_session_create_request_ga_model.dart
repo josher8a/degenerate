@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2();
 
-factory RealtimeSessionCreateRequestGaModelVariant2.fromJson(String json) { return switch (json) {
+factory RealtimeSessionCreateRequestGaModelVariant2.fromJson(String json) {return switch (json) {
   'gpt-realtime' => gptRealtime,
   'gpt-realtime-1.5' => gptRealtime15,
   'gpt-realtime-2025-08-28' => gptRealtime20250828,
@@ -21,7 +21,7 @@ factory RealtimeSessionCreateRequestGaModelVariant2.fromJson(String json) { retu
   'gpt-audio-mini-2025-10-06' => gptAudioMini20251006,
   'gpt-audio-mini-2025-12-15' => gptAudioMini20251215,
   _ => RealtimeSessionCreateRequestGaModelVariant2$Unknown(json),
-}; }
+};}
 
 static const RealtimeSessionCreateRequestGaModelVariant2 gptRealtime = RealtimeSessionCreateRequestGaModelVariant2$gptRealtime._();
 
@@ -58,9 +58,9 @@ static const RealtimeSessionCreateRequestGaModelVariant2 gptAudioMini20251215 = 
 static const List<RealtimeSessionCreateRequestGaModelVariant2> values = [gptRealtime, gptRealtime15, gptRealtime20250828, gpt4oRealtimePreview, gpt4oRealtimePreview20241001, gpt4oRealtimePreview20241217, gpt4oRealtimePreview20250603, gpt4oMiniRealtimePreview, gpt4oMiniRealtimePreview20241217, gptRealtimeMini, gptRealtimeMini20251006, gptRealtimeMini20251215, gptAudio15, gptAudioMini, gptAudioMini20251006, gptAudioMini20251215];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'gpt-realtime' => 'gptRealtime',
   'gpt-realtime-1.5' => 'gptRealtime15',
   'gpt-realtime-2025-08-28' => 'gptRealtime20250828',
@@ -78,11 +78,11 @@ String get name { return switch (value) {
   'gpt-audio-mini-2025-10-06' => 'gptAudioMini20251006',
   'gpt-audio-mini-2025-12-15' => 'gptAudioMini20251215',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeSessionCreateRequestGaModelVariant2$Unknown; } 
+bool get isUnknown {return this is RealtimeSessionCreateRequestGaModelVariant2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() gptRealtime, required W Function() gptRealtime15, required W Function() gptRealtime20250828, required W Function() gpt4oRealtimePreview, required W Function() gpt4oRealtimePreview20241001, required W Function() gpt4oRealtimePreview20241217, required W Function() gpt4oRealtimePreview20250603, required W Function() gpt4oMiniRealtimePreview, required W Function() gpt4oMiniRealtimePreview20241217, required W Function() gptRealtimeMini, required W Function() gptRealtimeMini20251006, required W Function() gptRealtimeMini20251215, required W Function() gptAudio15, required W Function() gptAudioMini, required W Function() gptAudioMini20251006, required W Function() gptAudioMini20251215, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() gptRealtime, required W Function() gptRealtime15, required W Function() gptRealtime20250828, required W Function() gpt4oRealtimePreview, required W Function() gpt4oRealtimePreview20241001, required W Function() gpt4oRealtimePreview20241217, required W Function() gpt4oRealtimePreview20250603, required W Function() gpt4oMiniRealtimePreview, required W Function() gpt4oMiniRealtimePreview20241217, required W Function() gptRealtimeMini, required W Function() gptRealtimeMini20251006, required W Function() gptRealtimeMini20251215, required W Function() gptAudio15, required W Function() gptAudioMini, required W Function() gptAudioMini20251006, required W Function() gptAudioMini20251215, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeSessionCreateRequestGaModelVariant2$gptRealtime() => gptRealtime(),
       RealtimeSessionCreateRequestGaModelVariant2$gptRealtime15() => gptRealtime15(),
       RealtimeSessionCreateRequestGaModelVariant2$gptRealtime20250828() => gptRealtime20250828(),
@@ -100,9 +100,9 @@ W when<W>({required W Function() gptRealtime, required W Function() gptRealtime1
       RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251006() => gptAudioMini20251006(),
       RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251215() => gptAudioMini20251215(),
       RealtimeSessionCreateRequestGaModelVariant2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealtime, W Function()? gptRealtime15, W Function()? gptRealtime20250828, W Function()? gpt4oRealtimePreview, W Function()? gpt4oRealtimePreview20241001, W Function()? gpt4oRealtimePreview20241217, W Function()? gpt4oRealtimePreview20250603, W Function()? gpt4oMiniRealtimePreview, W Function()? gpt4oMiniRealtimePreview20241217, W Function()? gptRealtimeMini, W Function()? gptRealtimeMini20251006, W Function()? gptRealtimeMini20251215, W Function()? gptAudio15, W Function()? gptAudioMini, W Function()? gptAudioMini20251006, W Function()? gptAudioMini20251215, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealtime, W Function()? gptRealtime15, W Function()? gptRealtime20250828, W Function()? gpt4oRealtimePreview, W Function()? gpt4oRealtimePreview20241001, W Function()? gpt4oRealtimePreview20241217, W Function()? gpt4oRealtimePreview20250603, W Function()? gpt4oMiniRealtimePreview, W Function()? gpt4oMiniRealtimePreview20241217, W Function()? gptRealtimeMini, W Function()? gptRealtimeMini20251006, W Function()? gptRealtimeMini20251215, W Function()? gptAudio15, W Function()? gptAudioMini, W Function()? gptAudioMini20251006, W Function()? gptAudioMini20251215, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeSessionCreateRequestGaModelVariant2$gptRealtime() => gptRealtime != null ? gptRealtime() : orElse(value),
       RealtimeSessionCreateRequestGaModelVariant2$gptRealtime15() => gptRealtime15 != null ? gptRealtime15() : orElse(value),
       RealtimeSessionCreateRequestGaModelVariant2$gptRealtime20250828() => gptRealtime20250828 != null ? gptRealtime20250828() : orElse(value),
@@ -120,10 +120,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
       RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251006() => gptAudioMini20251006 != null ? gptAudioMini20251006() : orElse(value),
       RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251215() => gptAudioMini20251215 != null ? gptAudioMini20251215() : orElse(value),
       RealtimeSessionCreateRequestGaModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeSessionCreateRequestGaModelVariant2($value)';
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptRealtime extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptRealtime._();
 
 @override String get value => 'gpt-realtime';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-realtime'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptRealtime15 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptRealtime15._();
 
 @override String get value => 'gpt-realtime-1.5';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-realtime-1.5'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptRealtime20250828 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptRealtime20250828._();
 
 @override String get value => 'gpt-realtime-2025-08-28';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-realtime-2025-08-28'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview._();
 
 @override String get value => 'gpt-4o-realtime-preview';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-4o-realtime-preview'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241001 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241001._();
 
 @override String get value => 'gpt-4o-realtime-preview-2024-10-01';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-4o-realtime-preview-2024-10-01'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241217 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241217._();
 
 @override String get value => 'gpt-4o-realtime-preview-2024-12-17';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-4o-realtime-preview-2024-12-17'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20250603 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20250603._();
 
 @override String get value => 'gpt-4o-realtime-preview-2025-06-03';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-4o-realtime-preview-2025-06-03'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview._();
 
 @override String get value => 'gpt-4o-mini-realtime-preview';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-4o-mini-realtime-preview'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview20241217 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview20241217._();
 
 @override String get value => 'gpt-4o-mini-realtime-preview-2024-12-17';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-4o-mini-realtime-preview-2024-12-17'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini._();
 
 @override String get value => 'gpt-realtime-mini';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-realtime-mini'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251006 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251006._();
 
 @override String get value => 'gpt-realtime-mini-2025-10-06';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-realtime-mini-2025-10-06'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251215 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251215._();
 
 @override String get value => 'gpt-realtime-mini-2025-12-15';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-realtime-mini-2025-12-15'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptAudio15 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptAudio15._();
 
 @override String get value => 'gpt-audio-1.5';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-audio-1.5'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini._();
 
 @override String get value => 'gpt-audio-mini';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-audio-mini'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251006 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251006._();
 
 @override String get value => 'gpt-audio-mini-2025-10-06';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-audio-mini-2025-10-06'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251215 extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251215._();
 
 @override String get value => 'gpt-audio-mini-2025-12-15';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => 'gpt-audio-mini-2025-12-15'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionCreateRequestGaModelVariant2$Unknown extends RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2$Unknown(this.value);
 
 @override final String value;
@@ -277,11 +277,47 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealt
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The Realtime model used for this session.
 /// 
-///
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [RealtimeSessionCreateRequestGaModelVariant2]
-typedef RealtimeSessionCreateRequestGaModel = OneOf2<String,RealtimeSessionCreateRequestGaModelVariant2>;
+@immutable final class RealtimeSessionCreateRequestGaModel {/// A value built from one or more typed views (at least one must be present).
+const RealtimeSessionCreateRequestGaModel({this.string = const Omittable.absent(), this.realtimeSessionCreateRequestGaModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const RealtimeSessionCreateRequestGaModel._({required this.rawValue, required this.string, required this.realtimeSessionCreateRequestGaModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory RealtimeSessionCreateRequestGaModel.fromJson(Object? json) {return RealtimeSessionCreateRequestGaModel._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  realtimeSessionCreateRequestGaModelVariant2: parseAnyOfVariant<RealtimeSessionCreateRequestGaModelVariant2>(json, (value) => RealtimeSessionCreateRequestGaModelVariant2.fromJson(value! as String)),
+);}
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `RealtimeSessionCreateRequestGaModelVariant2`, when it matches.
+final Omittable<RealtimeSessionCreateRequestGaModelVariant2> realtimeSessionCreateRequestGaModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || realtimeSessionCreateRequestGaModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (realtimeSessionCreateRequestGaModelVariant2.isPresent) realtimeSessionCreateRequestGaModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is RealtimeSessionCreateRequestGaModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'RealtimeSessionCreateRequestGaModel(${toJson()})';
+
+}

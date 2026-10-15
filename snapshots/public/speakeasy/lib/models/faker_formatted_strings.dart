@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A set of strings with format values that lead to relevant examples being generated for them
 @immutable final class FakerFormattedStrings {const FakerFormattedStrings({required this.dateFormat, required this.datetimeFormat, required this.imageFormat, required this.addressFormat, required this.timezoneFormat, required this.zipcodeFormat, required this.jsonFormat, required this.uuidFormat, required this.domainFormat, required this.emailFormat, required this.ipv4Format, required this.ipv6Format, required this.macFormat, required this.passwordFormat, required this.urlFormat, required this.phoneFormat, required this.filenameFormat, required this.directoryFormat, required this.filepathFormat, required this.unknownFormat, });
 
-factory FakerFormattedStrings.fromJson(Map<String, dynamic> json) { return FakerFormattedStrings(
+factory FakerFormattedStrings.fromJson(Map<String, dynamic> json) {return FakerFormattedStrings(
   dateFormat: json['dateFormat'] as String,
   datetimeFormat: DateTime.parse(json['datetimeFormat'] as String),
   imageFormat: json['imageFormat'] as String,
@@ -25,7 +25,7 @@ factory FakerFormattedStrings.fromJson(Map<String, dynamic> json) { return Faker
   directoryFormat: json['directoryFormat'] as String,
   filepathFormat: json['filepathFormat'] as String,
   unknownFormat: json['unknownFormat'] as String,
-); }
+);}
 
 /// A field that will have RFC3339 formatted datestamp generated as example
 final String dateFormat;
@@ -87,7 +87,7 @@ final String filepathFormat;
 /// A field that will have random words generated as example
 final String unknownFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dateFormat': dateFormat,
   'datetimeFormat': datetimeFormat.toIso8601String(),
   'imageFormat': imageFormat,
@@ -108,8 +108,8 @@ Map<String, dynamic> toJson() { return {
   'directoryFormat': directoryFormat,
   'filepathFormat': filepathFormat,
   'unknownFormat': unknownFormat,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dateFormat') && json['dateFormat'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dateFormat') && json['dateFormat'] is String &&
       json.containsKey('datetimeFormat') && json['datetimeFormat'] is String &&
       json.containsKey('imageFormat') && json['imageFormat'] is String &&
       json.containsKey('addressFormat') && json['addressFormat'] is String &&
@@ -128,8 +128,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dateF
       json.containsKey('filenameFormat') && json['filenameFormat'] is String &&
       json.containsKey('directoryFormat') && json['directoryFormat'] is String &&
       json.containsKey('filepathFormat') && json['filepathFormat'] is String &&
-      json.containsKey('unknownFormat') && json['unknownFormat'] is String; } 
-FakerFormattedStrings copyWith({String? dateFormat, DateTime? datetimeFormat, String? imageFormat, String? addressFormat, String? timezoneFormat, String? zipcodeFormat, String? jsonFormat, String? uuidFormat, String? domainFormat, String? emailFormat, String? ipv4Format, String? ipv6Format, String? macFormat, String? passwordFormat, String? urlFormat, String? phoneFormat, String? filenameFormat, String? directoryFormat, String? filepathFormat, String? unknownFormat, }) { return FakerFormattedStrings(
+      json.containsKey('unknownFormat') && json['unknownFormat'] is String;}
+FakerFormattedStrings copyWith({String? dateFormat, DateTime? datetimeFormat, String? imageFormat, String? addressFormat, String? timezoneFormat, String? zipcodeFormat, String? jsonFormat, String? uuidFormat, String? domainFormat, String? emailFormat, String? ipv4Format, String? ipv6Format, String? macFormat, String? passwordFormat, String? urlFormat, String? phoneFormat, String? filenameFormat, String? directoryFormat, String? filepathFormat, String? unknownFormat, }) {return FakerFormattedStrings(
   dateFormat: dateFormat ?? this.dateFormat,
   datetimeFormat: datetimeFormat ?? this.datetimeFormat,
   imageFormat: imageFormat ?? this.imageFormat,
@@ -150,7 +150,7 @@ FakerFormattedStrings copyWith({String? dateFormat, DateTime? datetimeFormat, St
   directoryFormat: directoryFormat ?? this.directoryFormat,
   filepathFormat: filepathFormat ?? this.filepathFormat,
   unknownFormat: unknownFormat ?? this.unknownFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FakerFormattedStrings &&
           dateFormat == other.dateFormat &&
@@ -178,4 +178,4 @@ FakerFormattedStrings copyWith({String? dateFormat, DateTime? datetimeFormat, St
 
 @override String toString() => 'FakerFormattedStrings(\n  dateFormat: $dateFormat,\n  datetimeFormat: $datetimeFormat,\n  imageFormat: $imageFormat,\n  addressFormat: $addressFormat,\n  timezoneFormat: $timezoneFormat,\n  zipcodeFormat: $zipcodeFormat,\n  jsonFormat: $jsonFormat,\n  uuidFormat: $uuidFormat,\n  domainFormat: $domainFormat,\n  emailFormat: $emailFormat,\n  ipv4Format: $ipv4Format,\n  ipv6Format: $ipv6Format,\n  macFormat: $macFormat,\n  passwordFormat: $passwordFormat,\n  urlFormat: $urlFormat,\n  phoneFormat: $phoneFormat,\n  filenameFormat: $filenameFormat,\n  directoryFormat: $directoryFormat,\n  filepathFormat: $filepathFormat,\n  unknownFormat: $unknownFormat,\n)';
 
- }
+}

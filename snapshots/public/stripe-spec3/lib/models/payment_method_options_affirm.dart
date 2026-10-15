@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentMethodOptionsAffirm {const PaymentMethodOptionsAffirm({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAffirm(
+factory PaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsAffirm(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   preferredLocale: json['preferred_locale'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -25,24 +25,24 @@ final String? preferredLocale;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   'preferred_locale': ?preferredLocale,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final preferredLocale$ = preferredLocale;
 if (preferredLocale$ != null) {
   if (preferredLocale$.runes.length > 30) { errors.add('preferredLocale: length must be <= 30'); }
 }
-return errors; } 
-PaymentMethodOptionsAffirm copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsAffirm(
+return errors;}
+PaymentMethodOptionsAffirm copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsAffirm(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsAffirm &&
           captureMethod == other.captureMethod &&
@@ -53,4 +53,4 @@ PaymentMethodOptionsAffirm copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMe
 
 @override String toString() => 'PaymentMethodOptionsAffirm(captureMethod: $captureMethod, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

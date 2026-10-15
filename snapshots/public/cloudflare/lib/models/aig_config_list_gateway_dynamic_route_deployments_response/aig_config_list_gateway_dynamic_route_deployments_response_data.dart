@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_deployments_response/deployments.dart';@immutable final class AigConfigListGatewayDynamicRouteDeploymentsResponseData {const AigConfigListGatewayDynamicRouteDeploymentsResponseData({required this.deployments, required this.orderBy, required this.orderByDirection, required this.page, required this.perPage, });
 
-factory AigConfigListGatewayDynamicRouteDeploymentsResponseData.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRouteDeploymentsResponseData(
+factory AigConfigListGatewayDynamicRouteDeploymentsResponseData.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayDynamicRouteDeploymentsResponseData(
   deployments: (json['deployments'] as List<dynamic>).map((e) => Deployments.fromJson(e as Map<String, dynamic>)).toList(),
   orderBy: json['order_by'] as String,
   orderByDirection: json['order_by_direction'] as String,
   page: (json['page'] as num).toDouble(),
   perPage: (json['per_page'] as num).toDouble(),
-); }
+);}
 
 final List<Deployments> deployments;
 
@@ -21,25 +21,25 @@ final double page;
 
 final double perPage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deployments': deployments.map((e) => e.toJson()).toList(),
   'order_by': orderBy,
   'order_by_direction': orderByDirection,
   'page': page,
   'per_page': perPage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deployments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deployments') &&
       json.containsKey('order_by') && json['order_by'] is String &&
       json.containsKey('order_by_direction') && json['order_by_direction'] is String &&
       json.containsKey('page') && json['page'] is num &&
-      json.containsKey('per_page') && json['per_page'] is num; } 
-AigConfigListGatewayDynamicRouteDeploymentsResponseData copyWith({List<Deployments>? deployments, String? orderBy, String? orderByDirection, double? page, double? perPage, }) { return AigConfigListGatewayDynamicRouteDeploymentsResponseData(
+      json.containsKey('per_page') && json['per_page'] is num;}
+AigConfigListGatewayDynamicRouteDeploymentsResponseData copyWith({List<Deployments>? deployments, String? orderBy, String? orderByDirection, double? page, double? perPage, }) {return AigConfigListGatewayDynamicRouteDeploymentsResponseData(
   deployments: deployments ?? this.deployments,
   orderBy: orderBy ?? this.orderBy,
   orderByDirection: orderByDirection ?? this.orderByDirection,
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayDynamicRouteDeploymentsResponseData &&
           listEquals(deployments, other.deployments) &&
@@ -52,4 +52,4 @@ AigConfigListGatewayDynamicRouteDeploymentsResponseData copyWith({List<Deploymen
 
 @override String toString() => 'AigConfigListGatewayDynamicRouteDeploymentsResponseData(deployments: $deployments, orderBy: $orderBy, orderByDirection: $orderByDirection, page: $page, perPage: $perPage)';
 
- }
+}

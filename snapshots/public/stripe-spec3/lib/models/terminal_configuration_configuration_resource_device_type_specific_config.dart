@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_device_type_specific_config/terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_device_type_specific_config/terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});
 
-factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-); }
+factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) {return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
+  splashscreen: json['splashscreen'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen.fromJson(json['splashscreen']) : null,
+);}
 
 /// A File ID representing an image to display on the reader
 final TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen? splashscreen;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen? Function()? splashscreen}) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'splashscreen'}.contains(key));}
+TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen? Function()? splashscreen}) {return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig &&
           splashscreen == other.splashscreen;
@@ -26,4 +26,4 @@ TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig copyWith({Ter
 
 @override String toString() => 'TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(splashscreen: $splashscreen)';
 
- }
+}

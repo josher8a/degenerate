@@ -11,19 +11,19 @@ bool toJson() => value;
 }
 @immutable final class Variant1Response {const Variant1Response({this.originTraffic});
 
-factory Variant1Response.fromJson(Map<String, dynamic> json) { return Variant1Response(
+factory Variant1Response.fromJson(Map<String, dynamic> json) {return Variant1Response(
   originTraffic: json['origin_traffic'] != null ? FirewallOriginTraffic.fromJson(json['origin_traffic'] as bool) : null,
-); }
+);}
 
 final FirewallOriginTraffic? originTraffic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (originTraffic != null) 'origin_traffic': originTraffic?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origin_traffic'}.contains(key)); } 
-Variant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) { return Variant1Response(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'origin_traffic'}.contains(key));}
+Variant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) {return Variant1Response(
   originTraffic: originTraffic != null ? originTraffic() : this.originTraffic,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Response &&
           originTraffic == other.originTraffic;
@@ -32,4 +32,4 @@ Variant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) { 
 
 @override String toString() => 'Variant1Response(originTraffic: $originTraffic)';
 
- }
+}

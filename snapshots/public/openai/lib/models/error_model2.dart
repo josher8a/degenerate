@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object repres
 /// 
 @immutable final class ErrorModel2 {const ErrorModel2({required this.code, required this.message, });
 
-factory ErrorModel2.fromJson(Map<String, dynamic> json) { return ErrorModel2(
+factory ErrorModel2.fromJson(Map<String, dynamic> json) {return ErrorModel2(
   code: json['code'] as String,
   message: json['message'] as String,
-); }
+);}
 
 /// The error code.
 final String code;
@@ -16,16 +16,16 @@ final String code;
 /// The error message.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('message') && json['message'] is String; } 
-ErrorModel2 copyWith({String? code, String? message, }) { return ErrorModel2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('message') && json['message'] is String;}
+ErrorModel2 copyWith({String? code, String? message, }) {return ErrorModel2(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorModel2 &&
           code == other.code &&
@@ -35,4 +35,4 @@ ErrorModel2 copyWith({String? code, String? message, }) { return ErrorModel2(
 
 @override String toString() => 'ErrorModel2(code: $code, message: $message)';
 
- }
+}

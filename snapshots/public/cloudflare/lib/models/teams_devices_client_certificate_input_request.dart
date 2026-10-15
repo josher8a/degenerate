@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesClientCertificateInputRequest {const TeamsDevicesClientCertificateInputRequest({required this.certificateId, required this.cn, });
 
-factory TeamsDevicesClientCertificateInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesClientCertificateInputRequest(
+factory TeamsDevicesClientCertificateInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesClientCertificateInputRequest(
   certificateId: json['certificate_id'] as String,
   cn: json['cn'] as String,
-); }
+);}
 
 /// UUID of Cloudflare managed certificate.
 /// 
@@ -18,20 +18,20 @@ final String certificateId;
 /// Example: `'example.com'`
 final String cn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate_id': certificateId,
   'cn': cn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_id') && json['certificate_id'] is String &&
-      json.containsKey('cn') && json['cn'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_id') && json['certificate_id'] is String &&
+      json.containsKey('cn') && json['cn'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (certificateId.runes.length > 36) { errors.add('certificateId: length must be <= 36'); }
-return errors; } 
-TeamsDevicesClientCertificateInputRequest copyWith({String? certificateId, String? cn, }) { return TeamsDevicesClientCertificateInputRequest(
+return errors;}
+TeamsDevicesClientCertificateInputRequest copyWith({String? certificateId, String? cn, }) {return TeamsDevicesClientCertificateInputRequest(
   certificateId: certificateId ?? this.certificateId,
   cn: cn ?? this.cn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesClientCertificateInputRequest &&
           certificateId == other.certificateId &&
@@ -41,4 +41,4 @@ TeamsDevicesClientCertificateInputRequest copyWith({String? certificateId, Strin
 
 @override String toString() => 'TeamsDevicesClientCertificateInputRequest(certificateId: $certificateId, cn: $cn)';
 
- }
+}

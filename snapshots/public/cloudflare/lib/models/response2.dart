@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_errors2.dart';@immutable final class Response2 {const Response2({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory Response2.fromJson(Map<String, dynamic> json) { return Response2(
+factory Response2.fromJson(Map<String, dynamic> json) {return Response2(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
-); }
+);}
 
 final List<R2Errors2> errors;
 
@@ -19,22 +19,22 @@ final Map<String,dynamic> result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-Response2 copyWith({List<R2Errors2>? errors, List<String>? messages, Map<String,dynamic>? result, bool? success, }) { return Response2(
+      json.containsKey('success') && json['success'] is bool;}
+Response2 copyWith({List<R2Errors2>? errors, List<String>? messages, Map<String,dynamic>? result, bool? success, }) {return Response2(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Response2 &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ Response2 copyWith({List<R2Errors2>? errors, List<String>? messages, Map<String,
 
 @override String toString() => 'Response2(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_multi_signer.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_presigned.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
 sealed class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus();
 
-factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) { return switch (json) {
+factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'disabled' => disabled,
   _ => DnssecEditDnssecStatusRequestStatus$Unknown(json),
-}; }
+};}
 
 static const DnssecEditDnssecStatusRequestStatus active = DnssecEditDnssecStatusRequestStatus$active._();
 
@@ -17,30 +17,30 @@ static const DnssecEditDnssecStatusRequestStatus disabled = DnssecEditDnssecStat
 static const List<DnssecEditDnssecStatusRequestStatus> values = [active, disabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'disabled' => 'disabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnssecEditDnssecStatusRequestStatus$Unknown; } 
+bool get isUnknown {return this is DnssecEditDnssecStatusRequestStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() disabled, required W Function(String value) $unknown, }) {return switch (this) {
       DnssecEditDnssecStatusRequestStatus$active() => active(),
       DnssecEditDnssecStatusRequestStatus$disabled() => disabled(),
       DnssecEditDnssecStatusRequestStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? disabled, W Function(String value)? $unknown, }) {return switch (this) {
       DnssecEditDnssecStatusRequestStatus$active() => active != null ? active() : orElse(value),
       DnssecEditDnssecStatusRequestStatus$disabled() => disabled != null ? disabled() : orElse(value),
       DnssecEditDnssecStatusRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DnssecEditDnssecStatusRequestStatus($value)';
 
- }
+}
 @immutable final class DnssecEditDnssecStatusRequestStatus$active extends DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus$active._();
 
 @override String get value => 'active';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class DnssecEditDnssecStatusRequestStatus$disabled extends DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus$disabled._();
 
 @override String get value => 'disabled';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class DnssecEditDnssecStatusRequestStatus$Unknown extends DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DnssecEditDnssecStatusRequest {const DnssecEditDnssecStatusRequest({this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.status, });
 
-factory DnssecEditDnssecStatusRequest.fromJson(Map<String, dynamic> json) { return DnssecEditDnssecStatusRequest(
+factory DnssecEditDnssecStatusRequest.fromJson(Map<String, dynamic> json) {return DnssecEditDnssecStatusRequest(
   dnssecMultiSigner: json['dnssec_multi_signer'] != null ? DnssecDnssecMultiSigner.fromJson(json['dnssec_multi_signer'] as bool) : null,
   dnssecPresigned: json['dnssec_presigned'] != null ? DnssecDnssecPresigned.fromJson(json['dnssec_presigned'] as bool) : null,
   dnssecUseNsec3: json['dnssec_use_nsec3'] != null ? DnssecDnssecUseNsec3.fromJson(json['dnssec_use_nsec3'] as bool) : null,
   status: json['status'] != null ? DnssecEditDnssecStatusRequestStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// If true, multi-signer DNSSEC is enabled on the zone, allowing multiple
 /// providers to serve a DNSSEC-signed zone at the same time.
@@ -108,19 +108,19 @@ final DnssecDnssecUseNsec3? dnssecUseNsec3;
 /// Example: `'active'`
 final DnssecEditDnssecStatusRequestStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dnssecMultiSigner != null) 'dnssec_multi_signer': dnssecMultiSigner?.toJson(),
   if (dnssecPresigned != null) 'dnssec_presigned': dnssecPresigned?.toJson(),
   if (dnssecUseNsec3 != null) 'dnssec_use_nsec3': dnssecUseNsec3?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'status'}.contains(key)); } 
-DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, DnssecEditDnssecStatusRequestStatus? Function()? status, }) { return DnssecEditDnssecStatusRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'status'}.contains(key));}
+DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, DnssecEditDnssecStatusRequestStatus? Function()? status, }) {return DnssecEditDnssecStatusRequest(
   dnssecMultiSigner: dnssecMultiSigner != null ? dnssecMultiSigner() : this.dnssecMultiSigner,
   dnssecPresigned: dnssecPresigned != null ? dnssecPresigned() : this.dnssecPresigned,
   dnssecUseNsec3: dnssecUseNsec3 != null ? dnssecUseNsec3() : this.dnssecUseNsec3,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnssecEditDnssecStatusRequest &&
           dnssecMultiSigner == other.dnssecMultiSigner &&
@@ -132,4 +132,4 @@ DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dns
 
 @override String toString() => 'DnssecEditDnssecStatusRequest(dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, status: $status)';
 
- }
+}

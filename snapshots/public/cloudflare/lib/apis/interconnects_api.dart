@@ -12,7 +12,7 @@ final class InterconnectsApi with ApiExecutor {const InterconnectsApi(this.apiCo
 /// List existing interconnects
 ///
 /// `GET /accounts/{account_id}/cni/interconnects`
-Future<ApiResult<NscInterconnectList, Never>> listInterconnects({required NscAccountTag accountId, String? site, String? type, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<NscInterconnectList, Never>> listInterconnects({required NscAccountTag accountId, String? site, String? type, int? cursor, int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (site != null) {
   queryParameters['site'] = site;
@@ -38,17 +38,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscInterconnectList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new interconnect
 ///
 /// `POST /accounts/{account_id}/cni/interconnects`
-Future<ApiResult<NscInterconnect, Never>> createInterconnect({required NscAccountTag accountId, required NscInterconnectCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscInterconnect, Never>> createInterconnect({required NscAccountTag accountId, required NscInterconnectCreate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,17 +59,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscInterconnect.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get information about an interconnect object
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}`
-Future<ApiResult<NscInterconnect, Never>> getInterconnect({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscInterconnect, Never>> getInterconnect({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,17 +78,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscInterconnect.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an interconnect object
 ///
 /// `DELETE /accounts/{account_id}/cni/interconnects/{icon}`
-Future<ApiResult<void, Never>> deleteInterconnect({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteInterconnect({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -97,15 +97,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Generate the Letter of Authorization (LOA) for a given interconnect
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}/loa`
-Future<ApiResult<void, Never>> getInterconnectLoa({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getInterconnectLoa({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -114,15 +114,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get the current status of an interconnect object
 ///
 /// `GET /accounts/{account_id}/cni/interconnects/{icon}/status`
-Future<ApiResult<NscStatusInfo, Never>> getInterconnectStatus({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscStatusInfo, Never>> getInterconnectStatus({required String icon, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -131,11 +131,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return NscStatusInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

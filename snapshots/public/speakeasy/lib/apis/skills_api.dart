@@ -10,7 +10,7 @@ final class SkillsApi with ApiExecutor {const SkillsApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /api/v1/skills/{skill_identifier}`
-Future<ApiResult<SkillInfo, Never>> getSkillByIdApiV1SkillsSkillIdentifierGet({required String skillIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SkillInfo, Never>> getSkillByIdApiV1SkillsSkillIdentifierGet({required String skillIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -19,11 +19,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SkillInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

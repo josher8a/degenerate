@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZoneLockdownUpdateAZoneLockdownRuleRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_configurations2.dart';import 'package:pub_cloudflare/models/firewall_schemas_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_ip_configuration.dart';@immutable final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_configurations2.dart';@immutable final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
 
-factory ZoneLockdownUpdateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic> json) { return ZoneLockdownUpdateAZoneLockdownRuleRequest(
-  configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),
+factory ZoneLockdownUpdateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic> json) {return ZoneLockdownUpdateAZoneLockdownRuleRequest(
+  configurations: (json['configurations'] as List<dynamic>).map(FirewallConfigurations2.fromJson).toList(),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
 final List<FirewallConfigurations2> configurations;
@@ -14,16 +14,16 @@ final List<FirewallConfigurations2> configurations;
 /// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 final List<String> urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configurations': configurations.map((e) => e.toJson()).toList(),
   'urls': urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('configurations') &&
-      json.containsKey('urls'); } 
-ZoneLockdownUpdateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations2>? configurations, List<String>? urls, }) { return ZoneLockdownUpdateAZoneLockdownRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('configurations') &&
+      json.containsKey('urls');}
+ZoneLockdownUpdateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations2>? configurations, List<String>? urls, }) {return ZoneLockdownUpdateAZoneLockdownRuleRequest(
   configurations: configurations ?? this.configurations,
   urls: urls ?? this.urls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLockdownUpdateAZoneLockdownRuleRequest &&
           listEquals(configurations, other.configurations) &&
@@ -33,4 +33,4 @@ ZoneLockdownUpdateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations
 
 @override String toString() => 'ZoneLockdownUpdateAZoneLockdownRuleRequest(configurations: $configurations, urls: $urls)';
 
- }
+}

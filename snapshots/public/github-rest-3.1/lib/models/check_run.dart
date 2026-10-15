@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_check_suite.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_conclusion.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';/// A check performed on the code of a given code change
 @immutable final class CheckRun {const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment, });
 
-factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
+factory CheckRun.fromJson(Map<String, dynamic> json) {return CheckRun(
   id: (json['id'] as num).toInt(),
   headSha: json['head_sha'] as String,
   nodeId: json['node_id'] as String,
@@ -22,7 +22,7 @@ factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
   app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList(),
   deployment: json['deployment'] != null ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The id of the check.
 final int id;
@@ -63,7 +63,7 @@ final List<PullRequestMinimal> pullRequests;
 
 final DeploymentSimple? deployment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'head_sha': headSha,
   'node_id': nodeId,
@@ -81,24 +81,24 @@ Map<String, dynamic> toJson() { return {
   'app': app?.toJson(),
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   if (deployment != null) 'deployment': deployment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('external_id') && json['external_id'] is String &&
+      json.containsKey('external_id') && (json['external_id'] == null || json['external_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('details_url') && json['details_url'] is String &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('details_url') && (json['details_url'] == null || json['details_url'] is String) &&
       json.containsKey('status') &&
       json.containsKey('conclusion') &&
-      json.containsKey('started_at') && json['started_at'] is String &&
-      json.containsKey('completed_at') && json['completed_at'] is String &&
+      json.containsKey('started_at') && (json['started_at'] == null || json['started_at'] is String) &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('output') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('check_suite') &&
       json.containsKey('app') &&
-      json.containsKey('pull_requests'); } 
-CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, Output? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple? Function()? deployment, }) { return CheckRun(
+      json.containsKey('pull_requests');}
+CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, Output? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple? Function()? deployment, }) {return CheckRun(
   id: id ?? this.id,
   headSha: headSha ?? this.headSha,
   nodeId: nodeId ?? this.nodeId,
@@ -116,7 +116,7 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
   app: app != null ? app() : this.app,
   pullRequests: pullRequests ?? this.pullRequests,
   deployment: deployment != null ? deployment() : this.deployment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckRun &&
           id == other.id &&
@@ -141,4 +141,4 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
 
 @override String toString() => 'CheckRun(\n  id: $id,\n  headSha: $headSha,\n  nodeId: $nodeId,\n  externalId: $externalId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  detailsUrl: $detailsUrl,\n  status: $status,\n  conclusion: $conclusion,\n  startedAt: $startedAt,\n  completedAt: $completedAt,\n  output: $output,\n  name: $name,\n  checkSuite: $checkSuite,\n  app: $app,\n  pullRequests: $pullRequests,\n  deployment: $deployment,\n)';
 
- }
+}

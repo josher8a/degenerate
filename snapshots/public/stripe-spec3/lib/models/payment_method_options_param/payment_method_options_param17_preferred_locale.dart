@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale();
 
-factory PaymentMethodOptionsParam17PreferredLocale.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam17PreferredLocale.fromJson(String json) {return switch (json) {
   'cs-CZ' => csCz,
   'da-DK' => daDk,
   'de-AT' => deAt,
@@ -51,7 +51,7 @@ factory PaymentMethodOptionsParam17PreferredLocale.fromJson(String json) { retur
   'sv-FI' => svFi,
   'sv-SE' => svSe,
   _ => PaymentMethodOptionsParam17PreferredLocale$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam17PreferredLocale csCz = PaymentMethodOptionsParam17PreferredLocale$csCz._();
 
@@ -148,9 +148,9 @@ static const PaymentMethodOptionsParam17PreferredLocale svSe = PaymentMethodOpti
 static const List<PaymentMethodOptionsParam17PreferredLocale> values = [csCz, daDk, deAt, deCh, deDe, elGr, enAt, enAu, enBe, enCa, enCh, enCz, enDe, enDk, enEs, enFi, enFr, enGb, enGr, enIe, enIt, enNl, enNo, enNz, enPl, enPt, enRo, enSe, enUs, esEs, esUs, fiFi, frBe, frCa, frCh, frFr, itCh, itIt, nbNo, nlBe, nlNl, plPl, ptPt, roRo, svFi, svSe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cs-CZ' => 'csCz',
   'da-DK' => 'daDk',
   'de-AT' => 'deAt',
@@ -198,11 +198,11 @@ String get name { return switch (value) {
   'sv-FI' => 'svFi',
   'sv-SE' => 'svSe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodOptionsParam17PreferredLocale$Unknown; } 
+bool get isUnknown {return this is PaymentMethodOptionsParam17PreferredLocale$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() csCz, required W Function() daDk, required W Function() deAt, required W Function() deCh, required W Function() deDe, required W Function() elGr, required W Function() enAt, required W Function() enAu, required W Function() enBe, required W Function() enCa, required W Function() enCh, required W Function() enCz, required W Function() enDe, required W Function() enDk, required W Function() enEs, required W Function() enFi, required W Function() enFr, required W Function() enGb, required W Function() enGr, required W Function() enIe, required W Function() enIt, required W Function() enNl, required W Function() enNo, required W Function() enNz, required W Function() enPl, required W Function() enPt, required W Function() enRo, required W Function() enSe, required W Function() enUs, required W Function() esEs, required W Function() esUs, required W Function() fiFi, required W Function() frBe, required W Function() frCa, required W Function() frCh, required W Function() frFr, required W Function() itCh, required W Function() itIt, required W Function() nbNo, required W Function() nlBe, required W Function() nlNl, required W Function() plPl, required W Function() ptPt, required W Function() roRo, required W Function() svFi, required W Function() svSe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() csCz, required W Function() daDk, required W Function() deAt, required W Function() deCh, required W Function() deDe, required W Function() elGr, required W Function() enAt, required W Function() enAu, required W Function() enBe, required W Function() enCa, required W Function() enCh, required W Function() enCz, required W Function() enDe, required W Function() enDk, required W Function() enEs, required W Function() enFi, required W Function() enFr, required W Function() enGb, required W Function() enGr, required W Function() enIe, required W Function() enIt, required W Function() enNl, required W Function() enNo, required W Function() enNz, required W Function() enPl, required W Function() enPt, required W Function() enRo, required W Function() enSe, required W Function() enUs, required W Function() esEs, required W Function() esUs, required W Function() fiFi, required W Function() frBe, required W Function() frCa, required W Function() frCh, required W Function() frFr, required W Function() itCh, required W Function() itIt, required W Function() nbNo, required W Function() nlBe, required W Function() nlNl, required W Function() plPl, required W Function() ptPt, required W Function() roRo, required W Function() svFi, required W Function() svSe, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodOptionsParam17PreferredLocale$csCz() => csCz(),
       PaymentMethodOptionsParam17PreferredLocale$daDk() => daDk(),
       PaymentMethodOptionsParam17PreferredLocale$deAt() => deAt(),
@@ -250,9 +250,9 @@ W when<W>({required W Function() csCz, required W Function() daDk, required W Fu
       PaymentMethodOptionsParam17PreferredLocale$svFi() => svFi(),
       PaymentMethodOptionsParam17PreferredLocale$svSe() => svSe(),
       PaymentMethodOptionsParam17PreferredLocale$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W Function()? daDk, W Function()? deAt, W Function()? deCh, W Function()? deDe, W Function()? elGr, W Function()? enAt, W Function()? enAu, W Function()? enBe, W Function()? enCa, W Function()? enCh, W Function()? enCz, W Function()? enDe, W Function()? enDk, W Function()? enEs, W Function()? enFi, W Function()? enFr, W Function()? enGb, W Function()? enGr, W Function()? enIe, W Function()? enIt, W Function()? enNl, W Function()? enNo, W Function()? enNz, W Function()? enPl, W Function()? enPt, W Function()? enRo, W Function()? enSe, W Function()? enUs, W Function()? esEs, W Function()? esUs, W Function()? fiFi, W Function()? frBe, W Function()? frCa, W Function()? frCh, W Function()? frFr, W Function()? itCh, W Function()? itIt, W Function()? nbNo, W Function()? nlBe, W Function()? nlNl, W Function()? plPl, W Function()? ptPt, W Function()? roRo, W Function()? svFi, W Function()? svSe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W Function()? daDk, W Function()? deAt, W Function()? deCh, W Function()? deDe, W Function()? elGr, W Function()? enAt, W Function()? enAu, W Function()? enBe, W Function()? enCa, W Function()? enCh, W Function()? enCz, W Function()? enDe, W Function()? enDk, W Function()? enEs, W Function()? enFi, W Function()? enFr, W Function()? enGb, W Function()? enGr, W Function()? enIe, W Function()? enIt, W Function()? enNl, W Function()? enNo, W Function()? enNz, W Function()? enPl, W Function()? enPt, W Function()? enRo, W Function()? enSe, W Function()? enUs, W Function()? esEs, W Function()? esUs, W Function()? fiFi, W Function()? frBe, W Function()? frCa, W Function()? frCh, W Function()? frFr, W Function()? itCh, W Function()? itIt, W Function()? nbNo, W Function()? nlBe, W Function()? nlNl, W Function()? plPl, W Function()? ptPt, W Function()? roRo, W Function()? svFi, W Function()? svSe, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodOptionsParam17PreferredLocale$csCz() => csCz != null ? csCz() : orElse(value),
       PaymentMethodOptionsParam17PreferredLocale$daDk() => daDk != null ? daDk() : orElse(value),
       PaymentMethodOptionsParam17PreferredLocale$deAt() => deAt != null ? deAt() : orElse(value),
@@ -300,10 +300,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
       PaymentMethodOptionsParam17PreferredLocale$svFi() => svFi != null ? svFi() : orElse(value),
       PaymentMethodOptionsParam17PreferredLocale$svSe() => svSe != null ? svSe() : orElse(value),
       PaymentMethodOptionsParam17PreferredLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodOptionsParam17PreferredLocale($value)';
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$csCz extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$csCz._();
 
 @override String get value => 'cs-CZ';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'cs-CZ'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$daDk extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$daDk._();
 
 @override String get value => 'da-DK';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'da-DK'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$deAt extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$deAt._();
 
 @override String get value => 'de-AT';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'de-AT'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$deCh extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$deCh._();
 
 @override String get value => 'de-CH';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'de-CH'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$deDe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$deDe._();
 
 @override String get value => 'de-DE';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'de-DE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$elGr extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$elGr._();
 
 @override String get value => 'el-GR';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'el-GR'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enAt extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enAt._();
 
 @override String get value => 'en-AT';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-AT'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enAu extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enAu._();
 
 @override String get value => 'en-AU';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-AU'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enBe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enBe._();
 
 @override String get value => 'en-BE';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-BE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enCa extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enCa._();
 
 @override String get value => 'en-CA';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-CA'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enCh extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enCh._();
 
 @override String get value => 'en-CH';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-CH'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enCz extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enCz._();
 
 @override String get value => 'en-CZ';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-CZ'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enDe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enDe._();
 
 @override String get value => 'en-DE';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-DE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enDk extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enDk._();
 
 @override String get value => 'en-DK';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-DK'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enEs extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enEs._();
 
 @override String get value => 'en-ES';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-ES'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enFi extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enFi._();
 
 @override String get value => 'en-FI';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-FI'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enFr extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enFr._();
 
 @override String get value => 'en-FR';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-FR'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enGb extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enGb._();
 
 @override String get value => 'en-GB';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-GB'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enGr extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enGr._();
 
 @override String get value => 'en-GR';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-GR'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enIe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enIe._();
 
 @override String get value => 'en-IE';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-IE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enIt extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enIt._();
 
 @override String get value => 'en-IT';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-IT'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enNl extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enNl._();
 
 @override String get value => 'en-NL';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-NL'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enNo extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enNo._();
 
 @override String get value => 'en-NO';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-NO'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enNz extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enNz._();
 
 @override String get value => 'en-NZ';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-NZ'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enPl extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enPl._();
 
 @override String get value => 'en-PL';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-PL'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enPt extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enPt._();
 
 @override String get value => 'en-PT';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-PT'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enRo extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enRo._();
 
 @override String get value => 'en-RO';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-RO'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enSe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enSe._();
 
 @override String get value => 'en-SE';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-SE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$enUs extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$enUs._();
 
 @override String get value => 'en-US';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'en-US'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$esEs extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$esEs._();
 
 @override String get value => 'es-ES';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'es-ES'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$esUs extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$esUs._();
 
 @override String get value => 'es-US';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'es-US'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$fiFi extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$fiFi._();
 
 @override String get value => 'fi-FI';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'fi-FI'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$frBe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$frBe._();
 
 @override String get value => 'fr-BE';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'fr-BE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$frCa extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$frCa._();
 
 @override String get value => 'fr-CA';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'fr-CA'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$frCh extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$frCh._();
 
 @override String get value => 'fr-CH';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'fr-CH'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$frFr extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$frFr._();
 
 @override String get value => 'fr-FR';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'fr-FR'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$itCh extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$itCh._();
 
 @override String get value => 'it-CH';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'it-CH'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$itIt extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$itIt._();
 
 @override String get value => 'it-IT';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'it-IT'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$nbNo extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$nbNo._();
 
 @override String get value => 'nb-NO';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'nb-NO'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$nlBe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$nlBe._();
 
 @override String get value => 'nl-BE';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'nl-BE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$nlNl extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$nlNl._();
 
 @override String get value => 'nl-NL';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'nl-NL'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$plPl extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$plPl._();
 
 @override String get value => 'pl-PL';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'pl-PL'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$ptPt extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$ptPt._();
 
 @override String get value => 'pt-PT';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'pt-PT'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$roRo extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$roRo._();
 
 @override String get value => 'ro-RO';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'ro-RO'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$svFi extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$svFi._();
 
 @override String get value => 'sv-FI';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'sv-FI'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$svSe extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$svSe._();
 
 @override String get value => 'sv-SE';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => 'sv-SE'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam17PreferredLocale$Unknown extends PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale$Unknown(this.value);
 
 @override final String value;
@@ -727,4 +727,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LivestreamsLivestreamSessionIdResponseData {const LivestreamsLivestreamSessionIdResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
 
-factory LivestreamsLivestreamSessionIdResponseData.fromJson(Map<String, dynamic> json) { return LivestreamsLivestreamSessionIdResponseData(
+factory LivestreamsLivestreamSessionIdResponseData.fromJson(Map<String, dynamic> json) {return LivestreamsLivestreamSessionIdResponseData(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   errMessage: json['err_message'] as String?,
   id: json['id'] as String?,
@@ -13,7 +13,7 @@ factory LivestreamsLivestreamSessionIdResponseData.fromJson(Map<String, dynamic>
   stoppedTime: json['stopped_time'] as String?,
   updatedAt: json['updated_at'] as String?,
   viewerSeconds: json['viewer_seconds'] != null ? (json['viewer_seconds'] as num).toInt() : null,
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -41,7 +41,7 @@ final String? updatedAt;
 /// Specifies if the livestream was disabled.
 final int? viewerSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'err_message': ?errMessage,
   'id': ?id,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   'stopped_time': ?stoppedTime,
   'updated_at': ?updatedAt,
   'viewer_seconds': ?viewerSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'livestream_id', 'started_time', 'stopped_time', 'updated_at', 'viewer_seconds'}.contains(key)); } 
-LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, int? Function()? ingestSeconds, String? Function()? livestreamId, String? Function()? startedTime, String? Function()? stoppedTime, String? Function()? updatedAt, int? Function()? viewerSeconds, }) { return LivestreamsLivestreamSessionIdResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'livestream_id', 'started_time', 'stopped_time', 'updated_at', 'viewer_seconds'}.contains(key));}
+LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, int? Function()? ingestSeconds, String? Function()? livestreamId, String? Function()? startedTime, String? Function()? stoppedTime, String? Function()? updatedAt, int? Function()? viewerSeconds, }) {return LivestreamsLivestreamSessionIdResponseData(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errMessage: errMessage != null ? errMessage() : this.errMessage,
   id: id != null ? id() : this.id,
@@ -63,7 +63,7 @@ LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? creat
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   viewerSeconds: viewerSeconds != null ? viewerSeconds() : this.viewerSeconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamsLivestreamSessionIdResponseData &&
           createdAt == other.createdAt &&
@@ -80,4 +80,4 @@ LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? creat
 
 @override String toString() => 'LivestreamsLivestreamSessionIdResponseData(\n  createdAt: $createdAt,\n  errMessage: $errMessage,\n  id: $id,\n  ingestSeconds: $ingestSeconds,\n  livestreamId: $livestreamId,\n  startedTime: $startedTime,\n  stoppedTime: $stoppedTime,\n  updatedAt: $updatedAt,\n  viewerSeconds: $viewerSeconds,\n)';
 
- }
+}

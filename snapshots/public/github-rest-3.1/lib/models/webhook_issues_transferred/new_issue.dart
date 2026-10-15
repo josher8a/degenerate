@@ -2,11 +2,11 @@
 // Source: #/components/schemas/WebhookIssuesTransferred (inline: Changes > NewIssue)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/active_lock_reason.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_assignee.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_assignees.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_labels.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_milestone.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_performed_via_github_app.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_pull_request.dart';/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-@immutable final class NewIssue {const NewIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.user, required this.milestone, required this.nodeId, required this.number, required this.repositoryUrl, required this.reactions, this.performedViaGithubApp, this.locked, this.pinnedComment, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason, this.timelineUrl, this.labels, this.type, this.draft, this.assignee, this.pullRequest, });
+@immutable final class NewIssue {const NewIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.user, required this.milestone, required this.nodeId, required this.number, required this.repositoryUrl, required this.reactions, this.performedViaGithubApp = const Omittable.absent(), this.locked, this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason = const Omittable.absent(), this.timelineUrl, this.labels, this.type = const Omittable.absent(), this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
 
-factory NewIssue.fromJson(Map<String, dynamic> json) { return NewIssue(
+factory NewIssue.fromJson(Map<String, dynamic> json) {return NewIssue(
   activeLockReason: json['active_lock_reason'] != null ? ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
-  assignee: json['assignee'] != null ? WebhooksIssue2Assignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhooksIssue2Assignee.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhooksIssue2Assignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
@@ -24,27 +24,27 @@ factory NewIssue.fromJson(Map<String, dynamic> json) { return NewIssue(
   milestone: json['milestone'] != null ? WebhooksIssue2Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
-  performedViaGithubApp: json['performed_via_github_app'] != null ? WebhooksIssue2PerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? WebhooksIssue2PerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   pullRequest: json['pull_request'] != null ? WebhooksIssue2PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   reactions: DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   repositoryUrl: Uri.parse(json['repository_url'] as String),
-  pinnedComment: json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null,
+  pinnedComment: json.containsKey('pinned_comment') ? Omittable(json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
   issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   issueFieldValues: (json['issue_field_values'] as List<dynamic>?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList(),
   state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
-  stateReason: json['state_reason'] as String?,
+  stateReason: json.containsKey('state_reason') ? Omittable(json['state_reason'] as String?) : const Omittable.absent(),
   timelineUrl: json['timeline_url'] != null ? Uri.parse(json['timeline_url'] as String) : null,
   title: json['title'] as String,
-  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ActiveLockReason? activeLockReason;
 
-final WebhooksIssue2Assignee? assignee;
+final Omittable<WebhooksIssue2Assignee?> assignee;
 
 final List<WebhooksIssue2Assignees?> assignees;
 
@@ -84,7 +84,7 @@ final String nodeId;
 final int number;
 
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-final WebhooksIssue2PerformedViaGithubApp? performedViaGithubApp;
+final Omittable<WebhooksIssue2PerformedViaGithubApp?> performedViaGithubApp;
 
 final WebhooksIssue2PullRequest? pullRequest;
 
@@ -92,7 +92,7 @@ final DiscussionReactions reactions;
 
 final Uri repositoryUrl;
 
-final IssueComment? pinnedComment;
+final Omittable<IssueComment?> pinnedComment;
 
 final SubIssuesSummary? subIssuesSummary;
 
@@ -103,14 +103,14 @@ final List<IssueFieldValue>? issueFieldValues;
 /// State of the issue; either 'open' or 'closed'
 final IssuesUpdateRequestState? state;
 
-final String? stateReason;
+final Omittable<String?> stateReason;
 
 final Uri? timelineUrl;
 
 /// Title of the issue
 final String title;
 
-final IssueType? type;
+final Omittable<IssueType?> type;
 
 final DateTime updatedAt;
 
@@ -119,9 +119,9 @@ final Uri url;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_lock_reason': activeLockReason?.toJson(),
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -139,28 +139,28 @@ Map<String, dynamic> toJson() { return {
   'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (pullRequest != null) 'pull_request': pullRequest?.toJson(),
   'reactions': reactions.toJson(),
   'repository_url': repositoryUrl.toString(),
-  if (pinnedComment != null) 'pinned_comment': pinnedComment?.toJson(),
+  if (pinnedComment.isPresent) 'pinned_comment': pinnedComment.value?.toJson(),
   if (subIssuesSummary != null) 'sub_issues_summary': subIssuesSummary?.toJson(),
   if (issueDependenciesSummary != null) 'issue_dependencies_summary': issueDependenciesSummary?.toJson(),
   if (issueFieldValues != null) 'issue_field_values': issueFieldValues?.map((e) => e.toJson()).toList(),
   if (state != null) 'state': state?.toJson(),
-  'state_reason': ?stateReason,
+  if (stateReason.isPresent) 'state_reason': stateReason.value,
   if (timelineUrl != null) 'timeline_url': timelineUrl?.toString(),
   'title': title,
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_lock_reason') &&
       json.containsKey('assignees') &&
       json.containsKey('author_association') &&
-      json.containsKey('body') && json['body'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('comments_url') && json['comments_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -176,10 +176,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-NewIssue copyWith({ActiveLockReason? Function()? activeLockReason, WebhooksIssue2Assignee? Function()? assignee, List<WebhooksIssue2Assignees?>? assignees, AuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhooksIssue2Labels>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhooksIssue2Milestone? Function()? milestone, String? nodeId, int? number, WebhooksIssue2PerformedViaGithubApp? Function()? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, DiscussionReactions? reactions, Uri? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, IssuesUpdateRequestState? Function()? state, String? Function()? stateReason, Uri? Function()? timelineUrl, String? title, IssueType? Function()? type, DateTime? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return NewIssue(
+      json.containsKey('user');}
+NewIssue copyWith({ActiveLockReason? Function()? activeLockReason, Omittable<WebhooksIssue2Assignee?>? assignee, List<WebhooksIssue2Assignees?>? assignees, AuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhooksIssue2Labels>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhooksIssue2Milestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhooksIssue2PerformedViaGithubApp?>? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, DiscussionReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, IssuesUpdateRequestState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, Omittable<IssueType?>? type, DateTime? updatedAt, Uri? url, DiscussionUser? Function()? user, }) {return NewIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
-  assignee: assignee != null ? assignee() : this.assignee,
+  assignee: assignee ?? this.assignee,
   assignees: assignees ?? this.assignees,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,
@@ -197,23 +197,23 @@ NewIssue copyWith({ActiveLockReason? Function()? activeLockReason, WebhooksIssue
   milestone: milestone != null ? milestone() : this.milestone,
   nodeId: nodeId ?? this.nodeId,
   number: number ?? this.number,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   pullRequest: pullRequest != null ? pullRequest() : this.pullRequest,
   reactions: reactions ?? this.reactions,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
-  pinnedComment: pinnedComment != null ? pinnedComment() : this.pinnedComment,
+  pinnedComment: pinnedComment ?? this.pinnedComment,
   subIssuesSummary: subIssuesSummary != null ? subIssuesSummary() : this.subIssuesSummary,
   issueDependenciesSummary: issueDependenciesSummary != null ? issueDependenciesSummary() : this.issueDependenciesSummary,
   issueFieldValues: issueFieldValues != null ? issueFieldValues() : this.issueFieldValues,
   state: state != null ? state() : this.state,
-  stateReason: stateReason != null ? stateReason() : this.stateReason,
+  stateReason: stateReason ?? this.stateReason,
   timelineUrl: timelineUrl != null ? timelineUrl() : this.timelineUrl,
   title: title ?? this.title,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NewIssue &&
           activeLockReason == other.activeLockReason &&
@@ -256,4 +256,4 @@ NewIssue copyWith({ActiveLockReason? Function()? activeLockReason, WebhooksIssue
 
 @override String toString() => 'NewIssue(\n  activeLockReason: $activeLockReason,\n  assignee: $assignee,\n  assignees: $assignees,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  closedAt: $closedAt,\n  comments: $comments,\n  commentsUrl: $commentsUrl,\n  createdAt: $createdAt,\n  draft: $draft,\n  eventsUrl: $eventsUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labels: $labels,\n  labelsUrl: $labelsUrl,\n  locked: $locked,\n  milestone: $milestone,\n  nodeId: $nodeId,\n  number: $number,\n  performedViaGithubApp: $performedViaGithubApp,\n  pullRequest: $pullRequest,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  pinnedComment: $pinnedComment,\n  subIssuesSummary: $subIssuesSummary,\n  issueDependenciesSummary: $issueDependenciesSummary,\n  issueFieldValues: $issueFieldValues,\n  state: $state,\n  stateReason: $stateReason,\n  timelineUrl: $timelineUrl,\n  title: $title,\n  type: $type,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
- }
+}

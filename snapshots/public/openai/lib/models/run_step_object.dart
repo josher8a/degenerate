@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_completion_usage.dart';import 'package:pub_openai/models/run_step_details_message_creation_object.dart';import 'package:pub_openai/models/run_step_details_tool_calls_object.dart';import 'package:pub_openai/models/run_step_object/run_step_object_last_error.dart';import 'package:pub_openai/models/run_step_object/run_step_object_step_details.dart';/// The object type, which is always `thread.run.step`.
 sealed class RunStepObjectObject {const RunStepObjectObject();
 
-factory RunStepObjectObject.fromJson(String json) { return switch (json) {
+factory RunStepObjectObject.fromJson(String json) {return switch (json) {
   'thread.run.step' => threadRunStep,
   _ => RunStepObjectObject$Unknown(json),
-}; }
+};}
 
 static const RunStepObjectObject threadRunStep = RunStepObjectObject$threadRunStep._();
 
 static const List<RunStepObjectObject> values = [threadRunStep];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'thread.run.step' => 'threadRunStep',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunStepObjectObject$Unknown; } 
+bool get isUnknown {return this is RunStepObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() threadRunStep, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() threadRunStep, required W Function(String value) $unknown, }) {return switch (this) {
       RunStepObjectObject$threadRunStep() => threadRunStep(),
       RunStepObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRunStep, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRunStep, W Function(String value)? $unknown, }) {return switch (this) {
       RunStepObjectObject$threadRunStep() => threadRunStep != null ? threadRunStep() : orElse(value),
       RunStepObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunStepObjectObject($value)';
 
- }
+}
 @immutable final class RunStepObjectObject$threadRunStep extends RunStepObjectObject {const RunStepObjectObject$threadRunStep._();
 
 @override String get value => 'thread.run.step';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRu
 
 @override int get hashCode => 'thread.run.step'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectObject$Unknown extends RunStepObjectObject {const RunStepObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The type of run step, which can be either `message_creation` or `tool_calls`.
 sealed class RunStepObjectType {const RunStepObjectType();
 
-factory RunStepObjectType.fromJson(String json) { return switch (json) {
+factory RunStepObjectType.fromJson(String json) {return switch (json) {
   'message_creation' => messageCreation,
   'tool_calls' => toolCalls,
   _ => RunStepObjectType$Unknown(json),
-}; }
+};}
 
 static const RunStepObjectType messageCreation = RunStepObjectType$messageCreation._();
 
@@ -70,30 +70,30 @@ static const RunStepObjectType toolCalls = RunStepObjectType$toolCalls._();
 static const List<RunStepObjectType> values = [messageCreation, toolCalls];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'message_creation' => 'messageCreation',
   'tool_calls' => 'toolCalls',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunStepObjectType$Unknown; } 
+bool get isUnknown {return this is RunStepObjectType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() messageCreation, required W Function() toolCalls, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() messageCreation, required W Function() toolCalls, required W Function(String value) $unknown, }) {return switch (this) {
       RunStepObjectType$messageCreation() => messageCreation(),
       RunStepObjectType$toolCalls() => toolCalls(),
       RunStepObjectType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageCreation, W Function()? toolCalls, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageCreation, W Function()? toolCalls, W Function(String value)? $unknown, }) {return switch (this) {
       RunStepObjectType$messageCreation() => messageCreation != null ? messageCreation() : orElse(value),
       RunStepObjectType$toolCalls() => toolCalls != null ? toolCalls() : orElse(value),
       RunStepObjectType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunStepObjectType($value)';
 
- }
+}
 @immutable final class RunStepObjectType$messageCreation extends RunStepObjectType {const RunStepObjectType$messageCreation._();
 
 @override String get value => 'message_creation';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageC
 
 @override int get hashCode => 'message_creation'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectType$toolCalls extends RunStepObjectType {const RunStepObjectType$toolCalls._();
 
 @override String get value => 'tool_calls';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageC
 
 @override int get hashCode => 'tool_calls'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectType$Unknown extends RunStepObjectType {const RunStepObjectType$Unknown(this.value);
 
 @override final String value;
@@ -121,18 +121,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
 sealed class RunStepObjectStatus {const RunStepObjectStatus();
 
-factory RunStepObjectStatus.fromJson(String json) { return switch (json) {
+factory RunStepObjectStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'cancelled' => cancelled,
   'failed' => failed,
   'completed' => completed,
   'expired' => expired,
   _ => RunStepObjectStatus$Unknown(json),
-}; }
+};}
 
 static const RunStepObjectStatus inProgress = RunStepObjectStatus$inProgress._();
 
@@ -147,39 +147,39 @@ static const RunStepObjectStatus expired = RunStepObjectStatus$expired._();
 static const List<RunStepObjectStatus> values = [inProgress, cancelled, failed, completed, expired];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'cancelled' => 'cancelled',
   'failed' => 'failed',
   'completed' => 'completed',
   'expired' => 'expired',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunStepObjectStatus$Unknown; } 
+bool get isUnknown {return this is RunStepObjectStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() cancelled, required W Function() failed, required W Function() completed, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() cancelled, required W Function() failed, required W Function() completed, required W Function() expired, required W Function(String value) $unknown, }) {return switch (this) {
       RunStepObjectStatus$inProgress() => inProgress(),
       RunStepObjectStatus$cancelled() => cancelled(),
       RunStepObjectStatus$failed() => failed(),
       RunStepObjectStatus$completed() => completed(),
       RunStepObjectStatus$expired() => expired(),
       RunStepObjectStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? cancelled, W Function()? failed, W Function()? completed, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? cancelled, W Function()? failed, W Function()? completed, W Function()? expired, W Function(String value)? $unknown, }) {return switch (this) {
       RunStepObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       RunStepObjectStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
       RunStepObjectStatus$failed() => failed != null ? failed() : orElse(value),
       RunStepObjectStatus$completed() => completed != null ? completed() : orElse(value),
       RunStepObjectStatus$expired() => expired != null ? expired() : orElse(value),
       RunStepObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunStepObjectStatus($value)';
 
- }
+}
 @immutable final class RunStepObjectStatus$inProgress extends RunStepObjectStatus {const RunStepObjectStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -188,7 +188,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectStatus$cancelled extends RunStepObjectStatus {const RunStepObjectStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -197,7 +197,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectStatus$failed extends RunStepObjectStatus {const RunStepObjectStatus$failed._();
 
 @override String get value => 'failed';
@@ -206,7 +206,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectStatus$completed extends RunStepObjectStatus {const RunStepObjectStatus$completed._();
 
 @override String get value => 'completed';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectStatus$expired extends RunStepObjectStatus {const RunStepObjectStatus$expired._();
 
 @override String get value => 'expired';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectStatus$Unknown extends RunStepObjectStatus {const RunStepObjectStatus$Unknown(this.value);
 
 @override final String value;
@@ -234,12 +234,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents a step in execution of a run.
 /// 
 @immutable final class RunStepObject {const RunStepObject({required this.id, required this.object, required this.createdAt, required this.assistantId, required this.threadId, required this.runId, required this.type, required this.status, required this.stepDetails, required this.lastError, required this.expiredAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.metadata, required this.usage, });
 
-factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject(
+factory RunStepObject.fromJson(Map<String, dynamic> json) {return RunStepObject(
   id: json['id'] as String,
   object: RunStepObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -259,8 +259,8 @@ factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject
   failedAt: json['failed_at'] != null ? (json['failed_at'] as num).toInt() : null,
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  usage: RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
-); }
+  usage: json['usage'] != null ? RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
+);}
 
 /// The identifier of the run step, which can be referenced in API endpoints.
 final String id;
@@ -313,9 +313,9 @@ final int? completedAt;
 /// 
 final Map<String,String>? metadata;
 
-final RunStepCompletionUsage usage;
+final RunStepCompletionUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -331,9 +331,9 @@ Map<String, dynamic> toJson() { return {
   'failed_at': failedAt,
   'completed_at': completedAt,
   'metadata': metadata,
-  'usage': usage.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+  'usage': usage?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('assistant_id') && json['assistant_id'] is String &&
@@ -343,13 +343,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('step_details') &&
       json.containsKey('last_error') &&
-      json.containsKey('expired_at') && json['expired_at'] is num &&
-      json.containsKey('cancelled_at') && json['cancelled_at'] is num &&
-      json.containsKey('failed_at') && json['failed_at'] is num &&
-      json.containsKey('completed_at') && json['completed_at'] is num &&
+      json.containsKey('expired_at') && (json['expired_at'] == null || json['expired_at'] is num) &&
+      json.containsKey('cancelled_at') && (json['cancelled_at'] == null || json['cancelled_at'] is num) &&
+      json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is num) &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
       json.containsKey('metadata') &&
-      json.containsKey('usage'); } 
-RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? usage, }) { return RunStepObject(
+      json.containsKey('usage');}
+RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? Function()? usage, }) {return RunStepObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -365,8 +365,8 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
   failedAt: failedAt != null ? failedAt() : this.failedAt,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   metadata: metadata != null ? metadata() : this.metadata,
-  usage: usage ?? this.usage,
-); } 
+  usage: usage != null ? usage() : this.usage,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepObject &&
           id == other.id &&
@@ -390,4 +390,4 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
 
 @override String toString() => 'RunStepObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  assistantId: $assistantId,\n  threadId: $threadId,\n  runId: $runId,\n  type: $type,\n  status: $status,\n  stepDetails: $stepDetails,\n  lastError: $lastError,\n  expiredAt: $expiredAt,\n  cancelledAt: $cancelledAt,\n  failedAt: $failedAt,\n  completedAt: $completedAt,\n  metadata: $metadata,\n  usage: $usage,\n)';
 
- }
+}

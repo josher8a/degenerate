@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration/firewall_cidr_configuration_target.dart';@immutable final class FirewallSchemasCidrConfiguration {const FirewallSchemasCidrConfiguration({this.target, this.value, });
 
-factory FirewallSchemasCidrConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasCidrConfiguration(
+factory FirewallSchemasCidrConfiguration.fromJson(Map<String, dynamic> json) {return FirewallSchemasCidrConfiguration(
   target: json['target'] != null ? FirewallCidrConfigurationTarget.fromJson(json['target'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the Zone Lockdown rule.
 /// 
@@ -18,15 +18,15 @@ final FirewallCidrConfigurationTarget? target;
 /// Example: `'198.51.100.4/16'`
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (target != null) 'target': target?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallSchemasCidrConfiguration copyWith({FirewallCidrConfigurationTarget? Function()? target, String? Function()? value, }) { return FirewallSchemasCidrConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'target', 'value'}.contains(key));}
+FirewallSchemasCidrConfiguration copyWith({FirewallCidrConfigurationTarget? Function()? target, String? Function()? value, }) {return FirewallSchemasCidrConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallSchemasCidrConfiguration &&
           target == other.target &&
@@ -36,4 +36,4 @@ FirewallSchemasCidrConfiguration copyWith({FirewallCidrConfigurationTarget? Func
 
 @override String toString() => 'FirewallSchemasCidrConfiguration(target: $target, value: $value)';
 
- }
+}

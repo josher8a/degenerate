@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Level of validation to be used for this hostname. Domain validation (dv) must be used.
 sealed class DvType {const DvType();
 
-factory DvType.fromJson(String json) { return switch (json) {
+factory DvType.fromJson(String json) {return switch (json) {
   'dv' => dv,
   _ => DvType$Unknown(json),
-}; }
+};}
 
 static const DvType dv = DvType$dv._();
 
 static const List<DvType> values = [dv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'dv' => 'dv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DvType$Unknown; } 
+bool get isUnknown {return this is DvType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dv, required W Function(String value) $unknown, }) {return switch (this) {
       DvType$dv() => dv(),
       DvType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dv, W Function(String value)? $unknown, }) {return switch (this) {
       DvType$dv() => dv != null ? dv() : orElse(value),
       DvType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DvType($value)';
 
- }
+}
 @immutable final class DvType$dv extends DvType {const DvType$dv._();
 
 @override String get value => 'dv';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dv, W Fu
 
 @override int get hashCode => 'dv'.hashCode;
 
- }
+}
 @immutable final class DvType$Unknown extends DvType {const DvType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dv, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

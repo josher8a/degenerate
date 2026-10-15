@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveInternetOrigin {const HyperdriveInternetOrigin({required this.host, required this.port, });
 
-factory HyperdriveInternetOrigin.fromJson(Map<String, dynamic> json) { return HyperdriveInternetOrigin(
+factory HyperdriveInternetOrigin.fromJson(Map<String, dynamic> json) {return HyperdriveInternetOrigin(
   host: json['host'] as String,
   port: (json['port'] as num).toInt(),
-); }
+);}
 
 /// Defines the host (hostname or IP) of your origin database.
 /// 
@@ -18,16 +18,16 @@ final String host;
 /// Example: `5432`
 final int port;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
   'port': port,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
-      json.containsKey('port') && json['port'] is num; } 
-HyperdriveInternetOrigin copyWith({String? host, int? port, }) { return HyperdriveInternetOrigin(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String &&
+      json.containsKey('port') && json['port'] is num;}
+HyperdriveInternetOrigin copyWith({String? host, int? port, }) {return HyperdriveInternetOrigin(
   host: host ?? this.host,
   port: port ?? this.port,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveInternetOrigin &&
           host == other.host &&
@@ -37,4 +37,4 @@ HyperdriveInternetOrigin copyWith({String? host, int? port, }) { return Hyperdri
 
 @override String toString() => 'HyperdriveInternetOrigin(host: $host, port: $port)';
 
- }
+}

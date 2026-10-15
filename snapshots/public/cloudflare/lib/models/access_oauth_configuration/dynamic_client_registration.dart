@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for OAuth dynamic client registration.
 @immutable final class DynamicClientRegistration {const DynamicClientRegistration({this.allowAnyOnLocalhost, this.allowAnyOnLoopback, this.allowedUris, this.enabled, });
 
-factory DynamicClientRegistration.fromJson(Map<String, dynamic> json) { return DynamicClientRegistration(
+factory DynamicClientRegistration.fromJson(Map<String, dynamic> json) {return DynamicClientRegistration(
   allowAnyOnLocalhost: json['allow_any_on_localhost'] as bool?,
   allowAnyOnLoopback: json['allow_any_on_loopback'] as bool?,
   allowedUris: (json['allowed_uris'] as List<dynamic>?)?.map((e) => e as String).toList(),
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 /// Allows any client with redirect URIs on localhost.
 final bool? allowAnyOnLocalhost;
@@ -26,19 +26,19 @@ final List<String>? allowedUris;
 /// Whether dynamic client registration is enabled.
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allow_any_on_localhost': ?allowAnyOnLocalhost,
   'allow_any_on_loopback': ?allowAnyOnLoopback,
   'allowed_uris': ?allowedUris,
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_any_on_localhost', 'allow_any_on_loopback', 'allowed_uris', 'enabled'}.contains(key)); } 
-DynamicClientRegistration copyWith({bool? Function()? allowAnyOnLocalhost, bool? Function()? allowAnyOnLoopback, List<String>? Function()? allowedUris, bool? Function()? enabled, }) { return DynamicClientRegistration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_any_on_localhost', 'allow_any_on_loopback', 'allowed_uris', 'enabled'}.contains(key));}
+DynamicClientRegistration copyWith({bool? Function()? allowAnyOnLocalhost, bool? Function()? allowAnyOnLoopback, List<String>? Function()? allowedUris, bool? Function()? enabled, }) {return DynamicClientRegistration(
   allowAnyOnLocalhost: allowAnyOnLocalhost != null ? allowAnyOnLocalhost() : this.allowAnyOnLocalhost,
   allowAnyOnLoopback: allowAnyOnLoopback != null ? allowAnyOnLoopback() : this.allowAnyOnLoopback,
   allowedUris: allowedUris != null ? allowedUris() : this.allowedUris,
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DynamicClientRegistration &&
           allowAnyOnLocalhost == other.allowAnyOnLocalhost &&
@@ -50,4 +50,4 @@ DynamicClientRegistration copyWith({bool? Function()? allowAnyOnLocalhost, bool?
 
 @override String toString() => 'DynamicClientRegistration(allowAnyOnLocalhost: $allowAnyOnLocalhost, allowAnyOnLoopback: $allowAnyOnLoopback, allowedUris: $allowedUris, enabled: $enabled)';
 
- }
+}

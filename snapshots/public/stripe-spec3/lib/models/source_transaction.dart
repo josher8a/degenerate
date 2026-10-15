@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/source_transaction_ach_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_chf_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_gbp_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_paper_check_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_sepa_credit_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class SourceTransactionObject {const SourceTransactionObject();
 
-factory SourceTransactionObject.fromJson(String json) { return switch (json) {
+factory SourceTransactionObject.fromJson(String json) {return switch (json) {
   'source_transaction' => sourceTransaction,
   _ => SourceTransactionObject$Unknown(json),
-}; }
+};}
 
 static const SourceTransactionObject sourceTransaction = SourceTransactionObject$sourceTransaction._();
 
 static const List<SourceTransactionObject> values = [sourceTransaction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'source_transaction' => 'sourceTransaction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceTransactionObject$Unknown; } 
+bool get isUnknown {return this is SourceTransactionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() sourceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() sourceTransaction, required W Function(String value) $unknown, }) {return switch (this) {
       SourceTransactionObject$sourceTransaction() => sourceTransaction(),
       SourceTransactionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceTransaction, W Function(String value)? $unknown, }) {return switch (this) {
       SourceTransactionObject$sourceTransaction() => sourceTransaction != null ? sourceTransaction() : orElse(value),
       SourceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceTransactionObject($value)';
 
- }
+}
 @immutable final class SourceTransactionObject$sourceTransaction extends SourceTransactionObject {const SourceTransactionObject$sourceTransaction._();
 
 @override String get value => 'source_transaction';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceTr
 
 @override int get hashCode => 'source_transaction'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionObject$Unknown extends SourceTransactionObject {const SourceTransactionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceTr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The type of source this transaction is attached to.
 sealed class SourceTransactionType {const SourceTransactionType();
 
-factory SourceTransactionType.fromJson(String json) { return switch (json) {
+factory SourceTransactionType.fromJson(String json) {return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'alipay' => alipay,
@@ -75,7 +75,7 @@ factory SourceTransactionType.fromJson(String json) { return switch (json) {
   'three_d_secure' => threeDSecure,
   'wechat' => wechat,
   _ => SourceTransactionType$Unknown(json),
-}; }
+};}
 
 static const SourceTransactionType achCreditTransfer = SourceTransactionType$achCreditTransfer._();
 
@@ -112,9 +112,9 @@ static const SourceTransactionType wechat = SourceTransactionType$wechat._();
 static const List<SourceTransactionType> values = [achCreditTransfer, achDebit, alipay, bancontact, card, cardPresent, eps, giropay, ideal, klarna, multibanco, p24, sepaDebit, sofort, threeDSecure, wechat];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach_credit_transfer' => 'achCreditTransfer',
   'ach_debit' => 'achDebit',
   'alipay' => 'alipay',
@@ -132,11 +132,11 @@ String get name { return switch (value) {
   'three_d_secure' => 'threeDSecure',
   'wechat' => 'wechat',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceTransactionType$Unknown; } 
+bool get isUnknown {return this is SourceTransactionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() achCreditTransfer, required W Function() achDebit, required W Function() alipay, required W Function() bancontact, required W Function() card, required W Function() cardPresent, required W Function() eps, required W Function() giropay, required W Function() ideal, required W Function() klarna, required W Function() multibanco, required W Function() p24, required W Function() sepaDebit, required W Function() sofort, required W Function() threeDSecure, required W Function() wechat, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() achCreditTransfer, required W Function() achDebit, required W Function() alipay, required W Function() bancontact, required W Function() card, required W Function() cardPresent, required W Function() eps, required W Function() giropay, required W Function() ideal, required W Function() klarna, required W Function() multibanco, required W Function() p24, required W Function() sepaDebit, required W Function() sofort, required W Function() threeDSecure, required W Function() wechat, required W Function(String value) $unknown, }) {return switch (this) {
       SourceTransactionType$achCreditTransfer() => achCreditTransfer(),
       SourceTransactionType$achDebit() => achDebit(),
       SourceTransactionType$alipay() => alipay(),
@@ -154,9 +154,9 @@ W when<W>({required W Function() achCreditTransfer, required W Function() achDeb
       SourceTransactionType$threeDSecure() => threeDSecure(),
       SourceTransactionType$wechat() => wechat(),
       SourceTransactionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCreditTransfer, W Function()? achDebit, W Function()? alipay, W Function()? bancontact, W Function()? card, W Function()? cardPresent, W Function()? eps, W Function()? giropay, W Function()? ideal, W Function()? klarna, W Function()? multibanco, W Function()? p24, W Function()? sepaDebit, W Function()? sofort, W Function()? threeDSecure, W Function()? wechat, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCreditTransfer, W Function()? achDebit, W Function()? alipay, W Function()? bancontact, W Function()? card, W Function()? cardPresent, W Function()? eps, W Function()? giropay, W Function()? ideal, W Function()? klarna, W Function()? multibanco, W Function()? p24, W Function()? sepaDebit, W Function()? sofort, W Function()? threeDSecure, W Function()? wechat, W Function(String value)? $unknown, }) {return switch (this) {
       SourceTransactionType$achCreditTransfer() => achCreditTransfer != null ? achCreditTransfer() : orElse(value),
       SourceTransactionType$achDebit() => achDebit != null ? achDebit() : orElse(value),
       SourceTransactionType$alipay() => alipay != null ? alipay() : orElse(value),
@@ -174,10 +174,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
       SourceTransactionType$threeDSecure() => threeDSecure != null ? threeDSecure() : orElse(value),
       SourceTransactionType$wechat() => wechat != null ? wechat() : orElse(value),
       SourceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceTransactionType($value)';
 
- }
+}
 @immutable final class SourceTransactionType$achCreditTransfer extends SourceTransactionType {const SourceTransactionType$achCreditTransfer._();
 
 @override String get value => 'ach_credit_transfer';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'ach_credit_transfer'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$achDebit extends SourceTransactionType {const SourceTransactionType$achDebit._();
 
 @override String get value => 'ach_debit';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'ach_debit'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$alipay extends SourceTransactionType {const SourceTransactionType$alipay._();
 
 @override String get value => 'alipay';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$bancontact extends SourceTransactionType {const SourceTransactionType$bancontact._();
 
 @override String get value => 'bancontact';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$card extends SourceTransactionType {const SourceTransactionType$card._();
 
 @override String get value => 'card';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$cardPresent extends SourceTransactionType {const SourceTransactionType$cardPresent._();
 
 @override String get value => 'card_present';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'card_present'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$eps extends SourceTransactionType {const SourceTransactionType$eps._();
 
 @override String get value => 'eps';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$giropay extends SourceTransactionType {const SourceTransactionType$giropay._();
 
 @override String get value => 'giropay';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$ideal extends SourceTransactionType {const SourceTransactionType$ideal._();
 
 @override String get value => 'ideal';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$klarna extends SourceTransactionType {const SourceTransactionType$klarna._();
 
 @override String get value => 'klarna';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$multibanco extends SourceTransactionType {const SourceTransactionType$multibanco._();
 
 @override String get value => 'multibanco';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$p24 extends SourceTransactionType {const SourceTransactionType$p24._();
 
 @override String get value => 'p24';
@@ -285,7 +285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$sepaDebit extends SourceTransactionType {const SourceTransactionType$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -294,7 +294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$sofort extends SourceTransactionType {const SourceTransactionType$sofort._();
 
 @override String get value => 'sofort';
@@ -303,7 +303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$threeDSecure extends SourceTransactionType {const SourceTransactionType$threeDSecure._();
 
 @override String get value => 'three_d_secure';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'three_d_secure'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$wechat extends SourceTransactionType {const SourceTransactionType$wechat._();
 
 @override String get value => 'wechat';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'wechat'.hashCode;
 
- }
+}
 @immutable final class SourceTransactionType$Unknown extends SourceTransactionType {const SourceTransactionType$Unknown(this.value);
 
 @override final String value;
@@ -331,14 +331,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Some payment methods have no required amount that a customer must send.
 /// Customers can be instructed to send any amount, and it can be made up of
 /// multiple transactions. As such, sources can have multiple associated
 /// transactions.
 @immutable final class SourceTransaction {const SourceTransaction({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.source, required this.status, required this.type, this.achCreditTransfer, this.chfCreditTransfer, this.gbpCreditTransfer, this.paperCheck, this.sepaCreditTransfer, });
 
-factory SourceTransaction.fromJson(Map<String, dynamic> json) { return SourceTransaction(
+factory SourceTransaction.fromJson(Map<String, dynamic> json) {return SourceTransaction(
   achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTransactionAchCreditTransferData.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,
   amount: (json['amount'] as num).toInt(),
   chfCreditTransfer: json['chf_credit_transfer'] != null ? SourceTransactionChfCreditTransferData.fromJson(json['chf_credit_transfer'] as Map<String, dynamic>) : null,
@@ -353,7 +353,7 @@ factory SourceTransaction.fromJson(Map<String, dynamic> json) { return SourceTra
   source: json['source'] as String,
   status: json['status'] as String,
   type: SourceTransactionType.fromJson(json['type'] as String),
-); }
+);}
 
 final SourceTransactionAchCreditTransferData? achCreditTransfer;
 
@@ -392,7 +392,7 @@ final String status;
 /// The type of source this transaction is attached to.
 final SourceTransactionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (achCreditTransfer != null) 'ach_credit_transfer': achCreditTransfer?.toJson(),
   'amount': amount,
   if (chfCreditTransfer != null) 'chf_credit_transfer': chfCreditTransfer?.toJson(),
@@ -407,8 +407,8 @@ Map<String, dynamic> toJson() { return {
   'source': source,
   'status': status,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -416,14 +416,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (source.runes.length > 5000) { errors.add('source: length must be <= 5000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
-return errors; } 
-SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData? Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData? Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData? Function()? paperCheck, SourceTransactionSepaCreditTransferData? Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) { return SourceTransaction(
+return errors;}
+SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData? Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData? Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData? Function()? paperCheck, SourceTransactionSepaCreditTransferData? Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) {return SourceTransaction(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   amount: amount ?? this.amount,
   chfCreditTransfer: chfCreditTransfer != null ? chfCreditTransfer() : this.chfCreditTransfer,
@@ -438,7 +438,7 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
   source: source ?? this.source,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransaction &&
           achCreditTransfer == other.achCreditTransfer &&
@@ -460,4 +460,4 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
 
 @override String toString() => 'SourceTransaction(\n  achCreditTransfer: $achCreditTransfer,\n  amount: $amount,\n  chfCreditTransfer: $chfCreditTransfer,\n  created: $created,\n  currency: $currency,\n  gbpCreditTransfer: $gbpCreditTransfer,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  paperCheck: $paperCheck,\n  sepaCreditTransfer: $sepaCreditTransfer,\n  source: $source,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

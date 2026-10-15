@@ -38,7 +38,7 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesDeviceDexTestSchemasHttp {const TeamsDevicesDeviceDexTestSchemasHttp({required this.data, required this.enabled, required this.interval, required this.name, this.description, this.targetPolicies, this.targeted, this.testId, });
 
-factory TeamsDevicesDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasHttp(
+factory TeamsDevicesDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json) {return TeamsDevicesDeviceDexTestSchemasHttp(
   data: TeamsDevicesDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),
   description: json['description'] != null ? TeamsDevicesDeviceDexTestSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: TeamsDevicesDeviceDexTestSchemasEnabled.fromJson(json['enabled'] as bool),
@@ -47,7 +47,7 @@ factory TeamsDevicesDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json)
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => TeamsDevicesDexTargetPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
   testId: json['test_id'] != null ? TeamsDevicesSchemasTestId.fromJson(json['test_id'] as String) : null,
-); }
+);}
 
 final TeamsDevicesDeviceDexTestSchemasData data;
 
@@ -67,7 +67,7 @@ final bool? targeted;
 
 final TeamsDevicesSchemasTestId? testId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.toJson(),
   if (description != null) 'description': description?.toJson(),
   'enabled': enabled.toJson(),
@@ -76,12 +76,12 @@ Map<String, dynamic> toJson() { return {
   if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,
   if (testId != null) 'test_id': testId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('enabled') &&
       json.containsKey('interval') &&
-      json.containsKey('name'); } 
-TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasData? data, TeamsDevicesDeviceDexTestSchemasDescription? Function()? description, TeamsDevicesDeviceDexTestSchemasEnabled? enabled, TeamsDevicesDeviceDexTestSchemasInterval? interval, TeamsDevicesDeviceDexTestSchemasName? name, List<TeamsDevicesDexTargetPolicy>? Function()? targetPolicies, bool? Function()? targeted, TeamsDevicesSchemasTestId? Function()? testId, }) { return TeamsDevicesDeviceDexTestSchemasHttp(
+      json.containsKey('name');}
+TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasData? data, TeamsDevicesDeviceDexTestSchemasDescription? Function()? description, TeamsDevicesDeviceDexTestSchemasEnabled? enabled, TeamsDevicesDeviceDexTestSchemasInterval? interval, TeamsDevicesDeviceDexTestSchemasName? name, List<TeamsDevicesDexTargetPolicy>? Function()? targetPolicies, bool? Function()? targeted, TeamsDevicesSchemasTestId? Function()? testId, }) {return TeamsDevicesDeviceDexTestSchemasHttp(
   data: data ?? this.data,
   description: description != null ? description() : this.description,
   enabled: enabled ?? this.enabled,
@@ -90,7 +90,7 @@ TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasD
   targetPolicies: targetPolicies != null ? targetPolicies() : this.targetPolicies,
   targeted: targeted != null ? targeted() : this.targeted,
   testId: testId != null ? testId() : this.testId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDeviceDexTestSchemasHttp &&
           data == other.data &&
@@ -106,4 +106,4 @@ TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasD
 
 @override String toString() => 'TeamsDevicesDeviceDexTestSchemasHttp(data: $data, description: $description, enabled: $enabled, interval: $interval, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, testId: $testId)';
 
- }
+}

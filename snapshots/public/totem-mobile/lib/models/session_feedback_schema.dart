@@ -119,21 +119,29 @@ final class SessionFeedbackOptions$Unknown extends SessionFeedbackOptions {
 
 @immutable
 final class SessionFeedbackSchema {
-  const SessionFeedbackSchema({required this.feedback, this.message});
+  const SessionFeedbackSchema({
+    required this.feedback,
+    this.message = const Omittable.absent(),
+  });
 
   factory SessionFeedbackSchema.fromJson(Map<String, dynamic> json) {
     return SessionFeedbackSchema(
       feedback: SessionFeedbackOptions.fromJson(json['feedback'] as String),
-      message: json['message'] as String?,
+      message: json.containsKey('message')
+          ? Omittable(json['message'] as String?)
+          : const Omittable.absent(),
     );
   }
 
   final SessionFeedbackOptions feedback;
 
-  final String? message;
+  final Omittable<String?> message;
 
   Map<String, dynamic> toJson() {
-    return {'feedback': feedback.toJson(), 'message': ?message};
+    return {
+      'feedback': feedback.toJson(),
+      if (message.isPresent) 'message': message.value,
+    };
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -142,11 +150,11 @@ final class SessionFeedbackSchema {
 
   SessionFeedbackSchema copyWith({
     SessionFeedbackOptions? feedback,
-    String? Function()? message,
+    Omittable<String?>? message,
   }) {
     return SessionFeedbackSchema(
       feedback: feedback ?? this.feedback,
-      message: message != null ? message() : this.message,
+      message: message ?? this.message,
     );
   }
 

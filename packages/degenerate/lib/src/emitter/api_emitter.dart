@@ -3,6 +3,7 @@ import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/success_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Shared request context for an operation: partitioned parameters, optional
@@ -13,7 +14,7 @@ typedef _RequestContext = ({
   List<IrParameter> queryParams,
   List<IrParameter> headerParams,
   List<IrParameter> cookieParams,
-  (String, IrMediaType)? requestBodyContent,
+  (SpecString, IrMediaType)? requestBodyContent,
   IrType? bodyType,
 });
 
@@ -28,6 +29,7 @@ final class ApiEmitter {
     this.ctx = EmitContext.empty,
     this.unwrapFields = const [],
     this.errorUnionMap = const {},
+    this.successUnionMap = const {},
   });
 
   /// The API group to emit.
@@ -41,6 +43,10 @@ final class ApiEmitter {
 
   /// Per-operation error union info (operationId -> ErrorUnionInfo).
   final Map<String, ErrorUnionInfo> errorUnionMap;
+
+  /// Per-operation success unions (operationId -> SuccessUnionInfo), for
+  /// operations whose success statuses carry differently typed bodies.
+  final Map<String, SuccessUnionInfo> successUnionMap;
 
   /// Emit the API client class as code_builder specs.
   List<Spec> emit() {
@@ -93,30 +99,30 @@ final class ApiEmitter {
       final successResponseContent = _successResponseContent(op);
       final errorResponseContent = _errorResponseContent(op);
 
-      void warnUnsupported(String role, (String, IrMediaType) content) {
+      void warnUnsupported(String role, (SpecString, IrMediaType) content) {
         warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON $role media type ${content.$1} with type ${irTypeName(content.$2.schema)}.',
+          'Operation ${op.operationId} uses unsupported non-JSON $role media type ${content.$1.forDiagnostics} with type ${irTypeName(content.$2.schema)}.',
         );
       }
 
       if (requestBodyContent != null &&
-          !isJsonLikeMediaType(requestBodyContent.$1) &&
-          !(isMultipartMediaType(requestBodyContent.$1) &&
+          !requestBodyContent.$1.test(isJsonLikeMediaType) &&
+          !(requestBodyContent.$1.test(isMultipartMediaType) &&
               _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
-          !(isFormUrlencodedMediaType(requestBodyContent.$1) &&
+          !(requestBodyContent.$1.test(isFormUrlencodedMediaType) &&
               _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
           !_supportsNonJsonEncode(requestBodyContent.$2.schema)) {
         warnUnsupported('request body', requestBodyContent);
       }
 
       if (successResponseContent != null &&
-          !isJsonLikeMediaType(successResponseContent.$1) &&
+          !successResponseContent.$1.test(isJsonLikeMediaType) &&
           !_supportsNonJsonDecode(successResponseContent.$2.schema)) {
         warnUnsupported('success response', successResponseContent);
       }
 
       if (errorResponseContent != null &&
-          !isJsonLikeMediaType(errorResponseContent.$1) &&
+          !errorResponseContent.$1.test(isJsonLikeMediaType) &&
           !_supportsNonJsonDecode(errorResponseContent.$2.schema)) {
         warnUnsupported('error response', errorResponseContent);
       }
@@ -257,24 +263,21 @@ final class ApiEmitter {
     // containing $/'/\ and break the lookup), then escape only the literal
     // spec-controlled segments around the `${...}` substitutions.
     final pathParamsByName = {for (final p in pathParams) p.name: p};
-    final path = op.path.splitMapJoin(
-      _pathParamPattern,
-      onMatch: (m) {
-        final p = pathParamsByName[m[1]];
-        if (p == null) return escapeDartString(m[0]!);
-        return '\${${_pathSegmentEncodeExpr(p)}}';
-      },
-      onNonMatch: escapeDartString,
-    );
+    final path = op.path.interpolatedLiteral(_pathParamPattern, (m) {
+      final p = pathParamsByName[SpecString(m[1]!)];
+      if (p == null) return escapeDartString(m[0]!);
+      return '\${${_pathSegmentEncodeExpr(p)}}';
+    });
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
     final multipartFields =
-        bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
+        bodyType != null && requestBodyContent!.$1.test(isMultipartMediaType)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
     final formUrlencodedFields =
-        bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
+        bodyType != null &&
+            requestBodyContent!.$1.test(isFormUrlencodedMediaType)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
@@ -319,20 +322,18 @@ final class ApiEmitter {
     if (requestBodyContent case (
       final mediaType,
       _,
-    ) when !isMultipartMediaType(mediaType)) {
-      final contentType = normalizeMediaType(mediaType) == '*/*'
-          ? 'application/json'
-          : mediaType;
-      buf.writeln(
-        "headers['Content-Type'] = ${dartStringLiteral(contentType)};",
-      );
+    ) when !mediaType.test(isMultipartMediaType)) {
+      final contentType = mediaType.test((m) => normalizeMediaType(m) == '*/*')
+          ? "'application/json'"
+          : mediaType.literal;
+      buf.writeln("headers['Content-Type'] = $contentType;");
     }
     _writeStringMapEntries(buf, headerParams, 'headers');
     buf.writeln();
 
     buf.writeln('final request = ApiRequest(');
-    buf.writeln("  method: '$httpMethod',");
-    buf.writeln("  path: '$path',");
+    buf.writeln('  method: ${httpMethod.literal},');
+    buf.writeln('  path: $path,');
     buf.writeln('  headers: headers,');
     if (queryParams.isNotEmpty) {
       buf.writeln('  queryParameters: queryParameters,');
@@ -386,14 +387,29 @@ final class ApiEmitter {
     final errorResponseContent = errorUnion == null
         ? _errorResponseContent(op)
         : null;
+    // A nullable body (`type: [T, 'null']`, or an optional unwrapped field)
+    // can legitimately be null on the wire, so the result type says so.
     final needsNullableSuffix =
-        unwrapResult.unwrappedField != null &&
         returnType != null &&
         returnType.isNullable &&
         !(returnType is IrPrimitive &&
             returnType.kind == PrimitiveKind.dynamic_);
-    final returnTypeStr = returnType != null
-        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
+    final shape = successShapeOf(op);
+    final successUnion = successUnionMap[op.operationId];
+    // A declared bodiless success status (a 204 next to a 200) yields null.
+    final emptyStatuses = switch (shape) {
+      SuccessSingle(:final emptyStatuses) => emptyStatuses,
+      _ => const <int>{},
+    };
+    final nullableResult = needsNullableSuffix ||
+        (emptyStatuses.isNotEmpty &&
+            returnType != null &&
+            !(returnType is IrPrimitive &&
+                returnType.kind == PrimitiveKind.dynamic_));
+    final returnTypeStr = successUnion != null
+        ? successUnion.className
+        : returnType != null
+        ? '${irTypeName(returnType)}${nullableResult ? '?' : ''}'
         : 'void';
     final String errorTypeStr;
     if (errorUnion != null) {
@@ -420,21 +436,23 @@ final class ApiEmitter {
       successResponseContent: successResponseContent,
       errorResponseContent: errorResponseContent,
       errorUnion: errorUnion,
+      successUnion: successUnion,
+      emptyStatuses: emptyStatuses,
       unwrappedField: unwrapResult.unwrappedField,
       unwrappedFieldIsOptional: unwrappedFieldIsOptional,
     );
 
     final docs = <String>[];
     if (op.summary != null) {
-      docs.addAll(formatDocComment(op.summary!));
+      docs.addAll(op.summary!.docComment);
     }
     if (op.description != null && op.description != op.summary) {
       if (docs.isNotEmpty) docs.add('///');
-      docs.addAll(formatDocComment(op.description!));
+      docs.addAll(op.description!.docComment);
     }
     final httpMethod = _httpMethodString(op);
     if (docs.isNotEmpty) docs.add('///');
-    docs.addAll(formatDocComment('`$httpMethod ${op.path}`'));
+    docs.add('/// `${httpMethod.commentText} ${op.path.commentText}`');
 
     return Method(
       (m) => m
@@ -460,9 +478,11 @@ final class ApiEmitter {
     IrOperation op,
     IrType? returnType,
     _RequestContext reqCtx, {
-    (String, IrMediaType)? successResponseContent,
-    (String, IrMediaType)? errorResponseContent,
+    (SpecString, IrMediaType)? successResponseContent,
+    (SpecString, IrMediaType)? errorResponseContent,
     ErrorUnionInfo? errorUnion,
+    SuccessUnionInfo? successUnion,
+    Set<int> emptyStatuses = const {},
     String? unwrappedField,
     bool unwrappedFieldIsOptional = false,
   }) {
@@ -472,10 +492,22 @@ final class ApiEmitter {
     }
 
     // Build onSuccess callback
-    if (returnType != null) {
-      buf.writeln('return execute(');
+    if (successUnion != null) {
+      buf.writeln('return await execute(');
+      buf.writeln('  request,');
+      buf.writeln('  onSuccess: ${successUnion.className}.fromResponse,');
+    } else if (returnType != null) {
+      buf.writeln('return await execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
+      if (emptyStatuses.isNotEmpty) {
+        final statuses = (emptyStatuses.toList()..sort()).join(', ');
+        final test = emptyStatuses.length == 1
+            ? 'response.statusCode == $statuses'
+            : 'const {$statuses}.contains(response.statusCode)';
+        // Declared without a body: nothing to decode.
+        buf.writeln('    if ($test) return null;');
+      }
       if (unwrappedField != null) {
         // Unwrap: parse full JSON, extract the field, deserialize it.
         buf.writeln(
@@ -493,7 +525,7 @@ final class ApiEmitter {
       }
       buf.writeln('  },');
     } else {
-      buf.writeln('return execute(');
+      buf.writeln('return await execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }
@@ -536,35 +568,32 @@ final class ApiEmitter {
         }
         return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
       }(),
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-        PrimitiveKind.bytes =>
-          'return ${ctx.fromJson(type, 'jsonDecode(response.body)')};',
-        _ => 'return jsonDecode(response.body);',
-      },
+      // A JSON body is JSON even for a scalar schema: a string arrives quoted
+      // (`"hello"`), a number may be spelled `1.0`, and a nullable body may be
+      // `null` — so decode it, then convert like any JSON value.
+      IrPrimitive() =>
+        'return ${ctx.fromJson(type, 'jsonDecode(response.body)', isOptional: type.isNullable)};',
       _ => null,
     };
   }
 
-  String _buildDeserializeExpr(String mediaType, IrType returnType) {
-    if (isJsonLikeMediaType(mediaType)) {
+  String _buildDeserializeExpr(SpecString mediaType, IrType returnType) {
+    if (mediaType.test(isJsonLikeMediaType)) {
       return _sharedJsonDeserialize(returnType) ??
-          'return ${ctx.fromJson(returnType, 'jsonDecode(response.body)')};';
+          'return ${ctx.fromJson(returnType, 'jsonDecode(response.body)', isOptional: returnType.isNullable)};';
     }
 
-    final unsupportedMessage =
-        'Cannot decode $mediaType response into ${irTypeName(returnType)}';
+    final unsupportedMessage = mediaType.rebuild(
+      (m) => 'Cannot decode $m response into ${irTypeName(returnType)}',
+    );
     final primitive = _nonJsonPrimitiveDeserialize(returnType);
     if (primitive != null) return primitive;
     return switch (returnType) {
       IrExtensionType() =>
         'return ${ctx.fromJson(returnType, 'response.body')};',
       _ =>
-        '// TODO: Unsupported non-JSON response schema ${sanitizeCommentText(unsupportedMessage)}\n'
-            'throw UnsupportedError(${dartStringLiteral(unsupportedMessage)});',
+        '// TODO: Unsupported non-JSON response schema ${unsupportedMessage.commentText}\n'
+            'throw UnsupportedError(${unsupportedMessage.literal});',
     };
   }
 
@@ -712,24 +741,18 @@ final class ApiEmitter {
     bool explode,
   ) {
     final name = _sanitizeParameterName(p.name);
-    // A field is nullable in the generated model when it's optional OR its
-    // type is nullable (required-but-nullable) — mirror that here or the
-    // typed conversions dereference a nullable and don't compile.
-    bool fieldNullable(IrField f) => !f.isRequired || f.type.isNullable;
     if (style == 'deepObject') {
       for (final field in fields) {
-        final key = '$name[${escapeDartString(field.originalName)}]';
-        if (fieldNullable(field)) {
+        final key = '$name[${field.originalName.escaped}]';
+        final fieldAccessor = _objectFieldAccessor(field, accessor);
+        if (_objectFieldIsNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
+            "if ($fieldAccessor case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
           );
         } else {
-          final valueExpr = _queryScalarExpr(
-            field.type,
-            '$accessor.${field.name}',
-          );
+          final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
           buf.writeln("queryParameters['$key'] = $valueExpr;");
         }
       }
@@ -738,18 +761,16 @@ final class ApiEmitter {
 
     if (style == 'form' && explode) {
       for (final field in fields) {
-        final fieldNameLiteral = dartStringLiteral(field.originalName);
-        if (fieldNullable(field)) {
+        final fieldNameLiteral = field.originalName.literal;
+        final fieldAccessor = _objectFieldAccessor(field, accessor);
+        if (_objectFieldIsNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
+            "if ($fieldAccessor case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
           );
         } else {
-          final valueExpr = _queryScalarExpr(
-            field.type,
-            '$accessor.${field.name}',
-          );
+          final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
           buf.writeln(
             "queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
           );
@@ -760,18 +781,21 @@ final class ApiEmitter {
 
     final parts = <String>[];
     for (final field in fields) {
-      final nullable = fieldNullable(field);
-      final fieldAccessor = '$accessor.${field.name}${nullable ? '!' : ''}';
-      final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
+      final nullable = _objectFieldIsNullable(field);
+      final fieldAccessor = _objectFieldAccessor(field, accessor);
+      final valueExpr = _queryScalarExpr(
+        field.type,
+        '$fieldAccessor${nullable ? '!' : ''}',
+      );
       if (nullable) {
         // Null fields are omitted (RFC 6570 drops undefined values).
         parts.add(
-          'if ($accessor.${field.name} != null) '
-          "...['${escapeDartString(field.originalName)}', $valueExpr]",
+          'if ($fieldAccessor != null) '
+          "...['${field.originalName.escaped}', $valueExpr]",
         );
       } else {
         parts
-          ..add("'${escapeDartString(field.originalName)}'")
+          ..add("'${field.originalName.escaped}'")
           ..add(valueExpr);
       }
     }
@@ -870,22 +894,21 @@ final class ApiEmitter {
       IrObject(:final fields) => () {
         final parts = <String>[];
         for (final f in fields) {
-          final nullable = !f.isRequired || f.type.isNullable;
-          final accessor = '${p.dartName}.${f.name}${nullable ? '!' : ''}';
+          final nullable = _objectFieldIsNullable(f);
+          final fieldAccessor = _objectFieldAccessor(f, p.dartName);
+          final accessor = '$fieldAccessor${nullable ? '!' : ''}';
           final value =
               'Uri.encodeComponent(${_queryScalarExpr(f.type, accessor)})';
-          final guard = nullable
-              ? 'if (${p.dartName}.${f.name} != null) '
-              : '';
+          final guard = nullable ? 'if ($fieldAccessor != null) ' : '';
           if (explode) {
-            parts.add("$guard'${escapeDartString(f.originalName)}=\${$value}'");
+            parts.add("$guard'${f.originalName.escaped}=\${$value}'");
           } else if (nullable) {
             parts.add(
-              "$guard...['${escapeDartString(f.originalName)}', $value]",
+              "$guard...['${f.originalName.escaped}', $value]",
             );
           } else {
             parts
-              ..add("'${escapeDartString(f.originalName)}'")
+              ..add("'${f.originalName.escaped}'")
               ..add(value);
           }
         }
@@ -941,18 +964,21 @@ final class ApiEmitter {
   bool _queryExplode(IrParameter p, String style) =>
       p.explode ?? (style == 'form');
 
-  /// Escape a parameter name for use inside a Dart string literal.
-  String _sanitizeParameterName(String value) =>
-      escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+  /// Normalize a parameter name (strip newlines/whitespace) for embedding.
+  SpecString _normalizeParamName(SpecString name) =>
+      name.rebuild((s) => s.replaceAll('\n', '').replaceAll('\r', '').trim());
+
+  /// Escape a parameter name for use inside a larger Dart string literal.
+  String _sanitizeParameterName(SpecString name) =>
+      _normalizeParamName(name).escaped;
 
   /// Returns a full Dart string literal (with quotes) for a parameter name,
   /// using raw strings when possible to avoid unnecessary escapes.
-  String _paramNameLiteral(String value) =>
-      dartStringLiteral(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+  String _paramNameLiteral(SpecString name) => _normalizeParamName(name).literal;
 
   /// Returns the HTTP method string for an operation (e.g. 'GET', 'HAUNT').
-  static String _httpMethodString(IrOperation op) =>
-      op.customMethod ?? op.method.name.toUpperCase();
+  static SpecString _httpMethodString(IrOperation op) =>
+      op.customMethod ?? SpecString(op.method.name.toUpperCase());
 
   /// If [unwrapFields] is configured and [type] is an object (or ref to one)
   /// with a matching field, return that field's type and the JSON key used
@@ -968,7 +994,7 @@ final class ApiEmitter {
     }
     for (final fieldName in unwrapFields) {
       for (final f in obj.fields) {
-        if (f.originalName == fieldName) {
+        if (f.originalName.test((s) => s == fieldName)) {
           final isOptional = !f.isRequired || f.type.isNullable;
           var fieldType = f.type;
           if (isOptional && !fieldType.isNullable) {
@@ -1022,13 +1048,13 @@ final class ApiEmitter {
 
     final docs = <String>[];
     if (op.summary != null) {
-      docs.addAll(formatDocComment('${op.summary!} (streaming)'));
+      docs.addAll(op.summary!.rebuild((s) => '$s (streaming)').docComment);
     } else {
       docs.add('/// Stream response.');
     }
     final httpMethod = _httpMethodString(op);
     if (docs.isNotEmpty) docs.add('///');
-    docs.addAll(formatDocComment('`$httpMethod ${op.path}`'));
+    docs.add('/// `${httpMethod.commentText} ${op.path.commentText}`');
 
     return Method(
       (m) => m
@@ -1071,13 +1097,13 @@ final class ApiEmitter {
     return 'return ${ctx.fromJson(eventType, 'jsonDecode(data)')};';
   }
 
-  (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
+  (SpecString, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
       preferredContent(body.content);
 
   bool _typeNeedsToJson(IrType type) =>
       type.isClassType || type is IrTypeRef;
 
-  (String, IrMediaType)? _errorResponseContent(IrOperation op) {
+  (SpecString, IrMediaType)? _errorResponseContent(IrOperation op) {
     // Check for a default error response first (most common pattern)
     if (op.defaultResponse != null) {
       final content = preferredContent(op.defaultResponse!.content);
@@ -1093,8 +1119,8 @@ final class ApiEmitter {
     return null;
   }
 
-  String _buildErrorDeserializeExpr(String mediaType, IrType errorType) {
-    if (isJsonLikeMediaType(mediaType)) {
+  String _buildErrorDeserializeExpr(SpecString mediaType, IrType errorType) {
+    if (mediaType.test(isJsonLikeMediaType)) {
       return _sharedJsonDeserialize(errorType) ??
           switch (errorType) {
             IrEnum(:final name) =>
@@ -1104,49 +1130,30 @@ final class ApiEmitter {
           };
     }
 
-    final unsupportedMessage =
-        'Cannot decode $mediaType error into ${irTypeName(errorType)}';
+    final unsupportedMessage = mediaType.rebuild(
+      (m) => 'Cannot decode $m error into ${irTypeName(errorType)}',
+    );
     final primitive = _nonJsonPrimitiveDeserialize(errorType);
     if (primitive != null) return primitive;
-    return '// TODO: Unsupported non-JSON error schema ${sanitizeCommentText(unsupportedMessage)}\n'
-        'throw UnsupportedError(${dartStringLiteral(unsupportedMessage)});';
+    return '// TODO: Unsupported non-JSON error schema ${unsupportedMessage.commentText}\n'
+        'throw UnsupportedError(${unsupportedMessage.literal});';
   }
 
-  (String, IrMediaType)? _successResponseContent(IrOperation op) {
-    // Find the first 2xx response with content.
-    // Check common codes first, then any other 2xx code.
-    const priorityCodes = {200, 201, 202, 203, 204};
-    for (final code in priorityCodes) {
-      final resp = op.responses[code];
-      if (resp != null) {
-        final content = preferredContent(resp.content);
-        if (content != null) return content;
-        // 201/204 with no content means void
-        if (resp.content.isEmpty) return null;
-      }
-    }
-    // Check remaining 2xx codes (206, 207, etc.), then the 2XX range
-    // sentinel.
-    for (final MapEntry(:key, :value) in op.responses.entries) {
-      if (key >= 200 && key < 300 && !priorityCodes.contains(key)) {
-        final content = preferredContent(value.content);
-        if (content != null) return content;
-        if (value.content.isEmpty) return null;
-      }
-    }
-    if (op.responses[kStatusRange2xx] case final resp?) {
-      final content = preferredContent(resp.content);
-      if (content != null) return content;
-    }
-    return null;
-  }
+  /// The single success body content, or `null` for a void result or a
+  /// success union (see [successShapeOf]).
+  (SpecString, IrMediaType)? _successResponseContent(IrOperation op) =>
+      switch (successShapeOf(op)) {
+        SuccessSingle(:final content) => content,
+        _ => null,
+      };
+
 
   String _buildRequestBodyExpr(
-    String mediaType,
+    SpecString mediaType,
     IrType bodyType,
     bool isRequired,
   ) {
-    if (isJsonLikeMediaType(mediaType)) {
+    if (mediaType.test(isJsonLikeMediaType)) {
       final nullAware = (!isRequired || bodyType.isNullable) ? '?' : '';
       final toJsonCall = _typeNeedsToJson(bodyType)
           ? '$nullAware.toJson()'
@@ -1154,8 +1161,9 @@ final class ApiEmitter {
       return 'jsonEncode(body$toJsonCall)';
     }
 
-    final unsupportedMessage =
-        'Cannot encode non-JSON $mediaType request body from ${irTypeName(bodyType)}';
+    final unsupportedMessage = mediaType.rebuild(
+      (m) => 'Cannot encode non-JSON $m request body from ${irTypeName(bodyType)}',
+    );
     return switch (bodyType) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.dynamic_ => 'body',
@@ -1165,7 +1173,7 @@ final class ApiEmitter {
       },
       IrEnum() => 'body.toJson()',
       IrExtensionType() => 'body.toJson()',
-      _ => 'throw UnsupportedError(${dartStringLiteral(unsupportedMessage)})',
+      _ => 'throw UnsupportedError(${unsupportedMessage.literal})',
     };
   }
 
@@ -1218,18 +1226,12 @@ final class ApiEmitter {
       buf.writeln('  body: [');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
+      final fieldAccessor = _objectFieldAccessor(f, 'body');
       final isBytes = switch (f.type) {
         IrPrimitive(kind: PrimitiveKind.bytes) => true,
         _ => false,
       };
-      // Emit null guard only when the Dart field type is actually nullable.
-      // Fields with defaults are non-nullable even if not required,
-      // but only if the default can be represented as a Dart constant.
-      final isNullable =
-          fieldIsNullableInDart(f);
-
-      if (isNullable) {
+      if (_objectFieldIsNullable(f)) {
         // Use a case-pattern variable to enable type promotion on nullable
         // public fields.
         final localVar = '${f.name}\$';
@@ -1242,6 +1244,17 @@ final class ApiEmitter {
     }
     buf.writeln('  ],');
   }
+
+  /// Scalar access to [field] on a model instance [object] (object
+  /// parameters, form and multipart bodies). These encodings omit both an
+  /// absent and an explicit-null value, so a presence wrapper is unwrapped.
+  String _objectFieldAccessor(IrField field, String object) =>
+      '$object.${field.name}${ctx.isOmittable(field) ? '.value' : ''}';
+
+  /// Nullability of [field]'s scalar after removing any presence wrapper —
+  /// matching the model's Dart declaration, so guards and `!` agree with it.
+  bool _objectFieldIsNullable(IrField field) =>
+      ctx.isOmittable(field) || fieldIsNullableInDart(field);
 
   /// Write form-urlencoded body construction code.
   ///
@@ -1258,10 +1271,9 @@ final class ApiEmitter {
       buf.writeln('  body: <String>[');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
-      final isNullable =
-          fieldIsNullableInDart(f);
-      final keyLiteral = escapeDartString(f.originalName);
+      final fieldAccessor = _objectFieldAccessor(f, 'body');
+      final isNullable = _objectFieldIsNullable(f);
+      final keyLiteral = f.originalName.escaped;
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
           "'$keyLiteral=\${Uri.encodeQueryComponent($valueExpr)}'";
@@ -1297,12 +1309,12 @@ final class ApiEmitter {
   ) {
     if (isBytes) {
       buf.writeln(
-        '    ApiMultipartField.file(${dartStringLiteral(f.originalName)}, $accessor),',
+        '    ApiMultipartField.file(${f.originalName.literal}, $accessor),',
       );
     } else {
       final valueExpr = _multipartFieldValueExpr(f.type, accessor);
       buf.writeln(
-        '    ApiMultipartField.text(${dartStringLiteral(f.originalName)}, $valueExpr),',
+        '    ApiMultipartField.text(${f.originalName.literal}, $valueExpr),',
       );
     }
   }

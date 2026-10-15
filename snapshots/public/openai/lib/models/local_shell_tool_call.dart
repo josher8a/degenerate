@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LocalShellToolCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';/// A tool call to run a command on the local shell.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';/// A tool call to run a command on the local shell.
 /// 
 @immutable final class LocalShellToolCall {const LocalShellToolCall({required this.type, required this.id, required this.callId, required this.action, required this.status, });
 
-factory LocalShellToolCall.fromJson(Map<String, dynamic> json) { return LocalShellToolCall(
+factory LocalShellToolCall.fromJson(Map<String, dynamic> json) {return LocalShellToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
   action: LocalShellExecAction.fromJson(json['action'] as Map<String, dynamic>),
-  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
-); }
+  status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
+);}
 
 /// The type of the local shell call. Always `local_shell_call`.
 /// 
@@ -29,27 +29,27 @@ final LocalShellExecAction action;
 
 /// The status of the local shell call.
 /// 
-final ComputerToolCallOutputStatus status;
+final ComputerToolCallOutputResourceStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
   'action': action.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('action') &&
-      json.containsKey('status'); } 
-LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return LocalShellToolCall(
+      json.containsKey('status');}
+LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) {return LocalShellToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   action: action ?? this.action,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LocalShellToolCall &&
           type == other.type &&
@@ -62,4 +62,4 @@ LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShel
 
 @override String toString() => 'LocalShellToolCall(type: $type, id: $id, callId: $callId, action: $action, status: $status)';
 
- }
+}

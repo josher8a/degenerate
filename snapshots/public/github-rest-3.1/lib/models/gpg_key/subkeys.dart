@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GpgKey (inline: Subkeys)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gpg_key/gpg_key_emails.dart';@immutable final class Subkeys {const Subkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt, this.rawKey, this.revoked, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gpg_key/gpg_key_emails.dart';@immutable final class Subkeys {const Subkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt = const Omittable.absent(), this.rawKey = const Omittable.absent(), this.revoked, });
 
-factory Subkeys.fromJson(Map<String, dynamic> json) { return Subkeys(
+factory Subkeys.fromJson(Map<String, dynamic> json) {return Subkeys(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   primaryKeyId: json['primary_key_id'] != null ? (json['primary_key_id'] as num).toInt() : null,
   keyId: json['key_id'] as String?,
@@ -15,10 +15,10 @@ factory Subkeys.fromJson(Map<String, dynamic> json) { return Subkeys(
   canEncryptStorage: json['can_encrypt_storage'] as bool?,
   canCertify: json['can_certify'] as bool?,
   createdAt: json['created_at'] as String?,
-  expiresAt: json['expires_at'] as String?,
-  rawKey: json['raw_key'] as String?,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] as String?) : const Omittable.absent(),
+  rawKey: json.containsKey('raw_key') ? Omittable(json['raw_key'] as String?) : const Omittable.absent(),
   revoked: json['revoked'] as bool?,
-); }
+);}
 
 final int? id;
 
@@ -42,13 +42,13 @@ final bool? canCertify;
 
 final String? createdAt;
 
-final String? expiresAt;
+final Omittable<String?> expiresAt;
 
-final String? rawKey;
+final Omittable<String?> rawKey;
 
 final bool? revoked;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'primary_key_id': ?primaryKeyId,
   'key_id': ?keyId,
@@ -60,12 +60,12 @@ Map<String, dynamic> toJson() { return {
   'can_encrypt_storage': ?canEncryptStorage,
   'can_certify': ?canCertify,
   'created_at': ?createdAt,
-  'expires_at': ?expiresAt,
-  'raw_key': ?rawKey,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
+  if (rawKey.isPresent) 'raw_key': rawKey.value,
   'revoked': ?revoked,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key)); } 
-Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Function()? keyId, String? Function()? publicKey, List<GpgKeyEmails>? Function()? emails, List<dynamic>? Function()? subkeys, bool? Function()? canSign, bool? Function()? canEncryptComms, bool? Function()? canEncryptStorage, bool? Function()? canCertify, String? Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool? Function()? revoked, }) { return Subkeys(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key));}
+Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Function()? keyId, String? Function()? publicKey, List<GpgKeyEmails>? Function()? emails, List<dynamic>? Function()? subkeys, bool? Function()? canSign, bool? Function()? canEncryptComms, bool? Function()? canEncryptStorage, bool? Function()? canCertify, String? Function()? createdAt, Omittable<String?>? expiresAt, Omittable<String?>? rawKey, bool? Function()? revoked, }) {return Subkeys(
   id: id != null ? id() : this.id,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,
   keyId: keyId != null ? keyId() : this.keyId,
@@ -77,10 +77,10 @@ Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Fu
   canEncryptStorage: canEncryptStorage != null ? canEncryptStorage() : this.canEncryptStorage,
   canCertify: canCertify != null ? canCertify() : this.canCertify,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-  rawKey: rawKey != null ? rawKey() : this.rawKey,
+  expiresAt: expiresAt ?? this.expiresAt,
+  rawKey: rawKey ?? this.rawKey,
   revoked: revoked != null ? revoked() : this.revoked,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Subkeys &&
           id == other.id &&
@@ -102,4 +102,4 @@ Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Fu
 
 @override String toString() => 'Subkeys(\n  id: $id,\n  primaryKeyId: $primaryKeyId,\n  keyId: $keyId,\n  publicKey: $publicKey,\n  emails: $emails,\n  subkeys: $subkeys,\n  canSign: $canSign,\n  canEncryptComms: $canEncryptComms,\n  canEncryptStorage: $canEncryptStorage,\n  canCertify: $canCertify,\n  createdAt: $createdAt,\n  expiresAt: $expiresAt,\n  rawKey: $rawKey,\n  revoked: $revoked,\n)';
 
- }
+}

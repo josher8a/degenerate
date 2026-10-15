@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.commit`.
 sealed class RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType();
 
-factory RealtimeBetaClientEventInputAudioBufferCommitType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventInputAudioBufferCommitType.fromJson(String json) {return switch (json) {
   'input_audio_buffer.commit' => inputAudioBufferCommit,
   _ => RealtimeBetaClientEventInputAudioBufferCommitType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventInputAudioBufferCommitType inputAudioBufferCommit = RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit._();
 
 static const List<RealtimeBetaClientEventInputAudioBufferCommitType> values = [inputAudioBufferCommit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'input_audio_buffer.commit' => 'inputAudioBufferCommit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaClientEventInputAudioBufferCommitType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaClientEventInputAudioBufferCommitType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inputAudioBufferCommit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inputAudioBufferCommit, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit() => inputAudioBufferCommit(),
       RealtimeBetaClientEventInputAudioBufferCommitType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAudioBufferCommit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAudioBufferCommit, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit() => inputAudioBufferCommit != null ? inputAudioBufferCommit() : orElse(value),
       RealtimeBetaClientEventInputAudioBufferCommitType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaClientEventInputAudioBufferCommitType($value)';
 
- }
+}
 @immutable final class RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit extends RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit._();
 
 @override String get value => 'input_audio_buffer.commit';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 
 @override int get hashCode => 'input_audio_buffer.commit'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaClientEventInputAudioBufferCommitType$Unknown extends RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Send this event to commit the user input audio buffer, which will create a
 /// new user message item in the conversation. This event will produce an error
 /// if the input audio buffer is empty. When in Server VAD mode, the client does
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 /// 
 @immutable final class RealtimeBetaClientEventInputAudioBufferCommit {const RealtimeBetaClientEventInputAudioBufferCommit({required this.type, this.eventId, });
 
-factory RealtimeBetaClientEventInputAudioBufferCommit.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventInputAudioBufferCommit(
+factory RealtimeBetaClientEventInputAudioBufferCommit.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventInputAudioBufferCommit(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventInputAudioBufferCommitType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -78,15 +78,15 @@ final String? eventId;
 /// The event type, must be `input_audio_buffer.commit`.
 final RealtimeBetaClientEventInputAudioBufferCommitType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeBetaClientEventInputAudioBufferCommit copyWith({String? Function()? eventId, RealtimeBetaClientEventInputAudioBufferCommitType? type, }) { return RealtimeBetaClientEventInputAudioBufferCommit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RealtimeBetaClientEventInputAudioBufferCommit copyWith({String? Function()? eventId, RealtimeBetaClientEventInputAudioBufferCommitType? type, }) {return RealtimeBetaClientEventInputAudioBufferCommit(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventInputAudioBufferCommit &&
           eventId == other.eventId &&
@@ -96,4 +96,4 @@ RealtimeBetaClientEventInputAudioBufferCommit copyWith({String? Function()? even
 
 @override String toString() => 'RealtimeBetaClientEventInputAudioBufferCommit(eventId: $eventId, type: $type)';
 
- }
+}

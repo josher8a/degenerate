@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_subdomain.dart';@immutable final class ZeroTrustGatewayProxyEndpointIdentity {const ZeroTrustGatewayProxyEndpointIdentity({required this.kind, required this.name, this.createdAt, this.id, this.subdomain, this.updatedAt, });
 
-factory ZeroTrustGatewayProxyEndpointIdentity.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointIdentity(
+factory ZeroTrustGatewayProxyEndpointIdentity.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayProxyEndpointIdentity(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null,
   kind: json['kind'] as String,
   name: ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String),
   subdomain: json['subdomain'] != null ? ZeroTrustGatewaySchemasSubdomain.fromJson(json['subdomain'] as String) : null,
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
@@ -27,24 +27,24 @@ final ZeroTrustGatewaySchemasSubdomain? subdomain;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   'kind': kind,
   'name': name.toJson(),
   if (subdomain != null) 'subdomain': subdomain?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
-      json.containsKey('name'); } 
-ZeroTrustGatewayProxyEndpointIdentity copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, String? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointIdentity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') && json['kind'] is String &&
+      json.containsKey('name');}
+ZeroTrustGatewayProxyEndpointIdentity copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, String? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) {return ZeroTrustGatewayProxyEndpointIdentity(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   kind: kind ?? this.kind,
   name: name ?? this.name,
   subdomain: subdomain != null ? subdomain() : this.subdomain,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointIdentity &&
           createdAt == other.createdAt &&
@@ -58,4 +58,4 @@ ZeroTrustGatewayProxyEndpointIdentity copyWith({ZeroTrustGatewayReadOnlyTimestam
 
 @override String toString() => 'ZeroTrustGatewayProxyEndpointIdentity(createdAt: $createdAt, id: $id, kind: $kind, name: $name, subdomain: $subdomain, updatedAt: $updatedAt)';
 
- }
+}

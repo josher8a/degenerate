@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FileSearchToolCall (inline: Results)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileSearchToolCallResults {const FileSearchToolCallResults({this.fileId, this.text, this.filename, this.attributes, this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileSearchToolCallResults {const FileSearchToolCallResults({this.fileId, this.text, this.filename, this.attributes = const Omittable.absent(), this.score, });
 
-factory FileSearchToolCallResults.fromJson(Map<String, dynamic> json) { return FileSearchToolCallResults(
+factory FileSearchToolCallResults.fromJson(Map<String, dynamic> json) {return FileSearchToolCallResults(
   fileId: json['file_id'] as String?,
   text: json['text'] as String?,
   filename: json['filename'] as String?,
-  attributes: json['attributes'] as Map<String, dynamic>?,
+  attributes: json.containsKey('attributes') ? Omittable(json['attributes'] as Map<String, dynamic>?) : const Omittable.absent(),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
-); }
+);}
 
 /// The unique ID of the file.
 /// 
@@ -23,27 +23,27 @@ final String? text;
 /// 
 final String? filename;
 
-final Map<String,dynamic>? attributes;
+final Omittable<Map<String,dynamic>?> attributes;
 
 /// The relevance score of the file - a value between 0 and 1.
 /// 
 final double? score;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': ?fileId,
   'text': ?text,
   'filename': ?filename,
-  'attributes': ?attributes,
+  if (attributes.isPresent) 'attributes': attributes.value,
   'score': ?score,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'text', 'filename', 'attributes', 'score'}.contains(key)); } 
-FileSearchToolCallResults copyWith({String? Function()? fileId, String? Function()? text, String? Function()? filename, Map<String, dynamic>? Function()? attributes, double? Function()? score, }) { return FileSearchToolCallResults(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_id', 'text', 'filename', 'attributes', 'score'}.contains(key));}
+FileSearchToolCallResults copyWith({String? Function()? fileId, String? Function()? text, String? Function()? filename, Omittable<Map<String,dynamic>?>? attributes, double? Function()? score, }) {return FileSearchToolCallResults(
   fileId: fileId != null ? fileId() : this.fileId,
   text: text != null ? text() : this.text,
   filename: filename != null ? filename() : this.filename,
-  attributes: attributes != null ? attributes() : this.attributes,
+  attributes: attributes ?? this.attributes,
   score: score != null ? score() : this.score,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchToolCallResults &&
           fileId == other.fileId &&
@@ -56,4 +56,4 @@ FileSearchToolCallResults copyWith({String? Function()? fileId, String? Function
 
 @override String toString() => 'FileSearchToolCallResults(fileId: $fileId, text: $text, filename: $filename, attributes: $attributes, score: $score)';
 
- }
+}

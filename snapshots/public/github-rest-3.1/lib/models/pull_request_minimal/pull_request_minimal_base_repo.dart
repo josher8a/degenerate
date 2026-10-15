@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestMinimalBaseRepo {const PullRequestMinimalBaseRepo({required this.id, required this.url, required this.name, });
 
-factory PullRequestMinimalBaseRepo.fromJson(Map<String, dynamic> json) { return PullRequestMinimalBaseRepo(
+factory PullRequestMinimalBaseRepo.fromJson(Map<String, dynamic> json) {return PullRequestMinimalBaseRepo(
   id: (json['id'] as num).toInt(),
   url: json['url'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final int id;
 
@@ -15,19 +15,19 @@ final String url;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'url': url,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-PullRequestMinimalBaseRepo copyWith({int? id, String? url, String? name, }) { return PullRequestMinimalBaseRepo(
+      json.containsKey('name') && json['name'] is String;}
+PullRequestMinimalBaseRepo copyWith({int? id, String? url, String? name, }) {return PullRequestMinimalBaseRepo(
   id: id ?? this.id,
   url: url ?? this.url,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestMinimalBaseRepo &&
           id == other.id &&
@@ -38,4 +38,4 @@ PullRequestMinimalBaseRepo copyWith({int? id, String? url, String? name, }) { re
 
 @override String toString() => 'PullRequestMinimalBaseRepo(id: $id, url: $url, name: $name)';
 
- }
+}

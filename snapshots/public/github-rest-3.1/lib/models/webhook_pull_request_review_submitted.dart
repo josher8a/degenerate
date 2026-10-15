@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_submitted/webhook_pull_request_review_submitted_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_review.dart';sealed class WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction();
 
-factory WebhookPullRequestReviewSubmittedAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewSubmittedAction.fromJson(String json) {return switch (json) {
   'submitted' => submitted,
   _ => WebhookPullRequestReviewSubmittedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewSubmittedAction submitted = WebhookPullRequestReviewSubmittedAction$submitted._();
 
 static const List<WebhookPullRequestReviewSubmittedAction> values = [submitted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'submitted' => 'submitted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookPullRequestReviewSubmittedAction$Unknown; } 
+bool get isUnknown {return this is WebhookPullRequestReviewSubmittedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() submitted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() submitted, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookPullRequestReviewSubmittedAction$submitted() => submitted(),
       WebhookPullRequestReviewSubmittedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? submitted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? submitted, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookPullRequestReviewSubmittedAction$submitted() => submitted != null ? submitted() : orElse(value),
       WebhookPullRequestReviewSubmittedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookPullRequestReviewSubmittedAction($value)';
 
- }
+}
 @immutable final class WebhookPullRequestReviewSubmittedAction$submitted extends WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction$submitted._();
 
 @override String get value => 'submitted';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? submitte
 
 @override int get hashCode => 'submitted'.hashCode;
 
- }
+}
 @immutable final class WebhookPullRequestReviewSubmittedAction$Unknown extends WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? submitte
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookPullRequestReviewSubmitted {const WebhookPullRequestReviewSubmitted({required this.action, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestReviewSubmitted.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewSubmitted(
+factory WebhookPullRequestReviewSubmitted.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewSubmitted(
   action: WebhookPullRequestReviewSubmittedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -64,7 +64,7 @@ factory WebhookPullRequestReviewSubmitted.fromJson(Map<String, dynamic> json) { 
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   review: WebhooksReview.fromJson(json['review'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestReviewSubmittedAction action;
 
@@ -82,7 +82,7 @@ final WebhooksReview review;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -91,13 +91,13 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'review': review.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('review') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestReviewSubmitted copyWith({WebhookPullRequestReviewSubmittedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewSubmittedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) { return WebhookPullRequestReviewSubmitted(
+      json.containsKey('sender');}
+WebhookPullRequestReviewSubmitted copyWith({WebhookPullRequestReviewSubmittedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewSubmittedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) {return WebhookPullRequestReviewSubmitted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -106,7 +106,7 @@ WebhookPullRequestReviewSubmitted copyWith({WebhookPullRequestReviewSubmittedAct
   repository: repository ?? this.repository,
   review: review ?? this.review,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewSubmitted &&
           action == other.action &&
@@ -122,4 +122,4 @@ WebhookPullRequestReviewSubmitted copyWith({WebhookPullRequestReviewSubmittedAct
 
 @override String toString() => 'WebhookPullRequestReviewSubmitted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields/payment_links_resource_custom_fields_type.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_dropdown.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_label.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_numeric.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_text.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFields {const PaymentPagesCheckoutSessionCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });
 
-factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFields(
+factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionCustomFields(
   dropdown: json['dropdown'] != null ? PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> js
   optional: json['optional'] as bool,
   text: json['text'] != null ? PaymentPagesCheckoutSessionCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PaymentLinksResourceCustomFieldsType.fromJson(json['type'] as String),
-); }
+);}
 
 final PaymentPagesCheckoutSessionCustomFieldsDropdown? dropdown;
 
@@ -31,7 +31,7 @@ final PaymentPagesCheckoutSessionCustomFieldsText? text;
 /// The type of the field.
 final PaymentLinksResourceCustomFieldsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dropdown != null) 'dropdown': dropdown?.toJson(),
   'key': key,
   'label': label.toJson(),
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'optional': optional,
   if (text != null) 'text': text?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
       json.containsKey('optional') && json['optional'] is bool &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (key.runes.length > 5000) { errors.add('key: length must be <= 5000'); }
-return errors; } 
-PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCustomFieldsDropdown? Function()? dropdown, String? key, PaymentPagesCheckoutSessionCustomFieldsLabel? label, PaymentPagesCheckoutSessionCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentPagesCheckoutSessionCustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PaymentPagesCheckoutSessionCustomFields(
+return errors;}
+PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCustomFieldsDropdown? Function()? dropdown, String? key, PaymentPagesCheckoutSessionCustomFieldsLabel? label, PaymentPagesCheckoutSessionCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentPagesCheckoutSessionCustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) {return PaymentPagesCheckoutSessionCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,
@@ -56,7 +56,7 @@ PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCus
   optional: optional ?? this.optional,
   text: text != null ? text() : this.text,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFields &&
           dropdown == other.dropdown &&
@@ -71,4 +71,4 @@ PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCus
 
 @override String toString() => 'PaymentPagesCheckoutSessionCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';
 
- }
+}

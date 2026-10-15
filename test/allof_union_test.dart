@@ -79,7 +79,7 @@ void main() {
       final order =
           mapper.typeRegistry['StoreOrder']! as IrObject;
       final list =
-          order.fields.singleWhere((f) => f.originalName == field).type
+          order.fields.singleWhere((f) => f.originalName.test((n) => n == field)).type
               as IrList;
       return list.items;
     }
@@ -91,7 +91,7 @@ void main() {
     };
 
     Set<String> wireNames(IrObject o) =>
-        o.fields.map((f) => f.originalName).toSet();
+        o.fields.map((f) => f.originalName.forDiagnostics).toSet();
 
     test(r'case A: $ref union + $ref object keeps the union, adds the '
         'object fields to every variant', () {
@@ -112,7 +112,7 @@ void main() {
       final union = fieldItems('actions') as IrUntaggedUnion;
       final create = object(union.variants.first);
       final orderId = create.fields.singleWhere(
-        (f) => f.originalName == 'orderId',
+        (f) => f.originalName.test((n) => n == 'orderId'),
       );
       expect(
         (orderId.type as IrPrimitive).constraints.maxLength,
@@ -172,24 +172,24 @@ void main() {
 
     test('discriminated anyOf keeps discriminator parsing', () {
       final union = fieldItems('kinds') as IrDiscriminatedUnion;
-      expect(union.discriminatorProperty, 'kind');
-      expect(union.mapping.keys, ['CAT', 'DOG']);
-      final cat = object(union.mapping['CAT']!);
+      expect(union.discriminatorProperty, const SpecString('kind'));
+      expect(union.mapping.keys.map((k) => k.forDiagnostics), ['CAT', 'DOG']);
+      final cat = object(union.mapping[const SpecString('CAT')]!);
       expect(cat.name, 'StoreOrderKindsCat');
       expect(
         wireNames(cat),
         {'kind', 'huntingSkill', 'orderId', 'status'},
       );
       // The discriminator field is a plain String, as for the source variants.
-      final kind = cat.fields.singleWhere((f) => f.originalName == 'kind');
+      final kind = cat.fields.singleWhere((f) => f.originalName.test((n) => n == 'kind'));
       expect(kind.type, isA<IrPrimitive>());
     });
 
     test('an explicit discriminator mapping is kept', () {
       final union = fieldItems('mappedKinds') as IrDiscriminatedUnion;
-      expect(union.mapping.keys, ['CAT', 'DOG']);
+      expect(union.mapping.keys.map((k) => k.forDiagnostics), ['CAT', 'DOG']);
       expect(
-        wireNames(object(union.mapping['DOG']!)),
+        wireNames(object(union.mapping[const SpecString('DOG')]!)),
         {'kind', 'breed', 'orderId', 'status'},
       );
     });
@@ -198,7 +198,7 @@ void main() {
       final op = apis
           .expand((a) => a.operations)
           .singleWhere((o) => o.operationId == 'createPet');
-      final body = op.requestBody!.content['application/json']!.schema;
+      final body = op.requestBody!.content[const SpecString('application/json')]!.schema;
       final union = switch (body) {
         IrDiscriminatedUnion() => body,
         IrTypeRef(:final name) =>
@@ -206,9 +206,9 @@ void main() {
         _ => throw StateError('unexpected body $body'),
       };
       expect(union.name, 'CreatePetRequest');
-      expect(union.mapping.keys, ['CAT', 'DOG']);
+      expect(union.mapping.keys.map((k) => k.forDiagnostics), ['CAT', 'DOG']);
       expect(
-        wireNames(object(union.mapping['CAT']!)),
+        wireNames(object(union.mapping[const SpecString('CAT')]!)),
         {'kind', 'huntingSkill', 'orderId'},
       );
     });
@@ -474,11 +474,14 @@ void main() {
                 : v as IrObject,
           )
           .first;
-      final cfgType = va.fields.singleWhere((f) => f.originalName == 'cfg').type;
+      final cfgType = va.fields.singleWhere((f) => f.originalName.test((n) => n == 'cfg')).type;
       final cfg = cfgType is IrTypeRef
           ? mapper.typeRegistry[cfgType.name]! as IrObject
           : cfgType as IrObject;
-      expect(cfg.fields.map((f) => f.originalName), unorderedEquals(['x', 'y']));
+      expect(
+        cfg.fields.map((f) => f.originalName.forDiagnostics),
+        unorderedEquals(['x', 'y']),
+      );
     });
 
     test('a discriminator on the allOf itself warns instead of dropping '
@@ -512,7 +515,7 @@ void main() {
       const caa = IrObject('Caa', []);
       const mx = IrObject('Mx', []);
       const merged = IrObject('PatchDataWithCaa', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.string)),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string)),
       ]);
       final resolution = resolveNames(
         allNames: {'DataWith', 'Caa', 'Mx', 'PatchDataWithCaa'},
@@ -540,10 +543,10 @@ void main() {
         IrPrimitive(PrimitiveKind.string),
       ]);
       const merged = IrObject('AUListU', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.string)),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string)),
       ]);
       const other = IrObject('BListU', [
-        IrField('n', 'n', IrPrimitive(PrimitiveKind.int)),
+        IrField('n', SpecString('n'), IrPrimitive(PrimitiveKind.int)),
       ]);
       final resolution = resolveNames(
         allNames: {'U', 'AUListU', 'BListU'},
@@ -561,8 +564,8 @@ void main() {
     test("a derived union's own variants keep their names", () {
       // The discriminated emitter de-collides a union's payload and wrapper
       // classes itself (`ShapeCircle\$Variant`).
-      const union = IrDiscriminatedUnion('Shape', 'kind', {
-        'circle': IrTypeRef('ShapeCircle'),
+      final union = IrDiscriminatedUnion('Shape', SpecString('kind'), {
+        SpecString('circle'): IrTypeRef('ShapeCircle'),
       });
       const circle = IrObject('ShapeCircle', []);
       final resolution = resolveNames(
@@ -579,12 +582,12 @@ void main() {
     });
 
     test('never take the name of a discriminated variant class', () {
-      const union = IrDiscriminatedUnion('Kind', 'kind', {
-        'CAT': IrTypeRef('Cat'),
+      final union = IrDiscriminatedUnion('Kind', SpecString('kind'), {
+        SpecString('CAT'): IrTypeRef('Cat'),
       });
       const cat = IrObject('Cat', []);
       const merged = IrObject('TrackedKindCat', [
-        IrField('id', 'id', IrPrimitive(PrimitiveKind.string)),
+        IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string)),
       ]);
       final resolution = resolveNames(
         allNames: {'Kind', 'Cat', 'TrackedKindCat'},
@@ -720,7 +723,7 @@ void main() {
         IrTypeRef(:final name) => mapper.typeRegistry[name]! as IrObject,
         final t => throw StateError('$t'),
       };
-      final name = create.fields.singleWhere((f) => f.originalName == 'name');
+      final name = create.fields.singleWhere((f) => f.originalName.test((n) => n == 'name'));
       expect(name.type, isA<IrPrimitive>());
       expect((name.type as IrPrimitive).kind, PrimitiveKind.string);
       expect(name.type.isNullable, isTrue);
@@ -748,7 +751,7 @@ void main() {
         },
       });
       final type = mapper.typeRegistry['Unsatisfiable']! as IrObject;
-      expect(type.fields.map((f) => f.originalName), ['id']);
+      expect(type.fields.map((f) => f.originalName.forDiagnostics), ['id']);
       expect(
         mapper.warnings,
         contains(

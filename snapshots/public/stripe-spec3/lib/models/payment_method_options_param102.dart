@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param102_preferred_locale.dart';@immutable final class PaymentMethodOptionsParam102 {const PaymentMethodOptionsParam102({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam102.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam102(
+factory PaymentMethodOptionsParam102.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam102(
   captureMethod: json['capture_method'] != null ? PaymentIntentParamCaptureMethod.fromJson(json['capture_method'] as String) : null,
   preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam102PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   reference: json['reference'] as String?,
   riskCorrelationId: json['risk_correlation_id'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentIntentParamCaptureMethod? captureMethod;
 
@@ -21,16 +21,16 @@ final String? riskCorrelationId;
 
 final PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (preferredLocale != null) 'preferred_locale': preferredLocale?.toJson(),
   'reference': ?reference,
   'risk_correlation_id': ?riskCorrelationId,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
   if (reference$.runes.length > 127) { errors.add('reference: length must be <= 127'); }
@@ -39,14 +39,14 @@ final riskCorrelationId$ = riskCorrelationId;
 if (riskCorrelationId$ != null) {
   if (riskCorrelationId$.runes.length > 32) { errors.add('riskCorrelationId: length must be <= 32'); }
 }
-return errors; } 
-PaymentMethodOptionsParam102 copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, PaymentMethodOptionsParam102PreferredLocale? Function()? preferredLocale, String? Function()? reference, String? Function()? riskCorrelationId, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam102(
+return errors;}
+PaymentMethodOptionsParam102 copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, PaymentMethodOptionsParam102PreferredLocale? Function()? preferredLocale, String? Function()? reference, String? Function()? riskCorrelationId, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam102(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   reference: reference != null ? reference() : this.reference,
   riskCorrelationId: riskCorrelationId != null ? riskCorrelationId() : this.riskCorrelationId,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam102 &&
           captureMethod == other.captureMethod &&
@@ -59,4 +59,4 @@ PaymentMethodOptionsParam102 copyWith({PaymentIntentParamCaptureMethod? Function
 
 @override String toString() => 'PaymentMethodOptionsParam102(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, riskCorrelationId: $riskCorrelationId, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

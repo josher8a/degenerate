@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_get_to_markdown_supported_response/workers_ai_get_to_markdown_supported_response_result.dart';@immutable final class WorkersAiGetToMarkdownSupportedResponse {const WorkersAiGetToMarkdownSupportedResponse({required this.result, required this.success, });
 
-factory WorkersAiGetToMarkdownSupportedResponse.fromJson(Map<String, dynamic> json) { return WorkersAiGetToMarkdownSupportedResponse(
+factory WorkersAiGetToMarkdownSupportedResponse.fromJson(Map<String, dynamic> json) {return WorkersAiGetToMarkdownSupportedResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkersAiGetToMarkdownSupportedResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<WorkersAiGetToMarkdownSupportedResponseResult> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorkersAiGetToMarkdownSupportedResponse copyWith({List<WorkersAiGetToMarkdownSupportedResponseResult>? result, bool? success, }) { return WorkersAiGetToMarkdownSupportedResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+WorkersAiGetToMarkdownSupportedResponse copyWith({List<WorkersAiGetToMarkdownSupportedResponseResult>? result, bool? success, }) {return WorkersAiGetToMarkdownSupportedResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiGetToMarkdownSupportedResponse &&
           listEquals(result, other.result) &&
@@ -31,4 +31,4 @@ WorkersAiGetToMarkdownSupportedResponse copyWith({List<WorkersAiGetToMarkdownSup
 
 @override String toString() => 'WorkersAiGetToMarkdownSupportedResponse(result: $result, success: $success)';
 
- }
+}

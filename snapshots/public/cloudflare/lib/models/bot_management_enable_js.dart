@@ -1,0 +1,10 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementEnableJs
+
+/// Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).
+extension type const BotManagementEnableJs(bool value) {
+factory BotManagementEnableJs.fromJson(bool json) => BotManagementEnableJs(json);
+
+bool toJson() => value;
+
+}

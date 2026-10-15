@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpDocumentFingerprint
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDocumentFingerprint {const DlpDocumentFingerprint({required this.createdAt, required this.entryId, required this.id, required this.matchPercent, required this.name, required this.status, required this.updatedAt, this.description = '', this.fileName, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDocumentFingerprint {const DlpDocumentFingerprint({required this.createdAt, required this.description, required this.entryId, required this.id, required this.matchPercent, required this.name, required this.status, required this.updatedAt, this.fileName = const Omittable.absent(), this.version = const Omittable.absent(), });
 
-factory DlpDocumentFingerprint.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprint(
+factory DlpDocumentFingerprint.fromJson(Map<String, dynamic> json) {return DlpDocumentFingerprint(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String,
   entryId: json['entry_id'] as String,
-  fileName: json['file_name'] as String?,
+  fileName: json.containsKey('file_name') ? Omittable(json['file_name'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   matchPercent: (json['match_percent'] as num).toInt(),
   name: json['name'] as String,
   status: DlpDatasetUploadStatus.fromJson(json['status'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  version: json['version'] != null ? (json['version'] as num).toInt() : null,
-); }
+  version: json.containsKey('version') ? Omittable(json['version'] != null ? (json['version'] as num).toInt() : null) : const Omittable.absent(),
+);}
 
 final DateTime createdAt;
 
@@ -22,7 +22,7 @@ final String description;
 
 final String entryId;
 
-final String? fileName;
+final Omittable<String?> fileName;
 
 final String id;
 
@@ -34,40 +34,40 @@ final DlpDatasetUploadStatus status;
 
 final DateTime updatedAt;
 
-final int? version;
+final Omittable<int?> version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': description,
   'entry_id': entryId,
-  'file_name': ?fileName,
+  if (fileName.isPresent) 'file_name': fileName.value,
   'id': id,
   'match_percent': matchPercent,
   'name': name,
   'status': status.toJson(),
   'updated_at': updatedAt.toIso8601String(),
-  'version': ?version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+  if (version.isPresent) 'version': version.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('entry_id') && json['entry_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('match_percent') && json['match_percent'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('status') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpDocumentFingerprint copyWith({DateTime? createdAt, String? description, String? entryId, String? Function()? fileName, String? id, int? matchPercent, String? name, DlpDatasetUploadStatus? status, DateTime? updatedAt, int? Function()? version, }) { return DlpDocumentFingerprint(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+DlpDocumentFingerprint copyWith({DateTime? createdAt, String? description, String? entryId, Omittable<String?>? fileName, String? id, int? matchPercent, String? name, DlpDatasetUploadStatus? status, DateTime? updatedAt, Omittable<int?>? version, }) {return DlpDocumentFingerprint(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   entryId: entryId ?? this.entryId,
-  fileName: fileName != null ? fileName() : this.fileName,
+  fileName: fileName ?? this.fileName,
   id: id ?? this.id,
   matchPercent: matchPercent ?? this.matchPercent,
   name: name ?? this.name,
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
-  version: version != null ? version() : this.version,
-); } 
+  version: version ?? this.version,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprint &&
           createdAt == other.createdAt &&
@@ -85,4 +85,4 @@ DlpDocumentFingerprint copyWith({DateTime? createdAt, String? description, Strin
 
 @override String toString() => 'DlpDocumentFingerprint(\n  createdAt: $createdAt,\n  description: $description,\n  entryId: $entryId,\n  fileName: $fileName,\n  id: $id,\n  matchPercent: $matchPercent,\n  name: $name,\n  status: $status,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
- }
+}

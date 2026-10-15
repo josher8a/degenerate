@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CategoriesContent {const CategoriesContent({required this.id, required this.name, this.superCategoryId, });
 
-factory CategoriesContent.fromJson(Map<String, dynamic> json) { return CategoriesContent(
+factory CategoriesContent.fromJson(Map<String, dynamic> json) {return CategoriesContent(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   superCategoryId: json['super_category_id'] != null ? (json['super_category_id'] as num).toInt() : null,
-); }
+);}
 
 final int id;
 
@@ -16,18 +16,18 @@ final String name;
 
 final int? superCategoryId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'super_category_id': ?superCategoryId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-CategoriesContent copyWith({int? id, String? name, int? Function()? superCategoryId, }) { return CategoriesContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+CategoriesContent copyWith({int? id, String? name, int? Function()? superCategoryId, }) {return CategoriesContent(
   id: id ?? this.id,
   name: name ?? this.name,
   superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CategoriesContent &&
           id == other.id &&
@@ -38,4 +38,4 @@ CategoriesContent copyWith({int? id, String? name, int? Function()? superCategor
 
 @override String toString() => 'CategoriesContent(id: $id, name: $name, superCategoryId: $superCategoryId)';
 
- }
+}

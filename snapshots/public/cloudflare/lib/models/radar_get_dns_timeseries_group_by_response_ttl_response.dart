@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_timeseries_group_by_response_ttl_response/radar_get_dns_timeseries_group_by_response_ttl_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByResponseTtlResponse {const RadarGetDnsTimeseriesGroupByResponseTtlResponse({required this.result, required this.success, });
 
-factory RadarGetDnsTimeseriesGroupByResponseTtlResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByResponseTtlResponse(
+factory RadarGetDnsTimeseriesGroupByResponseTtlResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByResponseTtlResponse(
   result: RadarGetDnsTimeseriesGroupByResponseTtlResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsTimeseriesGroupByResponseTtlResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByResponseTtlResponse copyWith({RadarGetDnsTimeseriesGroupByResponseTtlResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByResponseTtlResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsTimeseriesGroupByResponseTtlResponse copyWith({RadarGetDnsTimeseriesGroupByResponseTtlResponseResult? result, bool? success, }) {return RadarGetDnsTimeseriesGroupByResponseTtlResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByResponseTtlResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponse copyWith({RadarGetDnsTimeseriesG
 
 @override String toString() => 'RadarGetDnsTimeseriesGroupByResponseTtlResponse(result: $result, success: $success)';
 
- }
+}

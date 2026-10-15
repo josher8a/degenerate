@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_deleted/webhook_issue_comment_deleted_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentDeleted {const WebhookIssueCommentDeleted({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssueCommentDeleted.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentDeleted(
+factory WebhookIssueCommentDeleted.fromJson(Map<String, dynamic> json) {return WebhookIssueCommentDeleted(
   action: ItemDeletedAction.fromJson(json['action'] as String),
   comment: WebhooksIssueComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookIssueCommentDeleted.fromJson(Map<String, dynamic> json) { return 
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemDeletedAction action;
 
@@ -33,7 +33,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'comment': comment.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -42,13 +42,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('comment') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssueCommentDeleted copyWith({ItemDeletedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookIssueCommentDeletedIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentDeleted(
+      json.containsKey('sender');}
+WebhookIssueCommentDeleted copyWith({ItemDeletedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookIssueCommentDeletedIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssueCommentDeleted(
   action: action ?? this.action,
   comment: comment ?? this.comment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -57,7 +57,7 @@ WebhookIssueCommentDeleted copyWith({ItemDeletedAction? action, WebhooksIssueCom
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssueCommentDeleted &&
           action == other.action &&
@@ -73,4 +73,4 @@ WebhookIssueCommentDeleted copyWith({ItemDeletedAction? action, WebhooksIssueCom
 
 @override String toString() => 'WebhookIssueCommentDeleted(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

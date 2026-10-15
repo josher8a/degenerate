@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response/ai_search_instance_change_job_status_response_result.dart';@immutable final class AiSearchInstanceGetJobResponse {const AiSearchInstanceGetJobResponse({required this.result, required this.success, });
 
-factory AiSearchInstanceGetJobResponse.fromJson(Map<String, dynamic> json) { return AiSearchInstanceGetJobResponse(
+factory AiSearchInstanceGetJobResponse.fromJson(Map<String, dynamic> json) {return AiSearchInstanceGetJobResponse(
   result: AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AiSearchInstanceChangeJobStatusResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AiSearchInstanceGetJobResponse copyWith({AiSearchInstanceChangeJobStatusResponseResult? result, bool? success, }) { return AiSearchInstanceGetJobResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AiSearchInstanceGetJobResponse copyWith({AiSearchInstanceChangeJobStatusResponseResult? result, bool? success, }) {return AiSearchInstanceGetJobResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceGetJobResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AiSearchInstanceGetJobResponse copyWith({AiSearchInstanceChangeJobStatusResponse
 
 @override String toString() => 'AiSearchInstanceGetJobResponse(result: $result, success: $success)';
 
- }
+}

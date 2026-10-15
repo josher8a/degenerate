@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
 sealed class ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus();
 
-factory ConferenceRecordingEnumStatus.fromJson(String json) { return switch (json) {
+factory ConferenceRecordingEnumStatus.fromJson(String json) {return switch (json) {
   'in-progress' => inProgress,
   'paused' => paused,
   'stopped' => stopped,
@@ -12,7 +12,7 @@ factory ConferenceRecordingEnumStatus.fromJson(String json) { return switch (jso
   'completed' => completed,
   'absent' => absent,
   _ => ConferenceRecordingEnumStatus$Unknown(json),
-}; }
+};}
 
 static const ConferenceRecordingEnumStatus inProgress = ConferenceRecordingEnumStatus$inProgress._();
 
@@ -29,9 +29,9 @@ static const ConferenceRecordingEnumStatus absent = ConferenceRecordingEnumStatu
 static const List<ConferenceRecordingEnumStatus> values = [inProgress, paused, stopped, processing, completed, absent];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in-progress' => 'inProgress',
   'paused' => 'paused',
   'stopped' => 'stopped',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'completed' => 'completed',
   'absent' => 'absent',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConferenceRecordingEnumStatus$Unknown; } 
+bool get isUnknown {return this is ConferenceRecordingEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() paused, required W Function() stopped, required W Function() processing, required W Function() completed, required W Function() absent, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() paused, required W Function() stopped, required W Function() processing, required W Function() completed, required W Function() absent, required W Function(String value) $unknown, }) {return switch (this) {
       ConferenceRecordingEnumStatus$inProgress() => inProgress(),
       ConferenceRecordingEnumStatus$paused() => paused(),
       ConferenceRecordingEnumStatus$stopped() => stopped(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() inProgress, required W Function() paused, requi
       ConferenceRecordingEnumStatus$completed() => completed(),
       ConferenceRecordingEnumStatus$absent() => absent(),
       ConferenceRecordingEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? paused, W Function()? stopped, W Function()? processing, W Function()? completed, W Function()? absent, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? paused, W Function()? stopped, W Function()? processing, W Function()? completed, W Function()? absent, W Function(String value)? $unknown, }) {return switch (this) {
       ConferenceRecordingEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       ConferenceRecordingEnumStatus$paused() => paused != null ? paused() : orElse(value),
       ConferenceRecordingEnumStatus$stopped() => stopped != null ? stopped() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
       ConferenceRecordingEnumStatus$completed() => completed != null ? completed() : orElse(value),
       ConferenceRecordingEnumStatus$absent() => absent != null ? absent() : orElse(value),
       ConferenceRecordingEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConferenceRecordingEnumStatus($value)';
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$inProgress extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$inProgress._();
 
 @override String get value => 'in-progress';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in-progress'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$paused extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$paused._();
 
 @override String get value => 'paused';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'paused'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$stopped extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$stopped._();
 
 @override String get value => 'stopped';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'stopped'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$processing extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$processing._();
 
 @override String get value => 'processing';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$completed extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$completed._();
 
 @override String get value => 'completed';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$absent extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$absent._();
 
 @override String get value => 'absent';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'absent'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingEnumStatus$Unknown extends ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}

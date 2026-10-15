@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_snapshot_response/radar_get_bgp_rpki_aspa_snapshot_response_result.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponse {const RadarGetBgpRpkiAspaSnapshotResponse({required this.result, required this.success, });
 
-factory RadarGetBgpRpkiAspaSnapshotResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaSnapshotResponse(
+factory RadarGetBgpRpkiAspaSnapshotResponse.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaSnapshotResponse(
   result: RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBgpRpkiAspaSnapshotResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpRpkiAspaSnapshotResponse copyWith({RadarGetBgpRpkiAspaSnapshotResponseResult? result, bool? success, }) { return RadarGetBgpRpkiAspaSnapshotResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBgpRpkiAspaSnapshotResponse copyWith({RadarGetBgpRpkiAspaSnapshotResponseResult? result, bool? success, }) {return RadarGetBgpRpkiAspaSnapshotResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRpkiAspaSnapshotResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetBgpRpkiAspaSnapshotResponse copyWith({RadarGetBgpRpkiAspaSnapshotRespons
 
 @override String toString() => 'RadarGetBgpRpkiAspaSnapshotResponse(result: $result, success: $success)';
 
- }
+}

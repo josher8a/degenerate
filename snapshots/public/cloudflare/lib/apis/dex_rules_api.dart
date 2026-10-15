@@ -12,7 +12,7 @@ final class DexRulesApi with ApiExecutor {const DexRulesApi(this.apiConfig);
 /// List DEX Rules
 ///
 /// `GET /accounts/{account_id}/dex/rules`
-Future<ApiResult<DigitalExperienceMonitoringListRulesResponse?, CreateDexRuleError>> listDexRules({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringListRulesResponse?, CreateDexRuleError>> listDexRules({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, ListDexRulesSortOrder? sortOrder, ListDexRulesSortBy? sortBy, String? name, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -37,7 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -45,11 +45,11 @@ return execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Create a DEX Rule
 ///
 /// `POST /accounts/{account_id}/dex/rules`
-Future<ApiResult<DigitalExperienceMonitoringDexRule?, CreateDexRuleError>> createDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCreateRuleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexRule?, CreateDexRuleError>> createDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCreateRuleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,7 +60,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -68,13 +68,13 @@ return execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get DEX Rule
 ///
 /// Get details for a DEX Rule
 ///
 /// `GET /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<DigitalExperienceMonitoringDexRule?, CreateDexRuleError>> getDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexRule?, CreateDexRuleError>> getDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +83,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -91,11 +91,11 @@ return execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Update a DEX Rule
 ///
 /// `PATCH /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<DigitalExperienceMonitoringDexRule?, CreateDexRuleError>> updateDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, required DigitalExperienceMonitoringPatchRuleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexRule?, CreateDexRuleError>> updateDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, required DigitalExperienceMonitoringPatchRuleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -114,11 +114,11 @@ return execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Delete a DEX Rule
 ///
 /// `DELETE /accounts/{account_id}/dex/rules/{rule_id}`
-Future<ApiResult<bool?, CreateDexRuleError>> deleteDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<bool?, CreateDexRuleError>> deleteDexRule({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,7 +127,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -135,5 +135,5 @@ return execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
- }
+}
+}

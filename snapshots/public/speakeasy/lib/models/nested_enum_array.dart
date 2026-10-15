@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum.dart';@immutable final class NestedEnumArray {const NestedEnumArray({required this.tags, required this.enums, });
 
-factory NestedEnumArray.fromJson(Map<String, dynamic> json) { return NestedEnumArray(
+factory NestedEnumArray.fromJson(Map<String, dynamic> json) {return NestedEnumArray(
   tags: json['tags'] as String,
   enums: (json['enums'] as List<dynamic>).map((e) => Enum.fromJson(e as String)).toList(),
-); }
+);}
 
 final String tags;
 
 final List<Enum> enums;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tags': tags,
   'enums': enums.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tags') && json['tags'] is String &&
-      json.containsKey('enums'); } 
-NestedEnumArray copyWith({String? tags, List<Enum>? enums, }) { return NestedEnumArray(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tags') && json['tags'] is String &&
+      json.containsKey('enums');}
+NestedEnumArray copyWith({String? tags, List<Enum>? enums, }) {return NestedEnumArray(
   tags: tags ?? this.tags,
   enums: enums ?? this.enums,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NestedEnumArray &&
           tags == other.tags &&
@@ -31,4 +31,4 @@ NestedEnumArray copyWith({String? tags, List<Enum>? enums, }) { return NestedEnu
 
 @override String toString() => 'NestedEnumArray(tags: $tags, enums: $enums)';
 
- }
+}

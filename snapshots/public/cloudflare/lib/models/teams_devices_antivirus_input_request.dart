@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesAntivirusInputRequest {const TeamsDevicesAntivirusInputRequest({this.updateWindowDays});
 
-factory TeamsDevicesAntivirusInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesAntivirusInputRequest(
+factory TeamsDevicesAntivirusInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesAntivirusInputRequest(
   updateWindowDays: json['update_window_days'] != null ? (json['update_window_days'] as num).toDouble() : null,
-); }
+);}
 
 /// Number of days that the antivirus should be updated within.
 /// 
 /// Example: `7`
 final double? updateWindowDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'update_window_days': ?updateWindowDays,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'update_window_days'}.contains(key)); } 
-TeamsDevicesAntivirusInputRequest copyWith({double? Function()? updateWindowDays}) { return TeamsDevicesAntivirusInputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'update_window_days'}.contains(key));}
+TeamsDevicesAntivirusInputRequest copyWith({double? Function()? updateWindowDays}) {return TeamsDevicesAntivirusInputRequest(
   updateWindowDays: updateWindowDays != null ? updateWindowDays() : this.updateWindowDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesAntivirusInputRequest &&
           updateWindowDays == other.updateWindowDays;
@@ -27,4 +27,4 @@ TeamsDevicesAntivirusInputRequest copyWith({double? Function()? updateWindowDays
 
 @override String toString() => 'TeamsDevicesAntivirusInputRequest(updateWindowDays: $updateWindowDays)';
 
- }
+}

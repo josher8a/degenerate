@@ -2,36 +2,36 @@
 // Source: #/components/schemas/PaymentMethodConfigBizPaymentMethodConfigurationDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodConfigBizPaymentMethodConfigurationDetails {const PaymentMethodConfigBizPaymentMethodConfigurationDetails({required this.id, this.parent, });
+@immutable final class PaymentMethodConfigBizPaymentMethodConfigurationDetails {const PaymentMethodConfigBizPaymentMethodConfigurationDetails({required this.id, this.parent = const Omittable.absent(), });
 
-factory PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(Map<String, dynamic> json) { return PaymentMethodConfigBizPaymentMethodConfigurationDetails(
+factory PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(Map<String, dynamic> json) {return PaymentMethodConfigBizPaymentMethodConfigurationDetails(
   id: json['id'] as String,
-  parent: json['parent'] as String?,
-); }
+  parent: json.containsKey('parent') ? Omittable(json['parent'] as String?) : const Omittable.absent(),
+);}
 
 /// ID of the payment method configuration used.
 final String id;
 
 /// ID of the parent payment method configuration used.
-final String? parent;
+final Omittable<String?> parent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-  'parent': ?parent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+  if (parent.isPresent) 'parent': parent.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final parent$ = parent;
+final parent$ = parent.value;
 if (parent$ != null) {
   if (parent$.runes.length > 5000) { errors.add('parent: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodConfigBizPaymentMethodConfigurationDetails copyWith({String? id, String? Function()? parent, }) { return PaymentMethodConfigBizPaymentMethodConfigurationDetails(
+return errors;}
+PaymentMethodConfigBizPaymentMethodConfigurationDetails copyWith({String? id, Omittable<String?>? parent, }) {return PaymentMethodConfigBizPaymentMethodConfigurationDetails(
   id: id ?? this.id,
-  parent: parent != null ? parent() : this.parent,
-); } 
+  parent: parent ?? this.parent,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfigBizPaymentMethodConfigurationDetails &&
           id == other.id &&
@@ -41,4 +41,4 @@ PaymentMethodConfigBizPaymentMethodConfigurationDetails copyWith({String? id, St
 
 @override String toString() => 'PaymentMethodConfigBizPaymentMethodConfigurationDetails(id: $id, parent: $parent)';
 
- }
+}

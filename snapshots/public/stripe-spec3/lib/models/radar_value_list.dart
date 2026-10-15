@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guide: [Default Stripe lists](https://docs.stripe.com/radar/lists#managing-list-items)
 @immutable final class RadarValueList {const RadarValueList({required this.alias, required this.created, required this.createdBy, required this.id, required this.itemType, required this.listItems, required this.livemode, required this.metadata, required this.name, required this.object, });
 
-factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueList(
+factory RadarValueList.fromJson(Map<String, dynamic> json) {return RadarValueList(
   alias: json['alias'] as String,
   created: (json['created'] as num).toInt(),
   createdBy: json['created_by'] as String,
@@ -17,7 +17,7 @@ factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueLi
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: DeletedRadarValueListObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The name of the value list for use in rules.
 final String alias;
@@ -49,7 +49,7 @@ final String name;
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedRadarValueListObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alias': alias,
   'created': created,
   'created_by': createdBy,
@@ -60,8 +60,8 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'name': name,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alias') && json['alias'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('created_by') && json['created_by'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -70,15 +70,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (alias.runes.length > 5000) { errors.add('alias: length must be <= 5000'); }
 if (createdBy.runes.length > 5000) { errors.add('createdBy: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, ItemType? itemType, ListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, DeletedRadarValueListObject? object, }) { return RadarValueList(
+return errors;}
+RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, ItemType? itemType, ListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, DeletedRadarValueListObject? object, }) {return RadarValueList(
   alias: alias ?? this.alias,
   created: created ?? this.created,
   createdBy: createdBy ?? this.createdBy,
@@ -89,7 +89,7 @@ RadarValueList copyWith({String? alias, int? created, String? createdBy, String?
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarValueList &&
           alias == other.alias &&
@@ -107,4 +107,4 @@ RadarValueList copyWith({String? alias, int? created, String? createdBy, String?
 
 @override String toString() => 'RadarValueList(\n  alias: $alias,\n  created: $created,\n  createdBy: $createdBy,\n  id: $id,\n  itemType: $itemType,\n  listItems: $listItems,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n)';
 
- }
+}

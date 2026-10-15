@@ -2,9 +2,9 @@
 // Source: #/components/schemas/WebhooksReview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';/// The review that was affected.
-@immutable final class WebhooksReview {const WebhooksReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt, });
+@immutable final class WebhooksReview {const WebhooksReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt = const Omittable.absent(), });
 
-factory WebhooksReview.fromJson(Map<String, dynamic> json) { return WebhooksReview(
+factory WebhooksReview.fromJson(Map<String, dynamic> json) {return WebhooksReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
@@ -15,9 +15,9 @@ factory WebhooksReview.fromJson(Map<String, dynamic> json) { return WebhooksRevi
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
   state: json['state'] as String,
   submittedAt: json['submitted_at'] != null ? DateTime.parse(json['submitted_at'] as String) : null,
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhooksReviewLinks links;
 
@@ -43,11 +43,11 @@ final String state;
 
 final DateTime? submittedAt;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -58,21 +58,21 @@ Map<String, dynamic> toJson() { return {
   'pull_request_url': pullRequestUrl.toString(),
   'state': state,
   'submitted_at': submittedAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('author_association') &&
-      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('submitted_at') && json['submitted_at'] is String &&
-      json.containsKey('user'); } 
-WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, String? state, DateTime? Function()? submittedAt, DateTime? Function()? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksReview(
+      json.containsKey('submitted_at') && (json['submitted_at'] == null || json['submitted_at'] is String) &&
+      json.containsKey('user');}
+WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, String? state, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, DiscussionUser? Function()? user, }) {return WebhooksReview(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,
@@ -83,9 +83,9 @@ WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAs
   pullRequestUrl: pullRequestUrl ?? this.pullRequestUrl,
   state: state ?? this.state,
   submittedAt: submittedAt != null ? submittedAt() : this.submittedAt,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksReview &&
           links == other.links &&
@@ -105,4 +105,4 @@ WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAs
 
 @override String toString() => 'WebhooksReview(\n  links: $links,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  nodeId: $nodeId,\n  pullRequestUrl: $pullRequestUrl,\n  state: $state,\n  submittedAt: $submittedAt,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
- }
+}

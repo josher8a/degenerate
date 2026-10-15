@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'pull_request_body' secret scanning location type. This location type shows that a secret was detected in the body of a pull request.
 @immutable final class SecretScanningLocationPullRequestBody {const SecretScanningLocationPullRequestBody({required this.pullRequestBodyUrl});
 
-factory SecretScanningLocationPullRequestBody.fromJson(Map<String, dynamic> json) { return SecretScanningLocationPullRequestBody(
+factory SecretScanningLocationPullRequestBody.fromJson(Map<String, dynamic> json) {return SecretScanningLocationPullRequestBody(
   pullRequestBodyUrl: Uri.parse(json['pull_request_body_url'] as String),
-); }
+);}
 
 /// The API URL to get the pull request where the secret was detected.
 final Uri pullRequestBodyUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pull_request_body_url': pullRequestBodyUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull_request_body_url') && json['pull_request_body_url'] is String; } 
-SecretScanningLocationPullRequestBody copyWith({Uri? pullRequestBodyUrl}) { return SecretScanningLocationPullRequestBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pull_request_body_url') && json['pull_request_body_url'] is String;}
+SecretScanningLocationPullRequestBody copyWith({Uri? pullRequestBodyUrl}) {return SecretScanningLocationPullRequestBody(
   pullRequestBodyUrl: pullRequestBodyUrl ?? this.pullRequestBodyUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningLocationPullRequestBody &&
           pullRequestBodyUrl == other.pullRequestBodyUrl;
@@ -26,4 +26,4 @@ SecretScanningLocationPullRequestBody copyWith({Uri? pullRequestBodyUrl}) { retu
 
 @override String toString() => 'SecretScanningLocationPullRequestBody(pullRequestBodyUrl: $pullRequestBodyUrl)';
 
- }
+}

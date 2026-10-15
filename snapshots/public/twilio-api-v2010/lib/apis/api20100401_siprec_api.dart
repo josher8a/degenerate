@@ -12,7 +12,7 @@ final class Api20100401SiprecApi with ApiExecutor {const Api20100401SiprecApi(th
 /// Create a Siprec
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec.json`
-Future<ApiResult<AccountCallSiprec, Never>> createSiprec({required String accountSid, required String callSid, CreateSiprecRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallSiprec, Never>> createSiprec({required String accountSid, required String callSid, CreateSiprecRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -430,17 +430,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCallSiprec.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stop a Siprec using either the SID of the Siprec resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec/{Sid}.json`
-Future<ApiResult<AccountCallSiprec, Never>> updateSiprec({required String accountSid, required String callSid, required String sid, UpdateSiprecRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallSiprec, Never>> updateSiprec({required String accountSid, required String callSid, required String sid, UpdateSiprecRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -453,11 +453,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountCallSiprec.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxRegistrationObject {const TaxRegistrationObject();
 
-factory TaxRegistrationObject.fromJson(String json) { return switch (json) {
+factory TaxRegistrationObject.fromJson(String json) {return switch (json) {
   'tax.registration' => taxRegistration,
   _ => TaxRegistrationObject$Unknown(json),
-}; }
+};}
 
 static const TaxRegistrationObject taxRegistration = TaxRegistrationObject$taxRegistration._();
 
 static const List<TaxRegistrationObject> values = [taxRegistration];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax.registration' => 'taxRegistration',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxRegistrationObject$Unknown; } 
+bool get isUnknown {return this is TaxRegistrationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxRegistration, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxRegistration, required W Function(String value) $unknown, }) {return switch (this) {
       TaxRegistrationObject$taxRegistration() => taxRegistration(),
       TaxRegistrationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRegistration, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRegistration, W Function(String value)? $unknown, }) {return switch (this) {
       TaxRegistrationObject$taxRegistration() => taxRegistration != null ? taxRegistration() : orElse(value),
       TaxRegistrationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxRegistrationObject($value)';
 
- }
+}
 @immutable final class TaxRegistrationObject$taxRegistration extends TaxRegistrationObject {const TaxRegistrationObject$taxRegistration._();
 
 @override String get value => 'tax.registration';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRegis
 
 @override int get hashCode => 'tax.registration'.hashCode;
 
- }
+}
 @immutable final class TaxRegistrationObject$Unknown extends TaxRegistrationObject {const TaxRegistrationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRegis
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
 sealed class TaxRegistrationStatus {const TaxRegistrationStatus();
 
-factory TaxRegistrationStatus.fromJson(String json) { return switch (json) {
+factory TaxRegistrationStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'expired' => expired,
   'scheduled' => scheduled,
   _ => TaxRegistrationStatus$Unknown(json),
-}; }
+};}
 
 static const TaxRegistrationStatus active = TaxRegistrationStatus$active._();
 
@@ -73,33 +73,33 @@ static const TaxRegistrationStatus scheduled = TaxRegistrationStatus$scheduled._
 static const List<TaxRegistrationStatus> values = [active, expired, scheduled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'expired' => 'expired',
   'scheduled' => 'scheduled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxRegistrationStatus$Unknown; } 
+bool get isUnknown {return this is TaxRegistrationStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() expired, required W Function() scheduled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() expired, required W Function() scheduled, required W Function(String value) $unknown, }) {return switch (this) {
       TaxRegistrationStatus$active() => active(),
       TaxRegistrationStatus$expired() => expired(),
       TaxRegistrationStatus$scheduled() => scheduled(),
       TaxRegistrationStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? scheduled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? scheduled, W Function(String value)? $unknown, }) {return switch (this) {
       TaxRegistrationStatus$active() => active != null ? active() : orElse(value),
       TaxRegistrationStatus$expired() => expired != null ? expired() : orElse(value),
       TaxRegistrationStatus$scheduled() => scheduled != null ? scheduled() : orElse(value),
       TaxRegistrationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxRegistrationStatus($value)';
 
- }
+}
 @immutable final class TaxRegistrationStatus$active extends TaxRegistrationStatus {const TaxRegistrationStatus$active._();
 
 @override String get value => 'active';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TaxRegistrationStatus$expired extends TaxRegistrationStatus {const TaxRegistrationStatus$expired._();
 
 @override String get value => 'expired';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class TaxRegistrationStatus$scheduled extends TaxRegistrationStatus {const TaxRegistrationStatus$scheduled._();
 
 @override String get value => 'scheduled';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'scheduled'.hashCode;
 
- }
+}
 @immutable final class TaxRegistrationStatus$Unknown extends TaxRegistrationStatus {const TaxRegistrationStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,25 +136,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Tax `Registration` lets us know that your business is registered to collect tax on payments within a region, enabling you to [automatically collect tax](https://docs.stripe.com/tax).
 /// 
 /// Stripe doesn't register on your behalf with the relevant authorities when you create a Tax `Registration` object. For more information on how to register to collect tax, see [our guide](https://docs.stripe.com/tax/registering).
 /// 
 /// Related guide: [Using the Registrations API](https://docs.stripe.com/tax/registrations-api)
-@immutable final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, required this.id, required this.livemode, required this.object, required this.status, this.expiresAt, });
+@immutable final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, required this.id, required this.livemode, required this.object, required this.status, this.expiresAt = const Omittable.absent(), });
 
-factory TaxRegistration.fromJson(Map<String, dynamic> json) { return TaxRegistration(
+factory TaxRegistration.fromJson(Map<String, dynamic> json) {return TaxRegistration(
   activeFrom: (json['active_from'] as num).toInt(),
   country: json['country'] as String,
   countryOptions: TaxProductRegistrationsResourceCountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: TaxRegistrationObject.fromJson(json['object'] as String),
   status: TaxRegistrationStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Time at which the registration becomes active. Measured in seconds since the Unix epoch.
 final int activeFrom;
@@ -168,7 +168,7 @@ final TaxProductRegistrationsResourceCountryOptions countryOptions;
 final int created;
 
 /// If set, the registration stops being active at this time. If not set, the registration will be active indefinitely. Measured in seconds since the Unix epoch.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -182,41 +182,41 @@ final TaxRegistrationObject object;
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
 final TaxRegistrationStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_from': activeFrom,
   'country': country,
   'country_options': countryOptions.toJson(),
   'created': created,
-  'expires_at': ?expiresAt,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_from') && json['active_from'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_from') && json['active_from'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('country_options') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, int? Function()? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) { return TaxRegistration(
+return errors;}
+TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) {return TaxRegistration(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,
   countryOptions: countryOptions ?? this.countryOptions,
   created: created ?? this.created,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxRegistration &&
           activeFrom == other.activeFrom &&
@@ -233,4 +233,4 @@ TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrati
 
 @override String toString() => 'TaxRegistration(\n  activeFrom: $activeFrom,\n  country: $country,\n  countryOptions: $countryOptions,\n  created: $created,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n)';
 
- }
+}

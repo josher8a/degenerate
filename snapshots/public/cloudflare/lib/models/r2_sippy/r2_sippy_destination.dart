@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_aws/destination_provider.dart';/// Details about the configured destination bucket.
 @immutable final class R2SippyDestination {const R2SippyDestination({this.accessKeyId, this.account, this.bucket, this.provider, });
 
-factory R2SippyDestination.fromJson(Map<String, dynamic> json) { return R2SippyDestination(
+factory R2SippyDestination.fromJson(Map<String, dynamic> json) {return R2SippyDestination(
   accessKeyId: json['accessKeyId'] as String?,
   account: json['account'] as String?,
   bucket: json['bucket'] as String?,
   provider: json['provider'] != null ? DestinationProvider.fromJson(json['provider'] as String) : null,
-); }
+);}
 
 /// ID of the Cloudflare API token used when writing objects to this
 /// bucket.
@@ -23,19 +23,19 @@ final String? bucket;
 
 final DestinationProvider? provider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessKeyId': ?accessKeyId,
   'account': ?account,
   'bucket': ?bucket,
   if (provider != null) 'provider': provider?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'account', 'bucket', 'provider'}.contains(key)); } 
-R2SippyDestination copyWith({String? Function()? accessKeyId, String? Function()? account, String? Function()? bucket, DestinationProvider? Function()? provider, }) { return R2SippyDestination(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessKeyId', 'account', 'bucket', 'provider'}.contains(key));}
+R2SippyDestination copyWith({String? Function()? accessKeyId, String? Function()? account, String? Function()? bucket, DestinationProvider? Function()? provider, }) {return R2SippyDestination(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   account: account != null ? account() : this.account,
   bucket: bucket != null ? bucket() : this.bucket,
   provider: provider != null ? provider() : this.provider,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2SippyDestination &&
           accessKeyId == other.accessKeyId &&
@@ -47,4 +47,4 @@ R2SippyDestination copyWith({String? Function()? accessKeyId, String? Function()
 
 @override String toString() => 'R2SippyDestination(accessKeyId: $accessKeyId, account: $account, bucket: $bucket, provider: $provider)';
 
- }
+}

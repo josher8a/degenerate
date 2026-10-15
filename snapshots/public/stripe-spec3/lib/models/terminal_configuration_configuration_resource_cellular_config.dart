@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceCellularConfig {const TerminalConfigurationConfigurationResourceCellularConfig({required this.enabled});
 
-factory TerminalConfigurationConfigurationResourceCellularConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceCellularConfig(
+factory TerminalConfigurationConfigurationResourceCellularConfig.fromJson(Map<String, dynamic> json) {return TerminalConfigurationConfigurationResourceCellularConfig(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Whether a cellular-capable reader can connect to the internet over cellular.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-TerminalConfigurationConfigurationResourceCellularConfig copyWith({bool? enabled}) { return TerminalConfigurationConfigurationResourceCellularConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+TerminalConfigurationConfigurationResourceCellularConfig copyWith({bool? enabled}) {return TerminalConfigurationConfigurationResourceCellularConfig(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceCellularConfig &&
           enabled == other.enabled;
@@ -26,4 +26,4 @@ TerminalConfigurationConfigurationResourceCellularConfig copyWith({bool? enabled
 
 @override String toString() => 'TerminalConfigurationConfigurationResourceCellularConfig(enabled: $enabled)';
 
- }
+}

@@ -8,12 +8,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details how `sel
 /// 
 sealed class ShieldSelectorOperationState {const ShieldSelectorOperationState();
 
-factory ShieldSelectorOperationState.fromJson(String json) { return switch (json) {
+factory ShieldSelectorOperationState.fromJson(String json) {return switch (json) {
   'included' => included,
   'excluded' => excluded,
   'ignored' => ignored,
   _ => ShieldSelectorOperationState$Unknown(json),
-}; }
+};}
 
 static const ShieldSelectorOperationState included = ShieldSelectorOperationState$included._();
 
@@ -24,33 +24,33 @@ static const ShieldSelectorOperationState ignored = ShieldSelectorOperationState
 static const List<ShieldSelectorOperationState> values = [included, excluded, ignored];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'included' => 'included',
   'excluded' => 'excluded',
   'ignored' => 'ignored',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShieldSelectorOperationState$Unknown; } 
+bool get isUnknown {return this is ShieldSelectorOperationState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() included, required W Function() excluded, required W Function() ignored, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() included, required W Function() excluded, required W Function() ignored, required W Function(String value) $unknown, }) {return switch (this) {
       ShieldSelectorOperationState$included() => included(),
       ShieldSelectorOperationState$excluded() => excluded(),
       ShieldSelectorOperationState$ignored() => ignored(),
       ShieldSelectorOperationState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? excluded, W Function()? ignored, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? excluded, W Function()? ignored, W Function(String value)? $unknown, }) {return switch (this) {
       ShieldSelectorOperationState$included() => included != null ? included() : orElse(value),
       ShieldSelectorOperationState$excluded() => excluded != null ? excluded() : orElse(value),
       ShieldSelectorOperationState$ignored() => ignored != null ? ignored() : orElse(value),
       ShieldSelectorOperationState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShieldSelectorOperationState($value)';
 
- }
+}
 @immutable final class ShieldSelectorOperationState$included extends ShieldSelectorOperationState {const ShieldSelectorOperationState$included._();
 
 @override String get value => 'included';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'included'.hashCode;
 
- }
+}
 @immutable final class ShieldSelectorOperationState$excluded extends ShieldSelectorOperationState {const ShieldSelectorOperationState$excluded._();
 
 @override String get value => 'excluded';
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'excluded'.hashCode;
 
- }
+}
 @immutable final class ShieldSelectorOperationState$ignored extends ShieldSelectorOperationState {const ShieldSelectorOperationState$ignored._();
 
 @override String get value => 'ignored';
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'ignored'.hashCode;
 
- }
+}
 @immutable final class ShieldSelectorOperationState$Unknown extends ShieldSelectorOperationState {const ShieldSelectorOperationState$Unknown(this.value);
 
 @override final String value;
@@ -87,4 +87,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => value.hashCode;
 
- }
+}

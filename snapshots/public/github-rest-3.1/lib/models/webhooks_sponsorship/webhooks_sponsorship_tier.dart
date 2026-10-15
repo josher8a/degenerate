@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
 @immutable final class WebhooksSponsorshipTier {const WebhooksSponsorshipTier({required this.createdAt, required this.description, required this.isOneTime, required this.monthlyPriceInCents, required this.monthlyPriceInDollars, required this.name, required this.nodeId, this.isCustomAmmount, this.isCustomAmount, });
 
-factory WebhooksSponsorshipTier.fromJson(Map<String, dynamic> json) { return WebhooksSponsorshipTier(
+factory WebhooksSponsorshipTier.fromJson(Map<String, dynamic> json) {return WebhooksSponsorshipTier(
   createdAt: json['created_at'] as String,
   description: json['description'] as String,
   isCustomAmmount: json['is_custom_ammount'] as bool?,
@@ -14,7 +14,7 @@ factory WebhooksSponsorshipTier.fromJson(Map<String, dynamic> json) { return Web
   monthlyPriceInDollars: (json['monthly_price_in_dollars'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-); }
+);}
 
 final String createdAt;
 
@@ -34,7 +34,7 @@ final String name;
 
 final String nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'description': description,
   'is_custom_ammount': ?isCustomAmmount,
@@ -44,15 +44,15 @@ Map<String, dynamic> toJson() { return {
   'monthly_price_in_dollars': monthlyPriceInDollars,
   'name': name,
   'node_id': nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('is_one_time') && json['is_one_time'] is bool &&
       json.containsKey('monthly_price_in_cents') && json['monthly_price_in_cents'] is num &&
       json.containsKey('monthly_price_in_dollars') && json['monthly_price_in_dollars'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? Function()? isCustomAmmount, bool? Function()? isCustomAmount, bool? isOneTime, int? monthlyPriceInCents, int? monthlyPriceInDollars, String? name, String? nodeId, }) { return WebhooksSponsorshipTier(
+      json.containsKey('node_id') && json['node_id'] is String;}
+WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? Function()? isCustomAmmount, bool? Function()? isCustomAmount, bool? isOneTime, int? monthlyPriceInCents, int? monthlyPriceInDollars, String? name, String? nodeId, }) {return WebhooksSponsorshipTier(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   isCustomAmmount: isCustomAmmount != null ? isCustomAmmount() : this.isCustomAmmount,
@@ -62,7 +62,7 @@ WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? 
   monthlyPriceInDollars: monthlyPriceInDollars ?? this.monthlyPriceInDollars,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSponsorshipTier &&
           createdAt == other.createdAt &&
@@ -79,4 +79,4 @@ WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? 
 
 @override String toString() => 'WebhooksSponsorshipTier(\n  createdAt: $createdAt,\n  description: $description,\n  isCustomAmmount: $isCustomAmmount,\n  isCustomAmount: $isCustomAmount,\n  isOneTime: $isOneTime,\n  monthlyPriceInCents: $monthlyPriceInCents,\n  monthlyPriceInDollars: $monthlyPriceInDollars,\n  name: $name,\n  nodeId: $nodeId,\n)';
 
- }
+}

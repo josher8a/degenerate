@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
 @immutable final class GitCreateCommitRequestAuthor {const GitCreateCommitRequestAuthor({required this.name, required this.email, this.date, });
 
-factory GitCreateCommitRequestAuthor.fromJson(Map<String, dynamic> json) { return GitCreateCommitRequestAuthor(
+factory GitCreateCommitRequestAuthor.fromJson(Map<String, dynamic> json) {return GitCreateCommitRequestAuthor(
   name: json['name'] as String,
   email: json['email'] as String,
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-); }
+);}
 
 /// The name of the author (or committer) of the commit
 final String name;
@@ -19,18 +19,18 @@ final String email;
 /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime? date;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'email': email,
   if (date != null) 'date': date?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('email') && json['email'] is String; } 
-GitCreateCommitRequestAuthor copyWith({String? name, String? email, DateTime? Function()? date, }) { return GitCreateCommitRequestAuthor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('email') && json['email'] is String;}
+GitCreateCommitRequestAuthor copyWith({String? name, String? email, DateTime? Function()? date, }) {return GitCreateCommitRequestAuthor(
   name: name ?? this.name,
   email: email ?? this.email,
   date: date != null ? date() : this.date,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateCommitRequestAuthor &&
           name == other.name &&
@@ -41,4 +41,4 @@ GitCreateCommitRequestAuthor copyWith({String? name, String? email, DateTime? Fu
 
 @override String toString() => 'GitCreateCommitRequestAuthor(name: $name, email: $email, date: $date)';
 
- }
+}

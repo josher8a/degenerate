@@ -12,7 +12,7 @@ final class SecurityCenterInsightsApi with ApiExecutor {const SecurityCenterInsi
 /// Retrieves Security Center Issues Types
 ///
 /// `GET /accounts/{account_id}/intel/attack-surface-report/issue-types`
-Future<ApiResult<List<String>?, ArchiveSecurityCenterInsightError>> getSecurityCenterIssueTypes({required SecurityCenterIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>?, ArchiveSecurityCenterInsightError>> getSecurityCenterIssueTypes({required SecurityCenterIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,7 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -29,11 +29,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Security Center Insights
 ///
 /// `GET /accounts/{account_id}/security-center/insights`
-Future<ApiResult<GetSecurityCenterInsightsResponseResultVariant1?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsights({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSecurityCenterInsightsResponseResultVariant1?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsights({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -106,7 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -114,13 +114,13 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Security Center Insight Context
 ///
 /// Returns the full context payload for an insight. This endpoint is used for insights with large payloads that are not included inline in the list response.
 ///
 /// `GET /accounts/{account_id}/security-center/insights/{issue_id}/context`
-Future<ApiResult<Map<String, dynamic>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightContext({required SecurityCenterIdentifier accountId, required String issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightContext({required SecurityCenterIdentifier accountId, required String issueId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -129,7 +129,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -137,11 +137,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Archives Security Center Insight
 ///
 /// `PUT /accounts/{account_id}/security-center/insights/{issue_id}/dismiss`
-Future<ApiResult<ResponseCommon61, ArchiveSecurityCenterInsightError>> archiveSecurityCenterInsight({required SecurityCenterIdentifier accountId, required String issueId, required ArchiveSecurityCenterInsightRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon61, ArchiveSecurityCenterInsightError>> archiveSecurityCenterInsight({required SecurityCenterIdentifier accountId, required String issueId, required ArchiveSecurityCenterInsightRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -152,18 +152,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon61.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Security Center Insight Counts by Class
 ///
 /// `GET /accounts/{account_id}/security-center/insights/class`
-Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightCountsByClass({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightCountsByClass({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -230,7 +230,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -238,11 +238,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Security Center Insight Counts by Severity
 ///
 /// `GET /accounts/{account_id}/security-center/insights/severity`
-Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightCountsBySeverity({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightCountsBySeverity({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -309,7 +309,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -317,11 +317,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Security Center Insight Counts by Type
 ///
 /// `GET /accounts/{account_id}/security-center/insights/type`
-Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightCountsByType({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getSecurityCenterInsightCountsByType({required SecurityCenterIdentifier accountId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -388,7 +388,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -396,11 +396,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Zone Security Center Insights
 ///
 /// `GET /zones/{zone_id}/security-center/insights`
-Future<ApiResult<GetSecurityCenterInsightsResponseResultVariant1?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsights({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSecurityCenterInsightsResponseResultVariant1?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsights({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -473,7 +473,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -481,11 +481,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Archives Zone Security Center Insight
 ///
 /// `PUT /zones/{zone_id}/security-center/insights/{issue_id}/dismiss`
-Future<ApiResult<ResponseCommon61, ArchiveSecurityCenterInsightError>> archiveZoneSecurityCenterInsight({required SecurityCenterIdentifier zoneId, required String issueId, required ArchiveZoneSecurityCenterInsightRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon61, ArchiveSecurityCenterInsightError>> archiveZoneSecurityCenterInsight({required SecurityCenterIdentifier zoneId, required String issueId, required ArchiveZoneSecurityCenterInsightRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -496,18 +496,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCommon61.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Zone Security Center Insight Counts by Class
 ///
 /// `GET /zones/{zone_id}/security-center/insights/class`
-Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsightCountsByClass({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsightCountsByClass({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -574,7 +574,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -582,11 +582,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Zone Security Center Insight Counts by Severity
 ///
 /// `GET /zones/{zone_id}/security-center/insights/severity`
-Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsightCountsBySeverity({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsightCountsBySeverity({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -653,7 +653,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -661,11 +661,11 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
+}
 /// Retrieves Zone Security Center Insight Counts by Type
 ///
 /// `GET /zones/{zone_id}/security-center/insights/type`
-Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsightCountsByType({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecurityCenterValueCountsResponseResultVariant1>?, ArchiveSecurityCenterInsightError>> getZoneSecurityCenterInsightCountsByType({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toJson().toString();
@@ -732,7 +732,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -740,5 +740,5 @@ return execute(
   },
   onError: ArchiveSecurityCenterInsightError.fromResponse,
 );
- } 
- }
+}
+}

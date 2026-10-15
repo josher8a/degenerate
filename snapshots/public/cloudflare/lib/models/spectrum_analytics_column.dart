@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_column/metrics.dart';@immutable final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
 
-factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsColumn(
+factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) {return SpectrumAnalyticsColumn(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metrics: json['metrics'] != null ? OneOf2.parse(json['metrics'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList()).toList(),) : null,
-); }
+);}
 
 final List<String>? dimensions;
 
 final Metrics? metrics;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dimensions': ?dimensions,
   if (metrics != null) 'metrics': metrics?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'metrics'}.contains(key)); } 
-SpectrumAnalyticsColumn copyWith({List<String>? Function()? dimensions, Metrics? Function()? metrics, }) { return SpectrumAnalyticsColumn(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dimensions', 'metrics'}.contains(key));}
+SpectrumAnalyticsColumn copyWith({List<String>? Function()? dimensions, Metrics? Function()? metrics, }) {return SpectrumAnalyticsColumn(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   metrics: metrics != null ? metrics() : this.metrics,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsColumn &&
           listEquals(dimensions, other.dimensions) &&
@@ -30,4 +30,4 @@ SpectrumAnalyticsColumn copyWith({List<String>? Function()? dimensions, Metrics?
 
 @override String toString() => 'SpectrumAnalyticsColumn(dimensions: $dimensions, metrics: $metrics)';
 
- }
+}

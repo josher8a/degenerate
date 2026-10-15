@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateHyperdriveResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_config.dart';@immutable final class CreateHyperdriveResponse {const CreateHyperdriveResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_config_response2.dart';import 'package:pub_cloudflare/models/hyperdrive_messages2.dart';@immutable final class CreateHyperdriveResponse {const CreateHyperdriveResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory CreateHyperdriveResponse.fromJson(Map<String, dynamic> json) { return CreateHyperdriveResponse(
-  result: json['result'] != null ? HyperdriveHyperdriveConfig.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory CreateHyperdriveResponse.fromJson(Map<String, dynamic> json) {return CreateHyperdriveResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: HyperdriveHyperdriveConfigResponse2.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final HyperdriveHyperdriveConfig? result;
+final List<HyperdriveMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-CreateHyperdriveResponse copyWith({HyperdriveHyperdriveConfig? Function()? result}) { return CreateHyperdriveResponse(
-  result: result != null ? result() : this.result,
-); } 
+final List<HyperdriveMessages2> messages;
+
+final HyperdriveHyperdriveConfigResponse2 result;
+
+/// Return the status of the API call success.
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+CreateHyperdriveResponse copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, HyperdriveHyperdriveConfigResponse2? result, bool? success, }) {return CreateHyperdriveResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateHyperdriveResponse &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'CreateHyperdriveResponse(result: $result)';
+@override String toString() => 'CreateHyperdriveResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

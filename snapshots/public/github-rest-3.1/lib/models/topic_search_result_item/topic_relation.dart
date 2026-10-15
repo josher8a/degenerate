@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TopicRelation {const TopicRelation({this.id, this.name, this.topicId, this.relationType, });
 
-factory TopicRelation.fromJson(Map<String, dynamic> json) { return TopicRelation(
+factory TopicRelation.fromJson(Map<String, dynamic> json) {return TopicRelation(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   name: json['name'] as String?,
   topicId: json['topic_id'] != null ? (json['topic_id'] as num).toInt() : null,
   relationType: json['relation_type'] as String?,
-); }
+);}
 
 final int? id;
 
@@ -18,19 +18,19 @@ final int? topicId;
 
 final String? relationType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'name': ?name,
   'topic_id': ?topicId,
   'relation_type': ?relationType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'topic_id', 'relation_type'}.contains(key)); } 
-TopicRelation copyWith({int? Function()? id, String? Function()? name, int? Function()? topicId, String? Function()? relationType, }) { return TopicRelation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'topic_id', 'relation_type'}.contains(key));}
+TopicRelation copyWith({int? Function()? id, String? Function()? name, int? Function()? topicId, String? Function()? relationType, }) {return TopicRelation(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   topicId: topicId != null ? topicId() : this.topicId,
   relationType: relationType != null ? relationType() : this.relationType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TopicRelation &&
           id == other.id &&
@@ -42,4 +42,4 @@ TopicRelation copyWith({int? Function()? id, String? Function()? name, int? Func
 
 @override String toString() => 'TopicRelation(id: $id, name: $name, topicId: $topicId, relationType: $relationType)';
 
- }
+}

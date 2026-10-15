@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_variant_identifier.dart';import 'package:pub_cloudflare/models/images_image_variant_never_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/images_image_variant_options.dart';@immutable final class Hero {const Hero({required this.id, required this.options, this.neverRequireSignedUrLs, });
 
-factory Hero.fromJson(Map<String, dynamic> json) { return Hero(
+factory Hero.fromJson(Map<String, dynamic> json) {return Hero(
   id: ImagesImageVariantIdentifier.fromJson(json['id'] as String),
   neverRequireSignedUrLs: json['neverRequireSignedURLs'] != null ? ImagesImageVariantNeverRequireSignedUrLs.fromJson(json['neverRequireSignedURLs'] as bool) : null,
   options: ImagesImageVariantOptions.fromJson(json['options'] as Map<String, dynamic>),
-); }
+);}
 
 final ImagesImageVariantIdentifier id;
 
@@ -16,18 +16,18 @@ final ImagesImageVariantNeverRequireSignedUrLs? neverRequireSignedUrLs;
 
 final ImagesImageVariantOptions options;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   if (neverRequireSignedUrLs != null) 'neverRequireSignedURLs': neverRequireSignedUrLs?.toJson(),
   'options': options.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('options'); } 
-Hero copyWith({ImagesImageVariantIdentifier? id, ImagesImageVariantNeverRequireSignedUrLs? Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return Hero(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('options');}
+Hero copyWith({ImagesImageVariantIdentifier? id, ImagesImageVariantNeverRequireSignedUrLs? Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) {return Hero(
   id: id ?? this.id,
   neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
   options: options ?? this.options,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Hero &&
           id == other.id &&
@@ -38,4 +38,4 @@ Hero copyWith({ImagesImageVariantIdentifier? id, ImagesImageVariantNeverRequireS
 
 @override String toString() => 'Hero(id: $id, neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)';
 
- }
+}

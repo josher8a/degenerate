@@ -18,7 +18,7 @@ final class PrivateRegistriesApi with ApiExecutor {const PrivateRegistriesApi(th
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries`
-Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, ActionsGetCustomOidcSubClaimForRepoError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, ActionsGetCustomOidcSubClaimForRepoError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -38,14 +38,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
- } 
+}
 /// Create a private registry for an organization
 ///
 /// 
@@ -54,7 +54,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/private-registries`
-Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,14 +65,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// Get private registries public key for an organization
 ///
 /// 
@@ -81,7 +81,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries/public-key`
-Future<ApiResult<PrivateRegistriesGetOrgPublicKeyResponse, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesGetOrgPublicKey({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PrivateRegistriesGetOrgPublicKeyResponse, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesGetOrgPublicKey({required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,14 +90,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PrivateRegistriesGetOrgPublicKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// Get a private registry for an organization
 ///
 /// 
@@ -106,7 +106,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<OrgPrivateRegistryConfiguration, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesGetOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgPrivateRegistryConfiguration, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesGetOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -115,14 +115,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return OrgPrivateRegistryConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// Update a private registry for an organization
 ///
 /// 
@@ -131,7 +131,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,12 +142,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// Delete a private registry for an organization
 ///
 /// 
@@ -156,7 +156,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, ActionsGetCustomOidcSubClaimForRepoError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetCustomOidcSubClaimForRepoError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -165,10 +165,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
- } 
- }
+}
+}

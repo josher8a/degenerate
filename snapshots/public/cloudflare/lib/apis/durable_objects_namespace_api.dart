@@ -14,7 +14,7 @@ final class DurableObjectsNamespaceApi with ApiExecutor {const DurableObjectsNam
 /// Returns the Durable Object namespaces owned by an account.
 ///
 /// `GET /accounts/{account_id}/workers/durable_objects/namespaces`
-Future<ApiResult<List<WorkersNamespace>?, CreateWorkerVersionError>> durableObjectsNamespaceListNamespaces({required WorkersIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersNamespace>?, CreateWorkerVersionError>> durableObjectsNamespaceListNamespaces({required WorkersIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -42,13 +42,13 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// List Objects
 ///
 /// Returns the Durable Objects in a given namespace.
 ///
 /// `GET /accounts/{account_id}/workers/durable_objects/namespaces/{id}/objects`
-Future<ApiResult<List<WorkersObject>?, CreateWorkerVersionError>> durableObjectsNamespaceListObjects({required WorkersIdentifier accountId, required WorkersSchemasId id, double? limit, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersObject>?, CreateWorkerVersionError>> durableObjectsNamespaceListObjects({required WorkersIdentifier accountId, required WorkersSchemasId id, double? limit, String? cursor, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -76,5 +76,5 @@ return execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

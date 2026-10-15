@@ -10,25 +10,25 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesGlobalWarpOverrideRequest {const TeamsDevicesGlobalWarpOverrideRequest({required this.disconnect, this.justification, });
 
-factory TeamsDevicesGlobalWarpOverrideRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesGlobalWarpOverrideRequest(
+factory TeamsDevicesGlobalWarpOverrideRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesGlobalWarpOverrideRequest(
   disconnect: TeamsDevicesDisconnect.fromJson(json['disconnect'] as bool),
   justification: json['justification'] != null ? TeamsDevicesJustification.fromJson(json['justification'] as String) : null,
-); }
+);}
 
 /// Disconnects all devices on the account using Global WARP override.
 final TeamsDevicesDisconnect disconnect;
 
 final TeamsDevicesJustification? justification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'disconnect': disconnect.toJson(),
   if (justification != null) 'justification': justification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('disconnect'); } 
-TeamsDevicesGlobalWarpOverrideRequest copyWith({TeamsDevicesDisconnect? disconnect, TeamsDevicesJustification? Function()? justification, }) { return TeamsDevicesGlobalWarpOverrideRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('disconnect');}
+TeamsDevicesGlobalWarpOverrideRequest copyWith({TeamsDevicesDisconnect? disconnect, TeamsDevicesJustification? Function()? justification, }) {return TeamsDevicesGlobalWarpOverrideRequest(
   disconnect: disconnect ?? this.disconnect,
   justification: justification != null ? justification() : this.justification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesGlobalWarpOverrideRequest &&
           disconnect == other.disconnect &&
@@ -38,4 +38,4 @@ TeamsDevicesGlobalWarpOverrideRequest copyWith({TeamsDevicesDisconnect? disconne
 
 @override String toString() => 'TeamsDevicesGlobalWarpOverrideRequest(disconnect: $disconnect, justification: $justification)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_list_item.dart';import 'package:pub_cloudflare/models/mcn_list_item/mcn_list_item_list.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_resource_preview_item.dart';import 'package:pub_cloudflare/models/mcn_string_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType();
 
-factory McnResourceDetailsSectionItemValueItemType.fromJson(String json) { return switch (json) {
+factory McnResourceDetailsSectionItemValueItemType.fromJson(String json) {return switch (json) {
   'mcn_string_item' => mcnStringItem,
   'mcn_yaml_item' => mcnYamlItem,
   'mcn_yaml_diff_item' => mcnYamlDiffItem,
   'mcn_resource_preview_item' => mcnResourcePreviewItem,
   'mcn_list_item' => mcnListItem,
   _ => McnResourceDetailsSectionItemValueItemType$Unknown(json),
-}; }
+};}
 
 static const McnResourceDetailsSectionItemValueItemType mcnStringItem = McnResourceDetailsSectionItemValueItemType$mcnStringItem._();
 
@@ -29,7 +29,7 @@ String toJson() => value;
 
 bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown;
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueItemType$mcnStringItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnStringItem._();
 
 @override String get value => 'mcn_string_item';
@@ -40,7 +40,7 @@ bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown
 
 @override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_string_item)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueItemType$mcnYamlItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnYamlItem._();
 
 @override String get value => 'mcn_yaml_item';
@@ -51,7 +51,7 @@ bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown
 
 @override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_yaml_item)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueItemType$mcnYamlDiffItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnYamlDiffItem._();
 
 @override String get value => 'mcn_yaml_diff_item';
@@ -62,7 +62,7 @@ bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown
 
 @override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_yaml_diff_item)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueItemType$mcnResourcePreviewItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnResourcePreviewItem._();
 
 @override String get value => 'mcn_resource_preview_item';
@@ -73,7 +73,7 @@ bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown
 
 @override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_resource_preview_item)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueItemType$mcnListItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnListItem._();
 
 @override String get value => 'mcn_list_item';
@@ -84,7 +84,7 @@ bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown
 
 @override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_list_item)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueItemType$Unknown extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$Unknown(this.value);
 
 @override final String value;
@@ -95,33 +95,33 @@ bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown
 
 @override String toString() => 'McnResourceDetailsSectionItemValueItemType($value)';
 
- }
+}
 sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
-factory McnResourceDetailsSectionItemValue.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
+factory McnResourceDetailsSectionItemValue.fromJson(Map<String, dynamic> json) {return switch (json['item_type']) {
   'mcn_string_item' => McnResourceDetailsSectionItemValueMcnStringItem.fromJson(json),
   'mcn_yaml_item' => McnResourceDetailsSectionItemValueMcnYamlItem.fromJson(json),
   'mcn_yaml_diff_item' => McnResourceDetailsSectionItemValueMcnYamlDiffItem.fromJson(json),
   'mcn_resource_preview_item' => McnResourceDetailsSectionItemValueMcnResourcePreviewItem.fromJson(json),
   'mcn_list_item' => McnResourceDetailsSectionItemValueMcnListItem.fromJson(json),
   _ => McnResourceDetailsSectionItemValue$Unknown(json),
-}; }
+};}
 
 /// Build the `mcn_string_item` variant.
-factory McnResourceDetailsSectionItemValue.mcnStringItem({required String string}) { return McnResourceDetailsSectionItemValueMcnStringItem(McnStringItem(itemType: 'mcn_string_item', string: string)); }
+factory McnResourceDetailsSectionItemValue.mcnStringItem({required String string}) {return McnResourceDetailsSectionItemValueMcnStringItem(McnStringItem(itemType: 'mcn_string_item', string: string));}
 
 /// Build the `mcn_yaml_item` variant.
-factory McnResourceDetailsSectionItemValue.mcnYamlItem({required String yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(McnYamlItem(itemType: 'mcn_yaml_item', yaml: yaml)); }
+factory McnResourceDetailsSectionItemValue.mcnYamlItem({required String yaml}) {return McnResourceDetailsSectionItemValueMcnYamlItem(McnYamlItem(itemType: 'mcn_yaml_item', yaml: yaml));}
 
 /// Build the `mcn_yaml_diff_item` variant.
-factory McnResourceDetailsSectionItemValue.mcnYamlDiffItem({required McnYamlDiff yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(McnYamlDiffItem(itemType: 'mcn_yaml_diff_item', yamlDiff: yamlDiff)); }
+factory McnResourceDetailsSectionItemValue.mcnYamlDiffItem({required McnYamlDiff yamlDiff}) {return McnResourceDetailsSectionItemValueMcnYamlDiffItem(McnYamlDiffItem(itemType: 'mcn_yaml_diff_item', yamlDiff: yamlDiff));}
 
 /// Build the `mcn_resource_preview_item` variant.
-factory McnResourceDetailsSectionItemValue.mcnResourcePreviewItem({required McnResourcePreview resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(McnResourcePreviewItem(itemType: 'mcn_resource_preview_item', resourcePreview: resourcePreview)); }
+factory McnResourceDetailsSectionItemValue.mcnResourcePreviewItem({required McnResourcePreview resourcePreview}) {return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(McnResourcePreviewItem(itemType: 'mcn_resource_preview_item', resourcePreview: resourcePreview));}
 
 /// Build the `mcn_list_item` variant.
-factory McnResourceDetailsSectionItemValue.mcnListItem({required List<McnListItemList> list}) { return McnResourceDetailsSectionItemValueMcnListItem(McnListItem(itemType: 'mcn_list_item', list: list)); }
+factory McnResourceDetailsSectionItemValue.mcnListItem({required List<McnListItemList> list}) {return McnResourceDetailsSectionItemValueMcnListItem(McnListItem(itemType: 'mcn_list_item', list: list));}
 
 /// The discriminator value identifying this variant.
 McnResourceDetailsSectionItemValueItemType get itemType;
@@ -129,18 +129,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is McnResourceDetailsSectionItemValue$Unknown;
 
-R when<R>({required R Function(McnResourceDetailsSectionItemValueMcnStringItem) mcnStringItem, required R Function(McnResourceDetailsSectionItemValueMcnYamlItem) mcnYamlItem, required R Function(McnResourceDetailsSectionItemValueMcnYamlDiffItem) mcnYamlDiffItem, required R Function(McnResourceDetailsSectionItemValueMcnResourcePreviewItem) mcnResourcePreviewItem, required R Function(McnResourceDetailsSectionItemValueMcnListItem) mcnListItem, required R Function(McnResourceDetailsSectionItemValue$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(McnResourceDetailsSectionItemValueMcnStringItem) mcnStringItem, required R Function(McnResourceDetailsSectionItemValueMcnYamlItem) mcnYamlItem, required R Function(McnResourceDetailsSectionItemValueMcnYamlDiffItem) mcnYamlDiffItem, required R Function(McnResourceDetailsSectionItemValueMcnResourcePreviewItem) mcnResourcePreviewItem, required R Function(McnResourceDetailsSectionItemValueMcnListItem) mcnListItem, required R Function(McnResourceDetailsSectionItemValue$Unknown) unknown, }) {return switch (this) {
   final McnResourceDetailsSectionItemValueMcnStringItem v => mcnStringItem(v),
   final McnResourceDetailsSectionItemValueMcnYamlItem v => mcnYamlItem(v),
   final McnResourceDetailsSectionItemValueMcnYamlDiffItem v => mcnYamlDiffItem(v),
   final McnResourceDetailsSectionItemValueMcnResourcePreviewItem v => mcnResourcePreviewItem(v),
   final McnResourceDetailsSectionItemValueMcnListItem v => mcnListItem(v),
   final McnResourceDetailsSectionItemValue$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class McnResourceDetailsSectionItemValueMcnStringItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnStringItem(this.mcnStringItem);
 
-factory McnResourceDetailsSectionItemValueMcnStringItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnStringItem(McnStringItem.fromJson(json)); }
+factory McnResourceDetailsSectionItemValueMcnStringItem.fromJson(Map<String, dynamic> json) {return McnResourceDetailsSectionItemValueMcnStringItem(McnStringItem.fromJson(json));}
 
 final McnStringItem mcnStringItem;
 
@@ -148,9 +148,9 @@ final McnStringItem mcnStringItem;
 
 @override Map<String, dynamic> toJson() => {...mcnStringItem.toJson(), 'item_type': itemType.toJson()};
 
-McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { return McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem.copyWith(
+McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) {return McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem.copyWith(
   string: string,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnStringItem && mcnStringItem == other.mcnStringItem;
 
@@ -158,10 +158,10 @@ McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { ret
 
 @override String toString() => 'McnResourceDetailsSectionItemValue.mcnStringItem($mcnStringItem)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueMcnYamlItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlItem(this.mcnYamlItem);
 
-factory McnResourceDetailsSectionItemValueMcnYamlItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnYamlItem(McnYamlItem.fromJson(json)); }
+factory McnResourceDetailsSectionItemValueMcnYamlItem.fromJson(Map<String, dynamic> json) {return McnResourceDetailsSectionItemValueMcnYamlItem(McnYamlItem.fromJson(json));}
 
 final McnYamlItem mcnYamlItem;
 
@@ -169,9 +169,9 @@ final McnYamlItem mcnYamlItem;
 
 @override Map<String, dynamic> toJson() => {...mcnYamlItem.toJson(), 'item_type': itemType.toJson()};
 
-McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem.copyWith(
+McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) {return McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem.copyWith(
   yaml: yaml,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnYamlItem && mcnYamlItem == other.mcnYamlItem;
 
@@ -179,10 +179,10 @@ McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return 
 
 @override String toString() => 'McnResourceDetailsSectionItemValue.mcnYamlItem($mcnYamlItem)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueMcnYamlDiffItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlDiffItem(this.mcnYamlDiffItem);
 
-factory McnResourceDetailsSectionItemValueMcnYamlDiffItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(McnYamlDiffItem.fromJson(json)); }
+factory McnResourceDetailsSectionItemValueMcnYamlDiffItem.fromJson(Map<String, dynamic> json) {return McnResourceDetailsSectionItemValueMcnYamlDiffItem(McnYamlDiffItem.fromJson(json));}
 
 final McnYamlDiffItem mcnYamlDiffItem;
 
@@ -190,9 +190,9 @@ final McnYamlDiffItem mcnYamlDiffItem;
 
 @override Map<String, dynamic> toJson() => {...mcnYamlDiffItem.toJson(), 'item_type': itemType.toJson()};
 
-McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem.copyWith(
+McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDiff}) {return McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem.copyWith(
   yamlDiff: yamlDiff,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnYamlDiffItem && mcnYamlDiffItem == other.mcnYamlDiffItem;
 
@@ -200,10 +200,10 @@ McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDif
 
 @override String toString() => 'McnResourceDetailsSectionItemValue.mcnYamlDiffItem($mcnYamlDiffItem)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueMcnResourcePreviewItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
-factory McnResourceDetailsSectionItemValueMcnResourcePreviewItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(McnResourcePreviewItem.fromJson(json)); }
+factory McnResourceDetailsSectionItemValueMcnResourcePreviewItem.fromJson(Map<String, dynamic> json) {return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(McnResourcePreviewItem.fromJson(json));}
 
 final McnResourcePreviewItem mcnResourcePreviewItem;
 
@@ -211,9 +211,9 @@ final McnResourcePreviewItem mcnResourcePreviewItem;
 
 @override Map<String, dynamic> toJson() => {...mcnResourcePreviewItem.toJson(), 'item_type': itemType.toJson()};
 
-McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
+McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) {return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
   resourcePreview: resourcePreview,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem;
 
@@ -221,10 +221,10 @@ McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePr
 
 @override String toString() => 'McnResourceDetailsSectionItemValue.mcnResourcePreviewItem($mcnResourcePreviewItem)';
 
- }
+}
 @immutable final class McnResourceDetailsSectionItemValueMcnListItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnListItem(this.mcnListItem);
 
-factory McnResourceDetailsSectionItemValueMcnListItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnListItem(McnListItem.fromJson(json)); }
+factory McnResourceDetailsSectionItemValueMcnListItem.fromJson(Map<String, dynamic> json) {return McnResourceDetailsSectionItemValueMcnListItem(McnListItem.fromJson(json));}
 
 final McnListItem mcnListItem;
 
@@ -232,9 +232,9 @@ final McnListItem mcnListItem;
 
 @override Map<String, dynamic> toJson() => {...mcnListItem.toJson(), 'item_type': itemType.toJson()};
 
-McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? list}) { return McnResourceDetailsSectionItemValueMcnListItem(mcnListItem.copyWith(
+McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? list}) {return McnResourceDetailsSectionItemValueMcnListItem(mcnListItem.copyWith(
   list: list,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnListItem && mcnListItem == other.mcnListItem;
 
@@ -242,7 +242,7 @@ McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? l
 
 @override String toString() => 'McnResourceDetailsSectionItemValue.mcnListItem($mcnListItem)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class McnResourceDetailsSectionItemValue$Unknown extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue$Unknown(this.json);
@@ -260,4 +260,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'McnResourceDetailsSectionItemValue.unknown($json)';
 
- }
+}

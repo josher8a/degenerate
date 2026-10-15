@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_uuid.dart';@immutable final class CloudforceOneRequestsPriorityItem {const CloudforceOneRequestsPriorityItem({required this.created, required this.id, required this.labels, required this.priority, required this.requirement, required this.tlp, required this.updated, });
 
-factory CloudforceOneRequestsPriorityItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsPriorityItem(
+factory CloudforceOneRequestsPriorityItem.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsPriorityItem(
   created: CloudforceOneRequestsTime.fromJson(json['created'] as String),
   id: CloudforceOneRequestsUuid.fromJson(json['id'] as String),
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory CloudforceOneRequestsPriorityItem.fromJson(Map<String, dynamic> json) { 
   requirement: json['requirement'] as String,
   tlp: CloudforceOneRequestsTlp.fromJson(json['tlp'] as String),
   updated: CloudforceOneRequestsTime.fromJson(json['updated'] as String),
-); }
+);}
 
 /// Priority creation time.
 final CloudforceOneRequestsTime created;
@@ -36,7 +36,7 @@ final CloudforceOneRequestsTlp tlp;
 /// Priority last updated time.
 final CloudforceOneRequestsTime updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created.toJson(),
   'id': id.toJson(),
   'labels': labels,
@@ -44,15 +44,15 @@ Map<String, dynamic> toJson() { return {
   'requirement': requirement,
   'tlp': tlp.toJson(),
   'updated': updated.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') &&
       json.containsKey('id') &&
       json.containsKey('labels') &&
       json.containsKey('priority') && json['priority'] is num &&
       json.containsKey('requirement') && json['requirement'] is String &&
       json.containsKey('tlp') &&
-      json.containsKey('updated'); } 
-CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, List<String>? labels, int? priority, String? requirement, CloudforceOneRequestsTlp? tlp, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsPriorityItem(
+      json.containsKey('updated');}
+CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, List<String>? labels, int? priority, String? requirement, CloudforceOneRequestsTlp? tlp, CloudforceOneRequestsTime? updated, }) {return CloudforceOneRequestsPriorityItem(
   created: created ?? this.created,
   id: id ?? this.id,
   labels: labels ?? this.labels,
@@ -60,7 +60,7 @@ CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, 
   requirement: requirement ?? this.requirement,
   tlp: tlp ?? this.tlp,
   updated: updated ?? this.updated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsPriorityItem &&
           created == other.created &&
@@ -75,4 +75,4 @@ CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, 
 
 @override String toString() => 'CloudforceOneRequestsPriorityItem(created: $created, id: $id, labels: $labels, priority: $priority, requirement: $requirement, tlp: $tlp, updated: $updated)';
 
- }
+}

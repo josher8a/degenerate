@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionFunctions {const ChatCompletionFunctions({required this.name, this.description, this.parameters, });
 
-factory ChatCompletionFunctions.fromJson(Map<String, dynamic> json) { return ChatCompletionFunctions(
+factory ChatCompletionFunctions.fromJson(Map<String, dynamic> json) {return ChatCompletionFunctions(
   description: json['description'] as String?,
   name: json['name'] as String,
   parameters: json['parameters'] as Map<String, dynamic>?,
-); }
+);}
 
 /// A description of what the function does, used by the model to choose when and how to call the function.
 final String? description;
@@ -17,17 +17,17 @@ final String name;
 
 final Map<String,dynamic>? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': name,
   'parameters': ?parameters,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ChatCompletionFunctions copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, }) { return ChatCompletionFunctions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ChatCompletionFunctions copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, }) {return ChatCompletionFunctions(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionFunctions &&
           description == other.description &&
@@ -38,4 +38,4 @@ ChatCompletionFunctions copyWith({String? Function()? description, String? name,
 
 @override String toString() => 'ChatCompletionFunctions(description: $description, name: $name, parameters: $parameters)';
 
- }
+}

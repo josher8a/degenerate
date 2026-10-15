@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsTwint {const PostCheckoutSessionsRequestPaymentMethodOptionsTwint({this.setupFutureUsage});
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsTwint.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsTwint(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsTwint.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsTwint(
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsTwint copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage}) { return PostCheckoutSessionsRequestPaymentMethodOptionsTwint(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsTwint copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage}) {return PostCheckoutSessionsRequestPaymentMethodOptionsTwint(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsTwint &&
           setupFutureUsage == other.setupFutureUsage;
@@ -24,4 +24,4 @@ PostCheckoutSessionsRequestPaymentMethodOptionsTwint copyWith({CheckoutAffirmPay
 
 @override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsTwint(setupFutureUsage: $setupFutureUsage)';
 
- }
+}

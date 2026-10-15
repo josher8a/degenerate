@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value that is one of: `String`, `List<RecursiveOneOfValue>`, `Map<String, RecursiveOneOfValue>`.
 sealed class RecursiveOneOfValue {const RecursiveOneOfValue();
 
-factory RecursiveOneOfValue.fromJson(Object? json) {   if (json is String) return RecursiveOneOfValueString(json);
+factory RecursiveOneOfValue.fromJson(Object? json) {  if (json is String) return RecursiveOneOfValueString(json);
   if (json is List) {
     return RecursiveOneOfValueListRecursiveOneOfValue(json.map(RecursiveOneOfValue.fromJson).toList());
   }
   if (json is Map<String, dynamic>) {
     return RecursiveOneOfValueMapStringRecursiveOneOfValue(json.map((k, v) => MapEntry(k, RecursiveOneOfValue.fromJson(v))));
   }
-  return RecursiveOneOfValue$Unknown(json); }
+  return RecursiveOneOfValue$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class RecursiveOneOfValueString extends RecursiveOneOfValue {const RecursiveOneOfValueString(this._value);
 
 final String _value;
@@ -30,14 +30,14 @@ final String _value;
 
 @override String toString() => 'RecursiveOneOfValue.string($_value)';
 
- }
+}
 @immutable final class RecursiveOneOfValueListRecursiveOneOfValue extends RecursiveOneOfValue {const RecursiveOneOfValueListRecursiveOneOfValue(this._value);
 
 final List<RecursiveOneOfValue> _value;
 
 @override List<RecursiveOneOfValue> get value => _value;
 
-@override dynamic toJson() { return value.map((e) => e.toJson()).toList(); } 
+@override dynamic toJson() {return value.map((e) => e.toJson()).toList();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RecursiveOneOfValueListRecursiveOneOfValue && _value == other._value;
 
@@ -45,14 +45,14 @@ final List<RecursiveOneOfValue> _value;
 
 @override String toString() => 'RecursiveOneOfValue.list<RecursiveOneOfValue>($_value)';
 
- }
+}
 @immutable final class RecursiveOneOfValueMapStringRecursiveOneOfValue extends RecursiveOneOfValue {const RecursiveOneOfValueMapStringRecursiveOneOfValue(this._value);
 
 final Map<String,RecursiveOneOfValue> _value;
 
 @override Map<String,RecursiveOneOfValue> get value => _value;
 
-@override dynamic toJson() { return value.map((k, v) => MapEntry(k, v.toJson())); } 
+@override dynamic toJson() {return value.map((k, v) => MapEntry(k, v.toJson()));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RecursiveOneOfValueMapStringRecursiveOneOfValue && _value == other._value;
 
@@ -60,7 +60,7 @@ final Map<String,RecursiveOneOfValue> _value;
 
 @override String toString() => 'RecursiveOneOfValue.map<String,RecursiveOneOfValue>($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class RecursiveOneOfValue$Unknown extends RecursiveOneOfValue {const RecursiveOneOfValue$Unknown(this._value);
 
@@ -75,4 +75,4 @@ final dynamic _value;
 
 @override String toString() => 'RecursiveOneOfValue.unknown($_value)';
 
- }
+}

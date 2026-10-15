@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoiceAddLinesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/post_invoices_invoice_add_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceAddLinesRequest {const PostInvoicesInvoiceAddLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/post_invoices_invoice_add_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceAddLinesRequest {const PostInvoicesInvoiceAddLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
-factory PostInvoicesInvoiceAddLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequest(
+factory PostInvoicesInvoiceAddLinesRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceAddLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceMetadata: json['invoice_metadata'] != null ? OneOf2.parse(json['invoice_metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  invoiceMetadata: json['invoice_metadata'] != null ? InvoiceMetadata.fromJson(json['invoice_metadata']) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceAddLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final InvoiceMetadata? invoiceMetadata;
 /// The line items to add.
 final List<PostInvoicesInvoiceAddLinesRequestLines> lines;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (invoiceMetadata != null) 'invoice_metadata': invoiceMetadata?.toJson(),
   'lines': lines.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('lines'); } 
-PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, InvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceAddLinesRequestLines>? lines, }) { return PostInvoicesInvoiceAddLinesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('lines');}
+PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, InvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceAddLinesRequestLines>? lines, }) {return PostInvoicesInvoiceAddLinesRequest(
   expand: expand != null ? expand() : this.expand,
   invoiceMetadata: invoiceMetadata != null ? invoiceMetadata() : this.invoiceMetadata,
   lines: lines ?? this.lines,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceAddLinesRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, I
 
 @override String toString() => 'PostInvoicesInvoiceAddLinesRequest(expand: $expand, invoiceMetadata: $invoiceMetadata, lines: $lines)';
 
- }
+}

@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure4.dart';sealed class AccessApplicationsAddAnApplicationError {const AccessApplicationsAddAnApplicationError();
 
-factory AccessApplicationsAddAnApplicationError.fromResponse(ApiResponse response) {     try {
+factory AccessApplicationsAddAnApplicationError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => AccessApplicationsAddAnApplicationError$4XX(ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => AccessApplicationsAddAnApplicationError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return AccessApplicationsAddAnApplicationError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class AccessApplicationsAddAnApplicationError$4XX extends AccessApplicationsAddAnApplicationError {const AccessApplicationsAddAnApplicationError$4XX(this.error, this.statusCode, );
 
 final ResponseCommonFailure4 error;
@@ -23,14 +23,14 @@ final ResponseCommonFailure4 error;
 
 @override Object get typedError => error;
 
- }
+}
 final class AccessApplicationsAddAnApplicationError$Unknown extends AccessApplicationsAddAnApplicationError {const AccessApplicationsAddAnApplicationError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef AccessApplicationsDeleteAnAccessApplicationError = AccessApplicationsAddAnApplicationError;
 typedef AccessApplicationsGetAnAccessApplicationError = AccessApplicationsAddAnApplicationError;
 typedef AccessApplicationsListAccessApplicationsError = AccessApplicationsAddAnApplicationError;

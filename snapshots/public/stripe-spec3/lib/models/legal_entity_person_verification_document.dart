@@ -1,52 +1,52 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LegalEntityPersonVerificationDocument
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
-@immutable final class LegalEntityPersonVerificationDocument {const LegalEntityPersonVerificationDocument({this.back, this.details, this.detailsCode, this.front, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
+@immutable final class LegalEntityPersonVerificationDocument {const LegalEntityPersonVerificationDocument({this.back = const Omittable.absent(), this.details = const Omittable.absent(), this.detailsCode = const Omittable.absent(), this.front = const Omittable.absent(), });
 
-factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerificationDocument(
-  back: json['back'] != null ? OneOf2.parse(json['back'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-  details: json['details'] as String?,
-  detailsCode: json['details_code'] as String?,
-  front: json['front'] != null ? OneOf2.parse(json['front'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-); }
+factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json) {return LegalEntityPersonVerificationDocument(
+  back: json.containsKey('back') ? Omittable(json['back'] != null ? Back.fromJson(json['back']) : null) : const Omittable.absent(),
+  details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
+  detailsCode: json.containsKey('details_code') ? Omittable(json['details_code'] as String?) : const Omittable.absent(),
+  front: json.containsKey('front') ? Omittable(json['front'] != null ? Front.fromJson(json['front']) : null) : const Omittable.absent(),
+);}
 
 /// The back of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
-final Back? back;
+final Omittable<Back?> back;
 
 /// A user-displayable string describing the verification state of this document. For example, if a document is uploaded and the picture is too fuzzy, this may say "Identity document is too unclear to read".
-final String? details;
+final Omittable<String?> details;
 
 /// One of `document_corrupt`, `document_country_not_supported`, `document_expired`, `document_failed_copy`, `document_failed_other`, `document_failed_test_mode`, `document_fraudulent`, `document_failed_greyscale`, `document_incomplete`, `document_invalid`, `document_manipulated`, `document_missing_back`, `document_missing_front`, `document_not_readable`, `document_not_uploaded`, `document_photo_mismatch`, `document_too_large`, or `document_type_not_supported`. A machine-readable code specifying the verification state for this document.
-final String? detailsCode;
+final Omittable<String?> detailsCode;
 
 /// The front of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
-final Front? front;
+final Omittable<Front?> front;
 
-Map<String, dynamic> toJson() { return {
-  if (back != null) 'back': back?.toJson(),
-  'details': ?details,
-  'details_code': ?detailsCode,
-  if (front != null) 'front': front?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (back.isPresent) 'back': back.value?.toJson(),
+  if (details.isPresent) 'details': details.value,
+  if (detailsCode.isPresent) 'details_code': detailsCode.value,
+  if (front.isPresent) 'front': front.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final details$ = details;
+List<String> validate() {final errors = <String>[];
+final details$ = details.value;
 if (details$ != null) {
   if (details$.runes.length > 5000) { errors.add('details: length must be <= 5000'); }
 }
-final detailsCode$ = detailsCode;
+final detailsCode$ = detailsCode.value;
 if (detailsCode$ != null) {
   if (detailsCode$.runes.length > 5000) { errors.add('detailsCode: length must be <= 5000'); }
 }
-return errors; } 
-LegalEntityPersonVerificationDocument copyWith({Back? Function()? back, String? Function()? details, String? Function()? detailsCode, Front? Function()? front, }) { return LegalEntityPersonVerificationDocument(
-  back: back != null ? back() : this.back,
-  details: details != null ? details() : this.details,
-  detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,
-  front: front != null ? front() : this.front,
-); } 
+return errors;}
+LegalEntityPersonVerificationDocument copyWith({Omittable<Back?>? back, Omittable<String?>? details, Omittable<String?>? detailsCode, Omittable<Front?>? front, }) {return LegalEntityPersonVerificationDocument(
+  back: back ?? this.back,
+  details: details ?? this.details,
+  detailsCode: detailsCode ?? this.detailsCode,
+  front: front ?? this.front,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityPersonVerificationDocument &&
           back == other.back &&
@@ -58,4 +58,4 @@ LegalEntityPersonVerificationDocument copyWith({Back? Function()? back, String? 
 
 @override String toString() => 'LegalEntityPersonVerificationDocument(back: $back, details: $details, detailsCode: $detailsCode, front: $front)';
 
- }
+}

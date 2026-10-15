@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Severity of a code scanning alert.
 sealed class CodeScanningAlertSeverity {const CodeScanningAlertSeverity();
 
-factory CodeScanningAlertSeverity.fromJson(String json) { return switch (json) {
+factory CodeScanningAlertSeverity.fromJson(String json) {return switch (json) {
   'critical' => critical,
   'high' => high,
   'medium' => medium,
@@ -13,7 +13,7 @@ factory CodeScanningAlertSeverity.fromJson(String json) { return switch (json) {
   'note' => note,
   'error' => error,
   _ => CodeScanningAlertSeverity$Unknown(json),
-}; }
+};}
 
 static const CodeScanningAlertSeverity critical = CodeScanningAlertSeverity$critical._();
 
@@ -32,9 +32,9 @@ static const CodeScanningAlertSeverity error = CodeScanningAlertSeverity$error._
 static const List<CodeScanningAlertSeverity> values = [critical, high, medium, low, warning, note, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'critical' => 'critical',
   'high' => 'high',
   'medium' => 'medium',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'note' => 'note',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningAlertSeverity$Unknown; } 
+bool get isUnknown {return this is CodeScanningAlertSeverity$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() critical, required W Function() high, required W Function() medium, required W Function() low, required W Function() warning, required W Function() note, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() critical, required W Function() high, required W Function() medium, required W Function() low, required W Function() warning, required W Function() note, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningAlertSeverity$critical() => critical(),
       CodeScanningAlertSeverity$high() => high(),
       CodeScanningAlertSeverity$medium() => medium(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() critical, required W Function() high, required 
       CodeScanningAlertSeverity$note() => note(),
       CodeScanningAlertSeverity$error() => error(),
       CodeScanningAlertSeverity$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical, W Function()? high, W Function()? medium, W Function()? low, W Function()? warning, W Function()? note, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical, W Function()? high, W Function()? medium, W Function()? low, W Function()? warning, W Function()? note, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningAlertSeverity$critical() => critical != null ? critical() : orElse(value),
       CodeScanningAlertSeverity$high() => high != null ? high() : orElse(value),
       CodeScanningAlertSeverity$medium() => medium != null ? medium() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
       CodeScanningAlertSeverity$note() => note != null ? note() : orElse(value),
       CodeScanningAlertSeverity$error() => error != null ? error() : orElse(value),
       CodeScanningAlertSeverity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningAlertSeverity($value)';
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$critical extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$critical._();
 
 @override String get value => 'critical';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'critical'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$high extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$high._();
 
 @override String get value => 'high';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$medium extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$medium._();
 
 @override String get value => 'medium';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$low extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$low._();
 
 @override String get value => 'low';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$warning extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$warning._();
 
 @override String get value => 'warning';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'warning'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$note extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$note._();
 
 @override String get value => 'note';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'note'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$error extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$error._();
 
 @override String get value => 'error';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertSeverity$Unknown extends CodeScanningAlertSeverity {const CodeScanningAlertSeverity$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => value.hashCode;
 
- }
+}

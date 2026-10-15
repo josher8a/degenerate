@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for base account-level resource types (those with no extra required fields).
 sealed class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum();
 
-factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
+factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) {return switch (json) {
   'access_application' => accessApplication,
   'access_group' => accessGroup,
   'account' => account,
@@ -25,7 +25,7 @@ factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { retur
   'stream_video' => streamVideo,
   'worker' => worker,
   _ => ResourceTaggingAccountResourceTypeBaseEnum$Unknown(json),
-}; }
+};}
 
 static const ResourceTaggingAccountResourceTypeBaseEnum accessApplication = ResourceTaggingAccountResourceTypeBaseEnum$accessApplication._();
 
@@ -68,9 +68,9 @@ static const ResourceTaggingAccountResourceTypeBaseEnum worker = ResourceTagging
 static const List<ResourceTaggingAccountResourceTypeBaseEnum> values = [accessApplication, accessGroup, account, aiGateway, alertingPolicy, alertingWebhook, cloudflaredTunnel, d1Database, durableObjectNamespace, gatewayList, gatewayRule, image, kvNamespace, queue, r2Bucket, resourceShare, streamLiveInput, streamVideo, worker];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'access_application' => 'accessApplication',
   'access_group' => 'accessGroup',
   'account' => 'account',
@@ -91,11 +91,11 @@ String get name { return switch (value) {
   'stream_video' => 'streamVideo',
   'worker' => 'worker',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResourceTaggingAccountResourceTypeBaseEnum$Unknown; } 
+bool get isUnknown {return this is ResourceTaggingAccountResourceTypeBaseEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accessApplication, required W Function() accessGroup, required W Function() account, required W Function() aiGateway, required W Function() alertingPolicy, required W Function() alertingWebhook, required W Function() cloudflaredTunnel, required W Function() d1Database, required W Function() durableObjectNamespace, required W Function() gatewayList, required W Function() gatewayRule, required W Function() image, required W Function() kvNamespace, required W Function() queue, required W Function() r2Bucket, required W Function() resourceShare, required W Function() streamLiveInput, required W Function() streamVideo, required W Function() worker, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accessApplication, required W Function() accessGroup, required W Function() account, required W Function() aiGateway, required W Function() alertingPolicy, required W Function() alertingWebhook, required W Function() cloudflaredTunnel, required W Function() d1Database, required W Function() durableObjectNamespace, required W Function() gatewayList, required W Function() gatewayRule, required W Function() image, required W Function() kvNamespace, required W Function() queue, required W Function() r2Bucket, required W Function() resourceShare, required W Function() streamLiveInput, required W Function() streamVideo, required W Function() worker, required W Function(String value) $unknown, }) {return switch (this) {
       ResourceTaggingAccountResourceTypeBaseEnum$accessApplication() => accessApplication(),
       ResourceTaggingAccountResourceTypeBaseEnum$accessGroup() => accessGroup(),
       ResourceTaggingAccountResourceTypeBaseEnum$account() => account(),
@@ -116,9 +116,9 @@ W when<W>({required W Function() accessApplication, required W Function() access
       ResourceTaggingAccountResourceTypeBaseEnum$streamVideo() => streamVideo(),
       ResourceTaggingAccountResourceTypeBaseEnum$worker() => worker(),
       ResourceTaggingAccountResourceTypeBaseEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessApplication, W Function()? accessGroup, W Function()? account, W Function()? aiGateway, W Function()? alertingPolicy, W Function()? alertingWebhook, W Function()? cloudflaredTunnel, W Function()? d1Database, W Function()? durableObjectNamespace, W Function()? gatewayList, W Function()? gatewayRule, W Function()? image, W Function()? kvNamespace, W Function()? queue, W Function()? r2Bucket, W Function()? resourceShare, W Function()? streamLiveInput, W Function()? streamVideo, W Function()? worker, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessApplication, W Function()? accessGroup, W Function()? account, W Function()? aiGateway, W Function()? alertingPolicy, W Function()? alertingWebhook, W Function()? cloudflaredTunnel, W Function()? d1Database, W Function()? durableObjectNamespace, W Function()? gatewayList, W Function()? gatewayRule, W Function()? image, W Function()? kvNamespace, W Function()? queue, W Function()? r2Bucket, W Function()? resourceShare, W Function()? streamLiveInput, W Function()? streamVideo, W Function()? worker, W Function(String value)? $unknown, }) {return switch (this) {
       ResourceTaggingAccountResourceTypeBaseEnum$accessApplication() => accessApplication != null ? accessApplication() : orElse(value),
       ResourceTaggingAccountResourceTypeBaseEnum$accessGroup() => accessGroup != null ? accessGroup() : orElse(value),
       ResourceTaggingAccountResourceTypeBaseEnum$account() => account != null ? account() : orElse(value),
@@ -139,10 +139,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
       ResourceTaggingAccountResourceTypeBaseEnum$streamVideo() => streamVideo != null ? streamVideo() : orElse(value),
       ResourceTaggingAccountResourceTypeBaseEnum$worker() => worker != null ? worker() : orElse(value),
       ResourceTaggingAccountResourceTypeBaseEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResourceTaggingAccountResourceTypeBaseEnum($value)';
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$accessApplication extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$accessApplication._();
 
 @override String get value => 'access_application';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'access_application'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$accessGroup extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$accessGroup._();
 
 @override String get value => 'access_group';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'access_group'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$account extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$account._();
 
 @override String get value => 'account';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'account'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$aiGateway extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$aiGateway._();
 
 @override String get value => 'ai_gateway';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'ai_gateway'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$alertingPolicy extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$alertingPolicy._();
 
 @override String get value => 'alerting_policy';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'alerting_policy'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$alertingWebhook extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$alertingWebhook._();
 
 @override String get value => 'alerting_webhook';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'alerting_webhook'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$cloudflaredTunnel extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$cloudflaredTunnel._();
 
 @override String get value => 'cloudflared_tunnel';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'cloudflared_tunnel'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$d1Database extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$d1Database._();
 
 @override String get value => 'd1_database';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'd1_database'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$durableObjectNamespace extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$durableObjectNamespace._();
 
 @override String get value => 'durable_object_namespace';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'durable_object_namespace'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$gatewayList extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$gatewayList._();
 
 @override String get value => 'gateway_list';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'gateway_list'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$gatewayRule extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$gatewayRule._();
 
 @override String get value => 'gateway_rule';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'gateway_rule'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$image extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$image._();
 
 @override String get value => 'image';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$kvNamespace extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$kvNamespace._();
 
 @override String get value => 'kv_namespace';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'kv_namespace'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$queue extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$queue._();
 
 @override String get value => 'queue';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'queue'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$r2Bucket extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$r2Bucket._();
 
 @override String get value => 'r2_bucket';
@@ -277,7 +277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'r2_bucket'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$resourceShare extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$resourceShare._();
 
 @override String get value => 'resource_share';
@@ -286,7 +286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'resource_share'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$streamLiveInput extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$streamLiveInput._();
 
 @override String get value => 'stream_live_input';
@@ -295,7 +295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'stream_live_input'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$streamVideo extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$streamVideo._();
 
 @override String get value => 'stream_video';
@@ -304,7 +304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'stream_video'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$worker extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$worker._();
 
 @override String get value => 'worker';
@@ -313,7 +313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => 'worker'.hashCode;
 
- }
+}
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum$Unknown extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$Unknown(this.value);
 
 @override final String value;
@@ -323,4 +323,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessAp
 
 @override int get hashCode => value.hashCode;
 
- }
+}

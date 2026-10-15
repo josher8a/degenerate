@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn_prepend_count.dart';import 'package:pub_cloudflare/models/addressing_auto_advertise_withdraw.dart';import 'package:pub_cloudflare/models/addressing_bgp_prefix_update_advertisement/on_demand.dart';@immutable final class AddressingBgpPrefixUpdateAdvertisement {const AddressingBgpPrefixUpdateAdvertisement({this.asnPrependCount, this.autoAdvertiseWithdraw, this.onDemand, });
 
-factory AddressingBgpPrefixUpdateAdvertisement.fromJson(Map<String, dynamic> json) { return AddressingBgpPrefixUpdateAdvertisement(
+factory AddressingBgpPrefixUpdateAdvertisement.fromJson(Map<String, dynamic> json) {return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,
   autoAdvertiseWithdraw: json['auto_advertise_withdraw'] != null ? AddressingAutoAdvertiseWithdraw.fromJson(json['auto_advertise_withdraw'] as bool) : null,
   onDemand: json['on_demand'] != null ? OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
 final AddressingAsnPrependCount? asnPrependCount;
@@ -17,17 +17,17 @@ final AddressingAutoAdvertiseWithdraw? autoAdvertiseWithdraw;
 
 final OnDemand? onDemand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asnPrependCount != null) 'asn_prepend_count': asnPrependCount?.toJson(),
   if (autoAdvertiseWithdraw != null) 'auto_advertise_withdraw': autoAdvertiseWithdraw?.toJson(),
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn_prepend_count', 'auto_advertise_withdraw', 'on_demand'}.contains(key)); } 
-AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount? Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw? Function()? autoAdvertiseWithdraw, OnDemand? Function()? onDemand, }) { return AddressingBgpPrefixUpdateAdvertisement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'asn_prepend_count', 'auto_advertise_withdraw', 'on_demand'}.contains(key));}
+AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount? Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw? Function()? autoAdvertiseWithdraw, OnDemand? Function()? onDemand, }) {return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: asnPrependCount != null ? asnPrependCount() : this.asnPrependCount,
   autoAdvertiseWithdraw: autoAdvertiseWithdraw != null ? autoAdvertiseWithdraw() : this.autoAdvertiseWithdraw,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingBgpPrefixUpdateAdvertisement &&
           asnPrependCount == other.asnPrependCount &&
@@ -38,4 +38,4 @@ AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount? Func
 
 @override String toString() => 'AddressingBgpPrefixUpdateAdvertisement(asnPrependCount: $asnPrependCount, autoAdvertiseWithdraw: $autoAdvertiseWithdraw, onDemand: $onDemand)';
 
- }
+}

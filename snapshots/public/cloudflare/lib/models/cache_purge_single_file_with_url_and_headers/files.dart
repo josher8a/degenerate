@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Files {const Files({this.headers, this.url, });
 
-factory Files.fromJson(Map<String, dynamic> json) { return Files(
+factory Files.fromJson(Map<String, dynamic> json) {return Files(
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String?,
-); }
+);}
 
 /// Example: `'<HTTP header object>'`
 final Map<String,String>? headers;
@@ -14,15 +14,15 @@ final Map<String,String>? headers;
 /// Example: `'http://www.example.com/cat_picture.jpg'`
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'headers': ?headers,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headers', 'url'}.contains(key)); } 
-Files copyWith({Map<String, String>? Function()? headers, String? Function()? url, }) { return Files(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'headers', 'url'}.contains(key));}
+Files copyWith({Map<String, String>? Function()? headers, String? Function()? url, }) {return Files(
   headers: headers != null ? headers() : this.headers,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Files &&
           headers == other.headers &&
@@ -32,4 +32,4 @@ Files copyWith({Map<String, String>? Function()? headers, String? Function()? ur
 
 @override String toString() => 'Files(headers: $headers, url: $url)';
 
- }
+}

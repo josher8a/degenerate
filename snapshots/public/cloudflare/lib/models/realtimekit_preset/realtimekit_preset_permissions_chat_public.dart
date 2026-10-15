@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetPermissionsChatPublic {const RealtimekitPresetPermissionsChatPublic({required this.canSend, required this.files, required this.text, });
 
-factory RealtimekitPresetPermissionsChatPublic.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsChatPublic(
+factory RealtimekitPresetPermissionsChatPublic.fromJson(Map<String, dynamic> json) {return RealtimekitPresetPermissionsChatPublic(
   canSend: json['can_send'] as bool,
   files: json['files'] as bool,
   text: json['text'] as bool,
-); }
+);}
 
 /// Can send messages in general
 final bool canSend;
@@ -18,19 +18,19 @@ final bool files;
 /// Can send text messages
 final bool text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_send': canSend,
   'files': files,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_send') && json['can_send'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('can_send') && json['can_send'] is bool &&
       json.containsKey('files') && json['files'] is bool &&
-      json.containsKey('text') && json['text'] is bool; } 
-RealtimekitPresetPermissionsChatPublic copyWith({bool? canSend, bool? files, bool? text, }) { return RealtimekitPresetPermissionsChatPublic(
+      json.containsKey('text') && json['text'] is bool;}
+RealtimekitPresetPermissionsChatPublic copyWith({bool? canSend, bool? files, bool? text, }) {return RealtimekitPresetPermissionsChatPublic(
   canSend: canSend ?? this.canSend,
   files: files ?? this.files,
   text: text ?? this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsChatPublic &&
           canSend == other.canSend &&
@@ -41,4 +41,4 @@ RealtimekitPresetPermissionsChatPublic copyWith({bool? canSend, bool? files, boo
 
 @override String toString() => 'RealtimekitPresetPermissionsChatPublic(canSend: $canSend, files: $files, text: $text)';
 
- }
+}

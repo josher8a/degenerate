@@ -15,37 +15,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId();
 
-factory ZonesCacheTtlByStatusId.fromJson(String json) { return switch (json) {
+factory ZonesCacheTtlByStatusId.fromJson(String json) {return switch (json) {
   'cache_ttl_by_status' => cacheTtlByStatus,
   _ => ZonesCacheTtlByStatusId$Unknown(json),
-}; }
+};}
 
 static const ZonesCacheTtlByStatusId cacheTtlByStatus = ZonesCacheTtlByStatusId$cacheTtlByStatus._();
 
 static const List<ZonesCacheTtlByStatusId> values = [cacheTtlByStatus];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cache_ttl_by_status' => 'cacheTtlByStatus',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesCacheTtlByStatusId$Unknown; } 
+bool get isUnknown {return this is ZonesCacheTtlByStatusId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cacheTtlByStatus, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cacheTtlByStatus, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesCacheTtlByStatusId$cacheTtlByStatus() => cacheTtlByStatus(),
       ZonesCacheTtlByStatusId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheTtlByStatus, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheTtlByStatus, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesCacheTtlByStatusId$cacheTtlByStatus() => cacheTtlByStatus != null ? cacheTtlByStatus() : orElse(value),
       ZonesCacheTtlByStatusId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesCacheTtlByStatusId($value)';
 
- }
+}
 @immutable final class ZonesCacheTtlByStatusId$cacheTtlByStatus extends ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId$cacheTtlByStatus._();
 
 @override String get value => 'cache_ttl_by_status';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheTtl
 
 @override int get hashCode => 'cache_ttl_by_status'.hashCode;
 
- }
+}
 @immutable final class ZonesCacheTtlByStatusId$Unknown extends ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId$Unknown(this.value);
 
 @override final String value;
@@ -64,13 +64,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheTtl
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesCacheTtlByStatus {const ZonesCacheTtlByStatus({this.id, this.value, });
 
-factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) { return ZonesCacheTtlByStatus(
+factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) {return ZonesCacheTtlByStatus(
   id: json['id'] != null ? ZonesCacheTtlByStatusId.fromJson(json['id'] as String) : null,
-  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ValueVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),))),
-); }
+  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ValueValue.fromJson(v))),
+);}
 
 /// Enterprise customers can set cache time-to-live (TTL) based on the
 /// response status from the origin web server. Cache TTL refers to the
@@ -103,15 +103,15 @@ final ZonesCacheTtlByStatusId? id;
 /// Example: `{200-299: 86400, 300-499: no-cache, 500-599: no-store}`
 final Map<String,ValueValue>? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId? Function()? id, Map<String, ValueValue>? Function()? value, }) { return ZonesCacheTtlByStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId? Function()? id, Map<String, ValueValue>? Function()? value, }) {return ZonesCacheTtlByStatus(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesCacheTtlByStatus &&
           id == other.id &&
@@ -121,4 +121,4 @@ ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId? Function()? id, Map<Str
 
 @override String toString() => 'ZonesCacheTtlByStatus(id: $id, value: $value)';
 
- }
+}

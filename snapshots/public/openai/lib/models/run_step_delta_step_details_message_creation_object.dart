@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_step_details_message_creation_object/run_step_delta_step_details_message_creation_object_message_creation.dart';import 'package:pub_openai/models/run_step_delta_step_details_message_creation_object/run_step_delta_step_details_message_creation_object_type.dart';/// Details of the message creation by the run step.
 @immutable final class RunStepDeltaStepDetailsMessageCreationObject {const RunStepDeltaStepDetailsMessageCreationObject({required this.type, this.messageCreation, });
 
-factory RunStepDeltaStepDetailsMessageCreationObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsMessageCreationObject(
+factory RunStepDeltaStepDetailsMessageCreationObject.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsMessageCreationObject(
   type: RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(json['type'] as String),
   messageCreation: json['message_creation'] != null ? RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(json['message_creation'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Always `message_creation`.
 final RunStepDeltaStepDetailsMessageCreationObjectType type;
 
 final RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? messageCreation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (messageCreation != null) 'message_creation': messageCreation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'message_creation'; } 
-RunStepDeltaStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMessageCreationObjectType? type, RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Function()? messageCreation, }) { return RunStepDeltaStepDetailsMessageCreationObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'message_creation';}
+RunStepDeltaStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMessageCreationObjectType? type, RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Function()? messageCreation, }) {return RunStepDeltaStepDetailsMessageCreationObject(
   type: type ?? this.type,
   messageCreation: messageCreation != null ? messageCreation() : this.messageCreation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsMessageCreationObject &&
           type == other.type &&
@@ -32,4 +32,4 @@ RunStepDeltaStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMe
 
 @override String toString() => 'RunStepDeltaStepDetailsMessageCreationObject(type: $type, messageCreation: $messageCreation)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryResultInfo {const ObservatoryResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
-factory ObservatoryResultInfo.fromJson(Map<String, dynamic> json) { return ObservatoryResultInfo(
+factory ObservatoryResultInfo.fromJson(Map<String, dynamic> json) {return ObservatoryResultInfo(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   page: json['page'] != null ? (json['page'] as num).toInt() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toInt() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
-); }
+);}
 
 /// Example: `5`
 final int? count;
@@ -22,19 +22,19 @@ final int? perPage;
 /// Example: `3`
 final int? totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'page': ?page,
   'per_page': ?perPage,
   'total_count': ?totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key)); } 
-ObservatoryResultInfo copyWith({int? Function()? count, int? Function()? page, int? Function()? perPage, int? Function()? totalCount, }) { return ObservatoryResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key));}
+ObservatoryResultInfo copyWith({int? Function()? count, int? Function()? page, int? Function()? perPage, int? Function()? totalCount, }) {return ObservatoryResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryResultInfo &&
           count == other.count &&
@@ -46,4 +46,4 @@ ObservatoryResultInfo copyWith({int? Function()? count, int? Function()? page, i
 
 @override String toString() => 'ObservatoryResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
 
- }
+}

@@ -1,32 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Entitlement
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bool_allocation.dart';import 'package:pub_cloudflare/models/entitlement/allocation.dart';import 'package:pub_cloudflare/models/feature.dart';import 'package:pub_cloudflare/models/max_count_allocation.dart';import 'package:pub_cloudflare/models/null_allocation.dart';@immutable final class Entitlement {const Entitlement({required this.allocation, required this.feature, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/entitlement/allocation.dart';import 'package:pub_cloudflare/models/feature.dart';@immutable final class Entitlement {const Entitlement({required this.allocation, required this.feature, });
 
-factory Entitlement.fromJson(Map<String, dynamic> json) { return Entitlement(
-  allocation: switch (json['allocation']) {
-  final Map<String, dynamic> m when m['type'] == 'max_count' => OneOf3<MaxCountAllocation, BoolAllocation, NullAllocation>.a(MaxCountAllocation.fromJson(m)),
-  final Map<String, dynamic> m when m['type'] == 'bool' => OneOf3<MaxCountAllocation, BoolAllocation, NullAllocation>.b(BoolAllocation.fromJson(m)),
-  final Map<String, dynamic> m when m['type'] == '' => OneOf3<MaxCountAllocation, BoolAllocation, NullAllocation>.c(NullAllocation.fromJson(m)),
-  _ => OneOf3.parse(json['allocation'], fromA: (v) => MaxCountAllocation.fromJson(v as Map<String, dynamic>), fromB: (v) => BoolAllocation.fromJson(v as Map<String, dynamic>), fromC: (v) => NullAllocation.fromJson(v as Map<String, dynamic>),),
-},
+factory Entitlement.fromJson(Map<String, dynamic> json) {return Entitlement(
+  allocation: Allocation.fromJson(json['allocation']),
   feature: Feature.fromJson(json['feature'] as Map<String, dynamic>),
-); }
+);}
 
 final Allocation allocation;
 
 final Feature feature;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allocation': allocation.toJson(),
   'feature': feature.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allocation') &&
-      json.containsKey('feature'); } 
-Entitlement copyWith({Allocation? allocation, Feature? feature, }) { return Entitlement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allocation') &&
+      json.containsKey('feature');}
+Entitlement copyWith({Allocation? allocation, Feature? feature, }) {return Entitlement(
   allocation: allocation ?? this.allocation,
   feature: feature ?? this.feature,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Entitlement &&
           allocation == other.allocation &&
@@ -36,4 +31,4 @@ Entitlement copyWith({Allocation? allocation, Feature? feature, }) { return Enti
 
 @override String toString() => 'Entitlement(allocation: $allocation, feature: $feature)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookLabelCreated {const WebhookLabelCreated({required this.action, required this.label, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookLabelCreated.fromJson(Map<String, dynamic> json) { return WebhookLabelCreated(
+factory WebhookLabelCreated.fromJson(Map<String, dynamic> json) {return WebhookLabelCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookLabelCreated.fromJson(Map<String, dynamic> json) { return Webhook
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('label') &&
-      json.containsKey('repository'); } 
-WebhookLabelCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookLabelCreated(
+      json.containsKey('repository');}
+WebhookLabelCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookLabelCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -47,7 +47,7 @@ WebhookLabelCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Fun
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookLabelCreated &&
           action == other.action &&
@@ -62,4 +62,4 @@ WebhookLabelCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Fun
 
 @override String toString() => 'WebhookLabelCreated(action: $action, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

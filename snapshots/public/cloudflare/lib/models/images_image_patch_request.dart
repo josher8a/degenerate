@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImagePatchRequest {const ImagesImagePatchRequest({this.creator, this.metadata, this.requireSignedUrLs, });
 
-factory ImagesImagePatchRequest.fromJson(Map<String, dynamic> json) { return ImagesImagePatchRequest(
+factory ImagesImagePatchRequest.fromJson(Map<String, dynamic> json) {return ImagesImagePatchRequest(
   creator: json['creator'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] as bool?,
-); }
+);}
 
 /// Can set the creator field with an internal user ID.
 final String? creator;
@@ -20,17 +20,17 @@ final Map<String,dynamic>? metadata;
 /// Example: `true`
 final bool? requireSignedUrLs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'creator': ?creator,
   'metadata': ?metadata,
   'requireSignedURLs': ?requireSignedUrLs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'metadata', 'requireSignedURLs'}.contains(key)); } 
-ImagesImagePatchRequest copyWith({String? Function()? creator, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, }) { return ImagesImagePatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'creator', 'metadata', 'requireSignedURLs'}.contains(key));}
+ImagesImagePatchRequest copyWith({String? Function()? creator, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, }) {return ImagesImagePatchRequest(
   creator: creator != null ? creator() : this.creator,
   metadata: metadata != null ? metadata() : this.metadata,
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImagePatchRequest &&
           creator == other.creator &&
@@ -41,4 +41,4 @@ ImagesImagePatchRequest copyWith({String? Function()? creator, Map<String, dynam
 
 @override String toString() => 'ImagesImagePatchRequest(creator: $creator, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind();
 
-factory SmartUnionNestedInnerBirdKind.fromJson(String json) { return switch (json) {
+factory SmartUnionNestedInnerBirdKind.fromJson(String json) {return switch (json) {
   'bird' => bird,
   _ => SmartUnionNestedInnerBirdKind$Unknown(json),
-}; }
+};}
 
 static const SmartUnionNestedInnerBirdKind bird = SmartUnionNestedInnerBirdKind$bird._();
 
 static const List<SmartUnionNestedInnerBirdKind> values = [bird];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bird' => 'bird',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SmartUnionNestedInnerBirdKind$Unknown; } 
+bool get isUnknown {return this is SmartUnionNestedInnerBirdKind$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bird, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bird, required W Function(String value) $unknown, }) {return switch (this) {
       SmartUnionNestedInnerBirdKind$bird() => bird(),
       SmartUnionNestedInnerBirdKind$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bird, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bird, W Function(String value)? $unknown, }) {return switch (this) {
       SmartUnionNestedInnerBirdKind$bird() => bird != null ? bird() : orElse(value),
       SmartUnionNestedInnerBirdKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SmartUnionNestedInnerBirdKind($value)';
 
- }
+}
 @immutable final class SmartUnionNestedInnerBirdKind$bird extends SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind$bird._();
 
 @override String get value => 'bird';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bird, W 
 
 @override int get hashCode => 'bird'.hashCode;
 
- }
+}
 @immutable final class SmartUnionNestedInnerBirdKind$Unknown extends SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind$Unknown(this.value);
 
 @override final String value;
@@ -52,22 +52,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bird, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class SmartUnionNestedInnerBird {const SmartUnionNestedInnerBird({required this.kind});
 
-factory SmartUnionNestedInnerBird.fromJson(Map<String, dynamic> json) { return SmartUnionNestedInnerBird(
+factory SmartUnionNestedInnerBird.fromJson(Map<String, dynamic> json) {return SmartUnionNestedInnerBird(
   kind: SmartUnionNestedInnerBirdKind.fromJson(json['kind'] as String),
-); }
+);}
 
 final SmartUnionNestedInnerBirdKind kind;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] == 'bird'; } 
-SmartUnionNestedInnerBird copyWith({SmartUnionNestedInnerBirdKind? kind}) { return SmartUnionNestedInnerBird(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') && json['kind'] == 'bird';}
+SmartUnionNestedInnerBird copyWith({SmartUnionNestedInnerBirdKind? kind}) {return SmartUnionNestedInnerBird(
   kind: kind ?? this.kind,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionNestedInnerBird &&
           kind == other.kind;
@@ -76,4 +76,4 @@ SmartUnionNestedInnerBird copyWith({SmartUnionNestedInnerBirdKind? kind}) { retu
 
 @override String toString() => 'SmartUnionNestedInnerBird(kind: $kind)';
 
- }
+}

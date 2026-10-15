@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_all_livestreams_response/fetch_all_livestreams_response_data_paging.dart';import 'package:pub_cloudflare/models/livestream_session_livestream_id_response/livestream_session_livestream_id_response_data_livestream.dart';import 'package:pub_cloudflare/models/livestream_session_livestream_id_response/livestream_session_livestream_id_response_data_session.dart';@immutable final class LivestreamSessionLivestreamIdResponseData {const LivestreamSessionLivestreamIdResponseData({this.livestream, this.paging, this.session, });
 
-factory LivestreamSessionLivestreamIdResponseData.fromJson(Map<String, dynamic> json) { return LivestreamSessionLivestreamIdResponseData(
+factory LivestreamSessionLivestreamIdResponseData.fromJson(Map<String, dynamic> json) {return LivestreamSessionLivestreamIdResponseData(
   livestream: json['livestream'] != null ? LivestreamSessionLivestreamIdResponseDataLivestream.fromJson(json['livestream'] as Map<String, dynamic>) : null,
   paging: json['paging'] != null ? FetchAllLivestreamsResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>) : null,
   session: json['session'] != null ? LivestreamSessionLivestreamIdResponseDataSession.fromJson(json['session'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final LivestreamSessionLivestreamIdResponseDataLivestream? livestream;
 
@@ -15,17 +15,17 @@ final FetchAllLivestreamsResponseDataPaging? paging;
 
 final LivestreamSessionLivestreamIdResponseDataSession? session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (livestream != null) 'livestream': livestream?.toJson(),
   if (paging != null) 'paging': paging?.toJson(),
   if (session != null) 'session': session?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'livestream', 'paging', 'session'}.contains(key)); } 
-LivestreamSessionLivestreamIdResponseData copyWith({LivestreamSessionLivestreamIdResponseDataLivestream? Function()? livestream, FetchAllLivestreamsResponseDataPaging? Function()? paging, LivestreamSessionLivestreamIdResponseDataSession? Function()? session, }) { return LivestreamSessionLivestreamIdResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'livestream', 'paging', 'session'}.contains(key));}
+LivestreamSessionLivestreamIdResponseData copyWith({LivestreamSessionLivestreamIdResponseDataLivestream? Function()? livestream, FetchAllLivestreamsResponseDataPaging? Function()? paging, LivestreamSessionLivestreamIdResponseDataSession? Function()? session, }) {return LivestreamSessionLivestreamIdResponseData(
   livestream: livestream != null ? livestream() : this.livestream,
   paging: paging != null ? paging() : this.paging,
   session: session != null ? session() : this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamSessionLivestreamIdResponseData &&
           livestream == other.livestream &&
@@ -36,4 +36,4 @@ LivestreamSessionLivestreamIdResponseData copyWith({LivestreamSessionLivestreamI
 
 @override String toString() => 'LivestreamSessionLivestreamIdResponseData(livestream: $livestream, paging: $paging, session: $session)';
 
- }
+}

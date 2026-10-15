@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnYamlItem {const McnYamlItem({required this.itemType, required this.yaml, });
 
-factory McnYamlItem.fromJson(Map<String, dynamic> json) { return McnYamlItem(
+factory McnYamlItem.fromJson(Map<String, dynamic> json) {return McnYamlItem(
   itemType: json['item_type'] as String,
   yaml: json['yaml'] as String,
-); }
+);}
 
 final String itemType;
 
 final String yaml;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'item_type': itemType,
   'yaml': yaml,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('item_type') && json['item_type'] is String &&
-      json.containsKey('yaml') && json['yaml'] is String; } 
-McnYamlItem copyWith({String? itemType, String? yaml, }) { return McnYamlItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('item_type') && json['item_type'] is String &&
+      json.containsKey('yaml') && json['yaml'] is String;}
+McnYamlItem copyWith({String? itemType, String? yaml, }) {return McnYamlItem(
   itemType: itemType ?? this.itemType,
   yaml: yaml ?? this.yaml,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnYamlItem &&
           itemType == other.itemType &&
@@ -31,4 +31,4 @@ McnYamlItem copyWith({String? itemType, String? yaml, }) { return McnYamlItem(
 
 @override String toString() => 'McnYamlItem(itemType: $itemType, yaml: $yaml)';
 
- }
+}

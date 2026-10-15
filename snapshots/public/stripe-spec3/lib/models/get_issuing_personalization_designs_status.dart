@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus();
 
-factory GetIssuingPersonalizationDesignsStatus.fromJson(String json) { return switch (json) {
+factory GetIssuingPersonalizationDesignsStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'rejected' => rejected,
   'review' => review,
   _ => GetIssuingPersonalizationDesignsStatus$Unknown(json),
-}; }
+};}
 
 static const GetIssuingPersonalizationDesignsStatus active = GetIssuingPersonalizationDesignsStatus$active._();
 
@@ -22,36 +22,36 @@ static const GetIssuingPersonalizationDesignsStatus review = GetIssuingPersonali
 static const List<GetIssuingPersonalizationDesignsStatus> values = [active, inactive, rejected, review];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'inactive' => 'inactive',
   'rejected' => 'rejected',
   'review' => 'review',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetIssuingPersonalizationDesignsStatus$Unknown; } 
+bool get isUnknown {return this is GetIssuingPersonalizationDesignsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() inactive, required W Function() rejected, required W Function() review, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() inactive, required W Function() rejected, required W Function() review, required W Function(String value) $unknown, }) {return switch (this) {
       GetIssuingPersonalizationDesignsStatus$active() => active(),
       GetIssuingPersonalizationDesignsStatus$inactive() => inactive(),
       GetIssuingPersonalizationDesignsStatus$rejected() => rejected(),
       GetIssuingPersonalizationDesignsStatus$review() => review(),
       GetIssuingPersonalizationDesignsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? rejected, W Function()? review, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? rejected, W Function()? review, W Function(String value)? $unknown, }) {return switch (this) {
       GetIssuingPersonalizationDesignsStatus$active() => active != null ? active() : orElse(value),
       GetIssuingPersonalizationDesignsStatus$inactive() => inactive != null ? inactive() : orElse(value),
       GetIssuingPersonalizationDesignsStatus$rejected() => rejected != null ? rejected() : orElse(value),
       GetIssuingPersonalizationDesignsStatus$review() => review != null ? review() : orElse(value),
       GetIssuingPersonalizationDesignsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetIssuingPersonalizationDesignsStatus($value)';
 
- }
+}
 @immutable final class GetIssuingPersonalizationDesignsStatus$active extends GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus$active._();
 
 @override String get value => 'active';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class GetIssuingPersonalizationDesignsStatus$inactive extends GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class GetIssuingPersonalizationDesignsStatus$rejected extends GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus$rejected._();
 
 @override String get value => 'rejected';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class GetIssuingPersonalizationDesignsStatus$review extends GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus$review._();
 
 @override String get value => 'review';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'review'.hashCode;
 
- }
+}
 @immutable final class GetIssuingPersonalizationDesignsStatus$Unknown extends GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

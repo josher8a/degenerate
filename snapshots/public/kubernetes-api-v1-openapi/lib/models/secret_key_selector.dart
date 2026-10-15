@@ -2,34 +2,37 @@
 // Source: #/components/schemas/SecretKeySelector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretKeySelector selects a key of a Secret.
-@immutable final class SecretKeySelector {const SecretKeySelector({this.key = '', this.name = '', this.optional, });
+@immutable final class SecretKeySelector {const SecretKeySelector({required this.key, this.name, this.optional, });
 
-factory SecretKeySelector.fromJson(Map<String, dynamic> json) { return SecretKeySelector(
+factory SecretKeySelector.fromJson(Map<String, dynamic> json) {return SecretKeySelector(
   key: json['key'] as String,
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
   optional: json['optional'] as bool?,
-); }
+);}
 
 /// The key of the secret to select from.  Must be a valid secret key.
 final String key;
 
 /// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-final String name;
+final String? name;
 
 /// Specify whether the Secret or its key must be defined
 final bool? optional;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `name`, or its schema default when absent.
+String get nameOrDefault => name ?? '';
+
+Map<String, dynamic> toJson() {return {
   'key': key,
-  'name': name,
+  'name': ?name,
   'optional': ?optional,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-SecretKeySelector copyWith({String? key, String Function()? name, bool? Function()? optional, }) { return SecretKeySelector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
+SecretKeySelector copyWith({String? key, String? Function()? name, bool? Function()? optional, }) {return SecretKeySelector(
   key: key ?? this.key,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretKeySelector &&
           key == other.key &&
@@ -40,4 +43,4 @@ SecretKeySelector copyWith({String? key, String Function()? name, bool? Function
 
 @override String toString() => 'SecretKeySelector(key: $key, name: $name, optional: $optional)';
 
- }
+}

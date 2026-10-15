@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpDataset
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDataset {const DlpDataset({required this.columns, required this.createdAt, required this.encodingVersion, required this.id, required this.name, required this.numCells, required this.secret, required this.status, required this.updatedAt, required this.uploads, this.caseSensitive, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDataset {const DlpDataset({required this.columns, required this.createdAt, required this.encodingVersion, required this.id, required this.name, required this.numCells, required this.secret, required this.status, required this.updatedAt, required this.uploads, this.caseSensitive, this.description = const Omittable.absent(), });
 
-factory DlpDataset.fromJson(Map<String, dynamic> json) { return DlpDataset(
+factory DlpDataset.fromJson(Map<String, dynamic> json) {return DlpDataset(
   caseSensitive: json['case_sensitive'] as bool?,
   columns: (json['columns'] as List<dynamic>).map((e) => DlpDatasetColumn.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   encodingVersion: (json['encoding_version'] as num).toInt(),
   id: json['id'] as String,
   name: json['name'] as String,
@@ -16,7 +16,7 @@ factory DlpDataset.fromJson(Map<String, dynamic> json) { return DlpDataset(
   status: DlpDatasetUploadStatus.fromJson(json['status'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   uploads: (json['uploads'] as List<dynamic>).map((e) => DlpDatasetUpload.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final bool? caseSensitive;
 
@@ -25,7 +25,7 @@ final List<DlpDatasetColumn> columns;
 final DateTime createdAt;
 
 /// The description of the dataset.
-final String? description;
+final Omittable<String?> description;
 
 final int encodingVersion;
 
@@ -46,11 +46,11 @@ final DateTime updatedAt;
 
 final List<DlpDatasetUpload> uploads;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': ?caseSensitive,
   'columns': columns.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'encoding_version': encodingVersion,
   'id': id,
   'name': name,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'uploads': uploads.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('columns') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('columns') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('encoding_version') && json['encoding_version'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -69,16 +69,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('colum
       json.containsKey('secret') && json['secret'] is bool &&
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('uploads'); } 
+      json.containsKey('uploads');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (encodingVersion < 0) { errors.add('encodingVersion: must be >= 0'); }
-return errors; } 
-DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? columns, DateTime? createdAt, String? Function()? description, int? encodingVersion, String? id, String? name, int? numCells, bool? secret, DlpDatasetUploadStatus? status, DateTime? updatedAt, List<DlpDatasetUpload>? uploads, }) { return DlpDataset(
+return errors;}
+DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? columns, DateTime? createdAt, Omittable<String?>? description, int? encodingVersion, String? id, String? name, int? numCells, bool? secret, DlpDatasetUploadStatus? status, DateTime? updatedAt, List<DlpDatasetUpload>? uploads, }) {return DlpDataset(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   columns: columns ?? this.columns,
   createdAt: createdAt ?? this.createdAt,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   encodingVersion: encodingVersion ?? this.encodingVersion,
   id: id ?? this.id,
   name: name ?? this.name,
@@ -87,7 +87,7 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   uploads: uploads ?? this.uploads,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDataset &&
           caseSensitive == other.caseSensitive &&
@@ -107,4 +107,4 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
 
 @override String toString() => 'DlpDataset(\n  caseSensitive: $caseSensitive,\n  columns: $columns,\n  createdAt: $createdAt,\n  description: $description,\n  encodingVersion: $encodingVersion,\n  id: $id,\n  name: $name,\n  numCells: $numCells,\n  secret: $secret,\n  status: $status,\n  updatedAt: $updatedAt,\n  uploads: $uploads,\n)';
 
- }
+}

@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The size of the 
 /// 
 sealed class ImageEditCompletedEventSize {const ImageEditCompletedEventSize();
 
-factory ImageEditCompletedEventSize.fromJson(String json) { return switch (json) {
+factory ImageEditCompletedEventSize.fromJson(String json) {return switch (json) {
   '1024x1024' => $1024x1024,
   '1024x1536' => $1024x1536,
   '1536x1024' => $1536x1024,
   'auto' => auto,
   _ => ImageEditCompletedEventSize$Unknown(json),
-}; }
+};}
 
 static const ImageEditCompletedEventSize $1024x1024 = ImageEditCompletedEventSize$$1024x1024._();
 
@@ -24,36 +24,36 @@ static const ImageEditCompletedEventSize auto = ImageEditCompletedEventSize$auto
 static const List<ImageEditCompletedEventSize> values = [$1024x1024, $1024x1536, $1536x1024, auto];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '1024x1024' => r'$1024x1024',
   '1024x1536' => r'$1024x1536',
   '1536x1024' => r'$1536x1024',
   'auto' => 'auto',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ImageEditCompletedEventSize$Unknown; } 
+bool get isUnknown {return this is ImageEditCompletedEventSize$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1024x1024, required W Function() $1024x1536, required W Function() $1536x1024, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1024x1024, required W Function() $1024x1536, required W Function() $1536x1024, required W Function() auto, required W Function(String value) $unknown, }) {return switch (this) {
       ImageEditCompletedEventSize$$1024x1024() => $1024x1024(),
       ImageEditCompletedEventSize$$1024x1536() => $1024x1536(),
       ImageEditCompletedEventSize$$1536x1024() => $1536x1024(),
       ImageEditCompletedEventSize$auto() => auto(),
       ImageEditCompletedEventSize$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x1024, W Function()? $1024x1536, W Function()? $1536x1024, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x1024, W Function()? $1024x1536, W Function()? $1536x1024, W Function()? auto, W Function(String value)? $unknown, }) {return switch (this) {
       ImageEditCompletedEventSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
       ImageEditCompletedEventSize$$1024x1536() => $1024x1536 != null ? $1024x1536() : orElse(value),
       ImageEditCompletedEventSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
       ImageEditCompletedEventSize$auto() => auto != null ? auto() : orElse(value),
       ImageEditCompletedEventSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ImageEditCompletedEventSize($value)';
 
- }
+}
 @immutable final class ImageEditCompletedEventSize$$1024x1024 extends ImageEditCompletedEventSize {const ImageEditCompletedEventSize$$1024x1024._();
 
 @override String get value => '1024x1024';
@@ -62,7 +62,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x10
 
 @override int get hashCode => '1024x1024'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventSize$$1024x1536 extends ImageEditCompletedEventSize {const ImageEditCompletedEventSize$$1024x1536._();
 
 @override String get value => '1024x1536';
@@ -71,7 +71,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x10
 
 @override int get hashCode => '1024x1536'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventSize$$1536x1024 extends ImageEditCompletedEventSize {const ImageEditCompletedEventSize$$1536x1024._();
 
 @override String get value => '1536x1024';
@@ -80,7 +80,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x10
 
 @override int get hashCode => '1536x1024'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventSize$auto extends ImageEditCompletedEventSize {const ImageEditCompletedEventSize$auto._();
 
 @override String get value => 'auto';
@@ -89,7 +89,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x10
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventSize$Unknown extends ImageEditCompletedEventSize {const ImageEditCompletedEventSize$Unknown(this.value);
 
 @override final String value;
@@ -99,4 +99,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x10
 
 @override int get hashCode => value.hashCode;
 
- }
+}

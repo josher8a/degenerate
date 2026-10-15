@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_cancelled/webhook_marketplace_purchase_cancelled_action.dart';@immutable final class WebhookPersonalAccessTokenRequestCancelled {const WebhookPersonalAccessTokenRequestCancelled({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
-factory WebhookPersonalAccessTokenRequestCancelled.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestCancelled(
+factory WebhookPersonalAccessTokenRequestCancelled.fromJson(Map<String, dynamic> json) {return WebhookPersonalAccessTokenRequestCancelled(
   action: WebhookMarketplacePurchaseCancelledAction.fromJson(json['action'] as String),
   personalAccessTokenRequest: PersonalAccessTokenRequest.fromJson(json['personal_access_token_request'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookMarketplacePurchaseCancelledAction action;
 
@@ -24,27 +24,27 @@ final SimpleUser sender;
 
 final SimpleInstallation installation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'personal_access_token_request': personalAccessTokenRequest.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'organization': organization.toJson(),
   'sender': sender.toJson(),
   'installation': installation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('personal_access_token_request') &&
       json.containsKey('organization') &&
       json.containsKey('sender') &&
-      json.containsKey('installation'); } 
-WebhookPersonalAccessTokenRequestCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestCancelled(
+      json.containsKey('installation');}
+WebhookPersonalAccessTokenRequestCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) {return WebhookPersonalAccessTokenRequestCancelled(
   action: action ?? this.action,
   personalAccessTokenRequest: personalAccessTokenRequest ?? this.personalAccessTokenRequest,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   organization: organization ?? this.organization,
   sender: sender ?? this.sender,
   installation: installation ?? this.installation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPersonalAccessTokenRequestCancelled &&
           action == other.action &&
@@ -58,4 +58,4 @@ WebhookPersonalAccessTokenRequestCancelled copyWith({WebhookMarketplacePurchaseC
 
 @override String toString() => 'WebhookPersonalAccessTokenRequestCancelled(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, enterprise: $enterprise, organization: $organization, sender: $sender, installation: $installation)';
 
- }
+}

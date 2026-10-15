@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginAsResponseResultTop0 {const RadarGetAttacksLayer7TopOriginAsResponseResultTop0({required this.originAsn, required this.originAsnName, required this.rank, required this.value, });
 
-factory RadarGetAttacksLayer7TopOriginAsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginAsResponseResultTop0(
+factory RadarGetAttacksLayer7TopOriginAsResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7TopOriginAsResponseResultTop0(
   originAsn: json['originAsn'] as String,
   originAsnName: json['originAsnName'] as String,
   rank: (json['rank'] as num).toDouble(),
   value: json['value'] as String,
-); }
+);}
 
 /// Example: `'55836'`
 final String originAsn;
@@ -22,22 +22,22 @@ final double rank;
 /// Example: `'4.323214'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'originAsn': originAsn,
   'originAsnName': originAsnName,
   'rank': rank,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('originAsn') && json['originAsn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('originAsn') && json['originAsn'] is String &&
       json.containsKey('originAsnName') && json['originAsnName'] is String &&
       json.containsKey('rank') && json['rank'] is num &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetAttacksLayer7TopOriginAsResponseResultTop0 copyWith({String? originAsn, String? originAsnName, double? rank, String? value, }) { return RadarGetAttacksLayer7TopOriginAsResponseResultTop0(
+      json.containsKey('value') && json['value'] is String;}
+RadarGetAttacksLayer7TopOriginAsResponseResultTop0 copyWith({String? originAsn, String? originAsnName, double? rank, String? value, }) {return RadarGetAttacksLayer7TopOriginAsResponseResultTop0(
   originAsn: originAsn ?? this.originAsn,
   originAsnName: originAsnName ?? this.originAsnName,
   rank: rank ?? this.rank,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopOriginAsResponseResultTop0 &&
           originAsn == other.originAsn &&
@@ -49,4 +49,4 @@ RadarGetAttacksLayer7TopOriginAsResponseResultTop0 copyWith({String? originAsn, 
 
 @override String toString() => 'RadarGetAttacksLayer7TopOriginAsResponseResultTop0(originAsn: $originAsn, originAsnName: $originAsnName, rank: $rank, value: $value)';
 
- }
+}

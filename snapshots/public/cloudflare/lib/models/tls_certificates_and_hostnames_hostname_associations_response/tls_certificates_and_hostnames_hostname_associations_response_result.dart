@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesHostnameAssociationsResponseResult {const TlsCertificatesAndHostnamesHostnameAssociationsResponseResult({this.hostnames});
 
-factory TlsCertificatesAndHostnamesHostnameAssociationsResponseResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(
+factory TlsCertificatesAndHostnamesHostnameAssociationsResponseResult.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(
   hostnames: (json['hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? hostnames;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostnames': ?hostnames,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hostnames'}.contains(key)); } 
-TlsCertificatesAndHostnamesHostnameAssociationsResponseResult copyWith({List<String>? Function()? hostnames}) { return TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hostnames'}.contains(key));}
+TlsCertificatesAndHostnamesHostnameAssociationsResponseResult copyWith({List<String>? Function()? hostnames}) {return TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameAssociationsResponseResult &&
           listEquals(hostnames, other.hostnames);
@@ -24,4 +24,4 @@ TlsCertificatesAndHostnamesHostnameAssociationsResponseResult copyWith({List<Str
 
 @override String toString() => 'TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(hostnames: $hostnames)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_scheme.dart';@immutable final class PublicDatabase {const PublicDatabase({required this.database, required this.password, required this.scheme, required this.user, required this.host, required this.port, });
 
-factory PublicDatabase.fromJson(Map<String, dynamic> json) { return PublicDatabase(
+factory PublicDatabase.fromJson(Map<String, dynamic> json) {return PublicDatabase(
   database: json['database'] as String,
   password: json['password'] as String,
   scheme: HyperdriveHyperdriveScheme.fromJson(json['scheme'] as String),
   user: json['user'] as String,
   host: json['host'] as String,
   port: (json['port'] as num).toInt(),
-); }
+);}
 
 /// Set the name of your origin database.
 /// 
@@ -37,28 +37,28 @@ final String host;
 /// Example: `5432`
 final int port;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'database': database,
   'password': password,
   'scheme': scheme.toJson(),
   'user': user,
   'host': host,
   'port': port,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('database') && json['database'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('database') && json['database'] is String &&
       json.containsKey('password') && json['password'] is String &&
       json.containsKey('scheme') &&
       json.containsKey('user') && json['user'] is String &&
       json.containsKey('host') && json['host'] is String &&
-      json.containsKey('port') && json['port'] is num; } 
-PublicDatabase copyWith({String? database, String? password, HyperdriveHyperdriveScheme? scheme, String? user, String? host, int? port, }) { return PublicDatabase(
+      json.containsKey('port') && json['port'] is num;}
+PublicDatabase copyWith({String? database, String? password, HyperdriveHyperdriveScheme? scheme, String? user, String? host, int? port, }) {return PublicDatabase(
   database: database ?? this.database,
   password: password ?? this.password,
   scheme: scheme ?? this.scheme,
   user: user ?? this.user,
   host: host ?? this.host,
   port: port ?? this.port,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PublicDatabase &&
           database == other.database &&
@@ -72,4 +72,4 @@ PublicDatabase copyWith({String? database, String? password, HyperdriveHyperdriv
 
 @override String toString() => 'PublicDatabase(database: $database, password: $password, scheme: $scheme, user: $user, host: $host, port: $port)';
 
- }
+}

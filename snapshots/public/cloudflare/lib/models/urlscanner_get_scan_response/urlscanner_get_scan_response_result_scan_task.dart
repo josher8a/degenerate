@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/scanned_from.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_client_type.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_status.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_visibility.dart';@immutable final class UrlscannerGetScanResponseResultScanTask {const UrlscannerGetScanResponseResultScanTask({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanTask(
+factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanTask(
   clientLocation: json['clientLocation'] as String,
   clientType: TasksClientType.fromJson(json['clientType'] as String),
   effectiveUrl: json['effectiveUrl'] as String,
@@ -16,7 +16,7 @@ factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> js
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: TasksVisibility.fromJson(json['visibility'] as String),
-); }
+);}
 
 /// Submitter location
 /// 
@@ -57,7 +57,7 @@ final String uuid;
 
 final TasksVisibility visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'clientLocation': clientLocation,
   'clientType': clientType.toJson(),
   'effectiveUrl': effectiveUrl,
@@ -70,8 +70,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'uuid': uuid,
   'visibility': visibility.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientLocation') && json['clientLocation'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('clientLocation') && json['clientLocation'] is String &&
       json.containsKey('clientType') &&
       json.containsKey('effectiveUrl') && json['effectiveUrl'] is String &&
       json.containsKey('errors') &&
@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('timeEnd') && json['timeEnd'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility'); } 
-UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, TasksClientType? clientType, String? effectiveUrl, List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, ScannedFrom? scannedFrom, TasksStatus? status, bool? success, String? time, String? timeEnd, String? url, String? uuid, TasksVisibility? visibility, }) { return UrlscannerGetScanResponseResultScanTask(
+      json.containsKey('visibility');}
+UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, TasksClientType? clientType, String? effectiveUrl, List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, ScannedFrom? scannedFrom, TasksStatus? status, bool? success, String? time, String? timeEnd, String? url, String? uuid, TasksVisibility? visibility, }) {return UrlscannerGetScanResponseResultScanTask(
   clientLocation: clientLocation ?? this.clientLocation,
   clientType: clientType ?? this.clientType,
   effectiveUrl: effectiveUrl ?? this.effectiveUrl,
@@ -96,7 +96,7 @@ UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, TasksC
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanTask &&
           clientLocation == other.clientLocation &&
@@ -116,4 +116,4 @@ UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, TasksC
 
 @override String toString() => 'UrlscannerGetScanResponseResultScanTask(\n  clientLocation: $clientLocation,\n  clientType: $clientType,\n  effectiveUrl: $effectiveUrl,\n  errors: $errors,\n  scannedFrom: $scannedFrom,\n  status: $status,\n  success: $success,\n  time: $time,\n  timeEnd: $timeEnd,\n  url: $url,\n  uuid: $uuid,\n  visibility: $visibility,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Record type.
 sealed class DnsRecordsType {const DnsRecordsType();
 
-factory DnsRecordsType.fromJson(String json) { return switch (json) {
+factory DnsRecordsType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'CAA' => caa,
@@ -27,7 +27,7 @@ factory DnsRecordsType.fromJson(String json) { return switch (json) {
   'TXT' => txt,
   'URI' => uri,
   _ => DnsRecordsType$Unknown(json),
-}; }
+};}
 
 static const DnsRecordsType a = DnsRecordsType$a._();
 
@@ -74,9 +74,9 @@ static const DnsRecordsType uri = DnsRecordsType$uri._();
 static const List<DnsRecordsType> values = [a, aaaa, caa, cert, cname, dnskey, ds, https, loc, mx, naptr, ns, openpgpkey, ptr, smimea, srv, sshfp, svcb, tlsa, txt, uri];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'A' => 'a',
   'AAAA' => 'aaaa',
   'CAA' => 'caa',
@@ -99,11 +99,11 @@ String get name { return switch (value) {
   'TXT' => 'txt',
   'URI' => 'uri',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsRecordsType$Unknown; } 
+bool get isUnknown {return this is DnsRecordsType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() a, required W Function() aaaa, required W Function() caa, required W Function() cert, required W Function() cname, required W Function() dnskey, required W Function() ds, required W Function() https, required W Function() loc, required W Function() mx, required W Function() naptr, required W Function() ns, required W Function() openpgpkey, required W Function() ptr, required W Function() smimea, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() tlsa, required W Function() txt, required W Function() uri, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() a, required W Function() aaaa, required W Function() caa, required W Function() cert, required W Function() cname, required W Function() dnskey, required W Function() ds, required W Function() https, required W Function() loc, required W Function() mx, required W Function() naptr, required W Function() ns, required W Function() openpgpkey, required W Function() ptr, required W Function() smimea, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() tlsa, required W Function() txt, required W Function() uri, required W Function(String value) $unknown, }) {return switch (this) {
       DnsRecordsType$a() => a(),
       DnsRecordsType$aaaa() => aaaa(),
       DnsRecordsType$caa() => caa(),
@@ -126,9 +126,9 @@ W when<W>({required W Function() a, required W Function() aaaa, required W Funct
       DnsRecordsType$txt() => txt(),
       DnsRecordsType$uri() => uri(),
       DnsRecordsType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? caa, W Function()? cert, W Function()? cname, W Function()? dnskey, W Function()? ds, W Function()? https, W Function()? loc, W Function()? mx, W Function()? naptr, W Function()? ns, W Function()? openpgpkey, W Function()? ptr, W Function()? smimea, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? tlsa, W Function()? txt, W Function()? uri, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? caa, W Function()? cert, W Function()? cname, W Function()? dnskey, W Function()? ds, W Function()? https, W Function()? loc, W Function()? mx, W Function()? naptr, W Function()? ns, W Function()? openpgpkey, W Function()? ptr, W Function()? smimea, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? tlsa, W Function()? txt, W Function()? uri, W Function(String value)? $unknown, }) {return switch (this) {
       DnsRecordsType$a() => a != null ? a() : orElse(value),
       DnsRecordsType$aaaa() => aaaa != null ? aaaa() : orElse(value),
       DnsRecordsType$caa() => caa != null ? caa() : orElse(value),
@@ -151,10 +151,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
       DnsRecordsType$txt() => txt != null ? txt() : orElse(value),
       DnsRecordsType$uri() => uri != null ? uri() : orElse(value),
       DnsRecordsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DnsRecordsType($value)';
 
- }
+}
 @immutable final class DnsRecordsType$a extends DnsRecordsType {const DnsRecordsType$a._();
 
 @override String get value => 'A';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'A'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$aaaa extends DnsRecordsType {const DnsRecordsType$aaaa._();
 
 @override String get value => 'AAAA';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AAAA'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$caa extends DnsRecordsType {const DnsRecordsType$caa._();
 
 @override String get value => 'CAA';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CAA'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$cert extends DnsRecordsType {const DnsRecordsType$cert._();
 
 @override String get value => 'CERT';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CERT'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$cname extends DnsRecordsType {const DnsRecordsType$cname._();
 
 @override String get value => 'CNAME';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CNAME'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$dnskey extends DnsRecordsType {const DnsRecordsType$dnskey._();
 
 @override String get value => 'DNSKEY';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DNSKEY'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$ds extends DnsRecordsType {const DnsRecordsType$ds._();
 
 @override String get value => 'DS';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DS'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$https extends DnsRecordsType {const DnsRecordsType$https._();
 
 @override String get value => 'HTTPS';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$loc extends DnsRecordsType {const DnsRecordsType$loc._();
 
 @override String get value => 'LOC';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'LOC'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$mx extends DnsRecordsType {const DnsRecordsType$mx._();
 
 @override String get value => 'MX';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MX'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$naptr extends DnsRecordsType {const DnsRecordsType$naptr._();
 
 @override String get value => 'NAPTR';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NAPTR'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$ns extends DnsRecordsType {const DnsRecordsType$ns._();
 
 @override String get value => 'NS';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NS'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$openpgpkey extends DnsRecordsType {const DnsRecordsType$openpgpkey._();
 
 @override String get value => 'OPENPGPKEY';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'OPENPGPKEY'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$ptr extends DnsRecordsType {const DnsRecordsType$ptr._();
 
 @override String get value => 'PTR';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'PTR'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$smimea extends DnsRecordsType {const DnsRecordsType$smimea._();
 
 @override String get value => 'SMIMEA';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SMIMEA'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$srv extends DnsRecordsType {const DnsRecordsType$srv._();
 
 @override String get value => 'SRV';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SRV'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$sshfp extends DnsRecordsType {const DnsRecordsType$sshfp._();
 
 @override String get value => 'SSHFP';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SSHFP'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$svcb extends DnsRecordsType {const DnsRecordsType$svcb._();
 
 @override String get value => 'SVCB';
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SVCB'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$tlsa extends DnsRecordsType {const DnsRecordsType$tlsa._();
 
 @override String get value => 'TLSA';
@@ -325,7 +325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TLSA'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$txt extends DnsRecordsType {const DnsRecordsType$txt._();
 
 @override String get value => 'TXT';
@@ -334,7 +334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TXT'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$uri extends DnsRecordsType {const DnsRecordsType$uri._();
 
 @override String get value => 'URI';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'URI'.hashCode;
 
- }
+}
 @immutable final class DnsRecordsType$Unknown extends DnsRecordsType {const DnsRecordsType$Unknown(this.value);
 
 @override final String value;
@@ -353,4 +353,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}

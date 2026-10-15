@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DockerContainerInfo {const DockerContainerInfo({this.id, this.status, });
 
-factory DockerContainerInfo.fromJson(Map<String, dynamic> json) { return DockerContainerInfo(
+factory DockerContainerInfo.fromJson(Map<String, dynamic> json) {return DockerContainerInfo(
   id: json['id'] as String?,
   status: json['status'] as String?,
-); }
+);}
 
 final String? id;
 
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'status'}.contains(key)); } 
-DockerContainerInfo copyWith({String? Function()? id, String? Function()? status, }) { return DockerContainerInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'status'}.contains(key));}
+DockerContainerInfo copyWith({String? Function()? id, String? Function()? status, }) {return DockerContainerInfo(
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DockerContainerInfo &&
           id == other.id &&
@@ -30,4 +30,4 @@ DockerContainerInfo copyWith({String? Function()? id, String? Function()? status
 
 @override String toString() => 'DockerContainerInfo(id: $id, status: $status)';
 
- }
+}

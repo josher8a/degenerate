@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ShieldTokenType {const ShieldTokenType();
 
-factory ShieldTokenType.fromJson(String json) { return switch (json) {
+factory ShieldTokenType.fromJson(String json) {return switch (json) {
   'JWT' => jwt,
   _ => ShieldTokenType$Unknown(json),
-}; }
+};}
 
 static const ShieldTokenType jwt = ShieldTokenType$jwt._();
 
 static const List<ShieldTokenType> values = [jwt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JWT' => 'jwt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShieldTokenType$Unknown; } 
+bool get isUnknown {return this is ShieldTokenType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() jwt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() jwt, required W Function(String value) $unknown, }) {return switch (this) {
       ShieldTokenType$jwt() => jwt(),
       ShieldTokenType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? jwt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? jwt, W Function(String value)? $unknown, }) {return switch (this) {
       ShieldTokenType$jwt() => jwt != null ? jwt() : orElse(value),
       ShieldTokenType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShieldTokenType($value)';
 
- }
+}
 @immutable final class ShieldTokenType$jwt extends ShieldTokenType {const ShieldTokenType$jwt._();
 
 @override String get value => 'JWT';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jwt, W F
 
 @override int get hashCode => 'JWT'.hashCode;
 
- }
+}
 @immutable final class ShieldTokenType$Unknown extends ShieldTokenType {const ShieldTokenType$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jwt, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

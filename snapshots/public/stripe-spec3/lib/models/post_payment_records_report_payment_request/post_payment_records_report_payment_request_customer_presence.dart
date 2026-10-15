@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
 sealed class PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence();
 
-factory PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown(json),
-}; }
+};}
 
 static const PostPaymentRecordsReportPaymentRequestCustomerPresence offSession = PostPaymentRecordsReportPaymentRequestCustomerPresence$offSession._();
 
@@ -17,30 +17,30 @@ static const PostPaymentRecordsReportPaymentRequestCustomerPresence onSession = 
 static const List<PostPaymentRecordsReportPaymentRequestCustomerPresence> values = [offSession, onSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off_session' => 'offSession',
   'on_session' => 'onSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown; } 
+bool get isUnknown {return this is PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) {return switch (this) {
       PostPaymentRecordsReportPaymentRequestCustomerPresence$offSession() => offSession(),
       PostPaymentRecordsReportPaymentRequestCustomerPresence$onSession() => onSession(),
       PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) {return switch (this) {
       PostPaymentRecordsReportPaymentRequestCustomerPresence$offSession() => offSession != null ? offSession() : orElse(value),
       PostPaymentRecordsReportPaymentRequestCustomerPresence$onSession() => onSession != null ? onSession() : orElse(value),
       PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostPaymentRecordsReportPaymentRequestCustomerPresence($value)';
 
- }
+}
 @immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence$offSession extends PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence$offSession._();
 
 @override String get value => 'off_session';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence$onSession extends PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence$onSession._();
 
 @override String get value => 'on_session';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'on_session'.hashCode;
 
- }
+}
 @immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown extends PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

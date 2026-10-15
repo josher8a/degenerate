@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';@immutable final class RadarGetOriginsTimeseriesResponse {const RadarGetOriginsTimeseriesResponse({required this.result, required this.success, });
 
-factory RadarGetOriginsTimeseriesResponse.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesResponse(
+factory RadarGetOriginsTimeseriesResponse.fromJson(Map<String, dynamic> json) {return RadarGetOriginsTimeseriesResponse(
   result: RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAiBotsTimeseriesResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetOriginsTimeseriesResponse copyWith({RadarGetAiBotsTimeseriesResponseResult? result, bool? success, }) { return RadarGetOriginsTimeseriesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetOriginsTimeseriesResponse copyWith({RadarGetAiBotsTimeseriesResponseResult? result, bool? success, }) {return RadarGetOriginsTimeseriesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetOriginsTimeseriesResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetOriginsTimeseriesResponse copyWith({RadarGetAiBotsTimeseriesResponseResu
 
 @override String toString() => 'RadarGetOriginsTimeseriesResponse(result: $result, success: $success)';
 
- }
+}

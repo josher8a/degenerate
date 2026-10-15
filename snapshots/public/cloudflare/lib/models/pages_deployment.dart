@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_build_config.dart';import 'package:pub_cloudflare/models/pages_deployment/deployment_trigger.dart';import 'package:pub_cloudflare/models/pages_env_vars/pages_env_vars_value.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';import 'package:pub_cloudflare/models/pages_source.dart';import 'package:pub_cloudflare/models/pages_stage.dart';/// Type of deploy.
 sealed class Environment {const Environment();
 
-factory Environment.fromJson(String json) { return switch (json) {
+factory Environment.fromJson(String json) {return switch (json) {
   'preview' => preview,
   'production' => production,
   _ => Environment$Unknown(json),
-}; }
+};}
 
 static const Environment preview = Environment$preview._();
 
@@ -17,30 +17,30 @@ static const Environment production = Environment$production._();
 static const List<Environment> values = [preview, production];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'preview' => 'preview',
   'production' => 'production',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Environment$Unknown; } 
+bool get isUnknown {return this is Environment$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() preview, required W Function() production, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() preview, required W Function() production, required W Function(String value) $unknown, }) {return switch (this) {
       Environment$preview() => preview(),
       Environment$production() => production(),
       Environment$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview, W Function()? production, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview, W Function()? production, W Function(String value)? $unknown, }) {return switch (this) {
       Environment$preview() => preview != null ? preview() : orElse(value),
       Environment$production() => production != null ? production() : orElse(value),
       Environment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Environment($value)';
 
- }
+}
 @immutable final class Environment$preview extends Environment {const Environment$preview._();
 
 @override String get value => 'preview';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview,
 
 @override int get hashCode => 'preview'.hashCode;
 
- }
+}
 @immutable final class Environment$production extends Environment {const Environment$production._();
 
 @override String get value => 'production';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview,
 
 @override int get hashCode => 'production'.hashCode;
 
- }
+}
 @immutable final class Environment$Unknown extends Environment {const Environment$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview,
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
+}
+@immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions = const Omittable.absent(), });
 
-factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeployment(
+factory PagesDeployment.fromJson(Map<String, dynamic> json) {return PagesDeployment(
   aliases: (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
   buildConfig: PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>),
   createdOn: DateTime.parse(json['created_on'] as String),
@@ -88,8 +88,8 @@ factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeploy
   source: PagesSource.fromJson(json['source'] as Map<String, dynamic>),
   stages: (json['stages'] as List<dynamic>).map((e) => PagesStage.fromJson(e as Map<String, dynamic>)).toList(),
   url: json['url'] as String,
-  usesFunctions: json['uses_functions'] as bool?,
-); }
+  usesFunctions: json.containsKey('uses_functions') ? Omittable(json['uses_functions'] as bool?) : const Omittable.absent(),
+);}
 
 /// A list of alias URLs pointing to this deployment.
 /// 
@@ -155,9 +155,9 @@ final List<PagesStage> stages;
 final String url;
 
 /// Whether the deployment uses functions.
-final bool? usesFunctions;
+final Omittable<bool?> usesFunctions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aliases': aliases,
   'build_config': buildConfig.toJson(),
   'created_on': createdOn.toIso8601String(),
@@ -174,9 +174,9 @@ Map<String, dynamic> toJson() { return {
   'source': source.toJson(),
   'stages': stages.map((e) => e.toJson()).toList(),
   'url': url,
-  'uses_functions': ?usesFunctions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aliases') &&
+  if (usesFunctions.isPresent) 'uses_functions': usesFunctions.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aliases') &&
       json.containsKey('build_config') &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('deployment_trigger') &&
@@ -191,8 +191,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('short_id') && json['short_id'] is String &&
       json.containsKey('source') &&
       json.containsKey('stages') &&
-      json.containsKey('url') && json['url'] is String; } 
-PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, DeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, Environment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, bool? Function()? usesFunctions, }) { return PagesDeployment(
+      json.containsKey('url') && json['url'] is String;}
+PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, DeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, Environment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, Omittable<bool?>? usesFunctions, }) {return PagesDeployment(
   aliases: aliases != null ? aliases() : this.aliases,
   buildConfig: buildConfig ?? this.buildConfig,
   createdOn: createdOn ?? this.createdOn,
@@ -209,8 +209,8 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
   source: source ?? this.source,
   stages: stages ?? this.stages,
   url: url ?? this.url,
-  usesFunctions: usesFunctions != null ? usesFunctions() : this.usesFunctions,
-); } 
+  usesFunctions: usesFunctions ?? this.usesFunctions,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeployment &&
           listEquals(aliases, other.aliases) &&
@@ -235,4 +235,4 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
 
 @override String toString() => 'PagesDeployment(\n  aliases: $aliases,\n  buildConfig: $buildConfig,\n  createdOn: $createdOn,\n  deploymentTrigger: $deploymentTrigger,\n  envVars: $envVars,\n  environment: $environment,\n  id: $id,\n  isSkipped: $isSkipped,\n  latestStage: $latestStage,\n  modifiedOn: $modifiedOn,\n  projectId: $projectId,\n  projectName: $projectName,\n  shortId: $shortId,\n  source: $source,\n  stages: $stages,\n  url: $url,\n  usesFunctions: $usesFunctions,\n)';
 
- }
+}

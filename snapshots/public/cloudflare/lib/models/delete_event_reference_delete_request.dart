@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEventReferenceDeleteRequest {const DeleteEventReferenceDeleteRequest({required this.events});
 
-factory DeleteEventReferenceDeleteRequest.fromJson(Map<String, dynamic> json) { return DeleteEventReferenceDeleteRequest(
+factory DeleteEventReferenceDeleteRequest.fromJson(Map<String, dynamic> json) {return DeleteEventReferenceDeleteRequest(
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> events;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'events': events,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('events'); } 
-DeleteEventReferenceDeleteRequest copyWith({List<String>? events}) { return DeleteEventReferenceDeleteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('events');}
+DeleteEventReferenceDeleteRequest copyWith({List<String>? events}) {return DeleteEventReferenceDeleteRequest(
   events: events ?? this.events,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEventReferenceDeleteRequest &&
           listEquals(events, other.events);
@@ -24,4 +24,4 @@ DeleteEventReferenceDeleteRequest copyWith({List<String>? events}) { return Dele
 
 @override String toString() => 'DeleteEventReferenceDeleteRequest(events: $events)';
 
- }
+}

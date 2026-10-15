@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParticipantPeerStatsDeviceInfo {const ParticipantPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
 
-factory ParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) { return ParticipantPeerStatsDeviceInfo(
+factory ParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) {return ParticipantPeerStatsDeviceInfo(
   browser: json['browser'] as String?,
   browserVersion: json['browser_version'] as String?,
   cpus: json['cpus'] != null ? (json['cpus'] as num).toInt() : null,
@@ -15,7 +15,7 @@ factory ParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) { ret
   sdkVersion: json['sdk_version'] as String?,
   userAgent: json['user_agent'] as String?,
   webglSupport: json['webgl_support'] as String?,
-); }
+);}
 
 final String? browser;
 
@@ -39,7 +39,7 @@ final String? userAgent;
 
 final String? webglSupport;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'browser': ?browser,
   'browser_version': ?browserVersion,
   'cpus': ?cpus,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   'sdk_version': ?sdkVersion,
   'user_agent': ?userAgent,
   'webgl_support': ?webglSupport,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'browser_version', 'cpus', 'engine', 'is_mobile', 'os', 'os_version', 'sdk_name', 'sdk_version', 'user_agent', 'webgl_support'}.contains(key)); } 
-ParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Function()? browserVersion, int? Function()? cpus, String? Function()? engine, bool? Function()? isMobile, String? Function()? os, String? Function()? osVersion, String? Function()? sdkName, String? Function()? sdkVersion, String? Function()? userAgent, String? Function()? webglSupport, }) { return ParticipantPeerStatsDeviceInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'browser', 'browser_version', 'cpus', 'engine', 'is_mobile', 'os', 'os_version', 'sdk_name', 'sdk_version', 'user_agent', 'webgl_support'}.contains(key));}
+ParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Function()? browserVersion, int? Function()? cpus, String? Function()? engine, bool? Function()? isMobile, String? Function()? os, String? Function()? osVersion, String? Function()? sdkName, String? Function()? sdkVersion, String? Function()? userAgent, String? Function()? webglSupport, }) {return ParticipantPeerStatsDeviceInfo(
   browser: browser != null ? browser() : this.browser,
   browserVersion: browserVersion != null ? browserVersion() : this.browserVersion,
   cpus: cpus != null ? cpus() : this.cpus,
@@ -65,7 +65,7 @@ ParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Fu
   sdkVersion: sdkVersion != null ? sdkVersion() : this.sdkVersion,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
   webglSupport: webglSupport != null ? webglSupport() : this.webglSupport,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantPeerStatsDeviceInfo &&
           browser == other.browser &&
@@ -84,4 +84,4 @@ ParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Fu
 
 @override String toString() => 'ParticipantPeerStatsDeviceInfo(\n  browser: $browser,\n  browserVersion: $browserVersion,\n  cpus: $cpus,\n  engine: $engine,\n  isMobile: $isMobile,\n  os: $os,\n  osVersion: $osVersion,\n  sdkName: $sdkName,\n  sdkVersion: $sdkVersion,\n  userAgent: $userAgent,\n  webglSupport: $webglSupport,\n)';
 
- }
+}

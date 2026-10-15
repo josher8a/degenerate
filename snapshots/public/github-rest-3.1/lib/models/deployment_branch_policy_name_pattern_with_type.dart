@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_name_pattern_with_type/deployment_branch_policy_name_pattern_with_type_type.dart';@immutable final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
 
-factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicyNamePatternWithType(
+factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) {return DeploymentBranchPolicyNamePatternWithType(
   name: json['name'] as String,
   type: json['type'] != null ? DeploymentBranchPolicyNamePatternWithTypeType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The name pattern that branches or tags must match in order to deploy to the environment.
 /// 
@@ -17,15 +17,15 @@ final String name;
 /// Whether this rule targets a branch or tag
 final DeploymentBranchPolicyNamePatternWithTypeType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DeploymentBranchPolicyNamePatternWithType copyWith({String? name, DeploymentBranchPolicyNamePatternWithTypeType? Function()? type, }) { return DeploymentBranchPolicyNamePatternWithType(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+DeploymentBranchPolicyNamePatternWithType copyWith({String? name, DeploymentBranchPolicyNamePatternWithTypeType? Function()? type, }) {return DeploymentBranchPolicyNamePatternWithType(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentBranchPolicyNamePatternWithType &&
           name == other.name &&
@@ -35,4 +35,4 @@ DeploymentBranchPolicyNamePatternWithType copyWith({String? name, DeploymentBran
 
 @override String toString() => 'DeploymentBranchPolicyNamePatternWithType(name: $name, type: $type)';
 
- }
+}

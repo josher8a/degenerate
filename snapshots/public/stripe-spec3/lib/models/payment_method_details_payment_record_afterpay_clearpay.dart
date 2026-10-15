@@ -2,39 +2,39 @@
 // Source: #/components/schemas/PaymentMethodDetailsPaymentRecordAfterpayClearpay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsPaymentRecordAfterpayClearpay {const PaymentMethodDetailsPaymentRecordAfterpayClearpay({this.orderId, this.reference, });
+@immutable final class PaymentMethodDetailsPaymentRecordAfterpayClearpay {const PaymentMethodDetailsPaymentRecordAfterpayClearpay({this.orderId = const Omittable.absent(), this.reference = const Omittable.absent(), });
 
-factory PaymentMethodDetailsPaymentRecordAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordAfterpayClearpay(
-  orderId: json['order_id'] as String?,
-  reference: json['reference'] as String?,
-); }
+factory PaymentMethodDetailsPaymentRecordAfterpayClearpay.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsPaymentRecordAfterpayClearpay(
+  orderId: json.containsKey('order_id') ? Omittable(json['order_id'] as String?) : const Omittable.absent(),
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
+);}
 
 /// The Afterpay order ID associated with this payment intent.
-final String? orderId;
+final Omittable<String?> orderId;
 
 /// Order identifier shown to the merchant in Afterpay's online portal.
-final String? reference;
+final Omittable<String?> reference;
 
-Map<String, dynamic> toJson() { return {
-  'order_id': ?orderId,
-  'reference': ?reference,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'order_id', 'reference'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (orderId.isPresent) 'order_id': orderId.value,
+  if (reference.isPresent) 'reference': reference.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'order_id', 'reference'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final orderId$ = orderId;
+List<String> validate() {final errors = <String>[];
+final orderId$ = orderId.value;
 if (orderId$ != null) {
   if (orderId$.runes.length > 5000) { errors.add('orderId: length must be <= 5000'); }
 }
-final reference$ = reference;
+final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsPaymentRecordAfterpayClearpay copyWith({String? Function()? orderId, String? Function()? reference, }) { return PaymentMethodDetailsPaymentRecordAfterpayClearpay(
-  orderId: orderId != null ? orderId() : this.orderId,
-  reference: reference != null ? reference() : this.reference,
-); } 
+return errors;}
+PaymentMethodDetailsPaymentRecordAfterpayClearpay copyWith({Omittable<String?>? orderId, Omittable<String?>? reference, }) {return PaymentMethodDetailsPaymentRecordAfterpayClearpay(
+  orderId: orderId ?? this.orderId,
+  reference: reference ?? this.reference,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordAfterpayClearpay &&
           orderId == other.orderId &&
@@ -44,4 +44,4 @@ PaymentMethodDetailsPaymentRecordAfterpayClearpay copyWith({String? Function()? 
 
 @override String toString() => 'PaymentMethodDetailsPaymentRecordAfterpayClearpay(orderId: $orderId, reference: $reference)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_source.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline/cloudflare_pipelines_workers_pipelines_pipeline_destination.dart';/// `[DEPRECATED]` Describes the configuration of a pipeline. Use the new streams/sinks/pipelines API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesPipeline {const CloudflarePipelinesWorkersPipelinesPipeline({required this.destination, required this.endpoint, required this.id, required this.name, required this.source, required this.version, });
 
-factory CloudflarePipelinesWorkersPipelinesPipeline.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipeline(
+factory CloudflarePipelinesWorkersPipelinesPipeline.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesWorkersPipelinesPipeline(
   destination: CloudflarePipelinesWorkersPipelinesPipelineDestination.fromJson(json['destination'] as Map<String, dynamic>),
   endpoint: json['endpoint'] as String,
   id: json['id'] as String,
   name: json['name'] as String,
   source: (json['source'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.fromJson(e as Map<String, dynamic>)).toList(),
   version: (json['version'] as num).toDouble(),
-); }
+);}
 
 final CloudflarePipelinesWorkersPipelinesPipelineDestination destination;
 
@@ -37,34 +37,34 @@ final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource> so
 /// Example: `2`
 final double version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination': destination.toJson(),
   'endpoint': endpoint,
   'id': id,
   'name': name,
   'source': source.map((e) => e.toJson()).toList(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination') &&
       json.containsKey('endpoint') && json['endpoint'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') &&
-      json.containsKey('version') && json['version'] is num; } 
+      json.containsKey('version') && json['version'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
 if (source.isEmpty) { errors.add('source: must have >= 1 items'); }
-return errors; } 
-CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkersPipelinesPipelineDestination? destination, String? endpoint, String? id, String? name, List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource>? source, double? version, }) { return CloudflarePipelinesWorkersPipelinesPipeline(
+return errors;}
+CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkersPipelinesPipelineDestination? destination, String? endpoint, String? id, String? name, List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource>? source, double? version, }) {return CloudflarePipelinesWorkersPipelinesPipeline(
   destination: destination ?? this.destination,
   endpoint: endpoint ?? this.endpoint,
   id: id ?? this.id,
   name: name ?? this.name,
   source: source ?? this.source,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesPipeline &&
           destination == other.destination &&
@@ -78,4 +78,4 @@ CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkers
 
 @override String toString() => 'CloudflarePipelinesWorkersPipelinesPipeline(destination: $destination, endpoint: $endpoint, id: $id, name: $name, source: $source, version: $version)';
 
- }
+}

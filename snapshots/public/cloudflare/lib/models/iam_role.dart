@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permissions.dart';import 'package:pub_cloudflare/models/iam_role_components_schemas_identifier.dart';@immutable final class IamRole {const IamRole({required this.description, required this.id, required this.name, required this.permissions, });
 
-factory IamRole.fromJson(Map<String, dynamic> json) { return IamRole(
+factory IamRole.fromJson(Map<String, dynamic> json) {return IamRole(
   description: json['description'] as String,
   id: IamRoleComponentsSchemasIdentifier.fromJson(json['id'] as String),
   name: json['name'] as String,
   permissions: IamPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
-); }
+);}
 
 /// Description of role's permissions.
 /// 
@@ -24,26 +24,26 @@ final String name;
 
 final IamPermissions permissions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'id': id.toJson(),
   'name': name,
   'permissions': permissions.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('permissions'); } 
+      json.containsKey('permissions');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 120) { errors.add('name: length must be <= 120'); }
-return errors; } 
-IamRole copyWith({String? description, IamRoleComponentsSchemasIdentifier? id, String? name, IamPermissions? permissions, }) { return IamRole(
+return errors;}
+IamRole copyWith({String? description, IamRoleComponentsSchemasIdentifier? id, String? name, IamPermissions? permissions, }) {return IamRole(
   description: description ?? this.description,
   id: id ?? this.id,
   name: name ?? this.name,
   permissions: permissions ?? this.permissions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamRole &&
           description == other.description &&
@@ -55,4 +55,4 @@ IamRole copyWith({String? description, IamRoleComponentsSchemasIdentifier? id, S
 
 @override String toString() => 'IamRole(description: $description, id: $id, name: $name, permissions: $permissions)';
 
- }
+}

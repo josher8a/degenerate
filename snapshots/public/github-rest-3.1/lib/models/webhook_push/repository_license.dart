@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryLicense {const RepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
 
-factory RepositoryLicense.fromJson(Map<String, dynamic> json) { return RepositoryLicense(
+factory RepositoryLicense.fromJson(Map<String, dynamic> json) {return RepositoryLicense(
   key: json['key'] as String,
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   spdxId: json['spdx_id'] as String,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final String key;
 
@@ -21,25 +21,25 @@ final String spdxId;
 
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'name': name,
   'node_id': nodeId,
   'spdx_id': spdxId,
   'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('spdx_id') && json['spdx_id'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RepositoryLicense copyWith({String? key, String? name, String? nodeId, String? spdxId, Uri? Function()? url, }) { return RepositoryLicense(
+      json.containsKey('url') && (json['url'] == null || json['url'] is String);}
+RepositoryLicense copyWith({String? key, String? name, String? nodeId, String? spdxId, Uri? Function()? url, }) {return RepositoryLicense(
   key: key ?? this.key,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   spdxId: spdxId ?? this.spdxId,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryLicense &&
           key == other.key &&
@@ -52,4 +52,4 @@ RepositoryLicense copyWith({String? key, String? name, String? nodeId, String? s
 
 @override String toString() => 'RepositoryLicense(key: $key, name: $name, nodeId: $nodeId, spdxId: $spdxId, url: $url)';
 
- }
+}

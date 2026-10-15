@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PackageDimensions {const PackageDimensions({required this.height, required this.length, required this.weight, required this.width, });
 
-factory PackageDimensions.fromJson(Map<String, dynamic> json) { return PackageDimensions(
+factory PackageDimensions.fromJson(Map<String, dynamic> json) {return PackageDimensions(
   height: (json['height'] as num).toDouble(),
   length: (json['length'] as num).toDouble(),
   weight: (json['weight'] as num).toDouble(),
   width: (json['width'] as num).toDouble(),
-); }
+);}
 
 /// Height, in inches.
 final double height;
@@ -23,22 +23,22 @@ final double weight;
 /// Width, in inches.
 final double width;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'height': height,
   'length': length,
   'weight': weight,
   'width': width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('height') && json['height'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('height') && json['height'] is num &&
       json.containsKey('length') && json['length'] is num &&
       json.containsKey('weight') && json['weight'] is num &&
-      json.containsKey('width') && json['width'] is num; } 
-PackageDimensions copyWith({double? height, double? length, double? weight, double? width, }) { return PackageDimensions(
+      json.containsKey('width') && json['width'] is num;}
+PackageDimensions copyWith({double? height, double? length, double? weight, double? width, }) {return PackageDimensions(
   height: height ?? this.height,
   length: length ?? this.length,
   weight: weight ?? this.weight,
   width: width ?? this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PackageDimensions &&
           height == other.height &&
@@ -50,4 +50,4 @@ PackageDimensions copyWith({double? height, double? length, double? weight, doub
 
 @override String toString() => 'PackageDimensions(height: $height, length: $length, weight: $weight, width: $width)';
 
- }
+}

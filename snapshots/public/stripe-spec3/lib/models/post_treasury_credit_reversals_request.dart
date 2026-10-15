@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryCreditReversalsRequest {const PostTreasuryCreditReversalsRequest({required this.receivedCredit, this.expand, this.metadata, });
 
-factory PostTreasuryCreditReversalsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryCreditReversalsRequest(
+factory PostTreasuryCreditReversalsRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryCreditReversalsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   receivedCredit: json['received_credit'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,21 +18,21 @@ final Map<String,String>? metadata;
 /// The ReceivedCredit to reverse.
 final String receivedCredit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'metadata': ?metadata,
   'received_credit': receivedCredit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_credit') && json['received_credit'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('received_credit') && json['received_credit'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (receivedCredit.runes.length > 5000) { errors.add('receivedCredit: length must be <= 5000'); }
-return errors; } 
-PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedCredit, }) { return PostTreasuryCreditReversalsRequest(
+return errors;}
+PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedCredit, }) {return PostTreasuryCreditReversalsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   receivedCredit: receivedCredit ?? this.receivedCredit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryCreditReversalsRequest &&
           listEquals(expand, other.expand) &&
@@ -43,4 +43,4 @@ PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, M
 
 @override String toString() => 'PostTreasuryCreditReversalsRequest(expand: $expand, metadata: $metadata, receivedCredit: $receivedCredit)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item_redirect.dart';@immutable final class ListsListItemRedirectObject {const ListsListItemRedirectObject({required this.redirect});
 
-factory ListsListItemRedirectObject.fromJson(Map<String, dynamic> json) { return ListsListItemRedirectObject(
+factory ListsListItemRedirectObject.fromJson(Map<String, dynamic> json) {return ListsListItemRedirectObject(
   redirect: ListsItemRedirect.fromJson(json['redirect'] as Map<String, dynamic>),
-); }
+);}
 
 final ListsItemRedirect redirect;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'redirect': redirect.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('redirect'); } 
-ListsListItemRedirectObject copyWith({ListsItemRedirect? redirect}) { return ListsListItemRedirectObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('redirect');}
+ListsListItemRedirectObject copyWith({ListsItemRedirect? redirect}) {return ListsListItemRedirectObject(
   redirect: redirect ?? this.redirect,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsListItemRedirectObject &&
           redirect == other.redirect;
@@ -24,4 +24,4 @@ ListsListItemRedirectObject copyWith({ListsItemRedirect? redirect}) { return Lis
 
 @override String toString() => 'ListsListItemRedirectObject(redirect: $redirect)';
 
- }
+}

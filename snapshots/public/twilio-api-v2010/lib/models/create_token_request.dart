@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTokenRequest {const CreateTokenRequest({this.ttl});
 
-factory CreateTokenRequest.fromJson(Map<String, dynamic> json) { return CreateTokenRequest(
+factory CreateTokenRequest.fromJson(Map<String, dynamic> json) {return CreateTokenRequest(
   ttl: json['Ttl'] != null ? (json['Ttl'] as num).toInt() : null,
-); }
+);}
 
 /// The duration in seconds for which the generated credentials are valid. The default value is 86400 (24 hours).
 final int? ttl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Ttl': ?ttl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Ttl'}.contains(key)); } 
-CreateTokenRequest copyWith({int? Function()? ttl}) { return CreateTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Ttl'}.contains(key));}
+CreateTokenRequest copyWith({int? Function()? ttl}) {return CreateTokenRequest(
   ttl: ttl != null ? ttl() : this.ttl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTokenRequest &&
           ttl == other.ttl;
@@ -25,4 +25,4 @@ CreateTokenRequest copyWith({int? Function()? ttl}) { return CreateTokenRequest(
 
 @override String toString() => 'CreateTokenRequest(ttl: $ttl)';
 
- }
+}

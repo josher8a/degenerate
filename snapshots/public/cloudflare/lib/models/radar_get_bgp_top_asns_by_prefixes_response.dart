@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_response/radar_get_bgp_top_asns_by_prefixes_response_result.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponse {const RadarGetBgpTopAsnsByPrefixesResponse({required this.result, required this.success, });
 
-factory RadarGetBgpTopAsnsByPrefixesResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsnsByPrefixesResponse(
+factory RadarGetBgpTopAsnsByPrefixesResponse.fromJson(Map<String, dynamic> json) {return RadarGetBgpTopAsnsByPrefixesResponse(
   result: RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBgpTopAsnsByPrefixesResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpTopAsnsByPrefixesResponse copyWith({RadarGetBgpTopAsnsByPrefixesResponseResult? result, bool? success, }) { return RadarGetBgpTopAsnsByPrefixesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBgpTopAsnsByPrefixesResponse copyWith({RadarGetBgpTopAsnsByPrefixesResponseResult? result, bool? success, }) {return RadarGetBgpTopAsnsByPrefixesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopAsnsByPrefixesResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetBgpTopAsnsByPrefixesResponse copyWith({RadarGetBgpTopAsnsByPrefixesRespo
 
 @override String toString() => 'RadarGetBgpTopAsnsByPrefixesResponse(result: $result, success: $success)';
 
- }
+}

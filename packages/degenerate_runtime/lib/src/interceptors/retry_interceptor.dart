@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:degenerate_runtime/src/api_client.dart';
 import 'package:degenerate_runtime/src/cancel_token.dart';
 import 'package:degenerate_runtime/src/interceptor.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// A function that delays execution for the given [delay] duration.
 typedef RetrySleep = Future<void> Function(Duration delay);
@@ -44,7 +45,7 @@ class RetryInterceptor implements Interceptor {
 
   /// Custom predicate to decide whether a response should be retried.
   /// If null, retries on 429 and 5xx.
-  final bool Function(ApiResponse response)? retryWhen;
+  final bool Function(StreamedApiResponse response)? retryWhen;
 
   /// Custom predicate to decide whether a request is safe to retry.
   /// If null, retries only idempotent methods by default.
@@ -64,7 +65,7 @@ class RetryInterceptor implements Interceptor {
   /// Maximum delay between retries, capping exponential growth.
   final Duration? maxDelay;
 
-  bool _shouldRetry(ApiResponse response) {
+  bool _shouldRetry(StreamedApiResponse response) {
     if (retryWhen != null) return retryWhen!(response);
     return response.statusCode == 429 || response.statusCode >= 500;
   }
@@ -87,12 +88,15 @@ class RetryInterceptor implements Interceptor {
   RetrySleep get _sleep => sleep ?? Future<void>.delayed;
   RetryRandom get _random => random ?? _defaultRandom;
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     Object? lastError;
     StackTrace? lastStack;
-    ApiResponse? previousResponse;
+    StreamedApiResponse? previousResponse;
 
     for (var attempt = 0; attempt <= maxRetries; attempt++) {
+      if (request.options?.cancelToken?.isCancelled ?? false) {
+        throw const CancelledException();
+      }
       if (attempt > 0) {
         final delay = _computeDelay(
           attempt,
@@ -108,6 +112,8 @@ class RetryInterceptor implements Interceptor {
             attempt == maxRetries) {
           return response;
         }
+        // Drain the body we're not returning so the connection is released.
+        await response.discard();
       } on CancelledException {
         // Cancellation (user-initiated or executor timeout) must surface
         // immediately — retrying would extend every timeout by the whole
@@ -124,7 +130,7 @@ class RetryInterceptor implements Interceptor {
     Error.throwWithStackTrace(lastError!, lastStack!);
   }
 
-  Duration _computeDelay(int attempt, {ApiResponse? previousResponse}) {
+  Duration _computeDelay(int attempt, {StreamedApiResponse? previousResponse}) {
     final retryAfter = previousResponse == null
         ? null
         : _parseRetryAfter(previousResponse.headers);

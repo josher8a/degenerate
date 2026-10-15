@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values/pages_deployment_config_values_limits.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values_request/pages_deployment_config_values_request_usage_model.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_multiple_step_migrations.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item/migrations.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/smart.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant4.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item/workers_script_and_version_settings_item_annotations.dart';import 'package:pub_cloudflare/models/workers_single_step_migrations.dart';import 'package:pub_cloudflare/models/workers_version/assets.dart';import 'package:pub_cloudflare/models/workers_version/modules.dart';@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel = PagesDeploymentConfigValuesRequestUsageModel.standard, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values/pages_deployment_config_values_limits.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values_request/pages_deployment_config_values_request_usage_model.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_multiple_step_migrations.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item/workers_namespace_script_and_version_settings_item_migrations.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/smart.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant4.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item/workers_script_and_version_settings_item_annotations.dart';import 'package:pub_cloudflare/models/workers_single_step_migrations.dart';import 'package:pub_cloudflare/models/workers_version/assets.dart';import 'package:pub_cloudflare/models/workers_version/modules.dart';@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel, });
 
-factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersion(
+factory WorkersVersion.fromJson(Map<String, dynamic> json) {return WorkersVersion(
   annotations: json['annotations'] != null ? WorkersScriptAndVersionSettingsItemAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   assets: json['assets'] != null ? Assets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -20,8 +20,8 @@ factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersi
   source: json['source'] as String?,
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
   urls: (json['urls'] as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),
-  usageModel: json.containsKey('usage_model') ? PagesDeploymentConfigValuesRequestUsageModel.fromJson(json['usage_model'] as String) : PagesDeploymentConfigValuesRequestUsageModel.standard,
-); }
+  usageModel: json['usage_model'] != null ? PagesDeploymentConfigValuesRequestUsageModel.fromJson(json['usage_model'] as String) : null,
+);}
 
 /// Metadata about the version.
 final WorkersScriptAndVersionSettingsItemAnnotations? annotations;
@@ -55,7 +55,7 @@ final PagesDeploymentConfigValuesLimits? limits;
 final String? mainModule;
 
 /// Migrations for Durable Objects associated with the version. Migrations are applied when the version is deployed.
-final Migrations? migrations;
+final WorkersNamespaceScriptAndVersionSettingsItemMigrations? migrations;
 
 /// Code, sourcemaps, and other content used at runtime.
 /// 
@@ -89,9 +89,12 @@ final List<Uri> urls;
 /// Usage model for the version.
 /// 
 /// Example: `'standard'`
-final PagesDeploymentConfigValuesRequestUsageModel usageModel;
+final PagesDeploymentConfigValuesRequestUsageModel? usageModel;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `usageModel`, or its schema default when absent.
+PagesDeploymentConfigValuesRequestUsageModel get usageModelOrDefault => usageModel ?? PagesDeploymentConfigValuesRequestUsageModel.fromJson('standard');
+
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   if (assets != null) 'assets': assets?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
@@ -108,13 +111,13 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
   'startup_time_ms': ?startupTimeMs,
   'urls': urls.map((e) => e.toString()).toList(),
-  'usage_model': usageModel.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+  if (usageModel != null) 'usage_model': usageModel?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('number') && json['number'] is num &&
-      json.containsKey('urls'); } 
-WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Function()? annotations, Assets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, DateTime? createdOn, String? id, PagesDeploymentConfigValuesLimits? Function()? limits, String? Function()? mainModule, Migrations? Function()? migrations, List<Modules>? Function()? modules, int? number, WorkersPlacementInfoNoStatus? Function()? placement, String? Function()? source, int? Function()? startupTimeMs, List<Uri>? urls, PagesDeploymentConfigValuesRequestUsageModel Function()? usageModel, }) { return WorkersVersion(
+      json.containsKey('urls');}
+WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Function()? annotations, Assets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, DateTime? createdOn, String? id, PagesDeploymentConfigValuesLimits? Function()? limits, String? Function()? mainModule, WorkersNamespaceScriptAndVersionSettingsItemMigrations? Function()? migrations, List<Modules>? Function()? modules, int? number, WorkersPlacementInfoNoStatus? Function()? placement, String? Function()? source, int? Function()? startupTimeMs, List<Uri>? urls, PagesDeploymentConfigValuesRequestUsageModel? Function()? usageModel, }) {return WorkersVersion(
   annotations: annotations != null ? annotations() : this.annotations,
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,
@@ -132,7 +135,7 @@ WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Functio
   startupTimeMs: startupTimeMs != null ? startupTimeMs() : this.startupTimeMs,
   urls: urls ?? this.urls,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersion &&
           annotations == other.annotations &&
@@ -157,4 +160,4 @@ WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Functio
 
 @override String toString() => 'WorkersVersion(\n  annotations: $annotations,\n  assets: $assets,\n  bindings: $bindings,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  createdOn: $createdOn,\n  id: $id,\n  limits: $limits,\n  mainModule: $mainModule,\n  migrations: $migrations,\n  modules: $modules,\n  number: $number,\n  placement: $placement,\n  source: $source,\n  startupTimeMs: $startupTimeMs,\n  urls: $urls,\n  usageModel: $usageModel,\n)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/function_object.dart';@immutable final class AssistantToolsFunction {const AssistantToolsFunction({required this.type, required this.function, });
 
-factory AssistantToolsFunction.fromJson(Map<String, dynamic> json) { return AssistantToolsFunction(
+factory AssistantToolsFunction.fromJson(Map<String, dynamic> json) {return AssistantToolsFunction(
   type: AssistantToolsFunctionType.fromJson(json['type'] as String),
   function: FunctionObject.fromJson(json['function'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of tool being defined: `function`
 final AssistantToolsFunctionType type;
 
 final FunctionObject function;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'function': function.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'function' &&
-      json.containsKey('function'); } 
-AssistantToolsFunction copyWith({AssistantToolsFunctionType? type, FunctionObject? function, }) { return AssistantToolsFunction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'function' &&
+      json.containsKey('function');}
+AssistantToolsFunction copyWith({AssistantToolsFunctionType? type, FunctionObject? function, }) {return AssistantToolsFunction(
   type: type ?? this.type,
   function: function ?? this.function,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantToolsFunction &&
           type == other.type &&
@@ -32,4 +32,4 @@ AssistantToolsFunction copyWith({AssistantToolsFunctionType? type, FunctionObjec
 
 @override String toString() => 'AssistantToolsFunction(type: $type, function: $function)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Bots {const Bots({required this.category, required this.description, required this.kind, required this.name, required this.$operator, required this.slug, required this.userAgentPatterns, });
 
-factory Bots.fromJson(Map<String, dynamic> json) { return Bots(
+factory Bots.fromJson(Map<String, dynamic> json) {return Bots(
   category: json['category'] as String,
   description: json['description'] as String,
   kind: json['kind'] as String,
@@ -11,7 +11,7 @@ factory Bots.fromJson(Map<String, dynamic> json) { return Bots(
   $operator: json['operator'] as String,
   slug: json['slug'] as String,
   userAgentPatterns: (json['userAgentPatterns'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The category of the bot.
 /// 
@@ -45,7 +45,7 @@ final String slug;
 
 final List<String> userAgentPatterns;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'category': category,
   'description': description,
   'kind': kind,
@@ -53,15 +53,15 @@ Map<String, dynamic> toJson() { return {
   'operator': $operator,
   'slug': slug,
   'userAgentPatterns': userAgentPatterns,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') && json['category'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('category') && json['category'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('operator') && json['operator'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('userAgentPatterns'); } 
-Bots copyWith({String? category, String? description, String? kind, String? name, String? $operator, String? slug, List<String>? userAgentPatterns, }) { return Bots(
+      json.containsKey('userAgentPatterns');}
+Bots copyWith({String? category, String? description, String? kind, String? name, String? $operator, String? slug, List<String>? userAgentPatterns, }) {return Bots(
   category: category ?? this.category,
   description: description ?? this.description,
   kind: kind ?? this.kind,
@@ -69,7 +69,7 @@ Bots copyWith({String? category, String? description, String? kind, String? name
   $operator: $operator ?? this.$operator,
   slug: slug ?? this.slug,
   userAgentPatterns: userAgentPatterns ?? this.userAgentPatterns,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Bots &&
           category == other.category &&
@@ -84,4 +84,4 @@ Bots copyWith({String? category, String? description, String? kind, String? name
 
 @override String toString() => 'Bots(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, slug: $slug, userAgentPatterns: $userAgentPatterns)';
 
- }
+}

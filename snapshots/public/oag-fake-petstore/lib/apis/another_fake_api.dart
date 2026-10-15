@@ -14,7 +14,7 @@ final class $anotherFakeApi with ApiExecutor {const $anotherFakeApi(this.apiConf
 /// To test special tags and operation ID starting with number
 ///
 /// `PATCH /another-fake/dummy`
-Future<ApiResult<Client, Never>> $123Test$SpecialTags({required Client body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Client, Never>> $123Test$SpecialTags({required Client body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,11 +25,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Client.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when the expression matches.
 sealed class WaitingroomRuleAction {const WaitingroomRuleAction();
 
-factory WaitingroomRuleAction.fromJson(String json) { return switch (json) {
+factory WaitingroomRuleAction.fromJson(String json) {return switch (json) {
   'bypass_waiting_room' => bypassWaitingRoom,
   _ => WaitingroomRuleAction$Unknown(json),
-}; }
+};}
 
 static const WaitingroomRuleAction bypassWaitingRoom = WaitingroomRuleAction$bypassWaitingRoom._();
 
 static const List<WaitingroomRuleAction> values = [bypassWaitingRoom];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bypass_waiting_room' => 'bypassWaitingRoom',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WaitingroomRuleAction$Unknown; } 
+bool get isUnknown {return this is WaitingroomRuleAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bypassWaitingRoom, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bypassWaitingRoom, required W Function(String value) $unknown, }) {return switch (this) {
       WaitingroomRuleAction$bypassWaitingRoom() => bypassWaitingRoom(),
       WaitingroomRuleAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bypassWaitingRoom, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bypassWaitingRoom, W Function(String value)? $unknown, }) {return switch (this) {
       WaitingroomRuleAction$bypassWaitingRoom() => bypassWaitingRoom != null ? bypassWaitingRoom() : orElse(value),
       WaitingroomRuleAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WaitingroomRuleAction($value)';
 
- }
+}
 @immutable final class WaitingroomRuleAction$bypassWaitingRoom extends WaitingroomRuleAction {const WaitingroomRuleAction$bypassWaitingRoom._();
 
 @override String get value => 'bypass_waiting_room';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bypassWa
 
 @override int get hashCode => 'bypass_waiting_room'.hashCode;
 
- }
+}
 @immutable final class WaitingroomRuleAction$Unknown extends WaitingroomRuleAction {const WaitingroomRuleAction$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bypassWa
 
 @override int get hashCode => value.hashCode;
 
- }
+}

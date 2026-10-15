@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_origin_request.dart';/// Public hostname
 @immutable final class TunnelIngressRule {const TunnelIngressRule({required this.hostname, required this.service, this.originRequest, this.path, });
 
-factory TunnelIngressRule.fromJson(Map<String, dynamic> json) { return TunnelIngressRule(
+factory TunnelIngressRule.fromJson(Map<String, dynamic> json) {return TunnelIngressRule(
   hostname: json['hostname'] as String,
   originRequest: json['originRequest'] != null ? TunnelOriginRequest.fromJson(json['originRequest'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
   service: json['service'] as String,
-); }
+);}
 
 /// Public hostname for this service.
 /// 
@@ -29,20 +29,20 @@ final String? path;
 /// Example: `'https://localhost:8001'`
 final String service;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': hostname,
   if (originRequest != null) 'originRequest': originRequest?.toJson(),
   'path': ?path,
   'service': service,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
-      json.containsKey('service') && json['service'] is String; } 
-TunnelIngressRule copyWith({String? hostname, TunnelOriginRequest? Function()? originRequest, String? Function()? path, String? service, }) { return TunnelIngressRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
+      json.containsKey('service') && json['service'] is String;}
+TunnelIngressRule copyWith({String? hostname, TunnelOriginRequest? Function()? originRequest, String? Function()? path, String? service, }) {return TunnelIngressRule(
   hostname: hostname ?? this.hostname,
   originRequest: originRequest != null ? originRequest() : this.originRequest,
   path: path != null ? path() : this.path,
   service: service ?? this.service,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelIngressRule &&
           hostname == other.hostname &&
@@ -54,4 +54,4 @@ TunnelIngressRule copyWith({String? hostname, TunnelOriginRequest? Function()? o
 
 @override String toString() => 'TunnelIngressRule(hostname: $hostname, originRequest: $originRequest, path: $path, service: $service)';
 
- }
+}

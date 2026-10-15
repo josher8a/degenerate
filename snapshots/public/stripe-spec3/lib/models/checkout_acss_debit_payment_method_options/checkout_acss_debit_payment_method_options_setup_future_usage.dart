@@ -10,12 +10,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 sealed class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage();
 
-factory CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown(json),
-}; }
+};}
 
 static const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage none = CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$none._();
 
@@ -26,33 +26,33 @@ static const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage onSession = C
 static const List<CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage> values = [none, offSession, onSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'off_session' => 'offSession',
   'on_session' => 'onSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown; } 
+bool get isUnknown {return this is CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$none() => none(),
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$offSession() => offSession(),
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$onSession() => onSession(),
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$none() => none != null ? none() : orElse(value),
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$offSession() => offSession != null ? offSession() : orElse(value),
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$onSession() => onSession != null ? onSession() : orElse(value),
       CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage($value)';
 
- }
+}
 @immutable final class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$none extends CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$none._();
 
 @override String get value => 'none';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$offSession extends CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$offSession._();
 
 @override String get value => 'off_session';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$onSession extends CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$onSession._();
 
 @override String get value => 'on_session';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'on_session'.hashCode;
 
- }
+}
 @immutable final class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown extends CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage$Unknown(this.value);
 
 @override final String value;
@@ -89,4 +89,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

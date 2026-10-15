@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gists_get_comment_response403/block.dart';@immutable final class GistsGetCommentResponse403 {const GistsGetCommentResponse403({this.block, this.message, this.documentationUrl, });
 
-factory GistsGetCommentResponse403.fromJson(Map<String, dynamic> json) { return GistsGetCommentResponse403(
+factory GistsGetCommentResponse403.fromJson(Map<String, dynamic> json) {return GistsGetCommentResponse403(
   block: json['block'] != null ? Block.fromJson(json['block'] as Map<String, dynamic>) : null,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
-); }
+);}
 
 final Block? block;
 
@@ -15,17 +15,17 @@ final String? message;
 
 final String? documentationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (block != null) 'block': block?.toJson(),
   'message': ?message,
   'documentation_url': ?documentationUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'block', 'message', 'documentation_url'}.contains(key)); } 
-GistsGetCommentResponse403 copyWith({Block? Function()? block, String? Function()? message, String? Function()? documentationUrl, }) { return GistsGetCommentResponse403(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'block', 'message', 'documentation_url'}.contains(key));}
+GistsGetCommentResponse403 copyWith({Block? Function()? block, String? Function()? message, String? Function()? documentationUrl, }) {return GistsGetCommentResponse403(
   block: block != null ? block() : this.block,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GistsGetCommentResponse403 &&
           block == other.block &&
@@ -36,4 +36,4 @@ GistsGetCommentResponse403 copyWith({Block? Function()? block, String? Function(
 
 @override String toString() => 'GistsGetCommentResponse403(block: $block, message: $message, documentationUrl: $documentationUrl)';
 
- }
+}

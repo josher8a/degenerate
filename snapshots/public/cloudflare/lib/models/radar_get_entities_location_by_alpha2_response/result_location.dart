@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultLocation {const ResultLocation({required this.alpha2, required this.confidenceLevel, required this.continent, required this.latitude, required this.longitude, required this.name, required this.region, required this.subregion, });
 
-factory ResultLocation.fromJson(Map<String, dynamic> json) { return ResultLocation(
+factory ResultLocation.fromJson(Map<String, dynamic> json) {return ResultLocation(
   alpha2: json['alpha2'] as String,
   confidenceLevel: (json['confidenceLevel'] as num).toInt(),
   continent: json['continent'] as String,
@@ -12,7 +12,7 @@ factory ResultLocation.fromJson(Map<String, dynamic> json) { return ResultLocati
   name: json['name'] as String,
   region: json['region'] as String,
   subregion: json['subregion'] as String,
-); }
+);}
 
 /// Example: `'AF'`
 final String alpha2;
@@ -42,7 +42,7 @@ final String region;
 /// Example: `'Southern Asia'`
 final String subregion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alpha2': alpha2,
   'confidenceLevel': confidenceLevel,
   'continent': continent,
@@ -51,21 +51,21 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'region': region,
   'subregion': subregion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alpha2') && json['alpha2'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alpha2') && json['alpha2'] is String &&
       json.containsKey('confidenceLevel') && json['confidenceLevel'] is num &&
       json.containsKey('continent') && json['continent'] is String &&
       json.containsKey('latitude') && json['latitude'] is String &&
       json.containsKey('longitude') && json['longitude'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('region') && json['region'] is String &&
-      json.containsKey('subregion') && json['subregion'] is String; } 
+      json.containsKey('subregion') && json['subregion'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(latitude)) { errors.add(r'latitude: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(longitude)) { errors.add(r'longitude: must match pattern ^\d+$'); }
-return errors; } 
-ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) { return ResultLocation(
+return errors;}
+ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) {return ResultLocation(
   alpha2: alpha2 ?? this.alpha2,
   confidenceLevel: confidenceLevel ?? this.confidenceLevel,
   continent: continent ?? this.continent,
@@ -74,7 +74,7 @@ ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent
   name: name ?? this.name,
   region: region ?? this.region,
   subregion: subregion ?? this.subregion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultLocation &&
           alpha2 == other.alpha2 &&
@@ -90,4 +90,4 @@ ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent
 
 @override String toString() => 'ResultLocation(alpha2: $alpha2, confidenceLevel: $confidenceLevel, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)';
 
- }
+}

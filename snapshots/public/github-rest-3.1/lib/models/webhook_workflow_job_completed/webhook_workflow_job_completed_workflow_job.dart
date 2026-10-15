@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WorkflowJobConclusion {const WorkflowJobConclusion();
 
-factory WorkflowJobConclusion.fromJson(String json) { return switch (json) {
+factory WorkflowJobConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'skipped' => skipped,
@@ -12,7 +12,7 @@ factory WorkflowJobConclusion.fromJson(String json) { return switch (json) {
   'neutral' => neutral,
   'timed_out' => timedOut,
   _ => WorkflowJobConclusion$Unknown(json),
-}; }
+};}
 
 static const WorkflowJobConclusion success = WorkflowJobConclusion$success._();
 
@@ -31,9 +31,9 @@ static const WorkflowJobConclusion timedOut = WorkflowJobConclusion$timedOut._()
 static const List<WorkflowJobConclusion> values = [success, failure, skipped, cancelled, actionRequired, neutral, timedOut];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'success' => 'success',
   'failure' => 'failure',
   'skipped' => 'skipped',
@@ -42,11 +42,11 @@ String get name { return switch (value) {
   'neutral' => 'neutral',
   'timed_out' => 'timedOut',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkflowJobConclusion$Unknown; } 
+bool get isUnknown {return this is WorkflowJobConclusion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() success, required W Function() failure, required W Function() skipped, required W Function() cancelled, required W Function() actionRequired, required W Function() neutral, required W Function() timedOut, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() success, required W Function() failure, required W Function() skipped, required W Function() cancelled, required W Function() actionRequired, required W Function() neutral, required W Function() timedOut, required W Function(String value) $unknown, }) {return switch (this) {
       WorkflowJobConclusion$success() => success(),
       WorkflowJobConclusion$failure() => failure(),
       WorkflowJobConclusion$skipped() => skipped(),
@@ -55,9 +55,9 @@ W when<W>({required W Function() success, required W Function() failure, require
       WorkflowJobConclusion$neutral() => neutral(),
       WorkflowJobConclusion$timedOut() => timedOut(),
       WorkflowJobConclusion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? skipped, W Function()? cancelled, W Function()? actionRequired, W Function()? neutral, W Function()? timedOut, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? skipped, W Function()? cancelled, W Function()? actionRequired, W Function()? neutral, W Function()? timedOut, W Function(String value)? $unknown, }) {return switch (this) {
       WorkflowJobConclusion$success() => success != null ? success() : orElse(value),
       WorkflowJobConclusion$failure() => failure != null ? failure() : orElse(value),
       WorkflowJobConclusion$skipped() => skipped != null ? skipped() : orElse(value),
@@ -66,10 +66,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
       WorkflowJobConclusion$neutral() => neutral != null ? neutral() : orElse(value),
       WorkflowJobConclusion$timedOut() => timedOut != null ? timedOut() : orElse(value),
       WorkflowJobConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkflowJobConclusion($value)';
 
- }
+}
 @immutable final class WorkflowJobConclusion$success extends WorkflowJobConclusion {const WorkflowJobConclusion$success._();
 
 @override String get value => 'success';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$failure extends WorkflowJobConclusion {const WorkflowJobConclusion$failure._();
 
 @override String get value => 'failure';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$skipped extends WorkflowJobConclusion {const WorkflowJobConclusion$skipped._();
 
 @override String get value => 'skipped';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'skipped'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$cancelled extends WorkflowJobConclusion {const WorkflowJobConclusion$cancelled._();
 
 @override String get value => 'cancelled';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$actionRequired extends WorkflowJobConclusion {const WorkflowJobConclusion$actionRequired._();
 
 @override String get value => 'action_required';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'action_required'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$neutral extends WorkflowJobConclusion {const WorkflowJobConclusion$neutral._();
 
 @override String get value => 'neutral';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'neutral'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$timedOut extends WorkflowJobConclusion {const WorkflowJobConclusion$timedOut._();
 
 @override String get value => 'timed_out';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'timed_out'.hashCode;
 
- }
+}
 @immutable final class WorkflowJobConclusion$Unknown extends WorkflowJobConclusion {const WorkflowJobConclusion$Unknown(this.value);
 
 @override final String value;
@@ -142,11 +142,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.
 @immutable final class WebhookWorkflowJobCompletedWorkflowJob {const WebhookWorkflowJobCompletedWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
 
-factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobCompletedWorkflowJob(
+factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> json) {return WebhookWorkflowJobCompletedWorkflowJob(
   checkRunUrl: json['check_run_url'] as String,
   completedAt: json['completed_at'] as String,
   conclusion: WorkflowJobConclusion.fromJson(json['conclusion'] as String),
@@ -170,7 +170,7 @@ factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> jso
   workflowName: json['workflow_name'] as String?,
   steps: (json['steps'] as List<dynamic>).map((e) => e as Map<String, dynamic>?).toList(),
   url: json['url'] as String,
-); }
+);}
 
 final String checkRunUrl;
 
@@ -221,7 +221,7 @@ final List<Map<String,dynamic>?> steps;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_run_url': checkRunUrl,
   'completed_at': completedAt,
   'conclusion': conclusion.toJson(),
@@ -245,8 +245,8 @@ Map<String, dynamic> toJson() { return {
   'workflow_name': workflowName,
   'steps': steps.map((e) => e).toList(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run_url') && json['check_run_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('check_run_url') && json['check_run_url'] is String &&
       json.containsKey('completed_at') && json['completed_at'] is String &&
       json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -259,17 +259,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('run_attempt') && json['run_attempt'] is num &&
       json.containsKey('run_id') && json['run_id'] is num &&
       json.containsKey('run_url') && json['run_url'] is String &&
-      json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
-      json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
-      json.containsKey('runner_id') && json['runner_id'] is num &&
-      json.containsKey('runner_name') && json['runner_name'] is String &&
+      json.containsKey('runner_group_id') && (json['runner_group_id'] == null || json['runner_group_id'] is num) &&
+      json.containsKey('runner_group_name') && (json['runner_group_name'] == null || json['runner_group_name'] is String) &&
+      json.containsKey('runner_id') && (json['runner_id'] == null || json['runner_id'] is num) &&
+      json.containsKey('runner_name') && (json['runner_name'] == null || json['runner_name'] is String) &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
-      json.containsKey('workflow_name') && json['workflow_name'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
+      json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
       json.containsKey('steps') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? completedAt, WorkflowJobConclusion? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String?>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, String? status, String? Function()? headBranch, String? Function()? workflowName, List<Map<String,dynamic>?>? steps, String? url, }) { return WebhookWorkflowJobCompletedWorkflowJob(
+      json.containsKey('url') && json['url'] is String;}
+WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? completedAt, WorkflowJobConclusion? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String?>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, String? status, String? Function()? headBranch, String? Function()? workflowName, List<Map<String,dynamic>?>? steps, String? url, }) {return WebhookWorkflowJobCompletedWorkflowJob(
   checkRunUrl: checkRunUrl ?? this.checkRunUrl,
   completedAt: completedAt ?? this.completedAt,
   conclusion: conclusion ?? this.conclusion,
@@ -293,7 +293,7 @@ WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? co
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   steps: steps ?? this.steps,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobCompletedWorkflowJob &&
           checkRunUrl == other.checkRunUrl &&
@@ -324,4 +324,4 @@ WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? co
 
 @override String toString() => 'WebhookWorkflowJobCompletedWorkflowJob(\n  checkRunUrl: $checkRunUrl,\n  completedAt: $completedAt,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labels: $labels,\n  name: $name,\n  nodeId: $nodeId,\n  runAttempt: $runAttempt,\n  runId: $runId,\n  runUrl: $runUrl,\n  runnerGroupId: $runnerGroupId,\n  runnerGroupName: $runnerGroupName,\n  runnerId: $runnerId,\n  runnerName: $runnerName,\n  startedAt: $startedAt,\n  status: $status,\n  headBranch: $headBranch,\n  workflowName: $workflowName,\n  steps: $steps,\n  url: $url,\n)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_device_session.dart';import 'package:pub_cloudflare/models/access_geo.dart';import 'package:pub_cloudflare/models/access_identity/idp.dart';import 'package:pub_cloudflare/models/access_identity/mtls_auth.dart';import 'package:pub_cloudflare/models/access_schemas_device_posture_rule.dart';@immutable final class AccessIdentity {const AccessIdentity({this.accountId, this.authStatus, this.commonName, this.deviceId, this.deviceSessions, this.devicePosture, this.email, this.geo, this.iat, this.idp, this.ip, this.isGateway, this.isWarp, this.mtlsAuth, this.serviceTokenId, this.serviceTokenStatus, this.userUuid, this.version, });
 
-factory AccessIdentity.fromJson(Map<String, dynamic> json) { return AccessIdentity(
+factory AccessIdentity.fromJson(Map<String, dynamic> json) {return AccessIdentity(
   accountId: json['account_id'] as String?,
   authStatus: json['auth_status'] as String?,
   commonName: json['common_name'] as String?,
@@ -22,7 +22,7 @@ factory AccessIdentity.fromJson(Map<String, dynamic> json) { return AccessIdenti
   serviceTokenStatus: json['service_token_status'] as bool?,
   userUuid: json['user_uuid'] as String?,
   version: json['version'] != null ? (json['version'] as num).toDouble() : null,
-); }
+);}
 
 /// Example: `'1234567890'`
 final String? accountId;
@@ -73,7 +73,7 @@ final String? userUuid;
 /// Example: `2`
 final double? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': ?accountId,
   'auth_status': ?authStatus,
   'common_name': ?commonName,
@@ -92,9 +92,9 @@ Map<String, dynamic> toJson() { return {
   'service_token_status': ?serviceTokenStatus,
   'user_uuid': ?userUuid,
   'version': ?version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'auth_status', 'common_name', 'device_id', 'device_sessions', 'devicePosture', 'email', 'geo', 'iat', 'idp', 'ip', 'is_gateway', 'is_warp', 'mtls_auth', 'service_token_id', 'service_token_status', 'user_uuid', 'version'}.contains(key)); } 
-AccessIdentity copyWith({String? Function()? accountId, String? Function()? authStatus, String? Function()? commonName, String? Function()? deviceId, Map<String, AccessDeviceSession>? Function()? deviceSessions, Map<String, AccessSchemasDevicePostureRule>? Function()? devicePosture, String? Function()? email, AccessGeo? Function()? geo, double? Function()? iat, Idp? Function()? idp, String? Function()? ip, bool? Function()? isGateway, bool? Function()? isWarp, MtlsAuth? Function()? mtlsAuth, String? Function()? serviceTokenId, bool? Function()? serviceTokenStatus, String? Function()? userUuid, double? Function()? version, }) { return AccessIdentity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_id', 'auth_status', 'common_name', 'device_id', 'device_sessions', 'devicePosture', 'email', 'geo', 'iat', 'idp', 'ip', 'is_gateway', 'is_warp', 'mtls_auth', 'service_token_id', 'service_token_status', 'user_uuid', 'version'}.contains(key));}
+AccessIdentity copyWith({String? Function()? accountId, String? Function()? authStatus, String? Function()? commonName, String? Function()? deviceId, Map<String, AccessDeviceSession>? Function()? deviceSessions, Map<String, AccessSchemasDevicePostureRule>? Function()? devicePosture, String? Function()? email, AccessGeo? Function()? geo, double? Function()? iat, Idp? Function()? idp, String? Function()? ip, bool? Function()? isGateway, bool? Function()? isWarp, MtlsAuth? Function()? mtlsAuth, String? Function()? serviceTokenId, bool? Function()? serviceTokenStatus, String? Function()? userUuid, double? Function()? version, }) {return AccessIdentity(
   accountId: accountId != null ? accountId() : this.accountId,
   authStatus: authStatus != null ? authStatus() : this.authStatus,
   commonName: commonName != null ? commonName() : this.commonName,
@@ -113,7 +113,7 @@ AccessIdentity copyWith({String? Function()? accountId, String? Function()? auth
   serviceTokenStatus: serviceTokenStatus != null ? serviceTokenStatus() : this.serviceTokenStatus,
   userUuid: userUuid != null ? userUuid() : this.userUuid,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessIdentity &&
           accountId == other.accountId &&
@@ -139,4 +139,4 @@ AccessIdentity copyWith({String? Function()? accountId, String? Function()? auth
 
 @override String toString() => 'AccessIdentity(\n  accountId: $accountId,\n  authStatus: $authStatus,\n  commonName: $commonName,\n  deviceId: $deviceId,\n  deviceSessions: $deviceSessions,\n  devicePosture: $devicePosture,\n  email: $email,\n  geo: $geo,\n  iat: $iat,\n  idp: $idp,\n  ip: $ip,\n  isGateway: $isGateway,\n  isWarp: $isWarp,\n  mtlsAuth: $mtlsAuth,\n  serviceTokenId: $serviceTokenId,\n  serviceTokenStatus: $serviceTokenStatus,\n  userUuid: $userUuid,\n  version: $version,\n)';
 
- }
+}

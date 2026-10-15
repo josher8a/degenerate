@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/different_data_schemas/different_data_schemas_data.dart';import 'package:pub_speakeasy/models/message_event.dart';import 'package:pub_speakeasy/models/url_event.dart';sealed class DifferentDataSchemasEvent {const DifferentDataSchemasEvent();
 
-factory DifferentDataSchemasEvent.fromJson(String json) { return switch (json) {
+factory DifferentDataSchemasEvent.fromJson(String json) {return switch (json) {
   'message' => message,
   'url' => url,
   'array' => array,
   'primitive' => primitive,
   _ => DifferentDataSchemasEvent$Unknown(json),
-}; }
+};}
 
 static const DifferentDataSchemasEvent message = DifferentDataSchemasEvent$message._();
 
@@ -22,36 +22,36 @@ static const DifferentDataSchemasEvent primitive = DifferentDataSchemasEvent$pri
 static const List<DifferentDataSchemasEvent> values = [message, url, array, primitive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'message' => 'message',
   'url' => 'url',
   'array' => 'array',
   'primitive' => 'primitive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DifferentDataSchemasEvent$Unknown; } 
+bool get isUnknown {return this is DifferentDataSchemasEvent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() message, required W Function() url, required W Function() array, required W Function() primitive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() message, required W Function() url, required W Function() array, required W Function() primitive, required W Function(String value) $unknown, }) {return switch (this) {
       DifferentDataSchemasEvent$message() => message(),
       DifferentDataSchemasEvent$url() => url(),
       DifferentDataSchemasEvent$array() => array(),
       DifferentDataSchemasEvent$primitive() => primitive(),
       DifferentDataSchemasEvent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? url, W Function()? array, W Function()? primitive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? url, W Function()? array, W Function()? primitive, W Function(String value)? $unknown, }) {return switch (this) {
       DifferentDataSchemasEvent$message() => message != null ? message() : orElse(value),
       DifferentDataSchemasEvent$url() => url != null ? url() : orElse(value),
       DifferentDataSchemasEvent$array() => array != null ? array() : orElse(value),
       DifferentDataSchemasEvent$primitive() => primitive != null ? primitive() : orElse(value),
       DifferentDataSchemasEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DifferentDataSchemasEvent($value)';
 
- }
+}
 @immutable final class DifferentDataSchemasEvent$message extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$message._();
 
 @override String get value => 'message';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'message'.hashCode;
 
- }
+}
 @immutable final class DifferentDataSchemasEvent$url extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$url._();
 
 @override String get value => 'url';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'url'.hashCode;
 
- }
+}
 @immutable final class DifferentDataSchemasEvent$array extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$array._();
 
 @override String get value => 'array';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'array'.hashCode;
 
- }
+}
 @immutable final class DifferentDataSchemasEvent$primitive extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$primitive._();
 
 @override String get value => 'primitive';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'primitive'.hashCode;
 
- }
+}
 @immutable final class DifferentDataSchemasEvent$Unknown extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$Unknown(this.value);
 
 @override final String value;
@@ -97,15 +97,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an event with different schemas for the data property
 @immutable final class DifferentDataSchemas {const DifferentDataSchemas({required this.id, required this.event, required this.data, });
 
-factory DifferentDataSchemas.fromJson(Map<String, dynamic> json) { return DifferentDataSchemas(
+factory DifferentDataSchemas.fromJson(Map<String, dynamic> json) {return DifferentDataSchemas(
   id: json['id'] as String,
   event: DifferentDataSchemasEvent.fromJson(json['event'] as String),
   data: OneOf5.parse(json['data'], fromA: (v) => MessageEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => UrlEvent.fromJson(v as Map<String, dynamic>), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => v as bool, fromE: (v) => (v as num).toDouble(),),
-); }
+);}
 
 final String id;
 
@@ -113,19 +113,19 @@ final DifferentDataSchemasEvent event;
 
 final DifferentDataSchemasData data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('event') &&
-      json.containsKey('data'); } 
-DifferentDataSchemas copyWith({String? id, DifferentDataSchemasEvent? event, DifferentDataSchemasData? data, }) { return DifferentDataSchemas(
+      json.containsKey('data');}
+DifferentDataSchemas copyWith({String? id, DifferentDataSchemasEvent? event, DifferentDataSchemasData? data, }) {return DifferentDataSchemas(
   id: id ?? this.id,
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DifferentDataSchemas &&
           id == other.id &&
@@ -136,4 +136,4 @@ DifferentDataSchemas copyWith({String? id, DifferentDataSchemasEvent? event, Dif
 
 @override String toString() => 'DifferentDataSchemas(id: $id, event: $event, data: $data)';
 
- }
+}

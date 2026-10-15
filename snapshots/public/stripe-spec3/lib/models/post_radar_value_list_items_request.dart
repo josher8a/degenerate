@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostRadarValueListItemsRequest {const PostRadarValueListItemsRequest({required this.value, required this.valueList, this.expand, });
 
-factory PostRadarValueListItemsRequest.fromJson(Map<String, dynamic> json) { return PostRadarValueListItemsRequest(
+factory PostRadarValueListItemsRequest.fromJson(Map<String, dynamic> json) {return PostRadarValueListItemsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   value: json['value'] as String,
   valueList: json['value_list'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,23 +18,23 @@ final String value;
 /// The identifier of the value list which the created item will be added to.
 final String valueList;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'value': value,
   'value_list': valueList,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String &&
-      json.containsKey('value_list') && json['value_list'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value') && json['value'] is String &&
+      json.containsKey('value_list') && json['value_list'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (value.runes.length > 800) { errors.add('value: length must be <= 800'); }
 if (valueList.runes.length > 5000) { errors.add('valueList: length must be <= 5000'); }
-return errors; } 
-PostRadarValueListItemsRequest copyWith({List<String>? Function()? expand, String? value, String? valueList, }) { return PostRadarValueListItemsRequest(
+return errors;}
+PostRadarValueListItemsRequest copyWith({List<String>? Function()? expand, String? value, String? valueList, }) {return PostRadarValueListItemsRequest(
   expand: expand != null ? expand() : this.expand,
   value: value ?? this.value,
   valueList: valueList ?? this.valueList,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarValueListItemsRequest &&
           listEquals(expand, other.expand) &&
@@ -45,4 +45,4 @@ PostRadarValueListItemsRequest copyWith({List<String>? Function()? expand, Strin
 
 @override String toString() => 'PostRadarValueListItemsRequest(expand: $expand, value: $value, valueList: $valueList)';
 
- }
+}

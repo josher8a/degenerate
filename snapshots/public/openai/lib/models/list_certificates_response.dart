@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/certificate.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';@immutable final class ListCertificatesResponse {const ListCertificatesResponse({required this.data, required this.hasMore, required this.object, this.firstId, this.lastId, });
 
-factory ListCertificatesResponse.fromJson(Map<String, dynamic> json) { return ListCertificatesResponse(
+factory ListCertificatesResponse.fromJson(Map<String, dynamic> json) {return ListCertificatesResponse(
   data: (json['data'] as List<dynamic>).map((e) => Certificate.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
-); }
+);}
 
 final List<Certificate> data;
 
@@ -23,23 +23,23 @@ final bool hasMore;
 
 final ContainerFileListResourceObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'first_id': ?firstId,
   'last_id': ?lastId,
   'has_more': hasMore,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('object'); } 
-ListCertificatesResponse copyWith({List<Certificate>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, ContainerFileListResourceObject? object, }) { return ListCertificatesResponse(
+      json.containsKey('object');}
+ListCertificatesResponse copyWith({List<Certificate>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, ContainerFileListResourceObject? object, }) {return ListCertificatesResponse(
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,
   lastId: lastId != null ? lastId() : this.lastId,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListCertificatesResponse &&
           listEquals(data, other.data) &&
@@ -52,4 +52,4 @@ ListCertificatesResponse copyWith({List<Certificate>? data, String? Function()? 
 
 @override String toString() => 'ListCertificatesResponse(data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore, object: $object)';
 
- }
+}

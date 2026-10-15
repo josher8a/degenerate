@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/cache_purge_identifier.dart';import 'package:pub_cloudflare/models/errors/put_zones_zone_id_activation_check_error.dart';import 'package:pub_cloudflare/models/errors/zone_purge_error.dart';import 'package:pub_cloudflare/models/errors/zones0_delete_error.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zone_activation_identifier.dart';import 'package:pub_cloudflare/models/zone_purge_request.dart';import 'package:pub_cloudflare/models/zones0_patch_request.dart';import 'package:pub_cloudflare/models/zones_get_direction.dart';import 'package:pub_cloudflare/models/zones_get_match.dart';import 'package:pub_cloudflare/models/zones_get_order.dart';import 'package:pub_cloudflare/models/zones_get_status.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_post_request.dart';import 'package:pub_cloudflare/models/zones_zone.dart';/// ZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/cache_purge_identifier.dart';import 'package:pub_cloudflare/models/errors/put_zones_zone_id_activation_check_error.dart';import 'package:pub_cloudflare/models/errors/zone_purge_error.dart';import 'package:pub_cloudflare/models/errors/zones0_delete_error.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/zone_activation_identifier.dart';import 'package:pub_cloudflare/models/zone_purge_request.dart';import 'package:pub_cloudflare/models/zones0_patch_request.dart';import 'package:pub_cloudflare/models/zones_get_direction.dart';import 'package:pub_cloudflare/models/zones_get_match.dart';import 'package:pub_cloudflare/models/zones_get_order.dart';import 'package:pub_cloudflare/models/zones_get_status.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_post_request.dart';import 'package:pub_cloudflare/models/zones_zone.dart';/// ZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -16,7 +16,7 @@ final class ZoneApi with ApiExecutor {const ZoneApi(this.apiConfig);
 /// 
 ///
 /// `GET /zones`
-Future<ApiResult<List<ZonesZone>?, Zones0DeleteError>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ZonesZone>?, Zones0DeleteError>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -57,7 +57,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -65,11 +65,11 @@ return execute(
   },
   onError: Zones0DeleteError.fromResponse,
 );
- } 
+}
 /// Create Zone
 ///
 /// `POST /zones`
-Future<ApiResult<ZonesZone?, Zones0DeleteError>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesZone?, Zones0DeleteError>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,7 +80,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -88,11 +88,11 @@ return execute(
   },
   onError: Zones0DeleteError.fromResponse,
 );
- } 
+}
 /// Zone Details
 ///
 /// `GET /zones/{zone_id}`
-Future<ApiResult<ZonesZone?, Zones0DeleteError>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesZone?, Zones0DeleteError>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,7 +101,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -109,13 +109,13 @@ return execute(
   },
   onError: Zones0DeleteError.fromResponse,
 );
- } 
+}
 /// Edit Zone
 ///
 /// Edits a zone. Only one zone property can be changed at a time.
 ///
 /// `PATCH /zones/{zone_id}`
-Future<ApiResult<ZonesZone?, Zones0DeleteError>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesZone?, Zones0DeleteError>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -126,7 +126,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -134,13 +134,13 @@ return execute(
   },
   onError: Zones0DeleteError.fromResponse,
 );
- } 
+}
 /// Delete Zone
 ///
 /// Deletes an existing zone.
 ///
 /// `DELETE /zones/{zone_id}`
-Future<ApiResult<ResponseSingleId5Result?, Zones0DeleteError>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, Zones0DeleteError>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -149,15 +149,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: Zones0DeleteError.fromResponse,
 );
- } 
+}
 /// Rerun the Activation Check
 ///
 /// Triggeres a new activation check for a PENDING Zone. This can be
@@ -165,7 +165,7 @@ return execute(
 /// Zones.
 ///
 /// `PUT /zones/{zone_id}/activation_check`
-Future<ApiResult<AaaIdResponseResult?, PutZonesZoneIdActivationCheckError>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, PutZonesZoneIdActivationCheckError>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -174,7 +174,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -182,7 +182,7 @@ return execute(
   },
   onError: PutZonesZoneIdActivationCheckError.fromResponse,
 );
- } 
+}
 /// Purge Cached Content
 ///
 /// ### Purge All Cached Content
@@ -228,7 +228,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/purge_cache`
-Future<ApiResult<ResponseSingleId5Result?, ZonePurgeError>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, ZonePurgeError>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -239,13 +239,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: ZonePurgeError.fromResponse,
 );
- } 
- }
+}
+}

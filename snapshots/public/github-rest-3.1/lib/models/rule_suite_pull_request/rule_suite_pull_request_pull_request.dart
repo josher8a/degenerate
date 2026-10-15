@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite_pull_request/pull_request_user.dart';import 'package:pub_github_rest_3_1/models/rule_suite_pull_request/reviews.dart';/// The pull request associated with the rule evaluation.
 @immutable final class RuleSuitePullRequestPullRequest {const RuleSuitePullRequestPullRequest({this.id, this.number, this.user, this.reviews, });
 
-factory RuleSuitePullRequestPullRequest.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequestPullRequest(
+factory RuleSuitePullRequestPullRequest.fromJson(Map<String, dynamic> json) {return RuleSuitePullRequestPullRequest(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   number: json['number'] != null ? (json['number'] as num).toInt() : null,
   user: json['user'] != null ? PullRequestUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   reviews: (json['reviews'] as List<dynamic>?)?.map((e) => Reviews.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique identifier of the pull request.
 final int? id;
@@ -23,19 +23,19 @@ final PullRequestUser? user;
 /// The reviews associated with the pull request.
 final List<Reviews>? reviews;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'number': ?number,
   if (user != null) 'user': user?.toJson(),
   if (reviews != null) 'reviews': reviews?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'number', 'user', 'reviews'}.contains(key)); } 
-RuleSuitePullRequestPullRequest copyWith({int? Function()? id, int? Function()? number, PullRequestUser? Function()? user, List<Reviews>? Function()? reviews, }) { return RuleSuitePullRequestPullRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'number', 'user', 'reviews'}.contains(key));}
+RuleSuitePullRequestPullRequest copyWith({int? Function()? id, int? Function()? number, PullRequestUser? Function()? user, List<Reviews>? Function()? reviews, }) {return RuleSuitePullRequestPullRequest(
   id: id != null ? id() : this.id,
   number: number != null ? number() : this.number,
   user: user != null ? user() : this.user,
   reviews: reviews != null ? reviews() : this.reviews,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuitePullRequestPullRequest &&
           id == other.id &&
@@ -47,4 +47,4 @@ RuleSuitePullRequestPullRequest copyWith({int? Function()? id, int? Function()? 
 
 @override String toString() => 'RuleSuitePullRequestPullRequest(id: $id, number: $number, user: $user, reviews: $reviews)';
 
- }
+}

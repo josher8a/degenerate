@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub App that is providing a custom deployment protection rule.
 @immutable final class CustomDeploymentRuleApp {const CustomDeploymentRuleApp({required this.id, required this.slug, required this.integrationUrl, required this.nodeId, });
 
-factory CustomDeploymentRuleApp.fromJson(Map<String, dynamic> json) { return CustomDeploymentRuleApp(
+factory CustomDeploymentRuleApp.fromJson(Map<String, dynamic> json) {return CustomDeploymentRuleApp(
   id: (json['id'] as num).toInt(),
   slug: json['slug'] as String,
   integrationUrl: json['integration_url'] as String,
   nodeId: json['node_id'] as String,
-); }
+);}
 
 /// The unique identifier of the deployment protection rule integration.
 final int id;
@@ -23,22 +23,22 @@ final String integrationUrl;
 /// The node ID for the deployment protection rule integration.
 final String nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'slug': slug,
   'integration_url': integrationUrl,
   'node_id': nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('integration_url') && json['integration_url'] is String &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-CustomDeploymentRuleApp copyWith({int? id, String? slug, String? integrationUrl, String? nodeId, }) { return CustomDeploymentRuleApp(
+      json.containsKey('node_id') && json['node_id'] is String;}
+CustomDeploymentRuleApp copyWith({int? id, String? slug, String? integrationUrl, String? nodeId, }) {return CustomDeploymentRuleApp(
   id: id ?? this.id,
   slug: slug ?? this.slug,
   integrationUrl: integrationUrl ?? this.integrationUrl,
   nodeId: nodeId ?? this.nodeId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomDeploymentRuleApp &&
           id == other.id &&
@@ -50,4 +50,4 @@ CustomDeploymentRuleApp copyWith({int? id, String? slug, String? integrationUrl,
 
 @override String toString() => 'CustomDeploymentRuleApp(id: $id, slug: $slug, integrationUrl: $integrationUrl, nodeId: $nodeId)';
 
- }
+}

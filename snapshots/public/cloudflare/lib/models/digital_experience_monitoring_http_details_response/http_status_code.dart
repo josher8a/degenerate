@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HttpStatusCode {const HttpStatusCode({required this.status200, required this.status300, required this.status400, required this.status500, required this.timestamp, });
 
-factory HttpStatusCode.fromJson(Map<String, dynamic> json) { return HttpStatusCode(
+factory HttpStatusCode.fromJson(Map<String, dynamic> json) {return HttpStatusCode(
   status200: (json['status200'] as num).toInt(),
   status300: (json['status300'] as num).toInt(),
   status400: (json['status400'] as num).toInt(),
   status500: (json['status500'] as num).toInt(),
   timestamp: json['timestamp'] as String,
-); }
+);}
 
 final int status200;
 
@@ -22,25 +22,25 @@ final int status500;
 /// Example: `'2023-07-16 15:00:00+00'`
 final String timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status200': status200,
   'status300': status300,
   'status400': status400,
   'status500': status500,
   'timestamp': timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status200') && json['status200'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status200') && json['status200'] is num &&
       json.containsKey('status300') && json['status300'] is num &&
       json.containsKey('status400') && json['status400'] is num &&
       json.containsKey('status500') && json['status500'] is num &&
-      json.containsKey('timestamp') && json['timestamp'] is String; } 
-HttpStatusCode copyWith({int? status200, int? status300, int? status400, int? status500, String? timestamp, }) { return HttpStatusCode(
+      json.containsKey('timestamp') && json['timestamp'] is String;}
+HttpStatusCode copyWith({int? status200, int? status300, int? status400, int? status500, String? timestamp, }) {return HttpStatusCode(
   status200: status200 ?? this.status200,
   status300: status300 ?? this.status300,
   status400: status400 ?? this.status400,
   status500: status500 ?? this.status500,
   timestamp: timestamp ?? this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HttpStatusCode &&
           status200 == other.status200 &&
@@ -53,4 +53,4 @@ HttpStatusCode copyWith({int? status200, int? status300, int? status400, int? st
 
 @override String toString() => 'HttpStatusCode(status200: $status200, status300: $status300, status400: $status400, status500: $status500, timestamp: $timestamp)';
 
- }
+}

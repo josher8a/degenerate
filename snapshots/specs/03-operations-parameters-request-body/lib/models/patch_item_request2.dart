@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PatchItemRequest2
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchItemRequest2 {const PatchItemRequest2({this.name, this.avatar, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchItemRequest2 {const PatchItemRequest2({this.name, this.avatar = const Omittable.absent(), });
 
-factory PatchItemRequest2.fromJson(Map<String, dynamic> json) { return PatchItemRequest2(
+factory PatchItemRequest2.fromJson(Map<String, dynamic> json) {return PatchItemRequest2(
   name: json['name'] as String?,
-  avatar: json['avatar'],
-); }
+  avatar: json.containsKey('avatar') ? Omittable(json['avatar']) : const Omittable.absent(),
+);}
 
 final String? name;
 
-final dynamic avatar;
+final Omittable<dynamic> avatar;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
-  'avatar': ?avatar,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'avatar'}.contains(key)); } 
-PatchItemRequest2 copyWith({String? Function()? name, dynamic Function()? avatar, }) { return PatchItemRequest2(
+  if (avatar.isPresent) 'avatar': avatar.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'avatar'}.contains(key));}
+PatchItemRequest2 copyWith({String? Function()? name, Omittable<dynamic>? avatar, }) {return PatchItemRequest2(
   name: name != null ? name() : this.name,
-  avatar: avatar != null ? avatar() : this.avatar,
-); } 
+  avatar: avatar ?? this.avatar,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PatchItemRequest2 &&
           name == other.name &&
@@ -30,4 +30,4 @@ PatchItemRequest2 copyWith({String? Function()? name, dynamic Function()? avatar
 
 @override String toString() => 'PatchItemRequest2(name: $name, avatar: $avatar)';
 
- }
+}

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrgsReviewPatGrantRequestsInBulkRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_request_request/orgs_review_pat_grant_request_request_action.dart';@immutable final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({required this.action, this.patRequestIds, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_request_request/orgs_review_pat_grant_request_request_action.dart';@immutable final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({required this.action, this.patRequestIds, this.reason = const Omittable.absent(), });
 
-factory OrgsReviewPatGrantRequestsInBulkRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestsInBulkRequest(
+factory OrgsReviewPatGrantRequestsInBulkRequest.fromJson(Map<String, dynamic> json) {return OrgsReviewPatGrantRequestsInBulkRequest(
   patRequestIds: (json['pat_request_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   action: OrgsReviewPatGrantRequestRequestAction.fromJson(json['action'] as String),
-  reason: json['reason'] as String?,
-); }
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
+);}
 
 /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
 final List<int>? patRequestIds;
@@ -16,31 +16,31 @@ final List<int>? patRequestIds;
 final OrgsReviewPatGrantRequestRequestAction action;
 
 /// Reason for approving or denying the requests. Max 1024 characters.
-final String? reason;
+final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pat_request_ids': ?patRequestIds,
   'action': action.toJson(),
-  'reason': ?reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
+  if (reason.isPresent) 'reason': reason.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final patRequestIds$ = patRequestIds;
 if (patRequestIds$ != null) {
   if (patRequestIds$.isEmpty) { errors.add('patRequestIds: must have >= 1 items'); }
   if (patRequestIds$.length > 100) { errors.add('patRequestIds: must have <= 100 items'); }
 }
-final reason$ = reason;
+final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 1024) { errors.add('reason: length must be <= 1024'); }
 }
-return errors; } 
-OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequestIds, OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(
+return errors;}
+OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequestIds, OrgsReviewPatGrantRequestRequestAction? action, Omittable<String?>? reason, }) {return OrgsReviewPatGrantRequestsInBulkRequest(
   patRequestIds: patRequestIds != null ? patRequestIds() : this.patRequestIds,
   action: action ?? this.action,
-  reason: reason != null ? reason() : this.reason,
-); } 
+  reason: reason ?? this.reason,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsReviewPatGrantRequestsInBulkRequest &&
           listEquals(patRequestIds, other.patRequestIds) &&
@@ -51,4 +51,4 @@ OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequ
 
 @override String toString() => 'OrgsReviewPatGrantRequestsInBulkRequest(patRequestIds: $patRequestIds, action: $action, reason: $reason)';
 
- }
+}

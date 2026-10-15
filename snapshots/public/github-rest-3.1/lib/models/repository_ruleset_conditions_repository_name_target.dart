@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_name_and_ref_name/repository_name.dart';/// Parameters for a repository name condition
 @immutable final class RepositoryRulesetConditionsRepositoryNameTarget {const RepositoryRulesetConditionsRepositoryNameTarget({required this.repositoryName});
 
-factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryNameTarget(
+factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(Map<String, dynamic> json) {return RepositoryRulesetConditionsRepositoryNameTarget(
   repositoryName: RepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>),
-); }
+);}
 
 final RepositoryName repositoryName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'repository_name': repositoryName.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_name'); } 
-RepositoryRulesetConditionsRepositoryNameTarget copyWith({RepositoryName? repositoryName}) { return RepositoryRulesetConditionsRepositoryNameTarget(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository_name');}
+RepositoryRulesetConditionsRepositoryNameTarget copyWith({RepositoryName? repositoryName}) {return RepositoryRulesetConditionsRepositoryNameTarget(
   repositoryName: repositoryName ?? this.repositoryName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetConditionsRepositoryNameTarget &&
           repositoryName == other.repositoryName;
@@ -25,4 +25,4 @@ RepositoryRulesetConditionsRepositoryNameTarget copyWith({RepositoryName? reposi
 
 @override String toString() => 'RepositoryRulesetConditionsRepositoryNameTarget(repositoryName: $repositoryName)';
 
- }
+}

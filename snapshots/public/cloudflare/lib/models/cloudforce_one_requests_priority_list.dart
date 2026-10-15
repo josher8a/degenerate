@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneRequestsPriorityList {const CloudforceOneRequestsPriorityList({required this.page, required this.perPage, });
 
-factory CloudforceOneRequestsPriorityList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsPriorityList(
+factory CloudforceOneRequestsPriorityList.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsPriorityList(
   page: (json['page'] as num).toInt(),
   perPage: (json['per_page'] as num).toInt(),
-); }
+);}
 
 /// Page number of results.
 final int page;
@@ -16,16 +16,16 @@ final int page;
 /// Example: `10`
 final int perPage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'page': page,
   'per_page': perPage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
-      json.containsKey('per_page') && json['per_page'] is num; } 
-CloudforceOneRequestsPriorityList copyWith({int? page, int? perPage, }) { return CloudforceOneRequestsPriorityList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('page') && json['page'] is num &&
+      json.containsKey('per_page') && json['per_page'] is num;}
+CloudforceOneRequestsPriorityList copyWith({int? page, int? perPage, }) {return CloudforceOneRequestsPriorityList(
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsPriorityList &&
           page == other.page &&
@@ -35,4 +35,4 @@ CloudforceOneRequestsPriorityList copyWith({int? page, int? perPage, }) { return
 
 @override String toString() => 'CloudforceOneRequestsPriorityList(page: $page, perPage: $perPage)';
 
- }
+}

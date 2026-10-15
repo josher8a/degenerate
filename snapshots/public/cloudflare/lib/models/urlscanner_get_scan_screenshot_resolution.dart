@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target device type.
 sealed class UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution();
 
-factory UrlscannerGetScanScreenshotResolution.fromJson(String json) { return switch (json) {
+factory UrlscannerGetScanScreenshotResolution.fromJson(String json) {return switch (json) {
   'desktop' => desktop,
   'mobile' => mobile,
   'tablet' => tablet,
   _ => UrlscannerGetScanScreenshotResolution$Unknown(json),
-}; }
+};}
 
 static const UrlscannerGetScanScreenshotResolution desktop = UrlscannerGetScanScreenshotResolution$desktop._();
 
@@ -20,33 +20,33 @@ static const UrlscannerGetScanScreenshotResolution tablet = UrlscannerGetScanScr
 static const List<UrlscannerGetScanScreenshotResolution> values = [desktop, mobile, tablet];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'desktop' => 'desktop',
   'mobile' => 'mobile',
   'tablet' => 'tablet',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UrlscannerGetScanScreenshotResolution$Unknown; } 
+bool get isUnknown {return this is UrlscannerGetScanScreenshotResolution$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() desktop, required W Function() mobile, required W Function() tablet, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() tablet, required W Function(String value) $unknown, }) {return switch (this) {
       UrlscannerGetScanScreenshotResolution$desktop() => desktop(),
       UrlscannerGetScanScreenshotResolution$mobile() => mobile(),
       UrlscannerGetScanScreenshotResolution$tablet() => tablet(),
       UrlscannerGetScanScreenshotResolution$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? tablet, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? tablet, W Function(String value)? $unknown, }) {return switch (this) {
       UrlscannerGetScanScreenshotResolution$desktop() => desktop != null ? desktop() : orElse(value),
       UrlscannerGetScanScreenshotResolution$mobile() => mobile != null ? mobile() : orElse(value),
       UrlscannerGetScanScreenshotResolution$tablet() => tablet != null ? tablet() : orElse(value),
       UrlscannerGetScanScreenshotResolution$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UrlscannerGetScanScreenshotResolution($value)';
 
- }
+}
 @immutable final class UrlscannerGetScanScreenshotResolution$desktop extends UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution$desktop._();
 
 @override String get value => 'desktop';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'desktop'.hashCode;
 
- }
+}
 @immutable final class UrlscannerGetScanScreenshotResolution$mobile extends UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution$mobile._();
 
 @override String get value => 'mobile';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'mobile'.hashCode;
 
- }
+}
 @immutable final class UrlscannerGetScanScreenshotResolution$tablet extends UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution$tablet._();
 
 @override String get value => 'tablet';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'tablet'.hashCode;
 
- }
+}
 @immutable final class UrlscannerGetScanScreenshotResolution$Unknown extends UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

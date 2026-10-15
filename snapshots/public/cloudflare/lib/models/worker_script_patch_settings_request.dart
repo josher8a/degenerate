@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkerScriptPatchSettingsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item.dart';@immutable final class WorkerScriptPatchSettingsRequest {const WorkerScriptPatchSettingsRequest({this.settings});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item_request.dart';@immutable final class WorkerScriptPatchSettingsRequest {const WorkerScriptPatchSettingsRequest({this.settings});
 
-factory WorkerScriptPatchSettingsRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptPatchSettingsRequest(
-  settings: json['settings'] != null ? WorkersScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>) : null,
-); }
+factory WorkerScriptPatchSettingsRequest.fromJson(Map<String, dynamic> json) {return WorkerScriptPatchSettingsRequest(
+  settings: json['settings'] != null ? WorkersScriptAndVersionSettingsItemRequest.fromJson(json['settings'] as Map<String, dynamic>) : null,
+);}
 
-final WorkersScriptAndVersionSettingsItem? settings;
+final WorkersScriptAndVersionSettingsItemRequest? settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (settings != null) 'settings': settings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings'}.contains(key)); } 
-WorkerScriptPatchSettingsRequest copyWith({WorkersScriptAndVersionSettingsItem? Function()? settings}) { return WorkerScriptPatchSettingsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'settings'}.contains(key));}
+WorkerScriptPatchSettingsRequest copyWith({WorkersScriptAndVersionSettingsItemRequest? Function()? settings}) {return WorkerScriptPatchSettingsRequest(
   settings: settings != null ? settings() : this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerScriptPatchSettingsRequest &&
           settings == other.settings;
@@ -24,4 +24,4 @@ WorkerScriptPatchSettingsRequest copyWith({WorkersScriptAndVersionSettingsItem? 
 
 @override String toString() => 'WorkerScriptPatchSettingsRequest(settings: $settings)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';@immutable final class MqWorkerConsumerResponse {const MqWorkerConsumerResponse({this.consumerId, this.createdOn, this.deadLetterQueue, this.queueName, this.scriptName, this.settings, this.type, });
 
-factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerResponse(
+factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) {return MqWorkerConsumerResponse(
   consumerId: json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   deadLetterQueue: json['dead_letter_queue'] as String?,
@@ -11,7 +11,7 @@ factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return Mq
   scriptName: json['script_name'] != null ? MqScriptName.fromJson(json['script_name'] as String) : null,
   settings: json['settings'] != null ? MqWorkerConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
-); }
+);}
 
 /// A Resource identifier.
 final MqIdentifier? consumerId;
@@ -30,7 +30,7 @@ final MqWorkerConsumerRequestSettings? settings;
 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (consumerId != null) 'consumer_id': consumerId?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   'dead_letter_queue': ?deadLetterQueue,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   if (scriptName != null) 'script_name': scriptName?.toJson(),
   if (settings != null) 'settings': settings?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'consumer_id', 'created_on', 'dead_letter_queue', 'queue_name', 'script_name', 'settings', 'type'}.contains(key)); } 
-MqWorkerConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqScriptName? Function()? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, String? Function()? type, }) { return MqWorkerConsumerResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'consumer_id', 'created_on', 'dead_letter_queue', 'queue_name', 'script_name', 'settings', 'type'}.contains(key));}
+MqWorkerConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqScriptName? Function()? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, String? Function()? type, }) {return MqWorkerConsumerResponse(
   consumerId: consumerId != null ? consumerId() : this.consumerId,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   deadLetterQueue: deadLetterQueue != null ? deadLetterQueue() : this.deadLetterQueue,
@@ -48,7 +48,7 @@ MqWorkerConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTim
   scriptName: scriptName != null ? scriptName() : this.scriptName,
   settings: settings != null ? settings() : this.settings,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MqWorkerConsumerResponse &&
           consumerId == other.consumerId &&
@@ -63,4 +63,4 @@ MqWorkerConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTim
 
 @override String toString() => 'MqWorkerConsumerResponse(consumerId: $consumerId, createdOn: $createdOn, deadLetterQueue: $deadLetterQueue, queueName: $queueName, scriptName: $scriptName, settings: $settings, type: $type)';
 
- }
+}

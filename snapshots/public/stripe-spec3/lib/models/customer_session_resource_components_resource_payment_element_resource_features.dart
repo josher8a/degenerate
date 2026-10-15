@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// When using SetupIntents, directly configure the [`usage`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-usage) value on SetupIntent creation.
 sealed class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage();
 
-factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage.fromJson(String json) { return switch (json) {
+factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown(json),
-}; }
+};}
 
 static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage offSession = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession._();
 
@@ -19,30 +19,30 @@ static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeat
 static const List<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage> values = [offSession, onSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off_session' => 'offSession',
   'on_session' => 'onSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown; } 
+bool get isUnknown {return this is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession() => offSession(),
       CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession() => onSession(),
       CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession() => offSession != null ? offSession() : orElse(value),
       CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession() => onSession != null ? onSession() : orElse(value),
       CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage($value)';
 
- }
+}
 @immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession._();
 
 @override String get value => 'off_session';
@@ -51,7 +51,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession._();
 
 @override String get value => 'on_session';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'on_session'.hashCode;
 
- }
+}
 @immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown(this.value);
 
 @override final String value;
@@ -70,18 +70,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// This hash contains the features the Payment Element supports.
-@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures({required this.paymentMethodAllowRedisplayFilters, required this.paymentMethodRedisplay, required this.paymentMethodRemove, required this.paymentMethodSave, this.paymentMethodRedisplayLimit, this.paymentMethodSaveUsage, });
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures({required this.paymentMethodAllowRedisplayFilters, required this.paymentMethodRedisplay, required this.paymentMethodRemove, required this.paymentMethodSave, this.paymentMethodRedisplayLimit = const Omittable.absent(), this.paymentMethodSaveUsage = const Omittable.absent(), });
 
-factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(
+factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures.fromJson(Map<String, dynamic> json) {return CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>).map((e) => PaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
   paymentMethodRedisplay: CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay.fromJson(json['payment_method_redisplay'] as String),
-  paymentMethodRedisplayLimit: json['payment_method_redisplay_limit'] != null ? (json['payment_method_redisplay_limit'] as num).toInt() : null,
+  paymentMethodRedisplayLimit: json.containsKey('payment_method_redisplay_limit') ? Omittable(json['payment_method_redisplay_limit'] != null ? (json['payment_method_redisplay_limit'] as num).toInt() : null) : const Omittable.absent(),
   paymentMethodRemove: CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove.fromJson(json['payment_method_remove'] as String),
   paymentMethodSave: CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave.fromJson(json['payment_method_save'] as String),
-  paymentMethodSaveUsage: json['payment_method_save_usage'] != null ? CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage.fromJson(json['payment_method_save_usage'] as String) : null,
-); }
+  paymentMethodSaveUsage: json.containsKey('payment_method_save_usage') ? Omittable(json['payment_method_save_usage'] != null ? CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage.fromJson(json['payment_method_save_usage'] as String) : null) : const Omittable.absent(),
+);}
 
 /// A list of [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) values that controls which saved payment methods the Payment Element displays by filtering to only show payment methods with an `allow_redisplay` value that is present in this list.
 /// 
@@ -92,7 +92,7 @@ final List<PaymentMethodAllowRedisplayFilters> paymentMethodAllowRedisplayFilter
 final CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay paymentMethodRedisplay;
 
 /// Determines the max number of saved payment methods for the Payment Element to display. This parameter defaults to `3`. The maximum redisplay limit is `10`.
-final int? paymentMethodRedisplayLimit;
+final Omittable<int?> paymentMethodRedisplayLimit;
 
 /// Controls whether the Payment Element displays the option to remove a saved payment method. This parameter defaults to `disabled`.
 /// 
@@ -107,28 +107,28 @@ final CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPay
 /// When using PaymentIntents and the customer checks the save checkbox, this field determines the [`setup_future_usage`](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-setup_future_usage) value used to confirm the PaymentIntent.
 /// 
 /// When using SetupIntents, directly configure the [`usage`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-usage) value on SetupIntent creation.
-final CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage? paymentMethodSaveUsage;
+final Omittable<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage?> paymentMethodSaveUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payment_method_allow_redisplay_filters': paymentMethodAllowRedisplayFilters.map((e) => e.toJson()).toList(),
   'payment_method_redisplay': paymentMethodRedisplay.toJson(),
-  'payment_method_redisplay_limit': ?paymentMethodRedisplayLimit,
+  if (paymentMethodRedisplayLimit.isPresent) 'payment_method_redisplay_limit': paymentMethodRedisplayLimit.value,
   'payment_method_remove': paymentMethodRemove.toJson(),
   'payment_method_save': paymentMethodSave.toJson(),
-  if (paymentMethodSaveUsage != null) 'payment_method_save_usage': paymentMethodSaveUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_method_allow_redisplay_filters') &&
+  if (paymentMethodSaveUsage.isPresent) 'payment_method_save_usage': paymentMethodSaveUsage.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_method_allow_redisplay_filters') &&
       json.containsKey('payment_method_redisplay') &&
       json.containsKey('payment_method_remove') &&
-      json.containsKey('payment_method_save'); } 
-CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures copyWith({List<PaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay? paymentMethodRedisplay, int? Function()? paymentMethodRedisplayLimit, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove? paymentMethodRemove, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave? paymentMethodSave, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage? Function()? paymentMethodSaveUsage, }) { return CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(
+      json.containsKey('payment_method_save');}
+CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures copyWith({List<PaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay? paymentMethodRedisplay, Omittable<int?>? paymentMethodRedisplayLimit, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove? paymentMethodRemove, CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave? paymentMethodSave, Omittable<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage?>? paymentMethodSaveUsage, }) {return CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(
   paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters ?? this.paymentMethodAllowRedisplayFilters,
   paymentMethodRedisplay: paymentMethodRedisplay ?? this.paymentMethodRedisplay,
-  paymentMethodRedisplayLimit: paymentMethodRedisplayLimit != null ? paymentMethodRedisplayLimit() : this.paymentMethodRedisplayLimit,
+  paymentMethodRedisplayLimit: paymentMethodRedisplayLimit ?? this.paymentMethodRedisplayLimit,
   paymentMethodRemove: paymentMethodRemove ?? this.paymentMethodRemove,
   paymentMethodSave: paymentMethodSave ?? this.paymentMethodSave,
-  paymentMethodSaveUsage: paymentMethodSaveUsage != null ? paymentMethodSaveUsage() : this.paymentMethodSaveUsage,
-); } 
+  paymentMethodSaveUsage: paymentMethodSaveUsage ?? this.paymentMethodSaveUsage,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures &&
           listEquals(paymentMethodAllowRedisplayFilters, other.paymentMethodAllowRedisplayFilters) &&
@@ -142,4 +142,4 @@ CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures copyWith
 
 @override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRedisplayLimit: $paymentMethodRedisplayLimit, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveUsage: $paymentMethodSaveUsage)';
 
- }
+}

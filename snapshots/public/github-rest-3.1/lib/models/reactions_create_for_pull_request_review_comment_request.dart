@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/reaction/reaction_content.dart';@immutable final class ReactionsCreateForPullRequestReviewCommentRequest {const ReactionsCreateForPullRequestReviewCommentRequest({required this.content});
 
-factory ReactionsCreateForPullRequestReviewCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForPullRequestReviewCommentRequest(
+factory ReactionsCreateForPullRequestReviewCommentRequest.fromJson(Map<String, dynamic> json) {return ReactionsCreateForPullRequestReviewCommentRequest(
   content: ReactionContent.fromJson(json['content'] as String),
-); }
+);}
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
 final ReactionContent content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
-ReactionsCreateForPullRequestReviewCommentRequest copyWith({ReactionContent? content}) { return ReactionsCreateForPullRequestReviewCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content');}
+ReactionsCreateForPullRequestReviewCommentRequest copyWith({ReactionContent? content}) {return ReactionsCreateForPullRequestReviewCommentRequest(
   content: content ?? this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReactionsCreateForPullRequestReviewCommentRequest &&
           content == other.content;
@@ -25,4 +25,4 @@ ReactionsCreateForPullRequestReviewCommentRequest copyWith({ReactionContent? con
 
 @override String toString() => 'ReactionsCreateForPullRequestReviewCommentRequest(content: $content)';
 
- }
+}

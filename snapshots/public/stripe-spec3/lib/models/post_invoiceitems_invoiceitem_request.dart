@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoiceitemsInvoiceitemRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_period.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_price_data.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/pricing.dart';@immutable final class PostInvoiceitemsInvoiceitemRequest {const PostInvoiceitemsInvoiceitemRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_period.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_price_data.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/pricing.dart';@immutable final class PostInvoiceitemsInvoiceitemRequest {const PostInvoiceitemsInvoiceitemRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
 
-factory PostInvoiceitemsInvoiceitemRequest.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsInvoiceitemRequest(
+factory PostInvoiceitemsInvoiceitemRequest.fromJson(Map<String, dynamic> json) {return PostInvoiceitemsInvoiceitemRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   period: json['period'] != null ? PostInvoiceitemsInvoiceitemRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   priceData: json['price_data'] != null ? PostInvoiceitemsInvoiceitemRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   pricing: json['pricing'] != null ? Pricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  taxCode: json['tax_code'] != null ? PostInvoiceitemsInvoiceitemRequestTaxCode.fromJson(json['tax_code']) : null,
+  taxRates: json['tax_rates'] != null ? TaxRates.fromJson(json['tax_rates']) : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 /// The integer amount in cents (or local equivalent) of the charge to be applied to the upcoming invoice. If you want to apply a credit to the customer's account, pass a negative amount.
 final int? amount;
@@ -62,7 +62,7 @@ final TaxRates? taxRates;
 /// The decimal unit amount in cents (or local equivalent) of the charge to be applied to the upcoming invoice. This `unit_amount_decimal` will be multiplied by the quantity to get the full amount. Passing in a negative `unit_amount_decimal` will reduce the `amount_due` on the invoice. Accepts at most 12 decimal places.
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'description': ?description,
   'discountable': ?discountable,
@@ -77,16 +77,16 @@ Map<String, dynamic> toJson() { return {
   if (taxCode != null) 'tax_code': taxCode?.toJson(),
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'expand', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount_decimal'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'expand', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount_decimal'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-return errors; } 
-PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod? Function()? period, PostInvoiceitemsInvoiceitemRequestPriceData? Function()? priceData, Pricing? Function()? pricing, int? Function()? quantity, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, TaxRates? Function()? taxRates, String? Function()? unitAmountDecimal, }) { return PostInvoiceitemsInvoiceitemRequest(
+return errors;}
+PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod? Function()? period, PostInvoiceitemsInvoiceitemRequestPriceData? Function()? priceData, Pricing? Function()? pricing, int? Function()? quantity, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, TaxRates? Function()? taxRates, String? Function()? unitAmountDecimal, }) {return PostInvoiceitemsInvoiceitemRequest(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   discountable: discountable != null ? discountable() : this.discountable,
@@ -101,7 +101,7 @@ PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Fu
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoiceitemsInvoiceitemRequest &&
           amount == other.amount &&
@@ -123,4 +123,4 @@ PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Fu
 
 @override String toString() => 'PostInvoiceitemsInvoiceitemRequest(\n  amount: $amount,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  expand: $expand,\n  metadata: $metadata,\n  period: $period,\n  priceData: $priceData,\n  pricing: $pricing,\n  quantity: $quantity,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  taxRates: $taxRates,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
- }
+}

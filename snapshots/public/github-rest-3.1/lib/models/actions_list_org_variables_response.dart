@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_actions_variable.dart';@immutable final class ActionsListOrgVariablesResponse {const ActionsListOrgVariablesResponse({required this.totalCount, required this.variables, });
 
-factory ActionsListOrgVariablesResponse.fromJson(Map<String, dynamic> json) { return ActionsListOrgVariablesResponse(
+factory ActionsListOrgVariablesResponse.fromJson(Map<String, dynamic> json) {return ActionsListOrgVariablesResponse(
   totalCount: (json['total_count'] as num).toInt(),
   variables: (json['variables'] as List<dynamic>).map((e) => OrganizationActionsVariable.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<OrganizationActionsVariable> variables;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'variables': variables.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('variables'); } 
-ActionsListOrgVariablesResponse copyWith({int? totalCount, List<OrganizationActionsVariable>? variables, }) { return ActionsListOrgVariablesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('variables');}
+ActionsListOrgVariablesResponse copyWith({int? totalCount, List<OrganizationActionsVariable>? variables, }) {return ActionsListOrgVariablesResponse(
   totalCount: totalCount ?? this.totalCount,
   variables: variables ?? this.variables,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListOrgVariablesResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListOrgVariablesResponse copyWith({int? totalCount, List<OrganizationActi
 
 @override String toString() => 'ActionsListOrgVariablesResponse(totalCount: $totalCount, variables: $variables)';
 
- }
+}

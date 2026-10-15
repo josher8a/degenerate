@@ -1,22 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActivitySetThreadSubscriptionRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivitySetThreadSubscriptionRequest {const ActivitySetThreadSubscriptionRequest({this.ignored = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivitySetThreadSubscriptionRequest {const ActivitySetThreadSubscriptionRequest({this.ignored});
 
-factory ActivitySetThreadSubscriptionRequest.fromJson(Map<String, dynamic> json) { return ActivitySetThreadSubscriptionRequest(
-  ignored: json.containsKey('ignored') ? json['ignored'] as bool : false,
-); }
+factory ActivitySetThreadSubscriptionRequest.fromJson(Map<String, dynamic> json) {return ActivitySetThreadSubscriptionRequest(
+  ignored: json['ignored'] as bool?,
+);}
 
 /// Whether to block all notifications from a thread.
-final bool ignored;
+final bool? ignored;
 
-Map<String, dynamic> toJson() { return {
-  'ignored': ignored,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ignored'}.contains(key)); } 
-ActivitySetThreadSubscriptionRequest copyWith({bool Function()? ignored}) { return ActivitySetThreadSubscriptionRequest(
+/// The value of `ignored`, or its schema default when absent.
+bool get ignoredOrDefault => ignored ?? false;
+
+Map<String, dynamic> toJson() {return {
+  'ignored': ?ignored,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ignored'}.contains(key));}
+ActivitySetThreadSubscriptionRequest copyWith({bool? Function()? ignored}) {return ActivitySetThreadSubscriptionRequest(
   ignored: ignored != null ? ignored() : this.ignored,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActivitySetThreadSubscriptionRequest &&
           ignored == other.ignored;
@@ -25,4 +28,4 @@ ActivitySetThreadSubscriptionRequest copyWith({bool Function()? ignored}) { retu
 
 @override String toString() => 'ActivitySetThreadSubscriptionRequest(ignored: $ignored)';
 
- }
+}

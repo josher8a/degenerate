@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImagesImagesListResponse2
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_images_list_response2/images_images_list_response2_result.dart';@immutable final class ImagesImagesListResponse2 {const ImagesImagesListResponse2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_images_list_response2/images_images_list_response2_result.dart';import 'package:pub_cloudflare/models/images_messages2.dart';@immutable final class ImagesImagesListResponse2 {const ImagesImagesListResponse2({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory ImagesImagesListResponse2.fromJson(Map<String, dynamic> json) { return ImagesImagesListResponse2(
-  result: json['result'] != null ? ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory ImagesImagesListResponse2.fromJson(Map<String, dynamic> json) {return ImagesImagesListResponse2(
+  errors: (json['errors'] as List<dynamic>).map((e) => ImagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => ImagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final ImagesImagesListResponse2Result? result;
+final List<ImagesMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-ImagesImagesListResponse2 copyWith({ImagesImagesListResponse2Result? Function()? result}) { return ImagesImagesListResponse2(
-  result: result != null ? result() : this.result,
-); } 
+final List<ImagesMessages2> messages;
+
+final ImagesImagesListResponse2Result result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+ImagesImagesListResponse2 copyWith({List<ImagesMessages2>? errors, List<ImagesMessages2>? messages, ImagesImagesListResponse2Result? result, bool? success, }) {return ImagesImagesListResponse2(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImagesListResponse2 &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'ImagesImagesListResponse2(result: $result)';
+@override String toString() => 'ImagesImagesListResponse2(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

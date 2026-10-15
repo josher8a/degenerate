@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_moderation_request/create_moderation_request_input.dart';import 'package:pub_openai/models/create_moderation_request/create_moderation_request_model.dart';import 'package:pub_openai/models/create_moderation_request/variant3_image_url.dart';import 'package:pub_openai/models/create_moderation_request/variant3_text.dart';@immutable final class CreateModerationRequest {const CreateModerationRequest({required this.input, this.model, });
 
-factory CreateModerationRequest.fromJson(Map<String, dynamic> json) { return CreateModerationRequest(
+factory CreateModerationRequest.fromJson(Map<String, dynamic> json) {return CreateModerationRequest(
   input: OneOf3.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => switch (e) {
   final Map<String, dynamic> m when m['type'] == 'image_url' => OneOf2<Variant3ImageUrl, Variant3Text>.a(Variant3ImageUrl.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'text' => OneOf2<Variant3ImageUrl, Variant3Text>.b(Variant3Text.fromJson(m)),
   _ => OneOf2.parse(e, fromA: (v) => Variant3ImageUrl.fromJson(v as Map<String, dynamic>), fromB: (v) => Variant3Text.fromJson(v as Map<String, dynamic>),),
 }).toList(),),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateModerationRequestModelVariant2.fromJson(v as String),) : null,
-); }
+  model: json['model'] != null ? CreateModerationRequestModel.fromJson(json['model']) : null,
+);}
 
 /// Input (or inputs) to classify. Can be a single string, an array of strings, or
 /// an array of multi-modal input objects similar to other models.
@@ -25,15 +25,15 @@ final CreateModerationRequestInput input;
 /// Example: `'omni-moderation-2024-09-26'`
 final CreateModerationRequestModel? model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input': input.toJson(),
   if (model != null) 'model': model?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateModerationRequestModel? Function()? model, }) { return CreateModerationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input');}
+CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateModerationRequestModel? Function()? model, }) {return CreateModerationRequest(
   input: input ?? this.input,
   model: model != null ? model() : this.model,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateModerationRequest &&
           input == other.input &&
@@ -43,4 +43,4 @@ CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateMod
 
 @override String toString() => 'CreateModerationRequest(input: $input, model: $model)';
 
- }
+}

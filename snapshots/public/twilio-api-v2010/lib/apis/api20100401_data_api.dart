@@ -12,7 +12,7 @@ final class Api20100401DataApi with ApiExecutor {const Api20100401DataApi(this.a
 /// Fetch an instance of a result payload
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{PayloadSid}/Data.json`
-Future<ApiResult<void, Never>> fetchRecordingAddOnResultPayloadData({required String accountSid, required String referenceSid, required String addOnResultSid, required String payloadSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> fetchRecordingAddOnResultPayloadData({required String accountSid, required String referenceSid, required String addOnResultSid, required String payloadSid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,9 +21,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

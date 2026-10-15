@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the funds in this account can be paid out.
 sealed class BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus();
 
-factory BalanceSettingsResourcePayoutsStatus.fromJson(String json) { return switch (json) {
+factory BalanceSettingsResourcePayoutsStatus.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => BalanceSettingsResourcePayoutsStatus$Unknown(json),
-}; }
+};}
 
 static const BalanceSettingsResourcePayoutsStatus disabled = BalanceSettingsResourcePayoutsStatus$disabled._();
 
@@ -17,30 +17,30 @@ static const BalanceSettingsResourcePayoutsStatus enabled = BalanceSettingsResou
 static const List<BalanceSettingsResourcePayoutsStatus> values = [disabled, enabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disabled' => 'disabled',
   'enabled' => 'enabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BalanceSettingsResourcePayoutsStatus$Unknown; } 
+bool get isUnknown {return this is BalanceSettingsResourcePayoutsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) {return switch (this) {
       BalanceSettingsResourcePayoutsStatus$disabled() => disabled(),
       BalanceSettingsResourcePayoutsStatus$enabled() => enabled(),
       BalanceSettingsResourcePayoutsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) {return switch (this) {
       BalanceSettingsResourcePayoutsStatus$disabled() => disabled != null ? disabled() : orElse(value),
       BalanceSettingsResourcePayoutsStatus$enabled() => enabled != null ? enabled() : orElse(value),
       BalanceSettingsResourcePayoutsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BalanceSettingsResourcePayoutsStatus($value)';
 
- }
+}
 @immutable final class BalanceSettingsResourcePayoutsStatus$disabled extends BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus$disabled._();
 
 @override String get value => 'disabled';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class BalanceSettingsResourcePayoutsStatus$enabled extends BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus$enabled._();
 
 @override String get value => 'enabled';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class BalanceSettingsResourcePayoutsStatus$Unknown extends BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => value.hashCode;
 
- }
+}

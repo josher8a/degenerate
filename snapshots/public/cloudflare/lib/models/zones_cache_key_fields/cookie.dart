@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls which c
 /// 
 @immutable final class Cookie {const Cookie({this.checkPresence, this.include, });
 
-factory Cookie.fromJson(Map<String, dynamic> json) { return Cookie(
+factory Cookie.fromJson(Map<String, dynamic> json) {return Cookie(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),
   include: (json['include'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// A list of cookies to check for the presence of, without
 /// including their actual values.
@@ -23,13 +23,13 @@ final List<String>? checkPresence;
 /// Example: `[foo, bar]`
 final List<String>? include;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_presence': ?checkPresence,
   'include': ?include,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'include'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'check_presence', 'include'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final checkPresence$ = checkPresence;
 if (checkPresence$ != null) {
   if (checkPresence$.isEmpty) { errors.add('checkPresence: must have >= 1 items'); }
@@ -40,11 +40,11 @@ if (include$ != null) {
   if (include$.isEmpty) { errors.add('include: must have >= 1 items'); }
   if (include$.length > 50) { errors.add('include: must have <= 50 items'); }
 }
-return errors; } 
-Cookie copyWith({List<String>? Function()? checkPresence, List<String>? Function()? include, }) { return Cookie(
+return errors;}
+Cookie copyWith({List<String>? Function()? checkPresence, List<String>? Function()? include, }) {return Cookie(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   include: include != null ? include() : this.include,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Cookie &&
           listEquals(checkPresence, other.checkPresence) &&
@@ -54,4 +54,4 @@ Cookie copyWith({List<String>? Function()? checkPresence, List<String>? Function
 
 @override String toString() => 'Cookie(checkPresence: $checkPresence, include: $include)';
 
- }
+}

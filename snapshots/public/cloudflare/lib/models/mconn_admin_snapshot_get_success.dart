@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_snapshot.dart';@immutable final class MconnAdminSnapshotGetSuccess {const MconnAdminSnapshotGetSuccess({required this.success, required this.result, this.errors, this.messages, });
 
-factory MconnAdminSnapshotGetSuccess.fromJson(Map<String, dynamic> json) { return MconnAdminSnapshotGetSuccess(
+factory MconnAdminSnapshotGetSuccess.fromJson(Map<String, dynamic> json) {return MconnAdminSnapshotGetSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: MconnSnapshot.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<MconnCodedMessage>? errors;
 
@@ -18,20 +18,20 @@ final bool success;
 
 final MconnSnapshot result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-MconnAdminSnapshotGetSuccess copyWith({List<MconnCodedMessage>? Function()? errors, List<MconnCodedMessage>? Function()? messages, bool? success, MconnSnapshot? result, }) { return MconnAdminSnapshotGetSuccess(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result');}
+MconnAdminSnapshotGetSuccess copyWith({List<MconnCodedMessage>? Function()? errors, List<MconnCodedMessage>? Function()? messages, bool? success, MconnSnapshot? result, }) {return MconnAdminSnapshotGetSuccess(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminSnapshotGetSuccess &&
           listEquals(errors, other.errors) &&
@@ -43,4 +43,4 @@ MconnAdminSnapshotGetSuccess copyWith({List<MconnCodedMessage>? Function()? erro
 
 @override String toString() => 'MconnAdminSnapshotGetSuccess(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

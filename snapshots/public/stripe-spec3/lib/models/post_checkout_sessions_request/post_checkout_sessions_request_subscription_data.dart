@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/subscription_data_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_trial_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';sealed class SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior();
 
-factory SubscriptionDataProrationBehavior.fromJson(String json) { return switch (json) {
+factory SubscriptionDataProrationBehavior.fromJson(String json) {return switch (json) {
   'create_prorations' => createProrations,
   'none' => none,
   _ => SubscriptionDataProrationBehavior$Unknown(json),
-}; }
+};}
 
 static const SubscriptionDataProrationBehavior createProrations = SubscriptionDataProrationBehavior$createProrations._();
 
@@ -16,30 +16,30 @@ static const SubscriptionDataProrationBehavior none = SubscriptionDataProrationB
 static const List<SubscriptionDataProrationBehavior> values = [createProrations, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'create_prorations' => 'createProrations',
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SubscriptionDataProrationBehavior$Unknown; } 
+bool get isUnknown {return this is SubscriptionDataProrationBehavior$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() createProrations, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() createProrations, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       SubscriptionDataProrationBehavior$createProrations() => createProrations(),
       SubscriptionDataProrationBehavior$none() => none(),
       SubscriptionDataProrationBehavior$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? createProrations, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createProrations, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       SubscriptionDataProrationBehavior$createProrations() => createProrations != null ? createProrations() : orElse(value),
       SubscriptionDataProrationBehavior$none() => none != null ? none() : orElse(value),
       SubscriptionDataProrationBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SubscriptionDataProrationBehavior($value)';
 
- }
+}
 @immutable final class SubscriptionDataProrationBehavior$createProrations extends SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior$createProrations._();
 
 @override String get value => 'create_prorations';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createPr
 
 @override int get hashCode => 'create_prorations'.hashCode;
 
- }
+}
 @immutable final class SubscriptionDataProrationBehavior$none extends SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior$none._();
 
 @override String get value => 'none';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createPr
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class SubscriptionDataProrationBehavior$Unknown extends SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior$Unknown(this.value);
 
 @override final String value;
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createPr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A subset of parameters to be passed to subscription creation for Checkout Sessions in `subscription` mode.
 @immutable final class PostCheckoutSessionsRequestSubscriptionData {const PostCheckoutSessionsRequestSubscriptionData({this.applicationFeePercent, this.billingCycleAnchor, this.billingMode, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trialEnd, this.trialPeriodDays, this.trialSettings, });
 
-factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionData(
+factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? (json['billing_cycle_anchor'] as num).toInt() : null,
   billingMode: json['billing_mode'] != null ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
@@ -85,7 +85,7 @@ factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   trialSettings: json['trial_settings'] != null ? PostCustomersCustomerSubscriptionsRequestTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final double? applicationFeePercent;
 
@@ -113,7 +113,7 @@ final int? trialPeriodDays;
 
 final PostCustomersCustomerSubscriptionsRequestTrialSettings? trialSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'application_fee_percent': ?applicationFeePercent,
   'billing_cycle_anchor': ?billingCycleAnchor,
   if (billingMode != null) 'billing_mode': billingMode?.toJson(),
@@ -127,16 +127,16 @@ Map<String, dynamic> toJson() { return {
   'trial_end': ?trialEnd,
   'trial_period_days': ?trialPeriodDays,
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_percent', 'billing_cycle_anchor', 'billing_mode', 'default_tax_rates', 'description', 'invoice_settings', 'metadata', 'on_behalf_of', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_period_days', 'trial_settings'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'application_fee_percent', 'billing_cycle_anchor', 'billing_mode', 'default_tax_rates', 'description', 'invoice_settings', 'metadata', 'on_behalf_of', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_period_days', 'trial_settings'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 500) { errors.add('description: length must be <= 500'); }
 }
-return errors; } 
-PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applicationFeePercent, int? Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, List<String>? Function()? defaultTaxRates, String? Function()? description, SubscriptionDataInvoiceSettings? Function()? invoiceSettings, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, SubscriptionDataProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, int? Function()? trialEnd, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) { return PostCheckoutSessionsRequestSubscriptionData(
+return errors;}
+PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applicationFeePercent, int? Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, List<String>? Function()? defaultTaxRates, String? Function()? description, SubscriptionDataInvoiceSettings? Function()? invoiceSettings, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, SubscriptionDataProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, int? Function()? trialEnd, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) {return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   billingMode: billingMode != null ? billingMode() : this.billingMode,
@@ -150,7 +150,7 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestSubscriptionData &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -171,4 +171,4 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
 
 @override String toString() => 'PostCheckoutSessionsRequestSubscriptionData(\n  applicationFeePercent: $applicationFeePercent,\n  billingCycleAnchor: $billingCycleAnchor,\n  billingMode: $billingMode,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  invoiceSettings: $invoiceSettings,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  prorationBehavior: $prorationBehavior,\n  transferData: $transferData,\n  trialEnd: $trialEnd,\n  trialPeriodDays: $trialPeriodDays,\n  trialSettings: $trialSettings,\n)';
 
- }
+}

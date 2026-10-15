@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_bgp_control.dart';import 'package:pub_cloudflare/models/nsc_magic_settings.dart';@immutable final class NscCniCreate {const NscCniCreate({required this.account, required this.interconnect, required this.magic, this.bgp, });
 
-factory NscCniCreate.fromJson(Map<String, dynamic> json) { return NscCniCreate(
+factory NscCniCreate.fromJson(Map<String, dynamic> json) {return NscCniCreate(
   account: NscAccountTag.fromJson(json['account'] as String),
   bgp: json['bgp'] != null ? NscBgpControl.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   interconnect: json['interconnect'] as String,
   magic: NscMagicSettings.fromJson(json['magic'] as Map<String, dynamic>),
-); }
+);}
 
 /// Customer account tag
 final NscAccountTag account;
@@ -19,21 +19,21 @@ final String interconnect;
 
 final NscMagicSettings magic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   if (bgp != null) 'bgp': bgp?.toJson(),
   'interconnect': interconnect,
   'magic': magic.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('interconnect') && json['interconnect'] is String &&
-      json.containsKey('magic'); } 
-NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? interconnect, NscMagicSettings? magic, }) { return NscCniCreate(
+      json.containsKey('magic');}
+NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? interconnect, NscMagicSettings? magic, }) {return NscCniCreate(
   account: account ?? this.account,
   bgp: bgp != null ? bgp() : this.bgp,
   interconnect: interconnect ?? this.interconnect,
   magic: magic ?? this.magic,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NscCniCreate &&
           account == other.account &&
@@ -45,4 +45,4 @@ NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, S
 
 @override String toString() => 'NscCniCreate(account: $account, bgp: $bgp, interconnect: $interconnect, magic: $magic)';
 
- }
+}

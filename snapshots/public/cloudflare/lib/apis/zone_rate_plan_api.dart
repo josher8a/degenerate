@@ -14,7 +14,7 @@ final class ZoneRatePlanApi with ApiExecutor {const ZoneRatePlanApi(this.apiConf
 /// Lists available plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans`
-Future<ApiResult<List<AvailableRatePlan>?, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AvailableRatePlan>, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => AvailableRatePlan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => AvailableRatePlan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
- } 
+}
 /// Available Plan Details
 ///
 /// Details of the available plan that the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans/{plan_identifier}`
-Future<ApiResult<AvailableRatePlan?, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AvailableRatePlan, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,21 +46,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AvailableRatePlan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return AvailableRatePlan.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
- } 
+}
 /// List Available Rate Plans
 ///
 /// Lists all rate plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_rate_plans`
-Future<ApiResult<List<RatePlan>?, ZoneRatePlanListAvailableRatePlansError>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<RatePlan>, ZoneRatePlanListAvailableRatePlansError>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,13 +69,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => RatePlan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => RatePlan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: ZoneRatePlanListAvailableRatePlansError.fromResponse,
 );
- } 
- }
+}
+}

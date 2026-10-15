@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';/// 
 @immutable final class ProrationDetails {const ProrationDetails({required this.discountAmounts});
 
-factory ProrationDetails.fromJson(Map<String, dynamic> json) { return ProrationDetails(
+factory ProrationDetails.fromJson(Map<String, dynamic> json) {return ProrationDetails(
   discountAmounts: (json['discount_amounts'] as List<dynamic>).map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Discount amounts applied when the proration was created.
 final List<DiscountsResourceDiscountAmount> discountAmounts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'discount_amounts': discountAmounts.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('discount_amounts'); } 
-ProrationDetails copyWith({List<DiscountsResourceDiscountAmount>? discountAmounts}) { return ProrationDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('discount_amounts');}
+ProrationDetails copyWith({List<DiscountsResourceDiscountAmount>? discountAmounts}) {return ProrationDetails(
   discountAmounts: discountAmounts ?? this.discountAmounts,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProrationDetails &&
           listEquals(discountAmounts, other.discountAmounts);
@@ -26,4 +26,4 @@ ProrationDetails copyWith({List<DiscountsResourceDiscountAmount>? discountAmount
 
 @override String toString() => 'ProrationDetails(discountAmounts: $discountAmounts)';
 
- }
+}

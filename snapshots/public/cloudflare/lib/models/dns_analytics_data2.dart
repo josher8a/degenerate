@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsAnalyticsData2 {const DnsAnalyticsData2({required this.dimensions});
 
-factory DnsAnalyticsData2.fromJson(Map<String, dynamic> json) { return DnsAnalyticsData2(
+factory DnsAnalyticsData2.fromJson(Map<String, dynamic> json) {return DnsAnalyticsData2(
   dimensions: (json['dimensions'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Array of dimension values, representing the combination of dimension values corresponding to this row.
 final List<String> dimensions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dimensions': dimensions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dimensions'); } 
-DnsAnalyticsData2 copyWith({List<String>? dimensions}) { return DnsAnalyticsData2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dimensions');}
+DnsAnalyticsData2 copyWith({List<String>? dimensions}) {return DnsAnalyticsData2(
   dimensions: dimensions ?? this.dimensions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsData2 &&
           listEquals(dimensions, other.dimensions);
@@ -25,4 +25,4 @@ DnsAnalyticsData2 copyWith({List<String>? dimensions}) { return DnsAnalyticsData
 
 @override String toString() => 'DnsAnalyticsData2(dimensions: $dimensions)';
 
- }
+}

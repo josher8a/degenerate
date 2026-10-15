@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataAnnotations {const MetadataAnnotations({this.workersAlias, this.workersMessage, this.workersTag, });
 
-factory MetadataAnnotations.fromJson(Map<String, dynamic> json) { return MetadataAnnotations(
+factory MetadataAnnotations.fromJson(Map<String, dynamic> json) {return MetadataAnnotations(
   workersAlias: json['workers/alias'] as String?,
   workersMessage: json['workers/message'] as String?,
   workersTag: json['workers/tag'] as String?,
-); }
+);}
 
 /// Associated alias for a version.
 /// 
@@ -24,14 +24,14 @@ final String? workersMessage;
 /// Example: `'any-identifier-from-external-system'`
 final String? workersTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'workers/alias': ?workersAlias,
   'workers/message': ?workersMessage,
   'workers/tag': ?workersTag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/alias', 'workers/message', 'workers/tag'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'workers/alias', 'workers/message', 'workers/tag'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final workersAlias$ = workersAlias;
 if (workersAlias$ != null) {
   if (workersAlias$.runes.length > 63) { errors.add('workersAlias: length must be <= 63'); }
@@ -44,12 +44,12 @@ final workersTag$ = workersTag;
 if (workersTag$ != null) {
   if (workersTag$.runes.length > 25) { errors.add('workersTag: length must be <= 25'); }
 }
-return errors; } 
-MetadataAnnotations copyWith({String? Function()? workersAlias, String? Function()? workersMessage, String? Function()? workersTag, }) { return MetadataAnnotations(
+return errors;}
+MetadataAnnotations copyWith({String? Function()? workersAlias, String? Function()? workersMessage, String? Function()? workersTag, }) {return MetadataAnnotations(
   workersAlias: workersAlias != null ? workersAlias() : this.workersAlias,
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTag: workersTag != null ? workersTag() : this.workersTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataAnnotations &&
           workersAlias == other.workersAlias &&
@@ -60,4 +60,4 @@ MetadataAnnotations copyWith({String? Function()? workersAlias, String? Function
 
 @override String toString() => 'MetadataAnnotations(workersAlias: $workersAlias, workersMessage: $workersMessage, workersTag: $workersTag)';
 
- }
+}

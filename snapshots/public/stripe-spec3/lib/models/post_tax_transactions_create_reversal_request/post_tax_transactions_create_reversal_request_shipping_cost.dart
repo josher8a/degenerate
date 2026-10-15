@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The shipping cost to reverse.
 @immutable final class PostTaxTransactionsCreateReversalRequestShippingCost {const PostTaxTransactionsCreateReversalRequestShippingCost({required this.amount, required this.amountTax, });
 
-factory PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateReversalRequestShippingCost(
+factory PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(Map<String, dynamic> json) {return PostTaxTransactionsCreateReversalRequestShippingCost(
   amount: (json['amount'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
-); }
+);}
 
 final int amount;
 
 final int amountTax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_tax': amountTax,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('amount_tax') && json['amount_tax'] is num; } 
-PostTaxTransactionsCreateReversalRequestShippingCost copyWith({int? amount, int? amountTax, }) { return PostTaxTransactionsCreateReversalRequestShippingCost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('amount_tax') && json['amount_tax'] is num;}
+PostTaxTransactionsCreateReversalRequestShippingCost copyWith({int? amount, int? amountTax, }) {return PostTaxTransactionsCreateReversalRequestShippingCost(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxTransactionsCreateReversalRequestShippingCost &&
           amount == other.amount &&
@@ -32,4 +32,4 @@ PostTaxTransactionsCreateReversalRequestShippingCost copyWith({int? amount, int?
 
 @override String toString() => 'PostTaxTransactionsCreateReversalRequestShippingCost(amount: $amount, amountTax: $amountTax)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText();
 
-factory IssuingPersonalizationDesignRejectionReasonsCarrierText.fromJson(String json) { return switch (json) {
+factory IssuingPersonalizationDesignRejectionReasonsCarrierText.fromJson(String json) {return switch (json) {
   'geographic_location' => geographicLocation,
   'inappropriate' => inappropriate,
   'network_name' => networkName,
@@ -12,7 +12,7 @@ factory IssuingPersonalizationDesignRejectionReasonsCarrierText.fromJson(String 
   'other_entity' => otherEntity,
   'promotional_material' => promotionalMaterial,
   _ => IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown(json),
-}; }
+};}
 
 static const IssuingPersonalizationDesignRejectionReasonsCarrierText geographicLocation = IssuingPersonalizationDesignRejectionReasonsCarrierText$geographicLocation._();
 
@@ -31,9 +31,9 @@ static const IssuingPersonalizationDesignRejectionReasonsCarrierText promotional
 static const List<IssuingPersonalizationDesignRejectionReasonsCarrierText> values = [geographicLocation, inappropriate, networkName, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'geographic_location' => 'geographicLocation',
   'inappropriate' => 'inappropriate',
   'network_name' => 'networkName',
@@ -42,11 +42,11 @@ String get name { return switch (value) {
   'other_entity' => 'otherEntity',
   'promotional_material' => 'promotionalMaterial',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown; } 
+bool get isUnknown {return this is IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() geographicLocation, required W Function() inappropriate, required W Function() networkName, required W Function() nonFiatCurrency, required W Function() $other, required W Function() otherEntity, required W Function() promotionalMaterial, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() geographicLocation, required W Function() inappropriate, required W Function() networkName, required W Function() nonFiatCurrency, required W Function() $other, required W Function() otherEntity, required W Function() promotionalMaterial, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingPersonalizationDesignRejectionReasonsCarrierText$geographicLocation() => geographicLocation(),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$inappropriate() => inappropriate(),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$networkName() => networkName(),
@@ -55,9 +55,9 @@ W when<W>({required W Function() geographicLocation, required W Function() inapp
       IssuingPersonalizationDesignRejectionReasonsCarrierText$otherEntity() => otherEntity(),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$promotionalMaterial() => promotionalMaterial(),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? geographicLocation, W Function()? inappropriate, W Function()? networkName, W Function()? nonFiatCurrency, W Function()? $other, W Function()? otherEntity, W Function()? promotionalMaterial, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? geographicLocation, W Function()? inappropriate, W Function()? networkName, W Function()? nonFiatCurrency, W Function()? $other, W Function()? otherEntity, W Function()? promotionalMaterial, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingPersonalizationDesignRejectionReasonsCarrierText$geographicLocation() => geographicLocation != null ? geographicLocation() : orElse(value),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$inappropriate() => inappropriate != null ? inappropriate() : orElse(value),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$networkName() => networkName != null ? networkName() : orElse(value),
@@ -66,10 +66,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
       IssuingPersonalizationDesignRejectionReasonsCarrierText$otherEntity() => otherEntity != null ? otherEntity() : orElse(value),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$promotionalMaterial() => promotionalMaterial != null ? promotionalMaterial() : orElse(value),
       IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingPersonalizationDesignRejectionReasonsCarrierText($value)';
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$geographicLocation extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$geographicLocation._();
 
 @override String get value => 'geographic_location';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'geographic_location'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$inappropriate extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$inappropriate._();
 
 @override String get value => 'inappropriate';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'inappropriate'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$networkName extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$networkName._();
 
 @override String get value => 'network_name';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'network_name'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$nonFiatCurrency extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$nonFiatCurrency._();
 
 @override String get value => 'non_fiat_currency';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'non_fiat_currency'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$$other extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$$other._();
 
 @override String get value => 'other';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$otherEntity extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$otherEntity._();
 
 @override String get value => 'other_entity';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'other_entity'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$promotionalMaterial extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$promotionalMaterial._();
 
 @override String get value => 'promotional_material';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => 'promotional_material'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown extends IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText$Unknown(this.value);
 
 @override final String value;
@@ -142,4 +142,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? geograph
 
 @override int get hashCode => value.hashCode;
 
- }
+}

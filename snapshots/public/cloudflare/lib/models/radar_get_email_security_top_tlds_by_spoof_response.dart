@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_top_tlds_by_malicious_response/radar_get_email_security_top_tlds_by_malicious_response_result.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofResponse {const RadarGetEmailSecurityTopTldsBySpoofResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecurityTopTldsBySpoofResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpoofResponse(
+factory RadarGetEmailSecurityTopTldsBySpoofResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTopTldsBySpoofResponse(
   result: RadarGetEmailSecurityTopTldsByMaliciousResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecurityTopTldsByMaliciousResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecurityTopTldsBySpoofResponse copyWith({RadarGetEmailSecurityTopTldsByMaliciousResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTopTldsBySpoofResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecurityTopTldsBySpoofResponse copyWith({RadarGetEmailSecurityTopTldsByMaliciousResponseResult? result, bool? success, }) {return RadarGetEmailSecurityTopTldsBySpoofResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTopTldsBySpoofResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecurityTopTldsBySpoofResponse copyWith({RadarGetEmailSecurityTopTl
 
 @override String toString() => 'RadarGetEmailSecurityTopTldsBySpoofResponse(result: $result, success: $success)';
 
- }
+}

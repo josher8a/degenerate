@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_csr.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_request_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_requested_validity.dart';@immutable final class OriginCaCreateCertificateRequest {const OriginCaCreateCertificateRequest({required this.csr, required this.hostnames, required this.requestType, this.requestedValidity, });
 
-factory OriginCaCreateCertificateRequest.fromJson(Map<String, dynamic> json) { return OriginCaCreateCertificateRequest(
+factory OriginCaCreateCertificateRequest.fromJson(Map<String, dynamic> json) {return OriginCaCreateCertificateRequest(
   csr: TlsCertificatesAndHostnamesCsr.fromJson(json['csr'] as String),
   hostnames: (json['hostnames'] as List<dynamic>).map((e) => e as String).toList(),
   requestType: TlsCertificatesAndHostnamesRequestType.fromJson(json['request_type'] as String),
   requestedValidity: json['requested_validity'] != null ? TlsCertificatesAndHostnamesRequestedValidity.fromJson((json['requested_validity'] as num).toDouble()) : null,
-); }
+);}
 
 /// The Certificate Signing Request (CSR). Must be newline-encoded.
 final TlsCertificatesAndHostnamesCsr csr;
@@ -23,26 +23,26 @@ final TlsCertificatesAndHostnamesRequestType requestType;
 /// The number of days for which the certificate should be valid.
 final TlsCertificatesAndHostnamesRequestedValidity? requestedValidity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'csr': csr.toJson(),
   'hostnames': hostnames,
   'request_type': requestType.toJson(),
   if (requestedValidity != null) 'requested_validity': requestedValidity?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('csr') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('csr') &&
       json.containsKey('hostnames') &&
-      json.containsKey('request_type'); } 
+      json.containsKey('request_type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (hostnames.isEmpty) { errors.add('hostnames: must have >= 1 items'); }
 if (hostnames.length > 100) { errors.add('hostnames: must have <= 100 items'); }
-return errors; } 
-OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? Function()? requestedValidity, }) { return OriginCaCreateCertificateRequest(
+return errors;}
+OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? Function()? requestedValidity, }) {return OriginCaCreateCertificateRequest(
   csr: csr ?? this.csr,
   hostnames: hostnames ?? this.hostnames,
   requestType: requestType ?? this.requestType,
   requestedValidity: requestedValidity != null ? requestedValidity() : this.requestedValidity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OriginCaCreateCertificateRequest &&
           csr == other.csr &&
@@ -54,4 +54,4 @@ OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, 
 
 @override String toString() => 'OriginCaCreateCertificateRequest(csr: $csr, hostnames: $hostnames, requestType: $requestType, requestedValidity: $requestedValidity)';
 
- }
+}

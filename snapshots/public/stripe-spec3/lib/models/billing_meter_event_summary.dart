@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject();
 
-factory BillingMeterEventSummaryObject.fromJson(String json) { return switch (json) {
+factory BillingMeterEventSummaryObject.fromJson(String json) {return switch (json) {
   'billing.meter_event_summary' => billingMeterEventSummary,
   _ => BillingMeterEventSummaryObject$Unknown(json),
-}; }
+};}
 
 static const BillingMeterEventSummaryObject billingMeterEventSummary = BillingMeterEventSummaryObject$billingMeterEventSummary._();
 
 static const List<BillingMeterEventSummaryObject> values = [billingMeterEventSummary];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing.meter_event_summary' => 'billingMeterEventSummary',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingMeterEventSummaryObject$Unknown; } 
+bool get isUnknown {return this is BillingMeterEventSummaryObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billingMeterEventSummary, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billingMeterEventSummary, required W Function(String value) $unknown, }) {return switch (this) {
       BillingMeterEventSummaryObject$billingMeterEventSummary() => billingMeterEventSummary(),
       BillingMeterEventSummaryObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeterEventSummary, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeterEventSummary, W Function(String value)? $unknown, }) {return switch (this) {
       BillingMeterEventSummaryObject$billingMeterEventSummary() => billingMeterEventSummary != null ? billingMeterEventSummary() : orElse(value),
       BillingMeterEventSummaryObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingMeterEventSummaryObject($value)';
 
- }
+}
 @immutable final class BillingMeterEventSummaryObject$billingMeterEventSummary extends BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject$billingMeterEventSummary._();
 
 @override String get value => 'billing.meter_event_summary';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingM
 
 @override int get hashCode => 'billing.meter_event_summary'.hashCode;
 
- }
+}
 @immutable final class BillingMeterEventSummaryObject$Unknown extends BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingM
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A billing meter event summary represents an aggregated view of a customer's billing meter events within a specified timeframe. It indicates how much
 /// usage was accrued by a customer for that period.
 /// 
 /// Note: Meters events are aggregated asynchronously so the meter event summaries provide an eventually consistent view of the reported usage.
 @immutable final class BillingMeterEventSummary {const BillingMeterEventSummary({required this.aggregatedValue, required this.endTime, required this.id, required this.livemode, required this.meter, required this.object, required this.startTime, });
 
-factory BillingMeterEventSummary.fromJson(Map<String, dynamic> json) { return BillingMeterEventSummary(
+factory BillingMeterEventSummary.fromJson(Map<String, dynamic> json) {return BillingMeterEventSummary(
   aggregatedValue: (json['aggregated_value'] as num).toDouble(),
   endTime: (json['end_time'] as num).toInt(),
   id: json['id'] as String,
@@ -68,7 +68,7 @@ factory BillingMeterEventSummary.fromJson(Map<String, dynamic> json) { return Bi
   meter: json['meter'] as String,
   object: BillingMeterEventSummaryObject.fromJson(json['object'] as String),
   startTime: (json['start_time'] as num).toInt(),
-); }
+);}
 
 /// Aggregated value of all the events within `start_time` (inclusive) and `end_time` (inclusive). The aggregation strategy is defined on meter via `default_aggregation`.
 final double aggregatedValue;
@@ -91,7 +91,7 @@ final BillingMeterEventSummaryObject object;
 /// Start timestamp for this event summary (inclusive). Must be aligned with minute boundaries.
 final int startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aggregated_value': aggregatedValue,
   'end_time': endTime,
   'id': id,
@@ -99,20 +99,20 @@ Map<String, dynamic> toJson() { return {
   'meter': meter,
   'object': object.toJson(),
   'start_time': startTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggregated_value') && json['aggregated_value'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aggregated_value') && json['aggregated_value'] is num &&
       json.containsKey('end_time') && json['end_time'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('meter') && json['meter'] is String &&
       json.containsKey('object') &&
-      json.containsKey('start_time') && json['start_time'] is num; } 
+      json.containsKey('start_time') && json['start_time'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (meter.runes.length > 5000) { errors.add('meter: length must be <= 5000'); }
-return errors; } 
-BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String? id, bool? livemode, String? meter, BillingMeterEventSummaryObject? object, int? startTime, }) { return BillingMeterEventSummary(
+return errors;}
+BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String? id, bool? livemode, String? meter, BillingMeterEventSummaryObject? object, int? startTime, }) {return BillingMeterEventSummary(
   aggregatedValue: aggregatedValue ?? this.aggregatedValue,
   endTime: endTime ?? this.endTime,
   id: id ?? this.id,
@@ -120,7 +120,7 @@ BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String
   meter: meter ?? this.meter,
   object: object ?? this.object,
   startTime: startTime ?? this.startTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterEventSummary &&
           aggregatedValue == other.aggregatedValue &&
@@ -135,4 +135,4 @@ BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String
 
 @override String toString() => 'BillingMeterEventSummary(aggregatedValue: $aggregatedValue, endTime: $endTime, id: $id, livemode: $livemode, meter: $meter, object: $object, startTime: $startTime)';
 
- }
+}

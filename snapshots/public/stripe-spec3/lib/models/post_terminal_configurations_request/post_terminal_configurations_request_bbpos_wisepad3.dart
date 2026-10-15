@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTerminalConfigurationsRequest (inline: BbposWisepad3)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bbpos_wise_pad3/bbpos_wise_pad3_splashscreen.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';/// An object containing device type specific settings for BBPOS WisePad 3 readers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bbpos_wise_pad3/bbpos_wise_pad3_splashscreen.dart';/// An object containing device type specific settings for BBPOS WisePad 3 readers.
 @immutable final class PostTerminalConfigurationsRequestBbposWisepad3 {const PostTerminalConfigurationsRequestBbposWisepad3({this.splashscreen});
 
-factory PostTerminalConfigurationsRequestBbposWisepad3.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestBbposWisepad3(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+factory PostTerminalConfigurationsRequestBbposWisepad3.fromJson(Map<String, dynamic> json) {return PostTerminalConfigurationsRequestBbposWisepad3(
+  splashscreen: json['splashscreen'] != null ? BbposWisePad3Splashscreen.fromJson(json['splashscreen']) : null,
+);}
 
 final BbposWisePad3Splashscreen? splashscreen;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-PostTerminalConfigurationsRequestBbposWisepad3 copyWith({BbposWisePad3Splashscreen? Function()? splashscreen}) { return PostTerminalConfigurationsRequestBbposWisepad3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'splashscreen'}.contains(key));}
+PostTerminalConfigurationsRequestBbposWisepad3 copyWith({BbposWisePad3Splashscreen? Function()? splashscreen}) {return PostTerminalConfigurationsRequestBbposWisepad3(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalConfigurationsRequestBbposWisepad3 &&
           splashscreen == other.splashscreen;
@@ -25,4 +25,4 @@ PostTerminalConfigurationsRequestBbposWisepad3 copyWith({BbposWisePad3Splashscre
 
 @override String toString() => 'PostTerminalConfigurationsRequestBbposWisepad3(splashscreen: $splashscreen)';
 
- }
+}

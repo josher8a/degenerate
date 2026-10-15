@@ -17,7 +17,7 @@ final class R2CatalogManagementApi with ApiExecutor {const R2CatalogManagementAp
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog`
-Future<ApiResult<R2DataCatalogCatalogList?, ListCatalogsError>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogList?, ListCatalogsError>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -34,7 +34,7 @@ return execute(
   },
   onError: ListCatalogsError.fromResponse,
 );
- } 
+}
 /// Get R2 catalog details
 ///
 /// Retrieve detailed information about a specific R2 catalog by bucket name.
@@ -42,7 +42,7 @@ return execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}`
-Future<ApiResult<R2DataCatalogCatalog?, DisableCatalogError>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalog?, DisableCatalogError>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,7 +51,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -59,7 +59,7 @@ return execute(
   },
   onError: DisableCatalogError.fromResponse,
 );
- } 
+}
 /// Disable R2 catalog
 ///
 /// Disable an R2 bucket as a catalog. This operation deactivates the catalog
@@ -68,7 +68,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/disable`
-Future<ApiResult<void, DisableCatalogError>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DisableCatalogError>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -77,12 +77,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: DisableCatalogError.fromResponse,
 );
- } 
+}
 /// Enable R2 bucket as a catalog
 ///
 /// Enable an R2 bucket as an Apache Iceberg catalog. This operation creates
@@ -91,7 +91,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/enable`
-Future<ApiResult<R2DataCatalogCatalogActivationResponse?, EnableCatalogError>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogActivationResponse?, EnableCatalogError>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -100,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -108,5 +108,5 @@ return execute(
   },
   onError: EnableCatalogError.fromResponse,
 );
- } 
- }
+}
+}

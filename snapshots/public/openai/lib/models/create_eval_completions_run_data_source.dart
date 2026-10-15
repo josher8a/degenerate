@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_input_messages.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_sampling_params.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_source.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source.dart';import 'package:pub_openai/models/eval_jsonl_file_id_source.dart';import 'package:pub_openai/models/eval_stored_completions_source.dart';import 'package:pub_openai/models/item_reference_input_messages.dart';import 'package:pub_openai/models/template_input_messages.dart';/// The type of run data source. Always `completions`.
 sealed class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType();
 
-factory CreateEvalCompletionsRunDataSourceType.fromJson(String json) { return switch (json) {
+factory CreateEvalCompletionsRunDataSourceType.fromJson(String json) {return switch (json) {
   'completions' => completions,
   _ => CreateEvalCompletionsRunDataSourceType$Unknown(json),
-}; }
+};}
 
 static const CreateEvalCompletionsRunDataSourceType completions = CreateEvalCompletionsRunDataSourceType$completions._();
 
 static const List<CreateEvalCompletionsRunDataSourceType> values = [completions];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'completions' => 'completions',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateEvalCompletionsRunDataSourceType$Unknown; } 
+bool get isUnknown {return this is CreateEvalCompletionsRunDataSourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() completions, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() completions, required W Function(String value) $unknown, }) {return switch (this) {
       CreateEvalCompletionsRunDataSourceType$completions() => completions(),
       CreateEvalCompletionsRunDataSourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? completions, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completions, W Function(String value)? $unknown, }) {return switch (this) {
       CreateEvalCompletionsRunDataSourceType$completions() => completions != null ? completions() : orElse(value),
       CreateEvalCompletionsRunDataSourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateEvalCompletionsRunDataSourceType($value)';
 
- }
+}
 @immutable final class CreateEvalCompletionsRunDataSourceType$completions extends CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType$completions._();
 
 @override String get value => 'completions';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? completi
 
 @override int get hashCode => 'completions'.hashCode;
 
- }
+}
 @immutable final class CreateEvalCompletionsRunDataSourceType$Unknown extends CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? completi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A CompletionsRunDataSource object describing a model sampling configuration.
 /// 
-@immutable final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({required this.source, this.type = CreateEvalCompletionsRunDataSourceType.completions, this.inputMessages, this.samplingParams, this.model, });
+@immutable final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({required this.type, required this.source, this.inputMessages, this.samplingParams, this.model, });
 
-factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalCompletionsRunDataSource(
+factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) {return CreateEvalCompletionsRunDataSource(
   type: CreateEvalCompletionsRunDataSourceType.fromJson(json['type'] as String),
   inputMessages: json['input_messages'] != null ? switch (json['input_messages']) {
   final Map<String, dynamic> m when m['type'] == 'template' => OneOf2<TemplateInputMessages, ItemReferenceInputMessages>.a(TemplateInputMessages.fromJson(m)),
@@ -73,7 +73,7 @@ factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) {
   final Map<String, dynamic> m when m['type'] == 'stored_completions' => OneOf3<EvalJsonlFileContentSource, EvalJsonlFileIdSource, EvalStoredCompletionsSource>.c(EvalStoredCompletionsSource.fromJson(m)),
   _ => OneOf3.parse(json['source'], fromA: (v) => EvalJsonlFileContentSource.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalJsonlFileIdSource.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalStoredCompletionsSource.fromJson(v as Map<String, dynamic>),),
 },
-); }
+);}
 
 /// The type of run data source. Always `completions`.
 final CreateEvalCompletionsRunDataSourceType type;
@@ -89,22 +89,22 @@ final String? model;
 /// Determines what populates the `item` namespace in this run's data source.
 final CreateEvalCompletionsRunDataSourceSource source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (inputMessages != null) 'input_messages': inputMessages?.toJson(),
   if (samplingParams != null) 'sampling_params': samplingParams?.toJson(),
   'model': ?model,
   'source': source.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'completions' &&
-      json.containsKey('source'); } 
-CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceType? type, CreateEvalCompletionsRunDataSourceInputMessages? Function()? inputMessages, CreateEvalCompletionsRunDataSourceSamplingParams? Function()? samplingParams, String? Function()? model, CreateEvalCompletionsRunDataSourceSource? source, }) { return CreateEvalCompletionsRunDataSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'completions' &&
+      json.containsKey('source');}
+CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceType? type, CreateEvalCompletionsRunDataSourceInputMessages? Function()? inputMessages, CreateEvalCompletionsRunDataSourceSamplingParams? Function()? samplingParams, String? Function()? model, CreateEvalCompletionsRunDataSourceSource? source, }) {return CreateEvalCompletionsRunDataSource(
   type: type ?? this.type,
   inputMessages: inputMessages != null ? inputMessages() : this.inputMessages,
   samplingParams: samplingParams != null ? samplingParams() : this.samplingParams,
   model: model != null ? model() : this.model,
   source: source ?? this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalCompletionsRunDataSource &&
           type == other.type &&
@@ -117,4 +117,4 @@ CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceT
 
 @override String toString() => 'CreateEvalCompletionsRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)';
 
- }
+}

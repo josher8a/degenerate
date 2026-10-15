@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDatasetUpload {const DlpDatasetUpload({required this.numCells, required this.status, required this.version, });
 
-factory DlpDatasetUpload.fromJson(Map<String, dynamic> json) { return DlpDatasetUpload(
+factory DlpDatasetUpload.fromJson(Map<String, dynamic> json) {return DlpDatasetUpload(
   numCells: (json['num_cells'] as num).toInt(),
   status: DlpDatasetUploadStatus.fromJson(json['status'] as String),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 final int numCells;
 
@@ -15,19 +15,19 @@ final DlpDatasetUploadStatus status;
 
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'num_cells': numCells,
   'status': status.toJson(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('num_cells') && json['num_cells'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('num_cells') && json['num_cells'] is num &&
       json.containsKey('status') &&
-      json.containsKey('version') && json['version'] is num; } 
-DlpDatasetUpload copyWith({int? numCells, DlpDatasetUploadStatus? status, int? version, }) { return DlpDatasetUpload(
+      json.containsKey('version') && json['version'] is num;}
+DlpDatasetUpload copyWith({int? numCells, DlpDatasetUploadStatus? status, int? version, }) {return DlpDatasetUpload(
   numCells: numCells ?? this.numCells,
   status: status ?? this.status,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetUpload &&
           numCells == other.numCells &&
@@ -38,4 +38,4 @@ DlpDatasetUpload copyWith({int? numCells, DlpDatasetUploadStatus? status, int? v
 
 @override String toString() => 'DlpDatasetUpload(numCells: $numCells, status: $status, version: $version)';
 
- }
+}

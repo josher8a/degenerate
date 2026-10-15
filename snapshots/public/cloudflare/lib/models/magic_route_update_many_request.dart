@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route_update_single_request.dart';@immutable final class MagicRouteUpdateManyRequest {const MagicRouteUpdateManyRequest({required this.routes});
 
-factory MagicRouteUpdateManyRequest.fromJson(Map<String, dynamic> json) { return MagicRouteUpdateManyRequest(
+factory MagicRouteUpdateManyRequest.fromJson(Map<String, dynamic> json) {return MagicRouteUpdateManyRequest(
   routes: (json['routes'] as List<dynamic>).map((e) => MagicRouteUpdateSingleRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<MagicRouteUpdateSingleRequest> routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'routes': routes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('routes'); } 
-MagicRouteUpdateManyRequest copyWith({List<MagicRouteUpdateSingleRequest>? routes}) { return MagicRouteUpdateManyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('routes');}
+MagicRouteUpdateManyRequest copyWith({List<MagicRouteUpdateSingleRequest>? routes}) {return MagicRouteUpdateManyRequest(
   routes: routes ?? this.routes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteUpdateManyRequest &&
           listEquals(routes, other.routes);
@@ -24,4 +24,4 @@ MagicRouteUpdateManyRequest copyWith({List<MagicRouteUpdateSingleRequest>? route
 
 @override String toString() => 'MagicRouteUpdateManyRequest(routes: $routes)';
 
- }
+}

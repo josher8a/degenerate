@@ -15,26 +15,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class InfraHostnameHost {const InfraHostnameHost({required this.hostname, required this.resolverNetwork, });
 
-factory InfraHostnameHost.fromJson(Map<String, dynamic> json) { return InfraHostnameHost(
+factory InfraHostnameHost.fromJson(Map<String, dynamic> json) {return InfraHostnameHost(
   hostname: json['hostname'] as String,
   resolverNetwork: InfraResolverNetwork.fromJson(json['resolver_network'] as Map<String, dynamic>),
-); }
+);}
 
 /// Example: `'example.com'`
 final String hostname;
 
 final InfraResolverNetwork resolverNetwork;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': hostname,
   'resolver_network': resolverNetwork.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
-      json.containsKey('resolver_network'); } 
-InfraHostnameHost copyWith({String? hostname, InfraResolverNetwork? resolverNetwork, }) { return InfraHostnameHost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
+      json.containsKey('resolver_network');}
+InfraHostnameHost copyWith({String? hostname, InfraResolverNetwork? resolverNetwork, }) {return InfraHostnameHost(
   hostname: hostname ?? this.hostname,
   resolverNetwork: resolverNetwork ?? this.resolverNetwork,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraHostnameHost &&
           hostname == other.hostname &&
@@ -44,4 +44,4 @@ InfraHostnameHost copyWith({String? hostname, InfraResolverNetwork? resolverNetw
 
 @override String toString() => 'InfraHostnameHost(hostname: $hostname, resolverNetwork: $resolverNetwork)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_config.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_ui.dart';@immutable final class RealtimekitPreset {const RealtimekitPreset({required this.config, required this.name, required this.ui, this.permissions, });
 
-factory RealtimekitPreset.fromJson(Map<String, dynamic> json) { return RealtimekitPreset(
+factory RealtimekitPreset.fromJson(Map<String, dynamic> json) {return RealtimekitPreset(
   config: RealtimekitPresetConfig.fromJson(json['config'] as Map<String, dynamic>),
   name: json['name'] as String,
   permissions: json['permissions'] != null ? RealtimekitPresetPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   ui: RealtimekitPresetUi.fromJson(json['ui'] as Map<String, dynamic>),
-); }
+);}
 
 final RealtimekitPresetConfig config;
 
@@ -19,21 +19,21 @@ final RealtimekitPresetPermissions? permissions;
 
 final RealtimekitPresetUi ui;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   'name': name,
   if (permissions != null) 'permissions': permissions?.toJson(),
   'ui': ui.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('ui'); } 
-RealtimekitPreset copyWith({RealtimekitPresetConfig? config, String? name, RealtimekitPresetPermissions? Function()? permissions, RealtimekitPresetUi? ui, }) { return RealtimekitPreset(
+      json.containsKey('ui');}
+RealtimekitPreset copyWith({RealtimekitPresetConfig? config, String? name, RealtimekitPresetPermissions? Function()? permissions, RealtimekitPresetUi? ui, }) {return RealtimekitPreset(
   config: config ?? this.config,
   name: name ?? this.name,
   permissions: permissions != null ? permissions() : this.permissions,
   ui: ui ?? this.ui,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPreset &&
           config == other.config &&
@@ -45,4 +45,4 @@ RealtimekitPreset copyWith({RealtimekitPresetConfig? config, String? name, Realt
 
 @override String toString() => 'RealtimekitPreset(config: $config, name: $name, permissions: $permissions, ui: $ui)';
 
- }
+}

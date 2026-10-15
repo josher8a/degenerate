@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages13_messages_content.dart';import 'package:pub_cloudflare/models/messages/messages13_messages_content_variant2.dart';@immutable final class Messages13Messages {const Messages13Messages({this.content, this.role, });
 
-factory Messages13Messages.fromJson(Map<String, dynamic> json) { return Messages13Messages(
+factory Messages13Messages.fromJson(Map<String, dynamic> json) {return Messages13Messages(
   content: json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages13MessagesContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),) : null,
   role: json['role'] as String?,
-); }
+);}
 
 final Messages13MessagesContent? content;
 
 /// The role of the message sender (e.g., 'user', 'assistant', 'system', 'tool').
 final String? role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (content != null) 'content': content?.toJson(),
   'role': ?role,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'role'}.contains(key)); } 
-Messages13Messages copyWith({Messages13MessagesContent? Function()? content, String? Function()? role, }) { return Messages13Messages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content', 'role'}.contains(key));}
+Messages13Messages copyWith({Messages13MessagesContent? Function()? content, String? Function()? role, }) {return Messages13Messages(
   content: content != null ? content() : this.content,
   role: role != null ? role() : this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Messages13Messages &&
           content == other.content &&
@@ -31,4 +31,4 @@ Messages13Messages copyWith({Messages13MessagesContent? Function()? content, Str
 
 @override String toString() => 'Messages13Messages(content: $content, role: $role)';
 
- }
+}

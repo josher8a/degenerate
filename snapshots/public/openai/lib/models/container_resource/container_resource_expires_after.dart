@@ -7,10 +7,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ContainerResourceExpiresAfter {const ContainerResourceExpiresAfter({this.anchor, this.minutes, });
 
-factory ContainerResourceExpiresAfter.fromJson(Map<String, dynamic> json) { return ContainerResourceExpiresAfter(
+factory ContainerResourceExpiresAfter.fromJson(Map<String, dynamic> json) {return ContainerResourceExpiresAfter(
   anchor: json['anchor'] != null ? VectorStoreExpirationAfterAnchor.fromJson(json['anchor'] as String) : null,
   minutes: json['minutes'] != null ? (json['minutes'] as num).toInt() : null,
-); }
+);}
 
 /// The reference point for the expiration.
 final VectorStoreExpirationAfterAnchor? anchor;
@@ -18,15 +18,15 @@ final VectorStoreExpirationAfterAnchor? anchor;
 /// The number of minutes after the anchor before the container expires.
 final int? minutes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (anchor != null) 'anchor': anchor?.toJson(),
   'minutes': ?minutes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'minutes'}.contains(key)); } 
-ContainerResourceExpiresAfter copyWith({VectorStoreExpirationAfterAnchor? Function()? anchor, int? Function()? minutes, }) { return ContainerResourceExpiresAfter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'anchor', 'minutes'}.contains(key));}
+ContainerResourceExpiresAfter copyWith({VectorStoreExpirationAfterAnchor? Function()? anchor, int? Function()? minutes, }) {return ContainerResourceExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   minutes: minutes != null ? minutes() : this.minutes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerResourceExpiresAfter &&
           anchor == other.anchor &&
@@ -36,4 +36,4 @@ ContainerResourceExpiresAfter copyWith({VectorStoreExpirationAfterAnchor? Functi
 
 @override String toString() => 'ContainerResourceExpiresAfter(anchor: $anchor, minutes: $minutes)';
 
- }
+}

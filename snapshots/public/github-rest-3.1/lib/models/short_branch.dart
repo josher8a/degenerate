@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_protection.dart';import 'package:pub_github_rest_3_1/models/short_branch/short_branch_commit.dart';/// Short Branch
 @immutable final class ShortBranch {const ShortBranch({required this.name, required this.commit, required this.protected, this.protection, this.protectionUrl, });
 
-factory ShortBranch.fromJson(Map<String, dynamic> json) { return ShortBranch(
+factory ShortBranch.fromJson(Map<String, dynamic> json) {return ShortBranch(
   name: json['name'] as String,
   commit: ShortBranchCommit.fromJson(json['commit'] as Map<String, dynamic>),
   protected: json['protected'] as bool,
   protection: json['protection'] != null ? BranchProtection.fromJson(json['protection'] as Map<String, dynamic>) : null,
   protectionUrl: json['protection_url'] != null ? Uri.parse(json['protection_url'] as String) : null,
-); }
+);}
 
 final String name;
 
@@ -22,23 +22,23 @@ final BranchProtection? protection;
 
 final Uri? protectionUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'commit': commit.toJson(),
   'protected': protected,
   if (protection != null) 'protection': protection?.toJson(),
   if (protectionUrl != null) 'protection_url': protectionUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('commit') &&
-      json.containsKey('protected') && json['protected'] is bool; } 
-ShortBranch copyWith({String? name, ShortBranchCommit? commit, bool? protected, BranchProtection? Function()? protection, Uri? Function()? protectionUrl, }) { return ShortBranch(
+      json.containsKey('protected') && json['protected'] is bool;}
+ShortBranch copyWith({String? name, ShortBranchCommit? commit, bool? protected, BranchProtection? Function()? protection, Uri? Function()? protectionUrl, }) {return ShortBranch(
   name: name ?? this.name,
   commit: commit ?? this.commit,
   protected: protected ?? this.protected,
   protection: protection != null ? protection() : this.protection,
   protectionUrl: protectionUrl != null ? protectionUrl() : this.protectionUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShortBranch &&
           name == other.name &&
@@ -51,4 +51,4 @@ ShortBranch copyWith({String? name, ShortBranchCommit? commit, bool? protected, 
 
 @override String toString() => 'ShortBranch(name: $name, commit: $commit, protected: $protected, protection: $protection, protectionUrl: $protectionUrl)';
 
- }
+}

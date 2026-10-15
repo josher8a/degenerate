@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRouteLeakEventsResponseResultEvents {const RadarGetBgpRouteLeakEventsResponseResultEvents({required this.countries, required this.detectedTs, required this.finished, required this.id, required this.leakAsn, required this.leakCount, required this.leakSeg, required this.leakType, required this.maxTs, required this.minTs, required this.originCount, required this.peerCount, required this.prefixCount, });
 
-factory RadarGetBgpRouteLeakEventsResponseResultEvents.fromJson(Map<String, dynamic> json) { return RadarGetBgpRouteLeakEventsResponseResultEvents(
+factory RadarGetBgpRouteLeakEventsResponseResultEvents.fromJson(Map<String, dynamic> json) {return RadarGetBgpRouteLeakEventsResponseResultEvents(
   countries: (json['countries'] as List<dynamic>).map((e) => e as String).toList(),
   detectedTs: json['detected_ts'] as String,
   finished: json['finished'] as bool,
@@ -17,7 +17,7 @@ factory RadarGetBgpRouteLeakEventsResponseResultEvents.fromJson(Map<String, dyna
   originCount: (json['origin_count'] as num).toInt(),
   peerCount: (json['peer_count'] as num).toInt(),
   prefixCount: (json['prefix_count'] as num).toInt(),
-); }
+);}
 
 final List<String> countries;
 
@@ -45,7 +45,7 @@ final int peerCount;
 
 final int prefixCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'countries': countries,
   'detected_ts': detectedTs,
   'finished': finished,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'origin_count': originCount,
   'peer_count': peerCount,
   'prefix_count': prefixCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('countries') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('countries') &&
       json.containsKey('detected_ts') && json['detected_ts'] is String &&
       json.containsKey('finished') && json['finished'] is bool &&
       json.containsKey('id') && json['id'] is num &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('min_ts') && json['min_ts'] is String &&
       json.containsKey('origin_count') && json['origin_count'] is num &&
       json.containsKey('peer_count') && json['peer_count'] is num &&
-      json.containsKey('prefix_count') && json['prefix_count'] is num; } 
-RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries, String? detectedTs, bool? finished, int? id, int? leakAsn, int? leakCount, List<int>? leakSeg, int? leakType, String? maxTs, String? minTs, int? originCount, int? peerCount, int? prefixCount, }) { return RadarGetBgpRouteLeakEventsResponseResultEvents(
+      json.containsKey('prefix_count') && json['prefix_count'] is num;}
+RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries, String? detectedTs, bool? finished, int? id, int? leakAsn, int? leakCount, List<int>? leakSeg, int? leakType, String? maxTs, String? minTs, int? originCount, int? peerCount, int? prefixCount, }) {return RadarGetBgpRouteLeakEventsResponseResultEvents(
   countries: countries ?? this.countries,
   detectedTs: detectedTs ?? this.detectedTs,
   finished: finished ?? this.finished,
@@ -87,7 +87,7 @@ RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries
   originCount: originCount ?? this.originCount,
   peerCount: peerCount ?? this.peerCount,
   prefixCount: prefixCount ?? this.prefixCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRouteLeakEventsResponseResultEvents &&
           listEquals(countries, other.countries) &&
@@ -108,4 +108,4 @@ RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries
 
 @override String toString() => 'RadarGetBgpRouteLeakEventsResponseResultEvents(\n  countries: $countries,\n  detectedTs: $detectedTs,\n  finished: $finished,\n  id: $id,\n  leakAsn: $leakAsn,\n  leakCount: $leakCount,\n  leakSeg: $leakSeg,\n  leakType: $leakType,\n  maxTs: $maxTs,\n  minTs: $minTs,\n  originCount: $originCount,\n  peerCount: $peerCount,\n  prefixCount: $prefixCount,\n)';
 
- }
+}

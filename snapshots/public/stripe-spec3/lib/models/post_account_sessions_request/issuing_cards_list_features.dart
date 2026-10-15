@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuingCardsListFeatures {const IssuingCardsListFeatures({this.cardManagement, this.cardSpendDisputeManagement, this.cardholderManagement, this.disableStripeUserAuthentication, this.spendControlManagement, });
 
-factory IssuingCardsListFeatures.fromJson(Map<String, dynamic> json) { return IssuingCardsListFeatures(
+factory IssuingCardsListFeatures.fromJson(Map<String, dynamic> json) {return IssuingCardsListFeatures(
   cardManagement: json['card_management'] as bool?,
   cardSpendDisputeManagement: json['card_spend_dispute_management'] as bool?,
   cardholderManagement: json['cardholder_management'] as bool?,
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool?,
   spendControlManagement: json['spend_control_management'] as bool?,
-); }
+);}
 
 final bool? cardManagement;
 
@@ -21,21 +21,21 @@ final bool? disableStripeUserAuthentication;
 
 final bool? spendControlManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card_management': ?cardManagement,
   'card_spend_dispute_management': ?cardSpendDisputeManagement,
   'cardholder_management': ?cardholderManagement,
   'disable_stripe_user_authentication': ?disableStripeUserAuthentication,
   'spend_control_management': ?spendControlManagement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_management', 'card_spend_dispute_management', 'cardholder_management', 'disable_stripe_user_authentication', 'spend_control_management'}.contains(key)); } 
-IssuingCardsListFeatures copyWith({bool? Function()? cardManagement, bool? Function()? cardSpendDisputeManagement, bool? Function()? cardholderManagement, bool? Function()? disableStripeUserAuthentication, bool? Function()? spendControlManagement, }) { return IssuingCardsListFeatures(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'card_management', 'card_spend_dispute_management', 'cardholder_management', 'disable_stripe_user_authentication', 'spend_control_management'}.contains(key));}
+IssuingCardsListFeatures copyWith({bool? Function()? cardManagement, bool? Function()? cardSpendDisputeManagement, bool? Function()? cardholderManagement, bool? Function()? disableStripeUserAuthentication, bool? Function()? spendControlManagement, }) {return IssuingCardsListFeatures(
   cardManagement: cardManagement != null ? cardManagement() : this.cardManagement,
   cardSpendDisputeManagement: cardSpendDisputeManagement != null ? cardSpendDisputeManagement() : this.cardSpendDisputeManagement,
   cardholderManagement: cardholderManagement != null ? cardholderManagement() : this.cardholderManagement,
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   spendControlManagement: spendControlManagement != null ? spendControlManagement() : this.spendControlManagement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardsListFeatures &&
           cardManagement == other.cardManagement &&
@@ -48,4 +48,4 @@ IssuingCardsListFeatures copyWith({bool? Function()? cardManagement, bool? Funct
 
 @override String toString() => 'IssuingCardsListFeatures(cardManagement: $cardManagement, cardSpendDisputeManagement: $cardSpendDisputeManagement, cardholderManagement: $cardholderManagement, disableStripeUserAuthentication: $disableStripeUserAuthentication, spendControlManagement: $spendControlManagement)';
 
- }
+}

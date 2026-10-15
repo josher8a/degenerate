@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';sealed class FunctionCallStatus {const FunctionCallStatus();
 
-factory FunctionCallStatus.fromJson(String json) { return switch (json) {
+factory FunctionCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => FunctionCallStatus$Unknown(json),
-}; }
+};}
 
 static const FunctionCallStatus inProgress = FunctionCallStatus$inProgress._();
 
@@ -19,33 +19,33 @@ static const FunctionCallStatus incomplete = FunctionCallStatus$incomplete._();
 static const List<FunctionCallStatus> values = [inProgress, completed, incomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'incomplete' => 'incomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionCallStatus$Unknown; } 
+bool get isUnknown {return this is FunctionCallStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) {return switch (this) {
       FunctionCallStatus$inProgress() => inProgress(),
       FunctionCallStatus$completed() => completed(),
       FunctionCallStatus$incomplete() => incomplete(),
       FunctionCallStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) {return switch (this) {
       FunctionCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       FunctionCallStatus$completed() => completed != null ? completed() : orElse(value),
       FunctionCallStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       FunctionCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FunctionCallStatus($value)';
 
- }
+}
 @immutable final class FunctionCallStatus$inProgress extends FunctionCallStatus {const FunctionCallStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class FunctionCallStatus$completed extends FunctionCallStatus {const FunctionCallStatus$completed._();
 
 @override String get value => 'completed';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class FunctionCallStatus$incomplete extends FunctionCallStatus {const FunctionCallStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class FunctionCallStatus$Unknown extends FunctionCallStatus {const FunctionCallStatus$Unknown(this.value);
 
 @override final String value;
@@ -82,10 +82,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class ToolSearchCall {const ToolSearchCall({required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.type = 'tool_search_call', this.createdBy, });
+}
+@immutable final class ToolSearchCall {const ToolSearchCall({required this.type, required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.createdBy, });
 
-factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCall(
+factory ToolSearchCall.fromJson(Map<String, dynamic> json) {return ToolSearchCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String?,
@@ -93,7 +93,7 @@ factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCa
   arguments: json['arguments'],
   status: FunctionCallStatus.fromJson(json['status'] as String),
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the item. Always `tool_search_call`.
 final String type;
@@ -116,7 +116,7 @@ final FunctionCallStatus status;
 /// The identifier of the actor that created the item.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -124,14 +124,14 @@ Map<String, dynamic> toJson() { return {
   'arguments': arguments,
   'status': status.toJson(),
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('call_id') && json['call_id'] is String &&
+      json.containsKey('call_id') && (json['call_id'] == null || json['call_id'] is String) &&
       json.containsKey('execution') &&
       json.containsKey('arguments') &&
-      json.containsKey('status'); } 
-ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ToolSearchCall(
+      json.containsKey('status');}
+ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) {return ToolSearchCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId != null ? callId() : this.callId,
@@ -139,7 +139,7 @@ ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, T
   arguments: arguments != null ? arguments() : this.arguments,
   status: status ?? this.status,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolSearchCall &&
           type == other.type &&
@@ -154,4 +154,4 @@ ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, T
 
 @override String toString() => 'ToolSearchCall(type: $type, id: $id, callId: $callId, execution: $execution, arguments: $arguments, status: $status, createdBy: $createdBy)';
 
- }
+}

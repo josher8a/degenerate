@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_16_allof_unions/models/store_order/actions.dart';import 'package:spec_16_allof_unions/models/store_order/aliased.dart';import 'package:spec_16_allof_unions/models/store_order/control.dart';import 'package:spec_16_allof_unions/models/store_order/invite.dart';import 'package:spec_16_allof_unions/models/store_order/kinds.dart';import 'package:spec_16_allof_unions/models/store_order/mapped_kinds.dart';import 'package:spec_16_allof_unions/models/store_order/pets.dart';import 'package:spec_16_allof_unions/models/store_order/pets_update.dart';import 'package:spec_16_allof_unions/models/store_order/pets_update_tags.dart';import 'package:spec_16_allof_unions/models/store_order/remove.dart';import 'package:spec_16_allof_unions/models/store_order/singles_create.dart';import 'package:spec_16_allof_unions/models/store_order/team.dart';import 'package:spec_16_allof_unions/models/tracked_action/tracked_action_create.dart';import 'package:spec_16_allof_unions/models/tracked_action/tracked_action_delete.dart';@immutable final class StoreOrder {const StoreOrder({this.actions, this.singles, this.aliased, this.pets, this.team, this.kinds, this.mappedKinds, this.control, });
 
-factory StoreOrder.fromJson(Map<String, dynamic> json) { return StoreOrder(
+factory StoreOrder.fromJson(Map<String, dynamic> json) {return StoreOrder(
   actions: (json['actions'] as List<dynamic>?)?.map((e) => switch (e) {
   final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
   final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
@@ -28,7 +28,7 @@ factory StoreOrder.fromJson(Map<String, dynamic> json) { return StoreOrder(
   kinds: (json['kinds'] as List<dynamic>?)?.map((e) => Kinds.fromJson(e as Map<String, dynamic>)).toList(),
   mappedKinds: (json['mappedKinds'] as List<dynamic>?)?.map((e) => MappedKinds.fromJson(e as Map<String, dynamic>)).toList(),
   control: (json['control'] as List<dynamic>?)?.map((e) => Control.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<Actions>? actions;
 
@@ -46,7 +46,7 @@ final List<MappedKinds>? mappedKinds;
 
 final List<Control>? control;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actions != null) 'actions': actions?.map((e) => e.toJson()).toList(),
   if (singles != null) 'singles': singles?.map((e) => e.toJson()).toList(),
   if (aliased != null) 'aliased': aliased?.map((e) => e.toJson()).toList(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (kinds != null) 'kinds': kinds?.map((e) => e.toJson()).toList(),
   if (mappedKinds != null) 'mappedKinds': mappedKinds?.map((e) => e.toJson()).toList(),
   if (control != null) 'control': control?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'singles', 'aliased', 'pets', 'team', 'kinds', 'mappedKinds', 'control'}.contains(key)); } 
-StoreOrder copyWith({List<Actions>? Function()? actions, List<SinglesCreate>? Function()? singles, List<Aliased>? Function()? aliased, List<Pets>? Function()? pets, List<Team>? Function()? team, List<Kinds>? Function()? kinds, List<MappedKinds>? Function()? mappedKinds, List<Control>? Function()? control, }) { return StoreOrder(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'singles', 'aliased', 'pets', 'team', 'kinds', 'mappedKinds', 'control'}.contains(key));}
+StoreOrder copyWith({List<Actions>? Function()? actions, List<SinglesCreate>? Function()? singles, List<Aliased>? Function()? aliased, List<Pets>? Function()? pets, List<Team>? Function()? team, List<Kinds>? Function()? kinds, List<MappedKinds>? Function()? mappedKinds, List<Control>? Function()? control, }) {return StoreOrder(
   actions: actions != null ? actions() : this.actions,
   singles: singles != null ? singles() : this.singles,
   aliased: aliased != null ? aliased() : this.aliased,
@@ -66,7 +66,7 @@ StoreOrder copyWith({List<Actions>? Function()? actions, List<SinglesCreate>? Fu
   kinds: kinds != null ? kinds() : this.kinds,
   mappedKinds: mappedKinds != null ? mappedKinds() : this.mappedKinds,
   control: control != null ? control() : this.control,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StoreOrder &&
           listEquals(actions, other.actions) &&
@@ -82,4 +82,4 @@ StoreOrder copyWith({List<Actions>? Function()? actions, List<SinglesCreate>? Fu
 
 @override String toString() => 'StoreOrder(actions: $actions, singles: $singles, aliased: $aliased, pets: $pets, team: $team, kinds: $kinds, mappedKinds: $mappedKinds, control: $control)';
 
- }
+}

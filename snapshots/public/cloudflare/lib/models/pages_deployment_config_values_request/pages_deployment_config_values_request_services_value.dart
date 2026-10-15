@@ -2,16 +2,16 @@
 // Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: Services > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Service binding.
-@immutable final class PagesDeploymentConfigValuesRequestServicesValue {const PagesDeploymentConfigValuesRequestServicesValue({required this.service, this.entrypoint, this.environment, });
+@immutable final class PagesDeploymentConfigValuesRequestServicesValue {const PagesDeploymentConfigValuesRequestServicesValue({required this.service, this.entrypoint = const Omittable.absent(), this.environment, });
 
-factory PagesDeploymentConfigValuesRequestServicesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestServicesValue(
-  entrypoint: json['entrypoint'] as String?,
+factory PagesDeploymentConfigValuesRequestServicesValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesRequestServicesValue(
+  entrypoint: json.containsKey('entrypoint') ? Omittable(json['entrypoint'] as String?) : const Omittable.absent(),
   environment: json['environment'] as String?,
   service: json['service'] as String,
-); }
+);}
 
 /// The entrypoint to bind to.
-final String? entrypoint;
+final Omittable<String?> entrypoint;
 
 /// The Service environment.
 final String? environment;
@@ -19,17 +19,17 @@ final String? environment;
 /// The Service name.
 final String service;
 
-Map<String, dynamic> toJson() { return {
-  'entrypoint': ?entrypoint,
+Map<String, dynamic> toJson() {return {
+  if (entrypoint.isPresent) 'entrypoint': entrypoint.value,
   'environment': ?environment,
   'service': service,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('service') && json['service'] is String; } 
-PagesDeploymentConfigValuesRequestServicesValue copyWith({String? Function()? entrypoint, String? Function()? environment, String? service, }) { return PagesDeploymentConfigValuesRequestServicesValue(
-  entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('service') && json['service'] is String;}
+PagesDeploymentConfigValuesRequestServicesValue copyWith({Omittable<String?>? entrypoint, String? Function()? environment, String? service, }) {return PagesDeploymentConfigValuesRequestServicesValue(
+  entrypoint: entrypoint ?? this.entrypoint,
   environment: environment != null ? environment() : this.environment,
   service: service ?? this.service,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestServicesValue &&
           entrypoint == other.entrypoint &&
@@ -40,4 +40,4 @@ PagesDeploymentConfigValuesRequestServicesValue copyWith({String? Function()? en
 
 @override String toString() => 'PagesDeploymentConfigValuesRequestServicesValue(entrypoint: $entrypoint, environment: $environment, service: $service)';
 
- }
+}

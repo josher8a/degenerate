@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
 sealed class EnabledRepositories {const EnabledRepositories();
 
-factory EnabledRepositories.fromJson(String json) { return switch (json) {
+factory EnabledRepositories.fromJson(String json) {return switch (json) {
   'all' => all,
   'none' => none,
   'selected' => selected,
   _ => EnabledRepositories$Unknown(json),
-}; }
+};}
 
 static const EnabledRepositories all = EnabledRepositories$all._();
 
@@ -20,33 +20,33 @@ static const EnabledRepositories selected = EnabledRepositories$selected._();
 static const List<EnabledRepositories> values = [all, none, selected];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'all' => 'all',
   'none' => 'none',
   'selected' => 'selected',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnabledRepositories$Unknown; } 
+bool get isUnknown {return this is EnabledRepositories$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() all, required W Function() none, required W Function() selected, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() all, required W Function() none, required W Function() selected, required W Function(String value) $unknown, }) {return switch (this) {
       EnabledRepositories$all() => all(),
       EnabledRepositories$none() => none(),
       EnabledRepositories$selected() => selected(),
       EnabledRepositories$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? none, W Function()? selected, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? none, W Function()? selected, W Function(String value)? $unknown, }) {return switch (this) {
       EnabledRepositories$all() => all != null ? all() : orElse(value),
       EnabledRepositories$none() => none != null ? none() : orElse(value),
       EnabledRepositories$selected() => selected != null ? selected() : orElse(value),
       EnabledRepositories$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnabledRepositories($value)';
 
- }
+}
 @immutable final class EnabledRepositories$all extends EnabledRepositories {const EnabledRepositories$all._();
 
 @override String get value => 'all';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class EnabledRepositories$none extends EnabledRepositories {const EnabledRepositories$none._();
 
 @override String get value => 'none';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class EnabledRepositories$selected extends EnabledRepositories {const EnabledRepositories$selected._();
 
 @override String get value => 'selected';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'selected'.hashCode;
 
- }
+}
 @immutable final class EnabledRepositories$Unknown extends EnabledRepositories {const EnabledRepositories$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -1,47 +1,47 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Shape (inline: Circle)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShapeCircle {const ShapeCircle({required this.kind, required this.radius, required this.id, this.color, this.createdAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShapeCircle {const ShapeCircle({required this.kind, required this.radius, required this.id, this.color = const Omittable.absent(), this.createdAt, });
 
-factory ShapeCircle.fromJson(Map<String, dynamic> json) { return ShapeCircle(
+factory ShapeCircle.fromJson(Map<String, dynamic> json) {return ShapeCircle(
   kind: json['kind'],
   radius: (json['radius'] as num).toDouble(),
-  color: json['color'] as String?,
+  color: json.containsKey('color') ? Omittable(json['color'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : null,
-); }
+);}
 
 final dynamic kind;
 
 final double radius;
 
-final String? color;
+final Omittable<String?> color;
 
 final String id;
 
 final DateTime? createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind,
   'radius': radius,
-  'color': ?color,
+  if (color.isPresent) 'color': color.value,
   'id': id,
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
       json.containsKey('radius') && json['radius'] is num &&
-      json.containsKey('id') && json['id'] is String; } 
+      json.containsKey('id') && json['id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (radius <= 0) { errors.add('radius: must be > 0'); }
-return errors; } 
-ShapeCircle copyWith({dynamic Function()? kind, double? radius, String? Function()? color, String? id, DateTime? Function()? createdAt, }) { return ShapeCircle(
+return errors;}
+ShapeCircle copyWith({dynamic Function()? kind, double? radius, Omittable<String?>? color, String? id, DateTime? Function()? createdAt, }) {return ShapeCircle(
   kind: kind != null ? kind() : this.kind,
   radius: radius ?? this.radius,
-  color: color != null ? color() : this.color,
+  color: color ?? this.color,
   id: id ?? this.id,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShapeCircle &&
           kind == other.kind &&
@@ -54,4 +54,4 @@ ShapeCircle copyWith({dynamic Function()? kind, double? radius, String? Function
 
 @override String toString() => 'ShapeCircle(kind: $kind, radius: $radius, color: $color, id: $id, createdAt: $createdAt)';
 
- }
+}

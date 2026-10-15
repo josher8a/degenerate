@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account_ownership/owners.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject();
 
-factory FinancialConnectionsAccountOwnershipObject.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountOwnershipObject.fromJson(String json) {return switch (json) {
   'financial_connections.account_ownership' => financialConnectionsAccountOwnership,
   _ => FinancialConnectionsAccountOwnershipObject$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountOwnershipObject financialConnectionsAccountOwnership = FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership._();
 
 static const List<FinancialConnectionsAccountOwnershipObject> values = [financialConnectionsAccountOwnership];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'financial_connections.account_ownership' => 'financialConnectionsAccountOwnership',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsAccountOwnershipObject$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsAccountOwnershipObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() financialConnectionsAccountOwnership, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() financialConnectionsAccountOwnership, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership() => financialConnectionsAccountOwnership(),
       FinancialConnectionsAccountOwnershipObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsAccountOwnership, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsAccountOwnership, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership() => financialConnectionsAccountOwnership != null ? financialConnectionsAccountOwnership() : orElse(value),
       FinancialConnectionsAccountOwnershipObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsAccountOwnershipObject($value)';
 
- }
+}
 @immutable final class FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership extends FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership._();
 
 @override String get value => 'financial_connections.account_ownership';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? financia
 
 @override int get hashCode => 'financial_connections.account_ownership'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountOwnershipObject$Unknown extends FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? financia
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Describes a snapshot of the owners of an account at a particular point in time.
 @immutable final class FinancialConnectionsAccountOwnership {const FinancialConnectionsAccountOwnership({required this.created, required this.id, required this.object, required this.owners, });
 
-factory FinancialConnectionsAccountOwnership.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccountOwnership(
+factory FinancialConnectionsAccountOwnership.fromJson(Map<String, dynamic> json) {return FinancialConnectionsAccountOwnership(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   object: FinancialConnectionsAccountOwnershipObject.fromJson(json['object'] as String),
   owners: Owners.fromJson(json['owners'] as Map<String, dynamic>),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -76,26 +76,26 @@ final FinancialConnectionsAccountOwnershipObject object;
 /// A paginated list of owners for this account.
 final Owners owners;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'id': id,
   'object': object.toJson(),
   'owners': owners.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('owners'); } 
+      json.containsKey('owners');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-FinancialConnectionsAccountOwnership copyWith({int? created, String? id, FinancialConnectionsAccountOwnershipObject? object, Owners? owners, }) { return FinancialConnectionsAccountOwnership(
+return errors;}
+FinancialConnectionsAccountOwnership copyWith({int? created, String? id, FinancialConnectionsAccountOwnershipObject? object, Owners? owners, }) {return FinancialConnectionsAccountOwnership(
   created: created ?? this.created,
   id: id ?? this.id,
   object: object ?? this.object,
   owners: owners ?? this.owners,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsAccountOwnership &&
           created == other.created &&
@@ -107,4 +107,4 @@ FinancialConnectionsAccountOwnership copyWith({int? created, String? id, Financi
 
 @override String toString() => 'FinancialConnectionsAccountOwnership(created: $created, id: $id, object: $object, owners: $owners)';
 
- }
+}

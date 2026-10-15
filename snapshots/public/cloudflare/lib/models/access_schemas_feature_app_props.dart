@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_components_schemas_domain.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';/// The application type.
 sealed class AccessComponentsSchemasType {const AccessComponentsSchemasType();
 
-factory AccessComponentsSchemasType.fromJson(String json) { return switch (json) {
+factory AccessComponentsSchemasType.fromJson(String json) {return switch (json) {
   'self_hosted' => selfHosted,
   'saas' => saas,
   'ssh' => ssh,
@@ -15,7 +15,7 @@ factory AccessComponentsSchemasType.fromJson(String json) { return switch (json)
   'bookmark' => bookmark,
   'dash_sso' => dashSso,
   _ => AccessComponentsSchemasType$Unknown(json),
-}; }
+};}
 
 static const AccessComponentsSchemasType selfHosted = AccessComponentsSchemasType$selfHosted._();
 
@@ -38,9 +38,9 @@ static const AccessComponentsSchemasType dashSso = AccessComponentsSchemasType$d
 static const List<AccessComponentsSchemasType> values = [selfHosted, saas, ssh, vnc, appLauncher, warp, biso, bookmark, dashSso];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'self_hosted' => 'selfHosted',
   'saas' => 'saas',
   'ssh' => 'ssh',
@@ -51,11 +51,11 @@ String get name { return switch (value) {
   'bookmark' => 'bookmark',
   'dash_sso' => 'dashSso',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccessComponentsSchemasType$Unknown; } 
+bool get isUnknown {return this is AccessComponentsSchemasType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() selfHosted, required W Function() saas, required W Function() ssh, required W Function() vnc, required W Function() appLauncher, required W Function() warp, required W Function() biso, required W Function() bookmark, required W Function() dashSso, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() selfHosted, required W Function() saas, required W Function() ssh, required W Function() vnc, required W Function() appLauncher, required W Function() warp, required W Function() biso, required W Function() bookmark, required W Function() dashSso, required W Function(String value) $unknown, }) {return switch (this) {
       AccessComponentsSchemasType$selfHosted() => selfHosted(),
       AccessComponentsSchemasType$saas() => saas(),
       AccessComponentsSchemasType$ssh() => ssh(),
@@ -66,9 +66,9 @@ W when<W>({required W Function() selfHosted, required W Function() saas, require
       AccessComponentsSchemasType$bookmark() => bookmark(),
       AccessComponentsSchemasType$dashSso() => dashSso(),
       AccessComponentsSchemasType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHosted, W Function()? saas, W Function()? ssh, W Function()? vnc, W Function()? appLauncher, W Function()? warp, W Function()? biso, W Function()? bookmark, W Function()? dashSso, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHosted, W Function()? saas, W Function()? ssh, W Function()? vnc, W Function()? appLauncher, W Function()? warp, W Function()? biso, W Function()? bookmark, W Function()? dashSso, W Function(String value)? $unknown, }) {return switch (this) {
       AccessComponentsSchemasType$selfHosted() => selfHosted != null ? selfHosted() : orElse(value),
       AccessComponentsSchemasType$saas() => saas != null ? saas() : orElse(value),
       AccessComponentsSchemasType$ssh() => ssh != null ? ssh() : orElse(value),
@@ -79,10 +79,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
       AccessComponentsSchemasType$bookmark() => bookmark != null ? bookmark() : orElse(value),
       AccessComponentsSchemasType$dashSso() => dashSso != null ? dashSso() : orElse(value),
       AccessComponentsSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccessComponentsSchemasType($value)';
 
- }
+}
 @immutable final class AccessComponentsSchemasType$selfHosted extends AccessComponentsSchemasType {const AccessComponentsSchemasType$selfHosted._();
 
 @override String get value => 'self_hosted';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'self_hosted'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$saas extends AccessComponentsSchemasType {const AccessComponentsSchemasType$saas._();
 
 @override String get value => 'saas';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'saas'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$ssh extends AccessComponentsSchemasType {const AccessComponentsSchemasType$ssh._();
 
 @override String get value => 'ssh';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'ssh'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$vnc extends AccessComponentsSchemasType {const AccessComponentsSchemasType$vnc._();
 
 @override String get value => 'vnc';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'vnc'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$appLauncher extends AccessComponentsSchemasType {const AccessComponentsSchemasType$appLauncher._();
 
 @override String get value => 'app_launcher';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'app_launcher'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$warp extends AccessComponentsSchemasType {const AccessComponentsSchemasType$warp._();
 
 @override String get value => 'warp';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'warp'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$biso extends AccessComponentsSchemasType {const AccessComponentsSchemasType$biso._();
 
 @override String get value => 'biso';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'biso'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$bookmark extends AccessComponentsSchemasType {const AccessComponentsSchemasType$bookmark._();
 
 @override String get value => 'bookmark';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'bookmark'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$dashSso extends AccessComponentsSchemasType {const AccessComponentsSchemasType$dashSso._();
 
 @override String get value => 'dash_sso';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'dash_sso'.hashCode;
 
- }
+}
 @immutable final class AccessComponentsSchemasType$Unknown extends AccessComponentsSchemasType {const AccessComponentsSchemasType$Unknown(this.value);
 
 @override final String value;
@@ -173,17 +173,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccessSchemasFeatureAppProps {const AccessSchemasFeatureAppProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });
 
-factory AccessSchemasFeatureAppProps.fromJson(Map<String, dynamic> json) { return AccessSchemasFeatureAppProps(
+factory AccessSchemasFeatureAppProps.fromJson(Map<String, dynamic> json) {return AccessSchemasFeatureAppProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
   domain: json['domain'] != null ? AccessComponentsSchemasDomain.fromJson(json['domain'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   sessionDuration: json['session_duration'] != null ? AccessAppsComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessComponentsSchemasType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
@@ -203,23 +203,23 @@ final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 /// The application type.
 final AccessComponentsSchemasType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
   if (domain != null) 'domain': domain?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessComponentsSchemasType? type, }) { return AccessSchemasFeatureAppProps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessComponentsSchemasType? type, }) {return AccessSchemasFeatureAppProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   domain: domain != null ? domain() : this.domain,
   name: name != null ? name() : this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasFeatureAppProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -233,4 +233,4 @@ AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, Ac
 
 @override String toString() => 'AccessSchemasFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)';
 
- }
+}

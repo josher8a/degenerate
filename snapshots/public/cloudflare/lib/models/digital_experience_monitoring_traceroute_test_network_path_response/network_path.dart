@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestNetworkPathResponse (inline: NetworkPath)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/network_path_slots.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/sampling.dart';@immutable final class NetworkPath {const NetworkPath({required this.slots, this.sampling, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/network_path_slots.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/sampling.dart';@immutable final class NetworkPath {const NetworkPath({required this.slots, this.sampling = const Omittable.absent(), });
 
-factory NetworkPath.fromJson(Map<String, dynamic> json) { return NetworkPath(
-  sampling: json['sampling'] != null ? Sampling.fromJson(json['sampling'] as Map<String, dynamic>) : null,
+factory NetworkPath.fromJson(Map<String, dynamic> json) {return NetworkPath(
+  sampling: json.containsKey('sampling') ? Omittable(json['sampling'] != null ? Sampling.fromJson(json['sampling'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   slots: (json['slots'] as List<dynamic>).map((e) => NetworkPathSlots.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Specifies the sampling applied, if any, to the slots response. When sampled, results shown represent the first test run to the start of each sampling interval.
-final Sampling? sampling;
+final Omittable<Sampling?> sampling;
 
 final List<NetworkPathSlots> slots;
 
-Map<String, dynamic> toJson() { return {
-  if (sampling != null) 'sampling': sampling?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (sampling.isPresent) 'sampling': sampling.value?.toJson(),
   'slots': slots.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('slots'); } 
-NetworkPath copyWith({Sampling? Function()? sampling, List<NetworkPathSlots>? slots, }) { return NetworkPath(
-  sampling: sampling != null ? sampling() : this.sampling,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('slots');}
+NetworkPath copyWith({Omittable<Sampling?>? sampling, List<NetworkPathSlots>? slots, }) {return NetworkPath(
+  sampling: sampling ?? this.sampling,
   slots: slots ?? this.slots,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkPath &&
           sampling == other.sampling &&
@@ -31,4 +31,4 @@ NetworkPath copyWith({Sampling? Function()? sampling, List<NetworkPathSlots>? sl
 
 @override String toString() => 'NetworkPath(sampling: $sampling, slots: $slots)';
 
- }
+}

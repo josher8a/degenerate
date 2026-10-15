@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2();
 
-factory VoiceIdsSharedVariant2.fromJson(String json) { return switch (json) {
+factory VoiceIdsSharedVariant2.fromJson(String json) {return switch (json) {
   'alloy' => alloy,
   'ash' => ash,
   'ballad' => ballad,
@@ -15,7 +15,7 @@ factory VoiceIdsSharedVariant2.fromJson(String json) { return switch (json) {
   'marin' => marin,
   'cedar' => cedar,
   _ => VoiceIdsSharedVariant2$Unknown(json),
-}; }
+};}
 
 static const VoiceIdsSharedVariant2 alloy = VoiceIdsSharedVariant2$alloy._();
 
@@ -40,9 +40,9 @@ static const VoiceIdsSharedVariant2 cedar = VoiceIdsSharedVariant2$cedar._();
 static const List<VoiceIdsSharedVariant2> values = [alloy, ash, ballad, coral, echo, sage, shimmer, verse, marin, cedar];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'alloy' => 'alloy',
   'ash' => 'ash',
   'ballad' => 'ballad',
@@ -54,11 +54,11 @@ String get name { return switch (value) {
   'marin' => 'marin',
   'cedar' => 'cedar',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VoiceIdsSharedVariant2$Unknown; } 
+bool get isUnknown {return this is VoiceIdsSharedVariant2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() alloy, required W Function() ash, required W Function() ballad, required W Function() coral, required W Function() echo, required W Function() sage, required W Function() shimmer, required W Function() verse, required W Function() marin, required W Function() cedar, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() alloy, required W Function() ash, required W Function() ballad, required W Function() coral, required W Function() echo, required W Function() sage, required W Function() shimmer, required W Function() verse, required W Function() marin, required W Function() cedar, required W Function(String value) $unknown, }) {return switch (this) {
       VoiceIdsSharedVariant2$alloy() => alloy(),
       VoiceIdsSharedVariant2$ash() => ash(),
       VoiceIdsSharedVariant2$ballad() => ballad(),
@@ -70,9 +70,9 @@ W when<W>({required W Function() alloy, required W Function() ash, required W Fu
       VoiceIdsSharedVariant2$marin() => marin(),
       VoiceIdsSharedVariant2$cedar() => cedar(),
       VoiceIdsSharedVariant2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W Function()? ash, W Function()? ballad, W Function()? coral, W Function()? echo, W Function()? sage, W Function()? shimmer, W Function()? verse, W Function()? marin, W Function()? cedar, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W Function()? ash, W Function()? ballad, W Function()? coral, W Function()? echo, W Function()? sage, W Function()? shimmer, W Function()? verse, W Function()? marin, W Function()? cedar, W Function(String value)? $unknown, }) {return switch (this) {
       VoiceIdsSharedVariant2$alloy() => alloy != null ? alloy() : orElse(value),
       VoiceIdsSharedVariant2$ash() => ash != null ? ash() : orElse(value),
       VoiceIdsSharedVariant2$ballad() => ballad != null ? ballad() : orElse(value),
@@ -84,10 +84,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
       VoiceIdsSharedVariant2$marin() => marin != null ? marin() : orElse(value),
       VoiceIdsSharedVariant2$cedar() => cedar != null ? cedar() : orElse(value),
       VoiceIdsSharedVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VoiceIdsSharedVariant2($value)';
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$alloy extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$alloy._();
 
 @override String get value => 'alloy';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'alloy'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$ash extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$ash._();
 
 @override String get value => 'ash';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'ash'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$ballad extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$ballad._();
 
 @override String get value => 'ballad';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'ballad'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$coral extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$coral._();
 
 @override String get value => 'coral';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'coral'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$echo extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$echo._();
 
 @override String get value => 'echo';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'echo'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$sage extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$sage._();
 
 @override String get value => 'sage';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'sage'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$shimmer extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$shimmer._();
 
 @override String get value => 'shimmer';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'shimmer'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$verse extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$verse._();
 
 @override String get value => 'verse';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'verse'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$marin extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$marin._();
 
 @override String get value => 'marin';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'marin'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$cedar extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$cedar._();
 
 @override String get value => 'cedar';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => 'cedar'.hashCode;
 
- }
+}
 @immutable final class VoiceIdsSharedVariant2$Unknown extends VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2$Unknown(this.value);
 
 @override final String value;
@@ -187,8 +187,45 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W
 
 @override int get hashCode => value.hashCode;
 
- }
-/// Variants:
-/// - `.a` → [String]
-/// - `.b` → [VoiceIdsSharedVariant2]
-typedef VoiceIdsShared = OneOf2<String,VoiceIdsSharedVariant2>;
+}
+@immutable final class VoiceIdsShared {/// A value built from one or more typed views (at least one must be present).
+const VoiceIdsShared({this.string = const Omittable.absent(), this.voiceIdsSharedVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const VoiceIdsShared._({required this.rawValue, required this.string, required this.voiceIdsSharedVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory VoiceIdsShared.fromJson(Object? json) {return VoiceIdsShared._(
+  rawValue: Omittable(json),
+  string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  voiceIdsSharedVariant2: parseAnyOfVariant<VoiceIdsSharedVariant2>(json, (value) => VoiceIdsSharedVariant2.fromJson(value! as String)),
+);}
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `String`, when it matches.
+final Omittable<String> string;
+
+/// The payload decoded as `VoiceIdsSharedVariant2`, when it matches.
+final Omittable<VoiceIdsSharedVariant2> voiceIdsSharedVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => string.isPresent || voiceIdsSharedVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+    if (voiceIdsSharedVariant2.isPresent) voiceIdsSharedVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is VoiceIdsShared && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'VoiceIdsShared(${toJson()})';
+
+}

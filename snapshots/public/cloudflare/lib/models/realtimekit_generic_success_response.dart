@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimekitGenericSuccessResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitGenericSuccessResponse {const RealtimekitGenericSuccessResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitGenericSuccessResponse {const RealtimekitGenericSuccessResponse({required this.success, this.data, });
 
-factory RealtimekitGenericSuccessResponse.fromJson(Map<String, dynamic> json) { return RealtimekitGenericSuccessResponse(
+factory RealtimekitGenericSuccessResponse.fromJson(Map<String, dynamic> json) {return RealtimekitGenericSuccessResponse(
   data: json['data'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 /// Data returned by the operation
 final Map<String,dynamic>? data;
@@ -14,15 +14,15 @@ final Map<String,dynamic>? data;
 /// Success status of the operation
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': ?data,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-RealtimekitGenericSuccessResponse copyWith({Map<String, dynamic>? Function()? data, bool? success, }) { return RealtimekitGenericSuccessResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool;}
+RealtimekitGenericSuccessResponse copyWith({Map<String, dynamic>? Function()? data, bool? success, }) {return RealtimekitGenericSuccessResponse(
   data: data != null ? data() : this.data,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitGenericSuccessResponse &&
           data == other.data &&
@@ -32,4 +32,4 @@ RealtimekitGenericSuccessResponse copyWith({Map<String, dynamic>? Function()? da
 
 @override String toString() => 'RealtimekitGenericSuccessResponse(data: $data, success: $success)';
 
- }
+}

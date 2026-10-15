@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_dependabot_alert_dismissed/webhook_dependabot_alert_dismissed_action.dart';@immutable final class WebhookDependabotAlertDismissed {const WebhookDependabotAlertDismissed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
-factory WebhookDependabotAlertDismissed.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertDismissed(
+factory WebhookDependabotAlertDismissed.fromJson(Map<String, dynamic> json) {return WebhookDependabotAlertDismissed(
   action: WebhookDependabotAlertDismissedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookDependabotAlertDismissed.fromJson(Map<String, dynamic> json) { re
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDependabotAlertDismissedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDependabotAlertDismissed copyWith({WebhookDependabotAlertDismissedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertDismissed(
+      json.containsKey('sender');}
+WebhookDependabotAlertDismissed copyWith({WebhookDependabotAlertDismissedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDependabotAlertDismissed(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -48,7 +48,7 @@ WebhookDependabotAlertDismissed copyWith({WebhookDependabotAlertDismissedAction?
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertDismissed &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookDependabotAlertDismissed copyWith({WebhookDependabotAlertDismissedAction?
 
 @override String toString() => 'WebhookDependabotAlertDismissed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
 
- }
+}

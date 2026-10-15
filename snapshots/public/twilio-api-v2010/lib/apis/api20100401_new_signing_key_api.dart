@@ -12,7 +12,7 @@ final class Api20100401NewSigningKeyApi with ApiExecutor {const Api20100401NewSi
 /// Create a new Signing Key for the account making the request.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SigningKeys.json`
-Future<ApiResult<AccountNewSigningKey, Never>> createNewSigningKey({required String accountSid, CreateNewSigningKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountNewSigningKey, Never>> createNewSigningKey({required String accountSid, CreateNewSigningKeyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -26,11 +26,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountNewSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

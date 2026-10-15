@@ -15,7 +15,7 @@ final class DlpIntegrationEntriesApi with ApiExecutor {const DlpIntegrationEntri
 /// This is needed for our generated terraform API.
 ///
 /// `POST /accounts/{account_id}/dlp/entries/integration`
-Future<ApiResult<DlpIntegrationEntry?, DlpDatasetsCreateError>> dlpEntriesCreateIntegrationEntry({required String accountId, required DlpNewPredefinedEntry body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpIntegrationEntry?, DlpDatasetsCreateError>> dlpEntriesCreateIntegrationEntry({required String accountId, required DlpNewPredefinedEntry body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,7 +26,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -34,13 +34,13 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Update integration entry
 ///
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/integration/{entry_id}`
-Future<ApiResult<DlpIntegrationEntry?, DlpDatasetsCreateError>> dlpEntriesUpdateIntegrationEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpIntegrationEntry?, DlpDatasetsCreateError>> dlpEntriesUpdateIntegrationEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,7 +51,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -59,13 +59,13 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Delete integration entry
 ///
 /// This is a no-op as integration entires can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/integration/{entry_id}`
-Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpEntriesDeleteIntegrationEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpEntriesDeleteIntegrationEntry({required String accountId, required String entryId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -74,7 +74,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -82,5 +82,5 @@ return execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
- }
+}
+}

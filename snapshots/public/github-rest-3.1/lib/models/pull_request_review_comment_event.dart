@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment_event/pull_request_review_comment_event_comment.dart';@immutable final class PullRequestReviewCommentEvent {const PullRequestReviewCommentEvent({required this.action, required this.pullRequest, required this.comment, });
 
-factory PullRequestReviewCommentEvent.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentEvent(
+factory PullRequestReviewCommentEvent.fromJson(Map<String, dynamic> json) {return PullRequestReviewCommentEvent(
   action: json['action'] as String,
   pullRequest: PullRequestMinimal.fromJson(json['pull_request'] as Map<String, dynamic>),
   comment: PullRequestReviewCommentEventComment.fromJson(json['comment'] as Map<String, dynamic>),
-); }
+);}
 
 final String action;
 
@@ -15,19 +15,19 @@ final PullRequestMinimal pullRequest;
 
 final PullRequestReviewCommentEventComment comment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'pull_request': pullRequest.toJson(),
   'comment': comment.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
       json.containsKey('pull_request') &&
-      json.containsKey('comment'); } 
-PullRequestReviewCommentEvent copyWith({String? action, PullRequestMinimal? pullRequest, PullRequestReviewCommentEventComment? comment, }) { return PullRequestReviewCommentEvent(
+      json.containsKey('comment');}
+PullRequestReviewCommentEvent copyWith({String? action, PullRequestMinimal? pullRequest, PullRequestReviewCommentEventComment? comment, }) {return PullRequestReviewCommentEvent(
   action: action ?? this.action,
   pullRequest: pullRequest ?? this.pullRequest,
   comment: comment ?? this.comment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewCommentEvent &&
           action == other.action &&
@@ -38,4 +38,4 @@ PullRequestReviewCommentEvent copyWith({String? action, PullRequestMinimal? pull
 
 @override String toString() => 'PullRequestReviewCommentEvent(action: $action, pullRequest: $pullRequest, comment: $comment)';
 
- }
+}

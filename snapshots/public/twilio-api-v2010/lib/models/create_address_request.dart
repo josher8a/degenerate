@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAddressRequest {const CreateAddressRequest({required this.customerName, required this.street, required this.city, required this.region, required this.postalCode, required this.isoCountry, this.friendlyName, this.emergencyEnabled, this.autoCorrectAddress, this.streetSecondary, });
 
-factory CreateAddressRequest.fromJson(Map<String, dynamic> json) { return CreateAddressRequest(
+factory CreateAddressRequest.fromJson(Map<String, dynamic> json) {return CreateAddressRequest(
   customerName: json['CustomerName'] as String,
   street: json['Street'] as String,
   city: json['City'] as String,
@@ -14,7 +14,7 @@ factory CreateAddressRequest.fromJson(Map<String, dynamic> json) { return Create
   emergencyEnabled: json['EmergencyEnabled'] as bool?,
   autoCorrectAddress: json['AutoCorrectAddress'] as bool?,
   streetSecondary: json['StreetSecondary'] as String?,
-); }
+);}
 
 /// The name to associate with the new address.
 final String customerName;
@@ -46,7 +46,7 @@ final bool? autoCorrectAddress;
 /// The additional number and street address of the address.
 final String? streetSecondary;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'CustomerName': customerName,
   'Street': street,
   'City': city,
@@ -57,14 +57,14 @@ Map<String, dynamic> toJson() { return {
   'EmergencyEnabled': ?emergencyEnabled,
   'AutoCorrectAddress': ?autoCorrectAddress,
   'StreetSecondary': ?streetSecondary,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('CustomerName') && json['CustomerName'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('CustomerName') && json['CustomerName'] is String &&
       json.containsKey('Street') && json['Street'] is String &&
       json.containsKey('City') && json['City'] is String &&
       json.containsKey('Region') && json['Region'] is String &&
       json.containsKey('PostalCode') && json['PostalCode'] is String &&
-      json.containsKey('IsoCountry') && json['IsoCountry'] is String; } 
-CreateAddressRequest copyWith({String? customerName, String? street, String? city, String? region, String? postalCode, String? isoCountry, String? Function()? friendlyName, bool? Function()? emergencyEnabled, bool? Function()? autoCorrectAddress, String? Function()? streetSecondary, }) { return CreateAddressRequest(
+      json.containsKey('IsoCountry') && json['IsoCountry'] is String;}
+CreateAddressRequest copyWith({String? customerName, String? street, String? city, String? region, String? postalCode, String? isoCountry, String? Function()? friendlyName, bool? Function()? emergencyEnabled, bool? Function()? autoCorrectAddress, String? Function()? streetSecondary, }) {return CreateAddressRequest(
   customerName: customerName ?? this.customerName,
   street: street ?? this.street,
   city: city ?? this.city,
@@ -75,7 +75,7 @@ CreateAddressRequest copyWith({String? customerName, String? street, String? cit
   emergencyEnabled: emergencyEnabled != null ? emergencyEnabled() : this.emergencyEnabled,
   autoCorrectAddress: autoCorrectAddress != null ? autoCorrectAddress() : this.autoCorrectAddress,
   streetSecondary: streetSecondary != null ? streetSecondary() : this.streetSecondary,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAddressRequest &&
           customerName == other.customerName &&
@@ -93,4 +93,4 @@ CreateAddressRequest copyWith({String? customerName, String? street, String? cit
 
 @override String toString() => 'CreateAddressRequest(\n  customerName: $customerName,\n  street: $street,\n  city: $city,\n  region: $region,\n  postalCode: $postalCode,\n  isoCountry: $isoCountry,\n  friendlyName: $friendlyName,\n  emergencyEnabled: $emergencyEnabled,\n  autoCorrectAddress: $autoCorrectAddress,\n  streetSecondary: $streetSecondary,\n)';
 
- }
+}

@@ -14,7 +14,7 @@ final class KeysApi with ApiExecutor {const KeysApi(this.apiConfig);
 /// List all the keys in your telemetry events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/keys`
-Future<ApiResult<List<TelemetryKeysListResponseResult>, TelemetryKeysListError>> telemetryKeysList({required String accountId, required TelemetryKeysListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TelemetryKeysListResponseResult>, TelemetryKeysListError>> telemetryKeysList({required String accountId, required TelemetryKeysListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,7 +25,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -33,5 +33,5 @@ return execute(
   },
   onError: TelemetryKeysListError.fromResponse,
 );
- } 
- }
+}
+}

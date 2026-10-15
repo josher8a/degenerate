@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpStatsGeoip {const IpStatsGeoip({required this.city, required this.country, required this.countryName, required this.ll, required this.region, });
 
-factory IpStatsGeoip.fromJson(Map<String, dynamic> json) { return IpStatsGeoip(
+factory IpStatsGeoip.fromJson(Map<String, dynamic> json) {return IpStatsGeoip(
   city: json['city'] as String,
   country: json['country'] as String,
   countryName: json['country_name'] as String,
   ll: (json['ll'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
   region: json['region'] as String,
-); }
+);}
 
 final String city;
 
@@ -21,25 +21,25 @@ final List<double> ll;
 
 final String region;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'city': city,
   'country': country,
   'country_name': countryName,
   'll': ll,
   'region': region,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('city') && json['city'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('city') && json['city'] is String &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('country_name') && json['country_name'] is String &&
       json.containsKey('ll') &&
-      json.containsKey('region') && json['region'] is String; } 
-IpStatsGeoip copyWith({String? city, String? country, String? countryName, List<double>? ll, String? region, }) { return IpStatsGeoip(
+      json.containsKey('region') && json['region'] is String;}
+IpStatsGeoip copyWith({String? city, String? country, String? countryName, List<double>? ll, String? region, }) {return IpStatsGeoip(
   city: city ?? this.city,
   country: country ?? this.country,
   countryName: countryName ?? this.countryName,
   ll: ll ?? this.ll,
   region: region ?? this.region,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpStatsGeoip &&
           city == other.city &&
@@ -52,4 +52,4 @@ IpStatsGeoip copyWith({String? city, String? country, String? countryName, List<
 
 @override String toString() => 'IpStatsGeoip(city: $city, country: $country, countryName: $countryName, ll: $ll, region: $region)';
 
- }
+}

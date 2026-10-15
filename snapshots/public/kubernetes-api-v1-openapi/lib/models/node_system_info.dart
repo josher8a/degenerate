@@ -2,9 +2,9 @@
 // Source: #/components/schemas/NodeSystemInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_swap_status.dart';/// NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
-@immutable final class NodeSystemInfo {const NodeSystemInfo({this.architecture = '', this.bootId = '', this.containerRuntimeVersion = '', this.kernelVersion = '', this.kubeProxyVersion = '', this.kubeletVersion = '', this.machineId = '', this.operatingSystem = '', this.osImage = '', this.swap, this.systemUuid = '', });
+@immutable final class NodeSystemInfo {const NodeSystemInfo({required this.architecture, required this.bootId, required this.containerRuntimeVersion, required this.kernelVersion, required this.kubeProxyVersion, required this.kubeletVersion, required this.machineId, required this.operatingSystem, required this.osImage, required this.systemUuid, this.swap, });
 
-factory NodeSystemInfo.fromJson(Map<String, dynamic> json) { return NodeSystemInfo(
+factory NodeSystemInfo.fromJson(Map<String, dynamic> json) {return NodeSystemInfo(
   architecture: json['architecture'] as String,
   bootId: json['bootID'] as String,
   containerRuntimeVersion: json['containerRuntimeVersion'] as String,
@@ -16,7 +16,7 @@ factory NodeSystemInfo.fromJson(Map<String, dynamic> json) { return NodeSystemIn
   osImage: json['osImage'] as String,
   swap: json['swap'] != null ? NodeSwapStatus.fromJson(json['swap'] as Map<String, dynamic>) : null,
   systemUuid: json['systemUUID'] as String,
-); }
+);}
 
 /// The Architecture reported by the node
 final String architecture;
@@ -51,7 +51,7 @@ final NodeSwapStatus? swap;
 /// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
 final String systemUuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'architecture': architecture,
   'bootID': bootId,
   'containerRuntimeVersion': containerRuntimeVersion,
@@ -63,8 +63,8 @@ Map<String, dynamic> toJson() { return {
   'osImage': osImage,
   if (swap != null) 'swap': swap?.toJson(),
   'systemUUID': systemUuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('architecture') && json['architecture'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('architecture') && json['architecture'] is String &&
       json.containsKey('bootID') && json['bootID'] is String &&
       json.containsKey('containerRuntimeVersion') && json['containerRuntimeVersion'] is String &&
       json.containsKey('kernelVersion') && json['kernelVersion'] is String &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('machineID') && json['machineID'] is String &&
       json.containsKey('operatingSystem') && json['operatingSystem'] is String &&
       json.containsKey('osImage') && json['osImage'] is String &&
-      json.containsKey('systemUUID') && json['systemUUID'] is String; } 
-NodeSystemInfo copyWith({String? architecture, String? bootId, String? containerRuntimeVersion, String? kernelVersion, String? kubeProxyVersion, String? kubeletVersion, String? machineId, String? operatingSystem, String? osImage, NodeSwapStatus? Function()? swap, String? systemUuid, }) { return NodeSystemInfo(
+      json.containsKey('systemUUID') && json['systemUUID'] is String;}
+NodeSystemInfo copyWith({String? architecture, String? bootId, String? containerRuntimeVersion, String? kernelVersion, String? kubeProxyVersion, String? kubeletVersion, String? machineId, String? operatingSystem, String? osImage, NodeSwapStatus? Function()? swap, String? systemUuid, }) {return NodeSystemInfo(
   architecture: architecture ?? this.architecture,
   bootId: bootId ?? this.bootId,
   containerRuntimeVersion: containerRuntimeVersion ?? this.containerRuntimeVersion,
@@ -86,7 +86,7 @@ NodeSystemInfo copyWith({String? architecture, String? bootId, String? container
   osImage: osImage ?? this.osImage,
   swap: swap != null ? swap() : this.swap,
   systemUuid: systemUuid ?? this.systemUuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NodeSystemInfo &&
           architecture == other.architecture &&
@@ -105,4 +105,4 @@ NodeSystemInfo copyWith({String? architecture, String? bootId, String? container
 
 @override String toString() => 'NodeSystemInfo(\n  architecture: $architecture,\n  bootId: $bootId,\n  containerRuntimeVersion: $containerRuntimeVersion,\n  kernelVersion: $kernelVersion,\n  kubeProxyVersion: $kubeProxyVersion,\n  kubeletVersion: $kubeletVersion,\n  machineId: $machineId,\n  operatingSystem: $operatingSystem,\n  osImage: $osImage,\n  swap: $swap,\n  systemUuid: $systemUuid,\n)';
 
- }
+}

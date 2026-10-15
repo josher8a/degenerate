@@ -43,16 +43,16 @@ factory ZeroTrustGatewayWarningStatus.fromJson(String json) => ZeroTrustGatewayW
 String toJson() => value;
 
 }
-@immutable final class ZeroTrustGatewayRules {const ZeroTrustGatewayRules({required this.action, required this.enabled, required this.filters, required this.name, required this.precedence, required this.traffic, this.createdAt, this.deletedAt, this.description, this.devicePosture, this.expiration, this.id, this.identity, this.readOnly, this.ruleSettings, this.schedule, this.sharable, this.sourceAccount, this.updatedAt, this.version, this.warningStatus, });
+@immutable final class ZeroTrustGatewayRules {const ZeroTrustGatewayRules({required this.action, required this.enabled, required this.filters, required this.name, required this.precedence, required this.traffic, this.createdAt, this.deletedAt = const Omittable.absent(), this.description, this.devicePosture, this.expiration = const Omittable.absent(), this.id, this.identity, this.readOnly, this.ruleSettings, this.schedule = const Omittable.absent(), this.sharable, this.sourceAccount, this.updatedAt, this.version, this.warningStatus = const Omittable.absent(), });
 
-factory ZeroTrustGatewayRules.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRules(
+factory ZeroTrustGatewayRules.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRules(
   action: ZeroTrustGatewayAction.fromJson(json['action'] as String),
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
-  deletedAt: json['deleted_at'] != null ? ZeroTrustGatewayDeletedAt.fromJson(json['deleted_at'] as String) : null,
+  deletedAt: json.containsKey('deleted_at') ? Omittable(json['deleted_at'] != null ? ZeroTrustGatewayDeletedAt.fromJson(json['deleted_at'] as String) : null) : const Omittable.absent(),
   description: json['description'] != null ? ZeroTrustGatewaySchemasDescription.fromJson(json['description'] as String) : null,
   devicePosture: json['device_posture'] != null ? ZeroTrustGatewayDevicePosture.fromJson(json['device_posture'] as String) : null,
   enabled: ZeroTrustGatewayEnabled.fromJson(json['enabled'] as bool),
-  expiration: json['expiration'] != null ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>) : null,
+  expiration: json.containsKey('expiration') ? Omittable(json['expiration'] != null ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   filters: (json['filters'] as List<dynamic>).map((e) => ZeroTrustGatewayFilters2.fromJson(e as String)).toList(),
   id: json['id'] != null ? ZeroTrustGatewaySchemasUuid.fromJson(json['id'] as String) : null,
   identity: json['identity'] != null ? ZeroTrustGatewayIdentity.fromJson(json['identity'] as String) : null,
@@ -60,14 +60,14 @@ factory ZeroTrustGatewayRules.fromJson(Map<String, dynamic> json) { return ZeroT
   precedence: ZeroTrustGatewayPrecedence.fromJson(json['precedence'] as num),
   readOnly: json['read_only'] != null ? ZeroTrustGatewayReadOnly.fromJson(json['read_only'] as bool) : null,
   ruleSettings: json['rule_settings'] != null ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>) : null,
-  schedule: json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
+  schedule: json.containsKey('schedule') ? Omittable(json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sharable: json['sharable'] != null ? ZeroTrustGatewaySharable.fromJson(json['sharable'] as bool) : null,
   sourceAccount: json['source_account'] != null ? ZeroTrustGatewaySourceAccount.fromJson(json['source_account'] as String) : null,
   traffic: ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String),
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
   version: json['version'] != null ? ZeroTrustGatewayVersion.fromJson(json['version'] as num) : null,
-  warningStatus: json['warning_status'] != null ? ZeroTrustGatewayWarningStatus.fromJson(json['warning_status'] as String) : null,
-); }
+  warningStatus: json.containsKey('warning_status') ? Omittable(json['warning_status'] != null ? ZeroTrustGatewayWarningStatus.fromJson(json['warning_status'] as String) : null) : const Omittable.absent(),
+);}
 
 /// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
 final ZeroTrustGatewayAction action;
@@ -75,7 +75,7 @@ final ZeroTrustGatewayAction action;
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
 /// Indicate the date of deletion, if any.
-final ZeroTrustGatewayDeletedAt? deletedAt;
+final Omittable<ZeroTrustGatewayDeletedAt?> deletedAt;
 
 final ZeroTrustGatewaySchemasDescription? description;
 
@@ -85,7 +85,7 @@ final ZeroTrustGatewayDevicePosture? devicePosture;
 /// Specify whether the rule is enabled.
 final ZeroTrustGatewayEnabled enabled;
 
-final ZeroTrustGatewayExpiration? expiration;
+final Omittable<ZeroTrustGatewayExpiration?> expiration;
 
 /// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
 final List<ZeroTrustGatewayFilters2> filters;
@@ -106,7 +106,7 @@ final ZeroTrustGatewayReadOnly? readOnly;
 
 final ZeroTrustGatewayRuleSettings? ruleSettings;
 
-final ZeroTrustGatewaySchedule? schedule;
+final Omittable<ZeroTrustGatewaySchedule?> schedule;
 
 final ZeroTrustGatewaySharable? sharable;
 
@@ -118,16 +118,16 @@ final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
 final ZeroTrustGatewayVersion? version;
 
-final ZeroTrustGatewayWarningStatus? warningStatus;
+final Omittable<ZeroTrustGatewayWarningStatus?> warningStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
-  if (deletedAt != null) 'deleted_at': deletedAt?.toJson(),
+  if (deletedAt.isPresent) 'deleted_at': deletedAt.value?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (devicePosture != null) 'device_posture': devicePosture?.toJson(),
   'enabled': enabled.toJson(),
-  if (expiration != null) 'expiration': expiration?.toJson(),
+  if (expiration.isPresent) 'expiration': expiration.value?.toJson(),
   'filters': filters.map((e) => e.toJson()).toList(),
   if (id != null) 'id': id?.toJson(),
   if (identity != null) 'identity': identity?.toJson(),
@@ -135,33 +135,33 @@ Map<String, dynamic> toJson() { return {
   'precedence': precedence.toJson(),
   if (readOnly != null) 'read_only': readOnly?.toJson(),
   if (ruleSettings != null) 'rule_settings': ruleSettings?.toJson(),
-  if (schedule != null) 'schedule': schedule?.toJson(),
+  if (schedule.isPresent) 'schedule': schedule.value?.toJson(),
   if (sharable != null) 'sharable': sharable?.toJson(),
   if (sourceAccount != null) 'source_account': sourceAccount?.toJson(),
   'traffic': traffic.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (version != null) 'version': version?.toJson(),
-  if (warningStatus != null) 'warning_status': warningStatus?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+  if (warningStatus.isPresent) 'warning_status': warningStatus.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('enabled') &&
       json.containsKey('filters') &&
       json.containsKey('name') &&
       json.containsKey('precedence') &&
-      json.containsKey('traffic'); } 
+      json.containsKey('traffic');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (filters.isEmpty) { errors.add('filters: must have >= 1 items'); }
 if (filters.length > 1) { errors.add('filters: must have <= 1 items'); }
-return errors; } 
-ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDeletedAt? Function()? deletedAt, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? enabled, ZeroTrustGatewayExpiration? Function()? expiration, List<ZeroTrustGatewayFilters2>? filters, ZeroTrustGatewaySchemasUuid? Function()? id, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? precedence, ZeroTrustGatewayReadOnly? Function()? readOnly, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, ZeroTrustGatewaySchedule? Function()? schedule, ZeroTrustGatewaySharable? Function()? sharable, ZeroTrustGatewaySourceAccount? Function()? sourceAccount, ZeroTrustGatewayTraffic? traffic, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayVersion? Function()? version, ZeroTrustGatewayWarningStatus? Function()? warningStatus, }) { return ZeroTrustGatewayRules(
+return errors;}
+ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, Omittable<ZeroTrustGatewayDeletedAt?>? deletedAt, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? enabled, Omittable<ZeroTrustGatewayExpiration?>? expiration, List<ZeroTrustGatewayFilters2>? filters, ZeroTrustGatewaySchemasUuid? Function()? id, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? precedence, ZeroTrustGatewayReadOnly? Function()? readOnly, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, Omittable<ZeroTrustGatewaySchedule?>? schedule, ZeroTrustGatewaySharable? Function()? sharable, ZeroTrustGatewaySourceAccount? Function()? sourceAccount, ZeroTrustGatewayTraffic? traffic, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayVersion? Function()? version, Omittable<ZeroTrustGatewayWarningStatus?>? warningStatus, }) {return ZeroTrustGatewayRules(
   action: action ?? this.action,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-  deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
+  deletedAt: deletedAt ?? this.deletedAt,
   description: description != null ? description() : this.description,
   devicePosture: devicePosture != null ? devicePosture() : this.devicePosture,
   enabled: enabled ?? this.enabled,
-  expiration: expiration != null ? expiration() : this.expiration,
+  expiration: expiration ?? this.expiration,
   filters: filters ?? this.filters,
   id: id != null ? id() : this.id,
   identity: identity != null ? identity() : this.identity,
@@ -169,14 +169,14 @@ ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGateway
   precedence: precedence ?? this.precedence,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   ruleSettings: ruleSettings != null ? ruleSettings() : this.ruleSettings,
-  schedule: schedule != null ? schedule() : this.schedule,
+  schedule: schedule ?? this.schedule,
   sharable: sharable != null ? sharable() : this.sharable,
   sourceAccount: sourceAccount != null ? sourceAccount() : this.sourceAccount,
   traffic: traffic ?? this.traffic,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   version: version != null ? version() : this.version,
-  warningStatus: warningStatus != null ? warningStatus() : this.warningStatus,
-); } 
+  warningStatus: warningStatus ?? this.warningStatus,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayRules &&
           action == other.action &&
@@ -205,4 +205,4 @@ ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGateway
 
 @override String toString() => 'ZeroTrustGatewayRules(\n  action: $action,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  description: $description,\n  devicePosture: $devicePosture,\n  enabled: $enabled,\n  expiration: $expiration,\n  filters: $filters,\n  id: $id,\n  identity: $identity,\n  name: $name,\n  precedence: $precedence,\n  readOnly: $readOnly,\n  ruleSettings: $ruleSettings,\n  schedule: $schedule,\n  sharable: $sharable,\n  sourceAccount: $sourceAccount,\n  traffic: $traffic,\n  updatedAt: $updatedAt,\n  version: $version,\n  warningStatus: $warningStatus,\n)';
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_key_rotation_interval_days.dart';@immutable final class AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest {const AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest({required this.keyRotationIntervalDays});
 
-factory AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest.fromJson(Map<String, dynamic> json) { return AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(
+factory AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest.fromJson(Map<String, dynamic> json) {return AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(
   keyRotationIntervalDays: AccessKeyRotationIntervalDays.fromJson(json['key_rotation_interval_days'] as num),
-); }
+);}
 
 /// The number of days between key rotations.
 final AccessKeyRotationIntervalDays keyRotationIntervalDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key_rotation_interval_days': keyRotationIntervalDays.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_rotation_interval_days'); } 
-AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest copyWith({AccessKeyRotationIntervalDays? keyRotationIntervalDays}) { return AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_rotation_interval_days');}
+AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest copyWith({AccessKeyRotationIntervalDays? keyRotationIntervalDays}) {return AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(
   keyRotationIntervalDays: keyRotationIntervalDays ?? this.keyRotationIntervalDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest &&
           keyRotationIntervalDays == other.keyRotationIntervalDays;
@@ -25,4 +25,4 @@ AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest copyWith({AccessKey
 
 @override String toString() => 'AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(keyRotationIntervalDays: $keyRotationIntervalDays)';
 
- }
+}

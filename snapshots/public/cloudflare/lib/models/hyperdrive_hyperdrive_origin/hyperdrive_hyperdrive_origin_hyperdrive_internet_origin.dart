@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_scheme.dart';@immutable final class HyperdriveHyperdriveOriginHyperdriveInternetOrigin {const HyperdriveHyperdriveOriginHyperdriveInternetOrigin({required this.host, required this.port, this.database, this.password, this.scheme, this.user, });
 
-factory HyperdriveHyperdriveOriginHyperdriveInternetOrigin.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveOriginHyperdriveInternetOrigin(
+factory HyperdriveHyperdriveOriginHyperdriveInternetOrigin.fromJson(Map<String, dynamic> json) {return HyperdriveHyperdriveOriginHyperdriveInternetOrigin(
   host: json['host'] as String,
   port: (json['port'] as num).toInt(),
   database: json['database'] as String?,
   password: json['password'] as String?,
   scheme: json['scheme'] != null ? HyperdriveHyperdriveScheme.fromJson(json['scheme'] as String) : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// Defines the host (hostname or IP) of your origin database.
 /// 
@@ -37,24 +37,24 @@ final HyperdriveHyperdriveScheme? scheme;
 /// Example: `'postgres'`
 final String? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
   'port': port,
   'database': ?database,
   'password': ?password,
   if (scheme != null) 'scheme': scheme?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
-      json.containsKey('port') && json['port'] is num; } 
-HyperdriveHyperdriveOriginHyperdriveInternetOrigin copyWith({String? host, int? port, String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) { return HyperdriveHyperdriveOriginHyperdriveInternetOrigin(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String &&
+      json.containsKey('port') && json['port'] is num;}
+HyperdriveHyperdriveOriginHyperdriveInternetOrigin copyWith({String? host, int? port, String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) {return HyperdriveHyperdriveOriginHyperdriveInternetOrigin(
   host: host ?? this.host,
   port: port ?? this.port,
   database: database != null ? database() : this.database,
   password: password != null ? password() : this.password,
   scheme: scheme != null ? scheme() : this.scheme,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveOriginHyperdriveInternetOrigin &&
           host == other.host &&
@@ -68,4 +68,4 @@ HyperdriveHyperdriveOriginHyperdriveInternetOrigin copyWith({String? host, int? 
 
 @override String toString() => 'HyperdriveHyperdriveOriginHyperdriveInternetOrigin(host: $host, port: $port, database: $database, password: $password, scheme: $scheme, user: $user)';
 
- }
+}

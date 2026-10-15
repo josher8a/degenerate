@@ -14,7 +14,7 @@ final class GatewayCaApi with ApiExecutor {const GatewayCaApi(this.apiConfig);
 /// Lists SSH Certificate Authorities (CA).
 ///
 /// `GET /accounts/{account_id}/access/gateway_ca`
-Future<ApiResult<List<AccessSchemasCertificates>?, AccessApplicationsAddAnApplicationError>> accessGatewayCaListSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasCertificates>?, AccessApplicationsAddAnApplicationError>> accessGatewayCaListSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Add a new SSH Certificate Authority (CA)
 ///
 /// Adds a new SSH Certificate Authority (CA).
 ///
 /// `POST /accounts/{account_id}/access/gateway_ca`
-Future<ApiResult<AccessSchemasCertificates?, AccessApplicationsAddAnApplicationError>> accessGatewayCaAddAnSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasCertificates?, AccessApplicationsAddAnApplicationError>> accessGatewayCaAddAnSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an SSH Certificate Authority (CA)
 ///
 /// Deletes an SSH Certificate Authority.
 ///
 /// `DELETE /accounts/{account_id}/access/gateway_ca/{certificate_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessGatewayCaDeleteAnSshCa({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessGatewayCaDeleteAnSshCa({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -69,7 +69,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -77,5 +77,5 @@ return execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

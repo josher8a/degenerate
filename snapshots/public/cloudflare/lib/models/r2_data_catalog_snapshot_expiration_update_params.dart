@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_state.dart';/// Updates snapshot expiration configuration (all fields optional).
 @immutable final class R2DataCatalogSnapshotExpirationUpdateParams {const R2DataCatalogSnapshotExpirationUpdateParams({this.maxSnapshotAge, this.minSnapshotsToKeep, this.state, });
 
-factory R2DataCatalogSnapshotExpirationUpdateParams.fromJson(Map<String, dynamic> json) { return R2DataCatalogSnapshotExpirationUpdateParams(
+factory R2DataCatalogSnapshotExpirationUpdateParams.fromJson(Map<String, dynamic> json) {return R2DataCatalogSnapshotExpirationUpdateParams(
   maxSnapshotAge: json['max_snapshot_age'] as String?,
   minSnapshotsToKeep: json['min_snapshots_to_keep'] != null ? (json['min_snapshots_to_keep'] as num).toInt() : null,
   state: json['state'] != null ? R2DataCatalogCatalogMaintenanceState.fromJson(json['state'] as String) : null,
-); }
+);}
 
 /// Updates the maximum age for snapshots optionally.
 final String? maxSnapshotAge;
@@ -21,14 +21,14 @@ final int? minSnapshotsToKeep;
 /// Specifies the state of maintenance operations.
 final R2DataCatalogCatalogMaintenanceState? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_snapshot_age': ?maxSnapshotAge,
   'min_snapshots_to_keep': ?minSnapshotsToKeep,
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_snapshot_age', 'min_snapshots_to_keep', 'state'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'max_snapshot_age', 'min_snapshots_to_keep', 'state'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final maxSnapshotAge$ = maxSnapshotAge;
 if (maxSnapshotAge$ != null) {
   if (!RegExp(r'^\d+(d|h|m|s)$').hasMatch(maxSnapshotAge$)) { errors.add(r'maxSnapshotAge: must match pattern ^\d+(d|h|m|s)$'); }
@@ -37,12 +37,12 @@ final minSnapshotsToKeep$ = minSnapshotsToKeep;
 if (minSnapshotsToKeep$ != null) {
   if (minSnapshotsToKeep$ < 1) { errors.add('minSnapshotsToKeep: must be >= 1'); }
 }
-return errors; } 
-R2DataCatalogSnapshotExpirationUpdateParams copyWith({String? Function()? maxSnapshotAge, int? Function()? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? Function()? state, }) { return R2DataCatalogSnapshotExpirationUpdateParams(
+return errors;}
+R2DataCatalogSnapshotExpirationUpdateParams copyWith({String? Function()? maxSnapshotAge, int? Function()? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? Function()? state, }) {return R2DataCatalogSnapshotExpirationUpdateParams(
   maxSnapshotAge: maxSnapshotAge != null ? maxSnapshotAge() : this.maxSnapshotAge,
   minSnapshotsToKeep: minSnapshotsToKeep != null ? minSnapshotsToKeep() : this.minSnapshotsToKeep,
   state: state != null ? state() : this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogSnapshotExpirationUpdateParams &&
           maxSnapshotAge == other.maxSnapshotAge &&
@@ -53,4 +53,4 @@ R2DataCatalogSnapshotExpirationUpdateParams copyWith({String? Function()? maxSna
 
 @override String toString() => 'R2DataCatalogSnapshotExpirationUpdateParams(maxSnapshotAge: $maxSnapshotAge, minSnapshotsToKeep: $minSnapshotsToKeep, state: $state)';
 
- }
+}

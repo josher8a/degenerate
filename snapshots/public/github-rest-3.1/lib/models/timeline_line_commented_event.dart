@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment.dart';/// Timeline Line Commented Event
 @immutable final class TimelineLineCommentedEvent {const TimelineLineCommentedEvent({this.event, this.nodeId, this.comments, });
 
-factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) { return TimelineLineCommentedEvent(
+factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) {return TimelineLineCommentedEvent(
   event: json['event'] as String?,
   nodeId: json['node_id'] as String?,
   comments: (json['comments'] as List<dynamic>?)?.map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String? event;
 
@@ -16,17 +16,17 @@ final String? nodeId;
 
 final List<PullRequestReviewComment>? comments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': ?event,
   'node_id': ?nodeId,
   if (comments != null) 'comments': comments?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'event', 'node_id', 'comments'}.contains(key)); } 
-TimelineLineCommentedEvent copyWith({String? Function()? event, String? Function()? nodeId, List<PullRequestReviewComment>? Function()? comments, }) { return TimelineLineCommentedEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'event', 'node_id', 'comments'}.contains(key));}
+TimelineLineCommentedEvent copyWith({String? Function()? event, String? Function()? nodeId, List<PullRequestReviewComment>? Function()? comments, }) {return TimelineLineCommentedEvent(
   event: event != null ? event() : this.event,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   comments: comments != null ? comments() : this.comments,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineLineCommentedEvent &&
           event == other.event &&
@@ -37,4 +37,4 @@ TimelineLineCommentedEvent copyWith({String? Function()? event, String? Function
 
 @override String toString() => 'TimelineLineCommentedEvent(event: $event, nodeId: $nodeId, comments: $comments)';
 
- }
+}

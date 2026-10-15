@@ -1,28 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GitUpdateRefRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force, });
 
-factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) { return GitUpdateRefRequest(
+factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) {return GitUpdateRefRequest(
   sha: json['sha'] as String,
-  force: json.containsKey('force') ? json['force'] as bool : false,
-); }
+  force: json['force'] as bool?,
+);}
 
 /// The SHA1 value to set this reference to
 final String sha;
 
 /// Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
-final bool force;
+final bool? force;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `force`, or its schema default when absent.
+bool get forceOrDefault => force ?? false;
+
+Map<String, dynamic> toJson() {return {
   'sha': sha,
-  'force': force,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String; } 
-GitUpdateRefRequest copyWith({String? sha, bool Function()? force, }) { return GitUpdateRefRequest(
+  'force': ?force,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String;}
+GitUpdateRefRequest copyWith({String? sha, bool? Function()? force, }) {return GitUpdateRefRequest(
   sha: sha ?? this.sha,
   force: force != null ? force() : this.force,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitUpdateRefRequest &&
           sha == other.sha &&
@@ -32,4 +35,4 @@ GitUpdateRefRequest copyWith({String? sha, bool Function()? force, }) { return G
 
 @override String toString() => 'GitUpdateRefRequest(sha: $sha, force: $force)';
 
- }
+}

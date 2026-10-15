@@ -2,13 +2,13 @@
 // Source: #/components/schemas/ConfirmationTokensResourceShipping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
-@immutable final class ConfirmationTokensResourceShipping {const ConfirmationTokensResourceShipping({required this.address, required this.name, this.phone, });
+@immutable final class ConfirmationTokensResourceShipping {const ConfirmationTokensResourceShipping({required this.address, required this.name, this.phone = const Omittable.absent(), });
 
-factory ConfirmationTokensResourceShipping.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceShipping(
+factory ConfirmationTokensResourceShipping.fromJson(Map<String, dynamic> json) {return ConfirmationTokensResourceShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] as String?,
-); }
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
+);}
 
 final Address address;
 
@@ -16,28 +16,28 @@ final Address address;
 final String name;
 
 /// Recipient phone (including extension).
-final String? phone;
+final Omittable<String?> phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'name': name,
-  'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
+  if (phone.isPresent) 'phone': phone.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-final phone$ = phone;
+final phone$ = phone.value;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-ConfirmationTokensResourceShipping copyWith({Address? address, String? name, String? Function()? phone, }) { return ConfirmationTokensResourceShipping(
+return errors;}
+ConfirmationTokensResourceShipping copyWith({Address? address, String? name, Omittable<String?>? phone, }) {return ConfirmationTokensResourceShipping(
   address: address ?? this.address,
   name: name ?? this.name,
-  phone: phone != null ? phone() : this.phone,
-); } 
+  phone: phone ?? this.phone,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmationTokensResourceShipping &&
           address == other.address &&
@@ -48,4 +48,4 @@ ConfirmationTokensResourceShipping copyWith({Address? address, String? name, Str
 
 @override String toString() => 'ConfirmationTokensResourceShipping(address: $address, name: $name, phone: $phone)';
 
- }
+}

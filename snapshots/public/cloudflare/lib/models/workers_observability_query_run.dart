@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/workers_observability_query.dart';import 'package:pub_cloudflare/models/workers_observability_query_run/statistics.dart';sealed class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus();
 
-factory WorkersObservabilityQueryRunStatus.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryRunStatus.fromJson(String json) {return switch (json) {
   'STARTED' => started,
   'COMPLETED' => completed,
   _ => WorkersObservabilityQueryRunStatus$Unknown(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryRunStatus started = WorkersObservabilityQueryRunStatus$started._();
 
@@ -16,30 +16,30 @@ static const WorkersObservabilityQueryRunStatus completed = WorkersObservability
 static const List<WorkersObservabilityQueryRunStatus> values = [started, completed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'STARTED' => 'started',
   'COMPLETED' => 'completed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersObservabilityQueryRunStatus$Unknown; } 
+bool get isUnknown {return this is WorkersObservabilityQueryRunStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() started, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() started, required W Function() completed, required W Function(String value) $unknown, }) {return switch (this) {
       WorkersObservabilityQueryRunStatus$started() => started(),
       WorkersObservabilityQueryRunStatus$completed() => completed(),
       WorkersObservabilityQueryRunStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? started, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? started, W Function()? completed, W Function(String value)? $unknown, }) {return switch (this) {
       WorkersObservabilityQueryRunStatus$started() => started != null ? started() : orElse(value),
       WorkersObservabilityQueryRunStatus$completed() => completed != null ? completed() : orElse(value),
       WorkersObservabilityQueryRunStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkersObservabilityQueryRunStatus($value)';
 
- }
+}
 @immutable final class WorkersObservabilityQueryRunStatus$started extends WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus$started._();
 
 @override String get value => 'STARTED';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? started,
 
 @override int get hashCode => 'STARTED'.hashCode;
 
- }
+}
 @immutable final class WorkersObservabilityQueryRunStatus$completed extends WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus$completed._();
 
 @override String get value => 'COMPLETED';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? started,
 
 @override int get hashCode => 'COMPLETED'.hashCode;
 
- }
+}
 @immutable final class WorkersObservabilityQueryRunStatus$Unknown extends WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus$Unknown(this.value);
 
 @override final String value;
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? started,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Workers Observability Query Object
 @immutable final class WorkersObservabilityQueryRun {const WorkersObservabilityQueryRun({required this.accountId, required this.dry, required this.environmentId, required this.granularity, required this.id, required this.query, required this.status, required this.timeframe, required this.userId, required this.workspaceId, this.created, this.statistics, this.updated, });
 
-factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryRun(
+factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryRun(
   accountId: json['accountId'] as String,
   created: json['created'] as String?,
   dry: json['dry'] as bool,
@@ -85,7 +85,7 @@ factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { retur
   updated: json['updated'] as String?,
   userId: json['userId'] as String,
   workspaceId: json['workspaceId'] as String,
-); }
+);}
 
 final String accountId;
 
@@ -114,7 +114,7 @@ final String userId;
 
 final String workspaceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accountId': accountId,
   'created': ?created,
   'dry': dry,
@@ -128,8 +128,8 @@ Map<String, dynamic> toJson() { return {
   'updated': ?updated,
   'userId': userId,
   'workspaceId': workspaceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accountId') && json['accountId'] is String &&
       json.containsKey('dry') && json['dry'] is bool &&
       json.containsKey('environmentId') && json['environmentId'] is String &&
       json.containsKey('granularity') && json['granularity'] is num &&
@@ -138,8 +138,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('status') &&
       json.containsKey('timeframe') &&
       json.containsKey('userId') && json['userId'] is String &&
-      json.containsKey('workspaceId') && json['workspaceId'] is String; } 
-WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, Statistics? Function()? statistics, WorkersObservabilityQueryRunStatus? status, Timeframe? timeframe, String? Function()? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQueryRun(
+      json.containsKey('workspaceId') && json['workspaceId'] is String;}
+WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, Statistics? Function()? statistics, WorkersObservabilityQueryRunStatus? status, Timeframe? timeframe, String? Function()? updated, String? userId, String? workspaceId, }) {return WorkersObservabilityQueryRun(
   accountId: accountId ?? this.accountId,
   created: created != null ? created() : this.created,
   dry: dry ?? this.dry,
@@ -153,7 +153,7 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
   updated: updated != null ? updated() : this.updated,
   userId: userId ?? this.userId,
   workspaceId: workspaceId ?? this.workspaceId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryRun &&
           accountId == other.accountId &&
@@ -174,4 +174,4 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
 
 @override String toString() => 'WorkersObservabilityQueryRun(\n  accountId: $accountId,\n  created: $created,\n  dry: $dry,\n  environmentId: $environmentId,\n  granularity: $granularity,\n  id: $id,\n  query: $query,\n  statistics: $statistics,\n  status: $status,\n  timeframe: $timeframe,\n  updated: $updated,\n  userId: $userId,\n  workspaceId: $workspaceId,\n)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';/// The default repository access level for Dependabot updates.
 sealed class DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel();
 
-factory DependabotRepositoryAccessDetailsDefaultLevel.fromJson(String json) { return switch (json) {
+factory DependabotRepositoryAccessDetailsDefaultLevel.fromJson(String json) {return switch (json) {
   'public' => public,
   'internal' => internal,
   'null' => $null,
   _ => DependabotRepositoryAccessDetailsDefaultLevel$Unknown(json),
-}; }
+};}
 
 static const DependabotRepositoryAccessDetailsDefaultLevel public = DependabotRepositoryAccessDetailsDefaultLevel$public._();
 
@@ -20,33 +20,33 @@ static const DependabotRepositoryAccessDetailsDefaultLevel $null = DependabotRep
 static const List<DependabotRepositoryAccessDetailsDefaultLevel> values = [public, internal, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'public' => 'public',
   'internal' => 'internal',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DependabotRepositoryAccessDetailsDefaultLevel$Unknown; } 
+bool get isUnknown {return this is DependabotRepositoryAccessDetailsDefaultLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() public, required W Function() internal, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() public, required W Function() internal, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       DependabotRepositoryAccessDetailsDefaultLevel$public() => public(),
       DependabotRepositoryAccessDetailsDefaultLevel$internal() => internal(),
       DependabotRepositoryAccessDetailsDefaultLevel$$null() => $null(),
       DependabotRepositoryAccessDetailsDefaultLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, W Function()? internal, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, W Function()? internal, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       DependabotRepositoryAccessDetailsDefaultLevel$public() => public != null ? public() : orElse(value),
       DependabotRepositoryAccessDetailsDefaultLevel$internal() => internal != null ? internal() : orElse(value),
       DependabotRepositoryAccessDetailsDefaultLevel$$null() => $null != null ? $null() : orElse(value),
       DependabotRepositoryAccessDetailsDefaultLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DependabotRepositoryAccessDetailsDefaultLevel($value)';
 
- }
+}
 @immutable final class DependabotRepositoryAccessDetailsDefaultLevel$public extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$public._();
 
 @override String get value => 'public';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, 
 
 @override int get hashCode => 'public'.hashCode;
 
- }
+}
 @immutable final class DependabotRepositoryAccessDetailsDefaultLevel$internal extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$internal._();
 
 @override String get value => 'internal';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, 
 
 @override int get hashCode => 'internal'.hashCode;
 
- }
+}
 @immutable final class DependabotRepositoryAccessDetailsDefaultLevel$$null extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$$null._();
 
 @override String get value => 'null';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, 
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class DependabotRepositoryAccessDetailsDefaultLevel$Unknown extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$Unknown(this.value);
 
 @override final String value;
@@ -83,29 +83,29 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Information about repositories that Dependabot is able to access in an organization
-@immutable final class DependabotRepositoryAccessDetails {const DependabotRepositoryAccessDetails({this.defaultLevel, this.accessibleRepositories, });
+@immutable final class DependabotRepositoryAccessDetails {const DependabotRepositoryAccessDetails({this.defaultLevel = const Omittable.absent(), this.accessibleRepositories, });
 
-factory DependabotRepositoryAccessDetails.fromJson(Map<String, dynamic> json) { return DependabotRepositoryAccessDetails(
-  defaultLevel: json['default_level'] != null ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(json['default_level'] as String) : null,
+factory DependabotRepositoryAccessDetails.fromJson(Map<String, dynamic> json) {return DependabotRepositoryAccessDetails(
+  defaultLevel: json.containsKey('default_level') ? Omittable(json['default_level'] != null ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(json['default_level'] as String) : null) : const Omittable.absent(),
   accessibleRepositories: (json['accessible_repositories'] as List<dynamic>?)?.map((e) => e == null ? null : SimpleRepository.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The default repository access level for Dependabot updates.
-final DependabotRepositoryAccessDetailsDefaultLevel? defaultLevel;
+final Omittable<DependabotRepositoryAccessDetailsDefaultLevel?> defaultLevel;
 
 final List<SimpleRepository?>? accessibleRepositories;
 
-Map<String, dynamic> toJson() { return {
-  if (defaultLevel != null) 'default_level': defaultLevel?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (defaultLevel.isPresent) 'default_level': defaultLevel.value?.toJson(),
   if (accessibleRepositories != null) 'accessible_repositories': accessibleRepositories?.map((e) => e?.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_level', 'accessible_repositories'}.contains(key)); } 
-DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDefaultLevel? Function()? defaultLevel, List<SimpleRepository?>? Function()? accessibleRepositories, }) { return DependabotRepositoryAccessDetails(
-  defaultLevel: defaultLevel != null ? defaultLevel() : this.defaultLevel,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_level', 'accessible_repositories'}.contains(key));}
+DependabotRepositoryAccessDetails copyWith({Omittable<DependabotRepositoryAccessDetailsDefaultLevel?>? defaultLevel, List<SimpleRepository?>? Function()? accessibleRepositories, }) {return DependabotRepositoryAccessDetails(
+  defaultLevel: defaultLevel ?? this.defaultLevel,
   accessibleRepositories: accessibleRepositories != null ? accessibleRepositories() : this.accessibleRepositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotRepositoryAccessDetails &&
           defaultLevel == other.defaultLevel &&
@@ -115,4 +115,4 @@ DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDef
 
 @override String toString() => 'DependabotRepositoryAccessDetails(defaultLevel: $defaultLevel, accessibleRepositories: $accessibleRepositories)';
 
- }
+}

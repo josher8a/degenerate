@@ -12,7 +12,7 @@ final class AiSearchTokensApi with ApiExecutor {const AiSearchTokensApi(this.api
 /// List tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<List<AiSearchCreateTokensResponseResult>, AiSearchListTokensError>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchCreateTokensResponseResult>, AiSearchListTokensError>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -38,7 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -46,13 +46,13 @@ return execute(
   },
   onError: AiSearchListTokensError.fromResponse,
 );
- } 
+}
 /// Create new tokens.
 ///
 /// Create a new tokens.
 ///
 /// `POST /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchCreateTokensError>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchCreateTokensError>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,7 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -71,11 +71,11 @@ return execute(
   },
   onError: AiSearchCreateTokensError.fromResponse,
 );
- } 
+}
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,7 +84,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -92,11 +92,11 @@ return execute(
   },
   onError: AiSearchFetchTokensError.fromResponse,
 );
- } 
+}
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,7 +107,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -115,11 +115,11 @@ return execute(
   },
   onError: AiSearchUpdateTokensError.fromResponse,
 );
- } 
+}
 /// Delete tokens.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchDeleteTokensError>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchDeleteTokensError>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -128,7 +128,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -136,5 +136,5 @@ return execute(
   },
   onError: AiSearchDeleteTokensError.fromResponse,
 );
- } 
- }
+}
+}

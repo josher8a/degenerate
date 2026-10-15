@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_trigger.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/sleep.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps_step.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/termination.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wait_for_event.dart';@immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_trigger.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps.dart';@immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
 
-factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
+factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResult(
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   error: json['error'] != null ? ResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   output: json['output'],
@@ -12,17 +12,11 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorBatchCreateWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
   stepCount: (json['step_count'] as num).toInt(),
-  steps: (json['steps'] as List<dynamic>).map((e) => switch (e) {
-  final Map<String, dynamic> m when m['type'] == 'step' => OneOf4<StepsStep, Sleep, Termination, WaitForEvent>.a(StepsStep.fromJson(m)),
-  final Map<String, dynamic> m when m['type'] == 'sleep' => OneOf4<StepsStep, Sleep, Termination, WaitForEvent>.b(Sleep.fromJson(m)),
-  final Map<String, dynamic> m when m['type'] == 'termination' => OneOf4<StepsStep, Sleep, Termination, WaitForEvent>.c(Termination.fromJson(m)),
-  final Map<String, dynamic> m when m['type'] == 'waitForEvent' => OneOf4<StepsStep, Sleep, Termination, WaitForEvent>.d(WaitForEvent.fromJson(m)),
-  _ => OneOf4.parse(e, fromA: (v) => StepsStep.fromJson(v as Map<String, dynamic>), fromB: (v) => Sleep.fromJson(v as Map<String, dynamic>), fromC: (v) => Termination.fromJson(v as Map<String, dynamic>), fromD: (v) => WaitForEvent.fromJson(v as Map<String, dynamic>),),
-}).toList(),
+  steps: (json['steps'] as List<dynamic>).map(Steps.fromJson).toList(),
   success: json['success'] as bool?,
   trigger: ResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,
-); }
+);}
 
 final DateTime? end;
 
@@ -49,7 +43,7 @@ final ResultTrigger trigger;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': end?.toIso8601String(),
   'error': error?.toJson(),
   'output': output,
@@ -62,20 +56,20 @@ Map<String, dynamic> toJson() { return {
   'success': success,
   'trigger': trigger.toJson(),
   'versionId': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('error') &&
       json.containsKey('output') &&
       json.containsKey('params') &&
       json.containsKey('queued') && json['queued'] is String &&
-      json.containsKey('start') && json['start'] is String &&
+      json.containsKey('start') && (json['start'] == null || json['start'] is String) &&
       json.containsKey('status') &&
       json.containsKey('step_count') && json['step_count'] is num &&
       json.containsKey('steps') &&
-      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
       json.containsKey('trigger') &&
-      json.containsKey('versionId') && json['versionId'] is String; } 
-WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, ResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorBatchCreateWorkflowInstanceResponseResultStatus? status, int? stepCount, List<Steps>? steps, bool? Function()? success, ResultTrigger? trigger, String? versionId, }) { return WorDescribeWorkflowInstanceResponseResult(
+      json.containsKey('versionId') && json['versionId'] is String;}
+WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, ResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorBatchCreateWorkflowInstanceResponseResultStatus? status, int? stepCount, List<Steps>? steps, bool? Function()? success, ResultTrigger? trigger, String? versionId, }) {return WorDescribeWorkflowInstanceResponseResult(
   end: end != null ? end() : this.end,
   error: error != null ? error() : this.error,
   output: output ?? this.output,
@@ -88,7 +82,7 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
   success: success != null ? success() : this.success,
   trigger: trigger ?? this.trigger,
   versionId: versionId ?? this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResult &&
           end == other.end &&
@@ -108,4 +102,4 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
 
 @override String toString() => 'WorDescribeWorkflowInstanceResponseResult(\n  end: $end,\n  error: $error,\n  output: $output,\n  params: $params,\n  queued: $queued,\n  start: $start,\n  status: $status,\n  stepCount: $stepCount,\n  steps: $steps,\n  success: $success,\n  trigger: $trigger,\n  versionId: $versionId,\n)';
 
- }
+}

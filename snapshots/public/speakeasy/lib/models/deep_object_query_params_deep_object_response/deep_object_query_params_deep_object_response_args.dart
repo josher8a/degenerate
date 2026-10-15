@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeepObjectQueryParamsDeepObjectResponseArgs {const DeepObjectQueryParamsDeepObjectResponseArgs({required this.deepObjarr, required this.deepObjbool, required this.deepObjint, required this.deepObjnum, required this.deepObjmaptestkey1, required this.deepObjmaptestkey2, required this.deepObjobjany, required this.deepObjobjbigint, required this.deepObjobjbigintStr, required this.deepObjobjboolOpt, required this.deepObjobjbool, required this.deepObjobjdateTime, required this.deepObjobjdate, required this.deepObjobjdecimal, required this.deepObjobjdecimalStr, required this.deepObjobjenum, required this.deepObjobjfloat32, required this.deepObjobjint32, required this.deepObjobjint32Enum, required this.deepObjobjintEnum, required this.deepObjobjint, required this.deepObjobjnum, required this.deepObjobjstr, required this.deepObjobjstrOpt, required this.deepObjoneof, required this.deepObjstr, this.deepObjobjfloat64Str, this.deepObjobjint64Str, });
 
-factory DeepObjectQueryParamsDeepObjectResponseArgs.fromJson(Map<String, dynamic> json) { return DeepObjectQueryParamsDeepObjectResponseArgs(
+factory DeepObjectQueryParamsDeepObjectResponseArgs.fromJson(Map<String, dynamic> json) {return DeepObjectQueryParamsDeepObjectResponseArgs(
   deepObjarr: (json['deepObj[arr]'] as List<dynamic>).map((e) => e as String).toList(),
   deepObjbool: json['deepObj[bool]'] as String,
   deepObjint: json['deepObj[int]'] as String,
@@ -32,7 +32,7 @@ factory DeepObjectQueryParamsDeepObjectResponseArgs.fromJson(Map<String, dynamic
   deepObjobjstrOpt: json['deepObj[obj][strOpt]'] as String,
   deepObjoneof: json['deepObj[oneof]'] as String,
   deepObjstr: json['deepObj[str]'] as String,
-); }
+);}
 
 /// Example: `[test1, test2]`
 final List<String> deepObjarr;
@@ -118,7 +118,7 @@ final String deepObjoneof;
 /// Example: `'test'`
 final String deepObjstr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deepObj[arr]': deepObjarr,
   'deepObj[bool]': deepObjbool,
   'deepObj[int]': deepObjint,
@@ -147,8 +147,8 @@ Map<String, dynamic> toJson() { return {
   'deepObj[obj][strOpt]': deepObjobjstrOpt,
   'deepObj[oneof]': deepObjoneof,
   'deepObj[str]': deepObjstr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deepObj[arr]') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deepObj[arr]') &&
       json.containsKey('deepObj[bool]') && json['deepObj[bool]'] is String &&
       json.containsKey('deepObj[int]') && json['deepObj[int]'] is String &&
       json.containsKey('deepObj[num]') && json['deepObj[num]'] is String &&
@@ -173,8 +173,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('deepO
       json.containsKey('deepObj[obj][str]') && json['deepObj[obj][str]'] is String &&
       json.containsKey('deepObj[obj][strOpt]') && json['deepObj[obj][strOpt]'] is String &&
       json.containsKey('deepObj[oneof]') && json['deepObj[oneof]'] is String &&
-      json.containsKey('deepObj[str]') && json['deepObj[str]'] is String; } 
-DeepObjectQueryParamsDeepObjectResponseArgs copyWith({List<String>? deepObjarr, String? deepObjbool, String? deepObjint, String? deepObjnum, String? deepObjmaptestkey1, String? deepObjmaptestkey2, String? deepObjobjany, String? deepObjobjbigint, String? deepObjobjbigintStr, String? deepObjobjboolOpt, String? deepObjobjbool, String? deepObjobjdateTime, String? deepObjobjdate, String? deepObjobjdecimal, String? deepObjobjdecimalStr, String? deepObjobjenum, String? deepObjobjfloat32, String? Function()? deepObjobjfloat64Str, String? deepObjobjint32, String? deepObjobjint32Enum, String? Function()? deepObjobjint64Str, String? deepObjobjintEnum, String? deepObjobjint, String? deepObjobjnum, String? deepObjobjstr, String? deepObjobjstrOpt, String? deepObjoneof, String? deepObjstr, }) { return DeepObjectQueryParamsDeepObjectResponseArgs(
+      json.containsKey('deepObj[str]') && json['deepObj[str]'] is String;}
+DeepObjectQueryParamsDeepObjectResponseArgs copyWith({List<String>? deepObjarr, String? deepObjbool, String? deepObjint, String? deepObjnum, String? deepObjmaptestkey1, String? deepObjmaptestkey2, String? deepObjobjany, String? deepObjobjbigint, String? deepObjobjbigintStr, String? deepObjobjboolOpt, String? deepObjobjbool, String? deepObjobjdateTime, String? deepObjobjdate, String? deepObjobjdecimal, String? deepObjobjdecimalStr, String? deepObjobjenum, String? deepObjobjfloat32, String? Function()? deepObjobjfloat64Str, String? deepObjobjint32, String? deepObjobjint32Enum, String? Function()? deepObjobjint64Str, String? deepObjobjintEnum, String? deepObjobjint, String? deepObjobjnum, String? deepObjobjstr, String? deepObjobjstrOpt, String? deepObjoneof, String? deepObjstr, }) {return DeepObjectQueryParamsDeepObjectResponseArgs(
   deepObjarr: deepObjarr ?? this.deepObjarr,
   deepObjbool: deepObjbool ?? this.deepObjbool,
   deepObjint: deepObjint ?? this.deepObjint,
@@ -203,7 +203,7 @@ DeepObjectQueryParamsDeepObjectResponseArgs copyWith({List<String>? deepObjarr, 
   deepObjobjstrOpt: deepObjobjstrOpt ?? this.deepObjobjstrOpt,
   deepObjoneof: deepObjoneof ?? this.deepObjoneof,
   deepObjstr: deepObjstr ?? this.deepObjstr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeepObjectQueryParamsDeepObjectResponseArgs &&
           listEquals(deepObjarr, other.deepObjarr) &&
@@ -239,4 +239,4 @@ DeepObjectQueryParamsDeepObjectResponseArgs copyWith({List<String>? deepObjarr, 
 
 @override String toString() => 'DeepObjectQueryParamsDeepObjectResponseArgs(\n  deepObjarr: $deepObjarr,\n  deepObjbool: $deepObjbool,\n  deepObjint: $deepObjint,\n  deepObjnum: $deepObjnum,\n  deepObjmaptestkey1: $deepObjmaptestkey1,\n  deepObjmaptestkey2: $deepObjmaptestkey2,\n  deepObjobjany: $deepObjobjany,\n  deepObjobjbigint: $deepObjobjbigint,\n  deepObjobjbigintStr: $deepObjobjbigintStr,\n  deepObjobjboolOpt: $deepObjobjboolOpt,\n  deepObjobjbool: $deepObjobjbool,\n  deepObjobjdateTime: $deepObjobjdateTime,\n  deepObjobjdate: $deepObjobjdate,\n  deepObjobjdecimal: $deepObjobjdecimal,\n  deepObjobjdecimalStr: $deepObjobjdecimalStr,\n  deepObjobjenum: $deepObjobjenum,\n  deepObjobjfloat32: $deepObjobjfloat32,\n  deepObjobjfloat64Str: $deepObjobjfloat64Str,\n  deepObjobjint32: $deepObjobjint32,\n  deepObjobjint32Enum: $deepObjobjint32Enum,\n  deepObjobjint64Str: $deepObjobjint64Str,\n  deepObjobjintEnum: $deepObjobjintEnum,\n  deepObjobjint: $deepObjobjint,\n  deepObjobjnum: $deepObjobjnum,\n  deepObjobjstr: $deepObjobjstr,\n  deepObjobjstrOpt: $deepObjobjstrOpt,\n  deepObjoneof: $deepObjoneof,\n  deepObjstr: $deepObjstr,\n)';
 
- }
+}

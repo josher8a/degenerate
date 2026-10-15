@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_timeseries_response/radar_get_attacks_layer7_timeseries_response_result_serie0.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_response/radar_get_bgp_timeseries_response_result_meta.dart';@immutable final class RadarGetBgpTimeseriesResponseResult {const RadarGetBgpTimeseriesResponseResult({required this.meta, required this.serie0, });
 
-factory RadarGetBgpTimeseriesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpTimeseriesResponseResult(
+factory RadarGetBgpTimeseriesResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetBgpTimeseriesResponseResult(
   meta: RadarGetBgpTimeseriesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   serie0: RadarGetAttacksLayer7TimeseriesResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarGetBgpTimeseriesResponseResultMeta meta;
 
 final RadarGetAttacksLayer7TimeseriesResponseResultSerie0 serie0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'serie_0': serie0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('serie_0'); } 
-RadarGetBgpTimeseriesResponseResult copyWith({RadarGetBgpTimeseriesResponseResultMeta? meta, RadarGetAttacksLayer7TimeseriesResponseResultSerie0? serie0, }) { return RadarGetBgpTimeseriesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('serie_0');}
+RadarGetBgpTimeseriesResponseResult copyWith({RadarGetBgpTimeseriesResponseResultMeta? meta, RadarGetAttacksLayer7TimeseriesResponseResultSerie0? serie0, }) {return RadarGetBgpTimeseriesResponseResult(
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTimeseriesResponseResult &&
           meta == other.meta &&
@@ -31,4 +31,4 @@ RadarGetBgpTimeseriesResponseResult copyWith({RadarGetBgpTimeseriesResponseResul
 
 @override String toString() => 'RadarGetBgpTimeseriesResponseResult(meta: $meta, serie0: $serie0)';
 
- }
+}

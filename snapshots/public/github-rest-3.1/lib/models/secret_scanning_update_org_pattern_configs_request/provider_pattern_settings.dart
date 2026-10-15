@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Push protection setting to set for the pattern.
 sealed class ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting();
 
-factory ProviderPatternSettingsPushProtectionSetting.fromJson(String json) { return switch (json) {
+factory ProviderPatternSettingsPushProtectionSetting.fromJson(String json) {return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   _ => ProviderPatternSettingsPushProtectionSetting$Unknown(json),
-}; }
+};}
 
 static const ProviderPatternSettingsPushProtectionSetting notSet = ProviderPatternSettingsPushProtectionSetting$notSet._();
 
@@ -20,33 +20,33 @@ static const ProviderPatternSettingsPushProtectionSetting enabled = ProviderPatt
 static const List<ProviderPatternSettingsPushProtectionSetting> values = [notSet, disabled, enabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'not-set' => 'notSet',
   'disabled' => 'disabled',
   'enabled' => 'enabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ProviderPatternSettingsPushProtectionSetting$Unknown; } 
+bool get isUnknown {return this is ProviderPatternSettingsPushProtectionSetting$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) {return switch (this) {
       ProviderPatternSettingsPushProtectionSetting$notSet() => notSet(),
       ProviderPatternSettingsPushProtectionSetting$disabled() => disabled(),
       ProviderPatternSettingsPushProtectionSetting$enabled() => enabled(),
       ProviderPatternSettingsPushProtectionSetting$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) {return switch (this) {
       ProviderPatternSettingsPushProtectionSetting$notSet() => notSet != null ? notSet() : orElse(value),
       ProviderPatternSettingsPushProtectionSetting$disabled() => disabled != null ? disabled() : orElse(value),
       ProviderPatternSettingsPushProtectionSetting$enabled() => enabled != null ? enabled() : orElse(value),
       ProviderPatternSettingsPushProtectionSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ProviderPatternSettingsPushProtectionSetting($value)';
 
- }
+}
 @immutable final class ProviderPatternSettingsPushProtectionSetting$notSet extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$notSet._();
 
 @override String get value => 'not-set';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'not-set'.hashCode;
 
- }
+}
 @immutable final class ProviderPatternSettingsPushProtectionSetting$disabled extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$disabled._();
 
 @override String get value => 'disabled';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class ProviderPatternSettingsPushProtectionSetting$enabled extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$enabled._();
 
 @override String get value => 'enabled';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class ProviderPatternSettingsPushProtectionSetting$Unknown extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$Unknown(this.value);
 
 @override final String value;
@@ -83,13 +83,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ProviderPatternSettings {const ProviderPatternSettings({this.tokenType, this.pushProtectionSetting, });
 
-factory ProviderPatternSettings.fromJson(Map<String, dynamic> json) { return ProviderPatternSettings(
+factory ProviderPatternSettings.fromJson(Map<String, dynamic> json) {return ProviderPatternSettings(
   tokenType: json['token_type'] as String?,
   pushProtectionSetting: json['push_protection_setting'] != null ? ProviderPatternSettingsPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null,
-); }
+);}
 
 /// The ID of the pattern to configure.
 final String? tokenType;
@@ -97,15 +97,15 @@ final String? tokenType;
 /// Push protection setting to set for the pattern.
 final ProviderPatternSettingsPushProtectionSetting? pushProtectionSetting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token_type': ?tokenType,
   if (pushProtectionSetting != null) 'push_protection_setting': pushProtectionSetting?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'push_protection_setting'}.contains(key)); } 
-ProviderPatternSettings copyWith({String? Function()? tokenType, ProviderPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) { return ProviderPatternSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token_type', 'push_protection_setting'}.contains(key));}
+ProviderPatternSettings copyWith({String? Function()? tokenType, ProviderPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) {return ProviderPatternSettings(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   pushProtectionSetting: pushProtectionSetting != null ? pushProtectionSetting() : this.pushProtectionSetting,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProviderPatternSettings &&
           tokenType == other.tokenType &&
@@ -115,4 +115,4 @@ ProviderPatternSettings copyWith({String? Function()? tokenType, ProviderPattern
 
 @override String toString() => 'ProviderPatternSettings(tokenType: $tokenType, pushProtectionSetting: $pushProtectionSetting)';
 
- }
+}

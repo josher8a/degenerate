@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_customer_device_options.dart';import 'package:pub_cloudflare/models/mconn_day_of_week.dart';import 'package:pub_cloudflare/models/mconn_embargo_date.dart';@immutable final class MconnCustomerConnectorCreateRequest {const MconnCustomerConnectorCreateRequest({required this.device, this.activated, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.notes, this.timezone, });
 
-factory MconnCustomerConnectorCreateRequest.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorCreateRequest(
+factory MconnCustomerConnectorCreateRequest.fromJson(Map<String, dynamic> json) {return MconnCustomerConnectorCreateRequest(
   activated: json['activated'] as bool?,
   interruptWindowDaysOfWeek: (json['interrupt_window_days_of_week'] as List<dynamic>?)?.map((e) => MconnDayOfWeek.fromJson(e as String)).toList(),
   interruptWindowDurationHours: json['interrupt_window_duration_hours'] != null ? (json['interrupt_window_duration_hours'] as num).toDouble() : null,
@@ -12,7 +12,7 @@ factory MconnCustomerConnectorCreateRequest.fromJson(Map<String, dynamic> json) 
   notes: json['notes'] as String?,
   timezone: json['timezone'] as String?,
   device: MconnCustomerDeviceOptions.fromJson(json['device'] as Map<String, dynamic>),
-); }
+);}
 
 final bool? activated;
 
@@ -32,7 +32,7 @@ final String? timezone;
 
 final MconnCustomerDeviceOptions device;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activated': ?activated,
   if (interruptWindowDaysOfWeek != null) 'interrupt_window_days_of_week': interruptWindowDaysOfWeek?.map((e) => e.toJson()).toList(),
   'interrupt_window_duration_hours': ?interruptWindowDurationHours,
@@ -41,10 +41,10 @@ Map<String, dynamic> toJson() { return {
   'notes': ?notes,
   'timezone': ?timezone,
   'device': device.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('device'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('device');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final interruptWindowDurationHours$ = interruptWindowDurationHours;
 if (interruptWindowDurationHours$ != null) {
   if (interruptWindowDurationHours$ < 1) { errors.add('interruptWindowDurationHours: must be >= 1'); }
@@ -54,8 +54,8 @@ final interruptWindowEmbargoDates$ = interruptWindowEmbargoDates;
 if (interruptWindowEmbargoDates$ != null) {
   if (interruptWindowEmbargoDates$.length > 100) { errors.add('interruptWindowEmbargoDates: must have <= 100 items'); }
 }
-return errors; } 
-MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, MconnCustomerDeviceOptions? device, }) { return MconnCustomerConnectorCreateRequest(
+return errors;}
+MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, MconnCustomerDeviceOptions? device, }) {return MconnCustomerConnectorCreateRequest(
   activated: activated != null ? activated() : this.activated,
   interruptWindowDaysOfWeek: interruptWindowDaysOfWeek != null ? interruptWindowDaysOfWeek() : this.interruptWindowDaysOfWeek,
   interruptWindowDurationHours: interruptWindowDurationHours != null ? interruptWindowDurationHours() : this.interruptWindowDurationHours,
@@ -64,7 +64,7 @@ MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<
   notes: notes != null ? notes() : this.notes,
   timezone: timezone != null ? timezone() : this.timezone,
   device: device ?? this.device,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnectorCreateRequest &&
           activated == other.activated &&
@@ -80,4 +80,4 @@ MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<
 
 @override String toString() => 'MconnCustomerConnectorCreateRequest(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone, device: $device)';
 
- }
+}

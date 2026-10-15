@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link_link_options.dart';sealed class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject();
 
-factory TerminalOnboardingLinkObject.fromJson(String json) { return switch (json) {
+factory TerminalOnboardingLinkObject.fromJson(String json) {return switch (json) {
   'terminal.onboarding_link' => terminalOnboardingLink,
   _ => TerminalOnboardingLinkObject$Unknown(json),
-}; }
+};}
 
 static const TerminalOnboardingLinkObject terminalOnboardingLink = TerminalOnboardingLinkObject$terminalOnboardingLink._();
 
 static const List<TerminalOnboardingLinkObject> values = [terminalOnboardingLink];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'terminal.onboarding_link' => 'terminalOnboardingLink',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TerminalOnboardingLinkObject$Unknown; } 
+bool get isUnknown {return this is TerminalOnboardingLinkObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() terminalOnboardingLink, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() terminalOnboardingLink, required W Function(String value) $unknown, }) {return switch (this) {
       TerminalOnboardingLinkObject$terminalOnboardingLink() => terminalOnboardingLink(),
       TerminalOnboardingLinkObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminalOnboardingLink, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminalOnboardingLink, W Function(String value)? $unknown, }) {return switch (this) {
       TerminalOnboardingLinkObject$terminalOnboardingLink() => terminalOnboardingLink != null ? terminalOnboardingLink() : orElse(value),
       TerminalOnboardingLinkObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TerminalOnboardingLinkObject($value)';
 
- }
+}
 @immutable final class TerminalOnboardingLinkObject$terminalOnboardingLink extends TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject$terminalOnboardingLink._();
 
 @override String get value => 'terminal.onboarding_link';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminal
 
 @override int get hashCode => 'terminal.onboarding_link'.hashCode;
 
- }
+}
 @immutable final class TerminalOnboardingLinkObject$Unknown extends TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject$Unknown(this.value);
 
 @override final String value;
@@ -52,17 +52,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminal
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returns redirect links used for onboarding onto Tap to Pay on iPhone.
-@immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf, });
+@immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf = const Omittable.absent(), });
 
-factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLink(
+factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) {return TerminalOnboardingLink(
   linkOptions: TerminalOnboardingLinkLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
   linkType: LinkType.fromJson(json['link_type'] as String),
   object: TerminalOnboardingLinkObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] as String?,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] as String?) : const Omittable.absent(),
   redirectUrl: json['redirect_url'] as String,
-); }
+);}
 
 final TerminalOnboardingLinkLinkOptions linkOptions;
 
@@ -72,37 +72,37 @@ final LinkType linkType;
 final TerminalOnboardingLinkObject object;
 
 /// Stripe account ID to generate the link for.
-final String? onBehalfOf;
+final Omittable<String?> onBehalfOf;
 
 /// The link passed back to the user for their onboarding.
 final String redirectUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'link_options': linkOptions.toJson(),
   'link_type': linkType.toJson(),
   'object': object.toJson(),
-  'on_behalf_of': ?onBehalfOf,
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value,
   'redirect_url': redirectUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('link_options') &&
       json.containsKey('link_type') &&
       json.containsKey('object') &&
-      json.containsKey('redirect_url') && json['redirect_url'] is String; } 
+      json.containsKey('redirect_url') && json['redirect_url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final onBehalfOf$ = onBehalfOf;
+List<String> validate() {final errors = <String>[];
+final onBehalfOf$ = onBehalfOf.value;
 if (onBehalfOf$ != null) {
   if (onBehalfOf$.runes.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
 if (redirectUrl.runes.length > 5000) { errors.add('redirectUrl: length must be <= 5000'); }
-return errors; } 
-TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, LinkType? linkType, TerminalOnboardingLinkObject? object, String? Function()? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
+return errors;}
+TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, LinkType? linkType, TerminalOnboardingLinkObject? object, Omittable<String?>? onBehalfOf, String? redirectUrl, }) {return TerminalOnboardingLink(
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   redirectUrl: redirectUrl ?? this.redirectUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalOnboardingLink &&
           linkOptions == other.linkOptions &&
@@ -115,4 +115,4 @@ TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions,
 
 @override String toString() => 'TerminalOnboardingLink(linkOptions: $linkOptions, linkType: $linkType, object: $object, onBehalfOf: $onBehalfOf, redirectUrl: $redirectUrl)';
 
- }
+}

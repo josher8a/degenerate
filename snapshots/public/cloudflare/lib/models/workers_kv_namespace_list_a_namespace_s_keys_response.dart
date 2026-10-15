@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_cursor_result_info.dart';import 'package:pub_cloudflare/models/workers_kv_key.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';@immutable final class WorkersKvNamespaceListANamespaceSKeysResponse {const WorkersKvNamespaceListANamespaceSKeysResponse({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 
-factory WorkersKvNamespaceListANamespaceSKeysResponse.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceListANamespaceSKeysResponse(
+factory WorkersKvNamespaceListANamespaceSKeysResponse.fromJson(Map<String, dynamic> json) {return WorkersKvNamespaceListANamespaceSKeysResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => WorkersKvKey.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? WorkersKvCursorResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<WorkersKvMessages2> errors;
 
@@ -24,28 +24,28 @@ final List<WorkersKvKey>? result;
 
 final WorkersKvCursorResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && json['success'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 if (errors.toSet().length != errors.length) { errors$.add('errors: items must be unique'); }
 if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
-return errors$; } 
-WorkersKvNamespaceListANamespaceSKeysResponse copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, List<WorkersKvKey>? Function()? result, WorkersKvCursorResultInfo? Function()? resultInfo, }) { return WorkersKvNamespaceListANamespaceSKeysResponse(
+return errors$;}
+WorkersKvNamespaceListANamespaceSKeysResponse copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, List<WorkersKvKey>? Function()? result, WorkersKvCursorResultInfo? Function()? resultInfo, }) {return WorkersKvNamespaceListANamespaceSKeysResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvNamespaceListANamespaceSKeysResponse &&
           listEquals(errors, other.errors) &&
@@ -58,4 +58,4 @@ WorkersKvNamespaceListANamespaceSKeysResponse copyWith({List<WorkersKvMessages2>
 
 @override String toString() => 'WorkersKvNamespaceListANamespaceSKeysResponse(errors: $errors, messages: $messages, success: $success, result: $result, resultInfo: $resultInfo)';
 
- }
+}

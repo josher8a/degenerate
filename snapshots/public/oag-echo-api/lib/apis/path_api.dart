@@ -12,7 +12,7 @@ final class PathApi with ApiExecutor {const PathApi(this.apiConfig);
 /// Test path parameter(s)
 ///
 /// `GET /path/string/{path_string}/integer/{path_integer}/{enum_nonref_string_path}/{enum_ref_string_path}`
-Future<ApiResult<String, Never>> testsPathStringInteger({required String pathString, required int pathInteger, required TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath enumNonrefStringPath, required StringEnumRef enumRefStringPath, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testsPathStringInteger({required String pathString, required int pathInteger, required TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath enumNonrefStringPath, required StringEnumRef enumRefStringPath, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,11 +21,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return response.body;
   },
 );
- } 
- }
+}
+}

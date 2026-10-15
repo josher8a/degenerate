@@ -14,7 +14,7 @@ final class PerHostnameAuthenticatedOriginPullApi with ApiExecutor {const PerHos
 /// Associate a hostname to a certificate and enable, disable or invalidate the association. If disabled, client certificate will not be sent to the hostname even if activated at the zone level. 100 maximum associations on a single certificate are allowed. Note: Use a null value for parameter *enabled* to invalidate the association.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/hostnames`
-Future<ApiResult<List<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull>?, PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationError>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull>?, PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationError>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,7 +25,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -33,13 +33,13 @@ return execute(
   },
   onError: PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationError.fromResponse,
 );
- } 
+}
 /// Get the Hostname Status for Client Authentication
 ///
 /// Retrieves the client certificate authentication status for a specific hostname, showing whether authenticated origin pulls are enabled.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/{hostname}`
-Future<ApiResult<TlsCertificatesAndHostnamesHostnameCertidObject?, PerHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationError>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required TlsCertificatesAndHostnamesSchemasHostname hostname, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesHostnameCertidObject?, PerHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationError>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required TlsCertificatesAndHostnamesSchemasHostname hostname, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,13 +56,13 @@ return execute(
   },
   onError: PerHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationError.fromResponse,
 );
- } 
+}
 /// List Certificates
 ///
 /// Lists all client certificates configured for per-hostname authenticated origin pulls on the zone.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesSchemasCertificateObject>?, PerHostnameAuthenticatedOriginPullListCertificatesError>> perHostnameAuthenticatedOriginPullListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesSchemasCertificateObject>?, PerHostnameAuthenticatedOriginPullListCertificatesError>> perHostnameAuthenticatedOriginPullListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,13 +79,13 @@ return execute(
   },
   onError: PerHostnameAuthenticatedOriginPullListCertificatesError.fromResponse,
 );
- } 
+}
 /// Upload a Hostname Client Certificate
 ///
 /// Upload a certificate to be used for client authentication on a hostname. 10 hostname certificates per zone are allowed.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -104,13 +104,13 @@ return execute(
   },
   onError: PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateError.fromResponse,
 );
- } 
+}
 /// Get the Hostname Client Certificate
 ///
 /// Get the certificate by ID to be used for client authentication on a hostname.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,7 +119,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -127,7 +127,7 @@ return execute(
   },
   onError: PerHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateError.fromResponse,
 );
- } 
+}
 /// Delete Hostname Client Certificate
 ///
 /// Removes a client certificate used for authenticated origin pulls on a specific hostname.
@@ -135,7 +135,7 @@ return execute(
 /// 
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -144,7 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -152,5 +152,5 @@ return execute(
   },
   onError: PerHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateError.fromResponse,
 );
- } 
- }
+}
+}

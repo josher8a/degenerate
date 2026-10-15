@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_email_list_item.dart';@immutable final class ListEmailsResponseResult {const ListEmailsResponseResult({required this.emails});
 
-factory ListEmailsResponseResult.fromJson(Map<String, dynamic> json) { return ListEmailsResponseResult(
+factory ListEmailsResponseResult.fromJson(Map<String, dynamic> json) {return ListEmailsResponseResult(
   emails: (json['emails'] as List<dynamic>).map((e) => AbuseReportsEmailListItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<AbuseReportsEmailListItem> emails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'emails': emails.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('emails'); } 
-ListEmailsResponseResult copyWith({List<AbuseReportsEmailListItem>? emails}) { return ListEmailsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('emails');}
+ListEmailsResponseResult copyWith({List<AbuseReportsEmailListItem>? emails}) {return ListEmailsResponseResult(
   emails: emails ?? this.emails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListEmailsResponseResult &&
           listEquals(emails, other.emails);
@@ -24,4 +24,4 @@ ListEmailsResponseResult copyWith({List<AbuseReportsEmailListItem>? emails}) { r
 
 @override String toString() => 'ListEmailsResponseResult(emails: $emails)';
 
- }
+}

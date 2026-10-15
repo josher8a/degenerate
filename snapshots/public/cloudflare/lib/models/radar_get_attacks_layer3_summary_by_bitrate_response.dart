@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_by_bitrate_response/radar_get_attacks_layer3_summary_by_bitrate_response_result.dart';@immutable final class RadarGetAttacksLayer3SummaryByBitrateResponse {const RadarGetAttacksLayer3SummaryByBitrateResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer3SummaryByBitrateResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByBitrateResponse(
+factory RadarGetAttacksLayer3SummaryByBitrateResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3SummaryByBitrateResponse(
   result: RadarGetAttacksLayer3SummaryByBitrateResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3SummaryByBitrateResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer3SummaryByBitrateResponse copyWith({RadarGetAttacksLayer3SummaryByBitrateResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3SummaryByBitrateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer3SummaryByBitrateResponse copyWith({RadarGetAttacksLayer3SummaryByBitrateResponseResult? result, bool? success, }) {return RadarGetAttacksLayer3SummaryByBitrateResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByBitrateResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer3SummaryByBitrateResponse copyWith({RadarGetAttacksLayer3Sum
 
 @override String toString() => 'RadarGetAttacksLayer3SummaryByBitrateResponse(result: $result, success: $success)';
 
- }
+}

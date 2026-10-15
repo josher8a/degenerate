@@ -14,7 +14,7 @@ final class DevicesApi with ApiExecutor {const DevicesApi(this.apiConfig);
 /// Fetches a list of the device settings profiles for an account.
 ///
 /// `GET /accounts/{account_id}/devices/policies`
-Future<ApiResult<List<TeamsDevicesDeviceSettingsPolicy>?, DevicesListDeviceSettingsPoliciesError>> devicesListDeviceSettingsPolicies({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDeviceSettingsPolicy>, DevicesListDeviceSettingsPoliciesError>> devicesListDeviceSettingsPolicies({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DevicesListDeviceSettingsPoliciesError.fromResponse,
 );
- } 
+}
 /// Get the default device settings profile
 ///
 /// Fetches the default device settings profile for an account.
 ///
 /// `GET /accounts/{account_id}/devices/policy`
-Future<ApiResult<TeamsDevicesDefaultDeviceSettingsPolicy?, DevicesGetDefaultDeviceSettingsPolicyError>> devicesGetDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDefaultDeviceSettingsPolicy, DevicesGetDefaultDeviceSettingsPolicyError>> devicesGetDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,21 +46,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesGetDefaultDeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Create a device settings profile
 ///
 /// Creates a device settings profile to be applied to certain devices matching the criteria.
 ///
 /// `POST /accounts/{account_id}/devices/policy`
-Future<ApiResult<TeamsDevicesDeviceSettingsPolicy?, DevicesCreateDeviceSettingsPolicyError>> devicesCreateDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesCreateDeviceSettingsPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDeviceSettingsPolicy, DevicesCreateDeviceSettingsPolicyError>> devicesCreateDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesCreateDeviceSettingsPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,21 +71,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesCreateDeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Update the default device settings profile
 ///
 /// Updates the default device settings profile for an account.
 ///
 /// `PATCH /accounts/{account_id}/devices/policy`
-Future<ApiResult<TeamsDevicesDefaultDeviceSettingsPolicy?, DevicesUpdateDefaultDeviceSettingsPolicyError>> devicesUpdateDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesUpdateDefaultDeviceSettingsPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDefaultDeviceSettingsPolicy, DevicesUpdateDefaultDeviceSettingsPolicyError>> devicesUpdateDefaultDeviceSettingsPolicy({required TeamsDevicesIdentifier accountId, required DevicesUpdateDefaultDeviceSettingsPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,21 +96,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesUpdateDefaultDeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Get device settings profile by ID
 ///
 /// Fetches a device settings profile by ID.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<TeamsDevicesDeviceSettingsPolicy?, DevicesGetDeviceSettingsPolicyByIdError>> devicesGetDeviceSettingsPolicyById({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDeviceSettingsPolicy, DevicesGetDeviceSettingsPolicyByIdError>> devicesGetDeviceSettingsPolicyById({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,21 +119,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesGetDeviceSettingsPolicyByIdError.fromResponse,
 );
- } 
+}
 /// Update a device settings profile
 ///
 /// Updates a configured device settings profile.
 ///
 /// `PATCH /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<TeamsDevicesDeviceSettingsPolicy?, DevicesUpdateDeviceSettingsPolicyError>> devicesUpdateDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required DevicesUpdateDeviceSettingsPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDeviceSettingsPolicy, DevicesUpdateDeviceSettingsPolicyError>> devicesUpdateDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required DevicesUpdateDeviceSettingsPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,21 +144,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesUpdateDeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Delete a device settings profile
 ///
 /// Deletes a device settings profile and fetches a list of the remaining profiles for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/policy/{policy_id}`
-Future<ApiResult<List<TeamsDevicesDeviceSettingsPolicy>?, DevicesDeleteDeviceSettingsPolicyError>> devicesDeleteDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDeviceSettingsPolicy>, DevicesDeleteDeviceSettingsPolicyError>> devicesDeleteDeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -167,21 +167,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DevicesDeleteDeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Get the Split Tunnel exclude list for a device settings profile
 ///
 /// Fetches the list of routes excluded from the WARP client's tunnel for a specific device settings profile.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/exclude`
-Future<ApiResult<List<TeamsDevicesSplitTunnel>?, DevicesGetSplitTunnelExcludeListForADeviceSettingsPolicyError>> devicesGetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnel>, DevicesGetSplitTunnelExcludeListForADeviceSettingsPolicyError>> devicesGetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -190,21 +190,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesGetSplitTunnelExcludeListForADeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Set the Split Tunnel exclude list for a device settings profile
 ///
 /// Sets the list of routes excluded from the WARP client's tunnel for a specific device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/exclude`
-Future<ApiResult<List<TeamsDevicesSplitTunnel>?, DevicesSetSplitTunnelExcludeListForADeviceSettingsPolicyError>> devicesSetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnel>, DevicesSetSplitTunnelExcludeListForADeviceSettingsPolicyError>> devicesSetSplitTunnelExcludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,21 +215,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesSetSplitTunnelExcludeListForADeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Get the Local Domain Fallback list for a device settings profile
 ///
 /// Fetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. These domains will use the specified local DNS resolver instead.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains`
-Future<ApiResult<List<TeamsDevicesFallbackDomain>?, DevicesGetLocalDomainFallbackListForADeviceSettingsPolicyError>> devicesGetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesFallbackDomain>, DevicesGetLocalDomainFallbackListForADeviceSettingsPolicyError>> devicesGetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -238,21 +238,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DevicesGetLocalDomainFallbackListForADeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Set the Local Domain Fallback list for a device settings profile
 ///
 /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead. This will only apply to the specified device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains`
-Future<ApiResult<List<TeamsDevicesFallbackDomain>?, DevicesSetLocalDomainFallbackListForADeviceSettingsPolicyError>> devicesSetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesFallbackDomain>, DevicesSetLocalDomainFallbackListForADeviceSettingsPolicyError>> devicesSetLocalDomainFallbackListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -263,21 +263,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DevicesSetLocalDomainFallbackListForADeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Get the Split Tunnel include list for a device settings profile
 ///
 /// Fetches the list of routes included in the WARP client's tunnel for a specific device settings profile.
 ///
 /// `GET /accounts/{account_id}/devices/policy/{policy_id}/include`
-Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>?, DevicesGetSplitTunnelIncludeListForADeviceSettingsPolicyError>> devicesGetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>, DevicesGetSplitTunnelIncludeListForADeviceSettingsPolicyError>> devicesGetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -286,21 +286,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesGetSplitTunnelIncludeListForADeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Set the Split Tunnel include list for a device settings profile
 ///
 /// Sets the list of routes included in the WARP client's tunnel for a specific device settings profile.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/{policy_id}/include`
-Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>?, DevicesSetSplitTunnelIncludeListForADeviceSettingsPolicyError>> devicesSetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>, DevicesSetSplitTunnelIncludeListForADeviceSettingsPolicyError>> devicesSetSplitTunnelIncludeListForADeviceSettingsPolicy({required TeamsDevicesSchemasUuid policyId, required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -311,21 +311,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesSetSplitTunnelIncludeListForADeviceSettingsPolicyError.fromResponse,
 );
- } 
+}
 /// Get the Split Tunnel exclude list
 ///
 /// Fetches the list of routes excluded from the WARP client's tunnel.
 ///
 /// `GET /accounts/{account_id}/devices/policy/exclude`
-Future<ApiResult<List<TeamsDevicesSplitTunnel>?, DevicesGetSplitTunnelExcludeListError>> devicesGetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnel>, DevicesGetSplitTunnelExcludeListError>> devicesGetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -334,21 +334,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesGetSplitTunnelExcludeListError.fromResponse,
 );
- } 
+}
 /// Set the Split Tunnel exclude list
 ///
 /// Sets the list of routes excluded from the WARP client's tunnel.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/exclude`
-Future<ApiResult<List<TeamsDevicesSplitTunnel>?, DevicesSetSplitTunnelExcludeListError>> devicesSetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnel>, DevicesSetSplitTunnelExcludeListError>> devicesSetSplitTunnelExcludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnel> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -359,21 +359,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesSetSplitTunnelExcludeListError.fromResponse,
 );
- } 
+}
 /// Get your Local Domain Fallback list
 ///
 /// Fetches a list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.
 ///
 /// `GET /accounts/{account_id}/devices/policy/fallback_domains`
-Future<ApiResult<List<TeamsDevicesFallbackDomain>?, DevicesGetLocalDomainFallbackListError>> devicesGetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesFallbackDomain>, DevicesGetLocalDomainFallbackListError>> devicesGetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -382,21 +382,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DevicesGetLocalDomainFallbackListError.fromResponse,
 );
- } 
+}
 /// Set your Local Domain Fallback list
 ///
 /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/fallback_domains`
-Future<ApiResult<List<TeamsDevicesFallbackDomain>?, DevicesSetLocalDomainFallbackListError>> devicesSetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesFallbackDomain>, DevicesSetLocalDomainFallbackListError>> devicesSetLocalDomainFallbackList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesFallbackDomain> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -407,21 +407,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DevicesSetLocalDomainFallbackListError.fromResponse,
 );
- } 
+}
 /// Get the Split Tunnel include list
 ///
 /// Fetches the list of routes included in the WARP client's tunnel.
 ///
 /// `GET /accounts/{account_id}/devices/policy/include`
-Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>?, DevicesGetSplitTunnelIncludeListError>> devicesGetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>, DevicesGetSplitTunnelIncludeListError>> devicesGetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -430,21 +430,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesGetSplitTunnelIncludeListError.fromResponse,
 );
- } 
+}
 /// Set the Split Tunnel include list
 ///
 /// Sets the list of routes included in the WARP client's tunnel.
 ///
 /// `PUT /accounts/{account_id}/devices/policy/include`
-Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>?, DevicesSetSplitTunnelIncludeListError>> devicesSetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>, DevicesSetSplitTunnelIncludeListError>> devicesSetSplitTunnelIncludeList({required TeamsDevicesIdentifier accountId, required List<TeamsDevicesSplitTunnelInclude> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -455,21 +455,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesIncludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: DevicesSetSplitTunnelIncludeListError.fromResponse,
 );
- } 
+}
 /// Get device certificate provisioning status
 ///
 /// Fetches device certificate provisioning.
 ///
 /// `GET /zones/{zone_id}/devices/policy/certificates`
-Future<ApiResult<TeamsDevicesDevicesPolicyCertificates?, DevicesGetPolicyCertificatesError>> devicesGetPolicyCertificates({required TeamsDevicesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicesPolicyCertificates, DevicesGetPolicyCertificatesError>> devicesGetPolicyCertificates({required TeamsDevicesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -478,21 +478,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDevicesPolicyCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDevicesPolicyCertificates.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesGetPolicyCertificatesError.fromResponse,
 );
- } 
+}
 /// Update device certificate provisioning status
 ///
 /// Enable Zero Trust Clients to provision a certificate, containing a x509 subject, and referenced by Access device posture policies when the client visits MTLS protected domains. This facilitates device posture without a WARP session.
 ///
 /// `PATCH /zones/{zone_id}/devices/policy/certificates`
-Future<ApiResult<TeamsDevicesDevicesPolicyCertificates?, DevicesUpdatePolicyCertificatesError>> devicesUpdatePolicyCertificates({required TeamsDevicesIdentifier zoneId, required TeamsDevicesDevicesPolicyCertificates body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicesPolicyCertificates, DevicesUpdatePolicyCertificatesError>> devicesUpdatePolicyCertificates({required TeamsDevicesIdentifier zoneId, required TeamsDevicesDevicesPolicyCertificates body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -503,13 +503,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesDevicesPolicyCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return TeamsDevicesDevicesPolicyCertificates.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: DevicesUpdatePolicyCertificatesError.fromResponse,
 );
- } 
- }
+}
+}

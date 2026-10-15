@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route.dart';@immutable final class MagicRoutesCollectionResponseResult {const MagicRoutesCollectionResponseResult({this.routes});
 
-factory MagicRoutesCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicRoutesCollectionResponseResult(
+factory MagicRoutesCollectionResponseResult.fromJson(Map<String, dynamic> json) {return MagicRoutesCollectionResponseResult(
   routes: (json['routes'] as List<dynamic>?)?.map((e) => MagicRoute.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<MagicRoute>? routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (routes != null) 'routes': routes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'routes'}.contains(key)); } 
-MagicRoutesCollectionResponseResult copyWith({List<MagicRoute>? Function()? routes}) { return MagicRoutesCollectionResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'routes'}.contains(key));}
+MagicRoutesCollectionResponseResult copyWith({List<MagicRoute>? Function()? routes}) {return MagicRoutesCollectionResponseResult(
   routes: routes != null ? routes() : this.routes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRoutesCollectionResponseResult &&
           listEquals(routes, other.routes);
@@ -24,4 +24,4 @@ MagicRoutesCollectionResponseResult copyWith({List<MagicRoute>? Function()? rout
 
 @override String toString() => 'MagicRoutesCollectionResponseResult(routes: $routes)';
 
- }
+}

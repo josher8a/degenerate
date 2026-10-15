@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ThreeDSecureUsage {const ThreeDSecureUsage({required this.supported});
 
-factory ThreeDSecureUsage.fromJson(Map<String, dynamic> json) { return ThreeDSecureUsage(
+factory ThreeDSecureUsage.fromJson(Map<String, dynamic> json) {return ThreeDSecureUsage(
   supported: json['supported'] as bool,
-); }
+);}
 
 /// Whether 3D Secure is supported on this card.
 final bool supported;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'supported': supported,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported') && json['supported'] is bool; } 
-ThreeDSecureUsage copyWith({bool? supported}) { return ThreeDSecureUsage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('supported') && json['supported'] is bool;}
+ThreeDSecureUsage copyWith({bool? supported}) {return ThreeDSecureUsage(
   supported: supported ?? this.supported,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ThreeDSecureUsage &&
           supported == other.supported;
@@ -26,4 +26,4 @@ ThreeDSecureUsage copyWith({bool? supported}) { return ThreeDSecureUsage(
 
 @override String toString() => 'ThreeDSecureUsage(supported: $supported)';
 
- }
+}

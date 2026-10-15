@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';@immutable final class PostZonesZoneIdLogpushValidateDestinationExistsRequest {const PostZonesZoneIdLogpushValidateDestinationExistsRequest({required this.destinationConf});
 
-factory PostZonesZoneIdLogpushValidateDestinationExistsRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushValidateDestinationExistsRequest(
+factory PostZonesZoneIdLogpushValidateDestinationExistsRequest.fromJson(Map<String, dynamic> json) {return PostZonesZoneIdLogpushValidateDestinationExistsRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
-); }
+);}
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination_conf': destinationConf.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
-PostZonesZoneIdLogpushValidateDestinationExistsRequest copyWith({LogpushDestinationConf? destinationConf}) { return PostZonesZoneIdLogpushValidateDestinationExistsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_conf');}
+PostZonesZoneIdLogpushValidateDestinationExistsRequest copyWith({LogpushDestinationConf? destinationConf}) {return PostZonesZoneIdLogpushValidateDestinationExistsRequest(
   destinationConf: destinationConf ?? this.destinationConf,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostZonesZoneIdLogpushValidateDestinationExistsRequest &&
           destinationConf == other.destinationConf;
@@ -25,4 +25,4 @@ PostZonesZoneIdLogpushValidateDestinationExistsRequest copyWith({LogpushDestinat
 
 @override String toString() => 'PostZonesZoneIdLogpushValidateDestinationExistsRequest(destinationConf: $destinationConf)';
 
- }
+}

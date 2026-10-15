@@ -14,7 +14,7 @@ final class StreamSigningKeysApi with ApiExecutor {const StreamSigningKeysApi(th
 /// Lists the video ID and creation date and time when a signing key was created.
 ///
 /// `GET /accounts/{account_id}/stream/keys`
-Future<ApiResult<List<StreamKeyResponseCollectionResult>?, AddAudioTrackError>> streamSigningKeysListSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamKeyResponseCollectionResult>?, AddAudioTrackError>> streamSigningKeysListSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Create signing keys
 ///
 /// Creates an RSA private key in PEM and JWK formats. Key files are only displayed once after creation. Keys are created, used, and deleted independently of videos, and every key can sign any video.
 ///
 /// `POST /accounts/{account_id}/stream/keys`
-Future<ApiResult<StreamKeys?, AddAudioTrackError>> streamSigningKeysCreateSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamKeys?, AddAudioTrackError>> streamSigningKeysCreateSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Delete signing keys
 ///
 /// Deletes signing keys and revokes all signed URLs generated with the key.
 ///
 /// `DELETE /accounts/{account_id}/stream/keys/{identifier}`
-Future<ApiResult<String?, AddAudioTrackError>> streamSigningKeysDeleteSigningKeys({required StreamSchemasIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, AddAudioTrackError>> streamSigningKeysDeleteSigningKeys({required StreamSchemasIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -69,7 +69,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -77,5 +77,5 @@ return execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Dataset {const Dataset({required this.url});
 
-factory Dataset.fromJson(Map<String, dynamic> json) { return Dataset(
+factory Dataset.fromJson(Map<String, dynamic> json) {return Dataset(
   url: json['url'] as String,
-); }
+);}
 
 /// Example: `'https://example.com/download'`
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-Dataset copyWith({String? url}) { return Dataset(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+Dataset copyWith({String? url}) {return Dataset(
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Dataset &&
           url == other.url;
@@ -25,4 +25,4 @@ Dataset copyWith({String? url}) { return Dataset(
 
 @override String toString() => 'Dataset(url: $url)';
 
- }
+}

@@ -381,7 +381,7 @@ final class IrMapper {
     bool isInline = false,
     List<String>? namePath,
   }) {
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
 
     // Handle $ref pointers → IrTypeRef.
@@ -582,7 +582,7 @@ final class IrMapper {
     if (type == 'null') {
       return IrPrimitive(
         PrimitiveKind.dynamic_,
-        description: schema['description'] as String?,
+        description: SpecString.orNull(schema['description'] as String?),
         isNullable: true,
       );
     }
@@ -608,7 +608,7 @@ final class IrMapper {
     String? nameHint,
   }) {
     final format = schema['format'] as String?;
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
 
     final kind = _primitiveKind(type, format);
@@ -795,7 +795,7 @@ final class IrMapper {
     final values = (schema['enum'] as List).map((e) => e.toString()).toList();
     final rawDefault = schema['default'];
     final defaultValue = rawDefault?.toString();
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
     final enumName = name ?? _uniqueTypeName('InlineEnum');
     _recordPath(enumName, namePath);
@@ -825,7 +825,7 @@ final class IrMapper {
     String? itemNameHint,
     List<String>? namePath,
   }) {
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
     final rawItems = schema['items'];
     final itemsSchema = rawItems is Map<String, dynamic> ? rawItems : null;
@@ -857,7 +857,7 @@ final class IrMapper {
     String? nameHint,
     List<String>? namePath,
   }) {
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
     final addProps = schema['additionalProperties'];
     IrType valueType;
@@ -884,7 +884,7 @@ final class IrMapper {
     String? discriminatorProperty,
     List<String>? namePath,
   }) {
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
     final objectName = name ?? _uniqueTypeName('InlineObject');
     final objectPath = namePath ?? [objectName];
@@ -972,7 +972,7 @@ final class IrMapper {
     if (fieldValue is! Map<String, dynamic>) {
       return IrField(
         fieldDartName,
-        fieldOriginalName,
+        SpecString(fieldOriginalName),
         const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
         isRequired: isRequired,
       );
@@ -1027,17 +1027,22 @@ final class IrMapper {
       fieldType = fieldType.copyAsNullable();
     }
 
-    final effectiveDescription =
-        fieldType.description != null &&
-                fieldType.description != fieldDescription
-            ? fieldDescription != null
-                ? '$fieldDescription\n\n${fieldType.description}'
-                : fieldType.description
-            : fieldDescription;
+    // Merge a type-level description (e.g. "One of: String, int" from a
+    // collapsed union) into the field description for doc comments.
+    final typeDescription = fieldType.description;
+    final SpecString? effectiveDescription;
+    if (typeDescription != null &&
+        !typeDescription.test((s) => s == fieldDescription)) {
+      effectiveDescription = fieldDescription != null
+          ? typeDescription.rebuild((s) => '$fieldDescription\n\n$s')
+          : typeDescription;
+    } else {
+      effectiveDescription = SpecString.orNull(fieldDescription);
+    }
 
     return IrField(
       fieldDartName,
-      fieldOriginalName,
+      SpecString(fieldOriginalName),
       fieldType,
       isRequired: isRequired,
       defaultValue: fieldDefault,
@@ -1053,7 +1058,7 @@ final class IrMapper {
     Map<String, dynamic> schema, {
     List<String>? namePath,
   }) {
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
     final unionName = name ?? _uniqueTypeName('InlineUnion');
     final unionPath = namePath ?? [unionName];
@@ -1061,7 +1066,7 @@ final class IrMapper {
 
     final discriminator = schema['discriminator'] as Map<String, dynamic>;
     final propertyName = discriminator['propertyName'] as String;
-    final mapping = <String, IrType>{};
+    final mapping = <SpecString, IrType>{};
 
     final explicitMapping = discriminator['mapping'] as Map<String, dynamic>?;
     // A discriminated union may be declared with `oneOf` or `anyOf`.
@@ -1101,13 +1106,13 @@ final class IrMapper {
             }
             dartRefName ??= toTypeName(rawRefName);
           }
-          mapping[key] = IrTypeRef(dartRefName);
+          mapping[SpecString(key)] = IrTypeRef(dartRefName);
         } else if (value is Map<String, dynamic>) {
           // Use title if available, otherwise derive from parent + key.
           final hint =
               (value['title'] as String?) ??
               '$unionName${toPascalCase(key)}';
-          mapping[key] = lowerInlineSchema(
+          mapping[SpecString(key)] = lowerInlineSchema(
             value,
             nameHint: hint,
             namePath: [...unionPath, toPascalCase(key)],
@@ -1141,14 +1146,22 @@ final class IrMapper {
               ) ??
               key;
         }
-        if (explicitKeys.contains(key)) continue;
-        if (mapping.containsKey(key)) {
+        if (explicitKeys.contains(SpecString(key))) {
+          _warnings.add(
+            'Union $unionName: variant $dartRefName declares discriminator '
+            'value "$key", but an explicit mapping entry redirects that '
+            'value to another schema — the variant is unreachable and was '
+            'dropped from the union.',
+          );
+          continue;
+        }
+        if (mapping.containsKey(SpecString(key))) {
           _warnings.add(
             'Union $unionName: duplicate discriminator value "$key" — '
             'keeping the last declared variant ($dartRefName).',
           );
         }
-        mapping[key] = IrTypeRef(dartRefName);
+        mapping[SpecString(key)] = IrTypeRef(dartRefName);
       } else if (variant is Map<String, dynamic> &&
           (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
         final hint = _variantHint(unionName, variant, i);
@@ -1163,7 +1176,15 @@ final class IrMapper {
               variant['properties'] as Map<String, dynamic>?,
               propertyName,
             );
-        if (enumKey != null && explicitKeys.contains(enumKey)) continue;
+        if (enumKey != null && explicitKeys.contains(SpecString(enumKey))) {
+          _warnings.add(
+            'Union $unionName: inline variant "$hint" declares discriminator '
+            'value "$enumKey", but an explicit mapping entry redirects that '
+            'value to another schema — the variant is unreachable and was '
+            'dropped from the union.',
+          );
+          continue;
+        }
         final lowered = lowerInlineSchema(
           variant,
           nameHint: hint,
@@ -1175,14 +1196,22 @@ final class IrMapper {
         );
         final key =
             enumKey ?? (lowered is IrObject ? lowered.name : hint);
-        if (explicitKeys.contains(key)) continue;
-        if (mapping.containsKey(key)) {
+        if (explicitKeys.contains(SpecString(key))) {
+          _warnings.add(
+            'Union $unionName: inline variant "$hint" maps to discriminator '
+            'value "$key", but an explicit mapping entry redirects that '
+            'value to another schema — the variant is unreachable and was '
+            'dropped from the union.',
+          );
+          continue;
+        }
+        if (mapping.containsKey(SpecString(key))) {
           _warnings.add(
             'Union $unionName: duplicate discriminator value "$key" — '
             'keeping the last declared variant.',
           );
         }
-        mapping[key] = lowered is IrObject
+        mapping[SpecString(key)] = lowered is IrObject
             ? IrTypeRef(lowered.name)
             : lowered;
       }
@@ -1190,7 +1219,7 @@ final class IrMapper {
 
     return IrDiscriminatedUnion(
       unionName,
-      propertyName,
+      SpecString(propertyName),
       mapping,
       description: description,
       isNullable: nullable,
@@ -1223,18 +1252,21 @@ final class IrMapper {
     String schemaKey,
     String fallbackName,
     IrType Function(String, List<IrType>,
-            {String? description, bool isNullable})
+            {SpecString? description, bool isNullable})
         constructor, {
     bool isInline = false,
     List<String>? namePath,
   }) {
-    final description = schema['description'] as String?;
+    final description = SpecString.orNull(schema['description'] as String?);
     final nullable = _isNullable(schema);
     final unionName = name ?? _uniqueTypeName(fallbackName);
     final unionPath = namePath ?? [unionName];
     _recordPath(unionName, unionPath);
 
     final items = schema[schemaKey] as List;
+    final hasNullVariant = items.any(
+      (variant) => variant is Map<String, dynamic> && variant['type'] == 'null',
+    );
 
     // Collapse anyOf/oneOf of single-value string enums into one enum.
     final collapsed = _trySingleValueEnumCollapse(items);
@@ -1251,6 +1283,9 @@ final class IrMapper {
     for (var i = 0; i < items.length; i++) {
       final variant = items[i];
       if (variant is Map<String, dynamic>) {
+        // A null-only alternative contributes nullability, not a dynamic
+        // variant that would accept every JSON value.
+        if (variant['type'] == 'null') continue;
         final hint = _variantHint(unionName, variant, i);
         variants.add(
           lowerInlineSchema(
@@ -1283,7 +1318,8 @@ final class IrMapper {
       unionName,
       deduped.length >= 2 ? deduped : variants,
       description: description,
-      isNullable: nullable,
+      isNullable:
+          nullable || hasNullVariant || variants.any((v) => v.isNullable),
     );
   }
 
@@ -1366,7 +1402,7 @@ final class IrMapper {
   /// otherwise their own fields would be silently dropped.
   IrType? _resolveAllOfRef(
     Map<String, dynamic> flattened, {
-    required String? description,
+    required SpecString? description,
     required bool nullable,
     required String? discriminatorProperty,
   }) {
@@ -1374,18 +1410,29 @@ final class IrMapper {
     final rawRefName = _extractRefName(refPath);
     final refName = _dartRefName(rawRefName);
 
-    final refSchema = _rawSchemas[rawRefName];
-    final refPropKeys = refSchema is Map<String, dynamic>
-        ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
-            <String>{}
-        : <String>{};
+    // The target may itself be an allOf chain (multi-level inheritance) —
+    // expand it first or its own and inherited properties are invisible to
+    // the merge.
+    final rawTarget = _rawSchemas[rawRefName];
+    final refSchema = rawTarget is Map<String, dynamic>
+        ? _expandNestedAllOf(rawTarget, {rawRefName})
+        : rawTarget;
     final flatProps = flattened['properties'] as Map<String, dynamic>? ?? {};
-    final extraProperties = flatProps.keys.toSet().difference(refPropKeys);
+    final ownProperties = flatProps.keys.toSet();
+
+    // A discriminator variant whose only declared property is the
+    // discriminator itself stays a bare ref so the union emitter wraps the
+    // base payload. Variants that declare anything else merge — whether they
+    // ADD properties (canonical allOf inheritance) or OVERRIDE a base
+    // property with a narrower type (e.g. Cloudflare's generic `result`
+    // envelopes). A keys-only "extra properties" check would treat overrides
+    // as no-ops and collapse them to the generic base, losing the narrowed
+    // type.
     if (discriminatorProperty != null) {
-      extraProperties.remove(discriminatorProperty);
+      ownProperties.remove(discriminatorProperty);
     }
 
-    if (extraProperties.isNotEmpty && refSchema is Map<String, dynamic>) {
+    if (ownProperties.isNotEmpty && refSchema is Map<String, dynamic>) {
       final refProps = refSchema['properties'] as Map<String, dynamic>? ?? {};
       flattened['properties'] = <String, dynamic>{...refProps, ...flatProps};
       final refReq = (refSchema['required'] as List?)?.cast<String>() ?? [];
@@ -1395,7 +1442,8 @@ final class IrMapper {
       return null;
     }
 
-    final flatDescription = flattened['description'] as String? ?? description;
+    final flatDescription =
+        SpecString.orNull(flattened['description'] as String?) ?? description;
     final flatNullable = _isNullable(flattened) || nullable;
     return IrTypeRef(
       refName,
@@ -1450,13 +1498,18 @@ final class IrMapper {
   }
 
   /// Builds a description that includes the collapsed variant type names.
-  String _descriptionWithVariants(String? description, List<IrType> variants) {
+  SpecString _descriptionWithVariants(
+    SpecString? description,
+    List<IrType> variants,
+  ) {
     final typeNames = variants
         .whereType<IrPrimitive>()
         .map((p) => p.kind.dartName)
         .join(', ');
     final suffix = 'One of: $typeNames';
-    return description != null ? '$description\n\n$suffix' : suffix;
+    return description != null
+        ? description.rebuild((s) => '$s\n\n$suffix')
+        : SpecString(suffix);
   }
 
   /// The Dart type name for a raw `$ref` name: the resolved rename if known,
@@ -1566,12 +1619,14 @@ final class IrMapper {
     return true;
   }
 
-  static String? _withExample(String? description, Object? example) {
+  static SpecString? _withExample(SpecString? description, Object? example) {
     if (example == null) return description;
     final json = _formatExample(example);
     if (json == null) return description;
     final block = 'Example:\n```json\n$json\n```';
-    return description != null ? '$description\n\n$block' : block;
+    return description != null
+        ? description.rebuild((s) => '$s\n\n$block')
+        : SpecString(block);
   }
 
   static String? _formatExample(Object? example) {

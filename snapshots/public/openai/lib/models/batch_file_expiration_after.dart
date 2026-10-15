@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after/batch_file_expiration_after_anchor.dart';/// The expiration policy for the output and/or error file that are generated for a batch.
 @immutable final class BatchFileExpirationAfter {const BatchFileExpirationAfter({required this.anchor, required this.seconds, });
 
-factory BatchFileExpirationAfter.fromJson(Map<String, dynamic> json) { return BatchFileExpirationAfter(
+factory BatchFileExpirationAfter.fromJson(Map<String, dynamic> json) {return BatchFileExpirationAfter(
   anchor: BatchFileExpirationAfterAnchor.fromJson(json['anchor'] as String),
   seconds: (json['seconds'] as num).toInt(),
-); }
+);}
 
 /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Note that the anchor is the file creation time, not the time the batch is created.
 final BatchFileExpirationAfterAnchor anchor;
@@ -15,21 +15,21 @@ final BatchFileExpirationAfterAnchor anchor;
 /// The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).
 final int seconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'anchor': anchor.toJson(),
   'seconds': seconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') &&
-      json.containsKey('seconds') && json['seconds'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('anchor') &&
+      json.containsKey('seconds') && json['seconds'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (seconds < 3600) { errors.add('seconds: must be >= 3600'); }
 if (seconds > 2592000) { errors.add('seconds: must be <= 2592000'); }
-return errors; } 
-BatchFileExpirationAfter copyWith({BatchFileExpirationAfterAnchor? anchor, int? seconds, }) { return BatchFileExpirationAfter(
+return errors;}
+BatchFileExpirationAfter copyWith({BatchFileExpirationAfterAnchor? anchor, int? seconds, }) {return BatchFileExpirationAfter(
   anchor: anchor ?? this.anchor,
   seconds: seconds ?? this.seconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BatchFileExpirationAfter &&
           anchor == other.anchor &&
@@ -39,4 +39,4 @@ BatchFileExpirationAfter copyWith({BatchFileExpirationAfterAnchor? anchor, int? 
 
 @override String toString() => 'BatchFileExpirationAfter(anchor: $anchor, seconds: $seconds)';
 
- }
+}

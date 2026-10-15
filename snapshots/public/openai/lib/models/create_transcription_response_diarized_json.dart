@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_diarized_json/create_transcription_response_diarized_json_usage.dart';import 'package:pub_openai/models/transcription_diarized_segment.dart';/// The type of task that was run. Always `transcribe`.
 sealed class Task {const Task();
 
-factory Task.fromJson(String json) { return switch (json) {
+factory Task.fromJson(String json) {return switch (json) {
   'transcribe' => transcribe,
   _ => Task$Unknown(json),
-}; }
+};}
 
 static const Task transcribe = Task$transcribe._();
 
 static const List<Task> values = [transcribe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'transcribe' => 'transcribe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Task$Unknown; } 
+bool get isUnknown {return this is Task$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() transcribe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() transcribe, required W Function(String value) $unknown, }) {return switch (this) {
       Task$transcribe() => transcribe(),
       Task$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? transcribe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transcribe, W Function(String value)? $unknown, }) {return switch (this) {
       Task$transcribe() => transcribe != null ? transcribe() : orElse(value),
       Task$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Task($value)';
 
- }
+}
 @immutable final class Task$transcribe extends Task {const Task$transcribe._();
 
 @override String get value => 'transcribe';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transcri
 
 @override int get hashCode => 'transcribe'.hashCode;
 
- }
+}
 @immutable final class Task$Unknown extends Task {const Task$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transcri
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents a diarized transcription response returned by the model, including the combined transcript and speaker-segment annotations.
 /// 
 @immutable final class CreateTranscriptionResponseDiarizedJson {const CreateTranscriptionResponseDiarizedJson({required this.task, required this.duration, required this.text, required this.segments, this.usage, });
 
-factory CreateTranscriptionResponseDiarizedJson.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseDiarizedJson(
+factory CreateTranscriptionResponseDiarizedJson.fromJson(Map<String, dynamic> json) {return CreateTranscriptionResponseDiarizedJson(
   task: Task.fromJson(json['task'] as String),
   duration: (json['duration'] as num).toDouble(),
   text: json['text'] as String,
   segments: (json['segments'] as List<dynamic>).map((e) => TranscriptionDiarizedSegment.fromJson(e as Map<String, dynamic>)).toList(),
   usage: json['usage'] != null ? CreateTranscriptionResponseDiarizedJsonUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The type of task that was run. Always `transcribe`.
 final Task task;
@@ -81,24 +81,24 @@ final List<TranscriptionDiarizedSegment> segments;
 /// Token or duration usage statistics for the request.
 final CreateTranscriptionResponseDiarizedJsonUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'task': task.toJson(),
   'duration': duration,
   'text': text,
   'segments': segments.map((e) => e.toJson()).toList(),
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('task') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('task') &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('segments'); } 
-CreateTranscriptionResponseDiarizedJson copyWith({Task? task, double? duration, String? text, List<TranscriptionDiarizedSegment>? segments, CreateTranscriptionResponseDiarizedJsonUsage? Function()? usage, }) { return CreateTranscriptionResponseDiarizedJson(
+      json.containsKey('segments');}
+CreateTranscriptionResponseDiarizedJson copyWith({Task? task, double? duration, String? text, List<TranscriptionDiarizedSegment>? segments, CreateTranscriptionResponseDiarizedJsonUsage? Function()? usage, }) {return CreateTranscriptionResponseDiarizedJson(
   task: task ?? this.task,
   duration: duration ?? this.duration,
   text: text ?? this.text,
   segments: segments ?? this.segments,
   usage: usage != null ? usage() : this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranscriptionResponseDiarizedJson &&
           task == other.task &&
@@ -111,4 +111,4 @@ CreateTranscriptionResponseDiarizedJson copyWith({Task? task, double? duration, 
 
 @override String toString() => 'CreateTranscriptionResponseDiarizedJson(task: $task, duration: $duration, text: $text, segments: $segments, usage: $usage)';
 
- }
+}

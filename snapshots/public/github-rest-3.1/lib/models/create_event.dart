@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateEvent {const CreateEvent({required this.ref, required this.refType, required this.fullRef, required this.masterBranch, required this.pusherType, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateEvent {const CreateEvent({required this.ref, required this.refType, required this.fullRef, required this.masterBranch, required this.pusherType, this.description = const Omittable.absent(), });
 
-factory CreateEvent.fromJson(Map<String, dynamic> json) { return CreateEvent(
+factory CreateEvent.fromJson(Map<String, dynamic> json) {return CreateEvent(
   ref: json['ref'] as String,
   refType: json['ref_type'] as String,
   fullRef: json['full_ref'] as String,
   masterBranch: json['master_branch'] as String,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   pusherType: json['pusher_type'] as String,
-); }
+);}
 
 final String ref;
 
@@ -20,31 +20,31 @@ final String fullRef;
 
 final String masterBranch;
 
-final String? description;
+final Omittable<String?> description;
 
 final String pusherType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ref,
   'ref_type': refType,
   'full_ref': fullRef,
   'master_branch': masterBranch,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'pusher_type': pusherType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('ref_type') && json['ref_type'] is String &&
       json.containsKey('full_ref') && json['full_ref'] is String &&
       json.containsKey('master_branch') && json['master_branch'] is String &&
-      json.containsKey('pusher_type') && json['pusher_type'] is String; } 
-CreateEvent copyWith({String? ref, String? refType, String? fullRef, String? masterBranch, String? Function()? description, String? pusherType, }) { return CreateEvent(
+      json.containsKey('pusher_type') && json['pusher_type'] is String;}
+CreateEvent copyWith({String? ref, String? refType, String? fullRef, String? masterBranch, Omittable<String?>? description, String? pusherType, }) {return CreateEvent(
   ref: ref ?? this.ref,
   refType: refType ?? this.refType,
   fullRef: fullRef ?? this.fullRef,
   masterBranch: masterBranch ?? this.masterBranch,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   pusherType: pusherType ?? this.pusherType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvent &&
           ref == other.ref &&
@@ -58,4 +58,4 @@ CreateEvent copyWith({String? ref, String? refType, String? fullRef, String? mas
 
 @override String toString() => 'CreateEvent(ref: $ref, refType: $refType, fullRef: $fullRef, masterBranch: $masterBranch, description: $description, pusherType: $pusherType)';
 
- }
+}

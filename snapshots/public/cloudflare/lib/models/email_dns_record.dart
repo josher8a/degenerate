@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailDnsRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/email_dns_record/ttl.dart';/// DNS record type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_dns_record/ttl.dart';/// DNS record type.
 sealed class EmailDnsRecordType {const EmailDnsRecordType();
 
-factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
+factory EmailDnsRecordType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'CNAME' => cname,
@@ -24,7 +24,7 @@ factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
   'TLSA' => tlsa,
   'URI' => uri,
   _ => EmailDnsRecordType$Unknown(json),
-}; }
+};}
 
 static const EmailDnsRecordType a = EmailDnsRecordType$a._();
 
@@ -65,9 +65,9 @@ static const EmailDnsRecordType uri = EmailDnsRecordType$uri._();
 static const List<EmailDnsRecordType> values = [a, aaaa, cname, https, txt, srv, loc, mx, ns, cert, dnskey, ds, naptr, smimea, sshfp, svcb, tlsa, uri];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'A' => 'a',
   'AAAA' => 'aaaa',
   'CNAME' => 'cname',
@@ -87,11 +87,11 @@ String get name { return switch (value) {
   'TLSA' => 'tlsa',
   'URI' => 'uri',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailDnsRecordType$Unknown; } 
+bool get isUnknown {return this is EmailDnsRecordType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() a, required W Function() aaaa, required W Function() cname, required W Function() https, required W Function() txt, required W Function() srv, required W Function() loc, required W Function() mx, required W Function() ns, required W Function() cert, required W Function() dnskey, required W Function() ds, required W Function() naptr, required W Function() smimea, required W Function() sshfp, required W Function() svcb, required W Function() tlsa, required W Function() uri, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() a, required W Function() aaaa, required W Function() cname, required W Function() https, required W Function() txt, required W Function() srv, required W Function() loc, required W Function() mx, required W Function() ns, required W Function() cert, required W Function() dnskey, required W Function() ds, required W Function() naptr, required W Function() smimea, required W Function() sshfp, required W Function() svcb, required W Function() tlsa, required W Function() uri, required W Function(String value) $unknown, }) {return switch (this) {
       EmailDnsRecordType$a() => a(),
       EmailDnsRecordType$aaaa() => aaaa(),
       EmailDnsRecordType$cname() => cname(),
@@ -111,9 +111,9 @@ W when<W>({required W Function() a, required W Function() aaaa, required W Funct
       EmailDnsRecordType$tlsa() => tlsa(),
       EmailDnsRecordType$uri() => uri(),
       EmailDnsRecordType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? cname, W Function()? https, W Function()? txt, W Function()? srv, W Function()? loc, W Function()? mx, W Function()? ns, W Function()? cert, W Function()? dnskey, W Function()? ds, W Function()? naptr, W Function()? smimea, W Function()? sshfp, W Function()? svcb, W Function()? tlsa, W Function()? uri, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? cname, W Function()? https, W Function()? txt, W Function()? srv, W Function()? loc, W Function()? mx, W Function()? ns, W Function()? cert, W Function()? dnskey, W Function()? ds, W Function()? naptr, W Function()? smimea, W Function()? sshfp, W Function()? svcb, W Function()? tlsa, W Function()? uri, W Function(String value)? $unknown, }) {return switch (this) {
       EmailDnsRecordType$a() => a != null ? a() : orElse(value),
       EmailDnsRecordType$aaaa() => aaaa != null ? aaaa() : orElse(value),
       EmailDnsRecordType$cname() => cname != null ? cname() : orElse(value),
@@ -133,10 +133,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
       EmailDnsRecordType$tlsa() => tlsa != null ? tlsa() : orElse(value),
       EmailDnsRecordType$uri() => uri != null ? uri() : orElse(value),
       EmailDnsRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailDnsRecordType($value)';
 
- }
+}
 @immutable final class EmailDnsRecordType$a extends EmailDnsRecordType {const EmailDnsRecordType$a._();
 
 @override String get value => 'A';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'A'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$aaaa extends EmailDnsRecordType {const EmailDnsRecordType$aaaa._();
 
 @override String get value => 'AAAA';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AAAA'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$cname extends EmailDnsRecordType {const EmailDnsRecordType$cname._();
 
 @override String get value => 'CNAME';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CNAME'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$https extends EmailDnsRecordType {const EmailDnsRecordType$https._();
 
 @override String get value => 'HTTPS';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$txt extends EmailDnsRecordType {const EmailDnsRecordType$txt._();
 
 @override String get value => 'TXT';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TXT'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$srv extends EmailDnsRecordType {const EmailDnsRecordType$srv._();
 
 @override String get value => 'SRV';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SRV'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$loc extends EmailDnsRecordType {const EmailDnsRecordType$loc._();
 
 @override String get value => 'LOC';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'LOC'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$mx extends EmailDnsRecordType {const EmailDnsRecordType$mx._();
 
 @override String get value => 'MX';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MX'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$ns extends EmailDnsRecordType {const EmailDnsRecordType$ns._();
 
 @override String get value => 'NS';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NS'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$cert extends EmailDnsRecordType {const EmailDnsRecordType$cert._();
 
 @override String get value => 'CERT';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CERT'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$dnskey extends EmailDnsRecordType {const EmailDnsRecordType$dnskey._();
 
 @override String get value => 'DNSKEY';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DNSKEY'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$ds extends EmailDnsRecordType {const EmailDnsRecordType$ds._();
 
 @override String get value => 'DS';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DS'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$naptr extends EmailDnsRecordType {const EmailDnsRecordType$naptr._();
 
 @override String get value => 'NAPTR';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NAPTR'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$smimea extends EmailDnsRecordType {const EmailDnsRecordType$smimea._();
 
 @override String get value => 'SMIMEA';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SMIMEA'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$sshfp extends EmailDnsRecordType {const EmailDnsRecordType$sshfp._();
 
 @override String get value => 'SSHFP';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SSHFP'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$svcb extends EmailDnsRecordType {const EmailDnsRecordType$svcb._();
 
 @override String get value => 'SVCB';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SVCB'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$tlsa extends EmailDnsRecordType {const EmailDnsRecordType$tlsa._();
 
 @override String get value => 'TLSA';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TLSA'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$uri extends EmailDnsRecordType {const EmailDnsRecordType$uri._();
 
 @override String get value => 'URI';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'URI'.hashCode;
 
- }
+}
 @immutable final class EmailDnsRecordType$Unknown extends EmailDnsRecordType {const EmailDnsRecordType$Unknown(this.value);
 
 @override final String value;
@@ -308,17 +308,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// List of records needed to enable an Email Routing zone.
 @immutable final class EmailDnsRecord {const EmailDnsRecord({this.content, this.name, this.priority, this.ttl, this.type, });
 
-factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsRecord(
+factory EmailDnsRecord.fromJson(Map<String, dynamic> json) {return EmailDnsRecord(
   content: json['content'] as String?,
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
-  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => DnsRecordsTtlVariant2.fromJson((v as num).toDouble()),) : null,
+  ttl: json['ttl'] != null ? Ttl.fromJson(json['ttl']) : null,
   type: json['type'] != null ? EmailDnsRecordType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// DNS record content.
 /// 
@@ -345,16 +345,16 @@ final Ttl? ttl;
 /// Example: `'NS'`
 final EmailDnsRecordType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': ?content,
   'name': ?name,
   'priority': ?priority,
   if (ttl != null) 'ttl': ttl?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'name', 'priority', 'ttl', 'type'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content', 'name', 'priority', 'ttl', 'type'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 255) { errors.add('name: length must be <= 255'); }
@@ -364,14 +364,14 @@ if (priority$ != null) {
   if (priority$ < 0) { errors.add('priority: must be >= 0'); }
   if (priority$ > 65535) { errors.add('priority: must be <= 65535'); }
 }
-return errors; } 
-EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, double? Function()? priority, Ttl? Function()? ttl, EmailDnsRecordType? Function()? type, }) { return EmailDnsRecord(
+return errors;}
+EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, double? Function()? priority, Ttl? Function()? ttl, EmailDnsRecordType? Function()? type, }) {return EmailDnsRecord(
   content: content != null ? content() : this.content,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
   ttl: ttl != null ? ttl() : this.ttl,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailDnsRecord &&
           content == other.content &&
@@ -384,4 +384,4 @@ EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, 
 
 @override String toString() => 'EmailDnsRecord(content: $content, name: $name, priority: $priority, ttl: $ttl, type: $type)';
 
- }
+}

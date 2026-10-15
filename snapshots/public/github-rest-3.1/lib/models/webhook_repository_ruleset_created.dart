@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookRepositoryRulesetCreated {const WebhookRepositoryRulesetCreated({required this.action, required this.repositoryRuleset, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookRepositoryRulesetCreated.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetCreated(
+factory WebhookRepositoryRulesetCreated.fromJson(Map<String, dynamic> json) {return WebhookRepositoryRulesetCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookRepositoryRulesetCreated.fromJson(Map<String, dynamic> json) { re
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   repositoryRuleset: RepositoryRuleset.fromJson(json['repository_ruleset'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryRuleset repositoryRuleset;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'repository_ruleset': repositoryRuleset.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository_ruleset') &&
-      json.containsKey('sender'); } 
-WebhookRepositoryRulesetCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, RepositoryRuleset? repositoryRuleset, SimpleUser? sender, }) { return WebhookRepositoryRulesetCreated(
+      json.containsKey('sender');}
+WebhookRepositoryRulesetCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, RepositoryRuleset? repositoryRuleset, SimpleUser? sender, }) {return WebhookRepositoryRulesetCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -47,7 +47,7 @@ WebhookRepositoryRulesetCreated copyWith({ItemCreatedAction? action, EnterpriseW
   repository: repository != null ? repository() : this.repository,
   repositoryRuleset: repositoryRuleset ?? this.repositoryRuleset,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryRulesetCreated &&
           action == other.action &&
@@ -62,4 +62,4 @@ WebhookRepositoryRulesetCreated copyWith({ItemCreatedAction? action, EnterpriseW
 
 @override String toString() => 'WebhookRepositoryRulesetCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, repositoryRuleset: $repositoryRuleset, sender: $sender)';
 
- }
+}

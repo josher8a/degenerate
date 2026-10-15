@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit/commit_author.dart';import 'package:pub_github_rest_3_1/models/commit/commit_commit.dart';import 'package:pub_github_rest_3_1/models/commit/commit_committer.dart';import 'package:pub_github_rest_3_1/models/commit/commit_parents.dart';import 'package:pub_github_rest_3_1/models/commit/stats.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Commit
 @immutable final class Commit {const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats, this.files, });
 
-factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
+factory Commit.fromJson(Map<String, dynamic> json) {return Commit(
   url: Uri.parse(json['url'] as String),
   sha: json['sha'] as String,
   nodeId: json['node_id'] as String,
@@ -16,7 +16,7 @@ factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
   parents: (json['parents'] as List<dynamic>).map((e) => CommitParents.fromJson(e as Map<String, dynamic>)).toList(),
   stats: json['stats'] != null ? Stats.fromJson(json['stats'] as Map<String, dynamic>) : null,
   files: (json['files'] as List<dynamic>?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -40,7 +40,7 @@ final Stats? stats;
 
 final List<DiffEntry>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'sha': sha,
   'node_id': nodeId,
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'parents': parents.map((e) => e.toJson()).toList(),
   if (stats != null) 'stats': stats?.toJson(),
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('commit') &&
       json.containsKey('author') &&
       json.containsKey('committer') &&
-      json.containsKey('parents'); } 
-Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, Stats? Function()? stats, List<DiffEntry>? Function()? files, }) { return Commit(
+      json.containsKey('parents');}
+Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, Stats? Function()? stats, List<DiffEntry>? Function()? files, }) {return Commit(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,
@@ -74,7 +74,7 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
   parents: parents ?? this.parents,
   stats: stats != null ? stats() : this.stats,
   files: files != null ? files() : this.files,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Commit &&
           url == other.url &&
@@ -93,4 +93,4 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
 
 @override String toString() => 'Commit(\n  url: $url,\n  sha: $sha,\n  nodeId: $nodeId,\n  htmlUrl: $htmlUrl,\n  commentsUrl: $commentsUrl,\n  commit: $commit,\n  author: $author,\n  committer: $committer,\n  parents: $parents,\n  stats: $stats,\n  files: $files,\n)';
 
- }
+}

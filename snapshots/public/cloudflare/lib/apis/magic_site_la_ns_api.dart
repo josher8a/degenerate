@@ -14,7 +14,7 @@ final class MagicSiteLaNsApi with ApiExecutor {const MagicSiteLaNsApi(this.apiCo
 /// Lists Site LANs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/lans`
-Future<ApiResult<List<MagicLan>?, MagicAccountAppsAddAppError>> magicSiteLansListLans({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicLan>, MagicAccountAppsAddAppError>> magicSiteLansListLans({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MagicLan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => MagicLan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Create a new Site LAN
 ///
 /// Creates a new Site LAN. If the site is in high availability mode, static_addressing is required along with secondary and virtual address.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/lans`
-Future<ApiResult<List<MagicLan>?, MagicAccountAppsAddAppError>> magicSiteLansCreateLan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicLansAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicLan>, MagicAccountAppsAddAppError>> magicSiteLansCreateLan({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicLansAddSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,21 +48,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MagicLan.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => MagicLan.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Site LAN Details
 ///
 /// Get a specific Site LAN.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<MagicLan?, MagicAccountAppsAddAppError>> magicSiteLansLanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicLan, MagicAccountAppsAddAppError>> magicSiteLansLanDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,21 +71,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicLan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicLan.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update Site LAN
 ///
 /// Update a specific Site LAN.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<MagicLan?, MagicAccountAppsAddAppError>> magicSiteLansUpdateLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicLan, MagicAccountAppsAddAppError>> magicSiteLansUpdateLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,21 +96,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicLan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicLan.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Patch Site LAN
 ///
 /// Patch a specific Site LAN.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<MagicLan?, MagicAccountAppsAddAppError>> magicSiteLansPatchLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicLan, MagicAccountAppsAddAppError>> magicSiteLansPatchLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, required MagicLanUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,21 +121,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicLan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicLan.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Delete Site LAN
 ///
 /// Remove a specific Site LAN.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}`
-Future<ApiResult<MagicLan?, MagicAccountAppsAddAppError>> magicSiteLansDeleteLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicLan, MagicAccountAppsAddAppError>> magicSiteLansDeleteLan({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier lanId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -144,13 +144,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicLan.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicLan.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
- }
+}
+}

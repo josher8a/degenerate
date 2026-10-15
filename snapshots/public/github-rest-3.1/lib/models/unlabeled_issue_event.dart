@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/labeled_issue_event/labeled_issue_event_label.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Unlabeled Issue Event
 @immutable final class UnlabeledIssueEvent {const UnlabeledIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.label, });
 
-factory UnlabeledIssueEvent.fromJson(Map<String, dynamic> json) { return UnlabeledIssueEvent(
+factory UnlabeledIssueEvent.fromJson(Map<String, dynamic> json) {return UnlabeledIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory UnlabeledIssueEvent.fromJson(Map<String, dynamic> json) { return Unlabel
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   label: LabeledIssueEventLabel.fromJson(json['label'] as Map<String, dynamic>),
-); }
+);}
 
 final int id;
 
@@ -37,7 +37,7 @@ final Integration? performedViaGithubApp;
 
 final LabeledIssueEventLabel label;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -48,18 +48,18 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   'label': label.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
-      json.containsKey('label'); } 
-UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, LabeledIssueEventLabel? label, }) { return UnlabeledIssueEvent(
+      json.containsKey('label');}
+UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, LabeledIssueEventLabel? label, }) {return UnlabeledIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -70,7 +70,7 @@ UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? 
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   label: label ?? this.label,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UnlabeledIssueEvent &&
           id == other.id &&
@@ -88,4 +88,4 @@ UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? 
 
 @override String toString() => 'UnlabeledIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  label: $label,\n)';
 
- }
+}

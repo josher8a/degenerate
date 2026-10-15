@@ -12,7 +12,7 @@ final class PetsApi with ApiExecutor {const PetsApi(this.apiConfig);
 /// List all pets
 ///
 /// `GET /pets`
-Future<ApiResult<List<Pet>, CreatePetsError>> listPets({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Pet>, CreatePetsError>> listPets({int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -29,7 +29,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -37,11 +37,11 @@ return execute(
   },
   onError: CreatePetsError.fromResponse,
 );
- } 
+}
 /// Create a pet
 ///
 /// `POST /pets`
-Future<ApiResult<void, CreatePetsError>> createPets({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CreatePetsError>> createPets({required Pet body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,16 +52,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: CreatePetsError.fromResponse,
 );
- } 
+}
 /// Info for a specific pet
 ///
 /// `GET /pets/{petId}`
-Future<ApiResult<Pet, CreatePetsError>> showPetById({required String petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Pet, CreatePetsError>> showPetById({required String petId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -70,12 +70,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: CreatePetsError.fromResponse,
 );
- } 
- }
+}
+}

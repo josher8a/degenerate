@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PurposesValue {const PurposesValue({required this.description, required this.name, });
 
-factory PurposesValue.fromJson(Map<String, dynamic> json) { return PurposesValue(
+factory PurposesValue.fromJson(Map<String, dynamic> json) {return PurposesValue(
   description: json['description'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String description;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-PurposesValue copyWith({String? description, String? name, }) { return PurposesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+PurposesValue copyWith({String? description, String? name, }) {return PurposesValue(
   description: description ?? this.description,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PurposesValue &&
           description == other.description &&
@@ -31,4 +31,4 @@ PurposesValue copyWith({String? description, String? name, }) { return PurposesV
 
 @override String toString() => 'PurposesValue(description: $description, name: $name)';
 
- }
+}

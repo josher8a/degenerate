@@ -14,7 +14,7 @@ final class CustomPagesForAnAccountApi with ApiExecutor {const CustomPagesForAnA
 /// Fetches all the custom pages at the account level.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages`
-Future<ApiResult<List<CustomPagesCustomPage>?, CustomPagesForAnAccountListCustomPagesError>> customPagesForAnAccountListCustomPages({required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomPagesCustomPage>?, CustomPagesForAnAccountListCustomPagesError>> customPagesForAnAccountListCustomPages({required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: CustomPagesForAnAccountListCustomPagesError.fromResponse,
 );
- } 
+}
 /// Get a custom page
 ///
 /// Fetches the details of a custom page.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage?, CustomPagesForAnAccountGetACustomPageError>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomPagesCustomPage?, CustomPagesForAnAccountGetACustomPageError>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: CustomPagesForAnAccountGetACustomPageError.fromResponse,
 );
- } 
+}
 /// Update a custom page
 ///
 /// Updates the configuration of an existing custom page.
 ///
 /// `PUT /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage?, CustomPagesForAnAccountUpdateACustomPageError>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomPagesCustomPage?, CustomPagesForAnAccountUpdateACustomPageError>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,5 +79,5 @@ return execute(
   },
   onError: CustomPagesForAnAccountUpdateACustomPageError.fromResponse,
 );
- } 
- }
+}
+}

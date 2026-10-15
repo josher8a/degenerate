@@ -2,39 +2,39 @@
 // Source: #/components/schemas/RefundDestinationDetailsMultibanco
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class RefundDestinationDetailsMultibanco {const RefundDestinationDetailsMultibanco({this.reference, this.referenceStatus, });
+@immutable final class RefundDestinationDetailsMultibanco {const RefundDestinationDetailsMultibanco({this.reference = const Omittable.absent(), this.referenceStatus = const Omittable.absent(), });
 
-factory RefundDestinationDetailsMultibanco.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsMultibanco(
-  reference: json['reference'] as String?,
-  referenceStatus: json['reference_status'] as String?,
-); }
+factory RefundDestinationDetailsMultibanco.fromJson(Map<String, dynamic> json) {return RefundDestinationDetailsMultibanco(
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
+  referenceStatus: json.containsKey('reference_status') ? Omittable(json['reference_status'] as String?) : const Omittable.absent(),
+);}
 
 /// The reference assigned to the refund.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Status of the reference on the refund. This can be `pending`, `available` or `unavailable`.
-final String? referenceStatus;
+final Omittable<String?> referenceStatus;
 
-Map<String, dynamic> toJson() { return {
-  'reference': ?reference,
-  'reference_status': ?referenceStatus,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'reference_status'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (reference.isPresent) 'reference': reference.value,
+  if (referenceStatus.isPresent) 'reference_status': referenceStatus.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference', 'reference_status'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final reference$ = reference;
+List<String> validate() {final errors = <String>[];
+final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
-final referenceStatus$ = referenceStatus;
+final referenceStatus$ = referenceStatus.value;
 if (referenceStatus$ != null) {
   if (referenceStatus$.runes.length > 5000) { errors.add('referenceStatus: length must be <= 5000'); }
 }
-return errors; } 
-RefundDestinationDetailsMultibanco copyWith({String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsMultibanco(
-  reference: reference != null ? reference() : this.reference,
-  referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
-); } 
+return errors;}
+RefundDestinationDetailsMultibanco copyWith({Omittable<String?>? reference, Omittable<String?>? referenceStatus, }) {return RefundDestinationDetailsMultibanco(
+  reference: reference ?? this.reference,
+  referenceStatus: referenceStatus ?? this.referenceStatus,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetailsMultibanco &&
           reference == other.reference &&
@@ -44,4 +44,4 @@ RefundDestinationDetailsMultibanco copyWith({String? Function()? reference, Stri
 
 @override String toString() => 'RefundDestinationDetailsMultibanco(reference: $reference, referenceStatus: $referenceStatus)';
 
- }
+}

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: AdditionalTosAcceptances > Account)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/user_agent.dart';@immutable final class AdditionalTosAcceptancesAccount {const AdditionalTosAcceptancesAccount({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/user_agent.dart';@immutable final class AdditionalTosAcceptancesAccount {const AdditionalTosAcceptancesAccount({this.date, this.ip, this.userAgent, });
 
-factory AdditionalTosAcceptancesAccount.fromJson(Map<String, dynamic> json) { return AdditionalTosAcceptancesAccount(
+factory AdditionalTosAcceptancesAccount.fromJson(Map<String, dynamic> json) {return AdditionalTosAcceptancesAccount(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null ? OneOf2.parse(json['user_agent'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+  userAgent: json['user_agent'] != null ? UserAgent.fromJson(json['user_agent']) : null,
+);}
 
 final int? date;
 
@@ -15,17 +15,17 @@ final String? ip;
 
 final UserAgent? userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': ?date,
   'ip': ?ip,
   if (userAgent != null) 'user_agent': userAgent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
-AdditionalTosAcceptancesAccount copyWith({int? Function()? date, String? Function()? ip, UserAgent? Function()? userAgent, }) { return AdditionalTosAcceptancesAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key));}
+AdditionalTosAcceptancesAccount copyWith({int? Function()? date, String? Function()? ip, UserAgent? Function()? userAgent, }) {return AdditionalTosAcceptancesAccount(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AdditionalTosAcceptancesAccount &&
           date == other.date &&
@@ -36,4 +36,4 @@ AdditionalTosAcceptancesAccount copyWith({int? Function()? date, String? Functio
 
 @override String toString() => 'AdditionalTosAcceptancesAccount(date: $date, ip: $ip, userAgent: $userAgent)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_create_tag_request/git_create_tag_request_type.dart';/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
 sealed class TreeMode {const TreeMode();
 
-factory TreeMode.fromJson(String json) { return switch (json) {
+factory TreeMode.fromJson(String json) {return switch (json) {
   '100644' => $100644,
   '100755' => $100755,
   '040000' => $040000,
   '160000' => $160000,
   '120000' => $120000,
   _ => TreeMode$Unknown(json),
-}; }
+};}
 
 static const TreeMode $100644 = TreeMode$$100644._();
 
@@ -26,39 +26,39 @@ static const TreeMode $120000 = TreeMode$$120000._();
 static const List<TreeMode> values = [$100644, $100755, $040000, $160000, $120000];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '100644' => r'$100644',
   '100755' => r'$100755',
   '040000' => r'$040000',
   '160000' => r'$160000',
   '120000' => r'$120000',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreeMode$Unknown; } 
+bool get isUnknown {return this is TreeMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $100644, required W Function() $100755, required W Function() $040000, required W Function() $160000, required W Function() $120000, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $100644, required W Function() $100755, required W Function() $040000, required W Function() $160000, required W Function() $120000, required W Function(String value) $unknown, }) {return switch (this) {
       TreeMode$$100644() => $100644(),
       TreeMode$$100755() => $100755(),
       TreeMode$$040000() => $040000(),
       TreeMode$$160000() => $160000(),
       TreeMode$$120000() => $120000(),
       TreeMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644, W Function()? $100755, W Function()? $040000, W Function()? $160000, W Function()? $120000, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644, W Function()? $100755, W Function()? $040000, W Function()? $160000, W Function()? $120000, W Function(String value)? $unknown, }) {return switch (this) {
       TreeMode$$100644() => $100644 != null ? $100644() : orElse(value),
       TreeMode$$100755() => $100755 != null ? $100755() : orElse(value),
       TreeMode$$040000() => $040000 != null ? $040000() : orElse(value),
       TreeMode$$160000() => $160000 != null ? $160000() : orElse(value),
       TreeMode$$120000() => $120000 != null ? $120000() : orElse(value),
       TreeMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreeMode($value)';
 
- }
+}
 @immutable final class TreeMode$$100644 extends TreeMode {const TreeMode$$100644._();
 
 @override String get value => '100644';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644,
 
 @override int get hashCode => '100644'.hashCode;
 
- }
+}
 @immutable final class TreeMode$$100755 extends TreeMode {const TreeMode$$100755._();
 
 @override String get value => '100755';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644,
 
 @override int get hashCode => '100755'.hashCode;
 
- }
+}
 @immutable final class TreeMode$$040000 extends TreeMode {const TreeMode$$040000._();
 
 @override String get value => '040000';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644,
 
 @override int get hashCode => '040000'.hashCode;
 
- }
+}
 @immutable final class TreeMode$$160000 extends TreeMode {const TreeMode$$160000._();
 
 @override String get value => '160000';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644,
 
 @override int get hashCode => '160000'.hashCode;
 
- }
+}
 @immutable final class TreeMode$$120000 extends TreeMode {const TreeMode$$120000._();
 
 @override String get value => '120000';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644,
 
 @override int get hashCode => '120000'.hashCode;
 
- }
+}
 @immutable final class TreeMode$Unknown extends TreeMode {const TreeMode$Unknown(this.value);
 
 @override final String value;
@@ -113,16 +113,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644,
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha, this.content, });
+}
+@immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha = const Omittable.absent(), this.content, });
 
-factory GitCreateTreeRequestTree.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequestTree(
+factory GitCreateTreeRequestTree.fromJson(Map<String, dynamic> json) {return GitCreateTreeRequestTree(
   path: json['path'] as String?,
   mode: json['mode'] != null ? TreeMode.fromJson(json['mode'] as String) : null,
   type: json['type'] != null ? GitCreateTagRequestType.fromJson(json['type'] as String) : null,
-  sha: json['sha'] as String?,
+  sha: json.containsKey('sha') ? Omittable(json['sha'] as String?) : const Omittable.absent(),
   content: json['content'] as String?,
-); }
+);}
 
 /// The file referenced in the tree.
 final String? path;
@@ -136,28 +136,28 @@ final GitCreateTagRequestType? type;
 /// The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.
 /// 
 /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
-final String? sha;
+final Omittable<String?> sha;
 
 /// The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.
 /// 
 /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
 final String? content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': ?path,
   if (mode != null) 'mode': mode?.toJson(),
   if (type != null) 'type': type?.toJson(),
-  'sha': ?sha,
+  if (sha.isPresent) 'sha': sha.value,
   'content': ?content,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key)); } 
-GitCreateTreeRequestTree copyWith({String? Function()? path, TreeMode? Function()? mode, GitCreateTagRequestType? Function()? type, String? Function()? sha, String? Function()? content, }) { return GitCreateTreeRequestTree(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key));}
+GitCreateTreeRequestTree copyWith({String? Function()? path, TreeMode? Function()? mode, GitCreateTagRequestType? Function()? type, Omittable<String?>? sha, String? Function()? content, }) {return GitCreateTreeRequestTree(
   path: path != null ? path() : this.path,
   mode: mode != null ? mode() : this.mode,
   type: type != null ? type() : this.type,
-  sha: sha != null ? sha() : this.sha,
+  sha: sha ?? this.sha,
   content: content != null ? content() : this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateTreeRequestTree &&
           path == other.path &&
@@ -170,4 +170,4 @@ GitCreateTreeRequestTree copyWith({String? Function()? path, TreeMode? Function(
 
 @override String toString() => 'GitCreateTreeRequestTree(path: $path, mode: $mode, type: $type, sha: $sha, content: $content)';
 
- }
+}

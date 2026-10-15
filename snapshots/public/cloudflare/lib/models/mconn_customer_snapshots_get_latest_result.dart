@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_snapshot.dart';@immutable final class MconnCustomerSnapshotsGetLatestResult {const MconnCustomerSnapshotsGetLatestResult({required this.count, required this.items, });
 
-factory MconnCustomerSnapshotsGetLatestResult.fromJson(Map<String, dynamic> json) { return MconnCustomerSnapshotsGetLatestResult(
+factory MconnCustomerSnapshotsGetLatestResult.fromJson(Map<String, dynamic> json) {return MconnCustomerSnapshotsGetLatestResult(
   count: (json['count'] as num).toDouble(),
   items: (json['items'] as List<dynamic>).map((e) => MconnSnapshot.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double count;
 
 final List<MconnSnapshot> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'items': items.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
-      json.containsKey('items'); } 
-MconnCustomerSnapshotsGetLatestResult copyWith({double? count, List<MconnSnapshot>? items, }) { return MconnCustomerSnapshotsGetLatestResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('items');}
+MconnCustomerSnapshotsGetLatestResult copyWith({double? count, List<MconnSnapshot>? items, }) {return MconnCustomerSnapshotsGetLatestResult(
   count: count ?? this.count,
   items: items ?? this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerSnapshotsGetLatestResult &&
           count == other.count &&
@@ -31,4 +31,4 @@ MconnCustomerSnapshotsGetLatestResult copyWith({double? count, List<MconnSnapsho
 
 @override String toString() => 'MconnCustomerSnapshotsGetLatestResult(count: $count, items: $items)';
 
- }
+}

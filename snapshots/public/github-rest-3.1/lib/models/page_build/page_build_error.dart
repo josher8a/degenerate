@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageBuildError {const PageBuildError({required this.message});
 
-factory PageBuildError.fromJson(Map<String, dynamic> json) { return PageBuildError(
+factory PageBuildError.fromJson(Map<String, dynamic> json) {return PageBuildError(
   message: json['message'] as String?,
-); }
+);}
 
 final String? message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PageBuildError copyWith({String? Function()? message}) { return PageBuildError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && (json['message'] == null || json['message'] is String);}
+PageBuildError copyWith({String? Function()? message}) {return PageBuildError(
   message: message != null ? message() : this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageBuildError &&
           message == other.message;
@@ -24,4 +24,4 @@ PageBuildError copyWith({String? Function()? message}) { return PageBuildError(
 
 @override String toString() => 'PageBuildError(message: $message)';
 
- }
+}

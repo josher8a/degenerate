@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed on the page. Can be `created` or `edited`.
 sealed class PagesAction {const PagesAction();
 
-factory PagesAction.fromJson(String json) { return switch (json) {
+factory PagesAction.fromJson(String json) {return switch (json) {
   'created' => created,
   'edited' => edited,
   _ => PagesAction$Unknown(json),
-}; }
+};}
 
 static const PagesAction created = PagesAction$created._();
 
@@ -17,30 +17,30 @@ static const PagesAction edited = PagesAction$edited._();
 static const List<PagesAction> values = [created, edited];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created' => 'created',
   'edited' => 'edited',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesAction$Unknown; } 
+bool get isUnknown {return this is PagesAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() created, required W Function() edited, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() created, required W Function() edited, required W Function(String value) $unknown, }) {return switch (this) {
       PagesAction$created() => created(),
       PagesAction$edited() => edited(),
       PagesAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? edited, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? edited, W Function(String value)? $unknown, }) {return switch (this) {
       PagesAction$created() => created != null ? created() : orElse(value),
       PagesAction$edited() => edited != null ? edited() : orElse(value),
       PagesAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PagesAction($value)';
 
- }
+}
 @immutable final class PagesAction$created extends PagesAction {const PagesAction$created._();
 
 @override String get value => 'created';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class PagesAction$edited extends PagesAction {const PagesAction$edited._();
 
 @override String get value => 'edited';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'edited'.hashCode;
 
- }
+}
 @immutable final class PagesAction$Unknown extends PagesAction {const PagesAction$Unknown(this.value);
 
 @override final String value;
@@ -68,17 +68,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookGollumPages {const WebhookGollumPages({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title, });
 
-factory WebhookGollumPages.fromJson(Map<String, dynamic> json) { return WebhookGollumPages(
+factory WebhookGollumPages.fromJson(Map<String, dynamic> json) {return WebhookGollumPages(
   action: PagesAction.fromJson(json['action'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   pageName: json['page_name'] as String,
   sha: json['sha'] as String,
   summary: json['summary'] as String?,
   title: json['title'] as String,
-); }
+);}
 
 /// The action that was performed on the page. Can be `created` or `edited`.
 final PagesAction action;
@@ -97,28 +97,28 @@ final String? summary;
 /// The current page title.
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'html_url': htmlUrl.toString(),
   'page_name': pageName,
   'sha': sha,
   'summary': summary,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('page_name') && json['page_name'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('summary') && json['summary'] is String &&
-      json.containsKey('title') && json['title'] is String; } 
-WebhookGollumPages copyWith({PagesAction? action, Uri? htmlUrl, String? pageName, String? sha, String? Function()? summary, String? title, }) { return WebhookGollumPages(
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String) &&
+      json.containsKey('title') && json['title'] is String;}
+WebhookGollumPages copyWith({PagesAction? action, Uri? htmlUrl, String? pageName, String? sha, String? Function()? summary, String? title, }) {return WebhookGollumPages(
   action: action ?? this.action,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   pageName: pageName ?? this.pageName,
   sha: sha ?? this.sha,
   summary: summary != null ? summary() : this.summary,
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookGollumPages &&
           action == other.action &&
@@ -132,4 +132,4 @@ WebhookGollumPages copyWith({PagesAction? action, Uri? htmlUrl, String? pageName
 
 @override String toString() => 'WebhookGollumPages(action: $action, htmlUrl: $htmlUrl, pageName: $pageName, sha: $sha, summary: $summary, title: $title)';
 
- }
+}

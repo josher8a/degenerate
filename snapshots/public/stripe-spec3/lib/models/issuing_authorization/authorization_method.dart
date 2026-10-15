@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How the card details were provided.
 sealed class AuthorizationMethod {const AuthorizationMethod();
 
-factory AuthorizationMethod.fromJson(String json) { return switch (json) {
+factory AuthorizationMethod.fromJson(String json) {return switch (json) {
   'chip' => chip,
   'contactless' => contactless,
   'keyed_in' => keyedIn,
   'online' => online,
   'swipe' => swipe,
   _ => AuthorizationMethod$Unknown(json),
-}; }
+};}
 
 static const AuthorizationMethod chip = AuthorizationMethod$chip._();
 
@@ -26,39 +26,39 @@ static const AuthorizationMethod swipe = AuthorizationMethod$swipe._();
 static const List<AuthorizationMethod> values = [chip, contactless, keyedIn, online, swipe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'chip' => 'chip',
   'contactless' => 'contactless',
   'keyed_in' => 'keyedIn',
   'online' => 'online',
   'swipe' => 'swipe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AuthorizationMethod$Unknown; } 
+bool get isUnknown {return this is AuthorizationMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chip, required W Function() contactless, required W Function() keyedIn, required W Function() online, required W Function() swipe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chip, required W Function() contactless, required W Function() keyedIn, required W Function() online, required W Function() swipe, required W Function(String value) $unknown, }) {return switch (this) {
       AuthorizationMethod$chip() => chip(),
       AuthorizationMethod$contactless() => contactless(),
       AuthorizationMethod$keyedIn() => keyedIn(),
       AuthorizationMethod$online() => online(),
       AuthorizationMethod$swipe() => swipe(),
       AuthorizationMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W Function()? contactless, W Function()? keyedIn, W Function()? online, W Function()? swipe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W Function()? contactless, W Function()? keyedIn, W Function()? online, W Function()? swipe, W Function(String value)? $unknown, }) {return switch (this) {
       AuthorizationMethod$chip() => chip != null ? chip() : orElse(value),
       AuthorizationMethod$contactless() => contactless != null ? contactless() : orElse(value),
       AuthorizationMethod$keyedIn() => keyedIn != null ? keyedIn() : orElse(value),
       AuthorizationMethod$online() => online != null ? online() : orElse(value),
       AuthorizationMethod$swipe() => swipe != null ? swipe() : orElse(value),
       AuthorizationMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AuthorizationMethod($value)';
 
- }
+}
 @immutable final class AuthorizationMethod$chip extends AuthorizationMethod {const AuthorizationMethod$chip._();
 
 @override String get value => 'chip';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W 
 
 @override int get hashCode => 'chip'.hashCode;
 
- }
+}
 @immutable final class AuthorizationMethod$contactless extends AuthorizationMethod {const AuthorizationMethod$contactless._();
 
 @override String get value => 'contactless';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W 
 
 @override int get hashCode => 'contactless'.hashCode;
 
- }
+}
 @immutable final class AuthorizationMethod$keyedIn extends AuthorizationMethod {const AuthorizationMethod$keyedIn._();
 
 @override String get value => 'keyed_in';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W 
 
 @override int get hashCode => 'keyed_in'.hashCode;
 
- }
+}
 @immutable final class AuthorizationMethod$online extends AuthorizationMethod {const AuthorizationMethod$online._();
 
 @override String get value => 'online';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W 
 
 @override int get hashCode => 'online'.hashCode;
 
- }
+}
 @immutable final class AuthorizationMethod$swipe extends AuthorizationMethod {const AuthorizationMethod$swipe._();
 
 @override String get value => 'swipe';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W 
 
 @override int get hashCode => 'swipe'.hashCode;
 
- }
+}
 @immutable final class AuthorizationMethod$Unknown extends AuthorizationMethod {const AuthorizationMethod$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

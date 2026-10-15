@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the current page.
 @immutable final class PageInfo {const PageInfo({this.hasNext, this.hasPrevious, this.next, this.previous, });
 
-factory PageInfo.fromJson(Map<String, dynamic> json) { return PageInfo(
+factory PageInfo.fromJson(Map<String, dynamic> json) {return PageInfo(
   hasNext: json['has_next'] as bool?,
   hasPrevious: json['has_previous'] as bool?,
   next: json['next'] as String?,
   previous: json['previous'] as String?,
-); }
+);}
 
 /// Indicates whether there is a next page.
 final bool? hasNext;
@@ -23,19 +23,19 @@ final String? next;
 /// The cursor to the previous page.
 final String? previous;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'has_next': ?hasNext,
   'has_previous': ?hasPrevious,
   'next': ?next,
   'previous': ?previous,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'has_next', 'has_previous', 'next', 'previous'}.contains(key)); } 
-PageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, String? Function()? next, String? Function()? previous, }) { return PageInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'has_next', 'has_previous', 'next', 'previous'}.contains(key));}
+PageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, String? Function()? next, String? Function()? previous, }) {return PageInfo(
   hasNext: hasNext != null ? hasNext() : this.hasNext,
   hasPrevious: hasPrevious != null ? hasPrevious() : this.hasPrevious,
   next: next != null ? next() : this.next,
   previous: previous != null ? previous() : this.previous,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageInfo &&
           hasNext == other.hasNext &&
@@ -47,4 +47,4 @@ PageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, Str
 
 @override String toString() => 'PageInfo(hasNext: $hasNext, hasPrevious: $hasPrevious, next: $next, previous: $previous)';
 
- }
+}

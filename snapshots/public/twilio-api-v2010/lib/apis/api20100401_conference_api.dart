@@ -12,7 +12,7 @@ final class Api20100401ConferenceApi with ApiExecutor {const Api20100401Conferen
 /// Fetch an instance of a conference
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json`
-Future<ApiResult<AccountConference, Never>> fetchConference({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConference, Never>> fetchConference({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,17 +21,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountConference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json`
-Future<ApiResult<AccountConference, Never>> updateConference({required String accountSid, required String sid, UpdateConferenceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConference, Never>> updateConference({required String accountSid, required String sid, UpdateConferenceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -49,17 +49,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountConference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve a list of conferences belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences.json`
-Future<ApiResult<ListConferenceResponse, Never>> listConference({required String accountSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, String? dateUpdated, String? dateUpdatedBefore, String? dateUpdatedAfter, String? friendlyName, ConferenceEnumStatus? status, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListConferenceResponse, Never>> listConference({required String accountSid, String? dateCreated, String? dateCreatedBefore, String? dateCreatedAfter, String? dateUpdated, String? dateUpdatedBefore, String? dateUpdatedAfter, String? friendlyName, ConferenceEnumStatus? status, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateCreated != null) {
   queryParameters['DateCreated'] = dateCreated;
@@ -106,11 +106,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListConferenceResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

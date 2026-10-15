@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class CustomToolChatCompletions {const CustomToolChatCompletions({required this.type, required this.custom, });
 
-factory CustomToolChatCompletions.fromJson(Map<String, dynamic> json) { return CustomToolChatCompletions(
+factory CustomToolChatCompletions.fromJson(Map<String, dynamic> json) {return CustomToolChatCompletions(
   type: ChatCompletionMessageCustomToolCallType.fromJson(json['type'] as String),
   custom: CustomToolChatCompletionsCustom.fromJson(json['custom'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the custom tool. Always `custom`.
 final ChatCompletionMessageCustomToolCallType type;
@@ -17,16 +17,16 @@ final ChatCompletionMessageCustomToolCallType type;
 /// 
 final CustomToolChatCompletionsCustom custom;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'custom': custom.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom' &&
-      json.containsKey('custom'); } 
-CustomToolChatCompletions copyWith({ChatCompletionMessageCustomToolCallType? type, CustomToolChatCompletionsCustom? custom, }) { return CustomToolChatCompletions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'custom' &&
+      json.containsKey('custom');}
+CustomToolChatCompletions copyWith({ChatCompletionMessageCustomToolCallType? type, CustomToolChatCompletionsCustom? custom, }) {return CustomToolChatCompletions(
   type: type ?? this.type,
   custom: custom ?? this.custom,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomToolChatCompletions &&
           type == other.type &&
@@ -36,4 +36,4 @@ CustomToolChatCompletions copyWith({ChatCompletionMessageCustomToolCallType? typ
 
 @override String toString() => 'CustomToolChatCompletions(type: $type, custom: $custom)';
 
- }
+}

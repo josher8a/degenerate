@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_error_response/realtimekit_error_response_error.dart';@immutable final class RealtimekitErrorResponse {const RealtimekitErrorResponse({required this.error, required this.success, });
 
-factory RealtimekitErrorResponse.fromJson(Map<String, dynamic> json) { return RealtimekitErrorResponse(
+factory RealtimekitErrorResponse.fromJson(Map<String, dynamic> json) {return RealtimekitErrorResponse(
   error: RealtimekitErrorResponseError.fromJson(json['error'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 /// Object containing details of the error that occurred
 final RealtimekitErrorResponseError error;
@@ -16,16 +16,16 @@ final RealtimekitErrorResponseError error;
 /// Example: `false`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RealtimekitErrorResponse copyWith({RealtimekitErrorResponseError? error, bool? success, }) { return RealtimekitErrorResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') &&
+      json.containsKey('success') && json['success'] is bool;}
+RealtimekitErrorResponse copyWith({RealtimekitErrorResponseError? error, bool? success, }) {return RealtimekitErrorResponse(
   error: error ?? this.error,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitErrorResponse &&
           error == other.error &&
@@ -35,4 +35,4 @@ RealtimekitErrorResponse copyWith({RealtimekitErrorResponseError? error, bool? s
 
 @override String toString() => 'RealtimekitErrorResponse(error: $error, success: $success)';
 
- }
+}

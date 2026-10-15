@@ -12,7 +12,7 @@ final class Api20100401MessageApi with ApiExecutor {const Api20100401MessageApi(
 /// Retrieve a list of Message resources associated with a Twilio Account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages.json`
-Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (to != null) {
   queryParameters['To'] = to;
@@ -50,17 +50,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListMessageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Send a message
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages.json`
-Future<ApiResult<AccountMessage, Never>> createMessage({required String accountSid, CreateMessageRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountMessage, Never>> createMessage({required String accountSid, CreateMessageRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -119,17 +119,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountMessage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fetch a specific Message
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<AccountMessage, Never>> fetchMessage({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountMessage, Never>> fetchMessage({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -138,17 +138,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountMessage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update a Message resource (used to redact Message `body` text and to cancel not-yet-sent messages)
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<AccountMessage, Never>> updateMessage({required String accountSid, required String sid, UpdateMessageRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountMessage, Never>> updateMessage({required String accountSid, required String sid, UpdateMessageRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -164,17 +164,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountMessage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes a Message resource from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json`
-Future<ApiResult<void, Never>> deleteMessage({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteMessage({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -183,9 +183,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

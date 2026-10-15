@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_by_arc_response/radar_get_email_routing_summary_by_arc_response_result.dart';@immutable final class RadarGetEmailSecuritySummaryByDmarcResponse {const RadarGetEmailSecuritySummaryByDmarcResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecuritySummaryByDmarcResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByDmarcResponse(
+factory RadarGetEmailSecuritySummaryByDmarcResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryByDmarcResponse(
   result: RadarGetEmailRoutingSummaryByArcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailRoutingSummaryByArcResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryByDmarcResponse copyWith({RadarGetEmailRoutingSummaryByArcResponseResult? result, bool? success, }) { return RadarGetEmailSecuritySummaryByDmarcResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecuritySummaryByDmarcResponse copyWith({RadarGetEmailRoutingSummaryByArcResponseResult? result, bool? success, }) {return RadarGetEmailSecuritySummaryByDmarcResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByDmarcResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecuritySummaryByDmarcResponse copyWith({RadarGetEmailRoutingSummar
 
 @override String toString() => 'RadarGetEmailSecuritySummaryByDmarcResponse(result: $result, success: $success)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record.dart';@immutable final class OrgsListArtifactDeploymentRecordsResponse {const OrgsListArtifactDeploymentRecordsResponse({this.totalCount, this.deploymentRecords, });
 
-factory OrgsListArtifactDeploymentRecordsResponse.fromJson(Map<String, dynamic> json) { return OrgsListArtifactDeploymentRecordsResponse(
+factory OrgsListArtifactDeploymentRecordsResponse.fromJson(Map<String, dynamic> json) {return OrgsListArtifactDeploymentRecordsResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   deploymentRecords: (json['deployment_records'] as List<dynamic>?)?.map((e) => ArtifactDeploymentRecord.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The number of deployment records for this digest and organization
 final int? totalCount;
 
 final List<ArtifactDeploymentRecord>? deploymentRecords;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': ?totalCount,
   if (deploymentRecords != null) 'deployment_records': deploymentRecords?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'deployment_records'}.contains(key)); } 
-OrgsListArtifactDeploymentRecordsResponse copyWith({int? Function()? totalCount, List<ArtifactDeploymentRecord>? Function()? deploymentRecords, }) { return OrgsListArtifactDeploymentRecordsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total_count', 'deployment_records'}.contains(key));}
+OrgsListArtifactDeploymentRecordsResponse copyWith({int? Function()? totalCount, List<ArtifactDeploymentRecord>? Function()? deploymentRecords, }) {return OrgsListArtifactDeploymentRecordsResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   deploymentRecords: deploymentRecords != null ? deploymentRecords() : this.deploymentRecords,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsListArtifactDeploymentRecordsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ OrgsListArtifactDeploymentRecordsResponse copyWith({int? Function()? totalCount,
 
 @override String toString() => 'OrgsListArtifactDeploymentRecordsResponse(totalCount: $totalCount, deploymentRecords: $deploymentRecords)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response429/urlscanner_create_scan_bulk_response429_errors.dart';@immutable final class UrlscannerCreateScanResponse4292 {const UrlscannerCreateScanResponse4292({required this.errors, required this.message, required this.status, this.description, });
 
-factory UrlscannerCreateScanResponse4292.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse4292(
+factory UrlscannerCreateScanResponse4292.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanResponse4292(
   description: json['description'] as String?,
   errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerCreateScanBulkResponse429Errors.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String,
   status: (json['status'] as num).toDouble(),
-); }
+);}
 
 final String? description;
 
@@ -19,21 +19,21 @@ final String message;
 /// Example: `429`
 final double status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'errors': errors.map((e) => e.toJson()).toList(),
   'message': message,
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('status') && json['status'] is num; } 
-UrlscannerCreateScanResponse4292 copyWith({String? Function()? description, List<UrlscannerCreateScanBulkResponse429Errors>? errors, String? message, double? status, }) { return UrlscannerCreateScanResponse4292(
+      json.containsKey('status') && json['status'] is num;}
+UrlscannerCreateScanResponse4292 copyWith({String? Function()? description, List<UrlscannerCreateScanBulkResponse429Errors>? errors, String? message, double? status, }) {return UrlscannerCreateScanResponse4292(
   description: description != null ? description() : this.description,
   errors: errors ?? this.errors,
   message: message ?? this.message,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanResponse4292 &&
           description == other.description &&
@@ -45,4 +45,4 @@ UrlscannerCreateScanResponse4292 copyWith({String? Function()? description, List
 
 @override String toString() => 'UrlscannerCreateScanResponse4292(description: $description, errors: $errors, message: $message, status: $status)';
 
- }
+}

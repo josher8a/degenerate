@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/webhook_check_suite_completed_check_suite_app.dart';/// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
 sealed class WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus();
 
-factory WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(String json) {return switch (json) {
   'requested' => requested,
   'in_progress' => inProgress,
   'completed' => completed,
@@ -12,7 +12,7 @@ factory WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(String json) { retur
   'null' => $null,
   'pending' => pending,
   _ => WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(json),
-}; }
+};}
 
 static const WebhookCheckSuiteCompletedCheckSuiteStatus requested = WebhookCheckSuiteCompletedCheckSuiteStatus$requested._();
 
@@ -29,9 +29,9 @@ static const WebhookCheckSuiteCompletedCheckSuiteStatus pending = WebhookCheckSu
 static const List<WebhookCheckSuiteCompletedCheckSuiteStatus> values = [requested, inProgress, completed, queued, $null, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'requested' => 'requested',
   'in_progress' => 'inProgress',
   'completed' => 'completed',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'null' => r'$null',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown; } 
+bool get isUnknown {return this is WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() $null, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() $null, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookCheckSuiteCompletedCheckSuiteStatus$requested() => requested(),
       WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress() => inProgress(),
       WebhookCheckSuiteCompletedCheckSuiteStatus$completed() => completed(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() requested, required W Function() inProgress, re
       WebhookCheckSuiteCompletedCheckSuiteStatus$$null() => $null(),
       WebhookCheckSuiteCompletedCheckSuiteStatus$pending() => pending(),
       WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? $null, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? $null, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookCheckSuiteCompletedCheckSuiteStatus$requested() => requested != null ? requested() : orElse(value),
       WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       WebhookCheckSuiteCompletedCheckSuiteStatus$completed() => completed != null ? completed() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
       WebhookCheckSuiteCompletedCheckSuiteStatus$$null() => $null != null ? $null() : orElse(value),
       WebhookCheckSuiteCompletedCheckSuiteStatus$pending() => pending != null ? pending() : orElse(value),
       WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteStatus($value)';
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$requested extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$requested._();
 
 @override String get value => 'requested';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'requested'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$completed extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$completed._();
 
 @override String get value => 'completed';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$queued extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$queued._();
 
 @override String get value => 'queued';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$$null extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$$null._();
 
 @override String get value => 'null';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$pending extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$pending._();
 
 @override String get value => 'pending';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,11 +128,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
 @immutable final class WebhookCheckSuiteCompletedCheckSuite {const WebhookCheckSuiteCompletedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, required this.status, required this.updatedAt, required this.url, this.rerequestable, this.runsRerequestable, });
 
-factory WebhookCheckSuiteCompletedCheckSuite.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompletedCheckSuite(
+factory WebhookCheckSuiteCompletedCheckSuite.fromJson(Map<String, dynamic> json) {return WebhookCheckSuiteCompletedCheckSuite(
   after: json['after'] as String?,
   app: WebhookCheckSuiteCompletedCheckSuiteApp.fromJson(json['app'] as Map<String, dynamic>),
   before: json['before'] as String?,
@@ -151,7 +151,7 @@ factory WebhookCheckSuiteCompletedCheckSuite.fromJson(Map<String, dynamic> json)
   status: json['status'] != null ? WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(json['status'] as String) : null,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String? after;
 
@@ -196,7 +196,7 @@ final DateTime updatedAt;
 /// URL that points to the check suite API resource.
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': after,
   'app': app.toJson(),
   'before': before,
@@ -215,14 +215,14 @@ Map<String, dynamic> toJson() { return {
   'status': status?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && json['after'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after') && (json['after'] == null || json['after'] is String) &&
       json.containsKey('app') &&
-      json.containsKey('before') && json['before'] is String &&
+      json.containsKey('before') && (json['before'] == null || json['before'] is String) &&
       json.containsKey('check_runs_url') && json['check_runs_url'] is String &&
       json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_commit') &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -231,8 +231,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('pull_requests') &&
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteCompletedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, CheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<CheckSuitePullRequests>? pullRequests, bool? Function()? rerequestable, bool? Function()? runsRerequestable, WebhookCheckSuiteCompletedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteCompletedCheckSuite(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteCompletedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, CheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<CheckSuitePullRequests>? pullRequests, bool? Function()? rerequestable, bool? Function()? runsRerequestable, WebhookCheckSuiteCompletedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) {return WebhookCheckSuiteCompletedCheckSuite(
   after: after != null ? after() : this.after,
   app: app ?? this.app,
   before: before != null ? before() : this.before,
@@ -251,7 +251,7 @@ WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, Webhoo
   status: status != null ? status() : this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteCompletedCheckSuite &&
           after == other.after &&
@@ -277,4 +277,4 @@ WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, Webhoo
 
 @override String toString() => 'WebhookCheckSuiteCompletedCheckSuite(\n  after: $after,\n  app: $app,\n  before: $before,\n  checkRunsUrl: $checkRunsUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headSha: $headSha,\n  id: $id,\n  latestCheckRunsCount: $latestCheckRunsCount,\n  nodeId: $nodeId,\n  pullRequests: $pullRequests,\n  rerequestable: $rerequestable,\n  runsRerequestable: $runsRerequestable,\n  status: $status,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

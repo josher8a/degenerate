@@ -1,40 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentMethod
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_type.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_alipay.dart';import 'package:pub_stripe_spec3/models/payment_method_acss_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_affirm.dart';import 'package:pub_stripe_spec3/models/payment_method_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/payment_method_alma.dart';import 'package:pub_stripe_spec3/models/payment_method_amazon_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bacs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bancontact.dart';import 'package:pub_stripe_spec3/models/payment_method_billie.dart';import 'package:pub_stripe_spec3/models/payment_method_blik.dart';import 'package:pub_stripe_spec3/models/payment_method_boleto.dart';import 'package:pub_stripe_spec3/models/payment_method_card.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present.dart';import 'package:pub_stripe_spec3/models/payment_method_cashapp.dart';import 'package:pub_stripe_spec3/models/payment_method_crypto.dart';import 'package:pub_stripe_spec3/models/payment_method_custom.dart';import 'package:pub_stripe_spec3/models/payment_method_customer_balance.dart';import 'package:pub_stripe_spec3/models/payment_method_eps.dart';import 'package:pub_stripe_spec3/models/payment_method_fpx.dart';import 'package:pub_stripe_spec3/models/payment_method_giropay.dart';import 'package:pub_stripe_spec3/models/payment_method_grabpay.dart';import 'package:pub_stripe_spec3/models/payment_method_ideal.dart';import 'package:pub_stripe_spec3/models/payment_method_interac_present.dart';import 'package:pub_stripe_spec3/models/payment_method_kakao_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_klarna.dart';import 'package:pub_stripe_spec3/models/payment_method_konbini.dart';import 'package:pub_stripe_spec3/models/payment_method_kr_card.dart';import 'package:pub_stripe_spec3/models/payment_method_link.dart';import 'package:pub_stripe_spec3/models/payment_method_mb_way.dart';import 'package:pub_stripe_spec3/models/payment_method_mobilepay.dart';import 'package:pub_stripe_spec3/models/payment_method_multibanco.dart';import 'package:pub_stripe_spec3/models/payment_method_naver_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_oxxo.dart';import 'package:pub_stripe_spec3/models/payment_method_p24.dart';import 'package:pub_stripe_spec3/models/payment_method_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/payment_method_payco.dart';import 'package:pub_stripe_spec3/models/payment_method_paynow.dart';import 'package:pub_stripe_spec3/models/payment_method_paypal.dart';import 'package:pub_stripe_spec3/models/payment_method_payto.dart';import 'package:pub_stripe_spec3/models/payment_method_pix.dart';import 'package:pub_stripe_spec3/models/payment_method_promptpay.dart';import 'package:pub_stripe_spec3/models/payment_method_revolut_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_samsung_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_satispay.dart';import 'package:pub_stripe_spec3/models/payment_method_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_sofort.dart';import 'package:pub_stripe_spec3/models/payment_method_swish.dart';import 'package:pub_stripe_spec3/models/payment_method_twint.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_wechat_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_zip.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_type.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_alipay.dart';import 'package:pub_stripe_spec3/models/payment_method_acss_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_affirm.dart';import 'package:pub_stripe_spec3/models/payment_method_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/payment_method_alma.dart';import 'package:pub_stripe_spec3/models/payment_method_amazon_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bacs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bancontact.dart';import 'package:pub_stripe_spec3/models/payment_method_billie.dart';import 'package:pub_stripe_spec3/models/payment_method_blik.dart';import 'package:pub_stripe_spec3/models/payment_method_boleto.dart';import 'package:pub_stripe_spec3/models/payment_method_card.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present.dart';import 'package:pub_stripe_spec3/models/payment_method_cashapp.dart';import 'package:pub_stripe_spec3/models/payment_method_crypto.dart';import 'package:pub_stripe_spec3/models/payment_method_custom.dart';import 'package:pub_stripe_spec3/models/payment_method_customer_balance.dart';import 'package:pub_stripe_spec3/models/payment_method_eps.dart';import 'package:pub_stripe_spec3/models/payment_method_fpx.dart';import 'package:pub_stripe_spec3/models/payment_method_giropay.dart';import 'package:pub_stripe_spec3/models/payment_method_grabpay.dart';import 'package:pub_stripe_spec3/models/payment_method_ideal.dart';import 'package:pub_stripe_spec3/models/payment_method_interac_present.dart';import 'package:pub_stripe_spec3/models/payment_method_kakao_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_klarna.dart';import 'package:pub_stripe_spec3/models/payment_method_konbini.dart';import 'package:pub_stripe_spec3/models/payment_method_kr_card.dart';import 'package:pub_stripe_spec3/models/payment_method_link.dart';import 'package:pub_stripe_spec3/models/payment_method_mb_way.dart';import 'package:pub_stripe_spec3/models/payment_method_mobilepay.dart';import 'package:pub_stripe_spec3/models/payment_method_multibanco.dart';import 'package:pub_stripe_spec3/models/payment_method_naver_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_oxxo.dart';import 'package:pub_stripe_spec3/models/payment_method_p24.dart';import 'package:pub_stripe_spec3/models/payment_method_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/payment_method_payco.dart';import 'package:pub_stripe_spec3/models/payment_method_paynow.dart';import 'package:pub_stripe_spec3/models/payment_method_paypal.dart';import 'package:pub_stripe_spec3/models/payment_method_payto.dart';import 'package:pub_stripe_spec3/models/payment_method_pix.dart';import 'package:pub_stripe_spec3/models/payment_method_promptpay.dart';import 'package:pub_stripe_spec3/models/payment_method_revolut_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_samsung_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_satispay.dart';import 'package:pub_stripe_spec3/models/payment_method_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_sofort.dart';import 'package:pub_stripe_spec3/models/payment_method_swish.dart';import 'package:pub_stripe_spec3/models/payment_method_twint.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_wechat_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_zip.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PaymentMethodObject {const PaymentMethodObject();
 
-factory PaymentMethodObject.fromJson(String json) { return switch (json) {
+factory PaymentMethodObject.fromJson(String json) {return switch (json) {
   'payment_method' => paymentMethod,
   _ => PaymentMethodObject$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodObject paymentMethod = PaymentMethodObject$paymentMethod._();
 
 static const List<PaymentMethodObject> values = [paymentMethod];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment_method' => 'paymentMethod',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodObject$Unknown; } 
+bool get isUnknown {return this is PaymentMethodObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentMethod, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentMethod, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodObject$paymentMethod() => paymentMethod(),
       PaymentMethodObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethod, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethod, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodObject$paymentMethod() => paymentMethod != null ? paymentMethod() : orElse(value),
       PaymentMethodObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodObject($value)';
 
- }
+}
 @immutable final class PaymentMethodObject$paymentMethod extends PaymentMethodObject {const PaymentMethodObject$paymentMethod._();
 
 @override String get value => 'payment_method';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 
 @override int get hashCode => 'payment_method'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodObject$Unknown extends PaymentMethodObject {const PaymentMethodObject$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// PaymentMethod objects represent your customer's payment instruments.
 /// You can use them with [PaymentIntents](https://docs.stripe.com/payments/payment-intents) to collect payments or save them to
 /// Customer objects to store instrument details for future payments.
 /// 
 /// Related guides: [Payment Methods](https://docs.stripe.com/payments/payment-methods) and [More Payment Scenarios](https://docs.stripe.com/payments/more-payment-scenarios).
-@immutable final class PaymentMethod {const PaymentMethod({required this.type, required this.billingDetails, required this.created, required this.id, required this.livemode, required this.object, this.customerAccount, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.affirm, this.blik, this.boleto, this.card, this.cardPresent, this.cashapp, this.afterpayClearpay, this.crypto, this.custom, this.customer, this.acssDebit, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.alipay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.allowRedisplay, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.zip, this.alma, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.amazonPay, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
+@immutable final class PaymentMethod {const PaymentMethod({required this.type, required this.billingDetails, required this.created, required this.id, required this.livemode, required this.object, this.customerAccount = const Omittable.absent(), this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.affirm, this.blik, this.boleto, this.card, this.cardPresent, this.cashapp, this.afterpayClearpay, this.crypto, this.custom, this.customer = const Omittable.absent(), this.acssDebit, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.alipay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.allowRedisplay, this.mbWay, this.metadata = const Omittable.absent(), this.mobilepay, this.multibanco, this.naverPay, this.zip, this.alma, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.amazonPay, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
 
-factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod(
+factory PaymentMethod.fromJson(Map<String, dynamic> json) {return PaymentMethod(
   acssDebit: json['acss_debit'] != null ? PaymentMethodAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   affirm: json['affirm'] != null ? PaymentMethodAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
   afterpayClearpay: json['afterpay_clearpay'] != null ? PaymentMethodAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
@@ -82,8 +82,8 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   created: (json['created'] as num).toInt(),
   crypto: json['crypto'] != null ? PaymentMethodCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
   custom: json['custom'] != null ? PaymentMethodCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   customerBalance: json['customer_balance'] != null ? PaymentMethodCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
   eps: json['eps'] != null ? PaymentMethodEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
   fpx: json['fpx'] != null ? PaymentMethodFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
@@ -99,7 +99,7 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   link: json['link'] != null ? PaymentMethodLink.fromJson(json['link'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   mbWay: json['mb_way'] != null ? PaymentMethodMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   mobilepay: json['mobilepay'] != null ? PaymentMethodMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
   multibanco: json['multibanco'] != null ? PaymentMethodMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
   naverPay: json['naver_pay'] != null ? PaymentMethodNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
@@ -126,7 +126,7 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   usBankAccount: json['us_bank_account'] != null ? PaymentMethodUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
   wechatPay: json['wechat_pay'] != null ? PaymentMethodWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
   zip: json['zip'] != null ? PaymentMethodZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentMethodAcssDebit? acssDebit;
 
@@ -171,9 +171,9 @@ final PaymentMethodCrypto? crypto;
 final PaymentMethodCustom? custom;
 
 /// The ID of the Customer to which this PaymentMethod is saved. This will not be set when the PaymentMethod has not been saved to a Customer.
-final BankConnectionsResourceAccountholderCustomer? customer;
+final Omittable<BankConnectionsResourceAccountholderCustomer?> customer;
 
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 final PaymentMethodCustomerBalance? customerBalance;
 
@@ -208,7 +208,7 @@ final bool livemode;
 final PaymentMethodMbWay? mbWay;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 final PaymentMethodMobilepay? mobilepay;
 
@@ -264,7 +264,7 @@ final PaymentMethodWechatPay? wechatPay;
 
 final PaymentMethodZip? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (affirm != null) 'affirm': affirm?.toJson(),
   if (afterpayClearpay != null) 'afterpay_clearpay': afterpayClearpay?.toJson(),
@@ -285,8 +285,8 @@ Map<String, dynamic> toJson() { return {
   'created': created,
   if (crypto != null) 'crypto': crypto?.toJson(),
   if (custom != null) 'custom': custom?.toJson(),
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   if (customerBalance != null) 'customer_balance': customerBalance?.toJson(),
   if (eps != null) 'eps': eps?.toJson(),
   if (fpx != null) 'fpx': fpx?.toJson(),
@@ -302,7 +302,7 @@ Map<String, dynamic> toJson() { return {
   if (link != null) 'link': link?.toJson(),
   'livemode': livemode,
   if (mbWay != null) 'mb_way': mbWay?.toJson(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (mobilepay != null) 'mobilepay': mobilepay?.toJson(),
   if (multibanco != null) 'multibanco': multibanco?.toJson(),
   if (naverPay != null) 'naver_pay': naverPay?.toJson(),
@@ -329,22 +329,22 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
   if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
   if (zip != null) 'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_details') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final customerAccount$ = customerAccount;
+List<String> validate() {final errors = <String>[];
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMethodAffirm? Function()? affirm, PaymentMethodAfterpayClearpay? Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay? Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PaymentMethodAlma? Function()? alma, PaymentMethodAmazonPay? Function()? amazonPay, PaymentMethodAuBecsDebit? Function()? auBecsDebit, PaymentMethodBacsDebit? Function()? bacsDebit, PaymentMethodBancontact? Function()? bancontact, PaymentMethodBillie? Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik? Function()? blik, PaymentMethodBoleto? Function()? boleto, PaymentMethodCard? Function()? card, PaymentMethodCardPresent? Function()? cardPresent, PaymentMethodCashapp? Function()? cashapp, int? created, PaymentMethodCrypto? Function()? crypto, PaymentMethodCustom? Function()? custom, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, PaymentMethodCustomerBalance? Function()? customerBalance, PaymentMethodEps? Function()? eps, PaymentMethodFpx? Function()? fpx, PaymentMethodGiropay? Function()? giropay, PaymentMethodGrabpay? Function()? grabpay, String? id, PaymentMethodIdeal? Function()? ideal, PaymentMethodInteracPresent? Function()? interacPresent, PaymentMethodKakaoPay? Function()? kakaoPay, PaymentMethodKlarna? Function()? klarna, PaymentMethodKonbini? Function()? konbini, PaymentMethodKrCard? Function()? krCard, PaymentMethodLink? Function()? link, bool? livemode, PaymentMethodMbWay? Function()? mbWay, Map<String, String>? Function()? metadata, PaymentMethodMobilepay? Function()? mobilepay, PaymentMethodMultibanco? Function()? multibanco, PaymentMethodNaverPay? Function()? naverPay, PaymentMethodNzBankAccount? Function()? nzBankAccount, PaymentMethodObject? object, PaymentMethodOxxo? Function()? oxxo, PaymentMethodP24? Function()? p24, PaymentMethodPayByBank? Function()? payByBank, PaymentMethodPayco? Function()? payco, PaymentMethodPaynow? Function()? paynow, PaymentMethodPaypal? Function()? paypal, PaymentMethodPayto? Function()? payto, PaymentMethodPix? Function()? pix, PaymentMethodPromptpay? Function()? promptpay, RadarRadarOptions? Function()? radarOptions, PaymentMethodRevolutPay? Function()? revolutPay, PaymentMethodSamsungPay? Function()? samsungPay, PaymentMethodSatispay? Function()? satispay, PaymentMethodSepaDebit? Function()? sepaDebit, PaymentMethodSofort? Function()? sofort, PaymentMethodSwish? Function()? swish, PaymentMethodTwint? Function()? twint, ConfirmationTokensResourcePaymentMethodPreviewType? type, PaymentMethodUsBankAccount? Function()? usBankAccount, PaymentMethodWechatPay? Function()? wechatPay, PaymentMethodZip? Function()? zip, }) { return PaymentMethod(
+return errors;}
+PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMethodAffirm? Function()? affirm, PaymentMethodAfterpayClearpay? Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay? Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PaymentMethodAlma? Function()? alma, PaymentMethodAmazonPay? Function()? amazonPay, PaymentMethodAuBecsDebit? Function()? auBecsDebit, PaymentMethodBacsDebit? Function()? bacsDebit, PaymentMethodBancontact? Function()? bancontact, PaymentMethodBillie? Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik? Function()? blik, PaymentMethodBoleto? Function()? boleto, PaymentMethodCard? Function()? card, PaymentMethodCardPresent? Function()? cardPresent, PaymentMethodCashapp? Function()? cashapp, int? created, PaymentMethodCrypto? Function()? crypto, PaymentMethodCustom? Function()? custom, Omittable<BankConnectionsResourceAccountholderCustomer?>? customer, Omittable<String?>? customerAccount, PaymentMethodCustomerBalance? Function()? customerBalance, PaymentMethodEps? Function()? eps, PaymentMethodFpx? Function()? fpx, PaymentMethodGiropay? Function()? giropay, PaymentMethodGrabpay? Function()? grabpay, String? id, PaymentMethodIdeal? Function()? ideal, PaymentMethodInteracPresent? Function()? interacPresent, PaymentMethodKakaoPay? Function()? kakaoPay, PaymentMethodKlarna? Function()? klarna, PaymentMethodKonbini? Function()? konbini, PaymentMethodKrCard? Function()? krCard, PaymentMethodLink? Function()? link, bool? livemode, PaymentMethodMbWay? Function()? mbWay, Omittable<Map<String,String>?>? metadata, PaymentMethodMobilepay? Function()? mobilepay, PaymentMethodMultibanco? Function()? multibanco, PaymentMethodNaverPay? Function()? naverPay, PaymentMethodNzBankAccount? Function()? nzBankAccount, PaymentMethodObject? object, PaymentMethodOxxo? Function()? oxxo, PaymentMethodP24? Function()? p24, PaymentMethodPayByBank? Function()? payByBank, PaymentMethodPayco? Function()? payco, PaymentMethodPaynow? Function()? paynow, PaymentMethodPaypal? Function()? paypal, PaymentMethodPayto? Function()? payto, PaymentMethodPix? Function()? pix, PaymentMethodPromptpay? Function()? promptpay, RadarRadarOptions? Function()? radarOptions, PaymentMethodRevolutPay? Function()? revolutPay, PaymentMethodSamsungPay? Function()? samsungPay, PaymentMethodSatispay? Function()? satispay, PaymentMethodSepaDebit? Function()? sepaDebit, PaymentMethodSofort? Function()? sofort, PaymentMethodSwish? Function()? swish, PaymentMethodTwint? Function()? twint, ConfirmationTokensResourcePaymentMethodPreviewType? type, PaymentMethodUsBankAccount? Function()? usBankAccount, PaymentMethodWechatPay? Function()? wechatPay, PaymentMethodZip? Function()? zip, }) {return PaymentMethod(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
@@ -365,8 +365,8 @@ PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMe
   created: created ?? this.created,
   crypto: crypto != null ? crypto() : this.crypto,
   custom: custom != null ? custom() : this.custom,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
   customerBalance: customerBalance != null ? customerBalance() : this.customerBalance,
   eps: eps != null ? eps() : this.eps,
   fpx: fpx != null ? fpx() : this.fpx,
@@ -382,7 +382,7 @@ PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMe
   link: link != null ? link() : this.link,
   livemode: livemode ?? this.livemode,
   mbWay: mbWay != null ? mbWay() : this.mbWay,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   mobilepay: mobilepay != null ? mobilepay() : this.mobilepay,
   multibanco: multibanco != null ? multibanco() : this.multibanco,
   naverPay: naverPay != null ? naverPay() : this.naverPay,
@@ -409,7 +409,7 @@ PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMe
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethod &&
           acssDebit == other.acssDebit &&
@@ -481,4 +481,4 @@ PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMe
 
 @override String toString() => 'PaymentMethod(\n  acssDebit: $acssDebit,\n  affirm: $affirm,\n  afterpayClearpay: $afterpayClearpay,\n  alipay: $alipay,\n  allowRedisplay: $allowRedisplay,\n  alma: $alma,\n  amazonPay: $amazonPay,\n  auBecsDebit: $auBecsDebit,\n  bacsDebit: $bacsDebit,\n  bancontact: $bancontact,\n  billie: $billie,\n  billingDetails: $billingDetails,\n  blik: $blik,\n  boleto: $boleto,\n  card: $card,\n  cardPresent: $cardPresent,\n  cashapp: $cashapp,\n  created: $created,\n  crypto: $crypto,\n  custom: $custom,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerBalance: $customerBalance,\n  eps: $eps,\n  fpx: $fpx,\n  giropay: $giropay,\n  grabpay: $grabpay,\n  id: $id,\n  ideal: $ideal,\n  interacPresent: $interacPresent,\n  kakaoPay: $kakaoPay,\n  klarna: $klarna,\n  konbini: $konbini,\n  krCard: $krCard,\n  link: $link,\n  livemode: $livemode,\n  mbWay: $mbWay,\n  metadata: $metadata,\n  mobilepay: $mobilepay,\n  multibanco: $multibanco,\n  naverPay: $naverPay,\n  nzBankAccount: $nzBankAccount,\n  object: $object,\n  oxxo: $oxxo,\n  p24: $p24,\n  payByBank: $payByBank,\n  payco: $payco,\n  paynow: $paynow,\n  paypal: $paypal,\n  payto: $payto,\n  pix: $pix,\n  promptpay: $promptpay,\n  radarOptions: $radarOptions,\n  revolutPay: $revolutPay,\n  samsungPay: $samsungPay,\n  satispay: $satispay,\n  sepaDebit: $sepaDebit,\n  sofort: $sofort,\n  swish: $swish,\n  twint: $twint,\n  type: $type,\n  usBankAccount: $usBankAccount,\n  wechatPay: $wechatPay,\n  zip: $zip,\n)';
 
- }
+}

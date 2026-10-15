@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_get_message_raw_response/email_security_get_message_raw_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityGetMessageRawResponse {const EmailSecurityGetMessageRawResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory EmailSecurityGetMessageRawResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageRawResponse(
+factory EmailSecurityGetMessageRawResponse.fromJson(Map<String, dynamic> json) {return EmailSecurityGetMessageRawResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: EmailSecurityGetMessageRawResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 /// Example: `[]`
 final List<EmailSecurityMessage> errors;
@@ -36,22 +36,22 @@ final bool success;
 /// This is a test email.}``
 final EmailSecurityGetMessageRawResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-EmailSecurityGetMessageRawResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityGetMessageRawResponseResult? result, }) { return EmailSecurityGetMessageRawResponse(
+      json.containsKey('result');}
+EmailSecurityGetMessageRawResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityGetMessageRawResponseResult? result, }) {return EmailSecurityGetMessageRawResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetMessageRawResponse &&
           listEquals(errors, other.errors) &&
@@ -63,4 +63,4 @@ EmailSecurityGetMessageRawResponse copyWith({List<EmailSecurityMessage>? errors,
 
 @override String toString() => 'EmailSecurityGetMessageRawResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

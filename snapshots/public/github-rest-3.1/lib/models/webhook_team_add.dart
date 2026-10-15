@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';@immutable final class WebhookTeamAdd {const WebhookTeamAdd({required this.repository, required this.sender, required this.team, this.enterprise, this.installation, this.organization, });
 
-factory WebhookTeamAdd.fromJson(Map<String, dynamic> json) { return WebhookTeamAdd(
+factory WebhookTeamAdd.fromJson(Map<String, dynamic> json) {return WebhookTeamAdd(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
-); }
+);}
 
 final EnterpriseWebhooks? enterprise;
 
@@ -24,25 +24,25 @@ final SimpleUser sender;
 
 final WebhooksTeam1 team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'team': team.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('team'); } 
-WebhookTeamAdd copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamAdd(
+      json.containsKey('team');}
+WebhookTeamAdd copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksTeam1? team, }) {return WebhookTeamAdd(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
   team: team ?? this.team,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamAdd &&
           enterprise == other.enterprise &&
@@ -56,4 +56,4 @@ WebhookTeamAdd copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInsta
 
 @override String toString() => 'WebhookTeamAdd(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)';
 
- }
+}

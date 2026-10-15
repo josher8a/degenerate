@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of grader.
 sealed class EvalGraderTextSimilarityType {const EvalGraderTextSimilarityType();
 
-factory EvalGraderTextSimilarityType.fromJson(String json) { return switch (json) {
+factory EvalGraderTextSimilarityType.fromJson(String json) {return switch (json) {
   'text_similarity' => textSimilarity,
   _ => EvalGraderTextSimilarityType$Unknown(json),
-}; }
+};}
 
 static const EvalGraderTextSimilarityType textSimilarity = EvalGraderTextSimilarityType$textSimilarity._();
 
 static const List<EvalGraderTextSimilarityType> values = [textSimilarity];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text_similarity' => 'textSimilarity',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EvalGraderTextSimilarityType$Unknown; } 
+bool get isUnknown {return this is EvalGraderTextSimilarityType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() textSimilarity, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() textSimilarity, required W Function(String value) $unknown, }) {return switch (this) {
       EvalGraderTextSimilarityType$textSimilarity() => textSimilarity(),
       EvalGraderTextSimilarityType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? textSimilarity, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? textSimilarity, W Function(String value)? $unknown, }) {return switch (this) {
       EvalGraderTextSimilarityType$textSimilarity() => textSimilarity != null ? textSimilarity() : orElse(value),
       EvalGraderTextSimilarityType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EvalGraderTextSimilarityType($value)';
 
- }
+}
 @immutable final class EvalGraderTextSimilarityType$textSimilarity extends EvalGraderTextSimilarityType {const EvalGraderTextSimilarityType$textSimilarity._();
 
 @override String get value => 'text_similarity';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? textSimi
 
 @override int get hashCode => 'text_similarity'.hashCode;
 
- }
+}
 @immutable final class EvalGraderTextSimilarityType$Unknown extends EvalGraderTextSimilarityType {const EvalGraderTextSimilarityType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? textSimi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

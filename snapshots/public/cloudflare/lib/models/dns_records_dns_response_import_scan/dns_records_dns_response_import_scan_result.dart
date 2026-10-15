@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseImportScanResult {const DnsRecordsDnsResponseImportScanResult({this.recsAdded, this.totalRecordsParsed, });
 
-factory DnsRecordsDnsResponseImportScanResult.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseImportScanResult(
+factory DnsRecordsDnsResponseImportScanResult.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsResponseImportScanResult(
   recsAdded: json['recs_added'] != null ? (json['recs_added'] as num).toDouble() : null,
   totalRecordsParsed: json['total_records_parsed'] != null ? (json['total_records_parsed'] as num).toDouble() : null,
-); }
+);}
 
 /// Number of DNS records added.
 /// 
@@ -18,15 +18,15 @@ final double? recsAdded;
 /// Example: `5`
 final double? totalRecordsParsed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'recs_added': ?recsAdded,
   'total_records_parsed': ?totalRecordsParsed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recs_added', 'total_records_parsed'}.contains(key)); } 
-DnsRecordsDnsResponseImportScanResult copyWith({double? Function()? recsAdded, double? Function()? totalRecordsParsed, }) { return DnsRecordsDnsResponseImportScanResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'recs_added', 'total_records_parsed'}.contains(key));}
+DnsRecordsDnsResponseImportScanResult copyWith({double? Function()? recsAdded, double? Function()? totalRecordsParsed, }) {return DnsRecordsDnsResponseImportScanResult(
   recsAdded: recsAdded != null ? recsAdded() : this.recsAdded,
   totalRecordsParsed: totalRecordsParsed != null ? totalRecordsParsed() : this.totalRecordsParsed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseImportScanResult &&
           recsAdded == other.recsAdded &&
@@ -36,4 +36,4 @@ DnsRecordsDnsResponseImportScanResult copyWith({double? Function()? recsAdded, d
 
 @override String toString() => 'DnsRecordsDnsResponseImportScanResult(recsAdded: $recsAdded, totalRecordsParsed: $totalRecordsParsed)';
 
- }
+}

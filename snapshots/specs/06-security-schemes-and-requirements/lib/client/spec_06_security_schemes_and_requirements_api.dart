@@ -12,7 +12,7 @@ final ApiConfig _config;
 
 late final DefaultApi $default = DefaultApi(_config);
 
-Spec06SecuritySchemesAndRequirementsApi withApiKeyAuth(String value) { return Spec06SecuritySchemesAndRequirementsApi(Spec06SecuritySchemesAndRequirementsSecurity.applyApiKeyAuth(_config, value)); } 
-Spec06SecuritySchemesAndRequirementsApi withHttpBasic({required String username, required String password, }) { return Spec06SecuritySchemesAndRequirementsApi(Spec06SecuritySchemesAndRequirementsSecurity.applyHttpBasic(_config, username: username, password: password)); } 
-Spec06SecuritySchemesAndRequirementsApi withHttpBearer(String token) { return Spec06SecuritySchemesAndRequirementsApi(Spec06SecuritySchemesAndRequirementsSecurity.applyHttpBearer(_config, token)); } 
- }
+Spec06SecuritySchemesAndRequirementsApi withApiKeyAuth(String value) {return Spec06SecuritySchemesAndRequirementsApi(Spec06SecuritySchemesAndRequirementsSecurity.applyApiKeyAuth(_config, value));}
+Spec06SecuritySchemesAndRequirementsApi withHttpBasic({required String username, required String password, }) {return Spec06SecuritySchemesAndRequirementsApi(Spec06SecuritySchemesAndRequirementsSecurity.applyHttpBasic(_config, username: username, password: password));}
+Spec06SecuritySchemesAndRequirementsApi withHttpBearer(String token) {return Spec06SecuritySchemesAndRequirementsApi(Spec06SecuritySchemesAndRequirementsSecurity.applyHttpBearer(_config, token));}
+}

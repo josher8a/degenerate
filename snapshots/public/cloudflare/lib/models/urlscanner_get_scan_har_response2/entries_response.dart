@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_request_headers.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/response_content.dart';@immutable final class EntriesResponse {const EntriesResponse({required this.transferSize, required this.bodySize, required this.content, required this.headers, required this.headersSize, required this.httpVersion, required this.redirectUrl, required this.status, required this.statusText, });
 
-factory EntriesResponse.fromJson(Map<String, dynamic> json) { return EntriesResponse(
+factory EntriesResponse.fromJson(Map<String, dynamic> json) {return EntriesResponse(
   transferSize: (json['_transferSize'] as num).toDouble(),
   bodySize: (json['bodySize'] as num).toDouble(),
   content: ResponseContent.fromJson(json['content'] as Map<String, dynamic>),
@@ -13,7 +13,7 @@ factory EntriesResponse.fromJson(Map<String, dynamic> json) { return EntriesResp
   redirectUrl: json['redirectURL'] as String,
   status: (json['status'] as num).toDouble(),
   statusText: json['statusText'] as String,
-); }
+);}
 
 /// Example: `1071`
 final double transferSize;
@@ -39,7 +39,7 @@ final double status;
 /// Example: `'OK'`
 final String statusText;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_transferSize': transferSize,
   'bodySize': bodySize,
   'content': content.toJson(),
@@ -49,8 +49,8 @@ Map<String, dynamic> toJson() { return {
   'redirectURL': redirectUrl,
   'status': status,
   'statusText': statusText,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_transferSize') && json['_transferSize'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_transferSize') && json['_transferSize'] is num &&
       json.containsKey('bodySize') && json['bodySize'] is num &&
       json.containsKey('content') &&
       json.containsKey('headers') &&
@@ -58,8 +58,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_tran
       json.containsKey('httpVersion') && json['httpVersion'] is String &&
       json.containsKey('redirectURL') && json['redirectURL'] is String &&
       json.containsKey('status') && json['status'] is num &&
-      json.containsKey('statusText') && json['statusText'] is String; } 
-EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseContent? content, List<EntriesRequestHeaders>? headers, double? headersSize, String? httpVersion, String? redirectUrl, double? status, String? statusText, }) { return EntriesResponse(
+      json.containsKey('statusText') && json['statusText'] is String;}
+EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseContent? content, List<EntriesRequestHeaders>? headers, double? headersSize, String? httpVersion, String? redirectUrl, double? status, String? statusText, }) {return EntriesResponse(
   transferSize: transferSize ?? this.transferSize,
   bodySize: bodySize ?? this.bodySize,
   content: content ?? this.content,
@@ -69,7 +69,7 @@ EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseConten
   redirectUrl: redirectUrl ?? this.redirectUrl,
   status: status ?? this.status,
   statusText: statusText ?? this.statusText,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EntriesResponse &&
           transferSize == other.transferSize &&
@@ -86,4 +86,4 @@ EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseConten
 
 @override String toString() => 'EntriesResponse(\n  transferSize: $transferSize,\n  bodySize: $bodySize,\n  content: $content,\n  headers: $headers,\n  headersSize: $headersSize,\n  httpVersion: $httpVersion,\n  redirectUrl: $redirectUrl,\n  status: $status,\n  statusText: $statusText,\n)';
 
- }
+}

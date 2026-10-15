@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/VectorizeDeleteMetadataIndexResponse2
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_delete_metadata_index_response.dart';@immutable final class VectorizeDeleteMetadataIndexResponse2 {const VectorizeDeleteMetadataIndexResponse2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_delete_metadata_index_response.dart';import 'package:pub_cloudflare/models/vectorize_messages2.dart';@immutable final class VectorizeDeleteMetadataIndexResponse2 {const VectorizeDeleteMetadataIndexResponse2({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory VectorizeDeleteMetadataIndexResponse2.fromJson(Map<String, dynamic> json) { return VectorizeDeleteMetadataIndexResponse2(
-  result: json['result'] != null ? VectorizeDeleteMetadataIndexResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory VectorizeDeleteMetadataIndexResponse2.fromJson(Map<String, dynamic> json) {return VectorizeDeleteMetadataIndexResponse2(
+  errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: VectorizeDeleteMetadataIndexResponse.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+);}
 
-final VectorizeDeleteMetadataIndexResponse? result;
+final List<VectorizeMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-VectorizeDeleteMetadataIndexResponse2 copyWith({VectorizeDeleteMetadataIndexResponse? Function()? result}) { return VectorizeDeleteMetadataIndexResponse2(
-  result: result != null ? result() : this.result,
-); } 
+final List<VectorizeMessages2> messages;
+
+final VectorizeDeleteMetadataIndexResponse result;
+
+/// Whether the API call was successful
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+VectorizeDeleteMetadataIndexResponse2 copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, VectorizeDeleteMetadataIndexResponse? result, bool? success, }) {return VectorizeDeleteMetadataIndexResponse2(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeleteMetadataIndexResponse2 &&
-          result == other.result;
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
 
-@override String toString() => 'VectorizeDeleteMetadataIndexResponse2(result: $result)';
+@override String toString() => 'VectorizeDeleteMetadataIndexResponse2(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';sealed class VideoStatus {const VideoStatus();
 
-factory VideoStatus.fromJson(String json) { return switch (json) {
+factory VideoStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   'failed' => failed,
   _ => VideoStatus$Unknown(json),
-}; }
+};}
 
 static const VideoStatus queued = VideoStatus$queued._();
 
@@ -22,36 +22,36 @@ static const VideoStatus failed = VideoStatus$failed._();
 static const List<VideoStatus> values = [queued, inProgress, completed, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VideoStatus$Unknown; } 
+bool get isUnknown {return this is VideoStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       VideoStatus$queued() => queued(),
       VideoStatus$inProgress() => inProgress(),
       VideoStatus$completed() => completed(),
       VideoStatus$failed() => failed(),
       VideoStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       VideoStatus$queued() => queued != null ? queued() : orElse(value),
       VideoStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       VideoStatus$completed() => completed != null ? completed() : orElse(value),
       VideoStatus$failed() => failed != null ? failed() : orElse(value),
       VideoStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VideoStatus($value)';
 
- }
+}
 @immutable final class VideoStatus$queued extends VideoStatus {const VideoStatus$queued._();
 
 @override String get value => 'queued';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class VideoStatus$inProgress extends VideoStatus {const VideoStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class VideoStatus$completed extends VideoStatus {const VideoStatus$completed._();
 
 @override String get value => 'completed';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class VideoStatus$failed extends VideoStatus {const VideoStatus$failed._();
 
 @override String get value => 'failed';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class VideoStatus$Unknown extends VideoStatus {const VideoStatus$Unknown(this.value);
 
 @override final String value;
@@ -97,41 +97,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The object type, which is always `video`.
 sealed class VideoResourceObject {const VideoResourceObject();
 
-factory VideoResourceObject.fromJson(String json) { return switch (json) {
+factory VideoResourceObject.fromJson(String json) {return switch (json) {
   'video' => video,
   _ => VideoResourceObject$Unknown(json),
-}; }
+};}
 
 static const VideoResourceObject video = VideoResourceObject$video._();
 
 static const List<VideoResourceObject> values = [video];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'video' => 'video',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VideoResourceObject$Unknown; } 
+bool get isUnknown {return this is VideoResourceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() video, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() video, required W Function(String value) $unknown, }) {return switch (this) {
       VideoResourceObject$video() => video(),
       VideoResourceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? video, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? video, W Function(String value)? $unknown, }) {return switch (this) {
       VideoResourceObject$video() => video != null ? video() : orElse(value),
       VideoResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VideoResourceObject($value)';
 
- }
+}
 @immutable final class VideoResourceObject$video extends VideoResourceObject {const VideoResourceObject$video._();
 
 @override String get value => 'video';
@@ -140,7 +140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? video, W
 
 @override int get hashCode => 'video'.hashCode;
 
- }
+}
 @immutable final class VideoResourceObject$Unknown extends VideoResourceObject {const VideoResourceObject$Unknown(this.value);
 
 @override final String value;
@@ -150,14 +150,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? video, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Structured information describing a generated video job.
-@immutable final class VideoResource {const VideoResource({required this.id, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, this.object = VideoResourceObject.video, });
+@immutable final class VideoResource {const VideoResource({required this.id, required this.object, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, });
 
-factory VideoResource.fromJson(Map<String, dynamic> json) { return VideoResource(
+factory VideoResource.fromJson(Map<String, dynamic> json) {return VideoResource(
   id: json['id'] as String,
   object: VideoResourceObject.fromJson(json['object'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => VideoModelVariant2.fromJson(v as String),),
+  model: VideoModel.fromJson(json['model']),
   status: VideoStatus.fromJson(json['status'] as String),
   progress: (json['progress'] as num).toInt(),
   createdAt: (json['created_at'] as num).toInt(),
@@ -168,7 +168,7 @@ factory VideoResource.fromJson(Map<String, dynamic> json) { return VideoResource
   seconds: json['seconds'] as String,
   remixedFromVideoId: json['remixed_from_video_id'] as String?,
   error: json['error'] != null ? Error2.fromJson(json['error'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Unique identifier for the video job.
 final String id;
@@ -209,7 +209,7 @@ final String? remixedFromVideoId;
 /// Error payload that explains why generation failed, if applicable.
 final Error2? error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'model': model.toJson(),
@@ -223,21 +223,21 @@ Map<String, dynamic> toJson() { return {
   'seconds': seconds,
   'remixed_from_video_id': remixedFromVideoId,
   'error': error?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('model') &&
       json.containsKey('status') &&
       json.containsKey('progress') && json['progress'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('completed_at') && json['completed_at'] is num &&
-      json.containsKey('expires_at') && json['expires_at'] is num &&
-      json.containsKey('prompt') && json['prompt'] is String &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is num) &&
+      json.containsKey('prompt') && (json['prompt'] == null || json['prompt'] is String) &&
       json.containsKey('size') &&
       json.containsKey('seconds') && json['seconds'] is String &&
-      json.containsKey('remixed_from_video_id') && json['remixed_from_video_id'] is String &&
-      json.containsKey('error'); } 
-VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? model, VideoStatus? status, int? progress, int? createdAt, int? Function()? completedAt, int? Function()? expiresAt, String? Function()? prompt, VideoSize? size, String? seconds, String? Function()? remixedFromVideoId, Error2? Function()? error, }) { return VideoResource(
+      json.containsKey('remixed_from_video_id') && (json['remixed_from_video_id'] == null || json['remixed_from_video_id'] is String) &&
+      json.containsKey('error');}
+VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? model, VideoStatus? status, int? progress, int? createdAt, int? Function()? completedAt, int? Function()? expiresAt, String? Function()? prompt, VideoSize? size, String? seconds, String? Function()? remixedFromVideoId, Error2? Function()? error, }) {return VideoResource(
   id: id ?? this.id,
   object: object ?? this.object,
   model: model ?? this.model,
@@ -251,7 +251,7 @@ VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? mod
   seconds: seconds ?? this.seconds,
   remixedFromVideoId: remixedFromVideoId != null ? remixedFromVideoId() : this.remixedFromVideoId,
   error: error != null ? error() : this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VideoResource &&
           id == other.id &&
@@ -272,4 +272,4 @@ VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? mod
 
 @override String toString() => 'VideoResource(\n  id: $id,\n  object: $object,\n  model: $model,\n  status: $status,\n  progress: $progress,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  expiresAt: $expiresAt,\n  prompt: $prompt,\n  size: $size,\n  seconds: $seconds,\n  remixedFromVideoId: $remixedFromVideoId,\n  error: $error,\n)';
 
- }
+}

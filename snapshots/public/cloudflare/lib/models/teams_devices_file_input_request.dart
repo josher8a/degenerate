@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';@immutable final class TeamsDevicesFileInputRequest {const TeamsDevicesFileInputRequest({required this.operatingSystem, required this.path, this.exists, this.sha256, this.thumbprint, });
 
-factory TeamsDevicesFileInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesFileInputRequest(
+factory TeamsDevicesFileInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesFileInputRequest(
   exists: json['exists'] as bool?,
   operatingSystem: InputRequestOperatingSystem.fromJson(json['operating_system'] as String),
   path: json['path'] as String,
   sha256: json['sha256'] as String?,
   thumbprint: json['thumbprint'] as String?,
-); }
+);}
 
 /// Whether or not file exists.
 /// 
@@ -36,22 +36,22 @@ final String? sha256;
 /// Example: `'0aabab210bdb998e9cf45da2c9ce352977ab531c681b74cf1e487be1bbe9fe6e'`
 final String? thumbprint;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'exists': ?exists,
   'operating_system': operatingSystem.toJson(),
   'path': path,
   'sha256': ?sha256,
   'thumbprint': ?thumbprint,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') &&
-      json.containsKey('path') && json['path'] is String; } 
-TeamsDevicesFileInputRequest copyWith({bool? Function()? exists, InputRequestOperatingSystem? operatingSystem, String? path, String? Function()? sha256, String? Function()? thumbprint, }) { return TeamsDevicesFileInputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operating_system') &&
+      json.containsKey('path') && json['path'] is String;}
+TeamsDevicesFileInputRequest copyWith({bool? Function()? exists, InputRequestOperatingSystem? operatingSystem, String? path, String? Function()? sha256, String? Function()? thumbprint, }) {return TeamsDevicesFileInputRequest(
   exists: exists != null ? exists() : this.exists,
   operatingSystem: operatingSystem ?? this.operatingSystem,
   path: path ?? this.path,
   sha256: sha256 != null ? sha256() : this.sha256,
   thumbprint: thumbprint != null ? thumbprint() : this.thumbprint,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesFileInputRequest &&
           exists == other.exists &&
@@ -64,4 +64,4 @@ TeamsDevicesFileInputRequest copyWith({bool? Function()? exists, InputRequestOpe
 
 @override String toString() => 'TeamsDevicesFileInputRequest(exists: $exists, operatingSystem: $operatingSystem, path: $path, sha256: $sha256, thumbprint: $thumbprint)';
 
- }
+}

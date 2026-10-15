@@ -1,41 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Response
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/create_response/prompt_cache_retention.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';/// The object type of this resource - always set to `response`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/create_chat_completion_request/prompt_cache_retention.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';/// The object type of this resource - always set to `response`.
 /// 
 sealed class ResponseObject {const ResponseObject();
 
-factory ResponseObject.fromJson(String json) { return switch (json) {
+factory ResponseObject.fromJson(String json) {return switch (json) {
   'response' => response,
   _ => ResponseObject$Unknown(json),
-}; }
+};}
 
 static const ResponseObject response = ResponseObject$response._();
 
 static const List<ResponseObject> values = [response];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response' => 'response',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseObject$Unknown; } 
+bool get isUnknown {return this is ResponseObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() response, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() response, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseObject$response() => response(),
       ResponseObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? response, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? response, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseObject$response() => response != null ? response() : orElse(value),
       ResponseObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseObject($value)';
 
- }
+}
 @immutable final class ResponseObject$response extends ResponseObject {const ResponseObject$response._();
 
 @override String get value => 'response';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response'.hashCode;
 
- }
+}
 @immutable final class ResponseObject$Unknown extends ResponseObject {const ResponseObject$Unknown(this.value);
 
 @override final String value;
@@ -54,13 +54,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the response generation. One of `completed`, `failed`,
 /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
 /// 
 sealed class ResponseStatus {const ResponseStatus();
 
-factory ResponseStatus.fromJson(String json) { return switch (json) {
+factory ResponseStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'failed' => failed,
   'in_progress' => inProgress,
@@ -68,7 +68,7 @@ factory ResponseStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'incomplete' => incomplete,
   _ => ResponseStatus$Unknown(json),
-}; }
+};}
 
 static const ResponseStatus completed = ResponseStatus$completed._();
 
@@ -85,9 +85,9 @@ static const ResponseStatus incomplete = ResponseStatus$incomplete._();
 static const List<ResponseStatus> values = [completed, failed, inProgress, cancelled, queued, incomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'completed' => 'completed',
   'failed' => 'failed',
   'in_progress' => 'inProgress',
@@ -95,11 +95,11 @@ String get name { return switch (value) {
   'queued' => 'queued',
   'incomplete' => 'incomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseStatus$Unknown; } 
+bool get isUnknown {return this is ResponseStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() completed, required W Function() failed, required W Function() inProgress, required W Function() cancelled, required W Function() queued, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() completed, required W Function() failed, required W Function() inProgress, required W Function() cancelled, required W Function() queued, required W Function() incomplete, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseStatus$completed() => completed(),
       ResponseStatus$failed() => failed(),
       ResponseStatus$inProgress() => inProgress(),
@@ -107,9 +107,9 @@ W when<W>({required W Function() completed, required W Function() failed, requir
       ResponseStatus$queued() => queued(),
       ResponseStatus$incomplete() => incomplete(),
       ResponseStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? failed, W Function()? inProgress, W Function()? cancelled, W Function()? queued, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? failed, W Function()? inProgress, W Function()? cancelled, W Function()? queued, W Function()? incomplete, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseStatus$completed() => completed != null ? completed() : orElse(value),
       ResponseStatus$failed() => failed != null ? failed() : orElse(value),
       ResponseStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
@@ -117,10 +117,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
       ResponseStatus$queued() => queued != null ? queued() : orElse(value),
       ResponseStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       ResponseStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseStatus($value)';
 
- }
+}
 @immutable final class ResponseStatus$completed extends ResponseStatus {const ResponseStatus$completed._();
 
 @override String get value => 'completed';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$failed extends ResponseStatus {const ResponseStatus$failed._();
 
 @override String get value => 'failed';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$inProgress extends ResponseStatus {const ResponseStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$cancelled extends ResponseStatus {const ResponseStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$queued extends ResponseStatus {const ResponseStatus$queued._();
 
 @override String get value => 'queued';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$incomplete extends ResponseStatus {const ResponseStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$Unknown extends ResponseStatus {const ResponseStatus$Unknown(this.value);
 
 @override final String value;
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Example:
 /// ```json
 /// {
@@ -245,43 +245,43 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 ///   "metadata": {}
 /// }
 /// ```
-@immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.model, required this.tools, required this.toolChoice, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.topLogprobs, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.previousResponseId, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.prompt, this.truncation, this.status, this.completedAt, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
+@immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.model, required this.tools, required this.toolChoice, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, required this.parallelToolCalls, this.topLogprobs = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.prompt = const Omittable.absent(), this.truncation = const Omittable.absent(), this.status, this.completedAt = const Omittable.absent(), this.outputText = const Omittable.absent(), this.usage, this.conversation = const Omittable.absent(), });
 
-factory Response.fromJson(Map<String, dynamic> json) { return Response(
+factory Response.fromJson(Map<String, dynamic> json) {return Response(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
+  topLogprobs: json.containsKey('top_logprobs') ? Omittable(json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null) : const Omittable.absent(),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
   user: json['user'] as String?,
   safetyIdentifier: json['safety_identifier'] as String?,
   promptCacheKey: json['prompt_cache_key'] as String?,
-  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
-  promptCacheRetention: json['prompt_cache_retention'] != null ? PromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
-  previousResponseId: json['previous_response_id'] as String?,
-  model: OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),),
-  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
-  background: json['background'] as bool?,
-  maxOutputTokens: json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null,
-  maxToolCalls: json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null,
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
+  promptCacheRetention: json.containsKey('prompt_cache_retention') ? Omittable(json['prompt_cache_retention'] != null ? PromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null) : const Omittable.absent(),
+  previousResponseId: json.containsKey('previous_response_id') ? Omittable(json['previous_response_id'] as String?) : const Omittable.absent(),
+  model: ModelIdsResponses.fromJson(json['model']),
+  reasoning: json.containsKey('reasoning') ? Omittable(json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  background: json.containsKey('background') ? Omittable(json['background'] as bool?) : const Omittable.absent(),
+  maxOutputTokens: json.containsKey('max_output_tokens') ? Omittable(json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null) : const Omittable.absent(),
+  maxToolCalls: json.containsKey('max_tool_calls') ? Omittable(json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null) : const Omittable.absent(),
   text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>).map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),),
-  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
-  truncation: json['truncation'] != null ? Truncation.fromJson(json['truncation'] as String) : null,
+  prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  truncation: json.containsKey('truncation') ? Omittable(json['truncation'] != null ? Truncation.fromJson(json['truncation'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
   object: ResponseObject.fromJson(json['object'] as String),
   status: json['status'] != null ? ResponseStatus.fromJson(json['status'] as String) : null,
   createdAt: (json['created_at'] as num).toDouble(),
-  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toDouble() : null,
-  error: ResponseError.fromJson(json['error'] as Map<String, dynamic>),
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? (json['completed_at'] as num).toDouble() : null) : const Omittable.absent(),
+  error: json['error'] != null ? ResponseError.fromJson(json['error'] as Map<String, dynamic>) : null,
   incompleteDetails: json['incomplete_details'] != null ? ResponseIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>) : null,
   output: (json['output'] as List<dynamic>).map((e) => OutputItem.fromJson(e as Map<String, dynamic>)).toList(),
   instructions: json['instructions'] != null ? OneOf2.parse(json['instructions'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null,
-  outputText: json['output_text'] as String?,
+  outputText: json.containsKey('output_text') ? Omittable(json['output_text'] as String?) : const Omittable.absent(),
   usage: json['usage'] != null ? ResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   parallelToolCalls: json['parallel_tool_calls'] as bool,
-  conversation: json['conversation'] != null ? Conversation2.fromJson(json['conversation'] as Map<String, dynamic>) : null,
-); }
+  conversation: json.containsKey('conversation') ? Omittable(json['conversation'] != null ? Conversation2.fromJson(json['conversation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -295,7 +295,7 @@ final Map<String,String>? metadata;
 /// An integer between 0 and 20 specifying the number of most likely tokens to
 /// return at each token position, each with an associated log probability.
 /// 
-final int? topLogprobs;
+final Omittable<int?> topLogprobs;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// We generally recommend altering this or `top_p` but not both.
@@ -332,17 +332,17 @@ final String? safetyIdentifier;
 /// Example: `'prompt-cache-key-1234'`
 final String? promptCacheKey;
 
-final ServiceTier? serviceTier;
+final Omittable<ServiceTier?> serviceTier;
 
 /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final PromptCacheRetention? promptCacheRetention;
+final Omittable<PromptCacheRetention?> promptCacheRetention;
 
 /// The unique ID of the previous response to the model. Use this to
 /// create multi-turn conversations. Learn more about
 /// [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
 /// 
-final String? previousResponseId;
+final Omittable<String?> previousResponseId;
 
 /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI
 /// offers a wide range of models with different capabilities, performance
@@ -351,20 +351,20 @@ final String? previousResponseId;
 /// 
 final ModelIdsResponses model;
 
-final Reasoning? reasoning;
+final Omittable<Reasoning?> reasoning;
 
 /// Whether to run the model response in the background.
 /// [Learn more](/docs/guides/background).
 /// 
-final bool? background;
+final Omittable<bool?> background;
 
 /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
 /// 
-final int? maxOutputTokens;
+final Omittable<int?> maxOutputTokens;
 
 /// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
 /// 
-final int? maxToolCalls;
+final Omittable<int?> maxToolCalls;
 
 final ResponseTextParam? text;
 
@@ -372,7 +372,7 @@ final List<Tool> tools;
 
 final ToolChoiceParam toolChoice;
 
-final Prompt? prompt;
+final Omittable<Prompt?> prompt;
 
 /// The truncation strategy to use for the model response.
 /// - `auto`: If the input to this Response exceeds
@@ -381,7 +381,7 @@ final Prompt? prompt;
 /// - `disabled` (default): If the input size will exceed the context window
 ///   size for a model, the request will fail with a 400 error.
 /// 
-final Truncation? truncation;
+final Omittable<Truncation?> truncation;
 
 /// Unique identifier for this Response.
 /// 
@@ -403,9 +403,9 @@ final double createdAt;
 /// Unix timestamp (in seconds) of when this Response was completed.
 /// Only present when the status is `completed`.
 /// 
-final double? completedAt;
+final Omittable<double?> completedAt;
 
-final ResponseError error;
+final ResponseError? error;
 
 /// Details about why the response is incomplete.
 /// 
@@ -434,7 +434,7 @@ final Instructions? instructions;
 /// from all `output_text` items in the `output` array, if any are present.
 /// Supported in the Python and JavaScript SDKs.
 /// 
-final String? outputText;
+final Omittable<String?> outputText;
 
 final ResponseUsage? usage;
 
@@ -442,46 +442,46 @@ final ResponseUsage? usage;
 /// 
 final bool parallelToolCalls;
 
-final Conversation2? conversation;
+final Omittable<Conversation2?> conversation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'metadata': metadata,
-  'top_logprobs': ?topLogprobs,
+  if (topLogprobs.isPresent) 'top_logprobs': topLogprobs.value,
   'temperature': temperature,
   'top_p': topP,
   'user': ?user,
   'safety_identifier': ?safetyIdentifier,
   'prompt_cache_key': ?promptCacheKey,
-  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
-  if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
-  'previous_response_id': ?previousResponseId,
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
+  if (promptCacheRetention.isPresent) 'prompt_cache_retention': promptCacheRetention.value?.toJson(),
+  if (previousResponseId.isPresent) 'previous_response_id': previousResponseId.value,
   'model': model.toJson(),
-  if (reasoning != null) 'reasoning': reasoning?.toJson(),
-  'background': ?background,
-  'max_output_tokens': ?maxOutputTokens,
-  'max_tool_calls': ?maxToolCalls,
+  if (reasoning.isPresent) 'reasoning': reasoning.value?.toJson(),
+  if (background.isPresent) 'background': background.value,
+  if (maxOutputTokens.isPresent) 'max_output_tokens': maxOutputTokens.value,
+  if (maxToolCalls.isPresent) 'max_tool_calls': maxToolCalls.value,
   if (text != null) 'text': text?.toJson(),
   'tools': tools.map((e) => e.toJson()).toList(),
   'tool_choice': toolChoice.toJson(),
-  if (prompt != null) 'prompt': prompt?.toJson(),
-  if (truncation != null) 'truncation': truncation?.toJson(),
+  if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
+  if (truncation.isPresent) 'truncation': truncation.value?.toJson(),
   'id': id,
   'object': object.toJson(),
   if (status != null) 'status': status?.toJson(),
   'created_at': createdAt,
-  'completed_at': ?completedAt,
-  'error': error.toJson(),
+  if (completedAt.isPresent) 'completed_at': completedAt.value,
+  'error': error?.toJson(),
   'incomplete_details': incompleteDetails?.toJson(),
   'output': output.map((e) => e.toJson()).toList(),
   'instructions': instructions?.toJson(),
-  'output_text': ?outputText,
+  if (outputText.isPresent) 'output_text': outputText.value,
   if (usage != null) 'usage': usage?.toJson(),
   'parallel_tool_calls': parallelToolCalls,
-  if (conversation != null) 'conversation': conversation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
-      json.containsKey('temperature') && json['temperature'] is num &&
-      json.containsKey('top_p') && json['top_p'] is num &&
+  if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metadata') &&
+      json.containsKey('temperature') && (json['temperature'] == null || json['temperature'] is num) &&
+      json.containsKey('top_p') && (json['top_p'] == null || json['top_p'] is num) &&
       json.containsKey('model') &&
       json.containsKey('tools') &&
       json.containsKey('tool_choice') &&
@@ -492,10 +492,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
       json.containsKey('incomplete_details') &&
       json.containsKey('output') &&
       json.containsKey('instructions') &&
-      json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool; } 
+      json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final topLogprobs$ = topLogprobs;
+List<String> validate() {final errors = <String>[];
+final topLogprobs$ = topLogprobs.value;
 if (topLogprobs$ != null) {
   if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
   if (topLogprobs$ > 20) { errors.add('topLogprobs: must be <= 20'); }
@@ -514,42 +514,42 @@ final safetyIdentifier$ = safetyIdentifier;
 if (safetyIdentifier$ != null) {
   if (safetyIdentifier$.runes.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
-return errors; } 
-Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? Function()? previousResponseId, ModelIdsResponses? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, String? Function()? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(
+return errors;}
+Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Omittable<Prompt?>? prompt, Omittable<Truncation?>? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, Omittable<double?>? completedAt, ResponseError? Function()? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, Omittable<String?>? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Omittable<Conversation2?>? conversation, }) {return Response(
   metadata: metadata != null ? metadata() : this.metadata,
-  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
+  topLogprobs: topLogprobs ?? this.topLogprobs,
   temperature: temperature != null ? temperature() : this.temperature,
   topP: topP != null ? topP() : this.topP,
   user: user != null ? user() : this.user,
   safetyIdentifier: safetyIdentifier != null ? safetyIdentifier() : this.safetyIdentifier,
   promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
-  promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
-  previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
+  serviceTier: serviceTier ?? this.serviceTier,
+  promptCacheRetention: promptCacheRetention ?? this.promptCacheRetention,
+  previousResponseId: previousResponseId ?? this.previousResponseId,
   model: model ?? this.model,
-  reasoning: reasoning != null ? reasoning() : this.reasoning,
-  background: background != null ? background() : this.background,
-  maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
-  maxToolCalls: maxToolCalls != null ? maxToolCalls() : this.maxToolCalls,
+  reasoning: reasoning ?? this.reasoning,
+  background: background ?? this.background,
+  maxOutputTokens: maxOutputTokens ?? this.maxOutputTokens,
+  maxToolCalls: maxToolCalls ?? this.maxToolCalls,
   text: text != null ? text() : this.text,
   tools: tools ?? this.tools,
   toolChoice: toolChoice ?? this.toolChoice,
-  prompt: prompt != null ? prompt() : this.prompt,
-  truncation: truncation != null ? truncation() : this.truncation,
+  prompt: prompt ?? this.prompt,
+  truncation: truncation ?? this.truncation,
   id: id ?? this.id,
   object: object ?? this.object,
   status: status != null ? status() : this.status,
   createdAt: createdAt ?? this.createdAt,
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
-  error: error ?? this.error,
+  completedAt: completedAt ?? this.completedAt,
+  error: error != null ? error() : this.error,
   incompleteDetails: incompleteDetails != null ? incompleteDetails() : this.incompleteDetails,
   output: output ?? this.output,
   instructions: instructions != null ? instructions() : this.instructions,
-  outputText: outputText != null ? outputText() : this.outputText,
+  outputText: outputText ?? this.outputText,
   usage: usage != null ? usage() : this.usage,
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
-  conversation: conversation != null ? conversation() : this.conversation,
-); } 
+  conversation: conversation ?? this.conversation,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Response &&
           metadata == other.metadata &&
@@ -590,4 +590,4 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
 
 @override String toString() => 'Response(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  id: $id,\n  object: $object,\n  status: $status,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  error: $error,\n  incompleteDetails: $incompleteDetails,\n  output: $output,\n  instructions: $instructions,\n  outputText: $outputText,\n  usage: $usage,\n  parallelToolCalls: $parallelToolCalls,\n  conversation: $conversation,\n)';
 
- }
+}

@@ -6,6 +6,6 @@ static final securitySchemes = <String, ApiSecurityScheme>{'basicAuth': const Ap
 
 static final globalRequirements = [const ApiSecurityRequirement({'basicAuth': []}), const ApiSecurityRequirement({'bearerAuth': []})];
 
-static ApiConfig applyBasicAuth(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
-static ApiConfig applyBearerAuth(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
- }
+static ApiConfig applyBasicAuth(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+static ApiConfig applyBearerAuth(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_domain_identifier.dart';import 'package:pub_cloudflare/models/workers_hostname.dart';import 'package:pub_cloudflare/models/workers_schemas_environment.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';import 'package:pub_cloudflare/models/workers_zone_name.dart';@immutable final class WorkersDomain {const WorkersDomain({this.environment, this.hostname, this.id, this.service, this.zoneId, this.zoneName, });
 
-factory WorkersDomain.fromJson(Map<String, dynamic> json) { return WorkersDomain(
+factory WorkersDomain.fromJson(Map<String, dynamic> json) {return WorkersDomain(
   environment: json['environment'] != null ? WorkersSchemasEnvironment.fromJson(json['environment'] as String) : null,
   hostname: json['hostname'] != null ? WorkersHostname.fromJson(json['hostname'] as String) : null,
   id: json['id'] != null ? WorkersDomainIdentifier.fromJson(json['id'] as String) : null,
   service: json['service'] != null ? WorkersSchemasService.fromJson(json['service'] as String) : null,
   zoneId: json['zone_id'] != null ? WorkersZoneIdentifier.fromJson(json['zone_id'] as String) : null,
   zoneName: json['zone_name'] != null ? WorkersZoneName.fromJson(json['zone_name'] as String) : null,
-); }
+);}
 
 final WorkersSchemasEnvironment? environment;
 
@@ -24,23 +24,23 @@ final WorkersZoneIdentifier? zoneId;
 
 final WorkersZoneName? zoneName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (environment != null) 'environment': environment?.toJson(),
   if (hostname != null) 'hostname': hostname?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (service != null) 'service': service?.toJson(),
   if (zoneId != null) 'zone_id': zoneId?.toJson(),
   if (zoneName != null) 'zone_name': zoneName?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'environment', 'hostname', 'id', 'service', 'zone_id', 'zone_name'}.contains(key)); } 
-WorkersDomain copyWith({WorkersSchemasEnvironment? Function()? environment, WorkersHostname? Function()? hostname, WorkersDomainIdentifier? Function()? id, WorkersSchemasService? Function()? service, WorkersZoneIdentifier? Function()? zoneId, WorkersZoneName? Function()? zoneName, }) { return WorkersDomain(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'environment', 'hostname', 'id', 'service', 'zone_id', 'zone_name'}.contains(key));}
+WorkersDomain copyWith({WorkersSchemasEnvironment? Function()? environment, WorkersHostname? Function()? hostname, WorkersDomainIdentifier? Function()? id, WorkersSchemasService? Function()? service, WorkersZoneIdentifier? Function()? zoneId, WorkersZoneName? Function()? zoneName, }) {return WorkersDomain(
   environment: environment != null ? environment() : this.environment,
   hostname: hostname != null ? hostname() : this.hostname,
   id: id != null ? id() : this.id,
   service: service != null ? service() : this.service,
   zoneId: zoneId != null ? zoneId() : this.zoneId,
   zoneName: zoneName != null ? zoneName() : this.zoneName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDomain &&
           environment == other.environment &&
@@ -54,4 +54,4 @@ WorkersDomain copyWith({WorkersSchemasEnvironment? Function()? environment, Work
 
 @override String toString() => 'WorkersDomain(environment: $environment, hostname: $hostname, id: $id, service: $service, zoneId: $zoneId, zoneName: $zoneName)';
 
- }
+}

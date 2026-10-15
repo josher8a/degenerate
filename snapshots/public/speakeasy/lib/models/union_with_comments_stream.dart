@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/progress_event.dart';import 'package:pub_speakeasy/models/progress_event_data.dart';import 'package:pub_speakeasy/models/status_event.dart';import 'package:pub_speakeasy/models/status_event_data.dart';sealed class UnionWithCommentsStreamEvent {const UnionWithCommentsStreamEvent();
 
-factory UnionWithCommentsStreamEvent.fromJson(String json) { return switch (json) {
+factory UnionWithCommentsStreamEvent.fromJson(String json) {return switch (json) {
   'status' => status,
   'progress' => progress,
   _ => UnionWithCommentsStreamEvent$Unknown(json),
-}; }
+};}
 
 static const UnionWithCommentsStreamEvent status = UnionWithCommentsStreamEvent$status._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is UnionWithCommentsStreamEvent$Unknown;
 
- }
+}
 @immutable final class UnionWithCommentsStreamEvent$status extends UnionWithCommentsStreamEvent {const UnionWithCommentsStreamEvent$status._();
 
 @override String get value => 'status';
@@ -31,7 +31,7 @@ bool get isUnknown => this is UnionWithCommentsStreamEvent$Unknown;
 
 @override String toString() => 'UnionWithCommentsStreamEvent(status)';
 
- }
+}
 @immutable final class UnionWithCommentsStreamEvent$progress extends UnionWithCommentsStreamEvent {const UnionWithCommentsStreamEvent$progress._();
 
 @override String get value => 'progress';
@@ -42,7 +42,7 @@ bool get isUnknown => this is UnionWithCommentsStreamEvent$Unknown;
 
 @override String toString() => 'UnionWithCommentsStreamEvent(progress)';
 
- }
+}
 @immutable final class UnionWithCommentsStreamEvent$Unknown extends UnionWithCommentsStreamEvent {const UnionWithCommentsStreamEvent$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is UnionWithCommentsStreamEvent$Unknown;
 
 @override String toString() => 'UnionWithCommentsStreamEvent($value)';
 
- }
+}
 sealed class UnionWithCommentsStream {const UnionWithCommentsStream();
 
 /// Deserialize from JSON, dispatching on the `event` discriminator.
-factory UnionWithCommentsStream.fromJson(Map<String, dynamic> json) { return switch (json['event']) {
+factory UnionWithCommentsStream.fromJson(Map<String, dynamic> json) {return switch (json['event']) {
   'status' => UnionWithCommentsStreamStatus.fromJson(json),
   'progress' => UnionWithCommentsStreamProgress.fromJson(json),
   _ => UnionWithCommentsStream$Unknown(json),
-}; }
+};}
 
 /// Build the `status` variant.
-factory UnionWithCommentsStream.status({required StatusEventData data}) { return UnionWithCommentsStreamStatus(StatusEvent(event: 'status', data: data)); }
+factory UnionWithCommentsStream.status({required StatusEventData data}) {return UnionWithCommentsStreamStatus(StatusEvent(event: 'status', data: data));}
 
 /// Build the `progress` variant.
-factory UnionWithCommentsStream.progress({required ProgressEventData data}) { return UnionWithCommentsStreamProgress(ProgressEvent(event: 'progress', data: data)); }
+factory UnionWithCommentsStream.progress({required ProgressEventData data}) {return UnionWithCommentsStreamProgress(ProgressEvent(event: 'progress', data: data));}
 
 /// The discriminator value identifying this variant.
 UnionWithCommentsStreamEvent get event;
@@ -75,15 +75,15 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is UnionWithCommentsStream$Unknown;
 
-R when<R>({required R Function(UnionWithCommentsStreamStatus) status, required R Function(UnionWithCommentsStreamProgress) progress, required R Function(UnionWithCommentsStream$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(UnionWithCommentsStreamStatus) status, required R Function(UnionWithCommentsStreamProgress) progress, required R Function(UnionWithCommentsStream$Unknown) unknown, }) {return switch (this) {
   final UnionWithCommentsStreamStatus v => status(v),
   final UnionWithCommentsStreamProgress v => progress(v),
   final UnionWithCommentsStream$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class UnionWithCommentsStreamStatus extends UnionWithCommentsStream {const UnionWithCommentsStreamStatus(this.statusEvent);
 
-factory UnionWithCommentsStreamStatus.fromJson(Map<String, dynamic> json) { return UnionWithCommentsStreamStatus(StatusEvent.fromJson(json)); }
+factory UnionWithCommentsStreamStatus.fromJson(Map<String, dynamic> json) {return UnionWithCommentsStreamStatus(StatusEvent.fromJson(json));}
 
 final StatusEvent statusEvent;
 
@@ -91,9 +91,9 @@ final StatusEvent statusEvent;
 
 @override Map<String, dynamic> toJson() => {...statusEvent.toJson(), 'event': event.toJson()};
 
-UnionWithCommentsStreamStatus copyWith({StatusEventData? data}) { return UnionWithCommentsStreamStatus(statusEvent.copyWith(
+UnionWithCommentsStreamStatus copyWith({StatusEventData? data}) {return UnionWithCommentsStreamStatus(statusEvent.copyWith(
   data: data,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is UnionWithCommentsStreamStatus && statusEvent == other.statusEvent;
 
@@ -101,10 +101,10 @@ UnionWithCommentsStreamStatus copyWith({StatusEventData? data}) { return UnionWi
 
 @override String toString() => 'UnionWithCommentsStream.status($statusEvent)';
 
- }
+}
 @immutable final class UnionWithCommentsStreamProgress extends UnionWithCommentsStream {const UnionWithCommentsStreamProgress(this.progressEvent);
 
-factory UnionWithCommentsStreamProgress.fromJson(Map<String, dynamic> json) { return UnionWithCommentsStreamProgress(ProgressEvent.fromJson(json)); }
+factory UnionWithCommentsStreamProgress.fromJson(Map<String, dynamic> json) {return UnionWithCommentsStreamProgress(ProgressEvent.fromJson(json));}
 
 final ProgressEvent progressEvent;
 
@@ -112,9 +112,9 @@ final ProgressEvent progressEvent;
 
 @override Map<String, dynamic> toJson() => {...progressEvent.toJson(), 'event': event.toJson()};
 
-UnionWithCommentsStreamProgress copyWith({ProgressEventData? data}) { return UnionWithCommentsStreamProgress(progressEvent.copyWith(
+UnionWithCommentsStreamProgress copyWith({ProgressEventData? data}) {return UnionWithCommentsStreamProgress(progressEvent.copyWith(
   data: data,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is UnionWithCommentsStreamProgress && progressEvent == other.progressEvent;
 
@@ -122,7 +122,7 @@ UnionWithCommentsStreamProgress copyWith({ProgressEventData? data}) { return Uni
 
 @override String toString() => 'UnionWithCommentsStream.progress($progressEvent)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class UnionWithCommentsStream$Unknown extends UnionWithCommentsStream {const UnionWithCommentsStream$Unknown(this.json);
@@ -140,4 +140,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'UnionWithCommentsStream.unknown($json)';
 
- }
+}

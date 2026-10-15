@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SearchResultTextMatches
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches/matches.dart';@immutable final class SearchResultTextMatches2 {const SearchResultTextMatches2({this.objectUrl, this.objectType, this.property, this.fragment, this.matches, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches/matches.dart';@immutable final class SearchResultTextMatches2 {const SearchResultTextMatches2({this.objectUrl, this.objectType = const Omittable.absent(), this.property, this.fragment, this.matches, });
 
-factory SearchResultTextMatches2.fromJson(Map<String, dynamic> json) { return SearchResultTextMatches2(
+factory SearchResultTextMatches2.fromJson(Map<String, dynamic> json) {return SearchResultTextMatches2(
   objectUrl: json['object_url'] as String?,
-  objectType: json['object_type'] as String?,
+  objectType: json.containsKey('object_type') ? Omittable(json['object_type'] as String?) : const Omittable.absent(),
   property: json['property'] as String?,
   fragment: json['fragment'] as String?,
   matches: (json['matches'] as List<dynamic>?)?.map((e) => Matches.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String? objectUrl;
 
-final String? objectType;
+final Omittable<String?> objectType;
 
 final String? property;
 
@@ -21,21 +21,21 @@ final String? fragment;
 
 final List<Matches>? matches;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object_url': ?objectUrl,
-  'object_type': ?objectType,
+  if (objectType.isPresent) 'object_type': objectType.value,
   'property': ?property,
   'fragment': ?fragment,
   if (matches != null) 'matches': matches?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object_url', 'object_type', 'property', 'fragment', 'matches'}.contains(key)); } 
-SearchResultTextMatches2 copyWith({String? Function()? objectUrl, String? Function()? objectType, String? Function()? property, String? Function()? fragment, List<Matches>? Function()? matches, }) { return SearchResultTextMatches2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'object_url', 'object_type', 'property', 'fragment', 'matches'}.contains(key));}
+SearchResultTextMatches2 copyWith({String? Function()? objectUrl, Omittable<String?>? objectType, String? Function()? property, String? Function()? fragment, List<Matches>? Function()? matches, }) {return SearchResultTextMatches2(
   objectUrl: objectUrl != null ? objectUrl() : this.objectUrl,
-  objectType: objectType != null ? objectType() : this.objectType,
+  objectType: objectType ?? this.objectType,
   property: property != null ? property() : this.property,
   fragment: fragment != null ? fragment() : this.fragment,
   matches: matches != null ? matches() : this.matches,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SearchResultTextMatches2 &&
           objectUrl == other.objectUrl &&
@@ -48,4 +48,4 @@ SearchResultTextMatches2 copyWith({String? Function()? objectUrl, String? Functi
 
 @override String toString() => 'SearchResultTextMatches2(objectUrl: $objectUrl, objectType: $objectType, property: $property, fragment: $fragment, matches: $matches)';
 
- }
+}

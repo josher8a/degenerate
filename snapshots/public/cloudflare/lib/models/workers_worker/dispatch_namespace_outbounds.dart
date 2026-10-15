@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DispatchNamespaceOutbounds {const DispatchNamespaceOutbounds({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
 
-factory DispatchNamespaceOutbounds.fromJson(Map<String, dynamic> json) { return DispatchNamespaceOutbounds(
+factory DispatchNamespaceOutbounds.fromJson(Map<String, dynamic> json) {return DispatchNamespaceOutbounds(
   namespaceId: json['namespace_id'] as String,
   namespaceName: json['namespace_name'] as String,
   workerId: json['worker_id'] as String,
   workerName: json['worker_name'] as String,
-); }
+);}
 
 /// ID of the dispatch namespace.
 /// 
@@ -30,22 +30,22 @@ final String workerId;
 /// Example: `'my-worker'`
 final String workerName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'namespace_id': namespaceId,
   'namespace_name': namespaceName,
   'worker_id': workerId,
   'worker_name': workerName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('namespace_id') && json['namespace_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('namespace_id') && json['namespace_id'] is String &&
       json.containsKey('namespace_name') && json['namespace_name'] is String &&
       json.containsKey('worker_id') && json['worker_id'] is String &&
-      json.containsKey('worker_name') && json['worker_name'] is String; } 
-DispatchNamespaceOutbounds copyWith({String? namespaceId, String? namespaceName, String? workerId, String? workerName, }) { return DispatchNamespaceOutbounds(
+      json.containsKey('worker_name') && json['worker_name'] is String;}
+DispatchNamespaceOutbounds copyWith({String? namespaceId, String? namespaceName, String? workerId, String? workerName, }) {return DispatchNamespaceOutbounds(
   namespaceId: namespaceId ?? this.namespaceId,
   namespaceName: namespaceName ?? this.namespaceName,
   workerId: workerId ?? this.workerId,
   workerName: workerName ?? this.workerName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DispatchNamespaceOutbounds &&
           namespaceId == other.namespaceId &&
@@ -57,4 +57,4 @@ DispatchNamespaceOutbounds copyWith({String? namespaceId, String? namespaceName,
 
 @override String toString() => 'DispatchNamespaceOutbounds(namespaceId: $namespaceId, namespaceName: $namespaceName, workerId: $workerId, workerName: $workerName)';
 
- }
+}

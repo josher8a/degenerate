@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitRefObject {const GitRefObject({required this.type, required this.sha, required this.url, });
 
-factory GitRefObject.fromJson(Map<String, dynamic> json) { return GitRefObject(
+factory GitRefObject.fromJson(Map<String, dynamic> json) {return GitRefObject(
   type: json['type'] as String,
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String type;
 
@@ -16,24 +16,24 @@ final String sha;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'sha': sha,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (sha.runes.length < 40) { errors.add('sha: length must be >= 40'); }
 if (sha.runes.length > 40) { errors.add('sha: length must be <= 40'); }
-return errors; } 
-GitRefObject copyWith({String? type, String? sha, Uri? url, }) { return GitRefObject(
+return errors;}
+GitRefObject copyWith({String? type, String? sha, Uri? url, }) {return GitRefObject(
   type: type ?? this.type,
   sha: sha ?? this.sha,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitRefObject &&
           type == other.type &&
@@ -44,4 +44,4 @@ GitRefObject copyWith({String? type, String? sha, Uri? url, }) { return GitRefOb
 
 @override String toString() => 'GitRefObject(type: $type, sha: $sha, url: $url)';
 
- }
+}

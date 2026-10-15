@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill.version`.
 sealed class SkillVersionResourceObject {const SkillVersionResourceObject();
 
-factory SkillVersionResourceObject.fromJson(String json) { return switch (json) {
+factory SkillVersionResourceObject.fromJson(String json) {return switch (json) {
   'skill.version' => skillVersion,
   _ => SkillVersionResourceObject$Unknown(json),
-}; }
+};}
 
 static const SkillVersionResourceObject skillVersion = SkillVersionResourceObject$skillVersion._();
 
 static const List<SkillVersionResourceObject> values = [skillVersion];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'skill.version' => 'skillVersion',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SkillVersionResourceObject$Unknown; } 
+bool get isUnknown {return this is SkillVersionResourceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() skillVersion, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() skillVersion, required W Function(String value) $unknown, }) {return switch (this) {
       SkillVersionResourceObject$skillVersion() => skillVersion(),
       SkillVersionResourceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillVersion, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillVersion, W Function(String value)? $unknown, }) {return switch (this) {
       SkillVersionResourceObject$skillVersion() => skillVersion != null ? skillVersion() : orElse(value),
       SkillVersionResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SkillVersionResourceObject($value)';
 
- }
+}
 @immutable final class SkillVersionResourceObject$skillVersion extends SkillVersionResourceObject {const SkillVersionResourceObject$skillVersion._();
 
 @override String get value => 'skill.version';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillVer
 
 @override int get hashCode => 'skill.version'.hashCode;
 
- }
+}
 @immutable final class SkillVersionResourceObject$Unknown extends SkillVersionResourceObject {const SkillVersionResourceObject$Unknown(this.value);
 
 @override final String value;
@@ -53,10 +53,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? skillVer
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class SkillVersionResource {const SkillVersionResource({required this.id, required this.skillId, required this.version, required this.createdAt, required this.name, required this.description, this.object = SkillVersionResourceObject.skillVersion, });
+}
+@immutable final class SkillVersionResource {const SkillVersionResource({required this.object, required this.id, required this.skillId, required this.version, required this.createdAt, required this.name, required this.description, });
 
-factory SkillVersionResource.fromJson(Map<String, dynamic> json) { return SkillVersionResource(
+factory SkillVersionResource.fromJson(Map<String, dynamic> json) {return SkillVersionResource(
   object: SkillVersionResourceObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   skillId: json['skill_id'] as String,
@@ -64,7 +64,7 @@ factory SkillVersionResource.fromJson(Map<String, dynamic> json) { return SkillV
   createdAt: (json['created_at'] as num).toInt(),
   name: json['name'] as String,
   description: json['description'] as String,
-); }
+);}
 
 /// The object type, which is `skill.version`.
 final SkillVersionResourceObject object;
@@ -87,7 +87,7 @@ final String name;
 /// Description of the skill version.
 final String description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'skill_id': skillId,
@@ -95,15 +95,15 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'name': name,
   'description': description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('skill_id') && json['skill_id'] is String &&
       json.containsKey('version') && json['version'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
-SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, String? skillId, String? version, int? createdAt, String? name, String? description, }) { return SkillVersionResource(
+      json.containsKey('description') && json['description'] is String;}
+SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, String? skillId, String? version, int? createdAt, String? name, String? description, }) {return SkillVersionResource(
   object: object ?? this.object,
   id: id ?? this.id,
   skillId: skillId ?? this.skillId,
@@ -111,7 +111,7 @@ SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, S
   createdAt: createdAt ?? this.createdAt,
   name: name ?? this.name,
   description: description ?? this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SkillVersionResource &&
           object == other.object &&
@@ -126,4 +126,4 @@ SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, S
 
 @override String toString() => 'SkillVersionResource(object: $object, id: $id, skillId: $skillId, version: $version, createdAt: $createdAt, name: $name, description: $description)';
 
- }
+}

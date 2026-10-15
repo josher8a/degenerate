@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullableObject {const NullableObject({this.inner});
 
-factory NullableObject.fromJson(Map<String, dynamic> json) { return NullableObject(
+factory NullableObject.fromJson(Map<String, dynamic> json) {return NullableObject(
   inner: json['inner'] as String?,
-); }
+);}
 
 final String? inner;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'inner': ?inner,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inner'}.contains(key)); } 
-NullableObject copyWith({String? Function()? inner}) { return NullableObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'inner'}.contains(key));}
+NullableObject copyWith({String? Function()? inner}) {return NullableObject(
   inner: inner != null ? inner() : this.inner,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NullableObject &&
           inner == other.inner;
@@ -24,4 +24,4 @@ NullableObject copyWith({String? Function()? inner}) { return NullableObject(
 
 @override String toString() => 'NullableObject(inner: $inner)';
 
- }
+}

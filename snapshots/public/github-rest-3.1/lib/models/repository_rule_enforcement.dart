@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 sealed class RepositoryRuleEnforcement {const RepositoryRuleEnforcement();
 
-factory RepositoryRuleEnforcement.fromJson(String json) { return switch (json) {
+factory RepositoryRuleEnforcement.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'active' => active,
   'evaluate' => evaluate,
   _ => RepositoryRuleEnforcement$Unknown(json),
-}; }
+};}
 
 static const RepositoryRuleEnforcement disabled = RepositoryRuleEnforcement$disabled._();
 
@@ -20,33 +20,33 @@ static const RepositoryRuleEnforcement evaluate = RepositoryRuleEnforcement$eval
 static const List<RepositoryRuleEnforcement> values = [disabled, active, evaluate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disabled' => 'disabled',
   'active' => 'active',
   'evaluate' => 'evaluate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RepositoryRuleEnforcement$Unknown; } 
+bool get isUnknown {return this is RepositoryRuleEnforcement$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disabled, required W Function() active, required W Function() evaluate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disabled, required W Function() active, required W Function() evaluate, required W Function(String value) $unknown, }) {return switch (this) {
       RepositoryRuleEnforcement$disabled() => disabled(),
       RepositoryRuleEnforcement$active() => active(),
       RepositoryRuleEnforcement$evaluate() => evaluate(),
       RepositoryRuleEnforcement$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? active, W Function()? evaluate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? active, W Function()? evaluate, W Function(String value)? $unknown, }) {return switch (this) {
       RepositoryRuleEnforcement$disabled() => disabled != null ? disabled() : orElse(value),
       RepositoryRuleEnforcement$active() => active != null ? active() : orElse(value),
       RepositoryRuleEnforcement$evaluate() => evaluate != null ? evaluate() : orElse(value),
       RepositoryRuleEnforcement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RepositoryRuleEnforcement($value)';
 
- }
+}
 @immutable final class RepositoryRuleEnforcement$disabled extends RepositoryRuleEnforcement {const RepositoryRuleEnforcement$disabled._();
 
 @override String get value => 'disabled';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class RepositoryRuleEnforcement$active extends RepositoryRuleEnforcement {const RepositoryRuleEnforcement$active._();
 
 @override String get value => 'active';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class RepositoryRuleEnforcement$evaluate extends RepositoryRuleEnforcement {const RepositoryRuleEnforcement$evaluate._();
 
 @override String get value => 'evaluate';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'evaluate'.hashCode;
 
- }
+}
 @immutable final class RepositoryRuleEnforcement$Unknown extends RepositoryRuleEnforcement {const RepositoryRuleEnforcement$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_connector.dart';@immutable final class MconnSupportMacrosProvisionPhysicalConnectorResult {const MconnSupportMacrosProvisionPhysicalConnectorResult({required this.connector});
 
-factory MconnSupportMacrosProvisionPhysicalConnectorResult.fromJson(Map<String, dynamic> json) { return MconnSupportMacrosProvisionPhysicalConnectorResult(
+factory MconnSupportMacrosProvisionPhysicalConnectorResult.fromJson(Map<String, dynamic> json) {return MconnSupportMacrosProvisionPhysicalConnectorResult(
   connector: MconnSupportConnector.fromJson(json['connector'] as Map<String, dynamic>),
-); }
+);}
 
 final MconnSupportConnector connector;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector': connector.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connector'); } 
-MconnSupportMacrosProvisionPhysicalConnectorResult copyWith({MconnSupportConnector? connector}) { return MconnSupportMacrosProvisionPhysicalConnectorResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connector');}
+MconnSupportMacrosProvisionPhysicalConnectorResult copyWith({MconnSupportConnector? connector}) {return MconnSupportMacrosProvisionPhysicalConnectorResult(
   connector: connector ?? this.connector,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportMacrosProvisionPhysicalConnectorResult &&
           connector == other.connector;
@@ -24,4 +24,4 @@ MconnSupportMacrosProvisionPhysicalConnectorResult copyWith({MconnSupportConnect
 
 @override String toString() => 'MconnSupportMacrosProvisionPhysicalConnectorResult(connector: $connector)';
 
- }
+}

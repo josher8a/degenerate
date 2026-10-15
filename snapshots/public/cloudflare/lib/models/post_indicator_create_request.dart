@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostIndicatorCreateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/patch_indicator_update_request_tags.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/tags_variant2.dart';@immutable final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/patch_indicator_update_request_tags.dart';@immutable final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
-factory PostIndicatorCreateRequest.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateRequest(
+factory PostIndicatorCreateRequest.fromJson(Map<String, dynamic> json) {return PostIndicatorCreateRequest(
   autoCreateType: json['autoCreateType'] as bool?,
   indicatorType: json['indicatorType'] as String,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => RelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TagsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map(PatchIndicatorUpdateRequestTags.fromJson).toList(),
   value: json['value'] as String,
-); }
+);}
 
 /// If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
 final bool? autoCreateType;
@@ -24,22 +24,22 @@ final List<PatchIndicatorUpdateRequestTags>? tags;
 /// Example: `'malicious-domain.com'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'autoCreateType': ?autoCreateType,
   'indicatorType': indicatorType,
   if (relatedEvents != null) 'relatedEvents': relatedEvents?.map((e) => e.toJson()).toList(),
   if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostIndicatorCreateRequest copyWith({bool? Function()? autoCreateType, String? indicatorType, List<RelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? value, }) { return PostIndicatorCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indicatorType') && json['indicatorType'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostIndicatorCreateRequest copyWith({bool? Function()? autoCreateType, String? indicatorType, List<RelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? value, }) {return PostIndicatorCreateRequest(
   autoCreateType: autoCreateType != null ? autoCreateType() : this.autoCreateType,
   indicatorType: indicatorType ?? this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorCreateRequest &&
           autoCreateType == other.autoCreateType &&
@@ -52,4 +52,4 @@ PostIndicatorCreateRequest copyWith({bool? Function()? autoCreateType, String? i
 
 @override String toString() => 'PostIndicatorCreateRequest(autoCreateType: $autoCreateType, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)';
 
- }
+}

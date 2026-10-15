@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the me
 /// 
 sealed class IamMemberInvitationStatus {const IamMemberInvitationStatus();
 
-factory IamMemberInvitationStatus.fromJson(String json) { return switch (json) {
+factory IamMemberInvitationStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   _ => IamMemberInvitationStatus$Unknown(json),
-}; }
+};}
 
 static const IamMemberInvitationStatus accepted = IamMemberInvitationStatus$accepted._();
 
@@ -19,30 +19,30 @@ static const IamMemberInvitationStatus pending = IamMemberInvitationStatus$pendi
 static const List<IamMemberInvitationStatus> values = [accepted, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IamMemberInvitationStatus$Unknown; } 
+bool get isUnknown {return this is IamMemberInvitationStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       IamMemberInvitationStatus$accepted() => accepted(),
       IamMemberInvitationStatus$pending() => pending(),
       IamMemberInvitationStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       IamMemberInvitationStatus$accepted() => accepted != null ? accepted() : orElse(value),
       IamMemberInvitationStatus$pending() => pending != null ? pending() : orElse(value),
       IamMemberInvitationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IamMemberInvitationStatus($value)';
 
- }
+}
 @immutable final class IamMemberInvitationStatus$accepted extends IamMemberInvitationStatus {const IamMemberInvitationStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -51,7 +51,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class IamMemberInvitationStatus$pending extends IamMemberInvitationStatus {const IamMemberInvitationStatus$pending._();
 
 @override String get value => 'pending';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class IamMemberInvitationStatus$Unknown extends IamMemberInvitationStatus {const IamMemberInvitationStatus$Unknown(this.value);
 
 @override final String value;
@@ -70,4 +70,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}

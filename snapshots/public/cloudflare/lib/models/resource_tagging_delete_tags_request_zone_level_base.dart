@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_zone_resource_type_base_enum.dart';/// Request body schema for deleting tags from zone-level resources. Zone ID comes from URL path.
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelBase {const ResourceTaggingDeleteTagsRequestZoneLevelBase({required this.resourceId, required this.resourceType, });
 
-factory ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestZoneLevelBase(
+factory ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestZoneLevelBase(
   resourceId: ResourceTaggingResourceId.fromJson(json['resource_id'] as String),
   resourceType: ResourceTaggingZoneResourceTypeBaseEnum.fromJson(json['resource_type'] as String),
-); }
+);}
 
 final ResourceTaggingResourceId resourceId;
 
 final ResourceTaggingZoneResourceTypeBaseEnum resourceType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resource_id': resourceId.toJson(),
   'resource_type': resourceType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
-      json.containsKey('resource_type'); } 
-ResourceTaggingDeleteTagsRequestZoneLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingZoneResourceTypeBaseEnum? resourceType, }) { return ResourceTaggingDeleteTagsRequestZoneLevelBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('resource_id') &&
+      json.containsKey('resource_type');}
+ResourceTaggingDeleteTagsRequestZoneLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingZoneResourceTypeBaseEnum? resourceType, }) {return ResourceTaggingDeleteTagsRequestZoneLevelBase(
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingDeleteTagsRequestZoneLevelBase &&
           resourceId == other.resourceId &&
@@ -32,4 +32,4 @@ ResourceTaggingDeleteTagsRequestZoneLevelBase copyWith({ResourceTaggingResourceI
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceId: $resourceId, resourceType: $resourceType)';
 
- }
+}

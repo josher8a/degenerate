@@ -14,7 +14,7 @@ final class MagicSiteAcLsApi with ApiExecutor {const MagicSiteAcLsApi(this.apiCo
 /// Lists Site ACLs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/acls`
-Future<ApiResult<List<MagicAcl>?, MagicAccountAppsAddAppError>> magicSiteAclsListAcls({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicAcl>, MagicAccountAppsAddAppError>> magicSiteAclsListAcls({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MagicAcl.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => MagicAcl.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Create a new Site ACL
 ///
 /// Creates a new Site ACL.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/acls`
-Future<ApiResult<MagicAcl?, MagicAccountAppsAddAppError>> magicSiteAclsCreateAcl({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAclsAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, MagicAccountAppsAddAppError>> magicSiteAclsCreateAcl({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAclsAddSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,21 +48,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicAcl.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Site ACL Details
 ///
 /// Get a specific Site ACL.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl?, MagicAccountAppsAddAppError>> magicSiteAclsAclDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, MagicAccountAppsAddAppError>> magicSiteAclsAclDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,21 +71,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicAcl.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update Site ACL
 ///
 /// Update a specific Site ACL.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl?, MagicAccountAppsAddAppError>> magicSiteAclsUpdateAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, MagicAccountAppsAddAppError>> magicSiteAclsUpdateAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,21 +96,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicAcl.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Patch Site ACL
 ///
 /// Patch a specific Site ACL.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl?, MagicAccountAppsAddAppError>> magicSiteAclsPatchAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, MagicAccountAppsAddAppError>> magicSiteAclsPatchAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,21 +121,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicAcl.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Delete Site ACL
 ///
 /// Remove a specific Site ACL.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl?, MagicAccountAppsAddAppError>> magicSiteAclsDeleteAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, MagicAccountAppsAddAppError>> magicSiteAclsDeleteAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -144,13 +144,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return MagicAcl.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
- }
+}
+}

@@ -5,22 +5,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which
 /// 
 @immutable final class Host {const Host({this.resolved});
 
-factory Host.fromJson(Map<String, dynamic> json) { return Host(
+factory Host.fromJson(Map<String, dynamic> json) {return Host(
   resolved: json['resolved'] as bool?,
-); }
+);}
 
 /// Whether to include the Host header in the HTTP request sent
 /// to the origin.
 /// 
 final bool? resolved;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resolved': ?resolved,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resolved'}.contains(key)); } 
-Host copyWith({bool? Function()? resolved}) { return Host(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'resolved'}.contains(key));}
+Host copyWith({bool? Function()? resolved}) {return Host(
   resolved: resolved != null ? resolved() : this.resolved,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Host &&
           resolved == other.resolved;
@@ -29,4 +29,4 @@ Host copyWith({bool? Function()? resolved}) { return Host(
 
 @override String toString() => 'Host(resolved: $resolved)';
 
- }
+}

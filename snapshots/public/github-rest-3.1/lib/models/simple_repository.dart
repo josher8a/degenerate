@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A GitHub repository.
 @immutable final class SimpleRepository {const SimpleRepository({required this.commentsUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.id, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.hooksUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.issuesUrl, });
 
-factory SimpleRepository.fromJson(Map<String, dynamic> json) { return SimpleRepository(
+factory SimpleRepository.fromJson(Map<String, dynamic> json) {return SimpleRepository(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -51,7 +51,7 @@ factory SimpleRepository.fromJson(Map<String, dynamic> json) { return SimpleRepo
   teamsUrl: Uri.parse(json['teams_url'] as String),
   treesUrl: json['trees_url'] as String,
   hooksUrl: Uri.parse(json['hooks_url'] as String),
-); }
+);}
 
 /// A unique identifier of the repository.
 final int id;
@@ -190,7 +190,7 @@ final String treesUrl;
 /// The API URL to list the hooks on the repository.
 final Uri hooksUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -237,15 +237,15 @@ Map<String, dynamic> toJson() { return {
   'teams_url': teamsUrl.toString(),
   'trees_url': treesUrl,
   'hooks_url': hooksUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_url') && json['archive_url'] is String &&
@@ -283,8 +283,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('tags_url') && json['tags_url'] is String &&
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
-      json.containsKey('hooks_url') && json['hooks_url'] is String; } 
-SimpleRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, Uri? hooksUrl, }) { return SimpleRepository(
+      json.containsKey('hooks_url') && json['hooks_url'] is String;}
+SimpleRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, Uri? hooksUrl, }) {return SimpleRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -331,7 +331,7 @@ SimpleRepository copyWith({int? id, String? nodeId, String? name, String? fullNa
   teamsUrl: teamsUrl ?? this.teamsUrl,
   treesUrl: treesUrl ?? this.treesUrl,
   hooksUrl: hooksUrl ?? this.hooksUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleRepository &&
           id == other.id &&
@@ -385,4 +385,4 @@ SimpleRepository copyWith({int? id, String? nodeId, String? name, String? fullNa
 
 @override String toString() => 'SimpleRepository(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  fullName: $fullName,\n  owner: $owner,\n  private: $private,\n  htmlUrl: $htmlUrl,\n  description: $description,\n  fork: $fork,\n  url: $url,\n  archiveUrl: $archiveUrl,\n  assigneesUrl: $assigneesUrl,\n  blobsUrl: $blobsUrl,\n  branchesUrl: $branchesUrl,\n  collaboratorsUrl: $collaboratorsUrl,\n  commentsUrl: $commentsUrl,\n  commitsUrl: $commitsUrl,\n  compareUrl: $compareUrl,\n  contentsUrl: $contentsUrl,\n  contributorsUrl: $contributorsUrl,\n  deploymentsUrl: $deploymentsUrl,\n  downloadsUrl: $downloadsUrl,\n  eventsUrl: $eventsUrl,\n  forksUrl: $forksUrl,\n  gitCommitsUrl: $gitCommitsUrl,\n  gitRefsUrl: $gitRefsUrl,\n  gitTagsUrl: $gitTagsUrl,\n  issueCommentUrl: $issueCommentUrl,\n  issueEventsUrl: $issueEventsUrl,\n  issuesUrl: $issuesUrl,\n  keysUrl: $keysUrl,\n  labelsUrl: $labelsUrl,\n  languagesUrl: $languagesUrl,\n  mergesUrl: $mergesUrl,\n  milestonesUrl: $milestonesUrl,\n  notificationsUrl: $notificationsUrl,\n  pullsUrl: $pullsUrl,\n  releasesUrl: $releasesUrl,\n  stargazersUrl: $stargazersUrl,\n  statusesUrl: $statusesUrl,\n  subscribersUrl: $subscribersUrl,\n  subscriptionUrl: $subscriptionUrl,\n  tagsUrl: $tagsUrl,\n  teamsUrl: $teamsUrl,\n  treesUrl: $treesUrl,\n  hooksUrl: $hooksUrl,\n)';
 
- }
+}

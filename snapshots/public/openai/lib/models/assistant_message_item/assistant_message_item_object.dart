@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `chatkit.thread_item`.
 sealed class AssistantMessageItemObject {const AssistantMessageItemObject();
 
-factory AssistantMessageItemObject.fromJson(String json) { return switch (json) {
+factory AssistantMessageItemObject.fromJson(String json) {return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
   _ => AssistantMessageItemObject$Unknown(json),
-}; }
+};}
 
 static const AssistantMessageItemObject chatkitThreadItem = AssistantMessageItemObject$chatkitThreadItem._();
 
 static const List<AssistantMessageItemObject> values = [chatkitThreadItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'chatkit.thread_item' => 'chatkitThreadItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AssistantMessageItemObject$Unknown; } 
+bool get isUnknown {return this is AssistantMessageItemObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chatkitThreadItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chatkitThreadItem, required W Function(String value) $unknown, }) {return switch (this) {
       AssistantMessageItemObject$chatkitThreadItem() => chatkitThreadItem(),
       AssistantMessageItemObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitThreadItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitThreadItem, W Function(String value)? $unknown, }) {return switch (this) {
       AssistantMessageItemObject$chatkitThreadItem() => chatkitThreadItem != null ? chatkitThreadItem() : orElse(value),
       AssistantMessageItemObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AssistantMessageItemObject($value)';
 
- }
+}
 @immutable final class AssistantMessageItemObject$chatkitThreadItem extends AssistantMessageItemObject {const AssistantMessageItemObject$chatkitThreadItem._();
 
 @override String get value => 'chatkit.thread_item';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitT
 
 @override int get hashCode => 'chatkit.thread_item'.hashCode;
 
- }
+}
 @immutable final class AssistantMessageItemObject$Unknown extends AssistantMessageItemObject {const AssistantMessageItemObject$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitT
 
 @override int get hashCode => value.hashCode;
 
- }
+}

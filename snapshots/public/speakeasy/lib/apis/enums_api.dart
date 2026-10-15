@@ -10,7 +10,7 @@ final class EnumsApi with ApiExecutor {const EnumsApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `POST /anything/enums/openEnumUnrecognized`
-Future<ApiResult<ThemeResponse, Never>> enumsPostOpenEnumUnrecognized({required ThemeRequestOpaque body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ThemeResponse, Never>> enumsPostOpenEnumUnrecognized({required ThemeRequestOpaque body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -21,15 +21,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ThemeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/enums/refToNumberEnum`
-Future<ApiResult<void, Never>> enumsPostRefToNumberEnum({required NumberEnum body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> enumsPostRefToNumberEnum({required NumberEnum body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -40,9 +40,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

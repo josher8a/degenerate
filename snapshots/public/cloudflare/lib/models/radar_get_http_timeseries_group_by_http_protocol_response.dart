@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_timeseries_group_by_http_protocol_response/radar_get_http_timeseries_group_by_http_protocol_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByHttpProtocolResponse {const RadarGetHttpTimeseriesGroupByHttpProtocolResponse({required this.result, required this.success, });
 
-factory RadarGetHttpTimeseriesGroupByHttpProtocolResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByHttpProtocolResponse(
+factory RadarGetHttpTimeseriesGroupByHttpProtocolResponse.fromJson(Map<String, dynamic> json) {return RadarGetHttpTimeseriesGroupByHttpProtocolResponse(
   result: RadarGetHttpTimeseriesGroupByHttpProtocolResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpTimeseriesGroupByHttpProtocolResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTimeseriesGroupByHttpProtocolResponse copyWith({RadarGetHttpTimeseriesGroupByHttpProtocolResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByHttpProtocolResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetHttpTimeseriesGroupByHttpProtocolResponse copyWith({RadarGetHttpTimeseriesGroupByHttpProtocolResponseResult? result, bool? success, }) {return RadarGetHttpTimeseriesGroupByHttpProtocolResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByHttpProtocolResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetHttpTimeseriesGroupByHttpProtocolResponse copyWith({RadarGetHttpTimeseri
 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByHttpProtocolResponse(result: $result, success: $success)';
 
- }
+}

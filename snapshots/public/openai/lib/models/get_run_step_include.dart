@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetRunStepInclude {const GetRunStepInclude();
 
-factory GetRunStepInclude.fromJson(String json) { return switch (json) {
+factory GetRunStepInclude.fromJson(String json) {return switch (json) {
   'step_details.tool_calls[*].file_search.results[*].content' => stepDetailsToolCallsFileSearchResultsContent,
   _ => GetRunStepInclude$Unknown(json),
-}; }
+};}
 
 static const GetRunStepInclude stepDetailsToolCallsFileSearchResultsContent = GetRunStepInclude$stepDetailsToolCallsFileSearchResultsContent._();
 
 static const List<GetRunStepInclude> values = [stepDetailsToolCallsFileSearchResultsContent];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'step_details.tool_calls[*].file_search.results[*].content' => 'stepDetailsToolCallsFileSearchResultsContent',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetRunStepInclude$Unknown; } 
+bool get isUnknown {return this is GetRunStepInclude$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() stepDetailsToolCallsFileSearchResultsContent, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() stepDetailsToolCallsFileSearchResultsContent, required W Function(String value) $unknown, }) {return switch (this) {
       GetRunStepInclude$stepDetailsToolCallsFileSearchResultsContent() => stepDetailsToolCallsFileSearchResultsContent(),
       GetRunStepInclude$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? stepDetailsToolCallsFileSearchResultsContent, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stepDetailsToolCallsFileSearchResultsContent, W Function(String value)? $unknown, }) {return switch (this) {
       GetRunStepInclude$stepDetailsToolCallsFileSearchResultsContent() => stepDetailsToolCallsFileSearchResultsContent != null ? stepDetailsToolCallsFileSearchResultsContent() : orElse(value),
       GetRunStepInclude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetRunStepInclude($value)';
 
- }
+}
 @immutable final class GetRunStepInclude$stepDetailsToolCallsFileSearchResultsContent extends GetRunStepInclude {const GetRunStepInclude$stepDetailsToolCallsFileSearchResultsContent._();
 
 @override String get value => 'step_details.tool_calls[*].file_search.results[*].content';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stepDeta
 
 @override int get hashCode => 'step_details.tool_calls[*].file_search.results[*].content'.hashCode;
 
- }
+}
 @immutable final class GetRunStepInclude$Unknown extends GetRunStepInclude {const GetRunStepInclude$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stepDeta
 
 @override int get hashCode => value.hashCode;
 
- }
+}

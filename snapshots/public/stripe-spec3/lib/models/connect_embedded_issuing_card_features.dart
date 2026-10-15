@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedIssuingCardFeatures {const ConnectEmbeddedIssuingCardFeatures({required this.cardManagement, required this.cardSpendDisputeManagement, required this.cardholderManagement, required this.spendControlManagement, });
 
-factory ConnectEmbeddedIssuingCardFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedIssuingCardFeatures(
+factory ConnectEmbeddedIssuingCardFeatures.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedIssuingCardFeatures(
   cardManagement: json['card_management'] as bool,
   cardSpendDisputeManagement: json['card_spend_dispute_management'] as bool,
   cardholderManagement: json['cardholder_management'] as bool,
   spendControlManagement: json['spend_control_management'] as bool,
-); }
+);}
 
 /// Whether to allow card management features.
 final bool cardManagement;
@@ -23,22 +23,22 @@ final bool cardholderManagement;
 /// Whether to allow spend control management features.
 final bool spendControlManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card_management': cardManagement,
   'card_spend_dispute_management': cardSpendDisputeManagement,
   'cardholder_management': cardholderManagement,
   'spend_control_management': spendControlManagement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('card_management') && json['card_management'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('card_management') && json['card_management'] is bool &&
       json.containsKey('card_spend_dispute_management') && json['card_spend_dispute_management'] is bool &&
       json.containsKey('cardholder_management') && json['cardholder_management'] is bool &&
-      json.containsKey('spend_control_management') && json['spend_control_management'] is bool; } 
-ConnectEmbeddedIssuingCardFeatures copyWith({bool? cardManagement, bool? cardSpendDisputeManagement, bool? cardholderManagement, bool? spendControlManagement, }) { return ConnectEmbeddedIssuingCardFeatures(
+      json.containsKey('spend_control_management') && json['spend_control_management'] is bool;}
+ConnectEmbeddedIssuingCardFeatures copyWith({bool? cardManagement, bool? cardSpendDisputeManagement, bool? cardholderManagement, bool? spendControlManagement, }) {return ConnectEmbeddedIssuingCardFeatures(
   cardManagement: cardManagement ?? this.cardManagement,
   cardSpendDisputeManagement: cardSpendDisputeManagement ?? this.cardSpendDisputeManagement,
   cardholderManagement: cardholderManagement ?? this.cardholderManagement,
   spendControlManagement: spendControlManagement ?? this.spendControlManagement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedIssuingCardFeatures &&
           cardManagement == other.cardManagement &&
@@ -50,4 +50,4 @@ ConnectEmbeddedIssuingCardFeatures copyWith({bool? cardManagement, bool? cardSpe
 
 @override String toString() => 'ConnectEmbeddedIssuingCardFeatures(cardManagement: $cardManagement, cardSpendDisputeManagement: $cardSpendDisputeManagement, cardholderManagement: $cardholderManagement, spendControlManagement: $spendControlManagement)';
 
- }
+}

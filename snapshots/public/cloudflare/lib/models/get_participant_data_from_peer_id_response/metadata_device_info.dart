@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataDeviceInfo {const MetadataDeviceInfo({this.cpus, this.isMobile, this.os, this.osVersion, });
 
-factory MetadataDeviceInfo.fromJson(Map<String, dynamic> json) { return MetadataDeviceInfo(
+factory MetadataDeviceInfo.fromJson(Map<String, dynamic> json) {return MetadataDeviceInfo(
   cpus: json['cpus'] != null ? (json['cpus'] as num).toInt() : null,
   isMobile: json['is_mobile'] as bool?,
   os: json['os'] as String?,
   osVersion: json['os_version'] as String?,
-); }
+);}
 
 final int? cpus;
 
@@ -18,19 +18,19 @@ final String? os;
 
 final String? osVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cpus': ?cpus,
   'is_mobile': ?isMobile,
   'os': ?os,
   'os_version': ?osVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cpus', 'is_mobile', 'os', 'os_version'}.contains(key)); } 
-MetadataDeviceInfo copyWith({int? Function()? cpus, bool? Function()? isMobile, String? Function()? os, String? Function()? osVersion, }) { return MetadataDeviceInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cpus', 'is_mobile', 'os', 'os_version'}.contains(key));}
+MetadataDeviceInfo copyWith({int? Function()? cpus, bool? Function()? isMobile, String? Function()? os, String? Function()? osVersion, }) {return MetadataDeviceInfo(
   cpus: cpus != null ? cpus() : this.cpus,
   isMobile: isMobile != null ? isMobile() : this.isMobile,
   os: os != null ? os() : this.os,
   osVersion: osVersion != null ? osVersion() : this.osVersion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataDeviceInfo &&
           cpus == other.cpus &&
@@ -42,4 +42,4 @@ MetadataDeviceInfo copyWith({int? Function()? cpus, bool? Function()? isMobile, 
 
 @override String toString() => 'MetadataDeviceInfo(cpus: $cpus, isMobile: $isMobile, os: $os, osVersion: $osVersion)';
 
- }
+}

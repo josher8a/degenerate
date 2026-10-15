@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Bond
 @immutable final class MconnSnapshotBond {const MconnSnapshotBond({required this.name, required this.status, });
 
-factory MconnSnapshotBond.fromJson(Map<String, dynamic> json) { return MconnSnapshotBond(
+factory MconnSnapshotBond.fromJson(Map<String, dynamic> json) {return MconnSnapshotBond(
   name: json['name'] as String,
   status: json['status'] as String,
-); }
+);}
 
 /// Name of the network interface
 final String name;
@@ -15,16 +15,16 @@ final String name;
 /// Current status of the network interface
 final String status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('status') && json['status'] is String; } 
-MconnSnapshotBond copyWith({String? name, String? status, }) { return MconnSnapshotBond(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('status') && json['status'] is String;}
+MconnSnapshotBond copyWith({String? name, String? status, }) {return MconnSnapshotBond(
   name: name ?? this.name,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotBond &&
           name == other.name &&
@@ -34,4 +34,4 @@ MconnSnapshotBond copyWith({String? name, String? status, }) { return MconnSnaps
 
 @override String toString() => 'MconnSnapshotBond(name: $name, status: $status)';
 
- }
+}

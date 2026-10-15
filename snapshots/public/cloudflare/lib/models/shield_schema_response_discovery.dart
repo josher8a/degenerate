@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_schema_response_discovery/shield_schema_response_discovery_result.dart';@immutable final class ShieldSchemaResponseDiscovery {const ShieldSchemaResponseDiscovery({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory ShieldSchemaResponseDiscovery.fromJson(Map<String, dynamic> json) { return ShieldSchemaResponseDiscovery(
+factory ShieldSchemaResponseDiscovery.fromJson(Map<String, dynamic> json) {return ShieldSchemaResponseDiscovery(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: ShieldSchemaResponseDiscoveryResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<ShieldMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final ShieldSchemaResponseDiscoveryResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-ShieldSchemaResponseDiscovery copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldSchemaResponseDiscoveryResult? result, }) { return ShieldSchemaResponseDiscovery(
+      json.containsKey('result');}
+ShieldSchemaResponseDiscovery copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldSchemaResponseDiscoveryResult? result, }) {return ShieldSchemaResponseDiscovery(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaResponseDiscovery &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ ShieldSchemaResponseDiscovery copyWith({List<ShieldMessages2>? errors, List<Shie
 
 @override String toString() => 'ShieldSchemaResponseDiscovery(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

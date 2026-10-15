@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostWebhookEndpointsWebhookEndpointRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request/enabled_events.dart';@immutable final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request/enabled_events.dart';@immutable final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
 
-factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsWebhookEndpointRequest(
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) {return PostWebhookEndpointsWebhookEndpointRequest(
+  description: json['description'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription.fromJson(json['description']) : null,
   disabled: json['disabled'] as bool?,
   enabledEvents: (json['enabled_events'] as List<dynamic>?)?.map((e) => EnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   url: json['url'] as String?,
-); }
+);}
 
 /// An optional description of what the webhook is used for.
 final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? description;
@@ -30,23 +30,23 @@ final Metadata? metadata;
 /// The URL of the webhook endpoint.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'disabled': ?disabled,
   if (enabledEvents != null) 'enabled_events': enabledEvents?.map((e) => e.toJson()).toList(),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'disabled', 'enabled_events', 'expand', 'metadata', 'url'}.contains(key)); } 
-PostWebhookEndpointsWebhookEndpointRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? Function()? description, bool? Function()? disabled, List<EnabledEvents>? Function()? enabledEvents, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? url, }) { return PostWebhookEndpointsWebhookEndpointRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'disabled', 'enabled_events', 'expand', 'metadata', 'url'}.contains(key));}
+PostWebhookEndpointsWebhookEndpointRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? Function()? description, bool? Function()? disabled, List<EnabledEvents>? Function()? enabledEvents, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? url, }) {return PostWebhookEndpointsWebhookEndpointRequest(
   description: description != null ? description() : this.description,
   disabled: disabled != null ? disabled() : this.disabled,
   enabledEvents: enabledEvents != null ? enabledEvents() : this.enabledEvents,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostWebhookEndpointsWebhookEndpointRequest &&
           description == other.description &&
@@ -60,4 +60,4 @@ PostWebhookEndpointsWebhookEndpointRequest copyWith({PostPaymentRecordsIdReportP
 
 @override String toString() => 'PostWebhookEndpointsWebhookEndpointRequest(description: $description, disabled: $disabled, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)';
 
- }
+}

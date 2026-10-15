@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoConfig {const VideoConfig({this.height, this.width, });
 
-factory VideoConfig.fromJson(Map<String, dynamic> json) { return VideoConfig(
+factory VideoConfig.fromJson(Map<String, dynamic> json) {return VideoConfig(
   height: json['height'] != null ? (json['height'] as num).toInt() : null,
   width: json['width'] != null ? (json['width'] as num).toInt() : null,
-); }
+);}
 
 /// Height of the livestreaming video in pixels
 final int? height;
@@ -14,15 +14,15 @@ final int? height;
 /// Width of the livestreaming video in pixels
 final int? width;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'height': ?height,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'height', 'width'}.contains(key)); } 
-VideoConfig copyWith({int? Function()? height, int? Function()? width, }) { return VideoConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'height', 'width'}.contains(key));}
+VideoConfig copyWith({int? Function()? height, int? Function()? width, }) {return VideoConfig(
   height: height != null ? height() : this.height,
   width: width != null ? width() : this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VideoConfig &&
           height == other.height &&
@@ -32,4 +32,4 @@ VideoConfig copyWith({int? Function()? height, int? Function()? width, }) { retu
 
 @override String toString() => 'VideoConfig(height: $height, width: $width)';
 
- }
+}

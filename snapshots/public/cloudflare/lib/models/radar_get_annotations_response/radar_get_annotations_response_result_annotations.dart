@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/asns_details.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/locations_details.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/origins_details.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/outage.dart';@immutable final class RadarGetAnnotationsResponseResultAnnotations {const RadarGetAnnotationsResponseResultAnnotations({required this.asns, required this.asnsDetails, required this.dataSource, required this.eventType, required this.id, required this.locations, required this.locationsDetails, required this.origins, required this.originsDetails, required this.outage, required this.startDate, this.description, this.endDate, this.linkedUrl, this.scope, });
 
-factory RadarGetAnnotationsResponseResultAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResultAnnotations(
+factory RadarGetAnnotationsResponseResultAnnotations.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsResponseResultAnnotations(
   asns: (json['asns'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   asnsDetails: (json['asnsDetails'] as List<dynamic>).map((e) => AsnsDetails.fromJson(e as Map<String, dynamic>)).toList(),
   dataSource: json['dataSource'] as String,
@@ -19,7 +19,7 @@ factory RadarGetAnnotationsResponseResultAnnotations.fromJson(Map<String, dynami
   outage: Outage.fromJson(json['outage'] as Map<String, dynamic>),
   scope: json['scope'] as String?,
   startDate: json['startDate'] as String,
-); }
+);}
 
 final List<int> asns;
 
@@ -59,7 +59,7 @@ final String? scope;
 /// Example: `'2022-09-06T10:00:28Z'`
 final String startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asns': asns,
   'asnsDetails': asnsDetails.map((e) => e.toJson()).toList(),
   'dataSource': dataSource,
@@ -75,8 +75,8 @@ Map<String, dynamic> toJson() { return {
   'outage': outage.toJson(),
   'scope': ?scope,
   'startDate': startDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asns') &&
       json.containsKey('asnsDetails') &&
       json.containsKey('dataSource') && json['dataSource'] is String &&
       json.containsKey('eventType') && json['eventType'] is String &&
@@ -86,8 +86,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns'
       json.containsKey('origins') &&
       json.containsKey('originsDetails') &&
       json.containsKey('outage') &&
-      json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetAnnotationsResponseResultAnnotations copyWith({List<int>? asns, List<AsnsDetails>? asnsDetails, String? dataSource, String? Function()? description, String? Function()? endDate, String? eventType, String? id, String? Function()? linkedUrl, List<String>? locations, List<LocationsDetails>? locationsDetails, List<String>? origins, List<OriginsDetails>? originsDetails, Outage? outage, String? Function()? scope, String? startDate, }) { return RadarGetAnnotationsResponseResultAnnotations(
+      json.containsKey('startDate') && json['startDate'] is String;}
+RadarGetAnnotationsResponseResultAnnotations copyWith({List<int>? asns, List<AsnsDetails>? asnsDetails, String? dataSource, String? Function()? description, String? Function()? endDate, String? eventType, String? id, String? Function()? linkedUrl, List<String>? locations, List<LocationsDetails>? locationsDetails, List<String>? origins, List<OriginsDetails>? originsDetails, Outage? outage, String? Function()? scope, String? startDate, }) {return RadarGetAnnotationsResponseResultAnnotations(
   asns: asns ?? this.asns,
   asnsDetails: asnsDetails ?? this.asnsDetails,
   dataSource: dataSource ?? this.dataSource,
@@ -103,7 +103,7 @@ RadarGetAnnotationsResponseResultAnnotations copyWith({List<int>? asns, List<Asn
   outage: outage ?? this.outage,
   scope: scope != null ? scope() : this.scope,
   startDate: startDate ?? this.startDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAnnotationsResponseResultAnnotations &&
           listEquals(asns, other.asns) &&
@@ -126,4 +126,4 @@ RadarGetAnnotationsResponseResultAnnotations copyWith({List<int>? asns, List<Asn
 
 @override String toString() => 'RadarGetAnnotationsResponseResultAnnotations(\n  asns: $asns,\n  asnsDetails: $asnsDetails,\n  dataSource: $dataSource,\n  description: $description,\n  endDate: $endDate,\n  eventType: $eventType,\n  id: $id,\n  linkedUrl: $linkedUrl,\n  locations: $locations,\n  locationsDetails: $locationsDetails,\n  origins: $origins,\n  originsDetails: $originsDetails,\n  outage: $outage,\n  scope: $scope,\n  startDate: $startDate,\n)';
 
- }
+}

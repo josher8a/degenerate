@@ -2,6 +2,7 @@
 // Source: tag "DefaultApi" (8 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/errors/auth_logout_error.dart';
 import 'package:pub_totem_mobile/models/errors/auth_refresh_token_error.dart';
@@ -46,7 +47,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return FcmTokenResponseSchema.fromJson(
@@ -75,7 +76,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// Onboard Get
@@ -93,7 +94,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return OnboardSchema.fromJson(
@@ -121,7 +122,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return OnboardSchema.fromJson(
@@ -153,7 +154,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return MessageResponse.fromJson(
@@ -185,7 +186,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return TokenResponse.fromJson(
@@ -217,7 +218,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return TokenResponse.fromJson(
@@ -248,7 +249,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         return MessageResponse.fromJson(

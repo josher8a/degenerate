@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/session_list_schema.dart';@immutable final class PagedSessionListSchema {const PagedSessionListSchema({required this.items, required this.count, });
 
-factory PagedSessionListSchema.fromJson(Map<String, dynamic> json) { return PagedSessionListSchema(
+factory PagedSessionListSchema.fromJson(Map<String, dynamic> json) {return PagedSessionListSchema(
   items: (json['items'] as List<dynamic>).map((e) => SessionListSchema.fromJson(e as Map<String, dynamic>)).toList(),
   count: (json['count'] as num).toInt(),
-); }
+);}
 
 final List<SessionListSchema> items;
 
 final int count;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'items': items.map((e) => e.toJson()).toList(),
   'count': count,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
-      json.containsKey('count') && json['count'] is num; } 
-PagedSessionListSchema copyWith({List<SessionListSchema>? items, int? count, }) { return PagedSessionListSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items') &&
+      json.containsKey('count') && json['count'] is num;}
+PagedSessionListSchema copyWith({List<SessionListSchema>? items, int? count, }) {return PagedSessionListSchema(
   items: items ?? this.items,
   count: count ?? this.count,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagedSessionListSchema &&
           listEquals(items, other.items) &&
@@ -31,4 +31,4 @@ PagedSessionListSchema copyWith({List<SessionListSchema>? items, int? count, }) 
 
 @override String toString() => 'PagedSessionListSchema(items: $items, count: $count)';
 
- }
+}

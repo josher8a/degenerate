@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_method.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_toll_free_enum_emergency_status.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_toll_free_enum_voice_receive_mode.dart';@immutable final class CreateIncomingPhoneNumberTollFreeRequest {const CreateIncomingPhoneNumberTollFreeRequest({required this.phoneNumber, this.apiVersion, this.friendlyName, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.identitySid, this.addressSid, this.emergencyStatus, this.emergencyAddressSid, this.trunkSid, this.voiceReceiveMode, this.bundleSid, });
 
-factory CreateIncomingPhoneNumberTollFreeRequest.fromJson(Map<String, dynamic> json) { return CreateIncomingPhoneNumberTollFreeRequest(
+factory CreateIncomingPhoneNumberTollFreeRequest.fromJson(Map<String, dynamic> json) {return CreateIncomingPhoneNumberTollFreeRequest(
   phoneNumber: json['PhoneNumber'] as String,
   apiVersion: json['ApiVersion'] as String?,
   friendlyName: json['FriendlyName'] as String?,
@@ -27,7 +27,7 @@ factory CreateIncomingPhoneNumberTollFreeRequest.fromJson(Map<String, dynamic> j
   trunkSid: json['TrunkSid'] as String?,
   voiceReceiveMode: json['VoiceReceiveMode'] != null ? IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(json['VoiceReceiveMode'] as String) : null,
   bundleSid: json['BundleSid'] as String?,
-); }
+);}
 
 /// The phone number to purchase specified in [E.164](https://www.twilio.com/docs/glossary/what-e164) format.  E.164 phone numbers consist of a + followed by the country code and subscriber number without punctuation characters. For example, +14155551234.
 final String phoneNumber;
@@ -97,7 +97,7 @@ final IncomingPhoneNumberTollFreeEnumVoiceReceiveMode? voiceReceiveMode;
 /// The SID of the Bundle resource that you associate with the phone number. Some regions require a Bundle to meet local Regulations.
 final String? bundleSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'PhoneNumber': phoneNumber,
   'ApiVersion': ?apiVersion,
   'FriendlyName': ?friendlyName,
@@ -121,10 +121,10 @@ Map<String, dynamic> toJson() { return {
   'TrunkSid': ?trunkSid,
   if (voiceReceiveMode != null) 'VoiceReceiveMode': voiceReceiveMode?.toJson(),
   'BundleSid': ?bundleSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('PhoneNumber') && json['PhoneNumber'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('PhoneNumber') && json['PhoneNumber'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final smsApplicationSid$ = smsApplicationSid;
 if (smsApplicationSid$ != null) {
   if (smsApplicationSid$.runes.length < 34) { errors.add('smsApplicationSid: length must be >= 34'); }
@@ -167,8 +167,8 @@ if (bundleSid$ != null) {
   if (bundleSid$.runes.length > 34) { errors.add('bundleSid: length must be <= 34'); }
   if (!RegExp(r'^BU[0-9a-fA-F]{32}$').hasMatch(bundleSid$)) { errors.add(r'bundleSid: must match pattern ^BU[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-CreateIncomingPhoneNumberTollFreeRequest copyWith({String? phoneNumber, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? smsApplicationSid, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, String? Function()? identitySid, String? Function()? addressSid, IncomingPhoneNumberTollFreeEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? trunkSid, IncomingPhoneNumberTollFreeEnumVoiceReceiveMode? Function()? voiceReceiveMode, String? Function()? bundleSid, }) { return CreateIncomingPhoneNumberTollFreeRequest(
+return errors;}
+CreateIncomingPhoneNumberTollFreeRequest copyWith({String? phoneNumber, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? smsApplicationSid, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, String? Function()? identitySid, String? Function()? addressSid, IncomingPhoneNumberTollFreeEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? trunkSid, IncomingPhoneNumberTollFreeEnumVoiceReceiveMode? Function()? voiceReceiveMode, String? Function()? bundleSid, }) {return CreateIncomingPhoneNumberTollFreeRequest(
   phoneNumber: phoneNumber ?? this.phoneNumber,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
@@ -192,7 +192,7 @@ CreateIncomingPhoneNumberTollFreeRequest copyWith({String? phoneNumber, String? 
   trunkSid: trunkSid != null ? trunkSid() : this.trunkSid,
   voiceReceiveMode: voiceReceiveMode != null ? voiceReceiveMode() : this.voiceReceiveMode,
   bundleSid: bundleSid != null ? bundleSid() : this.bundleSid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateIncomingPhoneNumberTollFreeRequest &&
           phoneNumber == other.phoneNumber &&
@@ -223,4 +223,4 @@ CreateIncomingPhoneNumberTollFreeRequest copyWith({String? phoneNumber, String? 
 
 @override String toString() => 'CreateIncomingPhoneNumberTollFreeRequest(\n  phoneNumber: $phoneNumber,\n  apiVersion: $apiVersion,\n  friendlyName: $friendlyName,\n  smsApplicationSid: $smsApplicationSid,\n  smsFallbackMethod: $smsFallbackMethod,\n  smsFallbackUrl: $smsFallbackUrl,\n  smsMethod: $smsMethod,\n  smsUrl: $smsUrl,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  voiceApplicationSid: $voiceApplicationSid,\n  voiceCallerIdLookup: $voiceCallerIdLookup,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceMethod: $voiceMethod,\n  voiceUrl: $voiceUrl,\n  identitySid: $identitySid,\n  addressSid: $addressSid,\n  emergencyStatus: $emergencyStatus,\n  emergencyAddressSid: $emergencyAddressSid,\n  trunkSid: $trunkSid,\n  voiceReceiveMode: $voiceReceiveMode,\n  bundleSid: $bundleSid,\n)';
 
- }
+}

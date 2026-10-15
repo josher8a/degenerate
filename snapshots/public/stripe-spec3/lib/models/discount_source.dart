@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DiscountSource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_type.dart';/// 
-@immutable final class DiscountSource {const DiscountSource({required this.type, this.coupon, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_type.dart';/// 
+@immutable final class DiscountSource {const DiscountSource({required this.type, this.coupon = const Omittable.absent(), });
 
-factory DiscountSource.fromJson(Map<String, dynamic> json) { return DiscountSource(
-  coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,
+factory DiscountSource.fromJson(Map<String, dynamic> json) {return DiscountSource(
+  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? DiscountSourceCoupon.fromJson(json['coupon']) : null) : const Omittable.absent(),
   type: DiscountSourceType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The coupon that was redeemed to create this discount.
-final DiscountSourceCoupon? coupon;
+final Omittable<DiscountSourceCoupon?> coupon;
 
 /// The source type of the discount.
 final DiscountSourceType type;
 
-Map<String, dynamic> toJson() { return {
-  if (coupon != null) 'coupon': coupon?.toJson(),
+Map<String, dynamic> toJson() {return {
+  if (coupon.isPresent) 'coupon': coupon.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-DiscountSource copyWith({DiscountSourceCoupon? Function()? coupon, DiscountSourceType? type, }) { return DiscountSource(
-  coupon: coupon != null ? coupon() : this.coupon,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+DiscountSource copyWith({Omittable<DiscountSourceCoupon?>? coupon, DiscountSourceType? type, }) {return DiscountSource(
+  coupon: coupon ?? this.coupon,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DiscountSource &&
           coupon == other.coupon &&
@@ -33,4 +33,4 @@ DiscountSource copyWith({DiscountSourceCoupon? Function()? coupon, DiscountSourc
 
 @override String toString() => 'DiscountSource(coupon: $coupon, type: $type)';
 
- }
+}

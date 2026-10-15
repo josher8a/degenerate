@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Secrets for a GitHub Codespace.
 @immutable final class CodespacesSecret {const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl, });
 
-factory CodespacesSecret.fromJson(Map<String, dynamic> json) { return CodespacesSecret(
+factory CodespacesSecret.fromJson(Map<String, dynamic> json) {return CodespacesSecret(
   name: json['name'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoriesUrl: Uri.parse(json['selected_repositories_url'] as String),
-); }
+);}
 
 /// The name of the secret
 final String name;
@@ -27,25 +27,25 @@ final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 /// The API URL at which the list of repositories this secret is visible to can be retrieved
 final Uri selectedRepositoriesUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'visibility': visibility.toJson(),
   'selected_repositories_url': selectedRepositoriesUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('visibility') &&
-      json.containsKey('selected_repositories_url') && json['selected_repositories_url'] is String; } 
-CodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri? selectedRepositoriesUrl, }) { return CodespacesSecret(
+      json.containsKey('selected_repositories_url') && json['selected_repositories_url'] is String;}
+CodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri? selectedRepositoriesUrl, }) {return CodespacesSecret(
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   visibility: visibility ?? this.visibility,
   selectedRepositoriesUrl: selectedRepositoriesUrl ?? this.selectedRepositoriesUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesSecret &&
           name == other.name &&
@@ -58,4 +58,4 @@ CodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedA
 
 @override String toString() => 'CodespacesSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt, visibility: $visibility, selectedRepositoriesUrl: $selectedRepositoriesUrl)';
 
- }
+}

@@ -10,10 +10,10 @@ String toJson() => value;
 }
 @immutable final class IntelResolvesToRef {const IntelResolvesToRef({this.id, this.value, });
 
-factory IntelResolvesToRef.fromJson(Map<String, dynamic> json) { return IntelResolvesToRef(
+factory IntelResolvesToRef.fromJson(Map<String, dynamic> json) {return IntelResolvesToRef(
   id: json['id'] != null ? IntelStixIdentifier.fromJson(json['id'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 final IntelStixIdentifier? id;
 
@@ -22,15 +22,15 @@ final IntelStixIdentifier? id;
 /// Example: `'192.0.2.0'`
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-IntelResolvesToRef copyWith({IntelStixIdentifier? Function()? id, String? Function()? value, }) { return IntelResolvesToRef(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+IntelResolvesToRef copyWith({IntelStixIdentifier? Function()? id, String? Function()? value, }) {return IntelResolvesToRef(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IntelResolvesToRef &&
           id == other.id &&
@@ -40,4 +40,4 @@ IntelResolvesToRef copyWith({IntelStixIdentifier? Function()? id, String? Functi
 
 @override String toString() => 'IntelResolvesToRef(id: $id, value: $value)';
 
- }
+}

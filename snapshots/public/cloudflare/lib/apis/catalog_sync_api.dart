@@ -14,7 +14,7 @@ final class CatalogSyncApi with ApiExecutor {const CatalogSyncApi(this.apiConfig
 /// List Catalog Syncs (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<List<McnCatalogSync>?, CatalogSyncsListError>> catalogSyncsList({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<McnCatalogSync>, CatalogSyncsListError>> catalogSyncsList({required McnAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,21 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => McnCatalogSync.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => McnCatalogSync.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CatalogSyncsListError.fromResponse,
 );
- } 
+}
 /// Create Catalog Sync
 ///
 /// Create a new Catalog Sync (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnCatalogSync?, CatalogSyncsCreateError>> catalogSyncsCreate({required McnAccountId accountId, required McnCreateCatalogSyncRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, CatalogSyncsCreateError>> catalogSyncsCreate({required McnAccountId accountId, required McnCreateCatalogSyncRequest body, String? forwarded, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;
@@ -51,21 +51,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsCreateError.fromResponse,
 );
- } 
+}
 /// Read Catalog Sync
 ///
 /// Read a Catalog Sync (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnCatalogSync?, CatalogSyncsListError>> catalogSyncsRead({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, CatalogSyncsListError>> catalogSyncsRead({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,21 +74,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsListError.fromResponse,
 );
- } 
+}
 /// Update Catalog Sync
 ///
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnCatalogSync?, CatalogSyncsPatchError>> catalogSyncsUpdate({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, CatalogSyncsPatchError>> catalogSyncsUpdate({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,21 +99,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsPatchError.fromResponse,
 );
- } 
+}
 /// Patch Catalog Sync
 ///
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnCatalogSync?, CatalogSyncsPatchError>> catalogSyncsPatch({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, CatalogSyncsPatchError>> catalogSyncsPatch({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,21 +124,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsPatchError.fromResponse,
 );
- } 
+}
 /// Delete Catalog Sync
 ///
 /// Delete a Catalog Sync (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnDeletedCatalogSync?, CatalogSyncsDeleteError>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnDeletedCatalogSync, CatalogSyncsDeleteError>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deleteDestination != null) {
   queryParameters['delete_destination'] = deleteDestination.toString();
@@ -155,21 +155,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnDeletedCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return McnDeletedCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CatalogSyncsDeleteError.fromResponse,
 );
- } 
+}
 /// Run Catalog Sync
 ///
 /// Refresh a Catalog Sync's destination by running the sync policy against latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}/refresh`
-Future<ApiResult<McnPolicyResult?, CatalogSyncsPatchError>> catalogSyncsRefresh({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnPolicyResult, CatalogSyncsPatchError>> catalogSyncsRefresh({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -178,21 +178,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? McnPolicyResult.fromJson(json['result'] as String) : null;
+    return McnPolicyResult.fromJson(json['result'] as String);
   },
   onError: CatalogSyncsPatchError.fromResponse,
 );
- } 
+}
 /// List Prebuilt Policies
 ///
 /// List prebuilt catalog sync policies (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies`
-Future<ApiResult<List<McnCatalogSyncsPrebuiltPolicy>?, CatalogSyncsPrebuiltPoliciesListError>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<McnCatalogSyncsPrebuiltPolicy>, CatalogSyncsPrebuiltPoliciesListError>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (destinationType != null) {
   queryParameters['destination_type'] = destinationType.toJson();
@@ -209,13 +209,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => McnCatalogSyncsPrebuiltPolicy.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => McnCatalogSyncsPrebuiltPolicy.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: CatalogSyncsPrebuiltPoliciesListError.fromResponse,
 );
- } 
- }
+}
+}

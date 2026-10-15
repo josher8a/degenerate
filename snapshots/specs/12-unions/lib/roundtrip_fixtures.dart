@@ -108,15 +108,15 @@ final List<RoundtripFixture> roundtripFixtures = [
     (value) => (value! as ErrorModel).toJson(),
   ),
   RoundtripFixture(
-    'Notification [0]',
+    'Notification [EmailDetails]',
     {'emailAddress': 'string', 'subject': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => EmailDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => SmsDetails.fromJson(v as Map<String, dynamic>),),
+    (json) => Notification.fromJson(json),
     (value) => (value! as Notification).toJson(),
   ),
   RoundtripFixture(
-    'Notification [1]',
+    'Notification [SmsDetails]',
     {'phoneNumber': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => EmailDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => SmsDetails.fromJson(v as Map<String, dynamic>),),
+    (json) => Notification.fromJson(json),
     (value) => (value! as Notification).toJson(),
   ),
   RoundtripFixture(

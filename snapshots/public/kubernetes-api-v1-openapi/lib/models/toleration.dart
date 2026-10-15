@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pod this Toleration is attached to tolerates any taint that matches the triple `<key,value,effect>` using the matching operator `<operator>`.
 @immutable final class Toleration {const Toleration({this.effect, this.key, this.$operator, this.tolerationSeconds, this.value, });
 
-factory Toleration.fromJson(Map<String, dynamic> json) { return Toleration(
+factory Toleration.fromJson(Map<String, dynamic> json) {return Toleration(
   effect: json['effect'] as String?,
   key: json['key'] as String?,
   $operator: json['operator'] as String?,
   tolerationSeconds: json['tolerationSeconds'] != null ? (json['tolerationSeconds'] as num).toInt() : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
 final String? effect;
@@ -27,21 +27,21 @@ final int? tolerationSeconds;
 /// Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'effect': ?effect,
   'key': ?key,
   'operator': ?$operator,
   'tolerationSeconds': ?tolerationSeconds,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effect', 'key', 'operator', 'tolerationSeconds', 'value'}.contains(key)); } 
-Toleration copyWith({String? Function()? effect, String? Function()? key, String? Function()? $operator, int? Function()? tolerationSeconds, String? Function()? value, }) { return Toleration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'effect', 'key', 'operator', 'tolerationSeconds', 'value'}.contains(key));}
+Toleration copyWith({String? Function()? effect, String? Function()? key, String? Function()? $operator, int? Function()? tolerationSeconds, String? Function()? value, }) {return Toleration(
   effect: effect != null ? effect() : this.effect,
   key: key != null ? key() : this.key,
   $operator: $operator != null ? $operator() : this.$operator,
   tolerationSeconds: tolerationSeconds != null ? tolerationSeconds() : this.tolerationSeconds,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Toleration &&
           effect == other.effect &&
@@ -54,4 +54,4 @@ Toleration copyWith({String? Function()? effect, String? Function()? key, String
 
 @override String toString() => 'Toleration(effect: $effect, key: $key, \$operator: ${$operator}, tolerationSeconds: $tolerationSeconds, value: $value)';
 
- }
+}

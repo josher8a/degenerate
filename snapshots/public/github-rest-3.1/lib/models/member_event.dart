@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class MemberEvent {const MemberEvent({required this.action, required this.member, });
 
-factory MemberEvent.fromJson(Map<String, dynamic> json) { return MemberEvent(
+factory MemberEvent.fromJson(Map<String, dynamic> json) {return MemberEvent(
   action: json['action'] as String,
   member: SimpleUser.fromJson(json['member'] as Map<String, dynamic>),
-); }
+);}
 
 final String action;
 
 final SimpleUser member;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'member': member.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
-      json.containsKey('member'); } 
-MemberEvent copyWith({String? action, SimpleUser? member, }) { return MemberEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('member');}
+MemberEvent copyWith({String? action, SimpleUser? member, }) {return MemberEvent(
   action: action ?? this.action,
   member: member ?? this.member,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MemberEvent &&
           action == other.action &&
@@ -31,4 +31,4 @@ MemberEvent copyWith({String? action, SimpleUser? member, }) { return MemberEven
 
 @override String toString() => 'MemberEvent(action: $action, member: $member)';
 
- }
+}

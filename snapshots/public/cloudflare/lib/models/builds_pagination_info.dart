@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsPaginationInfo {const BuildsPaginationInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
-factory BuildsPaginationInfo.fromJson(Map<String, dynamic> json) { return BuildsPaginationInfo(
+factory BuildsPaginationInfo.fromJson(Map<String, dynamic> json) {return BuildsPaginationInfo(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   page: json['page'] != null ? (json['page'] as num).toInt() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toInt() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toInt() : null,
-); }
+);}
 
 /// Example: `25`
 final int? count;
@@ -26,21 +26,21 @@ final int? totalCount;
 /// Example: `3`
 final int? totalPages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'page': ?page,
   'per_page': ?perPage,
   'total_count': ?totalCount,
   'total_pages': ?totalPages,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count', 'total_pages'}.contains(key)); } 
-BuildsPaginationInfo copyWith({int? Function()? count, int? Function()? page, int? Function()? perPage, int? Function()? totalCount, int? Function()? totalPages, }) { return BuildsPaginationInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count', 'total_pages'}.contains(key));}
+BuildsPaginationInfo copyWith({int? Function()? count, int? Function()? page, int? Function()? perPage, int? Function()? totalCount, int? Function()? totalPages, }) {return BuildsPaginationInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsPaginationInfo &&
           count == other.count &&
@@ -53,4 +53,4 @@ BuildsPaginationInfo copyWith({int? Function()? count, int? Function()? page, in
 
 @override String toString() => 'BuildsPaginationInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)';
 
- }
+}

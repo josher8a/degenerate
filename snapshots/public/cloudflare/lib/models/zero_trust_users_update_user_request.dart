@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_email.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_name.dart';@immutable final class ZeroTrustUsersUpdateUserRequest {const ZeroTrustUsersUpdateUserRequest({required this.email, required this.name, });
 
-factory ZeroTrustUsersUpdateUserRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustUsersUpdateUserRequest(
+factory ZeroTrustUsersUpdateUserRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustUsersUpdateUserRequest(
   email: AccessSchemasEmail.fromJson(json['email'] as String),
   name: AccessUsersComponentsSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 /// The email of the user.
 final AccessSchemasEmail email;
@@ -14,16 +14,16 @@ final AccessSchemasEmail email;
 /// The name of the user.
 final AccessUsersComponentsSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') &&
-      json.containsKey('name'); } 
-ZeroTrustUsersUpdateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName? name, }) { return ZeroTrustUsersUpdateUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') &&
+      json.containsKey('name');}
+ZeroTrustUsersUpdateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName? name, }) {return ZeroTrustUsersUpdateUserRequest(
   email: email ?? this.email,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustUsersUpdateUserRequest &&
           email == other.email &&
@@ -33,4 +33,4 @@ ZeroTrustUsersUpdateUserRequest copyWith({AccessSchemasEmail? email, AccessUsers
 
 @override String toString() => 'ZeroTrustUsersUpdateUserRequest(email: $email, name: $name)';
 
- }
+}

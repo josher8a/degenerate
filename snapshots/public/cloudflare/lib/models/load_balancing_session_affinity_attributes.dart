@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
 sealed class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite();
 
-factory LoadBalancingSessionAffinityAttributesSamesite.fromJson(String json) { return switch (json) {
+factory LoadBalancingSessionAffinityAttributesSamesite.fromJson(String json) {return switch (json) {
   'Auto' => auto,
   'Lax' => lax,
   'None' => none,
   'Strict' => strict,
   _ => LoadBalancingSessionAffinityAttributesSamesite$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingSessionAffinityAttributesSamesite auto = LoadBalancingSessionAffinityAttributesSamesite$auto._();
 
@@ -23,36 +23,36 @@ static const LoadBalancingSessionAffinityAttributesSamesite strict = LoadBalanci
 static const List<LoadBalancingSessionAffinityAttributesSamesite> values = [auto, lax, none, strict];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Auto' => 'auto',
   'Lax' => 'lax',
   'None' => 'none',
   'Strict' => 'strict',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingSessionAffinityAttributesSamesite$Unknown; } 
+bool get isUnknown {return this is LoadBalancingSessionAffinityAttributesSamesite$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() lax, required W Function() none, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() lax, required W Function() none, required W Function() strict, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingSessionAffinityAttributesSamesite$auto() => auto(),
       LoadBalancingSessionAffinityAttributesSamesite$lax() => lax(),
       LoadBalancingSessionAffinityAttributesSamesite$none() => none(),
       LoadBalancingSessionAffinityAttributesSamesite$strict() => strict(),
       LoadBalancingSessionAffinityAttributesSamesite$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? lax, W Function()? none, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? lax, W Function()? none, W Function()? strict, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingSessionAffinityAttributesSamesite$auto() => auto != null ? auto() : orElse(value),
       LoadBalancingSessionAffinityAttributesSamesite$lax() => lax != null ? lax() : orElse(value),
       LoadBalancingSessionAffinityAttributesSamesite$none() => none != null ? none() : orElse(value),
       LoadBalancingSessionAffinityAttributesSamesite$strict() => strict != null ? strict() : orElse(value),
       LoadBalancingSessionAffinityAttributesSamesite$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingSessionAffinityAttributesSamesite($value)';
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite$auto extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$auto._();
 
 @override String get value => 'Auto';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'Auto'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite$lax extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$lax._();
 
 @override String get value => 'Lax';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'Lax'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite$none extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$none._();
 
 @override String get value => 'None';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'None'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite$strict extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$strict._();
 
 @override String get value => 'Strict';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'Strict'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite$Unknown extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$Unknown(this.value);
 
 @override final String value;
@@ -98,16 +98,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configures the Secure attribute on session affinity cookie. Value "Always" indicates the Secure attribute will be set in the Set-Cookie header, "Never" indicates the Secure attribute will not be set, and "Auto" will set the Secure attribute depending if Always Use HTTPS is enabled.
 sealed class LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure();
 
-factory LoadBalancingSessionAffinityAttributesSecure.fromJson(String json) { return switch (json) {
+factory LoadBalancingSessionAffinityAttributesSecure.fromJson(String json) {return switch (json) {
   'Auto' => auto,
   'Always' => always,
   'Never' => never,
   _ => LoadBalancingSessionAffinityAttributesSecure$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingSessionAffinityAttributesSecure auto = LoadBalancingSessionAffinityAttributesSecure$auto._();
 
@@ -118,33 +118,33 @@ static const LoadBalancingSessionAffinityAttributesSecure never = LoadBalancingS
 static const List<LoadBalancingSessionAffinityAttributesSecure> values = [auto, always, never];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Auto' => 'auto',
   'Always' => 'always',
   'Never' => 'never',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingSessionAffinityAttributesSecure$Unknown; } 
+bool get isUnknown {return this is LoadBalancingSessionAffinityAttributesSecure$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() always, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() always, required W Function() never, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingSessionAffinityAttributesSecure$auto() => auto(),
       LoadBalancingSessionAffinityAttributesSecure$always() => always(),
       LoadBalancingSessionAffinityAttributesSecure$never() => never(),
       LoadBalancingSessionAffinityAttributesSecure$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingSessionAffinityAttributesSecure$auto() => auto != null ? auto() : orElse(value),
       LoadBalancingSessionAffinityAttributesSecure$always() => always != null ? always() : orElse(value),
       LoadBalancingSessionAffinityAttributesSecure$never() => never != null ? never() : orElse(value),
       LoadBalancingSessionAffinityAttributesSecure$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingSessionAffinityAttributesSecure($value)';
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSecure$auto extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$auto._();
 
 @override String get value => 'Auto';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'Auto'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSecure$always extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$always._();
 
 @override String get value => 'Always';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'Always'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSecure$never extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$never._();
 
 @override String get value => 'Never';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'Never'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingSessionAffinityAttributesSecure$Unknown extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$Unknown(this.value);
 
 @override final String value;
@@ -181,16 +181,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
 sealed class ZeroDowntimeFailover {const ZeroDowntimeFailover();
 
-factory ZeroDowntimeFailover.fromJson(String json) { return switch (json) {
+factory ZeroDowntimeFailover.fromJson(String json) {return switch (json) {
   'none' => none,
   'temporary' => temporary,
   'sticky' => sticky,
   _ => ZeroDowntimeFailover$Unknown(json),
-}; }
+};}
 
 static const ZeroDowntimeFailover none = ZeroDowntimeFailover$none._();
 
@@ -201,33 +201,33 @@ static const ZeroDowntimeFailover sticky = ZeroDowntimeFailover$sticky._();
 static const List<ZeroDowntimeFailover> values = [none, temporary, sticky];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'temporary' => 'temporary',
   'sticky' => 'sticky',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroDowntimeFailover$Unknown; } 
+bool get isUnknown {return this is ZeroDowntimeFailover$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() temporary, required W Function() sticky, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() temporary, required W Function() sticky, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroDowntimeFailover$none() => none(),
       ZeroDowntimeFailover$temporary() => temporary(),
       ZeroDowntimeFailover$sticky() => sticky(),
       ZeroDowntimeFailover$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? temporary, W Function()? sticky, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? temporary, W Function()? sticky, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroDowntimeFailover$none() => none != null ? none() : orElse(value),
       ZeroDowntimeFailover$temporary() => temporary != null ? temporary() : orElse(value),
       ZeroDowntimeFailover$sticky() => sticky != null ? sticky() : orElse(value),
       ZeroDowntimeFailover$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroDowntimeFailover($value)';
 
- }
+}
 @immutable final class ZeroDowntimeFailover$none extends ZeroDowntimeFailover {const ZeroDowntimeFailover$none._();
 
 @override String get value => 'none';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ZeroDowntimeFailover$temporary extends ZeroDowntimeFailover {const ZeroDowntimeFailover$temporary._();
 
 @override String get value => 'temporary';
@@ -245,7 +245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'temporary'.hashCode;
 
- }
+}
 @immutable final class ZeroDowntimeFailover$sticky extends ZeroDowntimeFailover {const ZeroDowntimeFailover$sticky._();
 
 @override String get value => 'sticky';
@@ -254,7 +254,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'sticky'.hashCode;
 
- }
+}
 @immutable final class ZeroDowntimeFailover$Unknown extends ZeroDowntimeFailover {const ZeroDowntimeFailover$Unknown(this.value);
 
 @override final String value;
@@ -264,18 +264,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configures attributes for session affinity.
-@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders = false, this.samesite = LoadBalancingSessionAffinityAttributesSamesite.auto, this.secure = LoadBalancingSessionAffinityAttributesSecure.auto, this.zeroDowntimeFailover = ZeroDowntimeFailover.none, });
+@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders, this.samesite, this.secure, this.zeroDowntimeFailover, });
 
-factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) { return LoadBalancingSessionAffinityAttributes(
+factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) {return LoadBalancingSessionAffinityAttributes(
   drainDuration: json['drain_duration'] != null ? (json['drain_duration'] as num).toDouble() : null,
   headers: (json['headers'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  requireAllHeaders: json.containsKey('require_all_headers') ? json['require_all_headers'] as bool : false,
-  samesite: json.containsKey('samesite') ? LoadBalancingSessionAffinityAttributesSamesite.fromJson(json['samesite'] as String) : LoadBalancingSessionAffinityAttributesSamesite.auto,
-  secure: json.containsKey('secure') ? LoadBalancingSessionAffinityAttributesSecure.fromJson(json['secure'] as String) : LoadBalancingSessionAffinityAttributesSecure.auto,
-  zeroDowntimeFailover: json.containsKey('zero_downtime_failover') ? ZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : ZeroDowntimeFailover.none,
-); }
+  requireAllHeaders: json['require_all_headers'] as bool?,
+  samesite: json['samesite'] != null ? LoadBalancingSessionAffinityAttributesSamesite.fromJson(json['samesite'] as String) : null,
+  secure: json['secure'] != null ? LoadBalancingSessionAffinityAttributesSecure.fromJson(json['secure'] as String) : null,
+  zeroDowntimeFailover: json['zero_downtime_failover'] != null ? ZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : null,
+);}
 
 /// Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.
 /// 
@@ -286,47 +286,59 @@ final double? drainDuration;
 final List<String>? headers;
 
 /// When header `session_affinity` is enabled, this option can be used to specify how HTTP headers on load balancing requests will be used. The supported values are: - `"true"`: Load balancing requests must contain *all* of the HTTP headers specified by the `headers` session affinity attribute, otherwise sessions aren't created. - `"false"`: Load balancing requests must contain *at least one* of the HTTP headers specified by the `headers` session affinity attribute, otherwise sessions aren't created.
-final bool requireAllHeaders;
+final bool? requireAllHeaders;
 
 /// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
 /// 
 /// Example: `'Auto'`
-final LoadBalancingSessionAffinityAttributesSamesite samesite;
+final LoadBalancingSessionAffinityAttributesSamesite? samesite;
 
 /// Configures the Secure attribute on session affinity cookie. Value "Always" indicates the Secure attribute will be set in the Set-Cookie header, "Never" indicates the Secure attribute will not be set, and "Auto" will set the Secure attribute depending if Always Use HTTPS is enabled.
 /// 
 /// Example: `'Auto'`
-final LoadBalancingSessionAffinityAttributesSecure secure;
+final LoadBalancingSessionAffinityAttributesSecure? secure;
 
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
 /// 
 /// Example: `'sticky'`
-final ZeroDowntimeFailover zeroDowntimeFailover;
+final ZeroDowntimeFailover? zeroDowntimeFailover;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `requireAllHeaders`, or its schema default when absent.
+bool get requireAllHeadersOrDefault => requireAllHeaders ?? false;
+
+/// The value of `samesite`, or its schema default when absent.
+LoadBalancingSessionAffinityAttributesSamesite get samesiteOrDefault => samesite ?? LoadBalancingSessionAffinityAttributesSamesite.fromJson('Auto');
+
+/// The value of `secure`, or its schema default when absent.
+LoadBalancingSessionAffinityAttributesSecure get secureOrDefault => secure ?? LoadBalancingSessionAffinityAttributesSecure.fromJson('Auto');
+
+/// The value of `zeroDowntimeFailover`, or its schema default when absent.
+ZeroDowntimeFailover get zeroDowntimeFailoverOrDefault => zeroDowntimeFailover ?? ZeroDowntimeFailover.fromJson('none');
+
+Map<String, dynamic> toJson() {return {
   'drain_duration': ?drainDuration,
   'headers': ?headers,
-  'require_all_headers': requireAllHeaders,
-  'samesite': samesite.toJson(),
-  'secure': secure.toJson(),
-  'zero_downtime_failover': zeroDowntimeFailover.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key)); } 
+  'require_all_headers': ?requireAllHeaders,
+  if (samesite != null) 'samesite': samesite?.toJson(),
+  if (secure != null) 'secure': secure?.toJson(),
+  if (zeroDowntimeFailover != null) 'zero_downtime_failover': zeroDowntimeFailover?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final headers$ = headers;
 if (headers$ != null) {
   if (headers$.toSet().length != headers$.length) { errors.add('headers: items must be unique'); }
 }
-return errors; } 
-LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite Function()? samesite, LoadBalancingSessionAffinityAttributesSecure Function()? secure, ZeroDowntimeFailover Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
+return errors;}
+LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool? Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite? Function()? samesite, LoadBalancingSessionAffinityAttributesSecure? Function()? secure, ZeroDowntimeFailover? Function()? zeroDowntimeFailover, }) {return LoadBalancingSessionAffinityAttributes(
   drainDuration: drainDuration != null ? drainDuration() : this.drainDuration,
   headers: headers != null ? headers() : this.headers,
   requireAllHeaders: requireAllHeaders != null ? requireAllHeaders() : this.requireAllHeaders,
   samesite: samesite != null ? samesite() : this.samesite,
   secure: secure != null ? secure() : this.secure,
   zeroDowntimeFailover: zeroDowntimeFailover != null ? zeroDowntimeFailover() : this.zeroDowntimeFailover,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingSessionAffinityAttributes &&
           drainDuration == other.drainDuration &&
@@ -340,4 +352,4 @@ LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDurati
 
 @override String toString() => 'LoadBalancingSessionAffinityAttributes(drainDuration: $drainDuration, headers: $headers, requireAllHeaders: $requireAllHeaders, samesite: $samesite, secure: $secure, zeroDowntimeFailover: $zeroDowntimeFailover)';
 
- }
+}

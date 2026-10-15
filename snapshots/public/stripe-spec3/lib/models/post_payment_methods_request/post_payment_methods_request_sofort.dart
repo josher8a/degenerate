@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SofortCountry {const SofortCountry();
 
-factory SofortCountry.fromJson(String json) { return switch (json) {
+factory SofortCountry.fromJson(String json) {return switch (json) {
   'AT' => at,
   'BE' => be,
   'DE' => de,
@@ -11,7 +11,7 @@ factory SofortCountry.fromJson(String json) { return switch (json) {
   'IT' => it,
   'NL' => nl,
   _ => SofortCountry$Unknown(json),
-}; }
+};}
 
 static const SofortCountry at = SofortCountry$at._();
 
@@ -28,9 +28,9 @@ static const SofortCountry nl = SofortCountry$nl._();
 static const List<SofortCountry> values = [at, be, de, es, it, nl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'AT' => 'at',
   'BE' => 'be',
   'DE' => 'de',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'IT' => 'it',
   'NL' => 'nl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SofortCountry$Unknown; } 
+bool get isUnknown {return this is SofortCountry$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() at, required W Function() be, required W Function() de, required W Function() es, required W Function() it, required W Function() nl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() at, required W Function() be, required W Function() de, required W Function() es, required W Function() it, required W Function() nl, required W Function(String value) $unknown, }) {return switch (this) {
       SofortCountry$at() => at(),
       SofortCountry$be() => be(),
       SofortCountry$de() => de(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() at, required W Function() be, required W Functi
       SofortCountry$it() => it(),
       SofortCountry$nl() => nl(),
       SofortCountry$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Function()? be, W Function()? de, W Function()? es, W Function()? it, W Function()? nl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Function()? be, W Function()? de, W Function()? es, W Function()? it, W Function()? nl, W Function(String value)? $unknown, }) {return switch (this) {
       SofortCountry$at() => at != null ? at() : orElse(value),
       SofortCountry$be() => be != null ? be() : orElse(value),
       SofortCountry$de() => de != null ? de() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
       SofortCountry$it() => it != null ? it() : orElse(value),
       SofortCountry$nl() => nl != null ? nl() : orElse(value),
       SofortCountry$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SofortCountry($value)';
 
- }
+}
 @immutable final class SofortCountry$at extends SofortCountry {const SofortCountry$at._();
 
 @override String get value => 'AT';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => 'AT'.hashCode;
 
- }
+}
 @immutable final class SofortCountry$be extends SofortCountry {const SofortCountry$be._();
 
 @override String get value => 'BE';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => 'BE'.hashCode;
 
- }
+}
 @immutable final class SofortCountry$de extends SofortCountry {const SofortCountry$de._();
 
 @override String get value => 'DE';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => 'DE'.hashCode;
 
- }
+}
 @immutable final class SofortCountry$es extends SofortCountry {const SofortCountry$es._();
 
 @override String get value => 'ES';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => 'ES'.hashCode;
 
- }
+}
 @immutable final class SofortCountry$it extends SofortCountry {const SofortCountry$it._();
 
 @override String get value => 'IT';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => 'IT'.hashCode;
 
- }
+}
 @immutable final class SofortCountry$nl extends SofortCountry {const SofortCountry$nl._();
 
 @override String get value => 'NL';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => 'NL'.hashCode;
 
- }
+}
 @immutable final class SofortCountry$Unknown extends SofortCountry {const SofortCountry$Unknown(this.value);
 
 @override final String value;
@@ -127,22 +127,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostPaymentMethodsRequestSofort {const PostPaymentMethodsRequestSofort({required this.country});
 
-factory PostPaymentMethodsRequestSofort.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSofort(
+factory PostPaymentMethodsRequestSofort.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsRequestSofort(
   country: SofortCountry.fromJson(json['country'] as String),
-); }
+);}
 
 final SofortCountry country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country'); } 
-PostPaymentMethodsRequestSofort copyWith({SofortCountry? country}) { return PostPaymentMethodsRequestSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country');}
+PostPaymentMethodsRequestSofort copyWith({SofortCountry? country}) {return PostPaymentMethodsRequestSofort(
   country: country ?? this.country,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestSofort &&
           country == other.country;
@@ -151,4 +151,4 @@ PostPaymentMethodsRequestSofort copyWith({SofortCountry? country}) { return Post
 
 @override String toString() => 'PostPaymentMethodsRequestSofort(country: $country)';
 
- }
+}

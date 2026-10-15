@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_device_type.dart';import 'package:pub_cloudflare/models/observatory_lighthouse_report/observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
 sealed class ObservatoryLighthouseState {const ObservatoryLighthouseState();
 
-factory ObservatoryLighthouseState.fromJson(String json) { return switch (json) {
+factory ObservatoryLighthouseState.fromJson(String json) {return switch (json) {
   'RUNNING' => running,
   'COMPLETE' => complete,
   'FAILED' => failed,
   _ => ObservatoryLighthouseState$Unknown(json),
-}; }
+};}
 
 static const ObservatoryLighthouseState running = ObservatoryLighthouseState$running._();
 
@@ -20,33 +20,33 @@ static const ObservatoryLighthouseState failed = ObservatoryLighthouseState$fail
 static const List<ObservatoryLighthouseState> values = [running, complete, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'RUNNING' => 'running',
   'COMPLETE' => 'complete',
   'FAILED' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ObservatoryLighthouseState$Unknown; } 
+bool get isUnknown {return this is ObservatoryLighthouseState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() running, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() running, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       ObservatoryLighthouseState$running() => running(),
       ObservatoryLighthouseState$complete() => complete(),
       ObservatoryLighthouseState$failed() => failed(),
       ObservatoryLighthouseState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? running, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? running, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       ObservatoryLighthouseState$running() => running != null ? running() : orElse(value),
       ObservatoryLighthouseState$complete() => complete != null ? complete() : orElse(value),
       ObservatoryLighthouseState$failed() => failed != null ? failed() : orElse(value),
       ObservatoryLighthouseState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ObservatoryLighthouseState($value)';
 
- }
+}
 @immutable final class ObservatoryLighthouseState$running extends ObservatoryLighthouseState {const ObservatoryLighthouseState$running._();
 
 @override String get value => 'RUNNING';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'RUNNING'.hashCode;
 
- }
+}
 @immutable final class ObservatoryLighthouseState$complete extends ObservatoryLighthouseState {const ObservatoryLighthouseState$complete._();
 
 @override String get value => 'COMPLETE';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'COMPLETE'.hashCode;
 
- }
+}
 @immutable final class ObservatoryLighthouseState$failed extends ObservatoryLighthouseState {const ObservatoryLighthouseState$failed._();
 
 @override String get value => 'FAILED';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'FAILED'.hashCode;
 
- }
+}
 @immutable final class ObservatoryLighthouseState$Unknown extends ObservatoryLighthouseState {const ObservatoryLighthouseState$Unknown(this.value);
 
 @override final String value;
@@ -83,11 +83,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The Lighthouse report.
 @immutable final class ObservatoryLighthouseReport {const ObservatoryLighthouseReport({this.cls, this.deviceType, this.error, this.fcp, this.jsonReportUrl, this.lcp, this.performanceScore, this.si, this.state, this.tbt, this.ttfb, this.tti, });
 
-factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return ObservatoryLighthouseReport(
+factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) {return ObservatoryLighthouseReport(
   cls: json['cls'] != null ? (json['cls'] as num).toDouble() : null,
   deviceType: json['deviceType'] != null ? ObservatoryDeviceType.fromJson(json['deviceType'] as String) : null,
   error: json['error'] != null ? ObservatoryLighthouseReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
@@ -100,7 +100,7 @@ factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return
   tbt: json['tbt'] != null ? (json['tbt'] as num).toDouble() : null,
   ttfb: json['ttfb'] != null ? (json['ttfb'] as num).toDouble() : null,
   tti: json['tti'] != null ? (json['tti'] as num).toDouble() : null,
-); }
+);}
 
 /// Cumulative Layout Shift.
 /// 
@@ -152,7 +152,7 @@ final double? ttfb;
 /// Example: `100`
 final double? tti;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cls': ?cls,
   if (deviceType != null) 'deviceType': deviceType?.toJson(),
   if (error != null) 'error': error?.toJson(),
@@ -165,9 +165,9 @@ Map<String, dynamic> toJson() { return {
   'tbt': ?tbt,
   'ttfb': ?ttfb,
   'tti': ?tti,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cls', 'deviceType', 'error', 'fcp', 'jsonReportUrl', 'lcp', 'performanceScore', 'si', 'state', 'tbt', 'ttfb', 'tti'}.contains(key)); } 
-ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDeviceType? Function()? deviceType, ObservatoryLighthouseReportError? Function()? error, double? Function()? fcp, String? Function()? jsonReportUrl, double? Function()? lcp, double? Function()? performanceScore, double? Function()? si, ObservatoryLighthouseState? Function()? state, double? Function()? tbt, double? Function()? ttfb, double? Function()? tti, }) { return ObservatoryLighthouseReport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cls', 'deviceType', 'error', 'fcp', 'jsonReportUrl', 'lcp', 'performanceScore', 'si', 'state', 'tbt', 'ttfb', 'tti'}.contains(key));}
+ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDeviceType? Function()? deviceType, ObservatoryLighthouseReportError? Function()? error, double? Function()? fcp, String? Function()? jsonReportUrl, double? Function()? lcp, double? Function()? performanceScore, double? Function()? si, ObservatoryLighthouseState? Function()? state, double? Function()? tbt, double? Function()? ttfb, double? Function()? tti, }) {return ObservatoryLighthouseReport(
   cls: cls != null ? cls() : this.cls,
   deviceType: deviceType != null ? deviceType() : this.deviceType,
   error: error != null ? error() : this.error,
@@ -180,7 +180,7 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
   tbt: tbt != null ? tbt() : this.tbt,
   ttfb: ttfb != null ? ttfb() : this.ttfb,
   tti: tti != null ? tti() : this.tti,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryLighthouseReport &&
           cls == other.cls &&
@@ -200,4 +200,4 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
 
 @override String toString() => 'ObservatoryLighthouseReport(\n  cls: $cls,\n  deviceType: $deviceType,\n  error: $error,\n  fcp: $fcp,\n  jsonReportUrl: $jsonReportUrl,\n  lcp: $lcp,\n  performanceScore: $performanceScore,\n  si: $si,\n  state: $state,\n  tbt: $tbt,\n  ttfb: $ttfb,\n  tti: $tti,\n)';
 
- }
+}

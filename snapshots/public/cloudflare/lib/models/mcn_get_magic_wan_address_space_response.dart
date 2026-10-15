@@ -1,27 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McnGetMagicWanAddressSpaceResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_magic_wan_address_space.dart';@immutable final class McnGetMagicWanAddressSpaceResponse {const McnGetMagicWanAddressSpaceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_magic_wan_address_space.dart';@immutable final class McnGetMagicWanAddressSpaceResponse {const McnGetMagicWanAddressSpaceResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory McnGetMagicWanAddressSpaceResponse.fromJson(Map<String, dynamic> json) { return McnGetMagicWanAddressSpaceResponse(
-  result: json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory McnGetMagicWanAddressSpaceResponse.fromJson(Map<String, dynamic> json) {return McnGetMagicWanAddressSpaceResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
+  result: McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>),
+);}
 
-final McnMagicWanAddressSpace? result;
+final List<McnError> messages;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-McnGetMagicWanAddressSpaceResponse copyWith({McnMagicWanAddressSpace? Function()? result}) { return McnGetMagicWanAddressSpaceResponse(
-  result: result != null ? result() : this.result,
-); } 
+final bool success;
+
+final List<McnError> errors;
+
+final McnMagicWanAddressSpace result;
+
+Map<String, dynamic> toJson() {return {
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result');}
+McnGetMagicWanAddressSpaceResponse copyWith({List<McnError>? messages, bool? success, List<McnError>? errors, McnMagicWanAddressSpace? result, }) {return McnGetMagicWanAddressSpaceResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnGetMagicWanAddressSpaceResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           result == other.result;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result);
 
-@override String toString() => 'McnGetMagicWanAddressSpaceResponse(result: $result)';
+@override String toString() => 'McnGetMagicWanAddressSpaceResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

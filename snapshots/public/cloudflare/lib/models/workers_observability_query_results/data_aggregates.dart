@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataAggregates {const DataAggregates({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, this.bin, });
 
-factory DataAggregates.fromJson(Map<String, dynamic> json) { return DataAggregates(
+factory DataAggregates.fromJson(Map<String, dynamic> json) {return DataAggregates(
   count: (json['_count'] as num).toInt(),
   firstSeen: json['_firstSeen'] as String,
   interval: (json['_interval'] as num).toInt(),
   lastSeen: json['_lastSeen'] as String,
   bin: json['bin'] as Map<String, dynamic>?,
-); }
+);}
 
 final int count;
 
@@ -21,29 +21,29 @@ final String lastSeen;
 
 final Map<String,dynamic>? bin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_count': count,
   '_firstSeen': firstSeen,
   '_interval': interval,
   '_lastSeen': lastSeen,
   'bin': ?bin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_count') && json['_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_count') && json['_count'] is num &&
       json.containsKey('_firstSeen') && json['_firstSeen'] is String &&
       json.containsKey('_interval') && json['_interval'] is num &&
-      json.containsKey('_lastSeen') && json['_lastSeen'] is String; } 
+      json.containsKey('_lastSeen') && json['_lastSeen'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (count < 0) { errors.add('count: must be >= 0'); }
 if (interval < 0) { errors.add('interval: must be >= 0'); }
-return errors; } 
-DataAggregates copyWith({int? count, String? firstSeen, int? interval, String? lastSeen, Map<String, dynamic>? Function()? bin, }) { return DataAggregates(
+return errors;}
+DataAggregates copyWith({int? count, String? firstSeen, int? interval, String? lastSeen, Map<String, dynamic>? Function()? bin, }) {return DataAggregates(
   count: count ?? this.count,
   firstSeen: firstSeen ?? this.firstSeen,
   interval: interval ?? this.interval,
   lastSeen: lastSeen ?? this.lastSeen,
   bin: bin != null ? bin() : this.bin,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DataAggregates &&
           count == other.count &&
@@ -56,4 +56,4 @@ DataAggregates copyWith({int? count, String? firstSeen, int? interval, String? l
 
 @override String toString() => 'DataAggregates(count: $count, firstSeen: $firstSeen, interval: $interval, lastSeen: $lastSeen, bin: $bin)';
 
- }
+}

@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesH2Prioritization
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_h2_prioritization_value.dart';/// HTTP/2 Edge Prioritization optimises the delivery of resources served through HTTP/2 to improve page load performance. It also supports fine control of content delivery when used in conjunction with Workers.
+@immutable final class ZonesH2Prioritization {const ZonesH2Prioritization({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
+
+factory ZonesH2Prioritization.fromJson(Map<String, dynamic> json) {return ZonesH2Prioritization(
+  editable: json['editable'] as bool?,
+  id: json['id'],
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
+  value: ZonesH2PrioritizationValue.fromJson(json['value'] as String),
+);}
+
+/// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+final bool? editable;
+
+/// ID of the zone setting.
+/// 
+/// Example: `'h2_prioritization'`
+final dynamic id;
+
+/// last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
+final Omittable<DateTime?> modifiedOn;
+
+final ZonesH2PrioritizationValue value;
+
+/// The value of `editable`, or its schema default when absent.
+bool get editableOrDefault => editable ?? true;
+
+Map<String, dynamic> toJson() {return {
+  'editable': ?editable,
+  'id': id,
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
+  'value': value.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesH2Prioritization copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesH2PrioritizationValue? value, }) {return ZonesH2Prioritization(
+  editable: editable != null ? editable() : this.editable,
+  id: id != null ? id() : this.id,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
+  value: value ?? this.value,
+);}
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is ZonesH2Prioritization &&
+          editable == other.editable &&
+          id == other.id &&
+          modifiedOn == other.modifiedOn &&
+          value == other.value;
+
+@override int get hashCode => Object.hash(editable, id, modifiedOn, value);
+
+@override String toString() => 'ZonesH2Prioritization(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
+
+}

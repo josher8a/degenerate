@@ -14,6 +14,6 @@ static const defaultBaseUrl = 'https://api.stripe.com/';
 
 late final DefaultApi $default = DefaultApi(_config);
 
-PubStripeSpec3Api withBasicAuth({required String username, required String password, }) { return PubStripeSpec3Api(PubStripeSpec3Security.applyBasicAuth(_config, username: username, password: password)); } 
-PubStripeSpec3Api withBearerAuth(String token) { return PubStripeSpec3Api(PubStripeSpec3Security.applyBearerAuth(_config, token)); } 
- }
+PubStripeSpec3Api withBasicAuth({required String username, required String password, }) {return PubStripeSpec3Api(PubStripeSpec3Security.applyBasicAuth(_config, username: username, password: password));}
+PubStripeSpec3Api withBearerAuth(String token) {return PubStripeSpec3Api(PubStripeSpec3Security.applyBearerAuth(_config, token));}
+}

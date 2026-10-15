@@ -12,7 +12,7 @@ final class Api20100401FeedbackApi with ApiExecutor {const Api20100401FeedbackAp
 /// Create Message Feedback to confirm a tracked user action was performed by the recipient of the associated Message
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Feedback.json`
-Future<ApiResult<AccountMessageMessageFeedback, Never>> createMessageFeedback({required String accountSid, required String messageSid, CreateMessageFeedbackRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountMessageMessageFeedback, Never>> createMessageFeedback({required String accountSid, required String messageSid, CreateMessageFeedbackRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -26,11 +26,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountMessageMessageFeedback.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

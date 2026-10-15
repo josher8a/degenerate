@@ -5,26 +5,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionAllowedToolsChoice {const ChatCompletionAllowedToolsChoice({required this.type, required this.allowedTools, });
 
-factory ChatCompletionAllowedToolsChoice.fromJson(Map<String, dynamic> json) { return ChatCompletionAllowedToolsChoice(
+factory ChatCompletionAllowedToolsChoice.fromJson(Map<String, dynamic> json) {return ChatCompletionAllowedToolsChoice(
   type: ChatCompletionAllowedToolsChoiceType.fromJson(json['type'] as String),
   allowedTools: ChatCompletionAllowedTools.fromJson(json['allowed_tools'] as Map<String, dynamic>),
-); }
+);}
 
 /// Allowed tool configuration type. Always `allowed_tools`.
 final ChatCompletionAllowedToolsChoiceType type;
 
 final ChatCompletionAllowedTools allowedTools;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'allowed_tools': allowedTools.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'allowed_tools' &&
-      json.containsKey('allowed_tools'); } 
-ChatCompletionAllowedToolsChoice copyWith({ChatCompletionAllowedToolsChoiceType? type, ChatCompletionAllowedTools? allowedTools, }) { return ChatCompletionAllowedToolsChoice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'allowed_tools' &&
+      json.containsKey('allowed_tools');}
+ChatCompletionAllowedToolsChoice copyWith({ChatCompletionAllowedToolsChoiceType? type, ChatCompletionAllowedTools? allowedTools, }) {return ChatCompletionAllowedToolsChoice(
   type: type ?? this.type,
   allowedTools: allowedTools ?? this.allowedTools,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionAllowedToolsChoice &&
           type == other.type &&
@@ -34,4 +34,4 @@ ChatCompletionAllowedToolsChoice copyWith({ChatCompletionAllowedToolsChoiceType?
 
 @override String toString() => 'ChatCompletionAllowedToolsChoice(type: $type, allowedTools: $allowedTools)';
 
- }
+}

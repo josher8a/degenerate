@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define an expression to search using full-text search.
 @immutable final class Needle {const Needle({required this.value, this.isRegex, this.matchCase, });
 
-factory Needle.fromJson(Map<String, dynamic> json) { return Needle(
+factory Needle.fromJson(Map<String, dynamic> json) {return Needle(
   isRegex: json['isRegex'] as bool?,
   matchCase: json['matchCase'] as bool?,
   value: json['value'],
-); }
+);}
 
 final bool? isRegex;
 
@@ -17,17 +17,17 @@ final bool? matchCase;
 /// One of: String, double, bool
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'isRegex': ?isRegex,
   'matchCase': ?matchCase,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-Needle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dynamic value, }) { return Needle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+Needle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dynamic value, }) {return Needle(
   isRegex: isRegex != null ? isRegex() : this.isRegex,
   matchCase: matchCase != null ? matchCase() : this.matchCase,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Needle &&
           isRegex == other.isRegex &&
@@ -38,4 +38,4 @@ Needle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dynamic
 
 @override String toString() => 'Needle(isRegex: $isRegex, matchCase: $matchCase, value: $value)';
 
- }
+}

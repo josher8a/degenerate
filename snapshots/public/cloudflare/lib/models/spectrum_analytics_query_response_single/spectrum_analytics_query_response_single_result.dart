@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_column.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query.dart';import 'package:pub_cloudflare/models/spectrum_analytics_timestamp.dart';@immutable final class SpectrumAnalyticsQueryResponseSingleResult {const SpectrumAnalyticsQueryResponseSingleResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, this.timeIntervals, });
 
-factory SpectrumAnalyticsQueryResponseSingleResult.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQueryResponseSingleResult(
+factory SpectrumAnalyticsQueryResponseSingleResult.fromJson(Map<String, dynamic> json) {return SpectrumAnalyticsQueryResponseSingleResult(
   data: (json['data'] as List<dynamic>).map((e) => SpectrumAnalyticsColumn.fromJson(e as Map<String, dynamic>)).toList(),
   dataLag: (json['data_lag'] as num).toDouble(),
   max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toDouble())),
@@ -12,7 +12,7 @@ factory SpectrumAnalyticsQueryResponseSingleResult.fromJson(Map<String, dynamic>
   rows: (json['rows'] as num).toDouble(),
   timeIntervals: (json['time_intervals'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => SpectrumAnalyticsTimestamp.fromJson(e as String)).toList()).toList(),
   totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toDouble())),
-); }
+);}
 
 /// List of columns returned by the analytics query.
 final List<SpectrumAnalyticsColumn> data;
@@ -41,7 +41,7 @@ final List<List<SpectrumAnalyticsTimestamp>>? timeIntervals;
 /// Total result for each selected metrics across all data.
 final Map<String,double> totals;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'data_lag': dataLag,
   'max': max,
@@ -50,20 +50,20 @@ Map<String, dynamic> toJson() { return {
   'rows': rows,
   if (timeIntervals != null) 'time_intervals': timeIntervals?.map((e) => e.map((e) => e.toJson()).toList()).toList(),
   'totals': totals,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('data_lag') && json['data_lag'] is num &&
       json.containsKey('max') &&
       json.containsKey('min') &&
       json.containsKey('query') &&
       json.containsKey('rows') && json['rows'] is num &&
-      json.containsKey('totals'); } 
+      json.containsKey('totals');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (dataLag < 0) { errors.add('dataLag: must be >= 0'); }
 if (rows < 0) { errors.add('rows: must be >= 0'); }
-return errors; } 
-SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColumn>? data, double? dataLag, Map<String,double>? max, Map<String,double>? min, SpectrumAnalyticsQuery? query, double? rows, List<List<SpectrumAnalyticsTimestamp>>? Function()? timeIntervals, Map<String,double>? totals, }) { return SpectrumAnalyticsQueryResponseSingleResult(
+return errors;}
+SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColumn>? data, double? dataLag, Map<String,double>? max, Map<String,double>? min, SpectrumAnalyticsQuery? query, double? rows, List<List<SpectrumAnalyticsTimestamp>>? Function()? timeIntervals, Map<String,double>? totals, }) {return SpectrumAnalyticsQueryResponseSingleResult(
   data: data ?? this.data,
   dataLag: dataLag ?? this.dataLag,
   max: max ?? this.max,
@@ -72,7 +72,7 @@ SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColum
   rows: rows ?? this.rows,
   timeIntervals: timeIntervals != null ? timeIntervals() : this.timeIntervals,
   totals: totals ?? this.totals,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsQueryResponseSingleResult &&
           listEquals(data, other.data) &&
@@ -88,4 +88,4 @@ SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColum
 
 @override String toString() => 'SpectrumAnalyticsQueryResponseSingleResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, timeIntervals: $timeIntervals, totals: $totals)';
 
- }
+}

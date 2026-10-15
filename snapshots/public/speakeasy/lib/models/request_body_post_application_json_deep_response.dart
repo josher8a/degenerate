@@ -9,19 +9,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class RequestBodyPostApplicationJsonDeepResponse {const RequestBodyPostApplicationJsonDeepResponse({this.json});
 
-factory RequestBodyPostApplicationJsonDeepResponse.fromJson(Map<String, dynamic> json) { return RequestBodyPostApplicationJsonDeepResponse(
+factory RequestBodyPostApplicationJsonDeepResponse.fromJson(Map<String, dynamic> json) {return RequestBodyPostApplicationJsonDeepResponse(
   json: json['json'] != null ? DeepObject.fromJson(json['json'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DeepObject? json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (json != null) 'json': json?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json'}.contains(key)); } 
-RequestBodyPostApplicationJsonDeepResponse copyWith({DeepObject? Function()? json}) { return RequestBodyPostApplicationJsonDeepResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'json'}.contains(key));}
+RequestBodyPostApplicationJsonDeepResponse copyWith({DeepObject? Function()? json}) {return RequestBodyPostApplicationJsonDeepResponse(
   json: json != null ? json() : this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPostApplicationJsonDeepResponse &&
           json == other.json;
@@ -30,4 +30,4 @@ RequestBodyPostApplicationJsonDeepResponse copyWith({DeepObject? Function()? jso
 
 @override String toString() => 'RequestBodyPostApplicationJsonDeepResponse(json: $json)';
 
- }
+}

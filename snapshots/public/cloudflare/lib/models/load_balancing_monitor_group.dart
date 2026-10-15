@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_id.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_member.dart';@immutable final class LoadBalancingMonitorGroup {const LoadBalancingMonitorGroup({required this.description, required this.id, required this.members, this.createdAt, this.updatedAt, });
 
-factory LoadBalancingMonitorGroup.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitorGroup(
+factory LoadBalancingMonitorGroup.fromJson(Map<String, dynamic> json) {return LoadBalancingMonitorGroup(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String,
   id: LoadBalancingMonitorGroupId.fromJson(json['id'] as String),
   members: (json['members'] as List<dynamic>).map((e) => LoadBalancingMonitorGroupMember.fromJson(e as Map<String, dynamic>)).toList(),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The timestamp of when the monitor group was created
 /// 
@@ -31,23 +31,23 @@ final List<LoadBalancingMonitorGroupMember> members;
 /// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'description': description,
   'id': id.toJson(),
   'members': members.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') &&
-      json.containsKey('members'); } 
-LoadBalancingMonitorGroup copyWith({DateTime? Function()? createdAt, String? description, LoadBalancingMonitorGroupId? id, List<LoadBalancingMonitorGroupMember>? members, DateTime? Function()? updatedAt, }) { return LoadBalancingMonitorGroup(
+      json.containsKey('members');}
+LoadBalancingMonitorGroup copyWith({DateTime? Function()? createdAt, String? description, LoadBalancingMonitorGroupId? id, List<LoadBalancingMonitorGroupMember>? members, DateTime? Function()? updatedAt, }) {return LoadBalancingMonitorGroup(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
   id: id ?? this.id,
   members: members ?? this.members,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorGroup &&
           createdAt == other.createdAt &&
@@ -60,4 +60,4 @@ LoadBalancingMonitorGroup copyWith({DateTime? Function()? createdAt, String? des
 
 @override String toString() => 'LoadBalancingMonitorGroup(createdAt: $createdAt, description: $description, id: $id, members: $members, updatedAt: $updatedAt)';
 
- }
+}

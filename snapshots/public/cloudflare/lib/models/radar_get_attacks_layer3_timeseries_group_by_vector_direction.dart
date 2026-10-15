@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
 sealed class RadarGetAttacksLayer3TimeseriesGroupByVectorDirection {const RadarGetAttacksLayer3TimeseriesGroupByVectorDirection();
 
-factory RadarGetAttacksLayer3TimeseriesGroupByVectorDirection.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByVectorDirection.fromJson(String json) {return switch (json) {
   'ORIGIN' => origin,
   'TARGET' => target,
   _ => RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByVectorDirection origin = RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$origin._();
 
@@ -17,30 +17,30 @@ static const RadarGetAttacksLayer3TimeseriesGroupByVectorDirection target = Rada
 static const List<RadarGetAttacksLayer3TimeseriesGroupByVectorDirection> values = [origin, target];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ORIGIN' => 'origin',
   'TARGET' => 'target',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() origin, required W Function() target, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() origin, required W Function() target, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$origin() => origin(),
       RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$target() => target(),
       RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, W Function()? target, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, W Function()? target, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$origin() => origin != null ? origin() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$target() => target != null ? target() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVectorDirection($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$origin extends RadarGetAttacksLayer3TimeseriesGroupByVectorDirection {const RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$origin._();
 
 @override String get value => 'ORIGIN';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, 
 
 @override int get hashCode => 'ORIGIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$target extends RadarGetAttacksLayer3TimeseriesGroupByVectorDirection {const RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$target._();
 
 @override String get value => 'TARGET';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, 
 
 @override int get hashCode => 'TARGET'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown extends RadarGetAttacksLayer3TimeseriesGroupByVectorDirection {const RadarGetAttacksLayer3TimeseriesGroupByVectorDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

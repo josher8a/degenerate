@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType();
 
-factory PagesSecretTextEnvVarType.fromJson(String json) { return switch (json) {
+factory PagesSecretTextEnvVarType.fromJson(String json) {return switch (json) {
   'secret_text' => secretText,
   _ => PagesSecretTextEnvVarType$Unknown(json),
-}; }
+};}
 
 static const PagesSecretTextEnvVarType secretText = PagesSecretTextEnvVarType$secretText._();
 
 static const List<PagesSecretTextEnvVarType> values = [secretText];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'secret_text' => 'secretText',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesSecretTextEnvVarType$Unknown; } 
+bool get isUnknown {return this is PagesSecretTextEnvVarType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() secretText, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() secretText, required W Function(String value) $unknown, }) {return switch (this) {
       PagesSecretTextEnvVarType$secretText() => secretText(),
       PagesSecretTextEnvVarType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? secretText, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? secretText, W Function(String value)? $unknown, }) {return switch (this) {
       PagesSecretTextEnvVarType$secretText() => secretText != null ? secretText() : orElse(value),
       PagesSecretTextEnvVarType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PagesSecretTextEnvVarType($value)';
 
- }
+}
 @immutable final class PagesSecretTextEnvVarType$secretText extends PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType$secretText._();
 
 @override String get value => 'secret_text';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? secretTe
 
 @override int get hashCode => 'secret_text'.hashCode;
 
- }
+}
 @immutable final class PagesSecretTextEnvVarType$Unknown extends PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType$Unknown(this.value);
 
 @override final String value;
@@ -52,7 +52,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? secretTe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An encrypted environment variable.
 /// 
 /// Example:
@@ -64,26 +64,26 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? secretTe
 /// ```
 @immutable final class PagesSecretTextEnvVar {const PagesSecretTextEnvVar({required this.type, required this.value, });
 
-factory PagesSecretTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesSecretTextEnvVar(
+factory PagesSecretTextEnvVar.fromJson(Map<String, dynamic> json) {return PagesSecretTextEnvVar(
   type: PagesSecretTextEnvVarType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final PagesSecretTextEnvVarType type;
 
 /// Secret value.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PagesSecretTextEnvVar copyWith({PagesSecretTextEnvVarType? type, String? value, }) { return PagesSecretTextEnvVar(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PagesSecretTextEnvVar copyWith({PagesSecretTextEnvVarType? type, String? value, }) {return PagesSecretTextEnvVar(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesSecretTextEnvVar &&
           type == other.type &&
@@ -93,4 +93,4 @@ PagesSecretTextEnvVar copyWith({PagesSecretTextEnvVarType? type, String? value, 
 
 @override String toString() => 'PagesSecretTextEnvVar(type: $type, value: $value)';
 
- }
+}

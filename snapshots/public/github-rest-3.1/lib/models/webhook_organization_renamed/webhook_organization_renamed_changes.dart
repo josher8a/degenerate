@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_renamed/webhook_organization_renamed_changes_login.dart';@immutable final class WebhookOrganizationRenamedChanges {const WebhookOrganizationRenamedChanges({this.login});
 
-factory WebhookOrganizationRenamedChanges.fromJson(Map<String, dynamic> json) { return WebhookOrganizationRenamedChanges(
+factory WebhookOrganizationRenamedChanges.fromJson(Map<String, dynamic> json) {return WebhookOrganizationRenamedChanges(
   login: json['login'] != null ? WebhookOrganizationRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookOrganizationRenamedChangesLogin? login;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (login != null) 'login': login?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login'}.contains(key)); } 
-WebhookOrganizationRenamedChanges copyWith({WebhookOrganizationRenamedChangesLogin? Function()? login}) { return WebhookOrganizationRenamedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'login'}.contains(key));}
+WebhookOrganizationRenamedChanges copyWith({WebhookOrganizationRenamedChangesLogin? Function()? login}) {return WebhookOrganizationRenamedChanges(
   login: login != null ? login() : this.login,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookOrganizationRenamedChanges &&
           login == other.login;
@@ -24,4 +24,4 @@ WebhookOrganizationRenamedChanges copyWith({WebhookOrganizationRenamedChangesLog
 
 @override String toString() => 'WebhookOrganizationRenamedChanges(login: $login)';
 
- }
+}

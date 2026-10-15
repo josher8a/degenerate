@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/attached_volume.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_image.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_address.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_condition.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_config_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_daemon_endpoints.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_features.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_runtime_handler.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_system_info.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// NodeStatus is information about the current status of a node.
 @immutable final class NodeStatus {const NodeStatus({this.addresses, this.allocatable, this.capacity, this.conditions, this.config, this.daemonEndpoints, this.declaredFeatures, this.features, this.images, this.nodeInfo, this.phase, this.runtimeHandlers, this.volumesAttached, this.volumesInUse, });
 
-factory NodeStatus.fromJson(Map<String, dynamic> json) { return NodeStatus(
+factory NodeStatus.fromJson(Map<String, dynamic> json) {return NodeStatus(
   addresses: (json['addresses'] as List<dynamic>?)?.map((e) => NodeAddress.fromJson(e as Map<String, dynamic>)).toList(),
   allocatable: (json['allocatable'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
   capacity: (json['capacity'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
@@ -19,7 +19,7 @@ factory NodeStatus.fromJson(Map<String, dynamic> json) { return NodeStatus(
   runtimeHandlers: (json['runtimeHandlers'] as List<dynamic>?)?.map((e) => NodeRuntimeHandler.fromJson(e as Map<String, dynamic>)).toList(),
   volumesAttached: (json['volumesAttached'] as List<dynamic>?)?.map((e) => AttachedVolume.fromJson(e as Map<String, dynamic>)).toList(),
   volumesInUse: (json['volumesInUse'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// List of addresses reachable to the node. Queried from cloud provider, if available. More info: https://kubernetes.io/docs/reference/node/node-status/#addresses Note: This field is declared as mergeable, but the merge key is not sufficiently unique, which can cause data corruption when it is merged. Callers should instead use a full-replacement patch. See https://pr.k8s.io/79391 for an example. Consumers should assume that addresses can change during the lifetime of a Node. However, there are some exceptions where this may not be possible, such as Pods that inherit a Node's address in its own status or consumers of the downward API (status.hostIP).
 final List<NodeAddress>? addresses;
@@ -63,7 +63,7 @@ final List<AttachedVolume>? volumesAttached;
 /// List of attachable volumes in use (mounted) by the node.
 final List<String>? volumesInUse;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addresses != null) 'addresses': addresses?.map((e) => e.toJson()).toList(),
   if (allocatable != null) 'allocatable': allocatable?.map((k, v) => MapEntry(k, v.toJson())),
   if (capacity != null) 'capacity': capacity?.map((k, v) => MapEntry(k, v.toJson())),
@@ -78,9 +78,9 @@ Map<String, dynamic> toJson() { return {
   if (runtimeHandlers != null) 'runtimeHandlers': runtimeHandlers?.map((e) => e.toJson()).toList(),
   if (volumesAttached != null) 'volumesAttached': volumesAttached?.map((e) => e.toJson()).toList(),
   'volumesInUse': ?volumesInUse,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'addresses', 'allocatable', 'capacity', 'conditions', 'config', 'daemonEndpoints', 'declaredFeatures', 'features', 'images', 'nodeInfo', 'phase', 'runtimeHandlers', 'volumesAttached', 'volumesInUse'}.contains(key)); } 
-NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, ResourceQuantity>? Function()? allocatable, Map<String, ResourceQuantity>? Function()? capacity, List<NodeCondition>? Function()? conditions, NodeConfigStatus? Function()? config, NodeDaemonEndpoints? Function()? daemonEndpoints, List<String>? Function()? declaredFeatures, NodeFeatures? Function()? features, List<ContainerImage>? Function()? images, NodeSystemInfo? Function()? nodeInfo, String? Function()? phase, List<NodeRuntimeHandler>? Function()? runtimeHandlers, List<AttachedVolume>? Function()? volumesAttached, List<String>? Function()? volumesInUse, }) { return NodeStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'addresses', 'allocatable', 'capacity', 'conditions', 'config', 'daemonEndpoints', 'declaredFeatures', 'features', 'images', 'nodeInfo', 'phase', 'runtimeHandlers', 'volumesAttached', 'volumesInUse'}.contains(key));}
+NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, ResourceQuantity>? Function()? allocatable, Map<String, ResourceQuantity>? Function()? capacity, List<NodeCondition>? Function()? conditions, NodeConfigStatus? Function()? config, NodeDaemonEndpoints? Function()? daemonEndpoints, List<String>? Function()? declaredFeatures, NodeFeatures? Function()? features, List<ContainerImage>? Function()? images, NodeSystemInfo? Function()? nodeInfo, String? Function()? phase, List<NodeRuntimeHandler>? Function()? runtimeHandlers, List<AttachedVolume>? Function()? volumesAttached, List<String>? Function()? volumesInUse, }) {return NodeStatus(
   addresses: addresses != null ? addresses() : this.addresses,
   allocatable: allocatable != null ? allocatable() : this.allocatable,
   capacity: capacity != null ? capacity() : this.capacity,
@@ -95,7 +95,7 @@ NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, Resou
   runtimeHandlers: runtimeHandlers != null ? runtimeHandlers() : this.runtimeHandlers,
   volumesAttached: volumesAttached != null ? volumesAttached() : this.volumesAttached,
   volumesInUse: volumesInUse != null ? volumesInUse() : this.volumesInUse,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NodeStatus &&
           listEquals(addresses, other.addresses) &&
@@ -117,4 +117,4 @@ NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, Resou
 
 @override String toString() => 'NodeStatus(\n  addresses: $addresses,\n  allocatable: $allocatable,\n  capacity: $capacity,\n  conditions: $conditions,\n  config: $config,\n  daemonEndpoints: $daemonEndpoints,\n  declaredFeatures: $declaredFeatures,\n  features: $features,\n  images: $images,\n  nodeInfo: $nodeInfo,\n  phase: $phase,\n  runtimeHandlers: $runtimeHandlers,\n  volumesAttached: $volumesAttached,\n  volumesInUse: $volumesInUse,\n)';
 
- }
+}

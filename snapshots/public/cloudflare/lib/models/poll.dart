@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you've finished uploading to tell the D1 to start consuming it
 sealed class PollAction {const PollAction();
 
-factory PollAction.fromJson(String json) { return switch (json) {
+factory PollAction.fromJson(String json) {return switch (json) {
   'poll' => poll,
   _ => PollAction$Unknown(json),
-}; }
+};}
 
 static const PollAction poll = PollAction$poll._();
 
 static const List<PollAction> values = [poll];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'poll' => 'poll',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PollAction$Unknown; } 
+bool get isUnknown {return this is PollAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() poll, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() poll, required W Function(String value) $unknown, }) {return switch (this) {
       PollAction$poll() => poll(),
       PollAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? poll, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? poll, W Function(String value)? $unknown, }) {return switch (this) {
       PollAction$poll() => poll != null ? poll() : orElse(value),
       PollAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PollAction($value)';
 
- }
+}
 @immutable final class PollAction$poll extends PollAction {const PollAction$poll._();
 
 @override String get value => 'poll';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? poll, W 
 
 @override int get hashCode => 'poll'.hashCode;
 
- }
+}
 @immutable final class PollAction$Unknown extends PollAction {const PollAction$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? poll, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Poll {const Poll({required this.action, required this.currentBookmark, });
 
-factory Poll.fromJson(Map<String, dynamic> json) { return Poll(
+factory Poll.fromJson(Map<String, dynamic> json) {return Poll(
   action: PollAction.fromJson(json['action'] as String),
   currentBookmark: json['current_bookmark'] as String,
-); }
+);}
 
 /// Indicates you've finished uploading to tell the D1 to start consuming it
 final PollAction action;
@@ -67,16 +67,16 @@ final PollAction action;
 /// This identifies the currently-running import, checking its status.
 final String currentBookmark;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'current_bookmark': currentBookmark,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'poll' &&
-      json.containsKey('current_bookmark') && json['current_bookmark'] is String; } 
-Poll copyWith({PollAction? action, String? currentBookmark, }) { return Poll(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] == 'poll' &&
+      json.containsKey('current_bookmark') && json['current_bookmark'] is String;}
+Poll copyWith({PollAction? action, String? currentBookmark, }) {return Poll(
   action: action ?? this.action,
   currentBookmark: currentBookmark ?? this.currentBookmark,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Poll &&
           action == other.action &&
@@ -86,4 +86,4 @@ Poll copyWith({PollAction? action, String? currentBookmark, }) { return Poll(
 
 @override String toString() => 'Poll(action: $action, currentBookmark: $currentBookmark)';
 
- }
+}

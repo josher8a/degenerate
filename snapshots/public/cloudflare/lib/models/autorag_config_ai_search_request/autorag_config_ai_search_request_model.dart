@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';sealed class ModelVariant1 {const ModelVariant1();
 
-factory ModelVariant1.fromJson(String json) { return switch (json) {
+factory ModelVariant1.fromJson(String json) {return switch (json) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
   '@cf/meta/llama-3.1-8b-instruct-fast' => cfMetaLlama318bInstructFast,
   '@cf/meta/llama-3.1-8b-instruct-fp8' => cfMetaLlama318bInstructFp8,
@@ -30,7 +30,7 @@ factory ModelVariant1.fromJson(String json) { return switch (json) {
   'openai/gpt-5-mini' => openaiGpt5Mini,
   'openai/gpt-5-nano' => openaiGpt5Nano,
   _ => ModelVariant1$Unknown(json),
-}; }
+};}
 
 static const ModelVariant1 cfMetaLlama3370bInstructFp8Fast = ModelVariant1$cfMetaLlama3370bInstructFp8Fast._();
 
@@ -85,9 +85,9 @@ static const ModelVariant1 openaiGpt5Nano = ModelVariant1$openaiGpt5Nano._();
 static const List<ModelVariant1> values = [cfMetaLlama3370bInstructFp8Fast, cfMetaLlama318bInstructFast, cfMetaLlama318bInstructFp8, cfMetaLlama4Scout17b16eInstruct, cfQwenQwen330bA3bFp8, cfDeepseekAiDeepseekR1DistillQwen32b, cfMoonshotaiKimiK2Instruct, anthropicClaude37Sonnet, anthropicClaudeSonnet4, anthropicClaudeOpus4, anthropicClaude35Haiku, cerebrasQwen3235bA22bInstruct, cerebrasQwen3235bA22bThinking, cerebrasLlama3370b, cerebrasLlama4Maverick17b128eInstruct, cerebrasLlama4Scout17b16eInstruct, cerebrasGptOss120b, googleAiStudioGemini25Flash, googleAiStudioGemini25Pro, grokGrok4, groqLlama3370bVersatile, groqLlama318bInstant, openaiGpt5, openaiGpt5Mini, openaiGpt5Nano];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => 'cfMetaLlama3370bInstructFp8Fast',
   '@cf/meta/llama-3.1-8b-instruct-fast' => 'cfMetaLlama318bInstructFast',
   '@cf/meta/llama-3.1-8b-instruct-fp8' => 'cfMetaLlama318bInstructFp8',
@@ -114,11 +114,11 @@ String get name { return switch (value) {
   'openai/gpt-5-mini' => 'openaiGpt5Mini',
   'openai/gpt-5-nano' => 'openaiGpt5Nano',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ModelVariant1$Unknown; } 
+bool get isUnknown {return this is ModelVariant1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cfMetaLlama3370bInstructFp8Fast, required W Function() cfMetaLlama318bInstructFast, required W Function() cfMetaLlama318bInstructFp8, required W Function() cfMetaLlama4Scout17b16eInstruct, required W Function() cfQwenQwen330bA3bFp8, required W Function() cfDeepseekAiDeepseekR1DistillQwen32b, required W Function() cfMoonshotaiKimiK2Instruct, required W Function() anthropicClaude37Sonnet, required W Function() anthropicClaudeSonnet4, required W Function() anthropicClaudeOpus4, required W Function() anthropicClaude35Haiku, required W Function() cerebrasQwen3235bA22bInstruct, required W Function() cerebrasQwen3235bA22bThinking, required W Function() cerebrasLlama3370b, required W Function() cerebrasLlama4Maverick17b128eInstruct, required W Function() cerebrasLlama4Scout17b16eInstruct, required W Function() cerebrasGptOss120b, required W Function() googleAiStudioGemini25Flash, required W Function() googleAiStudioGemini25Pro, required W Function() grokGrok4, required W Function() groqLlama3370bVersatile, required W Function() groqLlama318bInstant, required W Function() openaiGpt5, required W Function() openaiGpt5Mini, required W Function() openaiGpt5Nano, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cfMetaLlama3370bInstructFp8Fast, required W Function() cfMetaLlama318bInstructFast, required W Function() cfMetaLlama318bInstructFp8, required W Function() cfMetaLlama4Scout17b16eInstruct, required W Function() cfQwenQwen330bA3bFp8, required W Function() cfDeepseekAiDeepseekR1DistillQwen32b, required W Function() cfMoonshotaiKimiK2Instruct, required W Function() anthropicClaude37Sonnet, required W Function() anthropicClaudeSonnet4, required W Function() anthropicClaudeOpus4, required W Function() anthropicClaude35Haiku, required W Function() cerebrasQwen3235bA22bInstruct, required W Function() cerebrasQwen3235bA22bThinking, required W Function() cerebrasLlama3370b, required W Function() cerebrasLlama4Maverick17b128eInstruct, required W Function() cerebrasLlama4Scout17b16eInstruct, required W Function() cerebrasGptOss120b, required W Function() googleAiStudioGemini25Flash, required W Function() googleAiStudioGemini25Pro, required W Function() grokGrok4, required W Function() groqLlama3370bVersatile, required W Function() groqLlama318bInstant, required W Function() openaiGpt5, required W Function() openaiGpt5Mini, required W Function() openaiGpt5Nano, required W Function(String value) $unknown, }) {return switch (this) {
       ModelVariant1$cfMetaLlama3370bInstructFp8Fast() => cfMetaLlama3370bInstructFp8Fast(),
       ModelVariant1$cfMetaLlama318bInstructFast() => cfMetaLlama318bInstructFast(),
       ModelVariant1$cfMetaLlama318bInstructFp8() => cfMetaLlama318bInstructFp8(),
@@ -145,9 +145,9 @@ W when<W>({required W Function() cfMetaLlama3370bInstructFp8Fast, required W Fun
       ModelVariant1$openaiGpt5Mini() => openaiGpt5Mini(),
       ModelVariant1$openaiGpt5Nano() => openaiGpt5Nano(),
       ModelVariant1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLlama3370bInstructFp8Fast, W Function()? cfMetaLlama318bInstructFast, W Function()? cfMetaLlama318bInstructFp8, W Function()? cfMetaLlama4Scout17b16eInstruct, W Function()? cfQwenQwen330bA3bFp8, W Function()? cfDeepseekAiDeepseekR1DistillQwen32b, W Function()? cfMoonshotaiKimiK2Instruct, W Function()? anthropicClaude37Sonnet, W Function()? anthropicClaudeSonnet4, W Function()? anthropicClaudeOpus4, W Function()? anthropicClaude35Haiku, W Function()? cerebrasQwen3235bA22bInstruct, W Function()? cerebrasQwen3235bA22bThinking, W Function()? cerebrasLlama3370b, W Function()? cerebrasLlama4Maverick17b128eInstruct, W Function()? cerebrasLlama4Scout17b16eInstruct, W Function()? cerebrasGptOss120b, W Function()? googleAiStudioGemini25Flash, W Function()? googleAiStudioGemini25Pro, W Function()? grokGrok4, W Function()? groqLlama3370bVersatile, W Function()? groqLlama318bInstant, W Function()? openaiGpt5, W Function()? openaiGpt5Mini, W Function()? openaiGpt5Nano, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLlama3370bInstructFp8Fast, W Function()? cfMetaLlama318bInstructFast, W Function()? cfMetaLlama318bInstructFp8, W Function()? cfMetaLlama4Scout17b16eInstruct, W Function()? cfQwenQwen330bA3bFp8, W Function()? cfDeepseekAiDeepseekR1DistillQwen32b, W Function()? cfMoonshotaiKimiK2Instruct, W Function()? anthropicClaude37Sonnet, W Function()? anthropicClaudeSonnet4, W Function()? anthropicClaudeOpus4, W Function()? anthropicClaude35Haiku, W Function()? cerebrasQwen3235bA22bInstruct, W Function()? cerebrasQwen3235bA22bThinking, W Function()? cerebrasLlama3370b, W Function()? cerebrasLlama4Maverick17b128eInstruct, W Function()? cerebrasLlama4Scout17b16eInstruct, W Function()? cerebrasGptOss120b, W Function()? googleAiStudioGemini25Flash, W Function()? googleAiStudioGemini25Pro, W Function()? grokGrok4, W Function()? groqLlama3370bVersatile, W Function()? groqLlama318bInstant, W Function()? openaiGpt5, W Function()? openaiGpt5Mini, W Function()? openaiGpt5Nano, W Function(String value)? $unknown, }) {return switch (this) {
       ModelVariant1$cfMetaLlama3370bInstructFp8Fast() => cfMetaLlama3370bInstructFp8Fast != null ? cfMetaLlama3370bInstructFp8Fast() : orElse(value),
       ModelVariant1$cfMetaLlama318bInstructFast() => cfMetaLlama318bInstructFast != null ? cfMetaLlama318bInstructFast() : orElse(value),
       ModelVariant1$cfMetaLlama318bInstructFp8() => cfMetaLlama318bInstructFp8 != null ? cfMetaLlama318bInstructFp8() : orElse(value),
@@ -174,10 +174,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
       ModelVariant1$openaiGpt5Mini() => openaiGpt5Mini != null ? openaiGpt5Mini() : orElse(value),
       ModelVariant1$openaiGpt5Nano() => openaiGpt5Nano != null ? openaiGpt5Nano() : orElse(value),
       ModelVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ModelVariant1($value)';
 
- }
+}
 @immutable final class ModelVariant1$cfMetaLlama3370bInstructFp8Fast extends ModelVariant1 {const ModelVariant1$cfMetaLlama3370bInstructFp8Fast._();
 
 @override String get value => '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/meta/llama-3.3-70b-instruct-fp8-fast'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cfMetaLlama318bInstructFast extends ModelVariant1 {const ModelVariant1$cfMetaLlama318bInstructFast._();
 
 @override String get value => '@cf/meta/llama-3.1-8b-instruct-fast';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/meta/llama-3.1-8b-instruct-fast'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cfMetaLlama318bInstructFp8 extends ModelVariant1 {const ModelVariant1$cfMetaLlama318bInstructFp8._();
 
 @override String get value => '@cf/meta/llama-3.1-8b-instruct-fp8';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/meta/llama-3.1-8b-instruct-fp8'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cfMetaLlama4Scout17b16eInstruct extends ModelVariant1 {const ModelVariant1$cfMetaLlama4Scout17b16eInstruct._();
 
 @override String get value => '@cf/meta/llama-4-scout-17b-16e-instruct';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/meta/llama-4-scout-17b-16e-instruct'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cfQwenQwen330bA3bFp8 extends ModelVariant1 {const ModelVariant1$cfQwenQwen330bA3bFp8._();
 
 @override String get value => '@cf/qwen/qwen3-30b-a3b-fp8';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/qwen/qwen3-30b-a3b-fp8'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cfDeepseekAiDeepseekR1DistillQwen32b extends ModelVariant1 {const ModelVariant1$cfDeepseekAiDeepseekR1DistillQwen32b._();
 
 @override String get value => '@cf/deepseek-ai/deepseek-r1-distill-qwen-32b';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/deepseek-ai/deepseek-r1-distill-qwen-32b'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cfMoonshotaiKimiK2Instruct extends ModelVariant1 {const ModelVariant1$cfMoonshotaiKimiK2Instruct._();
 
 @override String get value => '@cf/moonshotai/kimi-k2-instruct';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => '@cf/moonshotai/kimi-k2-instruct'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$anthropicClaude37Sonnet extends ModelVariant1 {const ModelVariant1$anthropicClaude37Sonnet._();
 
 @override String get value => 'anthropic/claude-3-7-sonnet';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'anthropic/claude-3-7-sonnet'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$anthropicClaudeSonnet4 extends ModelVariant1 {const ModelVariant1$anthropicClaudeSonnet4._();
 
 @override String get value => 'anthropic/claude-sonnet-4';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'anthropic/claude-sonnet-4'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$anthropicClaudeOpus4 extends ModelVariant1 {const ModelVariant1$anthropicClaudeOpus4._();
 
 @override String get value => 'anthropic/claude-opus-4';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'anthropic/claude-opus-4'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$anthropicClaude35Haiku extends ModelVariant1 {const ModelVariant1$anthropicClaude35Haiku._();
 
 @override String get value => 'anthropic/claude-3-5-haiku';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'anthropic/claude-3-5-haiku'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cerebrasQwen3235bA22bInstruct extends ModelVariant1 {const ModelVariant1$cerebrasQwen3235bA22bInstruct._();
 
 @override String get value => 'cerebras/qwen-3-235b-a22b-instruct';
@@ -285,7 +285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'cerebras/qwen-3-235b-a22b-instruct'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cerebrasQwen3235bA22bThinking extends ModelVariant1 {const ModelVariant1$cerebrasQwen3235bA22bThinking._();
 
 @override String get value => 'cerebras/qwen-3-235b-a22b-thinking';
@@ -294,7 +294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'cerebras/qwen-3-235b-a22b-thinking'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cerebrasLlama3370b extends ModelVariant1 {const ModelVariant1$cerebrasLlama3370b._();
 
 @override String get value => 'cerebras/llama-3.3-70b';
@@ -303,7 +303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'cerebras/llama-3.3-70b'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cerebrasLlama4Maverick17b128eInstruct extends ModelVariant1 {const ModelVariant1$cerebrasLlama4Maverick17b128eInstruct._();
 
 @override String get value => 'cerebras/llama-4-maverick-17b-128e-instruct';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'cerebras/llama-4-maverick-17b-128e-instruct'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cerebrasLlama4Scout17b16eInstruct extends ModelVariant1 {const ModelVariant1$cerebrasLlama4Scout17b16eInstruct._();
 
 @override String get value => 'cerebras/llama-4-scout-17b-16e-instruct';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'cerebras/llama-4-scout-17b-16e-instruct'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$cerebrasGptOss120b extends ModelVariant1 {const ModelVariant1$cerebrasGptOss120b._();
 
 @override String get value => 'cerebras/gpt-oss-120b';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'cerebras/gpt-oss-120b'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$googleAiStudioGemini25Flash extends ModelVariant1 {const ModelVariant1$googleAiStudioGemini25Flash._();
 
 @override String get value => 'google-ai-studio/gemini-2.5-flash';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'google-ai-studio/gemini-2.5-flash'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$googleAiStudioGemini25Pro extends ModelVariant1 {const ModelVariant1$googleAiStudioGemini25Pro._();
 
 @override String get value => 'google-ai-studio/gemini-2.5-pro';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'google-ai-studio/gemini-2.5-pro'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$grokGrok4 extends ModelVariant1 {const ModelVariant1$grokGrok4._();
 
 @override String get value => 'grok/grok-4';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'grok/grok-4'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$groqLlama3370bVersatile extends ModelVariant1 {const ModelVariant1$groqLlama3370bVersatile._();
 
 @override String get value => 'groq/llama-3.3-70b-versatile';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'groq/llama-3.3-70b-versatile'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$groqLlama318bInstant extends ModelVariant1 {const ModelVariant1$groqLlama318bInstant._();
 
 @override String get value => 'groq/llama-3.1-8b-instant';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'groq/llama-3.1-8b-instant'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$openaiGpt5 extends ModelVariant1 {const ModelVariant1$openaiGpt5._();
 
 @override String get value => 'openai/gpt-5';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'openai/gpt-5'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$openaiGpt5Mini extends ModelVariant1 {const ModelVariant1$openaiGpt5Mini._();
 
 @override String get value => 'openai/gpt-5-mini';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'openai/gpt-5-mini'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$openaiGpt5Nano extends ModelVariant1 {const ModelVariant1$openaiGpt5Nano._();
 
 @override String get value => 'openai/gpt-5-nano';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => 'openai/gpt-5-nano'.hashCode;
 
- }
+}
 @immutable final class ModelVariant1$Unknown extends ModelVariant1 {const ModelVariant1$Unknown(this.value);
 
 @override final String value;
@@ -412,8 +412,45 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLl
 
 @override int get hashCode => value.hashCode;
 
- }
-/// Variants:
-/// - `.a` → [ModelVariant1]
-/// - `.b` → [AiSearchModelVariant2]
-typedef AutoragConfigAiSearchRequestModel = OneOf2<ModelVariant1,AiSearchModelVariant2>;
+}
+@immutable final class AutoragConfigAiSearchRequestModel {/// A value built from one or more typed views (at least one must be present).
+const AutoragConfigAiSearchRequestModel({this.modelVariant1 = const Omittable.absent(), this.aiSearchModelVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
+
+const AutoragConfigAiSearchRequestModel._({required this.rawValue, required this.modelVariant1, required this.aiSearchModelVariant2, });
+
+/// Decodes every variant the payload matches, keeping the raw value.
+factory AutoragConfigAiSearchRequestModel.fromJson(Object? json) {return AutoragConfigAiSearchRequestModel._(
+  rawValue: Omittable(json),
+  modelVariant1: parseAnyOfVariant<ModelVariant1>(json, (value) => ModelVariant1.fromJson(value! as String)),
+  aiSearchModelVariant2: parseAnyOfVariant<AiSearchModelVariant2>(json, (value) => AiSearchModelVariant2.fromJson(value! as String)),
+);}
+
+/// The original wire value when decoded. Typed views never replace it.
+final Omittable<Object?> rawValue;
+
+/// The payload decoded as `ModelVariant1`, when it matches.
+final Omittable<ModelVariant1> modelVariant1;
+
+/// The payload decoded as `AiSearchModelVariant2`, when it matches.
+final Omittable<AiSearchModelVariant2> aiSearchModelVariant2;
+
+/// Whether at least one variant matched.
+bool get isValid => modelVariant1.isPresent || aiSearchModelVariant2.isPresent;
+
+/// Whether a decoded payload matched no variant.
+bool get isUnknown => rawValue.isPresent && !isValid;
+
+/// The decoded wire value, unchanged; for a constructed value, the merge of its views (conflicting views throw).
+Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (modelVariant1.isPresent) modelVariant1.value?.toJson(),
+    if (aiSearchModelVariant2.isPresent) aiSearchModelVariant2.value?.toJson(),
+  ]);
+
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AutoragConfigAiSearchRequestModel && jsonValueEquals(toJson(), other.toJson());
+
+@override int get hashCode => jsonValueHash(toJson());
+
+@override String toString() => 'AutoragConfigAiSearchRequestModel(${toJson()})';
+
+}

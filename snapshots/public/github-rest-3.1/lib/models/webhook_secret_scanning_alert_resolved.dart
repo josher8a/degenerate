@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_action.dart';@immutable final class WebhookSecretScanningAlertResolved {const WebhookSecretScanningAlertResolved({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookSecretScanningAlertResolved.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertResolved(
+factory WebhookSecretScanningAlertResolved.fromJson(Map<String, dynamic> json) {return WebhookSecretScanningAlertResolved(
   action: WebhookPullRequestReviewThreadResolvedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookSecretScanningAlertResolved.fromJson(Map<String, dynamic> json) {
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestReviewThreadResolvedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
-      json.containsKey('repository'); } 
-WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResolvedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookSecretScanningAlertResolved(
+      json.containsKey('repository');}
+WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResolvedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookSecretScanningAlertResolved(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -47,7 +47,7 @@ WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResol
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertResolved &&
           action == other.action &&
@@ -62,4 +62,4 @@ WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResol
 
 @override String toString() => 'WebhookSecretScanningAlertResolved(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

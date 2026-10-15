@@ -17,24 +17,24 @@ String toJson() => value;
 }
 @immutable final class TlsCertificatesAndHostnamesAssociationObject {const TlsCertificatesAndHostnamesAssociationObject({this.service, this.status, });
 
-factory TlsCertificatesAndHostnamesAssociationObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesAssociationObject(
+factory TlsCertificatesAndHostnamesAssociationObject.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesAssociationObject(
   service: json['service'] != null ? TlsCertificatesAndHostnamesService.fromJson(json['service'] as String) : null,
   status: json['status'] != null ? TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesService? service;
 
 final TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (service != null) 'service': service?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'service', 'status'}.contains(key)); } 
-TlsCertificatesAndHostnamesAssociationObject copyWith({TlsCertificatesAndHostnamesService? Function()? service, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus? Function()? status, }) { return TlsCertificatesAndHostnamesAssociationObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'service', 'status'}.contains(key));}
+TlsCertificatesAndHostnamesAssociationObject copyWith({TlsCertificatesAndHostnamesService? Function()? service, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus? Function()? status, }) {return TlsCertificatesAndHostnamesAssociationObject(
   service: service != null ? service() : this.service,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesAssociationObject &&
           service == other.service &&
@@ -44,4 +44,4 @@ TlsCertificatesAndHostnamesAssociationObject copyWith({TlsCertificatesAndHostnam
 
 @override String toString() => 'TlsCertificatesAndHostnamesAssociationObject(service: $service, status: $status)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';@immutable final class SmartshieldSmartShieldSettingsGetResponseSmartTieredCache {const SmartshieldSmartShieldSettingsGetResponseSmartTieredCache({this.editable, this.id, this.modifiedOn, this.value, });
 
-factory SmartshieldSmartShieldSettingsGetResponseSmartTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsGetResponseSmartTieredCache(
+factory SmartshieldSmartShieldSettingsGetResponseSmartTieredCache.fromJson(Map<String, dynamic> json) {return SmartshieldSmartShieldSettingsGetResponseSmartTieredCache(
   editable: json['editable'] as bool?,
   id: json['id'] as String?,
   modifiedOn: json['modified_on'] as String?,
   value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Whether the setting is editable.
 /// 
@@ -30,19 +30,19 @@ final String? modifiedOn;
 /// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': ?id,
   'modified_on': ?modifiedOn,
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SmartshieldSmartShieldSettingsGetResponseSmartTieredCache copyWith({bool? Function()? editable, String? Function()? id, String? Function()? modifiedOn, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return SmartshieldSmartShieldSettingsGetResponseSmartTieredCache(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key));}
+SmartshieldSmartShieldSettingsGetResponseSmartTieredCache copyWith({bool? Function()? editable, String? Function()? id, String? Function()? modifiedOn, CacheRulesSmartTieredCachePatchValue? Function()? value, }) {return SmartshieldSmartShieldSettingsGetResponseSmartTieredCache(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldSmartShieldSettingsGetResponseSmartTieredCache &&
           editable == other.editable &&
@@ -54,4 +54,4 @@ SmartshieldSmartShieldSettingsGetResponseSmartTieredCache copyWith({bool? Functi
 
 @override String toString() => 'SmartshieldSmartShieldSettingsGetResponseSmartTieredCache(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

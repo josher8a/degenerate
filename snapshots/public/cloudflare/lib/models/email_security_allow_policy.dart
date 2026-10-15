@@ -20,10 +20,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "verify_sender": true
 /// }
 /// ```
-@immutable final class EmailSecurityAllowPolicy {const EmailSecurityAllowPolicy({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.createdAt, required this.id, required this.lastModified, this.comments, this.isRecipient, this.isSender, this.isSpoof, });
+@immutable final class EmailSecurityAllowPolicy {const EmailSecurityAllowPolicy({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), this.isRecipient, this.isSender, this.isSpoof, });
 
-factory EmailSecurityAllowPolicy.fromJson(Map<String, dynamic> json) { return EmailSecurityAllowPolicy(
-  comments: json['comments'] as String?,
+factory EmailSecurityAllowPolicy.fromJson(Map<String, dynamic> json) {return EmailSecurityAllowPolicy(
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isAcceptableSender: json['is_acceptable_sender'] as bool,
   isExemptRecipient: json['is_exempt_recipient'] as bool,
   isRecipient: json['is_recipient'] as bool?,
@@ -37,9 +37,9 @@ factory EmailSecurityAllowPolicy.fromJson(Map<String, dynamic> json) { return Em
   createdAt: DateTime.parse(json['created_at'] as String),
   id: EmailSecurityAllowPolicyId.fromJson(json['id'] as num),
   lastModified: DateTime.parse(json['last_modified'] as String),
-); }
+);}
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.
 /// Note: This will not exempt messages with Malicious or Suspicious dispositions.
@@ -73,8 +73,8 @@ final EmailSecurityAllowPolicyId id;
 
 final DateTime lastModified;
 
-Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+Map<String, dynamic> toJson() {return {
+  if (comments.isPresent) 'comments': comments.value,
   'is_acceptable_sender': isAcceptableSender,
   'is_exempt_recipient': isExemptRecipient,
   'is_recipient': ?isRecipient,
@@ -88,8 +88,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
   'last_modified': lastModified.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
       json.containsKey('is_exempt_recipient') && json['is_exempt_recipient'] is bool &&
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_trusted_sender') && json['is_trusted_sender'] is bool &&
@@ -98,18 +98,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('verify_sender') && json['verify_sender'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
-      json.containsKey('last_modified') && json['last_modified'] is String; } 
+      json.containsKey('last_modified') && json['last_modified'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+List<String> validate() {final errors = <String>[];
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityAllowPolicy copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityAllowPolicy(
-  comments: comments != null ? comments() : this.comments,
+return errors;}
+EmailSecurityAllowPolicy copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) {return EmailSecurityAllowPolicy(
+  comments: comments ?? this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
   isRecipient: isRecipient != null ? isRecipient() : this.isRecipient,
@@ -123,7 +123,7 @@ EmailSecurityAllowPolicy copyWith({String? Function()? comments, bool? isAccepta
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityAllowPolicy &&
           comments == other.comments &&
@@ -145,4 +145,4 @@ EmailSecurityAllowPolicy copyWith({String? Function()? comments, bool? isAccepta
 
 @override String toString() => 'EmailSecurityAllowPolicy(\n  comments: $comments,\n  isAcceptableSender: $isAcceptableSender,\n  isExemptRecipient: $isExemptRecipient,\n  isRecipient: $isRecipient,\n  isRegex: $isRegex,\n  isSender: $isSender,\n  isSpoof: $isSpoof,\n  isTrustedSender: $isTrustedSender,\n  pattern: $pattern,\n  patternType: $patternType,\n  verifySender: $verifySender,\n  createdAt: $createdAt,\n  id: $id,\n  lastModified: $lastModified,\n)';
 
- }
+}

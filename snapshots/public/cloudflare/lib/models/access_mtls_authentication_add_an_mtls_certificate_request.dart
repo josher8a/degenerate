@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_certificates_components_schemas_name.dart';@immutable final class AccessMtlsAuthenticationAddAnMtlsCertificateRequest {const AccessMtlsAuthenticationAddAnMtlsCertificateRequest({required this.certificate, required this.name, this.associatedHostnames, });
 
-factory AccessMtlsAuthenticationAddAnMtlsCertificateRequest.fromJson(Map<String, dynamic> json) { return AccessMtlsAuthenticationAddAnMtlsCertificateRequest(
+factory AccessMtlsAuthenticationAddAnMtlsCertificateRequest.fromJson(Map<String, dynamic> json) {return AccessMtlsAuthenticationAddAnMtlsCertificateRequest(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
   certificate: json['certificate'] as String,
   name: AccessCertificatesComponentsSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 /// The hostnames of the applications that will use this certificate.
 final List<String>? associatedHostnames;
@@ -23,18 +23,18 @@ final String certificate;
 /// The name of the certificate.
 final AccessCertificatesComponentsSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'associated_hostnames': ?associatedHostnames,
   'certificate': certificate,
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate') && json['certificate'] is String &&
-      json.containsKey('name'); } 
-AccessMtlsAuthenticationAddAnMtlsCertificateRequest copyWith({List<String>? Function()? associatedHostnames, String? certificate, AccessCertificatesComponentsSchemasName? name, }) { return AccessMtlsAuthenticationAddAnMtlsCertificateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate') && json['certificate'] is String &&
+      json.containsKey('name');}
+AccessMtlsAuthenticationAddAnMtlsCertificateRequest copyWith({List<String>? Function()? associatedHostnames, String? certificate, AccessCertificatesComponentsSchemasName? name, }) {return AccessMtlsAuthenticationAddAnMtlsCertificateRequest(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   certificate: certificate ?? this.certificate,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessMtlsAuthenticationAddAnMtlsCertificateRequest &&
           listEquals(associatedHostnames, other.associatedHostnames) &&
@@ -45,4 +45,4 @@ AccessMtlsAuthenticationAddAnMtlsCertificateRequest copyWith({List<String>? Func
 
 @override String toString() => 'AccessMtlsAuthenticationAddAnMtlsCertificateRequest(associatedHostnames: $associatedHostnames, certificate: $certificate, name: $name)';
 
- }
+}

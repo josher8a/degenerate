@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ComputerToolCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// A tool call to a computer use tool. See the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';/// A tool call to a computer use tool. See the
 /// [computer use guide](/docs/guides/tools-computer-use) for more information.
 /// 
-@immutable final class ComputerToolCall {const ComputerToolCall({required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.type = 'computer_call', this.action, this.actions, });
+@immutable final class ComputerToolCall {const ComputerToolCall({required this.type, required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.action, this.actions, });
 
-factory ComputerToolCall.fromJson(Map<String, dynamic> json) { return ComputerToolCall(
+factory ComputerToolCall.fromJson(Map<String, dynamic> json) {return ComputerToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
   action: json['action'] != null ? ComputerAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   actions: (json['actions'] as List<dynamic>?)?.map((e) => ComputerAction.fromJson(e as Map<String, dynamic>)).toList(),
   pendingSafetyChecks: (json['pending_safety_checks'] as List<dynamic>).map((e) => ComputerCallSafetyCheckParam.fromJson(e as Map<String, dynamic>)).toList(),
-  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
-); }
+  status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
+);}
 
 /// The type of the computer call. Always `computer_call`.
 final String type;
@@ -40,9 +40,9 @@ final List<ComputerCallSafetyCheckParam> pendingSafetyChecks;
 /// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final ComputerToolCallOutputStatus status;
+final ComputerToolCallOutputResourceStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -50,13 +50,13 @@ Map<String, dynamic> toJson() { return {
   if (actions != null) 'actions': actions?.map((e) => e.toJson()).toList(),
   'pending_safety_checks': pendingSafetyChecks.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('pending_safety_checks') &&
-      json.containsKey('status'); } 
-ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ComputerToolCall(
+      json.containsKey('status');}
+ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) {return ComputerToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
@@ -64,7 +64,7 @@ ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAct
   actions: actions != null ? actions() : this.actions,
   pendingSafetyChecks: pendingSafetyChecks ?? this.pendingSafetyChecks,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerToolCall &&
           type == other.type &&
@@ -79,4 +79,4 @@ ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAct
 
 @override String toString() => 'ComputerToolCall(type: $type, id: $id, callId: $callId, action: $action, actions: $actions, pendingSafetyChecks: $pendingSafetyChecks, status: $status)';
 
- }
+}

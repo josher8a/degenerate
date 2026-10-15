@@ -3,26 +3,26 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBinDbPostRequest {const PostBinDbPostRequest({required this.file});
 
-factory PostBinDbPostRequest.fromJson(Map<String, dynamic> json) { return PostBinDbPostRequest(
+factory PostBinDbPostRequest.fromJson(Map<String, dynamic> json) {return PostBinDbPostRequest(
   file: base64Decode(json['file'] as String),
-); }
+);}
 
 /// The binary file content to upload.
 final Uint8List file;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file'); } 
-PostBinDbPostRequest copyWith({Uint8List? file}) { return PostBinDbPostRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file');}
+PostBinDbPostRequest copyWith({Uint8List? file}) {return PostBinDbPostRequest(
   file: file ?? this.file,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBinDbPostRequest &&
-          file == other.file;
+          listEquals(file, other.file);
 
-@override int get hashCode => file.hashCode;
+@override int get hashCode => Object.hashAll(file);
 
 @override String toString() => 'PostBinDbPostRequest(file: $file)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityListBlockedSendersOrder {const EmailSecurityListBlockedSendersOrder();
 
-factory EmailSecurityListBlockedSendersOrder.fromJson(String json) { return switch (json) {
+factory EmailSecurityListBlockedSendersOrder.fromJson(String json) {return switch (json) {
   'pattern' => pattern,
   'created_at' => createdAt,
   _ => EmailSecurityListBlockedSendersOrder$Unknown(json),
-}; }
+};}
 
 static const EmailSecurityListBlockedSendersOrder pattern = EmailSecurityListBlockedSendersOrder$pattern._();
 
@@ -16,30 +16,30 @@ static const EmailSecurityListBlockedSendersOrder createdAt = EmailSecurityListB
 static const List<EmailSecurityListBlockedSendersOrder> values = [pattern, createdAt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pattern' => 'pattern',
   'created_at' => 'createdAt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailSecurityListBlockedSendersOrder$Unknown; } 
+bool get isUnknown {return this is EmailSecurityListBlockedSendersOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pattern, required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pattern, required W Function() createdAt, required W Function(String value) $unknown, }) {return switch (this) {
       EmailSecurityListBlockedSendersOrder$pattern() => pattern(),
       EmailSecurityListBlockedSendersOrder$createdAt() => createdAt(),
       EmailSecurityListBlockedSendersOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pattern, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pattern, W Function()? createdAt, W Function(String value)? $unknown, }) {return switch (this) {
       EmailSecurityListBlockedSendersOrder$pattern() => pattern != null ? pattern() : orElse(value),
       EmailSecurityListBlockedSendersOrder$createdAt() => createdAt != null ? createdAt() : orElse(value),
       EmailSecurityListBlockedSendersOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailSecurityListBlockedSendersOrder($value)';
 
- }
+}
 @immutable final class EmailSecurityListBlockedSendersOrder$pattern extends EmailSecurityListBlockedSendersOrder {const EmailSecurityListBlockedSendersOrder$pattern._();
 
 @override String get value => 'pattern';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pattern,
 
 @override int get hashCode => 'pattern'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityListBlockedSendersOrder$createdAt extends EmailSecurityListBlockedSendersOrder {const EmailSecurityListBlockedSendersOrder$createdAt._();
 
 @override String get value => 'created_at';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pattern,
 
 @override int get hashCode => 'created_at'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityListBlockedSendersOrder$Unknown extends EmailSecurityListBlockedSendersOrder {const EmailSecurityListBlockedSendersOrder$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pattern,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

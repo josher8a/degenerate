@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_service_identifier.dart';import 'package:pub_cloudflare/models/addressing_service_name.dart';@immutable final class IpAddressManagementServiceBindingsListServicesResponseResult {const IpAddressManagementServiceBindingsListServicesResponseResult({this.id, this.name, });
 
-factory IpAddressManagementServiceBindingsListServicesResponseResult.fromJson(Map<String, dynamic> json) { return IpAddressManagementServiceBindingsListServicesResponseResult(
+factory IpAddressManagementServiceBindingsListServicesResponseResult.fromJson(Map<String, dynamic> json) {return IpAddressManagementServiceBindingsListServicesResponseResult(
   id: json['id'] != null ? AddressingServiceIdentifier.fromJson(json['id'] as String) : null,
   name: json['name'] != null ? AddressingServiceName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the
 /// **List Services** endpoint.
@@ -16,15 +16,15 @@ final AddressingServiceIdentifier? id;
 /// Name of a service running on the Cloudflare network
 final AddressingServiceName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
-IpAddressManagementServiceBindingsListServicesResponseResult copyWith({AddressingServiceIdentifier? Function()? id, AddressingServiceName? Function()? name, }) { return IpAddressManagementServiceBindingsListServicesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name'}.contains(key));}
+IpAddressManagementServiceBindingsListServicesResponseResult copyWith({AddressingServiceIdentifier? Function()? id, AddressingServiceName? Function()? name, }) {return IpAddressManagementServiceBindingsListServicesResponseResult(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementServiceBindingsListServicesResponseResult &&
           id == other.id &&
@@ -34,4 +34,4 @@ IpAddressManagementServiceBindingsListServicesResponseResult copyWith({Addressin
 
 @override String toString() => 'IpAddressManagementServiceBindingsListServicesResponseResult(id: $id, name: $name)';
 
- }
+}

@@ -10,7 +10,7 @@ String toJson() => value;
 }
 @immutable final class ResourceSharingShareObject {const ResourceSharingShareObject({required this.accountId, required this.accountName, required this.created, required this.id, required this.modified, required this.name, required this.organizationId, required this.status, required this.targetType, this.associatedRecipientCount, this.associatingRecipientCount, this.disassociatedRecipientCount, this.disassociatingRecipientCount, this.kind, this.resources, });
 
-factory ResourceSharingShareObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareObject(
+factory ResourceSharingShareObject.fromJson(Map<String, dynamic> json) {return ResourceSharingShareObject(
   accountId: ResourceSharingAccountId.fromJson(json['account_id'] as String),
   accountName: ResourceSharingAccountName.fromJson(json['account_name'] as String),
   associatedRecipientCount: json['associated_recipient_count'] != null ? (json['associated_recipient_count'] as num).toInt() : null,
@@ -26,7 +26,7 @@ factory ResourceSharingShareObject.fromJson(Map<String, dynamic> json) { return 
   resources: (json['resources'] as List<dynamic>?)?.map((e) => ResourceSharingShareResourceObject.fromJson(e as Map<String, dynamic>)).toList(),
   status: ResourceSharingShareStatus.fromJson(json['status'] as String),
   targetType: ResourceSharingShareTargetType.fromJson(json['target_type'] as String),
-); }
+);}
 
 /// Account identifier.
 final ResourceSharingAccountId accountId;
@@ -78,7 +78,7 @@ final ResourceSharingShareStatus status;
 
 final ResourceSharingShareTargetType targetType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId.toJson(),
   'account_name': accountName.toJson(),
   'associated_recipient_count': ?associatedRecipientCount,
@@ -94,8 +94,8 @@ Map<String, dynamic> toJson() { return {
   if (resources != null) 'resources': resources?.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
   'target_type': targetType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') &&
       json.containsKey('account_name') &&
       json.containsKey('created') &&
       json.containsKey('id') &&
@@ -103,8 +103,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('name') &&
       json.containsKey('organization_id') &&
       json.containsKey('status') &&
-      json.containsKey('target_type'); } 
-ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, ResourceSharingAccountName? accountName, int? Function()? associatedRecipientCount, int? Function()? associatingRecipientCount, ResourceSharingCreated? created, int? Function()? disassociatedRecipientCount, int? Function()? disassociatingRecipientCount, ResourceSharingShareId? id, ResourceSharingShareKind? Function()? kind, ResourceSharingModified? modified, ResourceSharingShareName? name, ResourceSharingOrganizationId? organizationId, List<ResourceSharingShareResourceObject>? Function()? resources, ResourceSharingShareStatus? status, ResourceSharingShareTargetType? targetType, }) { return ResourceSharingShareObject(
+      json.containsKey('target_type');}
+ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, ResourceSharingAccountName? accountName, int? Function()? associatedRecipientCount, int? Function()? associatingRecipientCount, ResourceSharingCreated? created, int? Function()? disassociatedRecipientCount, int? Function()? disassociatingRecipientCount, ResourceSharingShareId? id, ResourceSharingShareKind? Function()? kind, ResourceSharingModified? modified, ResourceSharingShareName? name, ResourceSharingOrganizationId? organizationId, List<ResourceSharingShareResourceObject>? Function()? resources, ResourceSharingShareStatus? status, ResourceSharingShareTargetType? targetType, }) {return ResourceSharingShareObject(
   accountId: accountId ?? this.accountId,
   accountName: accountName ?? this.accountName,
   associatedRecipientCount: associatedRecipientCount != null ? associatedRecipientCount() : this.associatedRecipientCount,
@@ -120,7 +120,7 @@ ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, Resour
   resources: resources != null ? resources() : this.resources,
   status: status ?? this.status,
   targetType: targetType ?? this.targetType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingShareObject &&
           accountId == other.accountId &&
@@ -143,4 +143,4 @@ ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, Resour
 
 @override String toString() => 'ResourceSharingShareObject(\n  accountId: $accountId,\n  accountName: $accountName,\n  associatedRecipientCount: $associatedRecipientCount,\n  associatingRecipientCount: $associatingRecipientCount,\n  created: $created,\n  disassociatedRecipientCount: $disassociatedRecipientCount,\n  disassociatingRecipientCount: $disassociatingRecipientCount,\n  id: $id,\n  kind: $kind,\n  modified: $modified,\n  name: $name,\n  organizationId: $organizationId,\n  resources: $resources,\n  status: $status,\n  targetType: $targetType,\n)';
 
- }
+}

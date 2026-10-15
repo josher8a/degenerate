@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/registry_package_owner.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_updated/webhook_registry_package_updated_registry_package_package_version.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackage {const WebhookRegistryPackageUpdatedRegistryPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 
-factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackage(
+factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackage(
   createdAt: json['created_at'] as String,
   description: json['description'],
   ecosystem: json['ecosystem'] as String,
@@ -16,7 +16,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynami
   packageVersion: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
   registry: json['registry'] as Map<String, dynamic>?,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final String createdAt;
 
@@ -42,7 +42,7 @@ final Map<String,dynamic>? registry;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'description': description,
   'ecosystem': ecosystem,
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'package_version': packageVersion.toJson(),
   'registry': registry,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') &&
       json.containsKey('ecosystem') && json['ecosystem'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -67,8 +67,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('package_type') && json['package_type'] is String &&
       json.containsKey('package_version') &&
       json.containsKey('registry') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynamic Function()? description, String? ecosystem, String? htmlUrl, int? id, String? name, String? namespace, RegistryPackageOwner? owner, String? packageType, WebhookRegistryPackageUpdatedRegistryPackagePackageVersion? packageVersion, Map<String, dynamic>? Function()? registry, String? updatedAt, }) { return WebhookRegistryPackageUpdatedRegistryPackage(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynamic Function()? description, String? ecosystem, String? htmlUrl, int? id, String? name, String? namespace, RegistryPackageOwner? owner, String? packageType, WebhookRegistryPackageUpdatedRegistryPackagePackageVersion? packageVersion, Map<String, dynamic>? Function()? registry, String? updatedAt, }) {return WebhookRegistryPackageUpdatedRegistryPackage(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   ecosystem: ecosystem ?? this.ecosystem,
@@ -81,7 +81,7 @@ WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynami
   packageVersion: packageVersion ?? this.packageVersion,
   registry: registry != null ? registry() : this.registry,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackage &&
           createdAt == other.createdAt &&
@@ -101,4 +101,4 @@ WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynami
 
 @override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackage(\n  createdAt: $createdAt,\n  description: $description,\n  ecosystem: $ecosystem,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  namespace: $namespace,\n  owner: $owner,\n  packageType: $packageType,\n  packageVersion: $packageVersion,\n  registry: $registry,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

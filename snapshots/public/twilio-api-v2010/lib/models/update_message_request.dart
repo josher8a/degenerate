@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MessageEnumUpdateStatus {const MessageEnumUpdateStatus();
 
-factory MessageEnumUpdateStatus.fromJson(String json) { return switch (json) {
+factory MessageEnumUpdateStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   _ => MessageEnumUpdateStatus$Unknown(json),
-}; }
+};}
 
 static const MessageEnumUpdateStatus canceled = MessageEnumUpdateStatus$canceled._();
 
 static const List<MessageEnumUpdateStatus> values = [canceled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageEnumUpdateStatus$Unknown; } 
+bool get isUnknown {return this is MessageEnumUpdateStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function(String value) $unknown, }) {return switch (this) {
       MessageEnumUpdateStatus$canceled() => canceled(),
       MessageEnumUpdateStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function(String value)? $unknown, }) {return switch (this) {
       MessageEnumUpdateStatus$canceled() => canceled != null ? canceled() : orElse(value),
       MessageEnumUpdateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageEnumUpdateStatus($value)';
 
- }
+}
 @immutable final class MessageEnumUpdateStatus$canceled extends MessageEnumUpdateStatus {const MessageEnumUpdateStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class MessageEnumUpdateStatus$Unknown extends MessageEnumUpdateStatus {const MessageEnumUpdateStatus$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class UpdateMessageRequest {const UpdateMessageRequest({this.body, this.status, });
 
-factory UpdateMessageRequest.fromJson(Map<String, dynamic> json) { return UpdateMessageRequest(
+factory UpdateMessageRequest.fromJson(Map<String, dynamic> json) {return UpdateMessageRequest(
   body: json['Body'] as String?,
   status: json['Status'] != null ? MessageEnumUpdateStatus.fromJson(json['Status'] as String) : null,
-); }
+);}
 
 /// The new `body` of the Message resource. To redact the text content of a Message, this parameter's value must be an empty string
 final String? body;
 
 final MessageEnumUpdateStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Body': ?body,
   if (status != null) 'Status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Body', 'Status'}.contains(key)); } 
-UpdateMessageRequest copyWith({String? Function()? body, MessageEnumUpdateStatus? Function()? status, }) { return UpdateMessageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Body', 'Status'}.contains(key));}
+UpdateMessageRequest copyWith({String? Function()? body, MessageEnumUpdateStatus? Function()? status, }) {return UpdateMessageRequest(
   body: body != null ? body() : this.body,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateMessageRequest &&
           body == other.body &&
@@ -83,4 +83,4 @@ UpdateMessageRequest copyWith({String? Function()? body, MessageEnumUpdateStatus
 
 @override String toString() => 'UpdateMessageRequest(body: $body, status: $status)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/changes.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/radar_get_bgp_rpki_aspa_changes_response_result_asn_info.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/radar_get_bgp_rpki_aspa_changes_response_result_meta.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponseResult {const RadarGetBgpRpkiAspaChangesResponseResult({required this.asnInfo, required this.changes, required this.meta, });
 
-factory RadarGetBgpRpkiAspaChangesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResult(
+factory RadarGetBgpRpkiAspaChangesResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaChangesResponseResult(
   asnInfo: RadarGetBgpRpkiAspaChangesResponseResultAsnInfo.fromJson(json['asnInfo'] as Map<String, dynamic>),
   changes: (json['changes'] as List<dynamic>).map((e) => Changes.fromJson(e as Map<String, dynamic>)).toList(),
   meta: RadarGetBgpRpkiAspaChangesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarGetBgpRpkiAspaChangesResponseResultAsnInfo asnInfo;
 
@@ -15,19 +15,19 @@ final List<Changes> changes;
 
 final RadarGetBgpRpkiAspaChangesResponseResultMeta meta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asnInfo': asnInfo.toJson(),
   'changes': changes.map((e) => e.toJson()).toList(),
   'meta': meta.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asnInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asnInfo') &&
       json.containsKey('changes') &&
-      json.containsKey('meta'); } 
-RadarGetBgpRpkiAspaChangesResponseResult copyWith({RadarGetBgpRpkiAspaChangesResponseResultAsnInfo? asnInfo, List<Changes>? changes, RadarGetBgpRpkiAspaChangesResponseResultMeta? meta, }) { return RadarGetBgpRpkiAspaChangesResponseResult(
+      json.containsKey('meta');}
+RadarGetBgpRpkiAspaChangesResponseResult copyWith({RadarGetBgpRpkiAspaChangesResponseResultAsnInfo? asnInfo, List<Changes>? changes, RadarGetBgpRpkiAspaChangesResponseResultMeta? meta, }) {return RadarGetBgpRpkiAspaChangesResponseResult(
   asnInfo: asnInfo ?? this.asnInfo,
   changes: changes ?? this.changes,
   meta: meta ?? this.meta,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRpkiAspaChangesResponseResult &&
           asnInfo == other.asnInfo &&
@@ -38,4 +38,4 @@ RadarGetBgpRpkiAspaChangesResponseResult copyWith({RadarGetBgpRpkiAspaChangesRes
 
 @override String toString() => 'RadarGetBgpRpkiAspaChangesResponseResult(asnInfo: $asnInfo, changes: $changes, meta: $meta)';
 
- }
+}

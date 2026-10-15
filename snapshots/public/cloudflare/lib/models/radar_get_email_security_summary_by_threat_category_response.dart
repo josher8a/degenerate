@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_summary_by_threat_category_response/radar_get_email_security_summary_by_threat_category_response_result.dart';@immutable final class RadarGetEmailSecuritySummaryByThreatCategoryResponse {const RadarGetEmailSecuritySummaryByThreatCategoryResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecuritySummaryByThreatCategoryResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
+factory RadarGetEmailSecuritySummaryByThreatCategoryResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
   result: RadarGetEmailSecuritySummaryByThreatCategoryResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecuritySummaryByThreatCategoryResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryByThreatCategoryResponse copyWith({RadarGetEmailSecuritySummaryByThreatCategoryResponseResult? result, bool? success, }) { return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecuritySummaryByThreatCategoryResponse copyWith({RadarGetEmailSecuritySummaryByThreatCategoryResponseResult? result, bool? success, }) {return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByThreatCategoryResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecuritySummaryByThreatCategoryResponse copyWith({RadarGetEmailSecu
 
 @override String toString() => 'RadarGetEmailSecuritySummaryByThreatCategoryResponse(result: $result, success: $success)';
 
- }
+}

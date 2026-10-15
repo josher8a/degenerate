@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod();
 
-factory RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   'DELETE' => delete,
@@ -51,7 +51,7 @@ factory RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod.fromJson(String
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod $get = RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$get._();
 
@@ -148,9 +148,9 @@ static const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod track = Ra
 static const List<RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   'DELETE' => 'delete',
@@ -198,11 +198,11 @@ String get name { return switch (value) {
   'COOK' => 'cook',
   'TRACK' => 'track',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function() delete, required W Function() put, required W Function() head, required W Function() purge, required W Function() options, required W Function() propfind, required W Function() mkcol, required W Function() patch, required W Function() acl, required W Function() bcopy, required W Function() bdelete, required W Function() bmove, required W Function() bpropfind, required W Function() bproppatch, required W Function() checkin, required W Function() checkout, required W Function() connect, required W Function() copy, required W Function() label, required W Function() lock, required W Function() merge, required W Function() mkactivity, required W Function() mkworkspace, required W Function() move, required W Function() notify, required W Function() orderpatch, required W Function() poll, required W Function() proppatch, required W Function() report, required W Function() search, required W Function() subscribe, required W Function() trace, required W Function() uncheckout, required W Function() unlock, required W Function() unsubscribe, required W Function() update, required W Function() versioncontrol, required W Function() baselinecontrol, required W Function() xmsenumatts, required W Function() rpcOutData, required W Function() rpcInData, required W Function() $json, required W Function() cook, required W Function() track, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function() delete, required W Function() put, required W Function() head, required W Function() purge, required W Function() options, required W Function() propfind, required W Function() mkcol, required W Function() patch, required W Function() acl, required W Function() bcopy, required W Function() bdelete, required W Function() bmove, required W Function() bpropfind, required W Function() bproppatch, required W Function() checkin, required W Function() checkout, required W Function() connect, required W Function() copy, required W Function() label, required W Function() lock, required W Function() merge, required W Function() mkactivity, required W Function() mkworkspace, required W Function() move, required W Function() notify, required W Function() orderpatch, required W Function() poll, required W Function() proppatch, required W Function() report, required W Function() search, required W Function() subscribe, required W Function() trace, required W Function() uncheckout, required W Function() unlock, required W Function() unsubscribe, required W Function() update, required W Function() versioncontrol, required W Function() baselinecontrol, required W Function() xmsenumatts, required W Function() rpcOutData, required W Function() rpcInData, required W Function() $json, required W Function() cook, required W Function() track, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$get() => $get(),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$post() => post(),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$delete() => delete(),
@@ -250,9 +250,9 @@ W when<W>({required W Function() $get, required W Function() post, required W Fu
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$cook() => cook(),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$track() => track(),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? delete, W Function()? put, W Function()? head, W Function()? purge, W Function()? options, W Function()? propfind, W Function()? mkcol, W Function()? patch, W Function()? acl, W Function()? bcopy, W Function()? bdelete, W Function()? bmove, W Function()? bpropfind, W Function()? bproppatch, W Function()? checkin, W Function()? checkout, W Function()? connect, W Function()? copy, W Function()? label, W Function()? lock, W Function()? merge, W Function()? mkactivity, W Function()? mkworkspace, W Function()? move, W Function()? notify, W Function()? orderpatch, W Function()? poll, W Function()? proppatch, W Function()? report, W Function()? search, W Function()? subscribe, W Function()? trace, W Function()? uncheckout, W Function()? unlock, W Function()? unsubscribe, W Function()? update, W Function()? versioncontrol, W Function()? baselinecontrol, W Function()? xmsenumatts, W Function()? rpcOutData, W Function()? rpcInData, W Function()? $json, W Function()? cook, W Function()? track, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? delete, W Function()? put, W Function()? head, W Function()? purge, W Function()? options, W Function()? propfind, W Function()? mkcol, W Function()? patch, W Function()? acl, W Function()? bcopy, W Function()? bdelete, W Function()? bmove, W Function()? bpropfind, W Function()? bproppatch, W Function()? checkin, W Function()? checkout, W Function()? connect, W Function()? copy, W Function()? label, W Function()? lock, W Function()? merge, W Function()? mkactivity, W Function()? mkworkspace, W Function()? move, W Function()? notify, W Function()? orderpatch, W Function()? poll, W Function()? proppatch, W Function()? report, W Function()? search, W Function()? subscribe, W Function()? trace, W Function()? uncheckout, W Function()? unlock, W Function()? unsubscribe, W Function()? update, W Function()? versioncontrol, W Function()? baselinecontrol, W Function()? xmsenumatts, W Function()? rpcOutData, W Function()? rpcInData, W Function()? $json, W Function()? cook, W Function()? track, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$get() => $get != null ? $get() : orElse(value),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$post() => post != null ? post() : orElse(value),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$delete() => delete != null ? delete() : orElse(value),
@@ -300,10 +300,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$cook() => cook != null ? cook() : orElse(value),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$track() => track != null ? track() : orElse(value),
       RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$get extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$get._();
 
 @override String get value => 'GET';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$post extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$post._();
 
 @override String get value => 'POST';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$delete extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$delete._();
 
 @override String get value => 'DELETE';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'DELETE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$put extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$put._();
 
 @override String get value => 'PUT';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PUT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$head extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$head._();
 
 @override String get value => 'HEAD';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'HEAD'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$purge extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$purge._();
 
 @override String get value => 'PURGE';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PURGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$options extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$options._();
 
 @override String get value => 'OPTIONS';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'OPTIONS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$propfind extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$propfind._();
 
 @override String get value => 'PROPFIND';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PROPFIND'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$mkcol extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$mkcol._();
 
 @override String get value => 'MKCOL';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MKCOL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$patch extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$patch._();
 
 @override String get value => 'PATCH';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$acl extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$acl._();
 
 @override String get value => 'ACL';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'ACL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bcopy extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bcopy._();
 
 @override String get value => 'BCOPY';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BCOPY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bdelete extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bdelete._();
 
 @override String get value => 'BDELETE';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BDELETE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bmove extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bmove._();
 
 @override String get value => 'BMOVE';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BMOVE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bpropfind extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bpropfind._();
 
 @override String get value => 'BPROPFIND';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BPROPFIND'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bproppatch extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$bproppatch._();
 
 @override String get value => 'BPROPPATCH';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BPROPPATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$checkin extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$checkin._();
 
 @override String get value => 'CHECKIN';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'CHECKIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$checkout extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$checkout._();
 
 @override String get value => 'CHECKOUT';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'CHECKOUT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$connect extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$connect._();
 
 @override String get value => 'CONNECT';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'CONNECT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$copy extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$copy._();
 
 @override String get value => 'COPY';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'COPY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$label extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$label._();
 
 @override String get value => 'LABEL';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'LABEL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$lock extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$lock._();
 
 @override String get value => 'LOCK';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'LOCK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$merge extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$merge._();
 
 @override String get value => 'MERGE';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MERGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$mkactivity extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$mkactivity._();
 
 @override String get value => 'MKACTIVITY';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MKACTIVITY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$mkworkspace extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$mkworkspace._();
 
 @override String get value => 'MKWORKSPACE';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MKWORKSPACE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$move extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$move._();
 
 @override String get value => 'MOVE';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MOVE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$notify extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$notify._();
 
 @override String get value => 'NOTIFY';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'NOTIFY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$orderpatch extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$orderpatch._();
 
 @override String get value => 'ORDERPATCH';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'ORDERPATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$poll extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$poll._();
 
 @override String get value => 'POLL';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POLL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$proppatch extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$proppatch._();
 
 @override String get value => 'PROPPATCH';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PROPPATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$report extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$report._();
 
 @override String get value => 'REPORT';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'REPORT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$search extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$search._();
 
 @override String get value => 'SEARCH';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'SEARCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$subscribe extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$subscribe._();
 
 @override String get value => 'SUBSCRIBE';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'SUBSCRIBE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$trace extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$trace._();
 
 @override String get value => 'TRACE';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'TRACE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$uncheckout extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$uncheckout._();
 
 @override String get value => 'UNCHECKOUT';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UNCHECKOUT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$unlock extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$unlock._();
 
 @override String get value => 'UNLOCK';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UNLOCK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$unsubscribe extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$unsubscribe._();
 
 @override String get value => 'UNSUBSCRIBE';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UNSUBSCRIBE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$update extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$update._();
 
 @override String get value => 'UPDATE';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UPDATE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$versioncontrol extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$versioncontrol._();
 
 @override String get value => 'VERSIONCONTROL';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'VERSIONCONTROL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$baselinecontrol extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$baselinecontrol._();
 
 @override String get value => 'BASELINECONTROL';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BASELINECONTROL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$xmsenumatts extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$xmsenumatts._();
 
 @override String get value => 'XMSENUMATTS';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'XMSENUMATTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$rpcOutData extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$rpcOutData._();
 
 @override String get value => 'RPC_OUT_DATA';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'RPC_OUT_DATA'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$rpcInData extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$rpcInData._();
 
 @override String get value => 'RPC_IN_DATA';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'RPC_IN_DATA'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$json extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$$json._();
 
 @override String get value => 'JSON';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$cook extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$cook._();
 
 @override String get value => 'COOK';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'COOK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$track extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$track._();
 
 @override String get value => 'TRACK';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'TRACK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown extends RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod$Unknown(this.value);
 
 @override final String value;
@@ -727,4 +727,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

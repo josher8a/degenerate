@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_priority.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_status.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';@immutable final class CloudforceOneRequestsRequestConstants {const CloudforceOneRequestsRequestConstants({this.priority, this.status, this.tlp, });
 
-factory CloudforceOneRequestsRequestConstants.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestConstants(
+factory CloudforceOneRequestsRequestConstants.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsRequestConstants(
   priority: (json['priority'] as List<dynamic>?)?.map((e) => CloudforceOneRequestsPriority.fromJson(e as String)).toList(),
   status: (json['status'] as List<dynamic>?)?.map((e) => CloudforceOneRequestsRequestStatus.fromJson(e as String)).toList(),
   tlp: (json['tlp'] as List<dynamic>?)?.map((e) => CloudforceOneRequestsTlp.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Example: `[routine, high, urgent]`
 final List<CloudforceOneRequestsPriority>? priority;
@@ -18,17 +18,17 @@ final List<CloudforceOneRequestsRequestStatus>? status;
 /// Example: `[clear, green, amber, amber-strict, red]`
 final List<CloudforceOneRequestsTlp>? tlp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (priority != null) 'priority': priority?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.map((e) => e.toJson()).toList(),
   if (tlp != null) 'tlp': tlp?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'priority', 'status', 'tlp'}.contains(key)); } 
-CloudforceOneRequestsRequestConstants copyWith({List<CloudforceOneRequestsPriority>? Function()? priority, List<CloudforceOneRequestsRequestStatus>? Function()? status, List<CloudforceOneRequestsTlp>? Function()? tlp, }) { return CloudforceOneRequestsRequestConstants(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'priority', 'status', 'tlp'}.contains(key));}
+CloudforceOneRequestsRequestConstants copyWith({List<CloudforceOneRequestsPriority>? Function()? priority, List<CloudforceOneRequestsRequestStatus>? Function()? status, List<CloudforceOneRequestsTlp>? Function()? tlp, }) {return CloudforceOneRequestsRequestConstants(
   priority: priority != null ? priority() : this.priority,
   status: status != null ? status() : this.status,
   tlp: tlp != null ? tlp() : this.tlp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestConstants &&
           listEquals(priority, other.priority) &&
@@ -39,4 +39,4 @@ CloudforceOneRequestsRequestConstants copyWith({List<CloudforceOneRequestsPriori
 
 @override String toString() => 'CloudforceOneRequestsRequestConstants(priority: $priority, status: $status, tlp: $tlp)';
 
- }
+}

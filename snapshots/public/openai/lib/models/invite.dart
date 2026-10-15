@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite/invite_projects.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';/// The object type, which is always `organization.invite`
 sealed class InviteObject {const InviteObject();
 
-factory InviteObject.fromJson(String json) { return switch (json) {
+factory InviteObject.fromJson(String json) {return switch (json) {
   'organization.invite' => organizationInvite,
   _ => InviteObject$Unknown(json),
-}; }
+};}
 
 static const InviteObject organizationInvite = InviteObject$organizationInvite._();
 
 static const List<InviteObject> values = [organizationInvite];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.invite' => 'organizationInvite',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InviteObject$Unknown; } 
+bool get isUnknown {return this is InviteObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationInvite, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationInvite, required W Function(String value) $unknown, }) {return switch (this) {
       InviteObject$organizationInvite() => organizationInvite(),
       InviteObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationInvite, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationInvite, W Function(String value)? $unknown, }) {return switch (this) {
       InviteObject$organizationInvite() => organizationInvite != null ? organizationInvite() : orElse(value),
       InviteObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InviteObject($value)';
 
- }
+}
 @immutable final class InviteObject$organizationInvite extends InviteObject {const InviteObject$organizationInvite._();
 
 @override String get value => 'organization.invite';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.invite'.hashCode;
 
- }
+}
 @immutable final class InviteObject$Unknown extends InviteObject {const InviteObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// `accepted`,`expired`, or `pending`
 sealed class InviteStatus {const InviteStatus();
 
-factory InviteStatus.fromJson(String json) { return switch (json) {
+factory InviteStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'expired' => expired,
   'pending' => pending,
   _ => InviteStatus$Unknown(json),
-}; }
+};}
 
 static const InviteStatus accepted = InviteStatus$accepted._();
 
@@ -73,33 +73,33 @@ static const InviteStatus pending = InviteStatus$pending._();
 static const List<InviteStatus> values = [accepted, expired, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   'expired' => 'expired',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InviteStatus$Unknown; } 
+bool get isUnknown {return this is InviteStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function() expired, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function() expired, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       InviteStatus$accepted() => accepted(),
       InviteStatus$expired() => expired(),
       InviteStatus$pending() => pending(),
       InviteStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? expired, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? expired, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       InviteStatus$accepted() => accepted != null ? accepted() : orElse(value),
       InviteStatus$expired() => expired != null ? expired() : orElse(value),
       InviteStatus$pending() => pending != null ? pending() : orElse(value),
       InviteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InviteStatus($value)';
 
- }
+}
 @immutable final class InviteStatus$accepted extends InviteStatus {const InviteStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class InviteStatus$expired extends InviteStatus {const InviteStatus$expired._();
 
 @override String get value => 'expired';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class InviteStatus$pending extends InviteStatus {const InviteStatus$pending._();
 
 @override String get value => 'pending';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class InviteStatus$Unknown extends InviteStatus {const InviteStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an individual `invite` to the organization.
 @immutable final class Invite {const Invite({required this.object, required this.id, required this.email, required this.role, required this.status, required this.invitedAt, required this.expiresAt, this.acceptedAt, this.projects, });
 
-factory Invite.fromJson(Map<String, dynamic> json) { return Invite(
+factory Invite.fromJson(Map<String, dynamic> json) {return Invite(
   object: InviteObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   email: json['email'] as String,
@@ -150,7 +150,7 @@ factory Invite.fromJson(Map<String, dynamic> json) { return Invite(
   expiresAt: (json['expires_at'] as num).toInt(),
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
   projects: (json['projects'] as List<dynamic>?)?.map((e) => InviteProjects.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The object type, which is always `organization.invite`
 final InviteObject object;
@@ -179,7 +179,7 @@ final int? acceptedAt;
 /// The projects that were granted membership upon acceptance of the invite.
 final List<InviteProjects>? projects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'email': email,
@@ -189,15 +189,15 @@ Map<String, dynamic> toJson() { return {
   'expires_at': expiresAt,
   'accepted_at': ?acceptedAt,
   if (projects != null) 'projects': projects?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('role') &&
       json.containsKey('status') &&
       json.containsKey('invited_at') && json['invited_at'] is num &&
-      json.containsKey('expires_at') && json['expires_at'] is num; } 
-Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int? Function()? acceptedAt, List<InviteProjects>? Function()? projects, }) { return Invite(
+      json.containsKey('expires_at') && json['expires_at'] is num;}
+Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int? Function()? acceptedAt, List<InviteProjects>? Function()? projects, }) {return Invite(
   object: object ?? this.object,
   id: id ?? this.id,
   email: email ?? this.email,
@@ -207,7 +207,7 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestR
   expiresAt: expiresAt ?? this.expiresAt,
   acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
   projects: projects != null ? projects() : this.projects,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Invite &&
           object == other.object &&
@@ -224,4 +224,4 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestR
 
 @override String toString() => 'Invite(\n  object: $object,\n  id: $id,\n  email: $email,\n  role: $role,\n  status: $status,\n  invitedAt: $invitedAt,\n  expiresAt: $expiresAt,\n  acceptedAt: $acceptedAt,\n  projects: $projects,\n)';
 
- }
+}

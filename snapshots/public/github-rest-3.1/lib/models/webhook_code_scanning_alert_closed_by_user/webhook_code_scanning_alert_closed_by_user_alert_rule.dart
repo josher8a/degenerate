@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCodeScanningAlertClosedByUser (inline: Alert > Rule)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/code_scanning_alert_rule_severity.dart';@immutable final class WebhookCodeScanningAlertClosedByUserAlertRule {const WebhookCodeScanningAlertClosedByUserAlertRule({required this.description, required this.id, required this.severity, this.fullDescription, this.help, this.helpUri, this.name, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/code_scanning_alert_rule_severity.dart';@immutable final class WebhookCodeScanningAlertClosedByUserAlertRule {const WebhookCodeScanningAlertClosedByUserAlertRule({required this.description, required this.id, required this.severity, this.fullDescription, this.help = const Omittable.absent(), this.helpUri = const Omittable.absent(), this.name, this.tags = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertClosedByUserAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertClosedByUserAlertRule(
+factory WebhookCodeScanningAlertClosedByUserAlertRule.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertClosedByUserAlertRule(
   description: json['description'] as String,
   fullDescription: json['full_description'] as String?,
-  help: json['help'] as String?,
-  helpUri: json['help_uri'] as String?,
+  help: json.containsKey('help') ? Omittable(json['help'] as String?) : const Omittable.absent(),
+  helpUri: json.containsKey('help_uri') ? Omittable(json['help_uri'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   name: json['name'] as String?,
   severity: json['severity'] != null ? CodeScanningAlertRuleSeverity.fromJson(json['severity'] as String) : null,
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+  tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
+);}
 
 /// A short description of the rule used to detect the alert.
 final String description;
 
 final String? fullDescription;
 
-final String? help;
+final Omittable<String?> help;
 
 /// A link to the documentation for the rule used to detect the alert.
-final String? helpUri;
+final Omittable<String?> helpUri;
 
 /// A unique identifier for the rule used to detect the alert.
 final String id;
@@ -32,31 +32,31 @@ final String? name;
 /// The severity of the alert.
 final CodeScanningAlertRuleSeverity? severity;
 
-final List<String>? tags;
+final Omittable<List<String>?> tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'full_description': ?fullDescription,
-  'help': ?help,
-  'help_uri': ?helpUri,
+  if (help.isPresent) 'help': help.value,
+  if (helpUri.isPresent) 'help_uri': helpUri.value,
   'id': id,
   'name': ?name,
   'severity': severity?.toJson(),
-  'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+  if (tags.isPresent) 'tags': tags.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('severity'); } 
-WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, String? Function()? fullDescription, String? Function()? help, String? Function()? helpUri, String? id, String? Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, List<String>? Function()? tags, }) { return WebhookCodeScanningAlertClosedByUserAlertRule(
+      json.containsKey('severity');}
+WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, String? Function()? fullDescription, Omittable<String?>? help, Omittable<String?>? helpUri, String? id, String? Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, Omittable<List<String>?>? tags, }) {return WebhookCodeScanningAlertClosedByUserAlertRule(
   description: description ?? this.description,
   fullDescription: fullDescription != null ? fullDescription() : this.fullDescription,
-  help: help != null ? help() : this.help,
-  helpUri: helpUri != null ? helpUri() : this.helpUri,
+  help: help ?? this.help,
+  helpUri: helpUri ?? this.helpUri,
   id: id ?? this.id,
   name: name != null ? name() : this.name,
   severity: severity != null ? severity() : this.severity,
-  tags: tags != null ? tags() : this.tags,
-); } 
+  tags: tags ?? this.tags,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUserAlertRule &&
           description == other.description &&
@@ -66,10 +66,11 @@ WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, Str
           id == other.id &&
           name == other.name &&
           severity == other.severity &&
-          listEquals(tags, other.tags);
+          tags.isPresent == other.tags.isPresent &&
+          listEquals(tags.value, other.tags.value);
 
-@override int get hashCode => Object.hash(description, fullDescription, help, helpUri, id, name, severity, Object.hashAll(tags ?? const []));
+@override int get hashCode => Object.hash(description, fullDescription, help, helpUri, id, name, severity, Object.hashAll(tags.value ?? const []));
 
 @override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertRule(description: $description, fullDescription: $fullDescription, help: $help, helpUri: $helpUri, id: $id, name: $name, severity: $severity, tags: $tags)';
 
- }
+}

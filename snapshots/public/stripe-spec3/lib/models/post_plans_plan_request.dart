@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPlansPlanRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPlansPlanRequest {const PostPlansPlanRequest({this.active, this.expand, this.metadata, this.nickname, this.product, this.trialPeriodDays, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPlansPlanRequest {const PostPlansPlanRequest({this.active, this.expand, this.metadata, this.nickname, this.product, this.trialPeriodDays, });
 
-factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) { return PostPlansPlanRequest(
+factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) {return PostPlansPlanRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   nickname: json['nickname'] as String?,
   product: json['product'] as String?,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-); }
+);}
 
 /// Whether the plan is currently available for new subscriptions.
 final bool? active;
@@ -30,17 +30,17 @@ final String? product;
 /// Default number of trial days when subscribing a customer to this plan using [`trial_from_plan=true`](https://docs.stripe.com/api#create_subscription-trial_from_plan).
 final int? trialPeriodDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'nickname': ?nickname,
   'product': ?product,
   'trial_period_days': ?trialPeriodDays,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'nickname', 'product', 'trial_period_days'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'expand', 'metadata', 'nickname', 'product', 'trial_period_days'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final nickname$ = nickname;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
@@ -49,15 +49,15 @@ final product$ = product;
 if (product$ != null) {
   if (product$.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
-return errors; } 
-PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) { return PostPlansPlanRequest(
+return errors;}
+PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) {return PostPlansPlanRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   nickname: nickname != null ? nickname() : this.nickname,
   product: product != null ? product() : this.product,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPlansPlanRequest &&
           active == other.active &&
@@ -71,4 +71,4 @@ PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function(
 
 @override String toString() => 'PostPlansPlanRequest(active: $active, expand: $expand, metadata: $metadata, nickname: $nickname, product: $product, trialPeriodDays: $trialPeriodDays)';
 
- }
+}

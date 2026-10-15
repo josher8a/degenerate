@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class CodeInterpreterTextOutput {const CodeInterpreterTextOutput({required this.type, required this.logs, });
 
-factory CodeInterpreterTextOutput.fromJson(Map<String, dynamic> json) { return CodeInterpreterTextOutput(
+factory CodeInterpreterTextOutput.fromJson(Map<String, dynamic> json) {return CodeInterpreterTextOutput(
   type: CodeInterpreterTextOutputType.fromJson(json['type'] as String),
   logs: json['logs'] as String,
-); }
+);}
 
 /// The type of the code interpreter text output. Always `logs`.
 /// 
@@ -18,16 +18,16 @@ final CodeInterpreterTextOutputType type;
 /// 
 final String logs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'logs': logs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('logs') && json['logs'] is String; } 
-CodeInterpreterTextOutput copyWith({CodeInterpreterTextOutputType? type, String? logs, }) { return CodeInterpreterTextOutput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('logs') && json['logs'] is String;}
+CodeInterpreterTextOutput copyWith({CodeInterpreterTextOutputType? type, String? logs, }) {return CodeInterpreterTextOutput(
   type: type ?? this.type,
   logs: logs ?? this.logs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterTextOutput &&
           type == other.type &&
@@ -37,4 +37,4 @@ CodeInterpreterTextOutput copyWith({CodeInterpreterTextOutputType? type, String?
 
 @override String toString() => 'CodeInterpreterTextOutput(type: $type, logs: $logs)';
 
- }
+}

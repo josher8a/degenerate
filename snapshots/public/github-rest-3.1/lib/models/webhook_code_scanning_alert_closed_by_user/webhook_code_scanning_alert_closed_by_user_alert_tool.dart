@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCodeScanningAlertClosedByUser (inline: Alert > Tool)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertClosedByUserAlertTool {const WebhookCodeScanningAlertClosedByUserAlertTool({required this.name, required this.version, this.guid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertClosedByUserAlertTool {const WebhookCodeScanningAlertClosedByUserAlertTool({required this.name, required this.version, this.guid = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertClosedByUserAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertClosedByUserAlertTool(
-  guid: json['guid'] as String?,
+factory WebhookCodeScanningAlertClosedByUserAlertTool.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertClosedByUserAlertTool(
+  guid: json.containsKey('guid') ? Omittable(json['guid'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   version: json['version'] as String?,
-); }
+);}
 
-final String? guid;
+final Omittable<String?> guid;
 
 /// The name of the tool used to generate the code scanning analysis alert.
 final String name;
@@ -17,18 +17,18 @@ final String name;
 /// The version of the tool used to detect the alert.
 final String? version;
 
-Map<String, dynamic> toJson() { return {
-  'guid': ?guid,
+Map<String, dynamic> toJson() {return {
+  if (guid.isPresent) 'guid': guid.value,
   'name': name,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-WebhookCodeScanningAlertClosedByUserAlertTool copyWith({String? Function()? guid, String? name, String? Function()? version, }) { return WebhookCodeScanningAlertClosedByUserAlertTool(
-  guid: guid != null ? guid() : this.guid,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('version') && (json['version'] == null || json['version'] is String);}
+WebhookCodeScanningAlertClosedByUserAlertTool copyWith({Omittable<String?>? guid, String? name, String? Function()? version, }) {return WebhookCodeScanningAlertClosedByUserAlertTool(
+  guid: guid ?? this.guid,
   name: name ?? this.name,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUserAlertTool &&
           guid == other.guid &&
@@ -39,4 +39,4 @@ WebhookCodeScanningAlertClosedByUserAlertTool copyWith({String? Function()? guid
 
 @override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertTool(guid: $guid, name: $name, version: $version)';
 
- }
+}

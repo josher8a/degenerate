@@ -1,27 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WafManagedRulesRuleResponseSingle
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WafManagedRulesRuleResponseSingle {const WafManagedRulesRuleResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_messages2.dart';@immutable final class WafManagedRulesRuleResponseSingle {const WafManagedRulesRuleResponseSingle({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory WafManagedRulesRuleResponseSingle.fromJson(Map<String, dynamic> json) { return WafManagedRulesRuleResponseSingle(
-  result: json['result'] as Map<String, dynamic>?,
-); }
+factory WafManagedRulesRuleResponseSingle.fromJson(Map<String, dynamic> json) {return WafManagedRulesRuleResponseSingle(
+  errors: (json['errors'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  result: json['result'] as Map<String, dynamic>,
+);}
 
-final Map<String,dynamic>? result;
+final List<WafManagedRulesMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  'result': ?result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-WafManagedRulesRuleResponseSingle copyWith({Map<String, dynamic>? Function()? result}) { return WafManagedRulesRuleResponseSingle(
-  result: result != null ? result() : this.result,
-); } 
+final List<WafManagedRulesMessages2> messages;
+
+/// Defines whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
+
+final Map<String,dynamic> result;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'result': result,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result');}
+WafManagedRulesRuleResponseSingle copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, Map<String,dynamic>? result, }) {return WafManagedRulesRuleResponseSingle(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesRuleResponseSingle &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
           result == other.result;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result);
 
-@override String toString() => 'WafManagedRulesRuleResponseSingle(result: $result)';
+@override String toString() => 'WafManagedRulesRuleResponseSingle(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

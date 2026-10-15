@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByTlsVersionBotClass {const RadarGetHttpTopLocationsByTlsVersionBotClass();
 
-factory RadarGetHttpTopLocationsByTlsVersionBotClass.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByTlsVersionBotClass.fromJson(String json) {return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,
   'LIKELY_HUMAN' => likelyHuman,
   _ => RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByTlsVersionBotClass likelyAutomated = RadarGetHttpTopLocationsByTlsVersionBotClass$likelyAutomated._();
 
@@ -16,30 +16,30 @@ static const RadarGetHttpTopLocationsByTlsVersionBotClass likelyHuman = RadarGet
 static const List<RadarGetHttpTopLocationsByTlsVersionBotClass> values = [likelyAutomated, likelyHuman];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'LIKELY_AUTOMATED' => 'likelyAutomated',
   'LIKELY_HUMAN' => 'likelyHuman',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() likelyAutomated, required W Function() likelyHuman, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() likelyAutomated, required W Function() likelyHuman, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByTlsVersionBotClass$likelyAutomated() => likelyAutomated(),
       RadarGetHttpTopLocationsByTlsVersionBotClass$likelyHuman() => likelyHuman(),
       RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAutomated, W Function()? likelyHuman, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAutomated, W Function()? likelyHuman, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByTlsVersionBotClass$likelyAutomated() => likelyAutomated != null ? likelyAutomated() : orElse(value),
       RadarGetHttpTopLocationsByTlsVersionBotClass$likelyHuman() => likelyHuman != null ? likelyHuman() : orElse(value),
       RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopLocationsByTlsVersionBotClass($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBotClass$likelyAutomated extends RadarGetHttpTopLocationsByTlsVersionBotClass {const RadarGetHttpTopLocationsByTlsVersionBotClass$likelyAutomated._();
 
 @override String get value => 'LIKELY_AUTOMATED';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAu
 
 @override int get hashCode => 'LIKELY_AUTOMATED'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBotClass$likelyHuman extends RadarGetHttpTopLocationsByTlsVersionBotClass {const RadarGetHttpTopLocationsByTlsVersionBotClass$likelyHuman._();
 
 @override String get value => 'LIKELY_HUMAN';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAu
 
 @override int get hashCode => 'LIKELY_HUMAN'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown extends RadarGetHttpTopLocationsByTlsVersionBotClass {const RadarGetHttpTopLocationsByTlsVersionBotClass$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

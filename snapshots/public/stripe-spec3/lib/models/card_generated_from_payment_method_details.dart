@@ -4,29 +4,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present.dart';/// 
 @immutable final class CardGeneratedFromPaymentMethodDetails {const CardGeneratedFromPaymentMethodDetails({required this.type, this.cardPresent, });
 
-factory CardGeneratedFromPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return CardGeneratedFromPaymentMethodDetails(
+factory CardGeneratedFromPaymentMethodDetails.fromJson(Map<String, dynamic> json) {return CardGeneratedFromPaymentMethodDetails(
   cardPresent: json['card_present'] != null ? PaymentMethodDetailsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-); }
+);}
 
 final PaymentMethodDetailsCardPresent? cardPresent;
 
 /// The type of payment method transaction-specific details from the transaction that generated this `card` payment method. Always `card_present`.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardPresent != null) 'card_present': cardPresent?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-CardGeneratedFromPaymentMethodDetails copyWith({PaymentMethodDetailsCardPresent? Function()? cardPresent, String? type, }) { return CardGeneratedFromPaymentMethodDetails(
+return errors;}
+CardGeneratedFromPaymentMethodDetails copyWith({PaymentMethodDetailsCardPresent? Function()? cardPresent, String? type, }) {return CardGeneratedFromPaymentMethodDetails(
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CardGeneratedFromPaymentMethodDetails &&
           cardPresent == other.cardPresent &&
@@ -36,4 +36,4 @@ CardGeneratedFromPaymentMethodDetails copyWith({PaymentMethodDetailsCardPresent?
 
 @override String toString() => 'CardGeneratedFromPaymentMethodDetails(cardPresent: $cardPresent, type: $type)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_components_schemas_type.dart';import 'package:pub_cloudflare/models/teams_devices_device_managed_networks_components_schemas_name.dart';import 'package:pub_cloudflare/models/teams_devices_schemas_config_request.dart';@immutable final class DeviceManagedNetworksCreateDeviceManagedNetworkRequest {const DeviceManagedNetworksCreateDeviceManagedNetworkRequest({required this.config, required this.name, required this.type, });
 
-factory DeviceManagedNetworksCreateDeviceManagedNetworkRequest.fromJson(Map<String, dynamic> json) { return DeviceManagedNetworksCreateDeviceManagedNetworkRequest(
+factory DeviceManagedNetworksCreateDeviceManagedNetworkRequest.fromJson(Map<String, dynamic> json) {return DeviceManagedNetworksCreateDeviceManagedNetworkRequest(
   config: TeamsDevicesSchemasConfigRequest.fromJson(json['config']),
   name: TeamsDevicesDeviceManagedNetworksComponentsSchemasName.fromJson(json['name'] as String),
   type: TeamsDevicesComponentsSchemasType.fromJson(json['type'] as String),
-); }
+);}
 
 final TeamsDevicesSchemasConfigRequest config;
 
@@ -17,19 +17,19 @@ final TeamsDevicesDeviceManagedNetworksComponentsSchemasName name;
 /// The type of device managed network.
 final TeamsDevicesComponentsSchemasType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   'name': name.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
       json.containsKey('name') &&
-      json.containsKey('type'); } 
-DeviceManagedNetworksCreateDeviceManagedNetworkRequest copyWith({TeamsDevicesSchemasConfigRequest? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName? name, TeamsDevicesComponentsSchemasType? type, }) { return DeviceManagedNetworksCreateDeviceManagedNetworkRequest(
+      json.containsKey('type');}
+DeviceManagedNetworksCreateDeviceManagedNetworkRequest copyWith({TeamsDevicesSchemasConfigRequest? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName? name, TeamsDevicesComponentsSchemasType? type, }) {return DeviceManagedNetworksCreateDeviceManagedNetworkRequest(
   config: config ?? this.config,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeviceManagedNetworksCreateDeviceManagedNetworkRequest &&
           config == other.config &&
@@ -40,4 +40,4 @@ DeviceManagedNetworksCreateDeviceManagedNetworkRequest copyWith({TeamsDevicesSch
 
 @override String toString() => 'DeviceManagedNetworksCreateDeviceManagedNetworkRequest(config: $config, name: $name, type: $type)';
 
- }
+}

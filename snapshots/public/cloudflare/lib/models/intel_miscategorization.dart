@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IndicatorType {const IndicatorType();
 
-factory IndicatorType.fromJson(String json) { return switch (json) {
+factory IndicatorType.fromJson(String json) {return switch (json) {
   'domain' => domain,
   'ipv4' => ipv4,
   'ipv6' => ipv6,
   'url' => url,
   _ => IndicatorType$Unknown(json),
-}; }
+};}
 
 static const IndicatorType domain = IndicatorType$domain._();
 
@@ -22,36 +22,36 @@ static const IndicatorType url = IndicatorType$url._();
 static const List<IndicatorType> values = [domain, ipv4, ipv6, url];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'domain' => 'domain',
   'ipv4' => 'ipv4',
   'ipv6' => 'ipv6',
   'url' => 'url',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IndicatorType$Unknown; } 
+bool get isUnknown {return this is IndicatorType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() domain, required W Function() ipv4, required W Function() ipv6, required W Function() url, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() domain, required W Function() ipv4, required W Function() ipv6, required W Function() url, required W Function(String value) $unknown, }) {return switch (this) {
       IndicatorType$domain() => domain(),
       IndicatorType$ipv4() => ipv4(),
       IndicatorType$ipv6() => ipv6(),
       IndicatorType$url() => url(),
       IndicatorType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? ipv4, W Function()? ipv6, W Function()? url, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? ipv4, W Function()? ipv6, W Function()? url, W Function(String value)? $unknown, }) {return switch (this) {
       IndicatorType$domain() => domain != null ? domain() : orElse(value),
       IndicatorType$ipv4() => ipv4 != null ? ipv4() : orElse(value),
       IndicatorType$ipv6() => ipv6 != null ? ipv6() : orElse(value),
       IndicatorType$url() => url != null ? url() : orElse(value),
       IndicatorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IndicatorType($value)';
 
- }
+}
 @immutable final class IndicatorType$domain extends IndicatorType {const IndicatorType$domain._();
 
 @override String get value => 'domain';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'domain'.hashCode;
 
- }
+}
 @immutable final class IndicatorType$ipv4 extends IndicatorType {const IndicatorType$ipv4._();
 
 @override String get value => 'ipv4';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'ipv4'.hashCode;
 
- }
+}
 @immutable final class IndicatorType$ipv6 extends IndicatorType {const IndicatorType$ipv6._();
 
 @override String get value => 'ipv6';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'ipv6'.hashCode;
 
- }
+}
 @immutable final class IndicatorType$url extends IndicatorType {const IndicatorType$url._();
 
 @override String get value => 'url';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'url'.hashCode;
 
- }
+}
 @immutable final class IndicatorType$Unknown extends IndicatorType {const IndicatorType$Unknown(this.value);
 
 @override final String value;
@@ -97,18 +97,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });
+}
+@immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip = const Omittable.absent(), this.securityAdds, this.securityRemoves, this.url, });
 
-factory IntelMiscategorization.fromJson(Map<String, dynamic> json) { return IntelMiscategorization(
+factory IntelMiscategorization.fromJson(Map<String, dynamic> json) {return IntelMiscategorization(
   contentAdds: (json['content_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   contentRemoves: (json['content_removes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   indicatorType: json['indicator_type'] != null ? IndicatorType.fromJson(json['indicator_type'] as String) : null,
-  ip: json['ip'] as String?,
+  ip: json.containsKey('ip') ? Omittable(json['ip'] as String?) : const Omittable.absent(),
   securityAdds: (json['security_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   securityRemoves: (json['security_removes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   url: json['url'] as String?,
-); }
+);}
 
 /// Content category IDs to add.
 /// 
@@ -124,7 +124,7 @@ final List<int>? contentRemoves;
 final IndicatorType? indicatorType;
 
 /// Provide only if indicator_type is `ipv4` or `ipv6`.
-final String? ip;
+final Omittable<String?> ip;
 
 /// Security category IDs to add.
 /// 
@@ -139,25 +139,25 @@ final List<int>? securityRemoves;
 /// Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content_adds': ?contentAdds,
   'content_removes': ?contentRemoves,
   if (indicatorType != null) 'indicator_type': indicatorType?.toJson(),
-  'ip': ?ip,
+  if (ip.isPresent) 'ip': ip.value,
   'security_adds': ?securityAdds,
   'security_removes': ?securityRemoves,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_adds', 'content_removes', 'indicator_type', 'ip', 'security_adds', 'security_removes', 'url'}.contains(key)); } 
-IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? Function()? contentRemoves, IndicatorType? Function()? indicatorType, String? Function()? ip, List<int>? Function()? securityAdds, List<int>? Function()? securityRemoves, String? Function()? url, }) { return IntelMiscategorization(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content_adds', 'content_removes', 'indicator_type', 'ip', 'security_adds', 'security_removes', 'url'}.contains(key));}
+IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? Function()? contentRemoves, IndicatorType? Function()? indicatorType, Omittable<String?>? ip, List<int>? Function()? securityAdds, List<int>? Function()? securityRemoves, String? Function()? url, }) {return IntelMiscategorization(
   contentAdds: contentAdds != null ? contentAdds() : this.contentAdds,
   contentRemoves: contentRemoves != null ? contentRemoves() : this.contentRemoves,
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,
-  ip: ip != null ? ip() : this.ip,
+  ip: ip ?? this.ip,
   securityAdds: securityAdds != null ? securityAdds() : this.securityAdds,
   securityRemoves: securityRemoves != null ? securityRemoves() : this.securityRemoves,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IntelMiscategorization &&
           listEquals(contentAdds, other.contentAdds) &&
@@ -172,4 +172,4 @@ IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? 
 
 @override String toString() => 'IntelMiscategorization(contentAdds: $contentAdds, contentRemoves: $contentRemoves, indicatorType: $indicatorType, ip: $ip, securityAdds: $securityAdds, securityRemoves: $securityRemoves, url: $url)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
 sealed class ReturnMetadata {const ReturnMetadata();
 
-factory ReturnMetadata.fromJson(String json) { return switch (json) {
+factory ReturnMetadata.fromJson(String json) {return switch (json) {
   'none' => none,
   'indexed' => indexed,
   'all' => all,
   _ => ReturnMetadata$Unknown(json),
-}; }
+};}
 
 static const ReturnMetadata none = ReturnMetadata$none._();
 
@@ -20,33 +20,33 @@ static const ReturnMetadata all = ReturnMetadata$all._();
 static const List<ReturnMetadata> values = [none, indexed, all];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'indexed' => 'indexed',
   'all' => 'all',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReturnMetadata$Unknown; } 
+bool get isUnknown {return this is ReturnMetadata$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() indexed, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() indexed, required W Function() all, required W Function(String value) $unknown, }) {return switch (this) {
       ReturnMetadata$none() => none(),
       ReturnMetadata$indexed() => indexed(),
       ReturnMetadata$all() => all(),
       ReturnMetadata$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? indexed, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? indexed, W Function()? all, W Function(String value)? $unknown, }) {return switch (this) {
       ReturnMetadata$none() => none != null ? none() : orElse(value),
       ReturnMetadata$indexed() => indexed != null ? indexed() : orElse(value),
       ReturnMetadata$all() => all != null ? all() : orElse(value),
       ReturnMetadata$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReturnMetadata($value)';
 
- }
+}
 @immutable final class ReturnMetadata$none extends ReturnMetadata {const ReturnMetadata$none._();
 
 @override String get value => 'none';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ReturnMetadata$indexed extends ReturnMetadata {const ReturnMetadata$indexed._();
 
 @override String get value => 'indexed';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'indexed'.hashCode;
 
- }
+}
 @immutable final class ReturnMetadata$all extends ReturnMetadata {const ReturnMetadata$all._();
 
 @override String get value => 'all';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class ReturnMetadata$Unknown extends ReturnMetadata {const ReturnMetadata$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = ReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
+}
+@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata, this.returnValues, this.topK, });
 
-factory Request.fromJson(Map<String, dynamic> json) { return Request(
+factory Request.fromJson(Map<String, dynamic> json) {return Request(
   filter: json['filter'] as Map<String, dynamic>?,
-  returnMetadata: json.containsKey('returnMetadata') ? ReturnMetadata.fromJson(json['returnMetadata'] as String) : ReturnMetadata.none,
-  returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
-  topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,
+  returnMetadata: json['returnMetadata'] != null ? ReturnMetadata.fromJson(json['returnMetadata'] as String) : null,
+  returnValues: json['returnValues'] as bool?,
+  topK: json['topK'] != null ? (json['topK'] as num).toDouble() : null,
   vector: (json['vector'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 /// A metadata filter expression used to limit nearest neighbor results.
 /// 
@@ -100,36 +100,45 @@ factory Request.fromJson(Map<String, dynamic> json) { return Request(
 final Map<String,dynamic>? filter;
 
 /// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
-final ReturnMetadata returnMetadata;
+final ReturnMetadata? returnMetadata;
 
 /// Whether to return the values associated with the closest vectors.
-final bool returnValues;
+final bool? returnValues;
 
 /// The number of nearest neighbors to find.
 /// 
 /// Example: `5`
-final double topK;
+final double? topK;
 
 /// The search vector that will be used to find the nearest neighbors.
 /// 
 /// Example: `[0.5, 0.5, 0.5]`
 final List<double> vector;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `returnMetadata`, or its schema default when absent.
+ReturnMetadata get returnMetadataOrDefault => returnMetadata ?? ReturnMetadata.fromJson('none');
+
+/// The value of `returnValues`, or its schema default when absent.
+bool get returnValuesOrDefault => returnValues ?? false;
+
+/// The value of `topK`, or its schema default when absent.
+double get topKOrDefault => topK ?? 5.0;
+
+Map<String, dynamic> toJson() {return {
   'filter': ?filter,
-  'returnMetadata': returnMetadata.toJson(),
-  'returnValues': returnValues,
-  'topK': topK,
+  if (returnMetadata != null) 'returnMetadata': returnMetadata?.toJson(),
+  'returnValues': ?returnValues,
+  'topK': ?topK,
   'vector': vector,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-Request copyWith({Map<String, dynamic>? Function()? filter, ReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('vector');}
+Request copyWith({Map<String, dynamic>? Function()? filter, ReturnMetadata? Function()? returnMetadata, bool? Function()? returnValues, double? Function()? topK, List<double>? vector, }) {return Request(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,
   topK: topK != null ? topK() : this.topK,
   vector: vector ?? this.vector,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Request &&
           filter == other.filter &&
@@ -142,4 +151,4 @@ Request copyWith({Map<String, dynamic>? Function()? filter, ReturnMetadata Funct
 
 @override String toString() => 'Request(filter: $filter, returnMetadata: $returnMetadata, returnValues: $returnValues, topK: $topK, vector: $vector)';
 
- }
+}

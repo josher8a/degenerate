@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_adaptive_routing.dart';import 'package:pub_cloudflare/models/load_balancing_fallback_pool.dart';import 'package:pub_cloudflare/models/load_balancing_location_strategy.dart';import 'package:pub_cloudflare/models/load_balancing_random_steering.dart';import 'package:pub_cloudflare/models/load_balancing_session_affinity.dart';import 'package:pub_cloudflare/models/load_balancing_session_affinity_attributes.dart';import 'package:pub_cloudflare/models/load_balancing_session_affinity_ttl.dart';import 'package:pub_cloudflare/models/load_balancing_steering_policy.dart';import 'package:pub_cloudflare/models/load_balancing_ttl.dart';/// A collection of overrides to apply to the load balancer when this rule's condition is true. All fields are optional.
 @immutable final class Overrides {const Overrides({this.adaptiveRouting, this.countryPools, this.defaultPools, this.fallbackPool, this.locationStrategy, this.popPools, this.randomSteering, this.regionPools, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
 
-factory Overrides.fromJson(Map<String, dynamic> json) { return Overrides(
+factory Overrides.fromJson(Map<String, dynamic> json) {return Overrides(
   adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
   countryPools: (json['country_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   defaultPools: (json['default_pools'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -18,7 +18,7 @@ factory Overrides.fromJson(Map<String, dynamic> json) { return Overrides(
   sessionAffinityTtl: json['session_affinity_ttl'] != null ? LoadBalancingSessionAffinityTtl.fromJson(json['session_affinity_ttl'] as num) : null,
   steeringPolicy: json['steering_policy'] != null ? LoadBalancingSteeringPolicy.fromJson(json['steering_policy'] as String) : null,
   ttl: json['ttl'] != null ? LoadBalancingTtl.fromJson(json['ttl'] as num) : null,
-); }
+);}
 
 final LoadBalancingAdaptiveRouting? adaptiveRouting;
 
@@ -51,7 +51,7 @@ final LoadBalancingSteeringPolicy? steeringPolicy;
 
 final LoadBalancingTtl? ttl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adaptiveRouting != null) 'adaptive_routing': adaptiveRouting?.toJson(),
   'country_pools': ?countryPools,
   'default_pools': ?defaultPools,
@@ -65,9 +65,9 @@ Map<String, dynamic> toJson() { return {
   if (sessionAffinityTtl != null) 'session_affinity_ttl': sessionAffinityTtl?.toJson(),
   if (steeringPolicy != null) 'steering_policy': steeringPolicy?.toJson(),
   if (ttl != null) 'ttl': ttl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adaptive_routing', 'country_pools', 'default_pools', 'fallback_pool', 'location_strategy', 'pop_pools', 'random_steering', 'region_pools', 'session_affinity', 'session_affinity_attributes', 'session_affinity_ttl', 'steering_policy', 'ttl'}.contains(key)); } 
-Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, Map<String, List<String>>? Function()? countryPools, List<String>? Function()? defaultPools, LoadBalancingFallbackPool? Function()? fallbackPool, LoadBalancingLocationStrategy? Function()? locationStrategy, Map<String, List<String>>? Function()? popPools, LoadBalancingRandomSteering? Function()? randomSteering, Map<String, List<String>>? Function()? regionPools, LoadBalancingSessionAffinity? Function()? sessionAffinity, LoadBalancingSessionAffinityAttributes? Function()? sessionAffinityAttributes, LoadBalancingSessionAffinityTtl? Function()? sessionAffinityTtl, LoadBalancingSteeringPolicy? Function()? steeringPolicy, LoadBalancingTtl? Function()? ttl, }) { return Overrides(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'adaptive_routing', 'country_pools', 'default_pools', 'fallback_pool', 'location_strategy', 'pop_pools', 'random_steering', 'region_pools', 'session_affinity', 'session_affinity_attributes', 'session_affinity_ttl', 'steering_policy', 'ttl'}.contains(key));}
+Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, Map<String, List<String>>? Function()? countryPools, List<String>? Function()? defaultPools, LoadBalancingFallbackPool? Function()? fallbackPool, LoadBalancingLocationStrategy? Function()? locationStrategy, Map<String, List<String>>? Function()? popPools, LoadBalancingRandomSteering? Function()? randomSteering, Map<String, List<String>>? Function()? regionPools, LoadBalancingSessionAffinity? Function()? sessionAffinity, LoadBalancingSessionAffinityAttributes? Function()? sessionAffinityAttributes, LoadBalancingSessionAffinityTtl? Function()? sessionAffinityTtl, LoadBalancingSteeringPolicy? Function()? steeringPolicy, LoadBalancingTtl? Function()? ttl, }) {return Overrides(
   adaptiveRouting: adaptiveRouting != null ? adaptiveRouting() : this.adaptiveRouting,
   countryPools: countryPools != null ? countryPools() : this.countryPools,
   defaultPools: defaultPools != null ? defaultPools() : this.defaultPools,
@@ -81,7 +81,7 @@ Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, M
   sessionAffinityTtl: sessionAffinityTtl != null ? sessionAffinityTtl() : this.sessionAffinityTtl,
   steeringPolicy: steeringPolicy != null ? steeringPolicy() : this.steeringPolicy,
   ttl: ttl != null ? ttl() : this.ttl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Overrides &&
           adaptiveRouting == other.adaptiveRouting &&
@@ -102,4 +102,4 @@ Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, M
 
 @override String toString() => 'Overrides(\n  adaptiveRouting: $adaptiveRouting,\n  countryPools: $countryPools,\n  defaultPools: $defaultPools,\n  fallbackPool: $fallbackPool,\n  locationStrategy: $locationStrategy,\n  popPools: $popPools,\n  randomSteering: $randomSteering,\n  regionPools: $regionPools,\n  sessionAffinity: $sessionAffinity,\n  sessionAffinityAttributes: $sessionAffinityAttributes,\n  sessionAffinityTtl: $sessionAffinityTtl,\n  steeringPolicy: $steeringPolicy,\n  ttl: $ttl,\n)';
 
- }
+}

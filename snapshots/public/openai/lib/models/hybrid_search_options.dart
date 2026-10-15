@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HybridSearchOptions {const HybridSearchOptions({required this.embeddingWeight, required this.textWeight, });
 
-factory HybridSearchOptions.fromJson(Map<String, dynamic> json) { return HybridSearchOptions(
+factory HybridSearchOptions.fromJson(Map<String, dynamic> json) {return HybridSearchOptions(
   embeddingWeight: (json['embedding_weight'] as num).toDouble(),
   textWeight: (json['text_weight'] as num).toDouble(),
-); }
+);}
 
 /// The weight of the embedding in the reciprocal ranking fusion.
 final double embeddingWeight;
@@ -14,16 +14,16 @@ final double embeddingWeight;
 /// The weight of the text in the reciprocal ranking fusion.
 final double textWeight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'embedding_weight': embeddingWeight,
   'text_weight': textWeight,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('embedding_weight') && json['embedding_weight'] is num &&
-      json.containsKey('text_weight') && json['text_weight'] is num; } 
-HybridSearchOptions copyWith({double? embeddingWeight, double? textWeight, }) { return HybridSearchOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('embedding_weight') && json['embedding_weight'] is num &&
+      json.containsKey('text_weight') && json['text_weight'] is num;}
+HybridSearchOptions copyWith({double? embeddingWeight, double? textWeight, }) {return HybridSearchOptions(
   embeddingWeight: embeddingWeight ?? this.embeddingWeight,
   textWeight: textWeight ?? this.textWeight,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HybridSearchOptions &&
           embeddingWeight == other.embeddingWeight &&
@@ -33,4 +33,4 @@ HybridSearchOptions copyWith({double? embeddingWeight, double? textWeight, }) { 
 
 @override String toString() => 'HybridSearchOptions(embeddingWeight: $embeddingWeight, textWeight: $textWeight)';
 
- }
+}

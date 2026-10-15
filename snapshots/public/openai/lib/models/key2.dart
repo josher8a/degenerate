@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log_actor_service_account.dart';import 'package:pub_openai/models/audit_log_actor_user.dart';import 'package:pub_openai/models/key2/key2_type.dart';/// The API Key used to perform the audit logged action.
 @immutable final class Key2 {const Key2({this.id, this.type, this.user, this.serviceAccount, });
 
-factory Key2.fromJson(Map<String, dynamic> json) { return Key2(
+factory Key2.fromJson(Map<String, dynamic> json) {return Key2(
   id: json['id'] as String?,
   type: json['type'] != null ? Key2Type.fromJson(json['type'] as String) : null,
   user: json['user'] != null ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   serviceAccount: json['service_account'] != null ? AuditLogActorServiceAccount.fromJson(json['service_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The tracking id of the API key.
 final String? id;
@@ -21,19 +21,19 @@ final AuditLogActorUser? user;
 
 final AuditLogActorServiceAccount? serviceAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (type != null) 'type': type?.toJson(),
   if (user != null) 'user': user?.toJson(),
   if (serviceAccount != null) 'service_account': serviceAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type', 'user', 'service_account'}.contains(key)); } 
-Key2 copyWith({String? Function()? id, Key2Type? Function()? type, AuditLogActorUser? Function()? user, AuditLogActorServiceAccount? Function()? serviceAccount, }) { return Key2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'type', 'user', 'service_account'}.contains(key));}
+Key2 copyWith({String? Function()? id, Key2Type? Function()? type, AuditLogActorUser? Function()? user, AuditLogActorServiceAccount? Function()? serviceAccount, }) {return Key2(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   user: user != null ? user() : this.user,
   serviceAccount: serviceAccount != null ? serviceAccount() : this.serviceAccount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Key2 &&
           id == other.id &&
@@ -45,4 +45,4 @@ Key2 copyWith({String? Function()? id, Key2Type? Function()? type, AuditLogActor
 
 @override String toString() => 'Key2(id: $id, type: $type, user: $user, serviceAccount: $serviceAccount)';
 
- }
+}

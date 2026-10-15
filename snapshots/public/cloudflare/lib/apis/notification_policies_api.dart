@@ -14,7 +14,7 @@ final class NotificationPoliciesApi with ApiExecutor {const NotificationPolicies
 /// Get a list of all Notification policies.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<List<AaaPolicies>?, NotificationAlertTypesGetAlertTypesError>> notificationPoliciesListNotificationPolicies({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaPolicies>?, NotificationAlertTypesGetAlertTypesError>> notificationPoliciesListNotificationPolicies({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: NotificationAlertTypesGetAlertTypesError.fromResponse,
 );
- } 
+}
 /// Create a Notification policy
 ///
 /// Creates a new Notification policy.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesCreateANotificationPolicyError>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesCreateANotificationPolicyError>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,13 +56,13 @@ return execute(
   },
   onError: NotificationPoliciesCreateANotificationPolicyError.fromResponse,
 );
- } 
+}
 /// Get a Notification policy
 ///
 /// Get details for a single policy.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<AaaPolicies?, NotificationPoliciesGetANotificationPolicyError>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaPolicies?, NotificationPoliciesGetANotificationPolicyError>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,13 +79,13 @@ return execute(
   },
   onError: NotificationPoliciesGetANotificationPolicyError.fromResponse,
 );
- } 
+}
 /// Update a Notification policy
 ///
 /// Update a Notification policy.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesUpdateANotificationPolicyError>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesUpdateANotificationPolicyError>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -104,13 +104,13 @@ return execute(
   },
   onError: NotificationPoliciesUpdateANotificationPolicyError.fromResponse,
 );
- } 
+}
 /// Delete a Notification policy
 ///
 /// Delete a Notification policy.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<ResponseCollection, NotificationPoliciesDeleteANotificationPolicyError>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection, NotificationPoliciesDeleteANotificationPolicyError>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,12 +119,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: NotificationPoliciesDeleteANotificationPolicyError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes/webhooks_changes_body.dart';/// The changes to the project if the action was `edited`.
 @immutable final class WebhookProjectEditedChanges {const WebhookProjectEditedChanges({this.body, this.name, });
 
-factory WebhookProjectEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectEditedChanges(
+factory WebhookProjectEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookProjectEditedChanges(
   body: json['body'] != null ? WebhooksChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? WebhookLabelEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhooksChangesBody? body;
 
 final WebhookLabelEditedChangesName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (body != null) 'body': body?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'name'}.contains(key)); } 
-WebhookProjectEditedChanges copyWith({WebhooksChangesBody? Function()? body, WebhookLabelEditedChangesName? Function()? name, }) { return WebhookProjectEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'body', 'name'}.contains(key));}
+WebhookProjectEditedChanges copyWith({WebhooksChangesBody? Function()? body, WebhookLabelEditedChangesName? Function()? name, }) {return WebhookProjectEditedChanges(
   body: body != null ? body() : this.body,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectEditedChanges &&
           body == other.body &&
@@ -31,4 +31,4 @@ WebhookProjectEditedChanges copyWith({WebhooksChangesBody? Function()? body, Web
 
 @override String toString() => 'WebhookProjectEditedChanges(body: $body, name: $name)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Bank Identifier Code of the customer's bank.
 sealed class Bic {const Bic();
 
-factory Bic.fromJson(String json) { return switch (json) {
+factory Bic.fromJson(String json) {return switch (json) {
   'ABNANL2A' => abnanl2A,
   'ADYBNL2A' => adybnl2A,
   'ASNBNL21' => asnbnl21,
@@ -27,7 +27,7 @@ factory Bic.fromJson(String json) { return switch (json) {
   'SNSBNL2A' => snsbnl2A,
   'TRIONL2U' => trionl2U,
   _ => Bic$Unknown(json),
-}; }
+};}
 
 static const Bic abnanl2A = Bic$abnanl2A._();
 
@@ -74,9 +74,9 @@ static const Bic trionl2U = Bic$trionl2U._();
 static const List<Bic> values = [abnanl2A, adybnl2A, asnbnl21, bitsnl2A, bunqnl2A, buutnl2A, fnomnl22, fvlbnl22, handnl2A, ingbnl2A, knabnl2H, mllenl2A, moyonl21, nnbanl2G, ntsbdeb1, rabonl2U, rbrbnl21, revoie23, revolt21, snsbnl2A, trionl2U];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ABNANL2A' => 'abnanl2A',
   'ADYBNL2A' => 'adybnl2A',
   'ASNBNL21' => 'asnbnl21',
@@ -99,11 +99,11 @@ String get name { return switch (value) {
   'SNSBNL2A' => 'snsbnl2A',
   'TRIONL2U' => 'trionl2U',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Bic$Unknown; } 
+bool get isUnknown {return this is Bic$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() abnanl2A, required W Function() adybnl2A, required W Function() asnbnl21, required W Function() bitsnl2A, required W Function() bunqnl2A, required W Function() buutnl2A, required W Function() fnomnl22, required W Function() fvlbnl22, required W Function() handnl2A, required W Function() ingbnl2A, required W Function() knabnl2H, required W Function() mllenl2A, required W Function() moyonl21, required W Function() nnbanl2G, required W Function() ntsbdeb1, required W Function() rabonl2U, required W Function() rbrbnl21, required W Function() revoie23, required W Function() revolt21, required W Function() snsbnl2A, required W Function() trionl2U, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() abnanl2A, required W Function() adybnl2A, required W Function() asnbnl21, required W Function() bitsnl2A, required W Function() bunqnl2A, required W Function() buutnl2A, required W Function() fnomnl22, required W Function() fvlbnl22, required W Function() handnl2A, required W Function() ingbnl2A, required W Function() knabnl2H, required W Function() mllenl2A, required W Function() moyonl21, required W Function() nnbanl2G, required W Function() ntsbdeb1, required W Function() rabonl2U, required W Function() rbrbnl21, required W Function() revoie23, required W Function() revolt21, required W Function() snsbnl2A, required W Function() trionl2U, required W Function(String value) $unknown, }) {return switch (this) {
       Bic$abnanl2A() => abnanl2A(),
       Bic$adybnl2A() => adybnl2A(),
       Bic$asnbnl21() => asnbnl21(),
@@ -126,9 +126,9 @@ W when<W>({required W Function() abnanl2A, required W Function() adybnl2A, requi
       Bic$snsbnl2A() => snsbnl2A(),
       Bic$trionl2U() => trionl2U(),
       Bic$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A, W Function()? adybnl2A, W Function()? asnbnl21, W Function()? bitsnl2A, W Function()? bunqnl2A, W Function()? buutnl2A, W Function()? fnomnl22, W Function()? fvlbnl22, W Function()? handnl2A, W Function()? ingbnl2A, W Function()? knabnl2H, W Function()? mllenl2A, W Function()? moyonl21, W Function()? nnbanl2G, W Function()? ntsbdeb1, W Function()? rabonl2U, W Function()? rbrbnl21, W Function()? revoie23, W Function()? revolt21, W Function()? snsbnl2A, W Function()? trionl2U, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A, W Function()? adybnl2A, W Function()? asnbnl21, W Function()? bitsnl2A, W Function()? bunqnl2A, W Function()? buutnl2A, W Function()? fnomnl22, W Function()? fvlbnl22, W Function()? handnl2A, W Function()? ingbnl2A, W Function()? knabnl2H, W Function()? mllenl2A, W Function()? moyonl21, W Function()? nnbanl2G, W Function()? ntsbdeb1, W Function()? rabonl2U, W Function()? rbrbnl21, W Function()? revoie23, W Function()? revolt21, W Function()? snsbnl2A, W Function()? trionl2U, W Function(String value)? $unknown, }) {return switch (this) {
       Bic$abnanl2A() => abnanl2A != null ? abnanl2A() : orElse(value),
       Bic$adybnl2A() => adybnl2A != null ? adybnl2A() : orElse(value),
       Bic$asnbnl21() => asnbnl21 != null ? asnbnl21() : orElse(value),
@@ -151,10 +151,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
       Bic$snsbnl2A() => snsbnl2A != null ? snsbnl2A() : orElse(value),
       Bic$trionl2U() => trionl2U != null ? trionl2U() : orElse(value),
       Bic$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Bic($value)';
 
- }
+}
 @immutable final class Bic$abnanl2A extends Bic {const Bic$abnanl2A._();
 
 @override String get value => 'ABNANL2A';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'ABNANL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$adybnl2A extends Bic {const Bic$adybnl2A._();
 
 @override String get value => 'ADYBNL2A';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'ADYBNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$asnbnl21 extends Bic {const Bic$asnbnl21._();
 
 @override String get value => 'ASNBNL21';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'ASNBNL21'.hashCode;
 
- }
+}
 @immutable final class Bic$bitsnl2A extends Bic {const Bic$bitsnl2A._();
 
 @override String get value => 'BITSNL2A';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'BITSNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$bunqnl2A extends Bic {const Bic$bunqnl2A._();
 
 @override String get value => 'BUNQNL2A';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'BUNQNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$buutnl2A extends Bic {const Bic$buutnl2A._();
 
 @override String get value => 'BUUTNL2A';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'BUUTNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$fnomnl22 extends Bic {const Bic$fnomnl22._();
 
 @override String get value => 'FNOMNL22';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'FNOMNL22'.hashCode;
 
- }
+}
 @immutable final class Bic$fvlbnl22 extends Bic {const Bic$fvlbnl22._();
 
 @override String get value => 'FVLBNL22';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'FVLBNL22'.hashCode;
 
- }
+}
 @immutable final class Bic$handnl2A extends Bic {const Bic$handnl2A._();
 
 @override String get value => 'HANDNL2A';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'HANDNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$ingbnl2A extends Bic {const Bic$ingbnl2A._();
 
 @override String get value => 'INGBNL2A';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'INGBNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$knabnl2H extends Bic {const Bic$knabnl2H._();
 
 @override String get value => 'KNABNL2H';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'KNABNL2H'.hashCode;
 
- }
+}
 @immutable final class Bic$mllenl2A extends Bic {const Bic$mllenl2A._();
 
 @override String get value => 'MLLENL2A';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'MLLENL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$moyonl21 extends Bic {const Bic$moyonl21._();
 
 @override String get value => 'MOYONL21';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'MOYONL21'.hashCode;
 
- }
+}
 @immutable final class Bic$nnbanl2G extends Bic {const Bic$nnbanl2G._();
 
 @override String get value => 'NNBANL2G';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'NNBANL2G'.hashCode;
 
- }
+}
 @immutable final class Bic$ntsbdeb1 extends Bic {const Bic$ntsbdeb1._();
 
 @override String get value => 'NTSBDEB1';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'NTSBDEB1'.hashCode;
 
- }
+}
 @immutable final class Bic$rabonl2U extends Bic {const Bic$rabonl2U._();
 
 @override String get value => 'RABONL2U';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'RABONL2U'.hashCode;
 
- }
+}
 @immutable final class Bic$rbrbnl21 extends Bic {const Bic$rbrbnl21._();
 
 @override String get value => 'RBRBNL21';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'RBRBNL21'.hashCode;
 
- }
+}
 @immutable final class Bic$revoie23 extends Bic {const Bic$revoie23._();
 
 @override String get value => 'REVOIE23';
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'REVOIE23'.hashCode;
 
- }
+}
 @immutable final class Bic$revolt21 extends Bic {const Bic$revolt21._();
 
 @override String get value => 'REVOLT21';
@@ -325,7 +325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'REVOLT21'.hashCode;
 
- }
+}
 @immutable final class Bic$snsbnl2A extends Bic {const Bic$snsbnl2A._();
 
 @override String get value => 'SNSBNL2A';
@@ -334,7 +334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'SNSBNL2A'.hashCode;
 
- }
+}
 @immutable final class Bic$trionl2U extends Bic {const Bic$trionl2U._();
 
 @override String get value => 'TRIONL2U';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => 'TRIONL2U'.hashCode;
 
- }
+}
 @immutable final class Bic$Unknown extends Bic {const Bic$Unknown(this.value);
 
 @override final String value;
@@ -353,4 +353,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A
 
 @override int get hashCode => value.hashCode;
 
- }
+}

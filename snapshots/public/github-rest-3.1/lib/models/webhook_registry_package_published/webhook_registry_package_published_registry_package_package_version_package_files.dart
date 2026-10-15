@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles({required this.contentType, required this.createdAt, required this.downloadUrl, required this.id, required this.md5, required this.name, required this.sha1, required this.sha256, required this.size, required this.state, required this.updatedAt, });
 
-factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(
+factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(
   contentType: json['content_type'] as String,
   createdAt: json['created_at'] as String,
   downloadUrl: json['download_url'] as String,
@@ -15,7 +15,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles
   size: (json['size'] as num).toInt(),
   state: json['state'] as String?,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final String contentType;
 
@@ -39,7 +39,7 @@ final String? state;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content_type': contentType,
   'created_at': createdAt,
   'download_url': downloadUrl,
@@ -51,19 +51,19 @@ Map<String, dynamic> toJson() { return {
   'size': size,
   'state': state,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_type') && json['content_type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content_type') && json['content_type'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('md5') && json['md5'] is String &&
+      json.containsKey('md5') && (json['md5'] == null || json['md5'] is String) &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('sha1') && json['sha1'] is String &&
-      json.containsKey('sha256') && json['sha256'] is String &&
+      json.containsKey('sha1') && (json['sha1'] == null || json['sha1'] is String) &&
+      json.containsKey('sha256') && (json['sha256'] == null || json['sha256'] is String) &&
       json.containsKey('size') && json['size'] is num &&
-      json.containsKey('state') && json['state'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWith({String? contentType, String? createdAt, String? downloadUrl, int? id, String? Function()? md5, String? name, String? Function()? sha1, String? Function()? sha256, int? size, String? Function()? state, String? updatedAt, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(
+      json.containsKey('state') && (json['state'] == null || json['state'] is String) &&
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWith({String? contentType, String? createdAt, String? downloadUrl, int? id, String? Function()? md5, String? name, String? Function()? sha1, String? Function()? sha256, int? size, String? Function()? state, String? updatedAt, }) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(
   contentType: contentType ?? this.contentType,
   createdAt: createdAt ?? this.createdAt,
   downloadUrl: downloadUrl ?? this.downloadUrl,
@@ -75,7 +75,7 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWit
   size: size ?? this.size,
   state: state != null ? state() : this.state,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles &&
           contentType == other.contentType &&
@@ -94,4 +94,4 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWit
 
 @override String toString() => 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(\n  contentType: $contentType,\n  createdAt: $createdAt,\n  downloadUrl: $downloadUrl,\n  id: $id,\n  md5: $md5,\n  name: $name,\n  sha1: $sha1,\n  sha256: $sha256,\n  size: $size,\n  state: $state,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

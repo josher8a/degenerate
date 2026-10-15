@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_events_get_latest_result.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnAdminEventsGetLatestSuccess {const MconnAdminEventsGetLatestSuccess({required this.success, required this.result, this.errors, this.messages, });
 
-factory MconnAdminEventsGetLatestSuccess.fromJson(Map<String, dynamic> json) { return MconnAdminEventsGetLatestSuccess(
+factory MconnAdminEventsGetLatestSuccess.fromJson(Map<String, dynamic> json) {return MconnAdminEventsGetLatestSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: MconnAdminEventsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<MconnCodedMessage>? errors;
 
@@ -18,20 +18,20 @@ final bool success;
 
 final MconnAdminEventsGetLatestResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-MconnAdminEventsGetLatestSuccess copyWith({List<MconnCodedMessage>? Function()? errors, List<MconnCodedMessage>? Function()? messages, bool? success, MconnAdminEventsGetLatestResult? result, }) { return MconnAdminEventsGetLatestSuccess(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result');}
+MconnAdminEventsGetLatestSuccess copyWith({List<MconnCodedMessage>? Function()? errors, List<MconnCodedMessage>? Function()? messages, bool? success, MconnAdminEventsGetLatestResult? result, }) {return MconnAdminEventsGetLatestSuccess(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminEventsGetLatestSuccess &&
           listEquals(errors, other.errors) &&
@@ -43,4 +43,4 @@ MconnAdminEventsGetLatestSuccess copyWith({List<MconnCodedMessage>? Function()? 
 
 @override String toString() => 'MconnAdminEventsGetLatestSuccess(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

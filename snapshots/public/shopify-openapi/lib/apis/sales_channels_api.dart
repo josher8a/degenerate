@@ -14,7 +14,7 @@ final class SalesChannelsApi with ApiExecutor {const SalesChannelsApi(this.apiCo
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCheckouts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCheckouts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,17 +25,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCheckouts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCheckouts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,17 +46,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCheckouts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCheckouts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,17 +67,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts.json`
-Future<ApiResult<void, Never>> createCheckouts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createCheckouts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,17 +88,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCheckouts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCheckouts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,17 +109,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-unstable
 ///
 /// `POST /admin/api/unstable/checkouts.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckouts({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckouts({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -130,17 +130,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -151,17 +151,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamToken({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -170,17 +170,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -191,11 +191,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -203,7 +203,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -212,17 +212,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -233,17 +233,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamToken({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -252,17 +252,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -273,11 +273,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -285,7 +285,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -294,17 +294,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -315,17 +315,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamToken({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -334,17 +334,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -355,11 +355,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -367,7 +367,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -376,17 +376,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> createCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -397,17 +397,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}.json`
-Future<ApiResult<void, Never>> getCheckoutsParamToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getCheckoutsParamToken({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -416,17 +416,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/checkouts/{token}.json`
-Future<ApiResult<void, Never>> updateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -437,11 +437,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -449,7 +449,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void, Never>> getCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -458,17 +458,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -479,17 +479,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamToken({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -498,17 +498,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -519,11 +519,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -531,7 +531,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -540,17 +540,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-unstable
 ///
 /// `POST /admin/api/unstable/checkouts/{token}/complete.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenComplete({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -561,17 +561,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamToken({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamToken({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -580,17 +580,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-unstable
 ///
 /// `PUT /admin/api/unstable/checkouts/{token}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCheckoutsParamToken({required String token, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -601,11 +601,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -613,7 +613,7 @@ return execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#shipping_rates-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/shipping_rates.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenShippingRates({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -622,17 +622,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListings({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -649,17 +649,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -676,17 +676,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-01
 ///
 /// `GET /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -695,17 +695,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-01
 ///
 /// `PUT /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -716,17 +716,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -735,17 +735,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListings({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -762,17 +762,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -789,17 +789,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-04
 ///
 /// `GET /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -808,17 +808,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-04
 ///
 /// `PUT /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -829,17 +829,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -848,17 +848,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListings({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -875,17 +875,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -902,17 +902,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-07
 ///
 /// `GET /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -921,17 +921,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-07
 ///
 /// `PUT /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -942,17 +942,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -961,17 +961,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings.json`
-Future<ApiResult<void, Never>> getCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectionListings({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -988,17 +988,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1015,17 +1015,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-10
 ///
 /// `GET /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1034,17 +1034,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-10
 ///
 /// `PUT /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> updateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1055,17 +1055,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1074,17 +1074,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListings({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1101,17 +1101,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1128,17 +1128,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2021-01
 ///
 /// `GET /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1147,17 +1147,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2021-01
 ///
 /// `PUT /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1168,17 +1168,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1187,17 +1187,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListings({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListings({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1214,17 +1214,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings/{collection_listing_id}/product_ids.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingIdProductIds({required String collectionListingId, dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1241,17 +1241,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-unstable
 ///
 /// `GET /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1260,17 +1260,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-unstable
 ///
 /// `PUT /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateCollectionListingsParamCollectionListingId({required String collectionListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1281,17 +1281,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/collection_listings/{collection_listing_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteCollectionListingsParamCollectionListingId({required String collectionListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1300,17 +1300,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1319,17 +1319,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-01
 ///
 /// `POST /admin/api/2020-01/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) {
   queryParameters['amount required'] = amountRequired.toString();
@@ -1357,17 +1357,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1376,17 +1376,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/{token}/payments/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1395,17 +1395,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1414,17 +1414,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-04
 ///
 /// `POST /admin/api/2020-04/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) {
   queryParameters['amount required'] = amountRequired.toString();
@@ -1452,17 +1452,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1471,17 +1471,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/{token}/payments/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1490,17 +1490,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1509,17 +1509,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-07
 ///
 /// `POST /admin/api/2020-07/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) {
   queryParameters['amount required'] = amountRequired.toString();
@@ -1547,17 +1547,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1566,17 +1566,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/{token}/payments/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1585,17 +1585,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> getCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1604,17 +1604,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-10
 ///
 /// `POST /admin/api/2020-10/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> createCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> createCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) {
   queryParameters['amount required'] = amountRequired.toString();
@@ -1642,17 +1642,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void, Never>> getCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1661,17 +1661,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/{token}/payments/count.json`
-Future<ApiResult<void, Never>> getCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1680,17 +1680,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1699,17 +1699,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2021-01
 ///
 /// `POST /admin/api/2021-01/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) {
   queryParameters['amount required'] = amountRequired.toString();
@@ -1737,17 +1737,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1756,17 +1756,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/{token}/payments/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1775,17 +1775,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPayments({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1794,17 +1794,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-unstable
 ///
 /// `POST /admin/api/unstable/checkouts/{token}/payments.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateCheckoutsParamTokenPayments({required String token, dynamic amountRequired, dynamic requestDetailsRequired, dynamic sessionIdRequired, dynamic uniqueTokenRequired, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amountRequired != null) {
   queryParameters['amount required'] = amountRequired.toString();
@@ -1832,17 +1832,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/payments/{payment_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPaymentsParamPaymentId({required String token, required String paymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1851,17 +1851,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/{token}/payments/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsParamTokenPaymentsCount({required String token, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1870,17 +1870,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (productIds != null) {
   queryParameters['product_ids'] = productIds.toString();
@@ -1909,17 +1909,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to your app. Maximum 1,000 results per page.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1936,17 +1936,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a count of products that are published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductListingsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsCount({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1955,17 +1955,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific product listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-01
 ///
 /// `GET /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1974,17 +1974,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a product listing to publish a product to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-01
 ///
 /// `PUT /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateProductListingsParamProductListingId({required String productListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateProductListingsParamProductListingId({required String productListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1995,17 +1995,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a product listing to unpublish a product from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2014,17 +2014,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (productIds != null) {
   queryParameters['product_ids'] = productIds.toString();
@@ -2053,17 +2053,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to your app. Maximum 1,000 results per page.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2080,17 +2080,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a count of products that are published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductListingsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsCount({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2099,17 +2099,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific product listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-04
 ///
 /// `GET /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2118,17 +2118,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a product listing to publish a product to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-04
 ///
 /// `PUT /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateProductListingsParamProductListingId({required String productListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateProductListingsParamProductListingId({required String productListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2139,17 +2139,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a product listing to unpublish a product from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2158,17 +2158,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductListings({dynamic productIds, dynamic limit, dynamic collectionId, dynamic updatedAtMin, dynamic handle, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (productIds != null) {
   queryParameters['product_ids'] = productIds.toString();
@@ -2197,17 +2197,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve product_ids that are published to your app. Maximum 1,000 results per page.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/product_ids.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsProductIds({dynamic limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2224,17 +2224,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a count of products that are published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductListingsCount({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsCount({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2243,17 +2243,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a specific product listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-07
 ///
 /// `GET /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2262,17 +2262,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a product listing to publish a product to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-07
 ///
 /// `PUT /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateProductListingsParamProductListingId({required String productListingId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateProductListingsParamProductListingId({required String productListingId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2283,17 +2283,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete a product listing to unpublish a product from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/product_listings/{product_listing_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteProductListingsParamProductListingId({required String productListingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2302,9 +2302,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

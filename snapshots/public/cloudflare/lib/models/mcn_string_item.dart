@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnStringItem {const McnStringItem({required this.itemType, required this.string, });
 
-factory McnStringItem.fromJson(Map<String, dynamic> json) { return McnStringItem(
+factory McnStringItem.fromJson(Map<String, dynamic> json) {return McnStringItem(
   itemType: json['item_type'] as String,
   string: json['string'] as String,
-); }
+);}
 
 final String itemType;
 
 final String string;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'item_type': itemType,
   'string': string,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('item_type') && json['item_type'] is String &&
-      json.containsKey('string') && json['string'] is String; } 
-McnStringItem copyWith({String? itemType, String? string, }) { return McnStringItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('item_type') && json['item_type'] is String &&
+      json.containsKey('string') && json['string'] is String;}
+McnStringItem copyWith({String? itemType, String? string, }) {return McnStringItem(
   itemType: itemType ?? this.itemType,
   string: string ?? this.string,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnStringItem &&
           itemType == other.itemType &&
@@ -31,4 +31,4 @@ McnStringItem copyWith({String? itemType, String? string, }) { return McnStringI
 
 @override String toString() => 'McnStringItem(itemType: $itemType, string: $string)';
 
- }
+}

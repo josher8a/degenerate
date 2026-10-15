@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/api.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_state.dart';@immutable final class CertificateLogs {const CertificateLogs({required this.api, required this.description, required this.endExclusive, required this.$operator, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.url, });
 
-factory CertificateLogs.fromJson(Map<String, dynamic> json) { return CertificateLogs(
+factory CertificateLogs.fromJson(Map<String, dynamic> json) {return CertificateLogs(
   api: Api.fromJson(json['api'] as String),
   description: json['description'] as String,
   endExclusive: DateTime.parse(json['endExclusive'] as String),
@@ -13,7 +13,7 @@ factory CertificateLogs.fromJson(Map<String, dynamic> json) { return Certificate
   state: CertificateLogState.fromJson(json['state'] as String),
   stateTimestamp: DateTime.parse(json['stateTimestamp'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// The API standard that the certificate log follows.
 final Api api;
@@ -56,7 +56,7 @@ final DateTime stateTimestamp;
 /// Example: `'https://ct.googleapis.com/logs/us1/argon2024/'`
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'api': api.toJson(),
   'description': description,
   'endExclusive': endExclusive.toIso8601String(),
@@ -66,8 +66,8 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'stateTimestamp': stateTimestamp.toIso8601String(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('api') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endExclusive') && json['endExclusive'] is String &&
       json.containsKey('operator') && json['operator'] is String &&
@@ -75,8 +75,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('startInclusive') && json['startInclusive'] is String &&
       json.containsKey('state') &&
       json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive, String? $operator, String? slug, DateTime? startInclusive, CertificateLogState? state, DateTime? stateTimestamp, String? url, }) { return CertificateLogs(
+      json.containsKey('url') && json['url'] is String;}
+CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive, String? $operator, String? slug, DateTime? startInclusive, CertificateLogState? state, DateTime? stateTimestamp, String? url, }) {return CertificateLogs(
   api: api ?? this.api,
   description: description ?? this.description,
   endExclusive: endExclusive ?? this.endExclusive,
@@ -86,7 +86,7 @@ CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive,
   state: state ?? this.state,
   stateTimestamp: stateTimestamp ?? this.stateTimestamp,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateLogs &&
           api == other.api &&
@@ -103,4 +103,4 @@ CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive,
 
 @override String toString() => 'CertificateLogs(\n  api: $api,\n  description: $description,\n  endExclusive: $endExclusive,\n  \$operator: ${$operator},\n  slug: $slug,\n  startInclusive: $startInclusive,\n  state: $state,\n  stateTimestamp: $stateTimestamp,\n  url: $url,\n)';
 
- }
+}

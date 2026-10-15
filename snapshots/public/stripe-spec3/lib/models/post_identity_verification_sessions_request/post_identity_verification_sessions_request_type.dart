@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed. You must provide a `type` if not passing `verification_flow`.
 sealed class PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType();
 
-factory PostIdentityVerificationSessionsRequestType.fromJson(String json) { return switch (json) {
+factory PostIdentityVerificationSessionsRequestType.fromJson(String json) {return switch (json) {
   'document' => document,
   'id_number' => idNumber,
   _ => PostIdentityVerificationSessionsRequestType$Unknown(json),
-}; }
+};}
 
 static const PostIdentityVerificationSessionsRequestType document = PostIdentityVerificationSessionsRequestType$document._();
 
@@ -17,30 +17,30 @@ static const PostIdentityVerificationSessionsRequestType idNumber = PostIdentity
 static const List<PostIdentityVerificationSessionsRequestType> values = [document, idNumber];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'document' => 'document',
   'id_number' => 'idNumber',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostIdentityVerificationSessionsRequestType$Unknown; } 
+bool get isUnknown {return this is PostIdentityVerificationSessionsRequestType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() document, required W Function() idNumber, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() document, required W Function() idNumber, required W Function(String value) $unknown, }) {return switch (this) {
       PostIdentityVerificationSessionsRequestType$document() => document(),
       PostIdentityVerificationSessionsRequestType$idNumber() => idNumber(),
       PostIdentityVerificationSessionsRequestType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? document, W Function()? idNumber, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? document, W Function()? idNumber, W Function(String value)? $unknown, }) {return switch (this) {
       PostIdentityVerificationSessionsRequestType$document() => document != null ? document() : orElse(value),
       PostIdentityVerificationSessionsRequestType$idNumber() => idNumber != null ? idNumber() : orElse(value),
       PostIdentityVerificationSessionsRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostIdentityVerificationSessionsRequestType($value)';
 
- }
+}
 @immutable final class PostIdentityVerificationSessionsRequestType$document extends PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType$document._();
 
 @override String get value => 'document';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'document'.hashCode;
 
- }
+}
 @immutable final class PostIdentityVerificationSessionsRequestType$idNumber extends PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType$idNumber._();
 
 @override String get value => 'id_number';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'id_number'.hashCode;
 
- }
+}
 @immutable final class PostIdentityVerificationSessionsRequestType$Unknown extends PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => value.hashCode;
 
- }
+}

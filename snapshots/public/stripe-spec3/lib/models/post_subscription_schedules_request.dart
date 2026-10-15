@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSubscriptionSchedulesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_phases.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_start_date.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/start_date_variant2.dart';@immutable final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_phases.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_start_date.dart';@immutable final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
 
-factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequest(
+factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequest(
   billingMode: json['billing_mode'] != null ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
@@ -11,10 +11,10 @@ factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { r
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fromSubscription: json['from_subscription'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
-  startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => (v as num).toInt(), fromB: (v) => StartDateVariant2.fromJson(v as String),) : null,
-); }
+  startDate: json['start_date'] != null ? PostSubscriptionSchedulesRequestStartDate.fromJson(json['start_date']) : null,
+);}
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 final PostSubscriptionSchedulesRequestBillingMode? billingMode;
@@ -46,7 +46,7 @@ final List<PostSubscriptionSchedulesRequestPhases>? phases;
 /// When the subscription schedule starts. We recommend using `now` so that it starts the subscription immediately. You can also use a Unix timestamp to backdate the subscription so that it starts on a past date, or set a future date for the subscription to start on.
 final PostSubscriptionSchedulesRequestStartDate? startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingMode != null) 'billing_mode': billingMode?.toJson(),
   'customer': ?customer,
   'customer_account': ?customerAccount,
@@ -57,10 +57,10 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (startDate != null) 'start_date': startDate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'customer', 'customer_account', 'default_settings', 'end_behavior', 'expand', 'from_subscription', 'metadata', 'phases', 'start_date'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_mode', 'customer', 'customer_account', 'default_settings', 'end_behavior', 'expand', 'from_subscription', 'metadata', 'phases', 'start_date'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -73,8 +73,8 @@ final fromSubscription$ = fromSubscription;
 if (fromSubscription$ != null) {
   if (fromSubscription$.runes.length > 5000) { errors.add('fromSubscription: length must be <= 5000'); }
 }
-return errors; } 
-PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, String? Function()? customer, String? Function()? customerAccount, DefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, String? Function()? fromSubscription, Metadata? Function()? metadata, List<PostSubscriptionSchedulesRequestPhases>? Function()? phases, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, }) { return PostSubscriptionSchedulesRequest(
+return errors;}
+PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, String? Function()? customer, String? Function()? customerAccount, DefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, String? Function()? fromSubscription, Metadata? Function()? metadata, List<PostSubscriptionSchedulesRequestPhases>? Function()? phases, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, }) {return PostSubscriptionSchedulesRequest(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
@@ -85,7 +85,7 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
   metadata: metadata != null ? metadata() : this.metadata,
   phases: phases != null ? phases() : this.phases,
   startDate: startDate != null ? startDate() : this.startDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesRequest &&
           billingMode == other.billingMode &&
@@ -103,4 +103,4 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
 
 @override String toString() => 'PostSubscriptionSchedulesRequest(\n  billingMode: $billingMode,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  defaultSettings: $defaultSettings,\n  endBehavior: $endBehavior,\n  expand: $expand,\n  fromSubscription: $fromSubscription,\n  metadata: $metadata,\n  phases: $phases,\n  startDate: $startDate,\n)';
 
- }
+}

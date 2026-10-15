@@ -14,7 +14,7 @@ final class ZeroTrustListsApi with ApiExecutor {const ZeroTrustListsApi(this.api
 /// Fetch all Zero Trust lists for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/lists`
-Future<ApiResult<List<ZeroTrustGatewayLists>?, ZeroTrustListsListZeroTrustListsError>> zeroTrustListsListZeroTrustLists({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewaySchemasType? type, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ZeroTrustGatewayLists>?, ZeroTrustListsListZeroTrustListsError>> zeroTrustListsListZeroTrustLists({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewaySchemasType? type, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
   queryParameters['type'] = type.toJson();
@@ -31,7 +31,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -39,13 +39,13 @@ return execute(
   },
   onError: ZeroTrustListsListZeroTrustListsError.fromResponse,
 );
- } 
+}
 /// Create Zero Trust list
 ///
 /// Creates a new Zero Trust list.
 ///
 /// `POST /accounts/{account_id}/gateway/lists`
-Future<ApiResult<ZeroTrustGatewaySingleResponseWithListItemsResult?, ZeroTrustListsCreateZeroTrustListError>> zeroTrustListsCreateZeroTrustList({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsCreateZeroTrustListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySingleResponseWithListItemsResult?, ZeroTrustListsCreateZeroTrustListError>> zeroTrustListsCreateZeroTrustList({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsCreateZeroTrustListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,7 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -64,13 +64,13 @@ return execute(
   },
   onError: ZeroTrustListsCreateZeroTrustListError.fromResponse,
 );
- } 
+}
 /// Get Zero Trust list details
 ///
 /// Fetch a single Zero Trust list.
 ///
 /// `GET /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ZeroTrustGatewayLists?, ZeroTrustListsZeroTrustListDetailsError>> zeroTrustListsZeroTrustListDetails({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLists?, ZeroTrustListsZeroTrustListDetailsError>> zeroTrustListsZeroTrustListDetails({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,7 +79,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -87,13 +87,13 @@ return execute(
   },
   onError: ZeroTrustListsZeroTrustListDetailsError.fromResponse,
 );
- } 
+}
 /// Update Zero Trust list
 ///
 /// Updates a configured Zero Trust list. Skips updating list items if not included in the payload. A non empty list items will overwrite the existing list.
 ///
 /// `PUT /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ZeroTrustGatewayLists?, ZeroTrustListsUpdateZeroTrustListError>> zeroTrustListsUpdateZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsUpdateZeroTrustListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLists?, ZeroTrustListsUpdateZeroTrustListError>> zeroTrustListsUpdateZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsUpdateZeroTrustListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,7 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -112,13 +112,13 @@ return execute(
   },
   onError: ZeroTrustListsUpdateZeroTrustListError.fromResponse,
 );
- } 
+}
 /// Patch Zero Trust list.
 ///
 /// Appends or removes an item from a configured Zero Trust list.
 ///
 /// `PATCH /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<ZeroTrustGatewayLists?, ZeroTrustListsPatchZeroTrustListError>> zeroTrustListsPatchZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsPatchZeroTrustListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLists?, ZeroTrustListsPatchZeroTrustListError>> zeroTrustListsPatchZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustListsPatchZeroTrustListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,7 +129,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -137,13 +137,13 @@ return execute(
   },
   onError: ZeroTrustListsPatchZeroTrustListError.fromResponse,
 );
- } 
+}
 /// Delete Zero Trust list
 ///
 /// Deletes a Zero Trust list.
 ///
 /// `DELETE /accounts/{account_id}/gateway/lists/{list_id}`
-Future<ApiResult<Map<String, dynamic>?, ZeroTrustListsDeleteZeroTrustListError>> zeroTrustListsDeleteZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustListsDeleteZeroTrustListError>> zeroTrustListsDeleteZeroTrustList({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -152,7 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -160,13 +160,13 @@ return execute(
   },
   onError: ZeroTrustListsDeleteZeroTrustListError.fromResponse,
 );
- } 
+}
 /// Get Zero Trust list items
 ///
 /// Fetch all items in a single Zero Trust list.
 ///
 /// `GET /accounts/{account_id}/gateway/lists/{list_id}/items`
-Future<ApiResult<List<List<ZeroTrustGatewayItems2>>?, ZeroTrustListsZeroTrustListItemsError>> zeroTrustListsZeroTrustListItems({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<List<ZeroTrustGatewayItems2>>?, ZeroTrustListsZeroTrustListItemsError>> zeroTrustListsZeroTrustListItems({required ZeroTrustGatewaySchemasUuid listId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,7 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -183,5 +183,5 @@ return execute(
   },
   onError: ZeroTrustListsZeroTrustListItemsError.fromResponse,
 );
- } 
- }
+}
+}

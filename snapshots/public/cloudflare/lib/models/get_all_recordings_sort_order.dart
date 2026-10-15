@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetAllRecordingsSortOrder {const GetAllRecordingsSortOrder();
 
-factory GetAllRecordingsSortOrder.fromJson(String json) { return switch (json) {
+factory GetAllRecordingsSortOrder.fromJson(String json) {return switch (json) {
   'ASC' => asc,
   'DESC' => desc,
   _ => GetAllRecordingsSortOrder$Unknown(json),
-}; }
+};}
 
 static const GetAllRecordingsSortOrder asc = GetAllRecordingsSortOrder$asc._();
 
@@ -16,30 +16,30 @@ static const GetAllRecordingsSortOrder desc = GetAllRecordingsSortOrder$desc._()
 static const List<GetAllRecordingsSortOrder> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ASC' => 'asc',
   'DESC' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetAllRecordingsSortOrder$Unknown; } 
+bool get isUnknown {return this is GetAllRecordingsSortOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       GetAllRecordingsSortOrder$asc() => asc(),
       GetAllRecordingsSortOrder$desc() => desc(),
       GetAllRecordingsSortOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       GetAllRecordingsSortOrder$asc() => asc != null ? asc() : orElse(value),
       GetAllRecordingsSortOrder$desc() => desc != null ? desc() : orElse(value),
       GetAllRecordingsSortOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetAllRecordingsSortOrder($value)';
 
- }
+}
 @immutable final class GetAllRecordingsSortOrder$asc extends GetAllRecordingsSortOrder {const GetAllRecordingsSortOrder$asc._();
 
 @override String get value => 'ASC';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'ASC'.hashCode;
 
- }
+}
 @immutable final class GetAllRecordingsSortOrder$desc extends GetAllRecordingsSortOrder {const GetAllRecordingsSortOrder$desc._();
 
 @override String get value => 'DESC';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'DESC'.hashCode;
 
- }
+}
 @immutable final class GetAllRecordingsSortOrder$Unknown extends GetAllRecordingsSortOrder {const GetAllRecordingsSortOrder$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Zones0HoldPatchRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter = '', this.includeSubdomains = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter, this.includeSubdomains, });
 
-factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zones0HoldPatchRequest(
-  holdAfter: json.containsKey('hold_after') ? json['hold_after'] as String : '',
-  includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,
-); }
+factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) {return Zones0HoldPatchRequest(
+  holdAfter: json['hold_after'] as String?,
+  includeSubdomains: json['include_subdomains'] as bool?,
+);}
 
 /// If `hold_after` is provided and future-dated, the hold will be temporarily disabled,
 /// then automatically re-enabled by the system at the time specified
@@ -15,7 +15,7 @@ factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zone
 /// to the current time.
 /// 
 /// Example: `'2023-01-31T15:56:36+00:00'`
-final String holdAfter;
+final String? holdAfter;
 
 /// If `true`, the zone hold will extend to block any subdomain of the given zone, as well
 /// as SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname
@@ -23,17 +23,23 @@ final String holdAfter;
 /// 'staging.example.com', 'api.staging.example.com', etc.
 /// 
 /// Example: `true`
-final bool includeSubdomains;
+final bool? includeSubdomains;
 
-Map<String, dynamic> toJson() { return {
-  'hold_after': holdAfter,
-  'include_subdomains': includeSubdomains,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key)); } 
-Zones0HoldPatchRequest copyWith({String Function()? holdAfter, bool Function()? includeSubdomains, }) { return Zones0HoldPatchRequest(
+/// The value of `holdAfter`, or its schema default when absent.
+String get holdAfterOrDefault => holdAfter ?? '';
+
+/// The value of `includeSubdomains`, or its schema default when absent.
+bool get includeSubdomainsOrDefault => includeSubdomains ?? false;
+
+Map<String, dynamic> toJson() {return {
+  'hold_after': ?holdAfter,
+  'include_subdomains': ?includeSubdomains,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key));}
+Zones0HoldPatchRequest copyWith({String? Function()? holdAfter, bool? Function()? includeSubdomains, }) {return Zones0HoldPatchRequest(
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0HoldPatchRequest &&
           holdAfter == other.holdAfter &&
@@ -43,4 +49,4 @@ Zones0HoldPatchRequest copyWith({String Function()? holdAfter, bool Function()? 
 
 @override String toString() => 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)';
 
- }
+}

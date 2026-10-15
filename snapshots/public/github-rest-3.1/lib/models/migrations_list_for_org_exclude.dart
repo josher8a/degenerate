@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
 sealed class MigrationsListForOrgExclude {const MigrationsListForOrgExclude();
 
-factory MigrationsListForOrgExclude.fromJson(String json) { return switch (json) {
+factory MigrationsListForOrgExclude.fromJson(String json) {return switch (json) {
   'repositories' => repositories,
   _ => MigrationsListForOrgExclude$Unknown(json),
-}; }
+};}
 
 static const MigrationsListForOrgExclude repositories = MigrationsListForOrgExclude$repositories._();
 
 static const List<MigrationsListForOrgExclude> values = [repositories];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'repositories' => 'repositories',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MigrationsListForOrgExclude$Unknown; } 
+bool get isUnknown {return this is MigrationsListForOrgExclude$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() repositories, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() repositories, required W Function(String value) $unknown, }) {return switch (this) {
       MigrationsListForOrgExclude$repositories() => repositories(),
       MigrationsListForOrgExclude$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? repositories, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? repositories, W Function(String value)? $unknown, }) {return switch (this) {
       MigrationsListForOrgExclude$repositories() => repositories != null ? repositories() : orElse(value),
       MigrationsListForOrgExclude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MigrationsListForOrgExclude($value)';
 
- }
+}
 @immutable final class MigrationsListForOrgExclude$repositories extends MigrationsListForOrgExclude {const MigrationsListForOrgExclude$repositories._();
 
 @override String get value => 'repositories';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reposito
 
 @override int get hashCode => 'repositories'.hashCode;
 
- }
+}
 @immutable final class MigrationsListForOrgExclude$Unknown extends MigrationsListForOrgExclude {const MigrationsListForOrgExclude$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reposito
 
 @override int get hashCode => value.hashCode;
 
- }
+}

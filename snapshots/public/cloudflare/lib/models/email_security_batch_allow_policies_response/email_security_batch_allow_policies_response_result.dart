@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';@immutable final class EmailSecurityBatchAllowPoliciesResponseResult {const EmailSecurityBatchAllowPoliciesResponseResult({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
-factory EmailSecurityBatchAllowPoliciesResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesResponseResult(
+factory EmailSecurityBatchAllowPoliciesResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchAllowPoliciesResponseResult(
   deletes: (json['deletes'] as List<dynamic>).map((e) => Deletes.fromJson(e as Map<String, dynamic>)).toList(),
   patches: (json['patches'] as List<dynamic>).map((e) => EmailSecurityAllowPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   posts: (json['posts'] as List<dynamic>).map((e) => EmailSecurityAllowPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   puts: (json['puts'] as List<dynamic>).map((e) => EmailSecurityAllowPolicy.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<Deletes> deletes;
 
@@ -18,22 +18,22 @@ final List<EmailSecurityAllowPolicy> posts;
 
 final List<EmailSecurityAllowPolicy> puts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deletes': deletes.map((e) => e.toJson()).toList(),
   'patches': patches.map((e) => e.toJson()).toList(),
   'posts': posts.map((e) => e.toJson()).toList(),
   'puts': puts.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deletes') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deletes') &&
       json.containsKey('patches') &&
       json.containsKey('posts') &&
-      json.containsKey('puts'); } 
-EmailSecurityBatchAllowPoliciesResponseResult copyWith({List<Deletes>? deletes, List<EmailSecurityAllowPolicy>? patches, List<EmailSecurityAllowPolicy>? posts, List<EmailSecurityAllowPolicy>? puts, }) { return EmailSecurityBatchAllowPoliciesResponseResult(
+      json.containsKey('puts');}
+EmailSecurityBatchAllowPoliciesResponseResult copyWith({List<Deletes>? deletes, List<EmailSecurityAllowPolicy>? patches, List<EmailSecurityAllowPolicy>? posts, List<EmailSecurityAllowPolicy>? puts, }) {return EmailSecurityBatchAllowPoliciesResponseResult(
   deletes: deletes ?? this.deletes,
   patches: patches ?? this.patches,
   posts: posts ?? this.posts,
   puts: puts ?? this.puts,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchAllowPoliciesResponseResult &&
           listEquals(deletes, other.deletes) &&
@@ -45,4 +45,4 @@ EmailSecurityBatchAllowPoliciesResponseResult copyWith({List<Deletes>? deletes, 
 
 @override String toString() => 'EmailSecurityBatchAllowPoliciesResponseResult(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)';
 
- }
+}

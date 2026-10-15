@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/post_test_helpers_confirmation_tokens_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/post_test_helpers_confirmation_tokens_request_shipping.dart';@immutable final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
 
-factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequest(
+factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersConfirmationTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentMethod: json['payment_method'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> j
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   shipping: json['shipping'] != null ? PostTestHelpersConfirmationTokensRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -36,7 +36,7 @@ final PostPaymentIntentsRequestSetupFutureUsage? setupFutureUsage;
 /// Shipping information for this ConfirmationToken.
 final PostTestHelpersConfirmationTokensRequestShipping? shipping;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'payment_method': ?paymentMethod,
   if (paymentMethodData != null) 'payment_method_data': paymentMethodData?.toJson(),
@@ -44,16 +44,16 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   if (shipping != null) 'shipping': shipping?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'setup_future_usage', 'shipping'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'setup_future_usage', 'shipping'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
   if (paymentMethod$.runes.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
-return errors; } 
-PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? expand, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping? Function()? shipping, }) { return PostTestHelpersConfirmationTokensRequest(
+return errors;}
+PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? expand, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping? Function()? shipping, }) {return PostTestHelpersConfirmationTokensRequest(
   expand: expand != null ? expand() : this.expand,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   paymentMethodData: paymentMethodData != null ? paymentMethodData() : this.paymentMethodData,
@@ -61,7 +61,7 @@ PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? exp
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   shipping: shipping != null ? shipping() : this.shipping,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequest &&
           listEquals(expand, other.expand) &&
@@ -76,4 +76,4 @@ PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? exp
 
 @override String toString() => 'PostTestHelpersConfirmationTokensRequest(expand: $expand, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping)';
 
- }
+}

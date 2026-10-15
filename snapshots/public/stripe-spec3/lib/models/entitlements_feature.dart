@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class EntitlementsFeatureObject {const EntitlementsFeatureObject();
 
-factory EntitlementsFeatureObject.fromJson(String json) { return switch (json) {
+factory EntitlementsFeatureObject.fromJson(String json) {return switch (json) {
   'entitlements.feature' => entitlementsFeature,
   _ => EntitlementsFeatureObject$Unknown(json),
-}; }
+};}
 
 static const EntitlementsFeatureObject entitlementsFeature = EntitlementsFeatureObject$entitlementsFeature._();
 
 static const List<EntitlementsFeatureObject> values = [entitlementsFeature];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'entitlements.feature' => 'entitlementsFeature',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EntitlementsFeatureObject$Unknown; } 
+bool get isUnknown {return this is EntitlementsFeatureObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() entitlementsFeature, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() entitlementsFeature, required W Function(String value) $unknown, }) {return switch (this) {
       EntitlementsFeatureObject$entitlementsFeature() => entitlementsFeature(),
       EntitlementsFeatureObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? entitlementsFeature, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? entitlementsFeature, W Function(String value)? $unknown, }) {return switch (this) {
       EntitlementsFeatureObject$entitlementsFeature() => entitlementsFeature != null ? entitlementsFeature() : orElse(value),
       EntitlementsFeatureObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EntitlementsFeatureObject($value)';
 
- }
+}
 @immutable final class EntitlementsFeatureObject$entitlementsFeature extends EntitlementsFeatureObject {const EntitlementsFeatureObject$entitlementsFeature._();
 
 @override String get value => 'entitlements.feature';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? entitlem
 
 @override int get hashCode => 'entitlements.feature'.hashCode;
 
- }
+}
 @immutable final class EntitlementsFeatureObject$Unknown extends EntitlementsFeatureObject {const EntitlementsFeatureObject$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? entitlem
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A feature represents a monetizable ability or functionality in your system.
 /// Features can be assigned to products, and when those products are purchased, Stripe will create an entitlement to the feature for the purchasing customer.
 @immutable final class EntitlementsFeature {const EntitlementsFeature({required this.active, required this.id, required this.livemode, required this.lookupKey, required this.metadata, required this.name, required this.object, });
 
-factory EntitlementsFeature.fromJson(Map<String, dynamic> json) { return EntitlementsFeature(
+factory EntitlementsFeature.fromJson(Map<String, dynamic> json) {return EntitlementsFeature(
   active: json['active'] as bool,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -66,7 +66,7 @@ factory EntitlementsFeature.fromJson(Map<String, dynamic> json) { return Entitle
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: EntitlementsFeatureObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Inactive features cannot be attached to new products and will not be returned from the features list endpoint.
 final bool active;
@@ -89,7 +89,7 @@ final String name;
 /// String representing the object's type. Objects of the same type share the same value.
 final EntitlementsFeatureObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'id': id,
   'livemode': livemode,
@@ -97,21 +97,21 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'name': name,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('lookup_key') && json['lookup_key'] is String &&
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (lookupKey.runes.length > 5000) { errors.add('lookupKey: length must be <= 5000'); }
 if (name.runes.length > 80) { errors.add('name: length must be <= 80'); }
-return errors; } 
-EntitlementsFeature copyWith({bool? active, String? id, bool? livemode, String? lookupKey, Map<String,String>? metadata, String? name, EntitlementsFeatureObject? object, }) { return EntitlementsFeature(
+return errors;}
+EntitlementsFeature copyWith({bool? active, String? id, bool? livemode, String? lookupKey, Map<String,String>? metadata, String? name, EntitlementsFeatureObject? object, }) {return EntitlementsFeature(
   active: active ?? this.active,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
@@ -119,7 +119,7 @@ EntitlementsFeature copyWith({bool? active, String? id, bool? livemode, String? 
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EntitlementsFeature &&
           active == other.active &&
@@ -134,4 +134,4 @@ EntitlementsFeature copyWith({bool? active, String? id, bool? livemode, String? 
 
 @override String toString() => 'EntitlementsFeature(active: $active, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object)';
 
- }
+}

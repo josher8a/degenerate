@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_connector.dart';import 'package:pub_cloudflare/models/mconn_support_device.dart';@immutable final class MconnSupportMacrosProvisionLicensedConnectorResult {const MconnSupportMacrosProvisionLicensedConnectorResult({required this.connector, required this.device, required this.licenseKey, });
 
-factory MconnSupportMacrosProvisionLicensedConnectorResult.fromJson(Map<String, dynamic> json) { return MconnSupportMacrosProvisionLicensedConnectorResult(
+factory MconnSupportMacrosProvisionLicensedConnectorResult.fromJson(Map<String, dynamic> json) {return MconnSupportMacrosProvisionLicensedConnectorResult(
   connector: MconnSupportConnector.fromJson(json['connector'] as Map<String, dynamic>),
   device: MconnSupportDevice.fromJson(json['device'] as Map<String, dynamic>),
   licenseKey: json['license_key'] as String,
-); }
+);}
 
 final MconnSupportConnector connector;
 
@@ -15,19 +15,19 @@ final MconnSupportDevice device;
 
 final String licenseKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector': connector.toJson(),
   'device': device.toJson(),
   'license_key': licenseKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connector') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connector') &&
       json.containsKey('device') &&
-      json.containsKey('license_key') && json['license_key'] is String; } 
-MconnSupportMacrosProvisionLicensedConnectorResult copyWith({MconnSupportConnector? connector, MconnSupportDevice? device, String? licenseKey, }) { return MconnSupportMacrosProvisionLicensedConnectorResult(
+      json.containsKey('license_key') && json['license_key'] is String;}
+MconnSupportMacrosProvisionLicensedConnectorResult copyWith({MconnSupportConnector? connector, MconnSupportDevice? device, String? licenseKey, }) {return MconnSupportMacrosProvisionLicensedConnectorResult(
   connector: connector ?? this.connector,
   device: device ?? this.device,
   licenseKey: licenseKey ?? this.licenseKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportMacrosProvisionLicensedConnectorResult &&
           connector == other.connector &&
@@ -38,4 +38,4 @@ MconnSupportMacrosProvisionLicensedConnectorResult copyWith({MconnSupportConnect
 
 @override String toString() => 'MconnSupportMacrosProvisionLicensedConnectorResult(connector: $connector, device: $device, licenseKey: $licenseKey)';
 
- }
+}

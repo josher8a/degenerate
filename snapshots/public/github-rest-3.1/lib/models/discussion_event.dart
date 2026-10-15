@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';@immutable final class DiscussionEvent {const DiscussionEvent({required this.action, required this.discussion, });
 
-factory DiscussionEvent.fromJson(Map<String, dynamic> json) { return DiscussionEvent(
+factory DiscussionEvent.fromJson(Map<String, dynamic> json) {return DiscussionEvent(
   action: json['action'] as String,
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
-); }
+);}
 
 final String action;
 
 final Discussion discussion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'discussion': discussion.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
-      json.containsKey('discussion'); } 
-DiscussionEvent copyWith({String? action, Discussion? discussion, }) { return DiscussionEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('discussion');}
+DiscussionEvent copyWith({String? action, Discussion? discussion, }) {return DiscussionEvent(
   action: action ?? this.action,
   discussion: discussion ?? this.discussion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DiscussionEvent &&
           action == other.action &&
@@ -31,4 +31,4 @@ DiscussionEvent copyWith({String? action, Discussion? discussion, }) { return Di
 
 @override String toString() => 'DiscussionEvent(action: $action, discussion: $discussion)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_team_added_to_repository/webhook_team_added_to_repository_repository.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';sealed class WebhookTeamAddedToRepositoryAction {const WebhookTeamAddedToRepositoryAction();
 
-factory WebhookTeamAddedToRepositoryAction.fromJson(String json) { return switch (json) {
+factory WebhookTeamAddedToRepositoryAction.fromJson(String json) {return switch (json) {
   'added_to_repository' => addedToRepository,
   _ => WebhookTeamAddedToRepositoryAction$Unknown(json),
-}; }
+};}
 
 static const WebhookTeamAddedToRepositoryAction addedToRepository = WebhookTeamAddedToRepositoryAction$addedToRepository._();
 
 static const List<WebhookTeamAddedToRepositoryAction> values = [addedToRepository];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'added_to_repository' => 'addedToRepository',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookTeamAddedToRepositoryAction$Unknown; } 
+bool get isUnknown {return this is WebhookTeamAddedToRepositoryAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() addedToRepository, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() addedToRepository, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookTeamAddedToRepositoryAction$addedToRepository() => addedToRepository(),
       WebhookTeamAddedToRepositoryAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? addedToRepository, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? addedToRepository, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookTeamAddedToRepositoryAction$addedToRepository() => addedToRepository != null ? addedToRepository() : orElse(value),
       WebhookTeamAddedToRepositoryAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookTeamAddedToRepositoryAction($value)';
 
- }
+}
 @immutable final class WebhookTeamAddedToRepositoryAction$addedToRepository extends WebhookTeamAddedToRepositoryAction {const WebhookTeamAddedToRepositoryAction$addedToRepository._();
 
 @override String get value => 'added_to_repository';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addedToR
 
 @override int get hashCode => 'added_to_repository'.hashCode;
 
- }
+}
 @immutable final class WebhookTeamAddedToRepositoryAction$Unknown extends WebhookTeamAddedToRepositoryAction {const WebhookTeamAddedToRepositoryAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? addedToR
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookTeamAddedToRepository {const WebhookTeamAddedToRepository({required this.action, required this.organization, required this.team, this.enterprise, this.installation, this.repository, this.sender, });
 
-factory WebhookTeamAddedToRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamAddedToRepository(
+factory WebhookTeamAddedToRepository.fromJson(Map<String, dynamic> json) {return WebhookTeamAddedToRepository(
   action: WebhookTeamAddedToRepositoryAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -63,7 +63,7 @@ factory WebhookTeamAddedToRepository.fromJson(Map<String, dynamic> json) { retur
   repository: json['repository'] != null ? WebhookTeamAddedToRepositoryRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookTeamAddedToRepositoryAction action;
 
@@ -80,7 +80,7 @@ final SimpleUser? sender;
 
 final WebhooksTeam1 team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -88,11 +88,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
   'team': team.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
-      json.containsKey('team'); } 
-WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository? Function()? repository, SimpleUser? Function()? sender, WebhooksTeam1? team, }) { return WebhookTeamAddedToRepository(
+      json.containsKey('team');}
+WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository? Function()? repository, SimpleUser? Function()? sender, WebhooksTeam1? team, }) {return WebhookTeamAddedToRepository(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -100,7 +100,7 @@ WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? actio
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
   team: team ?? this.team,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamAddedToRepository &&
           action == other.action &&
@@ -115,4 +115,4 @@ WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? actio
 
 @override String toString() => 'WebhookTeamAddedToRepository(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)';
 
- }
+}

@@ -10,7 +10,7 @@ final class ParametersApi with ApiExecutor {const ParametersApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /anything/mixedParams/path/{pathParam}`
-Future<ApiResult<MixedParametersPrimitivesResponse, Never>> mixedParametersPrimitives({required String pathParam, required String queryStringParam, required String headerParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<MixedParametersPrimitivesResponse, Never>> mixedParametersPrimitives({required String pathParam, required String queryStringParam, required String headerParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['queryStringParam'] = queryStringParam;
 
@@ -26,15 +26,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MixedParametersPrimitivesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/allowEmptyValue`
-Future<ApiResult<AllowEmptyValueQueryParamsResponse, Never>> allowEmptyValueQueryParams({String? strParam, List<String>? arrParamOmitEmpty, String? nullableStrParam, int? numParam, List<String>? arrParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AllowEmptyValueQueryParamsResponse, Never>> allowEmptyValueQueryParams({String? strParam, List<String>? arrParamOmitEmpty, String? nullableStrParam, int? numParam, List<String>? arrParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (strParam != null) {
   queryParameters['strParam'] = strParam;
@@ -67,17 +67,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AllowEmptyValueQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// It checks for https://learn.microsoft.com/en-sg/dotnet/csharp/language-reference/compiler-messages/cs1737 within c# sdk. In earlier implementation of generator - requiredPathParam would appear before requiredQueryParam hence triggering cs1737.
 ///
 /// `POST /anything/flatParametersOrdering/{requiredPathParam}`
-Future<ApiResult<FlatParametersOrderingResponse, Never>> flatParametersOrdering({required String requiredPathParam, required bool requiredQueryParam, required String requiredHeaderParam, required FlatParametersOrderingRequest body, int? optionalQueryParam, bool? optionalHeaderParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FlatParametersOrderingResponse, Never>> flatParametersOrdering({required String requiredPathParam, required bool requiredQueryParam, required String requiredHeaderParam, required FlatParametersOrderingRequest body, int? optionalQueryParam, bool? optionalHeaderParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (optionalQueryParam != null) {
   queryParameters['optionalQueryParam'] = optionalQueryParam.toString();
@@ -101,17 +101,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlatParametersOrderingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// It checks for https://learn.microsoft.com/en-sg/dotnet/csharp/language-reference/compiler-messages/cs1737 within c# sdk. In earlier implementation of generator - requiredPathParam would appear before requiredQueryParam hence triggering cs1737.
 ///
 /// `POST /anything/flatParametersOrdering/usingOptionalRequestBody/{requiredPathParam}`
-Future<ApiResult<FlatParametersOrderingUsingOptionalRequestBodyResponse, Never>> flatParametersOrderingUsingOptionalRequestBody({required String requiredPathParam, required bool requiredQueryParam, required String requiredHeaderParam, int? optionalQueryParam, bool? optionalHeaderParam, FlatParametersOrderingUsingOptionalRequestBodyRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FlatParametersOrderingUsingOptionalRequestBodyResponse, Never>> flatParametersOrderingUsingOptionalRequestBody({required String requiredPathParam, required bool requiredQueryParam, required String requiredHeaderParam, int? optionalQueryParam, bool? optionalHeaderParam, FlatParametersOrderingUsingOptionalRequestBodyRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (optionalQueryParam != null) {
   queryParameters['optionalQueryParam'] = optionalQueryParam.toString();
@@ -135,15 +135,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FlatParametersOrderingUsingOptionalRequestBodyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/params/{duplicateParamRequest}`
-Future<ApiResult<DuplicateParamResponse, Never>> duplicateParam({required String duplicateParamRequest, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DuplicateParamResponse, Never>> duplicateParam({required String duplicateParamRequest, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -152,15 +152,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicateParamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/params/{param1}/{param2}/{param1}`
-Future<ApiResult<DuplicatePathParamResponse, Never>> duplicatePathParam({required String param1, required String param2, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DuplicatePathParamResponse, Never>> duplicatePathParam({required String param1, required String param2, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -169,15 +169,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicatePathParamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/mixedParams/path/{path_param}/camelcase`
-Future<ApiResult<MixedParametersCamelCaseResponse, Never>> mixedParametersCamelCase({required String pathParam, required String queryStringParam, required String headerParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<MixedParametersCamelCaseResponse, Never>> mixedParametersCamelCase({required String pathParam, required String queryStringParam, required String headerParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['query_string_param'] = queryStringParam;
 
@@ -193,15 +193,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MixedParametersCamelCaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/pathParams/str/{strParam}/bool/{boolParam}/int/{intParam}/num/{numParam}`
-Future<ApiResult<SimplePathParameterPrimitivesResponse, Never>> simplePathParameterPrimitives({required String strParam, required bool boolParam, required int intParam, required double numParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SimplePathParameterPrimitivesResponse, Never>> simplePathParameterPrimitives({required String strParam, required bool boolParam, required int intParam, required double numParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -210,32 +210,32 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterPrimitivesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/pathParams/obj/{objParam}/objExploded/{objParamExploded}`
-Future<ApiResult<SimplePathParameterObjectsResponse, Never>> simplePathParameterObjects({required SimpleObject objParam, required SimpleObject objParamExploded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SimplePathParameterObjectsResponse, Never>> simplePathParameterObjects({required SimpleObject objParam, required SimpleObject objParamExploded, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/pathParams/obj/${<String>['str', Uri.encodeComponent(objParam.str), 'bool', Uri.encodeComponent(objParam.$bool.toString()), 'int', Uri.encodeComponent(objParam.$int.toString()), 'int32', Uri.encodeComponent(objParam.int32.toString()), 'num', Uri.encodeComponent(objParam.$num.toString()), 'float32', Uri.encodeComponent(objParam.float32.toString()), 'enum', Uri.encodeComponent(objParam.$enum.toJson()), 'date', Uri.encodeComponent(objParam.date), 'dateTime', Uri.encodeComponent(objParam.dateTime.toIso8601String()), if (objParam.any != null) ...['any', Uri.encodeComponent(objParam.any!.toString())], if (objParam.strOpt != null) ...['strOpt', Uri.encodeComponent(objParam.strOpt!)], if (objParam.boolOpt != null) ...['boolOpt', Uri.encodeComponent(objParam.boolOpt!.toString())], if (objParam.intOptNull != null) ...['intOptNull', Uri.encodeComponent(objParam.intOptNull!.toString())], if (objParam.numOptNull != null) ...['numOptNull', Uri.encodeComponent(objParam.numOptNull!.toString())], 'intEnum', Uri.encodeComponent(objParam.intEnum.toJson().toString()), 'int32Enum', Uri.encodeComponent(objParam.int32Enum.toJson().toString()), if (objParam.bigint != null) ...['bigint', Uri.encodeComponent(objParam.bigint!.toString())], if (objParam.bigintStr != null) ...['bigintStr', Uri.encodeComponent(objParam.bigintStr!)], if (objParam.decimal != null) ...['decimal', Uri.encodeComponent(objParam.decimal!.toString())], if (objParam.decimalStr != null) ...['decimalStr', Uri.encodeComponent(objParam.decimalStr!)], if (objParam.decimalNullableOpt != null) ...['decimalNullableOpt', Uri.encodeComponent(objParam.decimalNullableOpt!.toString())], if (objParam.int64Str != null) ...['int64Str', Uri.encodeComponent(objParam.int64Str!)], if (objParam.float64Str != null) ...['float64Str', Uri.encodeComponent(objParam.float64Str!)]].join(',')}/objExploded/${<String>['str=${Uri.encodeComponent(objParamExploded.str)}', 'bool=${Uri.encodeComponent(objParamExploded.$bool.toString())}', 'int=${Uri.encodeComponent(objParamExploded.$int.toString())}', 'int32=${Uri.encodeComponent(objParamExploded.int32.toString())}', 'num=${Uri.encodeComponent(objParamExploded.$num.toString())}', 'float32=${Uri.encodeComponent(objParamExploded.float32.toString())}', 'enum=${Uri.encodeComponent(objParamExploded.$enum.toJson())}', 'date=${Uri.encodeComponent(objParamExploded.date)}', 'dateTime=${Uri.encodeComponent(objParamExploded.dateTime.toIso8601String())}', if (objParamExploded.any != null) 'any=${Uri.encodeComponent(objParamExploded.any!.toString())}', if (objParamExploded.strOpt != null) 'strOpt=${Uri.encodeComponent(objParamExploded.strOpt!)}', if (objParamExploded.boolOpt != null) 'boolOpt=${Uri.encodeComponent(objParamExploded.boolOpt!.toString())}', if (objParamExploded.intOptNull != null) 'intOptNull=${Uri.encodeComponent(objParamExploded.intOptNull!.toString())}', if (objParamExploded.numOptNull != null) 'numOptNull=${Uri.encodeComponent(objParamExploded.numOptNull!.toString())}', 'intEnum=${Uri.encodeComponent(objParamExploded.intEnum.toJson().toString())}', 'int32Enum=${Uri.encodeComponent(objParamExploded.int32Enum.toJson().toString())}', if (objParamExploded.bigint != null) 'bigint=${Uri.encodeComponent(objParamExploded.bigint!.toString())}', if (objParamExploded.bigintStr != null) 'bigintStr=${Uri.encodeComponent(objParamExploded.bigintStr!)}', if (objParamExploded.decimal != null) 'decimal=${Uri.encodeComponent(objParamExploded.decimal!.toString())}', if (objParamExploded.decimalStr != null) 'decimalStr=${Uri.encodeComponent(objParamExploded.decimalStr!)}', if (objParamExploded.decimalNullableOpt != null) 'decimalNullableOpt=${Uri.encodeComponent(objParamExploded.decimalNullableOpt!.toString())}', if (objParamExploded.int64Str != null) 'int64Str=${Uri.encodeComponent(objParamExploded.int64Str!)}', if (objParamExploded.float64Str != null) 'float64Str=${Uri.encodeComponent(objParamExploded.float64Str!)}'].join(',')}',
+  path: '/anything/pathParams/obj/${<String>['str', Uri.encodeComponent(objParam.str), 'bool', Uri.encodeComponent(objParam.$bool.toString()), 'int', Uri.encodeComponent(objParam.$int.toString()), 'int32', Uri.encodeComponent(objParam.int32.toString()), 'num', Uri.encodeComponent(objParam.$num.toString()), 'float32', Uri.encodeComponent(objParam.float32.toString()), 'enum', Uri.encodeComponent(objParam.$enum.toJson()), 'date', Uri.encodeComponent(objParam.date), 'dateTime', Uri.encodeComponent(objParam.dateTime.toIso8601String()), if (objParam.any != null) ...['any', Uri.encodeComponent(objParam.any!.toString())], if (objParam.strOpt != null) ...['strOpt', Uri.encodeComponent(objParam.strOpt!)], if (objParam.boolOpt != null) ...['boolOpt', Uri.encodeComponent(objParam.boolOpt!.toString())], if (objParam.intOptNull != null) ...['intOptNull', Uri.encodeComponent(objParam.intOptNull!.toString())], if (objParam.numOptNull != null) ...['numOptNull', Uri.encodeComponent(objParam.numOptNull!.toString())], 'intEnum', Uri.encodeComponent(objParam.intEnum.toJson().toString()), 'int32Enum', Uri.encodeComponent(objParam.int32Enum.toJson().toString()), if (objParam.bigint != null) ...['bigint', Uri.encodeComponent(objParam.bigint!.toString())], if (objParam.bigintStr != null) ...['bigintStr', Uri.encodeComponent(objParam.bigintStr!)], if (objParam.decimal != null) ...['decimal', Uri.encodeComponent(objParam.decimal!.toString())], if (objParam.decimalStr != null) ...['decimalStr', Uri.encodeComponent(objParam.decimalStr!)], if (objParam.decimalNullableOpt.value != null) ...['decimalNullableOpt', Uri.encodeComponent(objParam.decimalNullableOpt.value!.toString())], if (objParam.int64Str != null) ...['int64Str', Uri.encodeComponent(objParam.int64Str!)], if (objParam.float64Str != null) ...['float64Str', Uri.encodeComponent(objParam.float64Str!)]].join(',')}/objExploded/${<String>['str=${Uri.encodeComponent(objParamExploded.str)}', 'bool=${Uri.encodeComponent(objParamExploded.$bool.toString())}', 'int=${Uri.encodeComponent(objParamExploded.$int.toString())}', 'int32=${Uri.encodeComponent(objParamExploded.int32.toString())}', 'num=${Uri.encodeComponent(objParamExploded.$num.toString())}', 'float32=${Uri.encodeComponent(objParamExploded.float32.toString())}', 'enum=${Uri.encodeComponent(objParamExploded.$enum.toJson())}', 'date=${Uri.encodeComponent(objParamExploded.date)}', 'dateTime=${Uri.encodeComponent(objParamExploded.dateTime.toIso8601String())}', if (objParamExploded.any != null) 'any=${Uri.encodeComponent(objParamExploded.any!.toString())}', if (objParamExploded.strOpt != null) 'strOpt=${Uri.encodeComponent(objParamExploded.strOpt!)}', if (objParamExploded.boolOpt != null) 'boolOpt=${Uri.encodeComponent(objParamExploded.boolOpt!.toString())}', if (objParamExploded.intOptNull != null) 'intOptNull=${Uri.encodeComponent(objParamExploded.intOptNull!.toString())}', if (objParamExploded.numOptNull != null) 'numOptNull=${Uri.encodeComponent(objParamExploded.numOptNull!.toString())}', 'intEnum=${Uri.encodeComponent(objParamExploded.intEnum.toJson().toString())}', 'int32Enum=${Uri.encodeComponent(objParamExploded.int32Enum.toJson().toString())}', if (objParamExploded.bigint != null) 'bigint=${Uri.encodeComponent(objParamExploded.bigint!.toString())}', if (objParamExploded.bigintStr != null) 'bigintStr=${Uri.encodeComponent(objParamExploded.bigintStr!)}', if (objParamExploded.decimal != null) 'decimal=${Uri.encodeComponent(objParamExploded.decimal!.toString())}', if (objParamExploded.decimalStr != null) 'decimalStr=${Uri.encodeComponent(objParamExploded.decimalStr!)}', if (objParamExploded.decimalNullableOpt.value != null) 'decimalNullableOpt=${Uri.encodeComponent(objParamExploded.decimalNullableOpt.value!.toString())}', if (objParamExploded.int64Str != null) 'int64Str=${Uri.encodeComponent(objParamExploded.int64Str!)}', if (objParamExploded.float64Str != null) 'float64Str=${Uri.encodeComponent(objParamExploded.float64Str!)}'].join(',')}',
   headers: headers,
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterObjectsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/pathParams/arr/{arrParam}`
-Future<ApiResult<SimplePathParameterArraysResponse, Never>> simplePathParameterArrays({required List<String> arrParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SimplePathParameterArraysResponse, Never>> simplePathParameterArrays({required List<String> arrParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -244,15 +244,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterArraysResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/pathParams/map/{mapParam}/mapExploded/{mapParamExploded}`
-Future<ApiResult<SimplePathParameterMapsResponse, Never>> simplePathParameterMaps({required Map<String,String> mapParam, required Map<String,int> mapParamExploded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SimplePathParameterMapsResponse, Never>> simplePathParameterMaps({required Map<String,String> mapParam, required Map<String,int> mapParamExploded, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -261,32 +261,32 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return SimplePathParameterMapsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/pathParams/json/{jsonObj}`
-Future<ApiResult<PathParameterJsonResponse, Never>> pathParameterJson({required SimpleObject jsonObj, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PathParameterJsonResponse, Never>> pathParameterJson({required SimpleObject jsonObj, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/pathParams/json/${<String>['str', Uri.encodeComponent(jsonObj.str), 'bool', Uri.encodeComponent(jsonObj.$bool.toString()), 'int', Uri.encodeComponent(jsonObj.$int.toString()), 'int32', Uri.encodeComponent(jsonObj.int32.toString()), 'num', Uri.encodeComponent(jsonObj.$num.toString()), 'float32', Uri.encodeComponent(jsonObj.float32.toString()), 'enum', Uri.encodeComponent(jsonObj.$enum.toJson()), 'date', Uri.encodeComponent(jsonObj.date), 'dateTime', Uri.encodeComponent(jsonObj.dateTime.toIso8601String()), if (jsonObj.any != null) ...['any', Uri.encodeComponent(jsonObj.any!.toString())], if (jsonObj.strOpt != null) ...['strOpt', Uri.encodeComponent(jsonObj.strOpt!)], if (jsonObj.boolOpt != null) ...['boolOpt', Uri.encodeComponent(jsonObj.boolOpt!.toString())], if (jsonObj.intOptNull != null) ...['intOptNull', Uri.encodeComponent(jsonObj.intOptNull!.toString())], if (jsonObj.numOptNull != null) ...['numOptNull', Uri.encodeComponent(jsonObj.numOptNull!.toString())], 'intEnum', Uri.encodeComponent(jsonObj.intEnum.toJson().toString()), 'int32Enum', Uri.encodeComponent(jsonObj.int32Enum.toJson().toString()), if (jsonObj.bigint != null) ...['bigint', Uri.encodeComponent(jsonObj.bigint!.toString())], if (jsonObj.bigintStr != null) ...['bigintStr', Uri.encodeComponent(jsonObj.bigintStr!)], if (jsonObj.decimal != null) ...['decimal', Uri.encodeComponent(jsonObj.decimal!.toString())], if (jsonObj.decimalStr != null) ...['decimalStr', Uri.encodeComponent(jsonObj.decimalStr!)], if (jsonObj.decimalNullableOpt != null) ...['decimalNullableOpt', Uri.encodeComponent(jsonObj.decimalNullableOpt!.toString())], if (jsonObj.int64Str != null) ...['int64Str', Uri.encodeComponent(jsonObj.int64Str!)], if (jsonObj.float64Str != null) ...['float64Str', Uri.encodeComponent(jsonObj.float64Str!)]].join(',')}',
+  path: '/anything/pathParams/json/${<String>['str', Uri.encodeComponent(jsonObj.str), 'bool', Uri.encodeComponent(jsonObj.$bool.toString()), 'int', Uri.encodeComponent(jsonObj.$int.toString()), 'int32', Uri.encodeComponent(jsonObj.int32.toString()), 'num', Uri.encodeComponent(jsonObj.$num.toString()), 'float32', Uri.encodeComponent(jsonObj.float32.toString()), 'enum', Uri.encodeComponent(jsonObj.$enum.toJson()), 'date', Uri.encodeComponent(jsonObj.date), 'dateTime', Uri.encodeComponent(jsonObj.dateTime.toIso8601String()), if (jsonObj.any != null) ...['any', Uri.encodeComponent(jsonObj.any!.toString())], if (jsonObj.strOpt != null) ...['strOpt', Uri.encodeComponent(jsonObj.strOpt!)], if (jsonObj.boolOpt != null) ...['boolOpt', Uri.encodeComponent(jsonObj.boolOpt!.toString())], if (jsonObj.intOptNull != null) ...['intOptNull', Uri.encodeComponent(jsonObj.intOptNull!.toString())], if (jsonObj.numOptNull != null) ...['numOptNull', Uri.encodeComponent(jsonObj.numOptNull!.toString())], 'intEnum', Uri.encodeComponent(jsonObj.intEnum.toJson().toString()), 'int32Enum', Uri.encodeComponent(jsonObj.int32Enum.toJson().toString()), if (jsonObj.bigint != null) ...['bigint', Uri.encodeComponent(jsonObj.bigint!.toString())], if (jsonObj.bigintStr != null) ...['bigintStr', Uri.encodeComponent(jsonObj.bigintStr!)], if (jsonObj.decimal != null) ...['decimal', Uri.encodeComponent(jsonObj.decimal!.toString())], if (jsonObj.decimalStr != null) ...['decimalStr', Uri.encodeComponent(jsonObj.decimalStr!)], if (jsonObj.decimalNullableOpt.value != null) ...['decimalNullableOpt', Uri.encodeComponent(jsonObj.decimalNullableOpt.value!.toString())], if (jsonObj.int64Str != null) ...['int64Str', Uri.encodeComponent(jsonObj.int64Str!)], if (jsonObj.float64Str != null) ...['float64Str', Uri.encodeComponent(jsonObj.float64Str!)]].join(',')}',
   headers: headers,
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PathParameterJsonResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/openEnum/{param-p}/suffix`
-Future<ApiResult<ParameterOpenEnumResponse, Never>> parameterOpenEnum({required OpenEnum paramP, required OpenEnum paramQ, required OpenEnum paramH, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ParameterOpenEnumResponse, Never>> parameterOpenEnum({required OpenEnum paramP, required OpenEnum paramQ, required OpenEnum paramH, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['param-q'] = paramQ.toJson().toString();
 
@@ -302,15 +302,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ParameterOpenEnumResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/duplicatePathParameterAtOperationLevel/{param}`
-Future<ApiResult<DuplicatePathParameterAtOperationLevelDoesNotErrorResponse, Never>> duplicatePathParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DuplicatePathParameterAtOperationLevelDoesNotErrorResponse, Never>> duplicatePathParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -319,15 +319,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DuplicatePathParameterAtOperationLevelDoesNotErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/duplicatePathParameter/atPathLevel/{param}`
-Future<ApiResult<String, Never>> duplicatePathParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> duplicatePathParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -336,15 +336,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// `GET /anything/duplicateQueryParamAtOperationLevel/`
-Future<ApiResult<String, Never>> duplicateQueryParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> duplicateQueryParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['param'] = param.toString();
 
@@ -359,15 +359,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// `GET /anything/duplicateQueryParam/atPathLevel/`
-Future<ApiResult<String, Never>> duplicateQueryParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> duplicateQueryParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['param'] = param.toString();
 
@@ -382,15 +382,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// `GET /anything/duplicateHeaderParamAtOperationLevel/`
-Future<ApiResult<String, Never>> duplicateHeaderParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> duplicateHeaderParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['param'] = param.toString();
 
 final request = ApiRequest(
@@ -400,15 +400,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// `GET /anything/duplicateHeaderParam/atPathLevel/`
-Future<ApiResult<String, Never>> duplicateHeaderParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> duplicateHeaderParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['param'] = param.toString();
 
 final request = ApiRequest(
@@ -418,15 +418,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/primitive`
-Future<ApiResult<FormQueryParamsPrimitiveResponse, Never>> formQueryParamsPrimitive({required String strParam, required bool boolParam, required int intParam, required double numParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsPrimitiveResponse, Never>> formQueryParamsPrimitive({required String strParam, required bool boolParam, required int intParam, required double numParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['strParam'] = strParam;
 queryParameters['boolParam'] = boolParam.toString();
@@ -444,15 +444,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsPrimitiveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/union`
-Future<ApiResult<FormQueryParamsUnionResponse, Never>> formQueryParamsUnion({required String strParam, FormQueryParamsUnionUnionParam? unionParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsUnionResponse, Never>> formQueryParamsUnion({required String strParam, FormQueryParamsUnionUnionParam? unionParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['strParam'] = strParam;
 if (unionParam != null) {
@@ -470,15 +470,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsUnionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/obj`
-Future<ApiResult<FormQueryParamsObjectResponse, Never>> formQueryParamsObject({required SimpleObject objParamExploded, SimpleObject? objParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsObjectResponse, Never>> formQueryParamsObject({required SimpleObject objParamExploded, SimpleObject? objParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParametersList.add(ApiQueryParameter(name: 'str', value: objParamExploded.str));
 queryParametersList.add(ApiQueryParameter(name: 'bool', value: objParamExploded.$bool.toString()));
@@ -500,11 +500,11 @@ if (objParamExploded.bigint case final bigint$?) { queryParametersList.add(ApiQu
 if (objParamExploded.bigintStr case final bigintStr$?) { queryParametersList.add(ApiQueryParameter(name: 'bigintStr', value: bigintStr$)); }
 if (objParamExploded.decimal case final decimal$?) { queryParametersList.add(ApiQueryParameter(name: 'decimal', value: decimal$.toString())); }
 if (objParamExploded.decimalStr case final decimalStr$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalStr', value: decimalStr$)); }
-if (objParamExploded.decimalNullableOpt case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
+if (objParamExploded.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
 if (objParamExploded.int64Str case final int64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'int64Str', value: int64Str$)); }
 if (objParamExploded.float64Str case final float64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'float64Str', value: float64Str$)); }
 if (objParam != null) {
-queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), if (objParam.any != null) ...['any', objParam.any!.toString()], if (objParam.strOpt != null) ...['strOpt', objParam.strOpt!], if (objParam.boolOpt != null) ...['boolOpt', objParam.boolOpt!.toString()], if (objParam.intOptNull != null) ...['intOptNull', objParam.intOptNull!.toString()], if (objParam.numOptNull != null) ...['numOptNull', objParam.numOptNull!.toString()], 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), if (objParam.bigint != null) ...['bigint', objParam.bigint!.toString()], if (objParam.bigintStr != null) ...['bigintStr', objParam.bigintStr!], if (objParam.decimal != null) ...['decimal', objParam.decimal!.toString()], if (objParam.decimalStr != null) ...['decimalStr', objParam.decimalStr!], if (objParam.decimalNullableOpt != null) ...['decimalNullableOpt', objParam.decimalNullableOpt!.toString()], if (objParam.int64Str != null) ...['int64Str', objParam.int64Str!], if (objParam.float64Str != null) ...['float64Str', objParam.float64Str!]].join(',');
+queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), if (objParam.any != null) ...['any', objParam.any!.toString()], if (objParam.strOpt != null) ...['strOpt', objParam.strOpt!], if (objParam.boolOpt != null) ...['boolOpt', objParam.boolOpt!.toString()], if (objParam.intOptNull != null) ...['intOptNull', objParam.intOptNull!.toString()], if (objParam.numOptNull != null) ...['numOptNull', objParam.numOptNull!.toString()], 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), if (objParam.bigint != null) ...['bigint', objParam.bigint!.toString()], if (objParam.bigintStr != null) ...['bigintStr', objParam.bigintStr!], if (objParam.decimal != null) ...['decimal', objParam.decimal!.toString()], if (objParam.decimalStr != null) ...['decimalStr', objParam.decimalStr!], if (objParam.decimalNullableOpt.value != null) ...['decimalNullableOpt', objParam.decimalNullableOpt.value!.toString()], if (objParam.int64Str != null) ...['int64Str', objParam.int64Str!], if (objParam.float64Str != null) ...['float64Str', objParam.float64Str!]].join(',');
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -518,15 +518,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/camelObj`
-Future<ApiResult<FormQueryParamsCamelObjectResponse, Never>> formQueryParamsCamelObject({required FormQueryParamsCamelObjectObjParamExploded objParamExploded, FormQueryParamsCamelObjectObjParam? objParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsCamelObjectResponse, Never>> formQueryParamsCamelObject({required FormQueryParamsCamelObjectObjParamExploded objParamExploded, FormQueryParamsCamelObjectObjParam? objParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (objParamExploded.searchTerm case final searchTerm$?) { queryParametersList.add(ApiQueryParameter(name: 'search_term', value: searchTerm$)); }
 if (objParamExploded.itemCount case final itemCount$?) { queryParametersList.add(ApiQueryParameter(name: 'item_count', value: itemCount$)); }
@@ -545,15 +545,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsCamelObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/refParamObject`
-Future<ApiResult<FormQueryParamsRefParamObjectResponse, Never>> formQueryParamsRefParamObject({FormQueryParamsRefParamObjectRefObjParamExploded? refObjParamExploded, FormQueryParamsRefParamObjectRefObjParam? refObjParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsRefParamObjectResponse, Never>> formQueryParamsRefParamObject({FormQueryParamsRefParamObjectRefObjParamExploded? refObjParamExploded, FormQueryParamsRefParamObjectRefObjParam? refObjParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (refObjParamExploded != null) {
 queryParametersList.add(ApiQueryParameter(name: 'str', value: refObjParamExploded.str));
@@ -576,15 +576,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsRefParamObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/array`
-Future<ApiResult<FormQueryParamsArrayResponse, Never>> formQueryParamsArray({List<String>? arrParam, List<int>? arrParamExploded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsArrayResponse, Never>> formQueryParamsArray({List<String>? arrParam, List<int>? arrParamExploded, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (arrParam != null) {
 queryParameters['arrParam'] = arrParam.join(',');
@@ -606,15 +606,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/pipe/array`
-Future<ApiResult<PipeDelimitedQueryParamsArrayResponse, Never>> pipeDelimitedQueryParamsArray({List<String>? arrParam, List<int>? arrParamExploded, SimpleObject? objParam, Map<String,String>? mapParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PipeDelimitedQueryParamsArrayResponse, Never>> pipeDelimitedQueryParamsArray({List<String>? arrParam, List<int>? arrParamExploded, SimpleObject? objParam, Map<String,String>? mapParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (arrParam != null) {
 queryParameters['arrParam'] = arrParam.join('|');
@@ -625,7 +625,7 @@ for (final item in arrParamExploded) {
 }
 }
 if (objParam != null) {
-queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), if (objParam.any != null) ...['any', objParam.any!.toString()], if (objParam.strOpt != null) ...['strOpt', objParam.strOpt!], if (objParam.boolOpt != null) ...['boolOpt', objParam.boolOpt!.toString()], if (objParam.intOptNull != null) ...['intOptNull', objParam.intOptNull!.toString()], if (objParam.numOptNull != null) ...['numOptNull', objParam.numOptNull!.toString()], 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), if (objParam.bigint != null) ...['bigint', objParam.bigint!.toString()], if (objParam.bigintStr != null) ...['bigintStr', objParam.bigintStr!], if (objParam.decimal != null) ...['decimal', objParam.decimal!.toString()], if (objParam.decimalStr != null) ...['decimalStr', objParam.decimalStr!], if (objParam.decimalNullableOpt != null) ...['decimalNullableOpt', objParam.decimalNullableOpt!.toString()], if (objParam.int64Str != null) ...['int64Str', objParam.int64Str!], if (objParam.float64Str != null) ...['float64Str', objParam.float64Str!]].join('|');
+queryParameters['objParam'] = ['str', objParam.str, 'bool', objParam.$bool.toString(), 'int', objParam.$int.toString(), 'int32', objParam.int32.toString(), 'num', objParam.$num.toString(), 'float32', objParam.float32.toString(), 'enum', objParam.$enum.toJson(), 'date', objParam.date, 'dateTime', objParam.dateTime.toIso8601String(), if (objParam.any != null) ...['any', objParam.any!.toString()], if (objParam.strOpt != null) ...['strOpt', objParam.strOpt!], if (objParam.boolOpt != null) ...['boolOpt', objParam.boolOpt!.toString()], if (objParam.intOptNull != null) ...['intOptNull', objParam.intOptNull!.toString()], if (objParam.numOptNull != null) ...['numOptNull', objParam.numOptNull!.toString()], 'intEnum', objParam.intEnum.toJson().toString(), 'int32Enum', objParam.int32Enum.toJson().toString(), if (objParam.bigint != null) ...['bigint', objParam.bigint!.toString()], if (objParam.bigintStr != null) ...['bigintStr', objParam.bigintStr!], if (objParam.decimal != null) ...['decimal', objParam.decimal!.toString()], if (objParam.decimalStr != null) ...['decimalStr', objParam.decimalStr!], if (objParam.decimalNullableOpt.value != null) ...['decimalNullableOpt', objParam.decimalNullableOpt.value!.toString()], if (objParam.int64Str != null) ...['int64Str', objParam.int64Str!], if (objParam.float64Str != null) ...['float64Str', objParam.float64Str!]].join('|');
 }
 if (mapParam != null) {
 final mapParamParts = <String>[];
@@ -647,15 +647,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return PipeDelimitedQueryParamsArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/form/map`
-Future<ApiResult<FormQueryParamsMapResponse, Never>> formQueryParamsMap({Map<String,String>? mapParam, Map<String,int>? mapParamExploded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FormQueryParamsMapResponse, Never>> formQueryParamsMap({Map<String,String>? mapParam, Map<String,int>? mapParamExploded, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mapParam != null) {
 final mapParamParts = <String>[];
@@ -682,15 +682,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return FormQueryParamsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/deepObject/obj`
-Future<ApiResult<DeepObjectQueryParamsObjectResponse, Never>> deepObjectQueryParamsObject({required SimpleObject objParam, DeepObjectQueryParamsObjectObjArrParam? objArrParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DeepObjectQueryParamsObjectResponse, Never>> deepObjectQueryParamsObject({required SimpleObject objParam, DeepObjectQueryParamsObjectObjArrParam? objArrParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['objParam[str]'] = objParam.str;
 queryParameters['objParam[bool]'] = objParam.$bool.toString();
@@ -712,7 +712,7 @@ if (objParam.bigint case final bigint$?) { queryParameters['objParam[bigint]'] =
 if (objParam.bigintStr case final bigintStr$?) { queryParameters['objParam[bigintStr]'] = bigintStr$; }
 if (objParam.decimal case final decimal$?) { queryParameters['objParam[decimal]'] = decimal$.toString(); }
 if (objParam.decimalStr case final decimalStr$?) { queryParameters['objParam[decimalStr]'] = decimalStr$; }
-if (objParam.decimalNullableOpt case final decimalNullableOpt$?) { queryParameters['objParam[decimalNullableOpt]'] = decimalNullableOpt$.toString(); }
+if (objParam.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParameters['objParam[decimalNullableOpt]'] = decimalNullableOpt$.toString(); }
 if (objParam.int64Str case final int64Str$?) { queryParameters['objParam[int64Str]'] = int64Str$; }
 if (objParam.float64Str case final float64Str$?) { queryParameters['objParam[float64Str]'] = float64Str$; }
 if (objArrParam != null) {
@@ -730,15 +730,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeepObjectQueryParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/deepObject/deepObj`
-Future<ApiResult<DeepObjectQueryParamsDeepObjectResponse, Never>> deepObjectQueryParamsDeepObject({required DeepObjectQueryParams deepObj, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DeepObjectQueryParamsDeepObjectResponse, Never>> deepObjectQueryParamsDeepObject({required DeepObjectQueryParams deepObj, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['deepObj[arr]'] = deepObj.arr.toString();
 queryParameters['deepObj[bool]'] = deepObj.$bool.toString();
@@ -761,15 +761,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeepObjectQueryParamsDeepObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/deepObject/map`
-Future<ApiResult<DeepObjectQueryParamsMapResponse, Never>> deepObjectQueryParamsMap({required Map<String,String> mapParam, Map<String,List<String>>? mapArrParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DeepObjectQueryParamsMapResponse, Never>> deepObjectQueryParamsMap({required Map<String,String> mapParam, Map<String,List<String>>? mapArrParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final entry in mapParam.entries) {
   queryParameters['mapParam[${entry.key}]'] = entry.value;
@@ -791,15 +791,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DeepObjectQueryParamsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/json/obj`
-Future<ApiResult<JsonQueryParamsObjectResponse, Never>> jsonQueryParamsObject({required SimpleObject simpleObjParam, required DeepObject deepObjParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<JsonQueryParamsObjectResponse, Never>> jsonQueryParamsObject({required SimpleObject simpleObjParam, required DeepObject deepObjParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParametersList.add(ApiQueryParameter(name: 'str', value: simpleObjParam.str));
 queryParametersList.add(ApiQueryParameter(name: 'bool', value: simpleObjParam.$bool.toString()));
@@ -821,7 +821,7 @@ if (simpleObjParam.bigint case final bigint$?) { queryParametersList.add(ApiQuer
 if (simpleObjParam.bigintStr case final bigintStr$?) { queryParametersList.add(ApiQueryParameter(name: 'bigintStr', value: bigintStr$)); }
 if (simpleObjParam.decimal case final decimal$?) { queryParametersList.add(ApiQueryParameter(name: 'decimal', value: decimal$.toString())); }
 if (simpleObjParam.decimalStr case final decimalStr$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalStr', value: decimalStr$)); }
-if (simpleObjParam.decimalNullableOpt case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
+if (simpleObjParam.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
 if (simpleObjParam.int64Str case final int64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'int64Str', value: int64Str$)); }
 if (simpleObjParam.float64Str case final float64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'float64Str', value: float64Str$)); }
 queryParametersList.add(ApiQueryParameter(name: 'str', value: deepObjParam.str));
@@ -845,15 +845,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return JsonQueryParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/json/objsmaller`
-Future<ApiResult<JsonQueryParamsObjectSmallerResponse, Never>> jsonQueryParamsObjectSmaller({required SimpleObject simpleObjParam, required DeepObjectSmaller deepObjParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<JsonQueryParamsObjectSmallerResponse, Never>> jsonQueryParamsObjectSmaller({required SimpleObject simpleObjParam, required DeepObjectSmaller deepObjParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParametersList.add(ApiQueryParameter(name: 'str', value: simpleObjParam.str));
 queryParametersList.add(ApiQueryParameter(name: 'bool', value: simpleObjParam.$bool.toString()));
@@ -875,7 +875,7 @@ if (simpleObjParam.bigint case final bigint$?) { queryParametersList.add(ApiQuer
 if (simpleObjParam.bigintStr case final bigintStr$?) { queryParametersList.add(ApiQueryParameter(name: 'bigintStr', value: bigintStr$)); }
 if (simpleObjParam.decimal case final decimal$?) { queryParametersList.add(ApiQueryParameter(name: 'decimal', value: decimal$.toString())); }
 if (simpleObjParam.decimalStr case final decimalStr$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalStr', value: decimalStr$)); }
-if (simpleObjParam.decimalNullableOpt case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
+if (simpleObjParam.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
 if (simpleObjParam.int64Str case final int64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'int64Str', value: int64Str$)); }
 if (simpleObjParam.float64Str case final float64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'float64Str', value: float64Str$)); }
 queryParametersList.add(ApiQueryParameter(name: 'str', value: deepObjParam.str));
@@ -899,15 +899,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return JsonQueryParamsObjectSmallerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/const`
-Future<ApiResult<ConstQueryParamsResponse, Never>> constQueryParams({required String constParam, String? configurableParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConstQueryParamsResponse, Never>> constQueryParams({required String constParam, String? configurableParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['constParam'] = constParam;
 if (configurableParam != null) {
@@ -925,15 +925,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ConstQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/default`
-Future<ApiResult<DefaultQueryParamsResponse, Never>> defaultQueryParams({String? defaultParam, String? configurableParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DefaultQueryParamsResponse, Never>> defaultQueryParams({String? defaultParam, String? configurableParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (defaultParam != null) {
   queryParameters['defaultParam'] = defaultParam;
@@ -953,15 +953,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return DefaultQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/queryParams/mixed`
-Future<ApiResult<MixedQueryParamsResponse, Never>> mixedQueryParams({required SimpleObject jsonParam, required SimpleObject formParam, required SimpleObject deepObjectParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<MixedQueryParamsResponse, Never>> mixedQueryParams({required SimpleObject jsonParam, required SimpleObject formParam, required SimpleObject deepObjectParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParametersList.add(ApiQueryParameter(name: 'str', value: jsonParam.str));
 queryParametersList.add(ApiQueryParameter(name: 'bool', value: jsonParam.$bool.toString()));
@@ -983,7 +983,7 @@ if (jsonParam.bigint case final bigint$?) { queryParametersList.add(ApiQueryPara
 if (jsonParam.bigintStr case final bigintStr$?) { queryParametersList.add(ApiQueryParameter(name: 'bigintStr', value: bigintStr$)); }
 if (jsonParam.decimal case final decimal$?) { queryParametersList.add(ApiQueryParameter(name: 'decimal', value: decimal$.toString())); }
 if (jsonParam.decimalStr case final decimalStr$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalStr', value: decimalStr$)); }
-if (jsonParam.decimalNullableOpt case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
+if (jsonParam.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
 if (jsonParam.int64Str case final int64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'int64Str', value: int64Str$)); }
 if (jsonParam.float64Str case final float64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'float64Str', value: float64Str$)); }
 queryParametersList.add(ApiQueryParameter(name: 'str', value: formParam.str));
@@ -1006,7 +1006,7 @@ if (formParam.bigint case final bigint$?) { queryParametersList.add(ApiQueryPara
 if (formParam.bigintStr case final bigintStr$?) { queryParametersList.add(ApiQueryParameter(name: 'bigintStr', value: bigintStr$)); }
 if (formParam.decimal case final decimal$?) { queryParametersList.add(ApiQueryParameter(name: 'decimal', value: decimal$.toString())); }
 if (formParam.decimalStr case final decimalStr$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalStr', value: decimalStr$)); }
-if (formParam.decimalNullableOpt case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
+if (formParam.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParametersList.add(ApiQueryParameter(name: 'decimalNullableOpt', value: decimalNullableOpt$.toString())); }
 if (formParam.int64Str case final int64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'int64Str', value: int64Str$)); }
 if (formParam.float64Str case final float64Str$?) { queryParametersList.add(ApiQueryParameter(name: 'float64Str', value: float64Str$)); }
 queryParameters['deepObjectParam[str]'] = deepObjectParam.str;
@@ -1029,7 +1029,7 @@ if (deepObjectParam.bigint case final bigint$?) { queryParameters['deepObjectPar
 if (deepObjectParam.bigintStr case final bigintStr$?) { queryParameters['deepObjectParam[bigintStr]'] = bigintStr$; }
 if (deepObjectParam.decimal case final decimal$?) { queryParameters['deepObjectParam[decimal]'] = decimal$.toString(); }
 if (deepObjectParam.decimalStr case final decimalStr$?) { queryParameters['deepObjectParam[decimalStr]'] = decimalStr$; }
-if (deepObjectParam.decimalNullableOpt case final decimalNullableOpt$?) { queryParameters['deepObjectParam[decimalNullableOpt]'] = decimalNullableOpt$.toString(); }
+if (deepObjectParam.decimalNullableOpt.value case final decimalNullableOpt$?) { queryParameters['deepObjectParam[decimalNullableOpt]'] = decimalNullableOpt$.toString(); }
 if (deepObjectParam.int64Str case final int64Str$?) { queryParameters['deepObjectParam[int64Str]'] = int64Str$; }
 if (deepObjectParam.float64Str case final float64Str$?) { queryParameters['deepObjectParam[float64Str]'] = float64Str$; }
 
@@ -1044,15 +1044,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return MixedQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/headers/primitive`
-Future<ApiResult<HeaderParamsPrimitiveResponse, Never>> headerParamsPrimitive({required String xHeaderString, required bool xHeaderBoolean, required int xHeaderInteger, required double xHeaderNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HeaderParamsPrimitiveResponse, Never>> headerParamsPrimitive({required String xHeaderString, required bool xHeaderBoolean, required int xHeaderInteger, required double xHeaderNumber, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-String'] = xHeaderString;
 headers['X-Header-Boolean'] = xHeaderBoolean.toString();
 headers['X-Header-Integer'] = xHeaderInteger.toString();
@@ -1065,15 +1065,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsPrimitiveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/headers/obj`
-Future<ApiResult<HeaderParamsObjectResponse, Never>> headerParamsObject({required SimpleObject xHeaderObj, required SimpleObject xHeaderObjExplode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HeaderParamsObjectResponse, Never>> headerParamsObject({required SimpleObject xHeaderObj, required SimpleObject xHeaderObjExplode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-Obj'] = xHeaderObj.toString();
 headers['X-Header-Obj-Explode'] = xHeaderObjExplode.toString();
 
@@ -1084,15 +1084,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsObjectResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/headers/map`
-Future<ApiResult<HeaderParamsMapResponse, Never>> headerParamsMap({required Map<String,String> xHeaderMap, required Map<String,String> xHeaderMapExplode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HeaderParamsMapResponse, Never>> headerParamsMap({required Map<String,String> xHeaderMap, required Map<String,String> xHeaderMapExplode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-Map'] = xHeaderMap.toString();
 headers['X-Header-Map-Explode'] = xHeaderMapExplode.toString();
 
@@ -1103,15 +1103,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/headers/array`
-Future<ApiResult<HeaderParamsArrayResponse, Never>> headerParamsArray({required List<String> xHeaderArray, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HeaderParamsArrayResponse, Never>> headerParamsArray({required List<String> xHeaderArray, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-Array'] = xHeaderArray.toString();
 
 final request = ApiRequest(
@@ -1121,15 +1121,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/headers/nil`
-Future<ApiResult<HeaderParamsNilResponse, Never>> headerParamsNil({required String? nullableHeader, String? optionalHeader, String? optionalNullableHeader, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HeaderParamsNilResponse, Never>> headerParamsNil({required String? nullableHeader, String? optionalHeader, String? optionalNullableHeader, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (optionalHeader != null) {
   headers['Optional-Header'] = optionalHeader;
 }
@@ -1147,15 +1147,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return HeaderParamsNilResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /pathencoding/{param1}/{param2}`
-Future<ApiResult<void, Never>> pathEncoding({required String param1, required String param2, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> pathEncoding({required String param1, required String param2, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1164,13 +1164,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /queryencoding`
-Future<ApiResult<void, Never>> queryEncoding({required String param1, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> queryEncoding({required String param1, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParametersList.add(ApiQueryParameter(name: 'param1', value: param1, allowReserved: true));
 
@@ -1185,13 +1185,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/queryParams/builtinShadow`
-Future<ApiResult<BuiltinShadowQueryParamsResponse, Never>> builtinShadowQueryParams({String? hash, String? list, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BuiltinShadowQueryParamsResponse, Never>> builtinShadowQueryParams({String? hash, String? list, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hash != null) {
   queryParameters['hash'] = hash;
@@ -1211,11 +1211,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return BuiltinShadowQueryParamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

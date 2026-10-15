@@ -2,36 +2,36 @@
 // Source: #/components/schemas/PayoutsTraceId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PayoutsTraceId {const PayoutsTraceId({required this.status, this.value, });
+@immutable final class PayoutsTraceId {const PayoutsTraceId({required this.status, this.value = const Omittable.absent(), });
 
-factory PayoutsTraceId.fromJson(Map<String, dynamic> json) { return PayoutsTraceId(
+factory PayoutsTraceId.fromJson(Map<String, dynamic> json) {return PayoutsTraceId(
   status: json['status'] as String,
-  value: json['value'] as String?,
-); }
+  value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
+);}
 
 /// Possible values are `pending`, `supported`, and `unsupported`. When `payout.status` is `pending` or `in_transit`, this will be `pending`. When the payout transitions to `paid`, `failed`, or `canceled`, this status will become `supported` or `unsupported` shortly after in most cases. In some cases, this may appear as `pending` for up to 10 days after `arrival_date` until transitioning to `supported` or `unsupported`.
 final String status;
 
 /// The trace ID value if `trace_id.status` is `supported`, otherwise `nil`.
-final String? value;
+final Omittable<String?> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status,
-  'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
+  if (value.isPresent) 'value': value.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
-final value$ = value;
+final value$ = value.value;
 if (value$ != null) {
   if (value$.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
-return errors; } 
-PayoutsTraceId copyWith({String? status, String? Function()? value, }) { return PayoutsTraceId(
+return errors;}
+PayoutsTraceId copyWith({String? status, Omittable<String?>? value, }) {return PayoutsTraceId(
   status: status ?? this.status,
-  value: value != null ? value() : this.value,
-); } 
+  value: value ?? this.value,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PayoutsTraceId &&
           status == other.status &&
@@ -41,4 +41,4 @@ PayoutsTraceId copyWith({String? status, String? Function()? value, }) { return 
 
 @override String toString() => 'PayoutsTraceId(status: $status, value: $value)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceCreateJobRequest {const AiSearchInstanceCreateJobRequest({this.description});
 
-factory AiSearchInstanceCreateJobRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceCreateJobRequest(
+factory AiSearchInstanceCreateJobRequest.fromJson(Map<String, dynamic> json) {return AiSearchInstanceCreateJobRequest(
   description: json['description'] as String?,
-); }
+);}
 
 final String? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 255) { errors.add('description: length must be <= 255'); }
 }
-return errors; } 
-AiSearchInstanceCreateJobRequest copyWith({String? Function()? description}) { return AiSearchInstanceCreateJobRequest(
+return errors;}
+AiSearchInstanceCreateJobRequest copyWith({String? Function()? description}) {return AiSearchInstanceCreateJobRequest(
   description: description != null ? description() : this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceCreateJobRequest &&
           description == other.description;
@@ -31,4 +31,4 @@ AiSearchInstanceCreateJobRequest copyWith({String? Function()? description}) { r
 
 @override String toString() => 'AiSearchInstanceCreateJobRequest(description: $description)';
 
- }
+}

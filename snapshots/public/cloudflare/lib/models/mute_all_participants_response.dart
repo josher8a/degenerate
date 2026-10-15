@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mute_all_participants_response/mute_all_participants_response_data.dart';@immutable final class MuteAllParticipantsResponse {const MuteAllParticipantsResponse({this.data, this.success, });
 
-factory MuteAllParticipantsResponse.fromJson(Map<String, dynamic> json) { return MuteAllParticipantsResponse(
+factory MuteAllParticipantsResponse.fromJson(Map<String, dynamic> json) {return MuteAllParticipantsResponse(
   data: json['data'] != null ? MuteAllParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final MuteAllParticipantsResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-MuteAllParticipantsResponse copyWith({MuteAllParticipantsResponseData? Function()? data, bool? Function()? success, }) { return MuteAllParticipantsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+MuteAllParticipantsResponse copyWith({MuteAllParticipantsResponseData? Function()? data, bool? Function()? success, }) {return MuteAllParticipantsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MuteAllParticipantsResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ MuteAllParticipantsResponse copyWith({MuteAllParticipantsResponseData? Function(
 
 @override String toString() => 'MuteAllParticipantsResponse(data: $data, success: $success)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories();
 
-factory BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'credit_card' => creditCard,
   'line_of_credit' => lineOfCredit,
   'mortgage' => mortgage,
   'savings' => savings,
   _ => BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown(json),
-}; }
+};}
 
 static const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories checking = BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking._();
 
@@ -25,39 +25,39 @@ static const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategorie
 static const List<BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories> values = [checking, creditCard, lineOfCredit, mortgage, savings];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'checking' => 'checking',
   'credit_card' => 'creditCard',
   'line_of_credit' => 'lineOfCredit',
   'mortgage' => 'mortgage',
   'savings' => 'savings',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown; } 
+bool get isUnknown {return this is BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() checking, required W Function() creditCard, required W Function() lineOfCredit, required W Function() mortgage, required W Function() savings, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() checking, required W Function() creditCard, required W Function() lineOfCredit, required W Function() mortgage, required W Function() savings, required W Function(String value) $unknown, }) {return switch (this) {
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking() => checking(),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$creditCard() => creditCard(),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$lineOfCredit() => lineOfCredit(),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$mortgage() => mortgage(),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$savings() => savings(),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? creditCard, W Function()? lineOfCredit, W Function()? mortgage, W Function()? savings, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? creditCard, W Function()? lineOfCredit, W Function()? mortgage, W Function()? savings, W Function(String value)? $unknown, }) {return switch (this) {
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking() => checking != null ? checking() : orElse(value),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$creditCard() => creditCard != null ? creditCard() : orElse(value),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$lineOfCredit() => lineOfCredit != null ? lineOfCredit() : orElse(value),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$mortgage() => mortgage != null ? mortgage() : orElse(value),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$savings() => savings != null ? savings() : orElse(value),
       BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories($value)';
 
- }
+}
 @immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking extends BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking._();
 
 @override String get value => 'checking';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'checking'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$creditCard extends BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$creditCard._();
 
 @override String get value => 'credit_card';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'credit_card'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$lineOfCredit extends BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$lineOfCredit._();
 
 @override String get value => 'line_of_credit';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'line_of_credit'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$mortgage extends BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$mortgage._();
 
 @override String get value => 'mortgage';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'mortgage'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$savings extends BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$savings._();
 
 @override String get value => 'savings';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'savings'.hashCode;
 
- }
+}
 @immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown extends BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => value.hashCode;
 
- }
+}

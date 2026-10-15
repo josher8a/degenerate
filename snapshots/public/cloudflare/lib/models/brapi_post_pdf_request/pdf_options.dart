@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_pdf_request/margin.dart';/// Paper format. Takes priority over width and height if set.
 sealed class PdfOptionsFormat {const PdfOptionsFormat();
 
-factory PdfOptionsFormat.fromJson(String json) { return switch (json) {
+factory PdfOptionsFormat.fromJson(String json) {return switch (json) {
   'letter' => letter,
   'legal' => legal,
   'tabloid' => tabloid,
@@ -17,7 +17,7 @@ factory PdfOptionsFormat.fromJson(String json) { return switch (json) {
   'a5' => a5,
   'a6' => a6,
   _ => PdfOptionsFormat$Unknown(json),
-}; }
+};}
 
 static const PdfOptionsFormat letter = PdfOptionsFormat$letter._();
 
@@ -44,9 +44,9 @@ static const PdfOptionsFormat a6 = PdfOptionsFormat$a6._();
 static const List<PdfOptionsFormat> values = [letter, legal, tabloid, ledger, a0, a1, a2, a3, a4, a5, a6];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'letter' => 'letter',
   'legal' => 'legal',
   'tabloid' => 'tabloid',
@@ -59,11 +59,11 @@ String get name { return switch (value) {
   'a5' => 'a5',
   'a6' => 'a6',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PdfOptionsFormat$Unknown; } 
+bool get isUnknown {return this is PdfOptionsFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() letter, required W Function() legal, required W Function() tabloid, required W Function() ledger, required W Function() a0, required W Function() a1, required W Function() a2, required W Function() a3, required W Function() a4, required W Function() a5, required W Function() a6, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() letter, required W Function() legal, required W Function() tabloid, required W Function() ledger, required W Function() a0, required W Function() a1, required W Function() a2, required W Function() a3, required W Function() a4, required W Function() a5, required W Function() a6, required W Function(String value) $unknown, }) {return switch (this) {
       PdfOptionsFormat$letter() => letter(),
       PdfOptionsFormat$legal() => legal(),
       PdfOptionsFormat$tabloid() => tabloid(),
@@ -76,9 +76,9 @@ W when<W>({required W Function() letter, required W Function() legal, required W
       PdfOptionsFormat$a5() => a5(),
       PdfOptionsFormat$a6() => a6(),
       PdfOptionsFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, W Function()? legal, W Function()? tabloid, W Function()? ledger, W Function()? a0, W Function()? a1, W Function()? a2, W Function()? a3, W Function()? a4, W Function()? a5, W Function()? a6, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, W Function()? legal, W Function()? tabloid, W Function()? ledger, W Function()? a0, W Function()? a1, W Function()? a2, W Function()? a3, W Function()? a4, W Function()? a5, W Function()? a6, W Function(String value)? $unknown, }) {return switch (this) {
       PdfOptionsFormat$letter() => letter != null ? letter() : orElse(value),
       PdfOptionsFormat$legal() => legal != null ? legal() : orElse(value),
       PdfOptionsFormat$tabloid() => tabloid != null ? tabloid() : orElse(value),
@@ -91,10 +91,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
       PdfOptionsFormat$a5() => a5 != null ? a5() : orElse(value),
       PdfOptionsFormat$a6() => a6 != null ? a6() : orElse(value),
       PdfOptionsFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PdfOptionsFormat($value)';
 
- }
+}
 @immutable final class PdfOptionsFormat$letter extends PdfOptionsFormat {const PdfOptionsFormat$letter._();
 
 @override String get value => 'letter';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'letter'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$legal extends PdfOptionsFormat {const PdfOptionsFormat$legal._();
 
 @override String get value => 'legal';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'legal'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$tabloid extends PdfOptionsFormat {const PdfOptionsFormat$tabloid._();
 
 @override String get value => 'tabloid';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'tabloid'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$ledger extends PdfOptionsFormat {const PdfOptionsFormat$ledger._();
 
 @override String get value => 'ledger';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'ledger'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a0 extends PdfOptionsFormat {const PdfOptionsFormat$a0._();
 
 @override String get value => 'a0';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a0'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a1 extends PdfOptionsFormat {const PdfOptionsFormat$a1._();
 
 @override String get value => 'a1';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a1'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a2 extends PdfOptionsFormat {const PdfOptionsFormat$a2._();
 
 @override String get value => 'a2';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a2'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a3 extends PdfOptionsFormat {const PdfOptionsFormat$a3._();
 
 @override String get value => 'a3';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a3'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a4 extends PdfOptionsFormat {const PdfOptionsFormat$a4._();
 
 @override String get value => 'a4';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a4'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a5 extends PdfOptionsFormat {const PdfOptionsFormat$a5._();
 
 @override String get value => 'a5';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a5'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$a6 extends PdfOptionsFormat {const PdfOptionsFormat$a6._();
 
 @override String get value => 'a6';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => 'a6'.hashCode;
 
- }
+}
 @immutable final class PdfOptionsFormat$Unknown extends PdfOptionsFormat {const PdfOptionsFormat$Unknown(this.value);
 
 @override final String value;
@@ -203,37 +203,37 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Check [options](https://pptr.dev/api/puppeteer.pdfoptions).
-@immutable final class PdfOptions {const PdfOptions({this.displayHeaderFooter = false, this.footerTemplate, this.format = PdfOptionsFormat.letter, this.headerTemplate, this.height, this.landscape = false, this.margin, this.omitBackground = false, this.outline = false, this.pageRanges, this.preferCssPageSize = false, this.printBackground = false, this.scale = 1.0, this.tagged = true, this.timeout = 30000.0, this.width, });
+@immutable final class PdfOptions {const PdfOptions({this.displayHeaderFooter, this.footerTemplate, this.format, this.headerTemplate, this.height, this.landscape, this.margin, this.omitBackground, this.outline, this.pageRanges, this.preferCssPageSize, this.printBackground, this.scale, this.tagged, this.timeout, this.width, });
 
-factory PdfOptions.fromJson(Map<String, dynamic> json) { return PdfOptions(
-  displayHeaderFooter: json.containsKey('displayHeaderFooter') ? json['displayHeaderFooter'] as bool : false,
+factory PdfOptions.fromJson(Map<String, dynamic> json) {return PdfOptions(
+  displayHeaderFooter: json['displayHeaderFooter'] as bool?,
   footerTemplate: json['footerTemplate'] as String?,
-  format: json.containsKey('format') ? PdfOptionsFormat.fromJson(json['format'] as String) : PdfOptionsFormat.letter,
+  format: json['format'] != null ? PdfOptionsFormat.fromJson(json['format'] as String) : null,
   headerTemplate: json['headerTemplate'] as String?,
   height: json['height'],
-  landscape: json.containsKey('landscape') ? json['landscape'] as bool : false,
+  landscape: json['landscape'] as bool?,
   margin: json['margin'] != null ? Margin.fromJson(json['margin'] as Map<String, dynamic>) : null,
-  omitBackground: json.containsKey('omitBackground') ? json['omitBackground'] as bool : false,
-  outline: json.containsKey('outline') ? json['outline'] as bool : false,
+  omitBackground: json['omitBackground'] as bool?,
+  outline: json['outline'] as bool?,
   pageRanges: json['pageRanges'] as String?,
-  preferCssPageSize: json.containsKey('preferCSSPageSize') ? json['preferCSSPageSize'] as bool : false,
-  printBackground: json.containsKey('printBackground') ? json['printBackground'] as bool : false,
-  scale: json.containsKey('scale') ? (json['scale'] as num).toDouble() : 1.0,
-  tagged: json.containsKey('tagged') ? json['tagged'] as bool : true,
-  timeout: json.containsKey('timeout') ? (json['timeout'] as num).toDouble() : 30000.0,
+  preferCssPageSize: json['preferCSSPageSize'] as bool?,
+  printBackground: json['printBackground'] as bool?,
+  scale: json['scale'] != null ? (json['scale'] as num).toDouble() : null,
+  tagged: json['tagged'] as bool?,
+  timeout: json['timeout'] != null ? (json['timeout'] as num).toDouble() : null,
   width: json['width'],
-); }
+);}
 
 /// Whether to show the header and footer.
-final bool displayHeaderFooter;
+final bool? displayHeaderFooter;
 
 /// HTML template for the print footer.
 final String? footerTemplate;
 
 /// Paper format. Takes priority over width and height if set.
-final PdfOptionsFormat format;
+final PdfOptionsFormat? format;
 
 /// HTML template for the print header.
 final String? headerTemplate;
@@ -246,34 +246,34 @@ final String? headerTemplate;
 final dynamic height;
 
 /// Whether to print in landscape orientation.
-final bool landscape;
+final bool? landscape;
 
 /// Set the PDF margins. Useful when setting header and footer.
 final Margin? margin;
 
 /// Hides default white background and allows generating pdfs with transparency.
-final bool omitBackground;
+final bool? omitBackground;
 
 /// Generate document outline.
-final bool outline;
+final bool? outline;
 
 /// Paper ranges to print, e.g. '1-5, 8, 11-13'.
 final String? pageRanges;
 
 /// Give CSS @page size priority over other size declarations.
-final bool preferCssPageSize;
+final bool? preferCssPageSize;
 
 /// Set to true to print background graphics.
-final bool printBackground;
+final bool? printBackground;
 
 /// Scales the rendering of the web page. Amount must be between 0.1 and 2.
-final double scale;
+final double? scale;
 
 /// Generate tagged (accessible) PDF.
-final bool tagged;
+final bool? tagged;
 
 /// Timeout in milliseconds.
-final double timeout;
+final double? timeout;
 
 /// Sets the width of paper. Can be a number or string with unit.
 /// 
@@ -282,31 +282,64 @@ final double timeout;
 /// One of: String, double
 final dynamic width;
 
-Map<String, dynamic> toJson() { return {
-  'displayHeaderFooter': displayHeaderFooter,
+/// The value of `displayHeaderFooter`, or its schema default when absent.
+bool get displayHeaderFooterOrDefault => displayHeaderFooter ?? false;
+
+/// The value of `format`, or its schema default when absent.
+PdfOptionsFormat get formatOrDefault => format ?? PdfOptionsFormat.fromJson('letter');
+
+/// The value of `landscape`, or its schema default when absent.
+bool get landscapeOrDefault => landscape ?? false;
+
+/// The value of `omitBackground`, or its schema default when absent.
+bool get omitBackgroundOrDefault => omitBackground ?? false;
+
+/// The value of `outline`, or its schema default when absent.
+bool get outlineOrDefault => outline ?? false;
+
+/// The value of `preferCssPageSize`, or its schema default when absent.
+bool get preferCssPageSizeOrDefault => preferCssPageSize ?? false;
+
+/// The value of `printBackground`, or its schema default when absent.
+bool get printBackgroundOrDefault => printBackground ?? false;
+
+/// The value of `scale`, or its schema default when absent.
+double get scaleOrDefault => scale ?? 1.0;
+
+/// The value of `tagged`, or its schema default when absent.
+bool get taggedOrDefault => tagged ?? true;
+
+/// The value of `timeout`, or its schema default when absent.
+double get timeoutOrDefault => timeout ?? 30000.0;
+
+Map<String, dynamic> toJson() {return {
+  'displayHeaderFooter': ?displayHeaderFooter,
   'footerTemplate': ?footerTemplate,
-  'format': format.toJson(),
+  if (format != null) 'format': format?.toJson(),
   'headerTemplate': ?headerTemplate,
   'height': ?height,
-  'landscape': landscape,
+  'landscape': ?landscape,
   if (margin != null) 'margin': margin?.toJson(),
-  'omitBackground': omitBackground,
-  'outline': outline,
+  'omitBackground': ?omitBackground,
+  'outline': ?outline,
   'pageRanges': ?pageRanges,
-  'preferCSSPageSize': preferCssPageSize,
-  'printBackground': printBackground,
-  'scale': scale,
-  'tagged': tagged,
-  'timeout': timeout,
+  'preferCSSPageSize': ?preferCssPageSize,
+  'printBackground': ?printBackground,
+  'scale': ?scale,
+  'tagged': ?tagged,
+  'timeout': ?timeout,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'displayHeaderFooter', 'footerTemplate', 'format', 'headerTemplate', 'height', 'landscape', 'margin', 'omitBackground', 'outline', 'pageRanges', 'preferCSSPageSize', 'printBackground', 'scale', 'tagged', 'timeout', 'width'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'displayHeaderFooter', 'footerTemplate', 'format', 'headerTemplate', 'height', 'landscape', 'margin', 'omitBackground', 'outline', 'pageRanges', 'preferCSSPageSize', 'printBackground', 'scale', 'tagged', 'timeout', 'width'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-if (scale < 0.1) { errors.add('scale: must be >= 0.1'); }
-if (scale > 2) { errors.add('scale: must be <= 2'); }
-return errors; } 
-PdfOptions copyWith({bool Function()? displayHeaderFooter, String? Function()? footerTemplate, PdfOptionsFormat Function()? format, String? Function()? headerTemplate, dynamic Function()? height, bool Function()? landscape, Margin? Function()? margin, bool Function()? omitBackground, bool Function()? outline, String? Function()? pageRanges, bool Function()? preferCssPageSize, bool Function()? printBackground, double Function()? scale, bool Function()? tagged, double Function()? timeout, dynamic Function()? width, }) { return PdfOptions(
+List<String> validate() {final errors = <String>[];
+final scale$ = scale;
+if (scale$ != null) {
+  if (scale$ < 0.1) { errors.add('scale: must be >= 0.1'); }
+  if (scale$ > 2) { errors.add('scale: must be <= 2'); }
+}
+return errors;}
+PdfOptions copyWith({bool? Function()? displayHeaderFooter, String? Function()? footerTemplate, PdfOptionsFormat? Function()? format, String? Function()? headerTemplate, dynamic Function()? height, bool? Function()? landscape, Margin? Function()? margin, bool? Function()? omitBackground, bool? Function()? outline, String? Function()? pageRanges, bool? Function()? preferCssPageSize, bool? Function()? printBackground, double? Function()? scale, bool? Function()? tagged, double? Function()? timeout, dynamic Function()? width, }) {return PdfOptions(
   displayHeaderFooter: displayHeaderFooter != null ? displayHeaderFooter() : this.displayHeaderFooter,
   footerTemplate: footerTemplate != null ? footerTemplate() : this.footerTemplate,
   format: format != null ? format() : this.format,
@@ -323,7 +356,7 @@ PdfOptions copyWith({bool Function()? displayHeaderFooter, String? Function()? f
   tagged: tagged != null ? tagged() : this.tagged,
   timeout: timeout != null ? timeout() : this.timeout,
   width: width != null ? width() : this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PdfOptions &&
           displayHeaderFooter == other.displayHeaderFooter &&
@@ -347,4 +380,4 @@ PdfOptions copyWith({bool Function()? displayHeaderFooter, String? Function()? f
 
 @override String toString() => 'PdfOptions(\n  displayHeaderFooter: $displayHeaderFooter,\n  footerTemplate: $footerTemplate,\n  format: $format,\n  headerTemplate: $headerTemplate,\n  height: $height,\n  landscape: $landscape,\n  margin: $margin,\n  omitBackground: $omitBackground,\n  outline: $outline,\n  pageRanges: $pageRanges,\n  preferCssPageSize: $preferCssPageSize,\n  printBackground: $printBackground,\n  scale: $scale,\n  tagged: $tagged,\n  timeout: $timeout,\n  width: $width,\n)';
 
- }
+}

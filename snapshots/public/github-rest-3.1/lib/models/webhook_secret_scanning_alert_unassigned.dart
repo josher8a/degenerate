@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unassigned/webhook_issues_unassigned_action.dart';@immutable final class WebhookSecretScanningAlertUnassigned {const WebhookSecretScanningAlertUnassigned({required this.action, required this.alert, required this.repository, this.assignee, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookSecretScanningAlertUnassigned.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertUnassigned(
+factory WebhookSecretScanningAlertUnassigned.fromJson(Map<String, dynamic> json) {return WebhookSecretScanningAlertUnassigned(
   action: WebhookIssuesUnassignedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookSecretScanningAlertUnassigned.fromJson(Map<String, dynamic> json)
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookIssuesUnassignedAction action;
 
@@ -30,7 +30,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (assignee != null) 'assignee': assignee?.toJson(),
@@ -39,11 +39,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
-      json.containsKey('repository'); } 
-WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? action, SecretScanningAlertWebhook? alert, SimpleUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookSecretScanningAlertUnassigned(
+      json.containsKey('repository');}
+WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? action, SecretScanningAlertWebhook? alert, SimpleUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookSecretScanningAlertUnassigned(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   assignee: assignee != null ? assignee() : this.assignee,
@@ -52,7 +52,7 @@ WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? ac
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertUnassigned &&
           action == other.action &&
@@ -68,4 +68,4 @@ WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? ac
 
 @override String toString() => 'WebhookSecretScanningAlertUnassigned(action: $action, alert: $alert, assignee: $assignee, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

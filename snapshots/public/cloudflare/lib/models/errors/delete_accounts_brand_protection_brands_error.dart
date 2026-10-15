@@ -2,18 +2,18 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model.dart';sealed class DeleteAccountsBrandProtectionBrandsError {const DeleteAccountsBrandProtectionBrandsError();
 
-factory DeleteAccountsBrandProtectionBrandsError.fromResponse(ApiResponse response) {     try {
+factory DeleteAccountsBrandProtectionBrandsError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ => DeleteAccountsBrandProtectionBrandsError$ErrorModel(ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
       };
     } on Object {
       rethrow;
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class DeleteAccountsBrandProtectionBrandsError$ErrorModel extends DeleteAccountsBrandProtectionBrandsError {const DeleteAccountsBrandProtectionBrandsError$ErrorModel(this.error, this.statusCode, );
 
 final ErrorModel error;
@@ -22,7 +22,7 @@ final ErrorModel error;
 
 @override Object get typedError => error;
 
- }
+}
 typedef DeleteAccountsBrandProtectionBrandsPatternsError = DeleteAccountsBrandProtectionBrandsError;
 typedef DeleteAccountsBrandProtectionLogosError = DeleteAccountsBrandProtectionBrandsError;
 typedef GetAccountsBrandProtectionAlertsError = DeleteAccountsBrandProtectionBrandsError;

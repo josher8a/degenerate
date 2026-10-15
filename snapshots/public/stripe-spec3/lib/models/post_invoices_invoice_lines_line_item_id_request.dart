@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoiceLinesLineItemIdRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_period.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/pricing.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/post_invoices_invoice_lines_line_item_id_request_price_data.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/post_invoices_invoice_lines_line_item_id_request_tax_amounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/post_invoices_invoice_lines_line_item_id_request_tax_amounts_variant1.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequest {const PostInvoicesInvoiceLinesLineItemIdRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_period.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/pricing.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/post_invoices_invoice_lines_line_item_id_request_price_data.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/post_invoices_invoice_lines_line_item_id_request_tax_amounts.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequest {const PostInvoicesInvoiceLinesLineItemIdRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
 
-factory PostInvoicesInvoiceLinesLineItemIdRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceLinesLineItemIdRequest(
+factory PostInvoicesInvoiceLinesLineItemIdRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceLinesLineItemIdRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   period: json['period'] != null ? PostInvoiceitemsInvoiceitemRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   priceData: json['price_data'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   pricing: json['pricing'] != null ? Pricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-); }
+  taxAmounts: json['tax_amounts'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts.fromJson(json['tax_amounts']) : null,
+  taxRates: json['tax_rates'] != null ? TaxRates.fromJson(json['tax_rates']) : null,
+);}
 
 /// The integer amount in cents (or local equivalent) of the charge to be applied to the upcoming invoice. If you want to apply a credit to the customer's account, pass a negative amount.
 final int? amount;
@@ -54,7 +54,7 @@ final PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts? taxAmounts;
 /// The tax rates which apply to the line item. When set, the `default_tax_rates` on the invoice do not apply to this line item. Pass an empty string to remove previously-defined tax rates.
 final TaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'description': ?description,
   'discountable': ?discountable,
@@ -67,16 +67,16 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxAmounts != null) 'tax_amounts': taxAmounts?.toJson(),
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'expand', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_amounts', 'tax_rates'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'expand', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_amounts', 'tax_rates'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-return errors; } 
-PostInvoicesInvoiceLinesLineItemIdRequest copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod? Function()? period, PostInvoicesInvoiceLinesLineItemIdRequestPriceData? Function()? priceData, Pricing? Function()? pricing, int? Function()? quantity, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts? Function()? taxAmounts, TaxRates? Function()? taxRates, }) { return PostInvoicesInvoiceLinesLineItemIdRequest(
+return errors;}
+PostInvoicesInvoiceLinesLineItemIdRequest copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod? Function()? period, PostInvoicesInvoiceLinesLineItemIdRequestPriceData? Function()? priceData, Pricing? Function()? pricing, int? Function()? quantity, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts? Function()? taxAmounts, TaxRates? Function()? taxRates, }) {return PostInvoicesInvoiceLinesLineItemIdRequest(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   discountable: discountable != null ? discountable() : this.discountable,
@@ -89,7 +89,7 @@ PostInvoicesInvoiceLinesLineItemIdRequest copyWith({int? Function()? amount, Str
   quantity: quantity != null ? quantity() : this.quantity,
   taxAmounts: taxAmounts != null ? taxAmounts() : this.taxAmounts,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceLinesLineItemIdRequest &&
           amount == other.amount &&
@@ -109,4 +109,4 @@ PostInvoicesInvoiceLinesLineItemIdRequest copyWith({int? Function()? amount, Str
 
 @override String toString() => 'PostInvoicesInvoiceLinesLineItemIdRequest(\n  amount: $amount,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  expand: $expand,\n  metadata: $metadata,\n  period: $period,\n  priceData: $priceData,\n  pricing: $pricing,\n  quantity: $quantity,\n  taxAmounts: $taxAmounts,\n  taxRates: $taxRates,\n)';
 
- }
+}

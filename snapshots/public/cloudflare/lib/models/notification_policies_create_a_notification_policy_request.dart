@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_alert_interval.dart';import 'package:pub_cloudflare/models/aaa_alert_type.dart';import 'package:pub_cloudflare/models/aaa_enabled.dart';import 'package:pub_cloudflare/models/aaa_filters.dart';import 'package:pub_cloudflare/models/aaa_mechanisms.dart';import 'package:pub_cloudflare/models/aaa_schemas_description.dart';import 'package:pub_cloudflare/models/aaa_schemas_name.dart';@immutable final class NotificationPoliciesCreateANotificationPolicyRequest {const NotificationPoliciesCreateANotificationPolicyRequest({required this.alertType, required this.enabled, required this.mechanisms, required this.name, this.alertInterval, this.description, this.filters, });
 
-factory NotificationPoliciesCreateANotificationPolicyRequest.fromJson(Map<String, dynamic> json) { return NotificationPoliciesCreateANotificationPolicyRequest(
+factory NotificationPoliciesCreateANotificationPolicyRequest.fromJson(Map<String, dynamic> json) {return NotificationPoliciesCreateANotificationPolicyRequest(
   alertInterval: json['alert_interval'] != null ? AaaAlertInterval.fromJson(json['alert_interval'] as String) : null,
   alertType: AaaAlertType.fromJson(json['alert_type'] as String),
   description: json['description'] != null ? AaaSchemasDescription.fromJson(json['description'] as String) : null,
@@ -11,7 +11,7 @@ factory NotificationPoliciesCreateANotificationPolicyRequest.fromJson(Map<String
   filters: json['filters'] != null ? AaaFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   mechanisms: AaaMechanisms.fromJson(json['mechanisms'] as Map<String, dynamic>),
   name: AaaSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 /// Optional specification of how often to re-alert from the same incident, not support on all alert types.
 final AaaAlertInterval? alertInterval;
@@ -32,7 +32,7 @@ final AaaMechanisms mechanisms;
 /// Name of the policy.
 final AaaSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alertInterval != null) 'alert_interval': alertInterval?.toJson(),
   'alert_type': alertType.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -40,12 +40,12 @@ Map<String, dynamic> toJson() { return {
   if (filters != null) 'filters': filters?.toJson(),
   'mechanisms': mechanisms.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alert_type') &&
       json.containsKey('enabled') &&
       json.containsKey('mechanisms') &&
-      json.containsKey('name'); } 
-NotificationPoliciesCreateANotificationPolicyRequest copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType? alertType, AaaSchemasDescription? Function()? description, AaaEnabled? enabled, AaaFilters? Function()? filters, AaaMechanisms? mechanisms, AaaSchemasName? name, }) { return NotificationPoliciesCreateANotificationPolicyRequest(
+      json.containsKey('name');}
+NotificationPoliciesCreateANotificationPolicyRequest copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType? alertType, AaaSchemasDescription? Function()? description, AaaEnabled? enabled, AaaFilters? Function()? filters, AaaMechanisms? mechanisms, AaaSchemasName? name, }) {return NotificationPoliciesCreateANotificationPolicyRequest(
   alertInterval: alertInterval != null ? alertInterval() : this.alertInterval,
   alertType: alertType ?? this.alertType,
   description: description != null ? description() : this.description,
@@ -53,7 +53,7 @@ NotificationPoliciesCreateANotificationPolicyRequest copyWith({AaaAlertInterval?
   filters: filters != null ? filters() : this.filters,
   mechanisms: mechanisms ?? this.mechanisms,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NotificationPoliciesCreateANotificationPolicyRequest &&
           alertInterval == other.alertInterval &&
@@ -68,4 +68,4 @@ NotificationPoliciesCreateANotificationPolicyRequest copyWith({AaaAlertInterval?
 
 @override String toString() => 'NotificationPoliciesCreateANotificationPolicyRequest(alertInterval: $alertInterval, alertType: $alertType, description: $description, enabled: $enabled, filters: $filters, mechanisms: $mechanisms, name: $name)';
 
- }
+}

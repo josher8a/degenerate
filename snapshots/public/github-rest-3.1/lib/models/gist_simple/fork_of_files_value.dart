@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ForkOfFilesValue {const ForkOfFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, });
 
-factory ForkOfFilesValue.fromJson(Map<String, dynamic> json) { return ForkOfFilesValue(
+factory ForkOfFilesValue.fromJson(Map<String, dynamic> json) {return ForkOfFilesValue(
   filename: json['filename'] as String?,
   type: json['type'] as String?,
   language: json['language'] as String?,
   rawUrl: json['raw_url'] as String?,
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
-); }
+);}
 
 final String? filename;
 
@@ -21,21 +21,21 @@ final String? rawUrl;
 
 final int? size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'filename': ?filename,
   'type': ?type,
   'language': ?language,
   'raw_url': ?rawUrl,
   'size': ?size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size'}.contains(key)); } 
-ForkOfFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, }) { return ForkOfFilesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size'}.contains(key));}
+ForkOfFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, }) {return ForkOfFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,
   rawUrl: rawUrl != null ? rawUrl() : this.rawUrl,
   size: size != null ? size() : this.size,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ForkOfFilesValue &&
           filename == other.filename &&
@@ -48,4 +48,4 @@ ForkOfFilesValue copyWith({String? Function()? filename, String? Function()? typ
 
 @override String toString() => 'ForkOfFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size)';
 
- }
+}

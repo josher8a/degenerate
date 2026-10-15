@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CloudflarePipelinesSourceField (inline: Timestamp)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_timestamp_unit.dart';@immutable final class Timestamp {const Timestamp({required this.type, required this.name, this.unit, this.metadataKey, this.$required, this.sqlName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_timestamp_unit.dart';@immutable final class Timestamp {const Timestamp({required this.type, required this.name, this.unit, this.metadataKey = const Omittable.absent(), this.$required, this.sqlName, });
 
-factory Timestamp.fromJson(Map<String, dynamic> json) { return Timestamp(
+factory Timestamp.fromJson(Map<String, dynamic> json) {return Timestamp(
   unit: json['unit'] != null ? CloudflarePipelinesTimestampUnit.fromJson(json['unit'] as String) : null,
   type: json['type'] as String,
-  metadataKey: json['metadata_key'] as String?,
+  metadataKey: json.containsKey('metadata_key') ? Omittable(json['metadata_key'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   $required: json['required'] as bool?,
   sqlName: json['sql_name'] as String?,
-); }
+);}
 
 final CloudflarePipelinesTimestampUnit? unit;
 
 final String type;
 
-final String? metadataKey;
+final Omittable<String?> metadataKey;
 
 final String name;
 
@@ -24,24 +24,24 @@ final bool? $required;
 
 final String? sqlName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (unit != null) 'unit': unit?.toJson(),
   'type': type,
-  'metadata_key': ?metadataKey,
+  if (metadataKey.isPresent) 'metadata_key': metadataKey.value,
   'name': name,
   'required': ?$required,
   'sql_name': ?sqlName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-Timestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit, String? type, String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return Timestamp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+Timestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit, String? type, Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) {return Timestamp(
   unit: unit != null ? unit() : this.unit,
   type: type ?? this.type,
-  metadataKey: metadataKey != null ? metadataKey() : this.metadataKey,
+  metadataKey: metadataKey ?? this.metadataKey,
   name: name ?? this.name,
   $required: $required != null ? $required() : this.$required,
   sqlName: sqlName != null ? sqlName() : this.sqlName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Timestamp &&
           unit == other.unit &&
@@ -55,4 +55,4 @@ Timestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit, String? 
 
 @override String toString() => 'Timestamp(unit: $unit, type: $type, metadataKey: $metadataKey, name: $name, \$required: ${$required}, sqlName: $sqlName)';
 
- }
+}

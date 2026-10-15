@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
 @immutable final class StatusCause {const StatusCause({this.field, this.message, this.reason, });
 
-factory StatusCause.fromJson(Map<String, dynamic> json) { return StatusCause(
+factory StatusCause.fromJson(Map<String, dynamic> json) {return StatusCause(
   field: json['field'] as String?,
   message: json['message'] as String?,
   reason: json['reason'] as String?,
-); }
+);}
 
 /// The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed.  Fields may appear more than once in an array of causes due to fields having multiple errors. Optional.
 /// 
@@ -23,17 +23,17 @@ final String? message;
 /// A machine-readable description of the cause of the error. If this value is empty there is no information available.
 final String? reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'field': ?field,
   'message': ?message,
   'reason': ?reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'field', 'message', 'reason'}.contains(key)); } 
-StatusCause copyWith({String? Function()? field, String? Function()? message, String? Function()? reason, }) { return StatusCause(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'field', 'message', 'reason'}.contains(key));}
+StatusCause copyWith({String? Function()? field, String? Function()? message, String? Function()? reason, }) {return StatusCause(
   field: field != null ? field() : this.field,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StatusCause &&
           field == other.field &&
@@ -44,4 +44,4 @@ StatusCause copyWith({String? Function()? field, String? Function()? message, St
 
 @override String toString() => 'StatusCause(field: $field, message: $message, reason: $reason)';
 
- }
+}

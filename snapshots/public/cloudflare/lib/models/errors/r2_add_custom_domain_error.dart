@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_failure.dart';sealed class R2AddCustomDomainError {const R2AddCustomDomainError();
 
-factory R2AddCustomDomainError.fromResponse(ApiResponse response) {     try {
+factory R2AddCustomDomainError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => R2AddCustomDomainError$4XX(ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => R2AddCustomDomainError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return R2AddCustomDomainError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class R2AddCustomDomainError$4XX extends R2AddCustomDomainError {const R2AddCustomDomainError$4XX(this.error, this.statusCode, );
 
 final ResponseFailure error;
@@ -23,14 +23,14 @@ final ResponseFailure error;
 
 @override Object get typedError => error;
 
- }
+}
 final class R2AddCustomDomainError$Unknown extends R2AddCustomDomainError {const R2AddCustomDomainError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef R2CreateBucketError = R2AddCustomDomainError;
 typedef R2CreateTempAccessCredentialsError = R2AddCustomDomainError;
 typedef R2DeleteBucketError = R2AddCustomDomainError;

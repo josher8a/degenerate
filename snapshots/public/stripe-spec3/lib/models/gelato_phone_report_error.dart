@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
 sealed class GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode();
 
-factory GelatoPhoneReportErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoPhoneReportErrorCode.fromJson(String json) {return switch (json) {
   'phone_unverified_other' => phoneUnverifiedOther,
   'phone_verification_declined' => phoneVerificationDeclined,
   _ => GelatoPhoneReportErrorCode$Unknown(json),
-}; }
+};}
 
 static const GelatoPhoneReportErrorCode phoneUnverifiedOther = GelatoPhoneReportErrorCode$phoneUnverifiedOther._();
 
@@ -17,30 +17,30 @@ static const GelatoPhoneReportErrorCode phoneVerificationDeclined = GelatoPhoneR
 static const List<GelatoPhoneReportErrorCode> values = [phoneUnverifiedOther, phoneVerificationDeclined];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'phone_unverified_other' => 'phoneUnverifiedOther',
   'phone_verification_declined' => 'phoneVerificationDeclined',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GelatoPhoneReportErrorCode$Unknown; } 
+bool get isUnknown {return this is GelatoPhoneReportErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() phoneUnverifiedOther, required W Function() phoneVerificationDeclined, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() phoneUnverifiedOther, required W Function() phoneVerificationDeclined, required W Function(String value) $unknown, }) {return switch (this) {
       GelatoPhoneReportErrorCode$phoneUnverifiedOther() => phoneUnverifiedOther(),
       GelatoPhoneReportErrorCode$phoneVerificationDeclined() => phoneVerificationDeclined(),
       GelatoPhoneReportErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? phoneUnverifiedOther, W Function()? phoneVerificationDeclined, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? phoneUnverifiedOther, W Function()? phoneVerificationDeclined, W Function(String value)? $unknown, }) {return switch (this) {
       GelatoPhoneReportErrorCode$phoneUnverifiedOther() => phoneUnverifiedOther != null ? phoneUnverifiedOther() : orElse(value),
       GelatoPhoneReportErrorCode$phoneVerificationDeclined() => phoneVerificationDeclined != null ? phoneVerificationDeclined() : orElse(value),
       GelatoPhoneReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GelatoPhoneReportErrorCode($value)';
 
- }
+}
 @immutable final class GelatoPhoneReportErrorCode$phoneUnverifiedOther extends GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode$phoneUnverifiedOther._();
 
 @override String get value => 'phone_unverified_other';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phoneUnv
 
 @override int get hashCode => 'phone_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoPhoneReportErrorCode$phoneVerificationDeclined extends GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode$phoneVerificationDeclined._();
 
 @override String get value => 'phone_verification_declined';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phoneUnv
 
 @override int get hashCode => 'phone_verification_declined'.hashCode;
 
- }
+}
 @immutable final class GelatoPhoneReportErrorCode$Unknown extends GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -68,37 +68,37 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phoneUnv
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class GelatoPhoneReportError {const GelatoPhoneReportError({this.code, this.reason, });
+@immutable final class GelatoPhoneReportError {const GelatoPhoneReportError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoPhoneReportError.fromJson(Map<String, dynamic> json) { return GelatoPhoneReportError(
-  code: json['code'] != null ? GelatoPhoneReportErrorCode.fromJson(json['code'] as String) : null,
-  reason: json['reason'] as String?,
-); }
+factory GelatoPhoneReportError.fromJson(Map<String, dynamic> json) {return GelatoPhoneReportError(
+  code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoPhoneReportErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
+);}
 
 /// A short machine-readable string giving the reason for the verification failure.
-final GelatoPhoneReportErrorCode? code;
+final Omittable<GelatoPhoneReportErrorCode?> code;
 
 /// A human-readable message giving the reason for the failure. These messages can be shown to your users.
-final String? reason;
+final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
-  if (code != null) 'code': code?.toJson(),
-  'reason': ?reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (code.isPresent) 'code': code.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final reason$ = reason;
+List<String> validate() {final errors = <String>[];
+final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 }
-return errors; } 
-GelatoPhoneReportError copyWith({GelatoPhoneReportErrorCode? Function()? code, String? Function()? reason, }) { return GelatoPhoneReportError(
-  code: code != null ? code() : this.code,
-  reason: reason != null ? reason() : this.reason,
-); } 
+return errors;}
+GelatoPhoneReportError copyWith({Omittable<GelatoPhoneReportErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoPhoneReportError(
+  code: code ?? this.code,
+  reason: reason ?? this.reason,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoPhoneReportError &&
           code == other.code &&
@@ -108,4 +108,4 @@ GelatoPhoneReportError copyWith({GelatoPhoneReportErrorCode? Function()? code, S
 
 @override String toString() => 'GelatoPhoneReportError(code: $code, reason: $reason)';
 
- }
+}

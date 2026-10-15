@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation {const MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation({this.fileId, this.quote, });
 
-factory MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
+factory MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(Map<String, dynamic> json) {return MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
   fileId: json['file_id'] as String?,
   quote: json['quote'] as String?,
-); }
+);}
 
 /// The ID of the specific File the citation is from.
 final String? fileId;
@@ -14,15 +14,15 @@ final String? fileId;
 /// The specific quote in the file.
 final String? quote;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': ?fileId,
   'quote': ?quote,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'quote'}.contains(key)); } 
-MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation copyWith({String? Function()? fileId, String? Function()? quote, }) { return MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_id', 'quote'}.contains(key));}
+MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation copyWith({String? Function()? fileId, String? Function()? quote, }) {return MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
   fileId: fileId != null ? fileId() : this.fileId,
   quote: quote != null ? quote() : this.quote,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation &&
           fileId == other.fileId &&
@@ -32,4 +32,4 @@ MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation copyWith({Strin
 
 @override String toString() => 'MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(fileId: $fileId, quote: $quote)';
 
- }
+}

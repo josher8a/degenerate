@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MigrationsMapCommitAuthorRequest {const MigrationsMapCommitAuthorRequest({this.email, this.name, });
 
-factory MigrationsMapCommitAuthorRequest.fromJson(Map<String, dynamic> json) { return MigrationsMapCommitAuthorRequest(
+factory MigrationsMapCommitAuthorRequest.fromJson(Map<String, dynamic> json) {return MigrationsMapCommitAuthorRequest(
   email: json['email'] as String?,
   name: json['name'] as String?,
-); }
+);}
 
 /// The new Git author email.
 final String? email;
@@ -14,15 +14,15 @@ final String? email;
 /// The new Git author name.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': ?email,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'name'}.contains(key)); } 
-MigrationsMapCommitAuthorRequest copyWith({String? Function()? email, String? Function()? name, }) { return MigrationsMapCommitAuthorRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'email', 'name'}.contains(key));}
+MigrationsMapCommitAuthorRequest copyWith({String? Function()? email, String? Function()? name, }) {return MigrationsMapCommitAuthorRequest(
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsMapCommitAuthorRequest &&
           email == other.email &&
@@ -32,4 +32,4 @@ MigrationsMapCommitAuthorRequest copyWith({String? Function()? email, String? Fu
 
 @override String toString() => 'MigrationsMapCommitAuthorRequest(email: $email, name: $name)';
 
- }
+}

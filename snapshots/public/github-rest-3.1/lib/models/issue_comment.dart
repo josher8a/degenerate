@@ -2,9 +2,9 @@
 // Source: #/components/schemas/IssueComment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pinned_issue_comment.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Comments provide a way for people to collaborate on an issue.
-@immutable final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.body, this.bodyText, this.bodyHtml, this.authorAssociation, this.performedViaGithubApp, this.reactions, this.pin, });
+@immutable final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.body, this.bodyText, this.bodyHtml, this.authorAssociation, this.performedViaGithubApp = const Omittable.absent(), this.reactions, this.pin = const Omittable.absent(), });
 
-factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
+factory IssueComment.fromJson(Map<String, dynamic> json) {return IssueComment(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -17,10 +17,10 @@ factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   issueUrl: Uri.parse(json['issue_url'] as String),
   authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
-); }
+  pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 /// Unique identifier of the issue comment
 final int id;
@@ -50,13 +50,13 @@ final Uri issueUrl;
 /// How the author is associated with the repository.
 final AuthorAssociation? authorAssociation;
 
-final Integration? performedViaGithubApp;
+final Omittable<Integration?> performedViaGithubApp;
 
 final ReactionRollup? reactions;
 
-final PinnedIssueComment? pin;
+final Omittable<PinnedIssueComment?> pin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -69,19 +69,19 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'issue_url': issueUrl.toString(),
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
-  if (pin != null) 'pin': pin?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+  if (pin.isPresent) 'pin': pin.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('issue_url') && json['issue_url'] is String; } 
-IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? Function()? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup? Function()? reactions, PinnedIssueComment? Function()? pin, }) { return IssueComment(
+      json.containsKey('issue_url') && json['issue_url'] is String;}
+IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? Function()? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) {return IssueComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -94,10 +94,10 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
   updatedAt: updatedAt ?? this.updatedAt,
   issueUrl: issueUrl ?? this.issueUrl,
   authorAssociation: authorAssociation != null ? authorAssociation() : this.authorAssociation,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   reactions: reactions != null ? reactions() : this.reactions,
-  pin: pin != null ? pin() : this.pin,
-); } 
+  pin: pin ?? this.pin,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueComment &&
           id == other.id &&
@@ -120,4 +120,4 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
 
 @override String toString() => 'IssueComment(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  body: $body,\n  bodyText: $bodyText,\n  bodyHtml: $bodyHtml,\n  htmlUrl: $htmlUrl,\n  user: $user,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  issueUrl: $issueUrl,\n  authorAssociation: $authorAssociation,\n  performedViaGithubApp: $performedViaGithubApp,\n  reactions: $reactions,\n  pin: $pin,\n)';
 
- }
+}

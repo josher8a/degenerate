@@ -12,12 +12,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// If you've already set `setup_future_usage` and you're performing a request using a publishable key, you can only update the value from `on_session` to `off_session`.
 sealed class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage();
 
-factory PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage $empty = PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$$empty._();
 
@@ -28,33 +28,33 @@ static const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage onSession = 
 static const List<PostPaymentIntentsIntentConfirmRequestSetupFutureUsage> values = [$empty, offSession, onSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'off_session' => 'offSession',
   'on_session' => 'onSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown; } 
+bool get isUnknown {return this is PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) {return switch (this) {
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$$empty() => $empty(),
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$offSession() => offSession(),
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$onSession() => onSession(),
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) {return switch (this) {
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$$empty() => $empty != null ? $empty() : orElse(value),
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$offSession() => offSession != null ? offSession() : orElse(value),
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$onSession() => onSession != null ? onSession() : orElse(value),
       PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostPaymentIntentsIntentConfirmRequestSetupFutureUsage($value)';
 
- }
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$$empty extends PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$$empty._();
 
 @override String get value => '';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$offSession extends PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$offSession._();
 
 @override String get value => 'off_session';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$onSession extends PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$onSession._();
 
 @override String get value => 'on_session';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'on_session'.hashCode;
 
- }
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown extends PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage$Unknown(this.value);
 
 @override final String value;
@@ -91,4 +91,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_hook/org_hook_config.dart';/// Org Hook
 @immutable final class OrgHook {const OrgHook({required this.id, required this.url, required this.pingUrl, required this.name, required this.events, required this.active, required this.config, required this.updatedAt, required this.createdAt, required this.type, this.deliveriesUrl, });
 
-factory OrgHook.fromJson(Map<String, dynamic> json) { return OrgHook(
+factory OrgHook.fromJson(Map<String, dynamic> json) {return OrgHook(
   id: (json['id'] as num).toInt(),
   url: Uri.parse(json['url'] as String),
   pingUrl: Uri.parse(json['ping_url'] as String),
@@ -16,7 +16,7 @@ factory OrgHook.fromJson(Map<String, dynamic> json) { return OrgHook(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   type: json['type'] as String,
-); }
+);}
 
 final int id;
 
@@ -40,7 +40,7 @@ final DateTime createdAt;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'url': url.toString(),
   'ping_url': pingUrl.toString(),
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('ping_url') && json['ping_url'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('config') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUrl, String? name, List<String>? events, bool? active, OrgHookConfig? config, DateTime? updatedAt, DateTime? createdAt, String? type, }) { return OrgHook(
+      json.containsKey('type') && json['type'] is String;}
+OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUrl, String? name, List<String>? events, bool? active, OrgHookConfig? config, DateTime? updatedAt, DateTime? createdAt, String? type, }) {return OrgHook(
   id: id ?? this.id,
   url: url ?? this.url,
   pingUrl: pingUrl ?? this.pingUrl,
@@ -75,7 +75,7 @@ OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUr
   updatedAt: updatedAt ?? this.updatedAt,
   createdAt: createdAt ?? this.createdAt,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgHook &&
           id == other.id &&
@@ -94,4 +94,4 @@ OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUr
 
 @override String toString() => 'OrgHook(\n  id: $id,\n  url: $url,\n  pingUrl: $pingUrl,\n  deliveriesUrl: $deliveriesUrl,\n  name: $name,\n  events: $events,\n  active: $active,\n  config: $config,\n  updatedAt: $updatedAt,\n  createdAt: $createdAt,\n  type: $type,\n)';
 
- }
+}

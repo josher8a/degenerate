@@ -4,36 +4,36 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom Payment Methods represent Payment Method types not modeled directly in
 /// the Stripe API. This resource consists of details about the custom payment method
 /// used for this payment attempt.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type = const Omittable.absent(), });
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: json['display_name'] as String,
-  type: json['type'] as String?,
-); }
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
+);}
 
 /// Display name for the custom (user-defined) payment method type used to make this payment.
 final String displayName;
 
 /// The custom payment method type associated with this payment.
-final String? type;
+final Omittable<String?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'display_name': displayName,
-  'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
+  if (type.isPresent) 'type': type.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (displayName.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
-final type$ = type;
+final type$ = type.value;
 if (type$ != null) {
   if (type$.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
 }
-return errors; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, String? Function()? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+return errors;}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, Omittable<String?>? type, }) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: displayName ?? this.displayName,
-  type: type != null ? type() : this.type,
-); } 
+  type: type ?? this.type,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails &&
           displayName == other.displayName &&
@@ -43,4 +43,4 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({Str
 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(displayName: $displayName, type: $type)';
 
- }
+}

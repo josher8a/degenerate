@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_method.dart';import 'package:pub_twilio_api_v2010/models/create_sip_domain_request/create_sip_domain_request_voice_status_callback_method.dart';@immutable final class CreateSipDomainRequest {const CreateSipDomainRequest({required this.domainName, this.friendlyName, this.voiceUrl, this.voiceMethod, this.voiceFallbackUrl, this.voiceFallbackMethod, this.voiceStatusCallbackUrl, this.voiceStatusCallbackMethod, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
 
-factory CreateSipDomainRequest.fromJson(Map<String, dynamic> json) { return CreateSipDomainRequest(
+factory CreateSipDomainRequest.fromJson(Map<String, dynamic> json) {return CreateSipDomainRequest(
   domainName: json['DomainName'] as String,
   friendlyName: json['FriendlyName'] as String?,
   voiceUrl: json['VoiceUrl'] != null ? Uri.parse(json['VoiceUrl'] as String) : null,
@@ -17,7 +17,7 @@ factory CreateSipDomainRequest.fromJson(Map<String, dynamic> json) { return Crea
   secure: json['Secure'] as bool?,
   byocTrunkSid: json['ByocTrunkSid'] as String?,
   emergencyCallerSid: json['EmergencyCallerSid'] as String?,
-); }
+);}
 
 /// The unique address you reserve on Twilio to which you route your SIP traffic. Domain names can contain letters, digits, and "-" and must end with `sip.twilio.com`.
 final String domainName;
@@ -58,7 +58,7 @@ final String? byocTrunkSid;
 /// Whether an emergency caller sid is configured for the domain. If present, this phone number will be used as the callback for the emergency call.
 final String? emergencyCallerSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'DomainName': domainName,
   'FriendlyName': ?friendlyName,
   if (voiceUrl != null) 'VoiceUrl': voiceUrl?.toString(),
@@ -72,10 +72,10 @@ Map<String, dynamic> toJson() { return {
   'Secure': ?secure,
   'ByocTrunkSid': ?byocTrunkSid,
   'EmergencyCallerSid': ?emergencyCallerSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('DomainName') && json['DomainName'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('DomainName') && json['DomainName'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final byocTrunkSid$ = byocTrunkSid;
 if (byocTrunkSid$ != null) {
   if (byocTrunkSid$.runes.length < 34) { errors.add('byocTrunkSid: length must be >= 34'); }
@@ -88,8 +88,8 @@ if (emergencyCallerSid$ != null) {
   if (emergencyCallerSid$.runes.length > 34) { errors.add('emergencyCallerSid: length must be <= 34'); }
   if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(emergencyCallerSid$)) { errors.add(r'emergencyCallerSid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendlyName, Uri? Function()? voiceUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return CreateSipDomainRequest(
+return errors;}
+CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendlyName, Uri? Function()? voiceUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) {return CreateSipDomainRequest(
   domainName: domainName ?? this.domainName,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,
@@ -103,7 +103,7 @@ CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendl
   secure: secure != null ? secure() : this.secure,
   byocTrunkSid: byocTrunkSid != null ? byocTrunkSid() : this.byocTrunkSid,
   emergencyCallerSid: emergencyCallerSid != null ? emergencyCallerSid() : this.emergencyCallerSid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipDomainRequest &&
           domainName == other.domainName &&
@@ -124,4 +124,4 @@ CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendl
 
 @override String toString() => 'CreateSipDomainRequest(\n  domainName: $domainName,\n  friendlyName: $friendlyName,\n  voiceUrl: $voiceUrl,\n  voiceMethod: $voiceMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceStatusCallbackUrl: $voiceStatusCallbackUrl,\n  voiceStatusCallbackMethod: $voiceStatusCallbackMethod,\n  sipRegistration: $sipRegistration,\n  emergencyCallingEnabled: $emergencyCallingEnabled,\n  secure: $secure,\n  byocTrunkSid: $byocTrunkSid,\n  emergencyCallerSid: $emergencyCallerSid,\n)';
 
- }
+}

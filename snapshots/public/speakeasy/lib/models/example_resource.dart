@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/example_boat.dart';import 'package:pub_speakeasy/models/example_car.dart';import 'package:pub_speakeasy/models/example_resource/chocolates.dart';import 'package:pub_speakeasy/models/example_resource/inline_object.dart';import 'package:pub_speakeasy/models/example_vehicle.dart';sealed class EnumStr {const EnumStr();
 
-factory EnumStr.fromJson(String json) { return switch (json) {
+factory EnumStr.fromJson(String json) {return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
   _ => EnumStr$Unknown(json),
-}; }
+};}
 
 static const EnumStr one = EnumStr$one._();
 
@@ -19,33 +19,33 @@ static const EnumStr three = EnumStr$three._();
 static const List<EnumStr> values = [one, two, three];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one' => 'one',
   'two' => 'two',
   'three' => 'three',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnumStr$Unknown; } 
+bool get isUnknown {return this is EnumStr$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) {return switch (this) {
       EnumStr$one() => one(),
       EnumStr$two() => two(),
       EnumStr$three() => three(),
       EnumStr$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) {return switch (this) {
       EnumStr$one() => one != null ? one() : orElse(value),
       EnumStr$two() => two != null ? two() : orElse(value),
       EnumStr$three() => three != null ? three() : orElse(value),
       EnumStr$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnumStr($value)';
 
- }
+}
 @immutable final class EnumStr$one extends EnumStr {const EnumStr$one._();
 
 @override String get value => 'one';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'one'.hashCode;
 
- }
+}
 @immutable final class EnumStr$two extends EnumStr {const EnumStr$two._();
 
 @override String get value => 'two';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'two'.hashCode;
 
- }
+}
 @immutable final class EnumStr$three extends EnumStr {const EnumStr$three._();
 
 @override String get value => 'three';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'three'.hashCode;
 
- }
+}
 @immutable final class EnumStr$Unknown extends EnumStr {const EnumStr$Unknown(this.value);
 
 @override final String value;
@@ -82,15 +82,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class EnumNumber {const EnumNumber();
 
-factory EnumNumber.fromJson(int json) { return switch (json) {
+factory EnumNumber.fromJson(int json) {return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
   _ => EnumNumber$Unknown(json),
-}; }
+};}
 
 static const EnumNumber $1 = EnumNumber$$1._();
 
@@ -101,33 +101,33 @@ static const EnumNumber $3 = EnumNumber$$3._();
 static const List<EnumNumber> values = [$1, $2, $3];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   2 => r'$2',
   3 => r'$3',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnumNumber$Unknown; } 
+bool get isUnknown {return this is EnumNumber$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) {return switch (this) {
       EnumNumber$$1() => $1(),
       EnumNumber$$2() => $2(),
       EnumNumber$$3() => $3(),
       EnumNumber$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) {return switch (this) {
       EnumNumber$$1() => $1 != null ? $1() : orElse(value),
       EnumNumber$$2() => $2 != null ? $2() : orElse(value),
       EnumNumber$$3() => $3 != null ? $3() : orElse(value),
       EnumNumber$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnumNumber($value)';
 
- }
+}
 @immutable final class EnumNumber$$1 extends EnumNumber {const EnumNumber$$1._();
 
 @override int get value => 1;
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class EnumNumber$$2 extends EnumNumber {const EnumNumber$$2._();
 
 @override int get value => 2;
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 2.hashCode;
 
- }
+}
 @immutable final class EnumNumber$$3 extends EnumNumber {const EnumNumber$$3._();
 
 @override int get value => 3;
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 3.hashCode;
 
- }
+}
 @immutable final class EnumNumber$Unknown extends EnumNumber {const EnumNumber$Unknown(this.value);
 
 @override final int value;
@@ -164,10 +164,10 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ExampleResource {const ExampleResource({required this.id, required this.name, required this.chocolates, required this.vehicle, this.namePrefix, this.createdAt, this.inlineObject, this.mapOfString, this.mapOfInteger, this.arrayOfString, this.arrayOfNumber, this.enumStr, this.enumNumber, this.updatedAt, });
 
-factory ExampleResource.fromJson(Map<String, dynamic> json) { return ExampleResource(
+factory ExampleResource.fromJson(Map<String, dynamic> json) {return ExampleResource(
   id: json['id'] as String,
   name: json['name'] as String,
   namePrefix: json['name_prefix'] as String?,
@@ -186,7 +186,7 @@ factory ExampleResource.fromJson(Map<String, dynamic> json) { return ExampleReso
   final Map<String, dynamic> m when m['type'] == 'car' => OneOf2<ExampleBoat, ExampleCar>.b(ExampleCar.fromJson(m)),
   _ => OneOf2.parse(json['vehicle'], fromA: (v) => ExampleBoat.fromJson(v as Map<String, dynamic>), fromB: (v) => ExampleCar.fromJson(v as Map<String, dynamic>),),
 },
-); }
+);}
 
 final String id;
 
@@ -216,7 +216,7 @@ final List<Chocolates> chocolates;
 
 final ExampleVehicle vehicle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'name_prefix': ?namePrefix,
@@ -231,12 +231,12 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updatedAt': updatedAt?.toIso8601String(),
   'chocolates': chocolates.map((e) => e.toJson()).toList(),
   'vehicle': vehicle.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('chocolates') &&
-      json.containsKey('vehicle'); } 
-ExampleResource copyWith({String? id, String? name, String? Function()? namePrefix, DateTime? Function()? createdAt, InlineObject? Function()? inlineObject, Map<String, String>? Function()? mapOfString, Map<String, int>? Function()? mapOfInteger, List<String>? Function()? arrayOfString, List<double>? Function()? arrayOfNumber, EnumStr? Function()? enumStr, EnumNumber? Function()? enumNumber, DateTime? Function()? updatedAt, List<Chocolates>? chocolates, ExampleVehicle? vehicle, }) { return ExampleResource(
+      json.containsKey('vehicle');}
+ExampleResource copyWith({String? id, String? name, String? Function()? namePrefix, DateTime? Function()? createdAt, InlineObject? Function()? inlineObject, Map<String, String>? Function()? mapOfString, Map<String, int>? Function()? mapOfInteger, List<String>? Function()? arrayOfString, List<double>? Function()? arrayOfNumber, EnumStr? Function()? enumStr, EnumNumber? Function()? enumNumber, DateTime? Function()? updatedAt, List<Chocolates>? chocolates, ExampleVehicle? vehicle, }) {return ExampleResource(
   id: id ?? this.id,
   name: name ?? this.name,
   namePrefix: namePrefix != null ? namePrefix() : this.namePrefix,
@@ -251,7 +251,7 @@ ExampleResource copyWith({String? id, String? name, String? Function()? namePref
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   chocolates: chocolates ?? this.chocolates,
   vehicle: vehicle ?? this.vehicle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ExampleResource &&
           id == other.id &&
@@ -273,4 +273,4 @@ ExampleResource copyWith({String? id, String? name, String? Function()? namePref
 
 @override String toString() => 'ExampleResource(\n  id: $id,\n  name: $name,\n  namePrefix: $namePrefix,\n  createdAt: $createdAt,\n  inlineObject: $inlineObject,\n  mapOfString: $mapOfString,\n  mapOfInteger: $mapOfInteger,\n  arrayOfString: $arrayOfString,\n  arrayOfNumber: $arrayOfNumber,\n  enumStr: $enumStr,\n  enumNumber: $enumNumber,\n  updatedAt: $updatedAt,\n  chocolates: $chocolates,\n  vehicle: $vehicle,\n)';
 
- }
+}

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResourceTaggingSetTagsRequestAccountLevel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_worker_version.dart';sealed class ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_base_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type_worker_version_enum.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level_worker_version.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType();
 
-factory ResourceTaggingSetTagsRequestAccountLevelResourceType.fromJson(String json) { return switch (json) {
+factory ResourceTaggingSetTagsRequestAccountLevelResourceType.fromJson(String json) {return switch (json) {
   'access_application' => accessApplication,
   'access_group' => accessGroup,
   'account' => account,
@@ -25,7 +25,7 @@ factory ResourceTaggingSetTagsRequestAccountLevelResourceType.fromJson(String js
   'worker' => worker,
   'worker_version' => workerVersion,
   _ => ResourceTaggingSetTagsRequestAccountLevelResourceType$Unknown(json),
-}; }
+};}
 
 static const ResourceTaggingSetTagsRequestAccountLevelResourceType accessApplication = ResourceTaggingSetTagsRequestAccountLevelResourceType$accessApplication._();
 
@@ -74,7 +74,7 @@ String toJson() => value;
 
 bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceType$Unknown;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$accessApplication extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$accessApplication._();
 
 @override String get value => 'access_application';
@@ -85,7 +85,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(access_application)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$accessGroup extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$accessGroup._();
 
 @override String get value => 'access_group';
@@ -96,7 +96,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(access_group)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$account extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$account._();
 
 @override String get value => 'account';
@@ -107,7 +107,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(account)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$aiGateway extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$aiGateway._();
 
 @override String get value => 'ai_gateway';
@@ -118,7 +118,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(ai_gateway)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$alertingPolicy extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$alertingPolicy._();
 
 @override String get value => 'alerting_policy';
@@ -129,7 +129,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(alerting_policy)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$alertingWebhook extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$alertingWebhook._();
 
 @override String get value => 'alerting_webhook';
@@ -140,7 +140,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(alerting_webhook)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$cloudflaredTunnel extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$cloudflaredTunnel._();
 
 @override String get value => 'cloudflared_tunnel';
@@ -151,7 +151,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(cloudflared_tunnel)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$d1Database extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$d1Database._();
 
 @override String get value => 'd1_database';
@@ -162,7 +162,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(d1_database)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$durableObjectNamespace extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$durableObjectNamespace._();
 
 @override String get value => 'durable_object_namespace';
@@ -173,7 +173,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(durable_object_namespace)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$gatewayList extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$gatewayList._();
 
 @override String get value => 'gateway_list';
@@ -184,7 +184,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(gateway_list)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$gatewayRule extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$gatewayRule._();
 
 @override String get value => 'gateway_rule';
@@ -195,7 +195,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(gateway_rule)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$image extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$image._();
 
 @override String get value => 'image';
@@ -206,7 +206,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(image)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$kvNamespace extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$kvNamespace._();
 
 @override String get value => 'kv_namespace';
@@ -217,7 +217,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(kv_namespace)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$queue extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$queue._();
 
 @override String get value => 'queue';
@@ -228,7 +228,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(queue)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$r2Bucket extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$r2Bucket._();
 
 @override String get value => 'r2_bucket';
@@ -239,7 +239,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(r2_bucket)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$resourceShare extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$resourceShare._();
 
 @override String get value => 'resource_share';
@@ -250,7 +250,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(resource_share)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$streamLiveInput extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$streamLiveInput._();
 
 @override String get value => 'stream_live_input';
@@ -261,7 +261,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(stream_live_input)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$streamVideo extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$streamVideo._();
 
 @override String get value => 'stream_video';
@@ -272,7 +272,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(stream_video)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$worker extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$worker._();
 
 @override String get value => 'worker';
@@ -283,7 +283,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(worker)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$workerVersion extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$workerVersion._();
 
 @override String get value => 'worker_version';
@@ -294,7 +294,7 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType(worker_version)';
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceType$Unknown extends ResourceTaggingSetTagsRequestAccountLevelResourceType {const ResourceTaggingSetTagsRequestAccountLevelResourceType$Unknown(this.value);
 
 @override final String value;
@@ -305,12 +305,12 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevelResourceT
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevelResourceType($value)';
 
- }
+}
 /// Request body schema for setting tags on account-level resources.
 sealed class ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevel();
 
 /// Deserialize from JSON, dispatching on the `resource_type` discriminator.
-factory ResourceTaggingSetTagsRequestAccountLevel.fromJson(Map<String, dynamic> json) { return switch (json['resource_type']) {
+factory ResourceTaggingSetTagsRequestAccountLevel.fromJson(Map<String, dynamic> json) {return switch (json['resource_type']) {
   'access_application' => ResourceTaggingSetTagsRequestAccountLevelAccessApplication.fromJson(json),
   'access_group' => ResourceTaggingSetTagsRequestAccountLevelAccessGroup.fromJson(json),
   'account' => ResourceTaggingSetTagsRequestAccountLevelAccount.fromJson(json),
@@ -332,67 +332,67 @@ factory ResourceTaggingSetTagsRequestAccountLevel.fromJson(Map<String, dynamic> 
   'worker' => ResourceTaggingSetTagsRequestAccountLevelWorker.fromJson(json),
   'worker_version' => ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant.fromJson(json),
   _ => ResourceTaggingSetTagsRequestAccountLevel$Unknown(json),
-}; }
+};}
 
 /// Build the `access_application` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_application'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_application'), resourceId: resourceId, tags: tags));}
 
 /// Build the `access_group` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_group'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_group'), resourceId: resourceId, tags: tags));}
 
 /// Build the `account` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAccount(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('account'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAccount(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('account'), resourceId: resourceId, tags: tags));}
 
 /// Build the `ai_gateway` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAiGateway(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('ai_gateway'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAiGateway(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('ai_gateway'), resourceId: resourceId, tags: tags));}
 
 /// Build the `alerting_policy` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_policy'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_policy'), resourceId: resourceId, tags: tags));}
 
 /// Build the `alerting_webhook` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_webhook'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_webhook'), resourceId: resourceId, tags: tags));}
 
 /// Build the `cloudflared_tunnel` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('cloudflared_tunnel'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('cloudflared_tunnel'), resourceId: resourceId, tags: tags));}
 
 /// Build the `d1_database` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelD1Database(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('d1_database'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelD1Database(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('d1_database'), resourceId: resourceId, tags: tags));}
 
 /// Build the `durable_object_namespace` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('durable_object_namespace'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('durable_object_namespace'), resourceId: resourceId, tags: tags));}
 
 /// Build the `gateway_list` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelGatewayList(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_list'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelGatewayList(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_list'), resourceId: resourceId, tags: tags));}
 
 /// Build the `gateway_rule` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_rule'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_rule'), resourceId: resourceId, tags: tags));}
 
 /// Build the `image` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelImage(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('image'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelImage(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('image'), resourceId: resourceId, tags: tags));}
 
 /// Build the `kv_namespace` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('kv_namespace'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('kv_namespace'), resourceId: resourceId, tags: tags));}
 
 /// Build the `queue` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelQueue(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('queue'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelQueue(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('queue'), resourceId: resourceId, tags: tags));}
 
 /// Build the `r2_bucket` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('r2_bucket'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('r2_bucket'), resourceId: resourceId, tags: tags));}
 
 /// Build the `resource_share` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelResourceShare(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('resource_share'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelResourceShare(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('resource_share'), resourceId: resourceId, tags: tags));}
 
 /// Build the `stream_live_input` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_live_input'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_live_input'), resourceId: resourceId, tags: tags));}
 
 /// Build the `stream_video` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_video'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_video'), resourceId: resourceId, tags: tags));}
 
 /// Build the `worker` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker'), resourceId: resourceId, tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingSetTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker'), resourceId: resourceId, tags: tags));}
 
 /// Build the `worker_version` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({Map<String,String>? tags}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(tags: tags)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId, required ResourceTaggingWorkerId workerId, Map<String,String>? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(resourceType: ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson('worker_version'), resourceId: resourceId, workerId: workerId, tags: tags));}
 
 /// The discriminator value identifying this variant.
 ResourceTaggingSetTagsRequestAccountLevelResourceType get resourceType;
@@ -401,8 +401,10 @@ Map<String, dynamic> toJson();
 bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevel$Unknown;
 
 /// Shared by all variants of this union.
+ResourceTaggingResourceId get resourceId;
+/// Shared by all variants of this union.
 Map<String,String>? get tags;
-R when<R>({required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessApplication) accessApplication, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessGroup) accessGroup, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccount) account, required R Function(ResourceTaggingSetTagsRequestAccountLevelAiGateway) aiGateway, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingSetTagsRequestAccountLevelD1Database) d1Database, required R Function(ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayList) gatewayList, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayRule) gatewayRule, required R Function(ResourceTaggingSetTagsRequestAccountLevelImage) image, required R Function(ResourceTaggingSetTagsRequestAccountLevelKvNamespace) kvNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelQueue) queue, required R Function(ResourceTaggingSetTagsRequestAccountLevelR2Bucket) r2Bucket, required R Function(ResourceTaggingSetTagsRequestAccountLevelResourceShare) resourceShare, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamVideo) streamVideo, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorker) worker, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant) workerVersion, required R Function(ResourceTaggingSetTagsRequestAccountLevel$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessApplication) accessApplication, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessGroup) accessGroup, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccount) account, required R Function(ResourceTaggingSetTagsRequestAccountLevelAiGateway) aiGateway, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingSetTagsRequestAccountLevelD1Database) d1Database, required R Function(ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayList) gatewayList, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayRule) gatewayRule, required R Function(ResourceTaggingSetTagsRequestAccountLevelImage) image, required R Function(ResourceTaggingSetTagsRequestAccountLevelKvNamespace) kvNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelQueue) queue, required R Function(ResourceTaggingSetTagsRequestAccountLevelR2Bucket) r2Bucket, required R Function(ResourceTaggingSetTagsRequestAccountLevelResourceShare) resourceShare, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamVideo) streamVideo, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorker) worker, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant) workerVersion, required R Function(ResourceTaggingSetTagsRequestAccountLevel$Unknown) unknown, }) {return switch (this) {
   final ResourceTaggingSetTagsRequestAccountLevelAccessApplication v => accessApplication(v),
   final ResourceTaggingSetTagsRequestAccountLevelAccessGroup v => accessGroup(v),
   final ResourceTaggingSetTagsRequestAccountLevelAccount v => account(v),
@@ -424,11 +426,11 @@ R when<R>({required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessAp
   final ResourceTaggingSetTagsRequestAccountLevelWorker v => worker(v),
   final ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant v => workerVersion(v),
   final ResourceTaggingSetTagsRequestAccountLevel$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAccessApplication extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAccessApplication(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelAccessApplication.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelAccessApplication.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -436,10 +438,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelAccessApplication copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelAccessApplication copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAccessApplication && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -447,12 +449,14 @@ ResourceTaggingSetTagsRequestAccountLevelAccessApplication copyWith({ResourceTag
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.accessApplication($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAccessGroup extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAccessGroup(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelAccessGroup.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelAccessGroup.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -460,10 +464,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAccessGroup && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -471,12 +475,14 @@ ResourceTaggingSetTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.accessGroup($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAccount extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAccount(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelAccount.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelAccount(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelAccount.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelAccount(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -484,10 +490,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelAccount copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAccount(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelAccount copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAccount(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAccount && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -495,12 +501,14 @@ ResourceTaggingSetTagsRequestAccountLevelAccount copyWith({ResourceTaggingResour
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.account($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAiGateway extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAiGateway(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelAiGateway.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelAiGateway(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelAiGateway.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelAiGateway(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -508,10 +516,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAiGateway(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAiGateway(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAiGateway && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -519,12 +527,14 @@ ResourceTaggingSetTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingReso
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.aiGateway($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -532,10 +542,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -543,12 +553,14 @@ ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggin
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -556,10 +568,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -567,12 +579,14 @@ ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggi
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -580,10 +594,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -591,12 +605,14 @@ ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTag
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelD1Database extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelD1Database(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelD1Database.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelD1Database(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelD1Database.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelD1Database(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -604,10 +620,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelD1Database copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelD1Database(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelD1Database copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelD1Database(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelD1Database && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -615,12 +631,14 @@ ResourceTaggingSetTagsRequestAccountLevelD1Database copyWith({ResourceTaggingRes
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.d1Database($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -628,10 +646,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -639,12 +657,14 @@ ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace copyWith({Resour
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelGatewayList extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelGatewayList(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelGatewayList.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelGatewayList(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelGatewayList.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelGatewayList(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -652,10 +672,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelGatewayList(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelGatewayList(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelGatewayList && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -663,12 +683,14 @@ ResourceTaggingSetTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.gatewayList($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelGatewayRule extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelGatewayRule(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelGatewayRule.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelGatewayRule.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -676,10 +698,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelGatewayRule && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -687,12 +709,14 @@ ResourceTaggingSetTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.gatewayRule($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelImage extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelImage(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelImage.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelImage(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelImage.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelImage(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -700,10 +724,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelImage copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelImage(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelImage copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelImage(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelImage && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -711,12 +735,14 @@ ResourceTaggingSetTagsRequestAccountLevelImage copyWith({ResourceTaggingResource
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.image($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelKvNamespace extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelKvNamespace(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelKvNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelKvNamespace.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -724,10 +750,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelKvNamespace && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -735,12 +761,14 @@ ResourceTaggingSetTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.kvNamespace($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelQueue extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelQueue(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelQueue.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelQueue(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelQueue.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelQueue(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -748,10 +776,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelQueue copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelQueue(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelQueue copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelQueue(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelQueue && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -759,12 +787,14 @@ ResourceTaggingSetTagsRequestAccountLevelQueue copyWith({ResourceTaggingResource
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.queue($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelR2Bucket extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelR2Bucket(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelR2Bucket.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelR2Bucket.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -772,10 +802,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelR2Bucket && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -783,12 +813,14 @@ ResourceTaggingSetTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResou
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.r2Bucket($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceShare extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelResourceShare(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelResourceShare.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelResourceShare(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelResourceShare.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelResourceShare(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -796,10 +828,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelResourceShare copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelResourceShare(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelResourceShare copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelResourceShare(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelResourceShare && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -807,12 +839,14 @@ ResourceTaggingSetTagsRequestAccountLevelResourceShare copyWith({ResourceTagging
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.resourceShare($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -820,10 +854,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -831,12 +865,14 @@ ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggi
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelStreamVideo extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelStreamVideo(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelStreamVideo.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelStreamVideo.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -844,10 +880,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelStreamVideo && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -855,12 +891,14 @@ ResourceTaggingSetTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingRe
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.streamVideo($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelWorker extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelWorker(this.resourceTaggingSetTagsRequestAccountLevelBase);
 
-factory ResourceTaggingSetTagsRequestAccountLevelWorker.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelWorker.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingSetTagsRequestAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -868,10 +906,10 @@ final ResourceTaggingSetTagsRequestAccountLevelBase resourceTaggingSetTagsReques
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorker(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourceId? resourceId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelWorker(resourceTaggingSetTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelWorker && resourceTaggingSetTagsRequestAccountLevelBase == other.resourceTaggingSetTagsRequestAccountLevelBase;
 
@@ -879,12 +917,14 @@ ResourceTaggingSetTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourc
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.worker($resourceTaggingSetTagsRequestAccountLevelBase)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelBase.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelBase.tags;
 
- }
+}
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(this.resourceTaggingSetTagsRequestAccountLevelWorkerVersion);
 
-factory ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion.fromJson(json)); }
+factory ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant.fromJson(Map<String, dynamic> json) {return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion.fromJson(json));}
 
 final ResourceTaggingSetTagsRequestAccountLevelWorkerVersion resourceTaggingSetTagsRequestAccountLevelWorkerVersion;
 
@@ -892,9 +932,11 @@ final ResourceTaggingSetTagsRequestAccountLevelWorkerVersion resourceTaggingSetT
 
 @override Map<String, dynamic> toJson() => {...resourceTaggingSetTagsRequestAccountLevelWorkerVersion.toJson(), 'resource_type': resourceType.toJson()};
 
-ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({Map<String, String>? Function()? tags}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(resourceTaggingSetTagsRequestAccountLevelWorkerVersion.copyWith(
+ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingWorkerId? workerId, Map<String, String>? Function()? tags, }) {return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant(resourceTaggingSetTagsRequestAccountLevelWorkerVersion.copyWith(
+  resourceId: resourceId,
+  workerId: workerId,
   tags: tags,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant && resourceTaggingSetTagsRequestAccountLevelWorkerVersion == other.resourceTaggingSetTagsRequestAccountLevelWorkerVersion;
 
@@ -902,14 +944,18 @@ ResourceTaggingSetTagsRequestAccountLevelWorkerVersion$Variant copyWith({Map<Str
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.workerVersion($resourceTaggingSetTagsRequestAccountLevelWorkerVersion)';
 
+@override ResourceTaggingResourceId get resourceId => resourceTaggingSetTagsRequestAccountLevelWorkerVersion.resourceId;
+
 @override Map<String,String>? get tags => resourceTaggingSetTagsRequestAccountLevelWorkerVersion.tags;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ResourceTaggingSetTagsRequestAccountLevel$Unknown extends ResourceTaggingSetTagsRequestAccountLevel {ResourceTaggingSetTagsRequestAccountLevel$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
 late final Map<String,String>? _tags = (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String));
 
@@ -924,6 +970,8 @@ late final Map<String,String>? _tags = (json['tags'] as Map<String, dynamic>?)?.
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.unknown($json)';
 
+@override ResourceTaggingResourceId get resourceId => _resourceId;
+
 @override Map<String,String>? get tags => _tags;
 
- }
+}

@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The display name of the option, in raw text and HTML formats.
 @immutable final class SingleSelectOptionsName {const SingleSelectOptionsName({required this.raw, required this.html, });
 
-factory SingleSelectOptionsName.fromJson(Map<String, dynamic> json) { return SingleSelectOptionsName(
+factory SingleSelectOptionsName.fromJson(Map<String, dynamic> json) {return SingleSelectOptionsName(
   raw: json['raw'] as String,
   html: json['html'] as String,
-); }
+);}
 
 final String raw;
 
 final String html;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'raw': raw,
   'html': html,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('raw') && json['raw'] is String &&
-      json.containsKey('html') && json['html'] is String; } 
-SingleSelectOptionsName copyWith({String? raw, String? html, }) { return SingleSelectOptionsName(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('raw') && json['raw'] is String &&
+      json.containsKey('html') && json['html'] is String;}
+SingleSelectOptionsName copyWith({String? raw, String? html, }) {return SingleSelectOptionsName(
   raw: raw ?? this.raw,
   html: html ?? this.html,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SingleSelectOptionsName &&
           raw == other.raw &&
@@ -32,4 +32,4 @@ SingleSelectOptionsName copyWith({String? raw, String? html, }) { return SingleS
 
 @override String toString() => 'SingleSelectOptionsName(raw: $raw, html: $html)';
 
- }
+}

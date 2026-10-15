@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when th
 /// 
 @immutable final class RealtimeServerEventResponseTextDone {const RealtimeServerEventResponseTextDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, });
 
-factory RealtimeServerEventResponseTextDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseTextDone(
+factory RealtimeServerEventResponseTextDone.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseTextDone(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -14,7 +14,7 @@ factory RealtimeServerEventResponseTextDone.fromJson(Map<String, dynamic> json) 
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   text: json['text'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -37,7 +37,7 @@ final int contentIndex;
 /// The final text content.
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -45,15 +45,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('text') && json['text'] is String; } 
-RealtimeServerEventResponseTextDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? text, }) { return RealtimeServerEventResponseTextDone(
+      json.containsKey('text') && json['text'] is String;}
+RealtimeServerEventResponseTextDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? text, }) {return RealtimeServerEventResponseTextDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -61,7 +61,7 @@ RealtimeServerEventResponseTextDone copyWith({String? eventId, String? type, Str
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   text: text ?? this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseTextDone &&
           eventId == other.eventId &&
@@ -76,4 +76,4 @@ RealtimeServerEventResponseTextDone copyWith({String? eventId, String? type, Str
 
 @override String toString() => 'RealtimeServerEventResponseTextDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, text: $text)';
 
- }
+}

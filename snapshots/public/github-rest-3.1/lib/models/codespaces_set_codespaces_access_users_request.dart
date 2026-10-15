@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesSetCodespacesAccessUsersRequest {const CodespacesSetCodespacesAccessUsersRequest({required this.selectedUsernames});
 
-factory CodespacesSetCodespacesAccessUsersRequest.fromJson(Map<String, dynamic> json) { return CodespacesSetCodespacesAccessUsersRequest(
+factory CodespacesSetCodespacesAccessUsersRequest.fromJson(Map<String, dynamic> json) {return CodespacesSetCodespacesAccessUsersRequest(
   selectedUsernames: (json['selected_usernames'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The usernames of the organization members whose codespaces be billed to the organization.
 final List<String> selectedUsernames;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selected_usernames': selectedUsernames,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_usernames'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selected_usernames');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (selectedUsernames.length > 100) { errors.add('selectedUsernames: must have <= 100 items'); }
-return errors; } 
-CodespacesSetCodespacesAccessUsersRequest copyWith({List<String>? selectedUsernames}) { return CodespacesSetCodespacesAccessUsersRequest(
+return errors;}
+CodespacesSetCodespacesAccessUsersRequest copyWith({List<String>? selectedUsernames}) {return CodespacesSetCodespacesAccessUsersRequest(
   selectedUsernames: selectedUsernames ?? this.selectedUsernames,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesSetCodespacesAccessUsersRequest &&
           listEquals(selectedUsernames, other.selectedUsernames);
@@ -29,4 +29,4 @@ CodespacesSetCodespacesAccessUsersRequest copyWith({List<String>? selectedUserna
 
 @override String toString() => 'CodespacesSetCodespacesAccessUsersRequest(selectedUsernames: $selectedUsernames)';
 
- }
+}

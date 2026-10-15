@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_top_origin_as_response/radar_get_attacks_layer7_top_origin_as_response_result.dart';@immutable final class RadarGetAttacksLayer7TopOriginAsResponse {const RadarGetAttacksLayer7TopOriginAsResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer7TopOriginAsResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginAsResponse(
+factory RadarGetAttacksLayer7TopOriginAsResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7TopOriginAsResponse(
   result: RadarGetAttacksLayer7TopOriginAsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer7TopOriginAsResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7TopOriginAsResponse copyWith({RadarGetAttacksLayer7TopOriginAsResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TopOriginAsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer7TopOriginAsResponse copyWith({RadarGetAttacksLayer7TopOriginAsResponseResult? result, bool? success, }) {return RadarGetAttacksLayer7TopOriginAsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopOriginAsResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer7TopOriginAsResponse copyWith({RadarGetAttacksLayer7TopOrigi
 
 @override String toString() => 'RadarGetAttacksLayer7TopOriginAsResponse(result: $result, success: $success)';
 
- }
+}

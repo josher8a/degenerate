@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_logpull_options.dart';@immutable final class PostAccountsAccountIdLogpushValidateOriginRequest {const PostAccountsAccountIdLogpushValidateOriginRequest({required this.logpullOptions});
 
-factory PostAccountsAccountIdLogpushValidateOriginRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountIdLogpushValidateOriginRequest(
+factory PostAccountsAccountIdLogpushValidateOriginRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountIdLogpushValidateOriginRequest(
   logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
-); }
+);}
 
 /// This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.
 final LogpushLogpullOptions? logpullOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'logpull_options': logpullOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('logpull_options'); } 
-PostAccountsAccountIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Function()? logpullOptions}) { return PostAccountsAccountIdLogpushValidateOriginRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('logpull_options');}
+PostAccountsAccountIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Function()? logpullOptions}) {return PostAccountsAccountIdLogpushValidateOriginRequest(
   logpullOptions: logpullOptions != null ? logpullOptions() : this.logpullOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountIdLogpushValidateOriginRequest &&
           logpullOptions == other.logpullOptions;
@@ -25,4 +25,4 @@ PostAccountsAccountIdLogpushValidateOriginRequest copyWith({LogpushLogpullOption
 
 @override String toString() => 'PostAccountsAccountIdLogpushValidateOriginRequest(logpullOptions: $logpullOptions)';
 
- }
+}

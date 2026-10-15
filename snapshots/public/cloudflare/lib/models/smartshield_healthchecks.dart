@@ -11,13 +11,13 @@ String toJson() => value;
 /// The current status of the origin server according to the health check.
 sealed class SmartshieldStatus {const SmartshieldStatus();
 
-factory SmartshieldStatus.fromJson(String json) { return switch (json) {
+factory SmartshieldStatus.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'healthy' => healthy,
   'unhealthy' => unhealthy,
   'suspended' => suspended,
   _ => SmartshieldStatus$Unknown(json),
-}; }
+};}
 
 static const SmartshieldStatus unknown = SmartshieldStatus$unknown._();
 
@@ -30,36 +30,36 @@ static const SmartshieldStatus suspended = SmartshieldStatus$suspended._();
 static const List<SmartshieldStatus> values = [unknown, healthy, unhealthy, suspended];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'unknown' => 'unknown',
   'healthy' => 'healthy',
   'unhealthy' => 'unhealthy',
   'suspended' => 'suspended',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SmartshieldStatus$Unknown; } 
+bool get isUnknown {return this is SmartshieldStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() unknown, required W Function() healthy, required W Function() unhealthy, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() unknown, required W Function() healthy, required W Function() unhealthy, required W Function() suspended, required W Function(String value) $unknown, }) {return switch (this) {
       SmartshieldStatus$unknown() => unknown(),
       SmartshieldStatus$healthy() => healthy(),
       SmartshieldStatus$unhealthy() => unhealthy(),
       SmartshieldStatus$suspended() => suspended(),
       SmartshieldStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? healthy, W Function()? unhealthy, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? healthy, W Function()? unhealthy, W Function()? suspended, W Function(String value)? $unknown, }) {return switch (this) {
       SmartshieldStatus$unknown() => unknown != null ? unknown() : orElse(value),
       SmartshieldStatus$healthy() => healthy != null ? healthy() : orElse(value),
       SmartshieldStatus$unhealthy() => unhealthy != null ? unhealthy() : orElse(value),
       SmartshieldStatus$suspended() => suspended != null ? suspended() : orElse(value),
       SmartshieldStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SmartshieldStatus($value)';
 
- }
+}
 @immutable final class SmartshieldStatus$unknown extends SmartshieldStatus {const SmartshieldStatus$unknown._();
 
 @override String get value => 'unknown';
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class SmartshieldStatus$healthy extends SmartshieldStatus {const SmartshieldStatus$healthy._();
 
 @override String get value => 'healthy';
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'healthy'.hashCode;
 
- }
+}
 @immutable final class SmartshieldStatus$unhealthy extends SmartshieldStatus {const SmartshieldStatus$unhealthy._();
 
 @override String get value => 'unhealthy';
@@ -86,7 +86,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'unhealthy'.hashCode;
 
- }
+}
 @immutable final class SmartshieldStatus$suspended extends SmartshieldStatus {const SmartshieldStatus$suspended._();
 
 @override String get value => 'suspended';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'suspended'.hashCode;
 
- }
+}
 @immutable final class SmartshieldStatus$Unknown extends SmartshieldStatus {const SmartshieldStatus$Unknown(this.value);
 
 @override final String value;
@@ -105,24 +105,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 extension type SmartshieldTimestamp(DateTime value) {
 factory SmartshieldTimestamp.fromJson(String json) => SmartshieldTimestamp(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
+@immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig = const Omittable.absent(), this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
-factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return SmartshieldHealthchecks(
+factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) {return SmartshieldHealthchecks(
   address: json['address'] != null ? SmartshieldAddress.fromJson(json['address'] as String) : null,
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? SmartshieldConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   createdOn: json['created_on'] != null ? SmartshieldTimestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? SmartshieldDescription.fromJson(json['description'] as String) : null,
   failureReason: json['failure_reason'] != null ? SmartshieldFailureReason.fromJson(json['failure_reason'] as String) : null,
-  httpConfig: json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
+  httpConfig: json.containsKey('http_config') ? Omittable(json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] != null ? SmartshieldIdentifier.fromJson(json['id'] as String) : null,
   interval: json['interval'] != null ? SmartshieldInterval.fromJson(json['interval'] as num) : null,
   modifiedOn: json['modified_on'] != null ? SmartshieldTimestamp.fromJson(json['modified_on'] as String) : null,
@@ -130,16 +130,16 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   retries: json['retries'] != null ? SmartshieldRetries.fromJson(json['retries'] as num) : null,
   status: json['status'] != null ? SmartshieldStatus.fromJson(json['status'] as String) : null,
   suspended: json['suspended'] != null ? SmartshieldSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
+  tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The hostname or IP address of the origin server to run health checks on.
 final SmartshieldAddress? address;
 
 /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
-final List<SmartshieldCheckRegions2>? checkRegions;
+final Omittable<List<SmartshieldCheckRegions2>?> checkRegions;
 
 /// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final SmartshieldConsecutiveFails? consecutiveFails;
@@ -155,7 +155,7 @@ final SmartshieldDescription? description;
 /// The current failure reason if status is unhealthy.
 final SmartshieldFailureReason? failureReason;
 
-final SmartshieldHttpConfig? httpConfig;
+final Omittable<SmartshieldHttpConfig?> httpConfig;
 
 final SmartshieldIdentifier? id;
 
@@ -171,21 +171,21 @@ final SmartshieldStatus? status;
 
 final SmartshieldSuspended? suspended;
 
-final SmartshieldTcpConfig? tcpConfig;
+final Omittable<SmartshieldTcpConfig?> tcpConfig;
 
 final SmartshieldTimeout? timeout;
 
 final SmartshieldType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
   if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (failureReason != null) 'failure_reason': failureReason?.toJson(),
-  if (httpConfig != null) 'http_config': httpConfig?.toJson(),
+  if (httpConfig.isPresent) 'http_config': httpConfig.value?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (interval != null) 'interval': interval?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
@@ -193,20 +193,20 @@ Map<String, dynamic> toJson() { return {
   if (retries != null) 'retries': retries?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (suspended != null) 'suspended': suspended?.toJson(),
-  if (tcpConfig != null) 'tcp_config': tcpConfig?.toJson(),
+  if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
-SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, List<SmartshieldCheckRegions2>? Function()? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldHealthchecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key));}
+SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) {return SmartshieldHealthchecks(
   address: address != null ? address() : this.address,
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+  checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
   consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   failureReason: failureReason != null ? failureReason() : this.failureReason,
-  httpConfig: httpConfig != null ? httpConfig() : this.httpConfig,
+  httpConfig: httpConfig ?? this.httpConfig,
   id: id != null ? id() : this.id,
   interval: interval != null ? interval() : this.interval,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
@@ -214,14 +214,15 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, List<
   retries: retries != null ? retries() : this.retries,
   status: status != null ? status() : this.status,
   suspended: suspended != null ? suspended() : this.suspended,
-  tcpConfig: tcpConfig != null ? tcpConfig() : this.tcpConfig,
+  tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldHealthchecks &&
           address == other.address &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           consecutiveFails == other.consecutiveFails &&
           consecutiveSuccesses == other.consecutiveSuccesses &&
           createdOn == other.createdOn &&
@@ -239,8 +240,8 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, List<
           timeout == other.timeout &&
           type == other.type;
 
-@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type);
+@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type);
 
 @override String toString() => 'SmartshieldHealthchecks(\n  address: $address,\n  checkRegions: $checkRegions,\n  consecutiveFails: $consecutiveFails,\n  consecutiveSuccesses: $consecutiveSuccesses,\n  createdOn: $createdOn,\n  description: $description,\n  failureReason: $failureReason,\n  httpConfig: $httpConfig,\n  id: $id,\n  interval: $interval,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  retries: $retries,\n  status: $status,\n  suspended: $suspended,\n  tcpConfig: $tcpConfig,\n  timeout: $timeout,\n  type: $type,\n)';
 
- }
+}

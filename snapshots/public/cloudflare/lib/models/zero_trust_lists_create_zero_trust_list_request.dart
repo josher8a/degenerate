@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_items_input2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_type.dart';@immutable final class ZeroTrustListsCreateZeroTrustListRequest {const ZeroTrustListsCreateZeroTrustListRequest({required this.name, required this.type, this.description, this.items, });
 
-factory ZeroTrustListsCreateZeroTrustListRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustListsCreateZeroTrustListRequest(
+factory ZeroTrustListsCreateZeroTrustListRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustListsCreateZeroTrustListRequest(
   description: json['description'] != null ? ZeroTrustGatewayDescription.fromJson(json['description'] as String) : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayItemsInput2.fromJson(e as Map<String, dynamic>)).toList(),
   name: ZeroTrustGatewayName.fromJson(json['name'] as String),
   type: ZeroTrustGatewaySchemasType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Provide the list description.
 final ZeroTrustGatewayDescription? description;
@@ -22,20 +22,20 @@ final ZeroTrustGatewayName name;
 /// Specify the list type.
 final ZeroTrustGatewaySchemasType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
   'name': name.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
-      json.containsKey('type'); } 
-ZeroTrustListsCreateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription? Function()? description, List<ZeroTrustGatewayItemsInput2>? Function()? items, ZeroTrustGatewayName? name, ZeroTrustGatewaySchemasType? type, }) { return ZeroTrustListsCreateZeroTrustListRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
+      json.containsKey('type');}
+ZeroTrustListsCreateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription? Function()? description, List<ZeroTrustGatewayItemsInput2>? Function()? items, ZeroTrustGatewayName? name, ZeroTrustGatewaySchemasType? type, }) {return ZeroTrustListsCreateZeroTrustListRequest(
   description: description != null ? description() : this.description,
   items: items != null ? items() : this.items,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustListsCreateZeroTrustListRequest &&
           description == other.description &&
@@ -47,4 +47,4 @@ ZeroTrustListsCreateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription? 
 
 @override String toString() => 'ZeroTrustListsCreateZeroTrustListRequest(description: $description, items: $items, name: $name, type: $type)';
 
- }
+}

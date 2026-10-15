@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimekitPatchWebhookRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_patch_webhook_request/realtimekit_patch_webhook_request_events.dart';@immutable final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled = true, this.events, this.name, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_patch_webhook_request/realtimekit_patch_webhook_request_events.dart';@immutable final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled, this.events, this.name, this.url, });
 
-factory RealtimekitPatchWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitPatchWebhookRequest(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
+factory RealtimekitPatchWebhookRequest.fromJson(Map<String, dynamic> json) {return RealtimekitPatchWebhookRequest(
+  enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>?)?.map((e) => RealtimekitPatchWebhookRequestEvents.fromJson(e as String)).toList(),
   name: json['name'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
-final bool enabled;
+final bool? enabled;
 
 /// Events that the webhook will get triggered by
 final List<RealtimekitPatchWebhookRequestEvents>? events;
@@ -23,19 +23,22 @@ final String? name;
 /// Example: `'https://webhook.site/b23a5bbd-c7b0-4ced-a9e2-78ae7889897e'`
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
+/// The value of `enabled`, or its schema default when absent.
+bool get enabledOrDefault => enabled ?? true;
+
+Map<String, dynamic> toJson() {return {
+  'enabled': ?enabled,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
   'name': ?name,
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'events', 'name', 'url'}.contains(key)); } 
-RealtimekitPatchWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) { return RealtimekitPatchWebhookRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'events', 'name', 'url'}.contains(key));}
+RealtimekitPatchWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) {return RealtimekitPatchWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events != null ? events() : this.events,
   name: name != null ? name() : this.name,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPatchWebhookRequest &&
           enabled == other.enabled &&
@@ -47,4 +50,4 @@ RealtimekitPatchWebhookRequest copyWith({bool Function()? enabled, List<Realtime
 
 @override String toString() => 'RealtimekitPatchWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)';
 
- }
+}

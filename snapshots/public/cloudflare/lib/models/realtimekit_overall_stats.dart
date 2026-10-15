@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitOverallStats {const RealtimekitOverallStats({this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
 
-factory RealtimekitOverallStats.fromJson(Map<String, dynamic> json) { return RealtimekitOverallStats(
+factory RealtimekitOverallStats.fromJson(Map<String, dynamic> json) {return RealtimekitOverallStats(
   recordingsMinutesConsumed: json['recordings_minutes_consumed'] != null ? (json['recordings_minutes_consumed'] as num).toDouble() : null,
   sessionsCount: json['sessions_count'] != null ? (json['sessions_count'] as num).toDouble() : null,
   sessionsMinutesConsumed: json['sessions_minutes_consumed'] != null ? (json['sessions_minutes_consumed'] as num).toDouble() : null,
-); }
+);}
 
 /// Total recordings minutes consumed across all sessions in the given time period.
 final double? recordingsMinutesConsumed;
@@ -18,17 +18,17 @@ final double? sessionsCount;
 /// Total meetings minutes consumed across all sessions in the given time period.
 final double? sessionsMinutesConsumed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'recordings_minutes_consumed': ?recordingsMinutesConsumed,
   'sessions_count': ?sessionsCount,
   'sessions_minutes_consumed': ?sessionsMinutesConsumed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recordings_minutes_consumed', 'sessions_count', 'sessions_minutes_consumed'}.contains(key)); } 
-RealtimekitOverallStats copyWith({double? Function()? recordingsMinutesConsumed, double? Function()? sessionsCount, double? Function()? sessionsMinutesConsumed, }) { return RealtimekitOverallStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'recordings_minutes_consumed', 'sessions_count', 'sessions_minutes_consumed'}.contains(key));}
+RealtimekitOverallStats copyWith({double? Function()? recordingsMinutesConsumed, double? Function()? sessionsCount, double? Function()? sessionsMinutesConsumed, }) {return RealtimekitOverallStats(
   recordingsMinutesConsumed: recordingsMinutesConsumed != null ? recordingsMinutesConsumed() : this.recordingsMinutesConsumed,
   sessionsCount: sessionsCount != null ? sessionsCount() : this.sessionsCount,
   sessionsMinutesConsumed: sessionsMinutesConsumed != null ? sessionsMinutesConsumed() : this.sessionsMinutesConsumed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitOverallStats &&
           recordingsMinutesConsumed == other.recordingsMinutesConsumed &&
@@ -39,4 +39,4 @@ RealtimekitOverallStats copyWith({double? Function()? recordingsMinutesConsumed,
 
 @override String toString() => 'RealtimekitOverallStats(recordingsMinutesConsumed: $recordingsMinutesConsumed, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)';
 
- }
+}

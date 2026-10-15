@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_member_invited/inviter.dart';/// The invitation for the user or email if the action is `member_invited`.
 @immutable final class Invitation {const Invitation({required this.createdAt, required this.email, required this.failedAt, required this.failedReason, required this.id, required this.invitationTeamsUrl, required this.inviter, required this.login, required this.nodeId, required this.role, required this.teamCount, this.invitationSource, });
 
-factory Invitation.fromJson(Map<String, dynamic> json) { return Invitation(
+factory Invitation.fromJson(Map<String, dynamic> json) {return Invitation(
   createdAt: DateTime.parse(json['created_at'] as String),
   email: json['email'] as String?,
   failedAt: json['failed_at'] != null ? DateTime.parse(json['failed_at'] as String) : null,
@@ -17,7 +17,7 @@ factory Invitation.fromJson(Map<String, dynamic> json) { return Invitation(
   role: json['role'] as String,
   teamCount: (json['team_count'] as num).toDouble(),
   invitationSource: json['invitation_source'] as String?,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -43,7 +43,7 @@ final double teamCount;
 
 final String? invitationSource;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'email': email,
   'failed_at': failedAt?.toIso8601String(),
@@ -56,19 +56,19 @@ Map<String, dynamic> toJson() { return {
   'role': role,
   'team_count': teamCount,
   'invitation_source': ?invitationSource,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('email') && json['email'] is String &&
-      json.containsKey('failed_at') && json['failed_at'] is String &&
-      json.containsKey('failed_reason') && json['failed_reason'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
+      json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is String) &&
+      json.containsKey('failed_reason') && (json['failed_reason'] == null || json['failed_reason'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('invitation_teams_url') && json['invitation_teams_url'] is String &&
       json.containsKey('inviter') &&
-      json.containsKey('login') && json['login'] is String &&
+      json.containsKey('login') && (json['login'] == null || json['login'] is String) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('role') && json['role'] is String &&
-      json.containsKey('team_count') && json['team_count'] is num; } 
-Invitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? Function()? failedAt, String? Function()? failedReason, double? id, Uri? invitationTeamsUrl, Inviter? Function()? inviter, String? Function()? login, String? nodeId, String? role, double? teamCount, String? Function()? invitationSource, }) { return Invitation(
+      json.containsKey('team_count') && json['team_count'] is num;}
+Invitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? Function()? failedAt, String? Function()? failedReason, double? id, Uri? invitationTeamsUrl, Inviter? Function()? inviter, String? Function()? login, String? nodeId, String? role, double? teamCount, String? Function()? invitationSource, }) {return Invitation(
   createdAt: createdAt ?? this.createdAt,
   email: email != null ? email() : this.email,
   failedAt: failedAt != null ? failedAt() : this.failedAt,
@@ -81,7 +81,7 @@ Invitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? F
   role: role ?? this.role,
   teamCount: teamCount ?? this.teamCount,
   invitationSource: invitationSource != null ? invitationSource() : this.invitationSource,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Invitation &&
           createdAt == other.createdAt &&
@@ -101,4 +101,4 @@ Invitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? F
 
 @override String toString() => 'Invitation(\n  createdAt: $createdAt,\n  email: $email,\n  failedAt: $failedAt,\n  failedReason: $failedReason,\n  id: $id,\n  invitationTeamsUrl: $invitationTeamsUrl,\n  inviter: $inviter,\n  login: $login,\n  nodeId: $nodeId,\n  role: $role,\n  teamCount: $teamCount,\n  invitationSource: $invitationSource,\n)';
 
- }
+}

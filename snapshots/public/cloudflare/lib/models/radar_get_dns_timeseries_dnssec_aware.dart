@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsTimeseriesDnssecAware {const RadarGetDnsTimeseriesDnssecAware();
 
-factory RadarGetDnsTimeseriesDnssecAware.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesDnssecAware.fromJson(String json) {return switch (json) {
   'SUPPORTED' => supported,
   'NOT_SUPPORTED' => notSupported,
   _ => RadarGetDnsTimeseriesDnssecAware$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesDnssecAware supported = RadarGetDnsTimeseriesDnssecAware$supported._();
 
@@ -16,30 +16,30 @@ static const RadarGetDnsTimeseriesDnssecAware notSupported = RadarGetDnsTimeseri
 static const List<RadarGetDnsTimeseriesDnssecAware> values = [supported, notSupported];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'SUPPORTED' => 'supported',
   'NOT_SUPPORTED' => 'notSupported',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsTimeseriesDnssecAware$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsTimeseriesDnssecAware$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() supported, required W Function() notSupported, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() supported, required W Function() notSupported, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsTimeseriesDnssecAware$supported() => supported(),
       RadarGetDnsTimeseriesDnssecAware$notSupported() => notSupported(),
       RadarGetDnsTimeseriesDnssecAware$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? supported, W Function()? notSupported, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? supported, W Function()? notSupported, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsTimeseriesDnssecAware$supported() => supported != null ? supported() : orElse(value),
       RadarGetDnsTimeseriesDnssecAware$notSupported() => notSupported != null ? notSupported() : orElse(value),
       RadarGetDnsTimeseriesDnssecAware$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsTimeseriesDnssecAware($value)';
 
- }
+}
 @immutable final class RadarGetDnsTimeseriesDnssecAware$supported extends RadarGetDnsTimeseriesDnssecAware {const RadarGetDnsTimeseriesDnssecAware$supported._();
 
 @override String get value => 'SUPPORTED';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? supporte
 
 @override int get hashCode => 'SUPPORTED'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsTimeseriesDnssecAware$notSupported extends RadarGetDnsTimeseriesDnssecAware {const RadarGetDnsTimeseriesDnssecAware$notSupported._();
 
 @override String get value => 'NOT_SUPPORTED';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? supporte
 
 @override int get hashCode => 'NOT_SUPPORTED'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsTimeseriesDnssecAware$Unknown extends RadarGetDnsTimeseriesDnssecAware {const RadarGetDnsTimeseriesDnssecAware$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? supporte
 
 @override int get hashCode => value.hashCode;
 
- }
+}

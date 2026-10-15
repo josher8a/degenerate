@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_queue_message_json/mq_queue_message_json_content_type.dart';@immutable final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });
 
-factory MqQueueMessageJson.fromJson(Map<String, dynamic> json) { return MqQueueMessageJson(
+factory MqQueueMessageJson.fromJson(Map<String, dynamic> json) {return MqQueueMessageJson(
   body: json['body'] as Map<String, dynamic>?,
   contentType: json['content_type'] != null ? MqQueueMessageJsonContentType.fromJson(json['content_type'] as String) : null,
-); }
+);}
 
 final Map<String,dynamic>? body;
 
 final MqQueueMessageJsonContentType? contentType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': ?body,
   if (contentType != null) 'content_type': contentType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'content_type'}.contains(key)); } 
-MqQueueMessageJson copyWith({Map<String, dynamic>? Function()? body, MqQueueMessageJsonContentType? Function()? contentType, }) { return MqQueueMessageJson(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'body', 'content_type'}.contains(key));}
+MqQueueMessageJson copyWith({Map<String, dynamic>? Function()? body, MqQueueMessageJsonContentType? Function()? contentType, }) {return MqQueueMessageJson(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueueMessageJson &&
           body == other.body &&
@@ -30,4 +30,4 @@ MqQueueMessageJson copyWith({Map<String, dynamic>? Function()? body, MqQueueMess
 
 @override String toString() => 'MqQueueMessageJson(body: $body, contentType: $contentType)';
 
- }
+}

@@ -2,12 +2,12 @@
 // Source: #/components/schemas/NodeAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeAddress contains information for the node's address.
-@immutable final class NodeAddress {const NodeAddress({this.address = '', this.type = '', });
+@immutable final class NodeAddress {const NodeAddress({required this.address, required this.type, });
 
-factory NodeAddress.fromJson(Map<String, dynamic> json) { return NodeAddress(
+factory NodeAddress.fromJson(Map<String, dynamic> json) {return NodeAddress(
   address: json['address'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// The node address.
 final String address;
@@ -15,16 +15,16 @@ final String address;
 /// Node address type, one of Hostname, ExternalIP or InternalIP.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') && json['address'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-NodeAddress copyWith({String? address, String? type, }) { return NodeAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') && json['address'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+NodeAddress copyWith({String? address, String? type, }) {return NodeAddress(
   address: address ?? this.address,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NodeAddress &&
           address == other.address &&
@@ -34,4 +34,4 @@ NodeAddress copyWith({String? address, String? type, }) { return NodeAddress(
 
 @override String toString() => 'NodeAddress(address: $address, type: $type)';
 
- }
+}

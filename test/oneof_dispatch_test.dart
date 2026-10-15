@@ -9,11 +9,11 @@ IrObject _pinned(String name, String property, String value) => IrObject(
   [
     IrField(
       property,
-      property,
+      SpecString(property),
       IrEnum('$name${property}Enum', [value]),
       isRequired: true,
     ),
-    const IrField('id', 'id', IrPrimitive(PrimitiveKind.string)),
+    const IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string)),
   ],
   requiredFields: [property],
 );
@@ -70,7 +70,7 @@ void main() {
 
     test('an optional pin is not trusted', () {
       const optional = IrObject('Loose', [
-        IrField('action', 'action', IrEnum('LooseAction', ['loose'])),
+        IrField('action', SpecString('action'), IrEnum('LooseAction', ['loose'])),
       ]);
       final code = _parse([optional, _pinned('Tight', 'action', 'tight')]);
       expect(code, startsWith('OneOf2.parse('));

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner.dart';@immutable final class ActionsListSelfHostedRunnersForOrgResponse {const ActionsListSelfHostedRunnersForOrgResponse({required this.totalCount, required this.runners, });
 
-factory ActionsListSelfHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelfHostedRunnersForOrgResponse(
+factory ActionsListSelfHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelfHostedRunnersForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   runners: (json['runners'] as List<dynamic>).map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<Runner> runners;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'runners': runners.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('runners'); } 
-ActionsListSelfHostedRunnersForOrgResponse copyWith({int? totalCount, List<Runner>? runners, }) { return ActionsListSelfHostedRunnersForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('runners');}
+ActionsListSelfHostedRunnersForOrgResponse copyWith({int? totalCount, List<Runner>? runners, }) {return ActionsListSelfHostedRunnersForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   runners: runners ?? this.runners,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelfHostedRunnersForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListSelfHostedRunnersForOrgResponse copyWith({int? totalCount, List<Runne
 
 @override String toString() => 'ActionsListSelfHostedRunnersForOrgResponse(totalCount: $totalCount, runners: $runners)';
 
- }
+}

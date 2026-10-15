@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_label.dart';@immutable final class ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse {const ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse({required this.totalCount, required this.labels, });
 
-factory ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse(
+factory ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   labels: (json['labels'] as List<dynamic>).map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<RunnerLabel> labels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'labels': labels.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('labels'); } 
-ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse copyWith({int? totalCount, List<RunnerLabel>? labels, }) { return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('labels');}
+ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse copyWith({int? totalCount, List<RunnerLabel>? labels, }) {return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   labels: labels ?? this.labels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse copyWith({int? totalCoun
 
 @override String toString() => 'ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse(totalCount: $totalCount, labels: $labels)';
 
- }
+}

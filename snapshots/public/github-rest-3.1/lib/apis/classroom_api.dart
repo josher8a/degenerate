@@ -14,7 +14,7 @@ final class ClassroomApi with ApiExecutor {const ClassroomApi(this.apiConfig);
 /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}`
-Future<ApiResult<ClassroomAssignment, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAnAssignment({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClassroomAssignment, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAnAssignment({required int assignmentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,20 +23,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ClassroomAssignment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// List accepted assignments for an assignment
 ///
 /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/accepted_assignments`
-Future<ApiResult<List<ClassroomAcceptedAssignment>, Never>> classroomListAcceptedAssignmentsForAnAssignment({required int assignmentId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ClassroomAcceptedAssignment>, Never>> classroomListAcceptedAssignmentsForAnAssignment({required int assignmentId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -56,20 +56,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ClassroomAcceptedAssignment.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get assignment grades
 ///
 /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/grades`
-Future<ApiResult<List<ClassroomAssignmentGrade>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAssignmentGrades({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ClassroomAssignmentGrade>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAssignmentGrades({required int assignmentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,7 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
@@ -86,13 +86,13 @@ return execute(
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// List classrooms
 ///
 /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
 ///
 /// `GET /classrooms`
-Future<ApiResult<List<SimpleClassroom>, Never>> classroomListClassrooms({int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleClassroom>, Never>> classroomListClassrooms({int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -112,20 +112,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleClassroom.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get a classroom
 ///
 /// Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}`
-Future<ApiResult<Classroom, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAClassroom({required int classroomId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Classroom, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAClassroom({required int classroomId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -134,20 +134,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return Classroom.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
- } 
+}
 /// List assignments for a classroom
 ///
 /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}/assignments`
-Future<ApiResult<List<SimpleClassroomAssignment>, Never>> classroomListAssignmentsForAClassroom({required int classroomId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleClassroomAssignment>, Never>> classroomListAssignmentsForAClassroom({required int classroomId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -167,12 +167,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleClassroomAssignment.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
- }
+}
+}

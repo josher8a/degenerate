@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByIpVersionBotClass {const RadarGetHttpTopAsesByIpVersionBotClass();
 
-factory RadarGetHttpTopAsesByIpVersionBotClass.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByIpVersionBotClass.fromJson(String json) {return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,
   'LIKELY_HUMAN' => likelyHuman,
   _ => RadarGetHttpTopAsesByIpVersionBotClass$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByIpVersionBotClass likelyAutomated = RadarGetHttpTopAsesByIpVersionBotClass$likelyAutomated._();
 
@@ -16,30 +16,30 @@ static const RadarGetHttpTopAsesByIpVersionBotClass likelyHuman = RadarGetHttpTo
 static const List<RadarGetHttpTopAsesByIpVersionBotClass> values = [likelyAutomated, likelyHuman];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'LIKELY_AUTOMATED' => 'likelyAutomated',
   'LIKELY_HUMAN' => 'likelyHuman',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopAsesByIpVersionBotClass$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopAsesByIpVersionBotClass$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() likelyAutomated, required W Function() likelyHuman, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() likelyAutomated, required W Function() likelyHuman, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByIpVersionBotClass$likelyAutomated() => likelyAutomated(),
       RadarGetHttpTopAsesByIpVersionBotClass$likelyHuman() => likelyHuman(),
       RadarGetHttpTopAsesByIpVersionBotClass$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAutomated, W Function()? likelyHuman, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAutomated, W Function()? likelyHuman, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByIpVersionBotClass$likelyAutomated() => likelyAutomated != null ? likelyAutomated() : orElse(value),
       RadarGetHttpTopAsesByIpVersionBotClass$likelyHuman() => likelyHuman != null ? likelyHuman() : orElse(value),
       RadarGetHttpTopAsesByIpVersionBotClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopAsesByIpVersionBotClass($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByIpVersionBotClass$likelyAutomated extends RadarGetHttpTopAsesByIpVersionBotClass {const RadarGetHttpTopAsesByIpVersionBotClass$likelyAutomated._();
 
 @override String get value => 'LIKELY_AUTOMATED';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAu
 
 @override int get hashCode => 'LIKELY_AUTOMATED'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByIpVersionBotClass$likelyHuman extends RadarGetHttpTopAsesByIpVersionBotClass {const RadarGetHttpTopAsesByIpVersionBotClass$likelyHuman._();
 
 @override String get value => 'LIKELY_HUMAN';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAu
 
 @override int get hashCode => 'LIKELY_HUMAN'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByIpVersionBotClass$Unknown extends RadarGetHttpTopAsesByIpVersionBotClass {const RadarGetHttpTopAsesByIpVersionBotClass$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

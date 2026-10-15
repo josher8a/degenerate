@@ -1,32 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_customer_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/business_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/individual_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_cash_balance.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';import 'package:pub_stripe_spec3/models/post_customers_request/post_customers_request_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_request/tax_id_data.dart';@immutable final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/business_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/individual_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_cash_balance.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';import 'package:pub_stripe_spec3/models/post_customers_request/post_customers_request_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_request/tax_id_data.dart';@immutable final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
 
-factory PostCustomersRequest.fromJson(Map<String, dynamic> json) { return PostCustomersRequest(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsCustomerAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+factory PostCustomersRequest.fromJson(Map<String, dynamic> json) {return PostCustomersRequest(
+  address: json['address'] != null ? PostCustomersCustomerRequestAddress.fromJson(json['address']) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
-  businessName: json['business_name'] != null ? OneOf2.parse(json['business_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  businessName: json['business_name'] != null ? BusinessName.fromJson(json['business_name']) : null,
   cashBalance: json['cash_balance'] != null ? PostCustomersCustomerRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  individualName: json['individual_name'] != null ? IndividualName.fromJson(json['individual_name']) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   paymentMethod: json['payment_method'] as String?,
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => CustomerShipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? PostCustomersCustomerRequestShipping.fromJson(json['shipping']) : null,
   source: json['source'] as String?,
   tax: json['tax'] != null ? PostCustomersRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIdData: (json['tax_id_data'] as List<dynamic>?)?.map((e) => TaxIdData.fromJson(e as Map<String, dynamic>)).toList(),
   testClock: json['test_clock'] as String?,
-); }
+);}
 
 /// The customer's address. Learn about [country-specific requirements for calculating tax](https://docs.stripe.com/invoicing/taxes?dashboard-or-api=dashboard#set-up-customer).
 final PostCustomersCustomerRequestAddress? address;
@@ -92,7 +92,7 @@ final List<TaxIdData>? taxIdData;
 /// ID of the test clock to attach to the customer.
 final String? testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   'balance': ?balance,
   if (businessName != null) 'business_name': businessName?.toJson(),
@@ -115,10 +115,10 @@ Map<String, dynamic> toJson() { return {
   if (taxExempt != null) 'tax_exempt': taxExempt?.toJson(),
   if (taxIdData != null) 'tax_id_data': taxIdData?.map((e) => e.toJson()).toList(),
   'test_clock': ?testClock,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -151,8 +151,8 @@ final testClock$ = testClock;
 if (testClock$ != null) {
   if (testClock$.runes.length > 5000) { errors.add('testClock: length must be <= 5000'); }
 }
-return errors; } 
-PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, BusinessName? Function()? businessName, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? description, String? Function()? email, List<String>? Function()? expand, IndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, Metadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? paymentMethod, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, List<TaxIdData>? Function()? taxIdData, String? Function()? testClock, }) { return PostCustomersRequest(
+return errors;}
+PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, BusinessName? Function()? businessName, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? description, String? Function()? email, List<String>? Function()? expand, IndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, Metadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? paymentMethod, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, List<TaxIdData>? Function()? taxIdData, String? Function()? testClock, }) {return PostCustomersRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,
@@ -175,7 +175,7 @@ PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? 
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
   taxIdData: taxIdData != null ? taxIdData() : this.taxIdData,
   testClock: testClock != null ? testClock() : this.testClock,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersRequest &&
           address == other.address &&
@@ -205,4 +205,4 @@ PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? 
 
 @override String toString() => 'PostCustomersRequest(\n  address: $address,\n  balance: $balance,\n  businessName: $businessName,\n  cashBalance: $cashBalance,\n  description: $description,\n  email: $email,\n  expand: $expand,\n  individualName: $individualName,\n  invoicePrefix: $invoicePrefix,\n  invoiceSettings: $invoiceSettings,\n  metadata: $metadata,\n  name: $name,\n  nextInvoiceSequence: $nextInvoiceSequence,\n  paymentMethod: $paymentMethod,\n  phone: $phone,\n  preferredLocales: $preferredLocales,\n  shipping: $shipping,\n  source: $source,\n  tax: $tax,\n  taxExempt: $taxExempt,\n  taxIdData: $taxIdData,\n  testClock: $testClock,\n)';
 
- }
+}

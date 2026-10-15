@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message3.dart';import 'package:pub_cloudflare/models/organization.dart';import 'package:pub_cloudflare/models/page_token_result_info.dart';@immutable final class OrganizationListOrganizationsResponse {const OrganizationListOrganizationsResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
 
-factory OrganizationListOrganizationsResponse.fromJson(Map<String, dynamic> json) { return OrganizationListOrganizationsResponse(
+factory OrganizationListOrganizationsResponse.fromJson(Map<String, dynamic> json) {return OrganizationListOrganizationsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => Organization.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: PageTokenResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<Map<String,dynamic>> errors;
 
@@ -21,29 +21,29 @@ final PageTokenResultInfo resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'result_info': resultInfo.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('result_info') &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && json['success'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 if (errors.isNotEmpty) { errors$.add('errors: must have <= 0 items'); }
-return errors$; } 
-OrganizationListOrganizationsResponse copyWith({List<Map<String,dynamic>>? errors, List<Message3>? messages, List<Organization>? result, PageTokenResultInfo? resultInfo, bool? success, }) { return OrganizationListOrganizationsResponse(
+return errors$;}
+OrganizationListOrganizationsResponse copyWith({List<Map<String,dynamic>>? errors, List<Message3>? messages, List<Organization>? result, PageTokenResultInfo? resultInfo, bool? success, }) {return OrganizationListOrganizationsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationListOrganizationsResponse &&
           listEquals(errors, other.errors) &&
@@ -56,4 +56,4 @@ OrganizationListOrganizationsResponse copyWith({List<Map<String,dynamic>>? error
 
 @override String toString() => 'OrganizationListOrganizationsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/draft_issue.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/item_content_type.dart';import 'package:pub_github_rest_3_1/models/item_simple/item_simple_content.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// An item belonging to a project
 @immutable final class ItemSimple {const ItemSimple({required this.id, required this.contentType, required this.createdAt, required this.updatedAt, required this.archivedAt, this.nodeId, this.content, this.creator, this.projectUrl, this.itemUrl, });
 
-factory ItemSimple.fromJson(Map<String, dynamic> json) { return ItemSimple(
+factory ItemSimple.fromJson(Map<String, dynamic> json) {return ItemSimple(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String?,
   content: json['content'] != null ? OneOf3.parse(json['content'], fromA: (v) => Issue.fromJson(v as Map<String, dynamic>), fromB: (v) => PullRequestSimple.fromJson(v as Map<String, dynamic>), fromC: (v) => DraftIssue.fromJson(v as Map<String, dynamic>),) : null,
@@ -15,7 +15,7 @@ factory ItemSimple.fromJson(Map<String, dynamic> json) { return ItemSimple(
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
   itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the project item.
 final double id;
@@ -46,7 +46,7 @@ final Uri? projectUrl;
 /// The URL of the item in the project.
 final Uri? itemUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': ?nodeId,
   if (content != null) 'content': content?.toJson(),
@@ -57,13 +57,13 @@ Map<String, dynamic> toJson() { return {
   'archived_at': archivedAt?.toIso8601String(),
   if (projectUrl != null) 'project_url': projectUrl?.toString(),
   if (itemUrl != null) 'item_url': itemUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('content_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('archived_at') && json['archived_at'] is String; } 
-ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? Function()? content, ItemContentType? contentType, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? projectUrl, Uri? Function()? itemUrl, }) { return ItemSimple(
+      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String);}
+ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? Function()? content, ItemContentType? contentType, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? projectUrl, Uri? Function()? itemUrl, }) {return ItemSimple(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   content: content != null ? content() : this.content,
@@ -74,7 +74,7 @@ ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? 
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
   projectUrl: projectUrl != null ? projectUrl() : this.projectUrl,
   itemUrl: itemUrl != null ? itemUrl() : this.itemUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ItemSimple &&
           id == other.id &&
@@ -92,4 +92,4 @@ ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? 
 
 @override String toString() => 'ItemSimple(\n  id: $id,\n  nodeId: $nodeId,\n  content: $content,\n  contentType: $contentType,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n  projectUrl: $projectUrl,\n  itemUrl: $itemUrl,\n)';
 
- }
+}

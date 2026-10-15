@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_audit_logs.dart';import 'package:pub_cloudflare/models/aaa_messages2.dart';@immutable final class AaaAuditLogsResponseCollectionVariant1 {const AaaAuditLogsResponseCollectionVariant1({this.errors, this.messages, this.result, this.success, });
 
-factory AaaAuditLogsResponseCollectionVariant1.fromJson(Map<String, dynamic> json) { return AaaAuditLogsResponseCollectionVariant1(
+factory AaaAuditLogsResponseCollectionVariant1.fromJson(Map<String, dynamic> json) {return AaaAuditLogsResponseCollectionVariant1(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AaaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => AaaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>?)?.map((e) => AaaAuditLogs.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool?,
-); }
+);}
 
 final List<AaaMessages2>? errors;
 
@@ -19,19 +19,19 @@ final List<AaaAuditLogs>? result;
 /// Example: `true`
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'result', 'success'}.contains(key)); } 
-AaaAuditLogsResponseCollectionVariant1 copyWith({List<AaaMessages2>? Function()? errors, List<AaaMessages2>? Function()? messages, List<AaaAuditLogs>? Function()? result, bool? Function()? success, }) { return AaaAuditLogsResponseCollectionVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'result', 'success'}.contains(key));}
+AaaAuditLogsResponseCollectionVariant1 copyWith({List<AaaMessages2>? Function()? errors, List<AaaMessages2>? Function()? messages, List<AaaAuditLogs>? Function()? result, bool? Function()? success, }) {return AaaAuditLogsResponseCollectionVariant1(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsResponseCollectionVariant1 &&
           listEquals(errors, other.errors) &&
@@ -43,4 +43,4 @@ AaaAuditLogsResponseCollectionVariant1 copyWith({List<AaaMessages2>? Function()?
 
 @override String toString() => 'AaaAuditLogsResponseCollectionVariant1(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_messages2.dart';@immutable final class PagesProjectDeleteProjectResponse {const PagesProjectDeleteProjectResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory PagesProjectDeleteProjectResponse.fromJson(Map<String, dynamic> json) { return PagesProjectDeleteProjectResponse(
+factory PagesProjectDeleteProjectResponse.fromJson(Map<String, dynamic> json) {return PagesProjectDeleteProjectResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] as Map<String, dynamic>?,
-); }
+);}
 
 final List<PagesMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final Map<String,dynamic>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-PagesProjectDeleteProjectResponse copyWith({List<PagesMessages2>? errors, List<PagesMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, }) { return PagesProjectDeleteProjectResponse(
+      json.containsKey('result');}
+PagesProjectDeleteProjectResponse copyWith({List<PagesMessages2>? errors, List<PagesMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, }) {return PagesProjectDeleteProjectResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesProjectDeleteProjectResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ PagesProjectDeleteProjectResponse copyWith({List<PagesMessages2>? errors, List<P
 
 @override String toString() => 'PagesProjectDeleteProjectResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

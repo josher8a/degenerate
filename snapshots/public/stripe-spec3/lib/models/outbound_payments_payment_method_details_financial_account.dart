@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details_financial_account/outbound_payments_payment_method_details_financial_account_network.dart';/// 
 @immutable final class OutboundPaymentsPaymentMethodDetailsFinancialAccount {const OutboundPaymentsPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
 
-factory OutboundPaymentsPaymentMethodDetailsFinancialAccount.fromJson(Map<String, dynamic> json) { return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
+factory OutboundPaymentsPaymentMethodDetailsFinancialAccount.fromJson(Map<String, dynamic> json) {return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
   id: json['id'] as String,
   network: OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork.fromJson(json['network'] as String),
-); }
+);}
 
 /// Token of the FinancialAccount.
 final String id;
@@ -15,20 +15,20 @@ final String id;
 /// The rails used to send funds.
 final OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork network;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'network': network.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('network'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('network');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-OutboundPaymentsPaymentMethodDetailsFinancialAccount copyWith({String? id, OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork? network, }) { return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
+return errors;}
+OutboundPaymentsPaymentMethodDetailsFinancialAccount copyWith({String? id, OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork? network, }) {return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
   id: id ?? this.id,
   network: network ?? this.network,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OutboundPaymentsPaymentMethodDetailsFinancialAccount &&
           id == other.id &&
@@ -38,4 +38,4 @@ OutboundPaymentsPaymentMethodDetailsFinancialAccount copyWith({String? id, Outbo
 
 @override String toString() => 'OutboundPaymentsPaymentMethodDetailsFinancialAccount(id: $id, network: $network)';
 
- }
+}

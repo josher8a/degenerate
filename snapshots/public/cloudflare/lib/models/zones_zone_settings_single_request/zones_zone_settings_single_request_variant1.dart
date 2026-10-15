@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ssl_recommender_enabled.dart';@immutable final class ZonesZoneSettingsSingleRequestVariant1 {const ZonesZoneSettingsSingleRequestVariant1({this.enabled});
 
-factory ZonesZoneSettingsSingleRequestVariant1.fromJson(Map<String, dynamic> json) { return ZonesZoneSettingsSingleRequestVariant1(
+factory ZonesZoneSettingsSingleRequestVariant1.fromJson(Map<String, dynamic> json) {return ZonesZoneSettingsSingleRequestVariant1(
   enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,
-); }
+);}
 
 /// ssl-recommender enrollment setting.
 final ZonesSslRecommenderEnabled? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enabled != null) 'enabled': enabled?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-ZonesZoneSettingsSingleRequestVariant1 copyWith({ZonesSslRecommenderEnabled? Function()? enabled}) { return ZonesZoneSettingsSingleRequestVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled'}.contains(key));}
+ZonesZoneSettingsSingleRequestVariant1 copyWith({ZonesSslRecommenderEnabled? Function()? enabled}) {return ZonesZoneSettingsSingleRequestVariant1(
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZoneSettingsSingleRequestVariant1 &&
           enabled == other.enabled;
@@ -25,4 +25,4 @@ ZonesZoneSettingsSingleRequestVariant1 copyWith({ZonesSslRecommenderEnabled? Fun
 
 @override String toString() => 'ZonesZoneSettingsSingleRequestVariant1(enabled: $enabled)';
 
- }
+}

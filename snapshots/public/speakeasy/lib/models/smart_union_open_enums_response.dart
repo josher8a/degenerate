@@ -3,23 +3,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/smart_union_open_enums_cat.dart';import 'package:pub_speakeasy/models/smart_union_open_enums_dog.dart';import 'package:pub_speakeasy/models/smart_union_open_enums_response/smart_union_open_enums_response_json.dart';@immutable final class SmartUnionOpenEnumsResponse {const SmartUnionOpenEnumsResponse({required this.json});
 
-factory SmartUnionOpenEnumsResponse.fromJson(Map<String, dynamic> json) { return SmartUnionOpenEnumsResponse(
+factory SmartUnionOpenEnumsResponse.fromJson(Map<String, dynamic> json) {return SmartUnionOpenEnumsResponse(
   json: switch (json['json']) {
   final Map<String, dynamic> m when m['kind'] == 'cat' => OneOf2<SmartUnionOpenEnumsCat, SmartUnionOpenEnumsDog>.a(SmartUnionOpenEnumsCat.fromJson(m)),
   final Map<String, dynamic> m when m['kind'] == 'dog' => OneOf2<SmartUnionOpenEnumsCat, SmartUnionOpenEnumsDog>.b(SmartUnionOpenEnumsDog.fromJson(m)),
   _ => OneOf2.parse(json['json'], fromA: (v) => SmartUnionOpenEnumsCat.fromJson(v as Map<String, dynamic>), fromB: (v) => SmartUnionOpenEnumsDog.fromJson(v as Map<String, dynamic>),),
 },
-); }
+);}
 
 final SmartUnionOpenEnumsResponseJson json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json': json.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json'); } 
-SmartUnionOpenEnumsResponse copyWith({SmartUnionOpenEnumsResponseJson? json}) { return SmartUnionOpenEnumsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json');}
+SmartUnionOpenEnumsResponse copyWith({SmartUnionOpenEnumsResponseJson? json}) {return SmartUnionOpenEnumsResponse(
   json: json ?? this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionOpenEnumsResponse &&
           json == other.json;
@@ -28,4 +28,4 @@ SmartUnionOpenEnumsResponse copyWith({SmartUnionOpenEnumsResponseJson? json}) { 
 
 @override String toString() => 'SmartUnionOpenEnumsResponse(json: $json)';
 
- }
+}

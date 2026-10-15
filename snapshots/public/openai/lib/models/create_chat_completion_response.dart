@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_chat_completion_response/create_chat_completion_response_choices.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type, which is always `chat.completion`.
 sealed class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject();
 
-factory CreateChatCompletionResponseObject.fromJson(String json) { return switch (json) {
+factory CreateChatCompletionResponseObject.fromJson(String json) {return switch (json) {
   'chat.completion' => chatCompletion,
   _ => CreateChatCompletionResponseObject$Unknown(json),
-}; }
+};}
 
 static const CreateChatCompletionResponseObject chatCompletion = CreateChatCompletionResponseObject$chatCompletion._();
 
 static const List<CreateChatCompletionResponseObject> values = [chatCompletion];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'chat.completion' => 'chatCompletion',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateChatCompletionResponseObject$Unknown; } 
+bool get isUnknown {return this is CreateChatCompletionResponseObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chatCompletion, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chatCompletion, required W Function(String value) $unknown, }) {return switch (this) {
       CreateChatCompletionResponseObject$chatCompletion() => chatCompletion(),
       CreateChatCompletionResponseObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatCompletion, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatCompletion, W Function(String value)? $unknown, }) {return switch (this) {
       CreateChatCompletionResponseObject$chatCompletion() => chatCompletion != null ? chatCompletion() : orElse(value),
       CreateChatCompletionResponseObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateChatCompletionResponseObject($value)';
 
- }
+}
 @immutable final class CreateChatCompletionResponseObject$chatCompletion extends CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject$chatCompletion._();
 
 @override String get value => 'chat.completion';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatComp
 
 @override int get hashCode => 'chat.completion'.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseObject$Unknown extends CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject$Unknown(this.value);
 
 @override final String value;
@@ -53,20 +53,20 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatComp
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents a chat completion response returned by model, based on the provided input.
-@immutable final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier, this.systemFingerprint, this.usage, });
+@immutable final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier = const Omittable.absent(), this.systemFingerprint, this.usage, });
 
-factory CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponse(
+factory CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) {return CreateChatCompletionResponse(
   id: json['id'] as String,
   choices: (json['choices'] as List<dynamic>).map((e) => CreateChatCompletionResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),
   created: (json['created'] as num).toInt(),
   model: json['model'] as String,
-  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
   systemFingerprint: json['system_fingerprint'] as String?,
   object: CreateChatCompletionResponseObject.fromJson(json['object'] as String),
   usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A unique identifier for the chat completion.
 final String id;
@@ -80,7 +80,7 @@ final int created;
 /// The model used for the chat completion.
 final String model;
 
-final ServiceTier? serviceTier;
+final Omittable<ServiceTier?> serviceTier;
 
 /// This fingerprint represents the backend configuration that the model runs with.
 /// 
@@ -93,31 +93,31 @@ final CreateChatCompletionResponseObject object;
 
 final CompletionUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'choices': choices.map((e) => e.toJson()).toList(),
   'created': created,
   'model': model,
-  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
   'system_fingerprint': ?systemFingerprint,
   'object': object.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('choices') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('object'); } 
-CreateChatCompletionResponse copyWith({String? id, List<CreateChatCompletionResponseChoices>? choices, int? created, String? model, ServiceTier? Function()? serviceTier, String? Function()? systemFingerprint, CreateChatCompletionResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateChatCompletionResponse(
+      json.containsKey('object');}
+CreateChatCompletionResponse copyWith({String? id, List<CreateChatCompletionResponseChoices>? choices, int? created, String? model, Omittable<ServiceTier?>? serviceTier, String? Function()? systemFingerprint, CreateChatCompletionResponseObject? object, CompletionUsage? Function()? usage, }) {return CreateChatCompletionResponse(
   id: id ?? this.id,
   choices: choices ?? this.choices,
   created: created ?? this.created,
   model: model ?? this.model,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  serviceTier: serviceTier ?? this.serviceTier,
   systemFingerprint: systemFingerprint != null ? systemFingerprint() : this.systemFingerprint,
   object: object ?? this.object,
   usage: usage != null ? usage() : this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionResponse &&
           id == other.id &&
@@ -133,4 +133,4 @@ CreateChatCompletionResponse copyWith({String? id, List<CreateChatCompletionResp
 
 @override String toString() => 'CreateChatCompletionResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)';
 
- }
+}

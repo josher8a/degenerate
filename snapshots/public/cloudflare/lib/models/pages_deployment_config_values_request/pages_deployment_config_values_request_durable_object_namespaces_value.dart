@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Durable Object binding.
 @immutable final class PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue {const PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue({required this.namespaceId});
 
-factory PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
+factory PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
   namespaceId: json['namespace_id'] as String,
-); }
+);}
 
 /// ID of the Durable Object namespace.
 /// 
 /// Example: `'5eb63bbbe01eeed093cb22bb8f5acdc3'`
 final String namespaceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'namespace_id': namespaceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('namespace_id') && json['namespace_id'] is String; } 
-PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue copyWith({String? namespaceId}) { return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('namespace_id') && json['namespace_id'] is String;}
+PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue copyWith({String? namespaceId}) {return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
   namespaceId: namespaceId ?? this.namespaceId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue &&
           namespaceId == other.namespaceId;
@@ -28,4 +28,4 @@ PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue copyWith({String?
 
 @override String toString() => 'PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(namespaceId: $namespaceId)';
 
- }
+}

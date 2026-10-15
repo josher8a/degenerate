@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingPremiumRequestUsageReportOrgUsageItems {const BillingPremiumRequestUsageReportOrgUsageItems({required this.product, required this.sku, required this.model, required this.unitType, required this.pricePerUnit, required this.grossQuantity, required this.grossAmount, required this.discountQuantity, required this.discountAmount, required this.netQuantity, required this.netAmount, });
 
-factory BillingPremiumRequestUsageReportOrgUsageItems.fromJson(Map<String, dynamic> json) { return BillingPremiumRequestUsageReportOrgUsageItems(
+factory BillingPremiumRequestUsageReportOrgUsageItems.fromJson(Map<String, dynamic> json) {return BillingPremiumRequestUsageReportOrgUsageItems(
   product: json['product'] as String,
   sku: json['sku'] as String,
   model: json['model'] as String,
@@ -15,7 +15,7 @@ factory BillingPremiumRequestUsageReportOrgUsageItems.fromJson(Map<String, dynam
   discountAmount: (json['discountAmount'] as num).toDouble(),
   netQuantity: (json['netQuantity'] as num).toDouble(),
   netAmount: (json['netAmount'] as num).toDouble(),
-); }
+);}
 
 /// Product name.
 final String product;
@@ -50,7 +50,7 @@ final double netQuantity;
 /// Net amount of the usage line item.
 final double netAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'product': product,
   'sku': sku,
   'model': model,
@@ -62,8 +62,8 @@ Map<String, dynamic> toJson() { return {
   'discountAmount': discountAmount,
   'netQuantity': netQuantity,
   'netAmount': netAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('product') && json['product'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('product') && json['product'] is String &&
       json.containsKey('sku') && json['sku'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('unitType') && json['unitType'] is String &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('produ
       json.containsKey('discountQuantity') && json['discountQuantity'] is num &&
       json.containsKey('discountAmount') && json['discountAmount'] is num &&
       json.containsKey('netQuantity') && json['netQuantity'] is num &&
-      json.containsKey('netAmount') && json['netAmount'] is num; } 
-BillingPremiumRequestUsageReportOrgUsageItems copyWith({String? product, String? sku, String? model, String? unitType, double? pricePerUnit, double? grossQuantity, double? grossAmount, double? discountQuantity, double? discountAmount, double? netQuantity, double? netAmount, }) { return BillingPremiumRequestUsageReportOrgUsageItems(
+      json.containsKey('netAmount') && json['netAmount'] is num;}
+BillingPremiumRequestUsageReportOrgUsageItems copyWith({String? product, String? sku, String? model, String? unitType, double? pricePerUnit, double? grossQuantity, double? grossAmount, double? discountQuantity, double? discountAmount, double? netQuantity, double? netAmount, }) {return BillingPremiumRequestUsageReportOrgUsageItems(
   product: product ?? this.product,
   sku: sku ?? this.sku,
   model: model ?? this.model,
@@ -86,7 +86,7 @@ BillingPremiumRequestUsageReportOrgUsageItems copyWith({String? product, String?
   discountAmount: discountAmount ?? this.discountAmount,
   netQuantity: netQuantity ?? this.netQuantity,
   netAmount: netAmount ?? this.netAmount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingPremiumRequestUsageReportOrgUsageItems &&
           product == other.product &&
@@ -105,4 +105,4 @@ BillingPremiumRequestUsageReportOrgUsageItems copyWith({String? product, String?
 
 @override String toString() => 'BillingPremiumRequestUsageReportOrgUsageItems(\n  product: $product,\n  sku: $sku,\n  model: $model,\n  unitType: $unitType,\n  pricePerUnit: $pricePerUnit,\n  grossQuantity: $grossQuantity,\n  grossAmount: $grossAmount,\n  discountQuantity: $discountQuantity,\n  discountAmount: $discountAmount,\n  netQuantity: $netQuantity,\n  netAmount: $netAmount,\n)';
 
- }
+}

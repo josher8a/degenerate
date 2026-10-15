@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/conversation_item.dart';/// A list of Conversation items.
 @immutable final class ConversationItemList {const ConversationItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
 
-factory ConversationItemList.fromJson(Map<String, dynamic> json) { return ConversationItemList(
+factory ConversationItemList.fromJson(Map<String, dynamic> json) {return ConversationItemList(
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
-); }
+);}
 
 /// The type of object returned, must be `list`.
 final ContainerFileListResourceObject object;
@@ -27,25 +27,25 @@ final String firstId;
 /// The ID of the last item in the list.
 final String lastId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'first_id': firstId,
   'last_id': lastId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('first_id') && json['first_id'] is String &&
-      json.containsKey('last_id') && json['last_id'] is String; } 
-ConversationItemList copyWith({ContainerFileListResourceObject? object, List<ConversationItem>? data, bool? hasMore, String? firstId, String? lastId, }) { return ConversationItemList(
+      json.containsKey('last_id') && json['last_id'] is String;}
+ConversationItemList copyWith({ContainerFileListResourceObject? object, List<ConversationItem>? data, bool? hasMore, String? firstId, String? lastId, }) {return ConversationItemList(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   firstId: firstId ?? this.firstId,
   lastId: lastId ?? this.lastId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConversationItemList &&
           object == other.object &&
@@ -58,4 +58,4 @@ ConversationItemList copyWith({ContainerFileListResourceObject? object, List<Con
 
 @override String toString() => 'ConversationItemList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_filter.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_offset_time.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_packet_limit.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_system.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_type.dart';@immutable final class MagicVisibilityPcapsPcapsRequestSimple {const MagicVisibilityPcapsPcapsRequestSimple({required this.packetLimit, required this.system, required this.timeLimit, required this.type, this.filterV1, this.offsetTime, });
 
-factory MagicVisibilityPcapsPcapsRequestSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsRequestSimple(
+factory MagicVisibilityPcapsPcapsRequestSimple.fromJson(Map<String, dynamic> json) {return MagicVisibilityPcapsPcapsRequestSimple(
   filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
   offsetTime: json['offset_time'] != null ? MagicVisibilityPcapsPcapsOffsetTime.fromJson(json['offset_time'] as String) : null,
   packetLimit: MagicVisibilityPcapsPcapsPacketLimit.fromJson(json['packet_limit'] as num),
   system: MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String),
   timeLimit: MagicVisibilityPcapsPcapsTimeLimitSampled.fromJson(json['time_limit'] as num),
   type: MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String),
-); }
+);}
 
 final MagicVisibilityPcapsPcapsFilter? filterV1;
 
@@ -26,26 +26,26 @@ final MagicVisibilityPcapsPcapsTimeLimitSampled timeLimit;
 
 final MagicVisibilityPcapsPcapsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (filterV1 != null) 'filter_v1': filterV1?.toJson(),
   if (offsetTime != null) 'offset_time': offsetTime?.toJson(),
   'packet_limit': packetLimit.toJson(),
   'system': system.toJson(),
   'time_limit': timeLimit.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('packet_limit') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('packet_limit') &&
       json.containsKey('system') && json['system'] == 'magic-transit' &&
       json.containsKey('time_limit') &&
-      json.containsKey('type'); } 
-MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsOffsetTime? Function()? offsetTime, MagicVisibilityPcapsPcapsPacketLimit? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestSimple(
+      json.containsKey('type');}
+MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsOffsetTime? Function()? offsetTime, MagicVisibilityPcapsPcapsPacketLimit? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit, MagicVisibilityPcapsPcapsType? type, }) {return MagicVisibilityPcapsPcapsRequestSimple(
   filterV1: filterV1 != null ? filterV1() : this.filterV1,
   offsetTime: offsetTime != null ? offsetTime() : this.offsetTime,
   packetLimit: packetLimit ?? this.packetLimit,
   system: system ?? this.system,
   timeLimit: timeLimit ?? this.timeLimit,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsRequestSimple &&
           filterV1 == other.filterV1 &&
@@ -59,4 +59,4 @@ MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter
 
 @override String toString() => 'MagicVisibilityPcapsPcapsRequestSimple(filterV1: $filterV1, offsetTime: $offsetTime, packetLimit: $packetLimit, system: $system, timeLimit: $timeLimit, type: $type)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReportingCategory {const ReportingCategory();
 
-factory ReportingCategory.fromJson(String json) { return switch (json) {
+factory ReportingCategory.fromJson(String json) {return switch (json) {
   'advance' => advance,
   'advance_funding' => advanceFunding,
   'anticipation_repayment' => anticipationRepayment,
@@ -42,7 +42,7 @@ factory ReportingCategory.fromJson(String json) { return switch (json) {
   'transfer_reversal' => transferReversal,
   'unreconciled_customer_funds' => unreconciledCustomerFunds,
   _ => ReportingCategory$Unknown(json),
-}; }
+};}
 
 static const ReportingCategory advance = ReportingCategory$advance._();
 
@@ -121,9 +121,9 @@ static const ReportingCategory unreconciledCustomerFunds = ReportingCategory$unr
 static const List<ReportingCategory> values = [advance, advanceFunding, anticipationRepayment, charge, chargeFailure, climateOrderPurchase, climateOrderRefund, connectCollectionTransfer, connectReservedFunds, contribution, dispute, disputeReversal, fee, financingPaydown, financingPaydownReversal, financingPayout, financingPayoutReversal, issuingAuthorizationHold, issuingAuthorizationRelease, issuingDispute, issuingTransaction, networkCost, otherAdjustment, partialCaptureReversal, payout, payoutReversal, platformEarning, platformEarningRefund, refund, refundFailure, riskReservedFunds, tax, topup, topupReversal, transfer, transferReversal, unreconciledCustomerFunds];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'advance' => 'advance',
   'advance_funding' => 'advanceFunding',
   'anticipation_repayment' => 'anticipationRepayment',
@@ -162,11 +162,11 @@ String get name { return switch (value) {
   'transfer_reversal' => 'transferReversal',
   'unreconciled_customer_funds' => 'unreconciledCustomerFunds',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReportingCategory$Unknown; } 
+bool get isUnknown {return this is ReportingCategory$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() advance, required W Function() advanceFunding, required W Function() anticipationRepayment, required W Function() charge, required W Function() chargeFailure, required W Function() climateOrderPurchase, required W Function() climateOrderRefund, required W Function() connectCollectionTransfer, required W Function() connectReservedFunds, required W Function() contribution, required W Function() dispute, required W Function() disputeReversal, required W Function() fee, required W Function() financingPaydown, required W Function() financingPaydownReversal, required W Function() financingPayout, required W Function() financingPayoutReversal, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() issuingDispute, required W Function() issuingTransaction, required W Function() networkCost, required W Function() otherAdjustment, required W Function() partialCaptureReversal, required W Function() payout, required W Function() payoutReversal, required W Function() platformEarning, required W Function() platformEarningRefund, required W Function() refund, required W Function() refundFailure, required W Function() riskReservedFunds, required W Function() tax, required W Function() topup, required W Function() topupReversal, required W Function() transfer, required W Function() transferReversal, required W Function() unreconciledCustomerFunds, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() advance, required W Function() advanceFunding, required W Function() anticipationRepayment, required W Function() charge, required W Function() chargeFailure, required W Function() climateOrderPurchase, required W Function() climateOrderRefund, required W Function() connectCollectionTransfer, required W Function() connectReservedFunds, required W Function() contribution, required W Function() dispute, required W Function() disputeReversal, required W Function() fee, required W Function() financingPaydown, required W Function() financingPaydownReversal, required W Function() financingPayout, required W Function() financingPayoutReversal, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() issuingDispute, required W Function() issuingTransaction, required W Function() networkCost, required W Function() otherAdjustment, required W Function() partialCaptureReversal, required W Function() payout, required W Function() payoutReversal, required W Function() platformEarning, required W Function() platformEarningRefund, required W Function() refund, required W Function() refundFailure, required W Function() riskReservedFunds, required W Function() tax, required W Function() topup, required W Function() topupReversal, required W Function() transfer, required W Function() transferReversal, required W Function() unreconciledCustomerFunds, required W Function(String value) $unknown, }) {return switch (this) {
       ReportingCategory$advance() => advance(),
       ReportingCategory$advanceFunding() => advanceFunding(),
       ReportingCategory$anticipationRepayment() => anticipationRepayment(),
@@ -205,9 +205,9 @@ W when<W>({required W Function() advance, required W Function() advanceFunding, 
       ReportingCategory$transferReversal() => transferReversal(),
       ReportingCategory$unreconciledCustomerFunds() => unreconciledCustomerFunds(),
       ReportingCategory$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance, W Function()? advanceFunding, W Function()? anticipationRepayment, W Function()? charge, W Function()? chargeFailure, W Function()? climateOrderPurchase, W Function()? climateOrderRefund, W Function()? connectCollectionTransfer, W Function()? connectReservedFunds, W Function()? contribution, W Function()? dispute, W Function()? disputeReversal, W Function()? fee, W Function()? financingPaydown, W Function()? financingPaydownReversal, W Function()? financingPayout, W Function()? financingPayoutReversal, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? issuingDispute, W Function()? issuingTransaction, W Function()? networkCost, W Function()? otherAdjustment, W Function()? partialCaptureReversal, W Function()? payout, W Function()? payoutReversal, W Function()? platformEarning, W Function()? platformEarningRefund, W Function()? refund, W Function()? refundFailure, W Function()? riskReservedFunds, W Function()? tax, W Function()? topup, W Function()? topupReversal, W Function()? transfer, W Function()? transferReversal, W Function()? unreconciledCustomerFunds, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance, W Function()? advanceFunding, W Function()? anticipationRepayment, W Function()? charge, W Function()? chargeFailure, W Function()? climateOrderPurchase, W Function()? climateOrderRefund, W Function()? connectCollectionTransfer, W Function()? connectReservedFunds, W Function()? contribution, W Function()? dispute, W Function()? disputeReversal, W Function()? fee, W Function()? financingPaydown, W Function()? financingPaydownReversal, W Function()? financingPayout, W Function()? financingPayoutReversal, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? issuingDispute, W Function()? issuingTransaction, W Function()? networkCost, W Function()? otherAdjustment, W Function()? partialCaptureReversal, W Function()? payout, W Function()? payoutReversal, W Function()? platformEarning, W Function()? platformEarningRefund, W Function()? refund, W Function()? refundFailure, W Function()? riskReservedFunds, W Function()? tax, W Function()? topup, W Function()? topupReversal, W Function()? transfer, W Function()? transferReversal, W Function()? unreconciledCustomerFunds, W Function(String value)? $unknown, }) {return switch (this) {
       ReportingCategory$advance() => advance != null ? advance() : orElse(value),
       ReportingCategory$advanceFunding() => advanceFunding != null ? advanceFunding() : orElse(value),
       ReportingCategory$anticipationRepayment() => anticipationRepayment != null ? anticipationRepayment() : orElse(value),
@@ -246,10 +246,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
       ReportingCategory$transferReversal() => transferReversal != null ? transferReversal() : orElse(value),
       ReportingCategory$unreconciledCustomerFunds() => unreconciledCustomerFunds != null ? unreconciledCustomerFunds() : orElse(value),
       ReportingCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReportingCategory($value)';
 
- }
+}
 @immutable final class ReportingCategory$advance extends ReportingCategory {const ReportingCategory$advance._();
 
 @override String get value => 'advance';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'advance'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$advanceFunding extends ReportingCategory {const ReportingCategory$advanceFunding._();
 
 @override String get value => 'advance_funding';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'advance_funding'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$anticipationRepayment extends ReportingCategory {const ReportingCategory$anticipationRepayment._();
 
 @override String get value => 'anticipation_repayment';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'anticipation_repayment'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$charge extends ReportingCategory {const ReportingCategory$charge._();
 
 @override String get value => 'charge';
@@ -285,7 +285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'charge'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$chargeFailure extends ReportingCategory {const ReportingCategory$chargeFailure._();
 
 @override String get value => 'charge_failure';
@@ -294,7 +294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'charge_failure'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$climateOrderPurchase extends ReportingCategory {const ReportingCategory$climateOrderPurchase._();
 
 @override String get value => 'climate_order_purchase';
@@ -303,7 +303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'climate_order_purchase'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$climateOrderRefund extends ReportingCategory {const ReportingCategory$climateOrderRefund._();
 
 @override String get value => 'climate_order_refund';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'climate_order_refund'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$connectCollectionTransfer extends ReportingCategory {const ReportingCategory$connectCollectionTransfer._();
 
 @override String get value => 'connect_collection_transfer';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'connect_collection_transfer'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$connectReservedFunds extends ReportingCategory {const ReportingCategory$connectReservedFunds._();
 
 @override String get value => 'connect_reserved_funds';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'connect_reserved_funds'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$contribution extends ReportingCategory {const ReportingCategory$contribution._();
 
 @override String get value => 'contribution';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'contribution'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$dispute extends ReportingCategory {const ReportingCategory$dispute._();
 
 @override String get value => 'dispute';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'dispute'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$disputeReversal extends ReportingCategory {const ReportingCategory$disputeReversal._();
 
 @override String get value => 'dispute_reversal';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'dispute_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$fee extends ReportingCategory {const ReportingCategory$fee._();
 
 @override String get value => 'fee';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'fee'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$financingPaydown extends ReportingCategory {const ReportingCategory$financingPaydown._();
 
 @override String get value => 'financing_paydown';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'financing_paydown'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$financingPaydownReversal extends ReportingCategory {const ReportingCategory$financingPaydownReversal._();
 
 @override String get value => 'financing_paydown_reversal';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'financing_paydown_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$financingPayout extends ReportingCategory {const ReportingCategory$financingPayout._();
 
 @override String get value => 'financing_payout';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'financing_payout'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$financingPayoutReversal extends ReportingCategory {const ReportingCategory$financingPayoutReversal._();
 
 @override String get value => 'financing_payout_reversal';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'financing_payout_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$issuingAuthorizationHold extends ReportingCategory {const ReportingCategory$issuingAuthorizationHold._();
 
 @override String get value => 'issuing_authorization_hold';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'issuing_authorization_hold'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$issuingAuthorizationRelease extends ReportingCategory {const ReportingCategory$issuingAuthorizationRelease._();
 
 @override String get value => 'issuing_authorization_release';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'issuing_authorization_release'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$issuingDispute extends ReportingCategory {const ReportingCategory$issuingDispute._();
 
 @override String get value => 'issuing_dispute';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'issuing_dispute'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$issuingTransaction extends ReportingCategory {const ReportingCategory$issuingTransaction._();
 
 @override String get value => 'issuing_transaction';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'issuing_transaction'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$networkCost extends ReportingCategory {const ReportingCategory$networkCost._();
 
 @override String get value => 'network_cost';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'network_cost'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$otherAdjustment extends ReportingCategory {const ReportingCategory$otherAdjustment._();
 
 @override String get value => 'other_adjustment';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'other_adjustment'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$partialCaptureReversal extends ReportingCategory {const ReportingCategory$partialCaptureReversal._();
 
 @override String get value => 'partial_capture_reversal';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'partial_capture_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$payout extends ReportingCategory {const ReportingCategory$payout._();
 
 @override String get value => 'payout';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'payout'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$payoutReversal extends ReportingCategory {const ReportingCategory$payoutReversal._();
 
 @override String get value => 'payout_reversal';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'payout_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$platformEarning extends ReportingCategory {const ReportingCategory$platformEarning._();
 
 @override String get value => 'platform_earning';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'platform_earning'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$platformEarningRefund extends ReportingCategory {const ReportingCategory$platformEarningRefund._();
 
 @override String get value => 'platform_earning_refund';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'platform_earning_refund'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$refund extends ReportingCategory {const ReportingCategory$refund._();
 
 @override String get value => 'refund';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'refund'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$refundFailure extends ReportingCategory {const ReportingCategory$refundFailure._();
 
 @override String get value => 'refund_failure';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'refund_failure'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$riskReservedFunds extends ReportingCategory {const ReportingCategory$riskReservedFunds._();
 
 @override String get value => 'risk_reserved_funds';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'risk_reserved_funds'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$tax extends ReportingCategory {const ReportingCategory$tax._();
 
 @override String get value => 'tax';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'tax'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$topup extends ReportingCategory {const ReportingCategory$topup._();
 
 @override String get value => 'topup';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'topup'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$topupReversal extends ReportingCategory {const ReportingCategory$topupReversal._();
 
 @override String get value => 'topup_reversal';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'topup_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$transfer extends ReportingCategory {const ReportingCategory$transfer._();
 
 @override String get value => 'transfer';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'transfer'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$transferReversal extends ReportingCategory {const ReportingCategory$transferReversal._();
 
 @override String get value => 'transfer_reversal';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'transfer_reversal'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$unreconciledCustomerFunds extends ReportingCategory {const ReportingCategory$unreconciledCustomerFunds._();
 
 @override String get value => 'unreconciled_customer_funds';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => 'unreconciled_customer_funds'.hashCode;
 
- }
+}
 @immutable final class ReportingCategory$Unknown extends ReportingCategory {const ReportingCategory$Unknown(this.value);
 
 @override final String value;
@@ -592,10 +592,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advance,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class Timezone {const Timezone();
 
-factory Timezone.fromJson(String json) { return switch (json) {
+factory Timezone.fromJson(String json) {return switch (json) {
   'Africa/Abidjan' => africaAbidjan,
   'Africa/Accra' => africaAccra,
   'Africa/Addis_Ababa' => africaAddisAbaba,
@@ -1196,7 +1196,7 @@ factory Timezone.fromJson(String json) { return switch (json) {
   'WET' => wet,
   'Zulu' => zulu,
   _ => Timezone$Unknown(json),
-}; }
+};}
 
 static const Timezone africaAbidjan = Timezone$africaAbidjan._();
 
@@ -2399,9 +2399,9 @@ static const Timezone zulu = Timezone$zulu._();
 static const List<Timezone> values = [africaAbidjan, africaAccra, africaAddisAbaba, africaAlgiers, africaAsmara, africaAsmera, africaBamako, africaBangui, africaBanjul, africaBissau, africaBlantyre, africaBrazzaville, africaBujumbura, africaCairo, africaCasablanca, africaCeuta, africaConakry, africaDakar, africaDarEsSalaam, africaDjibouti, africaDouala, africaElAaiun, africaFreetown, africaGaborone, africaHarare, africaJohannesburg, africaJuba, africaKampala, africaKhartoum, africaKigali, africaKinshasa, africaLagos, africaLibreville, africaLome, africaLuanda, africaLubumbashi, africaLusaka, africaMalabo, africaMaputo, africaMaseru, africaMbabane, africaMogadishu, africaMonrovia, africaNairobi, africaNdjamena, africaNiamey, africaNouakchott, africaOuagadougou, africaPortoNovo, africaSaoTome, africaTimbuktu, africaTripoli, africaTunis, africaWindhoek, americaAdak, americaAnchorage, americaAnguilla, americaAntigua, americaAraguaina, americaArgentinaBuenosAires, americaArgentinaCatamarca, americaArgentinaComodRivadavia, americaArgentinaCordoba, americaArgentinaJujuy, americaArgentinaLaRioja, americaArgentinaMendoza, americaArgentinaRioGallegos, americaArgentinaSalta, americaArgentinaSanJuan, americaArgentinaSanLuis, americaArgentinaTucuman, americaArgentinaUshuaia, americaAruba, americaAsuncion, americaAtikokan, americaAtka, americaBahia, americaBahiaBanderas, americaBarbados, americaBelem, americaBelize, americaBlancSablon, americaBoaVista, americaBogota, americaBoise, americaBuenosAires, americaCambridgeBay, americaCampoGrande, americaCancun, americaCaracas, americaCatamarca, americaCayenne, americaCayman, americaChicago, americaChihuahua, americaCiudadJuarez, americaCoralHarbour, americaCordoba, americaCostaRica, americaCoyhaique, americaCreston, americaCuiaba, americaCuracao, americaDanmarkshavn, americaDawson, americaDawsonCreek, americaDenver, americaDetroit, americaDominica, americaEdmonton, americaEirunepe, americaElSalvador, americaEnsenada, americaFortNelson, americaFortWayne, americaFortaleza, americaGlaceBay, americaGodthab, americaGooseBay, americaGrandTurk, americaGrenada, americaGuadeloupe, americaGuatemala, americaGuayaquil, americaGuyana, americaHalifax, americaHavana, americaHermosillo, americaIndianaIndianapolis, americaIndianaKnox, americaIndianaMarengo, americaIndianaPetersburg, americaIndianaTellCity, americaIndianaVevay, americaIndianaVincennes, americaIndianaWinamac, americaIndianapolis, americaInuvik, americaIqaluit, americaJamaica, americaJujuy, americaJuneau, americaKentuckyLouisville, americaKentuckyMonticello, americaKnoxIn, americaKralendijk, americaLaPaz, americaLima, americaLosAngeles, americaLouisville, americaLowerPrinces, americaMaceio, americaManagua, americaManaus, americaMarigot, americaMartinique, americaMatamoros, americaMazatlan, americaMendoza, americaMenominee, americaMerida, americaMetlakatla, americaMexicoCity, americaMiquelon, americaMoncton, americaMonterrey, americaMontevideo, americaMontreal, americaMontserrat, americaNassau, americaNewYork, americaNipigon, americaNome, americaNoronha, americaNorthDakotaBeulah, americaNorthDakotaCenter, americaNorthDakotaNewSalem, americaNuuk, americaOjinaga, americaPanama, americaPangnirtung, americaParamaribo, americaPhoenix, americaPortAuPrince, americaPortOfSpain, americaPortoAcre, americaPortoVelho, americaPuertoRico, americaPuntaArenas, americaRainyRiver, americaRankinInlet, americaRecife, americaRegina, americaResolute, americaRioBranco, americaRosario, americaSantaIsabel, americaSantarem, americaSantiago, americaSantoDomingo, americaSaoPaulo, americaScoresbysund, americaShiprock, americaSitka, americaStBarthelemy, americaStJohns, americaStKitts, americaStLucia, americaStThomas, americaStVincent, americaSwiftCurrent, americaTegucigalpa, americaThule, americaThunderBay, americaTijuana, americaToronto, americaTortola, americaVancouver, americaVirgin, americaWhitehorse, americaWinnipeg, americaYakutat, americaYellowknife, antarcticaCasey, antarcticaDavis, antarcticaDumontDUrville, antarcticaMacquarie, antarcticaMawson, antarcticaMcMurdo, antarcticaPalmer, antarcticaRothera, antarcticaSouthPole, antarcticaSyowa, antarcticaTroll, antarcticaVostok, arcticLongyearbyen, asiaAden, asiaAlmaty, asiaAmman, asiaAnadyr, asiaAqtau, asiaAqtobe, asiaAshgabat, asiaAshkhabad, asiaAtyrau, asiaBaghdad, asiaBahrain, asiaBaku, asiaBangkok, asiaBarnaul, asiaBeirut, asiaBishkek, asiaBrunei, asiaCalcutta, asiaChita, asiaChoibalsan, asiaChongqing, asiaChungking, asiaColombo, asiaDacca, asiaDamascus, asiaDhaka, asiaDili, asiaDubai, asiaDushanbe, asiaFamagusta, asiaGaza, asiaHarbin, asiaHebron, asiaHoChiMinh, asiaHongKong, asiaHovd, asiaIrkutsk, asiaIstanbul, asiaJakarta, asiaJayapura, asiaJerusalem, asiaKabul, asiaKamchatka, asiaKarachi, asiaKashgar, asiaKathmandu, asiaKatmandu, asiaKhandyga, asiaKolkata, asiaKrasnoyarsk, asiaKualaLumpur, asiaKuching, asiaKuwait, asiaMacao, asiaMacau, asiaMagadan, asiaMakassar, asiaManila, asiaMuscat, asiaNicosia, asiaNovokuznetsk, asiaNovosibirsk, asiaOmsk, asiaOral, asiaPhnomPenh, asiaPontianak, asiaPyongyang, asiaQatar, asiaQostanay, asiaQyzylorda, asiaRangoon, asiaRiyadh, asiaSaigon, asiaSakhalin, asiaSamarkand, asiaSeoul, asiaShanghai, asiaSingapore, asiaSrednekolymsk, asiaTaipei, asiaTashkent, asiaTbilisi, asiaTehran, asiaTelAviv, asiaThimbu, asiaThimphu, asiaTokyo, asiaTomsk, asiaUjungPandang, asiaUlaanbaatar, asiaUlanBator, asiaUrumqi, asiaUstNera, asiaVientiane, asiaVladivostok, asiaYakutsk, asiaYangon, asiaYekaterinburg, asiaYerevan, atlanticAzores, atlanticBermuda, atlanticCanary, atlanticCapeVerde, atlanticFaeroe, atlanticFaroe, atlanticJanMayen, atlanticMadeira, atlanticReykjavik, atlanticSouthGeorgia, atlanticStHelena, atlanticStanley, australiaAct, australiaAdelaide, australiaBrisbane, australiaBrokenHill, australiaCanberra, australiaCurrie, australiaDarwin, australiaEucla, australiaHobart, australiaLhi, australiaLindeman, australiaLordHowe, australiaMelbourne, australiaNsw, australiaNorth, australiaPerth, australiaQueensland, australiaSouth, australiaSydney, australiaTasmania, australiaVictoria, australiaWest, australiaYancowinna, brazilAcre, brazilDeNoronha, brazilEast, brazilWest, cet, cst6Cdt, canadaAtlantic, canadaCentral, canadaEastern, canadaMountain, canadaNewfoundland, canadaPacific, canadaSaskatchewan, canadaYukon, chileContinental, chileEasterIsland, cuba, eet, est, est5Edt, egypt, eire, etcGmt, etcGmt0, etcGmt1, etcGmt10, etcGmt11, etcGmt12, etcGmt2, etcGmt3, etcGmt4, etcGmt5, etcGmt6, etcGmt7, etcGmt8, etcGmt9, etcGmt02, etcGmt13, etcGmt102, etcGmt112, etcGmt122, etcGmt132, etcGmt14, etcGmt22, etcGmt32, etcGmt42, etcGmt52, etcGmt62, etcGmt72, etcGmt82, etcGmt92, etcGmt03, etcGreenwich, etcUct, etcUtc, etcUniversal, etcZulu, europeAmsterdam, europeAndorra, europeAstrakhan, europeAthens, europeBelfast, europeBelgrade, europeBerlin, europeBratislava, europeBrussels, europeBucharest, europeBudapest, europeBusingen, europeChisinau, europeCopenhagen, europeDublin, europeGibraltar, europeGuernsey, europeHelsinki, europeIsleOfMan, europeIstanbul, europeJersey, europeKaliningrad, europeKiev, europeKirov, europeKyiv, europeLisbon, europeLjubljana, europeLondon, europeLuxembourg, europeMadrid, europeMalta, europeMariehamn, europeMinsk, europeMonaco, europeMoscow, europeNicosia, europeOslo, europeParis, europePodgorica, europePrague, europeRiga, europeRome, europeSamara, europeSanMarino, europeSarajevo, europeSaratov, europeSimferopol, europeSkopje, europeSofia, europeStockholm, europeTallinn, europeTirane, europeTiraspol, europeUlyanovsk, europeUzhgorod, europeVaduz, europeVatican, europeVienna, europeVilnius, europeVolgograd, europeWarsaw, europeZagreb, europeZaporozhye, europeZurich, $factory, gb, gbEire, gmt, gmt0, gmt02, gmt03, greenwich, hst, hongkong, iceland, indianAntananarivo, indianChagos, indianChristmas, indianCocos, indianComoro, indianKerguelen, indianMahe, indianMaldives, indianMauritius, indianMayotte, indianReunion, iran, israel, jamaica, japan, kwajalein, libya, met, mst, mst7Mdt, mexicoBajaNorte, mexicoBajaSur, mexicoGeneral, nz, nzChat, navajo, prc, pst8Pdt, pacificApia, pacificAuckland, pacificBougainville, pacificChatham, pacificChuuk, pacificEaster, pacificEfate, pacificEnderbury, pacificFakaofo, pacificFiji, pacificFunafuti, pacificGalapagos, pacificGambier, pacificGuadalcanal, pacificGuam, pacificHonolulu, pacificJohnston, pacificKanton, pacificKiritimati, pacificKosrae, pacificKwajalein, pacificMajuro, pacificMarquesas, pacificMidway, pacificNauru, pacificNiue, pacificNorfolk, pacificNoumea, pacificPagoPago, pacificPalau, pacificPitcairn, pacificPohnpei, pacificPonape, pacificPortMoresby, pacificRarotonga, pacificSaipan, pacificSamoa, pacificTahiti, pacificTarawa, pacificTongatapu, pacificTruk, pacificWake, pacificWallis, pacificYap, poland, portugal, roc, rok, singapore, turkey, uct, usAlaska, usAleutian, usArizona, usCentral, usEastIndiana, usEastern, usHawaii, usIndianaStarke, usMichigan, usMountain, usPacific, usPacificNew, usSamoa, utc, universal, wSu, wet, zulu];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Africa/Abidjan' => 'africaAbidjan',
   'Africa/Accra' => 'africaAccra',
   'Africa/Addis_Ababa' => 'africaAddisAbaba',
@@ -3002,11 +3002,11 @@ String get name { return switch (value) {
   'WET' => 'wet',
   'Zulu' => 'zulu',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Timezone$Unknown; } 
+bool get isUnknown {return this is Timezone$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() africaAbidjan, required W Function() africaAccra, required W Function() africaAddisAbaba, required W Function() africaAlgiers, required W Function() africaAsmara, required W Function() africaAsmera, required W Function() africaBamako, required W Function() africaBangui, required W Function() africaBanjul, required W Function() africaBissau, required W Function() africaBlantyre, required W Function() africaBrazzaville, required W Function() africaBujumbura, required W Function() africaCairo, required W Function() africaCasablanca, required W Function() africaCeuta, required W Function() africaConakry, required W Function() africaDakar, required W Function() africaDarEsSalaam, required W Function() africaDjibouti, required W Function() africaDouala, required W Function() africaElAaiun, required W Function() africaFreetown, required W Function() africaGaborone, required W Function() africaHarare, required W Function() africaJohannesburg, required W Function() africaJuba, required W Function() africaKampala, required W Function() africaKhartoum, required W Function() africaKigali, required W Function() africaKinshasa, required W Function() africaLagos, required W Function() africaLibreville, required W Function() africaLome, required W Function() africaLuanda, required W Function() africaLubumbashi, required W Function() africaLusaka, required W Function() africaMalabo, required W Function() africaMaputo, required W Function() africaMaseru, required W Function() africaMbabane, required W Function() africaMogadishu, required W Function() africaMonrovia, required W Function() africaNairobi, required W Function() africaNdjamena, required W Function() africaNiamey, required W Function() africaNouakchott, required W Function() africaOuagadougou, required W Function() africaPortoNovo, required W Function() africaSaoTome, required W Function() africaTimbuktu, required W Function() africaTripoli, required W Function() africaTunis, required W Function() africaWindhoek, required W Function() americaAdak, required W Function() americaAnchorage, required W Function() americaAnguilla, required W Function() americaAntigua, required W Function() americaAraguaina, required W Function() americaArgentinaBuenosAires, required W Function() americaArgentinaCatamarca, required W Function() americaArgentinaComodRivadavia, required W Function() americaArgentinaCordoba, required W Function() americaArgentinaJujuy, required W Function() americaArgentinaLaRioja, required W Function() americaArgentinaMendoza, required W Function() americaArgentinaRioGallegos, required W Function() americaArgentinaSalta, required W Function() americaArgentinaSanJuan, required W Function() americaArgentinaSanLuis, required W Function() americaArgentinaTucuman, required W Function() americaArgentinaUshuaia, required W Function() americaAruba, required W Function() americaAsuncion, required W Function() americaAtikokan, required W Function() americaAtka, required W Function() americaBahia, required W Function() americaBahiaBanderas, required W Function() americaBarbados, required W Function() americaBelem, required W Function() americaBelize, required W Function() americaBlancSablon, required W Function() americaBoaVista, required W Function() americaBogota, required W Function() americaBoise, required W Function() americaBuenosAires, required W Function() americaCambridgeBay, required W Function() americaCampoGrande, required W Function() americaCancun, required W Function() americaCaracas, required W Function() americaCatamarca, required W Function() americaCayenne, required W Function() americaCayman, required W Function() americaChicago, required W Function() americaChihuahua, required W Function() americaCiudadJuarez, required W Function() americaCoralHarbour, required W Function() americaCordoba, required W Function() americaCostaRica, required W Function() americaCoyhaique, required W Function() americaCreston, required W Function() americaCuiaba, required W Function() americaCuracao, required W Function() americaDanmarkshavn, required W Function() americaDawson, required W Function() americaDawsonCreek, required W Function() americaDenver, required W Function() americaDetroit, required W Function() americaDominica, required W Function() americaEdmonton, required W Function() americaEirunepe, required W Function() americaElSalvador, required W Function() americaEnsenada, required W Function() americaFortNelson, required W Function() americaFortWayne, required W Function() americaFortaleza, required W Function() americaGlaceBay, required W Function() americaGodthab, required W Function() americaGooseBay, required W Function() americaGrandTurk, required W Function() americaGrenada, required W Function() americaGuadeloupe, required W Function() americaGuatemala, required W Function() americaGuayaquil, required W Function() americaGuyana, required W Function() americaHalifax, required W Function() americaHavana, required W Function() americaHermosillo, required W Function() americaIndianaIndianapolis, required W Function() americaIndianaKnox, required W Function() americaIndianaMarengo, required W Function() americaIndianaPetersburg, required W Function() americaIndianaTellCity, required W Function() americaIndianaVevay, required W Function() americaIndianaVincennes, required W Function() americaIndianaWinamac, required W Function() americaIndianapolis, required W Function() americaInuvik, required W Function() americaIqaluit, required W Function() americaJamaica, required W Function() americaJujuy, required W Function() americaJuneau, required W Function() americaKentuckyLouisville, required W Function() americaKentuckyMonticello, required W Function() americaKnoxIn, required W Function() americaKralendijk, required W Function() americaLaPaz, required W Function() americaLima, required W Function() americaLosAngeles, required W Function() americaLouisville, required W Function() americaLowerPrinces, required W Function() americaMaceio, required W Function() americaManagua, required W Function() americaManaus, required W Function() americaMarigot, required W Function() americaMartinique, required W Function() americaMatamoros, required W Function() americaMazatlan, required W Function() americaMendoza, required W Function() americaMenominee, required W Function() americaMerida, required W Function() americaMetlakatla, required W Function() americaMexicoCity, required W Function() americaMiquelon, required W Function() americaMoncton, required W Function() americaMonterrey, required W Function() americaMontevideo, required W Function() americaMontreal, required W Function() americaMontserrat, required W Function() americaNassau, required W Function() americaNewYork, required W Function() americaNipigon, required W Function() americaNome, required W Function() americaNoronha, required W Function() americaNorthDakotaBeulah, required W Function() americaNorthDakotaCenter, required W Function() americaNorthDakotaNewSalem, required W Function() americaNuuk, required W Function() americaOjinaga, required W Function() americaPanama, required W Function() americaPangnirtung, required W Function() americaParamaribo, required W Function() americaPhoenix, required W Function() americaPortAuPrince, required W Function() americaPortOfSpain, required W Function() americaPortoAcre, required W Function() americaPortoVelho, required W Function() americaPuertoRico, required W Function() americaPuntaArenas, required W Function() americaRainyRiver, required W Function() americaRankinInlet, required W Function() americaRecife, required W Function() americaRegina, required W Function() americaResolute, required W Function() americaRioBranco, required W Function() americaRosario, required W Function() americaSantaIsabel, required W Function() americaSantarem, required W Function() americaSantiago, required W Function() americaSantoDomingo, required W Function() americaSaoPaulo, required W Function() americaScoresbysund, required W Function() americaShiprock, required W Function() americaSitka, required W Function() americaStBarthelemy, required W Function() americaStJohns, required W Function() americaStKitts, required W Function() americaStLucia, required W Function() americaStThomas, required W Function() americaStVincent, required W Function() americaSwiftCurrent, required W Function() americaTegucigalpa, required W Function() americaThule, required W Function() americaThunderBay, required W Function() americaTijuana, required W Function() americaToronto, required W Function() americaTortola, required W Function() americaVancouver, required W Function() americaVirgin, required W Function() americaWhitehorse, required W Function() americaWinnipeg, required W Function() americaYakutat, required W Function() americaYellowknife, required W Function() antarcticaCasey, required W Function() antarcticaDavis, required W Function() antarcticaDumontDUrville, required W Function() antarcticaMacquarie, required W Function() antarcticaMawson, required W Function() antarcticaMcMurdo, required W Function() antarcticaPalmer, required W Function() antarcticaRothera, required W Function() antarcticaSouthPole, required W Function() antarcticaSyowa, required W Function() antarcticaTroll, required W Function() antarcticaVostok, required W Function() arcticLongyearbyen, required W Function() asiaAden, required W Function() asiaAlmaty, required W Function() asiaAmman, required W Function() asiaAnadyr, required W Function() asiaAqtau, required W Function() asiaAqtobe, required W Function() asiaAshgabat, required W Function() asiaAshkhabad, required W Function() asiaAtyrau, required W Function() asiaBaghdad, required W Function() asiaBahrain, required W Function() asiaBaku, required W Function() asiaBangkok, required W Function() asiaBarnaul, required W Function() asiaBeirut, required W Function() asiaBishkek, required W Function() asiaBrunei, required W Function() asiaCalcutta, required W Function() asiaChita, required W Function() asiaChoibalsan, required W Function() asiaChongqing, required W Function() asiaChungking, required W Function() asiaColombo, required W Function() asiaDacca, required W Function() asiaDamascus, required W Function() asiaDhaka, required W Function() asiaDili, required W Function() asiaDubai, required W Function() asiaDushanbe, required W Function() asiaFamagusta, required W Function() asiaGaza, required W Function() asiaHarbin, required W Function() asiaHebron, required W Function() asiaHoChiMinh, required W Function() asiaHongKong, required W Function() asiaHovd, required W Function() asiaIrkutsk, required W Function() asiaIstanbul, required W Function() asiaJakarta, required W Function() asiaJayapura, required W Function() asiaJerusalem, required W Function() asiaKabul, required W Function() asiaKamchatka, required W Function() asiaKarachi, required W Function() asiaKashgar, required W Function() asiaKathmandu, required W Function() asiaKatmandu, required W Function() asiaKhandyga, required W Function() asiaKolkata, required W Function() asiaKrasnoyarsk, required W Function() asiaKualaLumpur, required W Function() asiaKuching, required W Function() asiaKuwait, required W Function() asiaMacao, required W Function() asiaMacau, required W Function() asiaMagadan, required W Function() asiaMakassar, required W Function() asiaManila, required W Function() asiaMuscat, required W Function() asiaNicosia, required W Function() asiaNovokuznetsk, required W Function() asiaNovosibirsk, required W Function() asiaOmsk, required W Function() asiaOral, required W Function() asiaPhnomPenh, required W Function() asiaPontianak, required W Function() asiaPyongyang, required W Function() asiaQatar, required W Function() asiaQostanay, required W Function() asiaQyzylorda, required W Function() asiaRangoon, required W Function() asiaRiyadh, required W Function() asiaSaigon, required W Function() asiaSakhalin, required W Function() asiaSamarkand, required W Function() asiaSeoul, required W Function() asiaShanghai, required W Function() asiaSingapore, required W Function() asiaSrednekolymsk, required W Function() asiaTaipei, required W Function() asiaTashkent, required W Function() asiaTbilisi, required W Function() asiaTehran, required W Function() asiaTelAviv, required W Function() asiaThimbu, required W Function() asiaThimphu, required W Function() asiaTokyo, required W Function() asiaTomsk, required W Function() asiaUjungPandang, required W Function() asiaUlaanbaatar, required W Function() asiaUlanBator, required W Function() asiaUrumqi, required W Function() asiaUstNera, required W Function() asiaVientiane, required W Function() asiaVladivostok, required W Function() asiaYakutsk, required W Function() asiaYangon, required W Function() asiaYekaterinburg, required W Function() asiaYerevan, required W Function() atlanticAzores, required W Function() atlanticBermuda, required W Function() atlanticCanary, required W Function() atlanticCapeVerde, required W Function() atlanticFaeroe, required W Function() atlanticFaroe, required W Function() atlanticJanMayen, required W Function() atlanticMadeira, required W Function() atlanticReykjavik, required W Function() atlanticSouthGeorgia, required W Function() atlanticStHelena, required W Function() atlanticStanley, required W Function() australiaAct, required W Function() australiaAdelaide, required W Function() australiaBrisbane, required W Function() australiaBrokenHill, required W Function() australiaCanberra, required W Function() australiaCurrie, required W Function() australiaDarwin, required W Function() australiaEucla, required W Function() australiaHobart, required W Function() australiaLhi, required W Function() australiaLindeman, required W Function() australiaLordHowe, required W Function() australiaMelbourne, required W Function() australiaNsw, required W Function() australiaNorth, required W Function() australiaPerth, required W Function() australiaQueensland, required W Function() australiaSouth, required W Function() australiaSydney, required W Function() australiaTasmania, required W Function() australiaVictoria, required W Function() australiaWest, required W Function() australiaYancowinna, required W Function() brazilAcre, required W Function() brazilDeNoronha, required W Function() brazilEast, required W Function() brazilWest, required W Function() cet, required W Function() cst6Cdt, required W Function() canadaAtlantic, required W Function() canadaCentral, required W Function() canadaEastern, required W Function() canadaMountain, required W Function() canadaNewfoundland, required W Function() canadaPacific, required W Function() canadaSaskatchewan, required W Function() canadaYukon, required W Function() chileContinental, required W Function() chileEasterIsland, required W Function() cuba, required W Function() eet, required W Function() est, required W Function() est5Edt, required W Function() egypt, required W Function() eire, required W Function() etcGmt, required W Function() etcGmt0, required W Function() etcGmt1, required W Function() etcGmt10, required W Function() etcGmt11, required W Function() etcGmt12, required W Function() etcGmt2, required W Function() etcGmt3, required W Function() etcGmt4, required W Function() etcGmt5, required W Function() etcGmt6, required W Function() etcGmt7, required W Function() etcGmt8, required W Function() etcGmt9, required W Function() etcGmt02, required W Function() etcGmt13, required W Function() etcGmt102, required W Function() etcGmt112, required W Function() etcGmt122, required W Function() etcGmt132, required W Function() etcGmt14, required W Function() etcGmt22, required W Function() etcGmt32, required W Function() etcGmt42, required W Function() etcGmt52, required W Function() etcGmt62, required W Function() etcGmt72, required W Function() etcGmt82, required W Function() etcGmt92, required W Function() etcGmt03, required W Function() etcGreenwich, required W Function() etcUct, required W Function() etcUtc, required W Function() etcUniversal, required W Function() etcZulu, required W Function() europeAmsterdam, required W Function() europeAndorra, required W Function() europeAstrakhan, required W Function() europeAthens, required W Function() europeBelfast, required W Function() europeBelgrade, required W Function() europeBerlin, required W Function() europeBratislava, required W Function() europeBrussels, required W Function() europeBucharest, required W Function() europeBudapest, required W Function() europeBusingen, required W Function() europeChisinau, required W Function() europeCopenhagen, required W Function() europeDublin, required W Function() europeGibraltar, required W Function() europeGuernsey, required W Function() europeHelsinki, required W Function() europeIsleOfMan, required W Function() europeIstanbul, required W Function() europeJersey, required W Function() europeKaliningrad, required W Function() europeKiev, required W Function() europeKirov, required W Function() europeKyiv, required W Function() europeLisbon, required W Function() europeLjubljana, required W Function() europeLondon, required W Function() europeLuxembourg, required W Function() europeMadrid, required W Function() europeMalta, required W Function() europeMariehamn, required W Function() europeMinsk, required W Function() europeMonaco, required W Function() europeMoscow, required W Function() europeNicosia, required W Function() europeOslo, required W Function() europeParis, required W Function() europePodgorica, required W Function() europePrague, required W Function() europeRiga, required W Function() europeRome, required W Function() europeSamara, required W Function() europeSanMarino, required W Function() europeSarajevo, required W Function() europeSaratov, required W Function() europeSimferopol, required W Function() europeSkopje, required W Function() europeSofia, required W Function() europeStockholm, required W Function() europeTallinn, required W Function() europeTirane, required W Function() europeTiraspol, required W Function() europeUlyanovsk, required W Function() europeUzhgorod, required W Function() europeVaduz, required W Function() europeVatican, required W Function() europeVienna, required W Function() europeVilnius, required W Function() europeVolgograd, required W Function() europeWarsaw, required W Function() europeZagreb, required W Function() europeZaporozhye, required W Function() europeZurich, required W Function() $factory, required W Function() gb, required W Function() gbEire, required W Function() gmt, required W Function() gmt0, required W Function() gmt02, required W Function() gmt03, required W Function() greenwich, required W Function() hst, required W Function() hongkong, required W Function() iceland, required W Function() indianAntananarivo, required W Function() indianChagos, required W Function() indianChristmas, required W Function() indianCocos, required W Function() indianComoro, required W Function() indianKerguelen, required W Function() indianMahe, required W Function() indianMaldives, required W Function() indianMauritius, required W Function() indianMayotte, required W Function() indianReunion, required W Function() iran, required W Function() israel, required W Function() jamaica, required W Function() japan, required W Function() kwajalein, required W Function() libya, required W Function() met, required W Function() mst, required W Function() mst7Mdt, required W Function() mexicoBajaNorte, required W Function() mexicoBajaSur, required W Function() mexicoGeneral, required W Function() nz, required W Function() nzChat, required W Function() navajo, required W Function() prc, required W Function() pst8Pdt, required W Function() pacificApia, required W Function() pacificAuckland, required W Function() pacificBougainville, required W Function() pacificChatham, required W Function() pacificChuuk, required W Function() pacificEaster, required W Function() pacificEfate, required W Function() pacificEnderbury, required W Function() pacificFakaofo, required W Function() pacificFiji, required W Function() pacificFunafuti, required W Function() pacificGalapagos, required W Function() pacificGambier, required W Function() pacificGuadalcanal, required W Function() pacificGuam, required W Function() pacificHonolulu, required W Function() pacificJohnston, required W Function() pacificKanton, required W Function() pacificKiritimati, required W Function() pacificKosrae, required W Function() pacificKwajalein, required W Function() pacificMajuro, required W Function() pacificMarquesas, required W Function() pacificMidway, required W Function() pacificNauru, required W Function() pacificNiue, required W Function() pacificNorfolk, required W Function() pacificNoumea, required W Function() pacificPagoPago, required W Function() pacificPalau, required W Function() pacificPitcairn, required W Function() pacificPohnpei, required W Function() pacificPonape, required W Function() pacificPortMoresby, required W Function() pacificRarotonga, required W Function() pacificSaipan, required W Function() pacificSamoa, required W Function() pacificTahiti, required W Function() pacificTarawa, required W Function() pacificTongatapu, required W Function() pacificTruk, required W Function() pacificWake, required W Function() pacificWallis, required W Function() pacificYap, required W Function() poland, required W Function() portugal, required W Function() roc, required W Function() rok, required W Function() singapore, required W Function() turkey, required W Function() uct, required W Function() usAlaska, required W Function() usAleutian, required W Function() usArizona, required W Function() usCentral, required W Function() usEastIndiana, required W Function() usEastern, required W Function() usHawaii, required W Function() usIndianaStarke, required W Function() usMichigan, required W Function() usMountain, required W Function() usPacific, required W Function() usPacificNew, required W Function() usSamoa, required W Function() utc, required W Function() universal, required W Function() wSu, required W Function() wet, required W Function() zulu, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() africaAbidjan, required W Function() africaAccra, required W Function() africaAddisAbaba, required W Function() africaAlgiers, required W Function() africaAsmara, required W Function() africaAsmera, required W Function() africaBamako, required W Function() africaBangui, required W Function() africaBanjul, required W Function() africaBissau, required W Function() africaBlantyre, required W Function() africaBrazzaville, required W Function() africaBujumbura, required W Function() africaCairo, required W Function() africaCasablanca, required W Function() africaCeuta, required W Function() africaConakry, required W Function() africaDakar, required W Function() africaDarEsSalaam, required W Function() africaDjibouti, required W Function() africaDouala, required W Function() africaElAaiun, required W Function() africaFreetown, required W Function() africaGaborone, required W Function() africaHarare, required W Function() africaJohannesburg, required W Function() africaJuba, required W Function() africaKampala, required W Function() africaKhartoum, required W Function() africaKigali, required W Function() africaKinshasa, required W Function() africaLagos, required W Function() africaLibreville, required W Function() africaLome, required W Function() africaLuanda, required W Function() africaLubumbashi, required W Function() africaLusaka, required W Function() africaMalabo, required W Function() africaMaputo, required W Function() africaMaseru, required W Function() africaMbabane, required W Function() africaMogadishu, required W Function() africaMonrovia, required W Function() africaNairobi, required W Function() africaNdjamena, required W Function() africaNiamey, required W Function() africaNouakchott, required W Function() africaOuagadougou, required W Function() africaPortoNovo, required W Function() africaSaoTome, required W Function() africaTimbuktu, required W Function() africaTripoli, required W Function() africaTunis, required W Function() africaWindhoek, required W Function() americaAdak, required W Function() americaAnchorage, required W Function() americaAnguilla, required W Function() americaAntigua, required W Function() americaAraguaina, required W Function() americaArgentinaBuenosAires, required W Function() americaArgentinaCatamarca, required W Function() americaArgentinaComodRivadavia, required W Function() americaArgentinaCordoba, required W Function() americaArgentinaJujuy, required W Function() americaArgentinaLaRioja, required W Function() americaArgentinaMendoza, required W Function() americaArgentinaRioGallegos, required W Function() americaArgentinaSalta, required W Function() americaArgentinaSanJuan, required W Function() americaArgentinaSanLuis, required W Function() americaArgentinaTucuman, required W Function() americaArgentinaUshuaia, required W Function() americaAruba, required W Function() americaAsuncion, required W Function() americaAtikokan, required W Function() americaAtka, required W Function() americaBahia, required W Function() americaBahiaBanderas, required W Function() americaBarbados, required W Function() americaBelem, required W Function() americaBelize, required W Function() americaBlancSablon, required W Function() americaBoaVista, required W Function() americaBogota, required W Function() americaBoise, required W Function() americaBuenosAires, required W Function() americaCambridgeBay, required W Function() americaCampoGrande, required W Function() americaCancun, required W Function() americaCaracas, required W Function() americaCatamarca, required W Function() americaCayenne, required W Function() americaCayman, required W Function() americaChicago, required W Function() americaChihuahua, required W Function() americaCiudadJuarez, required W Function() americaCoralHarbour, required W Function() americaCordoba, required W Function() americaCostaRica, required W Function() americaCoyhaique, required W Function() americaCreston, required W Function() americaCuiaba, required W Function() americaCuracao, required W Function() americaDanmarkshavn, required W Function() americaDawson, required W Function() americaDawsonCreek, required W Function() americaDenver, required W Function() americaDetroit, required W Function() americaDominica, required W Function() americaEdmonton, required W Function() americaEirunepe, required W Function() americaElSalvador, required W Function() americaEnsenada, required W Function() americaFortNelson, required W Function() americaFortWayne, required W Function() americaFortaleza, required W Function() americaGlaceBay, required W Function() americaGodthab, required W Function() americaGooseBay, required W Function() americaGrandTurk, required W Function() americaGrenada, required W Function() americaGuadeloupe, required W Function() americaGuatemala, required W Function() americaGuayaquil, required W Function() americaGuyana, required W Function() americaHalifax, required W Function() americaHavana, required W Function() americaHermosillo, required W Function() americaIndianaIndianapolis, required W Function() americaIndianaKnox, required W Function() americaIndianaMarengo, required W Function() americaIndianaPetersburg, required W Function() americaIndianaTellCity, required W Function() americaIndianaVevay, required W Function() americaIndianaVincennes, required W Function() americaIndianaWinamac, required W Function() americaIndianapolis, required W Function() americaInuvik, required W Function() americaIqaluit, required W Function() americaJamaica, required W Function() americaJujuy, required W Function() americaJuneau, required W Function() americaKentuckyLouisville, required W Function() americaKentuckyMonticello, required W Function() americaKnoxIn, required W Function() americaKralendijk, required W Function() americaLaPaz, required W Function() americaLima, required W Function() americaLosAngeles, required W Function() americaLouisville, required W Function() americaLowerPrinces, required W Function() americaMaceio, required W Function() americaManagua, required W Function() americaManaus, required W Function() americaMarigot, required W Function() americaMartinique, required W Function() americaMatamoros, required W Function() americaMazatlan, required W Function() americaMendoza, required W Function() americaMenominee, required W Function() americaMerida, required W Function() americaMetlakatla, required W Function() americaMexicoCity, required W Function() americaMiquelon, required W Function() americaMoncton, required W Function() americaMonterrey, required W Function() americaMontevideo, required W Function() americaMontreal, required W Function() americaMontserrat, required W Function() americaNassau, required W Function() americaNewYork, required W Function() americaNipigon, required W Function() americaNome, required W Function() americaNoronha, required W Function() americaNorthDakotaBeulah, required W Function() americaNorthDakotaCenter, required W Function() americaNorthDakotaNewSalem, required W Function() americaNuuk, required W Function() americaOjinaga, required W Function() americaPanama, required W Function() americaPangnirtung, required W Function() americaParamaribo, required W Function() americaPhoenix, required W Function() americaPortAuPrince, required W Function() americaPortOfSpain, required W Function() americaPortoAcre, required W Function() americaPortoVelho, required W Function() americaPuertoRico, required W Function() americaPuntaArenas, required W Function() americaRainyRiver, required W Function() americaRankinInlet, required W Function() americaRecife, required W Function() americaRegina, required W Function() americaResolute, required W Function() americaRioBranco, required W Function() americaRosario, required W Function() americaSantaIsabel, required W Function() americaSantarem, required W Function() americaSantiago, required W Function() americaSantoDomingo, required W Function() americaSaoPaulo, required W Function() americaScoresbysund, required W Function() americaShiprock, required W Function() americaSitka, required W Function() americaStBarthelemy, required W Function() americaStJohns, required W Function() americaStKitts, required W Function() americaStLucia, required W Function() americaStThomas, required W Function() americaStVincent, required W Function() americaSwiftCurrent, required W Function() americaTegucigalpa, required W Function() americaThule, required W Function() americaThunderBay, required W Function() americaTijuana, required W Function() americaToronto, required W Function() americaTortola, required W Function() americaVancouver, required W Function() americaVirgin, required W Function() americaWhitehorse, required W Function() americaWinnipeg, required W Function() americaYakutat, required W Function() americaYellowknife, required W Function() antarcticaCasey, required W Function() antarcticaDavis, required W Function() antarcticaDumontDUrville, required W Function() antarcticaMacquarie, required W Function() antarcticaMawson, required W Function() antarcticaMcMurdo, required W Function() antarcticaPalmer, required W Function() antarcticaRothera, required W Function() antarcticaSouthPole, required W Function() antarcticaSyowa, required W Function() antarcticaTroll, required W Function() antarcticaVostok, required W Function() arcticLongyearbyen, required W Function() asiaAden, required W Function() asiaAlmaty, required W Function() asiaAmman, required W Function() asiaAnadyr, required W Function() asiaAqtau, required W Function() asiaAqtobe, required W Function() asiaAshgabat, required W Function() asiaAshkhabad, required W Function() asiaAtyrau, required W Function() asiaBaghdad, required W Function() asiaBahrain, required W Function() asiaBaku, required W Function() asiaBangkok, required W Function() asiaBarnaul, required W Function() asiaBeirut, required W Function() asiaBishkek, required W Function() asiaBrunei, required W Function() asiaCalcutta, required W Function() asiaChita, required W Function() asiaChoibalsan, required W Function() asiaChongqing, required W Function() asiaChungking, required W Function() asiaColombo, required W Function() asiaDacca, required W Function() asiaDamascus, required W Function() asiaDhaka, required W Function() asiaDili, required W Function() asiaDubai, required W Function() asiaDushanbe, required W Function() asiaFamagusta, required W Function() asiaGaza, required W Function() asiaHarbin, required W Function() asiaHebron, required W Function() asiaHoChiMinh, required W Function() asiaHongKong, required W Function() asiaHovd, required W Function() asiaIrkutsk, required W Function() asiaIstanbul, required W Function() asiaJakarta, required W Function() asiaJayapura, required W Function() asiaJerusalem, required W Function() asiaKabul, required W Function() asiaKamchatka, required W Function() asiaKarachi, required W Function() asiaKashgar, required W Function() asiaKathmandu, required W Function() asiaKatmandu, required W Function() asiaKhandyga, required W Function() asiaKolkata, required W Function() asiaKrasnoyarsk, required W Function() asiaKualaLumpur, required W Function() asiaKuching, required W Function() asiaKuwait, required W Function() asiaMacao, required W Function() asiaMacau, required W Function() asiaMagadan, required W Function() asiaMakassar, required W Function() asiaManila, required W Function() asiaMuscat, required W Function() asiaNicosia, required W Function() asiaNovokuznetsk, required W Function() asiaNovosibirsk, required W Function() asiaOmsk, required W Function() asiaOral, required W Function() asiaPhnomPenh, required W Function() asiaPontianak, required W Function() asiaPyongyang, required W Function() asiaQatar, required W Function() asiaQostanay, required W Function() asiaQyzylorda, required W Function() asiaRangoon, required W Function() asiaRiyadh, required W Function() asiaSaigon, required W Function() asiaSakhalin, required W Function() asiaSamarkand, required W Function() asiaSeoul, required W Function() asiaShanghai, required W Function() asiaSingapore, required W Function() asiaSrednekolymsk, required W Function() asiaTaipei, required W Function() asiaTashkent, required W Function() asiaTbilisi, required W Function() asiaTehran, required W Function() asiaTelAviv, required W Function() asiaThimbu, required W Function() asiaThimphu, required W Function() asiaTokyo, required W Function() asiaTomsk, required W Function() asiaUjungPandang, required W Function() asiaUlaanbaatar, required W Function() asiaUlanBator, required W Function() asiaUrumqi, required W Function() asiaUstNera, required W Function() asiaVientiane, required W Function() asiaVladivostok, required W Function() asiaYakutsk, required W Function() asiaYangon, required W Function() asiaYekaterinburg, required W Function() asiaYerevan, required W Function() atlanticAzores, required W Function() atlanticBermuda, required W Function() atlanticCanary, required W Function() atlanticCapeVerde, required W Function() atlanticFaeroe, required W Function() atlanticFaroe, required W Function() atlanticJanMayen, required W Function() atlanticMadeira, required W Function() atlanticReykjavik, required W Function() atlanticSouthGeorgia, required W Function() atlanticStHelena, required W Function() atlanticStanley, required W Function() australiaAct, required W Function() australiaAdelaide, required W Function() australiaBrisbane, required W Function() australiaBrokenHill, required W Function() australiaCanberra, required W Function() australiaCurrie, required W Function() australiaDarwin, required W Function() australiaEucla, required W Function() australiaHobart, required W Function() australiaLhi, required W Function() australiaLindeman, required W Function() australiaLordHowe, required W Function() australiaMelbourne, required W Function() australiaNsw, required W Function() australiaNorth, required W Function() australiaPerth, required W Function() australiaQueensland, required W Function() australiaSouth, required W Function() australiaSydney, required W Function() australiaTasmania, required W Function() australiaVictoria, required W Function() australiaWest, required W Function() australiaYancowinna, required W Function() brazilAcre, required W Function() brazilDeNoronha, required W Function() brazilEast, required W Function() brazilWest, required W Function() cet, required W Function() cst6Cdt, required W Function() canadaAtlantic, required W Function() canadaCentral, required W Function() canadaEastern, required W Function() canadaMountain, required W Function() canadaNewfoundland, required W Function() canadaPacific, required W Function() canadaSaskatchewan, required W Function() canadaYukon, required W Function() chileContinental, required W Function() chileEasterIsland, required W Function() cuba, required W Function() eet, required W Function() est, required W Function() est5Edt, required W Function() egypt, required W Function() eire, required W Function() etcGmt, required W Function() etcGmt0, required W Function() etcGmt1, required W Function() etcGmt10, required W Function() etcGmt11, required W Function() etcGmt12, required W Function() etcGmt2, required W Function() etcGmt3, required W Function() etcGmt4, required W Function() etcGmt5, required W Function() etcGmt6, required W Function() etcGmt7, required W Function() etcGmt8, required W Function() etcGmt9, required W Function() etcGmt02, required W Function() etcGmt13, required W Function() etcGmt102, required W Function() etcGmt112, required W Function() etcGmt122, required W Function() etcGmt132, required W Function() etcGmt14, required W Function() etcGmt22, required W Function() etcGmt32, required W Function() etcGmt42, required W Function() etcGmt52, required W Function() etcGmt62, required W Function() etcGmt72, required W Function() etcGmt82, required W Function() etcGmt92, required W Function() etcGmt03, required W Function() etcGreenwich, required W Function() etcUct, required W Function() etcUtc, required W Function() etcUniversal, required W Function() etcZulu, required W Function() europeAmsterdam, required W Function() europeAndorra, required W Function() europeAstrakhan, required W Function() europeAthens, required W Function() europeBelfast, required W Function() europeBelgrade, required W Function() europeBerlin, required W Function() europeBratislava, required W Function() europeBrussels, required W Function() europeBucharest, required W Function() europeBudapest, required W Function() europeBusingen, required W Function() europeChisinau, required W Function() europeCopenhagen, required W Function() europeDublin, required W Function() europeGibraltar, required W Function() europeGuernsey, required W Function() europeHelsinki, required W Function() europeIsleOfMan, required W Function() europeIstanbul, required W Function() europeJersey, required W Function() europeKaliningrad, required W Function() europeKiev, required W Function() europeKirov, required W Function() europeKyiv, required W Function() europeLisbon, required W Function() europeLjubljana, required W Function() europeLondon, required W Function() europeLuxembourg, required W Function() europeMadrid, required W Function() europeMalta, required W Function() europeMariehamn, required W Function() europeMinsk, required W Function() europeMonaco, required W Function() europeMoscow, required W Function() europeNicosia, required W Function() europeOslo, required W Function() europeParis, required W Function() europePodgorica, required W Function() europePrague, required W Function() europeRiga, required W Function() europeRome, required W Function() europeSamara, required W Function() europeSanMarino, required W Function() europeSarajevo, required W Function() europeSaratov, required W Function() europeSimferopol, required W Function() europeSkopje, required W Function() europeSofia, required W Function() europeStockholm, required W Function() europeTallinn, required W Function() europeTirane, required W Function() europeTiraspol, required W Function() europeUlyanovsk, required W Function() europeUzhgorod, required W Function() europeVaduz, required W Function() europeVatican, required W Function() europeVienna, required W Function() europeVilnius, required W Function() europeVolgograd, required W Function() europeWarsaw, required W Function() europeZagreb, required W Function() europeZaporozhye, required W Function() europeZurich, required W Function() $factory, required W Function() gb, required W Function() gbEire, required W Function() gmt, required W Function() gmt0, required W Function() gmt02, required W Function() gmt03, required W Function() greenwich, required W Function() hst, required W Function() hongkong, required W Function() iceland, required W Function() indianAntananarivo, required W Function() indianChagos, required W Function() indianChristmas, required W Function() indianCocos, required W Function() indianComoro, required W Function() indianKerguelen, required W Function() indianMahe, required W Function() indianMaldives, required W Function() indianMauritius, required W Function() indianMayotte, required W Function() indianReunion, required W Function() iran, required W Function() israel, required W Function() jamaica, required W Function() japan, required W Function() kwajalein, required W Function() libya, required W Function() met, required W Function() mst, required W Function() mst7Mdt, required W Function() mexicoBajaNorte, required W Function() mexicoBajaSur, required W Function() mexicoGeneral, required W Function() nz, required W Function() nzChat, required W Function() navajo, required W Function() prc, required W Function() pst8Pdt, required W Function() pacificApia, required W Function() pacificAuckland, required W Function() pacificBougainville, required W Function() pacificChatham, required W Function() pacificChuuk, required W Function() pacificEaster, required W Function() pacificEfate, required W Function() pacificEnderbury, required W Function() pacificFakaofo, required W Function() pacificFiji, required W Function() pacificFunafuti, required W Function() pacificGalapagos, required W Function() pacificGambier, required W Function() pacificGuadalcanal, required W Function() pacificGuam, required W Function() pacificHonolulu, required W Function() pacificJohnston, required W Function() pacificKanton, required W Function() pacificKiritimati, required W Function() pacificKosrae, required W Function() pacificKwajalein, required W Function() pacificMajuro, required W Function() pacificMarquesas, required W Function() pacificMidway, required W Function() pacificNauru, required W Function() pacificNiue, required W Function() pacificNorfolk, required W Function() pacificNoumea, required W Function() pacificPagoPago, required W Function() pacificPalau, required W Function() pacificPitcairn, required W Function() pacificPohnpei, required W Function() pacificPonape, required W Function() pacificPortMoresby, required W Function() pacificRarotonga, required W Function() pacificSaipan, required W Function() pacificSamoa, required W Function() pacificTahiti, required W Function() pacificTarawa, required W Function() pacificTongatapu, required W Function() pacificTruk, required W Function() pacificWake, required W Function() pacificWallis, required W Function() pacificYap, required W Function() poland, required W Function() portugal, required W Function() roc, required W Function() rok, required W Function() singapore, required W Function() turkey, required W Function() uct, required W Function() usAlaska, required W Function() usAleutian, required W Function() usArizona, required W Function() usCentral, required W Function() usEastIndiana, required W Function() usEastern, required W Function() usHawaii, required W Function() usIndianaStarke, required W Function() usMichigan, required W Function() usMountain, required W Function() usPacific, required W Function() usPacificNew, required W Function() usSamoa, required W Function() utc, required W Function() universal, required W Function() wSu, required W Function() wet, required W Function() zulu, required W Function(String value) $unknown, }) {return switch (this) {
       Timezone$africaAbidjan() => africaAbidjan(),
       Timezone$africaAccra() => africaAccra(),
       Timezone$africaAddisAbaba() => africaAddisAbaba(),
@@ -3607,9 +3607,9 @@ W when<W>({required W Function() africaAbidjan, required W Function() africaAccr
       Timezone$wet() => wet(),
       Timezone$zulu() => zulu(),
       Timezone$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAbidjan, W Function()? africaAccra, W Function()? africaAddisAbaba, W Function()? africaAlgiers, W Function()? africaAsmara, W Function()? africaAsmera, W Function()? africaBamako, W Function()? africaBangui, W Function()? africaBanjul, W Function()? africaBissau, W Function()? africaBlantyre, W Function()? africaBrazzaville, W Function()? africaBujumbura, W Function()? africaCairo, W Function()? africaCasablanca, W Function()? africaCeuta, W Function()? africaConakry, W Function()? africaDakar, W Function()? africaDarEsSalaam, W Function()? africaDjibouti, W Function()? africaDouala, W Function()? africaElAaiun, W Function()? africaFreetown, W Function()? africaGaborone, W Function()? africaHarare, W Function()? africaJohannesburg, W Function()? africaJuba, W Function()? africaKampala, W Function()? africaKhartoum, W Function()? africaKigali, W Function()? africaKinshasa, W Function()? africaLagos, W Function()? africaLibreville, W Function()? africaLome, W Function()? africaLuanda, W Function()? africaLubumbashi, W Function()? africaLusaka, W Function()? africaMalabo, W Function()? africaMaputo, W Function()? africaMaseru, W Function()? africaMbabane, W Function()? africaMogadishu, W Function()? africaMonrovia, W Function()? africaNairobi, W Function()? africaNdjamena, W Function()? africaNiamey, W Function()? africaNouakchott, W Function()? africaOuagadougou, W Function()? africaPortoNovo, W Function()? africaSaoTome, W Function()? africaTimbuktu, W Function()? africaTripoli, W Function()? africaTunis, W Function()? africaWindhoek, W Function()? americaAdak, W Function()? americaAnchorage, W Function()? americaAnguilla, W Function()? americaAntigua, W Function()? americaAraguaina, W Function()? americaArgentinaBuenosAires, W Function()? americaArgentinaCatamarca, W Function()? americaArgentinaComodRivadavia, W Function()? americaArgentinaCordoba, W Function()? americaArgentinaJujuy, W Function()? americaArgentinaLaRioja, W Function()? americaArgentinaMendoza, W Function()? americaArgentinaRioGallegos, W Function()? americaArgentinaSalta, W Function()? americaArgentinaSanJuan, W Function()? americaArgentinaSanLuis, W Function()? americaArgentinaTucuman, W Function()? americaArgentinaUshuaia, W Function()? americaAruba, W Function()? americaAsuncion, W Function()? americaAtikokan, W Function()? americaAtka, W Function()? americaBahia, W Function()? americaBahiaBanderas, W Function()? americaBarbados, W Function()? americaBelem, W Function()? americaBelize, W Function()? americaBlancSablon, W Function()? americaBoaVista, W Function()? americaBogota, W Function()? americaBoise, W Function()? americaBuenosAires, W Function()? americaCambridgeBay, W Function()? americaCampoGrande, W Function()? americaCancun, W Function()? americaCaracas, W Function()? americaCatamarca, W Function()? americaCayenne, W Function()? americaCayman, W Function()? americaChicago, W Function()? americaChihuahua, W Function()? americaCiudadJuarez, W Function()? americaCoralHarbour, W Function()? americaCordoba, W Function()? americaCostaRica, W Function()? americaCoyhaique, W Function()? americaCreston, W Function()? americaCuiaba, W Function()? americaCuracao, W Function()? americaDanmarkshavn, W Function()? americaDawson, W Function()? americaDawsonCreek, W Function()? americaDenver, W Function()? americaDetroit, W Function()? americaDominica, W Function()? americaEdmonton, W Function()? americaEirunepe, W Function()? americaElSalvador, W Function()? americaEnsenada, W Function()? americaFortNelson, W Function()? americaFortWayne, W Function()? americaFortaleza, W Function()? americaGlaceBay, W Function()? americaGodthab, W Function()? americaGooseBay, W Function()? americaGrandTurk, W Function()? americaGrenada, W Function()? americaGuadeloupe, W Function()? americaGuatemala, W Function()? americaGuayaquil, W Function()? americaGuyana, W Function()? americaHalifax, W Function()? americaHavana, W Function()? americaHermosillo, W Function()? americaIndianaIndianapolis, W Function()? americaIndianaKnox, W Function()? americaIndianaMarengo, W Function()? americaIndianaPetersburg, W Function()? americaIndianaTellCity, W Function()? americaIndianaVevay, W Function()? americaIndianaVincennes, W Function()? americaIndianaWinamac, W Function()? americaIndianapolis, W Function()? americaInuvik, W Function()? americaIqaluit, W Function()? americaJamaica, W Function()? americaJujuy, W Function()? americaJuneau, W Function()? americaKentuckyLouisville, W Function()? americaKentuckyMonticello, W Function()? americaKnoxIn, W Function()? americaKralendijk, W Function()? americaLaPaz, W Function()? americaLima, W Function()? americaLosAngeles, W Function()? americaLouisville, W Function()? americaLowerPrinces, W Function()? americaMaceio, W Function()? americaManagua, W Function()? americaManaus, W Function()? americaMarigot, W Function()? americaMartinique, W Function()? americaMatamoros, W Function()? americaMazatlan, W Function()? americaMendoza, W Function()? americaMenominee, W Function()? americaMerida, W Function()? americaMetlakatla, W Function()? americaMexicoCity, W Function()? americaMiquelon, W Function()? americaMoncton, W Function()? americaMonterrey, W Function()? americaMontevideo, W Function()? americaMontreal, W Function()? americaMontserrat, W Function()? americaNassau, W Function()? americaNewYork, W Function()? americaNipigon, W Function()? americaNome, W Function()? americaNoronha, W Function()? americaNorthDakotaBeulah, W Function()? americaNorthDakotaCenter, W Function()? americaNorthDakotaNewSalem, W Function()? americaNuuk, W Function()? americaOjinaga, W Function()? americaPanama, W Function()? americaPangnirtung, W Function()? americaParamaribo, W Function()? americaPhoenix, W Function()? americaPortAuPrince, W Function()? americaPortOfSpain, W Function()? americaPortoAcre, W Function()? americaPortoVelho, W Function()? americaPuertoRico, W Function()? americaPuntaArenas, W Function()? americaRainyRiver, W Function()? americaRankinInlet, W Function()? americaRecife, W Function()? americaRegina, W Function()? americaResolute, W Function()? americaRioBranco, W Function()? americaRosario, W Function()? americaSantaIsabel, W Function()? americaSantarem, W Function()? americaSantiago, W Function()? americaSantoDomingo, W Function()? americaSaoPaulo, W Function()? americaScoresbysund, W Function()? americaShiprock, W Function()? americaSitka, W Function()? americaStBarthelemy, W Function()? americaStJohns, W Function()? americaStKitts, W Function()? americaStLucia, W Function()? americaStThomas, W Function()? americaStVincent, W Function()? americaSwiftCurrent, W Function()? americaTegucigalpa, W Function()? americaThule, W Function()? americaThunderBay, W Function()? americaTijuana, W Function()? americaToronto, W Function()? americaTortola, W Function()? americaVancouver, W Function()? americaVirgin, W Function()? americaWhitehorse, W Function()? americaWinnipeg, W Function()? americaYakutat, W Function()? americaYellowknife, W Function()? antarcticaCasey, W Function()? antarcticaDavis, W Function()? antarcticaDumontDUrville, W Function()? antarcticaMacquarie, W Function()? antarcticaMawson, W Function()? antarcticaMcMurdo, W Function()? antarcticaPalmer, W Function()? antarcticaRothera, W Function()? antarcticaSouthPole, W Function()? antarcticaSyowa, W Function()? antarcticaTroll, W Function()? antarcticaVostok, W Function()? arcticLongyearbyen, W Function()? asiaAden, W Function()? asiaAlmaty, W Function()? asiaAmman, W Function()? asiaAnadyr, W Function()? asiaAqtau, W Function()? asiaAqtobe, W Function()? asiaAshgabat, W Function()? asiaAshkhabad, W Function()? asiaAtyrau, W Function()? asiaBaghdad, W Function()? asiaBahrain, W Function()? asiaBaku, W Function()? asiaBangkok, W Function()? asiaBarnaul, W Function()? asiaBeirut, W Function()? asiaBishkek, W Function()? asiaBrunei, W Function()? asiaCalcutta, W Function()? asiaChita, W Function()? asiaChoibalsan, W Function()? asiaChongqing, W Function()? asiaChungking, W Function()? asiaColombo, W Function()? asiaDacca, W Function()? asiaDamascus, W Function()? asiaDhaka, W Function()? asiaDili, W Function()? asiaDubai, W Function()? asiaDushanbe, W Function()? asiaFamagusta, W Function()? asiaGaza, W Function()? asiaHarbin, W Function()? asiaHebron, W Function()? asiaHoChiMinh, W Function()? asiaHongKong, W Function()? asiaHovd, W Function()? asiaIrkutsk, W Function()? asiaIstanbul, W Function()? asiaJakarta, W Function()? asiaJayapura, W Function()? asiaJerusalem, W Function()? asiaKabul, W Function()? asiaKamchatka, W Function()? asiaKarachi, W Function()? asiaKashgar, W Function()? asiaKathmandu, W Function()? asiaKatmandu, W Function()? asiaKhandyga, W Function()? asiaKolkata, W Function()? asiaKrasnoyarsk, W Function()? asiaKualaLumpur, W Function()? asiaKuching, W Function()? asiaKuwait, W Function()? asiaMacao, W Function()? asiaMacau, W Function()? asiaMagadan, W Function()? asiaMakassar, W Function()? asiaManila, W Function()? asiaMuscat, W Function()? asiaNicosia, W Function()? asiaNovokuznetsk, W Function()? asiaNovosibirsk, W Function()? asiaOmsk, W Function()? asiaOral, W Function()? asiaPhnomPenh, W Function()? asiaPontianak, W Function()? asiaPyongyang, W Function()? asiaQatar, W Function()? asiaQostanay, W Function()? asiaQyzylorda, W Function()? asiaRangoon, W Function()? asiaRiyadh, W Function()? asiaSaigon, W Function()? asiaSakhalin, W Function()? asiaSamarkand, W Function()? asiaSeoul, W Function()? asiaShanghai, W Function()? asiaSingapore, W Function()? asiaSrednekolymsk, W Function()? asiaTaipei, W Function()? asiaTashkent, W Function()? asiaTbilisi, W Function()? asiaTehran, W Function()? asiaTelAviv, W Function()? asiaThimbu, W Function()? asiaThimphu, W Function()? asiaTokyo, W Function()? asiaTomsk, W Function()? asiaUjungPandang, W Function()? asiaUlaanbaatar, W Function()? asiaUlanBator, W Function()? asiaUrumqi, W Function()? asiaUstNera, W Function()? asiaVientiane, W Function()? asiaVladivostok, W Function()? asiaYakutsk, W Function()? asiaYangon, W Function()? asiaYekaterinburg, W Function()? asiaYerevan, W Function()? atlanticAzores, W Function()? atlanticBermuda, W Function()? atlanticCanary, W Function()? atlanticCapeVerde, W Function()? atlanticFaeroe, W Function()? atlanticFaroe, W Function()? atlanticJanMayen, W Function()? atlanticMadeira, W Function()? atlanticReykjavik, W Function()? atlanticSouthGeorgia, W Function()? atlanticStHelena, W Function()? atlanticStanley, W Function()? australiaAct, W Function()? australiaAdelaide, W Function()? australiaBrisbane, W Function()? australiaBrokenHill, W Function()? australiaCanberra, W Function()? australiaCurrie, W Function()? australiaDarwin, W Function()? australiaEucla, W Function()? australiaHobart, W Function()? australiaLhi, W Function()? australiaLindeman, W Function()? australiaLordHowe, W Function()? australiaMelbourne, W Function()? australiaNsw, W Function()? australiaNorth, W Function()? australiaPerth, W Function()? australiaQueensland, W Function()? australiaSouth, W Function()? australiaSydney, W Function()? australiaTasmania, W Function()? australiaVictoria, W Function()? australiaWest, W Function()? australiaYancowinna, W Function()? brazilAcre, W Function()? brazilDeNoronha, W Function()? brazilEast, W Function()? brazilWest, W Function()? cet, W Function()? cst6Cdt, W Function()? canadaAtlantic, W Function()? canadaCentral, W Function()? canadaEastern, W Function()? canadaMountain, W Function()? canadaNewfoundland, W Function()? canadaPacific, W Function()? canadaSaskatchewan, W Function()? canadaYukon, W Function()? chileContinental, W Function()? chileEasterIsland, W Function()? cuba, W Function()? eet, W Function()? est, W Function()? est5Edt, W Function()? egypt, W Function()? eire, W Function()? etcGmt, W Function()? etcGmt0, W Function()? etcGmt1, W Function()? etcGmt10, W Function()? etcGmt11, W Function()? etcGmt12, W Function()? etcGmt2, W Function()? etcGmt3, W Function()? etcGmt4, W Function()? etcGmt5, W Function()? etcGmt6, W Function()? etcGmt7, W Function()? etcGmt8, W Function()? etcGmt9, W Function()? etcGmt02, W Function()? etcGmt13, W Function()? etcGmt102, W Function()? etcGmt112, W Function()? etcGmt122, W Function()? etcGmt132, W Function()? etcGmt14, W Function()? etcGmt22, W Function()? etcGmt32, W Function()? etcGmt42, W Function()? etcGmt52, W Function()? etcGmt62, W Function()? etcGmt72, W Function()? etcGmt82, W Function()? etcGmt92, W Function()? etcGmt03, W Function()? etcGreenwich, W Function()? etcUct, W Function()? etcUtc, W Function()? etcUniversal, W Function()? etcZulu, W Function()? europeAmsterdam, W Function()? europeAndorra, W Function()? europeAstrakhan, W Function()? europeAthens, W Function()? europeBelfast, W Function()? europeBelgrade, W Function()? europeBerlin, W Function()? europeBratislava, W Function()? europeBrussels, W Function()? europeBucharest, W Function()? europeBudapest, W Function()? europeBusingen, W Function()? europeChisinau, W Function()? europeCopenhagen, W Function()? europeDublin, W Function()? europeGibraltar, W Function()? europeGuernsey, W Function()? europeHelsinki, W Function()? europeIsleOfMan, W Function()? europeIstanbul, W Function()? europeJersey, W Function()? europeKaliningrad, W Function()? europeKiev, W Function()? europeKirov, W Function()? europeKyiv, W Function()? europeLisbon, W Function()? europeLjubljana, W Function()? europeLondon, W Function()? europeLuxembourg, W Function()? europeMadrid, W Function()? europeMalta, W Function()? europeMariehamn, W Function()? europeMinsk, W Function()? europeMonaco, W Function()? europeMoscow, W Function()? europeNicosia, W Function()? europeOslo, W Function()? europeParis, W Function()? europePodgorica, W Function()? europePrague, W Function()? europeRiga, W Function()? europeRome, W Function()? europeSamara, W Function()? europeSanMarino, W Function()? europeSarajevo, W Function()? europeSaratov, W Function()? europeSimferopol, W Function()? europeSkopje, W Function()? europeSofia, W Function()? europeStockholm, W Function()? europeTallinn, W Function()? europeTirane, W Function()? europeTiraspol, W Function()? europeUlyanovsk, W Function()? europeUzhgorod, W Function()? europeVaduz, W Function()? europeVatican, W Function()? europeVienna, W Function()? europeVilnius, W Function()? europeVolgograd, W Function()? europeWarsaw, W Function()? europeZagreb, W Function()? europeZaporozhye, W Function()? europeZurich, W Function()? $factory, W Function()? gb, W Function()? gbEire, W Function()? gmt, W Function()? gmt0, W Function()? gmt02, W Function()? gmt03, W Function()? greenwich, W Function()? hst, W Function()? hongkong, W Function()? iceland, W Function()? indianAntananarivo, W Function()? indianChagos, W Function()? indianChristmas, W Function()? indianCocos, W Function()? indianComoro, W Function()? indianKerguelen, W Function()? indianMahe, W Function()? indianMaldives, W Function()? indianMauritius, W Function()? indianMayotte, W Function()? indianReunion, W Function()? iran, W Function()? israel, W Function()? jamaica, W Function()? japan, W Function()? kwajalein, W Function()? libya, W Function()? met, W Function()? mst, W Function()? mst7Mdt, W Function()? mexicoBajaNorte, W Function()? mexicoBajaSur, W Function()? mexicoGeneral, W Function()? nz, W Function()? nzChat, W Function()? navajo, W Function()? prc, W Function()? pst8Pdt, W Function()? pacificApia, W Function()? pacificAuckland, W Function()? pacificBougainville, W Function()? pacificChatham, W Function()? pacificChuuk, W Function()? pacificEaster, W Function()? pacificEfate, W Function()? pacificEnderbury, W Function()? pacificFakaofo, W Function()? pacificFiji, W Function()? pacificFunafuti, W Function()? pacificGalapagos, W Function()? pacificGambier, W Function()? pacificGuadalcanal, W Function()? pacificGuam, W Function()? pacificHonolulu, W Function()? pacificJohnston, W Function()? pacificKanton, W Function()? pacificKiritimati, W Function()? pacificKosrae, W Function()? pacificKwajalein, W Function()? pacificMajuro, W Function()? pacificMarquesas, W Function()? pacificMidway, W Function()? pacificNauru, W Function()? pacificNiue, W Function()? pacificNorfolk, W Function()? pacificNoumea, W Function()? pacificPagoPago, W Function()? pacificPalau, W Function()? pacificPitcairn, W Function()? pacificPohnpei, W Function()? pacificPonape, W Function()? pacificPortMoresby, W Function()? pacificRarotonga, W Function()? pacificSaipan, W Function()? pacificSamoa, W Function()? pacificTahiti, W Function()? pacificTarawa, W Function()? pacificTongatapu, W Function()? pacificTruk, W Function()? pacificWake, W Function()? pacificWallis, W Function()? pacificYap, W Function()? poland, W Function()? portugal, W Function()? roc, W Function()? rok, W Function()? singapore, W Function()? turkey, W Function()? uct, W Function()? usAlaska, W Function()? usAleutian, W Function()? usArizona, W Function()? usCentral, W Function()? usEastIndiana, W Function()? usEastern, W Function()? usHawaii, W Function()? usIndianaStarke, W Function()? usMichigan, W Function()? usMountain, W Function()? usPacific, W Function()? usPacificNew, W Function()? usSamoa, W Function()? utc, W Function()? universal, W Function()? wSu, W Function()? wet, W Function()? zulu, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAbidjan, W Function()? africaAccra, W Function()? africaAddisAbaba, W Function()? africaAlgiers, W Function()? africaAsmara, W Function()? africaAsmera, W Function()? africaBamako, W Function()? africaBangui, W Function()? africaBanjul, W Function()? africaBissau, W Function()? africaBlantyre, W Function()? africaBrazzaville, W Function()? africaBujumbura, W Function()? africaCairo, W Function()? africaCasablanca, W Function()? africaCeuta, W Function()? africaConakry, W Function()? africaDakar, W Function()? africaDarEsSalaam, W Function()? africaDjibouti, W Function()? africaDouala, W Function()? africaElAaiun, W Function()? africaFreetown, W Function()? africaGaborone, W Function()? africaHarare, W Function()? africaJohannesburg, W Function()? africaJuba, W Function()? africaKampala, W Function()? africaKhartoum, W Function()? africaKigali, W Function()? africaKinshasa, W Function()? africaLagos, W Function()? africaLibreville, W Function()? africaLome, W Function()? africaLuanda, W Function()? africaLubumbashi, W Function()? africaLusaka, W Function()? africaMalabo, W Function()? africaMaputo, W Function()? africaMaseru, W Function()? africaMbabane, W Function()? africaMogadishu, W Function()? africaMonrovia, W Function()? africaNairobi, W Function()? africaNdjamena, W Function()? africaNiamey, W Function()? africaNouakchott, W Function()? africaOuagadougou, W Function()? africaPortoNovo, W Function()? africaSaoTome, W Function()? africaTimbuktu, W Function()? africaTripoli, W Function()? africaTunis, W Function()? africaWindhoek, W Function()? americaAdak, W Function()? americaAnchorage, W Function()? americaAnguilla, W Function()? americaAntigua, W Function()? americaAraguaina, W Function()? americaArgentinaBuenosAires, W Function()? americaArgentinaCatamarca, W Function()? americaArgentinaComodRivadavia, W Function()? americaArgentinaCordoba, W Function()? americaArgentinaJujuy, W Function()? americaArgentinaLaRioja, W Function()? americaArgentinaMendoza, W Function()? americaArgentinaRioGallegos, W Function()? americaArgentinaSalta, W Function()? americaArgentinaSanJuan, W Function()? americaArgentinaSanLuis, W Function()? americaArgentinaTucuman, W Function()? americaArgentinaUshuaia, W Function()? americaAruba, W Function()? americaAsuncion, W Function()? americaAtikokan, W Function()? americaAtka, W Function()? americaBahia, W Function()? americaBahiaBanderas, W Function()? americaBarbados, W Function()? americaBelem, W Function()? americaBelize, W Function()? americaBlancSablon, W Function()? americaBoaVista, W Function()? americaBogota, W Function()? americaBoise, W Function()? americaBuenosAires, W Function()? americaCambridgeBay, W Function()? americaCampoGrande, W Function()? americaCancun, W Function()? americaCaracas, W Function()? americaCatamarca, W Function()? americaCayenne, W Function()? americaCayman, W Function()? americaChicago, W Function()? americaChihuahua, W Function()? americaCiudadJuarez, W Function()? americaCoralHarbour, W Function()? americaCordoba, W Function()? americaCostaRica, W Function()? americaCoyhaique, W Function()? americaCreston, W Function()? americaCuiaba, W Function()? americaCuracao, W Function()? americaDanmarkshavn, W Function()? americaDawson, W Function()? americaDawsonCreek, W Function()? americaDenver, W Function()? americaDetroit, W Function()? americaDominica, W Function()? americaEdmonton, W Function()? americaEirunepe, W Function()? americaElSalvador, W Function()? americaEnsenada, W Function()? americaFortNelson, W Function()? americaFortWayne, W Function()? americaFortaleza, W Function()? americaGlaceBay, W Function()? americaGodthab, W Function()? americaGooseBay, W Function()? americaGrandTurk, W Function()? americaGrenada, W Function()? americaGuadeloupe, W Function()? americaGuatemala, W Function()? americaGuayaquil, W Function()? americaGuyana, W Function()? americaHalifax, W Function()? americaHavana, W Function()? americaHermosillo, W Function()? americaIndianaIndianapolis, W Function()? americaIndianaKnox, W Function()? americaIndianaMarengo, W Function()? americaIndianaPetersburg, W Function()? americaIndianaTellCity, W Function()? americaIndianaVevay, W Function()? americaIndianaVincennes, W Function()? americaIndianaWinamac, W Function()? americaIndianapolis, W Function()? americaInuvik, W Function()? americaIqaluit, W Function()? americaJamaica, W Function()? americaJujuy, W Function()? americaJuneau, W Function()? americaKentuckyLouisville, W Function()? americaKentuckyMonticello, W Function()? americaKnoxIn, W Function()? americaKralendijk, W Function()? americaLaPaz, W Function()? americaLima, W Function()? americaLosAngeles, W Function()? americaLouisville, W Function()? americaLowerPrinces, W Function()? americaMaceio, W Function()? americaManagua, W Function()? americaManaus, W Function()? americaMarigot, W Function()? americaMartinique, W Function()? americaMatamoros, W Function()? americaMazatlan, W Function()? americaMendoza, W Function()? americaMenominee, W Function()? americaMerida, W Function()? americaMetlakatla, W Function()? americaMexicoCity, W Function()? americaMiquelon, W Function()? americaMoncton, W Function()? americaMonterrey, W Function()? americaMontevideo, W Function()? americaMontreal, W Function()? americaMontserrat, W Function()? americaNassau, W Function()? americaNewYork, W Function()? americaNipigon, W Function()? americaNome, W Function()? americaNoronha, W Function()? americaNorthDakotaBeulah, W Function()? americaNorthDakotaCenter, W Function()? americaNorthDakotaNewSalem, W Function()? americaNuuk, W Function()? americaOjinaga, W Function()? americaPanama, W Function()? americaPangnirtung, W Function()? americaParamaribo, W Function()? americaPhoenix, W Function()? americaPortAuPrince, W Function()? americaPortOfSpain, W Function()? americaPortoAcre, W Function()? americaPortoVelho, W Function()? americaPuertoRico, W Function()? americaPuntaArenas, W Function()? americaRainyRiver, W Function()? americaRankinInlet, W Function()? americaRecife, W Function()? americaRegina, W Function()? americaResolute, W Function()? americaRioBranco, W Function()? americaRosario, W Function()? americaSantaIsabel, W Function()? americaSantarem, W Function()? americaSantiago, W Function()? americaSantoDomingo, W Function()? americaSaoPaulo, W Function()? americaScoresbysund, W Function()? americaShiprock, W Function()? americaSitka, W Function()? americaStBarthelemy, W Function()? americaStJohns, W Function()? americaStKitts, W Function()? americaStLucia, W Function()? americaStThomas, W Function()? americaStVincent, W Function()? americaSwiftCurrent, W Function()? americaTegucigalpa, W Function()? americaThule, W Function()? americaThunderBay, W Function()? americaTijuana, W Function()? americaToronto, W Function()? americaTortola, W Function()? americaVancouver, W Function()? americaVirgin, W Function()? americaWhitehorse, W Function()? americaWinnipeg, W Function()? americaYakutat, W Function()? americaYellowknife, W Function()? antarcticaCasey, W Function()? antarcticaDavis, W Function()? antarcticaDumontDUrville, W Function()? antarcticaMacquarie, W Function()? antarcticaMawson, W Function()? antarcticaMcMurdo, W Function()? antarcticaPalmer, W Function()? antarcticaRothera, W Function()? antarcticaSouthPole, W Function()? antarcticaSyowa, W Function()? antarcticaTroll, W Function()? antarcticaVostok, W Function()? arcticLongyearbyen, W Function()? asiaAden, W Function()? asiaAlmaty, W Function()? asiaAmman, W Function()? asiaAnadyr, W Function()? asiaAqtau, W Function()? asiaAqtobe, W Function()? asiaAshgabat, W Function()? asiaAshkhabad, W Function()? asiaAtyrau, W Function()? asiaBaghdad, W Function()? asiaBahrain, W Function()? asiaBaku, W Function()? asiaBangkok, W Function()? asiaBarnaul, W Function()? asiaBeirut, W Function()? asiaBishkek, W Function()? asiaBrunei, W Function()? asiaCalcutta, W Function()? asiaChita, W Function()? asiaChoibalsan, W Function()? asiaChongqing, W Function()? asiaChungking, W Function()? asiaColombo, W Function()? asiaDacca, W Function()? asiaDamascus, W Function()? asiaDhaka, W Function()? asiaDili, W Function()? asiaDubai, W Function()? asiaDushanbe, W Function()? asiaFamagusta, W Function()? asiaGaza, W Function()? asiaHarbin, W Function()? asiaHebron, W Function()? asiaHoChiMinh, W Function()? asiaHongKong, W Function()? asiaHovd, W Function()? asiaIrkutsk, W Function()? asiaIstanbul, W Function()? asiaJakarta, W Function()? asiaJayapura, W Function()? asiaJerusalem, W Function()? asiaKabul, W Function()? asiaKamchatka, W Function()? asiaKarachi, W Function()? asiaKashgar, W Function()? asiaKathmandu, W Function()? asiaKatmandu, W Function()? asiaKhandyga, W Function()? asiaKolkata, W Function()? asiaKrasnoyarsk, W Function()? asiaKualaLumpur, W Function()? asiaKuching, W Function()? asiaKuwait, W Function()? asiaMacao, W Function()? asiaMacau, W Function()? asiaMagadan, W Function()? asiaMakassar, W Function()? asiaManila, W Function()? asiaMuscat, W Function()? asiaNicosia, W Function()? asiaNovokuznetsk, W Function()? asiaNovosibirsk, W Function()? asiaOmsk, W Function()? asiaOral, W Function()? asiaPhnomPenh, W Function()? asiaPontianak, W Function()? asiaPyongyang, W Function()? asiaQatar, W Function()? asiaQostanay, W Function()? asiaQyzylorda, W Function()? asiaRangoon, W Function()? asiaRiyadh, W Function()? asiaSaigon, W Function()? asiaSakhalin, W Function()? asiaSamarkand, W Function()? asiaSeoul, W Function()? asiaShanghai, W Function()? asiaSingapore, W Function()? asiaSrednekolymsk, W Function()? asiaTaipei, W Function()? asiaTashkent, W Function()? asiaTbilisi, W Function()? asiaTehran, W Function()? asiaTelAviv, W Function()? asiaThimbu, W Function()? asiaThimphu, W Function()? asiaTokyo, W Function()? asiaTomsk, W Function()? asiaUjungPandang, W Function()? asiaUlaanbaatar, W Function()? asiaUlanBator, W Function()? asiaUrumqi, W Function()? asiaUstNera, W Function()? asiaVientiane, W Function()? asiaVladivostok, W Function()? asiaYakutsk, W Function()? asiaYangon, W Function()? asiaYekaterinburg, W Function()? asiaYerevan, W Function()? atlanticAzores, W Function()? atlanticBermuda, W Function()? atlanticCanary, W Function()? atlanticCapeVerde, W Function()? atlanticFaeroe, W Function()? atlanticFaroe, W Function()? atlanticJanMayen, W Function()? atlanticMadeira, W Function()? atlanticReykjavik, W Function()? atlanticSouthGeorgia, W Function()? atlanticStHelena, W Function()? atlanticStanley, W Function()? australiaAct, W Function()? australiaAdelaide, W Function()? australiaBrisbane, W Function()? australiaBrokenHill, W Function()? australiaCanberra, W Function()? australiaCurrie, W Function()? australiaDarwin, W Function()? australiaEucla, W Function()? australiaHobart, W Function()? australiaLhi, W Function()? australiaLindeman, W Function()? australiaLordHowe, W Function()? australiaMelbourne, W Function()? australiaNsw, W Function()? australiaNorth, W Function()? australiaPerth, W Function()? australiaQueensland, W Function()? australiaSouth, W Function()? australiaSydney, W Function()? australiaTasmania, W Function()? australiaVictoria, W Function()? australiaWest, W Function()? australiaYancowinna, W Function()? brazilAcre, W Function()? brazilDeNoronha, W Function()? brazilEast, W Function()? brazilWest, W Function()? cet, W Function()? cst6Cdt, W Function()? canadaAtlantic, W Function()? canadaCentral, W Function()? canadaEastern, W Function()? canadaMountain, W Function()? canadaNewfoundland, W Function()? canadaPacific, W Function()? canadaSaskatchewan, W Function()? canadaYukon, W Function()? chileContinental, W Function()? chileEasterIsland, W Function()? cuba, W Function()? eet, W Function()? est, W Function()? est5Edt, W Function()? egypt, W Function()? eire, W Function()? etcGmt, W Function()? etcGmt0, W Function()? etcGmt1, W Function()? etcGmt10, W Function()? etcGmt11, W Function()? etcGmt12, W Function()? etcGmt2, W Function()? etcGmt3, W Function()? etcGmt4, W Function()? etcGmt5, W Function()? etcGmt6, W Function()? etcGmt7, W Function()? etcGmt8, W Function()? etcGmt9, W Function()? etcGmt02, W Function()? etcGmt13, W Function()? etcGmt102, W Function()? etcGmt112, W Function()? etcGmt122, W Function()? etcGmt132, W Function()? etcGmt14, W Function()? etcGmt22, W Function()? etcGmt32, W Function()? etcGmt42, W Function()? etcGmt52, W Function()? etcGmt62, W Function()? etcGmt72, W Function()? etcGmt82, W Function()? etcGmt92, W Function()? etcGmt03, W Function()? etcGreenwich, W Function()? etcUct, W Function()? etcUtc, W Function()? etcUniversal, W Function()? etcZulu, W Function()? europeAmsterdam, W Function()? europeAndorra, W Function()? europeAstrakhan, W Function()? europeAthens, W Function()? europeBelfast, W Function()? europeBelgrade, W Function()? europeBerlin, W Function()? europeBratislava, W Function()? europeBrussels, W Function()? europeBucharest, W Function()? europeBudapest, W Function()? europeBusingen, W Function()? europeChisinau, W Function()? europeCopenhagen, W Function()? europeDublin, W Function()? europeGibraltar, W Function()? europeGuernsey, W Function()? europeHelsinki, W Function()? europeIsleOfMan, W Function()? europeIstanbul, W Function()? europeJersey, W Function()? europeKaliningrad, W Function()? europeKiev, W Function()? europeKirov, W Function()? europeKyiv, W Function()? europeLisbon, W Function()? europeLjubljana, W Function()? europeLondon, W Function()? europeLuxembourg, W Function()? europeMadrid, W Function()? europeMalta, W Function()? europeMariehamn, W Function()? europeMinsk, W Function()? europeMonaco, W Function()? europeMoscow, W Function()? europeNicosia, W Function()? europeOslo, W Function()? europeParis, W Function()? europePodgorica, W Function()? europePrague, W Function()? europeRiga, W Function()? europeRome, W Function()? europeSamara, W Function()? europeSanMarino, W Function()? europeSarajevo, W Function()? europeSaratov, W Function()? europeSimferopol, W Function()? europeSkopje, W Function()? europeSofia, W Function()? europeStockholm, W Function()? europeTallinn, W Function()? europeTirane, W Function()? europeTiraspol, W Function()? europeUlyanovsk, W Function()? europeUzhgorod, W Function()? europeVaduz, W Function()? europeVatican, W Function()? europeVienna, W Function()? europeVilnius, W Function()? europeVolgograd, W Function()? europeWarsaw, W Function()? europeZagreb, W Function()? europeZaporozhye, W Function()? europeZurich, W Function()? $factory, W Function()? gb, W Function()? gbEire, W Function()? gmt, W Function()? gmt0, W Function()? gmt02, W Function()? gmt03, W Function()? greenwich, W Function()? hst, W Function()? hongkong, W Function()? iceland, W Function()? indianAntananarivo, W Function()? indianChagos, W Function()? indianChristmas, W Function()? indianCocos, W Function()? indianComoro, W Function()? indianKerguelen, W Function()? indianMahe, W Function()? indianMaldives, W Function()? indianMauritius, W Function()? indianMayotte, W Function()? indianReunion, W Function()? iran, W Function()? israel, W Function()? jamaica, W Function()? japan, W Function()? kwajalein, W Function()? libya, W Function()? met, W Function()? mst, W Function()? mst7Mdt, W Function()? mexicoBajaNorte, W Function()? mexicoBajaSur, W Function()? mexicoGeneral, W Function()? nz, W Function()? nzChat, W Function()? navajo, W Function()? prc, W Function()? pst8Pdt, W Function()? pacificApia, W Function()? pacificAuckland, W Function()? pacificBougainville, W Function()? pacificChatham, W Function()? pacificChuuk, W Function()? pacificEaster, W Function()? pacificEfate, W Function()? pacificEnderbury, W Function()? pacificFakaofo, W Function()? pacificFiji, W Function()? pacificFunafuti, W Function()? pacificGalapagos, W Function()? pacificGambier, W Function()? pacificGuadalcanal, W Function()? pacificGuam, W Function()? pacificHonolulu, W Function()? pacificJohnston, W Function()? pacificKanton, W Function()? pacificKiritimati, W Function()? pacificKosrae, W Function()? pacificKwajalein, W Function()? pacificMajuro, W Function()? pacificMarquesas, W Function()? pacificMidway, W Function()? pacificNauru, W Function()? pacificNiue, W Function()? pacificNorfolk, W Function()? pacificNoumea, W Function()? pacificPagoPago, W Function()? pacificPalau, W Function()? pacificPitcairn, W Function()? pacificPohnpei, W Function()? pacificPonape, W Function()? pacificPortMoresby, W Function()? pacificRarotonga, W Function()? pacificSaipan, W Function()? pacificSamoa, W Function()? pacificTahiti, W Function()? pacificTarawa, W Function()? pacificTongatapu, W Function()? pacificTruk, W Function()? pacificWake, W Function()? pacificWallis, W Function()? pacificYap, W Function()? poland, W Function()? portugal, W Function()? roc, W Function()? rok, W Function()? singapore, W Function()? turkey, W Function()? uct, W Function()? usAlaska, W Function()? usAleutian, W Function()? usArizona, W Function()? usCentral, W Function()? usEastIndiana, W Function()? usEastern, W Function()? usHawaii, W Function()? usIndianaStarke, W Function()? usMichigan, W Function()? usMountain, W Function()? usPacific, W Function()? usPacificNew, W Function()? usSamoa, W Function()? utc, W Function()? universal, W Function()? wSu, W Function()? wet, W Function()? zulu, W Function(String value)? $unknown, }) {return switch (this) {
       Timezone$africaAbidjan() => africaAbidjan != null ? africaAbidjan() : orElse(value),
       Timezone$africaAccra() => africaAccra != null ? africaAccra() : orElse(value),
       Timezone$africaAddisAbaba() => africaAddisAbaba != null ? africaAddisAbaba() : orElse(value),
@@ -4210,10 +4210,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
       Timezone$wet() => wet != null ? wet() : orElse(value),
       Timezone$zulu() => zulu != null ? zulu() : orElse(value),
       Timezone$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Timezone($value)';
 
- }
+}
 @immutable final class Timezone$africaAbidjan extends Timezone {const Timezone$africaAbidjan._();
 
 @override String get value => 'Africa/Abidjan';
@@ -4222,7 +4222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Abidjan'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaAccra extends Timezone {const Timezone$africaAccra._();
 
 @override String get value => 'Africa/Accra';
@@ -4231,7 +4231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Accra'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaAddisAbaba extends Timezone {const Timezone$africaAddisAbaba._();
 
 @override String get value => 'Africa/Addis_Ababa';
@@ -4240,7 +4240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Addis_Ababa'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaAlgiers extends Timezone {const Timezone$africaAlgiers._();
 
 @override String get value => 'Africa/Algiers';
@@ -4249,7 +4249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Algiers'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaAsmara extends Timezone {const Timezone$africaAsmara._();
 
 @override String get value => 'Africa/Asmara';
@@ -4258,7 +4258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Asmara'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaAsmera extends Timezone {const Timezone$africaAsmera._();
 
 @override String get value => 'Africa/Asmera';
@@ -4267,7 +4267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Asmera'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBamako extends Timezone {const Timezone$africaBamako._();
 
 @override String get value => 'Africa/Bamako';
@@ -4276,7 +4276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Bamako'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBangui extends Timezone {const Timezone$africaBangui._();
 
 @override String get value => 'Africa/Bangui';
@@ -4285,7 +4285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Bangui'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBanjul extends Timezone {const Timezone$africaBanjul._();
 
 @override String get value => 'Africa/Banjul';
@@ -4294,7 +4294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Banjul'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBissau extends Timezone {const Timezone$africaBissau._();
 
 @override String get value => 'Africa/Bissau';
@@ -4303,7 +4303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Bissau'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBlantyre extends Timezone {const Timezone$africaBlantyre._();
 
 @override String get value => 'Africa/Blantyre';
@@ -4312,7 +4312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Blantyre'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBrazzaville extends Timezone {const Timezone$africaBrazzaville._();
 
 @override String get value => 'Africa/Brazzaville';
@@ -4321,7 +4321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Brazzaville'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaBujumbura extends Timezone {const Timezone$africaBujumbura._();
 
 @override String get value => 'Africa/Bujumbura';
@@ -4330,7 +4330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Bujumbura'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaCairo extends Timezone {const Timezone$africaCairo._();
 
 @override String get value => 'Africa/Cairo';
@@ -4339,7 +4339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Cairo'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaCasablanca extends Timezone {const Timezone$africaCasablanca._();
 
 @override String get value => 'Africa/Casablanca';
@@ -4348,7 +4348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Casablanca'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaCeuta extends Timezone {const Timezone$africaCeuta._();
 
 @override String get value => 'Africa/Ceuta';
@@ -4357,7 +4357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Ceuta'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaConakry extends Timezone {const Timezone$africaConakry._();
 
 @override String get value => 'Africa/Conakry';
@@ -4366,7 +4366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Conakry'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaDakar extends Timezone {const Timezone$africaDakar._();
 
 @override String get value => 'Africa/Dakar';
@@ -4375,7 +4375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Dakar'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaDarEsSalaam extends Timezone {const Timezone$africaDarEsSalaam._();
 
 @override String get value => 'Africa/Dar_es_Salaam';
@@ -4384,7 +4384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Dar_es_Salaam'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaDjibouti extends Timezone {const Timezone$africaDjibouti._();
 
 @override String get value => 'Africa/Djibouti';
@@ -4393,7 +4393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Djibouti'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaDouala extends Timezone {const Timezone$africaDouala._();
 
 @override String get value => 'Africa/Douala';
@@ -4402,7 +4402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Douala'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaElAaiun extends Timezone {const Timezone$africaElAaiun._();
 
 @override String get value => 'Africa/El_Aaiun';
@@ -4411,7 +4411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/El_Aaiun'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaFreetown extends Timezone {const Timezone$africaFreetown._();
 
 @override String get value => 'Africa/Freetown';
@@ -4420,7 +4420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Freetown'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaGaborone extends Timezone {const Timezone$africaGaborone._();
 
 @override String get value => 'Africa/Gaborone';
@@ -4429,7 +4429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Gaborone'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaHarare extends Timezone {const Timezone$africaHarare._();
 
 @override String get value => 'Africa/Harare';
@@ -4438,7 +4438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Harare'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaJohannesburg extends Timezone {const Timezone$africaJohannesburg._();
 
 @override String get value => 'Africa/Johannesburg';
@@ -4447,7 +4447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Johannesburg'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaJuba extends Timezone {const Timezone$africaJuba._();
 
 @override String get value => 'Africa/Juba';
@@ -4456,7 +4456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Juba'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaKampala extends Timezone {const Timezone$africaKampala._();
 
 @override String get value => 'Africa/Kampala';
@@ -4465,7 +4465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Kampala'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaKhartoum extends Timezone {const Timezone$africaKhartoum._();
 
 @override String get value => 'Africa/Khartoum';
@@ -4474,7 +4474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Khartoum'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaKigali extends Timezone {const Timezone$africaKigali._();
 
 @override String get value => 'Africa/Kigali';
@@ -4483,7 +4483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Kigali'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaKinshasa extends Timezone {const Timezone$africaKinshasa._();
 
 @override String get value => 'Africa/Kinshasa';
@@ -4492,7 +4492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Kinshasa'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaLagos extends Timezone {const Timezone$africaLagos._();
 
 @override String get value => 'Africa/Lagos';
@@ -4501,7 +4501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Lagos'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaLibreville extends Timezone {const Timezone$africaLibreville._();
 
 @override String get value => 'Africa/Libreville';
@@ -4510,7 +4510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Libreville'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaLome extends Timezone {const Timezone$africaLome._();
 
 @override String get value => 'Africa/Lome';
@@ -4519,7 +4519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Lome'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaLuanda extends Timezone {const Timezone$africaLuanda._();
 
 @override String get value => 'Africa/Luanda';
@@ -4528,7 +4528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Luanda'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaLubumbashi extends Timezone {const Timezone$africaLubumbashi._();
 
 @override String get value => 'Africa/Lubumbashi';
@@ -4537,7 +4537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Lubumbashi'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaLusaka extends Timezone {const Timezone$africaLusaka._();
 
 @override String get value => 'Africa/Lusaka';
@@ -4546,7 +4546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Lusaka'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaMalabo extends Timezone {const Timezone$africaMalabo._();
 
 @override String get value => 'Africa/Malabo';
@@ -4555,7 +4555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Malabo'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaMaputo extends Timezone {const Timezone$africaMaputo._();
 
 @override String get value => 'Africa/Maputo';
@@ -4564,7 +4564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Maputo'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaMaseru extends Timezone {const Timezone$africaMaseru._();
 
 @override String get value => 'Africa/Maseru';
@@ -4573,7 +4573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Maseru'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaMbabane extends Timezone {const Timezone$africaMbabane._();
 
 @override String get value => 'Africa/Mbabane';
@@ -4582,7 +4582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Mbabane'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaMogadishu extends Timezone {const Timezone$africaMogadishu._();
 
 @override String get value => 'Africa/Mogadishu';
@@ -4591,7 +4591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Mogadishu'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaMonrovia extends Timezone {const Timezone$africaMonrovia._();
 
 @override String get value => 'Africa/Monrovia';
@@ -4600,7 +4600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Monrovia'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaNairobi extends Timezone {const Timezone$africaNairobi._();
 
 @override String get value => 'Africa/Nairobi';
@@ -4609,7 +4609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Nairobi'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaNdjamena extends Timezone {const Timezone$africaNdjamena._();
 
 @override String get value => 'Africa/Ndjamena';
@@ -4618,7 +4618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Ndjamena'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaNiamey extends Timezone {const Timezone$africaNiamey._();
 
 @override String get value => 'Africa/Niamey';
@@ -4627,7 +4627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Niamey'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaNouakchott extends Timezone {const Timezone$africaNouakchott._();
 
 @override String get value => 'Africa/Nouakchott';
@@ -4636,7 +4636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Nouakchott'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaOuagadougou extends Timezone {const Timezone$africaOuagadougou._();
 
 @override String get value => 'Africa/Ouagadougou';
@@ -4645,7 +4645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Ouagadougou'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaPortoNovo extends Timezone {const Timezone$africaPortoNovo._();
 
 @override String get value => 'Africa/Porto-Novo';
@@ -4654,7 +4654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Porto-Novo'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaSaoTome extends Timezone {const Timezone$africaSaoTome._();
 
 @override String get value => 'Africa/Sao_Tome';
@@ -4663,7 +4663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Sao_Tome'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaTimbuktu extends Timezone {const Timezone$africaTimbuktu._();
 
 @override String get value => 'Africa/Timbuktu';
@@ -4672,7 +4672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Timbuktu'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaTripoli extends Timezone {const Timezone$africaTripoli._();
 
 @override String get value => 'Africa/Tripoli';
@@ -4681,7 +4681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Tripoli'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaTunis extends Timezone {const Timezone$africaTunis._();
 
 @override String get value => 'Africa/Tunis';
@@ -4690,7 +4690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Tunis'.hashCode;
 
- }
+}
 @immutable final class Timezone$africaWindhoek extends Timezone {const Timezone$africaWindhoek._();
 
 @override String get value => 'Africa/Windhoek';
@@ -4699,7 +4699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Africa/Windhoek'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAdak extends Timezone {const Timezone$americaAdak._();
 
 @override String get value => 'America/Adak';
@@ -4708,7 +4708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Adak'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAnchorage extends Timezone {const Timezone$americaAnchorage._();
 
 @override String get value => 'America/Anchorage';
@@ -4717,7 +4717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Anchorage'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAnguilla extends Timezone {const Timezone$americaAnguilla._();
 
 @override String get value => 'America/Anguilla';
@@ -4726,7 +4726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Anguilla'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAntigua extends Timezone {const Timezone$americaAntigua._();
 
 @override String get value => 'America/Antigua';
@@ -4735,7 +4735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Antigua'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAraguaina extends Timezone {const Timezone$americaAraguaina._();
 
 @override String get value => 'America/Araguaina';
@@ -4744,7 +4744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Araguaina'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaBuenosAires extends Timezone {const Timezone$americaArgentinaBuenosAires._();
 
 @override String get value => 'America/Argentina/Buenos_Aires';
@@ -4753,7 +4753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Buenos_Aires'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaCatamarca extends Timezone {const Timezone$americaArgentinaCatamarca._();
 
 @override String get value => 'America/Argentina/Catamarca';
@@ -4762,7 +4762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Catamarca'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaComodRivadavia extends Timezone {const Timezone$americaArgentinaComodRivadavia._();
 
 @override String get value => 'America/Argentina/ComodRivadavia';
@@ -4771,7 +4771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/ComodRivadavia'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaCordoba extends Timezone {const Timezone$americaArgentinaCordoba._();
 
 @override String get value => 'America/Argentina/Cordoba';
@@ -4780,7 +4780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Cordoba'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaJujuy extends Timezone {const Timezone$americaArgentinaJujuy._();
 
 @override String get value => 'America/Argentina/Jujuy';
@@ -4789,7 +4789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Jujuy'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaLaRioja extends Timezone {const Timezone$americaArgentinaLaRioja._();
 
 @override String get value => 'America/Argentina/La_Rioja';
@@ -4798,7 +4798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/La_Rioja'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaMendoza extends Timezone {const Timezone$americaArgentinaMendoza._();
 
 @override String get value => 'America/Argentina/Mendoza';
@@ -4807,7 +4807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Mendoza'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaRioGallegos extends Timezone {const Timezone$americaArgentinaRioGallegos._();
 
 @override String get value => 'America/Argentina/Rio_Gallegos';
@@ -4816,7 +4816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Rio_Gallegos'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaSalta extends Timezone {const Timezone$americaArgentinaSalta._();
 
 @override String get value => 'America/Argentina/Salta';
@@ -4825,7 +4825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Salta'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaSanJuan extends Timezone {const Timezone$americaArgentinaSanJuan._();
 
 @override String get value => 'America/Argentina/San_Juan';
@@ -4834,7 +4834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/San_Juan'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaSanLuis extends Timezone {const Timezone$americaArgentinaSanLuis._();
 
 @override String get value => 'America/Argentina/San_Luis';
@@ -4843,7 +4843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/San_Luis'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaTucuman extends Timezone {const Timezone$americaArgentinaTucuman._();
 
 @override String get value => 'America/Argentina/Tucuman';
@@ -4852,7 +4852,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Tucuman'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaArgentinaUshuaia extends Timezone {const Timezone$americaArgentinaUshuaia._();
 
 @override String get value => 'America/Argentina/Ushuaia';
@@ -4861,7 +4861,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Argentina/Ushuaia'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAruba extends Timezone {const Timezone$americaAruba._();
 
 @override String get value => 'America/Aruba';
@@ -4870,7 +4870,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Aruba'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAsuncion extends Timezone {const Timezone$americaAsuncion._();
 
 @override String get value => 'America/Asuncion';
@@ -4879,7 +4879,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Asuncion'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAtikokan extends Timezone {const Timezone$americaAtikokan._();
 
 @override String get value => 'America/Atikokan';
@@ -4888,7 +4888,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Atikokan'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaAtka extends Timezone {const Timezone$americaAtka._();
 
 @override String get value => 'America/Atka';
@@ -4897,7 +4897,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Atka'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBahia extends Timezone {const Timezone$americaBahia._();
 
 @override String get value => 'America/Bahia';
@@ -4906,7 +4906,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Bahia'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBahiaBanderas extends Timezone {const Timezone$americaBahiaBanderas._();
 
 @override String get value => 'America/Bahia_Banderas';
@@ -4915,7 +4915,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Bahia_Banderas'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBarbados extends Timezone {const Timezone$americaBarbados._();
 
 @override String get value => 'America/Barbados';
@@ -4924,7 +4924,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Barbados'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBelem extends Timezone {const Timezone$americaBelem._();
 
 @override String get value => 'America/Belem';
@@ -4933,7 +4933,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Belem'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBelize extends Timezone {const Timezone$americaBelize._();
 
 @override String get value => 'America/Belize';
@@ -4942,7 +4942,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Belize'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBlancSablon extends Timezone {const Timezone$americaBlancSablon._();
 
 @override String get value => 'America/Blanc-Sablon';
@@ -4951,7 +4951,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Blanc-Sablon'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBoaVista extends Timezone {const Timezone$americaBoaVista._();
 
 @override String get value => 'America/Boa_Vista';
@@ -4960,7 +4960,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Boa_Vista'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBogota extends Timezone {const Timezone$americaBogota._();
 
 @override String get value => 'America/Bogota';
@@ -4969,7 +4969,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Bogota'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBoise extends Timezone {const Timezone$americaBoise._();
 
 @override String get value => 'America/Boise';
@@ -4978,7 +4978,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Boise'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaBuenosAires extends Timezone {const Timezone$americaBuenosAires._();
 
 @override String get value => 'America/Buenos_Aires';
@@ -4987,7 +4987,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Buenos_Aires'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCambridgeBay extends Timezone {const Timezone$americaCambridgeBay._();
 
 @override String get value => 'America/Cambridge_Bay';
@@ -4996,7 +4996,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Cambridge_Bay'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCampoGrande extends Timezone {const Timezone$americaCampoGrande._();
 
 @override String get value => 'America/Campo_Grande';
@@ -5005,7 +5005,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Campo_Grande'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCancun extends Timezone {const Timezone$americaCancun._();
 
 @override String get value => 'America/Cancun';
@@ -5014,7 +5014,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Cancun'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCaracas extends Timezone {const Timezone$americaCaracas._();
 
 @override String get value => 'America/Caracas';
@@ -5023,7 +5023,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Caracas'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCatamarca extends Timezone {const Timezone$americaCatamarca._();
 
 @override String get value => 'America/Catamarca';
@@ -5032,7 +5032,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Catamarca'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCayenne extends Timezone {const Timezone$americaCayenne._();
 
 @override String get value => 'America/Cayenne';
@@ -5041,7 +5041,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Cayenne'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCayman extends Timezone {const Timezone$americaCayman._();
 
 @override String get value => 'America/Cayman';
@@ -5050,7 +5050,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Cayman'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaChicago extends Timezone {const Timezone$americaChicago._();
 
 @override String get value => 'America/Chicago';
@@ -5059,7 +5059,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Chicago'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaChihuahua extends Timezone {const Timezone$americaChihuahua._();
 
 @override String get value => 'America/Chihuahua';
@@ -5068,7 +5068,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Chihuahua'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCiudadJuarez extends Timezone {const Timezone$americaCiudadJuarez._();
 
 @override String get value => 'America/Ciudad_Juarez';
@@ -5077,7 +5077,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Ciudad_Juarez'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCoralHarbour extends Timezone {const Timezone$americaCoralHarbour._();
 
 @override String get value => 'America/Coral_Harbour';
@@ -5086,7 +5086,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Coral_Harbour'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCordoba extends Timezone {const Timezone$americaCordoba._();
 
 @override String get value => 'America/Cordoba';
@@ -5095,7 +5095,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Cordoba'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCostaRica extends Timezone {const Timezone$americaCostaRica._();
 
 @override String get value => 'America/Costa_Rica';
@@ -5104,7 +5104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Costa_Rica'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCoyhaique extends Timezone {const Timezone$americaCoyhaique._();
 
 @override String get value => 'America/Coyhaique';
@@ -5113,7 +5113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Coyhaique'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCreston extends Timezone {const Timezone$americaCreston._();
 
 @override String get value => 'America/Creston';
@@ -5122,7 +5122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Creston'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCuiaba extends Timezone {const Timezone$americaCuiaba._();
 
 @override String get value => 'America/Cuiaba';
@@ -5131,7 +5131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Cuiaba'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaCuracao extends Timezone {const Timezone$americaCuracao._();
 
 @override String get value => 'America/Curacao';
@@ -5140,7 +5140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Curacao'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaDanmarkshavn extends Timezone {const Timezone$americaDanmarkshavn._();
 
 @override String get value => 'America/Danmarkshavn';
@@ -5149,7 +5149,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Danmarkshavn'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaDawson extends Timezone {const Timezone$americaDawson._();
 
 @override String get value => 'America/Dawson';
@@ -5158,7 +5158,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Dawson'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaDawsonCreek extends Timezone {const Timezone$americaDawsonCreek._();
 
 @override String get value => 'America/Dawson_Creek';
@@ -5167,7 +5167,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Dawson_Creek'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaDenver extends Timezone {const Timezone$americaDenver._();
 
 @override String get value => 'America/Denver';
@@ -5176,7 +5176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Denver'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaDetroit extends Timezone {const Timezone$americaDetroit._();
 
 @override String get value => 'America/Detroit';
@@ -5185,7 +5185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Detroit'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaDominica extends Timezone {const Timezone$americaDominica._();
 
 @override String get value => 'America/Dominica';
@@ -5194,7 +5194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Dominica'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaEdmonton extends Timezone {const Timezone$americaEdmonton._();
 
 @override String get value => 'America/Edmonton';
@@ -5203,7 +5203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Edmonton'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaEirunepe extends Timezone {const Timezone$americaEirunepe._();
 
 @override String get value => 'America/Eirunepe';
@@ -5212,7 +5212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Eirunepe'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaElSalvador extends Timezone {const Timezone$americaElSalvador._();
 
 @override String get value => 'America/El_Salvador';
@@ -5221,7 +5221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/El_Salvador'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaEnsenada extends Timezone {const Timezone$americaEnsenada._();
 
 @override String get value => 'America/Ensenada';
@@ -5230,7 +5230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Ensenada'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaFortNelson extends Timezone {const Timezone$americaFortNelson._();
 
 @override String get value => 'America/Fort_Nelson';
@@ -5239,7 +5239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Fort_Nelson'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaFortWayne extends Timezone {const Timezone$americaFortWayne._();
 
 @override String get value => 'America/Fort_Wayne';
@@ -5248,7 +5248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Fort_Wayne'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaFortaleza extends Timezone {const Timezone$americaFortaleza._();
 
 @override String get value => 'America/Fortaleza';
@@ -5257,7 +5257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Fortaleza'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGlaceBay extends Timezone {const Timezone$americaGlaceBay._();
 
 @override String get value => 'America/Glace_Bay';
@@ -5266,7 +5266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Glace_Bay'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGodthab extends Timezone {const Timezone$americaGodthab._();
 
 @override String get value => 'America/Godthab';
@@ -5275,7 +5275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Godthab'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGooseBay extends Timezone {const Timezone$americaGooseBay._();
 
 @override String get value => 'America/Goose_Bay';
@@ -5284,7 +5284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Goose_Bay'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGrandTurk extends Timezone {const Timezone$americaGrandTurk._();
 
 @override String get value => 'America/Grand_Turk';
@@ -5293,7 +5293,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Grand_Turk'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGrenada extends Timezone {const Timezone$americaGrenada._();
 
 @override String get value => 'America/Grenada';
@@ -5302,7 +5302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Grenada'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGuadeloupe extends Timezone {const Timezone$americaGuadeloupe._();
 
 @override String get value => 'America/Guadeloupe';
@@ -5311,7 +5311,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Guadeloupe'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGuatemala extends Timezone {const Timezone$americaGuatemala._();
 
 @override String get value => 'America/Guatemala';
@@ -5320,7 +5320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Guatemala'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGuayaquil extends Timezone {const Timezone$americaGuayaquil._();
 
 @override String get value => 'America/Guayaquil';
@@ -5329,7 +5329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Guayaquil'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaGuyana extends Timezone {const Timezone$americaGuyana._();
 
 @override String get value => 'America/Guyana';
@@ -5338,7 +5338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Guyana'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaHalifax extends Timezone {const Timezone$americaHalifax._();
 
 @override String get value => 'America/Halifax';
@@ -5347,7 +5347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Halifax'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaHavana extends Timezone {const Timezone$americaHavana._();
 
 @override String get value => 'America/Havana';
@@ -5356,7 +5356,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Havana'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaHermosillo extends Timezone {const Timezone$americaHermosillo._();
 
 @override String get value => 'America/Hermosillo';
@@ -5365,7 +5365,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Hermosillo'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaIndianapolis extends Timezone {const Timezone$americaIndianaIndianapolis._();
 
 @override String get value => 'America/Indiana/Indianapolis';
@@ -5374,7 +5374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Indianapolis'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaKnox extends Timezone {const Timezone$americaIndianaKnox._();
 
 @override String get value => 'America/Indiana/Knox';
@@ -5383,7 +5383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Knox'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaMarengo extends Timezone {const Timezone$americaIndianaMarengo._();
 
 @override String get value => 'America/Indiana/Marengo';
@@ -5392,7 +5392,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Marengo'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaPetersburg extends Timezone {const Timezone$americaIndianaPetersburg._();
 
 @override String get value => 'America/Indiana/Petersburg';
@@ -5401,7 +5401,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Petersburg'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaTellCity extends Timezone {const Timezone$americaIndianaTellCity._();
 
 @override String get value => 'America/Indiana/Tell_City';
@@ -5410,7 +5410,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Tell_City'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaVevay extends Timezone {const Timezone$americaIndianaVevay._();
 
 @override String get value => 'America/Indiana/Vevay';
@@ -5419,7 +5419,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Vevay'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaVincennes extends Timezone {const Timezone$americaIndianaVincennes._();
 
 @override String get value => 'America/Indiana/Vincennes';
@@ -5428,7 +5428,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Vincennes'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianaWinamac extends Timezone {const Timezone$americaIndianaWinamac._();
 
 @override String get value => 'America/Indiana/Winamac';
@@ -5437,7 +5437,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indiana/Winamac'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIndianapolis extends Timezone {const Timezone$americaIndianapolis._();
 
 @override String get value => 'America/Indianapolis';
@@ -5446,7 +5446,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Indianapolis'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaInuvik extends Timezone {const Timezone$americaInuvik._();
 
 @override String get value => 'America/Inuvik';
@@ -5455,7 +5455,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Inuvik'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaIqaluit extends Timezone {const Timezone$americaIqaluit._();
 
 @override String get value => 'America/Iqaluit';
@@ -5464,7 +5464,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Iqaluit'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaJamaica extends Timezone {const Timezone$americaJamaica._();
 
 @override String get value => 'America/Jamaica';
@@ -5473,7 +5473,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Jamaica'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaJujuy extends Timezone {const Timezone$americaJujuy._();
 
 @override String get value => 'America/Jujuy';
@@ -5482,7 +5482,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Jujuy'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaJuneau extends Timezone {const Timezone$americaJuneau._();
 
 @override String get value => 'America/Juneau';
@@ -5491,7 +5491,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Juneau'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaKentuckyLouisville extends Timezone {const Timezone$americaKentuckyLouisville._();
 
 @override String get value => 'America/Kentucky/Louisville';
@@ -5500,7 +5500,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Kentucky/Louisville'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaKentuckyMonticello extends Timezone {const Timezone$americaKentuckyMonticello._();
 
 @override String get value => 'America/Kentucky/Monticello';
@@ -5509,7 +5509,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Kentucky/Monticello'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaKnoxIn extends Timezone {const Timezone$americaKnoxIn._();
 
 @override String get value => 'America/Knox_IN';
@@ -5518,7 +5518,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Knox_IN'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaKralendijk extends Timezone {const Timezone$americaKralendijk._();
 
 @override String get value => 'America/Kralendijk';
@@ -5527,7 +5527,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Kralendijk'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaLaPaz extends Timezone {const Timezone$americaLaPaz._();
 
 @override String get value => 'America/La_Paz';
@@ -5536,7 +5536,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/La_Paz'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaLima extends Timezone {const Timezone$americaLima._();
 
 @override String get value => 'America/Lima';
@@ -5545,7 +5545,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Lima'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaLosAngeles extends Timezone {const Timezone$americaLosAngeles._();
 
 @override String get value => 'America/Los_Angeles';
@@ -5554,7 +5554,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Los_Angeles'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaLouisville extends Timezone {const Timezone$americaLouisville._();
 
 @override String get value => 'America/Louisville';
@@ -5563,7 +5563,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Louisville'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaLowerPrinces extends Timezone {const Timezone$americaLowerPrinces._();
 
 @override String get value => 'America/Lower_Princes';
@@ -5572,7 +5572,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Lower_Princes'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMaceio extends Timezone {const Timezone$americaMaceio._();
 
 @override String get value => 'America/Maceio';
@@ -5581,7 +5581,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Maceio'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaManagua extends Timezone {const Timezone$americaManagua._();
 
 @override String get value => 'America/Managua';
@@ -5590,7 +5590,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Managua'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaManaus extends Timezone {const Timezone$americaManaus._();
 
 @override String get value => 'America/Manaus';
@@ -5599,7 +5599,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Manaus'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMarigot extends Timezone {const Timezone$americaMarigot._();
 
 @override String get value => 'America/Marigot';
@@ -5608,7 +5608,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Marigot'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMartinique extends Timezone {const Timezone$americaMartinique._();
 
 @override String get value => 'America/Martinique';
@@ -5617,7 +5617,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Martinique'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMatamoros extends Timezone {const Timezone$americaMatamoros._();
 
 @override String get value => 'America/Matamoros';
@@ -5626,7 +5626,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Matamoros'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMazatlan extends Timezone {const Timezone$americaMazatlan._();
 
 @override String get value => 'America/Mazatlan';
@@ -5635,7 +5635,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Mazatlan'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMendoza extends Timezone {const Timezone$americaMendoza._();
 
 @override String get value => 'America/Mendoza';
@@ -5644,7 +5644,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Mendoza'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMenominee extends Timezone {const Timezone$americaMenominee._();
 
 @override String get value => 'America/Menominee';
@@ -5653,7 +5653,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Menominee'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMerida extends Timezone {const Timezone$americaMerida._();
 
 @override String get value => 'America/Merida';
@@ -5662,7 +5662,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Merida'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMetlakatla extends Timezone {const Timezone$americaMetlakatla._();
 
 @override String get value => 'America/Metlakatla';
@@ -5671,7 +5671,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Metlakatla'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMexicoCity extends Timezone {const Timezone$americaMexicoCity._();
 
 @override String get value => 'America/Mexico_City';
@@ -5680,7 +5680,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Mexico_City'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMiquelon extends Timezone {const Timezone$americaMiquelon._();
 
 @override String get value => 'America/Miquelon';
@@ -5689,7 +5689,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Miquelon'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMoncton extends Timezone {const Timezone$americaMoncton._();
 
 @override String get value => 'America/Moncton';
@@ -5698,7 +5698,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Moncton'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMonterrey extends Timezone {const Timezone$americaMonterrey._();
 
 @override String get value => 'America/Monterrey';
@@ -5707,7 +5707,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Monterrey'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMontevideo extends Timezone {const Timezone$americaMontevideo._();
 
 @override String get value => 'America/Montevideo';
@@ -5716,7 +5716,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Montevideo'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMontreal extends Timezone {const Timezone$americaMontreal._();
 
 @override String get value => 'America/Montreal';
@@ -5725,7 +5725,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Montreal'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaMontserrat extends Timezone {const Timezone$americaMontserrat._();
 
 @override String get value => 'America/Montserrat';
@@ -5734,7 +5734,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Montserrat'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNassau extends Timezone {const Timezone$americaNassau._();
 
 @override String get value => 'America/Nassau';
@@ -5743,7 +5743,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Nassau'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNewYork extends Timezone {const Timezone$americaNewYork._();
 
 @override String get value => 'America/New_York';
@@ -5752,7 +5752,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/New_York'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNipigon extends Timezone {const Timezone$americaNipigon._();
 
 @override String get value => 'America/Nipigon';
@@ -5761,7 +5761,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Nipigon'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNome extends Timezone {const Timezone$americaNome._();
 
 @override String get value => 'America/Nome';
@@ -5770,7 +5770,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Nome'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNoronha extends Timezone {const Timezone$americaNoronha._();
 
 @override String get value => 'America/Noronha';
@@ -5779,7 +5779,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Noronha'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNorthDakotaBeulah extends Timezone {const Timezone$americaNorthDakotaBeulah._();
 
 @override String get value => 'America/North_Dakota/Beulah';
@@ -5788,7 +5788,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/North_Dakota/Beulah'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNorthDakotaCenter extends Timezone {const Timezone$americaNorthDakotaCenter._();
 
 @override String get value => 'America/North_Dakota/Center';
@@ -5797,7 +5797,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/North_Dakota/Center'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNorthDakotaNewSalem extends Timezone {const Timezone$americaNorthDakotaNewSalem._();
 
 @override String get value => 'America/North_Dakota/New_Salem';
@@ -5806,7 +5806,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/North_Dakota/New_Salem'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaNuuk extends Timezone {const Timezone$americaNuuk._();
 
 @override String get value => 'America/Nuuk';
@@ -5815,7 +5815,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Nuuk'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaOjinaga extends Timezone {const Timezone$americaOjinaga._();
 
 @override String get value => 'America/Ojinaga';
@@ -5824,7 +5824,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Ojinaga'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPanama extends Timezone {const Timezone$americaPanama._();
 
 @override String get value => 'America/Panama';
@@ -5833,7 +5833,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Panama'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPangnirtung extends Timezone {const Timezone$americaPangnirtung._();
 
 @override String get value => 'America/Pangnirtung';
@@ -5842,7 +5842,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Pangnirtung'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaParamaribo extends Timezone {const Timezone$americaParamaribo._();
 
 @override String get value => 'America/Paramaribo';
@@ -5851,7 +5851,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Paramaribo'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPhoenix extends Timezone {const Timezone$americaPhoenix._();
 
 @override String get value => 'America/Phoenix';
@@ -5860,7 +5860,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Phoenix'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPortAuPrince extends Timezone {const Timezone$americaPortAuPrince._();
 
 @override String get value => 'America/Port-au-Prince';
@@ -5869,7 +5869,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Port-au-Prince'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPortOfSpain extends Timezone {const Timezone$americaPortOfSpain._();
 
 @override String get value => 'America/Port_of_Spain';
@@ -5878,7 +5878,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Port_of_Spain'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPortoAcre extends Timezone {const Timezone$americaPortoAcre._();
 
 @override String get value => 'America/Porto_Acre';
@@ -5887,7 +5887,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Porto_Acre'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPortoVelho extends Timezone {const Timezone$americaPortoVelho._();
 
 @override String get value => 'America/Porto_Velho';
@@ -5896,7 +5896,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Porto_Velho'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPuertoRico extends Timezone {const Timezone$americaPuertoRico._();
 
 @override String get value => 'America/Puerto_Rico';
@@ -5905,7 +5905,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Puerto_Rico'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaPuntaArenas extends Timezone {const Timezone$americaPuntaArenas._();
 
 @override String get value => 'America/Punta_Arenas';
@@ -5914,7 +5914,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Punta_Arenas'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaRainyRiver extends Timezone {const Timezone$americaRainyRiver._();
 
 @override String get value => 'America/Rainy_River';
@@ -5923,7 +5923,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Rainy_River'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaRankinInlet extends Timezone {const Timezone$americaRankinInlet._();
 
 @override String get value => 'America/Rankin_Inlet';
@@ -5932,7 +5932,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Rankin_Inlet'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaRecife extends Timezone {const Timezone$americaRecife._();
 
 @override String get value => 'America/Recife';
@@ -5941,7 +5941,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Recife'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaRegina extends Timezone {const Timezone$americaRegina._();
 
 @override String get value => 'America/Regina';
@@ -5950,7 +5950,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Regina'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaResolute extends Timezone {const Timezone$americaResolute._();
 
 @override String get value => 'America/Resolute';
@@ -5959,7 +5959,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Resolute'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaRioBranco extends Timezone {const Timezone$americaRioBranco._();
 
 @override String get value => 'America/Rio_Branco';
@@ -5968,7 +5968,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Rio_Branco'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaRosario extends Timezone {const Timezone$americaRosario._();
 
 @override String get value => 'America/Rosario';
@@ -5977,7 +5977,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Rosario'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSantaIsabel extends Timezone {const Timezone$americaSantaIsabel._();
 
 @override String get value => 'America/Santa_Isabel';
@@ -5986,7 +5986,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Santa_Isabel'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSantarem extends Timezone {const Timezone$americaSantarem._();
 
 @override String get value => 'America/Santarem';
@@ -5995,7 +5995,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Santarem'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSantiago extends Timezone {const Timezone$americaSantiago._();
 
 @override String get value => 'America/Santiago';
@@ -6004,7 +6004,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Santiago'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSantoDomingo extends Timezone {const Timezone$americaSantoDomingo._();
 
 @override String get value => 'America/Santo_Domingo';
@@ -6013,7 +6013,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Santo_Domingo'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSaoPaulo extends Timezone {const Timezone$americaSaoPaulo._();
 
 @override String get value => 'America/Sao_Paulo';
@@ -6022,7 +6022,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Sao_Paulo'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaScoresbysund extends Timezone {const Timezone$americaScoresbysund._();
 
 @override String get value => 'America/Scoresbysund';
@@ -6031,7 +6031,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Scoresbysund'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaShiprock extends Timezone {const Timezone$americaShiprock._();
 
 @override String get value => 'America/Shiprock';
@@ -6040,7 +6040,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Shiprock'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSitka extends Timezone {const Timezone$americaSitka._();
 
 @override String get value => 'America/Sitka';
@@ -6049,7 +6049,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Sitka'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaStBarthelemy extends Timezone {const Timezone$americaStBarthelemy._();
 
 @override String get value => 'America/St_Barthelemy';
@@ -6058,7 +6058,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/St_Barthelemy'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaStJohns extends Timezone {const Timezone$americaStJohns._();
 
 @override String get value => 'America/St_Johns';
@@ -6067,7 +6067,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/St_Johns'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaStKitts extends Timezone {const Timezone$americaStKitts._();
 
 @override String get value => 'America/St_Kitts';
@@ -6076,7 +6076,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/St_Kitts'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaStLucia extends Timezone {const Timezone$americaStLucia._();
 
 @override String get value => 'America/St_Lucia';
@@ -6085,7 +6085,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/St_Lucia'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaStThomas extends Timezone {const Timezone$americaStThomas._();
 
 @override String get value => 'America/St_Thomas';
@@ -6094,7 +6094,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/St_Thomas'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaStVincent extends Timezone {const Timezone$americaStVincent._();
 
 @override String get value => 'America/St_Vincent';
@@ -6103,7 +6103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/St_Vincent'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaSwiftCurrent extends Timezone {const Timezone$americaSwiftCurrent._();
 
 @override String get value => 'America/Swift_Current';
@@ -6112,7 +6112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Swift_Current'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaTegucigalpa extends Timezone {const Timezone$americaTegucigalpa._();
 
 @override String get value => 'America/Tegucigalpa';
@@ -6121,7 +6121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Tegucigalpa'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaThule extends Timezone {const Timezone$americaThule._();
 
 @override String get value => 'America/Thule';
@@ -6130,7 +6130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Thule'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaThunderBay extends Timezone {const Timezone$americaThunderBay._();
 
 @override String get value => 'America/Thunder_Bay';
@@ -6139,7 +6139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Thunder_Bay'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaTijuana extends Timezone {const Timezone$americaTijuana._();
 
 @override String get value => 'America/Tijuana';
@@ -6148,7 +6148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Tijuana'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaToronto extends Timezone {const Timezone$americaToronto._();
 
 @override String get value => 'America/Toronto';
@@ -6157,7 +6157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Toronto'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaTortola extends Timezone {const Timezone$americaTortola._();
 
 @override String get value => 'America/Tortola';
@@ -6166,7 +6166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Tortola'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaVancouver extends Timezone {const Timezone$americaVancouver._();
 
 @override String get value => 'America/Vancouver';
@@ -6175,7 +6175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Vancouver'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaVirgin extends Timezone {const Timezone$americaVirgin._();
 
 @override String get value => 'America/Virgin';
@@ -6184,7 +6184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Virgin'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaWhitehorse extends Timezone {const Timezone$americaWhitehorse._();
 
 @override String get value => 'America/Whitehorse';
@@ -6193,7 +6193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Whitehorse'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaWinnipeg extends Timezone {const Timezone$americaWinnipeg._();
 
 @override String get value => 'America/Winnipeg';
@@ -6202,7 +6202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Winnipeg'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaYakutat extends Timezone {const Timezone$americaYakutat._();
 
 @override String get value => 'America/Yakutat';
@@ -6211,7 +6211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Yakutat'.hashCode;
 
- }
+}
 @immutable final class Timezone$americaYellowknife extends Timezone {const Timezone$americaYellowknife._();
 
 @override String get value => 'America/Yellowknife';
@@ -6220,7 +6220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'America/Yellowknife'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaCasey extends Timezone {const Timezone$antarcticaCasey._();
 
 @override String get value => 'Antarctica/Casey';
@@ -6229,7 +6229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Casey'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaDavis extends Timezone {const Timezone$antarcticaDavis._();
 
 @override String get value => 'Antarctica/Davis';
@@ -6238,7 +6238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Davis'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaDumontDUrville extends Timezone {const Timezone$antarcticaDumontDUrville._();
 
 @override String get value => 'Antarctica/DumontDUrville';
@@ -6247,7 +6247,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/DumontDUrville'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaMacquarie extends Timezone {const Timezone$antarcticaMacquarie._();
 
 @override String get value => 'Antarctica/Macquarie';
@@ -6256,7 +6256,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Macquarie'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaMawson extends Timezone {const Timezone$antarcticaMawson._();
 
 @override String get value => 'Antarctica/Mawson';
@@ -6265,7 +6265,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Mawson'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaMcMurdo extends Timezone {const Timezone$antarcticaMcMurdo._();
 
 @override String get value => 'Antarctica/McMurdo';
@@ -6274,7 +6274,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/McMurdo'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaPalmer extends Timezone {const Timezone$antarcticaPalmer._();
 
 @override String get value => 'Antarctica/Palmer';
@@ -6283,7 +6283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Palmer'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaRothera extends Timezone {const Timezone$antarcticaRothera._();
 
 @override String get value => 'Antarctica/Rothera';
@@ -6292,7 +6292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Rothera'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaSouthPole extends Timezone {const Timezone$antarcticaSouthPole._();
 
 @override String get value => 'Antarctica/South_Pole';
@@ -6301,7 +6301,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/South_Pole'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaSyowa extends Timezone {const Timezone$antarcticaSyowa._();
 
 @override String get value => 'Antarctica/Syowa';
@@ -6310,7 +6310,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Syowa'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaTroll extends Timezone {const Timezone$antarcticaTroll._();
 
 @override String get value => 'Antarctica/Troll';
@@ -6319,7 +6319,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Troll'.hashCode;
 
- }
+}
 @immutable final class Timezone$antarcticaVostok extends Timezone {const Timezone$antarcticaVostok._();
 
 @override String get value => 'Antarctica/Vostok';
@@ -6328,7 +6328,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Antarctica/Vostok'.hashCode;
 
- }
+}
 @immutable final class Timezone$arcticLongyearbyen extends Timezone {const Timezone$arcticLongyearbyen._();
 
 @override String get value => 'Arctic/Longyearbyen';
@@ -6337,7 +6337,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Arctic/Longyearbyen'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAden extends Timezone {const Timezone$asiaAden._();
 
 @override String get value => 'Asia/Aden';
@@ -6346,7 +6346,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Aden'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAlmaty extends Timezone {const Timezone$asiaAlmaty._();
 
 @override String get value => 'Asia/Almaty';
@@ -6355,7 +6355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Almaty'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAmman extends Timezone {const Timezone$asiaAmman._();
 
 @override String get value => 'Asia/Amman';
@@ -6364,7 +6364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Amman'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAnadyr extends Timezone {const Timezone$asiaAnadyr._();
 
 @override String get value => 'Asia/Anadyr';
@@ -6373,7 +6373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Anadyr'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAqtau extends Timezone {const Timezone$asiaAqtau._();
 
 @override String get value => 'Asia/Aqtau';
@@ -6382,7 +6382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Aqtau'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAqtobe extends Timezone {const Timezone$asiaAqtobe._();
 
 @override String get value => 'Asia/Aqtobe';
@@ -6391,7 +6391,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Aqtobe'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAshgabat extends Timezone {const Timezone$asiaAshgabat._();
 
 @override String get value => 'Asia/Ashgabat';
@@ -6400,7 +6400,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ashgabat'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAshkhabad extends Timezone {const Timezone$asiaAshkhabad._();
 
 @override String get value => 'Asia/Ashkhabad';
@@ -6409,7 +6409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ashkhabad'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaAtyrau extends Timezone {const Timezone$asiaAtyrau._();
 
 @override String get value => 'Asia/Atyrau';
@@ -6418,7 +6418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Atyrau'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBaghdad extends Timezone {const Timezone$asiaBaghdad._();
 
 @override String get value => 'Asia/Baghdad';
@@ -6427,7 +6427,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Baghdad'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBahrain extends Timezone {const Timezone$asiaBahrain._();
 
 @override String get value => 'Asia/Bahrain';
@@ -6436,7 +6436,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Bahrain'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBaku extends Timezone {const Timezone$asiaBaku._();
 
 @override String get value => 'Asia/Baku';
@@ -6445,7 +6445,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Baku'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBangkok extends Timezone {const Timezone$asiaBangkok._();
 
 @override String get value => 'Asia/Bangkok';
@@ -6454,7 +6454,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Bangkok'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBarnaul extends Timezone {const Timezone$asiaBarnaul._();
 
 @override String get value => 'Asia/Barnaul';
@@ -6463,7 +6463,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Barnaul'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBeirut extends Timezone {const Timezone$asiaBeirut._();
 
 @override String get value => 'Asia/Beirut';
@@ -6472,7 +6472,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Beirut'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBishkek extends Timezone {const Timezone$asiaBishkek._();
 
 @override String get value => 'Asia/Bishkek';
@@ -6481,7 +6481,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Bishkek'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaBrunei extends Timezone {const Timezone$asiaBrunei._();
 
 @override String get value => 'Asia/Brunei';
@@ -6490,7 +6490,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Brunei'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaCalcutta extends Timezone {const Timezone$asiaCalcutta._();
 
 @override String get value => 'Asia/Calcutta';
@@ -6499,7 +6499,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Calcutta'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaChita extends Timezone {const Timezone$asiaChita._();
 
 @override String get value => 'Asia/Chita';
@@ -6508,7 +6508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Chita'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaChoibalsan extends Timezone {const Timezone$asiaChoibalsan._();
 
 @override String get value => 'Asia/Choibalsan';
@@ -6517,7 +6517,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Choibalsan'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaChongqing extends Timezone {const Timezone$asiaChongqing._();
 
 @override String get value => 'Asia/Chongqing';
@@ -6526,7 +6526,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Chongqing'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaChungking extends Timezone {const Timezone$asiaChungking._();
 
 @override String get value => 'Asia/Chungking';
@@ -6535,7 +6535,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Chungking'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaColombo extends Timezone {const Timezone$asiaColombo._();
 
 @override String get value => 'Asia/Colombo';
@@ -6544,7 +6544,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Colombo'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaDacca extends Timezone {const Timezone$asiaDacca._();
 
 @override String get value => 'Asia/Dacca';
@@ -6553,7 +6553,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Dacca'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaDamascus extends Timezone {const Timezone$asiaDamascus._();
 
 @override String get value => 'Asia/Damascus';
@@ -6562,7 +6562,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Damascus'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaDhaka extends Timezone {const Timezone$asiaDhaka._();
 
 @override String get value => 'Asia/Dhaka';
@@ -6571,7 +6571,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Dhaka'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaDili extends Timezone {const Timezone$asiaDili._();
 
 @override String get value => 'Asia/Dili';
@@ -6580,7 +6580,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Dili'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaDubai extends Timezone {const Timezone$asiaDubai._();
 
 @override String get value => 'Asia/Dubai';
@@ -6589,7 +6589,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Dubai'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaDushanbe extends Timezone {const Timezone$asiaDushanbe._();
 
 @override String get value => 'Asia/Dushanbe';
@@ -6598,7 +6598,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Dushanbe'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaFamagusta extends Timezone {const Timezone$asiaFamagusta._();
 
 @override String get value => 'Asia/Famagusta';
@@ -6607,7 +6607,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Famagusta'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaGaza extends Timezone {const Timezone$asiaGaza._();
 
 @override String get value => 'Asia/Gaza';
@@ -6616,7 +6616,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Gaza'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaHarbin extends Timezone {const Timezone$asiaHarbin._();
 
 @override String get value => 'Asia/Harbin';
@@ -6625,7 +6625,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Harbin'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaHebron extends Timezone {const Timezone$asiaHebron._();
 
 @override String get value => 'Asia/Hebron';
@@ -6634,7 +6634,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Hebron'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaHoChiMinh extends Timezone {const Timezone$asiaHoChiMinh._();
 
 @override String get value => 'Asia/Ho_Chi_Minh';
@@ -6643,7 +6643,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ho_Chi_Minh'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaHongKong extends Timezone {const Timezone$asiaHongKong._();
 
 @override String get value => 'Asia/Hong_Kong';
@@ -6652,7 +6652,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Hong_Kong'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaHovd extends Timezone {const Timezone$asiaHovd._();
 
 @override String get value => 'Asia/Hovd';
@@ -6661,7 +6661,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Hovd'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaIrkutsk extends Timezone {const Timezone$asiaIrkutsk._();
 
 @override String get value => 'Asia/Irkutsk';
@@ -6670,7 +6670,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Irkutsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaIstanbul extends Timezone {const Timezone$asiaIstanbul._();
 
 @override String get value => 'Asia/Istanbul';
@@ -6679,7 +6679,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Istanbul'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaJakarta extends Timezone {const Timezone$asiaJakarta._();
 
 @override String get value => 'Asia/Jakarta';
@@ -6688,7 +6688,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Jakarta'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaJayapura extends Timezone {const Timezone$asiaJayapura._();
 
 @override String get value => 'Asia/Jayapura';
@@ -6697,7 +6697,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Jayapura'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaJerusalem extends Timezone {const Timezone$asiaJerusalem._();
 
 @override String get value => 'Asia/Jerusalem';
@@ -6706,7 +6706,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Jerusalem'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKabul extends Timezone {const Timezone$asiaKabul._();
 
 @override String get value => 'Asia/Kabul';
@@ -6715,7 +6715,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kabul'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKamchatka extends Timezone {const Timezone$asiaKamchatka._();
 
 @override String get value => 'Asia/Kamchatka';
@@ -6724,7 +6724,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kamchatka'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKarachi extends Timezone {const Timezone$asiaKarachi._();
 
 @override String get value => 'Asia/Karachi';
@@ -6733,7 +6733,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Karachi'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKashgar extends Timezone {const Timezone$asiaKashgar._();
 
 @override String get value => 'Asia/Kashgar';
@@ -6742,7 +6742,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kashgar'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKathmandu extends Timezone {const Timezone$asiaKathmandu._();
 
 @override String get value => 'Asia/Kathmandu';
@@ -6751,7 +6751,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kathmandu'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKatmandu extends Timezone {const Timezone$asiaKatmandu._();
 
 @override String get value => 'Asia/Katmandu';
@@ -6760,7 +6760,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Katmandu'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKhandyga extends Timezone {const Timezone$asiaKhandyga._();
 
 @override String get value => 'Asia/Khandyga';
@@ -6769,7 +6769,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Khandyga'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKolkata extends Timezone {const Timezone$asiaKolkata._();
 
 @override String get value => 'Asia/Kolkata';
@@ -6778,7 +6778,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kolkata'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKrasnoyarsk extends Timezone {const Timezone$asiaKrasnoyarsk._();
 
 @override String get value => 'Asia/Krasnoyarsk';
@@ -6787,7 +6787,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Krasnoyarsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKualaLumpur extends Timezone {const Timezone$asiaKualaLumpur._();
 
 @override String get value => 'Asia/Kuala_Lumpur';
@@ -6796,7 +6796,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kuala_Lumpur'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKuching extends Timezone {const Timezone$asiaKuching._();
 
 @override String get value => 'Asia/Kuching';
@@ -6805,7 +6805,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kuching'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaKuwait extends Timezone {const Timezone$asiaKuwait._();
 
 @override String get value => 'Asia/Kuwait';
@@ -6814,7 +6814,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Kuwait'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaMacao extends Timezone {const Timezone$asiaMacao._();
 
 @override String get value => 'Asia/Macao';
@@ -6823,7 +6823,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Macao'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaMacau extends Timezone {const Timezone$asiaMacau._();
 
 @override String get value => 'Asia/Macau';
@@ -6832,7 +6832,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Macau'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaMagadan extends Timezone {const Timezone$asiaMagadan._();
 
 @override String get value => 'Asia/Magadan';
@@ -6841,7 +6841,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Magadan'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaMakassar extends Timezone {const Timezone$asiaMakassar._();
 
 @override String get value => 'Asia/Makassar';
@@ -6850,7 +6850,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Makassar'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaManila extends Timezone {const Timezone$asiaManila._();
 
 @override String get value => 'Asia/Manila';
@@ -6859,7 +6859,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Manila'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaMuscat extends Timezone {const Timezone$asiaMuscat._();
 
 @override String get value => 'Asia/Muscat';
@@ -6868,7 +6868,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Muscat'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaNicosia extends Timezone {const Timezone$asiaNicosia._();
 
 @override String get value => 'Asia/Nicosia';
@@ -6877,7 +6877,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Nicosia'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaNovokuznetsk extends Timezone {const Timezone$asiaNovokuznetsk._();
 
 @override String get value => 'Asia/Novokuznetsk';
@@ -6886,7 +6886,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Novokuznetsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaNovosibirsk extends Timezone {const Timezone$asiaNovosibirsk._();
 
 @override String get value => 'Asia/Novosibirsk';
@@ -6895,7 +6895,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Novosibirsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaOmsk extends Timezone {const Timezone$asiaOmsk._();
 
 @override String get value => 'Asia/Omsk';
@@ -6904,7 +6904,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Omsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaOral extends Timezone {const Timezone$asiaOral._();
 
 @override String get value => 'Asia/Oral';
@@ -6913,7 +6913,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Oral'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaPhnomPenh extends Timezone {const Timezone$asiaPhnomPenh._();
 
 @override String get value => 'Asia/Phnom_Penh';
@@ -6922,7 +6922,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Phnom_Penh'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaPontianak extends Timezone {const Timezone$asiaPontianak._();
 
 @override String get value => 'Asia/Pontianak';
@@ -6931,7 +6931,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Pontianak'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaPyongyang extends Timezone {const Timezone$asiaPyongyang._();
 
 @override String get value => 'Asia/Pyongyang';
@@ -6940,7 +6940,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Pyongyang'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaQatar extends Timezone {const Timezone$asiaQatar._();
 
 @override String get value => 'Asia/Qatar';
@@ -6949,7 +6949,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Qatar'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaQostanay extends Timezone {const Timezone$asiaQostanay._();
 
 @override String get value => 'Asia/Qostanay';
@@ -6958,7 +6958,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Qostanay'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaQyzylorda extends Timezone {const Timezone$asiaQyzylorda._();
 
 @override String get value => 'Asia/Qyzylorda';
@@ -6967,7 +6967,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Qyzylorda'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaRangoon extends Timezone {const Timezone$asiaRangoon._();
 
 @override String get value => 'Asia/Rangoon';
@@ -6976,7 +6976,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Rangoon'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaRiyadh extends Timezone {const Timezone$asiaRiyadh._();
 
 @override String get value => 'Asia/Riyadh';
@@ -6985,7 +6985,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Riyadh'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaSaigon extends Timezone {const Timezone$asiaSaigon._();
 
 @override String get value => 'Asia/Saigon';
@@ -6994,7 +6994,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Saigon'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaSakhalin extends Timezone {const Timezone$asiaSakhalin._();
 
 @override String get value => 'Asia/Sakhalin';
@@ -7003,7 +7003,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Sakhalin'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaSamarkand extends Timezone {const Timezone$asiaSamarkand._();
 
 @override String get value => 'Asia/Samarkand';
@@ -7012,7 +7012,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Samarkand'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaSeoul extends Timezone {const Timezone$asiaSeoul._();
 
 @override String get value => 'Asia/Seoul';
@@ -7021,7 +7021,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Seoul'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaShanghai extends Timezone {const Timezone$asiaShanghai._();
 
 @override String get value => 'Asia/Shanghai';
@@ -7030,7 +7030,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Shanghai'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaSingapore extends Timezone {const Timezone$asiaSingapore._();
 
 @override String get value => 'Asia/Singapore';
@@ -7039,7 +7039,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Singapore'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaSrednekolymsk extends Timezone {const Timezone$asiaSrednekolymsk._();
 
 @override String get value => 'Asia/Srednekolymsk';
@@ -7048,7 +7048,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Srednekolymsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTaipei extends Timezone {const Timezone$asiaTaipei._();
 
 @override String get value => 'Asia/Taipei';
@@ -7057,7 +7057,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Taipei'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTashkent extends Timezone {const Timezone$asiaTashkent._();
 
 @override String get value => 'Asia/Tashkent';
@@ -7066,7 +7066,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Tashkent'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTbilisi extends Timezone {const Timezone$asiaTbilisi._();
 
 @override String get value => 'Asia/Tbilisi';
@@ -7075,7 +7075,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Tbilisi'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTehran extends Timezone {const Timezone$asiaTehran._();
 
 @override String get value => 'Asia/Tehran';
@@ -7084,7 +7084,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Tehran'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTelAviv extends Timezone {const Timezone$asiaTelAviv._();
 
 @override String get value => 'Asia/Tel_Aviv';
@@ -7093,7 +7093,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Tel_Aviv'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaThimbu extends Timezone {const Timezone$asiaThimbu._();
 
 @override String get value => 'Asia/Thimbu';
@@ -7102,7 +7102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Thimbu'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaThimphu extends Timezone {const Timezone$asiaThimphu._();
 
 @override String get value => 'Asia/Thimphu';
@@ -7111,7 +7111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Thimphu'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTokyo extends Timezone {const Timezone$asiaTokyo._();
 
 @override String get value => 'Asia/Tokyo';
@@ -7120,7 +7120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Tokyo'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaTomsk extends Timezone {const Timezone$asiaTomsk._();
 
 @override String get value => 'Asia/Tomsk';
@@ -7129,7 +7129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Tomsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaUjungPandang extends Timezone {const Timezone$asiaUjungPandang._();
 
 @override String get value => 'Asia/Ujung_Pandang';
@@ -7138,7 +7138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ujung_Pandang'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaUlaanbaatar extends Timezone {const Timezone$asiaUlaanbaatar._();
 
 @override String get value => 'Asia/Ulaanbaatar';
@@ -7147,7 +7147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ulaanbaatar'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaUlanBator extends Timezone {const Timezone$asiaUlanBator._();
 
 @override String get value => 'Asia/Ulan_Bator';
@@ -7156,7 +7156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ulan_Bator'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaUrumqi extends Timezone {const Timezone$asiaUrumqi._();
 
 @override String get value => 'Asia/Urumqi';
@@ -7165,7 +7165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Urumqi'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaUstNera extends Timezone {const Timezone$asiaUstNera._();
 
 @override String get value => 'Asia/Ust-Nera';
@@ -7174,7 +7174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Ust-Nera'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaVientiane extends Timezone {const Timezone$asiaVientiane._();
 
 @override String get value => 'Asia/Vientiane';
@@ -7183,7 +7183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Vientiane'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaVladivostok extends Timezone {const Timezone$asiaVladivostok._();
 
 @override String get value => 'Asia/Vladivostok';
@@ -7192,7 +7192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Vladivostok'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaYakutsk extends Timezone {const Timezone$asiaYakutsk._();
 
 @override String get value => 'Asia/Yakutsk';
@@ -7201,7 +7201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Yakutsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaYangon extends Timezone {const Timezone$asiaYangon._();
 
 @override String get value => 'Asia/Yangon';
@@ -7210,7 +7210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Yangon'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaYekaterinburg extends Timezone {const Timezone$asiaYekaterinburg._();
 
 @override String get value => 'Asia/Yekaterinburg';
@@ -7219,7 +7219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Yekaterinburg'.hashCode;
 
- }
+}
 @immutable final class Timezone$asiaYerevan extends Timezone {const Timezone$asiaYerevan._();
 
 @override String get value => 'Asia/Yerevan';
@@ -7228,7 +7228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Asia/Yerevan'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticAzores extends Timezone {const Timezone$atlanticAzores._();
 
 @override String get value => 'Atlantic/Azores';
@@ -7237,7 +7237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Azores'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticBermuda extends Timezone {const Timezone$atlanticBermuda._();
 
 @override String get value => 'Atlantic/Bermuda';
@@ -7246,7 +7246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Bermuda'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticCanary extends Timezone {const Timezone$atlanticCanary._();
 
 @override String get value => 'Atlantic/Canary';
@@ -7255,7 +7255,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Canary'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticCapeVerde extends Timezone {const Timezone$atlanticCapeVerde._();
 
 @override String get value => 'Atlantic/Cape_Verde';
@@ -7264,7 +7264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Cape_Verde'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticFaeroe extends Timezone {const Timezone$atlanticFaeroe._();
 
 @override String get value => 'Atlantic/Faeroe';
@@ -7273,7 +7273,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Faeroe'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticFaroe extends Timezone {const Timezone$atlanticFaroe._();
 
 @override String get value => 'Atlantic/Faroe';
@@ -7282,7 +7282,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Faroe'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticJanMayen extends Timezone {const Timezone$atlanticJanMayen._();
 
 @override String get value => 'Atlantic/Jan_Mayen';
@@ -7291,7 +7291,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Jan_Mayen'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticMadeira extends Timezone {const Timezone$atlanticMadeira._();
 
 @override String get value => 'Atlantic/Madeira';
@@ -7300,7 +7300,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Madeira'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticReykjavik extends Timezone {const Timezone$atlanticReykjavik._();
 
 @override String get value => 'Atlantic/Reykjavik';
@@ -7309,7 +7309,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Reykjavik'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticSouthGeorgia extends Timezone {const Timezone$atlanticSouthGeorgia._();
 
 @override String get value => 'Atlantic/South_Georgia';
@@ -7318,7 +7318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/South_Georgia'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticStHelena extends Timezone {const Timezone$atlanticStHelena._();
 
 @override String get value => 'Atlantic/St_Helena';
@@ -7327,7 +7327,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/St_Helena'.hashCode;
 
- }
+}
 @immutable final class Timezone$atlanticStanley extends Timezone {const Timezone$atlanticStanley._();
 
 @override String get value => 'Atlantic/Stanley';
@@ -7336,7 +7336,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Atlantic/Stanley'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaAct extends Timezone {const Timezone$australiaAct._();
 
 @override String get value => 'Australia/ACT';
@@ -7345,7 +7345,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/ACT'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaAdelaide extends Timezone {const Timezone$australiaAdelaide._();
 
 @override String get value => 'Australia/Adelaide';
@@ -7354,7 +7354,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Adelaide'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaBrisbane extends Timezone {const Timezone$australiaBrisbane._();
 
 @override String get value => 'Australia/Brisbane';
@@ -7363,7 +7363,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Brisbane'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaBrokenHill extends Timezone {const Timezone$australiaBrokenHill._();
 
 @override String get value => 'Australia/Broken_Hill';
@@ -7372,7 +7372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Broken_Hill'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaCanberra extends Timezone {const Timezone$australiaCanberra._();
 
 @override String get value => 'Australia/Canberra';
@@ -7381,7 +7381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Canberra'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaCurrie extends Timezone {const Timezone$australiaCurrie._();
 
 @override String get value => 'Australia/Currie';
@@ -7390,7 +7390,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Currie'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaDarwin extends Timezone {const Timezone$australiaDarwin._();
 
 @override String get value => 'Australia/Darwin';
@@ -7399,7 +7399,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Darwin'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaEucla extends Timezone {const Timezone$australiaEucla._();
 
 @override String get value => 'Australia/Eucla';
@@ -7408,7 +7408,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Eucla'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaHobart extends Timezone {const Timezone$australiaHobart._();
 
 @override String get value => 'Australia/Hobart';
@@ -7417,7 +7417,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Hobart'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaLhi extends Timezone {const Timezone$australiaLhi._();
 
 @override String get value => 'Australia/LHI';
@@ -7426,7 +7426,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/LHI'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaLindeman extends Timezone {const Timezone$australiaLindeman._();
 
 @override String get value => 'Australia/Lindeman';
@@ -7435,7 +7435,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Lindeman'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaLordHowe extends Timezone {const Timezone$australiaLordHowe._();
 
 @override String get value => 'Australia/Lord_Howe';
@@ -7444,7 +7444,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Lord_Howe'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaMelbourne extends Timezone {const Timezone$australiaMelbourne._();
 
 @override String get value => 'Australia/Melbourne';
@@ -7453,7 +7453,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Melbourne'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaNsw extends Timezone {const Timezone$australiaNsw._();
 
 @override String get value => 'Australia/NSW';
@@ -7462,7 +7462,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/NSW'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaNorth extends Timezone {const Timezone$australiaNorth._();
 
 @override String get value => 'Australia/North';
@@ -7471,7 +7471,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/North'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaPerth extends Timezone {const Timezone$australiaPerth._();
 
 @override String get value => 'Australia/Perth';
@@ -7480,7 +7480,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Perth'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaQueensland extends Timezone {const Timezone$australiaQueensland._();
 
 @override String get value => 'Australia/Queensland';
@@ -7489,7 +7489,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Queensland'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaSouth extends Timezone {const Timezone$australiaSouth._();
 
 @override String get value => 'Australia/South';
@@ -7498,7 +7498,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/South'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaSydney extends Timezone {const Timezone$australiaSydney._();
 
 @override String get value => 'Australia/Sydney';
@@ -7507,7 +7507,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Sydney'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaTasmania extends Timezone {const Timezone$australiaTasmania._();
 
 @override String get value => 'Australia/Tasmania';
@@ -7516,7 +7516,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Tasmania'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaVictoria extends Timezone {const Timezone$australiaVictoria._();
 
 @override String get value => 'Australia/Victoria';
@@ -7525,7 +7525,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Victoria'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaWest extends Timezone {const Timezone$australiaWest._();
 
 @override String get value => 'Australia/West';
@@ -7534,7 +7534,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/West'.hashCode;
 
- }
+}
 @immutable final class Timezone$australiaYancowinna extends Timezone {const Timezone$australiaYancowinna._();
 
 @override String get value => 'Australia/Yancowinna';
@@ -7543,7 +7543,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Australia/Yancowinna'.hashCode;
 
- }
+}
 @immutable final class Timezone$brazilAcre extends Timezone {const Timezone$brazilAcre._();
 
 @override String get value => 'Brazil/Acre';
@@ -7552,7 +7552,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Brazil/Acre'.hashCode;
 
- }
+}
 @immutable final class Timezone$brazilDeNoronha extends Timezone {const Timezone$brazilDeNoronha._();
 
 @override String get value => 'Brazil/DeNoronha';
@@ -7561,7 +7561,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Brazil/DeNoronha'.hashCode;
 
- }
+}
 @immutable final class Timezone$brazilEast extends Timezone {const Timezone$brazilEast._();
 
 @override String get value => 'Brazil/East';
@@ -7570,7 +7570,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Brazil/East'.hashCode;
 
- }
+}
 @immutable final class Timezone$brazilWest extends Timezone {const Timezone$brazilWest._();
 
 @override String get value => 'Brazil/West';
@@ -7579,7 +7579,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Brazil/West'.hashCode;
 
- }
+}
 @immutable final class Timezone$cet extends Timezone {const Timezone$cet._();
 
 @override String get value => 'CET';
@@ -7588,7 +7588,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'CET'.hashCode;
 
- }
+}
 @immutable final class Timezone$cst6Cdt extends Timezone {const Timezone$cst6Cdt._();
 
 @override String get value => 'CST6CDT';
@@ -7597,7 +7597,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'CST6CDT'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaAtlantic extends Timezone {const Timezone$canadaAtlantic._();
 
 @override String get value => 'Canada/Atlantic';
@@ -7606,7 +7606,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Atlantic'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaCentral extends Timezone {const Timezone$canadaCentral._();
 
 @override String get value => 'Canada/Central';
@@ -7615,7 +7615,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Central'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaEastern extends Timezone {const Timezone$canadaEastern._();
 
 @override String get value => 'Canada/Eastern';
@@ -7624,7 +7624,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Eastern'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaMountain extends Timezone {const Timezone$canadaMountain._();
 
 @override String get value => 'Canada/Mountain';
@@ -7633,7 +7633,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Mountain'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaNewfoundland extends Timezone {const Timezone$canadaNewfoundland._();
 
 @override String get value => 'Canada/Newfoundland';
@@ -7642,7 +7642,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Newfoundland'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaPacific extends Timezone {const Timezone$canadaPacific._();
 
 @override String get value => 'Canada/Pacific';
@@ -7651,7 +7651,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Pacific'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaSaskatchewan extends Timezone {const Timezone$canadaSaskatchewan._();
 
 @override String get value => 'Canada/Saskatchewan';
@@ -7660,7 +7660,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Saskatchewan'.hashCode;
 
- }
+}
 @immutable final class Timezone$canadaYukon extends Timezone {const Timezone$canadaYukon._();
 
 @override String get value => 'Canada/Yukon';
@@ -7669,7 +7669,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Canada/Yukon'.hashCode;
 
- }
+}
 @immutable final class Timezone$chileContinental extends Timezone {const Timezone$chileContinental._();
 
 @override String get value => 'Chile/Continental';
@@ -7678,7 +7678,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Chile/Continental'.hashCode;
 
- }
+}
 @immutable final class Timezone$chileEasterIsland extends Timezone {const Timezone$chileEasterIsland._();
 
 @override String get value => 'Chile/EasterIsland';
@@ -7687,7 +7687,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Chile/EasterIsland'.hashCode;
 
- }
+}
 @immutable final class Timezone$cuba extends Timezone {const Timezone$cuba._();
 
 @override String get value => 'Cuba';
@@ -7696,7 +7696,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Cuba'.hashCode;
 
- }
+}
 @immutable final class Timezone$eet extends Timezone {const Timezone$eet._();
 
 @override String get value => 'EET';
@@ -7705,7 +7705,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'EET'.hashCode;
 
- }
+}
 @immutable final class Timezone$est extends Timezone {const Timezone$est._();
 
 @override String get value => 'EST';
@@ -7714,7 +7714,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'EST'.hashCode;
 
- }
+}
 @immutable final class Timezone$est5Edt extends Timezone {const Timezone$est5Edt._();
 
 @override String get value => 'EST5EDT';
@@ -7723,7 +7723,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'EST5EDT'.hashCode;
 
- }
+}
 @immutable final class Timezone$egypt extends Timezone {const Timezone$egypt._();
 
 @override String get value => 'Egypt';
@@ -7732,7 +7732,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Egypt'.hashCode;
 
- }
+}
 @immutable final class Timezone$eire extends Timezone {const Timezone$eire._();
 
 @override String get value => 'Eire';
@@ -7741,7 +7741,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Eire'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt extends Timezone {const Timezone$etcGmt._();
 
 @override String get value => 'Etc/GMT';
@@ -7750,7 +7750,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt0 extends Timezone {const Timezone$etcGmt0._();
 
 @override String get value => 'Etc/GMT+0';
@@ -7759,7 +7759,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+0'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt1 extends Timezone {const Timezone$etcGmt1._();
 
 @override String get value => 'Etc/GMT+1';
@@ -7768,7 +7768,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+1'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt10 extends Timezone {const Timezone$etcGmt10._();
 
 @override String get value => 'Etc/GMT+10';
@@ -7777,7 +7777,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+10'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt11 extends Timezone {const Timezone$etcGmt11._();
 
 @override String get value => 'Etc/GMT+11';
@@ -7786,7 +7786,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+11'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt12 extends Timezone {const Timezone$etcGmt12._();
 
 @override String get value => 'Etc/GMT+12';
@@ -7795,7 +7795,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+12'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt2 extends Timezone {const Timezone$etcGmt2._();
 
 @override String get value => 'Etc/GMT+2';
@@ -7804,7 +7804,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+2'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt3 extends Timezone {const Timezone$etcGmt3._();
 
 @override String get value => 'Etc/GMT+3';
@@ -7813,7 +7813,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+3'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt4 extends Timezone {const Timezone$etcGmt4._();
 
 @override String get value => 'Etc/GMT+4';
@@ -7822,7 +7822,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+4'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt5 extends Timezone {const Timezone$etcGmt5._();
 
 @override String get value => 'Etc/GMT+5';
@@ -7831,7 +7831,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+5'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt6 extends Timezone {const Timezone$etcGmt6._();
 
 @override String get value => 'Etc/GMT+6';
@@ -7840,7 +7840,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+6'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt7 extends Timezone {const Timezone$etcGmt7._();
 
 @override String get value => 'Etc/GMT+7';
@@ -7849,7 +7849,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+7'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt8 extends Timezone {const Timezone$etcGmt8._();
 
 @override String get value => 'Etc/GMT+8';
@@ -7858,7 +7858,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+8'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt9 extends Timezone {const Timezone$etcGmt9._();
 
 @override String get value => 'Etc/GMT+9';
@@ -7867,7 +7867,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT+9'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt02 extends Timezone {const Timezone$etcGmt02._();
 
 @override String get value => 'Etc/GMT-0';
@@ -7876,7 +7876,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-0'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt13 extends Timezone {const Timezone$etcGmt13._();
 
 @override String get value => 'Etc/GMT-1';
@@ -7885,7 +7885,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-1'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt102 extends Timezone {const Timezone$etcGmt102._();
 
 @override String get value => 'Etc/GMT-10';
@@ -7894,7 +7894,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-10'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt112 extends Timezone {const Timezone$etcGmt112._();
 
 @override String get value => 'Etc/GMT-11';
@@ -7903,7 +7903,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-11'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt122 extends Timezone {const Timezone$etcGmt122._();
 
 @override String get value => 'Etc/GMT-12';
@@ -7912,7 +7912,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-12'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt132 extends Timezone {const Timezone$etcGmt132._();
 
 @override String get value => 'Etc/GMT-13';
@@ -7921,7 +7921,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-13'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt14 extends Timezone {const Timezone$etcGmt14._();
 
 @override String get value => 'Etc/GMT-14';
@@ -7930,7 +7930,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-14'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt22 extends Timezone {const Timezone$etcGmt22._();
 
 @override String get value => 'Etc/GMT-2';
@@ -7939,7 +7939,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-2'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt32 extends Timezone {const Timezone$etcGmt32._();
 
 @override String get value => 'Etc/GMT-3';
@@ -7948,7 +7948,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-3'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt42 extends Timezone {const Timezone$etcGmt42._();
 
 @override String get value => 'Etc/GMT-4';
@@ -7957,7 +7957,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-4'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt52 extends Timezone {const Timezone$etcGmt52._();
 
 @override String get value => 'Etc/GMT-5';
@@ -7966,7 +7966,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-5'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt62 extends Timezone {const Timezone$etcGmt62._();
 
 @override String get value => 'Etc/GMT-6';
@@ -7975,7 +7975,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-6'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt72 extends Timezone {const Timezone$etcGmt72._();
 
 @override String get value => 'Etc/GMT-7';
@@ -7984,7 +7984,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-7'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt82 extends Timezone {const Timezone$etcGmt82._();
 
 @override String get value => 'Etc/GMT-8';
@@ -7993,7 +7993,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-8'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt92 extends Timezone {const Timezone$etcGmt92._();
 
 @override String get value => 'Etc/GMT-9';
@@ -8002,7 +8002,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT-9'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGmt03 extends Timezone {const Timezone$etcGmt03._();
 
 @override String get value => 'Etc/GMT0';
@@ -8011,7 +8011,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/GMT0'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcGreenwich extends Timezone {const Timezone$etcGreenwich._();
 
 @override String get value => 'Etc/Greenwich';
@@ -8020,7 +8020,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/Greenwich'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcUct extends Timezone {const Timezone$etcUct._();
 
 @override String get value => 'Etc/UCT';
@@ -8029,7 +8029,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/UCT'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcUtc extends Timezone {const Timezone$etcUtc._();
 
 @override String get value => 'Etc/UTC';
@@ -8038,7 +8038,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/UTC'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcUniversal extends Timezone {const Timezone$etcUniversal._();
 
 @override String get value => 'Etc/Universal';
@@ -8047,7 +8047,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/Universal'.hashCode;
 
- }
+}
 @immutable final class Timezone$etcZulu extends Timezone {const Timezone$etcZulu._();
 
 @override String get value => 'Etc/Zulu';
@@ -8056,7 +8056,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Etc/Zulu'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeAmsterdam extends Timezone {const Timezone$europeAmsterdam._();
 
 @override String get value => 'Europe/Amsterdam';
@@ -8065,7 +8065,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Amsterdam'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeAndorra extends Timezone {const Timezone$europeAndorra._();
 
 @override String get value => 'Europe/Andorra';
@@ -8074,7 +8074,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Andorra'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeAstrakhan extends Timezone {const Timezone$europeAstrakhan._();
 
 @override String get value => 'Europe/Astrakhan';
@@ -8083,7 +8083,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Astrakhan'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeAthens extends Timezone {const Timezone$europeAthens._();
 
 @override String get value => 'Europe/Athens';
@@ -8092,7 +8092,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Athens'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBelfast extends Timezone {const Timezone$europeBelfast._();
 
 @override String get value => 'Europe/Belfast';
@@ -8101,7 +8101,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Belfast'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBelgrade extends Timezone {const Timezone$europeBelgrade._();
 
 @override String get value => 'Europe/Belgrade';
@@ -8110,7 +8110,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Belgrade'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBerlin extends Timezone {const Timezone$europeBerlin._();
 
 @override String get value => 'Europe/Berlin';
@@ -8119,7 +8119,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Berlin'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBratislava extends Timezone {const Timezone$europeBratislava._();
 
 @override String get value => 'Europe/Bratislava';
@@ -8128,7 +8128,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Bratislava'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBrussels extends Timezone {const Timezone$europeBrussels._();
 
 @override String get value => 'Europe/Brussels';
@@ -8137,7 +8137,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Brussels'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBucharest extends Timezone {const Timezone$europeBucharest._();
 
 @override String get value => 'Europe/Bucharest';
@@ -8146,7 +8146,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Bucharest'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBudapest extends Timezone {const Timezone$europeBudapest._();
 
 @override String get value => 'Europe/Budapest';
@@ -8155,7 +8155,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Budapest'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeBusingen extends Timezone {const Timezone$europeBusingen._();
 
 @override String get value => 'Europe/Busingen';
@@ -8164,7 +8164,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Busingen'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeChisinau extends Timezone {const Timezone$europeChisinau._();
 
 @override String get value => 'Europe/Chisinau';
@@ -8173,7 +8173,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Chisinau'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeCopenhagen extends Timezone {const Timezone$europeCopenhagen._();
 
 @override String get value => 'Europe/Copenhagen';
@@ -8182,7 +8182,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Copenhagen'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeDublin extends Timezone {const Timezone$europeDublin._();
 
 @override String get value => 'Europe/Dublin';
@@ -8191,7 +8191,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Dublin'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeGibraltar extends Timezone {const Timezone$europeGibraltar._();
 
 @override String get value => 'Europe/Gibraltar';
@@ -8200,7 +8200,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Gibraltar'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeGuernsey extends Timezone {const Timezone$europeGuernsey._();
 
 @override String get value => 'Europe/Guernsey';
@@ -8209,7 +8209,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Guernsey'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeHelsinki extends Timezone {const Timezone$europeHelsinki._();
 
 @override String get value => 'Europe/Helsinki';
@@ -8218,7 +8218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Helsinki'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeIsleOfMan extends Timezone {const Timezone$europeIsleOfMan._();
 
 @override String get value => 'Europe/Isle_of_Man';
@@ -8227,7 +8227,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Isle_of_Man'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeIstanbul extends Timezone {const Timezone$europeIstanbul._();
 
 @override String get value => 'Europe/Istanbul';
@@ -8236,7 +8236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Istanbul'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeJersey extends Timezone {const Timezone$europeJersey._();
 
 @override String get value => 'Europe/Jersey';
@@ -8245,7 +8245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Jersey'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeKaliningrad extends Timezone {const Timezone$europeKaliningrad._();
 
 @override String get value => 'Europe/Kaliningrad';
@@ -8254,7 +8254,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Kaliningrad'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeKiev extends Timezone {const Timezone$europeKiev._();
 
 @override String get value => 'Europe/Kiev';
@@ -8263,7 +8263,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Kiev'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeKirov extends Timezone {const Timezone$europeKirov._();
 
 @override String get value => 'Europe/Kirov';
@@ -8272,7 +8272,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Kirov'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeKyiv extends Timezone {const Timezone$europeKyiv._();
 
 @override String get value => 'Europe/Kyiv';
@@ -8281,7 +8281,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Kyiv'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeLisbon extends Timezone {const Timezone$europeLisbon._();
 
 @override String get value => 'Europe/Lisbon';
@@ -8290,7 +8290,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Lisbon'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeLjubljana extends Timezone {const Timezone$europeLjubljana._();
 
 @override String get value => 'Europe/Ljubljana';
@@ -8299,7 +8299,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Ljubljana'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeLondon extends Timezone {const Timezone$europeLondon._();
 
 @override String get value => 'Europe/London';
@@ -8308,7 +8308,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/London'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeLuxembourg extends Timezone {const Timezone$europeLuxembourg._();
 
 @override String get value => 'Europe/Luxembourg';
@@ -8317,7 +8317,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Luxembourg'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeMadrid extends Timezone {const Timezone$europeMadrid._();
 
 @override String get value => 'Europe/Madrid';
@@ -8326,7 +8326,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Madrid'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeMalta extends Timezone {const Timezone$europeMalta._();
 
 @override String get value => 'Europe/Malta';
@@ -8335,7 +8335,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Malta'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeMariehamn extends Timezone {const Timezone$europeMariehamn._();
 
 @override String get value => 'Europe/Mariehamn';
@@ -8344,7 +8344,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Mariehamn'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeMinsk extends Timezone {const Timezone$europeMinsk._();
 
 @override String get value => 'Europe/Minsk';
@@ -8353,7 +8353,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Minsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeMonaco extends Timezone {const Timezone$europeMonaco._();
 
 @override String get value => 'Europe/Monaco';
@@ -8362,7 +8362,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Monaco'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeMoscow extends Timezone {const Timezone$europeMoscow._();
 
 @override String get value => 'Europe/Moscow';
@@ -8371,7 +8371,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Moscow'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeNicosia extends Timezone {const Timezone$europeNicosia._();
 
 @override String get value => 'Europe/Nicosia';
@@ -8380,7 +8380,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Nicosia'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeOslo extends Timezone {const Timezone$europeOslo._();
 
 @override String get value => 'Europe/Oslo';
@@ -8389,7 +8389,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Oslo'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeParis extends Timezone {const Timezone$europeParis._();
 
 @override String get value => 'Europe/Paris';
@@ -8398,7 +8398,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Paris'.hashCode;
 
- }
+}
 @immutable final class Timezone$europePodgorica extends Timezone {const Timezone$europePodgorica._();
 
 @override String get value => 'Europe/Podgorica';
@@ -8407,7 +8407,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Podgorica'.hashCode;
 
- }
+}
 @immutable final class Timezone$europePrague extends Timezone {const Timezone$europePrague._();
 
 @override String get value => 'Europe/Prague';
@@ -8416,7 +8416,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Prague'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeRiga extends Timezone {const Timezone$europeRiga._();
 
 @override String get value => 'Europe/Riga';
@@ -8425,7 +8425,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Riga'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeRome extends Timezone {const Timezone$europeRome._();
 
 @override String get value => 'Europe/Rome';
@@ -8434,7 +8434,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Rome'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSamara extends Timezone {const Timezone$europeSamara._();
 
 @override String get value => 'Europe/Samara';
@@ -8443,7 +8443,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Samara'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSanMarino extends Timezone {const Timezone$europeSanMarino._();
 
 @override String get value => 'Europe/San_Marino';
@@ -8452,7 +8452,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/San_Marino'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSarajevo extends Timezone {const Timezone$europeSarajevo._();
 
 @override String get value => 'Europe/Sarajevo';
@@ -8461,7 +8461,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Sarajevo'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSaratov extends Timezone {const Timezone$europeSaratov._();
 
 @override String get value => 'Europe/Saratov';
@@ -8470,7 +8470,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Saratov'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSimferopol extends Timezone {const Timezone$europeSimferopol._();
 
 @override String get value => 'Europe/Simferopol';
@@ -8479,7 +8479,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Simferopol'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSkopje extends Timezone {const Timezone$europeSkopje._();
 
 @override String get value => 'Europe/Skopje';
@@ -8488,7 +8488,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Skopje'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeSofia extends Timezone {const Timezone$europeSofia._();
 
 @override String get value => 'Europe/Sofia';
@@ -8497,7 +8497,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Sofia'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeStockholm extends Timezone {const Timezone$europeStockholm._();
 
 @override String get value => 'Europe/Stockholm';
@@ -8506,7 +8506,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Stockholm'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeTallinn extends Timezone {const Timezone$europeTallinn._();
 
 @override String get value => 'Europe/Tallinn';
@@ -8515,7 +8515,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Tallinn'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeTirane extends Timezone {const Timezone$europeTirane._();
 
 @override String get value => 'Europe/Tirane';
@@ -8524,7 +8524,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Tirane'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeTiraspol extends Timezone {const Timezone$europeTiraspol._();
 
 @override String get value => 'Europe/Tiraspol';
@@ -8533,7 +8533,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Tiraspol'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeUlyanovsk extends Timezone {const Timezone$europeUlyanovsk._();
 
 @override String get value => 'Europe/Ulyanovsk';
@@ -8542,7 +8542,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Ulyanovsk'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeUzhgorod extends Timezone {const Timezone$europeUzhgorod._();
 
 @override String get value => 'Europe/Uzhgorod';
@@ -8551,7 +8551,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Uzhgorod'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeVaduz extends Timezone {const Timezone$europeVaduz._();
 
 @override String get value => 'Europe/Vaduz';
@@ -8560,7 +8560,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Vaduz'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeVatican extends Timezone {const Timezone$europeVatican._();
 
 @override String get value => 'Europe/Vatican';
@@ -8569,7 +8569,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Vatican'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeVienna extends Timezone {const Timezone$europeVienna._();
 
 @override String get value => 'Europe/Vienna';
@@ -8578,7 +8578,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Vienna'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeVilnius extends Timezone {const Timezone$europeVilnius._();
 
 @override String get value => 'Europe/Vilnius';
@@ -8587,7 +8587,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Vilnius'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeVolgograd extends Timezone {const Timezone$europeVolgograd._();
 
 @override String get value => 'Europe/Volgograd';
@@ -8596,7 +8596,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Volgograd'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeWarsaw extends Timezone {const Timezone$europeWarsaw._();
 
 @override String get value => 'Europe/Warsaw';
@@ -8605,7 +8605,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Warsaw'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeZagreb extends Timezone {const Timezone$europeZagreb._();
 
 @override String get value => 'Europe/Zagreb';
@@ -8614,7 +8614,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Zagreb'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeZaporozhye extends Timezone {const Timezone$europeZaporozhye._();
 
 @override String get value => 'Europe/Zaporozhye';
@@ -8623,7 +8623,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Zaporozhye'.hashCode;
 
- }
+}
 @immutable final class Timezone$europeZurich extends Timezone {const Timezone$europeZurich._();
 
 @override String get value => 'Europe/Zurich';
@@ -8632,7 +8632,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Europe/Zurich'.hashCode;
 
- }
+}
 @immutable final class Timezone$$factory extends Timezone {const Timezone$$factory._();
 
 @override String get value => 'Factory';
@@ -8641,7 +8641,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Factory'.hashCode;
 
- }
+}
 @immutable final class Timezone$gb extends Timezone {const Timezone$gb._();
 
 @override String get value => 'GB';
@@ -8650,7 +8650,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'GB'.hashCode;
 
- }
+}
 @immutable final class Timezone$gbEire extends Timezone {const Timezone$gbEire._();
 
 @override String get value => 'GB-Eire';
@@ -8659,7 +8659,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'GB-Eire'.hashCode;
 
- }
+}
 @immutable final class Timezone$gmt extends Timezone {const Timezone$gmt._();
 
 @override String get value => 'GMT';
@@ -8668,7 +8668,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'GMT'.hashCode;
 
- }
+}
 @immutable final class Timezone$gmt0 extends Timezone {const Timezone$gmt0._();
 
 @override String get value => 'GMT+0';
@@ -8677,7 +8677,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'GMT+0'.hashCode;
 
- }
+}
 @immutable final class Timezone$gmt02 extends Timezone {const Timezone$gmt02._();
 
 @override String get value => 'GMT-0';
@@ -8686,7 +8686,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'GMT-0'.hashCode;
 
- }
+}
 @immutable final class Timezone$gmt03 extends Timezone {const Timezone$gmt03._();
 
 @override String get value => 'GMT0';
@@ -8695,7 +8695,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'GMT0'.hashCode;
 
- }
+}
 @immutable final class Timezone$greenwich extends Timezone {const Timezone$greenwich._();
 
 @override String get value => 'Greenwich';
@@ -8704,7 +8704,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Greenwich'.hashCode;
 
- }
+}
 @immutable final class Timezone$hst extends Timezone {const Timezone$hst._();
 
 @override String get value => 'HST';
@@ -8713,7 +8713,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'HST'.hashCode;
 
- }
+}
 @immutable final class Timezone$hongkong extends Timezone {const Timezone$hongkong._();
 
 @override String get value => 'Hongkong';
@@ -8722,7 +8722,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Hongkong'.hashCode;
 
- }
+}
 @immutable final class Timezone$iceland extends Timezone {const Timezone$iceland._();
 
 @override String get value => 'Iceland';
@@ -8731,7 +8731,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Iceland'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianAntananarivo extends Timezone {const Timezone$indianAntananarivo._();
 
 @override String get value => 'Indian/Antananarivo';
@@ -8740,7 +8740,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Antananarivo'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianChagos extends Timezone {const Timezone$indianChagos._();
 
 @override String get value => 'Indian/Chagos';
@@ -8749,7 +8749,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Chagos'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianChristmas extends Timezone {const Timezone$indianChristmas._();
 
 @override String get value => 'Indian/Christmas';
@@ -8758,7 +8758,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Christmas'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianCocos extends Timezone {const Timezone$indianCocos._();
 
 @override String get value => 'Indian/Cocos';
@@ -8767,7 +8767,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Cocos'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianComoro extends Timezone {const Timezone$indianComoro._();
 
 @override String get value => 'Indian/Comoro';
@@ -8776,7 +8776,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Comoro'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianKerguelen extends Timezone {const Timezone$indianKerguelen._();
 
 @override String get value => 'Indian/Kerguelen';
@@ -8785,7 +8785,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Kerguelen'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianMahe extends Timezone {const Timezone$indianMahe._();
 
 @override String get value => 'Indian/Mahe';
@@ -8794,7 +8794,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Mahe'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianMaldives extends Timezone {const Timezone$indianMaldives._();
 
 @override String get value => 'Indian/Maldives';
@@ -8803,7 +8803,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Maldives'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianMauritius extends Timezone {const Timezone$indianMauritius._();
 
 @override String get value => 'Indian/Mauritius';
@@ -8812,7 +8812,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Mauritius'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianMayotte extends Timezone {const Timezone$indianMayotte._();
 
 @override String get value => 'Indian/Mayotte';
@@ -8821,7 +8821,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Mayotte'.hashCode;
 
- }
+}
 @immutable final class Timezone$indianReunion extends Timezone {const Timezone$indianReunion._();
 
 @override String get value => 'Indian/Reunion';
@@ -8830,7 +8830,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Indian/Reunion'.hashCode;
 
- }
+}
 @immutable final class Timezone$iran extends Timezone {const Timezone$iran._();
 
 @override String get value => 'Iran';
@@ -8839,7 +8839,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Iran'.hashCode;
 
- }
+}
 @immutable final class Timezone$israel extends Timezone {const Timezone$israel._();
 
 @override String get value => 'Israel';
@@ -8848,7 +8848,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Israel'.hashCode;
 
- }
+}
 @immutable final class Timezone$jamaica extends Timezone {const Timezone$jamaica._();
 
 @override String get value => 'Jamaica';
@@ -8857,7 +8857,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Jamaica'.hashCode;
 
- }
+}
 @immutable final class Timezone$japan extends Timezone {const Timezone$japan._();
 
 @override String get value => 'Japan';
@@ -8866,7 +8866,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Japan'.hashCode;
 
- }
+}
 @immutable final class Timezone$kwajalein extends Timezone {const Timezone$kwajalein._();
 
 @override String get value => 'Kwajalein';
@@ -8875,7 +8875,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Kwajalein'.hashCode;
 
- }
+}
 @immutable final class Timezone$libya extends Timezone {const Timezone$libya._();
 
 @override String get value => 'Libya';
@@ -8884,7 +8884,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Libya'.hashCode;
 
- }
+}
 @immutable final class Timezone$met extends Timezone {const Timezone$met._();
 
 @override String get value => 'MET';
@@ -8893,7 +8893,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'MET'.hashCode;
 
- }
+}
 @immutable final class Timezone$mst extends Timezone {const Timezone$mst._();
 
 @override String get value => 'MST';
@@ -8902,7 +8902,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'MST'.hashCode;
 
- }
+}
 @immutable final class Timezone$mst7Mdt extends Timezone {const Timezone$mst7Mdt._();
 
 @override String get value => 'MST7MDT';
@@ -8911,7 +8911,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'MST7MDT'.hashCode;
 
- }
+}
 @immutable final class Timezone$mexicoBajaNorte extends Timezone {const Timezone$mexicoBajaNorte._();
 
 @override String get value => 'Mexico/BajaNorte';
@@ -8920,7 +8920,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Mexico/BajaNorte'.hashCode;
 
- }
+}
 @immutable final class Timezone$mexicoBajaSur extends Timezone {const Timezone$mexicoBajaSur._();
 
 @override String get value => 'Mexico/BajaSur';
@@ -8929,7 +8929,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Mexico/BajaSur'.hashCode;
 
- }
+}
 @immutable final class Timezone$mexicoGeneral extends Timezone {const Timezone$mexicoGeneral._();
 
 @override String get value => 'Mexico/General';
@@ -8938,7 +8938,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Mexico/General'.hashCode;
 
- }
+}
 @immutable final class Timezone$nz extends Timezone {const Timezone$nz._();
 
 @override String get value => 'NZ';
@@ -8947,7 +8947,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'NZ'.hashCode;
 
- }
+}
 @immutable final class Timezone$nzChat extends Timezone {const Timezone$nzChat._();
 
 @override String get value => 'NZ-CHAT';
@@ -8956,7 +8956,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'NZ-CHAT'.hashCode;
 
- }
+}
 @immutable final class Timezone$navajo extends Timezone {const Timezone$navajo._();
 
 @override String get value => 'Navajo';
@@ -8965,7 +8965,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Navajo'.hashCode;
 
- }
+}
 @immutable final class Timezone$prc extends Timezone {const Timezone$prc._();
 
 @override String get value => 'PRC';
@@ -8974,7 +8974,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'PRC'.hashCode;
 
- }
+}
 @immutable final class Timezone$pst8Pdt extends Timezone {const Timezone$pst8Pdt._();
 
 @override String get value => 'PST8PDT';
@@ -8983,7 +8983,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'PST8PDT'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificApia extends Timezone {const Timezone$pacificApia._();
 
 @override String get value => 'Pacific/Apia';
@@ -8992,7 +8992,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Apia'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificAuckland extends Timezone {const Timezone$pacificAuckland._();
 
 @override String get value => 'Pacific/Auckland';
@@ -9001,7 +9001,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Auckland'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificBougainville extends Timezone {const Timezone$pacificBougainville._();
 
 @override String get value => 'Pacific/Bougainville';
@@ -9010,7 +9010,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Bougainville'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificChatham extends Timezone {const Timezone$pacificChatham._();
 
 @override String get value => 'Pacific/Chatham';
@@ -9019,7 +9019,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Chatham'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificChuuk extends Timezone {const Timezone$pacificChuuk._();
 
 @override String get value => 'Pacific/Chuuk';
@@ -9028,7 +9028,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Chuuk'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificEaster extends Timezone {const Timezone$pacificEaster._();
 
 @override String get value => 'Pacific/Easter';
@@ -9037,7 +9037,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Easter'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificEfate extends Timezone {const Timezone$pacificEfate._();
 
 @override String get value => 'Pacific/Efate';
@@ -9046,7 +9046,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Efate'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificEnderbury extends Timezone {const Timezone$pacificEnderbury._();
 
 @override String get value => 'Pacific/Enderbury';
@@ -9055,7 +9055,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Enderbury'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificFakaofo extends Timezone {const Timezone$pacificFakaofo._();
 
 @override String get value => 'Pacific/Fakaofo';
@@ -9064,7 +9064,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Fakaofo'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificFiji extends Timezone {const Timezone$pacificFiji._();
 
 @override String get value => 'Pacific/Fiji';
@@ -9073,7 +9073,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Fiji'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificFunafuti extends Timezone {const Timezone$pacificFunafuti._();
 
 @override String get value => 'Pacific/Funafuti';
@@ -9082,7 +9082,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Funafuti'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificGalapagos extends Timezone {const Timezone$pacificGalapagos._();
 
 @override String get value => 'Pacific/Galapagos';
@@ -9091,7 +9091,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Galapagos'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificGambier extends Timezone {const Timezone$pacificGambier._();
 
 @override String get value => 'Pacific/Gambier';
@@ -9100,7 +9100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Gambier'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificGuadalcanal extends Timezone {const Timezone$pacificGuadalcanal._();
 
 @override String get value => 'Pacific/Guadalcanal';
@@ -9109,7 +9109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Guadalcanal'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificGuam extends Timezone {const Timezone$pacificGuam._();
 
 @override String get value => 'Pacific/Guam';
@@ -9118,7 +9118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Guam'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificHonolulu extends Timezone {const Timezone$pacificHonolulu._();
 
 @override String get value => 'Pacific/Honolulu';
@@ -9127,7 +9127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Honolulu'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificJohnston extends Timezone {const Timezone$pacificJohnston._();
 
 @override String get value => 'Pacific/Johnston';
@@ -9136,7 +9136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Johnston'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificKanton extends Timezone {const Timezone$pacificKanton._();
 
 @override String get value => 'Pacific/Kanton';
@@ -9145,7 +9145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Kanton'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificKiritimati extends Timezone {const Timezone$pacificKiritimati._();
 
 @override String get value => 'Pacific/Kiritimati';
@@ -9154,7 +9154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Kiritimati'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificKosrae extends Timezone {const Timezone$pacificKosrae._();
 
 @override String get value => 'Pacific/Kosrae';
@@ -9163,7 +9163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Kosrae'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificKwajalein extends Timezone {const Timezone$pacificKwajalein._();
 
 @override String get value => 'Pacific/Kwajalein';
@@ -9172,7 +9172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Kwajalein'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificMajuro extends Timezone {const Timezone$pacificMajuro._();
 
 @override String get value => 'Pacific/Majuro';
@@ -9181,7 +9181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Majuro'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificMarquesas extends Timezone {const Timezone$pacificMarquesas._();
 
 @override String get value => 'Pacific/Marquesas';
@@ -9190,7 +9190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Marquesas'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificMidway extends Timezone {const Timezone$pacificMidway._();
 
 @override String get value => 'Pacific/Midway';
@@ -9199,7 +9199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Midway'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificNauru extends Timezone {const Timezone$pacificNauru._();
 
 @override String get value => 'Pacific/Nauru';
@@ -9208,7 +9208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Nauru'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificNiue extends Timezone {const Timezone$pacificNiue._();
 
 @override String get value => 'Pacific/Niue';
@@ -9217,7 +9217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Niue'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificNorfolk extends Timezone {const Timezone$pacificNorfolk._();
 
 @override String get value => 'Pacific/Norfolk';
@@ -9226,7 +9226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Norfolk'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificNoumea extends Timezone {const Timezone$pacificNoumea._();
 
 @override String get value => 'Pacific/Noumea';
@@ -9235,7 +9235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Noumea'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificPagoPago extends Timezone {const Timezone$pacificPagoPago._();
 
 @override String get value => 'Pacific/Pago_Pago';
@@ -9244,7 +9244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Pago_Pago'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificPalau extends Timezone {const Timezone$pacificPalau._();
 
 @override String get value => 'Pacific/Palau';
@@ -9253,7 +9253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Palau'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificPitcairn extends Timezone {const Timezone$pacificPitcairn._();
 
 @override String get value => 'Pacific/Pitcairn';
@@ -9262,7 +9262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Pitcairn'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificPohnpei extends Timezone {const Timezone$pacificPohnpei._();
 
 @override String get value => 'Pacific/Pohnpei';
@@ -9271,7 +9271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Pohnpei'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificPonape extends Timezone {const Timezone$pacificPonape._();
 
 @override String get value => 'Pacific/Ponape';
@@ -9280,7 +9280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Ponape'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificPortMoresby extends Timezone {const Timezone$pacificPortMoresby._();
 
 @override String get value => 'Pacific/Port_Moresby';
@@ -9289,7 +9289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Port_Moresby'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificRarotonga extends Timezone {const Timezone$pacificRarotonga._();
 
 @override String get value => 'Pacific/Rarotonga';
@@ -9298,7 +9298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Rarotonga'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificSaipan extends Timezone {const Timezone$pacificSaipan._();
 
 @override String get value => 'Pacific/Saipan';
@@ -9307,7 +9307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Saipan'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificSamoa extends Timezone {const Timezone$pacificSamoa._();
 
 @override String get value => 'Pacific/Samoa';
@@ -9316,7 +9316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Samoa'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificTahiti extends Timezone {const Timezone$pacificTahiti._();
 
 @override String get value => 'Pacific/Tahiti';
@@ -9325,7 +9325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Tahiti'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificTarawa extends Timezone {const Timezone$pacificTarawa._();
 
 @override String get value => 'Pacific/Tarawa';
@@ -9334,7 +9334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Tarawa'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificTongatapu extends Timezone {const Timezone$pacificTongatapu._();
 
 @override String get value => 'Pacific/Tongatapu';
@@ -9343,7 +9343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Tongatapu'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificTruk extends Timezone {const Timezone$pacificTruk._();
 
 @override String get value => 'Pacific/Truk';
@@ -9352,7 +9352,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Truk'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificWake extends Timezone {const Timezone$pacificWake._();
 
 @override String get value => 'Pacific/Wake';
@@ -9361,7 +9361,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Wake'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificWallis extends Timezone {const Timezone$pacificWallis._();
 
 @override String get value => 'Pacific/Wallis';
@@ -9370,7 +9370,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Wallis'.hashCode;
 
- }
+}
 @immutable final class Timezone$pacificYap extends Timezone {const Timezone$pacificYap._();
 
 @override String get value => 'Pacific/Yap';
@@ -9379,7 +9379,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Pacific/Yap'.hashCode;
 
- }
+}
 @immutable final class Timezone$poland extends Timezone {const Timezone$poland._();
 
 @override String get value => 'Poland';
@@ -9388,7 +9388,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Poland'.hashCode;
 
- }
+}
 @immutable final class Timezone$portugal extends Timezone {const Timezone$portugal._();
 
 @override String get value => 'Portugal';
@@ -9397,7 +9397,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Portugal'.hashCode;
 
- }
+}
 @immutable final class Timezone$roc extends Timezone {const Timezone$roc._();
 
 @override String get value => 'ROC';
@@ -9406,7 +9406,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'ROC'.hashCode;
 
- }
+}
 @immutable final class Timezone$rok extends Timezone {const Timezone$rok._();
 
 @override String get value => 'ROK';
@@ -9415,7 +9415,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'ROK'.hashCode;
 
- }
+}
 @immutable final class Timezone$singapore extends Timezone {const Timezone$singapore._();
 
 @override String get value => 'Singapore';
@@ -9424,7 +9424,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Singapore'.hashCode;
 
- }
+}
 @immutable final class Timezone$turkey extends Timezone {const Timezone$turkey._();
 
 @override String get value => 'Turkey';
@@ -9433,7 +9433,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Turkey'.hashCode;
 
- }
+}
 @immutable final class Timezone$uct extends Timezone {const Timezone$uct._();
 
 @override String get value => 'UCT';
@@ -9442,7 +9442,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'UCT'.hashCode;
 
- }
+}
 @immutable final class Timezone$usAlaska extends Timezone {const Timezone$usAlaska._();
 
 @override String get value => 'US/Alaska';
@@ -9451,7 +9451,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Alaska'.hashCode;
 
- }
+}
 @immutable final class Timezone$usAleutian extends Timezone {const Timezone$usAleutian._();
 
 @override String get value => 'US/Aleutian';
@@ -9460,7 +9460,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Aleutian'.hashCode;
 
- }
+}
 @immutable final class Timezone$usArizona extends Timezone {const Timezone$usArizona._();
 
 @override String get value => 'US/Arizona';
@@ -9469,7 +9469,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Arizona'.hashCode;
 
- }
+}
 @immutable final class Timezone$usCentral extends Timezone {const Timezone$usCentral._();
 
 @override String get value => 'US/Central';
@@ -9478,7 +9478,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Central'.hashCode;
 
- }
+}
 @immutable final class Timezone$usEastIndiana extends Timezone {const Timezone$usEastIndiana._();
 
 @override String get value => 'US/East-Indiana';
@@ -9487,7 +9487,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/East-Indiana'.hashCode;
 
- }
+}
 @immutable final class Timezone$usEastern extends Timezone {const Timezone$usEastern._();
 
 @override String get value => 'US/Eastern';
@@ -9496,7 +9496,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Eastern'.hashCode;
 
- }
+}
 @immutable final class Timezone$usHawaii extends Timezone {const Timezone$usHawaii._();
 
 @override String get value => 'US/Hawaii';
@@ -9505,7 +9505,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Hawaii'.hashCode;
 
- }
+}
 @immutable final class Timezone$usIndianaStarke extends Timezone {const Timezone$usIndianaStarke._();
 
 @override String get value => 'US/Indiana-Starke';
@@ -9514,7 +9514,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Indiana-Starke'.hashCode;
 
- }
+}
 @immutable final class Timezone$usMichigan extends Timezone {const Timezone$usMichigan._();
 
 @override String get value => 'US/Michigan';
@@ -9523,7 +9523,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Michigan'.hashCode;
 
- }
+}
 @immutable final class Timezone$usMountain extends Timezone {const Timezone$usMountain._();
 
 @override String get value => 'US/Mountain';
@@ -9532,7 +9532,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Mountain'.hashCode;
 
- }
+}
 @immutable final class Timezone$usPacific extends Timezone {const Timezone$usPacific._();
 
 @override String get value => 'US/Pacific';
@@ -9541,7 +9541,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Pacific'.hashCode;
 
- }
+}
 @immutable final class Timezone$usPacificNew extends Timezone {const Timezone$usPacificNew._();
 
 @override String get value => 'US/Pacific-New';
@@ -9550,7 +9550,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Pacific-New'.hashCode;
 
- }
+}
 @immutable final class Timezone$usSamoa extends Timezone {const Timezone$usSamoa._();
 
 @override String get value => 'US/Samoa';
@@ -9559,7 +9559,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'US/Samoa'.hashCode;
 
- }
+}
 @immutable final class Timezone$utc extends Timezone {const Timezone$utc._();
 
 @override String get value => 'UTC';
@@ -9568,7 +9568,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'UTC'.hashCode;
 
- }
+}
 @immutable final class Timezone$universal extends Timezone {const Timezone$universal._();
 
 @override String get value => 'Universal';
@@ -9577,7 +9577,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Universal'.hashCode;
 
- }
+}
 @immutable final class Timezone$wSu extends Timezone {const Timezone$wSu._();
 
 @override String get value => 'W-SU';
@@ -9586,7 +9586,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'W-SU'.hashCode;
 
- }
+}
 @immutable final class Timezone$wet extends Timezone {const Timezone$wet._();
 
 @override String get value => 'WET';
@@ -9595,7 +9595,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'WET'.hashCode;
 
- }
+}
 @immutable final class Timezone$zulu extends Timezone {const Timezone$zulu._();
 
 @override String get value => 'Zulu';
@@ -9604,7 +9604,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => 'Zulu'.hashCode;
 
- }
+}
 @immutable final class Timezone$Unknown extends Timezone {const Timezone$Unknown(this.value);
 
 @override final String value;
@@ -9614,11 +9614,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? africaAb
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Parameters specifying how the report should be run. Different Report Types have different required and optional parameters, listed in the [API Access to Reports](https://docs.stripe.com/reporting/statements/api) documentation.
 @immutable final class Parameters {const Parameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
 
-factory Parameters.fromJson(Map<String, dynamic> json) { return Parameters(
+factory Parameters.fromJson(Map<String, dynamic> json) {return Parameters(
   columns: (json['columns'] as List<dynamic>?)?.map((e) => e as String).toList(),
   connectedAccount: json['connected_account'] as String?,
   currency: json['currency'] as String?,
@@ -9627,7 +9627,7 @@ factory Parameters.fromJson(Map<String, dynamic> json) { return Parameters(
   payout: json['payout'] as String?,
   reportingCategory: json['reporting_category'] != null ? ReportingCategory.fromJson(json['reporting_category'] as String) : null,
   timezone: json['timezone'] != null ? Timezone.fromJson(json['timezone'] as String) : null,
-); }
+);}
 
 final List<String>? columns;
 
@@ -9645,7 +9645,7 @@ final ReportingCategory? reportingCategory;
 
 final Timezone? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'columns': ?columns,
   'connected_account': ?connectedAccount,
   'currency': ?currency,
@@ -9654,9 +9654,9 @@ Map<String, dynamic> toJson() { return {
   'payout': ?payout,
   if (reportingCategory != null) 'reporting_category': reportingCategory?.toJson(),
   if (timezone != null) 'timezone': timezone?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'columns', 'connected_account', 'currency', 'interval_end', 'interval_start', 'payout', 'reporting_category', 'timezone'}.contains(key)); } 
-Parameters copyWith({List<String>? Function()? columns, String? Function()? connectedAccount, String? Function()? currency, int? Function()? intervalEnd, int? Function()? intervalStart, String? Function()? payout, ReportingCategory? Function()? reportingCategory, Timezone? Function()? timezone, }) { return Parameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'columns', 'connected_account', 'currency', 'interval_end', 'interval_start', 'payout', 'reporting_category', 'timezone'}.contains(key));}
+Parameters copyWith({List<String>? Function()? columns, String? Function()? connectedAccount, String? Function()? currency, int? Function()? intervalEnd, int? Function()? intervalStart, String? Function()? payout, ReportingCategory? Function()? reportingCategory, Timezone? Function()? timezone, }) {return Parameters(
   columns: columns != null ? columns() : this.columns,
   connectedAccount: connectedAccount != null ? connectedAccount() : this.connectedAccount,
   currency: currency != null ? currency() : this.currency,
@@ -9665,7 +9665,7 @@ Parameters copyWith({List<String>? Function()? columns, String? Function()? conn
   payout: payout != null ? payout() : this.payout,
   reportingCategory: reportingCategory != null ? reportingCategory() : this.reportingCategory,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Parameters &&
           listEquals(columns, other.columns) &&
@@ -9681,4 +9681,4 @@ Parameters copyWith({List<String>? Function()? columns, String? Function()? conn
 
 @override String toString() => 'Parameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)';
 
- }
+}

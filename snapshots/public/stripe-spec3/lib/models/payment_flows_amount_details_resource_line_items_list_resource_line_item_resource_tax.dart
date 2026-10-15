@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax {const PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax({required this.totalTaxAmount});
 
-factory PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(
+factory PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax.fromJson(Map<String, dynamic> json) {return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(
   totalTaxAmount: (json['total_tax_amount'] as num).toInt(),
-); }
+);}
 
 /// The total amount of tax on the transaction represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Required for L2 rates. An integer greater than or equal to 0.
 /// 
 /// This field is mutually exclusive with the `amount_details[line_items][#][tax][total_tax_amount]` field.
 final int totalTaxAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_tax_amount': totalTaxAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_tax_amount') && json['total_tax_amount'] is num; } 
-PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax copyWith({int? totalTaxAmount}) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_tax_amount') && json['total_tax_amount'] is num;}
+PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax copyWith({int? totalTaxAmount}) {return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(
   totalTaxAmount: totalTaxAmount ?? this.totalTaxAmount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax &&
           totalTaxAmount == other.totalTaxAmount;
@@ -28,4 +28,4 @@ PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax copyWi
 
 @override String toString() => 'PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(totalTaxAmount: $totalTaxAmount)';
 
- }
+}

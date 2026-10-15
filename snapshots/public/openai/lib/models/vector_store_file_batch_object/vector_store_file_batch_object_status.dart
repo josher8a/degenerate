@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
 sealed class VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus();
 
-factory VectorStoreFileBatchObjectStatus.fromJson(String json) { return switch (json) {
+factory VectorStoreFileBatchObjectStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'cancelled' => cancelled,
   'failed' => failed,
   _ => VectorStoreFileBatchObjectStatus$Unknown(json),
-}; }
+};}
 
 static const VectorStoreFileBatchObjectStatus inProgress = VectorStoreFileBatchObjectStatus$inProgress._();
 
@@ -23,36 +23,36 @@ static const VectorStoreFileBatchObjectStatus failed = VectorStoreFileBatchObjec
 static const List<VectorStoreFileBatchObjectStatus> values = [inProgress, completed, cancelled, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'cancelled' => 'cancelled',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VectorStoreFileBatchObjectStatus$Unknown; } 
+bool get isUnknown {return this is VectorStoreFileBatchObjectStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() cancelled, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() cancelled, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       VectorStoreFileBatchObjectStatus$inProgress() => inProgress(),
       VectorStoreFileBatchObjectStatus$completed() => completed(),
       VectorStoreFileBatchObjectStatus$cancelled() => cancelled(),
       VectorStoreFileBatchObjectStatus$failed() => failed(),
       VectorStoreFileBatchObjectStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? cancelled, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? cancelled, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       VectorStoreFileBatchObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       VectorStoreFileBatchObjectStatus$completed() => completed != null ? completed() : orElse(value),
       VectorStoreFileBatchObjectStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
       VectorStoreFileBatchObjectStatus$failed() => failed != null ? failed() : orElse(value),
       VectorStoreFileBatchObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VectorStoreFileBatchObjectStatus($value)';
 
- }
+}
 @immutable final class VectorStoreFileBatchObjectStatus$inProgress extends VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileBatchObjectStatus$completed extends VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus$completed._();
 
 @override String get value => 'completed';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileBatchObjectStatus$cancelled extends VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileBatchObjectStatus$failed extends VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus$failed._();
 
 @override String get value => 'failed';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class VectorStoreFileBatchObjectStatus$Unknown extends VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}

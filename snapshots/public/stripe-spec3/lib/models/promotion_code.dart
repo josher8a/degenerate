@@ -1,40 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PromotionCode
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PromotionCodeObject {const PromotionCodeObject();
 
-factory PromotionCodeObject.fromJson(String json) { return switch (json) {
+factory PromotionCodeObject.fromJson(String json) {return switch (json) {
   'promotion_code' => promotionCode,
   _ => PromotionCodeObject$Unknown(json),
-}; }
+};}
 
 static const PromotionCodeObject promotionCode = PromotionCodeObject$promotionCode._();
 
 static const List<PromotionCodeObject> values = [promotionCode];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'promotion_code' => 'promotionCode',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PromotionCodeObject$Unknown; } 
+bool get isUnknown {return this is PromotionCodeObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() promotionCode, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() promotionCode, required W Function(String value) $unknown, }) {return switch (this) {
       PromotionCodeObject$promotionCode() => promotionCode(),
       PromotionCodeObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? promotionCode, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? promotionCode, W Function(String value)? $unknown, }) {return switch (this) {
       PromotionCodeObject$promotionCode() => promotionCode != null ? promotionCode() : orElse(value),
       PromotionCodeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PromotionCodeObject($value)';
 
- }
+}
 @immutable final class PromotionCodeObject$promotionCode extends PromotionCodeObject {const PromotionCodeObject$promotionCode._();
 
 @override String get value => 'promotion_code';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? promotio
 
 @override int get hashCode => 'promotion_code'.hashCode;
 
- }
+}
 @immutable final class PromotionCodeObject$Unknown extends PromotionCodeObject {const PromotionCodeObject$Unknown(this.value);
 
 @override final String value;
@@ -53,30 +53,30 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? promotio
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Promotion Code represents a customer-redeemable code for an underlying promotion.
 /// You can create multiple codes for a single promotion.
 /// 
 /// If you enable promotion codes in your [customer portal configuration](https://docs.stripe.com/customer-management/configure-portal), then customers can redeem a code themselves when updating a subscription in the portal.
 /// Customers can also view the currently active promotion codes and coupons on each of their subscriptions in the portal.
-@immutable final class PromotionCode {const PromotionCode({required this.active, required this.code, required this.created, required this.id, required this.livemode, required this.object, required this.promotion, required this.restrictions, required this.timesRedeemed, this.customer, this.customerAccount, this.expiresAt, this.maxRedemptions, this.metadata, });
+@immutable final class PromotionCode {const PromotionCode({required this.active, required this.code, required this.created, required this.id, required this.livemode, required this.object, required this.promotion, required this.restrictions, required this.timesRedeemed, this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.maxRedemptions = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
-factory PromotionCode.fromJson(Map<String, dynamic> json) { return PromotionCode(
+factory PromotionCode.fromJson(Map<String, dynamic> json) {return PromotionCode(
   active: json['active'] as bool,
   code: json['code'] as String,
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankAccountCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  maxRedemptions: json.containsKey('max_redemptions') ? Omittable(json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: PromotionCodeObject.fromJson(json['object'] as String),
   promotion: PromotionCodesResourcePromotion.fromJson(json['promotion'] as Map<String, dynamic>),
   restrictions: PromotionCodesResourceRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>),
   timesRedeemed: (json['times_redeemed'] as num).toInt(),
-); }
+);}
 
 /// Whether the promotion code is currently active. A promotion code is only active if the coupon is also valid.
 final bool active;
@@ -88,13 +88,13 @@ final String code;
 final int created;
 
 /// The customer who can use this promotion code.
-final BankAccountCustomer? customer;
+final Omittable<BankAccountCustomer?> customer;
 
 /// The account representing the customer who can use this promotion code.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Date at which the promotion code can no longer be redeemed.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -103,10 +103,10 @@ final String id;
 final bool livemode;
 
 /// Maximum number of times this promotion code can be redeemed.
-final int? maxRedemptions;
+final Omittable<int?> maxRedemptions;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final PromotionCodeObject object;
@@ -118,23 +118,23 @@ final PromotionCodesResourceRestrictions restrictions;
 /// Number of times this promotion code has been used.
 final int timesRedeemed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'code': code,
   'created': created,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
-  'expires_at': ?expiresAt,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
   'livemode': livemode,
-  'max_redemptions': ?maxRedemptions,
-  'metadata': ?metadata,
+  if (maxRedemptions.isPresent) 'max_redemptions': maxRedemptions.value,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
   'promotion': promotion.toJson(),
   'restrictions': restrictions.toJson(),
   'times_redeemed': timesRedeemed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('code') && json['code'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -142,32 +142,32 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('object') &&
       json.containsKey('promotion') &&
       json.containsKey('restrictions') &&
-      json.containsKey('times_redeemed') && json['times_redeemed'] is num; } 
+      json.containsKey('times_redeemed') && json['times_redeemed'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (code.runes.length > 5000) { errors.add('code: length must be <= 5000'); }
-final customerAccount$ = customerAccount;
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? expiresAt, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PromotionCodeObject? object, PromotionCodesResourcePromotion? promotion, PromotionCodesResourceRestrictions? restrictions, int? timesRedeemed, }) { return PromotionCode(
+return errors;}
+PromotionCode copyWith({bool? active, String? code, int? created, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<int?>? expiresAt, String? id, bool? livemode, Omittable<int?>? maxRedemptions, Omittable<Map<String,String>?>? metadata, PromotionCodeObject? object, PromotionCodesResourcePromotion? promotion, PromotionCodesResourceRestrictions? restrictions, int? timesRedeemed, }) {return PromotionCode(
   active: active ?? this.active,
   code: code ?? this.code,
   created: created ?? this.created,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
+  expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  maxRedemptions: maxRedemptions != null ? maxRedemptions() : this.maxRedemptions,
-  metadata: metadata != null ? metadata() : this.metadata,
+  maxRedemptions: maxRedemptions ?? this.maxRedemptions,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   promotion: promotion ?? this.promotion,
   restrictions: restrictions ?? this.restrictions,
   timesRedeemed: timesRedeemed ?? this.timesRedeemed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PromotionCode &&
           active == other.active &&
@@ -189,4 +189,4 @@ PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCus
 
 @override String toString() => 'PromotionCode(\n  active: $active,\n  code: $code,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  object: $object,\n  promotion: $promotion,\n  restrictions: $restrictions,\n  timesRedeemed: $timesRedeemed,\n)';
 
- }
+}

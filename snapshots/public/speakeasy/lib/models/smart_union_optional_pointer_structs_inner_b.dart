@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionOptionalPointerStructsInnerB {const SmartUnionOptionalPointerStructsInnerB({required this.name, required this.value, });
 
-factory SmartUnionOptionalPointerStructsInnerB.fromJson(Map<String, dynamic> json) { return SmartUnionOptionalPointerStructsInnerB(
+factory SmartUnionOptionalPointerStructsInnerB.fromJson(Map<String, dynamic> json) {return SmartUnionOptionalPointerStructsInnerB(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-SmartUnionOptionalPointerStructsInnerB copyWith({String? name, String? value, }) { return SmartUnionOptionalPointerStructsInnerB(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+SmartUnionOptionalPointerStructsInnerB copyWith({String? name, String? value, }) {return SmartUnionOptionalPointerStructsInnerB(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionOptionalPointerStructsInnerB &&
           name == other.name &&
@@ -31,4 +31,4 @@ SmartUnionOptionalPointerStructsInnerB copyWith({String? name, String? value, })
 
 @override String toString() => 'SmartUnionOptionalPointerStructsInnerB(name: $name, value: $value)';
 
- }
+}

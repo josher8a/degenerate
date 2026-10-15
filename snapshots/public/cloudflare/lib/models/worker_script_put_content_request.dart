@@ -3,10 +3,10 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/namespace_worker_put_script_content_request/namespace_worker_put_script_content_request_metadata.dart';@immutable final class WorkerScriptPutContentRequest {const WorkerScriptPutContentRequest({required this.metadata, this.files, });
 
-factory WorkerScriptPutContentRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptPutContentRequest(
+factory WorkerScriptPutContentRequest.fromJson(Map<String, dynamic> json) {return WorkerScriptPutContentRequest(
   files: (json['files'] as List<dynamic>?)?.map((e) => base64Decode(e as String)).toList(),
   metadata: NamespaceWorkerPutScriptContentRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
-); }
+);}
 
 /// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.`<br/>`Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
 final List<Uint8List>? files;
@@ -14,15 +14,15 @@ final List<Uint8List>? files;
 /// JSON-encoded metadata about the uploaded parts and Worker configuration.
 final NamespaceWorkerPutScriptContentRequestMetadata metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (files != null) 'files': files?.map(base64Encode).toList(),
   'metadata': metadata.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
-WorkerScriptPutContentRequest copyWith({List<Uint8List>? Function()? files, NamespaceWorkerPutScriptContentRequestMetadata? metadata, }) { return WorkerScriptPutContentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metadata');}
+WorkerScriptPutContentRequest copyWith({List<Uint8List>? Function()? files, NamespaceWorkerPutScriptContentRequestMetadata? metadata, }) {return WorkerScriptPutContentRequest(
   files: files != null ? files() : this.files,
   metadata: metadata ?? this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerScriptPutContentRequest &&
           listEquals(files, other.files) &&
@@ -32,4 +32,4 @@ WorkerScriptPutContentRequest copyWith({List<Uint8List>? Function()? files, Name
 
 @override String toString() => 'WorkerScriptPutContentRequest(files: $files, metadata: $metadata)';
 
- }
+}

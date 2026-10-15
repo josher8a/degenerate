@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionMessageToolCall {const ChatCompletionMessageToolCall({required this.id, required this.type, required this.function, });
 
-factory ChatCompletionMessageToolCall.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCall(
+factory ChatCompletionMessageToolCall.fromJson(Map<String, dynamic> json) {return ChatCompletionMessageToolCall(
   id: json['id'] as String,
   type: AssistantToolsFunctionType.fromJson(json['type'] as String),
   function: ChatCompletionMessageToolCallFunction.fromJson(json['function'] as Map<String, dynamic>),
-); }
+);}
 
 /// The ID of the tool call.
 final String id;
@@ -20,19 +20,19 @@ final AssistantToolsFunctionType type;
 /// The function that the model called.
 final ChatCompletionMessageToolCallFunction function;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type.toJson(),
   'function': function.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('function'); } 
-ChatCompletionMessageToolCall copyWith({String? id, AssistantToolsFunctionType? type, ChatCompletionMessageToolCallFunction? function, }) { return ChatCompletionMessageToolCall(
+      json.containsKey('function');}
+ChatCompletionMessageToolCall copyWith({String? id, AssistantToolsFunctionType? type, ChatCompletionMessageToolCallFunction? function, }) {return ChatCompletionMessageToolCall(
   id: id ?? this.id,
   type: type ?? this.type,
   function: function ?? this.function,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionMessageToolCall &&
           id == other.id &&
@@ -43,4 +43,4 @@ ChatCompletionMessageToolCall copyWith({String? id, AssistantToolsFunctionType? 
 
 @override String toString() => 'ChatCompletionMessageToolCall(id: $id, type: $type, function: $function)';
 
- }
+}

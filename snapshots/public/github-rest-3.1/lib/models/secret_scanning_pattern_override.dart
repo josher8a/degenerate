@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default push protection setting for this pattern.
 sealed class DefaultSetting {const DefaultSetting();
 
-factory DefaultSetting.fromJson(String json) { return switch (json) {
+factory DefaultSetting.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => DefaultSetting$Unknown(json),
-}; }
+};}
 
 static const DefaultSetting disabled = DefaultSetting$disabled._();
 
@@ -17,30 +17,30 @@ static const DefaultSetting enabled = DefaultSetting$enabled._();
 static const List<DefaultSetting> values = [disabled, enabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disabled' => 'disabled',
   'enabled' => 'enabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DefaultSetting$Unknown; } 
+bool get isUnknown {return this is DefaultSetting$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) {return switch (this) {
       DefaultSetting$disabled() => disabled(),
       DefaultSetting$enabled() => enabled(),
       DefaultSetting$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) {return switch (this) {
       DefaultSetting$disabled() => disabled != null ? disabled() : orElse(value),
       DefaultSetting$enabled() => enabled != null ? enabled() : orElse(value),
       DefaultSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DefaultSetting($value)';
 
- }
+}
 @immutable final class DefaultSetting$disabled extends DefaultSetting {const DefaultSetting$disabled._();
 
 @override String get value => 'disabled';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class DefaultSetting$enabled extends DefaultSetting {const DefaultSetting$enabled._();
 
 @override String get value => 'enabled';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class DefaultSetting$Unknown extends DefaultSetting {const DefaultSetting$Unknown(this.value);
 
 @override final String value;
@@ -68,17 +68,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
 sealed class EnterpriseSetting {const EnterpriseSetting();
 
-factory EnterpriseSetting.fromJson(String json) { return switch (json) {
+factory EnterpriseSetting.fromJson(String json) {return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   'null' => $null,
   _ => EnterpriseSetting$Unknown(json),
-}; }
+};}
 
 static const EnterpriseSetting notSet = EnterpriseSetting$notSet._();
 
@@ -91,36 +91,36 @@ static const EnterpriseSetting $null = EnterpriseSetting$$null._();
 static const List<EnterpriseSetting> values = [notSet, disabled, enabled, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'not-set' => 'notSet',
   'disabled' => 'disabled',
   'enabled' => 'enabled',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnterpriseSetting$Unknown; } 
+bool get isUnknown {return this is EnterpriseSetting$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       EnterpriseSetting$notSet() => notSet(),
       EnterpriseSetting$disabled() => disabled(),
       EnterpriseSetting$enabled() => enabled(),
       EnterpriseSetting$$null() => $null(),
       EnterpriseSetting$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       EnterpriseSetting$notSet() => notSet != null ? notSet() : orElse(value),
       EnterpriseSetting$disabled() => disabled != null ? disabled() : orElse(value),
       EnterpriseSetting$enabled() => enabled != null ? enabled() : orElse(value),
       EnterpriseSetting$$null() => $null != null ? $null() : orElse(value),
       EnterpriseSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnterpriseSetting($value)';
 
- }
+}
 @immutable final class EnterpriseSetting$notSet extends EnterpriseSetting {const EnterpriseSetting$notSet._();
 
 @override String get value => 'not-set';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'not-set'.hashCode;
 
- }
+}
 @immutable final class EnterpriseSetting$disabled extends EnterpriseSetting {const EnterpriseSetting$disabled._();
 
 @override String get value => 'disabled';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class EnterpriseSetting$enabled extends EnterpriseSetting {const EnterpriseSetting$enabled._();
 
 @override String get value => 'enabled';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class EnterpriseSetting$$null extends EnterpriseSetting {const EnterpriseSetting$$null._();
 
 @override String get value => 'null';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class EnterpriseSetting$Unknown extends EnterpriseSetting {const EnterpriseSetting$Unknown(this.value);
 
 @override final String value;
@@ -166,16 +166,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
 sealed class Setting {const Setting();
 
-factory Setting.fromJson(String json) { return switch (json) {
+factory Setting.fromJson(String json) {return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   _ => Setting$Unknown(json),
-}; }
+};}
 
 static const Setting notSet = Setting$notSet._();
 
@@ -186,33 +186,33 @@ static const Setting enabled = Setting$enabled._();
 static const List<Setting> values = [notSet, disabled, enabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'not-set' => 'notSet',
   'disabled' => 'disabled',
   'enabled' => 'enabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Setting$Unknown; } 
+bool get isUnknown {return this is Setting$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) {return switch (this) {
       Setting$notSet() => notSet(),
       Setting$disabled() => disabled(),
       Setting$enabled() => enabled(),
       Setting$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) {return switch (this) {
       Setting$notSet() => notSet != null ? notSet() : orElse(value),
       Setting$disabled() => disabled != null ? disabled() : orElse(value),
       Setting$enabled() => enabled != null ? enabled() : orElse(value),
       Setting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Setting($value)';
 
- }
+}
 @immutable final class Setting$notSet extends Setting {const Setting$notSet._();
 
 @override String get value => 'not-set';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'not-set'.hashCode;
 
- }
+}
 @immutable final class Setting$disabled extends Setting {const Setting$disabled._();
 
 @override String get value => 'disabled';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Setting$enabled extends Setting {const Setting$enabled._();
 
 @override String get value => 'enabled';
@@ -239,7 +239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Setting$Unknown extends Setting {const Setting$Unknown(this.value);
 
 @override final String value;
@@ -249,12 +249,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });
+}
+@immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion = const Omittable.absent(), this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting = const Omittable.absent(), this.setting, });
 
-factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { return SecretScanningPatternOverride(
+factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) {return SecretScanningPatternOverride(
   tokenType: json['token_type'] as String?,
-  customPatternVersion: json['custom_pattern_version'] as String?,
+  customPatternVersion: json.containsKey('custom_pattern_version') ? Omittable(json['custom_pattern_version'] as String?) : const Omittable.absent(),
   slug: json['slug'] as String?,
   displayName: json['display_name'] as String?,
   alertTotal: json['alert_total'] != null ? (json['alert_total'] as num).toInt() : null,
@@ -263,15 +263,15 @@ factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { retu
   falsePositiveRate: json['false_positive_rate'] != null ? (json['false_positive_rate'] as num).toInt() : null,
   bypassRate: json['bypass_rate'] != null ? (json['bypass_rate'] as num).toInt() : null,
   defaultSetting: json['default_setting'] != null ? DefaultSetting.fromJson(json['default_setting'] as String) : null,
-  enterpriseSetting: json['enterprise_setting'] != null ? EnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null,
+  enterpriseSetting: json.containsKey('enterprise_setting') ? Omittable(json['enterprise_setting'] != null ? EnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null) : const Omittable.absent(),
   setting: json['setting'] != null ? Setting.fromJson(json['setting'] as String) : null,
-); }
+);}
 
 /// The ID of the pattern.
 final String? tokenType;
 
 /// The version of this pattern if it's a custom pattern.
-final String? customPatternVersion;
+final Omittable<String?> customPatternVersion;
 
 /// The slug of the pattern.
 final String? slug;
@@ -298,14 +298,14 @@ final int? bypassRate;
 final DefaultSetting? defaultSetting;
 
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-final EnterpriseSetting? enterpriseSetting;
+final Omittable<EnterpriseSetting?> enterpriseSetting;
 
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
 final Setting? setting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token_type': ?tokenType,
-  'custom_pattern_version': ?customPatternVersion,
+  if (customPatternVersion.isPresent) 'custom_pattern_version': customPatternVersion.value,
   'slug': ?slug,
   'display_name': ?displayName,
   'alert_total': ?alertTotal,
@@ -314,13 +314,13 @@ Map<String, dynamic> toJson() { return {
   'false_positive_rate': ?falsePositiveRate,
   'bypass_rate': ?bypassRate,
   if (defaultSetting != null) 'default_setting': defaultSetting?.toJson(),
-  if (enterpriseSetting != null) 'enterprise_setting': enterpriseSetting?.toJson(),
+  if (enterpriseSetting.isPresent) 'enterprise_setting': enterpriseSetting.value?.toJson(),
   if (setting != null) 'setting': setting?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key)); } 
-SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? Function()? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, DefaultSetting? Function()? defaultSetting, EnterpriseSetting? Function()? enterpriseSetting, Setting? Function()? setting, }) { return SecretScanningPatternOverride(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key));}
+SecretScanningPatternOverride copyWith({String? Function()? tokenType, Omittable<String?>? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, DefaultSetting? Function()? defaultSetting, Omittable<EnterpriseSetting?>? enterpriseSetting, Setting? Function()? setting, }) {return SecretScanningPatternOverride(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
-  customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,
+  customPatternVersion: customPatternVersion ?? this.customPatternVersion,
   slug: slug != null ? slug() : this.slug,
   displayName: displayName != null ? displayName() : this.displayName,
   alertTotal: alertTotal != null ? alertTotal() : this.alertTotal,
@@ -329,9 +329,9 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? F
   falsePositiveRate: falsePositiveRate != null ? falsePositiveRate() : this.falsePositiveRate,
   bypassRate: bypassRate != null ? bypassRate() : this.bypassRate,
   defaultSetting: defaultSetting != null ? defaultSetting() : this.defaultSetting,
-  enterpriseSetting: enterpriseSetting != null ? enterpriseSetting() : this.enterpriseSetting,
+  enterpriseSetting: enterpriseSetting ?? this.enterpriseSetting,
   setting: setting != null ? setting() : this.setting,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningPatternOverride &&
           tokenType == other.tokenType &&
@@ -351,4 +351,4 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? F
 
 @override String toString() => 'SecretScanningPatternOverride(\n  tokenType: $tokenType,\n  customPatternVersion: $customPatternVersion,\n  slug: $slug,\n  displayName: $displayName,\n  alertTotal: $alertTotal,\n  alertTotalPercentage: $alertTotalPercentage,\n  falsePositives: $falsePositives,\n  falsePositiveRate: $falsePositiveRate,\n  bypassRate: $bypassRate,\n  defaultSetting: $defaultSetting,\n  enterpriseSetting: $enterpriseSetting,\n  setting: $setting,\n)';
 
- }
+}

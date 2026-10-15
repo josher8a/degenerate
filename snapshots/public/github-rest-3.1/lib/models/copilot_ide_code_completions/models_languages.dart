@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage metrics for a given language for the given editor for Copilot code completions.
 @immutable final class ModelsLanguages {const ModelsLanguages({this.name, this.totalEngagedUsers, this.totalCodeSuggestions, this.totalCodeAcceptances, this.totalCodeLinesSuggested, this.totalCodeLinesAccepted, });
 
-factory ModelsLanguages.fromJson(Map<String, dynamic> json) { return ModelsLanguages(
+factory ModelsLanguages.fromJson(Map<String, dynamic> json) {return ModelsLanguages(
   name: json['name'] as String?,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   totalCodeSuggestions: json['total_code_suggestions'] != null ? (json['total_code_suggestions'] as num).toInt() : null,
   totalCodeAcceptances: json['total_code_acceptances'] != null ? (json['total_code_acceptances'] as num).toInt() : null,
   totalCodeLinesSuggested: json['total_code_lines_suggested'] != null ? (json['total_code_lines_suggested'] as num).toInt() : null,
   totalCodeLinesAccepted: json['total_code_lines_accepted'] != null ? (json['total_code_lines_accepted'] as num).toInt() : null,
-); }
+);}
 
 /// Name of the language used for Copilot code completion suggestions, for the given editor.
 final String? name;
@@ -31,23 +31,23 @@ final int? totalCodeLinesSuggested;
 /// The number of lines of code accepted from Copilot code suggestions for the given editor, for the given language.
 final int? totalCodeLinesAccepted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'total_engaged_users': ?totalEngagedUsers,
   'total_code_suggestions': ?totalCodeSuggestions,
   'total_code_acceptances': ?totalCodeAcceptances,
   'total_code_lines_suggested': ?totalCodeLinesSuggested,
   'total_code_lines_accepted': ?totalCodeLinesAccepted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users', 'total_code_suggestions', 'total_code_acceptances', 'total_code_lines_suggested', 'total_code_lines_accepted'}.contains(key)); } 
-ModelsLanguages copyWith({String? Function()? name, int? Function()? totalEngagedUsers, int? Function()? totalCodeSuggestions, int? Function()? totalCodeAcceptances, int? Function()? totalCodeLinesSuggested, int? Function()? totalCodeLinesAccepted, }) { return ModelsLanguages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'total_engaged_users', 'total_code_suggestions', 'total_code_acceptances', 'total_code_lines_suggested', 'total_code_lines_accepted'}.contains(key));}
+ModelsLanguages copyWith({String? Function()? name, int? Function()? totalEngagedUsers, int? Function()? totalCodeSuggestions, int? Function()? totalCodeAcceptances, int? Function()? totalCodeLinesSuggested, int? Function()? totalCodeLinesAccepted, }) {return ModelsLanguages(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   totalCodeSuggestions: totalCodeSuggestions != null ? totalCodeSuggestions() : this.totalCodeSuggestions,
   totalCodeAcceptances: totalCodeAcceptances != null ? totalCodeAcceptances() : this.totalCodeAcceptances,
   totalCodeLinesSuggested: totalCodeLinesSuggested != null ? totalCodeLinesSuggested() : this.totalCodeLinesSuggested,
   totalCodeLinesAccepted: totalCodeLinesAccepted != null ? totalCodeLinesAccepted() : this.totalCodeLinesAccepted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ModelsLanguages &&
           name == other.name &&
@@ -61,4 +61,4 @@ ModelsLanguages copyWith({String? Function()? name, int? Function()? totalEngage
 
 @override String toString() => 'ModelsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers, totalCodeSuggestions: $totalCodeSuggestions, totalCodeAcceptances: $totalCodeAcceptances, totalCodeLinesSuggested: $totalCodeLinesSuggested, totalCodeLinesAccepted: $totalCodeLinesAccepted)';
 
- }
+}

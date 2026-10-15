@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings/zero_trust_gateway_gateway_account_settings_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';@immutable final class ZeroTrustGatewayGatewayAccountConfigResult {const ZeroTrustGatewayGatewayAccountConfigResult({this.settings, this.createdAt, this.updatedAt, });
 
-factory ZeroTrustGatewayGatewayAccountConfigResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountConfigResult(
+factory ZeroTrustGatewayGatewayAccountConfigResult.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayGatewayAccountConfigResult(
   settings: json['settings'] != null ? ZeroTrustGatewayGatewayAccountSettingsSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Specify account settings.
 final ZeroTrustGatewayGatewayAccountSettingsSettings? settings;
@@ -16,17 +16,17 @@ final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (settings != null) 'settings': settings?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings', 'created_at', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountConfigResult copyWith({ZeroTrustGatewayGatewayAccountSettingsSettings? Function()? settings, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayGatewayAccountConfigResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'settings', 'created_at', 'updated_at'}.contains(key));}
+ZeroTrustGatewayGatewayAccountConfigResult copyWith({ZeroTrustGatewayGatewayAccountSettingsSettings? Function()? settings, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) {return ZeroTrustGatewayGatewayAccountConfigResult(
   settings: settings != null ? settings() : this.settings,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountConfigResult &&
           settings == other.settings &&
@@ -37,4 +37,4 @@ ZeroTrustGatewayGatewayAccountConfigResult copyWith({ZeroTrustGatewayGatewayAcco
 
 @override String toString() => 'ZeroTrustGatewayGatewayAccountConfigResult(settings: $settings, createdAt: $createdAt, updatedAt: $updatedAt)';
 
- }
+}

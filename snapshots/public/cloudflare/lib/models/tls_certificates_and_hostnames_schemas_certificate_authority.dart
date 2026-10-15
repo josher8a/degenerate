@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details.](https://developers.cloudflare.com/ssl/reference/certificate-authorities)
 sealed class TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority();
 
-factory TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(String json) {return switch (json) {
   'google' => google,
   'lets_encrypt' => letsEncrypt,
   'ssl_com' => sslCom,
   _ => TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasCertificateAuthority google = TlsCertificatesAndHostnamesSchemasCertificateAuthority$google._();
 
@@ -20,33 +20,33 @@ static const TlsCertificatesAndHostnamesSchemasCertificateAuthority sslCom = Tls
 static const List<TlsCertificatesAndHostnamesSchemasCertificateAuthority> values = [google, letsEncrypt, sslCom];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'google' => 'google',
   'lets_encrypt' => 'letsEncrypt',
   'ssl_com' => 'sslCom',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() google, required W Function() letsEncrypt, required W Function() sslCom, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() google, required W Function() letsEncrypt, required W Function() sslCom, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$google() => google(),
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$letsEncrypt() => letsEncrypt(),
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$sslCom() => sslCom(),
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, W Function()? letsEncrypt, W Function()? sslCom, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, W Function()? letsEncrypt, W Function()? sslCom, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$google() => google != null ? google() : orElse(value),
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$letsEncrypt() => letsEncrypt != null ? letsEncrypt() : orElse(value),
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$sslCom() => sslCom != null ? sslCom() : orElse(value),
       TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasCertificateAuthority($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasCertificateAuthority$google extends TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority$google._();
 
 @override String get value => 'google';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => 'google'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasCertificateAuthority$letsEncrypt extends TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority$letsEncrypt._();
 
 @override String get value => 'lets_encrypt';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => 'lets_encrypt'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasCertificateAuthority$sslCom extends TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority$sslCom._();
 
 @override String get value => 'ssl_com';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => 'ssl_com'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown extends TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

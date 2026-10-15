@@ -1,31 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AutoragConfigAiSearchRequest (inline: RankingOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RankingOptions {const RankingOptions({this.ranker, this.scoreThreshold = 0.4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RankingOptions {const RankingOptions({this.ranker, this.scoreThreshold, });
 
-factory RankingOptions.fromJson(Map<String, dynamic> json) { return RankingOptions(
+factory RankingOptions.fromJson(Map<String, dynamic> json) {return RankingOptions(
   ranker: json['ranker'] as String?,
-  scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
-); }
+  scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
+);}
 
 final String? ranker;
 
-final double scoreThreshold;
+final double? scoreThreshold;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `scoreThreshold`, or its schema default when absent.
+double get scoreThresholdOrDefault => scoreThreshold ?? 0.4;
+
+Map<String, dynamic> toJson() {return {
   'ranker': ?ranker,
-  'score_threshold': scoreThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
+  'score_threshold': ?scoreThreshold,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-if (scoreThreshold < 0) { errors.add('scoreThreshold: must be >= 0'); }
-if (scoreThreshold > 1) { errors.add('scoreThreshold: must be <= 1'); }
-return errors; } 
-RankingOptions copyWith({String? Function()? ranker, double Function()? scoreThreshold, }) { return RankingOptions(
+List<String> validate() {final errors = <String>[];
+final scoreThreshold$ = scoreThreshold;
+if (scoreThreshold$ != null) {
+  if (scoreThreshold$ < 0) { errors.add('scoreThreshold: must be >= 0'); }
+  if (scoreThreshold$ > 1) { errors.add('scoreThreshold: must be <= 1'); }
+}
+return errors;}
+RankingOptions copyWith({String? Function()? ranker, double? Function()? scoreThreshold, }) {return RankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RankingOptions &&
           ranker == other.ranker &&
@@ -35,4 +41,4 @@ RankingOptions copyWith({String? Function()? ranker, double Function()? scoreThr
 
 @override String toString() => 'RankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)';
 
- }
+}

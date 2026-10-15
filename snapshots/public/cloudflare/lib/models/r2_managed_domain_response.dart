@@ -11,11 +11,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class R2ManagedDomainResponse {const R2ManagedDomainResponse({required this.bucketId, required this.domain, required this.enabled, });
 
-factory R2ManagedDomainResponse.fromJson(Map<String, dynamic> json) { return R2ManagedDomainResponse(
+factory R2ManagedDomainResponse.fromJson(Map<String, dynamic> json) {return R2ManagedDomainResponse(
   bucketId: json['bucketId'] as String,
   domain: json['domain'] as String,
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Bucket ID.
 final String bucketId;
@@ -26,23 +26,23 @@ final String domain;
 /// Whether this bucket is publicly accessible at the r2.dev domain.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucketId': bucketId,
   'domain': domain,
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucketId') && json['bucketId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bucketId') && json['bucketId'] is String &&
       json.containsKey('domain') && json['domain'] is String &&
-      json.containsKey('enabled') && json['enabled'] is bool; } 
+      json.containsKey('enabled') && json['enabled'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (bucketId.runes.length > 32) { errors.add('bucketId: length must be <= 32'); }
-return errors; } 
-R2ManagedDomainResponse copyWith({String? bucketId, String? domain, bool? enabled, }) { return R2ManagedDomainResponse(
+return errors;}
+R2ManagedDomainResponse copyWith({String? bucketId, String? domain, bool? enabled, }) {return R2ManagedDomainResponse(
   bucketId: bucketId ?? this.bucketId,
   domain: domain ?? this.domain,
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2ManagedDomainResponse &&
           bucketId == other.bucketId &&
@@ -53,4 +53,4 @@ R2ManagedDomainResponse copyWith({String? bucketId, String? domain, bool? enable
 
 @override String toString() => 'R2ManagedDomainResponse(bucketId: $bucketId, domain: $domain, enabled: $enabled)';
 
- }
+}

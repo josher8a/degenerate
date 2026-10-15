@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_reporting_report_runs_request/parameters.dart';@immutable final class PostReportingReportRunsRequest {const PostReportingReportRunsRequest({required this.reportType, this.expand, this.parameters, });
 
-factory PostReportingReportRunsRequest.fromJson(Map<String, dynamic> json) { return PostReportingReportRunsRequest(
+factory PostReportingReportRunsRequest.fromJson(Map<String, dynamic> json) {return PostReportingReportRunsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   parameters: json['parameters'] != null ? Parameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   reportType: json['report_type'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final Parameters? parameters;
 /// The ID of the [report type](https://docs.stripe.com/reporting/statements/api#report-types) to run, such as `"balance.summary.1"`.
 final String reportType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (parameters != null) 'parameters': parameters?.toJson(),
   'report_type': reportType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('report_type') && json['report_type'] is String; } 
-PostReportingReportRunsRequest copyWith({List<String>? Function()? expand, Parameters? Function()? parameters, String? reportType, }) { return PostReportingReportRunsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('report_type') && json['report_type'] is String;}
+PostReportingReportRunsRequest copyWith({List<String>? Function()? expand, Parameters? Function()? parameters, String? reportType, }) {return PostReportingReportRunsRequest(
   expand: expand != null ? expand() : this.expand,
   parameters: parameters != null ? parameters() : this.parameters,
   reportType: reportType ?? this.reportType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostReportingReportRunsRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostReportingReportRunsRequest copyWith({List<String>? Function()? expand, Param
 
 @override String toString() => 'PostReportingReportRunsRequest(expand: $expand, parameters: $parameters, reportType: $reportType)';
 
- }
+}

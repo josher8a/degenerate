@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PipelinesResponse2Result {const PipelinesResponse2Result({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, });
 
-factory PipelinesResponse2Result.fromJson(Map<String, dynamic> json) { return PipelinesResponse2Result(
+factory PipelinesResponse2Result.fromJson(Map<String, dynamic> json) {return PipelinesResponse2Result(
   createdAt: json['created_at'] as String,
   id: json['id'] as String,
   modifiedAt: json['modified_at'] as String,
   name: json['name'] as String,
   sql: json['sql'] as String,
   status: json['status'] as String,
-); }
+);}
 
 final String createdAt;
 
@@ -34,33 +34,33 @@ final String sql;
 /// Indicates the current status of the Pipeline.
 final String status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'modified_at': modifiedAt,
   'name': name,
   'sql': sql,
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('sql') && json['sql'] is String &&
-      json.containsKey('status') && json['status'] is String; } 
+      json.containsKey('status') && json['status'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-PipelinesResponse2Result copyWith({String? createdAt, String? id, String? modifiedAt, String? name, String? sql, String? status, }) { return PipelinesResponse2Result(
+return errors;}
+PipelinesResponse2Result copyWith({String? createdAt, String? id, String? modifiedAt, String? name, String? sql, String? status, }) {return PipelinesResponse2Result(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
   sql: sql ?? this.sql,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesResponse2Result &&
           createdAt == other.createdAt &&
@@ -74,4 +74,4 @@ PipelinesResponse2Result copyWith({String? createdAt, String? id, String? modifi
 
 @override String toString() => 'PipelinesResponse2Result(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status)';
 
- }
+}

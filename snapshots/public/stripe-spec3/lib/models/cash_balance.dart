@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_customer_balance_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CashBalanceObject {const CashBalanceObject();
 
-factory CashBalanceObject.fromJson(String json) { return switch (json) {
+factory CashBalanceObject.fromJson(String json) {return switch (json) {
   'cash_balance' => cashBalance,
   _ => CashBalanceObject$Unknown(json),
-}; }
+};}
 
 static const CashBalanceObject cashBalance = CashBalanceObject$cashBalance._();
 
 static const List<CashBalanceObject> values = [cashBalance];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cash_balance' => 'cashBalance',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CashBalanceObject$Unknown; } 
+bool get isUnknown {return this is CashBalanceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cashBalance, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cashBalance, required W Function(String value) $unknown, }) {return switch (this) {
       CashBalanceObject$cashBalance() => cashBalance(),
       CashBalanceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cashBalance, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cashBalance, W Function(String value)? $unknown, }) {return switch (this) {
       CashBalanceObject$cashBalance() => cashBalance != null ? cashBalance() : orElse(value),
       CashBalanceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CashBalanceObject($value)';
 
- }
+}
 @immutable final class CashBalanceObject$cashBalance extends CashBalanceObject {const CashBalanceObject$cashBalance._();
 
 @override String get value => 'cash_balance';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cashBala
 
 @override int get hashCode => 'cash_balance'.hashCode;
 
- }
+}
 @immutable final class CashBalanceObject$Unknown extends CashBalanceObject {const CashBalanceObject$Unknown(this.value);
 
 @override final String value;
@@ -53,27 +53,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cashBala
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A customer's `Cash balance` represents real funds. Customers can add funds to their cash balance by sending a bank transfer. These funds can be used for payment and can eventually be paid out to your bank account.
-@immutable final class CashBalance {const CashBalance({required this.customer, required this.livemode, required this.object, required this.settings, this.available, this.customerAccount, });
+@immutable final class CashBalance {const CashBalance({required this.customer, required this.livemode, required this.object, required this.settings, this.available = const Omittable.absent(), this.customerAccount = const Omittable.absent(), });
 
-factory CashBalance.fromJson(Map<String, dynamic> json) { return CashBalance(
-  available: (json['available'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
+factory CashBalance.fromJson(Map<String, dynamic> json) {return CashBalance(
+  available: json.containsKey('available') ? Omittable((json['available'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt()))) : const Omittable.absent(),
   customer: json['customer'] as String,
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: CashBalanceObject.fromJson(json['object'] as String),
   settings: CustomerBalanceCustomerBalanceSettings.fromJson(json['settings'] as Map<String, dynamic>),
-); }
+);}
 
 /// A hash of all cash balances available to this customer. You cannot delete a customer with any cash balances, even if the balance is 0. Amounts are represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final Map<String,int>? available;
+final Omittable<Map<String,int>?> available;
 
 /// The ID of the customer whose cash balance this object represents.
 final String customer;
 
 /// The ID of an Account representing a customer whose cash balance this object represents.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -83,34 +83,34 @@ final CashBalanceObject object;
 
 final CustomerBalanceCustomerBalanceSettings settings;
 
-Map<String, dynamic> toJson() { return {
-  'available': ?available,
+Map<String, dynamic> toJson() {return {
+  if (available.isPresent) 'available': available.value,
   'customer': customer,
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'livemode': livemode,
   'object': object.toJson(),
   'settings': settings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer') && json['customer'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customer') && json['customer'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('settings'); } 
+      json.containsKey('settings');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (customer.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
-final customerAccount$ = customerAccount;
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-CashBalance copyWith({Map<String, int>? Function()? available, String? customer, String? Function()? customerAccount, bool? livemode, CashBalanceObject? object, CustomerBalanceCustomerBalanceSettings? settings, }) { return CashBalance(
-  available: available != null ? available() : this.available,
+return errors;}
+CashBalance copyWith({Omittable<Map<String,int>?>? available, String? customer, Omittable<String?>? customerAccount, bool? livemode, CashBalanceObject? object, CustomerBalanceCustomerBalanceSettings? settings, }) {return CashBalance(
+  available: available ?? this.available,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   settings: settings ?? this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CashBalance &&
           available == other.available &&
@@ -124,4 +124,4 @@ CashBalance copyWith({Map<String, int>? Function()? available, String? customer,
 
 @override String toString() => 'CashBalance(available: $available, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object, settings: $settings)';
 
- }
+}

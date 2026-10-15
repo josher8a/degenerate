@@ -6,37 +6,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ZonesMirageId {const ZonesMirageId();
 
-factory ZonesMirageId.fromJson(String json) { return switch (json) {
+factory ZonesMirageId.fromJson(String json) {return switch (json) {
   'mirage' => mirage,
   _ => ZonesMirageId$Unknown(json),
-}; }
+};}
 
 static const ZonesMirageId mirage = ZonesMirageId$mirage._();
 
 static const List<ZonesMirageId> values = [mirage];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mirage' => 'mirage',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesMirageId$Unknown; } 
+bool get isUnknown {return this is ZonesMirageId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mirage, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mirage, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesMirageId$mirage() => mirage(),
       ZonesMirageId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirage, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirage, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesMirageId$mirage() => mirage != null ? mirage() : orElse(value),
       ZonesMirageId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesMirageId($value)';
 
- }
+}
 @immutable final class ZonesMirageId$mirage extends ZonesMirageId {const ZonesMirageId$mirage._();
 
 @override String get value => 'mirage';
@@ -45,7 +45,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirage, 
 
 @override int get hashCode => 'mirage'.hashCode;
 
- }
+}
 @immutable final class ZonesMirageId$Unknown extends ZonesMirageId {const ZonesMirageId$Unknown(this.value);
 
 @override final String value;
@@ -55,13 +55,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirage, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesMirage {const ZonesMirage({this.id, this.value, });
 
-factory ZonesMirage.fromJson(Map<String, dynamic> json) { return ZonesMirage(
+factory ZonesMirage.fromJson(Map<String, dynamic> json) {return ZonesMirage(
   id: json['id'] != null ? ZonesMirageId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
@@ -76,15 +76,15 @@ final ZonesMirageId? id;
 /// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesMirage copyWith({ZonesMirageId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesMirage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesMirage copyWith({ZonesMirageId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) {return ZonesMirage(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesMirage &&
           id == other.id &&
@@ -94,4 +94,4 @@ ZonesMirage copyWith({ZonesMirageId? Function()? id, CacheRulesSmartTieredCacheP
 
 @override String toString() => 'ZonesMirage(id: $id, value: $value)';
 
- }
+}

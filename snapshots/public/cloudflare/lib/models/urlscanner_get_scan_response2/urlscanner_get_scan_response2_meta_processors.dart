@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/domain_categories.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/phishing.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/processors_asn.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/processors_dns.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/processors_geoip.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/radar_rank.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/robots_txt.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/url_categories.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/wappa.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessors {const UrlscannerGetScanResponse2MetaProcessors({required this.asn, required this.dns, required this.domainCategories, required this.geoip, required this.phishing, required this.radarRank, required this.wappa, this.robotsTxt, this.urlCategories, });
 
-factory UrlscannerGetScanResponse2MetaProcessors.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessors(
+factory UrlscannerGetScanResponse2MetaProcessors.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2MetaProcessors(
   asn: ProcessorsAsn.fromJson(json['asn'] as Map<String, dynamic>),
   dns: ProcessorsDns.fromJson(json['dns'] as Map<String, dynamic>),
   domainCategories: DomainCategories.fromJson(json['domainCategories'] as Map<String, dynamic>),
@@ -13,7 +13,7 @@ factory UrlscannerGetScanResponse2MetaProcessors.fromJson(Map<String, dynamic> j
   robotsTxt: json['robotsTxt'] != null ? RobotsTxt.fromJson(json['robotsTxt'] as Map<String, dynamic>) : null,
   urlCategories: json['urlCategories'] != null ? UrlCategories.fromJson(json['urlCategories'] as Map<String, dynamic>) : null,
   wappa: Wappa.fromJson(json['wappa'] as Map<String, dynamic>),
-); }
+);}
 
 final ProcessorsAsn asn;
 
@@ -33,7 +33,7 @@ final UrlCategories? urlCategories;
 
 final Wappa wappa;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn.toJson(),
   'dns': dns.toJson(),
   'domainCategories': domainCategories.toJson(),
@@ -43,15 +43,15 @@ Map<String, dynamic> toJson() { return {
   if (robotsTxt != null) 'robotsTxt': robotsTxt?.toJson(),
   if (urlCategories != null) 'urlCategories': urlCategories?.toJson(),
   'wappa': wappa.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') &&
       json.containsKey('dns') &&
       json.containsKey('domainCategories') &&
       json.containsKey('geoip') &&
       json.containsKey('phishing') &&
       json.containsKey('radarRank') &&
-      json.containsKey('wappa'); } 
-UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, ProcessorsDns? dns, DomainCategories? domainCategories, ProcessorsGeoip? geoip, Phishing? phishing, RadarRank? radarRank, RobotsTxt? Function()? robotsTxt, UrlCategories? Function()? urlCategories, Wappa? wappa, }) { return UrlscannerGetScanResponse2MetaProcessors(
+      json.containsKey('wappa');}
+UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, ProcessorsDns? dns, DomainCategories? domainCategories, ProcessorsGeoip? geoip, Phishing? phishing, RadarRank? radarRank, RobotsTxt? Function()? robotsTxt, UrlCategories? Function()? urlCategories, Wappa? wappa, }) {return UrlscannerGetScanResponse2MetaProcessors(
   asn: asn ?? this.asn,
   dns: dns ?? this.dns,
   domainCategories: domainCategories ?? this.domainCategories,
@@ -61,7 +61,7 @@ UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, Processor
   robotsTxt: robotsTxt != null ? robotsTxt() : this.robotsTxt,
   urlCategories: urlCategories != null ? urlCategories() : this.urlCategories,
   wappa: wappa ?? this.wappa,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessors &&
           asn == other.asn &&
@@ -78,4 +78,4 @@ UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, Processor
 
 @override String toString() => 'UrlscannerGetScanResponse2MetaProcessors(\n  asn: $asn,\n  dns: $dns,\n  domainCategories: $domainCategories,\n  geoip: $geoip,\n  phishing: $phishing,\n  radarRank: $radarRank,\n  robotsTxt: $robotsTxt,\n  urlCategories: $urlCategories,\n  wappa: $wappa,\n)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_list_item/mcn_list_item_list.dart';@immutable final class McnListItem {const McnListItem({required this.itemType, required this.list, });
 
-factory McnListItem.fromJson(Map<String, dynamic> json) { return McnListItem(
+factory McnListItem.fromJson(Map<String, dynamic> json) {return McnListItem(
   itemType: json['item_type'] as String,
   list: (json['list'] as List<dynamic>).map((e) => McnListItemList.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String itemType;
 
 final List<McnListItemList> list;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'item_type': itemType,
   'list': list.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('item_type') && json['item_type'] is String &&
-      json.containsKey('list'); } 
-McnListItem copyWith({String? itemType, List<McnListItemList>? list, }) { return McnListItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('item_type') && json['item_type'] is String &&
+      json.containsKey('list');}
+McnListItem copyWith({String? itemType, List<McnListItemList>? list, }) {return McnListItem(
   itemType: itemType ?? this.itemType,
   list: list ?? this.list,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnListItem &&
           itemType == other.itemType &&
@@ -31,4 +31,4 @@ McnListItem copyWith({String? itemType, List<McnListItemList>? list, }) { return
 
 @override String toString() => 'McnListItem(itemType: $itemType, list: $list)';
 
- }
+}

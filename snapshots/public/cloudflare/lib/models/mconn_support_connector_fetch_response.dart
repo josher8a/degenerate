@@ -1,27 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MconnSupportConnectorFetchResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_connector.dart';@immutable final class MconnSupportConnectorFetchResponse {const MconnSupportConnectorFetchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_support_connector.dart';@immutable final class MconnSupportConnectorFetchResponse {const MconnSupportConnectorFetchResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnSupportConnectorFetchResponse.fromJson(Map<String, dynamic> json) { return MconnSupportConnectorFetchResponse(
-  result: json['result'] != null ? MconnSupportConnector.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory MconnSupportConnectorFetchResponse.fromJson(Map<String, dynamic> json) {return MconnSupportConnectorFetchResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  result: MconnSupportConnector.fromJson(json['result'] as Map<String, dynamic>),
+);}
 
-final MconnSupportConnector? result;
+final List<MconnCodedMessage> messages;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnSupportConnectorFetchResponse copyWith({MconnSupportConnector? Function()? result}) { return MconnSupportConnectorFetchResponse(
-  result: result != null ? result() : this.result,
-); } 
+final bool success;
+
+final List<MconnCodedMessage> errors;
+
+final MconnSupportConnector result;
+
+Map<String, dynamic> toJson() {return {
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result');}
+MconnSupportConnectorFetchResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, MconnSupportConnector? result, }) {return MconnSupportConnectorFetchResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportConnectorFetchResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           result == other.result;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result);
 
-@override String toString() => 'MconnSupportConnectorFetchResponse(result: $result)';
+@override String toString() => 'MconnSupportConnectorFetchResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

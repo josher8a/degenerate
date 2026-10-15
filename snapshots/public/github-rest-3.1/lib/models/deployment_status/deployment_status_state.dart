@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status.
 sealed class DeploymentStatusState {const DeploymentStatusState();
 
-factory DeploymentStatusState.fromJson(String json) { return switch (json) {
+factory DeploymentStatusState.fromJson(String json) {return switch (json) {
   'error' => error,
   'failure' => failure,
   'inactive' => inactive,
@@ -13,7 +13,7 @@ factory DeploymentStatusState.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   _ => DeploymentStatusState$Unknown(json),
-}; }
+};}
 
 static const DeploymentStatusState error = DeploymentStatusState$error._();
 
@@ -32,9 +32,9 @@ static const DeploymentStatusState inProgress = DeploymentStatusState$inProgress
 static const List<DeploymentStatusState> values = [error, failure, inactive, pending, success, queued, inProgress];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'error' => 'error',
   'failure' => 'failure',
   'inactive' => 'inactive',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'queued' => 'queued',
   'in_progress' => 'inProgress',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DeploymentStatusState$Unknown; } 
+bool get isUnknown {return this is DeploymentStatusState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() error, required W Function() failure, required W Function() inactive, required W Function() pending, required W Function() success, required W Function() queued, required W Function() inProgress, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() error, required W Function() failure, required W Function() inactive, required W Function() pending, required W Function() success, required W Function() queued, required W Function() inProgress, required W Function(String value) $unknown, }) {return switch (this) {
       DeploymentStatusState$error() => error(),
       DeploymentStatusState$failure() => failure(),
       DeploymentStatusState$inactive() => inactive(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() error, required W Function() failure, required 
       DeploymentStatusState$queued() => queued(),
       DeploymentStatusState$inProgress() => inProgress(),
       DeploymentStatusState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W Function()? failure, W Function()? inactive, W Function()? pending, W Function()? success, W Function()? queued, W Function()? inProgress, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W Function()? failure, W Function()? inactive, W Function()? pending, W Function()? success, W Function()? queued, W Function()? inProgress, W Function(String value)? $unknown, }) {return switch (this) {
       DeploymentStatusState$error() => error != null ? error() : orElse(value),
       DeploymentStatusState$failure() => failure != null ? failure() : orElse(value),
       DeploymentStatusState$inactive() => inactive != null ? inactive() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
       DeploymentStatusState$queued() => queued != null ? queued() : orElse(value),
       DeploymentStatusState$inProgress() => inProgress != null ? inProgress() : orElse(value),
       DeploymentStatusState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DeploymentStatusState($value)';
 
- }
+}
 @immutable final class DeploymentStatusState$error extends DeploymentStatusState {const DeploymentStatusState$error._();
 
 @override String get value => 'error';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$failure extends DeploymentStatusState {const DeploymentStatusState$failure._();
 
 @override String get value => 'failure';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$inactive extends DeploymentStatusState {const DeploymentStatusState$inactive._();
 
 @override String get value => 'inactive';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$pending extends DeploymentStatusState {const DeploymentStatusState$pending._();
 
 @override String get value => 'pending';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$success extends DeploymentStatusState {const DeploymentStatusState$success._();
 
 @override String get value => 'success';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$queued extends DeploymentStatusState {const DeploymentStatusState$queued._();
 
 @override String get value => 'queued';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$inProgress extends DeploymentStatusState {const DeploymentStatusState$inProgress._();
 
 @override String get value => 'in_progress';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class DeploymentStatusState$Unknown extends DeploymentStatusState {const DeploymentStatusState$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

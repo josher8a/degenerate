@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key.dart';@immutable final class KeyList {const KeyList({this.object, this.data, this.hasMore, this.firstId, this.lastId, });
 
-factory KeyList.fromJson(Map<String, dynamic> json) { return KeyList(
+factory KeyList.fromJson(Map<String, dynamic> json) {return KeyList(
   object: json['object'] as String?,
   data: (json['data'] as List<dynamic>?)?.map((e) => Key.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool?,
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
-); }
+);}
 
 /// Example: `'list'`
 final String? object;
@@ -25,21 +25,21 @@ final String? firstId;
 /// Example: `'key_xyz'`
 final String? lastId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': ?object,
   if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
   'has_more': ?hasMore,
   'first_id': ?firstId,
   'last_id': ?lastId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object', 'data', 'has_more', 'first_id', 'last_id'}.contains(key)); } 
-KeyList copyWith({String? Function()? object, List<Key>? Function()? data, bool? Function()? hasMore, String? Function()? firstId, String? Function()? lastId, }) { return KeyList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'object', 'data', 'has_more', 'first_id', 'last_id'}.contains(key));}
+KeyList copyWith({String? Function()? object, List<Key>? Function()? data, bool? Function()? hasMore, String? Function()? firstId, String? Function()? lastId, }) {return KeyList(
   object: object != null ? object() : this.object,
   data: data != null ? data() : this.data,
   hasMore: hasMore != null ? hasMore() : this.hasMore,
   firstId: firstId != null ? firstId() : this.firstId,
   lastId: lastId != null ? lastId() : this.lastId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is KeyList &&
           object == other.object &&
@@ -52,4 +52,4 @@ KeyList copyWith({String? Function()? object, List<Key>? Function()? data, bool?
 
 @override String toString() => 'KeyList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)';
 
- }
+}

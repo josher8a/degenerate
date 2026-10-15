@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_thread_comments.dart';@immutable final class WebhookPullRequestReviewThreadResolvedThread {const WebhookPullRequestReviewThreadResolvedThread({required this.comments, required this.nodeId, });
 
-factory WebhookPullRequestReviewThreadResolvedThread.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedThread(
+factory WebhookPullRequestReviewThreadResolvedThread.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadResolvedThread(
   comments: (json['comments'] as List<dynamic>).map((e) => WebhookPullRequestReviewThreadResolvedThreadComments.fromJson(e as Map<String, dynamic>)).toList(),
   nodeId: json['node_id'] as String,
-); }
+);}
 
 final List<WebhookPullRequestReviewThreadResolvedThreadComments> comments;
 
 final String nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.map((e) => e.toJson()).toList(),
   'node_id': nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-WebhookPullRequestReviewThreadResolvedThread copyWith({List<WebhookPullRequestReviewThreadResolvedThreadComments>? comments, String? nodeId, }) { return WebhookPullRequestReviewThreadResolvedThread(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
+      json.containsKey('node_id') && json['node_id'] is String;}
+WebhookPullRequestReviewThreadResolvedThread copyWith({List<WebhookPullRequestReviewThreadResolvedThreadComments>? comments, String? nodeId, }) {return WebhookPullRequestReviewThreadResolvedThread(
   comments: comments ?? this.comments,
   nodeId: nodeId ?? this.nodeId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewThreadResolvedThread &&
           listEquals(comments, other.comments) &&
@@ -31,4 +31,4 @@ WebhookPullRequestReviewThreadResolvedThread copyWith({List<WebhookPullRequestRe
 
 @override String toString() => 'WebhookPullRequestReviewThreadResolvedThread(comments: $comments, nodeId: $nodeId)';
 
- }
+}

@@ -1,27 +1,57 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TeamsDevicesDeviceSettingsResponseCollection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_settings_policy.dart';@immutable final class TeamsDevicesDeviceSettingsResponseCollection {const TeamsDevicesDeviceSettingsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_settings_policy.dart';import 'package:pub_cloudflare/models/teams_devices_messages2.dart';import 'package:pub_cloudflare/models/teams_devices_result_info.dart';@immutable final class TeamsDevicesDeviceSettingsResponseCollection {const TeamsDevicesDeviceSettingsResponseCollection({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory TeamsDevicesDeviceSettingsResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceSettingsResponseCollection(
-  result: (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+factory TeamsDevicesDeviceSettingsResponseCollection.fromJson(Map<String, dynamic> json) {return TeamsDevicesDeviceSettingsResponseCollection(
+  errors: (json['errors'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  resultInfo: json['result_info'] != null ? TeamsDevicesResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+);}
 
-final List<TeamsDevicesDeviceSettingsPolicy>? result;
+final List<TeamsDevicesMessages2> errors;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-TeamsDevicesDeviceSettingsResponseCollection copyWith({List<TeamsDevicesDeviceSettingsPolicy>? Function()? result}) { return TeamsDevicesDeviceSettingsResponseCollection(
-  result: result != null ? result() : this.result,
-); } 
+final List<TeamsDevicesMessages2> messages;
+
+final List<TeamsDevicesDeviceSettingsPolicy> result;
+
+/// Whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
+
+final TeamsDevicesResultInfo? resultInfo;
+
+Map<String, dynamic> toJson() {return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e.toJson()).toList(),
+  'success': success,
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+TeamsDevicesDeviceSettingsResponseCollection copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, List<TeamsDevicesDeviceSettingsPolicy>? result, bool? success, TeamsDevicesResultInfo? Function()? resultInfo, }) {return TeamsDevicesDeviceSettingsResponseCollection(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDeviceSettingsResponseCollection &&
-          listEquals(result, other.result);
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          listEquals(result, other.result) &&
+          success == other.success &&
+          resultInfo == other.resultInfo;
 
-@override int get hashCode => Object.hashAll(result ?? const []);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), success, resultInfo);
 
-@override String toString() => 'TeamsDevicesDeviceSettingsResponseCollection(result: $result)';
+@override String toString() => 'TeamsDevicesDeviceSettingsResponseCollection(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';
 
- }
+}

@@ -2,35 +2,35 @@
 // Source: #/components/schemas/SetupIntentPaymentMethodOptionsKlarna
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class SetupIntentPaymentMethodOptionsKlarna {const SetupIntentPaymentMethodOptionsKlarna({this.currency, this.preferredLocale, });
+@immutable final class SetupIntentPaymentMethodOptionsKlarna {const SetupIntentPaymentMethodOptionsKlarna({this.currency = const Omittable.absent(), this.preferredLocale = const Omittable.absent(), });
 
-factory SetupIntentPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsKlarna(
-  currency: json['currency'] as String?,
-  preferredLocale: json['preferred_locale'] as String?,
-); }
+factory SetupIntentPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptionsKlarna(
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
+  preferredLocale: json.containsKey('preferred_locale') ? Omittable(json['preferred_locale'] as String?) : const Omittable.absent(),
+);}
 
 /// The currency of the setup intent. Three letter ISO currency code.
-final String? currency;
+final Omittable<String?> currency;
 
 /// Preferred locale of the Klarna checkout page that the customer is redirected to.
-final String? preferredLocale;
+final Omittable<String?> preferredLocale;
 
-Map<String, dynamic> toJson() { return {
-  'currency': ?currency,
-  'preferred_locale': ?preferredLocale,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'preferred_locale'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (currency.isPresent) 'currency': currency.value,
+  if (preferredLocale.isPresent) 'preferred_locale': preferredLocale.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'currency', 'preferred_locale'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final preferredLocale$ = preferredLocale;
+List<String> validate() {final errors = <String>[];
+final preferredLocale$ = preferredLocale.value;
 if (preferredLocale$ != null) {
   if (preferredLocale$.runes.length > 5000) { errors.add('preferredLocale: length must be <= 5000'); }
 }
-return errors; } 
-SetupIntentPaymentMethodOptionsKlarna copyWith({String? Function()? currency, String? Function()? preferredLocale, }) { return SetupIntentPaymentMethodOptionsKlarna(
-  currency: currency != null ? currency() : this.currency,
-  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
-); } 
+return errors;}
+SetupIntentPaymentMethodOptionsKlarna copyWith({Omittable<String?>? currency, Omittable<String?>? preferredLocale, }) {return SetupIntentPaymentMethodOptionsKlarna(
+  currency: currency ?? this.currency,
+  preferredLocale: preferredLocale ?? this.preferredLocale,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsKlarna &&
           currency == other.currency &&
@@ -40,4 +40,4 @@ SetupIntentPaymentMethodOptionsKlarna copyWith({String? Function()? currency, St
 
 @override String toString() => 'SetupIntentPaymentMethodOptionsKlarna(currency: $currency, preferredLocale: $preferredLocale)';
 
- }
+}

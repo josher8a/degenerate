@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectsCreateDraftItemForOrgRequest {const ProjectsCreateDraftItemForOrgRequest({required this.title, this.body, });
 
-factory ProjectsCreateDraftItemForOrgRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateDraftItemForOrgRequest(
+factory ProjectsCreateDraftItemForOrgRequest.fromJson(Map<String, dynamic> json) {return ProjectsCreateDraftItemForOrgRequest(
   title: json['title'] as String,
   body: json['body'] as String?,
-); }
+);}
 
 /// The title of the draft issue item to create in the project.
 final String title;
@@ -14,15 +14,15 @@ final String title;
 /// The body content of the draft issue item to create in the project.
 final String? body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': title,
   'body': ?body,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-ProjectsCreateDraftItemForOrgRequest copyWith({String? title, String? Function()? body, }) { return ProjectsCreateDraftItemForOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('title') && json['title'] is String;}
+ProjectsCreateDraftItemForOrgRequest copyWith({String? title, String? Function()? body, }) {return ProjectsCreateDraftItemForOrgRequest(
   title: title ?? this.title,
   body: body != null ? body() : this.body,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectsCreateDraftItemForOrgRequest &&
           title == other.title &&
@@ -32,4 +32,4 @@ ProjectsCreateDraftItemForOrgRequest copyWith({String? title, String? Function()
 
 @override String toString() => 'ProjectsCreateDraftItemForOrgRequest(title: $title, body: $body)';
 
- }
+}

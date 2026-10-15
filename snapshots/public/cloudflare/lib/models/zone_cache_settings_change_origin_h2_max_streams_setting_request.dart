@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_h2_max_streams_value.dart';@immutable final class ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest {const ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest({required this.value});
 
-factory ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
+factory ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest.fromJson(Map<String, dynamic> json) {return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
   value: CacheRulesOriginH2MaxStreamsValue.fromJson(json['value'] as num),
-); }
+);}
 
 /// Value of the Origin H2 Max Streams Setting.
 final CacheRulesOriginH2MaxStreamsValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest copyWith({CacheRulesOriginH2MaxStreamsValue? value}) { return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest copyWith({CacheRulesOriginH2MaxStreamsValue? value}) {return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest &&
           value == other.value;
@@ -25,4 +25,4 @@ ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest copyWith({CacheRulesOrig
 
 @override String toString() => 'ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(value: $value)';
 
- }
+}

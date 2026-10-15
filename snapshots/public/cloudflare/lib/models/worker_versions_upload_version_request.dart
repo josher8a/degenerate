@@ -3,10 +3,10 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request/worker_versions_upload_version_request_metadata.dart';@immutable final class WorkerVersionsUploadVersionRequest {const WorkerVersionsUploadVersionRequest({required this.metadata, this.files, });
 
-factory WorkerVersionsUploadVersionRequest.fromJson(Map<String, dynamic> json) { return WorkerVersionsUploadVersionRequest(
+factory WorkerVersionsUploadVersionRequest.fromJson(Map<String, dynamic> json) {return WorkerVersionsUploadVersionRequest(
   files: (json['files'] as List<dynamic>?)?.map((e) => base64Decode(e as String)).toList(),
   metadata: WorkerVersionsUploadVersionRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
-); }
+);}
 
 /// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.`<br/>`Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
 final List<Uint8List>? files;
@@ -14,15 +14,15 @@ final List<Uint8List>? files;
 /// JSON-encoded metadata about the uploaded parts and Worker configuration.
 final WorkerVersionsUploadVersionRequestMetadata metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (files != null) 'files': files?.map(base64Encode).toList(),
   'metadata': metadata.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
-WorkerVersionsUploadVersionRequest copyWith({List<Uint8List>? Function()? files, WorkerVersionsUploadVersionRequestMetadata? metadata, }) { return WorkerVersionsUploadVersionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metadata');}
+WorkerVersionsUploadVersionRequest copyWith({List<Uint8List>? Function()? files, WorkerVersionsUploadVersionRequestMetadata? metadata, }) {return WorkerVersionsUploadVersionRequest(
   files: files != null ? files() : this.files,
   metadata: metadata ?? this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerVersionsUploadVersionRequest &&
           listEquals(files, other.files) &&
@@ -32,4 +32,4 @@ WorkerVersionsUploadVersionRequest copyWith({List<Uint8List>? Function()? files,
 
 @override String toString() => 'WorkerVersionsUploadVersionRequest(files: $files, metadata: $metadata)';
 
- }
+}

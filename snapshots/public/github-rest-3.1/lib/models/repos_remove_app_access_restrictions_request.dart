@@ -11,20 +11,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class ReposRemoveAppAccessRestrictionsRequest {const ReposRemoveAppAccessRestrictionsRequest({required this.apps});
 
-factory ReposRemoveAppAccessRestrictionsRequest.fromJson(Map<String, dynamic> json) { return ReposRemoveAppAccessRestrictionsRequest(
+factory ReposRemoveAppAccessRestrictionsRequest.fromJson(Map<String, dynamic> json) {return ReposRemoveAppAccessRestrictionsRequest(
   apps: (json['apps'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
 final List<String> apps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apps': apps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('apps'); } 
-ReposRemoveAppAccessRestrictionsRequest copyWith({List<String>? apps}) { return ReposRemoveAppAccessRestrictionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('apps');}
+ReposRemoveAppAccessRestrictionsRequest copyWith({List<String>? apps}) {return ReposRemoveAppAccessRestrictionsRequest(
   apps: apps ?? this.apps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposRemoveAppAccessRestrictionsRequest &&
           listEquals(apps, other.apps);
@@ -33,4 +33,4 @@ ReposRemoveAppAccessRestrictionsRequest copyWith({List<String>? apps}) { return 
 
 @override String toString() => 'ReposRemoveAppAccessRestrictionsRequest(apps: $apps)';
 
- }
+}

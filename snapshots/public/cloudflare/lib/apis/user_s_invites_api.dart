@@ -14,7 +14,7 @@ final class UserSInvitesApi with ApiExecutor {const UserSInvitesApi(this.apiConf
 /// Lists all invitations associated with my user.
 ///
 /// `GET /user/invites`
-Future<ApiResult<List<IamUserInvite>?, TokensCreateTokenError>> userSInvitesListInvitations({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IamUserInvite>?, TokensCreateTokenError>> userSInvitesListInvitations({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Invitation Details
 ///
 /// Gets the details of an invitation.
 ///
 /// `GET /user/invites/{invite_id}`
-Future<ApiResult<IamUserInvite?, TokensCreateTokenError>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserInvite?, TokensCreateTokenError>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,7 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -54,13 +54,13 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Respond to Invitation
 ///
 /// Responds to an invitation.
 ///
 /// `PATCH /user/invites/{invite_id}`
-Future<ApiResult<IamUserInvite?, TokensCreateTokenError>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserInvite?, TokensCreateTokenError>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +71,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -79,5 +79,5 @@ return execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

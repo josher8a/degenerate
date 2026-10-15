@@ -14,7 +14,7 @@ final class WorkersAiTextGenerationApi with ApiExecutor {const WorkersAiTextGene
 /// Runs inference on the @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bIt({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bIt({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -36,20 +36,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepseek-ai/deepseek-math-7b-instruct model.
 ///
 /// Runs inference on the @cf/deepseek-ai/deepseek-math-7b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-math-7b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -71,20 +71,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
 ///
 /// Runs inference on the @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -106,20 +106,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/defog/sqlcoder-7b-2 model.
 ///
 /// Runs inference on the @cf/defog/sqlcoder-7b-2 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/defog/sqlcoder-7b-2`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDefogSqlcoder7b2Error>> workersAiPostRunCfDefogSqlcoder7b2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDefogSqlcoder7b2Error>> workersAiPostRunCfDefogSqlcoder7b2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -141,20 +141,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfDefogSqlcoder7b2Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model.
 ///
 /// Runs inference on the @cf/fblgit/una-cybertron-7b-v2-bf16 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/fblgit/una-cybertron-7b-v2-bf16`
-Future<ApiResult<Map<String, dynamic>, Bf16Error>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16({required String accountId, String? queueRequest, String? tags, Bf16Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, Bf16Error>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16({required String accountId, String? queueRequest, String? tags, Bf16Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -176,20 +176,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: Bf16Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/google/gemma-2b-it-lora model.
 ///
 /// Runs inference on the @cf/google/gemma-2b-it-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-2b-it-lora`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleGemma2bItLoraError>> workersAiPostRunCfGoogleGemma2bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleGemma2bItLoraError>> workersAiPostRunCfGoogleGemma2bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -211,20 +211,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfGoogleGemma2bItLoraError.fromResponse,
 );
- } 
+}
 /// Execute @cf/google/gemma-3-12b-it model.
 ///
 /// Runs inference on the @cf/google/gemma-3-12b-it model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-3-12b-it`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleGemma312bItError>> workersAiPostRunCfGoogleGemma312bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleGemma312bItError>> workersAiPostRunCfGoogleGemma312bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -246,20 +246,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfGoogleGemma312bItError.fromResponse,
 );
- } 
+}
 /// Execute @cf/google/gemma-7b-it-lora model.
 ///
 /// Runs inference on the @cf/google/gemma-7b-it-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-7b-it-lora`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleGemma7bItLoraError>> workersAiPostRunCfGoogleGemma7bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleGemma7bItLoraError>> workersAiPostRunCfGoogleGemma7bItLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -281,20 +281,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfGoogleGemma7bItLoraError.fromResponse,
 );
- } 
+}
 /// Execute @cf/ibm-granite/granite-4.0-h-micro model.
 ///
 /// Runs inference on the @cf/ibm-granite/granite-4.0-h-micro model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ibm-granite/granite-4.0-h-micro`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfIbmGranite40HMicroError>> workersAiPostRunCfIbmGranite40HMicro({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfIbmGranite40HMicroError>> workersAiPostRunCfIbmGranite40HMicro({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -316,20 +316,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfIbmGranite40HMicroError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
 ///
 /// Runs inference on the @cf/meta-llama/llama-2-7b-chat-hf-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta-llama/llama-2-7b-chat-hf-lora`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama27bChatHfLoraError>> workersAiPostRunCfMetaLlama27bChatHfLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama27bChatHfLoraError>> workersAiPostRunCfMetaLlama27bChatHfLora({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -351,20 +351,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama27bChatHfLoraError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-2-7b-chat-fp16 model.
 ///
 /// Runs inference on the @cf/meta/llama-2-7b-chat-fp16 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-fp16`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama27bChatFp16Error>> workersAiPostRunCfMetaLlama27bChatFp16({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama27bChatFp16Error>> workersAiPostRunCfMetaLlama27bChatFp16({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -386,20 +386,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama27bChatFp16Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-2-7b-chat-int8 model.
 ///
 /// Runs inference on the @cf/meta/llama-2-7b-chat-int8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-int8`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama27bChatInt8Error>> workersAiPostRunCfMetaLlama27bChatInt8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama27bChatInt8Error>> workersAiPostRunCfMetaLlama27bChatInt8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -421,20 +421,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama27bChatInt8Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3-8b-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3-8b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama38bInstructError>> workersAiPostRunCfMetaLlama38bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama38bInstructError>> workersAiPostRunCfMetaLlama38bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -456,20 +456,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama38bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3-8b-instruct-awq model.
 ///
 /// Runs inference on the @cf/meta/llama-3-8b-instruct-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama38bInstructAwqError>> workersAiPostRunCfMetaLlama38bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama38bInstructAwqError>> workersAiPostRunCfMetaLlama38bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -491,20 +491,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama38bInstructAwqError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-8b-instruct-awq model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama318bInstructAwqError>> workersAiPostRunCfMetaLlama318bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama318bInstructAwqError>> workersAiPostRunCfMetaLlama318bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -526,20 +526,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama318bInstructAwqError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8 model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama318bInstructFp8Error>> workersAiPostRunCfMetaLlama318bInstructFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama318bInstructFp8Error>> workersAiPostRunCfMetaLlama318bInstructFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -561,20 +561,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama318bInstructFp8Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8-fast`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama318bInstructFp8FastError>> workersAiPostRunCfMetaLlama318bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama318bInstructFp8FastError>> workersAiPostRunCfMetaLlama318bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -596,20 +596,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama318bInstructFp8FastError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-70b-instruct-fp8-fast model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-70b-instruct-fp8-fast model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastError>> workersAiPostRunCfMetaLlama3170bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastError>> workersAiPostRunCfMetaLlama3170bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -631,20 +631,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama3170bInstructFp8FastError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.2-1b-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3.2-1b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-1b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama321bInstructError>> workersAiPostRunCfMetaLlama321bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama321bInstructError>> workersAiPostRunCfMetaLlama321bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -666,20 +666,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama321bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.2-3b-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3.2-3b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-3b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama323bInstructError>> workersAiPostRunCfMetaLlama323bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama323bInstructError>> workersAiPostRunCfMetaLlama323bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -701,20 +701,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama323bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.2-11b-vision-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3.2-11b-vision-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-11b-vision-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama3211bVisionInstructError>> workersAiPostRunCfMetaLlama3211bVisionInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama3211bVisionInstructError>> workersAiPostRunCfMetaLlama3211bVisionInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -736,20 +736,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama3211bVisionInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-3.3-70b-instruct-fp8-fast model.
 ///
 /// Runs inference on the @cf/meta/llama-3.3-70b-instruct-fp8-fast model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.3-70b-instruct-fp8-fast`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama370bInstructFp8FastError>> workersAiPostRunCfMetaLlama370bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama370bInstructFp8FastError>> workersAiPostRunCfMetaLlama370bInstructFp8Fast({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -771,20 +771,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama370bInstructFp8FastError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-4-scout-17b-16e-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-4-scout-17b-16e-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructError>> workersAiPostRunCfMetaLlama4Scout17b16eInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructError>> workersAiPostRunCfMetaLlama4Scout17b16eInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -806,20 +806,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlama4Scout17b16eInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/meta/llama-guard-3-8b model.
 ///
 /// Runs inference on the @cf/meta/llama-guard-3-8b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-guard-3-8b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlamaGuard38bError>> workersAiPostRunCfMetaLlamaGuard38b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaGuard38bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaLlamaGuard38bError>> workersAiPostRunCfMetaLlamaGuard38b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaGuard38bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -841,20 +841,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMetaLlamaGuard38bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/microsoft/phi-2 model.
 ///
 /// Runs inference on the @cf/microsoft/phi-2 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/phi-2`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftPhi2Error>> workersAiPostRunCfMicrosoftPhi2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftPhi2Error>> workersAiPostRunCfMicrosoftPhi2({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -876,20 +876,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMicrosoftPhi2Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/mistral/mistral-7b-instruct-v0.1 model.
 ///
 /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.1 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.1`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMistral7bInstructError>> workersAiPostRunCfMistral7bInstructV01({required String accountId, String? queueRequest, String? tags, $1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMistral7bInstructError>> workersAiPostRunCfMistral7bInstructV01({required String accountId, String? queueRequest, String? tags, $1Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -911,20 +911,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMistral7bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model.
 ///
 /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.2-lora model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.2-lora`
-Future<ApiResult<Map<String, dynamic>, LoraError>> workersAiPostRunCfMistral7bInstructV02Lora({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, LoraError>> workersAiPostRunCfMistral7bInstructV02Lora({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -946,20 +946,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: LoraError.fromResponse,
 );
- } 
+}
 /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model.
 ///
 /// Runs inference on the @cf/mistralai/mistral-small-3.1-24b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError>> workersAiPostRunCfMistralaiMistralSmall3124bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError>> workersAiPostRunCfMistralaiMistralSmall3124bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -981,20 +981,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/openai/gpt-oss-20b model.
 ///
 /// Runs inference on the @cf/openai/gpt-oss-20b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/gpt-oss-20b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiGptOss20bError>> workersAiPostRunCfOpenaiGptOss20b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss20bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiGptOss20bError>> workersAiPostRunCfOpenaiGptOss20b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss20bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1016,20 +1016,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfOpenaiGptOss20bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/openai/gpt-oss-120b model.
 ///
 /// Runs inference on the @cf/openai/gpt-oss-120b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/gpt-oss-120b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiGptOss120bError>> workersAiPostRunCfOpenaiGptOss120b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss120bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiGptOss120bError>> workersAiPostRunCfOpenaiGptOss120b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenaiGptOss120bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1051,20 +1051,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfOpenaiGptOss120bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/openchat/openchat-3.5-0106 model.
 ///
 /// Runs inference on the @cf/openchat/openchat-3.5-0106 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openchat/openchat-3.5-0106`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenchat350106Error>> workersAiPostRunCfOpenchat350106({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenchat350106Error>> workersAiPostRunCfOpenchat350106({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1086,20 +1086,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfOpenchat350106Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-0.5b-chat model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-0.5b-chat model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-0.5b-chat`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen1505bChatError>> workersAiPostRunCfQwenQwen1505bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen1505bChatError>> workersAiPostRunCfQwenQwen1505bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1121,20 +1121,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwen1505bChatError.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-1.8b-chat model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-1.8b-chat model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-1.8b-chat`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen1518bChatError>> workersAiPostRunCfQwenQwen1518bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen1518bChatError>> workersAiPostRunCfQwenQwen1518bChat({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1156,20 +1156,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwen1518bChatError.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-7b-chat-awq model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-7b-chat-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-7b-chat-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen157bChatAwqError>> workersAiPostRunCfQwenQwen157bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen157bChatAwqError>> workersAiPostRunCfQwenQwen157bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1191,20 +1191,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwen157bChatAwqError.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-14b-chat-awq model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-14b-chat-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-14b-chat-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen1514bChatAwqError>> workersAiPostRunCfQwenQwen1514bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen1514bChatAwqError>> workersAiPostRunCfQwenQwen1514bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1226,20 +1226,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwen1514bChatAwqError.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model.
 ///
 /// Runs inference on the @cf/qwen/qwen2.5-coder-32b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen2.5-coder-32b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen25Coder32bInstructError>> workersAiPostRunCfQwenQwen25Coder32bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen25Coder32bInstructError>> workersAiPostRunCfQwenQwen25Coder32bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1261,20 +1261,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwen25Coder32bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model.
 ///
 /// Runs inference on the @cf/qwen/qwen3-30b-a3b-fp8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-30b-a3b-fp8`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen330bA3bFp8Error>> workersAiPostRunCfQwenQwen330bA3bFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen330bA3bFp8Error>> workersAiPostRunCfQwenQwen330bA3bFp8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1296,20 +1296,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwen330bA3bFp8Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/qwen/qwq-32b model.
 ///
 /// Runs inference on the @cf/qwen/qwq-32b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwq-32b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwq32bError>> workersAiPostRunCfQwenQwq32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwq32bError>> workersAiPostRunCfQwenQwq32b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1331,20 +1331,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfQwenQwq32bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/thebloke/discolm-german-7b-v1-awq model.
 ///
 /// Runs inference on the @cf/thebloke/discolm-german-7b-v1-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq`
-Future<ApiResult<Map<String, dynamic>, AwqError>> workersAiPostRunCfTheblokeDiscolmGerman7bV1Awq({required String accountId, String? queueRequest, String? tags, AwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, AwqError>> workersAiPostRunCfTheblokeDiscolmGerman7bV1Awq({required String accountId, String? queueRequest, String? tags, AwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1366,20 +1366,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: AwqError.fromResponse,
 );
- } 
+}
 /// Execute @cf/tiiuae/falcon-7b-instruct model.
 ///
 /// Runs inference on the @cf/tiiuae/falcon-7b-instruct model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/tiiuae/falcon-7b-instruct`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfTiiuaeFalcon7bInstructError>> workersAiPostRunCfTiiuaeFalcon7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfTiiuaeFalcon7bInstructError>> workersAiPostRunCfTiiuaeFalcon7bInstruct({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1401,20 +1401,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfTiiuaeFalcon7bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
 ///
 /// Runs inference on the @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/tinyllama/tinyllama-1.1b-chat-v1.0`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfTinyllama11bChatError>> workersAiPostRunCfTinyllama11bChatV10({required String accountId, String? queueRequest, String? tags, $0Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfTinyllama11bChatError>> workersAiPostRunCfTinyllama11bChatV10({required String accountId, String? queueRequest, String? tags, $0Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1436,20 +1436,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfTinyllama11bChatError.fromResponse,
 );
- } 
+}
 /// Execute @cf/zai-org/glm-4.7-flash model.
 ///
 /// Runs inference on the @cf/zai-org/glm-4.7-flash model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/zai-org/glm-4.7-flash`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfZaiOrgGlm47FlashError>> workersAiPostRunCfZaiOrgGlm47Flash({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfZaiOrgGlm47FlashError>> workersAiPostRunCfZaiOrgGlm47Flash({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1471,20 +1471,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunCfZaiOrgGlm47FlashError.fromResponse,
 );
- } 
+}
 /// Execute @hf/google/gemma-7b-it model.
 ///
 /// Runs inference on the @hf/google/gemma-7b-it model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/google/gemma-7b-it`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfGoogleGemma7bItError>> workersAiPostRunHfGoogleGemma7bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfGoogleGemma7bItError>> workersAiPostRunHfGoogleGemma7bIt({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1506,20 +1506,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfGoogleGemma7bItError.fromResponse,
 );
- } 
+}
 /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model.
 ///
 /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/mistral/mistral-7b-instruct-v0.2`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfMistral7bInstructError>> workersAiPostRunHfMistral7bInstructV02({required String accountId, String? queueRequest, String? tags, $2Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfMistral7bInstructError>> workersAiPostRunHfMistral7bInstructV02({required String accountId, String? queueRequest, String? tags, $2Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1541,20 +1541,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfMistral7bInstructError.fromResponse,
 );
- } 
+}
 /// Execute @hf/nexusflow/starling-lm-7b-beta model.
 ///
 /// Runs inference on the @hf/nexusflow/starling-lm-7b-beta model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/nexusflow/starling-lm-7b-beta`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfNexusflowStarlingLm7bBetaError>> workersAiPostRunHfNexusflowStarlingLm7bBeta({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfNexusflowStarlingLm7bBetaError>> workersAiPostRunHfNexusflowStarlingLm7bBeta({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1576,20 +1576,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfNexusflowStarlingLm7bBetaError.fromResponse,
 );
- } 
+}
 /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
 ///
 /// Runs inference on the @hf/nousresearch/hermes-2-pro-mistral-7b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfNousresearchHermes2ProMistral7bError>> workersAiPostRunHfNousresearchHermes2ProMistral7b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfNousresearchHermes2ProMistral7bError>> workersAiPostRunHfNousresearchHermes2ProMistral7b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1611,20 +1611,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfNousresearchHermes2ProMistral7bError.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/deepseek-coder-6.7b-base-awq model.
 ///
 /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-base-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1646,20 +1646,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
 ///
 /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-instruct-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqError>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqError>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1681,20 +1681,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqError.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/llama-2-13b-chat-awq model.
 ///
 /// Runs inference on the @hf/thebloke/llama-2-13b-chat-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/llama-2-13b-chat-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeLlama213bChatAwqError>> workersAiPostRunHfTheblokeLlama213bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeLlama213bChatAwqError>> workersAiPostRunHfTheblokeLlama213bChatAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1716,20 +1716,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfTheblokeLlama213bChatAwqError.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
 ///
 /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/mistral-7b-instruct-v0.1-awq`
-Future<ApiResult<Map<String, dynamic>, AwqError2>> workersAiPostRunHfTheblokeMistral7bInstructV01Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, AwqError2>> workersAiPostRunHfTheblokeMistral7bInstructV01Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1751,20 +1751,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: AwqError2.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
 ///
 /// Runs inference on the @hf/thebloke/neural-chat-7b-v3-1-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq`
-Future<ApiResult<Map<String, dynamic>, AwqError3>> workersAiPostRunHfTheblokeNeuralChat7bV31Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, AwqError3>> workersAiPostRunHfTheblokeNeuralChat7bV31Awq({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1786,20 +1786,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: AwqError3.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
 ///
 /// Runs inference on the @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqError>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqError>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1821,20 +1821,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqError.fromResponse,
 );
- } 
+}
 /// Execute @hf/thebloke/zephyr-7b-beta-awq model.
 ///
 /// Runs inference on the @hf/thebloke/zephyr-7b-beta-awq model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/zephyr-7b-beta-awq`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqError>> workersAiPostRunHfTheblokeZephyr7bBetaAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqError>> workersAiPostRunHfTheblokeZephyr7bBetaAwq({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1856,18 +1856,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: WorkersAiPostRunHfTheblokeZephyr7bBetaAwqError.fromResponse,
 );
- } 
+}
 /// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it`
-Stream<Map<String, dynamic>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bItStream({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfAisingaporeGemmaSeaLionV427bItStream({required String accountId, String? queueRequest, String? tags, $27bItRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1895,11 +1895,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/deepseek-ai/deepseek-math-7b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-math-7b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfDeepseekAiDeepseekMath7bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1927,11 +1927,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b`
-Stream<Map<String, dynamic>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1959,11 +1959,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/defog/sqlcoder-7b-2 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/defog/sqlcoder-7b-2`
-Stream<Map<String, dynamic>> workersAiPostRunCfDefogSqlcoder7b2Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfDefogSqlcoder7b2Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDefogSqlcoder7b2Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -1991,11 +1991,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/fblgit/una-cybertron-7b-v2-bf16`
-Stream<Map<String, dynamic>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16Stream({required String accountId, String? queueRequest, String? tags, Bf16Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfFblgitUnaCybertron7bV2Bf16Stream({required String accountId, String? queueRequest, String? tags, Bf16Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2023,11 +2023,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/google/gemma-2b-it-lora model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-2b-it-lora`
-Stream<Map<String, dynamic>> workersAiPostRunCfGoogleGemma2bItLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfGoogleGemma2bItLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma2bItLoraRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2055,11 +2055,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/google/gemma-3-12b-it model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-3-12b-it`
-Stream<Map<String, dynamic>> workersAiPostRunCfGoogleGemma312bItStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfGoogleGemma312bItStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma312bItRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2087,11 +2087,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/google/gemma-7b-it-lora model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/gemma-7b-it-lora`
-Stream<Map<String, dynamic>> workersAiPostRunCfGoogleGemma7bItLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfGoogleGemma7bItLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleGemma7bItLoraRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2119,11 +2119,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/ibm-granite/granite-4.0-h-micro model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ibm-granite/granite-4.0-h-micro`
-Stream<Map<String, dynamic>> workersAiPostRunCfIbmGranite40HMicroStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfIbmGranite40HMicroStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfIbmGraniteGranite40HMicroRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2151,11 +2151,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta-llama/llama-2-7b-chat-hf-lora`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama27bChatHfLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama27bChatHfLoraStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2183,11 +2183,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-2-7b-chat-fp16 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-fp16`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama27bChatFp16Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama27bChatFp16Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatFp16Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2215,11 +2215,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-2-7b-chat-int8 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-2-7b-chat-int8`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama27bChatInt8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama27bChatInt8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama27bChatInt8Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2247,11 +2247,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3-8b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama38bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama38bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2279,11 +2279,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3-8b-instruct-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3-8b-instruct-awq`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama38bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama38bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama38bInstructAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2311,11 +2311,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-8b-instruct-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-awq`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama318bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama318bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2343,11 +2343,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama318bInstructFp8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama318bInstructFp8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2375,11 +2375,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8-fast`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama318bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama318bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama318bInstructFp8FastRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2407,11 +2407,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.1-70b-instruct-fp8-fast model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama3170bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama3170bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3170bInstructFp8FastRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2439,11 +2439,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.2-1b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-1b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama321bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama321bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama321bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2471,11 +2471,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.2-3b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-3b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama323bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama323bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama323bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2503,11 +2503,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.2-11b-vision-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.2-11b-vision-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama3211bVisionInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama3211bVisionInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2535,11 +2535,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-3.3-70b-instruct-fp8-fast model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-3.3-70b-instruct-fp8-fast`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama370bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama370bInstructFp8FastStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama3370bInstructFp8FastRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2567,11 +2567,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/llama-4-scout-17b-16e-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama4Scout17b16eInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMetaLlama4Scout17b16eInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2599,11 +2599,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/microsoft/phi-2 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/phi-2`
-Stream<Map<String, dynamic>> workersAiPostRunCfMicrosoftPhi2Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMicrosoftPhi2Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMicrosoftPhi2Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2631,11 +2631,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/mistral/mistral-7b-instruct-v0.1 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.1`
-Stream<Map<String, dynamic>> workersAiPostRunCfMistral7bInstructV01Stream({required String accountId, String? queueRequest, String? tags, $1Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMistral7bInstructV01Stream({required String accountId, String? queueRequest, String? tags, $1Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2663,11 +2663,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistral/mistral-7b-instruct-v0.2-lora`
-Stream<Map<String, dynamic>> workersAiPostRunCfMistral7bInstructV02LoraStream({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMistral7bInstructV02LoraStream({required String accountId, String? queueRequest, String? tags, $2LoraRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2695,11 +2695,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfMistralaiMistralSmall3124bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfMistralaiMistralSmall3124bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2727,11 +2727,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/openchat/openchat-3.5-0106 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openchat/openchat-3.5-0106`
-Stream<Map<String, dynamic>> workersAiPostRunCfOpenchat350106Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfOpenchat350106Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfOpenchatOpenchat350106Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2759,11 +2759,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-0.5b-chat model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-0.5b-chat`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen1505bChatStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen1505bChatStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1505bChatRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2791,11 +2791,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-1.8b-chat model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-1.8b-chat`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen1518bChatStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen1518bChatStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1518bChatRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2823,11 +2823,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-7b-chat-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-7b-chat-awq`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen157bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen157bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen157bChatAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2855,11 +2855,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwen1.5-14b-chat-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen1.5-14b-chat-awq`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen1514bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen1514bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen1514bChatAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2887,11 +2887,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen2.5-coder-32b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen25Coder32bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen25Coder32bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen25Coder32bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2919,11 +2919,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-30b-a3b-fp8`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen330bA3bFp8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwen330bA3bFp8Stream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen330bA3bFp8Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2951,11 +2951,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/qwen/qwq-32b model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwq-32b`
-Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwq32bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfQwenQwq32bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwq32bRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -2983,11 +2983,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/thebloke/discolm-german-7b-v1-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq`
-Stream<Map<String, dynamic>> workersAiPostRunCfTheblokeDiscolmGerman7bV1AwqStream({required String accountId, String? queueRequest, String? tags, AwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfTheblokeDiscolmGerman7bV1AwqStream({required String accountId, String? queueRequest, String? tags, AwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3015,11 +3015,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/tiiuae/falcon-7b-instruct model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/tiiuae/falcon-7b-instruct`
-Stream<Map<String, dynamic>> workersAiPostRunCfTiiuaeFalcon7bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfTiiuaeFalcon7bInstructStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfTiiuaeFalcon7bInstructRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3047,11 +3047,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/tinyllama/tinyllama-1.1b-chat-v1.0`
-Stream<Map<String, dynamic>> workersAiPostRunCfTinyllama11bChatV10Stream({required String accountId, String? queueRequest, String? tags, $0Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfTinyllama11bChatV10Stream({required String accountId, String? queueRequest, String? tags, $0Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3079,11 +3079,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @cf/zai-org/glm-4.7-flash model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/zai-org/glm-4.7-flash`
-Stream<Map<String, dynamic>> workersAiPostRunCfZaiOrgGlm47FlashStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunCfZaiOrgGlm47FlashStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfZaiOrgGlm47FlashRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3111,11 +3111,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/google/gemma-7b-it model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/google/gemma-7b-it`
-Stream<Map<String, dynamic>> workersAiPostRunHfGoogleGemma7bItStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfGoogleGemma7bItStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfGoogleGemma7bItRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3143,11 +3143,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/mistral/mistral-7b-instruct-v0.2`
-Stream<Map<String, dynamic>> workersAiPostRunHfMistral7bInstructV02Stream({required String accountId, String? queueRequest, String? tags, $2Request? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfMistral7bInstructV02Stream({required String accountId, String? queueRequest, String? tags, $2Request? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3175,11 +3175,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/nexusflow/starling-lm-7b-beta model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/nexusflow/starling-lm-7b-beta`
-Stream<Map<String, dynamic>> workersAiPostRunHfNexusflowStarlingLm7bBetaStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfNexusflowStarlingLm7bBetaStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNexusflowStarlingLm7bBetaRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3207,11 +3207,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b`
-Stream<Map<String, dynamic>> workersAiPostRunHfNousresearchHermes2ProMistral7bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfNousresearchHermes2ProMistral7bStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3239,11 +3239,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/deepseek-coder-6.7b-base-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3271,11 +3271,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/deepseek-coder-6.7b-instruct-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3303,11 +3303,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/llama-2-13b-chat-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/llama-2-13b-chat-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeLlama213bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeLlama213bChatAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeLlama213bChatAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3335,11 +3335,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/mistral-7b-instruct-v0.1-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeMistral7bInstructV01AwqStream({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeMistral7bInstructV01AwqStream({required String accountId, String? queueRequest, String? tags, $1AwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3367,11 +3367,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeNeuralChat7bV31AwqStream({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeNeuralChat7bV31AwqStream({required String accountId, String? queueRequest, String? tags, $1AwqRequest2? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3399,11 +3399,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3431,11 +3431,11 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Execute @hf/thebloke/zephyr-7b-beta-awq model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@hf/thebloke/zephyr-7b-beta-awq`
-Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeZephyr7bBetaAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, RequestOptions? options, }) { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Stream<Map<String, dynamic>> workersAiPostRunHfTheblokeZephyr7bBetaAwqStream({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunHfTheblokeZephyr7bBetaAwqRequest? body, RequestOptions? options, }) {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -3463,5 +3463,5 @@ return executeStreaming(
     return jsonDecode(data) as Map<String, dynamic>;
   },
 );
- } 
- }
+}
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_cors_rule/allowed.dart';@immutable final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
 
-factory R2CorsRule.fromJson(Map<String, dynamic> json) { return R2CorsRule(
+factory R2CorsRule.fromJson(Map<String, dynamic> json) {return R2CorsRule(
   allowed: Allowed.fromJson(json['allowed'] as Map<String, dynamic>),
   exposeHeaders: (json['exposeHeaders'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxAgeSeconds: json['maxAgeSeconds'] != null ? (json['maxAgeSeconds'] as num).toDouble() : null,
-); }
+);}
 
 /// Object specifying allowed origins, methods and headers for this CORS rule.
 final Allowed allowed;
@@ -26,19 +26,19 @@ final String? id;
 /// Example: `3600`
 final double? maxAgeSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed': allowed.toJson(),
   'exposeHeaders': ?exposeHeaders,
   'id': ?id,
   'maxAgeSeconds': ?maxAgeSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed'); } 
-R2CorsRule copyWith({Allowed? allowed, List<String>? Function()? exposeHeaders, String? Function()? id, double? Function()? maxAgeSeconds, }) { return R2CorsRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed');}
+R2CorsRule copyWith({Allowed? allowed, List<String>? Function()? exposeHeaders, String? Function()? id, double? Function()? maxAgeSeconds, }) {return R2CorsRule(
   allowed: allowed ?? this.allowed,
   exposeHeaders: exposeHeaders != null ? exposeHeaders() : this.exposeHeaders,
   id: id != null ? id() : this.id,
   maxAgeSeconds: maxAgeSeconds != null ? maxAgeSeconds() : this.maxAgeSeconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2CorsRule &&
           allowed == other.allowed &&
@@ -50,4 +50,4 @@ R2CorsRule copyWith({Allowed? allowed, List<String>? Function()? exposeHeaders, 
 
 @override String toString() => 'R2CorsRule(allowed: $allowed, exposeHeaders: $exposeHeaders, id: $id, maxAgeSeconds: $maxAgeSeconds)';
 
- }
+}

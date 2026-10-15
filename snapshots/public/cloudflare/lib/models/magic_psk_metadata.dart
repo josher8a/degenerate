@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_schemas_modified_on.dart';/// The PSK metadata that includes when the PSK was generated.
 @immutable final class MagicPskMetadata {const MagicPskMetadata({this.lastGeneratedOn});
 
-factory MagicPskMetadata.fromJson(Map<String, dynamic> json) { return MagicPskMetadata(
+factory MagicPskMetadata.fromJson(Map<String, dynamic> json) {return MagicPskMetadata(
   lastGeneratedOn: json['last_generated_on'] != null ? MagicSchemasModifiedOn.fromJson(json['last_generated_on'] as String) : null,
-); }
+);}
 
 final MagicSchemasModifiedOn? lastGeneratedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lastGeneratedOn != null) 'last_generated_on': lastGeneratedOn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_generated_on'}.contains(key)); } 
-MagicPskMetadata copyWith({MagicSchemasModifiedOn? Function()? lastGeneratedOn}) { return MagicPskMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'last_generated_on'}.contains(key));}
+MagicPskMetadata copyWith({MagicSchemasModifiedOn? Function()? lastGeneratedOn}) {return MagicPskMetadata(
   lastGeneratedOn: lastGeneratedOn != null ? lastGeneratedOn() : this.lastGeneratedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicPskMetadata &&
           lastGeneratedOn == other.lastGeneratedOn;
@@ -25,4 +25,4 @@ MagicPskMetadata copyWith({MagicSchemasModifiedOn? Function()? lastGeneratedOn})
 
 @override String toString() => 'MagicPskMetadata(lastGeneratedOn: $lastGeneratedOn)';
 
- }
+}

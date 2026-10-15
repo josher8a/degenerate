@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesResponse400Errors {const AiSearchCreateInstancesResponse400Errors({required this.code, required this.message, required this.path, });
 
-factory AiSearchCreateInstancesResponse400Errors.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponse400Errors(
+factory AiSearchCreateInstancesResponse400Errors.fromJson(Map<String, dynamic> json) {return AiSearchCreateInstancesResponse400Errors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
   path: (json['path'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Example: `7001`
 final double code;
@@ -17,19 +17,19 @@ final String message;
 
 final List<String> path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('path'); } 
-AiSearchCreateInstancesResponse400Errors copyWith({double? code, String? message, List<String>? path, }) { return AiSearchCreateInstancesResponse400Errors(
+      json.containsKey('path');}
+AiSearchCreateInstancesResponse400Errors copyWith({double? code, String? message, List<String>? path, }) {return AiSearchCreateInstancesResponse400Errors(
   code: code ?? this.code,
   message: message ?? this.message,
   path: path ?? this.path,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchCreateInstancesResponse400Errors &&
           code == other.code &&
@@ -40,4 +40,4 @@ AiSearchCreateInstancesResponse400Errors copyWith({double? code, String? message
 
 @override String toString() => 'AiSearchCreateInstancesResponse400Errors(code: $code, message: $message, path: $path)';
 
- }
+}

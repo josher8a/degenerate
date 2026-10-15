@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_balance.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_financial_address.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_platform_restrictions.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_status_details.dart';sealed class ActiveFeatures {const ActiveFeatures();
 
-factory ActiveFeatures.fromJson(String json) { return switch (json) {
+factory ActiveFeatures.fromJson(String json) {return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -16,7 +16,7 @@ factory ActiveFeatures.fromJson(String json) { return switch (json) {
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
   _ => ActiveFeatures$Unknown(json),
-}; }
+};}
 
 static const ActiveFeatures cardIssuing = ActiveFeatures$cardIssuing._();
 
@@ -43,9 +43,9 @@ static const ActiveFeatures remoteDepositCapture = ActiveFeatures$remoteDepositC
 static const List<ActiveFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'card_issuing' => 'cardIssuing',
   'deposit_insurance' => 'depositInsurance',
   'financial_addresses.aba' => 'financialAddressesAba',
@@ -58,11 +58,11 @@ String get name { return switch (value) {
   'outbound_transfers.us_domestic_wire' => 'outboundTransfersUsDomesticWire',
   'remote_deposit_capture' => 'remoteDepositCapture',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ActiveFeatures$Unknown; } 
+bool get isUnknown {return this is ActiveFeatures$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) {return switch (this) {
       ActiveFeatures$cardIssuing() => cardIssuing(),
       ActiveFeatures$depositInsurance() => depositInsurance(),
       ActiveFeatures$financialAddressesAba() => financialAddressesAba(),
@@ -75,9 +75,9 @@ W when<W>({required W Function() cardIssuing, required W Function() depositInsur
       ActiveFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire(),
       ActiveFeatures$remoteDepositCapture() => remoteDepositCapture(),
       ActiveFeatures$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) {return switch (this) {
       ActiveFeatures$cardIssuing() => cardIssuing != null ? cardIssuing() : orElse(value),
       ActiveFeatures$depositInsurance() => depositInsurance != null ? depositInsurance() : orElse(value),
       ActiveFeatures$financialAddressesAba() => financialAddressesAba != null ? financialAddressesAba() : orElse(value),
@@ -90,10 +90,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
       ActiveFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire != null ? outboundTransfersUsDomesticWire() : orElse(value),
       ActiveFeatures$remoteDepositCapture() => remoteDepositCapture != null ? remoteDepositCapture() : orElse(value),
       ActiveFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ActiveFeatures($value)';
 
- }
+}
 @immutable final class ActiveFeatures$cardIssuing extends ActiveFeatures {const ActiveFeatures$cardIssuing._();
 
 @override String get value => 'card_issuing';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'card_issuing'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$depositInsurance extends ActiveFeatures {const ActiveFeatures$depositInsurance._();
 
 @override String get value => 'deposit_insurance';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'deposit_insurance'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$financialAddressesAba extends ActiveFeatures {const ActiveFeatures$financialAddressesAba._();
 
 @override String get value => 'financial_addresses.aba';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'financial_addresses.aba'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$financialAddressesAbaForwarding extends ActiveFeatures {const ActiveFeatures$financialAddressesAbaForwarding._();
 
 @override String get value => 'financial_addresses.aba.forwarding';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'financial_addresses.aba.forwarding'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$inboundTransfersAch extends ActiveFeatures {const ActiveFeatures$inboundTransfersAch._();
 
 @override String get value => 'inbound_transfers.ach';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'inbound_transfers.ach'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$intraStripeFlows extends ActiveFeatures {const ActiveFeatures$intraStripeFlows._();
 
 @override String get value => 'intra_stripe_flows';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'intra_stripe_flows'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$outboundPaymentsAch extends ActiveFeatures {const ActiveFeatures$outboundPaymentsAch._();
 
 @override String get value => 'outbound_payments.ach';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_payments.ach'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$outboundPaymentsUsDomesticWire extends ActiveFeatures {const ActiveFeatures$outboundPaymentsUsDomesticWire._();
 
 @override String get value => 'outbound_payments.us_domestic_wire';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_payments.us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$outboundTransfersAch extends ActiveFeatures {const ActiveFeatures$outboundTransfersAch._();
 
 @override String get value => 'outbound_transfers.ach';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_transfers.ach'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$outboundTransfersUsDomesticWire extends ActiveFeatures {const ActiveFeatures$outboundTransfersUsDomesticWire._();
 
 @override String get value => 'outbound_transfers.us_domestic_wire';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_transfers.us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$remoteDepositCapture extends ActiveFeatures {const ActiveFeatures$remoteDepositCapture._();
 
 @override String get value => 'remote_deposit_capture';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'remote_deposit_capture'.hashCode;
 
- }
+}
 @immutable final class ActiveFeatures$Unknown extends ActiveFeatures {const ActiveFeatures$Unknown(this.value);
 
 @override final String value;
@@ -202,41 +202,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject();
 
-factory TreasuryFinancialAccountObject.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountObject.fromJson(String json) {return switch (json) {
   'treasury.financial_account' => treasuryFinancialAccount,
   _ => TreasuryFinancialAccountObject$Unknown(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountObject treasuryFinancialAccount = TreasuryFinancialAccountObject$treasuryFinancialAccount._();
 
 static const List<TreasuryFinancialAccountObject> values = [treasuryFinancialAccount];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'treasury.financial_account' => 'treasuryFinancialAccount',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryFinancialAccountObject$Unknown; } 
+bool get isUnknown {return this is TreasuryFinancialAccountObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() treasuryFinancialAccount, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() treasuryFinancialAccount, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryFinancialAccountObject$treasuryFinancialAccount() => treasuryFinancialAccount(),
       TreasuryFinancialAccountObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryFinancialAccount, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryFinancialAccount, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryFinancialAccountObject$treasuryFinancialAccount() => treasuryFinancialAccount != null ? treasuryFinancialAccount() : orElse(value),
       TreasuryFinancialAccountObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryFinancialAccountObject($value)';
 
- }
+}
 @immutable final class TreasuryFinancialAccountObject$treasuryFinancialAccount extends TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject$treasuryFinancialAccount._();
 
 @override String get value => 'treasury.financial_account';
@@ -245,7 +245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => 'treasury.financial_account'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountObject$Unknown extends TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject$Unknown(this.value);
 
 @override final String value;
@@ -255,10 +255,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class PendingFeatures {const PendingFeatures();
 
-factory PendingFeatures.fromJson(String json) { return switch (json) {
+factory PendingFeatures.fromJson(String json) {return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -271,7 +271,7 @@ factory PendingFeatures.fromJson(String json) { return switch (json) {
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
   _ => PendingFeatures$Unknown(json),
-}; }
+};}
 
 static const PendingFeatures cardIssuing = PendingFeatures$cardIssuing._();
 
@@ -298,9 +298,9 @@ static const PendingFeatures remoteDepositCapture = PendingFeatures$remoteDeposi
 static const List<PendingFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'card_issuing' => 'cardIssuing',
   'deposit_insurance' => 'depositInsurance',
   'financial_addresses.aba' => 'financialAddressesAba',
@@ -313,11 +313,11 @@ String get name { return switch (value) {
   'outbound_transfers.us_domestic_wire' => 'outboundTransfersUsDomesticWire',
   'remote_deposit_capture' => 'remoteDepositCapture',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PendingFeatures$Unknown; } 
+bool get isUnknown {return this is PendingFeatures$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) {return switch (this) {
       PendingFeatures$cardIssuing() => cardIssuing(),
       PendingFeatures$depositInsurance() => depositInsurance(),
       PendingFeatures$financialAddressesAba() => financialAddressesAba(),
@@ -330,9 +330,9 @@ W when<W>({required W Function() cardIssuing, required W Function() depositInsur
       PendingFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire(),
       PendingFeatures$remoteDepositCapture() => remoteDepositCapture(),
       PendingFeatures$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) {return switch (this) {
       PendingFeatures$cardIssuing() => cardIssuing != null ? cardIssuing() : orElse(value),
       PendingFeatures$depositInsurance() => depositInsurance != null ? depositInsurance() : orElse(value),
       PendingFeatures$financialAddressesAba() => financialAddressesAba != null ? financialAddressesAba() : orElse(value),
@@ -345,10 +345,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
       PendingFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire != null ? outboundTransfersUsDomesticWire() : orElse(value),
       PendingFeatures$remoteDepositCapture() => remoteDepositCapture != null ? remoteDepositCapture() : orElse(value),
       PendingFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PendingFeatures($value)';
 
- }
+}
 @immutable final class PendingFeatures$cardIssuing extends PendingFeatures {const PendingFeatures$cardIssuing._();
 
 @override String get value => 'card_issuing';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'card_issuing'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$depositInsurance extends PendingFeatures {const PendingFeatures$depositInsurance._();
 
 @override String get value => 'deposit_insurance';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'deposit_insurance'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$financialAddressesAba extends PendingFeatures {const PendingFeatures$financialAddressesAba._();
 
 @override String get value => 'financial_addresses.aba';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'financial_addresses.aba'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$financialAddressesAbaForwarding extends PendingFeatures {const PendingFeatures$financialAddressesAbaForwarding._();
 
 @override String get value => 'financial_addresses.aba.forwarding';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'financial_addresses.aba.forwarding'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$inboundTransfersAch extends PendingFeatures {const PendingFeatures$inboundTransfersAch._();
 
 @override String get value => 'inbound_transfers.ach';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'inbound_transfers.ach'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$intraStripeFlows extends PendingFeatures {const PendingFeatures$intraStripeFlows._();
 
 @override String get value => 'intra_stripe_flows';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'intra_stripe_flows'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$outboundPaymentsAch extends PendingFeatures {const PendingFeatures$outboundPaymentsAch._();
 
 @override String get value => 'outbound_payments.ach';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_payments.ach'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$outboundPaymentsUsDomesticWire extends PendingFeatures {const PendingFeatures$outboundPaymentsUsDomesticWire._();
 
 @override String get value => 'outbound_payments.us_domestic_wire';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_payments.us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$outboundTransfersAch extends PendingFeatures {const PendingFeatures$outboundTransfersAch._();
 
 @override String get value => 'outbound_transfers.ach';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_transfers.ach'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$outboundTransfersUsDomesticWire extends PendingFeatures {const PendingFeatures$outboundTransfersUsDomesticWire._();
 
 @override String get value => 'outbound_transfers.us_domestic_wire';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_transfers.us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$remoteDepositCapture extends PendingFeatures {const PendingFeatures$remoteDepositCapture._();
 
 @override String get value => 'remote_deposit_capture';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'remote_deposit_capture'.hashCode;
 
- }
+}
 @immutable final class PendingFeatures$Unknown extends PendingFeatures {const PendingFeatures$Unknown(this.value);
 
 @override final String value;
@@ -457,10 +457,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class RestrictedFeatures {const RestrictedFeatures();
 
-factory RestrictedFeatures.fromJson(String json) { return switch (json) {
+factory RestrictedFeatures.fromJson(String json) {return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -473,7 +473,7 @@ factory RestrictedFeatures.fromJson(String json) { return switch (json) {
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
   _ => RestrictedFeatures$Unknown(json),
-}; }
+};}
 
 static const RestrictedFeatures cardIssuing = RestrictedFeatures$cardIssuing._();
 
@@ -500,9 +500,9 @@ static const RestrictedFeatures remoteDepositCapture = RestrictedFeatures$remote
 static const List<RestrictedFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'card_issuing' => 'cardIssuing',
   'deposit_insurance' => 'depositInsurance',
   'financial_addresses.aba' => 'financialAddressesAba',
@@ -515,11 +515,11 @@ String get name { return switch (value) {
   'outbound_transfers.us_domestic_wire' => 'outboundTransfersUsDomesticWire',
   'remote_deposit_capture' => 'remoteDepositCapture',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RestrictedFeatures$Unknown; } 
+bool get isUnknown {return this is RestrictedFeatures$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) {return switch (this) {
       RestrictedFeatures$cardIssuing() => cardIssuing(),
       RestrictedFeatures$depositInsurance() => depositInsurance(),
       RestrictedFeatures$financialAddressesAba() => financialAddressesAba(),
@@ -532,9 +532,9 @@ W when<W>({required W Function() cardIssuing, required W Function() depositInsur
       RestrictedFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire(),
       RestrictedFeatures$remoteDepositCapture() => remoteDepositCapture(),
       RestrictedFeatures$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) {return switch (this) {
       RestrictedFeatures$cardIssuing() => cardIssuing != null ? cardIssuing() : orElse(value),
       RestrictedFeatures$depositInsurance() => depositInsurance != null ? depositInsurance() : orElse(value),
       RestrictedFeatures$financialAddressesAba() => financialAddressesAba != null ? financialAddressesAba() : orElse(value),
@@ -547,10 +547,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
       RestrictedFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire != null ? outboundTransfersUsDomesticWire() : orElse(value),
       RestrictedFeatures$remoteDepositCapture() => remoteDepositCapture != null ? remoteDepositCapture() : orElse(value),
       RestrictedFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RestrictedFeatures($value)';
 
- }
+}
 @immutable final class RestrictedFeatures$cardIssuing extends RestrictedFeatures {const RestrictedFeatures$cardIssuing._();
 
 @override String get value => 'card_issuing';
@@ -559,7 +559,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'card_issuing'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$depositInsurance extends RestrictedFeatures {const RestrictedFeatures$depositInsurance._();
 
 @override String get value => 'deposit_insurance';
@@ -568,7 +568,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'deposit_insurance'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$financialAddressesAba extends RestrictedFeatures {const RestrictedFeatures$financialAddressesAba._();
 
 @override String get value => 'financial_addresses.aba';
@@ -577,7 +577,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'financial_addresses.aba'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$financialAddressesAbaForwarding extends RestrictedFeatures {const RestrictedFeatures$financialAddressesAbaForwarding._();
 
 @override String get value => 'financial_addresses.aba.forwarding';
@@ -586,7 +586,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'financial_addresses.aba.forwarding'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$inboundTransfersAch extends RestrictedFeatures {const RestrictedFeatures$inboundTransfersAch._();
 
 @override String get value => 'inbound_transfers.ach';
@@ -595,7 +595,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'inbound_transfers.ach'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$intraStripeFlows extends RestrictedFeatures {const RestrictedFeatures$intraStripeFlows._();
 
 @override String get value => 'intra_stripe_flows';
@@ -604,7 +604,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'intra_stripe_flows'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$outboundPaymentsAch extends RestrictedFeatures {const RestrictedFeatures$outboundPaymentsAch._();
 
 @override String get value => 'outbound_payments.ach';
@@ -613,7 +613,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_payments.ach'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$outboundPaymentsUsDomesticWire extends RestrictedFeatures {const RestrictedFeatures$outboundPaymentsUsDomesticWire._();
 
 @override String get value => 'outbound_payments.us_domestic_wire';
@@ -622,7 +622,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_payments.us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$outboundTransfersAch extends RestrictedFeatures {const RestrictedFeatures$outboundTransfersAch._();
 
 @override String get value => 'outbound_transfers.ach';
@@ -631,7 +631,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_transfers.ach'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$outboundTransfersUsDomesticWire extends RestrictedFeatures {const RestrictedFeatures$outboundTransfersUsDomesticWire._();
 
 @override String get value => 'outbound_transfers.us_domestic_wire';
@@ -640,7 +640,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'outbound_transfers.us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$remoteDepositCapture extends RestrictedFeatures {const RestrictedFeatures$remoteDepositCapture._();
 
 @override String get value => 'remote_deposit_capture';
@@ -649,7 +649,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => 'remote_deposit_capture'.hashCode;
 
- }
+}
 @immutable final class RestrictedFeatures$Unknown extends RestrictedFeatures {const RestrictedFeatures$Unknown(this.value);
 
 @override final String value;
@@ -659,15 +659,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Status of this FinancialAccount.
 sealed class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus();
 
-factory TreasuryFinancialAccountStatus.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountStatus.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'open' => open,
   _ => TreasuryFinancialAccountStatus$Unknown(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountStatus closed = TreasuryFinancialAccountStatus$closed._();
 
@@ -676,30 +676,30 @@ static const TreasuryFinancialAccountStatus open = TreasuryFinancialAccountStatu
 static const List<TreasuryFinancialAccountStatus> values = [closed, open];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'closed' => 'closed',
   'open' => 'open',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryFinancialAccountStatus$Unknown; } 
+bool get isUnknown {return this is TreasuryFinancialAccountStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() closed, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() closed, required W Function() open, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryFinancialAccountStatus$closed() => closed(),
       TreasuryFinancialAccountStatus$open() => open(),
       TreasuryFinancialAccountStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? open, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryFinancialAccountStatus$closed() => closed != null ? closed() : orElse(value),
       TreasuryFinancialAccountStatus$open() => open != null ? open() : orElse(value),
       TreasuryFinancialAccountStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryFinancialAccountStatus($value)';
 
- }
+}
 @immutable final class TreasuryFinancialAccountStatus$closed extends TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus$closed._();
 
 @override String get value => 'closed';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountStatus$open extends TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus$open._();
 
 @override String get value => 'open';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountStatus$Unknown extends TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus$Unknown(this.value);
 
 @override final String value;
@@ -727,12 +727,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Stripe Treasury provides users with a container for money called a FinancialAccount that is separate from their Payments balance.
 /// FinancialAccounts serve as the source and destination of Treasury’s money movement APIs.
-@immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata, this.nickname, this.pendingFeatures, this.platformRestrictions, this.restrictedFeatures, });
+@immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata = const Omittable.absent(), this.nickname = const Omittable.absent(), this.pendingFeatures, this.platformRestrictions = const Omittable.absent(), this.restrictedFeatures, });
 
-factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccount(
+factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccount(
   activeFeatures: (json['active_features'] as List<dynamic>?)?.map((e) => ActiveFeatures.fromJson(e as String)).toList(),
   balance: TreasuryFinancialAccountsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>),
   country: json['country'] as String,
@@ -742,16 +742,16 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   id: json['id'] as String,
   isDefault: json['is_default'] as bool?,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] as String?,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: TreasuryFinancialAccountObject.fromJson(json['object'] as String),
   pendingFeatures: (json['pending_features'] as List<dynamic>?)?.map((e) => PendingFeatures.fromJson(e as String)).toList(),
-  platformRestrictions: json['platform_restrictions'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
+  platformRestrictions: json.containsKey('platform_restrictions') ? Omittable(json['platform_restrictions'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   restrictedFeatures: (json['restricted_features'] as List<dynamic>?)?.map((e) => RestrictedFeatures.fromJson(e as String)).toList(),
   status: TreasuryFinancialAccountStatus.fromJson(json['status'] as String),
   statusDetails: TreasuryFinancialAccountsResourceStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The array of paths to active Features in the Features hash.
 final List<ActiveFeatures>? activeFeatures;
@@ -778,10 +778,10 @@ final bool? isDefault;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// The nickname for the FinancialAccount.
-final String? nickname;
+final Omittable<String?> nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TreasuryFinancialAccountObject object;
@@ -790,7 +790,7 @@ final TreasuryFinancialAccountObject object;
 final List<PendingFeatures>? pendingFeatures;
 
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
-final TreasuryFinancialAccountsResourcePlatformRestrictions? platformRestrictions;
+final Omittable<TreasuryFinancialAccountsResourcePlatformRestrictions?> platformRestrictions;
 
 /// The array of paths to restricted Features in the Features hash.
 final List<RestrictedFeatures>? restrictedFeatures;
@@ -803,7 +803,7 @@ final TreasuryFinancialAccountsResourceStatusDetails statusDetails;
 /// The currencies the FinancialAccount can hold a balance in. Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
 final List<String> supportedCurrencies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (activeFeatures != null) 'active_features': activeFeatures?.map((e) => e.toJson()).toList(),
   'balance': balance.toJson(),
   'country': country,
@@ -813,17 +813,17 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'is_default': ?isDefault,
   'livemode': livemode,
-  'metadata': ?metadata,
-  'nickname': ?nickname,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (nickname.isPresent) 'nickname': nickname.value,
   'object': object.toJson(),
   if (pendingFeatures != null) 'pending_features': pendingFeatures?.map((e) => e.toJson()).toList(),
-  if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
+  if (platformRestrictions.isPresent) 'platform_restrictions': platformRestrictions.value?.toJson(),
   if (restrictedFeatures != null) 'restricted_features': restrictedFeatures?.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
   'status_details': statusDetails.toJson(),
   'supported_currencies': supportedCurrencies,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('balance') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('balance') &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('financial_addresses') &&
@@ -832,17 +832,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details') &&
-      json.containsKey('supported_currencies'); } 
+      json.containsKey('supported_currencies');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final nickname$ = nickname;
+final nickname$ = nickname.value;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures? Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool? Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<PendingFeatures>? Function()? pendingFeatures, TreasuryFinancialAccountsResourcePlatformRestrictions? Function()? platformRestrictions, List<RestrictedFeatures>? Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
+return errors;}
+TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures? Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool? Function()? isDefault, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, TreasuryFinancialAccountObject? object, List<PendingFeatures>? Function()? pendingFeatures, Omittable<TreasuryFinancialAccountsResourcePlatformRestrictions?>? platformRestrictions, List<RestrictedFeatures>? Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) {return TreasuryFinancialAccount(
   activeFeatures: activeFeatures != null ? activeFeatures() : this.activeFeatures,
   balance: balance ?? this.balance,
   country: country ?? this.country,
@@ -852,16 +852,16 @@ TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatu
   id: id ?? this.id,
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
-  nickname: nickname != null ? nickname() : this.nickname,
+  metadata: metadata ?? this.metadata,
+  nickname: nickname ?? this.nickname,
   object: object ?? this.object,
   pendingFeatures: pendingFeatures != null ? pendingFeatures() : this.pendingFeatures,
-  platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
+  platformRestrictions: platformRestrictions ?? this.platformRestrictions,
   restrictedFeatures: restrictedFeatures != null ? restrictedFeatures() : this.restrictedFeatures,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
   supportedCurrencies: supportedCurrencies ?? this.supportedCurrencies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccount &&
           listEquals(activeFeatures, other.activeFeatures) &&
@@ -887,4 +887,4 @@ TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatu
 
 @override String toString() => 'TreasuryFinancialAccount(\n  activeFeatures: $activeFeatures,\n  balance: $balance,\n  country: $country,\n  created: $created,\n  features: $features,\n  financialAddresses: $financialAddresses,\n  id: $id,\n  isDefault: $isDefault,\n  livemode: $livemode,\n  metadata: $metadata,\n  nickname: $nickname,\n  object: $object,\n  pendingFeatures: $pendingFeatures,\n  platformRestrictions: $platformRestrictions,\n  restrictedFeatures: $restrictedFeatures,\n  status: $status,\n  statusDetails: $statusDetails,\n  supportedCurrencies: $supportedCurrencies,\n)';
 
- }
+}

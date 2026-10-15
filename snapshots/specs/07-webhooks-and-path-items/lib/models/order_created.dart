@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrderCreated {const OrderCreated({required this.id, required this.amount, });
 
-factory OrderCreated.fromJson(Map<String, dynamic> json) { return OrderCreated(
+factory OrderCreated.fromJson(Map<String, dynamic> json) {return OrderCreated(
   id: json['id'] as String,
   amount: (json['amount'] as num).toDouble(),
-); }
+);}
 
 final String id;
 
 final double amount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'amount': amount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('amount') && json['amount'] is num; } 
-OrderCreated copyWith({String? id, double? amount, }) { return OrderCreated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('amount') && json['amount'] is num;}
+OrderCreated copyWith({String? id, double? amount, }) {return OrderCreated(
   id: id ?? this.id,
   amount: amount ?? this.amount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrderCreated &&
           id == other.id &&
@@ -31,4 +31,4 @@ OrderCreated copyWith({String? id, double? amount, }) { return OrderCreated(
 
 @override String toString() => 'OrderCreated(id: $id, amount: $amount)';
 
- }
+}

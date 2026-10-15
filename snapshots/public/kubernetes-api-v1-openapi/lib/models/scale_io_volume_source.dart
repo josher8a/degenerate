@@ -2,23 +2,23 @@
 // Source: #/components/schemas/ScaleIoVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';/// ScaleIOVolumeSource represents a persistent ScaleIO volume
-@immutable final class ScaleIoVolumeSource {const ScaleIoVolumeSource({required this.secretRef, this.fsType = 'xfs', this.gateway = '', this.protectionDomain, this.readOnly, this.sslEnabled, this.storageMode = 'ThinProvisioned', this.storagePool, this.system = '', this.volumeName, });
+@immutable final class ScaleIoVolumeSource {const ScaleIoVolumeSource({required this.gateway, required this.secretRef, required this.system, this.fsType, this.protectionDomain, this.readOnly, this.sslEnabled, this.storageMode, this.storagePool, this.volumeName, });
 
-factory ScaleIoVolumeSource.fromJson(Map<String, dynamic> json) { return ScaleIoVolumeSource(
-  fsType: json.containsKey('fsType') ? json['fsType'] as String : 'xfs',
+factory ScaleIoVolumeSource.fromJson(Map<String, dynamic> json) {return ScaleIoVolumeSource(
+  fsType: json['fsType'] as String?,
   gateway: json['gateway'] as String,
   protectionDomain: json['protectionDomain'] as String?,
   readOnly: json['readOnly'] as bool?,
   secretRef: LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>),
   sslEnabled: json['sslEnabled'] as bool?,
-  storageMode: json.containsKey('storageMode') ? json['storageMode'] as String : 'ThinProvisioned',
+  storageMode: json['storageMode'] as String?,
   storagePool: json['storagePool'] as String?,
   system: json['system'] as String,
   volumeName: json['volumeName'] as String?,
-); }
+);}
 
 /// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs".
-final String fsType;
+final String? fsType;
 
 /// gateway is the host address of the ScaleIO API Gateway.
 final String gateway;
@@ -36,7 +36,7 @@ final LocalObjectReference secretRef;
 final bool? sslEnabled;
 
 /// storageMode indicates whether the storage for a volume should be ThickProvisioned or ThinProvisioned. Default is ThinProvisioned.
-final String storageMode;
+final String? storageMode;
 
 /// storagePool is the ScaleIO Storage Pool associated with the protection domain.
 final String? storagePool;
@@ -47,22 +47,28 @@ final String system;
 /// volumeName is the name of a volume already created in the ScaleIO system that is associated with this volume source.
 final String? volumeName;
 
-Map<String, dynamic> toJson() { return {
-  'fsType': fsType,
+/// The value of `fsType`, or its schema default when absent.
+String get fsTypeOrDefault => fsType ?? 'xfs';
+
+/// The value of `storageMode`, or its schema default when absent.
+String get storageModeOrDefault => storageMode ?? 'ThinProvisioned';
+
+Map<String, dynamic> toJson() {return {
+  'fsType': ?fsType,
   'gateway': gateway,
   'protectionDomain': ?protectionDomain,
   'readOnly': ?readOnly,
   'secretRef': secretRef.toJson(),
   'sslEnabled': ?sslEnabled,
-  'storageMode': storageMode,
+  'storageMode': ?storageMode,
   'storagePool': ?storagePool,
   'system': system,
   'volumeName': ?volumeName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('gateway') && json['gateway'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('gateway') && json['gateway'] is String &&
       json.containsKey('secretRef') &&
-      json.containsKey('system') && json['system'] is String; } 
-ScaleIoVolumeSource copyWith({String Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, LocalObjectReference? secretRef, bool? Function()? sslEnabled, String Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) { return ScaleIoVolumeSource(
+      json.containsKey('system') && json['system'] is String;}
+ScaleIoVolumeSource copyWith({String? Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, LocalObjectReference? secretRef, bool? Function()? sslEnabled, String? Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) {return ScaleIoVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   gateway: gateway ?? this.gateway,
   protectionDomain: protectionDomain != null ? protectionDomain() : this.protectionDomain,
@@ -73,7 +79,7 @@ ScaleIoVolumeSource copyWith({String Function()? fsType, String? gateway, String
   storagePool: storagePool != null ? storagePool() : this.storagePool,
   system: system ?? this.system,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScaleIoVolumeSource &&
           fsType == other.fsType &&
@@ -91,4 +97,4 @@ ScaleIoVolumeSource copyWith({String Function()? fsType, String? gateway, String
 
 @override String toString() => 'ScaleIoVolumeSource(\n  fsType: $fsType,\n  gateway: $gateway,\n  protectionDomain: $protectionDomain,\n  readOnly: $readOnly,\n  secretRef: $secretRef,\n  sslEnabled: $sslEnabled,\n  storageMode: $storageMode,\n  storagePool: $storagePool,\n  system: $system,\n  volumeName: $volumeName,\n)';
 
- }
+}

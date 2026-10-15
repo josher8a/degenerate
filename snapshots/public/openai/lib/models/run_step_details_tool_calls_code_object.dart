@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_code/assistant_tools_code_type.dart';import 'package:pub_openai/models/run_step_details_tool_calls_code_object/run_step_details_tool_calls_code_object_code_interpreter.dart';/// Details of the Code Interpreter tool call the run step was involved in.
 @immutable final class RunStepDetailsToolCallsCodeObject {const RunStepDetailsToolCallsCodeObject({required this.id, required this.type, required this.codeInterpreter, });
 
-factory RunStepDetailsToolCallsCodeObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeObject(
+factory RunStepDetailsToolCallsCodeObject.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsCodeObject(
   id: json['id'] as String,
   type: AssistantToolsCodeType.fromJson(json['type'] as String),
   codeInterpreter: RunStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>),
-); }
+);}
 
 /// The ID of the tool call.
 final String id;
@@ -19,19 +19,19 @@ final AssistantToolsCodeType type;
 /// The Code Interpreter tool call definition.
 final RunStepDetailsToolCallsCodeObjectCodeInterpreter codeInterpreter;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type.toJson(),
   'code_interpreter': codeInterpreter.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] == 'code_interpreter' &&
-      json.containsKey('code_interpreter'); } 
-RunStepDetailsToolCallsCodeObject copyWith({String? id, AssistantToolsCodeType? type, RunStepDetailsToolCallsCodeObjectCodeInterpreter? codeInterpreter, }) { return RunStepDetailsToolCallsCodeObject(
+      json.containsKey('code_interpreter');}
+RunStepDetailsToolCallsCodeObject copyWith({String? id, AssistantToolsCodeType? type, RunStepDetailsToolCallsCodeObjectCodeInterpreter? codeInterpreter, }) {return RunStepDetailsToolCallsCodeObject(
   id: id ?? this.id,
   type: type ?? this.type,
   codeInterpreter: codeInterpreter ?? this.codeInterpreter,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeObject &&
           id == other.id &&
@@ -42,4 +42,4 @@ RunStepDetailsToolCallsCodeObject copyWith({String? id, AssistantToolsCodeType? 
 
 @override String toString() => 'RunStepDetailsToolCallsCodeObject(id: $id, type: $type, codeInterpreter: $codeInterpreter)';
 
- }
+}

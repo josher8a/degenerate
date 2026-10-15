@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record/runtime_risks.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_request/orgs_create_artifact_deployment_record_request_status.dart';@immutable final class OrgsCreateArtifactDeploymentRecordRequest {const OrgsCreateArtifactDeploymentRecordRequest({required this.name, required this.digest, required this.status, required this.logicalEnvironment, required this.deploymentName, this.version, this.physicalEnvironment, this.cluster, this.tags, this.runtimeRisks, this.githubRepository, });
 
-factory OrgsCreateArtifactDeploymentRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactDeploymentRecordRequest(
+factory OrgsCreateArtifactDeploymentRecordRequest.fromJson(Map<String, dynamic> json) {return OrgsCreateArtifactDeploymentRecordRequest(
   name: json['name'] as String,
   digest: json['digest'] as String,
   version: json['version'] as String?,
@@ -15,7 +15,7 @@ factory OrgsCreateArtifactDeploymentRecordRequest.fromJson(Map<String, dynamic> 
   tags: (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => RuntimeRisks.fromJson(e as String)).toList(),
   githubRepository: json['github_repository'] as String?,
-); }
+);}
 
 /// The name of the artifact.
 final String name;
@@ -58,7 +58,7 @@ final List<RuntimeRisks>? runtimeRisks;
 /// the repository information from the attestation instead of this parameter.
 final String? githubRepository;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'digest': digest,
   'version': ?version,
@@ -70,14 +70,14 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   if (runtimeRisks != null) 'runtime_risks': runtimeRisks?.map((e) => e.toJson()).toList(),
   'github_repository': ?githubRepository,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
       json.containsKey('status') &&
       json.containsKey('logical_environment') && json['logical_environment'] is String &&
-      json.containsKey('deployment_name') && json['deployment_name'] is String; } 
+      json.containsKey('deployment_name') && json['deployment_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 256) { errors.add('name: length must be <= 256'); }
 if (digest.runes.length < 71) { errors.add('digest: length must be >= 71'); }
@@ -110,8 +110,8 @@ if (githubRepository$ != null) {
   if (githubRepository$.runes.length > 100) { errors.add('githubRepository: length must be <= 100'); }
   if (!RegExp(r'^[A-Za-z0-9.\-_]+$').hasMatch(githubRepository$)) { errors.add(r'githubRepository: must match pattern ^[A-Za-z0-9.\-_]+$'); }
 }
-return errors; } 
-OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? deploymentName, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, String? Function()? githubRepository, }) { return OrgsCreateArtifactDeploymentRecordRequest(
+return errors;}
+OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? deploymentName, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, String? Function()? githubRepository, }) {return OrgsCreateArtifactDeploymentRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,
@@ -123,7 +123,7 @@ OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest
   tags: tags != null ? tags() : this.tags,
   runtimeRisks: runtimeRisks != null ? runtimeRisks() : this.runtimeRisks,
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactDeploymentRecordRequest &&
           name == other.name &&
@@ -142,4 +142,4 @@ OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest
 
 @override String toString() => 'OrgsCreateArtifactDeploymentRecordRequest(\n  name: $name,\n  digest: $digest,\n  version: $version,\n  status: $status,\n  logicalEnvironment: $logicalEnvironment,\n  physicalEnvironment: $physicalEnvironment,\n  cluster: $cluster,\n  deploymentName: $deploymentName,\n  tags: $tags,\n  runtimeRisks: $runtimeRisks,\n  githubRepository: $githubRepository,\n)';
 
- }
+}

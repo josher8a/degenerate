@@ -17,10 +17,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "verify_sender": true
 /// }
 /// ```
-@immutable final class EmailSecurityCreateAllowPolicy {const EmailSecurityCreateAllowPolicy({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, this.comments, this.isRecipient, this.isSender, this.isSpoof, });
+@immutable final class EmailSecurityCreateAllowPolicy {const EmailSecurityCreateAllowPolicy({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, this.comments = const Omittable.absent(), this.isRecipient, this.isSender, this.isSpoof, });
 
-factory EmailSecurityCreateAllowPolicy.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateAllowPolicy(
-  comments: json['comments'] as String?,
+factory EmailSecurityCreateAllowPolicy.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateAllowPolicy(
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isAcceptableSender: json['is_acceptable_sender'] as bool,
   isExemptRecipient: json['is_exempt_recipient'] as bool,
   isRecipient: json['is_recipient'] as bool?,
@@ -31,9 +31,9 @@ factory EmailSecurityCreateAllowPolicy.fromJson(Map<String, dynamic> json) { ret
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
   verifySender: json['verify_sender'] as bool,
-); }
+);}
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.
 /// Note: This will not exempt messages with Malicious or Suspicious dispositions.
@@ -61,8 +61,8 @@ final EmailSecurityPatternType? patternType;
 /// When on, Email Security only honors policies that pass authentication.
 final bool verifySender;
 
-Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+Map<String, dynamic> toJson() {return {
+  if (comments.isPresent) 'comments': comments.value,
   'is_acceptable_sender': isAcceptableSender,
   'is_exempt_recipient': isExemptRecipient,
   'is_recipient': ?isRecipient,
@@ -73,25 +73,25 @@ Map<String, dynamic> toJson() { return {
   'pattern': pattern,
   'pattern_type': patternType?.toJson(),
   'verify_sender': verifySender,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
       json.containsKey('is_exempt_recipient') && json['is_exempt_recipient'] is bool &&
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_trusted_sender') && json['is_trusted_sender'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type') &&
-      json.containsKey('verify_sender') && json['verify_sender'] is bool; } 
+      json.containsKey('verify_sender') && json['verify_sender'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+List<String> validate() {final errors = <String>[];
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityCreateAllowPolicy copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, }) { return EmailSecurityCreateAllowPolicy(
-  comments: comments != null ? comments() : this.comments,
+return errors;}
+EmailSecurityCreateAllowPolicy copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, }) {return EmailSecurityCreateAllowPolicy(
+  comments: comments ?? this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
   isRecipient: isRecipient != null ? isRecipient() : this.isRecipient,
@@ -102,7 +102,7 @@ EmailSecurityCreateAllowPolicy copyWith({String? Function()? comments, bool? isA
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,
   verifySender: verifySender ?? this.verifySender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateAllowPolicy &&
           comments == other.comments &&
@@ -121,4 +121,4 @@ EmailSecurityCreateAllowPolicy copyWith({String? Function()? comments, bool? isA
 
 @override String toString() => 'EmailSecurityCreateAllowPolicy(\n  comments: $comments,\n  isAcceptableSender: $isAcceptableSender,\n  isExemptRecipient: $isExemptRecipient,\n  isRecipient: $isRecipient,\n  isRegex: $isRegex,\n  isSender: $isSender,\n  isSpoof: $isSpoof,\n  isTrustedSender: $isTrustedSender,\n  pattern: $pattern,\n  patternType: $patternType,\n  verifySender: $verifySender,\n)';
 
- }
+}

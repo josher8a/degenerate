@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant_quality_stats/realtimekit_participant_quality_stats_quality_stats.dart';@immutable final class RealtimekitParticipantQualityStats {const RealtimekitParticipantQualityStats({this.qualityStats});
 
-factory RealtimekitParticipantQualityStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStats(
+factory RealtimekitParticipantQualityStats.fromJson(Map<String, dynamic> json) {return RealtimekitParticipantQualityStats(
   qualityStats: (json['quality_stats'] as List<dynamic>?)?.map((e) => RealtimekitParticipantQualityStatsQualityStats.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<RealtimekitParticipantQualityStatsQualityStats>? qualityStats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (qualityStats != null) 'quality_stats': qualityStats?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'quality_stats'}.contains(key)); } 
-RealtimekitParticipantQualityStats copyWith({List<RealtimekitParticipantQualityStatsQualityStats>? Function()? qualityStats}) { return RealtimekitParticipantQualityStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'quality_stats'}.contains(key));}
+RealtimekitParticipantQualityStats copyWith({List<RealtimekitParticipantQualityStatsQualityStats>? Function()? qualityStats}) {return RealtimekitParticipantQualityStats(
   qualityStats: qualityStats != null ? qualityStats() : this.qualityStats,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantQualityStats &&
           listEquals(qualityStats, other.qualityStats);
@@ -24,4 +24,4 @@ RealtimekitParticipantQualityStats copyWith({List<RealtimekitParticipantQualityS
 
 @override String toString() => 'RealtimekitParticipantQualityStats(qualityStats: $qualityStats)';
 
- }
+}

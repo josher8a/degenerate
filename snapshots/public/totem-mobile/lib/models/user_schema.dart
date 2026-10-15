@@ -11,12 +11,12 @@ final class UserSchema {
     required this.circleCount,
     required this.email,
     required this.dateCreated,
-    this.name,
-    this.slug,
-    this.isStaff = false,
+    this.name = const Omittable.absent(),
+    this.slug = const Omittable.absent(),
+    this.isStaff,
     this.apiKey,
     this.profileAvatarSeed,
-    this.profileImage,
+    this.profileImage = const Omittable.absent(),
   });
 
   factory UserSchema.fromJson(Map<String, dynamic> json) {
@@ -25,12 +25,18 @@ final class UserSchema {
         json['profile_avatar_type'] as String,
       ),
       circleCount: (json['circle_count'] as num).toInt(),
-      name: json['name'] as String?,
-      slug: json['slug'] as String?,
-      isStaff: json.containsKey('is_staff') ? json['is_staff'] as bool : false,
+      name: json.containsKey('name')
+          ? Omittable(json['name'] as String?)
+          : const Omittable.absent(),
+      slug: json.containsKey('slug')
+          ? Omittable(json['slug'] as String?)
+          : const Omittable.absent(),
+      isStaff: json['is_staff'] as bool?,
       apiKey: json['api_key'] as String?,
       profileAvatarSeed: json['profile_avatar_seed'] as String?,
-      profileImage: json['profile_image'] as String?,
+      profileImage: json.containsKey('profile_image')
+          ? Omittable(json['profile_image'] as String?)
+          : const Omittable.absent(),
       email: json['email'] as String,
       dateCreated: DateTime.parse(json['date_created'] as String),
     );
@@ -40,34 +46,37 @@ final class UserSchema {
 
   final int circleCount;
 
-  final String? name;
+  final Omittable<String?> name;
 
-  final String? slug;
+  final Omittable<String?> slug;
 
   /// Designates whether the user can log into this admin site.
-  final bool isStaff;
+  final bool? isStaff;
 
   final String? apiKey;
 
   final String? profileAvatarSeed;
 
   /// Profile image, must be under 5mb. Will be cropped to a square.
-  final String? profileImage;
+  final Omittable<String?> profileImage;
 
   final String email;
 
   final DateTime dateCreated;
 
+  /// The value of `isStaff`, or its schema default when absent.
+  bool get isStaffOrDefault => isStaff ?? false;
+
   Map<String, dynamic> toJson() {
     return {
       'profile_avatar_type': profileAvatarType.toJson(),
       'circle_count': circleCount,
-      'name': ?name,
-      'slug': ?slug,
-      'is_staff': isStaff,
+      if (name.isPresent) 'name': name.value,
+      if (slug.isPresent) 'slug': slug.value,
+      'is_staff': ?isStaff,
       'api_key': ?apiKey,
       'profile_avatar_seed': ?profileAvatarSeed,
-      'profile_image': ?profileImage,
+      if (profileImage.isPresent) 'profile_image': profileImage.value,
       'email': email,
       'date_created': dateCreated.toIso8601String(),
     };
@@ -86,7 +95,7 @@ final class UserSchema {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    final name$ = name;
+    final name$ = name.value;
     if (name$ != null) {
       if (name$.runes.length > 255) {
         errors.add('name: length must be <= 255');
@@ -101,26 +110,26 @@ final class UserSchema {
   UserSchema copyWith({
     ProfileAvatarTypeEnum? profileAvatarType,
     int? circleCount,
-    String? Function()? name,
-    String? Function()? slug,
-    bool Function()? isStaff,
+    Omittable<String?>? name,
+    Omittable<String?>? slug,
+    bool? Function()? isStaff,
     String? Function()? apiKey,
     String? Function()? profileAvatarSeed,
-    String? Function()? profileImage,
+    Omittable<String?>? profileImage,
     String? email,
     DateTime? dateCreated,
   }) {
     return UserSchema(
       profileAvatarType: profileAvatarType ?? this.profileAvatarType,
       circleCount: circleCount ?? this.circleCount,
-      name: name != null ? name() : this.name,
-      slug: slug != null ? slug() : this.slug,
+      name: name ?? this.name,
+      slug: slug ?? this.slug,
       isStaff: isStaff != null ? isStaff() : this.isStaff,
       apiKey: apiKey != null ? apiKey() : this.apiKey,
       profileAvatarSeed: profileAvatarSeed != null
           ? profileAvatarSeed()
           : this.profileAvatarSeed,
-      profileImage: profileImage != null ? profileImage() : this.profileImage,
+      profileImage: profileImage ?? this.profileImage,
       email: email ?? this.email,
       dateCreated: dateCreated ?? this.dateCreated,
     );

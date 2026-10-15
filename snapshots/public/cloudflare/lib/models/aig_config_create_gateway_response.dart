@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_response/aig_config_create_gateway_response_result.dart';@immutable final class AigConfigCreateGatewayResponse {const AigConfigCreateGatewayResponse({required this.result, required this.success, });
 
-factory AigConfigCreateGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayResponse(
+factory AigConfigCreateGatewayResponse.fromJson(Map<String, dynamic> json) {return AigConfigCreateGatewayResponse(
   result: AigConfigCreateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigCreateGatewayResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigCreateGatewayResponse copyWith({AigConfigCreateGatewayResponseResult? result, bool? success, }) { return AigConfigCreateGatewayResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigCreateGatewayResponse copyWith({AigConfigCreateGatewayResponseResult? result, bool? success, }) {return AigConfigCreateGatewayResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateGatewayResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AigConfigCreateGatewayResponse copyWith({AigConfigCreateGatewayResponseResult? r
 
 @override String toString() => 'AigConfigCreateGatewayResponse(result: $result, success: $success)';
 
- }
+}

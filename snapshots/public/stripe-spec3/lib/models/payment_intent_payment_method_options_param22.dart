@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam22 {const PaymentIntentPaymentMethodOptionsParam22({this.captureMethod, this.setupFutureUsage, });
 
-factory PaymentIntentPaymentMethodOptionsParam22.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam22(
+factory PaymentIntentPaymentMethodOptionsParam22.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam22(
   captureMethod: json['capture_method'] != null ? PaymentIntentParamCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentIntentParamCaptureMethod? captureMethod;
 
 final PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam22 copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam22(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam22 copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentIntentPaymentMethodOptionsParam22(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam22 &&
           captureMethod == other.captureMethod &&
@@ -30,4 +30,4 @@ PaymentIntentPaymentMethodOptionsParam22 copyWith({PaymentIntentParamCaptureMeth
 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParam22(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

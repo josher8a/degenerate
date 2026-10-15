@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEventTagDeleteRequest {const DeleteEventTagDeleteRequest({required this.tags});
 
-factory DeleteEventTagDeleteRequest.fromJson(Map<String, dynamic> json) { return DeleteEventTagDeleteRequest(
+factory DeleteEventTagDeleteRequest.fromJson(Map<String, dynamic> json) {return DeleteEventTagDeleteRequest(
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tags': tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tags'); } 
-DeleteEventTagDeleteRequest copyWith({List<String>? tags}) { return DeleteEventTagDeleteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tags');}
+DeleteEventTagDeleteRequest copyWith({List<String>? tags}) {return DeleteEventTagDeleteRequest(
   tags: tags ?? this.tags,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEventTagDeleteRequest &&
           listEquals(tags, other.tags);
@@ -24,4 +24,4 @@ DeleteEventTagDeleteRequest copyWith({List<String>? tags}) { return DeleteEventT
 
 @override String toString() => 'DeleteEventTagDeleteRequest(tags: $tags)';
 
- }
+}

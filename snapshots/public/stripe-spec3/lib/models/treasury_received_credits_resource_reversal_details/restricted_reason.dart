@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set if a ReceivedCredit cannot be reversed.
 sealed class RestrictedReason {const RestrictedReason();
 
-factory RestrictedReason.fromJson(String json) { return switch (json) {
+factory RestrictedReason.fromJson(String json) {return switch (json) {
   'already_reversed' => alreadyReversed,
   'deadline_passed' => deadlinePassed,
   'network_restricted' => networkRestricted,
   'other' => $other,
   'source_flow_restricted' => sourceFlowRestricted,
   _ => RestrictedReason$Unknown(json),
-}; }
+};}
 
 static const RestrictedReason alreadyReversed = RestrictedReason$alreadyReversed._();
 
@@ -26,39 +26,39 @@ static const RestrictedReason sourceFlowRestricted = RestrictedReason$sourceFlow
 static const List<RestrictedReason> values = [alreadyReversed, deadlinePassed, networkRestricted, $other, sourceFlowRestricted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'already_reversed' => 'alreadyReversed',
   'deadline_passed' => 'deadlinePassed',
   'network_restricted' => 'networkRestricted',
   'other' => r'$other',
   'source_flow_restricted' => 'sourceFlowRestricted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RestrictedReason$Unknown; } 
+bool get isUnknown {return this is RestrictedReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() alreadyReversed, required W Function() deadlinePassed, required W Function() networkRestricted, required W Function() $other, required W Function() sourceFlowRestricted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() alreadyReversed, required W Function() deadlinePassed, required W Function() networkRestricted, required W Function() $other, required W Function() sourceFlowRestricted, required W Function(String value) $unknown, }) {return switch (this) {
       RestrictedReason$alreadyReversed() => alreadyReversed(),
       RestrictedReason$deadlinePassed() => deadlinePassed(),
       RestrictedReason$networkRestricted() => networkRestricted(),
       RestrictedReason$$other() => $other(),
       RestrictedReason$sourceFlowRestricted() => sourceFlowRestricted(),
       RestrictedReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyReversed, W Function()? deadlinePassed, W Function()? networkRestricted, W Function()? $other, W Function()? sourceFlowRestricted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyReversed, W Function()? deadlinePassed, W Function()? networkRestricted, W Function()? $other, W Function()? sourceFlowRestricted, W Function(String value)? $unknown, }) {return switch (this) {
       RestrictedReason$alreadyReversed() => alreadyReversed != null ? alreadyReversed() : orElse(value),
       RestrictedReason$deadlinePassed() => deadlinePassed != null ? deadlinePassed() : orElse(value),
       RestrictedReason$networkRestricted() => networkRestricted != null ? networkRestricted() : orElse(value),
       RestrictedReason$$other() => $other != null ? $other() : orElse(value),
       RestrictedReason$sourceFlowRestricted() => sourceFlowRestricted != null ? sourceFlowRestricted() : orElse(value),
       RestrictedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RestrictedReason($value)';
 
- }
+}
 @immutable final class RestrictedReason$alreadyReversed extends RestrictedReason {const RestrictedReason$alreadyReversed._();
 
 @override String get value => 'already_reversed';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyR
 
 @override int get hashCode => 'already_reversed'.hashCode;
 
- }
+}
 @immutable final class RestrictedReason$deadlinePassed extends RestrictedReason {const RestrictedReason$deadlinePassed._();
 
 @override String get value => 'deadline_passed';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyR
 
 @override int get hashCode => 'deadline_passed'.hashCode;
 
- }
+}
 @immutable final class RestrictedReason$networkRestricted extends RestrictedReason {const RestrictedReason$networkRestricted._();
 
 @override String get value => 'network_restricted';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyR
 
 @override int get hashCode => 'network_restricted'.hashCode;
 
- }
+}
 @immutable final class RestrictedReason$$other extends RestrictedReason {const RestrictedReason$$other._();
 
 @override String get value => 'other';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyR
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class RestrictedReason$sourceFlowRestricted extends RestrictedReason {const RestrictedReason$sourceFlowRestricted._();
 
 @override String get value => 'source_flow_restricted';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyR
 
 @override int get hashCode => 'source_flow_restricted'.hashCode;
 
- }
+}
 @immutable final class RestrictedReason$Unknown extends RestrictedReason {const RestrictedReason$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? alreadyR
 
 @override int get hashCode => value.hashCode;
 
- }
+}

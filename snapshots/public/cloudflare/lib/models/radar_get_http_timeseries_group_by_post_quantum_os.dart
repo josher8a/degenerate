@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs();
 
-factory RadarGetHttpTimeseriesGroupByPostQuantumOs.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByPostQuantumOs.fromJson(String json) {return switch (json) {
   'WINDOWS' => windows,
   'MACOSX' => macosx,
   'IOS' => ios,
@@ -12,7 +12,7 @@ factory RadarGetHttpTimeseriesGroupByPostQuantumOs.fromJson(String json) { retur
   'LINUX' => linux,
   'SMART_TV' => smartTv,
   _ => RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByPostQuantumOs windows = RadarGetHttpTimeseriesGroupByPostQuantumOs$windows._();
 
@@ -31,9 +31,9 @@ static const RadarGetHttpTimeseriesGroupByPostQuantumOs smartTv = RadarGetHttpTi
 static const List<RadarGetHttpTimeseriesGroupByPostQuantumOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'WINDOWS' => 'windows',
   'MACOSX' => 'macosx',
   'IOS' => 'ios',
@@ -42,11 +42,11 @@ String get name { return switch (value) {
   'LINUX' => 'linux',
   'SMART_TV' => 'smartTv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByPostQuantumOs$windows() => windows(),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$macosx() => macosx(),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$ios() => ios(),
@@ -55,9 +55,9 @@ W when<W>({required W Function() windows, required W Function() macosx, required
       RadarGetHttpTimeseriesGroupByPostQuantumOs$linux() => linux(),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$smartTv() => smartTv(),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByPostQuantumOs$windows() => windows != null ? windows() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$macosx() => macosx != null ? macosx() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$ios() => ios != null ? ios() : orElse(value),
@@ -66,10 +66,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
       RadarGetHttpTimeseriesGroupByPostQuantumOs$linux() => linux != null ? linux() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumOs($value)';
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$windows extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$windows._();
 
 @override String get value => 'WINDOWS';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'WINDOWS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$macosx extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$macosx._();
 
 @override String get value => 'MACOSX';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'MACOSX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$ios extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$ios._();
 
 @override String get value => 'IOS';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'IOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$android extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$android._();
 
 @override String get value => 'ANDROID';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'ANDROID'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$chromeos extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$chromeos._();
 
 @override String get value => 'CHROMEOS';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'CHROMEOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$linux extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$linux._();
 
 @override String get value => 'LINUX';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'LINUX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$smartTv extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$smartTv._();
 
 @override String get value => 'SMART_TV';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'SMART_TV'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown extends RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs$Unknown(this.value);
 
 @override final String value;
@@ -142,4 +142,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

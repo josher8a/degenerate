@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LocalEnvironmentParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';import 'package:pub_openai/models/local_skill_param.dart';@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({this.type = LocalEnvironmentParamType.local, this.skills, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';import 'package:pub_openai/models/local_skill_param.dart';@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({required this.type, this.skills, });
 
-factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) { return LocalEnvironmentParam(
+factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) {return LocalEnvironmentParam(
   type: LocalEnvironmentParamType.fromJson(json['type'] as String),
   skills: (json['skills'] as List<dynamic>?)?.map((e) => LocalSkillParam.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Use a local computer environment.
 final LocalEnvironmentParamType type;
@@ -14,22 +14,22 @@ final LocalEnvironmentParamType type;
 /// An optional list of skills.
 final List<LocalSkillParam>? skills;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final skills$ = skills;
 if (skills$ != null) {
   if (skills$.length > 200) { errors.add('skills: must have <= 200 items'); }
 }
-return errors; } 
-LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) { return LocalEnvironmentParam(
+return errors;}
+LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) {return LocalEnvironmentParam(
   type: type ?? this.type,
   skills: skills != null ? skills() : this.skills,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LocalEnvironmentParam &&
           type == other.type &&
@@ -39,4 +39,4 @@ LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkill
 
 @override String toString() => 'LocalEnvironmentParam(type: $type, skills: $skills)';
 
- }
+}

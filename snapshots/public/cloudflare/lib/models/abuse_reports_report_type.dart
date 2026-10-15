@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The abuse report type
 sealed class AbuseReportsReportType {const AbuseReportsReportType();
 
-factory AbuseReportsReportType.fromJson(String json) { return switch (json) {
+factory AbuseReportsReportType.fromJson(String json) {return switch (json) {
   'PHISH' => phish,
   'GEN' => gen,
   'THREAT' => threat,
@@ -15,7 +15,7 @@ factory AbuseReportsReportType.fromJson(String json) { return switch (json) {
   'NCSEI' => ncsei,
   'NETWORK' => network,
   _ => AbuseReportsReportType$Unknown(json),
-}; }
+};}
 
 static const AbuseReportsReportType phish = AbuseReportsReportType$phish._();
 
@@ -38,9 +38,9 @@ static const AbuseReportsReportType network = AbuseReportsReportType$network._()
 static const List<AbuseReportsReportType> values = [phish, gen, threat, dmca, emer, tm, regWho, ncsei, network];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PHISH' => 'phish',
   'GEN' => 'gen',
   'THREAT' => 'threat',
@@ -51,11 +51,11 @@ String get name { return switch (value) {
   'NCSEI' => 'ncsei',
   'NETWORK' => 'network',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AbuseReportsReportType$Unknown; } 
+bool get isUnknown {return this is AbuseReportsReportType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() phish, required W Function() gen, required W Function() threat, required W Function() dmca, required W Function() emer, required W Function() tm, required W Function() regWho, required W Function() ncsei, required W Function() network, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() phish, required W Function() gen, required W Function() threat, required W Function() dmca, required W Function() emer, required W Function() tm, required W Function() regWho, required W Function() ncsei, required W Function() network, required W Function(String value) $unknown, }) {return switch (this) {
       AbuseReportsReportType$phish() => phish(),
       AbuseReportsReportType$gen() => gen(),
       AbuseReportsReportType$threat() => threat(),
@@ -66,9 +66,9 @@ W when<W>({required W Function() phish, required W Function() gen, required W Fu
       AbuseReportsReportType$ncsei() => ncsei(),
       AbuseReportsReportType$network() => network(),
       AbuseReportsReportType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W Function()? gen, W Function()? threat, W Function()? dmca, W Function()? emer, W Function()? tm, W Function()? regWho, W Function()? ncsei, W Function()? network, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W Function()? gen, W Function()? threat, W Function()? dmca, W Function()? emer, W Function()? tm, W Function()? regWho, W Function()? ncsei, W Function()? network, W Function(String value)? $unknown, }) {return switch (this) {
       AbuseReportsReportType$phish() => phish != null ? phish() : orElse(value),
       AbuseReportsReportType$gen() => gen != null ? gen() : orElse(value),
       AbuseReportsReportType$threat() => threat != null ? threat() : orElse(value),
@@ -79,10 +79,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
       AbuseReportsReportType$ncsei() => ncsei != null ? ncsei() : orElse(value),
       AbuseReportsReportType$network() => network != null ? network() : orElse(value),
       AbuseReportsReportType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AbuseReportsReportType($value)';
 
- }
+}
 @immutable final class AbuseReportsReportType$phish extends AbuseReportsReportType {const AbuseReportsReportType$phish._();
 
 @override String get value => 'PHISH';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'PHISH'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$gen extends AbuseReportsReportType {const AbuseReportsReportType$gen._();
 
 @override String get value => 'GEN';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'GEN'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$threat extends AbuseReportsReportType {const AbuseReportsReportType$threat._();
 
 @override String get value => 'THREAT';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'THREAT'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$dmca extends AbuseReportsReportType {const AbuseReportsReportType$dmca._();
 
 @override String get value => 'DMCA';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'DMCA'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$emer extends AbuseReportsReportType {const AbuseReportsReportType$emer._();
 
 @override String get value => 'EMER';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'EMER'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$tm extends AbuseReportsReportType {const AbuseReportsReportType$tm._();
 
 @override String get value => 'TM';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'TM'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$regWho extends AbuseReportsReportType {const AbuseReportsReportType$regWho._();
 
 @override String get value => 'REG_WHO';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'REG_WHO'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$ncsei extends AbuseReportsReportType {const AbuseReportsReportType$ncsei._();
 
 @override String get value => 'NCSEI';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'NCSEI'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$network extends AbuseReportsReportType {const AbuseReportsReportType$network._();
 
 @override String get value => 'NETWORK';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => 'NETWORK'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportType$Unknown extends AbuseReportsReportType {const AbuseReportsReportType$Unknown(this.value);
 
 @override final String value;
@@ -173,4 +173,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

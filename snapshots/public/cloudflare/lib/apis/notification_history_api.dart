@@ -14,7 +14,7 @@ final class NotificationHistoryApi with ApiExecutor {const NotificationHistoryAp
 /// Gets a list of history records for notifications sent to an account. The records are displayed for last `x` number of days based on the zone plan (free = 30, pro = 30, biz = 30, ent = 90).
 ///
 /// `GET /accounts/{account_id}/alerting/v3/history`
-Future<ApiResult<List<AaaHistory>?, NotificationHistoryListHistoryError>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AaaHistory>?, NotificationHistoryListHistoryError>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toJson().toString();
@@ -40,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -48,5 +48,5 @@ return execute(
   },
   onError: NotificationHistoryListHistoryError.fromResponse,
 );
- } 
- }
+}
+}

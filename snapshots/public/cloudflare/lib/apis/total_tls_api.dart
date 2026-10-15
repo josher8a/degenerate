@@ -14,7 +14,7 @@ final class TotalTlsApi with ApiExecutor {const TotalTlsApi(this.apiConfig);
 /// Get Total TLS Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsSettingsDetailsError>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsSettingsDetailsError>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -31,13 +31,13 @@ return execute(
   },
   onError: TotalTlsSettingsDetailsError.fromResponse,
 );
- } 
+}
 /// Enable or Disable Total TLS
 ///
 /// Set Total TLS Settings or disable the feature for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsEnableOrDisableTotalTlsError>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsEnableOrDisableTotalTlsError>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -56,5 +56,5 @@ return execute(
   },
   onError: TotalTlsEnableOrDisableTotalTlsError.fromResponse,
 );
- } 
- }
+}
+}

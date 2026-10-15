@@ -8,14 +8,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 /// The event will include the full content of the Item (except when model is generating a Response) except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if necessary.
 /// 
-@immutable final class RealtimeServerEventConversationItemAdded {const RealtimeServerEventConversationItemAdded({required this.eventId, required this.type, required this.item, this.previousItemId, });
+@immutable final class RealtimeServerEventConversationItemAdded {const RealtimeServerEventConversationItemAdded({required this.eventId, required this.type, required this.item, this.previousItemId = const Omittable.absent(), });
 
-factory RealtimeServerEventConversationItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemAdded(
+factory RealtimeServerEventConversationItemAdded.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemAdded(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
-  previousItemId: json['previous_item_id'] as String?,
+  previousItemId: json.containsKey('previous_item_id') ? Omittable(json['previous_item_id'] as String?) : const Omittable.absent(),
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -26,25 +26,25 @@ final String type;
 /// The ID of the item that precedes this one, if any. This is used to
 /// maintain ordering when items are inserted.
 /// 
-final String? previousItemId;
+final Omittable<String?> previousItemId;
 
 final RealtimeConversationItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
-  'previous_item_id': ?previousItemId,
+  if (previousItemId.isPresent) 'previous_item_id': previousItemId.value,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('item'); } 
-RealtimeServerEventConversationItemAdded copyWith({String? eventId, String? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemAdded(
+      json.containsKey('item');}
+RealtimeServerEventConversationItemAdded copyWith({String? eventId, String? type, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) {return RealtimeServerEventConversationItemAdded(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
-  previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
+  previousItemId: previousItemId ?? this.previousItemId,
   item: item ?? this.item,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemAdded &&
           eventId == other.eventId &&
@@ -56,4 +56,4 @@ RealtimeServerEventConversationItemAdded copyWith({String? eventId, String? type
 
 @override String toString() => 'RealtimeServerEventConversationItemAdded(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';
 
- }
+}

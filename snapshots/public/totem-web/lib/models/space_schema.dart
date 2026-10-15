@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SpaceSchema
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SpaceSchema {const SpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SpaceSchema {const SpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, this.slug = const Omittable.absent(), });
 
-factory SpaceSchema.fromJson(Map<String, dynamic> json) { return SpaceSchema(
+factory SpaceSchema.fromJson(Map<String, dynamic> json) {return SpaceSchema(
   author: PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>),
   title: json['title'] as String,
-  slug: json['slug'] as String?,
+  slug: json.containsKey('slug') ? Omittable(json['slug'] as String?) : const Omittable.absent(),
   dateCreated: DateTime.parse(json['date_created'] as String),
   dateModified: DateTime.parse(json['date_modified'] as String),
   subtitle: json['subtitle'] as String,
-); }
+);}
 
 final PublicUserSchema author;
 
 final String title;
 
-final String? slug;
+final Omittable<String?> slug;
 
 final DateTime dateCreated;
 
@@ -24,32 +24,32 @@ final DateTime dateModified;
 
 final String subtitle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author.toJson(),
   'title': title,
-  'slug': ?slug,
+  if (slug.isPresent) 'slug': slug.value,
   'date_created': dateCreated.toIso8601String(),
   'date_modified': dateModified.toIso8601String(),
   'subtitle': subtitle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('date_created') && json['date_created'] is String &&
       json.containsKey('date_modified') && json['date_modified'] is String &&
-      json.containsKey('subtitle') && json['subtitle'] is String; } 
+      json.containsKey('subtitle') && json['subtitle'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (title.runes.length > 255) { errors.add('title: length must be <= 255'); }
 if (subtitle.runes.length > 2000) { errors.add('subtitle: length must be <= 2000'); }
-return errors; } 
-SpaceSchema copyWith({PublicUserSchema? author, String? title, String? Function()? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, }) { return SpaceSchema(
+return errors;}
+SpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, }) {return SpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,
-  slug: slug != null ? slug() : this.slug,
+  slug: slug ?? this.slug,
   dateCreated: dateCreated ?? this.dateCreated,
   dateModified: dateModified ?? this.dateModified,
   subtitle: subtitle ?? this.subtitle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpaceSchema &&
           author == other.author &&
@@ -63,4 +63,4 @@ SpaceSchema copyWith({PublicUserSchema? author, String? title, String? Function(
 
 @override String toString() => 'SpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle)';
 
- }
+}

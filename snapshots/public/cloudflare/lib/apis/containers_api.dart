@@ -14,7 +14,7 @@ final class ContainersApi with ApiExecutor {const ContainersApi(this.apiConfig);
 /// Lists all the container applications that are associated with your account.
 ///
 /// `GET /accounts/{account_id}/containers`
-Future<ApiResult<List<CcPublicApplication>, PublicListApplicationsError>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CcPublicApplication>, PublicListApplicationsError>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -34,7 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -42,5 +42,5 @@ return execute(
   },
   onError: PublicListApplicationsError.fromResponse,
 );
- } 
- }
+}
+}

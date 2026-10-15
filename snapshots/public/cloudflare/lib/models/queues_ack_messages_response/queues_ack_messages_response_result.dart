@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QueuesAckMessagesResponseResult {const QueuesAckMessagesResponseResult({this.ackCount, this.retryCount, this.warnings, });
 
-factory QueuesAckMessagesResponseResult.fromJson(Map<String, dynamic> json) { return QueuesAckMessagesResponseResult(
+factory QueuesAckMessagesResponseResult.fromJson(Map<String, dynamic> json) {return QueuesAckMessagesResponseResult(
   ackCount: json['ackCount'] != null ? (json['ackCount'] as num).toDouble() : null,
   retryCount: json['retryCount'] != null ? (json['retryCount'] as num).toDouble() : null,
   warnings: (json['warnings'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The number of messages that were succesfully acknowledged.
 /// 
@@ -21,17 +21,17 @@ final double? retryCount;
 
 final List<String>? warnings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ackCount': ?ackCount,
   'retryCount': ?retryCount,
   'warnings': ?warnings,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ackCount', 'retryCount', 'warnings'}.contains(key)); } 
-QueuesAckMessagesResponseResult copyWith({double? Function()? ackCount, double? Function()? retryCount, List<String>? Function()? warnings, }) { return QueuesAckMessagesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ackCount', 'retryCount', 'warnings'}.contains(key));}
+QueuesAckMessagesResponseResult copyWith({double? Function()? ackCount, double? Function()? retryCount, List<String>? Function()? warnings, }) {return QueuesAckMessagesResponseResult(
   ackCount: ackCount != null ? ackCount() : this.ackCount,
   retryCount: retryCount != null ? retryCount() : this.retryCount,
   warnings: warnings != null ? warnings() : this.warnings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesAckMessagesResponseResult &&
           ackCount == other.ackCount &&
@@ -42,4 +42,4 @@ QueuesAckMessagesResponseResult copyWith({double? Function()? ackCount, double? 
 
 @override String toString() => 'QueuesAckMessagesResponseResult(ackCount: $ackCount, retryCount: $retryCount, warnings: $warnings)';
 
- }
+}

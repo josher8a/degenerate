@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/thread/subject.dart';/// Thread
 @immutable final class Thread {const Thread({required this.id, required this.repository, required this.subject, required this.reason, required this.unread, required this.updatedAt, required this.lastReadAt, required this.url, required this.subscriptionUrl, });
 
-factory Thread.fromJson(Map<String, dynamic> json) { return Thread(
+factory Thread.fromJson(Map<String, dynamic> json) {return Thread(
   id: json['id'] as String,
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   subject: Subject.fromJson(json['subject'] as Map<String, dynamic>),
@@ -14,7 +14,7 @@ factory Thread.fromJson(Map<String, dynamic> json) { return Thread(
   lastReadAt: json['last_read_at'] as String?,
   url: json['url'] as String,
   subscriptionUrl: json['subscription_url'] as String,
-); }
+);}
 
 final String id;
 
@@ -34,7 +34,7 @@ final String url;
 
 final String subscriptionUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'repository': repository.toJson(),
   'subject': subject.toJson(),
@@ -44,17 +44,17 @@ Map<String, dynamic> toJson() { return {
   'last_read_at': lastReadAt,
   'url': url,
   'subscription_url': subscriptionUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('repository') &&
       json.containsKey('subject') &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('unread') && json['unread'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('last_read_at') && json['last_read_at'] is String &&
+      json.containsKey('last_read_at') && (json['last_read_at'] == null || json['last_read_at'] is String) &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('subscription_url') && json['subscription_url'] is String; } 
-Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, String? reason, bool? unread, String? updatedAt, String? Function()? lastReadAt, String? url, String? subscriptionUrl, }) { return Thread(
+      json.containsKey('subscription_url') && json['subscription_url'] is String;}
+Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, String? reason, bool? unread, String? updatedAt, String? Function()? lastReadAt, String? url, String? subscriptionUrl, }) {return Thread(
   id: id ?? this.id,
   repository: repository ?? this.repository,
   subject: subject ?? this.subject,
@@ -64,7 +64,7 @@ Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, St
   lastReadAt: lastReadAt != null ? lastReadAt() : this.lastReadAt,
   url: url ?? this.url,
   subscriptionUrl: subscriptionUrl ?? this.subscriptionUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Thread &&
           id == other.id &&
@@ -81,4 +81,4 @@ Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, St
 
 @override String toString() => 'Thread(\n  id: $id,\n  repository: $repository,\n  subject: $subject,\n  reason: $reason,\n  unread: $unread,\n  updatedAt: $updatedAt,\n  lastReadAt: $lastReadAt,\n  url: $url,\n  subscriptionUrl: $subscriptionUrl,\n)';
 
- }
+}

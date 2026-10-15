@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/aig_config_post_gateway_dynamic_route_request_elements.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/elements_model.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/elements_rate.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/end.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/percentage.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/start.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400Route {const AigConfigUpdateGatewayDynamicRouteResponse400Route({required this.accountTag, required this.createdAt, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
 
-factory AigConfigUpdateGatewayDynamicRouteResponse400Route.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse400Route(
+factory AigConfigUpdateGatewayDynamicRouteResponse400Route.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteResponse400Route(
   accountTag: json['account_tag'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   elements: (json['elements'] as List<dynamic>).map((e) => switch (e) {
@@ -19,7 +19,7 @@ factory AigConfigUpdateGatewayDynamicRouteResponse400Route.fromJson(Map<String, 
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
-); }
+);}
 
 final String accountTag;
 
@@ -35,7 +35,7 @@ final DateTime modifiedAt;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_tag': accountTag,
   'created_at': createdAt.toIso8601String(),
   'elements': elements.map((e) => e.toJson()).toList(),
@@ -43,15 +43,15 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_tag') && json['account_tag'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_tag') && json['account_tag'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('elements') &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag, DateTime? createdAt, List<AigConfigPostGatewayDynamicRouteRequestElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, }) { return AigConfigUpdateGatewayDynamicRouteResponse400Route(
+      json.containsKey('name') && json['name'] is String;}
+AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag, DateTime? createdAt, List<AigConfigPostGatewayDynamicRouteRequestElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, }) {return AigConfigUpdateGatewayDynamicRouteResponse400Route(
   accountTag: accountTag ?? this.accountTag,
   createdAt: createdAt ?? this.createdAt,
   elements: elements ?? this.elements,
@@ -59,7 +59,7 @@ AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag,
   id: id ?? this.id,
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteResponse400Route &&
           accountTag == other.accountTag &&
@@ -74,4 +74,4 @@ AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag,
 
 @override String toString() => 'AigConfigUpdateGatewayDynamicRouteResponse400Route(accountTag: $accountTag, createdAt: $createdAt, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)';
 
- }
+}

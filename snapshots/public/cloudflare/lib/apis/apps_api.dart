@@ -14,7 +14,7 @@ final class AppsApi with ApiExecutor {const AppsApi(this.apiConfig);
 /// Fetch all apps for your account
 ///
 /// `GET /accounts/{account_id}/realtime/kit/apps`
-Future<ApiResult<GetAppsResponse, Never>> getApps({required RealtimekitAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetAppsResponse, Never>> getApps({required RealtimekitAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,19 +23,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return GetAppsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create App
 ///
 /// Create new app for your account
 ///
 /// `POST /accounts/{account_id}/realtime/kit/apps`
-Future<ApiResult<CreateAppResponse, Never>> createApp({required String accountId, CreateAppRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAppResponse, Never>> createApp({required String accountId, CreateAppRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,11 +46,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return CreateAppResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

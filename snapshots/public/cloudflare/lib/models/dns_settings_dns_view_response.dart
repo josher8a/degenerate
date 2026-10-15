@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_created_time.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';import 'package:pub_cloudflare/models/dns_settings_modified_time.dart';import 'package:pub_cloudflare/models/dns_settings_name.dart';@immutable final class DnsSettingsDnsViewResponse {const DnsSettingsDnsViewResponse({required this.createdTime, required this.modifiedTime, required this.name, required this.zones, required this.id, });
 
-factory DnsSettingsDnsViewResponse.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsViewResponse(
+factory DnsSettingsDnsViewResponse.fromJson(Map<String, dynamic> json) {return DnsSettingsDnsViewResponse(
   createdTime: DnsSettingsCreatedTime.fromJson(json['created_time'] as String),
   modifiedTime: DnsSettingsModifiedTime.fromJson(json['modified_time'] as String),
   name: DnsSettingsName.fromJson(json['name'] as String),
   zones: (json['zones'] as List<dynamic>).map((e) => e as String).toList(),
   id: DnsSettingsIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 /// When the view was created.
 final DnsSettingsCreatedTime createdTime;
@@ -22,25 +22,25 @@ final List<String> zones;
 
 final DnsSettingsIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_time': createdTime.toJson(),
   'modified_time': modifiedTime.toJson(),
   'name': name.toJson(),
   'zones': zones,
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_time') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_time') &&
       json.containsKey('modified_time') &&
       json.containsKey('name') &&
       json.containsKey('zones') &&
-      json.containsKey('id'); } 
-DnsSettingsDnsViewResponse copyWith({DnsSettingsCreatedTime? createdTime, DnsSettingsModifiedTime? modifiedTime, DnsSettingsName? name, List<String>? zones, DnsSettingsIdentifier? id, }) { return DnsSettingsDnsViewResponse(
+      json.containsKey('id');}
+DnsSettingsDnsViewResponse copyWith({DnsSettingsCreatedTime? createdTime, DnsSettingsModifiedTime? modifiedTime, DnsSettingsName? name, List<String>? zones, DnsSettingsIdentifier? id, }) {return DnsSettingsDnsViewResponse(
   createdTime: createdTime ?? this.createdTime,
   modifiedTime: modifiedTime ?? this.modifiedTime,
   name: name ?? this.name,
   zones: zones ?? this.zones,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsViewResponse &&
           createdTime == other.createdTime &&
@@ -53,4 +53,4 @@ DnsSettingsDnsViewResponse copyWith({DnsSettingsCreatedTime? createdTime, DnsSet
 
 @override String toString() => 'DnsSettingsDnsViewResponse(createdTime: $createdTime, modifiedTime: $modifiedTime, name: $name, zones: $zones, id: $id)';
 
- }
+}

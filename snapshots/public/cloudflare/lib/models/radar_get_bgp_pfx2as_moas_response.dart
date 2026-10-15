@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response/radar_get_bgp_pfx2as_moas_response_result.dart';@immutable final class RadarGetBgpPfx2asMoasResponse {const RadarGetBgpPfx2asMoasResponse({required this.result, required this.success, });
 
-factory RadarGetBgpPfx2asMoasResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asMoasResponse(
+factory RadarGetBgpPfx2asMoasResponse.fromJson(Map<String, dynamic> json) {return RadarGetBgpPfx2asMoasResponse(
   result: RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBgpPfx2asMoasResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpPfx2asMoasResponse copyWith({RadarGetBgpPfx2asMoasResponseResult? result, bool? success, }) { return RadarGetBgpPfx2asMoasResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBgpPfx2asMoasResponse copyWith({RadarGetBgpPfx2asMoasResponseResult? result, bool? success, }) {return RadarGetBgpPfx2asMoasResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpPfx2asMoasResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetBgpPfx2asMoasResponse copyWith({RadarGetBgpPfx2asMoasResponseResult? res
 
 @override String toString() => 'RadarGetBgpPfx2asMoasResponse(result: $result, success: $success)';
 
- }
+}

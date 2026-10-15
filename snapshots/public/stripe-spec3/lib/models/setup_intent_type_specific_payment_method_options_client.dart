@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_payto.dart';/// 
 @immutable final class SetupIntentTypeSpecificPaymentMethodOptionsClient {const SetupIntentTypeSpecificPaymentMethodOptionsClient({this.mandateOptions, this.verificationMethod, });
 
-factory SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return SetupIntentTypeSpecificPaymentMethodOptionsClient(
+factory SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) {return SetupIntentTypeSpecificPaymentMethodOptionsClient(
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final SetupIntentPaymentMethodOptionsMandateOptionsPayto? mandateOptions;
 
 /// Bank account verification method.
 final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'verification_method'}.contains(key)); } 
-SetupIntentTypeSpecificPaymentMethodOptionsClient copyWith({SetupIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return SetupIntentTypeSpecificPaymentMethodOptionsClient(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'verification_method'}.contains(key));}
+SetupIntentTypeSpecificPaymentMethodOptionsClient copyWith({SetupIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) {return SetupIntentTypeSpecificPaymentMethodOptionsClient(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentTypeSpecificPaymentMethodOptionsClient &&
           mandateOptions == other.mandateOptions &&
@@ -32,4 +32,4 @@ SetupIntentTypeSpecificPaymentMethodOptionsClient copyWith({SetupIntentPaymentMe
 
 @override String toString() => 'SetupIntentTypeSpecificPaymentMethodOptionsClient(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';
 
- }
+}

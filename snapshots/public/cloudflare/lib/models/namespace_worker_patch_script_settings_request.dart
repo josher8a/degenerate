@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item.dart';@immutable final class NamespaceWorkerPatchScriptSettingsRequest {const NamespaceWorkerPatchScriptSettingsRequest({this.settings});
 
-factory NamespaceWorkerPatchScriptSettingsRequest.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPatchScriptSettingsRequest(
+factory NamespaceWorkerPatchScriptSettingsRequest.fromJson(Map<String, dynamic> json) {return NamespaceWorkerPatchScriptSettingsRequest(
   settings: json['settings'] != null ? WorkersNamespaceScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WorkersNamespaceScriptAndVersionSettingsItem? settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (settings != null) 'settings': settings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings'}.contains(key)); } 
-NamespaceWorkerPatchScriptSettingsRequest copyWith({WorkersNamespaceScriptAndVersionSettingsItem? Function()? settings}) { return NamespaceWorkerPatchScriptSettingsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'settings'}.contains(key));}
+NamespaceWorkerPatchScriptSettingsRequest copyWith({WorkersNamespaceScriptAndVersionSettingsItem? Function()? settings}) {return NamespaceWorkerPatchScriptSettingsRequest(
   settings: settings != null ? settings() : this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceWorkerPatchScriptSettingsRequest &&
           settings == other.settings;
@@ -24,4 +24,4 @@ NamespaceWorkerPatchScriptSettingsRequest copyWith({WorkersNamespaceScriptAndVer
 
 @override String toString() => 'NamespaceWorkerPatchScriptSettingsRequest(settings: $settings)';
 
- }
+}

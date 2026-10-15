@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/cross_ref_union_a_array.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/cross_ref_union_a_text.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/number.dart';import 'package:pub_speakeasy/models/cross_ref_union_b.dart';sealed class CrossRefUnionAType {const CrossRefUnionAType();
 
-factory CrossRefUnionAType.fromJson(String json) { return switch (json) {
+factory CrossRefUnionAType.fromJson(String json) {return switch (json) {
   'CrossRefUnionAText' => crossRefUnionAText,
   'CrossRefUnionANumber' => crossRefUnionANumber,
   'CrossRefUnionAArray' => crossRefUnionAArray,
   _ => CrossRefUnionAType$Unknown(json),
-}; }
+};}
 
 static const CrossRefUnionAType crossRefUnionAText = CrossRefUnionAType$crossRefUnionAText._();
 
@@ -23,7 +23,7 @@ String toJson() => value;
 
 bool get isUnknown => this is CrossRefUnionAType$Unknown;
 
- }
+}
 @immutable final class CrossRefUnionAType$crossRefUnionAText extends CrossRefUnionAType {const CrossRefUnionAType$crossRefUnionAText._();
 
 @override String get value => 'CrossRefUnionAText';
@@ -34,7 +34,7 @@ bool get isUnknown => this is CrossRefUnionAType$Unknown;
 
 @override String toString() => 'CrossRefUnionAType(CrossRefUnionAText)';
 
- }
+}
 @immutable final class CrossRefUnionAType$crossRefUnionANumber extends CrossRefUnionAType {const CrossRefUnionAType$crossRefUnionANumber._();
 
 @override String get value => 'CrossRefUnionANumber';
@@ -45,7 +45,7 @@ bool get isUnknown => this is CrossRefUnionAType$Unknown;
 
 @override String toString() => 'CrossRefUnionAType(CrossRefUnionANumber)';
 
- }
+}
 @immutable final class CrossRefUnionAType$crossRefUnionAArray extends CrossRefUnionAType {const CrossRefUnionAType$crossRefUnionAArray._();
 
 @override String get value => 'CrossRefUnionAArray';
@@ -56,7 +56,7 @@ bool get isUnknown => this is CrossRefUnionAType$Unknown;
 
 @override String toString() => 'CrossRefUnionAType(CrossRefUnionAArray)';
 
- }
+}
 @immutable final class CrossRefUnionAType$Unknown extends CrossRefUnionAType {const CrossRefUnionAType$Unknown(this.value);
 
 @override final String value;
@@ -67,26 +67,26 @@ bool get isUnknown => this is CrossRefUnionAType$Unknown;
 
 @override String toString() => 'CrossRefUnionAType($value)';
 
- }
+}
 /// Union A - array variant references CrossRefUnionB (different union).
 sealed class CrossRefUnionA {const CrossRefUnionA();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory CrossRefUnionA.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory CrossRefUnionA.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'CrossRefUnionAText' => CrossRefUnionACrossRefUnionAText.fromJson(json),
   'CrossRefUnionANumber' => CrossRefUnionACrossRefUnionANumber.fromJson(json),
   'CrossRefUnionAArray' => CrossRefUnionACrossRefUnionAArray.fromJson(json),
   _ => CrossRefUnionA$Unknown(json),
-}; }
+};}
 
 /// Build the `CrossRefUnionAText` variant.
-factory CrossRefUnionA.crossRefUnionAText({required String label}) { return CrossRefUnionACrossRefUnionAText(CrossRefUnionAText(type: 'CrossRefUnionAText', label: label)); }
+factory CrossRefUnionA.crossRefUnionAText({required String label}) {return CrossRefUnionACrossRefUnionAText(CrossRefUnionAText(type: 'CrossRefUnionAText', label: label));}
 
 /// Build the `CrossRefUnionANumber` variant.
-factory CrossRefUnionA.crossRefUnionANumber({required String label}) { return CrossRefUnionACrossRefUnionANumber(Number(type: 'CrossRefUnionANumber', label: label)); }
+factory CrossRefUnionA.crossRefUnionANumber({required String label}) {return CrossRefUnionACrossRefUnionANumber(Number(type: 'CrossRefUnionANumber', label: label));}
 
 /// Build the `CrossRefUnionAArray` variant.
-factory CrossRefUnionA.crossRefUnionAArray({required String label, required CrossRefUnionB itemType, }) { return CrossRefUnionACrossRefUnionAArray(CrossRefUnionAArray(type: 'CrossRefUnionAArray', label: label, itemType: itemType)); }
+factory CrossRefUnionA.crossRefUnionAArray({required String label, required CrossRefUnionB itemType, }) {return CrossRefUnionACrossRefUnionAArray(CrossRefUnionAArray(type: 'CrossRefUnionAArray', label: label, itemType: itemType));}
 
 /// The discriminator value identifying this variant.
 CrossRefUnionAType get type;
@@ -96,16 +96,16 @@ bool get isUnknown => this is CrossRefUnionA$Unknown;
 
 /// Shared by all variants of this union.
 String get label;
-R when<R>({required R Function(CrossRefUnionACrossRefUnionAText) crossRefUnionAText, required R Function(CrossRefUnionACrossRefUnionANumber) crossRefUnionANumber, required R Function(CrossRefUnionACrossRefUnionAArray) crossRefUnionAArray, required R Function(CrossRefUnionA$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(CrossRefUnionACrossRefUnionAText) crossRefUnionAText, required R Function(CrossRefUnionACrossRefUnionANumber) crossRefUnionANumber, required R Function(CrossRefUnionACrossRefUnionAArray) crossRefUnionAArray, required R Function(CrossRefUnionA$Unknown) unknown, }) {return switch (this) {
   final CrossRefUnionACrossRefUnionAText v => crossRefUnionAText(v),
   final CrossRefUnionACrossRefUnionANumber v => crossRefUnionANumber(v),
   final CrossRefUnionACrossRefUnionAArray v => crossRefUnionAArray(v),
   final CrossRefUnionA$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class CrossRefUnionACrossRefUnionAText extends CrossRefUnionA {const CrossRefUnionACrossRefUnionAText(this.crossRefUnionAText);
 
-factory CrossRefUnionACrossRefUnionAText.fromJson(Map<String, dynamic> json) { return CrossRefUnionACrossRefUnionAText(CrossRefUnionAText.fromJson(json)); }
+factory CrossRefUnionACrossRefUnionAText.fromJson(Map<String, dynamic> json) {return CrossRefUnionACrossRefUnionAText(CrossRefUnionAText.fromJson(json));}
 
 final CrossRefUnionAText crossRefUnionAText;
 
@@ -113,9 +113,9 @@ final CrossRefUnionAText crossRefUnionAText;
 
 @override Map<String, dynamic> toJson() => {...crossRefUnionAText.toJson(), 'type': type.toJson()};
 
-CrossRefUnionACrossRefUnionAText copyWith({String? label}) { return CrossRefUnionACrossRefUnionAText(crossRefUnionAText.copyWith(
+CrossRefUnionACrossRefUnionAText copyWith({String? label}) {return CrossRefUnionACrossRefUnionAText(crossRefUnionAText.copyWith(
   label: label,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CrossRefUnionACrossRefUnionAText && crossRefUnionAText == other.crossRefUnionAText;
 
@@ -125,10 +125,10 @@ CrossRefUnionACrossRefUnionAText copyWith({String? label}) { return CrossRefUnio
 
 @override String get label => crossRefUnionAText.label;
 
- }
+}
 @immutable final class CrossRefUnionACrossRefUnionANumber extends CrossRefUnionA {const CrossRefUnionACrossRefUnionANumber(this.number);
 
-factory CrossRefUnionACrossRefUnionANumber.fromJson(Map<String, dynamic> json) { return CrossRefUnionACrossRefUnionANumber(Number.fromJson(json)); }
+factory CrossRefUnionACrossRefUnionANumber.fromJson(Map<String, dynamic> json) {return CrossRefUnionACrossRefUnionANumber(Number.fromJson(json));}
 
 final Number number;
 
@@ -136,9 +136,9 @@ final Number number;
 
 @override Map<String, dynamic> toJson() => {...number.toJson(), 'type': type.toJson()};
 
-CrossRefUnionACrossRefUnionANumber copyWith({String? label}) { return CrossRefUnionACrossRefUnionANumber(number.copyWith(
+CrossRefUnionACrossRefUnionANumber copyWith({String? label}) {return CrossRefUnionACrossRefUnionANumber(number.copyWith(
   label: label,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CrossRefUnionACrossRefUnionANumber && number == other.number;
 
@@ -148,10 +148,10 @@ CrossRefUnionACrossRefUnionANumber copyWith({String? label}) { return CrossRefUn
 
 @override String get label => number.label;
 
- }
+}
 @immutable final class CrossRefUnionACrossRefUnionAArray extends CrossRefUnionA {const CrossRefUnionACrossRefUnionAArray(this.crossRefUnionAArray);
 
-factory CrossRefUnionACrossRefUnionAArray.fromJson(Map<String, dynamic> json) { return CrossRefUnionACrossRefUnionAArray(CrossRefUnionAArray.fromJson(json)); }
+factory CrossRefUnionACrossRefUnionAArray.fromJson(Map<String, dynamic> json) {return CrossRefUnionACrossRefUnionAArray(CrossRefUnionAArray.fromJson(json));}
 
 final CrossRefUnionAArray crossRefUnionAArray;
 
@@ -159,10 +159,10 @@ final CrossRefUnionAArray crossRefUnionAArray;
 
 @override Map<String, dynamic> toJson() => {...crossRefUnionAArray.toJson(), 'type': type.toJson()};
 
-CrossRefUnionACrossRefUnionAArray copyWith({String? label, CrossRefUnionB? itemType, }) { return CrossRefUnionACrossRefUnionAArray(crossRefUnionAArray.copyWith(
+CrossRefUnionACrossRefUnionAArray copyWith({String? label, CrossRefUnionB? itemType, }) {return CrossRefUnionACrossRefUnionAArray(crossRefUnionAArray.copyWith(
   label: label,
   itemType: itemType,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CrossRefUnionACrossRefUnionAArray && crossRefUnionAArray == other.crossRefUnionAArray;
 
@@ -172,7 +172,7 @@ CrossRefUnionACrossRefUnionAArray copyWith({String? label, CrossRefUnionB? itemT
 
 @override String get label => crossRefUnionAArray.label;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class CrossRefUnionA$Unknown extends CrossRefUnionA {CrossRefUnionA$Unknown(this.json);
@@ -194,4 +194,4 @@ late final String _label = json['label'] as String;
 
 @override String get label => _label;
 
- }
+}

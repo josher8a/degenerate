@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionCallOutputItemParam (inline: Output > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';sealed class OutputVariant2Type {const OutputVariant2Type();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';sealed class OutputVariant2Type {const OutputVariant2Type();
 
-factory OutputVariant2Type.fromJson(String json) { return switch (json) {
+factory OutputVariant2Type.fromJson(String json) {return switch (json) {
   'input_text' => inputText,
   'input_image' => inputImage,
   'input_file' => inputFile,
   _ => OutputVariant2Type$Unknown(json),
-}; }
+};}
 
 static const OutputVariant2Type inputText = OutputVariant2Type$inputText._();
 
@@ -23,7 +23,7 @@ String toJson() => value;
 
 bool get isUnknown => this is OutputVariant2Type$Unknown;
 
- }
+}
 @immutable final class OutputVariant2Type$inputText extends OutputVariant2Type {const OutputVariant2Type$inputText._();
 
 @override String get value => 'input_text';
@@ -34,7 +34,7 @@ bool get isUnknown => this is OutputVariant2Type$Unknown;
 
 @override String toString() => 'OutputVariant2Type(input_text)';
 
- }
+}
 @immutable final class OutputVariant2Type$inputImage extends OutputVariant2Type {const OutputVariant2Type$inputImage._();
 
 @override String get value => 'input_image';
@@ -45,7 +45,7 @@ bool get isUnknown => this is OutputVariant2Type$Unknown;
 
 @override String toString() => 'OutputVariant2Type(input_image)';
 
- }
+}
 @immutable final class OutputVariant2Type$inputFile extends OutputVariant2Type {const OutputVariant2Type$inputFile._();
 
 @override String get value => 'input_file';
@@ -56,7 +56,7 @@ bool get isUnknown => this is OutputVariant2Type$Unknown;
 
 @override String toString() => 'OutputVariant2Type(input_file)';
 
- }
+}
 @immutable final class OutputVariant2Type$Unknown extends OutputVariant2Type {const OutputVariant2Type$Unknown(this.value);
 
 @override final String value;
@@ -67,26 +67,26 @@ bool get isUnknown => this is OutputVariant2Type$Unknown;
 
 @override String toString() => 'OutputVariant2Type($value)';
 
- }
+}
 /// A piece of message content, such as text, an image, or a file.
 sealed class OutputVariant2 {const OutputVariant2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory OutputVariant2.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory OutputVariant2.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'input_text' => OutputVariant2InputText.fromJson(json),
   'input_image' => OutputVariant2InputImage.fromJson(json),
   'input_file' => OutputVariant2InputFile.fromJson(json),
   _ => OutputVariant2$Unknown(json),
-}; }
+};}
 
 /// Build the `input_text` variant.
-factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(text: text)); }
+factory OutputVariant2.inputText({required String text}) {return OutputVariant2InputText(InputTextContentParam(type: InputTextContentParamType.fromJson('input_text'), text: text));}
 
 /// Build the `input_image` variant.
-factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory OutputVariant2.inputImage({Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), Omittable<DetailEnum?> detail = const Omittable.absent(), }) {return OutputVariant2InputImage(InputImageContentParamAutoParam(type: InputImageContentParamAutoParamType.fromJson('input_image'), imageUrl: imageUrl, fileId: fileId, detail: detail));}
 
 /// Build the `input_file` variant.
-factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory OutputVariant2.inputFile({Omittable<String?> fileId = const Omittable.absent(), Omittable<String?> filename = const Omittable.absent(), Omittable<String?> fileData = const Omittable.absent(), Omittable<String?> fileUrl = const Omittable.absent(), FileDetailEnum? detail, }) {return OutputVariant2InputFile(InputFileContentParam(type: InputFileContentParamType.fromJson('input_file'), fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail));}
 
 /// The discriminator value identifying this variant.
 OutputVariant2Type get type;
@@ -94,16 +94,16 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is OutputVariant2$Unknown;
 
-R when<R>({required R Function(OutputVariant2InputText) inputText, required R Function(OutputVariant2InputImage) inputImage, required R Function(OutputVariant2InputFile) inputFile, required R Function(OutputVariant2$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(OutputVariant2InputText) inputText, required R Function(OutputVariant2InputImage) inputImage, required R Function(OutputVariant2InputFile) inputFile, required R Function(OutputVariant2$Unknown) unknown, }) {return switch (this) {
   final OutputVariant2InputText v => inputText(v),
   final OutputVariant2InputImage v => inputImage(v),
   final OutputVariant2InputFile v => inputFile(v),
   final OutputVariant2$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class OutputVariant2InputText extends OutputVariant2 {const OutputVariant2InputText(this.inputTextContentParam);
 
-factory OutputVariant2InputText.fromJson(Map<String, dynamic> json) { return OutputVariant2InputText(InputTextContentParam.fromJson(json)); }
+factory OutputVariant2InputText.fromJson(Map<String, dynamic> json) {return OutputVariant2InputText(InputTextContentParam.fromJson(json));}
 
 final InputTextContentParam inputTextContentParam;
 
@@ -111,9 +111,9 @@ final InputTextContentParam inputTextContentParam;
 
 @override Map<String, dynamic> toJson() => {...inputTextContentParam.toJson(), 'type': type.toJson()};
 
-OutputVariant2InputText copyWith({String? text}) { return OutputVariant2InputText(inputTextContentParam.copyWith(
+OutputVariant2InputText copyWith({String? text}) {return OutputVariant2InputText(inputTextContentParam.copyWith(
   text: text,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is OutputVariant2InputText && inputTextContentParam == other.inputTextContentParam;
 
@@ -121,10 +121,10 @@ OutputVariant2InputText copyWith({String? text}) { return OutputVariant2InputTex
 
 @override String toString() => 'OutputVariant2.inputText($inputTextContentParam)';
 
- }
+}
 @immutable final class OutputVariant2InputImage extends OutputVariant2 {const OutputVariant2InputImage(this.inputImageContentParamAutoParam);
 
-factory OutputVariant2InputImage.fromJson(Map<String, dynamic> json) { return OutputVariant2InputImage(InputImageContentParamAutoParam.fromJson(json)); }
+factory OutputVariant2InputImage.fromJson(Map<String, dynamic> json) {return OutputVariant2InputImage(InputImageContentParamAutoParam.fromJson(json));}
 
 final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
@@ -132,11 +132,11 @@ final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
 @override Map<String, dynamic> toJson() => {...inputImageContentParamAutoParam.toJson(), 'type': type.toJson()};
 
-OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
+OutputVariant2InputImage copyWith({Omittable<String?>? imageUrl, Omittable<String?>? fileId, Omittable<DetailEnum?>? detail, }) {return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is OutputVariant2InputImage && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam;
 
@@ -144,10 +144,10 @@ OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Functio
 
 @override String toString() => 'OutputVariant2.inputImage($inputImageContentParamAutoParam)';
 
- }
+}
 @immutable final class OutputVariant2InputFile extends OutputVariant2 {const OutputVariant2InputFile(this.inputFileContentParam);
 
-factory OutputVariant2InputFile.fromJson(Map<String, dynamic> json) { return OutputVariant2InputFile(InputFileContentParam.fromJson(json)); }
+factory OutputVariant2InputFile.fromJson(Map<String, dynamic> json) {return OutputVariant2InputFile(InputFileContentParam.fromJson(json));}
 
 final InputFileContentParam inputFileContentParam;
 
@@ -155,13 +155,13 @@ final InputFileContentParam inputFileContentParam;
 
 @override Map<String, dynamic> toJson() => {...inputFileContentParam.toJson(), 'type': type.toJson()};
 
-OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum? Function()? detail, }) { return OutputVariant2InputFile(inputFileContentParam.copyWith(
+OutputVariant2InputFile copyWith({Omittable<String?>? fileId, Omittable<String?>? filename, Omittable<String?>? fileData, Omittable<String?>? fileUrl, FileDetailEnum? Function()? detail, }) {return OutputVariant2InputFile(inputFileContentParam.copyWith(
   fileId: fileId,
   filename: filename,
   fileData: fileData,
   fileUrl: fileUrl,
   detail: detail,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is OutputVariant2InputFile && inputFileContentParam == other.inputFileContentParam;
 
@@ -169,7 +169,7 @@ OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()
 
 @override String toString() => 'OutputVariant2.inputFile($inputFileContentParam)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class OutputVariant2$Unknown extends OutputVariant2 {const OutputVariant2$Unknown(this.json);
@@ -187,4 +187,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'OutputVariant2.unknown($json)';
 
- }
+}

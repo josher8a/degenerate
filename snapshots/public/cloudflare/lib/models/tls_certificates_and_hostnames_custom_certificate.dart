@@ -32,14 +32,14 @@ String toJson() => value;
 /// Status of the zone's custom SSL.
 sealed class TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus();
 
-factory TlsCertificatesAndHostnamesStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'expired' => expired,
   'deleted' => deleted,
   'pending' => pending,
   'initializing' => initializing,
   _ => TlsCertificatesAndHostnamesStatus$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesStatus active = TlsCertificatesAndHostnamesStatus$active._();
 
@@ -54,39 +54,39 @@ static const TlsCertificatesAndHostnamesStatus initializing = TlsCertificatesAnd
 static const List<TlsCertificatesAndHostnamesStatus> values = [active, expired, deleted, pending, initializing];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'expired' => 'expired',
   'deleted' => 'deleted',
   'pending' => 'pending',
   'initializing' => 'initializing',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesStatus$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() expired, required W Function() deleted, required W Function() pending, required W Function() initializing, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() expired, required W Function() deleted, required W Function() pending, required W Function() initializing, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesStatus$active() => active(),
       TlsCertificatesAndHostnamesStatus$expired() => expired(),
       TlsCertificatesAndHostnamesStatus$deleted() => deleted(),
       TlsCertificatesAndHostnamesStatus$pending() => pending(),
       TlsCertificatesAndHostnamesStatus$initializing() => initializing(),
       TlsCertificatesAndHostnamesStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? deleted, W Function()? pending, W Function()? initializing, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? deleted, W Function()? pending, W Function()? initializing, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesStatus$active() => active != null ? active() : orElse(value),
       TlsCertificatesAndHostnamesStatus$expired() => expired != null ? expired() : orElse(value),
       TlsCertificatesAndHostnamesStatus$deleted() => deleted != null ? deleted() : orElse(value),
       TlsCertificatesAndHostnamesStatus$pending() => pending != null ? pending() : orElse(value),
       TlsCertificatesAndHostnamesStatus$initializing() => initializing != null ? initializing() : orElse(value),
       TlsCertificatesAndHostnamesStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesStatus($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesStatus$active extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$active._();
 
 @override String get value => 'active';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesStatus$expired extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$expired._();
 
 @override String get value => 'expired';
@@ -104,7 +104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesStatus$deleted extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -113,7 +113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesStatus$pending extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$pending._();
 
 @override String get value => 'pending';
@@ -122,7 +122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesStatus$initializing extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -131,7 +131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesStatus$Unknown extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$Unknown(this.value);
 
 @override final String value;
@@ -141,10 +141,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesAndHostnamesCustomCertificate({required this.id, required this.zoneId, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.hosts, this.issuer, this.keylessServer, this.modifiedOn, this.policyRestrictions, this.priority, this.signature, this.status, this.uploadedOn, });
 
-factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomCertificate(
+factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCustomCertificate(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesExpiresOn.fromJson(json['expires_on'] as String) : null,
   geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
@@ -159,7 +159,7 @@ factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynami
   status: json['status'] != null ? TlsCertificatesAndHostnamesStatus.fromJson(json['status'] as String) : null,
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesUploadedOn.fromJson(json['uploaded_on'] as String) : null,
   zoneId: TlsCertificatesAndHostnamesIdentifier.fromJson(json['zone_id'] as String),
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
@@ -190,7 +190,7 @@ final TlsCertificatesAndHostnamesUploadedOn? uploadedOn;
 
 final TlsCertificatesAndHostnamesIdentifier zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   if (geoRestrictions != null) 'geo_restrictions': geoRestrictions?.toJson(),
@@ -205,10 +205,10 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
   'zone_id': zoneId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('zone_id'); } 
-TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, List<String>? Function()? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesIssuer? Function()? issuer, TlsCertificatesAndHostnamesBase? Function()? keylessServer, TlsCertificatesAndHostnamesModifiedOn? Function()? modifiedOn, TlsCertificatesAndHostnamesPolicyRestrictions? Function()? policyRestrictions, TlsCertificatesAndHostnamesPriority? Function()? priority, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesStatus? Function()? status, TlsCertificatesAndHostnamesUploadedOn? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? zoneId, }) { return TlsCertificatesAndHostnamesCustomCertificate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('zone_id');}
+TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, List<String>? Function()? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesIssuer? Function()? issuer, TlsCertificatesAndHostnamesBase? Function()? keylessServer, TlsCertificatesAndHostnamesModifiedOn? Function()? modifiedOn, TlsCertificatesAndHostnamesPolicyRestrictions? Function()? policyRestrictions, TlsCertificatesAndHostnamesPriority? Function()? priority, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesStatus? Function()? status, TlsCertificatesAndHostnamesUploadedOn? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? zoneId, }) {return TlsCertificatesAndHostnamesCustomCertificate(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   geoRestrictions: geoRestrictions != null ? geoRestrictions() : this.geoRestrictions,
@@ -223,7 +223,7 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
   status: status != null ? status() : this.status,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
   zoneId: zoneId ?? this.zoneId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomCertificate &&
           bundleMethod == other.bundleMethod &&
@@ -245,4 +245,4 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
 
 @override String toString() => 'TlsCertificatesAndHostnamesCustomCertificate(\n  bundleMethod: $bundleMethod,\n  expiresOn: $expiresOn,\n  geoRestrictions: $geoRestrictions,\n  hosts: $hosts,\n  id: $id,\n  issuer: $issuer,\n  keylessServer: $keylessServer,\n  modifiedOn: $modifiedOn,\n  policyRestrictions: $policyRestrictions,\n  priority: $priority,\n  signature: $signature,\n  status: $status,\n  uploadedOn: $uploadedOn,\n  zoneId: $zoneId,\n)';
 
- }
+}

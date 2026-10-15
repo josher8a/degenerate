@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_payment_method_options_mandate_options_bacs_debit.dart';/// 
 @immutable final class CheckoutBacsDebitPaymentMethodOptions {const CheckoutBacsDebitPaymentMethodOptions({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
-factory CheckoutBacsDebitPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutBacsDebitPaymentMethodOptions(
+factory CheckoutBacsDebitPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutBacsDebitPaymentMethodOptions(
   mandateOptions: json['mandate_options'] != null ? CheckoutPaymentMethodOptionsMandateOptionsBacsDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
-); }
+);}
 
 final CheckoutPaymentMethodOptionsMandateOptionsBacsDebit? mandateOptions;
 
@@ -24,24 +24,24 @@ final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 /// Controls when Stripe will attempt to debit the funds from the customer's account. The date must be a string in YYYY-MM-DD format. The date must be in the future and between 3 and 15 calendar days from now.
 final String? targetDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'target_date': ?targetDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final targetDate$ = targetDate;
 if (targetDate$ != null) {
   if (targetDate$.runes.length > 5000) { errors.add('targetDate: length must be <= 5000'); }
 }
-return errors; } 
-CheckoutBacsDebitPaymentMethodOptions copyWith({CheckoutPaymentMethodOptionsMandateOptionsBacsDebit? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return CheckoutBacsDebitPaymentMethodOptions(
+return errors;}
+CheckoutBacsDebitPaymentMethodOptions copyWith({CheckoutPaymentMethodOptionsMandateOptionsBacsDebit? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) {return CheckoutBacsDebitPaymentMethodOptions(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutBacsDebitPaymentMethodOptions &&
           mandateOptions == other.mandateOptions &&
@@ -52,4 +52,4 @@ CheckoutBacsDebitPaymentMethodOptions copyWith({CheckoutPaymentMethodOptionsMand
 
 @override String toString() => 'CheckoutBacsDebitPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';
 
- }
+}

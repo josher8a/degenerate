@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/datasets_items.dart';@immutable final class PropertiesDatasets {const PropertiesDatasets({required this.items, required this.type, });
 
-factory PropertiesDatasets.fromJson(Map<String, dynamic> json) { return PropertiesDatasets(
+factory PropertiesDatasets.fromJson(Map<String, dynamic> json) {return PropertiesDatasets(
   items: DatasetsItems.fromJson(json['items'] as Map<String, dynamic>),
   type: json['type'] as String,
-); }
+);}
 
 final DatasetsItems items;
 
 /// Example: `'array'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'items': items.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
-      json.containsKey('type') && json['type'] is String; } 
-PropertiesDatasets copyWith({DatasetsItems? items, String? type, }) { return PropertiesDatasets(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items') &&
+      json.containsKey('type') && json['type'] is String;}
+PropertiesDatasets copyWith({DatasetsItems? items, String? type, }) {return PropertiesDatasets(
   items: items ?? this.items,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PropertiesDatasets &&
           items == other.items &&
@@ -32,4 +32,4 @@ PropertiesDatasets copyWith({DatasetsItems? items, String? type, }) { return Pro
 
 @override String toString() => 'PropertiesDatasets(items: $items, type: $type)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after.dart';/// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
 sealed class Endpoint {const Endpoint();
 
-factory Endpoint.fromJson(String json) { return switch (json) {
+factory Endpoint.fromJson(String json) {return switch (json) {
   '/v1/responses' => v1Responses,
   '/v1/chat/completions' => v1ChatCompletions,
   '/v1/embeddings' => v1Embeddings,
@@ -13,7 +13,7 @@ factory Endpoint.fromJson(String json) { return switch (json) {
   '/v1/images/generations' => v1ImagesGenerations,
   '/v1/images/edits' => v1ImagesEdits,
   _ => Endpoint$Unknown(json),
-}; }
+};}
 
 static const Endpoint v1Responses = Endpoint$v1Responses._();
 
@@ -32,9 +32,9 @@ static const Endpoint v1ImagesEdits = Endpoint$v1ImagesEdits._();
 static const List<Endpoint> values = [v1Responses, v1ChatCompletions, v1Embeddings, v1Completions, v1Moderations, v1ImagesGenerations, v1ImagesEdits];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '/v1/responses' => 'v1Responses',
   '/v1/chat/completions' => 'v1ChatCompletions',
   '/v1/embeddings' => 'v1Embeddings',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   '/v1/images/generations' => 'v1ImagesGenerations',
   '/v1/images/edits' => 'v1ImagesEdits',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Endpoint$Unknown; } 
+bool get isUnknown {return this is Endpoint$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() v1Responses, required W Function() v1ChatCompletions, required W Function() v1Embeddings, required W Function() v1Completions, required W Function() v1Moderations, required W Function() v1ImagesGenerations, required W Function() v1ImagesEdits, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() v1Responses, required W Function() v1ChatCompletions, required W Function() v1Embeddings, required W Function() v1Completions, required W Function() v1Moderations, required W Function() v1ImagesGenerations, required W Function() v1ImagesEdits, required W Function(String value) $unknown, }) {return switch (this) {
       Endpoint$v1Responses() => v1Responses(),
       Endpoint$v1ChatCompletions() => v1ChatCompletions(),
       Endpoint$v1Embeddings() => v1Embeddings(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() v1Responses, required W Function() v1ChatComple
       Endpoint$v1ImagesGenerations() => v1ImagesGenerations(),
       Endpoint$v1ImagesEdits() => v1ImagesEdits(),
       Endpoint$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Responses, W Function()? v1ChatCompletions, W Function()? v1Embeddings, W Function()? v1Completions, W Function()? v1Moderations, W Function()? v1ImagesGenerations, W Function()? v1ImagesEdits, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Responses, W Function()? v1ChatCompletions, W Function()? v1Embeddings, W Function()? v1Completions, W Function()? v1Moderations, W Function()? v1ImagesGenerations, W Function()? v1ImagesEdits, W Function(String value)? $unknown, }) {return switch (this) {
       Endpoint$v1Responses() => v1Responses != null ? v1Responses() : orElse(value),
       Endpoint$v1ChatCompletions() => v1ChatCompletions != null ? v1ChatCompletions() : orElse(value),
       Endpoint$v1Embeddings() => v1Embeddings != null ? v1Embeddings() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
       Endpoint$v1ImagesGenerations() => v1ImagesGenerations != null ? v1ImagesGenerations() : orElse(value),
       Endpoint$v1ImagesEdits() => v1ImagesEdits != null ? v1ImagesEdits() : orElse(value),
       Endpoint$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Endpoint($value)';
 
- }
+}
 @immutable final class Endpoint$v1Responses extends Endpoint {const Endpoint$v1Responses._();
 
 @override String get value => '/v1/responses';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/responses'.hashCode;
 
- }
+}
 @immutable final class Endpoint$v1ChatCompletions extends Endpoint {const Endpoint$v1ChatCompletions._();
 
 @override String get value => '/v1/chat/completions';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/chat/completions'.hashCode;
 
- }
+}
 @immutable final class Endpoint$v1Embeddings extends Endpoint {const Endpoint$v1Embeddings._();
 
 @override String get value => '/v1/embeddings';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/embeddings'.hashCode;
 
- }
+}
 @immutable final class Endpoint$v1Completions extends Endpoint {const Endpoint$v1Completions._();
 
 @override String get value => '/v1/completions';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/completions'.hashCode;
 
- }
+}
 @immutable final class Endpoint$v1Moderations extends Endpoint {const Endpoint$v1Moderations._();
 
 @override String get value => '/v1/moderations';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/moderations'.hashCode;
 
- }
+}
 @immutable final class Endpoint$v1ImagesGenerations extends Endpoint {const Endpoint$v1ImagesGenerations._();
 
 @override String get value => '/v1/images/generations';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/images/generations'.hashCode;
 
- }
+}
 @immutable final class Endpoint$v1ImagesEdits extends Endpoint {const Endpoint$v1ImagesEdits._();
 
 @override String get value => '/v1/images/edits';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => '/v1/images/edits'.hashCode;
 
- }
+}
 @immutable final class Endpoint$Unknown extends Endpoint {const Endpoint$Unknown(this.value);
 
 @override final String value;
@@ -143,41 +143,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Respon
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The time frame within which the batch should be processed. Currently only `24h` is supported.
 sealed class CompletionWindow {const CompletionWindow();
 
-factory CompletionWindow.fromJson(String json) { return switch (json) {
+factory CompletionWindow.fromJson(String json) {return switch (json) {
   '24h' => $24h,
   _ => CompletionWindow$Unknown(json),
-}; }
+};}
 
 static const CompletionWindow $24h = CompletionWindow$$24h._();
 
 static const List<CompletionWindow> values = [$24h];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '24h' => r'$24h',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CompletionWindow$Unknown; } 
+bool get isUnknown {return this is CompletionWindow$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $24h, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $24h, required W Function(String value) $unknown, }) {return switch (this) {
       CompletionWindow$$24h() => $24h(),
       CompletionWindow$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $24h, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $24h, W Function(String value)? $unknown, }) {return switch (this) {
       CompletionWindow$$24h() => $24h != null ? $24h() : orElse(value),
       CompletionWindow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CompletionWindow($value)';
 
- }
+}
 @immutable final class CompletionWindow$$24h extends CompletionWindow {const CompletionWindow$$24h._();
 
 @override String get value => '24h';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $24h, W 
 
 @override int get hashCode => '24h'.hashCode;
 
- }
+}
 @immutable final class CompletionWindow$Unknown extends CompletionWindow {const CompletionWindow$Unknown(this.value);
 
 @override final String value;
@@ -196,16 +196,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $24h, W 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata, this.outputExpiresAfter, });
+}
+@immutable final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata = const Omittable.absent(), this.outputExpiresAfter, });
 
-factory CreateBatchRequest.fromJson(Map<String, dynamic> json) { return CreateBatchRequest(
+factory CreateBatchRequest.fromJson(Map<String, dynamic> json) {return CreateBatchRequest(
   inputFileId: json['input_file_id'] as String,
   endpoint: Endpoint.fromJson(json['endpoint'] as String),
   completionWindow: CompletionWindow.fromJson(json['completion_window'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   outputExpiresAfter: json['output_expires_after'] != null ? BatchFileExpirationAfter.fromJson(json['output_expires_after'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The ID of an uploaded file that contains requests for the new batch.
 /// 
@@ -228,27 +228,27 @@ final CompletionWindow completionWindow;
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 final BatchFileExpirationAfter? outputExpiresAfter;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input_file_id': inputFileId,
   'endpoint': endpoint.toJson(),
   'completion_window': completionWindow.toJson(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (outputExpiresAfter != null) 'output_expires_after': outputExpiresAfter?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_file_id') && json['input_file_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input_file_id') && json['input_file_id'] is String &&
       json.containsKey('endpoint') &&
-      json.containsKey('completion_window'); } 
-CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, CompletionWindow? completionWindow, Map<String, String>? Function()? metadata, BatchFileExpirationAfter? Function()? outputExpiresAfter, }) { return CreateBatchRequest(
+      json.containsKey('completion_window');}
+CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, CompletionWindow? completionWindow, Omittable<Map<String,String>?>? metadata, BatchFileExpirationAfter? Function()? outputExpiresAfter, }) {return CreateBatchRequest(
   inputFileId: inputFileId ?? this.inputFileId,
   endpoint: endpoint ?? this.endpoint,
   completionWindow: completionWindow ?? this.completionWindow,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   outputExpiresAfter: outputExpiresAfter != null ? outputExpiresAfter() : this.outputExpiresAfter,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateBatchRequest &&
           inputFileId == other.inputFileId &&
@@ -261,4 +261,4 @@ CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, Completion
 
 @override String toString() => 'CreateBatchRequest(inputFileId: $inputFileId, endpoint: $endpoint, completionWindow: $completionWindow, metadata: $metadata, outputExpiresAfter: $outputExpiresAfter)';
 
- }
+}

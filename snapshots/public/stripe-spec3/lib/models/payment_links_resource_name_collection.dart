@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_business_name.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_individual_name.dart';/// 
 @immutable final class PaymentLinksResourceNameCollection {const PaymentLinksResourceNameCollection({this.business, this.individual, });
 
-factory PaymentLinksResourceNameCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceNameCollection(
+factory PaymentLinksResourceNameCollection.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceNameCollection(
   business: json['business'] != null ? PaymentLinksResourceBusinessName.fromJson(json['business'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? PaymentLinksResourceIndividualName.fromJson(json['individual'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentLinksResourceBusinessName? business;
 
 final PaymentLinksResourceIndividualName? individual;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-PaymentLinksResourceNameCollection copyWith({PaymentLinksResourceBusinessName? Function()? business, PaymentLinksResourceIndividualName? Function()? individual, }) { return PaymentLinksResourceNameCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business', 'individual'}.contains(key));}
+PaymentLinksResourceNameCollection copyWith({PaymentLinksResourceBusinessName? Function()? business, PaymentLinksResourceIndividualName? Function()? individual, }) {return PaymentLinksResourceNameCollection(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceNameCollection &&
           business == other.business &&
@@ -31,4 +31,4 @@ PaymentLinksResourceNameCollection copyWith({PaymentLinksResourceBusinessName? F
 
 @override String toString() => 'PaymentLinksResourceNameCollection(business: $business, individual: $individual)';
 
- }
+}

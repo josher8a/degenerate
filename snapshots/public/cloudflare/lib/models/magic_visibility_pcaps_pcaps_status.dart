@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the packet capture request.
 sealed class MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus();
 
-factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) { return switch (json) {
+factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'success' => success,
   'pending' => pending,
@@ -14,7 +14,7 @@ factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) { return switch (j
   'complete' => complete,
   'failed' => failed,
   _ => MagicVisibilityPcapsPcapsStatus$Unknown(json),
-}; }
+};}
 
 static const MagicVisibilityPcapsPcapsStatus unknown = MagicVisibilityPcapsPcapsStatus$unknown._();
 
@@ -35,9 +35,9 @@ static const MagicVisibilityPcapsPcapsStatus failed = MagicVisibilityPcapsPcapsS
 static const List<MagicVisibilityPcapsPcapsStatus> values = [unknown, success, pending, running, conversionPending, conversionRunning, complete, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'unknown' => 'unknown',
   'success' => 'success',
   'pending' => 'pending',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'complete' => 'complete',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicVisibilityPcapsPcapsStatus$Unknown; } 
+bool get isUnknown {return this is MagicVisibilityPcapsPcapsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() unknown, required W Function() success, required W Function() pending, required W Function() running, required W Function() conversionPending, required W Function() conversionRunning, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() unknown, required W Function() success, required W Function() pending, required W Function() running, required W Function() conversionPending, required W Function() conversionRunning, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       MagicVisibilityPcapsPcapsStatus$unknown() => unknown(),
       MagicVisibilityPcapsPcapsStatus$success() => success(),
       MagicVisibilityPcapsPcapsStatus$pending() => pending(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() unknown, required W Function() success, require
       MagicVisibilityPcapsPcapsStatus$complete() => complete(),
       MagicVisibilityPcapsPcapsStatus$failed() => failed(),
       MagicVisibilityPcapsPcapsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? success, W Function()? pending, W Function()? running, W Function()? conversionPending, W Function()? conversionRunning, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? success, W Function()? pending, W Function()? running, W Function()? conversionPending, W Function()? conversionRunning, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       MagicVisibilityPcapsPcapsStatus$unknown() => unknown != null ? unknown() : orElse(value),
       MagicVisibilityPcapsPcapsStatus$success() => success != null ? success() : orElse(value),
       MagicVisibilityPcapsPcapsStatus$pending() => pending != null ? pending() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
       MagicVisibilityPcapsPcapsStatus$complete() => complete != null ? complete() : orElse(value),
       MagicVisibilityPcapsPcapsStatus$failed() => failed != null ? failed() : orElse(value),
       MagicVisibilityPcapsPcapsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicVisibilityPcapsPcapsStatus($value)';
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$unknown extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$unknown._();
 
 @override String get value => 'unknown';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$success extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$success._();
 
 @override String get value => 'success';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$pending extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$pending._();
 
 @override String get value => 'pending';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$running extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$running._();
 
 @override String get value => 'running';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'running'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$conversionPending extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$conversionPending._();
 
 @override String get value => 'conversion_pending';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'conversion_pending'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$conversionRunning extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$conversionRunning._();
 
 @override String get value => 'conversion_running';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'conversion_running'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$complete extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$complete._();
 
 @override String get value => 'complete';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'complete'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$failed extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$failed._();
 
 @override String get value => 'failed';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityPcapsPcapsStatus$Unknown extends MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

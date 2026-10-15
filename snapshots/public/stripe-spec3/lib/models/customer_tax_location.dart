@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The data source used to infer the customer's location.
 sealed class CustomerTaxLocationSource {const CustomerTaxLocationSource();
 
-factory CustomerTaxLocationSource.fromJson(String json) { return switch (json) {
+factory CustomerTaxLocationSource.fromJson(String json) {return switch (json) {
   'billing_address' => billingAddress,
   'ip_address' => ipAddress,
   'payment_method' => paymentMethod,
   'shipping_destination' => shippingDestination,
   _ => CustomerTaxLocationSource$Unknown(json),
-}; }
+};}
 
 static const CustomerTaxLocationSource billingAddress = CustomerTaxLocationSource$billingAddress._();
 
@@ -23,36 +23,36 @@ static const CustomerTaxLocationSource shippingDestination = CustomerTaxLocation
 static const List<CustomerTaxLocationSource> values = [billingAddress, ipAddress, paymentMethod, shippingDestination];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing_address' => 'billingAddress',
   'ip_address' => 'ipAddress',
   'payment_method' => 'paymentMethod',
   'shipping_destination' => 'shippingDestination',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerTaxLocationSource$Unknown; } 
+bool get isUnknown {return this is CustomerTaxLocationSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billingAddress, required W Function() ipAddress, required W Function() paymentMethod, required W Function() shippingDestination, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billingAddress, required W Function() ipAddress, required W Function() paymentMethod, required W Function() shippingDestination, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerTaxLocationSource$billingAddress() => billingAddress(),
       CustomerTaxLocationSource$ipAddress() => ipAddress(),
       CustomerTaxLocationSource$paymentMethod() => paymentMethod(),
       CustomerTaxLocationSource$shippingDestination() => shippingDestination(),
       CustomerTaxLocationSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingAddress, W Function()? ipAddress, W Function()? paymentMethod, W Function()? shippingDestination, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingAddress, W Function()? ipAddress, W Function()? paymentMethod, W Function()? shippingDestination, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerTaxLocationSource$billingAddress() => billingAddress != null ? billingAddress() : orElse(value),
       CustomerTaxLocationSource$ipAddress() => ipAddress != null ? ipAddress() : orElse(value),
       CustomerTaxLocationSource$paymentMethod() => paymentMethod != null ? paymentMethod() : orElse(value),
       CustomerTaxLocationSource$shippingDestination() => shippingDestination != null ? shippingDestination() : orElse(value),
       CustomerTaxLocationSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerTaxLocationSource($value)';
 
- }
+}
 @immutable final class CustomerTaxLocationSource$billingAddress extends CustomerTaxLocationSource {const CustomerTaxLocationSource$billingAddress._();
 
 @override String get value => 'billing_address';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingA
 
 @override int get hashCode => 'billing_address'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxLocationSource$ipAddress extends CustomerTaxLocationSource {const CustomerTaxLocationSource$ipAddress._();
 
 @override String get value => 'ip_address';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingA
 
 @override int get hashCode => 'ip_address'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxLocationSource$paymentMethod extends CustomerTaxLocationSource {const CustomerTaxLocationSource$paymentMethod._();
 
 @override String get value => 'payment_method';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingA
 
 @override int get hashCode => 'payment_method'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxLocationSource$shippingDestination extends CustomerTaxLocationSource {const CustomerTaxLocationSource$shippingDestination._();
 
 @override String get value => 'shipping_destination';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingA
 
 @override int get hashCode => 'shipping_destination'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxLocationSource$Unknown extends CustomerTaxLocationSource {const CustomerTaxLocationSource$Unknown(this.value);
 
 @override final String value;
@@ -98,15 +98,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingA
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
-@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
+@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state = const Omittable.absent(), });
 
-factory CustomerTaxLocation.fromJson(Map<String, dynamic> json) { return CustomerTaxLocation(
+factory CustomerTaxLocation.fromJson(Map<String, dynamic> json) {return CustomerTaxLocation(
   country: json['country'] as String,
   source: CustomerTaxLocationSource.fromJson(json['source'] as String),
-  state: json['state'] as String?,
-); }
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
+);}
 
 /// The identified tax country of the customer.
 final String country;
@@ -115,28 +115,28 @@ final String country;
 final CustomerTaxLocationSource source;
 
 /// The identified tax state, county, province, or region of the customer.
-final String? state;
+final Omittable<String?> state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country,
   'source': source.toJson(),
-  'state': ?state,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
-      json.containsKey('source'); } 
+  if (state.isPresent) 'state': state.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country') && json['country'] is String &&
+      json.containsKey('source');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
-final state$ = state;
+final state$ = state.value;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
-return errors; } 
-CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, String? Function()? state, }) { return CustomerTaxLocation(
+return errors;}
+CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, Omittable<String?>? state, }) {return CustomerTaxLocation(
   country: country ?? this.country,
   source: source ?? this.source,
-  state: state != null ? state() : this.state,
-); } 
+  state: state ?? this.state,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerTaxLocation &&
           country == other.country &&
@@ -147,4 +147,4 @@ CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source
 
 @override String toString() => 'CustomerTaxLocation(country: $country, source: $source, state: $state)';
 
- }
+}

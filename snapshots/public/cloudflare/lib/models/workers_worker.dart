@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersWorker
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn, this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker_request/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker_request/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.logpush, required this.name, required this.observability, required this.references, required this.subdomain, required this.tags, required this.tailConsumers, required this.updatedOn, this.deployedOn = const Omittable.absent(), });
 
-factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
+factory WorkersWorker.fromJson(Map<String, dynamic> json) {return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),
-  deployedOn: json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null,
+  deployedOn: json.containsKey('deployed_on') ? Omittable(json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
   logpush: json['logpush'] as bool,
   name: json['name'] as String,
@@ -15,13 +15,13 @@ factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
   tailConsumers: (json['tail_consumers'] as List<dynamic>).map((e) => TailConsumers.fromJson(e as Map<String, dynamic>)).toList(),
   updatedOn: DateTime.parse(json['updated_on'] as String),
-); }
+);}
 
 /// When the Worker was created.
 final DateTime createdOn;
 
 /// When the Worker's most recent deployment was created. `null` if the Worker has never been deployed.
-final DateTime? deployedOn;
+final Omittable<DateTime?> deployedOn;
 
 /// Immutable ID of the Worker.
 /// 
@@ -56,9 +56,9 @@ final List<TailConsumers> tailConsumers;
 /// When the Worker was most recently updated.
 final DateTime updatedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toIso8601String(),
-  if (deployedOn != null) 'deployed_on': deployedOn?.toIso8601String(),
+  if (deployedOn.isPresent) 'deployed_on': deployedOn.value?.toIso8601String(),
   'id': id,
   'logpush': logpush,
   'name': name,
@@ -68,8 +68,8 @@ Map<String, dynamic> toJson() { return {
   'tags': tags,
   'tail_consumers': tailConsumers.map((e) => e.toJson()).toList(),
   'updated_on': updatedOn.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('logpush') && json['logpush'] is bool &&
       json.containsKey('name') && json['name'] is String &&
@@ -78,15 +78,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('subdomain') &&
       json.containsKey('tags') &&
       json.containsKey('tail_consumers') &&
-      json.containsKey('updated_on') && json['updated_on'] is String; } 
+      json.containsKey('updated_on') && json['updated_on'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^[a-z0-9_][a-z0-9-_]*$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z0-9_][a-z0-9-_]*$'); }
 if (tags.length > 8) { errors.add('tags: must have <= 8 items'); }
-return errors; } 
-WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, String? id, bool? logpush, String? name, Observability? observability, References? references, Subdomain? subdomain, List<String>? tags, List<TailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
+return errors;}
+WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, String? id, bool? logpush, String? name, Observability? observability, References? references, Subdomain? subdomain, List<String>? tags, List<TailConsumers>? tailConsumers, DateTime? updatedOn, }) {return WorkersWorker(
   createdOn: createdOn ?? this.createdOn,
-  deployedOn: deployedOn != null ? deployedOn() : this.deployedOn,
+  deployedOn: deployedOn ?? this.deployedOn,
   id: id ?? this.id,
   logpush: logpush ?? this.logpush,
   name: name ?? this.name,
@@ -96,7 +96,7 @@ WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, S
   tags: tags ?? this.tags,
   tailConsumers: tailConsumers ?? this.tailConsumers,
   updatedOn: updatedOn ?? this.updatedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersWorker &&
           createdOn == other.createdOn &&
@@ -115,4 +115,4 @@ WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, S
 
 @override String toString() => 'WorkersWorker(\n  createdOn: $createdOn,\n  deployedOn: $deployedOn,\n  id: $id,\n  logpush: $logpush,\n  name: $name,\n  observability: $observability,\n  references: $references,\n  subdomain: $subdomain,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  updatedOn: $updatedOn,\n)';
 
- }
+}

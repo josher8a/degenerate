@@ -11,13 +11,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class R2AddCustomDomainRequest {const R2AddCustomDomainRequest({required this.domain, required this.enabled, required this.zoneId, this.ciphers, this.minTls, });
 
-factory R2AddCustomDomainRequest.fromJson(Map<String, dynamic> json) { return R2AddCustomDomainRequest(
+factory R2AddCustomDomainRequest.fromJson(Map<String, dynamic> json) {return R2AddCustomDomainRequest(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   domain: json['domain'] as String,
   enabled: json['enabled'] as bool,
   minTls: json['minTLS'] != null ? MinTls.fromJson(json['minTLS'] as String) : null,
   zoneId: json['zoneId'] as String,
-); }
+);}
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 final List<String>? ciphers;
@@ -34,23 +34,23 @@ final MinTls? minTls;
 /// Zone ID of the custom domain.
 final String zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ciphers': ?ciphers,
   'domain': domain,
   'enabled': enabled,
   if (minTls != null) 'minTLS': minTls?.toJson(),
   'zoneId': zoneId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('zoneId') && json['zoneId'] is String; } 
-R2AddCustomDomainRequest copyWith({List<String>? Function()? ciphers, String? domain, bool? enabled, MinTls? Function()? minTls, String? zoneId, }) { return R2AddCustomDomainRequest(
+      json.containsKey('zoneId') && json['zoneId'] is String;}
+R2AddCustomDomainRequest copyWith({List<String>? Function()? ciphers, String? domain, bool? enabled, MinTls? Function()? minTls, String? zoneId, }) {return R2AddCustomDomainRequest(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   domain: domain ?? this.domain,
   enabled: enabled ?? this.enabled,
   minTls: minTls != null ? minTls() : this.minTls,
   zoneId: zoneId ?? this.zoneId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2AddCustomDomainRequest &&
           listEquals(ciphers, other.ciphers) &&
@@ -63,4 +63,4 @@ R2AddCustomDomainRequest copyWith({List<String>? Function()? ciphers, String? do
 
 @override String toString() => 'R2AddCustomDomainRequest(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, zoneId: $zoneId)';
 
- }
+}

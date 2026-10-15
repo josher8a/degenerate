@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of input being collected.
 sealed class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType();
 
-factory TerminalReaderReaderResourceInputType.fromJson(String json) { return switch (json) {
+factory TerminalReaderReaderResourceInputType.fromJson(String json) {return switch (json) {
   'email' => email,
   'numeric' => numeric,
   'phone' => phone,
@@ -12,7 +12,7 @@ factory TerminalReaderReaderResourceInputType.fromJson(String json) { return swi
   'signature' => signature,
   'text' => text,
   _ => TerminalReaderReaderResourceInputType$Unknown(json),
-}; }
+};}
 
 static const TerminalReaderReaderResourceInputType email = TerminalReaderReaderResourceInputType$email._();
 
@@ -29,9 +29,9 @@ static const TerminalReaderReaderResourceInputType text = TerminalReaderReaderRe
 static const List<TerminalReaderReaderResourceInputType> values = [email, numeric, phone, selection, signature, text];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'email' => 'email',
   'numeric' => 'numeric',
   'phone' => 'phone',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'signature' => 'signature',
   'text' => 'text',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TerminalReaderReaderResourceInputType$Unknown; } 
+bool get isUnknown {return this is TerminalReaderReaderResourceInputType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() email, required W Function() numeric, required W Function() phone, required W Function() selection, required W Function() signature, required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() email, required W Function() numeric, required W Function() phone, required W Function() selection, required W Function() signature, required W Function() text, required W Function(String value) $unknown, }) {return switch (this) {
       TerminalReaderReaderResourceInputType$email() => email(),
       TerminalReaderReaderResourceInputType$numeric() => numeric(),
       TerminalReaderReaderResourceInputType$phone() => phone(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() email, required W Function() numeric, required 
       TerminalReaderReaderResourceInputType$signature() => signature(),
       TerminalReaderReaderResourceInputType$text() => text(),
       TerminalReaderReaderResourceInputType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? numeric, W Function()? phone, W Function()? selection, W Function()? signature, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? numeric, W Function()? phone, W Function()? selection, W Function()? signature, W Function()? text, W Function(String value)? $unknown, }) {return switch (this) {
       TerminalReaderReaderResourceInputType$email() => email != null ? email() : orElse(value),
       TerminalReaderReaderResourceInputType$numeric() => numeric != null ? numeric() : orElse(value),
       TerminalReaderReaderResourceInputType$phone() => phone != null ? phone() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
       TerminalReaderReaderResourceInputType$signature() => signature != null ? signature() : orElse(value),
       TerminalReaderReaderResourceInputType$text() => text != null ? text() : orElse(value),
       TerminalReaderReaderResourceInputType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TerminalReaderReaderResourceInputType($value)';
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$email extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$email._();
 
 @override String get value => 'email';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'email'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$numeric extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$numeric._();
 
 @override String get value => 'numeric';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'numeric'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$phone extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$phone._();
 
 @override String get value => 'phone';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'phone'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$selection extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$selection._();
 
 @override String get value => 'selection';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'selection'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$signature extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$signature._();
 
 @override String get value => 'signature';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'signature'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$text extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$text._();
 
 @override String get value => 'text';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderReaderResourceInputType$Unknown extends TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

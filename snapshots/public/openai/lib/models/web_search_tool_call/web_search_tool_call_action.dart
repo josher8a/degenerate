@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_action_find.dart';import 'package:pub_openai/models/web_search_action_open_page.dart';import 'package:pub_openai/models/web_search_action_search.dart';import 'package:pub_openai/models/web_search_action_search/sources.dart';sealed class WebSearchToolCallActionType {const WebSearchToolCallActionType();
 
-factory WebSearchToolCallActionType.fromJson(String json) { return switch (json) {
+factory WebSearchToolCallActionType.fromJson(String json) {return switch (json) {
   'search' => search,
   'open_page' => openPage,
   'find_in_page' => findInPage,
   _ => WebSearchToolCallActionType$Unknown(json),
-}; }
+};}
 
 static const WebSearchToolCallActionType search = WebSearchToolCallActionType$search._();
 
@@ -23,7 +23,7 @@ String toJson() => value;
 
 bool get isUnknown => this is WebSearchToolCallActionType$Unknown;
 
- }
+}
 @immutable final class WebSearchToolCallActionType$search extends WebSearchToolCallActionType {const WebSearchToolCallActionType$search._();
 
 @override String get value => 'search';
@@ -34,7 +34,7 @@ bool get isUnknown => this is WebSearchToolCallActionType$Unknown;
 
 @override String toString() => 'WebSearchToolCallActionType(search)';
 
- }
+}
 @immutable final class WebSearchToolCallActionType$openPage extends WebSearchToolCallActionType {const WebSearchToolCallActionType$openPage._();
 
 @override String get value => 'open_page';
@@ -45,7 +45,7 @@ bool get isUnknown => this is WebSearchToolCallActionType$Unknown;
 
 @override String toString() => 'WebSearchToolCallActionType(open_page)';
 
- }
+}
 @immutable final class WebSearchToolCallActionType$findInPage extends WebSearchToolCallActionType {const WebSearchToolCallActionType$findInPage._();
 
 @override String get value => 'find_in_page';
@@ -56,7 +56,7 @@ bool get isUnknown => this is WebSearchToolCallActionType$Unknown;
 
 @override String toString() => 'WebSearchToolCallActionType(find_in_page)';
 
- }
+}
 @immutable final class WebSearchToolCallActionType$Unknown extends WebSearchToolCallActionType {const WebSearchToolCallActionType$Unknown(this.value);
 
 @override final String value;
@@ -67,28 +67,28 @@ bool get isUnknown => this is WebSearchToolCallActionType$Unknown;
 
 @override String toString() => 'WebSearchToolCallActionType($value)';
 
- }
+}
 /// An object describing the specific action taken in this web search call.
 /// Includes details on how the model used the web (search, open_page, find_in_page).
 /// 
 sealed class WebSearchToolCallAction {const WebSearchToolCallAction();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory WebSearchToolCallAction.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory WebSearchToolCallAction.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'search' => WebSearchToolCallActionSearch.fromJson(json),
   'open_page' => WebSearchToolCallActionOpenPage.fromJson(json),
   'find_in_page' => WebSearchToolCallActionFindInPage.fromJson(json),
   _ => WebSearchToolCallAction$Unknown(json),
-}; }
+};}
 
 /// Build the `search` variant.
-factory WebSearchToolCallAction.search({required String query, List<String>? queries, List<Sources>? sources, }) { return WebSearchToolCallActionSearch(WebSearchActionSearch(type: WebSearchActionSearchType.fromJson('search'), query: query, queries: queries, sources: sources)); }
+factory WebSearchToolCallAction.search({required String query, List<String>? queries, List<Sources>? sources, }) {return WebSearchToolCallActionSearch(WebSearchActionSearch(type: WebSearchActionSearchType.fromJson('search'), query: query, queries: queries, sources: sources));}
 
 /// Build the `open_page` variant.
-factory WebSearchToolCallAction.openPage({Uri? url}) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage(type: WebSearchActionOpenPageType.fromJson('open_page'), url: url)); }
+factory WebSearchToolCallAction.openPage({Omittable<Uri?> url = const Omittable.absent()}) {return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage(type: WebSearchActionOpenPageType.fromJson('open_page'), url: url));}
 
 /// Build the `find_in_page` variant.
-factory WebSearchToolCallAction.findInPage({required Uri url, required String pattern, }) { return WebSearchToolCallActionFindInPage(WebSearchActionFind(type: WebSearchActionFindType.fromJson('find_in_page'), url: url, pattern: pattern)); }
+factory WebSearchToolCallAction.findInPage({required Uri url, required String pattern, }) {return WebSearchToolCallActionFindInPage(WebSearchActionFind(type: WebSearchActionFindType.fromJson('find_in_page'), url: url, pattern: pattern));}
 
 /// The discriminator value identifying this variant.
 WebSearchToolCallActionType get type;
@@ -96,16 +96,16 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is WebSearchToolCallAction$Unknown;
 
-R when<R>({required R Function(WebSearchToolCallActionSearch) search, required R Function(WebSearchToolCallActionOpenPage) openPage, required R Function(WebSearchToolCallActionFindInPage) findInPage, required R Function(WebSearchToolCallAction$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(WebSearchToolCallActionSearch) search, required R Function(WebSearchToolCallActionOpenPage) openPage, required R Function(WebSearchToolCallActionFindInPage) findInPage, required R Function(WebSearchToolCallAction$Unknown) unknown, }) {return switch (this) {
   final WebSearchToolCallActionSearch v => search(v),
   final WebSearchToolCallActionOpenPage v => openPage(v),
   final WebSearchToolCallActionFindInPage v => findInPage(v),
   final WebSearchToolCallAction$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class WebSearchToolCallActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionSearch(this.webSearchActionSearch);
 
-factory WebSearchToolCallActionSearch.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionSearch(WebSearchActionSearch.fromJson(json)); }
+factory WebSearchToolCallActionSearch.fromJson(Map<String, dynamic> json) {return WebSearchToolCallActionSearch(WebSearchActionSearch.fromJson(json));}
 
 final WebSearchActionSearch webSearchActionSearch;
 
@@ -113,11 +113,11 @@ final WebSearchActionSearch webSearchActionSearch;
 
 @override Map<String, dynamic> toJson() => {...webSearchActionSearch.toJson(), 'type': type.toJson()};
 
-WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()? queries, List<Sources>? Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
+WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()? queries, List<Sources>? Function()? sources, }) {return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
   query: query,
   queries: queries,
   sources: sources,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is WebSearchToolCallActionSearch && webSearchActionSearch == other.webSearchActionSearch;
 
@@ -125,10 +125,10 @@ WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()?
 
 @override String toString() => 'WebSearchToolCallAction.search($webSearchActionSearch)';
 
- }
+}
 @immutable final class WebSearchToolCallActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionOpenPage(this.webSearchActionOpenPage);
 
-factory WebSearchToolCallActionOpenPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage.fromJson(json)); }
+factory WebSearchToolCallActionOpenPage.fromJson(Map<String, dynamic> json) {return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage.fromJson(json));}
 
 final WebSearchActionOpenPage webSearchActionOpenPage;
 
@@ -136,9 +136,9 @@ final WebSearchActionOpenPage webSearchActionOpenPage;
 
 @override Map<String, dynamic> toJson() => {...webSearchActionOpenPage.toJson(), 'type': type.toJson()};
 
-WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
+WebSearchToolCallActionOpenPage copyWith({Omittable<Uri?>? url}) {return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
   url: url,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is WebSearchToolCallActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage;
 
@@ -146,10 +146,10 @@ WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSea
 
 @override String toString() => 'WebSearchToolCallAction.openPage($webSearchActionOpenPage)';
 
- }
+}
 @immutable final class WebSearchToolCallActionFindInPage extends WebSearchToolCallAction {const WebSearchToolCallActionFindInPage(this.webSearchActionFind);
 
-factory WebSearchToolCallActionFindInPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionFindInPage(WebSearchActionFind.fromJson(json)); }
+factory WebSearchToolCallActionFindInPage.fromJson(Map<String, dynamic> json) {return WebSearchToolCallActionFindInPage(WebSearchActionFind.fromJson(json));}
 
 final WebSearchActionFind webSearchActionFind;
 
@@ -157,10 +157,10 @@ final WebSearchActionFind webSearchActionFind;
 
 @override Map<String, dynamic> toJson() => {...webSearchActionFind.toJson(), 'type': type.toJson()};
 
-WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { return WebSearchToolCallActionFindInPage(webSearchActionFind.copyWith(
+WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) {return WebSearchToolCallActionFindInPage(webSearchActionFind.copyWith(
   url: url,
   pattern: pattern,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is WebSearchToolCallActionFindInPage && webSearchActionFind == other.webSearchActionFind;
 
@@ -168,7 +168,7 @@ WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { retu
 
 @override String toString() => 'WebSearchToolCallAction.findInPage($webSearchActionFind)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class WebSearchToolCallAction$Unknown extends WebSearchToolCallAction {const WebSearchToolCallAction$Unknown(this.json);
@@ -186,4 +186,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'WebSearchToolCallAction.unknown($json)';
 
- }
+}

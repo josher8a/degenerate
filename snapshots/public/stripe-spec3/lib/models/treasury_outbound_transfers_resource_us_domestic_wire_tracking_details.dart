@@ -2,49 +2,49 @@
 // Source: #/components/schemas/TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails {const TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails({this.chips, this.imad, this.omad, });
+@immutable final class TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails {const TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails({this.chips = const Omittable.absent(), this.imad = const Omittable.absent(), this.omad = const Omittable.absent(), });
 
-factory TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails(
-  chips: json['chips'] as String?,
-  imad: json['imad'] as String?,
-  omad: json['omad'] as String?,
-); }
+factory TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails.fromJson(Map<String, dynamic> json) {return TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails(
+  chips: json.containsKey('chips') ? Omittable(json['chips'] as String?) : const Omittable.absent(),
+  imad: json.containsKey('imad') ? Omittable(json['imad'] as String?) : const Omittable.absent(),
+  omad: json.containsKey('omad') ? Omittable(json['omad'] as String?) : const Omittable.absent(),
+);}
 
 /// CHIPS System Sequence Number (SSN) of the OutboundTransfer for transfers sent over the `us_domestic_wire` network.
-final String? chips;
+final Omittable<String?> chips;
 
 /// IMAD of the OutboundTransfer for transfers sent over the `us_domestic_wire` network.
-final String? imad;
+final Omittable<String?> imad;
 
 /// OMAD of the OutboundTransfer for transfers sent over the `us_domestic_wire` network.
-final String? omad;
+final Omittable<String?> omad;
 
-Map<String, dynamic> toJson() { return {
-  'chips': ?chips,
-  'imad': ?imad,
-  'omad': ?omad,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chips', 'imad', 'omad'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (chips.isPresent) 'chips': chips.value,
+  if (imad.isPresent) 'imad': imad.value,
+  if (omad.isPresent) 'omad': omad.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'chips', 'imad', 'omad'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final chips$ = chips;
+List<String> validate() {final errors = <String>[];
+final chips$ = chips.value;
 if (chips$ != null) {
   if (chips$.runes.length > 5000) { errors.add('chips: length must be <= 5000'); }
 }
-final imad$ = imad;
+final imad$ = imad.value;
 if (imad$ != null) {
   if (imad$.runes.length > 5000) { errors.add('imad: length must be <= 5000'); }
 }
-final omad$ = omad;
+final omad$ = omad.value;
 if (omad$ != null) {
   if (omad$.runes.length > 5000) { errors.add('omad: length must be <= 5000'); }
 }
-return errors; } 
-TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails copyWith({String? Function()? chips, String? Function()? imad, String? Function()? omad, }) { return TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails(
-  chips: chips != null ? chips() : this.chips,
-  imad: imad != null ? imad() : this.imad,
-  omad: omad != null ? omad() : this.omad,
-); } 
+return errors;}
+TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails copyWith({Omittable<String?>? chips, Omittable<String?>? imad, Omittable<String?>? omad, }) {return TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails(
+  chips: chips ?? this.chips,
+  imad: imad ?? this.imad,
+  omad: omad ?? this.omad,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails &&
           chips == other.chips &&
@@ -55,4 +55,4 @@ TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails copyWith({String?
 
 @override String toString() => 'TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails(chips: $chips, imad: $imad, omad: $omad)';
 
- }
+}

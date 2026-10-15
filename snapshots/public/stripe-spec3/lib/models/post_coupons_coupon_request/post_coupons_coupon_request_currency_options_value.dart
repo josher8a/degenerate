@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCouponsCouponRequestCurrencyOptionsValue {const PostCouponsCouponRequestCurrencyOptionsValue({required this.amountOff});
 
-factory PostCouponsCouponRequestCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostCouponsCouponRequestCurrencyOptionsValue(
+factory PostCouponsCouponRequestCurrencyOptionsValue.fromJson(Map<String, dynamic> json) {return PostCouponsCouponRequestCurrencyOptionsValue(
   amountOff: (json['amount_off'] as num).toInt(),
-); }
+);}
 
 final int amountOff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_off': amountOff,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_off') && json['amount_off'] is num; } 
-PostCouponsCouponRequestCurrencyOptionsValue copyWith({int? amountOff}) { return PostCouponsCouponRequestCurrencyOptionsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_off') && json['amount_off'] is num;}
+PostCouponsCouponRequestCurrencyOptionsValue copyWith({int? amountOff}) {return PostCouponsCouponRequestCurrencyOptionsValue(
   amountOff: amountOff ?? this.amountOff,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCouponsCouponRequestCurrencyOptionsValue &&
           amountOff == other.amountOff;
@@ -24,4 +24,4 @@ PostCouponsCouponRequestCurrencyOptionsValue copyWith({int? amountOff}) { return
 
 @override String toString() => 'PostCouponsCouponRequestCurrencyOptionsValue(amountOff: $amountOff)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';@immutable final class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse({required this.totalCount, required this.repositories, });
 
-factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) {return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<MinimalRepository> repositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'repositories': repositories.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('repositories'); } 
-CodespacesListRepositoriesForSecretForAuthenticatedUserResponse copyWith({int? totalCount, List<MinimalRepository>? repositories, }) { return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('repositories');}
+CodespacesListRepositoriesForSecretForAuthenticatedUserResponse copyWith({int? totalCount, List<MinimalRepository>? repositories, }) {return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
   totalCount: totalCount ?? this.totalCount,
   repositories: repositories ?? this.repositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesListRepositoriesForSecretForAuthenticatedUserResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ CodespacesListRepositoriesForSecretForAuthenticatedUserResponse copyWith({int? t
 
 @override String toString() => 'CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(totalCount: $totalCount, repositories: $repositories)';
 
- }
+}

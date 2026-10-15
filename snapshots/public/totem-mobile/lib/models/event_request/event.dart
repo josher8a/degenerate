@@ -246,24 +246,32 @@ sealed class Event {
   /// Build the `ban_participant` variant.
   factory Event.banParticipant({required String participantSlug}) {
     return EventBanParticipant(
-      BanParticipantEvent(participantSlug: participantSlug),
+      BanParticipantEvent(
+        type: 'ban_participant',
+        participantSlug: participantSlug,
+      ),
     );
   }
 
   /// Build the `end_room` variant.
   factory Event.endRoom({required EndReason reason}) {
-    return EventEndRoom(EndRoomEvent(reason: reason));
+    return EventEndRoom(EndRoomEvent(type: 'end_room', reason: reason));
   }
 
   /// Build the `reorder` variant.
   factory Event.reorder({required List<String> talkingOrder}) {
-    return EventReorder(ReorderEvent(talkingOrder: talkingOrder));
+    return EventReorder(
+      ReorderEvent(type: 'reorder', talkingOrder: talkingOrder),
+    );
   }
 
   /// Build the `unban_participant` variant.
   factory Event.unbanParticipant({required String participantSlug}) {
     return EventUnbanParticipant(
-      UnbanParticipantEvent(participantSlug: participantSlug),
+      UnbanParticipantEvent(
+        type: 'unban_participant',
+        participantSlug: participantSlug,
+      ),
     );
   }
 

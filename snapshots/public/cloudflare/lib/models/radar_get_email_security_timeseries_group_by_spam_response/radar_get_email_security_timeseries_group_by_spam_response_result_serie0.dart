@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0({required this.notSpam, required this.spam, });
 
-factory RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(
+factory RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(
   notSpam: (json['NOT_SPAM'] as List<dynamic>).map((e) => e as String).toList(),
   spam: (json['SPAM'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> notSpam;
 
 final List<String> spam;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'NOT_SPAM': notSpam,
   'SPAM': spam,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_SPAM') &&
-      json.containsKey('SPAM'); } 
-RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 copyWith({List<String>? notSpam, List<String>? spam, }) { return RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NOT_SPAM') &&
+      json.containsKey('SPAM');}
+RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 copyWith({List<String>? notSpam, List<String>? spam, }) {return RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(
   notSpam: notSpam ?? this.notSpam,
   spam: spam ?? this.spam,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 &&
           listEquals(notSpam, other.notSpam) &&
@@ -31,4 +31,4 @@ RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 copyWith({List<St
 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(notSpam: $notSpam, spam: $spam)';
 
- }
+}

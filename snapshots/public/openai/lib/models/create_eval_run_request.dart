@@ -1,38 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateEvalRunRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source.dart';import 'package:pub_openai/models/create_eval_run_request/data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source.dart';import 'package:pub_openai/models/create_eval_run_request/data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata = const Omittable.absent(), });
 
-factory CreateEvalRunRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRunRequest(
+factory CreateEvalRunRequest.fromJson(Map<String, dynamic> json) {return CreateEvalRunRequest(
   name: json['name'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   dataSource: switch (json['data_source']) {
   final Map<String, dynamic> m when m['type'] == 'jsonl' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.a(CreateEvalJsonlRunDataSource.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'completions' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.b(CreateEvalCompletionsRunDataSource.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'responses' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.c(CreateEvalResponsesRunDataSource.fromJson(m)),
   _ => OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
 },
-); }
+);}
 
 /// The name of the run.
 final String? name;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// Details about the run's data source.
 final DataSource dataSource;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'data_source': dataSource.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_source'); } 
-CreateEvalRunRequest copyWith({String? Function()? name, Map<String, String>? Function()? metadata, DataSource? dataSource, }) { return CreateEvalRunRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data_source');}
+CreateEvalRunRequest copyWith({String? Function()? name, Omittable<Map<String,String>?>? metadata, DataSource? dataSource, }) {return CreateEvalRunRequest(
   name: name != null ? name() : this.name,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   dataSource: dataSource ?? this.dataSource,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalRunRequest &&
           name == other.name &&
@@ -43,4 +43,4 @@ CreateEvalRunRequest copyWith({String? Function()? name, Map<String, String>? Fu
 
 @override String toString() => 'CreateEvalRunRequest(name: $name, metadata: $metadata, dataSource: $dataSource)';
 
- }
+}

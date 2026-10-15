@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/method.dart';/// The HTTP method we should use when calling the `async_amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 sealed class AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod();
 
-factory AsyncAmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory AsyncAmdStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AsyncAmdStatusCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const AsyncAmdStatusCallbackMethod $get = AsyncAmdStatusCallbackMethod$$get._();
 
@@ -17,30 +17,30 @@ static const AsyncAmdStatusCallbackMethod post = AsyncAmdStatusCallbackMethod$po
 static const List<AsyncAmdStatusCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AsyncAmdStatusCallbackMethod$Unknown; } 
+bool get isUnknown {return this is AsyncAmdStatusCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       AsyncAmdStatusCallbackMethod$$get() => $get(),
       AsyncAmdStatusCallbackMethod$post() => post(),
       AsyncAmdStatusCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       AsyncAmdStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       AsyncAmdStatusCallbackMethod$post() => post != null ? post() : orElse(value),
       AsyncAmdStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AsyncAmdStatusCallbackMethod($value)';
 
- }
+}
 @immutable final class AsyncAmdStatusCallbackMethod$$get extends AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class AsyncAmdStatusCallbackMethod$post extends AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class AsyncAmdStatusCallbackMethod$Unknown extends AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateCallRequest {const CreateCallRequest({required this.to, required this.from, this.recordingChannels, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackEvent, this.statusCallbackMethod, this.sendDigits, this.timeout, this.record, this.method, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.machineDetection, this.machineDetectionTimeout, this.recordingStatusCallbackEvent, this.trim, this.callerId, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.applicationSid, this.asyncAmd, this.asyncAmdStatusCallback, this.asyncAmdStatusCallbackMethod, this.byoc, this.callReason, this.callToken, this.recordingTrack, this.timeLimit, this.clientNotificationUrl, this.url, this.twiml, this.machineDetectionSilenceTimeout, });
 
-factory CreateCallRequest.fromJson(Map<String, dynamic> json) { return CreateCallRequest(
+factory CreateCallRequest.fromJson(Map<String, dynamic> json) {return CreateCallRequest(
   to: json['To'] as String,
   from: json['From'] as String,
   method: json['Method'] != null ? Method.fromJson(json['Method'] as String) : null,
@@ -108,7 +108,7 @@ factory CreateCallRequest.fromJson(Map<String, dynamic> json) { return CreateCal
   url: json['Url'] != null ? Uri.parse(json['Url'] as String) : null,
   twiml: json['Twiml'] as String?,
   applicationSid: json['ApplicationSid'] as String?,
-); }
+);}
 
 /// The phone number, SIP address, or client identifier to call.
 final String to;
@@ -218,7 +218,7 @@ final String? twiml;
 /// The SID of the Application resource that will handle the call, if the call will be handled by an application.
 final String? applicationSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'To': to,
   'From': from,
   if (method != null) 'Method': method?.toJson(),
@@ -255,11 +255,11 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'Url': url?.toString(),
   'Twiml': ?twiml,
   'ApplicationSid': ?applicationSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') && json['To'] is String &&
-      json.containsKey('From') && json['From'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('To') && json['To'] is String &&
+      json.containsKey('From') && json['From'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final byoc$ = byoc;
 if (byoc$ != null) {
   if (byoc$.runes.length < 34) { errors.add('byoc: length must be >= 34'); }
@@ -272,8 +272,8 @@ if (applicationSid$ != null) {
   if (applicationSid$.runes.length > 34) { errors.add('applicationSid: length must be <= 34'); }
   if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(applicationSid$)) { errors.add(r'applicationSid: must match pattern ^AP[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-CreateCallRequest copyWith({String? to, String? from, Method? Function()? method, Uri? Function()? fallbackUrl, FallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, List<String>? Function()? statusCallbackEvent, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? sendDigits, int? Function()? timeout, bool? Function()? record, String? Function()? recordingChannels, String? Function()? recordingStatusCallback, RecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, List<String>? Function()? recordingStatusCallbackEvent, String? Function()? trim, String? Function()? callerId, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, String? Function()? asyncAmd, Uri? Function()? asyncAmdStatusCallback, AsyncAmdStatusCallbackMethod? Function()? asyncAmdStatusCallbackMethod, String? Function()? byoc, String? Function()? callReason, String? Function()? callToken, String? Function()? recordingTrack, int? Function()? timeLimit, Uri? Function()? clientNotificationUrl, Uri? Function()? url, String? Function()? twiml, String? Function()? applicationSid, }) { return CreateCallRequest(
+return errors;}
+CreateCallRequest copyWith({String? to, String? from, Method? Function()? method, Uri? Function()? fallbackUrl, FallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, List<String>? Function()? statusCallbackEvent, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? sendDigits, int? Function()? timeout, bool? Function()? record, String? Function()? recordingChannels, String? Function()? recordingStatusCallback, RecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, List<String>? Function()? recordingStatusCallbackEvent, String? Function()? trim, String? Function()? callerId, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, String? Function()? asyncAmd, Uri? Function()? asyncAmdStatusCallback, AsyncAmdStatusCallbackMethod? Function()? asyncAmdStatusCallbackMethod, String? Function()? byoc, String? Function()? callReason, String? Function()? callToken, String? Function()? recordingTrack, int? Function()? timeLimit, Uri? Function()? clientNotificationUrl, Uri? Function()? url, String? Function()? twiml, String? Function()? applicationSid, }) {return CreateCallRequest(
   to: to ?? this.to,
   from: from ?? this.from,
   method: method != null ? method() : this.method,
@@ -310,7 +310,7 @@ CreateCallRequest copyWith({String? to, String? from, Method? Function()? method
   url: url != null ? url() : this.url,
   twiml: twiml != null ? twiml() : this.twiml,
   applicationSid: applicationSid != null ? applicationSid() : this.applicationSid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCallRequest &&
           to == other.to &&
@@ -354,4 +354,4 @@ CreateCallRequest copyWith({String? to, String? from, Method? Function()? method
 
 @override String toString() => 'CreateCallRequest(\n  to: $to,\n  from: $from,\n  method: $method,\n  fallbackUrl: $fallbackUrl,\n  fallbackMethod: $fallbackMethod,\n  statusCallback: $statusCallback,\n  statusCallbackEvent: $statusCallbackEvent,\n  statusCallbackMethod: $statusCallbackMethod,\n  sendDigits: $sendDigits,\n  timeout: $timeout,\n  record: $record,\n  recordingChannels: $recordingChannels,\n  recordingStatusCallback: $recordingStatusCallback,\n  recordingStatusCallbackMethod: $recordingStatusCallbackMethod,\n  sipAuthUsername: $sipAuthUsername,\n  sipAuthPassword: $sipAuthPassword,\n  machineDetection: $machineDetection,\n  machineDetectionTimeout: $machineDetectionTimeout,\n  recordingStatusCallbackEvent: $recordingStatusCallbackEvent,\n  trim: $trim,\n  callerId: $callerId,\n  machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold,\n  machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold,\n  machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout,\n  asyncAmd: $asyncAmd,\n  asyncAmdStatusCallback: $asyncAmdStatusCallback,\n  asyncAmdStatusCallbackMethod: $asyncAmdStatusCallbackMethod,\n  byoc: $byoc,\n  callReason: $callReason,\n  callToken: $callToken,\n  recordingTrack: $recordingTrack,\n  timeLimit: $timeLimit,\n  clientNotificationUrl: $clientNotificationUrl,\n  url: $url,\n  twiml: $twiml,\n  applicationSid: $applicationSid,\n)';
 
- }
+}

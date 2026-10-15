@@ -10,12 +10,12 @@ String toJson() => value;
 }
 @immutable final class ZeroTrustGatewaySettings {const ZeroTrustGatewaySettings({this.createdAt, this.publicKey, this.seedId, this.updatedAt, });
 
-factory ZeroTrustGatewaySettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySettings(
+factory ZeroTrustGatewaySettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewaySettings(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   publicKey: json['public_key'] != null ? ZeroTrustGatewayPublicKey.fromJson(json['public_key'] as String) : null,
   seedId: json['seed_id'] != null ? ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid.fromJson(json['seed_id'] as String) : null,
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
@@ -27,19 +27,19 @@ final ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid? seedId;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (publicKey != null) 'public_key': publicKey?.toJson(),
   if (seedId != null) 'seed_id': seedId?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'public_key', 'seed_id', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewaySettings copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayPublicKey? Function()? publicKey, ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid? Function()? seedId, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewaySettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'public_key', 'seed_id', 'updated_at'}.contains(key));}
+ZeroTrustGatewaySettings copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayPublicKey? Function()? publicKey, ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid? Function()? seedId, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) {return ZeroTrustGatewaySettings(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
   seedId: seedId != null ? seedId() : this.seedId,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewaySettings &&
           createdAt == other.createdAt &&
@@ -51,4 +51,4 @@ ZeroTrustGatewaySettings copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()
 
 @override String toString() => 'ZeroTrustGatewaySettings(createdAt: $createdAt, publicKey: $publicKey, seedId: $seedId, updatedAt: $updatedAt)';
 
- }
+}

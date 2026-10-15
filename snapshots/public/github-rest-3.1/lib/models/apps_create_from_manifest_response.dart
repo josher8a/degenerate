@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_owner.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_permissions.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class AppsCreateFromManifestResponse {const AppsCreateFromManifestResponse({required this.id, required this.nodeId, required this.clientId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, required this.clientSecret, required this.webhookSecret, required this.pem, this.slug, this.installationsCount, this.additionalProperties = const {}, });
 
-factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) { return AppsCreateFromManifestResponse(
+factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) {return AppsCreateFromManifestResponse(
   id: (json['id'] as num).toInt(),
   slug: json['slug'] as String?,
   nodeId: json['node_id'] as String,
@@ -22,7 +22,7 @@ factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) { ret
   webhookSecret: json['webhook_secret'] as String?,
   pem: json['pem'] as String,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'id', 'slug', 'node_id', 'client_id', 'owner', 'name', 'description', 'external_url', 'html_url', 'created_at', 'updated_at', 'permissions', 'events', 'installations_count', 'client_secret', 'webhook_secret', 'pem'}.contains(e.key))),
-); }
+);}
 
 /// Unique identifier of the GitHub app
 final int id;
@@ -78,7 +78,7 @@ final String pem;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'slug': ?slug,
   'node_id': nodeId,
@@ -97,13 +97,13 @@ Map<String, dynamic> toJson() { return {
   'webhook_secret': webhookSecret,
   'pem': pem,
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('owner') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('external_url') && json['external_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -111,9 +111,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('permissions') &&
       json.containsKey('events') &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
-      json.containsKey('webhook_secret') && json['webhook_secret'] is String &&
-      json.containsKey('pem') && json['pem'] is String; } 
-AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int? Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, Map<String, dynamic>? additionalProperties, }) { return AppsCreateFromManifestResponse(
+      json.containsKey('webhook_secret') && (json['webhook_secret'] == null || json['webhook_secret'] is String) &&
+      json.containsKey('pem') && json['pem'] is String;}
+AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int? Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, Map<String, dynamic>? additionalProperties, }) {return AppsCreateFromManifestResponse(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,
@@ -132,7 +132,7 @@ AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, Stri
   webhookSecret: webhookSecret != null ? webhookSecret() : this.webhookSecret,
   pem: pem ?? this.pem,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCreateFromManifestResponse &&
           id == other.id &&
@@ -154,8 +154,8 @@ AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, Stri
           pem == other.pem &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, mapHash(additionalProperties));
 
 @override String toString() => 'AppsCreateFromManifestResponse(\n  id: $id,\n  slug: $slug,\n  nodeId: $nodeId,\n  clientId: $clientId,\n  owner: $owner,\n  name: $name,\n  description: $description,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  permissions: $permissions,\n  events: $events,\n  installationsCount: $installationsCount,\n  clientSecret: $clientSecret,\n  webhookSecret: $webhookSecret,\n  pem: $pem,\n  additionalProperties: $additionalProperties,\n)';
 
- }
+}

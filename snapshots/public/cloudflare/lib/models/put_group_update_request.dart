@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutGroupUpdateRequest {const PutGroupUpdateRequest({required this.description, required this.name, });
 
-factory PutGroupUpdateRequest.fromJson(Map<String, dynamic> json) { return PutGroupUpdateRequest(
+factory PutGroupUpdateRequest.fromJson(Map<String, dynamic> json) {return PutGroupUpdateRequest(
   description: json['description'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// Example: `'Cloudforce subscribers'`
 final String description;
@@ -14,16 +14,16 @@ final String description;
 /// Example: `'cloudforce-subscribers'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-PutGroupUpdateRequest copyWith({String? description, String? name, }) { return PutGroupUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+PutGroupUpdateRequest copyWith({String? description, String? name, }) {return PutGroupUpdateRequest(
   description: description ?? this.description,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PutGroupUpdateRequest &&
           description == other.description &&
@@ -33,4 +33,4 @@ PutGroupUpdateRequest copyWith({String? description, String? name, }) { return P
 
 @override String toString() => 'PutGroupUpdateRequest(description: $description, name: $name)';
 
- }
+}

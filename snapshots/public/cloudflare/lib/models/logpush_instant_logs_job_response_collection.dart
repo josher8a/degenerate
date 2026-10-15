@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_instant_logs_job.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class LogpushInstantLogsJobResponseCollection {const LogpushInstantLogsJobResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
-factory LogpushInstantLogsJobResponseCollection.fromJson(Map<String, dynamic> json) { return LogpushInstantLogsJobResponseCollection(
+factory LogpushInstantLogsJobResponseCollection.fromJson(Map<String, dynamic> json) {return LogpushInstantLogsJobResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as List<dynamic>?)?.map((e) => LogpushInstantLogsJob.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+  result: (json['result'] as List<dynamic>?)?.map((e) => e == null ? null : LogpushInstantLogsJob.fromJson(e as Map<String, dynamic>)).toList(),
+);}
 
 final List<LogpushMessages2> errors;
 
@@ -19,23 +19,23 @@ final List<LogpushMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final List<LogpushInstantLogsJob>? result;
+final List<LogpushInstantLogsJob?>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+  if (result != null) 'result': result?.map((e) => e?.toJson()).toList(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-LogpushInstantLogsJobResponseCollection copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, List<LogpushInstantLogsJob>? Function()? result, }) { return LogpushInstantLogsJobResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+LogpushInstantLogsJobResponseCollection copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, List<LogpushInstantLogsJob?>? Function()? result, }) {return LogpushInstantLogsJobResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushInstantLogsJobResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ LogpushInstantLogsJobResponseCollection copyWith({List<LogpushMessages2>? errors
 
 @override String toString() => 'LogpushInstantLogsJobResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

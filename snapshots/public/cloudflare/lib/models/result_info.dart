@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultInfo {const ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
-factory ResultInfo.fromJson(Map<String, dynamic> json) { return ResultInfo(
+factory ResultInfo.fromJson(Map<String, dynamic> json) {return ResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   page: json['page'] != null ? (json['page'] as num).toDouble() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toDouble() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toDouble() : null,
-); }
+);}
 
 /// Total number of results for the requested service
 /// 
@@ -30,19 +30,19 @@ final double? perPage;
 /// Example: `2000`
 final double? totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'page': ?page,
   'per_page': ?perPage,
   'total_count': ?totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key)); } 
-ResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, }) { return ResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key));}
+ResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, }) {return ResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultInfo &&
           count == other.count &&
@@ -54,4 +54,4 @@ ResultInfo copyWith({double? Function()? count, double? Function()? page, double
 
 @override String toString() => 'ResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
 
- }
+}

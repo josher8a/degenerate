@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/page_build/page_build_error.dart';import 'package:pub_github_rest_3_1/models/webhook_page_build/build_pusher.dart';/// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
 @immutable final class Build {const Build({required this.commit, required this.createdAt, required this.duration, required this.error, required this.pusher, required this.status, required this.updatedAt, required this.url, });
 
-factory Build.fromJson(Map<String, dynamic> json) { return Build(
+factory Build.fromJson(Map<String, dynamic> json) {return Build(
   commit: json['commit'] as String?,
   createdAt: json['created_at'] as String,
   duration: (json['duration'] as num).toInt(),
@@ -13,7 +13,7 @@ factory Build.fromJson(Map<String, dynamic> json) { return Build(
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String? commit;
 
@@ -31,7 +31,7 @@ final String updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'commit': commit,
   'created_at': createdAt,
   'duration': duration,
@@ -40,16 +40,16 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'updated_at': updatedAt,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit') && json['commit'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('commit') && (json['commit'] == null || json['commit'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('error') &&
       json.containsKey('pusher') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-Build copyWith({String? Function()? commit, String? createdAt, int? duration, PageBuildError? error, BuildPusher? Function()? pusher, String? status, String? updatedAt, Uri? url, }) { return Build(
+      json.containsKey('url') && json['url'] is String;}
+Build copyWith({String? Function()? commit, String? createdAt, int? duration, PageBuildError? error, BuildPusher? Function()? pusher, String? status, String? updatedAt, Uri? url, }) {return Build(
   commit: commit != null ? commit() : this.commit,
   createdAt: createdAt ?? this.createdAt,
   duration: duration ?? this.duration,
@@ -58,7 +58,7 @@ Build copyWith({String? Function()? commit, String? createdAt, int? duration, Pa
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Build &&
           commit == other.commit &&
@@ -74,4 +74,4 @@ Build copyWith({String? Function()? commit, String? createdAt, int? duration, Pa
 
 @override String toString() => 'Build(commit: $commit, createdAt: $createdAt, duration: $duration, error: $error, pusher: $pusher, status: $status, updatedAt: $updatedAt, url: $url)';
 
- }
+}

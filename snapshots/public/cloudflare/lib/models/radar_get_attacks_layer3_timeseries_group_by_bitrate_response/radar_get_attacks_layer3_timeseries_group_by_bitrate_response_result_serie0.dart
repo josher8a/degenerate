@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, required this.timestamps, });
 
-factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(
+factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(
   $1GbpsTo10Gbps: (json['_1_GBPS_TO_10_GBPS'] as List<dynamic>).map((e) => e as String).toList(),
   $10GbpsTo100Gbps: (json['_10_GBPS_TO_100_GBPS'] as List<dynamic>).map((e) => e as String).toList(),
   $500MbpsTo1Gbps: (json['_500_MBPS_TO_1_GBPS'] as List<dynamic>).map((e) => e as String).toList(),
   over100Gbps: (json['OVER_100_GBPS'] as List<dynamic>).map((e) => e as String).toList(),
   under500Mbps: (json['UNDER_500_MBPS'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> $1GbpsTo10Gbps;
 
@@ -24,28 +24,28 @@ final List<String> under500Mbps;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_1_GBPS_TO_10_GBPS': $1GbpsTo10Gbps,
   '_10_GBPS_TO_100_GBPS': $10GbpsTo100Gbps,
   '_500_MBPS_TO_1_GBPS': $500MbpsTo1Gbps,
   'OVER_100_GBPS': over100Gbps,
   'UNDER_500_MBPS': under500Mbps,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_1_GBPS_TO_10_GBPS') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_1_GBPS_TO_10_GBPS') &&
       json.containsKey('_10_GBPS_TO_100_GBPS') &&
       json.containsKey('_500_MBPS_TO_1_GBPS') &&
       json.containsKey('OVER_100_GBPS') &&
       json.containsKey('UNDER_500_MBPS') &&
-      json.containsKey('timestamps'); } 
-RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 copyWith({List<String>? $1GbpsTo10Gbps, List<String>? $10GbpsTo100Gbps, List<String>? $500MbpsTo1Gbps, List<String>? over100Gbps, List<String>? under500Mbps, List<DateTime>? timestamps, }) { return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 copyWith({List<String>? $1GbpsTo10Gbps, List<String>? $10GbpsTo100Gbps, List<String>? $500MbpsTo1Gbps, List<String>? over100Gbps, List<String>? under500Mbps, List<DateTime>? timestamps, }) {return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(
   $1GbpsTo10Gbps: $1GbpsTo10Gbps ?? this.$1GbpsTo10Gbps,
   $10GbpsTo100Gbps: $10GbpsTo100Gbps ?? this.$10GbpsTo100Gbps,
   $500MbpsTo1Gbps: $500MbpsTo1Gbps ?? this.$500MbpsTo1Gbps,
   over100Gbps: over100Gbps ?? this.over100Gbps,
   under500Mbps: under500Mbps ?? this.under500Mbps,
   timestamps: timestamps ?? this.timestamps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 &&
           listEquals($1GbpsTo10Gbps, other.$1GbpsTo10Gbps) &&
@@ -59,4 +59,4 @@ RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 copyWith({List
 
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps, timestamps: $timestamps)';
 
- }
+}

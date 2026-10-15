@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType();
 
-factory DlpRiskScoreIntegrationType.fromJson(String json) { return switch (json) {
+factory DlpRiskScoreIntegrationType.fromJson(String json) {return switch (json) {
   'Okta' => okta,
   _ => DlpRiskScoreIntegrationType$Unknown(json),
-}; }
+};}
 
 static const DlpRiskScoreIntegrationType okta = DlpRiskScoreIntegrationType$okta._();
 
 static const List<DlpRiskScoreIntegrationType> values = [okta];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Okta' => 'okta',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DlpRiskScoreIntegrationType$Unknown; } 
+bool get isUnknown {return this is DlpRiskScoreIntegrationType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() okta, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() okta, required W Function(String value) $unknown, }) {return switch (this) {
       DlpRiskScoreIntegrationType$okta() => okta(),
       DlpRiskScoreIntegrationType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? okta, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? okta, W Function(String value)? $unknown, }) {return switch (this) {
       DlpRiskScoreIntegrationType$okta() => okta != null ? okta() : orElse(value),
       DlpRiskScoreIntegrationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DlpRiskScoreIntegrationType($value)';
 
- }
+}
 @immutable final class DlpRiskScoreIntegrationType$okta extends DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType$okta._();
 
 @override String get value => 'Okta';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? okta, W 
 
 @override int get hashCode => 'Okta'.hashCode;
 
- }
+}
 @immutable final class DlpRiskScoreIntegrationType$Unknown extends DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? okta, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

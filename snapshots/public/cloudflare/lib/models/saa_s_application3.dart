@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_oidc_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_saas_props/access_schemas_saas_props_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_saml_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class SaaSApplication3 {const SaaSApplication3({this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.logoUrl, this.name, this.saasApp, this.type, });
 
-factory SaaSApplication3.fromJson(Map<String, dynamic> json) { return SaaSApplication3(
+factory SaaSApplication3.fromJson(Map<String, dynamic> json) {return SaaSApplication3(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -16,7 +16,7 @@ factory SaaSApplication3.fromJson(Map<String, dynamic> json) { return SaaSApplic
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   saasApp: json['saas_app'] != null ? OneOf2.parse(json['saas_app'], fromA: (v) => AccessSchemasSamlSaasApp.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasOidcSaasApp.fromJson(v as Map<String, dynamic>),) : null,
   type: json['type'] as String?,
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -47,7 +47,7 @@ final AccessSchemasSaasPropsSaasApp? saasApp;
 /// Example: `'saas'`
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (saasApp != null) 'saas_app': saasApp?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'created_at', 'id', 'scim_config', 'updated_at', 'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'logo_url', 'name', 'saas_app', 'type'}.contains(key)); } 
-SaaSApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSaasPropsSaasApp? Function()? saasApp, String? Function()? type, }) { return SaaSApplication3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'aud', 'created_at', 'id', 'scim_config', 'updated_at', 'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'logo_url', 'name', 'saas_app', 'type'}.contains(key));}
+SaaSApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSaasPropsSaasApp? Function()? saasApp, String? Function()? type, }) {return SaaSApplication3(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -75,7 +75,7 @@ SaaSApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? F
   name: name != null ? name() : this.name,
   saasApp: saasApp != null ? saasApp() : this.saasApp,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SaaSApplication3 &&
           aud == other.aud &&
@@ -95,4 +95,4 @@ SaaSApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? F
 
 @override String toString() => 'SaaSApplication3(\n  aud: $aud,\n  createdAt: $createdAt,\n  id: $id,\n  scimConfig: $scimConfig,\n  updatedAt: $updatedAt,\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  logoUrl: $logoUrl,\n  name: $name,\n  saasApp: $saasApp,\n  type: $type,\n)';
 
- }
+}

@@ -26,13 +26,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
 
-factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequest(
+factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) {return PagesProjectUpdateProjectRequest(
   buildConfig: json['build_config'] != null ? BuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
   deploymentConfigs: json['deployment_configs'] != null ? PagesProjectCreateProjectRequestDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   productionBranch: json['production_branch'] as String?,
   source: json['source'] != null ? PagesProjectCreateProjectRequestSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Configs for the project build process.
 final BuildConfig? buildConfig;
@@ -53,21 +53,21 @@ final String? productionBranch;
 /// Configs for the project source control.
 final PagesProjectCreateProjectRequestSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
   if (deploymentConfigs != null) 'deployment_configs': deploymentConfigs?.toJson(),
   'name': ?name,
   'production_branch': ?productionBranch,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_config', 'deployment_configs', 'name', 'production_branch', 'source'}.contains(key)); } 
-PagesProjectUpdateProjectRequest copyWith({BuildConfig? Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs? Function()? deploymentConfigs, String? Function()? name, String? Function()? productionBranch, PagesProjectCreateProjectRequestSource? Function()? source, }) { return PagesProjectUpdateProjectRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'build_config', 'deployment_configs', 'name', 'production_branch', 'source'}.contains(key));}
+PagesProjectUpdateProjectRequest copyWith({BuildConfig? Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs? Function()? deploymentConfigs, String? Function()? name, String? Function()? productionBranch, PagesProjectCreateProjectRequestSource? Function()? source, }) {return PagesProjectUpdateProjectRequest(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   deploymentConfigs: deploymentConfigs != null ? deploymentConfigs() : this.deploymentConfigs,
   name: name != null ? name() : this.name,
   productionBranch: productionBranch != null ? productionBranch() : this.productionBranch,
   source: source != null ? source() : this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesProjectUpdateProjectRequest &&
           buildConfig == other.buildConfig &&
@@ -80,4 +80,4 @@ PagesProjectUpdateProjectRequest copyWith({BuildConfig? Function()? buildConfig,
 
 @override String toString() => 'PagesProjectUpdateProjectRequest(buildConfig: $buildConfig, deploymentConfigs: $deploymentConfigs, name: $name, productionBranch: $productionBranch, source: $source)';
 
- }
+}

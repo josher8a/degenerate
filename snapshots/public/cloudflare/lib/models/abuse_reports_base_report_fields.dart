@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_submission_report_type.dart';@immutable final class AbuseReportsBaseReportFields {const AbuseReportsBaseReportFields({required this.act, required this.email, required this.email2, required this.name, required this.urls, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 
-factory AbuseReportsBaseReportFields.fromJson(Map<String, dynamic> json) { return AbuseReportsBaseReportFields(
+factory AbuseReportsBaseReportFields.fromJson(Map<String, dynamic> json) {return AbuseReportsBaseReportFields(
   act: AbuseReportsSubmissionReportType.fromJson(json['act'] as String),
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -15,7 +15,7 @@ factory AbuseReportsBaseReportFields.fromJson(Map<String, dynamic> json) { retur
   tele: json['tele'] as String?,
   title: json['title'] as String?,
   urls: json['urls'] as String,
-); }
+);}
 
 final AbuseReportsSubmissionReportType act;
 
@@ -49,7 +49,7 @@ final String? title;
 /// A list of valid URLs separated by ‘\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 final String urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act.toJson(),
   'comments': ?comments,
   'company': ?company,
@@ -61,14 +61,14 @@ Map<String, dynamic> toJson() { return {
   'tele': ?tele,
   'title': ?title,
   'urls': urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('urls') && json['urls'] is String; } 
+      json.containsKey('urls') && json['urls'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -101,8 +101,8 @@ if (title$ != null) {
   if (title$.isEmpty) { errors.add('title: length must be >= 1'); }
   if (title$.runes.length > 255) { errors.add('title: length must be <= 255'); }
 }
-return errors; } 
-AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsBaseReportFields(
+return errors;}
+AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) {return AbuseReportsBaseReportFields(
   act: act ?? this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -114,7 +114,7 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
   tele: tele != null ? tele() : this.tele,
   title: title != null ? title() : this.title,
   urls: urls ?? this.urls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsBaseReportFields &&
           act == other.act &&
@@ -133,4 +133,4 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
 
 @override String toString() => 'AbuseReportsBaseReportFields(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n)';
 
- }
+}

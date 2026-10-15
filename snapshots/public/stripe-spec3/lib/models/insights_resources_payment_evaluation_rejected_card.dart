@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_address_line1_check.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_address_postal_code_check.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_cvc_check.dart';/// Card issuer's reason for the network decline.
 sealed class InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason();
 
-factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String json) {return switch (json) {
   'authentication_failed' => authenticationFailed,
   'do_not_honor' => doNotHonor,
   'expired' => expired,
@@ -19,7 +19,7 @@ factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String jso
   'reported_stolen' => reportedStolen,
   'try_again_later' => tryAgainLater,
   _ => InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationRejectedCardReason authenticationFailed = InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed._();
 
@@ -50,9 +50,9 @@ static const InsightsResourcesPaymentEvaluationRejectedCardReason tryAgainLater 
 static const List<InsightsResourcesPaymentEvaluationRejectedCardReason> values = [authenticationFailed, doNotHonor, expired, incorrectCvc, incorrectNumber, incorrectPostalCode, insufficientFunds, invalidAccount, lostCard, $other, processingError, reportedStolen, tryAgainLater];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'authentication_failed' => 'authenticationFailed',
   'do_not_honor' => 'doNotHonor',
   'expired' => 'expired',
@@ -67,11 +67,11 @@ String get name { return switch (value) {
   'reported_stolen' => 'reportedStolen',
   'try_again_later' => 'tryAgainLater',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown; } 
+bool get isUnknown {return this is InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() authenticationFailed, required W Function() doNotHonor, required W Function() expired, required W Function() incorrectCvc, required W Function() incorrectNumber, required W Function() incorrectPostalCode, required W Function() insufficientFunds, required W Function() invalidAccount, required W Function() lostCard, required W Function() $other, required W Function() processingError, required W Function() reportedStolen, required W Function() tryAgainLater, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() authenticationFailed, required W Function() doNotHonor, required W Function() expired, required W Function() incorrectCvc, required W Function() incorrectNumber, required W Function() incorrectPostalCode, required W Function() insufficientFunds, required W Function() invalidAccount, required W Function() lostCard, required W Function() $other, required W Function() processingError, required W Function() reportedStolen, required W Function() tryAgainLater, required W Function(String value) $unknown, }) {return switch (this) {
       InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed() => authenticationFailed(),
       InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor() => doNotHonor(),
       InsightsResourcesPaymentEvaluationRejectedCardReason$expired() => expired(),
@@ -86,9 +86,9 @@ W when<W>({required W Function() authenticationFailed, required W Function() doN
       InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen() => reportedStolen(),
       InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater() => tryAgainLater(),
       InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenticationFailed, W Function()? doNotHonor, W Function()? expired, W Function()? incorrectCvc, W Function()? incorrectNumber, W Function()? incorrectPostalCode, W Function()? insufficientFunds, W Function()? invalidAccount, W Function()? lostCard, W Function()? $other, W Function()? processingError, W Function()? reportedStolen, W Function()? tryAgainLater, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenticationFailed, W Function()? doNotHonor, W Function()? expired, W Function()? incorrectCvc, W Function()? incorrectNumber, W Function()? incorrectPostalCode, W Function()? insufficientFunds, W Function()? invalidAccount, W Function()? lostCard, W Function()? $other, W Function()? processingError, W Function()? reportedStolen, W Function()? tryAgainLater, W Function(String value)? $unknown, }) {return switch (this) {
       InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed() => authenticationFailed != null ? authenticationFailed() : orElse(value),
       InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor() => doNotHonor != null ? doNotHonor() : orElse(value),
       InsightsResourcesPaymentEvaluationRejectedCardReason$expired() => expired != null ? expired() : orElse(value),
@@ -103,10 +103,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
       InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen() => reportedStolen != null ? reportedStolen() : orElse(value),
       InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater() => tryAgainLater != null ? tryAgainLater() : orElse(value),
       InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)';
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed._();
 
 @override String get value => 'authentication_failed';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'authentication_failed'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor._();
 
 @override String get value => 'do_not_honor';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'do_not_honor'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$expired extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$expired._();
 
 @override String get value => 'expired';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc._();
 
 @override String get value => 'incorrect_cvc';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'incorrect_cvc'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber._();
 
 @override String get value => 'incorrect_number';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'incorrect_number'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode._();
 
 @override String get value => 'incorrect_postal_code';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'incorrect_postal_code'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds._();
 
 @override String get value => 'insufficient_funds';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'insufficient_funds'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount._();
 
 @override String get value => 'invalid_account';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'invalid_account'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard._();
 
 @override String get value => 'lost_card';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'lost_card'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$$other extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$$other._();
 
 @override String get value => 'other';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$processingError extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$processingError._();
 
 @override String get value => 'processing_error';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'processing_error'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen._();
 
 @override String get value => 'reported_stolen';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'reported_stolen'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater._();
 
 @override String get value => 'try_again_later';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => 'try_again_later'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(this.value);
 
 @override final String value;
@@ -233,16 +233,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenti
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details of an rejected card outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCard {const InsightsResourcesPaymentEvaluationRejectedCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.reason, });
 
-factory InsightsResourcesPaymentEvaluationRejectedCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationRejectedCard(
+factory InsightsResourcesPaymentEvaluationRejectedCard.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationRejectedCard(
   addressLine1Check: InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check.fromJson(json['address_line1_check'] as String),
   addressPostalCodeCheck: InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
   cvcCheck: InsightsResourcesPaymentEvaluationRejectedCardCvcCheck.fromJson(json['cvc_check'] as String),
   reason: InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// Result of the address line 1 check.
 final InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check addressLine1Check;
@@ -256,22 +256,22 @@ final InsightsResourcesPaymentEvaluationRejectedCardCvcCheck cvcCheck;
 /// Card issuer's reason for the network decline.
 final InsightsResourcesPaymentEvaluationRejectedCardReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_line1_check': addressLine1Check.toJson(),
   'address_postal_code_check': addressPostalCodeCheck.toJson(),
   'cvc_check': cvcCheck.toJson(),
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address_line1_check') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address_line1_check') &&
       json.containsKey('address_postal_code_check') &&
       json.containsKey('cvc_check') &&
-      json.containsKey('reason'); } 
-InsightsResourcesPaymentEvaluationRejectedCard copyWith({InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check? addressLine1Check, InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck? addressPostalCodeCheck, InsightsResourcesPaymentEvaluationRejectedCardCvcCheck? cvcCheck, InsightsResourcesPaymentEvaluationRejectedCardReason? reason, }) { return InsightsResourcesPaymentEvaluationRejectedCard(
+      json.containsKey('reason');}
+InsightsResourcesPaymentEvaluationRejectedCard copyWith({InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check? addressLine1Check, InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck? addressPostalCodeCheck, InsightsResourcesPaymentEvaluationRejectedCardCvcCheck? cvcCheck, InsightsResourcesPaymentEvaluationRejectedCardReason? reason, }) {return InsightsResourcesPaymentEvaluationRejectedCard(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
   cvcCheck: cvcCheck ?? this.cvcCheck,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationRejectedCard &&
           addressLine1Check == other.addressLine1Check &&
@@ -283,4 +283,4 @@ InsightsResourcesPaymentEvaluationRejectedCard copyWith({InsightsResourcesPaymen
 
 @override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck, reason: $reason)';
 
- }
+}

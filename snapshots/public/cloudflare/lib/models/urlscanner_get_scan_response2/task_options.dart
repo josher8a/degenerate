@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TaskOptions {const TaskOptions({this.customHeaders, this.screenshotsResolutions, });
 
-factory TaskOptions.fromJson(Map<String, dynamic> json) { return TaskOptions(
+factory TaskOptions.fromJson(Map<String, dynamic> json) {return TaskOptions(
   customHeaders: json['customHeaders'] as Map<String, dynamic>?,
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Custom headers set.
 final Map<String,dynamic>? customHeaders;
 
 final List<String>? screenshotsResolutions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customHeaders': ?customHeaders,
   'screenshotsResolutions': ?screenshotsResolutions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customHeaders', 'screenshotsResolutions'}.contains(key)); } 
-TaskOptions copyWith({Map<String, dynamic>? Function()? customHeaders, List<String>? Function()? screenshotsResolutions, }) { return TaskOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customHeaders', 'screenshotsResolutions'}.contains(key));}
+TaskOptions copyWith({Map<String, dynamic>? Function()? customHeaders, List<String>? Function()? screenshotsResolutions, }) {return TaskOptions(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaskOptions &&
           customHeaders == other.customHeaders &&
@@ -31,4 +31,4 @@ TaskOptions copyWith({Map<String, dynamic>? Function()? customHeaders, List<Stri
 
 @override String toString() => 'TaskOptions(customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions)';
 
- }
+}

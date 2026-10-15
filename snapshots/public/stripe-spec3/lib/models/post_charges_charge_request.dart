@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostChargesChargeRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/fraud_details.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';@immutable final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/fraud_details.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';@immutable final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
 
-factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequest(
+factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) {return PostChargesChargeRequest(
   customer: json['customer'] as String?,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fraudDetails: json['fraud_details'] != null ? FraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   receiptEmail: json['receipt_email'] as String?,
   shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// The ID of an existing customer that will be associated with this request. This field may only be updated if there is no existing associated customer with this charge.
 final String? customer;
@@ -38,7 +38,7 @@ final PostChargesChargeRequestShipping? shipping;
 /// A string that identifies this transaction as part of a group. `transfer_group` may only be provided if it has not been set. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer': ?customer,
   'description': ?description,
   'expand': ?expand,
@@ -47,10 +47,10 @@ Map<String, dynamic> toJson() { return {
   'receipt_email': ?receiptEmail,
   if (shipping != null) 'shipping': shipping?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'description', 'expand', 'fraud_details', 'metadata', 'receipt_email', 'shipping', 'transfer_group'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer', 'description', 'expand', 'fraud_details', 'metadata', 'receipt_email', 'shipping', 'transfer_group'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -63,8 +63,8 @@ final receiptEmail$ = receiptEmail;
 if (receiptEmail$ != null) {
   if (receiptEmail$.runes.length > 5000) { errors.add('receiptEmail: length must be <= 5000'); }
 }
-return errors; } 
-PostChargesChargeRequest copyWith({String? Function()? customer, String? Function()? description, List<String>? Function()? expand, FraudDetails? Function()? fraudDetails, Metadata? Function()? metadata, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? transferGroup, }) { return PostChargesChargeRequest(
+return errors;}
+PostChargesChargeRequest copyWith({String? Function()? customer, String? Function()? description, List<String>? Function()? expand, FraudDetails? Function()? fraudDetails, Metadata? Function()? metadata, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? transferGroup, }) {return PostChargesChargeRequest(
   customer: customer != null ? customer() : this.customer,
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,
@@ -73,7 +73,7 @@ PostChargesChargeRequest copyWith({String? Function()? customer, String? Functio
   receiptEmail: receiptEmail != null ? receiptEmail() : this.receiptEmail,
   shipping: shipping != null ? shipping() : this.shipping,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeRequest &&
           customer == other.customer &&
@@ -89,4 +89,4 @@ PostChargesChargeRequest copyWith({String? Function()? customer, String? Functio
 
 @override String toString() => 'PostChargesChargeRequest(customer: $customer, description: $description, expand: $expand, fraudDetails: $fraudDetails, metadata: $metadata, receiptEmail: $receiptEmail, shipping: $shipping, transferGroup: $transferGroup)';
 
- }
+}

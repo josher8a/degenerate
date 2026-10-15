@@ -2,61 +2,61 @@
 // Source: #/components/schemas/RadarReviewResourceLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class RadarReviewResourceLocation {const RadarReviewResourceLocation({this.city, this.country, this.latitude, this.longitude, this.region, });
+@immutable final class RadarReviewResourceLocation {const RadarReviewResourceLocation({this.city = const Omittable.absent(), this.country = const Omittable.absent(), this.latitude = const Omittable.absent(), this.longitude = const Omittable.absent(), this.region = const Omittable.absent(), });
 
-factory RadarReviewResourceLocation.fromJson(Map<String, dynamic> json) { return RadarReviewResourceLocation(
-  city: json['city'] as String?,
-  country: json['country'] as String?,
-  latitude: json['latitude'] != null ? (json['latitude'] as num).toDouble() : null,
-  longitude: json['longitude'] != null ? (json['longitude'] as num).toDouble() : null,
-  region: json['region'] as String?,
-); }
+factory RadarReviewResourceLocation.fromJson(Map<String, dynamic> json) {return RadarReviewResourceLocation(
+  city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  latitude: json.containsKey('latitude') ? Omittable(json['latitude'] != null ? (json['latitude'] as num).toDouble() : null) : const Omittable.absent(),
+  longitude: json.containsKey('longitude') ? Omittable(json['longitude'] != null ? (json['longitude'] as num).toDouble() : null) : const Omittable.absent(),
+  region: json.containsKey('region') ? Omittable(json['region'] as String?) : const Omittable.absent(),
+);}
 
 /// The city where the payment originated.
-final String? city;
+final Omittable<String?> city;
 
 /// Two-letter ISO code representing the country where the payment originated.
-final String? country;
+final Omittable<String?> country;
 
 /// The geographic latitude where the payment originated.
-final double? latitude;
+final Omittable<double?> latitude;
 
 /// The geographic longitude where the payment originated.
-final double? longitude;
+final Omittable<double?> longitude;
 
 /// The state/county/province/region where the payment originated.
-final String? region;
+final Omittable<String?> region;
 
-Map<String, dynamic> toJson() { return {
-  'city': ?city,
-  'country': ?country,
-  'latitude': ?latitude,
-  'longitude': ?longitude,
-  'region': ?region,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'latitude', 'longitude', 'region'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (city.isPresent) 'city': city.value,
+  if (country.isPresent) 'country': country.value,
+  if (latitude.isPresent) 'latitude': latitude.value,
+  if (longitude.isPresent) 'longitude': longitude.value,
+  if (region.isPresent) 'region': region.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'country', 'latitude', 'longitude', 'region'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final city$ = city;
+List<String> validate() {final errors = <String>[];
+final city$ = city.value;
 if (city$ != null) {
   if (city$.runes.length > 5000) { errors.add('city: length must be <= 5000'); }
 }
-final country$ = country;
+final country$ = country.value;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
-final region$ = region;
+final region$ = region.value;
 if (region$ != null) {
   if (region$.runes.length > 5000) { errors.add('region: length must be <= 5000'); }
 }
-return errors; } 
-RadarReviewResourceLocation copyWith({String? Function()? city, String? Function()? country, double? Function()? latitude, double? Function()? longitude, String? Function()? region, }) { return RadarReviewResourceLocation(
-  city: city != null ? city() : this.city,
-  country: country != null ? country() : this.country,
-  latitude: latitude != null ? latitude() : this.latitude,
-  longitude: longitude != null ? longitude() : this.longitude,
-  region: region != null ? region() : this.region,
-); } 
+return errors;}
+RadarReviewResourceLocation copyWith({Omittable<String?>? city, Omittable<String?>? country, Omittable<double?>? latitude, Omittable<double?>? longitude, Omittable<String?>? region, }) {return RadarReviewResourceLocation(
+  city: city ?? this.city,
+  country: country ?? this.country,
+  latitude: latitude ?? this.latitude,
+  longitude: longitude ?? this.longitude,
+  region: region ?? this.region,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarReviewResourceLocation &&
           city == other.city &&
@@ -69,4 +69,4 @@ RadarReviewResourceLocation copyWith({String? Function()? city, String? Function
 
 @override String toString() => 'RadarReviewResourceLocation(city: $city, country: $country, latitude: $latitude, longitude: $longitude, region: $region)';
 
- }
+}

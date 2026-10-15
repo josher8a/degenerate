@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesIpResponse404 {const RadarGetEntitiesIpResponse404({required this.error});
 
-factory RadarGetEntitiesIpResponse404.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesIpResponse404(
+factory RadarGetEntitiesIpResponse404.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesIpResponse404(
   error: json['error'] as String,
-); }
+);}
 
 /// Example: `'Not Found.'`
 final String error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String; } 
-RadarGetEntitiesIpResponse404 copyWith({String? error}) { return RadarGetEntitiesIpResponse404(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') && json['error'] is String;}
+RadarGetEntitiesIpResponse404 copyWith({String? error}) {return RadarGetEntitiesIpResponse404(
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesIpResponse404 &&
           error == other.error;
@@ -25,4 +25,4 @@ RadarGetEntitiesIpResponse404 copyWith({String? error}) { return RadarGetEntitie
 
 @override String toString() => 'RadarGetEntitiesIpResponse404(error: $error)';
 
- }
+}

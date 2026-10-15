@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/after_expiration.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/consent_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/phone_number_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_customer_update.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_invoice_creation.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_name_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_optional_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_permissions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_subscription_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/setup_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/tax_id_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/wallet_options.dart';sealed class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes();
 
-factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -55,7 +55,7 @@ factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { re
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodTypes acssDebit = PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit._();
 
@@ -160,9 +160,9 @@ static const PostCheckoutSessionsRequestPaymentMethodTypes zip = PostCheckoutSes
 static const List<PostCheckoutSessionsRequestPaymentMethodTypes> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'acss_debit' => 'acssDebit',
   'affirm' => 'affirm',
   'afterpay_clearpay' => 'afterpayClearpay',
@@ -214,11 +214,11 @@ String get name { return switch (value) {
   'wechat_pay' => 'wechatPay',
   'zip' => 'zip',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostCheckoutSessionsRequestPaymentMethodTypes$Unknown; } 
+bool get isUnknown {return this is PostCheckoutSessionsRequestPaymentMethodTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit() => acssDebit(),
       PostCheckoutSessionsRequestPaymentMethodTypes$affirm() => affirm(),
       PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay() => afterpayClearpay(),
@@ -270,9 +270,9 @@ W when<W>({required W Function() acssDebit, required W Function() affirm, requir
       PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay() => wechatPay(),
       PostCheckoutSessionsRequestPaymentMethodTypes$zip() => zip(),
       PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
       PostCheckoutSessionsRequestPaymentMethodTypes$affirm() => affirm != null ? affirm() : orElse(value),
       PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
@@ -324,10 +324,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
       PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
       PostCheckoutSessionsRequestPaymentMethodTypes$zip() => zip != null ? zip() : orElse(value),
       PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostCheckoutSessionsRequestPaymentMethodTypes($value)';
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit._();
 
 @override String get value => 'acss_debit';
@@ -336,7 +336,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'acss_debit'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$affirm extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$affirm._();
 
 @override String get value => 'affirm';
@@ -345,7 +345,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'affirm'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay._();
 
 @override String get value => 'afterpay_clearpay';
@@ -354,7 +354,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'afterpay_clearpay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$alipay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$alipay._();
 
 @override String get value => 'alipay';
@@ -363,7 +363,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$alma extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$alma._();
 
 @override String get value => 'alma';
@@ -372,7 +372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alma'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay._();
 
 @override String get value => 'amazon_pay';
@@ -381,7 +381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'amazon_pay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -390,7 +390,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit._();
 
 @override String get value => 'bacs_debit';
@@ -399,7 +399,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bacs_debit'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$bancontact extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$bancontact._();
 
 @override String get value => 'bancontact';
@@ -408,7 +408,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$billie extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$billie._();
 
 @override String get value => 'billie';
@@ -417,7 +417,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'billie'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$blik extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$blik._();
 
 @override String get value => 'blik';
@@ -426,7 +426,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$boleto extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$boleto._();
 
 @override String get value => 'boleto';
@@ -435,7 +435,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'boleto'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$card extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$card._();
 
 @override String get value => 'card';
@@ -444,7 +444,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$cashapp extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$cashapp._();
 
 @override String get value => 'cashapp';
@@ -453,7 +453,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'cashapp'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$crypto extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$crypto._();
 
 @override String get value => 'crypto';
@@ -462,7 +462,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'crypto'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance._();
 
 @override String get value => 'customer_balance';
@@ -471,7 +471,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'customer_balance'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$eps extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$eps._();
 
 @override String get value => 'eps';
@@ -480,7 +480,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$fpx extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$fpx._();
 
 @override String get value => 'fpx';
@@ -489,7 +489,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$giropay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$giropay._();
 
 @override String get value => 'giropay';
@@ -498,7 +498,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$grabpay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$grabpay._();
 
 @override String get value => 'grabpay';
@@ -507,7 +507,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'grabpay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$ideal extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$ideal._();
 
 @override String get value => 'ideal';
@@ -516,7 +516,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay._();
 
 @override String get value => 'kakao_pay';
@@ -525,7 +525,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kakao_pay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$klarna extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$klarna._();
 
 @override String get value => 'klarna';
@@ -534,7 +534,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$konbini extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$konbini._();
 
 @override String get value => 'konbini';
@@ -543,7 +543,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'konbini'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$krCard extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$krCard._();
 
 @override String get value => 'kr_card';
@@ -552,7 +552,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kr_card'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$link extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$link._();
 
 @override String get value => 'link';
@@ -561,7 +561,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$mbWay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$mbWay._();
 
 @override String get value => 'mb_way';
@@ -570,7 +570,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mb_way'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay._();
 
 @override String get value => 'mobilepay';
@@ -579,7 +579,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mobilepay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$multibanco extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$multibanco._();
 
 @override String get value => 'multibanco';
@@ -588,7 +588,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$naverPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$naverPay._();
 
 @override String get value => 'naver_pay';
@@ -597,7 +597,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'naver_pay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount._();
 
 @override String get value => 'nz_bank_account';
@@ -606,7 +606,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'nz_bank_account'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$oxxo extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$oxxo._();
 
 @override String get value => 'oxxo';
@@ -615,7 +615,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'oxxo'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$p24 extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$p24._();
 
 @override String get value => 'p24';
@@ -624,7 +624,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$payByBank extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$payByBank._();
 
 @override String get value => 'pay_by_bank';
@@ -633,7 +633,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pay_by_bank'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$payco extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$payco._();
 
 @override String get value => 'payco';
@@ -642,7 +642,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payco'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$paynow extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$paynow._();
 
 @override String get value => 'paynow';
@@ -651,7 +651,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paynow'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$paypal extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$paypal._();
 
 @override String get value => 'paypal';
@@ -660,7 +660,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paypal'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$payto extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$payto._();
 
 @override String get value => 'payto';
@@ -669,7 +669,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payto'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$pix extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$pix._();
 
 @override String get value => 'pix';
@@ -678,7 +678,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pix'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$promptpay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$promptpay._();
 
 @override String get value => 'promptpay';
@@ -687,7 +687,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'promptpay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay._();
 
 @override String get value => 'revolut_pay';
@@ -696,7 +696,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'revolut_pay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -705,7 +705,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$satispay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$satispay._();
 
 @override String get value => 'satispay';
@@ -714,7 +714,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'satispay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -723,7 +723,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$sofort extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$sofort._();
 
 @override String get value => 'sofort';
@@ -732,7 +732,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$swish extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$swish._();
 
 @override String get value => 'swish';
@@ -741,7 +741,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'swish'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$twint extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$twint._();
 
 @override String get value => 'twint';
@@ -750,7 +750,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'twint'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -759,7 +759,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay._();
 
 @override String get value => 'wechat_pay';
@@ -768,7 +768,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'wechat_pay'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$zip extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$zip._();
 
 @override String get value => 'zip';
@@ -777,7 +777,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$Unknown extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(this.value);
 
 @override final String value;
@@ -787,11 +787,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
 sealed class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale();
 
-factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestLocale.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'bg' => bg,
   'cs' => cs,
@@ -834,7 +834,7 @@ factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch 
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
   _ => PostCheckoutSessionsRequestLocale$Unknown(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestLocale auto = PostCheckoutSessionsRequestLocale$auto._();
 
@@ -921,9 +921,9 @@ static const PostCheckoutSessionsRequestLocale zhTw = PostCheckoutSessionsReques
 static const List<PostCheckoutSessionsRequestLocale> values = [auto, bg, cs, da, de, el, en, enGb, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'bg' => 'bg',
   'cs' => 'cs',
@@ -966,11 +966,11 @@ String get name { return switch (value) {
   'zh-HK' => 'zhHk',
   'zh-TW' => 'zhTw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostCheckoutSessionsRequestLocale$Unknown; } 
+bool get isUnknown {return this is PostCheckoutSessionsRequestLocale$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enGb, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enGb, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestLocale$auto() => auto(),
       PostCheckoutSessionsRequestLocale$bg() => bg(),
       PostCheckoutSessionsRequestLocale$cs() => cs(),
@@ -1013,9 +1013,9 @@ W when<W>({required W Function() auto, required W Function() bg, required W Func
       PostCheckoutSessionsRequestLocale$zhHk() => zhHk(),
       PostCheckoutSessionsRequestLocale$zhTw() => zhTw(),
       PostCheckoutSessionsRequestLocale$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enGb, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enGb, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestLocale$auto() => auto != null ? auto() : orElse(value),
       PostCheckoutSessionsRequestLocale$bg() => bg != null ? bg() : orElse(value),
       PostCheckoutSessionsRequestLocale$cs() => cs != null ? cs() : orElse(value),
@@ -1058,10 +1058,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
       PostCheckoutSessionsRequestLocale$zhHk() => zhHk != null ? zhHk() : orElse(value),
       PostCheckoutSessionsRequestLocale$zhTw() => zhTw != null ? zhTw() : orElse(value),
       PostCheckoutSessionsRequestLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostCheckoutSessionsRequestLocale($value)';
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$auto extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$auto._();
 
 @override String get value => 'auto';
@@ -1070,7 +1070,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$bg extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$bg._();
 
 @override String get value => 'bg';
@@ -1079,7 +1079,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'bg'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$cs extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$cs._();
 
 @override String get value => 'cs';
@@ -1088,7 +1088,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'cs'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$da extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$da._();
 
 @override String get value => 'da';
@@ -1097,7 +1097,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'da'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$de extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$de._();
 
 @override String get value => 'de';
@@ -1106,7 +1106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'de'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$el extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$el._();
 
 @override String get value => 'el';
@@ -1115,7 +1115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'el'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$en extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$en._();
 
 @override String get value => 'en';
@@ -1124,7 +1124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$enGb extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$enGb._();
 
 @override String get value => 'en-GB';
@@ -1133,7 +1133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-GB'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$es extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$es._();
 
 @override String get value => 'es';
@@ -1142,7 +1142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'es'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$es419 extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$es419._();
 
 @override String get value => 'es-419';
@@ -1151,7 +1151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'es-419'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$et extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$et._();
 
 @override String get value => 'et';
@@ -1160,7 +1160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'et'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$fi extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$fi._();
 
 @override String get value => 'fi';
@@ -1169,7 +1169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fi'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$fil extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$fil._();
 
 @override String get value => 'fil';
@@ -1178,7 +1178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fil'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$fr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$fr._();
 
 @override String get value => 'fr';
@@ -1187,7 +1187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fr'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$frCa extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$frCa._();
 
 @override String get value => 'fr-CA';
@@ -1196,7 +1196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fr-CA'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$hr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$hr._();
 
 @override String get value => 'hr';
@@ -1205,7 +1205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'hr'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$hu extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$hu._();
 
 @override String get value => 'hu';
@@ -1214,7 +1214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'hu'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$id extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$id._();
 
 @override String get value => 'id';
@@ -1223,7 +1223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'id'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$it extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$it._();
 
 @override String get value => 'it';
@@ -1232,7 +1232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'it'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$ja extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ja._();
 
 @override String get value => 'ja';
@@ -1241,7 +1241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ja'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$ko extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ko._();
 
 @override String get value => 'ko';
@@ -1250,7 +1250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ko'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$lt extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$lt._();
 
 @override String get value => 'lt';
@@ -1259,7 +1259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'lt'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$lv extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$lv._();
 
 @override String get value => 'lv';
@@ -1268,7 +1268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'lv'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$ms extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ms._();
 
 @override String get value => 'ms';
@@ -1277,7 +1277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ms'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$mt extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$mt._();
 
 @override String get value => 'mt';
@@ -1286,7 +1286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'mt'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$nb extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$nb._();
 
 @override String get value => 'nb';
@@ -1295,7 +1295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'nb'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$nl extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$nl._();
 
 @override String get value => 'nl';
@@ -1304,7 +1304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'nl'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$pl extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$pl._();
 
 @override String get value => 'pl';
@@ -1313,7 +1313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pl'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$pt extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$pt._();
 
 @override String get value => 'pt';
@@ -1322,7 +1322,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pt'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$ptBr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ptBr._();
 
 @override String get value => 'pt-BR';
@@ -1331,7 +1331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pt-BR'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$ro extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ro._();
 
 @override String get value => 'ro';
@@ -1340,7 +1340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ro'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$ru extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ru._();
 
 @override String get value => 'ru';
@@ -1349,7 +1349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ru'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$sk extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$sk._();
 
 @override String get value => 'sk';
@@ -1358,7 +1358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sk'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$sl extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$sl._();
 
 @override String get value => 'sl';
@@ -1367,7 +1367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sl'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$sv extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$sv._();
 
 @override String get value => 'sv';
@@ -1376,7 +1376,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sv'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$th extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$th._();
 
 @override String get value => 'th';
@@ -1385,7 +1385,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'th'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$tr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$tr._();
 
 @override String get value => 'tr';
@@ -1394,7 +1394,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'tr'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$vi extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$vi._();
 
 @override String get value => 'vi';
@@ -1403,7 +1403,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'vi'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$zh extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$zh._();
 
 @override String get value => 'zh';
@@ -1412,7 +1412,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$zhHk extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$zhHk._();
 
 @override String get value => 'zh-HK';
@@ -1421,7 +1421,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh-HK'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$zhTw extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$zhTw._();
 
 @override String get value => 'zh-TW';
@@ -1430,7 +1430,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh-TW'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestLocale$Unknown extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$Unknown(this.value);
 
 @override final String value;
@@ -1440,15 +1440,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Where the user is coming from. This informs the optimizations that are applied to the session. You can't set this parameter if `ui_mode` is `custom`.
 sealed class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext();
 
-factory PostCheckoutSessionsRequestOriginContext.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestOriginContext.fromJson(String json) {return switch (json) {
   'mobile_app' => mobileApp,
   'web' => web,
   _ => PostCheckoutSessionsRequestOriginContext$Unknown(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestOriginContext mobileApp = PostCheckoutSessionsRequestOriginContext$mobileApp._();
 
@@ -1457,30 +1457,30 @@ static const PostCheckoutSessionsRequestOriginContext web = PostCheckoutSessions
 static const List<PostCheckoutSessionsRequestOriginContext> values = [mobileApp, web];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mobile_app' => 'mobileApp',
   'web' => 'web',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostCheckoutSessionsRequestOriginContext$Unknown; } 
+bool get isUnknown {return this is PostCheckoutSessionsRequestOriginContext$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mobileApp, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mobileApp, required W Function() web, required W Function(String value) $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestOriginContext$mobileApp() => mobileApp(),
       PostCheckoutSessionsRequestOriginContext$web() => web(),
       PostCheckoutSessionsRequestOriginContext$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileApp, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileApp, W Function()? web, W Function(String value)? $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestOriginContext$mobileApp() => mobileApp != null ? mobileApp() : orElse(value),
       PostCheckoutSessionsRequestOriginContext$web() => web != null ? web() : orElse(value),
       PostCheckoutSessionsRequestOriginContext$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostCheckoutSessionsRequestOriginContext($value)';
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestOriginContext$mobileApp extends PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext$mobileApp._();
 
 @override String get value => 'mobile_app';
@@ -1489,7 +1489,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileAp
 
 @override int get hashCode => 'mobile_app'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestOriginContext$web extends PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext$web._();
 
 @override String get value => 'web';
@@ -1498,7 +1498,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileAp
 
 @override int get hashCode => 'web'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestOriginContext$Unknown extends PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext$Unknown(this.value);
 
 @override final String value;
@@ -1508,16 +1508,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileAp
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The UI mode of the Session. Defaults to `hosted`.
 sealed class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode();
 
-factory PostCheckoutSessionsRequestUiMode.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestUiMode.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'embedded' => embedded,
   'hosted' => hosted,
   _ => PostCheckoutSessionsRequestUiMode$Unknown(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestUiMode custom = PostCheckoutSessionsRequestUiMode$custom._();
 
@@ -1528,33 +1528,33 @@ static const PostCheckoutSessionsRequestUiMode hosted = PostCheckoutSessionsRequ
 static const List<PostCheckoutSessionsRequestUiMode> values = [custom, embedded, hosted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom' => 'custom',
   'embedded' => 'embedded',
   'hosted' => 'hosted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostCheckoutSessionsRequestUiMode$Unknown; } 
+bool get isUnknown {return this is PostCheckoutSessionsRequestUiMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() custom, required W Function() embedded, required W Function() hosted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() custom, required W Function() embedded, required W Function() hosted, required W Function(String value) $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestUiMode$custom() => custom(),
       PostCheckoutSessionsRequestUiMode$embedded() => embedded(),
       PostCheckoutSessionsRequestUiMode$hosted() => hosted(),
       PostCheckoutSessionsRequestUiMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? embedded, W Function()? hosted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? embedded, W Function()? hosted, W Function(String value)? $unknown, }) {return switch (this) {
       PostCheckoutSessionsRequestUiMode$custom() => custom != null ? custom() : orElse(value),
       PostCheckoutSessionsRequestUiMode$embedded() => embedded != null ? embedded() : orElse(value),
       PostCheckoutSessionsRequestUiMode$hosted() => hosted != null ? hosted() : orElse(value),
       PostCheckoutSessionsRequestUiMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostCheckoutSessionsRequestUiMode($value)';
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestUiMode$custom extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$custom._();
 
 @override String get value => 'custom';
@@ -1563,7 +1563,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestUiMode$embedded extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$embedded._();
 
 @override String get value => 'embedded';
@@ -1572,7 +1572,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'embedded'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestUiMode$hosted extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$hosted._();
 
 @override String get value => 'hosted';
@@ -1581,7 +1581,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'hosted'.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequestUiMode$Unknown extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$Unknown(this.value);
 
 @override final String value;
@@ -1591,10 +1591,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.customerUpdate, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.adaptivePricing, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.walletOptions, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.paymentMethodData, });
 
-factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequest(
+factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequest(
   adaptivePricing: json['adaptive_pricing'] != null ? AdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
   afterExpiration: json['after_expiration'] != null ? AfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
@@ -1644,7 +1644,7 @@ factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return
   taxIdCollection: json['tax_id_collection'] != null ? TaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
   uiMode: json['ui_mode'] != null ? PostCheckoutSessionsRequestUiMode.fromJson(json['ui_mode'] as String) : null,
   walletOptions: json['wallet_options'] != null ? WalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
 final AdaptivePricing? adaptivePricing;
@@ -1865,7 +1865,7 @@ final PostCheckoutSessionsRequestUiMode? uiMode;
 /// Wallet-specific configuration.
 final WalletOptions? walletOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adaptivePricing != null) 'adaptive_pricing': adaptivePricing?.toJson(),
   if (afterExpiration != null) 'after_expiration': afterExpiration?.toJson(),
   'allow_promotion_codes': ?allowPromotionCodes,
@@ -1915,10 +1915,10 @@ Map<String, dynamic> toJson() { return {
   if (taxIdCollection != null) 'tax_id_collection': taxIdCollection?.toJson(),
   if (uiMode != null) 'ui_mode': uiMode?.toJson(),
   if (walletOptions != null) 'wallet_options': walletOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adaptive_pricing', 'after_expiration', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'branding_settings', 'cancel_url', 'client_reference_id', 'consent_collection', 'currency', 'custom_fields', 'custom_text', 'customer', 'customer_account', 'customer_creation', 'customer_email', 'customer_update', 'discounts', 'excluded_payment_method_types', 'expand', 'expires_at', 'invoice_creation', 'line_items', 'locale', 'metadata', 'mode', 'name_collection', 'optional_items', 'origin_context', 'payment_intent_data', 'payment_method_collection', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'permissions', 'phone_number_collection', 'redirect_on_completion', 'return_url', 'saved_payment_method_options', 'setup_intent_data', 'shipping_address_collection', 'shipping_options', 'submit_type', 'subscription_data', 'success_url', 'tax_id_collection', 'ui_mode', 'wallet_options'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'adaptive_pricing', 'after_expiration', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'branding_settings', 'cancel_url', 'client_reference_id', 'consent_collection', 'currency', 'custom_fields', 'custom_text', 'customer', 'customer_account', 'customer_creation', 'customer_email', 'customer_update', 'discounts', 'excluded_payment_method_types', 'expand', 'expires_at', 'invoice_creation', 'line_items', 'locale', 'metadata', 'mode', 'name_collection', 'optional_items', 'origin_context', 'payment_intent_data', 'payment_method_collection', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'permissions', 'phone_number_collection', 'redirect_on_completion', 'return_url', 'saved_payment_method_options', 'setup_intent_data', 'shipping_address_collection', 'shipping_options', 'submit_type', 'subscription_data', 'success_url', 'tax_id_collection', 'ui_mode', 'wallet_options'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final clientReferenceId$ = clientReferenceId;
 if (clientReferenceId$ != null) {
   if (clientReferenceId$.runes.length > 200) { errors.add('clientReferenceId: length must be <= 200'); }
@@ -1935,8 +1935,8 @@ final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
   if (paymentMethodConfiguration$.runes.length > 100) { errors.add('paymentMethodConfiguration: length must be <= 100'); }
 }
-return errors; } 
-PostCheckoutSessionsRequest copyWith({AdaptivePricing? Function()? adaptivePricing, AfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PaymentLinkBillingAddressCollection? Function()? billingAddressCollection, BrandingSettings? Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, ConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, String? Function()? customer, String? Function()? customerAccount, PaymentLinkCustomerCreation? Function()? customerCreation, String? Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate? Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, int? Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation? Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems>? Function()? lineItems, PostCheckoutSessionsRequestLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? Function()? mode, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostCheckoutSessionsRequestOriginContext? Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? Function()? paymentMethodCollection, String? Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData? Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes>? Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions? Function()? permissions, PhoneNumberCollection? Function()? phoneNumberCollection, RedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, SavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, SetupIntentData? Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions>? Function()? shippingOptions, PaymentLinkSubmitType? Function()? submitType, PostCheckoutSessionsRequestSubscriptionData? Function()? subscriptionData, String? Function()? successUrl, TaxIdCollection? Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode? Function()? uiMode, WalletOptions? Function()? walletOptions, }) { return PostCheckoutSessionsRequest(
+return errors;}
+PostCheckoutSessionsRequest copyWith({AdaptivePricing? Function()? adaptivePricing, AfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PaymentLinkBillingAddressCollection? Function()? billingAddressCollection, BrandingSettings? Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, ConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, String? Function()? customer, String? Function()? customerAccount, PaymentLinkCustomerCreation? Function()? customerCreation, String? Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate? Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, int? Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation? Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems>? Function()? lineItems, PostCheckoutSessionsRequestLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? Function()? mode, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostCheckoutSessionsRequestOriginContext? Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? Function()? paymentMethodCollection, String? Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData? Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes>? Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions? Function()? permissions, PhoneNumberCollection? Function()? phoneNumberCollection, RedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, SavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, SetupIntentData? Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions>? Function()? shippingOptions, PaymentLinkSubmitType? Function()? submitType, PostCheckoutSessionsRequestSubscriptionData? Function()? subscriptionData, String? Function()? successUrl, TaxIdCollection? Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode? Function()? uiMode, WalletOptions? Function()? walletOptions, }) {return PostCheckoutSessionsRequest(
   adaptivePricing: adaptivePricing != null ? adaptivePricing() : this.adaptivePricing,
   afterExpiration: afterExpiration != null ? afterExpiration() : this.afterExpiration,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
@@ -1986,7 +1986,7 @@ PostCheckoutSessionsRequest copyWith({AdaptivePricing? Function()? adaptivePrici
   taxIdCollection: taxIdCollection != null ? taxIdCollection() : this.taxIdCollection,
   uiMode: uiMode != null ? uiMode() : this.uiMode,
   walletOptions: walletOptions != null ? walletOptions() : this.walletOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequest &&
           adaptivePricing == other.adaptivePricing &&
@@ -2043,4 +2043,4 @@ PostCheckoutSessionsRequest copyWith({AdaptivePricing? Function()? adaptivePrici
 
 @override String toString() => 'PostCheckoutSessionsRequest(\n  adaptivePricing: $adaptivePricing,\n  afterExpiration: $afterExpiration,\n  allowPromotionCodes: $allowPromotionCodes,\n  automaticTax: $automaticTax,\n  billingAddressCollection: $billingAddressCollection,\n  brandingSettings: $brandingSettings,\n  cancelUrl: $cancelUrl,\n  clientReferenceId: $clientReferenceId,\n  consentCollection: $consentCollection,\n  currency: $currency,\n  customFields: $customFields,\n  customText: $customText,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerCreation: $customerCreation,\n  customerEmail: $customerEmail,\n  customerUpdate: $customerUpdate,\n  discounts: $discounts,\n  excludedPaymentMethodTypes: $excludedPaymentMethodTypes,\n  expand: $expand,\n  expiresAt: $expiresAt,\n  invoiceCreation: $invoiceCreation,\n  lineItems: $lineItems,\n  locale: $locale,\n  metadata: $metadata,\n  mode: $mode,\n  nameCollection: $nameCollection,\n  optionalItems: $optionalItems,\n  originContext: $originContext,\n  paymentIntentData: $paymentIntentData,\n  paymentMethodCollection: $paymentMethodCollection,\n  paymentMethodConfiguration: $paymentMethodConfiguration,\n  paymentMethodData: $paymentMethodData,\n  paymentMethodOptions: $paymentMethodOptions,\n  paymentMethodTypes: $paymentMethodTypes,\n  permissions: $permissions,\n  phoneNumberCollection: $phoneNumberCollection,\n  redirectOnCompletion: $redirectOnCompletion,\n  returnUrl: $returnUrl,\n  savedPaymentMethodOptions: $savedPaymentMethodOptions,\n  setupIntentData: $setupIntentData,\n  shippingAddressCollection: $shippingAddressCollection,\n  shippingOptions: $shippingOptions,\n  submitType: $submitType,\n  subscriptionData: $subscriptionData,\n  successUrl: $successUrl,\n  taxIdCollection: $taxIdCollection,\n  uiMode: $uiMode,\n  walletOptions: $walletOptions,\n)';
 
- }
+}

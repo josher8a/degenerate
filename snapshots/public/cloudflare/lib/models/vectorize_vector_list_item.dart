@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeVectorListItem {const VectorizeVectorListItem({required this.id});
 
-factory VectorizeVectorListItem.fromJson(Map<String, dynamic> json) { return VectorizeVectorListItem(
+factory VectorizeVectorListItem.fromJson(Map<String, dynamic> json) {return VectorizeVectorListItem(
   id: VectorizeVectorIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 /// Identifier for a Vector
 final VectorizeVectorIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-VectorizeVectorListItem copyWith({VectorizeVectorIdentifier? id}) { return VectorizeVectorListItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+VectorizeVectorListItem copyWith({VectorizeVectorIdentifier? id}) {return VectorizeVectorListItem(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeVectorListItem &&
           id == other.id;
@@ -25,4 +25,4 @@ VectorizeVectorListItem copyWith({VectorizeVectorIdentifier? id}) { return Vecto
 
 @override String toString() => 'VectorizeVectorListItem(id: $id)';
 
- }
+}

@@ -12,7 +12,7 @@ final class Api20100401AssignedAddOnExtensionApi with ApiExecutor {const Api2010
 /// Fetch an instance of an Extension for the Assigned Add-on.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{AssignedAddOnSid}/Extensions/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension, Never>> fetchIncomingPhoneNumberAssignedAddOnExtension({required String accountSid, required String resourceSid, required String assignedAddOnSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension, Never>> fetchIncomingPhoneNumberAssignedAddOnExtension({required String accountSid, required String resourceSid, required String assignedAddOnSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -21,17 +21,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve a list of Extensions for the Assigned Add-on.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{AssignedAddOnSid}/Extensions.json`
-Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnExtensionResponse, Never>> listIncomingPhoneNumberAssignedAddOnExtension({required String accountSid, required String resourceSid, required String assignedAddOnSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnExtensionResponse, Never>> listIncomingPhoneNumberAssignedAddOnExtension({required String accountSid, required String resourceSid, required String assignedAddOnSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -54,11 +54,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return ListIncomingPhoneNumberAssignedAddOnExtensionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

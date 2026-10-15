@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';sealed class LocalShellCallStatus {const LocalShellCallStatus();
 
-factory LocalShellCallStatus.fromJson(String json) { return switch (json) {
+factory LocalShellCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => LocalShellCallStatus$Unknown(json),
-}; }
+};}
 
 static const LocalShellCallStatus inProgress = LocalShellCallStatus$inProgress._();
 
@@ -19,33 +19,33 @@ static const LocalShellCallStatus incomplete = LocalShellCallStatus$incomplete._
 static const List<LocalShellCallStatus> values = [inProgress, completed, incomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'incomplete' => 'incomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LocalShellCallStatus$Unknown; } 
+bool get isUnknown {return this is LocalShellCallStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) {return switch (this) {
       LocalShellCallStatus$inProgress() => inProgress(),
       LocalShellCallStatus$completed() => completed(),
       LocalShellCallStatus$incomplete() => incomplete(),
       LocalShellCallStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) {return switch (this) {
       LocalShellCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       LocalShellCallStatus$completed() => completed != null ? completed() : orElse(value),
       LocalShellCallStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       LocalShellCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LocalShellCallStatus($value)';
 
- }
+}
 @immutable final class LocalShellCallStatus$inProgress extends LocalShellCallStatus {const LocalShellCallStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class LocalShellCallStatus$completed extends LocalShellCallStatus {const LocalShellCallStatus$completed._();
 
 @override String get value => 'completed';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class LocalShellCallStatus$incomplete extends LocalShellCallStatus {const LocalShellCallStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class LocalShellCallStatus$Unknown extends LocalShellCallStatus {const LocalShellCallStatus$Unknown(this.value);
 
 @override final String value;
@@ -82,11 +82,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A tool call that executes one or more shell commands in a managed environment.
-@immutable final class FunctionShellCall {const FunctionShellCall({required this.id, required this.callId, required this.action, required this.status, required this.environment, this.type = 'shell_call', this.createdBy, });
+@immutable final class FunctionShellCall {const FunctionShellCall({required this.type, required this.id, required this.callId, required this.action, required this.status, required this.environment, this.createdBy, });
 
-factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionShellCall(
+factory FunctionShellCall.fromJson(Map<String, dynamic> json) {return FunctionShellCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
@@ -94,7 +94,7 @@ factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionS
   status: LocalShellCallStatus.fromJson(json['status'] as String),
   environment: json['environment'] != null ? FunctionShellCallEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null,
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the item. Always `shell_call`.
 final String type;
@@ -116,7 +116,7 @@ final FunctionShellCallEnvironment? environment;
 /// The ID of the entity that created this tool call.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -124,14 +124,14 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'environment': environment?.toJson(),
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('action') &&
       json.containsKey('status') &&
-      json.containsKey('environment'); } 
-FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return FunctionShellCall(
+      json.containsKey('environment');}
+FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) {return FunctionShellCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
@@ -139,7 +139,7 @@ FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionSh
   status: status ?? this.status,
   environment: environment != null ? environment() : this.environment,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCall &&
           type == other.type &&
@@ -154,4 +154,4 @@ FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionSh
 
 @override String toString() => 'FunctionShellCall(type: $type, id: $id, callId: $callId, action: $action, status: $status, environment: $environment, createdBy: $createdBy)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_by_encrypted_response/radar_get_email_routing_timeseries_group_by_encrypted_response_result.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse({required this.result, required this.success, });
 
-factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse(
+factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse(
   result: RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse copyWith({RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult? result, bool? success, }) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse copyWith({RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult? result, bool? success, }) {return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse copyWith({RadarGetEmailRo
 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse(result: $result, success: $success)';
 
- }
+}

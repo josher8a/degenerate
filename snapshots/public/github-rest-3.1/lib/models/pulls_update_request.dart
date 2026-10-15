@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';@immutable final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
 
-factory PullsUpdateRequest.fromJson(Map<String, dynamic> json) { return PullsUpdateRequest(
+factory PullsUpdateRequest.fromJson(Map<String, dynamic> json) {return PullsUpdateRequest(
   title: json['title'] as String?,
   body: json['body'] as String?,
   state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
   base: json['base'] as String?,
   maintainerCanModify: json['maintainer_can_modify'] as bool?,
-); }
+);}
 
 /// The title of the pull request.
 final String? title;
@@ -26,21 +26,21 @@ final String? base;
 /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
 final bool? maintainerCanModify;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': ?title,
   'body': ?body,
   if (state != null) 'state': state?.toJson(),
   'base': ?base,
   'maintainer_can_modify': ?maintainerCanModify,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'state', 'base', 'maintainer_can_modify'}.contains(key)); } 
-PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body, IssuesUpdateRequestState? Function()? state, String? Function()? base, bool? Function()? maintainerCanModify, }) { return PullsUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'title', 'body', 'state', 'base', 'maintainer_can_modify'}.contains(key));}
+PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body, IssuesUpdateRequestState? Function()? state, String? Function()? base, bool? Function()? maintainerCanModify, }) {return PullsUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,
   state: state != null ? state() : this.state,
   base: base != null ? base() : this.base,
   maintainerCanModify: maintainerCanModify != null ? maintainerCanModify() : this.maintainerCanModify,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullsUpdateRequest &&
           title == other.title &&
@@ -53,4 +53,4 @@ PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body
 
 @override String toString() => 'PullsUpdateRequest(title: $title, body: $body, state: $state, base: $base, maintainerCanModify: $maintainerCanModify)';
 
- }
+}

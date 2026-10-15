@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose();
 
-factory InvoicePaymentMethodOptionsParamMandateOptionsPurpose.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsParamMandateOptionsPurpose.fromJson(String json) {return switch (json) {
   'dependant_support' => dependantSupport,
   'government' => government,
   'loan' => loan,
@@ -16,7 +16,7 @@ factory InvoicePaymentMethodOptionsParamMandateOptionsPurpose.fromJson(String js
   'tax' => tax,
   'utility' => utility,
   _ => InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsParamMandateOptionsPurpose dependantSupport = InvoicePaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport._();
 
@@ -43,9 +43,9 @@ static const InvoicePaymentMethodOptionsParamMandateOptionsPurpose utility = Inv
 static const List<InvoicePaymentMethodOptionsParamMandateOptionsPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'dependant_support' => 'dependantSupport',
   'government' => 'government',
   'loan' => 'loan',
@@ -58,11 +58,11 @@ String get name { return switch (value) {
   'tax' => 'tax',
   'utility' => 'utility',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown; } 
+bool get isUnknown {return this is InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dependantSupport, required W Function() government, required W Function() loan, required W Function() mortgage, required W Function() $other, required W Function() pension, required W Function() personal, required W Function() retail, required W Function() salary, required W Function() tax, required W Function() utility, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dependantSupport, required W Function() government, required W Function() loan, required W Function() mortgage, required W Function() $other, required W Function() pension, required W Function() personal, required W Function() retail, required W Function() salary, required W Function() tax, required W Function() utility, required W Function(String value) $unknown, }) {return switch (this) {
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport() => dependantSupport(),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$government() => government(),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$loan() => loan(),
@@ -75,9 +75,9 @@ W when<W>({required W Function() dependantSupport, required W Function() governm
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$tax() => tax(),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$utility() => utility(),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependantSupport, W Function()? government, W Function()? loan, W Function()? mortgage, W Function()? $other, W Function()? pension, W Function()? personal, W Function()? retail, W Function()? salary, W Function()? tax, W Function()? utility, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependantSupport, W Function()? government, W Function()? loan, W Function()? mortgage, W Function()? $other, W Function()? pension, W Function()? personal, W Function()? retail, W Function()? salary, W Function()? tax, W Function()? utility, W Function(String value)? $unknown, }) {return switch (this) {
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport() => dependantSupport != null ? dependantSupport() : orElse(value),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$government() => government != null ? government() : orElse(value),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$loan() => loan != null ? loan() : orElse(value),
@@ -90,10 +90,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$tax() => tax != null ? tax() : orElse(value),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$utility() => utility != null ? utility() : orElse(value),
       InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoicePaymentMethodOptionsParamMandateOptionsPurpose($value)';
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport._();
 
 @override String get value => 'dependant_support';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'dependant_support'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$government extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$government._();
 
 @override String get value => 'government';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'government'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$loan extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$loan._();
 
 @override String get value => 'loan';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'loan'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$mortgage extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$mortgage._();
 
 @override String get value => 'mortgage';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'mortgage'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$$other extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$$other._();
 
 @override String get value => 'other';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$pension extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$pension._();
 
 @override String get value => 'pension';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'pension'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$personal extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$personal._();
 
 @override String get value => 'personal';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'personal'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$retail extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$retail._();
 
 @override String get value => 'retail';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'retail'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$salary extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$salary._();
 
 @override String get value => 'salary';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'salary'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$tax extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$tax._();
 
 @override String get value => 'tax';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'tax'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$utility extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$utility._();
 
 @override String get value => 'utility';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => 'utility'.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown extends InvoicePaymentMethodOptionsParamMandateOptionsPurpose {const InvoicePaymentMethodOptionsParamMandateOptionsPurpose$Unknown(this.value);
 
 @override final String value;
@@ -202,27 +202,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependan
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class InvoicePaymentMethodOptionsParam12MandateOptions {const InvoicePaymentMethodOptionsParam12MandateOptions({this.amount, this.purpose, });
 
-factory InvoicePaymentMethodOptionsParam12MandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam12MandateOptions(
+factory InvoicePaymentMethodOptionsParam12MandateOptions.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam12MandateOptions(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   purpose: json['purpose'] != null ? InvoicePaymentMethodOptionsParamMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
-); }
+);}
 
 final int? amount;
 
 final InvoicePaymentMethodOptionsParamMandateOptionsPurpose? purpose;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (purpose != null) 'purpose': purpose?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'purpose'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam12MandateOptions copyWith({int? Function()? amount, InvoicePaymentMethodOptionsParamMandateOptionsPurpose? Function()? purpose, }) { return InvoicePaymentMethodOptionsParam12MandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'purpose'}.contains(key));}
+InvoicePaymentMethodOptionsParam12MandateOptions copyWith({int? Function()? amount, InvoicePaymentMethodOptionsParamMandateOptionsPurpose? Function()? purpose, }) {return InvoicePaymentMethodOptionsParam12MandateOptions(
   amount: amount != null ? amount() : this.amount,
   purpose: purpose != null ? purpose() : this.purpose,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam12MandateOptions &&
           amount == other.amount &&
@@ -232,4 +232,4 @@ InvoicePaymentMethodOptionsParam12MandateOptions copyWith({int? Function()? amou
 
 @override String toString() => 'InvoicePaymentMethodOptionsParam12MandateOptions(amount: $amount, purpose: $purpose)';
 
- }
+}

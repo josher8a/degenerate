@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_by_encrypted_response/radar_get_email_routing_timeseries_group_by_encrypted_response_result_serie0.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult({required this.meta, required this.serie0, });
 
-factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult(
+factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult(
   meta: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   serie0: RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
 final RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 serie0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'serie_0': serie0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('serie_0'); } 
-RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta? meta, RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0? serie0, }) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('serie_0');}
+RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta? meta, RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0? serie0, }) {return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult(
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult &&
           meta == other.meta &&
@@ -32,4 +32,4 @@ RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult copyWith({RadarGetA
 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult(meta: $meta, serie0: $serie0)';
 
- }
+}

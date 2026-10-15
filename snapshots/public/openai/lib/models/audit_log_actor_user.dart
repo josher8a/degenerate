@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who performed the audit logged action.
 @immutable final class AuditLogActorUser {const AuditLogActorUser({this.id, this.email, });
 
-factory AuditLogActorUser.fromJson(Map<String, dynamic> json) { return AuditLogActorUser(
+factory AuditLogActorUser.fromJson(Map<String, dynamic> json) {return AuditLogActorUser(
   id: json['id'] as String?,
   email: json['email'] as String?,
-); }
+);}
 
 /// The user id.
 final String? id;
@@ -15,15 +15,15 @@ final String? id;
 /// The user email.
 final String? email;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'email': ?email,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'email'}.contains(key)); } 
-AuditLogActorUser copyWith({String? Function()? id, String? Function()? email, }) { return AuditLogActorUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'email'}.contains(key));}
+AuditLogActorUser copyWith({String? Function()? id, String? Function()? email, }) {return AuditLogActorUser(
   id: id != null ? id() : this.id,
   email: email != null ? email() : this.email,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AuditLogActorUser &&
           id == other.id &&
@@ -33,4 +33,4 @@ AuditLogActorUser copyWith({String? Function()? id, String? Function()? email, }
 
 @override String toString() => 'AuditLogActorUser(id: $id, email: $email)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card_details_params/card_details_params_networks.dart';@immutable final class CreditCardSpecs {const CreditCardSpecs({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.currency, this.cvc, this.name, this.networks, });
 
-factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardSpecs(
+factory CreditCardSpecs.fromJson(Map<String, dynamic> json) {return CreditCardSpecs(
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -17,7 +17,7 @@ factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardS
   name: json['name'] as String?,
   networks: json['networks'] != null ? CardDetailsParamsNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   number: json['number'] as String,
-); }
+);}
 
 final String? addressCity;
 
@@ -45,7 +45,7 @@ final CardDetailsParamsNetworks? networks;
 
 final String number;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_city': ?addressCity,
   'address_country': ?addressCountry,
   'address_line1': ?addressLine1,
@@ -59,12 +59,12 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (networks != null) 'networks': networks?.toJson(),
   'number': number,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is String &&
       json.containsKey('exp_year') && json['exp_year'] is String &&
-      json.containsKey('number') && json['number'] is String; } 
+      json.containsKey('number') && json['number'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final addressCity$ = addressCity;
 if (addressCity$ != null) {
   if (addressCity$.runes.length > 5000) { errors.add('addressCity: length must be <= 5000'); }
@@ -104,8 +104,8 @@ if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 if (number.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
-return errors; } 
-CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? currency, String? Function()? cvc, String? expMonth, String? expYear, String? Function()? name, CardDetailsParamsNetworks? Function()? networks, String? number, }) { return CreditCardSpecs(
+return errors;}
+CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? currency, String? Function()? cvc, String? expMonth, String? expYear, String? Function()? name, CardDetailsParamsNetworks? Function()? networks, String? number, }) {return CreditCardSpecs(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
@@ -119,7 +119,7 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
   name: name != null ? name() : this.name,
   networks: networks != null ? networks() : this.networks,
   number: number ?? this.number,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreditCardSpecs &&
           addressCity == other.addressCity &&
@@ -140,4 +140,4 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
 
 @override String toString() => 'CreditCardSpecs(\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  currency: $currency,\n  cvc: $cvc,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  name: $name,\n  networks: $networks,\n  number: $number,\n)';
 
- }
+}

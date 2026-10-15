@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsAuBecsDebit {const PaymentIntentPaymentMethodOptionsAuBecsDebit({this.setupFutureUsage, this.targetDate, });
 
-factory PaymentIntentPaymentMethodOptionsAuBecsDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsAuBecsDebit(
+factory PaymentIntentPaymentMethodOptionsAuBecsDebit.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsAuBecsDebit(
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
-); }
+);}
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -21,22 +21,22 @@ final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 /// Controls when Stripe will attempt to debit the funds from the customer's account. The date must be a string in YYYY-MM-DD format. The date must be in the future and between 3 and 15 calendar days from now.
 final String? targetDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'target_date': ?targetDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final targetDate$ = targetDate;
 if (targetDate$ != null) {
   if (targetDate$.runes.length > 5000) { errors.add('targetDate: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentPaymentMethodOptionsAuBecsDebit copyWith({CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsAuBecsDebit(
+return errors;}
+PaymentIntentPaymentMethodOptionsAuBecsDebit copyWith({CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) {return PaymentIntentPaymentMethodOptionsAuBecsDebit(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsAuBecsDebit &&
           setupFutureUsage == other.setupFutureUsage &&
@@ -46,4 +46,4 @@ PaymentIntentPaymentMethodOptionsAuBecsDebit copyWith({CheckoutAcssDebitPaymentM
 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsAuBecsDebit(setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';
 
- }
+}

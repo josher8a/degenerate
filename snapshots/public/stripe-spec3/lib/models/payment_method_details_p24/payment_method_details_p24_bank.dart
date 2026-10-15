@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank. Can be one of `ing`, `citi_handlowy`, `tmobile_usbugi_bankowe`, `plus_bank`, `etransfer_pocztowy24`, `banki_spbdzielcze`, `bank_nowy_bfg_sa`, `getin_bank`, `velobank`, `blik`, `noble_pay`, `ideabank`, `envelobank`, `santander_przelew24`, `nest_przelew`, `mbank_mtransfer`, `inteligo`, `pbac_z_ipko`, `bnp_paribas`, `credit_agricole`, `toyota_bank`, `bank_pekao_sa`, `volkswagen_bank`, `bank_millennium`, `alior_bank`, or `boz`.
 sealed class PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank();
 
-factory PaymentMethodDetailsP24Bank.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsP24Bank.fromJson(String json) {return switch (json) {
   'alior_bank' => aliorBank,
   'bank_millennium' => bankMillennium,
   'bank_nowy_bfg_sa' => bankNowyBfgSa,
@@ -32,7 +32,7 @@ factory PaymentMethodDetailsP24Bank.fromJson(String json) { return switch (json)
   'velobank' => velobank,
   'volkswagen_bank' => volkswagenBank,
   _ => PaymentMethodDetailsP24Bank$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDetailsP24Bank aliorBank = PaymentMethodDetailsP24Bank$aliorBank._();
 
@@ -89,9 +89,9 @@ static const PaymentMethodDetailsP24Bank volkswagenBank = PaymentMethodDetailsP2
 static const List<PaymentMethodDetailsP24Bank> values = [aliorBank, bankMillennium, bankNowyBfgSa, bankPekaoSa, bankiSpbdzielcze, blik, bnpParibas, boz, citiHandlowy, creditAgricole, envelobank, etransferPocztowy24, getinBank, ideabank, ing, inteligo, mbankMtransfer, nestPrzelew, noblePay, pbacZIpko, plusBank, santanderPrzelew24, tmobileUsbugiBankowe, toyotaBank, velobank, volkswagenBank];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'alior_bank' => 'aliorBank',
   'bank_millennium' => 'bankMillennium',
   'bank_nowy_bfg_sa' => 'bankNowyBfgSa',
@@ -119,11 +119,11 @@ String get name { return switch (value) {
   'velobank' => 'velobank',
   'volkswagen_bank' => 'volkswagenBank',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDetailsP24Bank$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDetailsP24Bank$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() aliorBank, required W Function() bankMillennium, required W Function() bankNowyBfgSa, required W Function() bankPekaoSa, required W Function() bankiSpbdzielcze, required W Function() blik, required W Function() bnpParibas, required W Function() boz, required W Function() citiHandlowy, required W Function() creditAgricole, required W Function() envelobank, required W Function() etransferPocztowy24, required W Function() getinBank, required W Function() ideabank, required W Function() ing, required W Function() inteligo, required W Function() mbankMtransfer, required W Function() nestPrzelew, required W Function() noblePay, required W Function() pbacZIpko, required W Function() plusBank, required W Function() santanderPrzelew24, required W Function() tmobileUsbugiBankowe, required W Function() toyotaBank, required W Function() velobank, required W Function() volkswagenBank, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() aliorBank, required W Function() bankMillennium, required W Function() bankNowyBfgSa, required W Function() bankPekaoSa, required W Function() bankiSpbdzielcze, required W Function() blik, required W Function() bnpParibas, required W Function() boz, required W Function() citiHandlowy, required W Function() creditAgricole, required W Function() envelobank, required W Function() etransferPocztowy24, required W Function() getinBank, required W Function() ideabank, required W Function() ing, required W Function() inteligo, required W Function() mbankMtransfer, required W Function() nestPrzelew, required W Function() noblePay, required W Function() pbacZIpko, required W Function() plusBank, required W Function() santanderPrzelew24, required W Function() tmobileUsbugiBankowe, required W Function() toyotaBank, required W Function() velobank, required W Function() volkswagenBank, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDetailsP24Bank$aliorBank() => aliorBank(),
       PaymentMethodDetailsP24Bank$bankMillennium() => bankMillennium(),
       PaymentMethodDetailsP24Bank$bankNowyBfgSa() => bankNowyBfgSa(),
@@ -151,9 +151,9 @@ W when<W>({required W Function() aliorBank, required W Function() bankMillennium
       PaymentMethodDetailsP24Bank$velobank() => velobank(),
       PaymentMethodDetailsP24Bank$volkswagenBank() => volkswagenBank(),
       PaymentMethodDetailsP24Bank$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBank, W Function()? bankMillennium, W Function()? bankNowyBfgSa, W Function()? bankPekaoSa, W Function()? bankiSpbdzielcze, W Function()? blik, W Function()? bnpParibas, W Function()? boz, W Function()? citiHandlowy, W Function()? creditAgricole, W Function()? envelobank, W Function()? etransferPocztowy24, W Function()? getinBank, W Function()? ideabank, W Function()? ing, W Function()? inteligo, W Function()? mbankMtransfer, W Function()? nestPrzelew, W Function()? noblePay, W Function()? pbacZIpko, W Function()? plusBank, W Function()? santanderPrzelew24, W Function()? tmobileUsbugiBankowe, W Function()? toyotaBank, W Function()? velobank, W Function()? volkswagenBank, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBank, W Function()? bankMillennium, W Function()? bankNowyBfgSa, W Function()? bankPekaoSa, W Function()? bankiSpbdzielcze, W Function()? blik, W Function()? bnpParibas, W Function()? boz, W Function()? citiHandlowy, W Function()? creditAgricole, W Function()? envelobank, W Function()? etransferPocztowy24, W Function()? getinBank, W Function()? ideabank, W Function()? ing, W Function()? inteligo, W Function()? mbankMtransfer, W Function()? nestPrzelew, W Function()? noblePay, W Function()? pbacZIpko, W Function()? plusBank, W Function()? santanderPrzelew24, W Function()? tmobileUsbugiBankowe, W Function()? toyotaBank, W Function()? velobank, W Function()? volkswagenBank, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDetailsP24Bank$aliorBank() => aliorBank != null ? aliorBank() : orElse(value),
       PaymentMethodDetailsP24Bank$bankMillennium() => bankMillennium != null ? bankMillennium() : orElse(value),
       PaymentMethodDetailsP24Bank$bankNowyBfgSa() => bankNowyBfgSa != null ? bankNowyBfgSa() : orElse(value),
@@ -181,10 +181,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
       PaymentMethodDetailsP24Bank$velobank() => velobank != null ? velobank() : orElse(value),
       PaymentMethodDetailsP24Bank$volkswagenBank() => volkswagenBank != null ? volkswagenBank() : orElse(value),
       PaymentMethodDetailsP24Bank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDetailsP24Bank($value)';
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$aliorBank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$aliorBank._();
 
 @override String get value => 'alior_bank';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'alior_bank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$bankMillennium extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$bankMillennium._();
 
 @override String get value => 'bank_millennium';
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'bank_millennium'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$bankNowyBfgSa extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$bankNowyBfgSa._();
 
 @override String get value => 'bank_nowy_bfg_sa';
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'bank_nowy_bfg_sa'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$bankPekaoSa extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$bankPekaoSa._();
 
 @override String get value => 'bank_pekao_sa';
@@ -220,7 +220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'bank_pekao_sa'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$bankiSpbdzielcze extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$bankiSpbdzielcze._();
 
 @override String get value => 'banki_spbdzielcze';
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'banki_spbdzielcze'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$blik extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$blik._();
 
 @override String get value => 'blik';
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$bnpParibas extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$bnpParibas._();
 
 @override String get value => 'bnp_paribas';
@@ -247,7 +247,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'bnp_paribas'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$boz extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$boz._();
 
 @override String get value => 'boz';
@@ -256,7 +256,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'boz'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$citiHandlowy extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$citiHandlowy._();
 
 @override String get value => 'citi_handlowy';
@@ -265,7 +265,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'citi_handlowy'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$creditAgricole extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$creditAgricole._();
 
 @override String get value => 'credit_agricole';
@@ -274,7 +274,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'credit_agricole'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$envelobank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$envelobank._();
 
 @override String get value => 'envelobank';
@@ -283,7 +283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'envelobank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$etransferPocztowy24 extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$etransferPocztowy24._();
 
 @override String get value => 'etransfer_pocztowy24';
@@ -292,7 +292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'etransfer_pocztowy24'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$getinBank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$getinBank._();
 
 @override String get value => 'getin_bank';
@@ -301,7 +301,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'getin_bank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$ideabank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$ideabank._();
 
 @override String get value => 'ideabank';
@@ -310,7 +310,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'ideabank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$ing extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$ing._();
 
 @override String get value => 'ing';
@@ -319,7 +319,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'ing'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$inteligo extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$inteligo._();
 
 @override String get value => 'inteligo';
@@ -328,7 +328,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'inteligo'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$mbankMtransfer extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$mbankMtransfer._();
 
 @override String get value => 'mbank_mtransfer';
@@ -337,7 +337,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'mbank_mtransfer'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$nestPrzelew extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$nestPrzelew._();
 
 @override String get value => 'nest_przelew';
@@ -346,7 +346,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'nest_przelew'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$noblePay extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$noblePay._();
 
 @override String get value => 'noble_pay';
@@ -355,7 +355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'noble_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$pbacZIpko extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$pbacZIpko._();
 
 @override String get value => 'pbac_z_ipko';
@@ -364,7 +364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'pbac_z_ipko'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$plusBank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$plusBank._();
 
 @override String get value => 'plus_bank';
@@ -373,7 +373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'plus_bank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$santanderPrzelew24 extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$santanderPrzelew24._();
 
 @override String get value => 'santander_przelew24';
@@ -382,7 +382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'santander_przelew24'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$tmobileUsbugiBankowe extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$tmobileUsbugiBankowe._();
 
 @override String get value => 'tmobile_usbugi_bankowe';
@@ -391,7 +391,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'tmobile_usbugi_bankowe'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$toyotaBank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$toyotaBank._();
 
 @override String get value => 'toyota_bank';
@@ -400,7 +400,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'toyota_bank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$velobank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$velobank._();
 
 @override String get value => 'velobank';
@@ -409,7 +409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'velobank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$volkswagenBank extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$volkswagenBank._();
 
 @override String get value => 'volkswagen_bank';
@@ -418,7 +418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => 'volkswagen_bank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsP24Bank$Unknown extends PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank$Unknown(this.value);
 
 @override final String value;
@@ -428,4 +428,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBan
 
 @override int get hashCode => value.hashCode;
 
- }
+}

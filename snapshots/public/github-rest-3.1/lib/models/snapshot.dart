@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/manifest.dart';import 'package:pub_github_rest_3_1/models/snapshot/detector.dart';import 'package:pub_github_rest_3_1/models/snapshot/snapshot_job.dart';/// Create a new snapshot of a repository's dependencies.
 @immutable final class Snapshot {const Snapshot({required this.version, required this.job, required this.sha, required this.ref, required this.detector, required this.scanned, this.metadata, this.manifests, });
 
-factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
+factory Snapshot.fromJson(Map<String, dynamic> json) {return Snapshot(
   version: (json['version'] as num).toInt(),
   job: SnapshotJob.fromJson(json['job'] as Map<String, dynamic>),
   sha: json['sha'] as String,
@@ -13,7 +13,7 @@ factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
   metadata: json['metadata'] as Map<String, dynamic>?,
   manifests: (json['manifests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Manifest.fromJson(v as Map<String, dynamic>))),
   scanned: DateTime.parse(json['scanned'] as String),
-); }
+);}
 
 /// The version of the repository snapshot submission.
 final int version;
@@ -38,7 +38,7 @@ final Map<String,Manifest>? manifests;
 /// The time at which the snapshot was scanned.
 final DateTime scanned;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'version': version,
   'job': job.toJson(),
   'sha': sha,
@@ -47,20 +47,20 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   if (manifests != null) 'manifests': manifests?.map((k, v) => MapEntry(k, v.toJson())),
   'scanned': scanned.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('version') && json['version'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('version') && json['version'] is num &&
       json.containsKey('job') &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('detector') &&
-      json.containsKey('scanned') && json['scanned'] is String; } 
+      json.containsKey('scanned') && json['scanned'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (sha.runes.length < 40) { errors.add('sha: length must be >= 40'); }
 if (sha.runes.length > 40) { errors.add('sha: length must be <= 40'); }
 if (!RegExp('^refs/').hasMatch(ref)) { errors.add('ref: must match pattern ^refs/'); }
-return errors; } 
-Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Detector? detector, Map<String, dynamic>? Function()? metadata, Map<String, Manifest>? Function()? manifests, DateTime? scanned, }) { return Snapshot(
+return errors;}
+Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Detector? detector, Map<String, dynamic>? Function()? metadata, Map<String, Manifest>? Function()? manifests, DateTime? scanned, }) {return Snapshot(
   version: version ?? this.version,
   job: job ?? this.job,
   sha: sha ?? this.sha,
@@ -69,7 +69,7 @@ Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Det
   metadata: metadata != null ? metadata() : this.metadata,
   manifests: manifests != null ? manifests() : this.manifests,
   scanned: scanned ?? this.scanned,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Snapshot &&
           version == other.version &&
@@ -85,4 +85,4 @@ Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Det
 
 @override String toString() => 'Snapshot(version: $version, job: $job, sha: $sha, ref: $ref, detector: $detector, metadata: $metadata, manifests: $manifests, scanned: $scanned)';
 
- }
+}

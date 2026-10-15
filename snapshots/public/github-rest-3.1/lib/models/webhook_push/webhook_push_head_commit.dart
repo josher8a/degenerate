@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_push/commits_author.dart';import 'package:pub_github_rest_3_1/models/webhook_push/commits_committer.dart';@immutable final class WebhookPushHeadCommit {const WebhookPushHeadCommit({required this.author, required this.committer, required this.distinct, required this.id, required this.message, required this.timestamp, required this.treeId, required this.url, this.added, this.modified, this.removed, });
 
-factory WebhookPushHeadCommit.fromJson(Map<String, dynamic> json) { return WebhookPushHeadCommit(
+factory WebhookPushHeadCommit.fromJson(Map<String, dynamic> json) {return WebhookPushHeadCommit(
   added: (json['added'] as List<dynamic>?)?.map((e) => e as String).toList(),
   author: CommitsAuthor.fromJson(json['author'] as Map<String, dynamic>),
   committer: CommitsCommitter.fromJson(json['committer'] as Map<String, dynamic>),
@@ -15,7 +15,7 @@ factory WebhookPushHeadCommit.fromJson(Map<String, dynamic> json) { return Webho
   timestamp: DateTime.parse(json['timestamp'] as String),
   treeId: json['tree_id'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// An array of files added in the commit.
 final List<String>? added;
@@ -48,7 +48,7 @@ final String treeId;
 /// URL that points to the commit API resource.
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'added': ?added,
   'author': author.toJson(),
   'committer': committer.toJson(),
@@ -60,16 +60,16 @@ Map<String, dynamic> toJson() { return {
   'timestamp': timestamp.toIso8601String(),
   'tree_id': treeId,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('committer') &&
       json.containsKey('distinct') && json['distinct'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('timestamp') && json['timestamp'] is String &&
       json.containsKey('tree_id') && json['tree_id'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? author, CommitsCommitter? committer, bool? distinct, String? id, String? message, List<String>? Function()? modified, List<String>? Function()? removed, DateTime? timestamp, String? treeId, Uri? url, }) { return WebhookPushHeadCommit(
+      json.containsKey('url') && json['url'] is String;}
+WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? author, CommitsCommitter? committer, bool? distinct, String? id, String? message, List<String>? Function()? modified, List<String>? Function()? removed, DateTime? timestamp, String? treeId, Uri? url, }) {return WebhookPushHeadCommit(
   added: added != null ? added() : this.added,
   author: author ?? this.author,
   committer: committer ?? this.committer,
@@ -81,7 +81,7 @@ WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? 
   timestamp: timestamp ?? this.timestamp,
   treeId: treeId ?? this.treeId,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPushHeadCommit &&
           listEquals(added, other.added) &&
@@ -100,4 +100,4 @@ WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? 
 
 @override String toString() => 'WebhookPushHeadCommit(\n  added: $added,\n  author: $author,\n  committer: $committer,\n  distinct: $distinct,\n  id: $id,\n  message: $message,\n  modified: $modified,\n  removed: $removed,\n  timestamp: $timestamp,\n  treeId: $treeId,\n  url: $url,\n)';
 
- }
+}

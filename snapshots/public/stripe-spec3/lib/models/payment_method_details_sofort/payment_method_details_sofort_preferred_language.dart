@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred langua
 /// Can be one of `de`, `en`, `es`, `fr`, `it`, `nl`, or `pl`
 sealed class PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage();
 
-factory PaymentMethodDetailsSofortPreferredLanguage.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsSofortPreferredLanguage.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'es' => es,
@@ -14,7 +14,7 @@ factory PaymentMethodDetailsSofortPreferredLanguage.fromJson(String json) { retu
   'nl' => nl,
   'pl' => pl,
   _ => PaymentMethodDetailsSofortPreferredLanguage$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDetailsSofortPreferredLanguage de = PaymentMethodDetailsSofortPreferredLanguage$de._();
 
@@ -33,9 +33,9 @@ static const PaymentMethodDetailsSofortPreferredLanguage pl = PaymentMethodDetai
 static const List<PaymentMethodDetailsSofortPreferredLanguage> values = [de, en, es, fr, it, nl, pl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'de' => 'de',
   'en' => 'en',
   'es' => 'es',
@@ -44,11 +44,11 @@ String get name { return switch (value) {
   'nl' => 'nl',
   'pl' => 'pl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDetailsSofortPreferredLanguage$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDetailsSofortPreferredLanguage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function() nl, required W Function() pl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function() nl, required W Function() pl, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDetailsSofortPreferredLanguage$de() => de(),
       PaymentMethodDetailsSofortPreferredLanguage$en() => en(),
       PaymentMethodDetailsSofortPreferredLanguage$es() => es(),
@@ -57,9 +57,9 @@ W when<W>({required W Function() de, required W Function() en, required W Functi
       PaymentMethodDetailsSofortPreferredLanguage$nl() => nl(),
       PaymentMethodDetailsSofortPreferredLanguage$pl() => pl(),
       PaymentMethodDetailsSofortPreferredLanguage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function()? nl, W Function()? pl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function()? nl, W Function()? pl, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDetailsSofortPreferredLanguage$de() => de != null ? de() : orElse(value),
       PaymentMethodDetailsSofortPreferredLanguage$en() => en != null ? en() : orElse(value),
       PaymentMethodDetailsSofortPreferredLanguage$es() => es != null ? es() : orElse(value),
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
       PaymentMethodDetailsSofortPreferredLanguage$nl() => nl != null ? nl() : orElse(value),
       PaymentMethodDetailsSofortPreferredLanguage$pl() => pl != null ? pl() : orElse(value),
       PaymentMethodDetailsSofortPreferredLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDetailsSofortPreferredLanguage($value)';
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$de extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$de._();
 
 @override String get value => 'de';
@@ -80,7 +80,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'de'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$en extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$en._();
 
 @override String get value => 'en';
@@ -89,7 +89,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'en'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$es extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$es._();
 
 @override String get value => 'es';
@@ -98,7 +98,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'es'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$fr extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$fr._();
 
 @override String get value => 'fr';
@@ -107,7 +107,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'fr'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$it extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$it._();
 
 @override String get value => 'it';
@@ -116,7 +116,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'it'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$nl extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$nl._();
 
 @override String get value => 'nl';
@@ -125,7 +125,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'nl'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$pl extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$pl._();
 
 @override String get value => 'pl';
@@ -134,7 +134,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => 'pl'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsSofortPreferredLanguage$Unknown extends PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage$Unknown(this.value);
 
 @override final String value;
@@ -144,4 +144,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

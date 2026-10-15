@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of credit the user is receiving.
 sealed class SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes();
 
-factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json) {
+factory SecurityAdvisoryCreditTypes.fromJson(String json) {return switch (json) {
   'analyst' => analyst,
   'finder' => finder,
   'reporter' => reporter,
@@ -16,7 +16,7 @@ factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json)
   'sponsor' => sponsor,
   'other' => $other,
   _ => SecurityAdvisoryCreditTypes$Unknown(json),
-}; }
+};}
 
 static const SecurityAdvisoryCreditTypes analyst = SecurityAdvisoryCreditTypes$analyst._();
 
@@ -41,9 +41,9 @@ static const SecurityAdvisoryCreditTypes $other = SecurityAdvisoryCreditTypes$$o
 static const List<SecurityAdvisoryCreditTypes> values = [analyst, finder, reporter, coordinator, remediationDeveloper, remediationReviewer, remediationVerifier, tool, sponsor, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'analyst' => 'analyst',
   'finder' => 'finder',
   'reporter' => 'reporter',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'sponsor' => 'sponsor',
   'other' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecurityAdvisoryCreditTypes$Unknown; } 
+bool get isUnknown {return this is SecurityAdvisoryCreditTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() analyst, required W Function() finder, required W Function() reporter, required W Function() coordinator, required W Function() remediationDeveloper, required W Function() remediationReviewer, required W Function() remediationVerifier, required W Function() tool, required W Function() sponsor, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() analyst, required W Function() finder, required W Function() reporter, required W Function() coordinator, required W Function() remediationDeveloper, required W Function() remediationReviewer, required W Function() remediationVerifier, required W Function() tool, required W Function() sponsor, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       SecurityAdvisoryCreditTypes$analyst() => analyst(),
       SecurityAdvisoryCreditTypes$finder() => finder(),
       SecurityAdvisoryCreditTypes$reporter() => reporter(),
@@ -71,9 +71,9 @@ W when<W>({required W Function() analyst, required W Function() finder, required
       SecurityAdvisoryCreditTypes$sponsor() => sponsor(),
       SecurityAdvisoryCreditTypes$$other() => $other(),
       SecurityAdvisoryCreditTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst, W Function()? finder, W Function()? reporter, W Function()? coordinator, W Function()? remediationDeveloper, W Function()? remediationReviewer, W Function()? remediationVerifier, W Function()? tool, W Function()? sponsor, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst, W Function()? finder, W Function()? reporter, W Function()? coordinator, W Function()? remediationDeveloper, W Function()? remediationReviewer, W Function()? remediationVerifier, W Function()? tool, W Function()? sponsor, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       SecurityAdvisoryCreditTypes$analyst() => analyst != null ? analyst() : orElse(value),
       SecurityAdvisoryCreditTypes$finder() => finder != null ? finder() : orElse(value),
       SecurityAdvisoryCreditTypes$reporter() => reporter != null ? reporter() : orElse(value),
@@ -85,10 +85,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
       SecurityAdvisoryCreditTypes$sponsor() => sponsor != null ? sponsor() : orElse(value),
       SecurityAdvisoryCreditTypes$$other() => $other != null ? $other() : orElse(value),
       SecurityAdvisoryCreditTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecurityAdvisoryCreditTypes($value)';
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$analyst extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$analyst._();
 
 @override String get value => 'analyst';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'analyst'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$finder extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$finder._();
 
 @override String get value => 'finder';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'finder'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$reporter extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$reporter._();
 
 @override String get value => 'reporter';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'reporter'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$coordinator extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$coordinator._();
 
 @override String get value => 'coordinator';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'coordinator'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$remediationDeveloper extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$remediationDeveloper._();
 
 @override String get value => 'remediation_developer';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'remediation_developer'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$remediationReviewer extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$remediationReviewer._();
 
 @override String get value => 'remediation_reviewer';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'remediation_reviewer'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$remediationVerifier extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$remediationVerifier._();
 
 @override String get value => 'remediation_verifier';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'remediation_verifier'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$tool extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$tool._();
 
 @override String get value => 'tool';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'tool'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$sponsor extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$sponsor._();
 
 @override String get value => 'sponsor';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'sponsor'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$$other extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$$other._();
 
 @override String get value => 'other';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryCreditTypes$Unknown extends SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes$Unknown(this.value);
 
 @override final String value;
@@ -188,4 +188,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpStatsAsn {const IpStatsAsn({required this.asn, required this.country, required this.description, required this.ip, required this.name, required this.org, });
 
-factory IpStatsAsn.fromJson(Map<String, dynamic> json) { return IpStatsAsn(
+factory IpStatsAsn.fromJson(Map<String, dynamic> json) {return IpStatsAsn(
   asn: json['asn'] as String,
   country: json['country'] as String,
   description: json['description'] as String,
   ip: json['ip'] as String,
   name: json['name'] as String,
   org: json['org'] as String,
-); }
+);}
 
 final String asn;
 
@@ -24,28 +24,28 @@ final String name;
 
 final String org;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'country': country,
   'description': description,
   'ip': ip,
   'name': name,
   'org': org,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('ip') && json['ip'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('org') && json['org'] is String; } 
-IpStatsAsn copyWith({String? asn, String? country, String? description, String? ip, String? name, String? org, }) { return IpStatsAsn(
+      json.containsKey('org') && json['org'] is String;}
+IpStatsAsn copyWith({String? asn, String? country, String? description, String? ip, String? name, String? org, }) {return IpStatsAsn(
   asn: asn ?? this.asn,
   country: country ?? this.country,
   description: description ?? this.description,
   ip: ip ?? this.ip,
   name: name ?? this.name,
   org: org ?? this.org,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpStatsAsn &&
           asn == other.asn &&
@@ -59,4 +59,4 @@ IpStatsAsn copyWith({String? asn, String? country, String? description, String? 
 
 @override String toString() => 'IpStatsAsn(asn: $asn, country: $country, description: $description, ip: $ip, name: $name, org: $org)';
 
- }
+}

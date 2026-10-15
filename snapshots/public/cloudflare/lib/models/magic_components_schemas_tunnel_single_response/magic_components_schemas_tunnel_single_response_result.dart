@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_interconnect.dart';@immutable final class MagicComponentsSchemasTunnelSingleResponseResult {const MagicComponentsSchemasTunnelSingleResponseResult({this.interconnect});
 
-factory MagicComponentsSchemasTunnelSingleResponseResult.fromJson(Map<String, dynamic> json) { return MagicComponentsSchemasTunnelSingleResponseResult(
+factory MagicComponentsSchemasTunnelSingleResponseResult.fromJson(Map<String, dynamic> json) {return MagicComponentsSchemasTunnelSingleResponseResult(
   interconnect: json['interconnect'] != null ? MagicInterconnect.fromJson(json['interconnect'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final MagicInterconnect? interconnect;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (interconnect != null) 'interconnect': interconnect?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interconnect'}.contains(key)); } 
-MagicComponentsSchemasTunnelSingleResponseResult copyWith({MagicInterconnect? Function()? interconnect}) { return MagicComponentsSchemasTunnelSingleResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'interconnect'}.contains(key));}
+MagicComponentsSchemasTunnelSingleResponseResult copyWith({MagicInterconnect? Function()? interconnect}) {return MagicComponentsSchemasTunnelSingleResponseResult(
   interconnect: interconnect != null ? interconnect() : this.interconnect,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicComponentsSchemasTunnelSingleResponseResult &&
           interconnect == other.interconnect;
@@ -24,4 +24,4 @@ MagicComponentsSchemasTunnelSingleResponseResult copyWith({MagicInterconnect? Fu
 
 @override String toString() => 'MagicComponentsSchemasTunnelSingleResponseResult(interconnect: $interconnect)';
 
- }
+}

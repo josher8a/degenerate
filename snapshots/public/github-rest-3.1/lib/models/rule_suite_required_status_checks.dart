@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite_required_status_checks/rule_suite_required_status_checks_checks.dart';/// Metadata for a required status checks rule evaluation result.
 @immutable final class RuleSuiteRequiredStatusChecks {const RuleSuiteRequiredStatusChecks({this.checks});
 
-factory RuleSuiteRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return RuleSuiteRequiredStatusChecks(
+factory RuleSuiteRequiredStatusChecks.fromJson(Map<String, dynamic> json) {return RuleSuiteRequiredStatusChecks(
   checks: (json['checks'] as List<dynamic>?)?.map((e) => RuleSuiteRequiredStatusChecksChecks.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The status checks associated with the rule evaluation.
 final List<RuleSuiteRequiredStatusChecksChecks>? checks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (checks != null) 'checks': checks?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'checks'}.contains(key)); } 
-RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks>? Function()? checks}) { return RuleSuiteRequiredStatusChecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'checks'}.contains(key));}
+RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks>? Function()? checks}) {return RuleSuiteRequiredStatusChecks(
   checks: checks != null ? checks() : this.checks,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuiteRequiredStatusChecks &&
           listEquals(checks, other.checks);
@@ -26,4 +26,4 @@ RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks
 
 @override String toString() => 'RuleSuiteRequiredStatusChecks(checks: $checks)';
 
- }
+}

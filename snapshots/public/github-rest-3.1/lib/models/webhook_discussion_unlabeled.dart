@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_unlabeled/webhook_discussion_unlabeled_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookDiscussionUnlabeled {const WebhookDiscussionUnlabeled({required this.action, required this.discussion, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDiscussionUnlabeled.fromJson(Map<String, dynamic> json) { return WebhookDiscussionUnlabeled(
+factory WebhookDiscussionUnlabeled.fromJson(Map<String, dynamic> json) {return WebhookDiscussionUnlabeled(
   action: WebhookDiscussionUnlabeledAction.fromJson(json['action'] as String),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookDiscussionUnlabeled.fromJson(Map<String, dynamic> json) { return 
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionUnlabeledAction action;
 
@@ -30,7 +30,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'discussion': discussion.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -39,13 +39,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('discussion') &&
       json.containsKey('label') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDiscussionUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionUnlabeled(
+      json.containsKey('sender');}
+WebhookDiscussionUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDiscussionUnlabeled(
   action: action ?? this.action,
   discussion: discussion ?? this.discussion,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -54,7 +54,7 @@ WebhookDiscussionUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, D
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionUnlabeled &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookDiscussionUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, D
 
 @override String toString() => 'WebhookDiscussionUnlabeled(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

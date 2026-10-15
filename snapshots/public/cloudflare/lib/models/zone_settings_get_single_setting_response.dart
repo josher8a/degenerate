@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';import 'package:pub_cloudflare/models/zones_setting.dart';@immutable final class ZoneSettingsGetSingleSettingResponse {const ZoneSettingsGetSingleSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory ZoneSettingsGetSingleSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneSettingsGetSingleSettingResponse(
+factory ZoneSettingsGetSingleSettingResponse.fromJson(Map<String, dynamic> json) {return ZoneSettingsGetSingleSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? ZonesSetting.fromJson(json['result']) : null,
-); }
+);}
 
 final List<ZonesMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final ZonesSetting? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZoneSettingsGetSingleSettingResponse copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? messages, bool? success, ZonesSetting? Function()? result, }) { return ZoneSettingsGetSingleSettingResponse(
+      json.containsKey('success') && json['success'] is bool;}
+ZoneSettingsGetSingleSettingResponse copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? messages, bool? success, ZonesSetting? Function()? result, }) {return ZoneSettingsGetSingleSettingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneSettingsGetSingleSettingResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ZoneSettingsGetSingleSettingResponse copyWith({List<ZonesMessages2>? errors, Lis
 
 @override String toString() => 'ZoneSettingsGetSingleSettingResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

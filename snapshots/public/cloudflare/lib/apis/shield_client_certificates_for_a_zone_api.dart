@@ -12,7 +12,7 @@ final class ShieldClientCertificatesForAZoneApi with ApiExecutor {const ShieldCl
 /// List Hostname Associations
 ///
 /// `GET /zones/{zone_id}/certificate_authorities/hostname_associations`
-Future<ApiResult<TlsCertificatesAndHostnamesHostnameAssociationsResponseResult?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneListHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, String? mtlsCertificateId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TlsCertificatesAndHostnamesHostnameAssociationsResponseResult?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneListHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, String? mtlsCertificateId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mtlsCertificateId != null) {
   queryParameters['mtls_certificate_id'] = mtlsCertificateId;
@@ -29,7 +29,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -37,11 +37,11 @@ return execute(
   },
   onError: ClientCertificateForAZoneClientCertificateDetailsError.fromResponse,
 );
- } 
+}
 /// Replace Hostname Associations
 ///
 /// `PUT /zones/{zone_id}/certificate_authorities/hostname_associations`
-Future<ApiResult<TlsCertificatesAndHostnamesHostnameAssociationsResponseResult?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZonePutHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesHostnameAssociation body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesHostnameAssociationsResponseResult?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZonePutHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesHostnameAssociation body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -60,13 +60,13 @@ return execute(
   },
   onError: ClientCertificateForAZoneClientCertificateDetailsError.fromResponse,
 );
- } 
+}
 /// List Client Certificates
 ///
 /// List all of your Zone's API Shield mTLS Client Certificates by Status and/or using Pagination
 ///
 /// `GET /zones/{zone_id}/client_certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesClientCertificate>?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneListClientCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic status, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesClientCertificate>?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneListClientCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic status, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toString();
@@ -95,7 +95,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -103,13 +103,13 @@ return execute(
   },
   onError: ClientCertificateForAZoneClientCertificateDetailsError.fromResponse,
 );
- } 
+}
 /// Create Client Certificate
 ///
 /// Create a new API Shield mTLS Client Certificate
 ///
 /// `POST /zones/{zone_id}/client_certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneCreateClientCertificateError>> clientCertificateForAZoneCreateClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneCreateClientCertificateError>> clientCertificateForAZoneCreateClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -120,7 +120,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -128,13 +128,13 @@ return execute(
   },
   onError: ClientCertificateForAZoneCreateClientCertificateError.fromResponse,
 );
- } 
+}
 /// Client Certificate Details
 ///
 /// Get Details for a single mTLS API Shield Client Certificate
 ///
 /// `GET /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneClientCertificateDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneClientCertificateDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -143,7 +143,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -151,13 +151,13 @@ return execute(
   },
   onError: ClientCertificateForAZoneClientCertificateDetailsError.fromResponse,
 );
- } 
+}
 /// Reactivate Client Certificate
 ///
 /// If a API Shield mTLS Client Certificate is in a pending_revocation state, you may reactivate it with this endpoint.
 ///
 /// `PATCH /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneEditClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, required ClientCertificateForAZoneEditClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneEditClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, required ClientCertificateForAZoneEditClientCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -168,7 +168,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -176,13 +176,13 @@ return execute(
   },
   onError: ClientCertificateForAZoneClientCertificateDetailsError.fromResponse,
 );
- } 
+}
 /// Revoke Client Certificate
 ///
 /// Set a API Shield mTLS Client Certificate to pending_revocation status for processing to revoked status.
 ///
 /// `DELETE /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneDeleteClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneClientCertificateDetailsError>> clientCertificateForAZoneDeleteClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -191,7 +191,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -199,5 +199,5 @@ return execute(
   },
   onError: ClientCertificateForAZoneClientCertificateDetailsError.fromResponse,
 );
- } 
- }
+}
+}

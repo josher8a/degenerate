@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_reference.dart';/// Represents a StorageOS persistent volume resource.
 @immutable final class StorageOsPersistentVolumeSource {const StorageOsPersistentVolumeSource({this.fsType, this.readOnly, this.secretRef, this.volumeName, this.volumeNamespace, });
 
-factory StorageOsPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return StorageOsPersistentVolumeSource(
+factory StorageOsPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return StorageOsPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
   secretRef: json['secretRef'] != null ? ObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   volumeName: json['volumeName'] as String?,
   volumeNamespace: json['volumeNamespace'] as String?,
-); }
+);}
 
 /// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 final String? fsType;
@@ -27,21 +27,21 @@ final String? volumeName;
 /// volumeNamespace specifies the scope of the volume within StorageOS.  If no namespace is specified then the Pod's namespace will be used.  This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to "default" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.
 final String? volumeNamespace;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'readOnly': ?readOnly,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
   'volumeName': ?volumeName,
   'volumeNamespace': ?volumeNamespace,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fsType', 'readOnly', 'secretRef', 'volumeName', 'volumeNamespace'}.contains(key)); } 
-StorageOsPersistentVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, ObjectReference? Function()? secretRef, String? Function()? volumeName, String? Function()? volumeNamespace, }) { return StorageOsPersistentVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fsType', 'readOnly', 'secretRef', 'volumeName', 'volumeNamespace'}.contains(key));}
+StorageOsPersistentVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, ObjectReference? Function()? secretRef, String? Function()? volumeName, String? Function()? volumeNamespace, }) {return StorageOsPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
   volumeNamespace: volumeNamespace != null ? volumeNamespace() : this.volumeNamespace,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StorageOsPersistentVolumeSource &&
           fsType == other.fsType &&
@@ -54,4 +54,4 @@ StorageOsPersistentVolumeSource copyWith({String? Function()? fsType, bool? Func
 
 @override String toString() => 'StorageOsPersistentVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeName: $volumeName, volumeNamespace: $volumeNamespace)';
 
- }
+}

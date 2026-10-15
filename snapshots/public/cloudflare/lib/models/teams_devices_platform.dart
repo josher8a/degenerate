@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TeamsDevicesPlatform {const TeamsDevicesPlatform();
 
-factory TeamsDevicesPlatform.fromJson(String json) { return switch (json) {
+factory TeamsDevicesPlatform.fromJson(String json) {return switch (json) {
   'windows' => windows,
   'mac' => mac,
   'linux' => linux,
@@ -11,7 +11,7 @@ factory TeamsDevicesPlatform.fromJson(String json) { return switch (json) {
   'ios' => ios,
   'chromeos' => chromeos,
   _ => TeamsDevicesPlatform$Unknown(json),
-}; }
+};}
 
 static const TeamsDevicesPlatform windows = TeamsDevicesPlatform$windows._();
 
@@ -28,9 +28,9 @@ static const TeamsDevicesPlatform chromeos = TeamsDevicesPlatform$chromeos._();
 static const List<TeamsDevicesPlatform> values = [windows, mac, linux, android, ios, chromeos];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'windows' => 'windows',
   'mac' => 'mac',
   'linux' => 'linux',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'ios' => 'ios',
   'chromeos' => 'chromeos',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamsDevicesPlatform$Unknown; } 
+bool get isUnknown {return this is TeamsDevicesPlatform$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() windows, required W Function() mac, required W Function() linux, required W Function() android, required W Function() ios, required W Function() chromeos, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() windows, required W Function() mac, required W Function() linux, required W Function() android, required W Function() ios, required W Function() chromeos, required W Function(String value) $unknown, }) {return switch (this) {
       TeamsDevicesPlatform$windows() => windows(),
       TeamsDevicesPlatform$mac() => mac(),
       TeamsDevicesPlatform$linux() => linux(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() windows, required W Function() mac, required W 
       TeamsDevicesPlatform$ios() => ios(),
       TeamsDevicesPlatform$chromeos() => chromeos(),
       TeamsDevicesPlatform$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? mac, W Function()? linux, W Function()? android, W Function()? ios, W Function()? chromeos, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? mac, W Function()? linux, W Function()? android, W Function()? ios, W Function()? chromeos, W Function(String value)? $unknown, }) {return switch (this) {
       TeamsDevicesPlatform$windows() => windows != null ? windows() : orElse(value),
       TeamsDevicesPlatform$mac() => mac != null ? mac() : orElse(value),
       TeamsDevicesPlatform$linux() => linux != null ? linux() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
       TeamsDevicesPlatform$ios() => ios != null ? ios() : orElse(value),
       TeamsDevicesPlatform$chromeos() => chromeos != null ? chromeos() : orElse(value),
       TeamsDevicesPlatform$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamsDevicesPlatform($value)';
 
- }
+}
 @immutable final class TeamsDevicesPlatform$windows extends TeamsDevicesPlatform {const TeamsDevicesPlatform$windows._();
 
 @override String get value => 'windows';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'windows'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesPlatform$mac extends TeamsDevicesPlatform {const TeamsDevicesPlatform$mac._();
 
 @override String get value => 'mac';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'mac'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesPlatform$linux extends TeamsDevicesPlatform {const TeamsDevicesPlatform$linux._();
 
 @override String get value => 'linux';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'linux'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesPlatform$android extends TeamsDevicesPlatform {const TeamsDevicesPlatform$android._();
 
 @override String get value => 'android';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'android'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesPlatform$ios extends TeamsDevicesPlatform {const TeamsDevicesPlatform$ios._();
 
 @override String get value => 'ios';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'ios'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesPlatform$chromeos extends TeamsDevicesPlatform {const TeamsDevicesPlatform$chromeos._();
 
 @override String get value => 'chromeos';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'chromeos'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesPlatform$Unknown extends TeamsDevicesPlatform {const TeamsDevicesPlatform$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

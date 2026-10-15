@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryOutboundTransfersResourceAchTrackingDetails {const TreasuryOutboundTransfersResourceAchTrackingDetails({required this.traceId});
 
-factory TreasuryOutboundTransfersResourceAchTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceAchTrackingDetails(
+factory TreasuryOutboundTransfersResourceAchTrackingDetails.fromJson(Map<String, dynamic> json) {return TreasuryOutboundTransfersResourceAchTrackingDetails(
   traceId: json['trace_id'] as String,
-); }
+);}
 
 /// ACH trace ID of the OutboundTransfer for transfers sent over the `ach` network.
 final String traceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'trace_id': traceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('trace_id') && json['trace_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('trace_id') && json['trace_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (traceId.runes.length > 5000) { errors.add('traceId: length must be <= 5000'); }
-return errors; } 
-TreasuryOutboundTransfersResourceAchTrackingDetails copyWith({String? traceId}) { return TreasuryOutboundTransfersResourceAchTrackingDetails(
+return errors;}
+TreasuryOutboundTransfersResourceAchTrackingDetails copyWith({String? traceId}) {return TreasuryOutboundTransfersResourceAchTrackingDetails(
   traceId: traceId ?? this.traceId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundTransfersResourceAchTrackingDetails &&
           traceId == other.traceId;
@@ -30,4 +30,4 @@ TreasuryOutboundTransfersResourceAchTrackingDetails copyWith({String? traceId}) 
 
 @override String toString() => 'TreasuryOutboundTransfersResourceAchTrackingDetails(traceId: $traceId)';
 
- }
+}

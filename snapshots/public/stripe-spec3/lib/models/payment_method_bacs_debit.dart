@@ -2,49 +2,49 @@
 // Source: #/components/schemas/PaymentMethodBacsDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodBacsDebit {const PaymentMethodBacsDebit({this.fingerprint, this.last4, this.sortCode, });
+@immutable final class PaymentMethodBacsDebit {const PaymentMethodBacsDebit({this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.sortCode = const Omittable.absent(), });
 
-factory PaymentMethodBacsDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodBacsDebit(
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
-  sortCode: json['sort_code'] as String?,
-); }
+factory PaymentMethodBacsDebit.fromJson(Map<String, dynamic> json) {return PaymentMethodBacsDebit(
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  sortCode: json.containsKey('sort_code') ? Omittable(json['sort_code'] as String?) : const Omittable.absent(),
+);}
 
 /// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// Sort code of the bank account. (e.g., `10-20-30`)
-final String? sortCode;
+final Omittable<String?> sortCode;
 
-Map<String, dynamic> toJson() { return {
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
-  'sort_code': ?sortCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'last4', 'sort_code'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (sortCode.isPresent) 'sort_code': sortCode.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fingerprint', 'last4', 'sort_code'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final fingerprint$ = fingerprint;
+List<String> validate() {final errors = <String>[];
+final fingerprint$ = fingerprint.value;
 if (fingerprint$ != null) {
   if (fingerprint$.runes.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
-final last4$ = last4;
+final last4$ = last4.value;
 if (last4$ != null) {
   if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
-final sortCode$ = sortCode;
+final sortCode$ = sortCode.value;
 if (sortCode$ != null) {
   if (sortCode$.runes.length > 5000) { errors.add('sortCode: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodBacsDebit copyWith({String? Function()? fingerprint, String? Function()? last4, String? Function()? sortCode, }) { return PaymentMethodBacsDebit(
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
-  sortCode: sortCode != null ? sortCode() : this.sortCode,
-); } 
+return errors;}
+PaymentMethodBacsDebit copyWith({Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? sortCode, }) {return PaymentMethodBacsDebit(
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
+  sortCode: sortCode ?? this.sortCode,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodBacsDebit &&
           fingerprint == other.fingerprint &&
@@ -55,4 +55,4 @@ PaymentMethodBacsDebit copyWith({String? Function()? fingerprint, String? Functi
 
 @override String toString() => 'PaymentMethodBacsDebit(fingerprint: $fingerprint, last4: $last4, sortCode: $sortCode)';
 
- }
+}

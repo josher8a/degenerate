@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_summary_by_http_version_response/radar_get_attacks_layer7_summary_by_http_version_response_result.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionResponse {const RadarGetAttacksLayer7SummaryByHttpVersionResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer7SummaryByHttpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
+factory RadarGetAttacksLayer7SummaryByHttpVersionResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
   result: RadarGetAttacksLayer7SummaryByHttpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer7SummaryByHttpVersionResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7SummaryByHttpVersionResponse copyWith({RadarGetAttacksLayer7SummaryByHttpVersionResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer7SummaryByHttpVersionResponse copyWith({RadarGetAttacksLayer7SummaryByHttpVersionResponseResult? result, bool? success, }) {return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7SummaryByHttpVersionResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer7SummaryByHttpVersionResponse copyWith({RadarGetAttacksLayer
 
 @override String toString() => 'RadarGetAttacksLayer7SummaryByHttpVersionResponse(result: $result, success: $success)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/validation_error/validation_error_errors.dart';/// Validation Error
 @immutable final class ValidationError {const ValidationError({required this.message, required this.documentationUrl, this.errors, });
 
-factory ValidationError.fromJson(Map<String, dynamic> json) { return ValidationError(
+factory ValidationError.fromJson(Map<String, dynamic> json) {return ValidationError(
   message: json['message'] as String,
   documentationUrl: json['documentation_url'] as String,
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ValidationErrorErrors.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String message;
 
@@ -16,18 +16,18 @@ final String documentationUrl;
 
 final List<ValidationErrorErrors>? errors;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
   'documentation_url': documentationUrl,
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
-      json.containsKey('documentation_url') && json['documentation_url'] is String; } 
-ValidationError copyWith({String? message, String? documentationUrl, List<ValidationErrorErrors>? Function()? errors, }) { return ValidationError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('documentation_url') && json['documentation_url'] is String;}
+ValidationError copyWith({String? message, String? documentationUrl, List<ValidationErrorErrors>? Function()? errors, }) {return ValidationError(
   message: message ?? this.message,
   documentationUrl: documentationUrl ?? this.documentationUrl,
   errors: errors != null ? errors() : this.errors,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ValidationError &&
           message == other.message &&
@@ -38,4 +38,4 @@ ValidationError copyWith({String? message, String? documentationUrl, List<Valida
 
 @override String toString() => 'ValidationError(message: $message, documentationUrl: $documentationUrl, errors: $errors)';
 
- }
+}

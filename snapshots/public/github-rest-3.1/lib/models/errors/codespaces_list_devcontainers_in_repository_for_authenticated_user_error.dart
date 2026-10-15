@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';sealed class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError();
 
-factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.fromResponse(ApiResponse response) {     try {
+factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         400 => CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$400(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         401 => CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$401(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -13,12 +13,12 @@ factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.fromRes
       };
     } on Object {
       return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$400 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$400(this.error);
 
 final BasicError error;
@@ -27,7 +27,7 @@ final BasicError error;
 
 @override int get statusCode => 400;
 
- }
+}
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$401 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
@@ -36,7 +36,7 @@ final BasicError error;
 
 @override int get statusCode => 401;
 
- }
+}
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$403 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
@@ -45,7 +45,7 @@ final BasicError error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$404 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
@@ -54,7 +54,7 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$500 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
@@ -63,11 +63,11 @@ final BasicError error;
 
 @override int get statusCode => 500;
 
- }
+}
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$Unknown extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

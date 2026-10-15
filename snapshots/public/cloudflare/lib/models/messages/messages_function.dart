@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FunctionRole {const FunctionRole();
 
-factory FunctionRole.fromJson(String json) { return switch (json) {
+factory FunctionRole.fromJson(String json) {return switch (json) {
   'function' => function,
   _ => FunctionRole$Unknown(json),
-}; }
+};}
 
 static const FunctionRole function = FunctionRole$function._();
 
 static const List<FunctionRole> values = [function];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'function' => 'function',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionRole$Unknown; } 
+bool get isUnknown {return this is FunctionRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() function, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() function, required W Function(String value) $unknown, }) {return switch (this) {
       FunctionRole$function() => function(),
       FunctionRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? function, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? function, W Function(String value)? $unknown, }) {return switch (this) {
       FunctionRole$function() => function != null ? function() : orElse(value),
       FunctionRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FunctionRole($value)';
 
- }
+}
 @immutable final class FunctionRole$function extends FunctionRole {const FunctionRole$function._();
 
 @override String get value => 'function';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? function
 
 @override int get hashCode => 'function'.hashCode;
 
- }
+}
 @immutable final class FunctionRole$Unknown extends FunctionRole {const FunctionRole$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? function
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class MessagesFunction {const MessagesFunction({required this.content, required this.name, required this.role, });
 
-factory MessagesFunction.fromJson(Map<String, dynamic> json) { return MessagesFunction(
+factory MessagesFunction.fromJson(Map<String, dynamic> json) {return MessagesFunction(
   content: json['content'] as String,
   name: json['name'] as String,
   role: FunctionRole.fromJson(json['role'] as String),
-); }
+);}
 
 final String content;
 
@@ -67,19 +67,19 @@ final String name;
 
 final FunctionRole role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'name': name,
   'role': role.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && json['content'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('role') && json['role'] == 'function'; } 
-MessagesFunction copyWith({String? content, String? name, FunctionRole? role, }) { return MessagesFunction(
+      json.containsKey('role') && json['role'] == 'function';}
+MessagesFunction copyWith({String? content, String? name, FunctionRole? role, }) {return MessagesFunction(
   content: content ?? this.content,
   name: name ?? this.name,
   role: role ?? this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessagesFunction &&
           content == other.content &&
@@ -90,4 +90,4 @@ MessagesFunction copyWith({String? content, String? name, FunctionRole? role, })
 
 @override String toString() => 'MessagesFunction(content: $content, name: $name, role: $role)';
 
- }
+}

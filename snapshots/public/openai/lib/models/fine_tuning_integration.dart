@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_integration/fine_tuning_integration_type.dart';import 'package:pub_openai/models/fine_tuning_integration/wandb.dart';@immutable final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
 
-factory FineTuningIntegration.fromJson(Map<String, dynamic> json) { return FineTuningIntegration(
+factory FineTuningIntegration.fromJson(Map<String, dynamic> json) {return FineTuningIntegration(
   type: FineTuningIntegrationType.fromJson(json['type'] as String),
   wandb: Wandb.fromJson(json['wandb'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the integration being enabled for the fine-tuning job
 final FineTuningIntegrationType type;
@@ -17,16 +17,16 @@ final FineTuningIntegrationType type;
 /// 
 final Wandb wandb;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'wandb': wandb.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('wandb'); } 
-FineTuningIntegration copyWith({FineTuningIntegrationType? type, Wandb? wandb, }) { return FineTuningIntegration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('wandb');}
+FineTuningIntegration copyWith({FineTuningIntegrationType? type, Wandb? wandb, }) {return FineTuningIntegration(
   type: type ?? this.type,
   wandb: wandb ?? this.wandb,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningIntegration &&
           type == other.type &&
@@ -36,4 +36,4 @@ FineTuningIntegration copyWith({FineTuningIntegrationType? type, Wandb? wandb, }
 
 @override String toString() => 'FineTuningIntegration(type: $type, wandb: $wandb)';
 
- }
+}

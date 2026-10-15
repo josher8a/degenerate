@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_messages2.dart';import 'package:pub_cloudflare/models/dos_tcp_flow_protection_rule.dart';@immutable final class DosTcpFlowProtectionRuleResponse {const DosTcpFlowProtectionRuleResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DosTcpFlowProtectionRuleResponse.fromJson(Map<String, dynamic> json) { return DosTcpFlowProtectionRuleResponse(
+factory DosTcpFlowProtectionRuleResponse.fromJson(Map<String, dynamic> json) {return DosTcpFlowProtectionRuleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? DosTcpFlowProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<DosMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final DosTcpFlowProtectionRule? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DosTcpFlowProtectionRuleResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, DosTcpFlowProtectionRule? Function()? result, }) { return DosTcpFlowProtectionRuleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DosTcpFlowProtectionRuleResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, DosTcpFlowProtectionRule? Function()? result, }) {return DosTcpFlowProtectionRuleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DosTcpFlowProtectionRuleResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ DosTcpFlowProtectionRuleResponse copyWith({List<DosMessages2>? errors, List<DosM
 
 @override String toString() => 'DosTcpFlowProtectionRuleResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

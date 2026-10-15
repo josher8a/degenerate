@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCountryReadResponseResult {const GetCountryReadResponseResult({required this.alpha3, required this.name, });
 
-factory GetCountryReadResponseResult.fromJson(Map<String, dynamic> json) { return GetCountryReadResponseResult(
+factory GetCountryReadResponseResult.fromJson(Map<String, dynamic> json) {return GetCountryReadResponseResult(
   alpha3: json['alpha3'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// Example: `'AF'`
 final String alpha3;
@@ -14,16 +14,16 @@ final String alpha3;
 /// Example: `'Afghanistan'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alpha3': alpha3,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alpha3') && json['alpha3'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-GetCountryReadResponseResult copyWith({String? alpha3, String? name, }) { return GetCountryReadResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alpha3') && json['alpha3'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+GetCountryReadResponseResult copyWith({String? alpha3, String? name, }) {return GetCountryReadResponseResult(
   alpha3: alpha3 ?? this.alpha3,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetCountryReadResponseResult &&
           alpha3 == other.alpha3 &&
@@ -33,4 +33,4 @@ GetCountryReadResponseResult copyWith({String? alpha3, String? name, }) { return
 
 @override String toString() => 'GetCountryReadResponseResult(alpha3: $alpha3, name: $name)';
 
- }
+}

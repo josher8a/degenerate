@@ -2,28 +2,31 @@
 // Source: #/components/schemas/TokenRequestStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// TokenRequestStatus is the result of a token request.
-@immutable final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token = '', });
+@immutable final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token, });
 
-factory TokenRequestStatus.fromJson(Map<String, dynamic> json) { return TokenRequestStatus(
+factory TokenRequestStatus.fromJson(Map<String, dynamic> json) {return TokenRequestStatus(
   expirationTimestamp: json['expirationTimestamp'] != null ? Time.fromJson(json['expirationTimestamp'] as String) : null,
-  token: json.containsKey('token') ? json['token'] as String : '',
-); }
+  token: json['token'] as String?,
+);}
 
 /// expirationTimestamp is the time of expiration of the returned token.
 final Time? expirationTimestamp;
 
 /// token is the opaque bearer token.
-final String token;
+final String? token;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `token`, or its schema default when absent.
+String get tokenOrDefault => token ?? '';
+
+Map<String, dynamic> toJson() {return {
   if (expirationTimestamp != null) 'expirationTimestamp': expirationTimestamp?.toJson(),
-  'token': token,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expirationTimestamp', 'token'}.contains(key)); } 
-TokenRequestStatus copyWith({Time? Function()? expirationTimestamp, String Function()? token, }) { return TokenRequestStatus(
+  'token': ?token,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expirationTimestamp', 'token'}.contains(key));}
+TokenRequestStatus copyWith({Time? Function()? expirationTimestamp, String? Function()? token, }) {return TokenRequestStatus(
   expirationTimestamp: expirationTimestamp != null ? expirationTimestamp() : this.expirationTimestamp,
   token: token != null ? token() : this.token,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TokenRequestStatus &&
           expirationTimestamp == other.expirationTimestamp &&
@@ -33,4 +36,4 @@ TokenRequestStatus copyWith({Time? Function()? expirationTimestamp, String Funct
 
 @override String toString() => 'TokenRequestStatus(expirationTimestamp: $expirationTimestamp, token: $token)';
 
- }
+}

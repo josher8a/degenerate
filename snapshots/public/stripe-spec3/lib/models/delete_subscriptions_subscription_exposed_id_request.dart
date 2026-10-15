@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_request/delete_subscriptions_subscription_exposed_id_request_cancellation_details.dart';@immutable final class DeleteSubscriptionsSubscriptionExposedIdRequest {const DeleteSubscriptionsSubscriptionExposedIdRequest({this.cancellationDetails, this.expand, this.invoiceNow, this.prorate, });
 
-factory DeleteSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) { return DeleteSubscriptionsSubscriptionExposedIdRequest(
+factory DeleteSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) {return DeleteSubscriptionsSubscriptionExposedIdRequest(
   cancellationDetails: json['cancellation_details'] != null ? DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(json['cancellation_details'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceNow: json['invoice_now'] as bool?,
   prorate: json['prorate'] as bool?,
-); }
+);}
 
 /// Details about why this subscription was cancelled
 final DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails? cancellationDetails;
@@ -22,19 +22,19 @@ final bool? invoiceNow;
 /// Will generate a proration invoice item that credits remaining unused time until the subscription period end. Defaults to `false`.
 final bool? prorate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cancellationDetails != null) 'cancellation_details': cancellationDetails?.toJson(),
   'expand': ?expand,
   'invoice_now': ?invoiceNow,
   'prorate': ?prorate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_details', 'expand', 'invoice_now', 'prorate'}.contains(key)); } 
-DeleteSubscriptionsSubscriptionExposedIdRequest copyWith({DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails? Function()? cancellationDetails, List<String>? Function()? expand, bool? Function()? invoiceNow, bool? Function()? prorate, }) { return DeleteSubscriptionsSubscriptionExposedIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cancellation_details', 'expand', 'invoice_now', 'prorate'}.contains(key));}
+DeleteSubscriptionsSubscriptionExposedIdRequest copyWith({DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails? Function()? cancellationDetails, List<String>? Function()? expand, bool? Function()? invoiceNow, bool? Function()? prorate, }) {return DeleteSubscriptionsSubscriptionExposedIdRequest(
   cancellationDetails: cancellationDetails != null ? cancellationDetails() : this.cancellationDetails,
   expand: expand != null ? expand() : this.expand,
   invoiceNow: invoiceNow != null ? invoiceNow() : this.invoiceNow,
   prorate: prorate != null ? prorate() : this.prorate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteSubscriptionsSubscriptionExposedIdRequest &&
           cancellationDetails == other.cancellationDetails &&
@@ -46,4 +46,4 @@ DeleteSubscriptionsSubscriptionExposedIdRequest copyWith({DeleteSubscriptionsSub
 
 @override String toString() => 'DeleteSubscriptionsSubscriptionExposedIdRequest(cancellationDetails: $cancellationDetails, expand: $expand, invoiceNow: $invoiceNow, prorate: $prorate)';
 
- }
+}

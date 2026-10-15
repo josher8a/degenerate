@@ -400,5 +400,5 @@ static final createUserDefinedMessageSubscriptionRequirements = [const ApiSecuri
 
 static final deleteUserDefinedMessageSubscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
 
-static ApiConfig applyAccountSidAuthToken(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
- }
+static ApiConfig applyAccountSidAuthToken(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+}

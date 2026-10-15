@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_message.dart';import 'package:pub_cloudflare/models/rulesets_result_info.dart';@immutable final class ListAccountEntrypointRulesetVersionsResponse {const ListAccountEntrypointRulesetVersionsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory ListAccountEntrypointRulesetVersionsResponse.fromJson(Map<String, dynamic> json) { return ListAccountEntrypointRulesetVersionsResponse(
+factory ListAccountEntrypointRulesetVersionsResponse.fromJson(Map<String, dynamic> json) {return ListAccountEntrypointRulesetVersionsResponse(
   errors: json['errors'],
   messages: (json['messages'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'],
   resultInfo: json['result_info'] != null ? RulesetsResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final dynamic errors;
 
@@ -23,28 +23,28 @@ final dynamic success;
 
 final RulesetsResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors,
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success'); } 
+      json.containsKey('success');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
-return errors$; } 
-ListAccountEntrypointRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountEntrypointRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo? Function()? resultInfo, }) { return ListAccountEntrypointRulesetVersionsResponse(
+return errors$;}
+ListAccountEntrypointRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountEntrypointRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo? Function()? resultInfo, }) {return ListAccountEntrypointRulesetVersionsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success != null ? success() : this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListAccountEntrypointRulesetVersionsResponse &&
           errors == other.errors &&
@@ -57,4 +57,4 @@ ListAccountEntrypointRulesetVersionsResponse copyWith({dynamic Function()? error
 
 @override String toString() => 'ListAccountEntrypointRulesetVersionsResponse(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';
 
- }
+}

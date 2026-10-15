@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification or user-session failure.
 sealed class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode();
 
-factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoSessionLastErrorCode.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'consent_declined' => consentDeclined,
   'country_not_supported' => countryNotSupported,
@@ -25,7 +25,7 @@ factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) 
   'selfie_unverified_other' => selfieUnverifiedOther,
   'under_supported_age' => underSupportedAge,
   _ => GelatoSessionLastErrorCode$Unknown(json),
-}; }
+};}
 
 static const GelatoSessionLastErrorCode abandoned = GelatoSessionLastErrorCode$abandoned._();
 
@@ -68,9 +68,9 @@ static const GelatoSessionLastErrorCode underSupportedAge = GelatoSessionLastErr
 static const List<GelatoSessionLastErrorCode> values = [abandoned, consentDeclined, countryNotSupported, deviceNotSupported, documentExpired, documentTypeNotSupported, documentUnverifiedOther, emailUnverifiedOther, emailVerificationDeclined, idNumberInsufficientDocumentData, idNumberMismatch, idNumberUnverifiedOther, phoneUnverifiedOther, phoneVerificationDeclined, selfieDocumentMissingPhoto, selfieFaceMismatch, selfieManipulated, selfieUnverifiedOther, underSupportedAge];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'abandoned' => 'abandoned',
   'consent_declined' => 'consentDeclined',
   'country_not_supported' => 'countryNotSupported',
@@ -91,11 +91,11 @@ String get name { return switch (value) {
   'selfie_unverified_other' => 'selfieUnverifiedOther',
   'under_supported_age' => 'underSupportedAge',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GelatoSessionLastErrorCode$Unknown; } 
+bool get isUnknown {return this is GelatoSessionLastErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() abandoned, required W Function() consentDeclined, required W Function() countryNotSupported, required W Function() deviceNotSupported, required W Function() documentExpired, required W Function() documentTypeNotSupported, required W Function() documentUnverifiedOther, required W Function() emailUnverifiedOther, required W Function() emailVerificationDeclined, required W Function() idNumberInsufficientDocumentData, required W Function() idNumberMismatch, required W Function() idNumberUnverifiedOther, required W Function() phoneUnverifiedOther, required W Function() phoneVerificationDeclined, required W Function() selfieDocumentMissingPhoto, required W Function() selfieFaceMismatch, required W Function() selfieManipulated, required W Function() selfieUnverifiedOther, required W Function() underSupportedAge, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() abandoned, required W Function() consentDeclined, required W Function() countryNotSupported, required W Function() deviceNotSupported, required W Function() documentExpired, required W Function() documentTypeNotSupported, required W Function() documentUnverifiedOther, required W Function() emailUnverifiedOther, required W Function() emailVerificationDeclined, required W Function() idNumberInsufficientDocumentData, required W Function() idNumberMismatch, required W Function() idNumberUnverifiedOther, required W Function() phoneUnverifiedOther, required W Function() phoneVerificationDeclined, required W Function() selfieDocumentMissingPhoto, required W Function() selfieFaceMismatch, required W Function() selfieManipulated, required W Function() selfieUnverifiedOther, required W Function() underSupportedAge, required W Function(String value) $unknown, }) {return switch (this) {
       GelatoSessionLastErrorCode$abandoned() => abandoned(),
       GelatoSessionLastErrorCode$consentDeclined() => consentDeclined(),
       GelatoSessionLastErrorCode$countryNotSupported() => countryNotSupported(),
@@ -116,9 +116,9 @@ W when<W>({required W Function() abandoned, required W Function() consentDecline
       GelatoSessionLastErrorCode$selfieUnverifiedOther() => selfieUnverifiedOther(),
       GelatoSessionLastErrorCode$underSupportedAge() => underSupportedAge(),
       GelatoSessionLastErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? consentDeclined, W Function()? countryNotSupported, W Function()? deviceNotSupported, W Function()? documentExpired, W Function()? documentTypeNotSupported, W Function()? documentUnverifiedOther, W Function()? emailUnverifiedOther, W Function()? emailVerificationDeclined, W Function()? idNumberInsufficientDocumentData, W Function()? idNumberMismatch, W Function()? idNumberUnverifiedOther, W Function()? phoneUnverifiedOther, W Function()? phoneVerificationDeclined, W Function()? selfieDocumentMissingPhoto, W Function()? selfieFaceMismatch, W Function()? selfieManipulated, W Function()? selfieUnverifiedOther, W Function()? underSupportedAge, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? consentDeclined, W Function()? countryNotSupported, W Function()? deviceNotSupported, W Function()? documentExpired, W Function()? documentTypeNotSupported, W Function()? documentUnverifiedOther, W Function()? emailUnverifiedOther, W Function()? emailVerificationDeclined, W Function()? idNumberInsufficientDocumentData, W Function()? idNumberMismatch, W Function()? idNumberUnverifiedOther, W Function()? phoneUnverifiedOther, W Function()? phoneVerificationDeclined, W Function()? selfieDocumentMissingPhoto, W Function()? selfieFaceMismatch, W Function()? selfieManipulated, W Function()? selfieUnverifiedOther, W Function()? underSupportedAge, W Function(String value)? $unknown, }) {return switch (this) {
       GelatoSessionLastErrorCode$abandoned() => abandoned != null ? abandoned() : orElse(value),
       GelatoSessionLastErrorCode$consentDeclined() => consentDeclined != null ? consentDeclined() : orElse(value),
       GelatoSessionLastErrorCode$countryNotSupported() => countryNotSupported != null ? countryNotSupported() : orElse(value),
@@ -139,10 +139,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
       GelatoSessionLastErrorCode$selfieUnverifiedOther() => selfieUnverifiedOther != null ? selfieUnverifiedOther() : orElse(value),
       GelatoSessionLastErrorCode$underSupportedAge() => underSupportedAge != null ? underSupportedAge() : orElse(value),
       GelatoSessionLastErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GelatoSessionLastErrorCode($value)';
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$abandoned extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$abandoned._();
 
 @override String get value => 'abandoned';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'abandoned'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$consentDeclined extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$consentDeclined._();
 
 @override String get value => 'consent_declined';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'consent_declined'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$countryNotSupported extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$countryNotSupported._();
 
 @override String get value => 'country_not_supported';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'country_not_supported'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$deviceNotSupported extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$deviceNotSupported._();
 
 @override String get value => 'device_not_supported';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'device_not_supported'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$documentExpired extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$documentExpired._();
 
 @override String get value => 'document_expired';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'document_expired'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$documentTypeNotSupported extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$documentTypeNotSupported._();
 
 @override String get value => 'document_type_not_supported';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'document_type_not_supported'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$documentUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$documentUnverifiedOther._();
 
 @override String get value => 'document_unverified_other';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'document_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$emailUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$emailUnverifiedOther._();
 
 @override String get value => 'email_unverified_other';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'email_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$emailVerificationDeclined extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$emailVerificationDeclined._();
 
 @override String get value => 'email_verification_declined';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'email_verification_declined'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$idNumberInsufficientDocumentData extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$idNumberInsufficientDocumentData._();
 
 @override String get value => 'id_number_insufficient_document_data';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'id_number_insufficient_document_data'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$idNumberMismatch extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$idNumberMismatch._();
 
 @override String get value => 'id_number_mismatch';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'id_number_mismatch'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$idNumberUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$idNumberUnverifiedOther._();
 
 @override String get value => 'id_number_unverified_other';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'id_number_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$phoneUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$phoneUnverifiedOther._();
 
 @override String get value => 'phone_unverified_other';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'phone_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$phoneVerificationDeclined extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$phoneVerificationDeclined._();
 
 @override String get value => 'phone_verification_declined';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'phone_verification_declined'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$selfieDocumentMissingPhoto extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieDocumentMissingPhoto._();
 
 @override String get value => 'selfie_document_missing_photo';
@@ -277,7 +277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'selfie_document_missing_photo'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$selfieFaceMismatch extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieFaceMismatch._();
 
 @override String get value => 'selfie_face_mismatch';
@@ -286,7 +286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'selfie_face_mismatch'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$selfieManipulated extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieManipulated._();
 
 @override String get value => 'selfie_manipulated';
@@ -295,7 +295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'selfie_manipulated'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$selfieUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieUnverifiedOther._();
 
 @override String get value => 'selfie_unverified_other';
@@ -304,7 +304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'selfie_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$underSupportedAge extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$underSupportedAge._();
 
 @override String get value => 'under_supported_age';
@@ -313,7 +313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'under_supported_age'.hashCode;
 
- }
+}
 @immutable final class GelatoSessionLastErrorCode$Unknown extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -323,37 +323,37 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Shows last VerificationSession error
-@immutable final class GelatoSessionLastError {const GelatoSessionLastError({this.code, this.reason, });
+@immutable final class GelatoSessionLastError {const GelatoSessionLastError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoSessionLastError.fromJson(Map<String, dynamic> json) { return GelatoSessionLastError(
-  code: json['code'] != null ? GelatoSessionLastErrorCode.fromJson(json['code'] as String) : null,
-  reason: json['reason'] as String?,
-); }
+factory GelatoSessionLastError.fromJson(Map<String, dynamic> json) {return GelatoSessionLastError(
+  code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoSessionLastErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
+);}
 
 /// A short machine-readable string giving the reason for the verification or user-session failure.
-final GelatoSessionLastErrorCode? code;
+final Omittable<GelatoSessionLastErrorCode?> code;
 
 /// A message that explains the reason for verification or user-session failure.
-final String? reason;
+final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
-  if (code != null) 'code': code?.toJson(),
-  'reason': ?reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
+Map<String, dynamic> toJson() {return {
+  if (code.isPresent) 'code': code.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value,
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final reason$ = reason;
+List<String> validate() {final errors = <String>[];
+final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 }
-return errors; } 
-GelatoSessionLastError copyWith({GelatoSessionLastErrorCode? Function()? code, String? Function()? reason, }) { return GelatoSessionLastError(
-  code: code != null ? code() : this.code,
-  reason: reason != null ? reason() : this.reason,
-); } 
+return errors;}
+GelatoSessionLastError copyWith({Omittable<GelatoSessionLastErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoSessionLastError(
+  code: code ?? this.code,
+  reason: reason ?? this.reason,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoSessionLastError &&
           code == other.code &&
@@ -363,4 +363,4 @@ GelatoSessionLastError copyWith({GelatoSessionLastErrorCode? Function()? code, S
 
 @override String toString() => 'GelatoSessionLastError(code: $code, reason: $reason)';
 
- }
+}

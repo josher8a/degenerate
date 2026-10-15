@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class EphemeralKeyObject {const EphemeralKeyObject();
 
-factory EphemeralKeyObject.fromJson(String json) { return switch (json) {
+factory EphemeralKeyObject.fromJson(String json) {return switch (json) {
   'ephemeral_key' => ephemeralKey,
   _ => EphemeralKeyObject$Unknown(json),
-}; }
+};}
 
 static const EphemeralKeyObject ephemeralKey = EphemeralKeyObject$ephemeralKey._();
 
 static const List<EphemeralKeyObject> values = [ephemeralKey];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ephemeral_key' => 'ephemeralKey',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EphemeralKeyObject$Unknown; } 
+bool get isUnknown {return this is EphemeralKeyObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ephemeralKey, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ephemeralKey, required W Function(String value) $unknown, }) {return switch (this) {
       EphemeralKeyObject$ephemeralKey() => ephemeralKey(),
       EphemeralKeyObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ephemeralKey, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ephemeralKey, W Function(String value)? $unknown, }) {return switch (this) {
       EphemeralKeyObject$ephemeralKey() => ephemeralKey != null ? ephemeralKey() : orElse(value),
       EphemeralKeyObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EphemeralKeyObject($value)';
 
- }
+}
 @immutable final class EphemeralKeyObject$ephemeralKey extends EphemeralKeyObject {const EphemeralKeyObject$ephemeralKey._();
 
 @override String get value => 'ephemeral_key';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ephemera
 
 @override int get hashCode => 'ephemeral_key'.hashCode;
 
- }
+}
 @immutable final class EphemeralKeyObject$Unknown extends EphemeralKeyObject {const EphemeralKeyObject$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ephemera
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class EphemeralKey {const EphemeralKey({required this.created, required this.expires, required this.id, required this.livemode, required this.object, this.secret, });
 
-factory EphemeralKey.fromJson(Map<String, dynamic> json) { return EphemeralKey(
+factory EphemeralKey.fromJson(Map<String, dynamic> json) {return EphemeralKey(
   created: (json['created'] as num).toInt(),
   expires: (json['expires'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: EphemeralKeyObject.fromJson(json['object'] as String),
   secret: json['secret'] as String?,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -84,35 +84,35 @@ final EphemeralKeyObject object;
 /// The key's secret. You can use this value to make authorized requests to the Stripe API.
 final String? secret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'expires': expires,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
   'secret': ?secret,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('expires') && json['expires'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final secret$ = secret;
 if (secret$ != null) {
   if (secret$.runes.length > 5000) { errors.add('secret: length must be <= 5000'); }
 }
-return errors; } 
-EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, EphemeralKeyObject? object, String? Function()? secret, }) { return EphemeralKey(
+return errors;}
+EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, EphemeralKeyObject? object, String? Function()? secret, }) {return EphemeralKey(
   created: created ?? this.created,
   expires: expires ?? this.expires,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   secret: secret != null ? secret() : this.secret,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EphemeralKey &&
           created == other.created &&
@@ -126,4 +126,4 @@ EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, E
 
 @override String toString() => 'EphemeralKey(created: $created, expires: $expires, id: $id, livemode: $livemode, object: $object, secret: $secret)';
 
- }
+}

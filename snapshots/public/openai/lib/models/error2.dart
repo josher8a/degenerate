@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An error that occurred while generating the response.
 @immutable final class Error2 {const Error2({required this.code, required this.message, });
 
-factory Error2.fromJson(Map<String, dynamic> json) { return Error2(
+factory Error2.fromJson(Map<String, dynamic> json) {return Error2(
   code: json['code'] as String,
   message: json['message'] as String,
-); }
+);}
 
 /// A machine-readable error code that was returned.
 final String code;
@@ -15,16 +15,16 @@ final String code;
 /// A human-readable description of the error that was returned.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('message') && json['message'] is String; } 
-Error2 copyWith({String? code, String? message, }) { return Error2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('message') && json['message'] is String;}
+Error2 copyWith({String? code, String? message, }) {return Error2(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Error2 &&
           code == other.code &&
@@ -34,4 +34,4 @@ Error2 copyWith({String? code, String? message, }) { return Error2(
 
 @override String toString() => 'Error2(code: $code, message: $message)';
 
- }
+}

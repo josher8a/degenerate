@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the cardholder provided a postal code and if it matched the cardholder’s `billing.address.postal_code`.
 sealed class IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck();
 
-factory IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(String json) {return switch (json) {
   'match' => match,
   'mismatch' => mismatch,
   'not_provided' => notProvided,
   _ => IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown(json),
-}; }
+};}
 
 static const IssuingAuthorizationVerificationDataAddressPostalCodeCheck match = IssuingAuthorizationVerificationDataAddressPostalCodeCheck$match._();
 
@@ -20,33 +20,33 @@ static const IssuingAuthorizationVerificationDataAddressPostalCodeCheck notProvi
 static const List<IssuingAuthorizationVerificationDataAddressPostalCodeCheck> values = [match, mismatch, notProvided];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'match' => 'match',
   'mismatch' => 'mismatch',
   'not_provided' => 'notProvided',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown; } 
+bool get isUnknown {return this is IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() match, required W Function() mismatch, required W Function() notProvided, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() match, required W Function() mismatch, required W Function() notProvided, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$match() => match(),
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$mismatch() => mismatch(),
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$notProvided() => notProvided(),
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W Function()? mismatch, W Function()? notProvided, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W Function()? mismatch, W Function()? notProvided, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$match() => match != null ? match() : orElse(value),
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$mismatch() => mismatch != null ? mismatch() : orElse(value),
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$notProvided() => notProvided != null ? notProvided() : orElse(value),
       IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingAuthorizationVerificationDataAddressPostalCodeCheck($value)';
 
- }
+}
 @immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck$match extends IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck$match._();
 
 @override String get value => 'match';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W
 
 @override int get hashCode => 'match'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck$mismatch extends IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck$mismatch._();
 
 @override String get value => 'mismatch';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W
 
 @override int get hashCode => 'mismatch'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck$notProvided extends IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck$notProvided._();
 
 @override String get value => 'not_provided';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W
 
 @override int get hashCode => 'not_provided'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown extends IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

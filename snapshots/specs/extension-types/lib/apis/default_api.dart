@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /users/{userId}`
-Future<ApiResult<User, Never>> getUser({required UserId userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> getUser({required UserId userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -19,11 +19,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
     return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

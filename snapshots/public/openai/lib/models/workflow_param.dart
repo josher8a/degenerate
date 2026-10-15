@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/workflow_tracing_param.dart';/// Workflow reference and overrides applied to the chat session.
 @immutable final class WorkflowParam {const WorkflowParam({required this.id, this.version, this.stateVariables, this.tracing, });
 
-factory WorkflowParam.fromJson(Map<String, dynamic> json) { return WorkflowParam(
+factory WorkflowParam.fromJson(Map<String, dynamic> json) {return WorkflowParam(
   id: json['id'] as String,
   version: json['version'] as String?,
   stateVariables: json['state_variables'] as Map<String, dynamic>?,
   tracing: json['tracing'] != null ? WorkflowTracingParam.fromJson(json['tracing'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Identifier for the workflow invoked by the session.
 final String id;
@@ -23,19 +23,19 @@ final Map<String,dynamic>? stateVariables;
 /// Optional tracing overrides for the workflow invocation. When omitted, tracing is enabled by default.
 final WorkflowTracingParam? tracing;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'version': ?version,
   'state_variables': ?stateVariables,
   if (tracing != null) 'tracing': tracing?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-WorkflowParam copyWith({String? id, String? Function()? version, Map<String, dynamic>? Function()? stateVariables, WorkflowTracingParam? Function()? tracing, }) { return WorkflowParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+WorkflowParam copyWith({String? id, String? Function()? version, Map<String, dynamic>? Function()? stateVariables, WorkflowTracingParam? Function()? tracing, }) {return WorkflowParam(
   id: id ?? this.id,
   version: version != null ? version() : this.version,
   stateVariables: stateVariables != null ? stateVariables() : this.stateVariables,
   tracing: tracing != null ? tracing() : this.tracing,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowParam &&
           id == other.id &&
@@ -47,4 +47,4 @@ WorkflowParam copyWith({String? id, String? Function()? version, Map<String, dyn
 
 @override String toString() => 'WorkflowParam(id: $id, version: $version, stateVariables: $stateVariables, tracing: $tracing)';
 
- }
+}

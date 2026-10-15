@@ -8,13 +8,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class Zones0PatchRequestType {const Zones0PatchRequestType();
 
-factory Zones0PatchRequestType.fromJson(String json) { return switch (json) {
+factory Zones0PatchRequestType.fromJson(String json) {return switch (json) {
   'full' => full,
   'partial' => partial,
   'secondary' => secondary,
   'internal' => internal,
   _ => Zones0PatchRequestType$Unknown(json),
-}; }
+};}
 
 static const Zones0PatchRequestType full = Zones0PatchRequestType$full._();
 
@@ -27,36 +27,36 @@ static const Zones0PatchRequestType internal = Zones0PatchRequestType$internal._
 static const List<Zones0PatchRequestType> values = [full, partial, secondary, internal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'full' => 'full',
   'partial' => 'partial',
   'secondary' => 'secondary',
   'internal' => 'internal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Zones0PatchRequestType$Unknown; } 
+bool get isUnknown {return this is Zones0PatchRequestType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() full, required W Function() partial, required W Function() secondary, required W Function() internal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() full, required W Function() partial, required W Function() secondary, required W Function() internal, required W Function(String value) $unknown, }) {return switch (this) {
       Zones0PatchRequestType$full() => full(),
       Zones0PatchRequestType$partial() => partial(),
       Zones0PatchRequestType$secondary() => secondary(),
       Zones0PatchRequestType$internal() => internal(),
       Zones0PatchRequestType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function()? secondary, W Function()? internal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function()? secondary, W Function()? internal, W Function(String value)? $unknown, }) {return switch (this) {
       Zones0PatchRequestType$full() => full != null ? full() : orElse(value),
       Zones0PatchRequestType$partial() => partial != null ? partial() : orElse(value),
       Zones0PatchRequestType$secondary() => secondary != null ? secondary() : orElse(value),
       Zones0PatchRequestType$internal() => internal != null ? internal() : orElse(value),
       Zones0PatchRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Zones0PatchRequestType($value)';
 
- }
+}
 @immutable final class Zones0PatchRequestType$full extends Zones0PatchRequestType {const Zones0PatchRequestType$full._();
 
 @override String get value => 'full';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => 'full'.hashCode;
 
- }
+}
 @immutable final class Zones0PatchRequestType$partial extends Zones0PatchRequestType {const Zones0PatchRequestType$partial._();
 
 @override String get value => 'partial';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => 'partial'.hashCode;
 
- }
+}
 @immutable final class Zones0PatchRequestType$secondary extends Zones0PatchRequestType {const Zones0PatchRequestType$secondary._();
 
 @override String get value => 'secondary';
@@ -83,7 +83,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => 'secondary'.hashCode;
 
- }
+}
 @immutable final class Zones0PatchRequestType$internal extends Zones0PatchRequestType {const Zones0PatchRequestType$internal._();
 
 @override String get value => 'internal';
@@ -92,7 +92,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => 'internal'.hashCode;
 
- }
+}
 @immutable final class Zones0PatchRequestType$Unknown extends Zones0PatchRequestType {const Zones0PatchRequestType$Unknown(this.value);
 
 @override final String value;
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Example:
 /// ```json
 /// {
@@ -111,12 +111,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 /// ```
 @immutable final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan, this.type, this.vanityNameServers, });
 
-factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0PatchRequest(
+factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) {return Zones0PatchRequest(
   paused: json['paused'] != null ? ZonesPaused.fromJson(json['paused'] as bool) : null,
   plan: json['plan'] != null ? Zones0PatchRequestPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? Zones0PatchRequestType.fromJson(json['type'] as String) : null,
   vanityNameServers: (json['vanity_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Indicates whether the zone is only using Cloudflare DNS services. A
 /// true value means the zone will not receive security or performance
@@ -144,19 +144,19 @@ final Zones0PatchRequestType? type;
 /// available for Business and Enterprise plans.
 final List<String>? vanityNameServers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (paused != null) 'paused': paused?.toJson(),
   if (plan != null) 'plan': plan?.toJson(),
   if (type != null) 'type': type?.toJson(),
   'vanity_name_servers': ?vanityNameServers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'paused', 'plan', 'type', 'vanity_name_servers'}.contains(key)); } 
-Zones0PatchRequest copyWith({ZonesPaused? Function()? paused, Zones0PatchRequestPlan? Function()? plan, Zones0PatchRequestType? Function()? type, List<String>? Function()? vanityNameServers, }) { return Zones0PatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'paused', 'plan', 'type', 'vanity_name_servers'}.contains(key));}
+Zones0PatchRequest copyWith({ZonesPaused? Function()? paused, Zones0PatchRequestPlan? Function()? plan, Zones0PatchRequestType? Function()? type, List<String>? Function()? vanityNameServers, }) {return Zones0PatchRequest(
   paused: paused != null ? paused() : this.paused,
   plan: plan != null ? plan() : this.plan,
   type: type != null ? type() : this.type,
   vanityNameServers: vanityNameServers != null ? vanityNameServers() : this.vanityNameServers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0PatchRequest &&
           paused == other.paused &&
@@ -168,4 +168,4 @@ Zones0PatchRequest copyWith({ZonesPaused? Function()? paused, Zones0PatchRequest
 
 @override String toString() => 'Zones0PatchRequest(paused: $paused, plan: $plan, type: $type, vanityNameServers: $vanityNameServers)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/termination_trigger.dart';sealed class TerminationType {const TerminationType();
 
-factory TerminationType.fromJson(String json) { return switch (json) {
+factory TerminationType.fromJson(String json) {return switch (json) {
   'termination' => termination,
   _ => TerminationType$Unknown(json),
-}; }
+};}
 
 static const TerminationType termination = TerminationType$termination._();
 
 static const List<TerminationType> values = [termination];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'termination' => 'termination',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TerminationType$Unknown; } 
+bool get isUnknown {return this is TerminationType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() termination, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() termination, required W Function(String value) $unknown, }) {return switch (this) {
       TerminationType$termination() => termination(),
       TerminationType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? termination, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? termination, W Function(String value)? $unknown, }) {return switch (this) {
       TerminationType$termination() => termination != null ? termination() : orElse(value),
       TerminationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TerminationType($value)';
 
- }
+}
 @immutable final class TerminationType$termination extends TerminationType {const TerminationType$termination._();
 
 @override String get value => 'termination';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminat
 
 @override int get hashCode => 'termination'.hashCode;
 
- }
+}
 @immutable final class TerminationType$Unknown extends TerminationType {const TerminationType$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminat
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Termination {const Termination({required this.trigger, required this.type, });
 
-factory Termination.fromJson(Map<String, dynamic> json) { return Termination(
+factory Termination.fromJson(Map<String, dynamic> json) {return Termination(
   trigger: TerminationTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   type: TerminationType.fromJson(json['type'] as String),
-); }
+);}
 
 final TerminationTrigger trigger;
 
 final TerminationType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'trigger': trigger.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('trigger') &&
-      json.containsKey('type') && json['type'] == 'termination'; } 
-Termination copyWith({TerminationTrigger? trigger, TerminationType? type, }) { return Termination(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('trigger') &&
+      json.containsKey('type') && json['type'] == 'termination';}
+Termination copyWith({TerminationTrigger? trigger, TerminationType? type, }) {return Termination(
   trigger: trigger ?? this.trigger,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Termination &&
           trigger == other.trigger &&
@@ -83,4 +83,4 @@ Termination copyWith({TerminationTrigger? trigger, TerminationType? type, }) { r
 
 @override String toString() => 'Termination(trigger: $trigger, type: $type)';
 
- }
+}

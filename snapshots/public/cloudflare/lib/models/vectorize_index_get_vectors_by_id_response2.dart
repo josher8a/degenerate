@@ -1,36 +1,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/VectorizeIndexGetVectorsByIdResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexGetVectorsByIdResponse2 {const VectorizeIndexGetVectorsByIdResponse2({this.id, this.metadata, this.namespace, this.values, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexGetVectorsByIdResponse2 {const VectorizeIndexGetVectorsByIdResponse2({this.id, this.metadata, this.namespace = const Omittable.absent(), this.values, });
 
-factory VectorizeIndexGetVectorsByIdResponse2.fromJson(Map<String, dynamic> json) { return VectorizeIndexGetVectorsByIdResponse2(
+factory VectorizeIndexGetVectorsByIdResponse2.fromJson(Map<String, dynamic> json) {return VectorizeIndexGetVectorsByIdResponse2(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
   metadata: json['metadata'] as Map<String, dynamic>?,
-  namespace: json['namespace'] as String?,
+  namespace: json.containsKey('namespace') ? Omittable(json['namespace'] as String?) : const Omittable.absent(),
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 final VectorizeVectorIdentifier? id;
 
 final Map<String,dynamic>? metadata;
 
-final String? namespace;
+final Omittable<String?> namespace;
 
 final List<double>? values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'metadata': ?metadata,
-  'namespace': ?namespace,
+  if (namespace.isPresent) 'namespace': namespace.value,
   'values': ?values,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'namespace', 'values'}.contains(key)); } 
-VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Function()? id, Map<String, dynamic>? Function()? metadata, String? Function()? namespace, List<double>? Function()? values, }) { return VectorizeIndexGetVectorsByIdResponse2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'metadata', 'namespace', 'values'}.contains(key));}
+VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Function()? id, Map<String, dynamic>? Function()? metadata, Omittable<String?>? namespace, List<double>? Function()? values, }) {return VectorizeIndexGetVectorsByIdResponse2(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
-  namespace: namespace != null ? namespace() : this.namespace,
+  namespace: namespace ?? this.namespace,
   values: values != null ? values() : this.values,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexGetVectorsByIdResponse2 &&
           id == other.id &&
@@ -42,4 +42,4 @@ VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Funct
 
 @override String toString() => 'VectorizeIndexGetVectorsByIdResponse2(id: $id, metadata: $metadata, namespace: $namespace, values: $values)';
 
- }
+}

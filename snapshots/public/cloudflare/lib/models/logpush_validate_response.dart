@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LogpushValidateResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';import 'package:pub_cloudflare/models/logpush_validate_response/logpush_validate_response_result.dart';@immutable final class LogpushValidateResponse {const LogpushValidateResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';import 'package:pub_cloudflare/models/logpush_validate_response/logpush_validate_response_result.dart';@immutable final class LogpushValidateResponse {const LogpushValidateResponse({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory LogpushValidateResponse.fromJson(Map<String, dynamic> json) { return LogpushValidateResponse(
+factory LogpushValidateResponse.fromJson(Map<String, dynamic> json) {return LogpushValidateResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? LogpushValidateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+  result: json.containsKey('result') ? Omittable(json['result'] != null ? LogpushValidateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+);}
 
 final List<LogpushMessages2> errors;
 
@@ -19,23 +19,23 @@ final List<LogpushMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final LogpushValidateResponseResult? result;
+final Omittable<LogpushValidateResponseResult?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+  if (result.isPresent) 'result': result.value?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-LogpushValidateResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, LogpushValidateResponseResult? Function()? result, }) { return LogpushValidateResponse(
+      json.containsKey('success') && json['success'] is bool;}
+LogpushValidateResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, Omittable<LogpushValidateResponseResult?>? result, }) {return LogpushValidateResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result != null ? result() : this.result,
-); } 
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushValidateResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ LogpushValidateResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMe
 
 @override String toString() => 'LogpushValidateResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

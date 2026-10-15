@@ -1,27 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MconnControllerEndAttestationSessionResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_attestation_session.dart';@immutable final class MconnControllerEndAttestationSessionResponse {const MconnControllerEndAttestationSessionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_controller_attestation_session.dart';@immutable final class MconnControllerEndAttestationSessionResponse {const MconnControllerEndAttestationSessionResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnControllerEndAttestationSessionResponse.fromJson(Map<String, dynamic> json) { return MconnControllerEndAttestationSessionResponse(
-  result: json['result'] != null ? MconnControllerAttestationSession.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+factory MconnControllerEndAttestationSessionResponse.fromJson(Map<String, dynamic> json) {return MconnControllerEndAttestationSessionResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  result: MconnControllerAttestationSession.fromJson(json['result'] as Map<String, dynamic>),
+);}
 
-final MconnControllerAttestationSession? result;
+final List<MconnCodedMessage> messages;
 
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnControllerEndAttestationSessionResponse copyWith({MconnControllerAttestationSession? Function()? result}) { return MconnControllerEndAttestationSessionResponse(
-  result: result != null ? result() : this.result,
-); } 
+final bool success;
+
+final List<MconnCodedMessage> errors;
+
+final MconnControllerAttestationSession result;
+
+Map<String, dynamic> toJson() {return {
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result');}
+MconnControllerEndAttestationSessionResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, MconnControllerAttestationSession? result, }) {return MconnControllerEndAttestationSessionResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerEndAttestationSessionResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           result == other.result;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result);
 
-@override String toString() => 'MconnControllerEndAttestationSessionResponse(result: $result)';
+@override String toString() => 'MconnControllerEndAttestationSessionResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

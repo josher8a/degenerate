@@ -2,17 +2,17 @@
 // Source: #/components/schemas/DeletedBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';/// 
-@immutable final class DeletedBankAccount {const DeletedBankAccount({required this.deleted, required this.id, required this.object, this.currency, });
+@immutable final class DeletedBankAccount {const DeletedBankAccount({required this.deleted, required this.id, required this.object, this.currency = const Omittable.absent(), });
 
-factory DeletedBankAccount.fromJson(Map<String, dynamic> json) { return DeletedBankAccount(
-  currency: json['currency'] as String?,
+factory DeletedBankAccount.fromJson(Map<String, dynamic> json) {return DeletedBankAccount(
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
   object: BankAccountObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Three-letter [ISO code for the currency](https://stripe.com/docs/payouts) paid out to the bank account.
-final String? currency;
+final Omittable<String?> currency;
 
 /// Always true for a deleted object
 final bool deleted;
@@ -23,29 +23,29 @@ final String id;
 /// String representing the object's type. Objects of the same type share the same value.
 final BankAccountObject object;
 
-Map<String, dynamic> toJson() { return {
-  'currency': ?currency,
+Map<String, dynamic> toJson() {return {
+  if (currency.isPresent) 'currency': currency.value,
   'deleted': deleted,
   'id': id,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'bank_account'; } 
+      json.containsKey('object') && json['object'] == 'bank_account';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
-final currency$ = currency;
+List<String> validate() {final errors = <String>[];
+final currency$ = currency.value;
 if (currency$ != null) {
   if (currency$.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-DeletedBankAccount copyWith({String? Function()? currency, bool? deleted, String? id, BankAccountObject? object, }) { return DeletedBankAccount(
-  currency: currency != null ? currency() : this.currency,
+return errors;}
+DeletedBankAccount copyWith({Omittable<String?>? currency, bool? deleted, String? id, BankAccountObject? object, }) {return DeletedBankAccount(
+  currency: currency ?? this.currency,
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedBankAccount &&
           currency == other.currency &&
@@ -57,4 +57,4 @@ DeletedBankAccount copyWith({String? Function()? currency, bool? deleted, String
 
 @override String toString() => 'DeletedBankAccount(currency: $currency, deleted: $deleted, id: $id, object: $object)';
 
- }
+}

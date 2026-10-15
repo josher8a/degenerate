@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0({required this.encrypted, required this.notEncrypted, });
 
-factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(
+factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(
   encrypted: (json['ENCRYPTED'] as List<dynamic>).map((e) => e as String).toList(),
   notEncrypted: (json['NOT_ENCRYPTED'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> encrypted;
 
 final List<String> notEncrypted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ENCRYPTED': encrypted,
   'NOT_ENCRYPTED': notEncrypted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ENCRYPTED') &&
-      json.containsKey('NOT_ENCRYPTED'); } 
-RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 copyWith({List<String>? encrypted, List<String>? notEncrypted, }) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ENCRYPTED') &&
+      json.containsKey('NOT_ENCRYPTED');}
+RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 copyWith({List<String>? encrypted, List<String>? notEncrypted, }) {return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(
   encrypted: encrypted ?? this.encrypted,
   notEncrypted: notEncrypted ?? this.notEncrypted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 &&
           listEquals(encrypted, other.encrypted) &&
@@ -31,4 +31,4 @@ RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 copyWith({Lis
 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(encrypted: $encrypted, notEncrypted: $notEncrypted)';
 
- }
+}

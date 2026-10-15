@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_links_html.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_links_pull_request.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_links_self.dart';@immutable final class PullRequestReviewCommentLinks {const PullRequestReviewCommentLinks({required this.self, required this.html, required this.pullRequest, });
 
-factory PullRequestReviewCommentLinks.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentLinks(
+factory PullRequestReviewCommentLinks.fromJson(Map<String, dynamic> json) {return PullRequestReviewCommentLinks(
   self: PullRequestReviewCommentLinksSelf.fromJson(json['self'] as Map<String, dynamic>),
   html: PullRequestReviewCommentLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
   pullRequest: PullRequestReviewCommentLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
-); }
+);}
 
 final PullRequestReviewCommentLinksSelf self;
 
@@ -15,19 +15,19 @@ final PullRequestReviewCommentLinksHtml html;
 
 final PullRequestReviewCommentLinksPullRequest pullRequest;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'self': self.toJson(),
   'html': html.toJson(),
   'pull_request': pullRequest.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('self') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('self') &&
       json.containsKey('html') &&
-      json.containsKey('pull_request'); } 
-PullRequestReviewCommentLinks copyWith({PullRequestReviewCommentLinksSelf? self, PullRequestReviewCommentLinksHtml? html, PullRequestReviewCommentLinksPullRequest? pullRequest, }) { return PullRequestReviewCommentLinks(
+      json.containsKey('pull_request');}
+PullRequestReviewCommentLinks copyWith({PullRequestReviewCommentLinksSelf? self, PullRequestReviewCommentLinksHtml? html, PullRequestReviewCommentLinksPullRequest? pullRequest, }) {return PullRequestReviewCommentLinks(
   self: self ?? this.self,
   html: html ?? this.html,
   pullRequest: pullRequest ?? this.pullRequest,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewCommentLinks &&
           self == other.self &&
@@ -38,4 +38,4 @@ PullRequestReviewCommentLinks copyWith({PullRequestReviewCommentLinksSelf? self,
 
 @override String toString() => 'PullRequestReviewCommentLinks(self: $self, html: $html, pullRequest: $pullRequest)';
 
- }
+}

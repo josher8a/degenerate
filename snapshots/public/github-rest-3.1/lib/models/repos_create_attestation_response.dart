@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAttestationResponse {const ReposCreateAttestationResponse({this.id});
 
-factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) { return ReposCreateAttestationResponse(
+factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) {return ReposCreateAttestationResponse(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-); }
+);}
 
 /// The ID of the attestation.
 final int? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ReposCreateAttestationResponse copyWith({int? Function()? id}) { return ReposCreateAttestationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+ReposCreateAttestationResponse copyWith({int? Function()? id}) {return ReposCreateAttestationResponse(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateAttestationResponse &&
           id == other.id;
@@ -25,4 +25,4 @@ ReposCreateAttestationResponse copyWith({int? Function()? id}) { return ReposCre
 
 @override String toString() => 'ReposCreateAttestationResponse(id: $id)';
 
- }
+}

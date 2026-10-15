@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';@immutable final class EmailSecurityBatchSendingDomainRestrictionsRequest {const EmailSecurityBatchSendingDomainRestrictionsRequest({required this.deletes});
 
-factory EmailSecurityBatchSendingDomainRestrictionsRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchSendingDomainRestrictionsRequest(
+factory EmailSecurityBatchSendingDomainRestrictionsRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchSendingDomainRestrictionsRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => Deletes.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<Deletes> deletes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deletes': deletes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deletes'); } 
-EmailSecurityBatchSendingDomainRestrictionsRequest copyWith({List<Deletes>? deletes}) { return EmailSecurityBatchSendingDomainRestrictionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deletes');}
+EmailSecurityBatchSendingDomainRestrictionsRequest copyWith({List<Deletes>? deletes}) {return EmailSecurityBatchSendingDomainRestrictionsRequest(
   deletes: deletes ?? this.deletes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchSendingDomainRestrictionsRequest &&
           listEquals(deletes, other.deletes);
@@ -24,4 +24,4 @@ EmailSecurityBatchSendingDomainRestrictionsRequest copyWith({List<Deletes>? dele
 
 @override String toString() => 'EmailSecurityBatchSendingDomainRestrictionsRequest(deletes: $deletes)';
 
- }
+}

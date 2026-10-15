@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest {const GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest();
 
-factory GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest.fromJson(Map<String, dynamic> _) { return const GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest(); }
+factory GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest.fromJson(Map<String, dynamic> _) {return const GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest copyWith() { return const GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest copyWith() {return const GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest()';
 
- }
+}

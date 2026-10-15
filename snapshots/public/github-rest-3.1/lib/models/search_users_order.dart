@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SearchUsersOrder {const SearchUsersOrder();
 
-factory SearchUsersOrder.fromJson(String json) { return switch (json) {
+factory SearchUsersOrder.fromJson(String json) {return switch (json) {
   'desc' => desc,
   'asc' => asc,
   _ => SearchUsersOrder$Unknown(json),
-}; }
+};}
 
 static const SearchUsersOrder desc = SearchUsersOrder$desc._();
 
@@ -16,30 +16,30 @@ static const SearchUsersOrder asc = SearchUsersOrder$asc._();
 static const List<SearchUsersOrder> values = [desc, asc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'desc' => 'desc',
   'asc' => 'asc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SearchUsersOrder$Unknown; } 
+bool get isUnknown {return this is SearchUsersOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() desc, required W Function() asc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() desc, required W Function() asc, required W Function(String value) $unknown, }) {return switch (this) {
       SearchUsersOrder$desc() => desc(),
       SearchUsersOrder$asc() => asc(),
       SearchUsersOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? desc, W Function()? asc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desc, W Function()? asc, W Function(String value)? $unknown, }) {return switch (this) {
       SearchUsersOrder$desc() => desc != null ? desc() : orElse(value),
       SearchUsersOrder$asc() => asc != null ? asc() : orElse(value),
       SearchUsersOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SearchUsersOrder($value)';
 
- }
+}
 @immutable final class SearchUsersOrder$desc extends SearchUsersOrder {const SearchUsersOrder$desc._();
 
 @override String get value => 'desc';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desc, W 
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class SearchUsersOrder$asc extends SearchUsersOrder {const SearchUsersOrder$asc._();
 
 @override String get value => 'asc';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desc, W 
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class SearchUsersOrder$Unknown extends SearchUsersOrder {const SearchUsersOrder$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desc, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateTranscriptionRequest
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';import 'package:pub_openai/models/vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
 /// 
 sealed class AudioResponseFormat {const AudioResponseFormat();
 
-factory AudioResponseFormat.fromJson(String json) { return switch (json) {
+factory AudioResponseFormat.fromJson(String json) {return switch (json) {
   'json' => $json,
   'text' => text,
   'srt' => srt,
@@ -13,7 +13,7 @@ factory AudioResponseFormat.fromJson(String json) { return switch (json) {
   'vtt' => vtt,
   'diarized_json' => diarizedJson,
   _ => AudioResponseFormat$Unknown(json),
-}; }
+};}
 
 static const AudioResponseFormat $json = AudioResponseFormat$$json._();
 
@@ -30,9 +30,9 @@ static const AudioResponseFormat diarizedJson = AudioResponseFormat$diarizedJson
 static const List<AudioResponseFormat> values = [$json, text, srt, verboseJson, vtt, diarizedJson];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'json' => r'$json',
   'text' => 'text',
   'srt' => 'srt',
@@ -40,11 +40,11 @@ String get name { return switch (value) {
   'vtt' => 'vtt',
   'diarized_json' => 'diarizedJson',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AudioResponseFormat$Unknown; } 
+bool get isUnknown {return this is AudioResponseFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() text, required W Function() srt, required W Function() verboseJson, required W Function() vtt, required W Function() diarizedJson, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() text, required W Function() srt, required W Function() verboseJson, required W Function() vtt, required W Function() diarizedJson, required W Function(String value) $unknown, }) {return switch (this) {
       AudioResponseFormat$$json() => $json(),
       AudioResponseFormat$text() => text(),
       AudioResponseFormat$srt() => srt(),
@@ -52,9 +52,9 @@ W when<W>({required W Function() $json, required W Function() text, required W F
       AudioResponseFormat$vtt() => vtt(),
       AudioResponseFormat$diarizedJson() => diarizedJson(),
       AudioResponseFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? text, W Function()? srt, W Function()? verboseJson, W Function()? vtt, W Function()? diarizedJson, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? text, W Function()? srt, W Function()? verboseJson, W Function()? vtt, W Function()? diarizedJson, W Function(String value)? $unknown, }) {return switch (this) {
       AudioResponseFormat$$json() => $json != null ? $json() : orElse(value),
       AudioResponseFormat$text() => text != null ? text() : orElse(value),
       AudioResponseFormat$srt() => srt != null ? srt() : orElse(value),
@@ -62,10 +62,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
       AudioResponseFormat$vtt() => vtt != null ? vtt() : orElse(value),
       AudioResponseFormat$diarizedJson() => diarizedJson != null ? diarizedJson() : orElse(value),
       AudioResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AudioResponseFormat($value)';
 
- }
+}
 @immutable final class AudioResponseFormat$$json extends AudioResponseFormat {const AudioResponseFormat$$json._();
 
 @override String get value => 'json';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'json'.hashCode;
 
- }
+}
 @immutable final class AudioResponseFormat$text extends AudioResponseFormat {const AudioResponseFormat$text._();
 
 @override String get value => 'text';
@@ -83,7 +83,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class AudioResponseFormat$srt extends AudioResponseFormat {const AudioResponseFormat$srt._();
 
 @override String get value => 'srt';
@@ -92,7 +92,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'srt'.hashCode;
 
- }
+}
 @immutable final class AudioResponseFormat$verboseJson extends AudioResponseFormat {const AudioResponseFormat$verboseJson._();
 
 @override String get value => 'verbose_json';
@@ -101,7 +101,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'verbose_json'.hashCode;
 
- }
+}
 @immutable final class AudioResponseFormat$vtt extends AudioResponseFormat {const AudioResponseFormat$vtt._();
 
 @override String get value => 'vtt';
@@ -110,7 +110,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'vtt'.hashCode;
 
- }
+}
 @immutable final class AudioResponseFormat$diarizedJson extends AudioResponseFormat {const AudioResponseFormat$diarizedJson._();
 
 @override String get value => 'diarized_json';
@@ -119,7 +119,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'diarized_json'.hashCode;
 
- }
+}
 @immutable final class AudioResponseFormat$Unknown extends AudioResponseFormat {const AudioResponseFormat$Unknown(this.value);
 
 @override final String value;
@@ -129,40 +129,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class TranscriptionInclude {const TranscriptionInclude();
 
-factory TranscriptionInclude.fromJson(String json) { return switch (json) {
+factory TranscriptionInclude.fromJson(String json) {return switch (json) {
   'logprobs' => logprobs,
   _ => TranscriptionInclude$Unknown(json),
-}; }
+};}
 
 static const TranscriptionInclude logprobs = TranscriptionInclude$logprobs._();
 
 static const List<TranscriptionInclude> values = [logprobs];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'logprobs' => 'logprobs',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TranscriptionInclude$Unknown; } 
+bool get isUnknown {return this is TranscriptionInclude$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() logprobs, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() logprobs, required W Function(String value) $unknown, }) {return switch (this) {
       TranscriptionInclude$logprobs() => logprobs(),
       TranscriptionInclude$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? logprobs, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? logprobs, W Function(String value)? $unknown, }) {return switch (this) {
       TranscriptionInclude$logprobs() => logprobs != null ? logprobs() : orElse(value),
       TranscriptionInclude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TranscriptionInclude($value)';
 
- }
+}
 @immutable final class TranscriptionInclude$logprobs extends TranscriptionInclude {const TranscriptionInclude$logprobs._();
 
 @override String get value => 'logprobs';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? logprobs
 
 @override int get hashCode => 'logprobs'.hashCode;
 
- }
+}
 @immutable final class TranscriptionInclude$Unknown extends TranscriptionInclude {const TranscriptionInclude$Unknown(this.value);
 
 @override final String value;
@@ -181,14 +181,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? logprobs
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class TimestampGranularities {const TimestampGranularities();
 
-factory TimestampGranularities.fromJson(String json) { return switch (json) {
+factory TimestampGranularities.fromJson(String json) {return switch (json) {
   'word' => word,
   'segment' => segment,
   _ => TimestampGranularities$Unknown(json),
-}; }
+};}
 
 static const TimestampGranularities word = TimestampGranularities$word._();
 
@@ -197,30 +197,30 @@ static const TimestampGranularities segment = TimestampGranularities$segment._()
 static const List<TimestampGranularities> values = [word, segment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'word' => 'word',
   'segment' => 'segment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TimestampGranularities$Unknown; } 
+bool get isUnknown {return this is TimestampGranularities$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() word, required W Function() segment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() word, required W Function() segment, required W Function(String value) $unknown, }) {return switch (this) {
       TimestampGranularities$word() => word(),
       TimestampGranularities$segment() => segment(),
       TimestampGranularities$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W Function()? segment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W Function()? segment, W Function(String value)? $unknown, }) {return switch (this) {
       TimestampGranularities$word() => word != null ? word() : orElse(value),
       TimestampGranularities$segment() => segment != null ? segment() : orElse(value),
       TimestampGranularities$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TimestampGranularities($value)';
 
- }
+}
 @immutable final class TimestampGranularities$word extends TimestampGranularities {const TimestampGranularities$word._();
 
 @override String get value => 'word';
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W 
 
 @override int get hashCode => 'word'.hashCode;
 
- }
+}
 @immutable final class TimestampGranularities$segment extends TimestampGranularities {const TimestampGranularities$segment._();
 
 @override String get value => 'segment';
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W 
 
 @override int get hashCode => 'segment'.hashCode;
 
- }
+}
 @immutable final class TimestampGranularities$Unknown extends TimestampGranularities {const TimestampGranularities$Unknown(this.value);
 
 @override final String value;
@@ -248,23 +248,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W 
 
 @override int get hashCode => value.hashCode;
 
- }
-@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream, this.chunkingStrategy, this.knownSpeakerNames, this.knownSpeakerReferences, });
+}
+@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature, this.include, this.timestampGranularities, this.stream = const Omittable.absent(), this.chunkingStrategy = const Omittable.absent(), this.knownSpeakerNames, this.knownSpeakerReferences, });
 
-factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateTranscriptionRequest(
+factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) {return CreateTranscriptionRequest(
   file: base64Decode(json['file'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AudioTranscriptionModelVariant2.fromJson(v as String),),
+  model: AudioTranscriptionModel.fromJson(json['model']),
   language: json['language'] as String?,
   prompt: json['prompt'] as String?,
   responseFormat: json['response_format'] != null ? AudioResponseFormat.fromJson(json['response_format'] as String) : null,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.0,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => TranscriptionInclude.fromJson(e as String)).toList(),
   timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => TimestampGranularities.fromJson(e as String)).toList(),
-  stream: json['stream'] as bool?,
-  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null,
+  stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
+  chunkingStrategy: json.containsKey('chunking_strategy') ? Omittable(json['chunking_strategy'] != null ? CreateTranscriptionRequestChunkingStrategy.fromJson(json['chunking_strategy']) : null) : const Omittable.absent(),
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
 /// 
@@ -290,7 +290,7 @@ final AudioResponseFormat? responseFormat;
 
 /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
 /// 
-final double temperature;
+final double? temperature;
 
 /// Additional information to include in the transcription response.
 /// `logprobs` will return the log probabilities of the tokens in the
@@ -312,10 +312,10 @@ final List<TimestampGranularities>? timestampGranularities;
 /// 
 /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.
 /// 
-final bool? stream;
+final Omittable<bool?> stream;
 
 /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. Required when using `gpt-4o-transcribe-diarize` for inputs longer than 30 seconds.
-final CreateTranscriptionRequestChunkingStrategy? chunkingStrategy;
+final Omittable<CreateTranscriptionRequestChunkingStrategy?> chunkingStrategy;
 
 /// Optional list of speaker names that correspond to the audio samples provided in `known_speaker_references[]`. Each entry should be a short identifier (for example `customer` or `agent`). Up to 4 speakers are supported.
 /// 
@@ -325,24 +325,27 @@ final List<String>? knownSpeakerNames;
 /// 
 final List<String>? knownSpeakerReferences;
 
-Map<String, dynamic> toJson() { return {
+/// The value of `temperature`, or its schema default when absent.
+double get temperatureOrDefault => temperature ?? 0.0;
+
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'model': model.toJson(),
   'language': ?language,
   'prompt': ?prompt,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
-  'temperature': temperature,
+  'temperature': ?temperature,
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
   if (timestampGranularities != null) 'timestamp_granularities': timestampGranularities?.map((e) => e.toJson()).toList(),
-  'stream': ?stream,
-  if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
+  if (stream.isPresent) 'stream': stream.value,
+  if (chunkingStrategy.isPresent) 'chunking_strategy': chunkingStrategy.value?.toJson(),
   'known_speaker_names': ?knownSpeakerNames,
   'known_speaker_references': ?knownSpeakerReferences,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('model'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('model');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final knownSpeakerNames$ = knownSpeakerNames;
 if (knownSpeakerNames$ != null) {
   if (knownSpeakerNames$.length > 4) { errors.add('knownSpeakerNames: must have <= 4 items'); }
@@ -351,8 +354,8 @@ final knownSpeakerReferences$ = knownSpeakerReferences;
 if (knownSpeakerReferences$ != null) {
   if (knownSpeakerReferences$.length > 4) { errors.add('knownSpeakerReferences: must have <= 4 items'); }
 }
-return errors; } 
-CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
+return errors;}
+CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double? Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, Omittable<bool?>? stream, Omittable<CreateTranscriptionRequestChunkingStrategy?>? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) {return CreateTranscriptionRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   language: language != null ? language() : this.language,
@@ -361,14 +364,14 @@ CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? m
   temperature: temperature != null ? temperature() : this.temperature,
   include: include != null ? include() : this.include,
   timestampGranularities: timestampGranularities != null ? timestampGranularities() : this.timestampGranularities,
-  stream: stream != null ? stream() : this.stream,
-  chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
+  stream: stream ?? this.stream,
+  chunkingStrategy: chunkingStrategy ?? this.chunkingStrategy,
   knownSpeakerNames: knownSpeakerNames != null ? knownSpeakerNames() : this.knownSpeakerNames,
   knownSpeakerReferences: knownSpeakerReferences != null ? knownSpeakerReferences() : this.knownSpeakerReferences,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranscriptionRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           model == other.model &&
           language == other.language &&
           prompt == other.prompt &&
@@ -381,8 +384,8 @@ CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? m
           listEquals(knownSpeakerNames, other.knownSpeakerNames) &&
           listEquals(knownSpeakerReferences, other.knownSpeakerReferences);
 
-@override int get hashCode => Object.hash(file, model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const []));
+@override int get hashCode => Object.hash(Object.hashAll(file), model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const []));
 
 @override String toString() => 'CreateTranscriptionRequest(\n  file: $file,\n  model: $model,\n  language: $language,\n  prompt: $prompt,\n  responseFormat: $responseFormat,\n  temperature: $temperature,\n  include: $include,\n  timestampGranularities: $timestampGranularities,\n  stream: $stream,\n  chunkingStrategy: $chunkingStrategy,\n  knownSpeakerNames: $knownSpeakerNames,\n  knownSpeakerReferences: $knownSpeakerReferences,\n)';
 
- }
+}

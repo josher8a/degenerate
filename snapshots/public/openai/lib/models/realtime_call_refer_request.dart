@@ -5,9 +5,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters requi
 /// Realtime API.
 @immutable final class RealtimeCallReferRequest {const RealtimeCallReferRequest({required this.targetUri});
 
-factory RealtimeCallReferRequest.fromJson(Map<String, dynamic> json) { return RealtimeCallReferRequest(
+factory RealtimeCallReferRequest.fromJson(Map<String, dynamic> json) {return RealtimeCallReferRequest(
   targetUri: json['target_uri'] as String,
-); }
+);}
 
 /// URI that should appear in the SIP Refer-To header. Supports values like
 /// `tel:+14155550123` or `sip:agent@example.com`.
@@ -15,13 +15,13 @@ factory RealtimeCallReferRequest.fromJson(Map<String, dynamic> json) { return Re
 /// Example: `'tel:+14155550123'`
 final String targetUri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'target_uri': targetUri,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_uri') && json['target_uri'] is String; } 
-RealtimeCallReferRequest copyWith({String? targetUri}) { return RealtimeCallReferRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_uri') && json['target_uri'] is String;}
+RealtimeCallReferRequest copyWith({String? targetUri}) {return RealtimeCallReferRequest(
   targetUri: targetUri ?? this.targetUri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCallReferRequest &&
           targetUri == other.targetUri;
@@ -30,4 +30,4 @@ RealtimeCallReferRequest copyWith({String? targetUri}) { return RealtimeCallRefe
 
 @override String toString() => 'RealtimeCallReferRequest(targetUri: $targetUri)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/issuing_cardholder_type.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/preferred_locales.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/billing.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_company.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_individual.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_spending_controls.dart';@immutable final class PostIssuingCardholdersRequest {const PostIssuingCardholdersRequest({required this.billing, required this.name, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, this.type, });
 
-factory PostIssuingCardholdersRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequest(
+factory PostIssuingCardholdersRequest.fromJson(Map<String, dynamic> json) {return PostIssuingCardholdersRequest(
   billing: Billing.fromJson(json['billing'] as Map<String, dynamic>),
   company: json['company'] != null ? PostIssuingCardholdersCardholderRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
@@ -16,7 +16,7 @@ factory PostIssuingCardholdersRequest.fromJson(Map<String, dynamic> json) { retu
   spendingControls: json['spending_controls'] != null ? PostIssuingCardholdersCardholderRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? BillingMeterStatus.fromJson(json['status'] as String) : null,
   type: json['type'] != null ? IssuingCardholderType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The cardholder's billing address.
 final Billing billing;
@@ -55,7 +55,7 @@ final BillingMeterStatus? status;
 /// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
 final IssuingCardholderType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing': billing.toJson(),
   if (company != null) 'company': company?.toJson(),
   'email': ?email,
@@ -68,10 +68,10 @@ Map<String, dynamic> toJson() { return {
   if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing') &&
-      json.containsKey('name') && json['name'] is String; } 
-PostIssuingCardholdersRequest copyWith({Billing? billing, PostIssuingCardholdersCardholderRequestCompany? Function()? company, String? Function()? email, List<String>? Function()? expand, PostIssuingCardholdersCardholderRequestIndividual? Function()? individual, Map<String, String>? Function()? metadata, String? name, String? Function()? phoneNumber, List<PreferredLocales>? Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls? Function()? spendingControls, BillingMeterStatus? Function()? status, IssuingCardholderType? Function()? type, }) { return PostIssuingCardholdersRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing') &&
+      json.containsKey('name') && json['name'] is String;}
+PostIssuingCardholdersRequest copyWith({Billing? billing, PostIssuingCardholdersCardholderRequestCompany? Function()? company, String? Function()? email, List<String>? Function()? expand, PostIssuingCardholdersCardholderRequestIndividual? Function()? individual, Map<String, String>? Function()? metadata, String? name, String? Function()? phoneNumber, List<PreferredLocales>? Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls? Function()? spendingControls, BillingMeterStatus? Function()? status, IssuingCardholderType? Function()? type, }) {return PostIssuingCardholdersRequest(
   billing: billing ?? this.billing,
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,
@@ -84,7 +84,7 @@ PostIssuingCardholdersRequest copyWith({Billing? billing, PostIssuingCardholders
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardholdersRequest &&
           billing == other.billing &&
@@ -104,4 +104,4 @@ PostIssuingCardholdersRequest copyWith({Billing? billing, PostIssuingCardholders
 
 @override String toString() => 'PostIssuingCardholdersRequest(\n  billing: $billing,\n  company: $company,\n  email: $email,\n  expand: $expand,\n  individual: $individual,\n  metadata: $metadata,\n  name: $name,\n  phoneNumber: $phoneNumber,\n  preferredLocales: $preferredLocales,\n  spendingControls: $spendingControls,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

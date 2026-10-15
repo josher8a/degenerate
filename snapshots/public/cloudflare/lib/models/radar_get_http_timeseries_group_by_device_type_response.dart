@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_timeseries_group_by_device_type_response/radar_get_http_timeseries_group_by_device_type_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeResponse {const RadarGetHttpTimeseriesGroupByDeviceTypeResponse({required this.result, required this.success, });
 
-factory RadarGetHttpTimeseriesGroupByDeviceTypeResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByDeviceTypeResponse(
+factory RadarGetHttpTimeseriesGroupByDeviceTypeResponse.fromJson(Map<String, dynamic> json) {return RadarGetHttpTimeseriesGroupByDeviceTypeResponse(
   result: RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTimeseriesGroupByDeviceTypeResponse copyWith({RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByDeviceTypeResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetHttpTimeseriesGroupByDeviceTypeResponse copyWith({RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult? result, bool? success, }) {return RadarGetHttpTimeseriesGroupByDeviceTypeResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByDeviceTypeResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetHttpTimeseriesGroupByDeviceTypeResponse copyWith({RadarGetHttpTimeseries
 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByDeviceTypeResponse(result: $result, success: $success)';
 
- }
+}

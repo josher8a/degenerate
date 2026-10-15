@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_trusted_domain_id.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequestPatches {const EmailSecurityBatchTrustedDomainsRequestPatches({required this.id, this.comments, this.isRecent, this.isRegex, this.isSimilarity, this.pattern, });
 
-factory EmailSecurityBatchTrustedDomainsRequestPatches.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsRequestPatches(
+factory EmailSecurityBatchTrustedDomainsRequestPatches.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchTrustedDomainsRequestPatches(
   comments: json['comments'] as String?,
   isRecent: json['is_recent'] as bool?,
   isRegex: json['is_regex'] as bool?,
   isSimilarity: json['is_similarity'] as bool?,
   pattern: json['pattern'] as String?,
   id: EmailSecurityTrustedDomainId.fromJson(json['id'] as num),
-); }
+);}
 
 final String? comments;
 
@@ -30,17 +30,17 @@ final String? pattern;
 /// The unique identifier for the trusted domain.
 final EmailSecurityTrustedDomainId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': ?comments,
   'is_recent': ?isRecent,
   'is_regex': ?isRegex,
   'is_similarity': ?isSimilarity,
   'pattern': ?pattern,
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
@@ -50,15 +50,15 @@ if (pattern$ != null) {
   if (pattern$.isEmpty) { errors.add('pattern: length must be >= 1'); }
   if (pattern$.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 }
-return errors; } 
-EmailSecurityBatchTrustedDomainsRequestPatches copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, EmailSecurityTrustedDomainId? id, }) { return EmailSecurityBatchTrustedDomainsRequestPatches(
+return errors;}
+EmailSecurityBatchTrustedDomainsRequestPatches copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, EmailSecurityTrustedDomainId? id, }) {return EmailSecurityBatchTrustedDomainsRequestPatches(
   comments: comments != null ? comments() : this.comments,
   isRecent: isRecent != null ? isRecent() : this.isRecent,
   isRegex: isRegex != null ? isRegex() : this.isRegex,
   isSimilarity: isSimilarity != null ? isSimilarity() : this.isSimilarity,
   pattern: pattern != null ? pattern() : this.pattern,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchTrustedDomainsRequestPatches &&
           comments == other.comments &&
@@ -72,4 +72,4 @@ EmailSecurityBatchTrustedDomainsRequestPatches copyWith({String? Function()? com
 
 @override String toString() => 'EmailSecurityBatchTrustedDomainsRequestPatches(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, id: $id)';
 
- }
+}

@@ -1,28 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FirewallRulesDeleteFirewallRulesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_firewall_rules_components_schemas_id.dart';@immutable final class FirewallRulesDeleteFirewallRulesRequest {const FirewallRulesDeleteFirewallRulesRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallRulesDeleteFirewallRulesRequest {const FirewallRulesDeleteFirewallRulesRequest();
 
-factory FirewallRulesDeleteFirewallRulesRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesDeleteFirewallRulesRequest(
-  id: FirewallFirewallRulesComponentsSchemasId.fromJson(json['id'] as String),
-); }
+factory FirewallRulesDeleteFirewallRulesRequest.fromJson(Map<String, dynamic> _) {return const FirewallRulesDeleteFirewallRulesRequest();}
 
-/// The unique identifier of the firewall rule.
-final FirewallFirewallRulesComponentsSchemasId id;
+Map<String, dynamic> toJson() {return {
 
-Map<String, dynamic> toJson() { return {
-  'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-FirewallRulesDeleteFirewallRulesRequest copyWith({FirewallFirewallRulesComponentsSchemasId? id}) { return FirewallRulesDeleteFirewallRulesRequest(
-  id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-      other is FirewallRulesDeleteFirewallRulesRequest &&
-          id == other.id;
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+FirewallRulesDeleteFirewallRulesRequest copyWith() {return const FirewallRulesDeleteFirewallRulesRequest(
 
-@override int get hashCode => id.hashCode;
+);}
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallRulesDeleteFirewallRulesRequest;
 
-@override String toString() => 'FirewallRulesDeleteFirewallRulesRequest(id: $id)';
+@override int get hashCode => runtimeType.hashCode;
 
- }
+@override String toString() => 'FirewallRulesDeleteFirewallRulesRequest()';
+
+}

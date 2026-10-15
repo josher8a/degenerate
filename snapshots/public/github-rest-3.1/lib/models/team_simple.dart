@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class TeamSimple {const TeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, required this.htmlUrl, required this.repositoriesUrl, required this.slug, required this.type, this.privacy, this.notificationSetting, this.ldapDn, this.organizationId, this.enterpriseId, });
 
-factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
+factory TeamSimple.fromJson(Map<String, dynamic> json) {return TeamSimple(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -21,7 +21,7 @@ factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
   type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Unique identifier of the team
 final int id;
@@ -66,7 +66,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -83,19 +83,19 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('permission') && json['permission'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('type'); } 
-TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, String? name, String? Function()? description, String? permission, String? Function()? privacy, String? Function()? notificationSetting, Uri? htmlUrl, Uri? repositoriesUrl, String? slug, String? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamSimple(
+      json.containsKey('type');}
+TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, String? name, String? Function()? description, String? permission, String? Function()? privacy, String? Function()? notificationSetting, Uri? htmlUrl, Uri? repositoriesUrl, String? slug, String? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return TeamSimple(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -112,7 +112,7 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamSimple &&
           id == other.id &&
@@ -136,4 +136,4 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
 
 @override String toString() => 'TeamSimple(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  membersUrl: $membersUrl,\n  name: $name,\n  description: $description,\n  permission: $permission,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  htmlUrl: $htmlUrl,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  ldapDn: $ldapDn,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
- }
+}

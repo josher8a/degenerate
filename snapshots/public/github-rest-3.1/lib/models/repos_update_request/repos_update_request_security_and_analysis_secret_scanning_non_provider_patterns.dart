@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
 @immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns {const ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns({this.status});
 
-factory ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns(
+factory ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) {return ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns(
   status: json['status'] as String?,
-); }
+);}
 
 /// Can be `enabled` or `disabled`.
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns copyWith({String? Function()? status}) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns copyWith({String? Function()? status}) {return ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns(
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns &&
           status == other.status;
@@ -26,4 +26,4 @@ ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns copyWith(
 
 @override String toString() => 'ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns(status: $status)';
 
- }
+}

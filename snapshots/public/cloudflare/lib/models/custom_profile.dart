@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomProfile
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_confidence.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_confidence.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class CustomProfile {const CustomProfile({required this.allowedMatchCount, required this.createdAt, required this.id, required this.name, required this.ocrEnabled, required this.updatedAt, required this.type, this.aiContextEnabled, this.confidenceThreshold, this.contextAwareness, this.dataClasses, this.dataTags, this.description = const Omittable.absent(), this.entries, this.sensitivityLevels, this.sharedEntries, });
 
-factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile(
-  aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
+factory CustomProfile.fromJson(Map<String, dynamic> json) {return CustomProfile(
+  aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
-  confidenceThreshold: json.containsKey('confidence_threshold') ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : DlpConfidence.low,
+  confidenceThreshold: json['confidence_threshold'] != null ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : null,
   contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   dataClasses: (json['data_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dataTags: (json['data_tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   entries: (json['entries'] as List<dynamic>?)?.map((e) => switch (e) {
   final Map<String, dynamic> m when m['type'] == 'custom' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.a(CustomEntry.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.b(PredefinedEntry.fromJson(m)),
@@ -36,16 +36,16 @@ factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile
 }).toList(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: CustomEntryType.fromJson(json['type'] as String),
-); }
+);}
 
-final bool aiContextEnabled;
+final bool? aiContextEnabled;
 
 /// Related DLP policies will trigger when the match count exceeds the number set.
 /// 
 /// Example: `5`
 final int allowedMatchCount;
 
-final DlpConfidence confidenceThreshold;
+final DlpConfidence? confidenceThreshold;
 
 final DlpContextAwareness? contextAwareness;
 
@@ -59,7 +59,7 @@ final List<String>? dataClasses;
 final List<String>? dataTags;
 
 /// The description of the profile.
-final String? description;
+final Omittable<String?> description;
 
 final List<DlpEntry>? entries;
 
@@ -81,15 +81,21 @@ final DateTime updatedAt;
 
 final CustomEntryType type;
 
-Map<String, dynamic> toJson() { return {
-  'ai_context_enabled': aiContextEnabled,
+/// The value of `aiContextEnabled`, or its schema default when absent.
+bool get aiContextEnabledOrDefault => aiContextEnabled ?? false;
+
+/// The value of `confidenceThreshold`, or its schema default when absent.
+DlpConfidence get confidenceThresholdOrDefault => confidenceThreshold ?? DlpConfidence.fromJson('low');
+
+Map<String, dynamic> toJson() {return {
+  'ai_context_enabled': ?aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
-  'confidence_threshold': confidenceThreshold.toJson(),
+  if (confidenceThreshold != null) 'confidence_threshold': confidenceThreshold?.toJson(),
   if (contextAwareness != null) 'context_awareness': contextAwareness?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'data_classes': ?dataClasses,
   'data_tags': ?dataTags,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
   'id': id,
   'name': name,
@@ -98,20 +104,20 @@ Map<String, dynamic> toJson() { return {
   if (sharedEntries != null) 'shared_entries': sharedEntries?.map((e) => e.toJson()).toList(),
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('ocr_enabled') && json['ocr_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type') && json['type'] == 'custom'; } 
+      json.containsKey('type') && json['type'] == 'custom';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (allowedMatchCount < 0) { errors.add('allowedMatchCount: must be >= 0'); }
 if (allowedMatchCount > 1000) { errors.add('allowedMatchCount: must be <= 1000'); }
-return errors; } 
-CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, String? Function()? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, CustomEntryType? type, }) { return CustomProfile(
+return errors;}
+CustomProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, Omittable<String?>? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, CustomEntryType? type, }) {return CustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,
@@ -119,7 +125,7 @@ CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCoun
   createdAt: createdAt ?? this.createdAt,
   dataClasses: dataClasses != null ? dataClasses() : this.dataClasses,
   dataTags: dataTags != null ? dataTags() : this.dataTags,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   entries: entries != null ? entries() : this.entries,
   id: id ?? this.id,
   name: name ?? this.name,
@@ -128,7 +134,7 @@ CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCoun
   sharedEntries: sharedEntries != null ? sharedEntries() : this.sharedEntries,
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomProfile &&
           aiContextEnabled == other.aiContextEnabled &&
@@ -152,4 +158,4 @@ CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCoun
 
 @override String toString() => 'CustomProfile(\n  aiContextEnabled: $aiContextEnabled,\n  allowedMatchCount: $allowedMatchCount,\n  confidenceThreshold: $confidenceThreshold,\n  contextAwareness: $contextAwareness,\n  createdAt: $createdAt,\n  dataClasses: $dataClasses,\n  dataTags: $dataTags,\n  description: $description,\n  entries: $entries,\n  id: $id,\n  name: $name,\n  ocrEnabled: $ocrEnabled,\n  sensitivityLevels: $sensitivityLevels,\n  sharedEntries: $sharedEntries,\n  updatedAt: $updatedAt,\n  type: $type,\n)';
 
- }
+}

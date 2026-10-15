@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({required this.guaranteedAt, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({required this.guaranteedAt, this.expand, this.metadata, });
 
-factory PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
+factory PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   guaranteedAt: (json['guaranteed_at'] as num).toInt(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), greedy: const {0},) : null,
-); }
+  metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final int guaranteedAt;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Metadata? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'guaranteed_at': guaranteedAt,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('guaranteed_at') && json['guaranteed_at'] is num; } 
-PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest copyWith({List<String>? Function()? expand, int? guaranteedAt, Metadata? Function()? metadata, }) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('guaranteed_at') && json['guaranteed_at'] is num;}
+PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest copyWith({List<String>? Function()? expand, int? guaranteedAt, Metadata? Function()? metadata, }) {return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
   expand: expand != null ? expand() : this.expand,
   guaranteedAt: guaranteedAt ?? this.guaranteedAt,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest copyWith({List<String>
 
 @override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(expand: $expand, guaranteedAt: $guaranteedAt, metadata: $metadata)';
 
- }
+}

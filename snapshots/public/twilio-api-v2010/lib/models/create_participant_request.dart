@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';/// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
 sealed class ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod();
 
-factory ConferenceStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory ConferenceStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => ConferenceStatusCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const ConferenceStatusCallbackMethod $get = ConferenceStatusCallbackMethod$$get._();
 
@@ -17,30 +17,30 @@ static const ConferenceStatusCallbackMethod post = ConferenceStatusCallbackMetho
 static const List<ConferenceStatusCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConferenceStatusCallbackMethod$Unknown; } 
+bool get isUnknown {return this is ConferenceStatusCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       ConferenceStatusCallbackMethod$$get() => $get(),
       ConferenceStatusCallbackMethod$post() => post(),
       ConferenceStatusCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       ConferenceStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       ConferenceStatusCallbackMethod$post() => post != null ? post() : orElse(value),
       ConferenceStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConferenceStatusCallbackMethod($value)';
 
- }
+}
 @immutable final class ConferenceStatusCallbackMethod$$get extends ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class ConferenceStatusCallbackMethod$post extends ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class ConferenceStatusCallbackMethod$Unknown extends ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
 sealed class ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod();
 
-factory ConferenceRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory ConferenceRecordingStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => ConferenceRecordingStatusCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const ConferenceRecordingStatusCallbackMethod $get = ConferenceRecordingStatusCallbackMethod$$get._();
 
@@ -85,30 +85,30 @@ static const ConferenceRecordingStatusCallbackMethod post = ConferenceRecordingS
 static const List<ConferenceRecordingStatusCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConferenceRecordingStatusCallbackMethod$Unknown; } 
+bool get isUnknown {return this is ConferenceRecordingStatusCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       ConferenceRecordingStatusCallbackMethod$$get() => $get(),
       ConferenceRecordingStatusCallbackMethod$post() => post(),
       ConferenceRecordingStatusCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       ConferenceRecordingStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       ConferenceRecordingStatusCallbackMethod$post() => post != null ? post() : orElse(value),
       ConferenceRecordingStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConferenceRecordingStatusCallbackMethod($value)';
 
- }
+}
 @immutable final class ConferenceRecordingStatusCallbackMethod$$get extends ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingStatusCallbackMethod$post extends ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class ConferenceRecordingStatusCallbackMethod$Unknown extends ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -136,15 +136,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 sealed class AmdStatusCallbackMethod {const AmdStatusCallbackMethod();
 
-factory AmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory AmdStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AmdStatusCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const AmdStatusCallbackMethod $get = AmdStatusCallbackMethod$$get._();
 
@@ -153,30 +153,30 @@ static const AmdStatusCallbackMethod post = AmdStatusCallbackMethod$post._();
 static const List<AmdStatusCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AmdStatusCallbackMethod$Unknown; } 
+bool get isUnknown {return this is AmdStatusCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       AmdStatusCallbackMethod$$get() => $get(),
       AmdStatusCallbackMethod$post() => post(),
       AmdStatusCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       AmdStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       AmdStatusCallbackMethod$post() => post != null ? post() : orElse(value),
       AmdStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AmdStatusCallbackMethod($value)';
 
- }
+}
 @immutable final class AmdStatusCallbackMethod$$get extends AmdStatusCallbackMethod {const AmdStatusCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class AmdStatusCallbackMethod$post extends AmdStatusCallbackMethod {const AmdStatusCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class AmdStatusCallbackMethod$Unknown extends AmdStatusCallbackMethod {const AmdStatusCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -204,10 +204,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateParticipantRequest {const CreateParticipantRequest({required this.from, required this.to, this.conferenceRecord, this.statusCallbackMethod, this.statusCallbackEvent, this.label, this.timeout, this.record, this.muted, this.beep, this.startConferenceOnEnter, this.endConferenceOnExit, this.waitUrl, this.waitMethod, this.earlyMedia, this.maxParticipants, this.statusCallback, this.conferenceTrim, this.conferenceStatusCallback, this.conferenceStatusCallbackMethod, this.conferenceStatusCallbackEvent, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.region, this.conferenceRecordingStatusCallback, this.conferenceRecordingStatusCallbackMethod, this.recordingStatusCallbackEvent, this.conferenceRecordingStatusCallbackEvent, this.coaching, this.callerDisplayName, this.jitterBufferSize, this.byoc, this.callerId, this.callReason, this.recordingTrack, this.timeLimit, this.machineDetection, this.machineDetectionTimeout, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.amdStatusCallback, this.amdStatusCallbackMethod, this.trim, this.callToken, this.clientNotificationUrl, this.callSidToCoach, });
 
-factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) { return CreateParticipantRequest(
+factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) {return CreateParticipantRequest(
   from: json['From'] as String,
   to: json['To'] as String,
   statusCallback: json['StatusCallback'] != null ? Uri.parse(json['StatusCallback'] as String) : null,
@@ -258,7 +258,7 @@ factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) { return Cr
   callToken: json['CallToken'] as String?,
   clientNotificationUrl: json['ClientNotificationUrl'] != null ? Uri.parse(json['ClientNotificationUrl'] as String) : null,
   callerDisplayName: json['CallerDisplayName'] as String?,
-); }
+);}
 
 /// The phone number, Client identifier, or username portion of SIP address that made this call. Phone numbers are in [E.164](https://www.twilio.com/docs/glossary/what-e164) format (e.g., +16175551212). Client identifiers are formatted `client:name`. If using a phone number, it must be a Twilio number or a Verified [outgoing caller id](https://www.twilio.com/docs/voice/api/outgoing-caller-ids) for your account. If the `to` parameter is a phone number, `from` must also be a phone number. If `to` is sip address, this value of `from` should be a username portion to be used to populate the P-Asserted-Identity header that is passed to the SIP endpoint.
 final String from;
@@ -410,7 +410,7 @@ final Uri? clientNotificationUrl;
 /// The name that populates the display name in the From header. Must be between 2 and 255 characters. Only applicable for calls to sip address.
 final String? callerDisplayName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'From': from,
   'To': to,
   if (statusCallback != null) 'StatusCallback': statusCallback?.toString(),
@@ -461,11 +461,11 @@ Map<String, dynamic> toJson() { return {
   'CallToken': ?callToken,
   if (clientNotificationUrl != null) 'ClientNotificationUrl': clientNotificationUrl?.toString(),
   'CallerDisplayName': ?callerDisplayName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('From') && json['From'] is String &&
-      json.containsKey('To') && json['To'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('From') && json['From'] is String &&
+      json.containsKey('To') && json['To'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final callSidToCoach$ = callSidToCoach;
 if (callSidToCoach$ != null) {
   if (callSidToCoach$.runes.length < 34) { errors.add('callSidToCoach: length must be >= 34'); }
@@ -478,8 +478,8 @@ if (byoc$ != null) {
   if (byoc$.runes.length > 34) { errors.add('byoc: length must be <= 34'); }
   if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byoc$)) { errors.add(r'byoc: must match pattern ^BY[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, List<String>? Function()? statusCallbackEvent, String? Function()? label, int? Function()? timeout, bool? Function()? record, bool? Function()? muted, String? Function()? beep, bool? Function()? startConferenceOnEnter, bool? Function()? endConferenceOnExit, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? earlyMedia, int? Function()? maxParticipants, String? Function()? conferenceRecord, String? Function()? conferenceTrim, Uri? Function()? conferenceStatusCallback, ConferenceStatusCallbackMethod? Function()? conferenceStatusCallbackMethod, List<String>? Function()? conferenceStatusCallbackEvent, String? Function()? recordingChannels, Uri? Function()? recordingStatusCallback, RecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? region, Uri? Function()? conferenceRecordingStatusCallback, ConferenceRecordingStatusCallbackMethod? Function()? conferenceRecordingStatusCallbackMethod, List<String>? Function()? recordingStatusCallbackEvent, List<String>? Function()? conferenceRecordingStatusCallbackEvent, bool? Function()? coaching, String? Function()? callSidToCoach, String? Function()? jitterBufferSize, String? Function()? byoc, String? Function()? callerId, String? Function()? callReason, String? Function()? recordingTrack, int? Function()? timeLimit, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, Uri? Function()? amdStatusCallback, AmdStatusCallbackMethod? Function()? amdStatusCallbackMethod, String? Function()? trim, String? Function()? callToken, Uri? Function()? clientNotificationUrl, String? Function()? callerDisplayName, }) { return CreateParticipantRequest(
+return errors;}
+CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, List<String>? Function()? statusCallbackEvent, String? Function()? label, int? Function()? timeout, bool? Function()? record, bool? Function()? muted, String? Function()? beep, bool? Function()? startConferenceOnEnter, bool? Function()? endConferenceOnExit, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? earlyMedia, int? Function()? maxParticipants, String? Function()? conferenceRecord, String? Function()? conferenceTrim, Uri? Function()? conferenceStatusCallback, ConferenceStatusCallbackMethod? Function()? conferenceStatusCallbackMethod, List<String>? Function()? conferenceStatusCallbackEvent, String? Function()? recordingChannels, Uri? Function()? recordingStatusCallback, RecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? region, Uri? Function()? conferenceRecordingStatusCallback, ConferenceRecordingStatusCallbackMethod? Function()? conferenceRecordingStatusCallbackMethod, List<String>? Function()? recordingStatusCallbackEvent, List<String>? Function()? conferenceRecordingStatusCallbackEvent, bool? Function()? coaching, String? Function()? callSidToCoach, String? Function()? jitterBufferSize, String? Function()? byoc, String? Function()? callerId, String? Function()? callReason, String? Function()? recordingTrack, int? Function()? timeLimit, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, Uri? Function()? amdStatusCallback, AmdStatusCallbackMethod? Function()? amdStatusCallbackMethod, String? Function()? trim, String? Function()? callToken, Uri? Function()? clientNotificationUrl, String? Function()? callerDisplayName, }) {return CreateParticipantRequest(
   from: from ?? this.from,
   to: to ?? this.to,
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
@@ -530,7 +530,7 @@ CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? st
   callToken: callToken != null ? callToken() : this.callToken,
   clientNotificationUrl: clientNotificationUrl != null ? clientNotificationUrl() : this.clientNotificationUrl,
   callerDisplayName: callerDisplayName != null ? callerDisplayName() : this.callerDisplayName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateParticipantRequest &&
           from == other.from &&
@@ -588,4 +588,4 @@ CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? st
 
 @override String toString() => 'CreateParticipantRequest(\n  from: $from,\n  to: $to,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  statusCallbackEvent: $statusCallbackEvent,\n  label: $label,\n  timeout: $timeout,\n  record: $record,\n  muted: $muted,\n  beep: $beep,\n  startConferenceOnEnter: $startConferenceOnEnter,\n  endConferenceOnExit: $endConferenceOnExit,\n  waitUrl: $waitUrl,\n  waitMethod: $waitMethod,\n  earlyMedia: $earlyMedia,\n  maxParticipants: $maxParticipants,\n  conferenceRecord: $conferenceRecord,\n  conferenceTrim: $conferenceTrim,\n  conferenceStatusCallback: $conferenceStatusCallback,\n  conferenceStatusCallbackMethod: $conferenceStatusCallbackMethod,\n  conferenceStatusCallbackEvent: $conferenceStatusCallbackEvent,\n  recordingChannels: $recordingChannels,\n  recordingStatusCallback: $recordingStatusCallback,\n  recordingStatusCallbackMethod: $recordingStatusCallbackMethod,\n  sipAuthUsername: $sipAuthUsername,\n  sipAuthPassword: $sipAuthPassword,\n  region: $region,\n  conferenceRecordingStatusCallback: $conferenceRecordingStatusCallback,\n  conferenceRecordingStatusCallbackMethod: $conferenceRecordingStatusCallbackMethod,\n  recordingStatusCallbackEvent: $recordingStatusCallbackEvent,\n  conferenceRecordingStatusCallbackEvent: $conferenceRecordingStatusCallbackEvent,\n  coaching: $coaching,\n  callSidToCoach: $callSidToCoach,\n  jitterBufferSize: $jitterBufferSize,\n  byoc: $byoc,\n  callerId: $callerId,\n  callReason: $callReason,\n  recordingTrack: $recordingTrack,\n  timeLimit: $timeLimit,\n  machineDetection: $machineDetection,\n  machineDetectionTimeout: $machineDetectionTimeout,\n  machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold,\n  machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold,\n  machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout,\n  amdStatusCallback: $amdStatusCallback,\n  amdStatusCallbackMethod: $amdStatusCallbackMethod,\n  trim: $trim,\n  callToken: $callToken,\n  clientNotificationUrl: $clientNotificationUrl,\n  callerDisplayName: $callerDisplayName,\n)';
 
- }
+}

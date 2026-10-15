@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request/post_tax_transactions_create_reversal_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request/post_tax_transactions_create_reversal_request_shipping_cost.dart';/// If `partial`, the provided line item or shipping cost amounts are reversed. If `full`, the original transaction is fully reversed.
 sealed class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode();
 
-factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) { return switch (json) {
+factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) {return switch (json) {
   'full' => full,
   'partial' => partial,
   _ => PostTaxTransactionsCreateReversalRequestMode$Unknown(json),
-}; }
+};}
 
 static const PostTaxTransactionsCreateReversalRequestMode full = PostTaxTransactionsCreateReversalRequestMode$full._();
 
@@ -17,30 +17,30 @@ static const PostTaxTransactionsCreateReversalRequestMode partial = PostTaxTrans
 static const List<PostTaxTransactionsCreateReversalRequestMode> values = [full, partial];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'full' => 'full',
   'partial' => 'partial',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostTaxTransactionsCreateReversalRequestMode$Unknown; } 
+bool get isUnknown {return this is PostTaxTransactionsCreateReversalRequestMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() full, required W Function() partial, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() full, required W Function() partial, required W Function(String value) $unknown, }) {return switch (this) {
       PostTaxTransactionsCreateReversalRequestMode$full() => full(),
       PostTaxTransactionsCreateReversalRequestMode$partial() => partial(),
       PostTaxTransactionsCreateReversalRequestMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function(String value)? $unknown, }) {return switch (this) {
       PostTaxTransactionsCreateReversalRequestMode$full() => full != null ? full() : orElse(value),
       PostTaxTransactionsCreateReversalRequestMode$partial() => partial != null ? partial() : orElse(value),
       PostTaxTransactionsCreateReversalRequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostTaxTransactionsCreateReversalRequestMode($value)';
 
- }
+}
 @immutable final class PostTaxTransactionsCreateReversalRequestMode$full extends PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode$full._();
 
 @override String get value => 'full';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => 'full'.hashCode;
 
- }
+}
 @immutable final class PostTaxTransactionsCreateReversalRequestMode$partial extends PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode$partial._();
 
 @override String get value => 'partial';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => 'partial'.hashCode;
 
- }
+}
 @immutable final class PostTaxTransactionsCreateReversalRequestMode$Unknown extends PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostTaxTransactionsCreateReversalRequest {const PostTaxTransactionsCreateReversalRequest({required this.mode, required this.originalTransaction, required this.reference, this.expand, this.flatAmount, this.lineItems, this.metadata, this.shippingCost, });
 
-factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateReversalRequest(
+factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> json) {return PostTaxTransactionsCreateReversalRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostTaxTransactionsCreateReversalRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
@@ -80,7 +80,7 @@ factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> j
   originalTransaction: json['original_transaction'] as String,
   reference: json['reference'] as String,
   shippingCost: json['shipping_cost'] != null ? PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -106,7 +106,7 @@ final String reference;
 /// The shipping cost to reverse.
 final PostTaxTransactionsCreateReversalRequestShippingCost? shippingCost;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'flat_amount': ?flatAmount,
   if (lineItems != null) 'line_items': lineItems?.map((e) => e.toJson()).toList(),
@@ -115,16 +115,16 @@ Map<String, dynamic> toJson() { return {
   'original_transaction': originalTransaction,
   'reference': reference,
   if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mode') &&
       json.containsKey('original_transaction') && json['original_transaction'] is String &&
-      json.containsKey('reference') && json['reference'] is String; } 
+      json.containsKey('reference') && json['reference'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (originalTransaction.runes.length > 5000) { errors.add('originalTransaction: length must be <= 5000'); }
 if (reference.runes.length > 500) { errors.add('reference: length must be <= 500'); }
-return errors; } 
-PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? expand, int? Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost? Function()? shippingCost, }) { return PostTaxTransactionsCreateReversalRequest(
+return errors;}
+PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? expand, int? Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost? Function()? shippingCost, }) {return PostTaxTransactionsCreateReversalRequest(
   expand: expand != null ? expand() : this.expand,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
@@ -133,7 +133,7 @@ PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? exp
   originalTransaction: originalTransaction ?? this.originalTransaction,
   reference: reference ?? this.reference,
   shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxTransactionsCreateReversalRequest &&
           listEquals(expand, other.expand) &&
@@ -149,4 +149,4 @@ PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? exp
 
 @override String toString() => 'PostTaxTransactionsCreateReversalRequest(expand: $expand, flatAmount: $flatAmount, lineItems: $lineItems, metadata: $metadata, mode: $mode, originalTransaction: $originalTransaction, reference: $reference, shippingCost: $shippingCost)';
 
- }
+}

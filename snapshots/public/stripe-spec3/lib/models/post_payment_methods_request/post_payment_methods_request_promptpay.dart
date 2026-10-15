@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestPromptpay {const PostPaymentMethodsRequestPromptpay();
 
-factory PostPaymentMethodsRequestPromptpay.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestPromptpay(); }
+factory PostPaymentMethodsRequestPromptpay.fromJson(Map<String, dynamic> _) {return const PostPaymentMethodsRequestPromptpay();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestPromptpay copyWith() { return const PostPaymentMethodsRequestPromptpay(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentMethodsRequestPromptpay copyWith() {return const PostPaymentMethodsRequestPromptpay(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestPromptpay;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'PostPaymentMethodsRequestPromptpay()';
 
- }
+}

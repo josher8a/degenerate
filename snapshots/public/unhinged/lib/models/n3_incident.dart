@@ -9,7 +9,7 @@ final class $3Incident {
   const $3Incident({
     required this.$1id,
     required this.$2species,
-    this.$3DreadLevel = 6.66,
+    this.$3DreadLevel,
     this.cafe,
     this.gnirts,
     this.ab,
@@ -19,9 +19,9 @@ final class $3Incident {
     return $3Incident(
       $1id: json['1id'] as String,
       $2species: Phase.fromJson(json['2species'] as String),
-      $3DreadLevel: json.containsKey('3-dread-level')
+      $3DreadLevel: json['3-dread-level'] != null
           ? (json['3-dread-level'] as num).toDouble()
-          : 6.66,
+          : null,
       cafe: json['café'] as String?,
       gnirts: json['\u202Egnirts'] as String?,
       ab: json['a\u200Bb'] as String?,
@@ -32,7 +32,7 @@ final class $3Incident {
 
   final Phase $2species;
 
-  final double $3DreadLevel;
+  final double? $3DreadLevel;
 
   final String? cafe;
 
@@ -42,11 +42,14 @@ final class $3Incident {
   /// Looks like ab but has U+200B between them.
   final String? ab;
 
+  /// The value of `$3DreadLevel`, or its schema default when absent.
+  double get $3DreadLevelOrDefault => $3DreadLevel ?? 6.66;
+
   Map<String, dynamic> toJson() {
     return {
       '1id': $1id,
       '2species': $2species.toJson(),
-      '3-dread-level': $3DreadLevel,
+      '3-dread-level': ?$3DreadLevel,
       'café': ?cafe,
       '\u202Egnirts': ?gnirts,
       'a\u200Bb': ?ab,
@@ -62,14 +65,17 @@ final class $3Incident {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    if ($3DreadLevel < 0) {
-      errors.add(r'$3DreadLevel: must be >= 0');
-    }
-    if ($3DreadLevel >= 13.00000000000001) {
-      errors.add(r'$3DreadLevel: must be < 13.00000000000001');
-    }
-    if ($3DreadLevel % 0.000001 != 0) {
-      errors.add(r'$3DreadLevel: must be a multiple of 0.000001');
+    final $3DreadLevel$ = $3DreadLevel;
+    if ($3DreadLevel$ != null) {
+      if ($3DreadLevel$ < 0) {
+        errors.add(r'$3DreadLevel: must be >= 0');
+      }
+      if ($3DreadLevel$ >= 13.00000000000001) {
+        errors.add(r'$3DreadLevel: must be < 13.00000000000001');
+      }
+      if ($3DreadLevel$ % 0.000001 != 0) {
+        errors.add(r'$3DreadLevel: must be a multiple of 0.000001');
+      }
     }
     return errors;
   }
@@ -77,7 +83,7 @@ final class $3Incident {
   $3Incident copyWith({
     String? $1id,
     Phase? $2species,
-    double Function()? $3DreadLevel,
+    double? Function()? $3DreadLevel,
     String? Function()? cafe,
     String? Function()? gnirts,
     String? Function()? ab,

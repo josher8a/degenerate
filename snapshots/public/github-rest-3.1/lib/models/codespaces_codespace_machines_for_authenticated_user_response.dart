@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespace_machine.dart';@immutable final class CodespacesCodespaceMachinesForAuthenticatedUserResponse {const CodespacesCodespaceMachinesForAuthenticatedUserResponse({required this.totalCount, required this.machines, });
 
-factory CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesCodespaceMachinesForAuthenticatedUserResponse(
+factory CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) {return CodespacesCodespaceMachinesForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),
   machines: (json['machines'] as List<dynamic>).map((e) => CodespaceMachine.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<CodespaceMachine> machines;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'machines': machines.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('machines'); } 
-CodespacesCodespaceMachinesForAuthenticatedUserResponse copyWith({int? totalCount, List<CodespaceMachine>? machines, }) { return CodespacesCodespaceMachinesForAuthenticatedUserResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('machines');}
+CodespacesCodespaceMachinesForAuthenticatedUserResponse copyWith({int? totalCount, List<CodespaceMachine>? machines, }) {return CodespacesCodespaceMachinesForAuthenticatedUserResponse(
   totalCount: totalCount ?? this.totalCount,
   machines: machines ?? this.machines,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCodespaceMachinesForAuthenticatedUserResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ CodespacesCodespaceMachinesForAuthenticatedUserResponse copyWith({int? totalCoun
 
 @override String toString() => 'CodespacesCodespaceMachinesForAuthenticatedUserResponse(totalCount: $totalCount, machines: $machines)';
 
- }
+}

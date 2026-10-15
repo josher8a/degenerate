@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamCaptionBasicUpload {const StreamCaptionBasicUpload({required this.file});
 
-factory StreamCaptionBasicUpload.fromJson(Map<String, dynamic> json) { return StreamCaptionBasicUpload(
+factory StreamCaptionBasicUpload.fromJson(Map<String, dynamic> json) {return StreamCaptionBasicUpload(
   file: json['file'] as String,
-); }
+);}
 
 /// The WebVTT file containing the caption or subtitle content.
 /// 
 /// Example: `'@/Users/kyle/Desktop/tr.vtt'`
 final String file;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': file,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-StreamCaptionBasicUpload copyWith({String? file}) { return StreamCaptionBasicUpload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') && json['file'] is String;}
+StreamCaptionBasicUpload copyWith({String? file}) {return StreamCaptionBasicUpload(
   file: file ?? this.file,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCaptionBasicUpload &&
           file == other.file;
@@ -27,4 +27,4 @@ StreamCaptionBasicUpload copyWith({String? file}) { return StreamCaptionBasicUpl
 
 @override String toString() => 'StreamCaptionBasicUpload(file: $file)';
 
- }
+}

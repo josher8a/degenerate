@@ -3,29 +3,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_addin_auth.dart';import 'package:pub_cloudflare/models/dlp_addin_auth/no_auth.dart';import 'package:pub_cloudflare/models/dlp_addin_auth/org.dart';@immutable final class DlpAddinAccountMapping {const DlpAddinAccountMapping({required this.addinIdentifierToken, required this.authRequirements, });
 
-factory DlpAddinAccountMapping.fromJson(Map<String, dynamic> json) { return DlpAddinAccountMapping(
+factory DlpAddinAccountMapping.fromJson(Map<String, dynamic> json) {return DlpAddinAccountMapping(
   addinIdentifierToken: json['addin_identifier_token'] as String,
   authRequirements: switch (json['auth_requirements']) {
   final Map<String, dynamic> m when m['type'] == 'Org' => OneOf2<Org, NoAuth>.a(Org.fromJson(m)),
   final Map<String, dynamic> m when m['type'] == 'NoAuth' => OneOf2<Org, NoAuth>.b(NoAuth.fromJson(m)),
   _ => OneOf2.parse(json['auth_requirements'], fromA: (v) => Org.fromJson(v as Map<String, dynamic>), fromB: (v) => NoAuth.fromJson(v as Map<String, dynamic>),),
 },
-); }
+);}
 
 final String addinIdentifierToken;
 
 final DlpAddinAuth authRequirements;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'addin_identifier_token': addinIdentifierToken,
   'auth_requirements': authRequirements.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('addin_identifier_token') && json['addin_identifier_token'] is String &&
-      json.containsKey('auth_requirements'); } 
-DlpAddinAccountMapping copyWith({String? addinIdentifierToken, DlpAddinAuth? authRequirements, }) { return DlpAddinAccountMapping(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('addin_identifier_token') && json['addin_identifier_token'] is String &&
+      json.containsKey('auth_requirements');}
+DlpAddinAccountMapping copyWith({String? addinIdentifierToken, DlpAddinAuth? authRequirements, }) {return DlpAddinAccountMapping(
   addinIdentifierToken: addinIdentifierToken ?? this.addinIdentifierToken,
   authRequirements: authRequirements ?? this.authRequirements,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpAddinAccountMapping &&
           addinIdentifierToken == other.addinIdentifierToken &&
@@ -35,4 +35,4 @@ DlpAddinAccountMapping copyWith({String? addinIdentifierToken, DlpAddinAuth? aut
 
 @override String toString() => 'DlpAddinAccountMapping(addinIdentifierToken: $addinIdentifierToken, authRequirements: $authRequirements)';
 
- }
+}

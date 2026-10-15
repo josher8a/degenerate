@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnSupportDevice {const MconnSupportDevice({required this.id, required this.lastUpdated, required this.metadata, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.pkiRotationFinishedAt, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
 
-factory MconnSupportDevice.fromJson(Map<String, dynamic> json) { return MconnSupportDevice(
+factory MconnSupportDevice.fromJson(Map<String, dynamic> json) {return MconnSupportDevice(
   cryptKeyRotationFinishedAt: json['crypt_key_rotation_finished_at'] as String?,
   cryptKeyRotationStartedAt: json['crypt_key_rotation_started_at'] as String?,
   cryptKeyRotationStatusCode: json['crypt_key_rotation_status_code'] != null ? (json['crypt_key_rotation_status_code'] as num).toDouble() : null,
@@ -17,7 +17,7 @@ factory MconnSupportDevice.fromJson(Map<String, dynamic> json) { return MconnSup
   pkiRotationStartedAt: json['pki_rotation_started_at'] as String?,
   pkiRotationStatusCode: json['pki_rotation_status_code'] != null ? (json['pki_rotation_status_code'] as num).toDouble() : null,
   serialNumber: json['serial_number'] as String?,
-); }
+);}
 
 final String? cryptKeyRotationFinishedAt;
 
@@ -45,7 +45,7 @@ final double? pkiRotationStatusCode;
 
 final String? serialNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'crypt_key_rotation_finished_at': ?cryptKeyRotationFinishedAt,
   'crypt_key_rotation_started_at': ?cryptKeyRotationStartedAt,
   'crypt_key_rotation_status_code': ?cryptKeyRotationStatusCode,
@@ -59,11 +59,11 @@ Map<String, dynamic> toJson() { return {
   'pki_rotation_started_at': ?pkiRotationStartedAt,
   'pki_rotation_status_code': ?pkiRotationStatusCode,
   'serial_number': ?serialNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
-      json.containsKey('metadata') && json['metadata'] is String; } 
-MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, String? Function()? cryptKeyRotationStartedAt, double? Function()? cryptKeyRotationStatusCode, String? Function()? deviceType, String? Function()? ekCert, MconnUuid? id, String? Function()? imagedAt, String? lastUpdated, String? metadata, String? Function()? pkiRotationFinishedAt, String? Function()? pkiRotationStartedAt, double? Function()? pkiRotationStatusCode, String? Function()? serialNumber, }) { return MconnSupportDevice(
+      json.containsKey('metadata') && json['metadata'] is String;}
+MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, String? Function()? cryptKeyRotationStartedAt, double? Function()? cryptKeyRotationStatusCode, String? Function()? deviceType, String? Function()? ekCert, MconnUuid? id, String? Function()? imagedAt, String? lastUpdated, String? metadata, String? Function()? pkiRotationFinishedAt, String? Function()? pkiRotationStartedAt, double? Function()? pkiRotationStatusCode, String? Function()? serialNumber, }) {return MconnSupportDevice(
   cryptKeyRotationFinishedAt: cryptKeyRotationFinishedAt != null ? cryptKeyRotationFinishedAt() : this.cryptKeyRotationFinishedAt,
   cryptKeyRotationStartedAt: cryptKeyRotationStartedAt != null ? cryptKeyRotationStartedAt() : this.cryptKeyRotationStartedAt,
   cryptKeyRotationStatusCode: cryptKeyRotationStatusCode != null ? cryptKeyRotationStatusCode() : this.cryptKeyRotationStatusCode,
@@ -77,7 +77,7 @@ MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, Str
   pkiRotationStartedAt: pkiRotationStartedAt != null ? pkiRotationStartedAt() : this.pkiRotationStartedAt,
   pkiRotationStatusCode: pkiRotationStatusCode != null ? pkiRotationStatusCode() : this.pkiRotationStatusCode,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportDevice &&
           cryptKeyRotationFinishedAt == other.cryptKeyRotationFinishedAt &&
@@ -98,4 +98,4 @@ MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, Str
 
 @override String toString() => 'MconnSupportDevice(\n  cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt,\n  cryptKeyRotationStartedAt: $cryptKeyRotationStartedAt,\n  cryptKeyRotationStatusCode: $cryptKeyRotationStatusCode,\n  deviceType: $deviceType,\n  ekCert: $ekCert,\n  id: $id,\n  imagedAt: $imagedAt,\n  lastUpdated: $lastUpdated,\n  metadata: $metadata,\n  pkiRotationFinishedAt: $pkiRotationFinishedAt,\n  pkiRotationStartedAt: $pkiRotationStartedAt,\n  pkiRotationStatusCode: $pkiRotationStatusCode,\n  serialNumber: $serialNumber,\n)';
 
- }
+}

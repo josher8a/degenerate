@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
 sealed class ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType();
 
-factory ShieldAuthIdCharacteristicType.fromJson(String json) { return switch (json) {
+factory ShieldAuthIdCharacteristicType.fromJson(String json) {return switch (json) {
   'header' => header,
   'cookie' => cookie,
   _ => ShieldAuthIdCharacteristicType$Unknown(json),
-}; }
+};}
 
 static const ShieldAuthIdCharacteristicType header = ShieldAuthIdCharacteristicType$header._();
 
@@ -17,30 +17,30 @@ static const ShieldAuthIdCharacteristicType cookie = ShieldAuthIdCharacteristicT
 static const List<ShieldAuthIdCharacteristicType> values = [header, cookie];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'header' => 'header',
   'cookie' => 'cookie',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShieldAuthIdCharacteristicType$Unknown; } 
+bool get isUnknown {return this is ShieldAuthIdCharacteristicType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() header, required W Function() cookie, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() header, required W Function() cookie, required W Function(String value) $unknown, }) {return switch (this) {
       ShieldAuthIdCharacteristicType$header() => header(),
       ShieldAuthIdCharacteristicType$cookie() => cookie(),
       ShieldAuthIdCharacteristicType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? header, W Function()? cookie, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? header, W Function()? cookie, W Function(String value)? $unknown, }) {return switch (this) {
       ShieldAuthIdCharacteristicType$header() => header != null ? header() : orElse(value),
       ShieldAuthIdCharacteristicType$cookie() => cookie != null ? cookie() : orElse(value),
       ShieldAuthIdCharacteristicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShieldAuthIdCharacteristicType($value)';
 
- }
+}
 @immutable final class ShieldAuthIdCharacteristicType$header extends ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType$header._();
 
 @override String get value => 'header';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? header, 
 
 @override int get hashCode => 'header'.hashCode;
 
- }
+}
 @immutable final class ShieldAuthIdCharacteristicType$cookie extends ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType$cookie._();
 
 @override String get value => 'cookie';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? header, 
 
 @override int get hashCode => 'cookie'.hashCode;
 
- }
+}
 @immutable final class ShieldAuthIdCharacteristicType$Unknown extends ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType$Unknown(this.value);
 
 @override final String value;
@@ -68,14 +68,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? header, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Auth ID Characteristic
 @immutable final class ShieldAuthIdCharacteristic {const ShieldAuthIdCharacteristic({required this.name, required this.type, });
 
-factory ShieldAuthIdCharacteristic.fromJson(Map<String, dynamic> json) { return ShieldAuthIdCharacteristic(
+factory ShieldAuthIdCharacteristic.fromJson(Map<String, dynamic> json) {return ShieldAuthIdCharacteristic(
   name: json['name'] as String,
   type: ShieldAuthIdCharacteristicType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The name of the characteristic field, i.e., the header or cookie name.
 /// 
@@ -87,20 +87,20 @@ final String name;
 /// Example: `'header'`
 final ShieldAuthIdCharacteristicType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-ShieldAuthIdCharacteristic copyWith({String? name, ShieldAuthIdCharacteristicType? type, }) { return ShieldAuthIdCharacteristic(
+return errors;}
+ShieldAuthIdCharacteristic copyWith({String? name, ShieldAuthIdCharacteristicType? type, }) {return ShieldAuthIdCharacteristic(
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldAuthIdCharacteristic &&
           name == other.name &&
@@ -110,4 +110,4 @@ ShieldAuthIdCharacteristic copyWith({String? name, ShieldAuthIdCharacteristicTyp
 
 @override String toString() => 'ShieldAuthIdCharacteristic(name: $name, type: $type)';
 
- }
+}

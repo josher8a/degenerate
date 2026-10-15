@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of a commit.
 @immutable final class Status {const Status({required this.url, required this.avatarUrl, required this.id, required this.nodeId, required this.state, required this.description, required this.targetUrl, required this.context, required this.createdAt, required this.updatedAt, required this.creator, });
 
-factory Status.fromJson(Map<String, dynamic> json) { return Status(
+factory Status.fromJson(Map<String, dynamic> json) {return Status(
   url: json['url'] as String,
   avatarUrl: json['avatar_url'] as String?,
   id: (json['id'] as num).toInt(),
@@ -16,7 +16,7 @@ factory Status.fromJson(Map<String, dynamic> json) { return Status(
   createdAt: json['created_at'] as String,
   updatedAt: json['updated_at'] as String,
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String url;
 
@@ -40,7 +40,7 @@ final String updatedAt;
 
 final SimpleUser? creator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
   'avatar_url': avatarUrl,
   'id': id,
@@ -52,19 +52,19 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'updated_at': updatedAt,
   'creator': creator?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('avatar_url') && (json['avatar_url'] == null || json['avatar_url'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('target_url') && json['target_url'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('target_url') && (json['target_url'] == null || json['target_url'] is String) &&
       json.containsKey('context') && json['context'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('creator'); } 
-Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? nodeId, String? state, String? Function()? description, String? Function()? targetUrl, String? context, String? createdAt, String? updatedAt, SimpleUser? Function()? creator, }) { return Status(
+      json.containsKey('creator');}
+Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? nodeId, String? state, String? Function()? description, String? Function()? targetUrl, String? context, String? createdAt, String? updatedAt, SimpleUser? Function()? creator, }) {return Status(
   url: url ?? this.url,
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   id: id ?? this.id,
@@ -76,7 +76,7 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   creator: creator != null ? creator() : this.creator,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Status &&
           url == other.url &&
@@ -95,4 +95,4 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
 
 @override String toString() => 'Status(\n  url: $url,\n  avatarUrl: $avatarUrl,\n  id: $id,\n  nodeId: $nodeId,\n  state: $state,\n  description: $description,\n  targetUrl: $targetUrl,\n  context: $context,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  creator: $creator,\n)';
 
- }
+}

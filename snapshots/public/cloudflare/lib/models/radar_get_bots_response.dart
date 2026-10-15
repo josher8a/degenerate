@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bots_response/radar_get_bots_response_result.dart';@immutable final class RadarGetBotsResponse {const RadarGetBotsResponse({required this.result, required this.success, });
 
-factory RadarGetBotsResponse.fromJson(Map<String, dynamic> json) { return RadarGetBotsResponse(
+factory RadarGetBotsResponse.fromJson(Map<String, dynamic> json) {return RadarGetBotsResponse(
   result: RadarGetBotsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBotsResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBotsResponse copyWith({RadarGetBotsResponseResult? result, bool? success, }) { return RadarGetBotsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBotsResponse copyWith({RadarGetBotsResponseResult? result, bool? success, }) {return RadarGetBotsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBotsResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetBotsResponse copyWith({RadarGetBotsResponseResult? result, bool? success
 
 @override String toString() => 'RadarGetBotsResponse(result: $result, success: $success)';
 
- }
+}

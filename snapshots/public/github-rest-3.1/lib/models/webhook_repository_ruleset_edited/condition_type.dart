@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConditionType {const ConditionType({this.from});
 
-factory ConditionType.fromJson(Map<String, dynamic> json) { return ConditionType(
+factory ConditionType.fromJson(Map<String, dynamic> json) {return ConditionType(
   from: json['from'] as String?,
-); }
+);}
 
 final String? from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': ?from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from'}.contains(key)); } 
-ConditionType copyWith({String? Function()? from}) { return ConditionType(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'from'}.contains(key));}
+ConditionType copyWith({String? Function()? from}) {return ConditionType(
   from: from != null ? from() : this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConditionType &&
           from == other.from;
@@ -24,4 +24,4 @@ ConditionType copyWith({String? Function()? from}) { return ConditionType(
 
 @override String toString() => 'ConditionType(from: $from)';
 
- }
+}

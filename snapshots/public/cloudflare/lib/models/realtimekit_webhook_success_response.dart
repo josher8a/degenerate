@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_webhook.dart';@immutable final class RealtimekitWebhookSuccessResponse {const RealtimekitWebhookSuccessResponse({required this.data, required this.success, });
 
-factory RealtimekitWebhookSuccessResponse.fromJson(Map<String, dynamic> json) { return RealtimekitWebhookSuccessResponse(
+factory RealtimekitWebhookSuccessResponse.fromJson(Map<String, dynamic> json) {return RealtimekitWebhookSuccessResponse(
   data: RealtimekitWebhook.fromJson(json['data'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RealtimekitWebhook data;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RealtimekitWebhookSuccessResponse copyWith({RealtimekitWebhook? data, bool? success, }) { return RealtimekitWebhookSuccessResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
+      json.containsKey('success') && json['success'] is bool;}
+RealtimekitWebhookSuccessResponse copyWith({RealtimekitWebhook? data, bool? success, }) {return RealtimekitWebhookSuccessResponse(
   data: data ?? this.data,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitWebhookSuccessResponse &&
           data == other.data &&
@@ -32,4 +32,4 @@ RealtimekitWebhookSuccessResponse copyWith({RealtimekitWebhook? data, bool? succ
 
 @override String toString() => 'RealtimekitWebhookSuccessResponse(data: $data, success: $success)';
 
- }
+}

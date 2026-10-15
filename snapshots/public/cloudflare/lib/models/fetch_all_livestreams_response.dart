@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_all_livestreams_response/fetch_all_livestreams_response_data.dart';@immutable final class FetchAllLivestreamsResponse {const FetchAllLivestreamsResponse({this.data, this.success, });
 
-factory FetchAllLivestreamsResponse.fromJson(Map<String, dynamic> json) { return FetchAllLivestreamsResponse(
+factory FetchAllLivestreamsResponse.fromJson(Map<String, dynamic> json) {return FetchAllLivestreamsResponse(
   data: json['data'] != null ? FetchAllLivestreamsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final FetchAllLivestreamsResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-FetchAllLivestreamsResponse copyWith({FetchAllLivestreamsResponseData? Function()? data, bool? Function()? success, }) { return FetchAllLivestreamsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+FetchAllLivestreamsResponse copyWith({FetchAllLivestreamsResponseData? Function()? data, bool? Function()? success, }) {return FetchAllLivestreamsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FetchAllLivestreamsResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ FetchAllLivestreamsResponse copyWith({FetchAllLivestreamsResponseData? Function(
 
 @override String toString() => 'FetchAllLivestreamsResponse(data: $data, success: $success)';
 
- }
+}
